@@ -2,6 +2,9 @@
     <main class="page home">
 
         <!-- ===== HERO + CLOCK (Blade) ===== -->
+        <!-- Include standalone clock styles (keep this near the top of the blade so it loads for the hero) -->
+        <link rel="stylesheet" href="{{ asset('css/clock.css') }}">
+
         <div class="video-bg-wrapper"
              style="background-image: url('{{ url('/images/bg_background_website.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
@@ -115,6 +118,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- Include clock script at the end of the file so it can auto-init -->
+        <script src="{{ asset('js/clock.js') }}"></script>
 
     </main>
 </x-layout>
