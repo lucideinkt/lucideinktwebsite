@@ -1,10 +1,6 @@
 <x-layout>
     <main class="page home">
 
-        <!-- ===== HERO + CLOCK (Blade) ===== -->
-        <!-- Include standalone clock styles (keep this near the top of the blade so it loads for the hero) -->
-{{--        <link rel="stylesheet" href="{{ asset('css/clock.css') }}">--}}
-
         <div class="video-bg-wrapper"
              style="background-image: url('{{ url('/images/Website-Banner-new-10.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
@@ -14,8 +10,10 @@
                     <img class="book-shot" src="{{ asset('images/banner_hero_web.png') }}" alt="">
                 </div>
 
-                <div class="clock-image" >
-                    <div class="hero-section">
+                <div class="clock-image">
+
+                    <div class="hero-section" style="position: relative; overflow: visible;">
+                        <img class="hero-bg-img" src="{{ asset('images/sun_clock_new.png') }}" alt="" style="position: absolute; left: 50%; top: 50%; transform: translate(-51%, -51%); width: 180%; height: auto; pointer-events: none; z-index: -1;">
 
                         <!-- Achterste laag: draaiende rotor -->
                         <div class="layer layer-rotor">
@@ -25,17 +23,17 @@
                         <!-- Middenlaag: text inside clock -->
                         <div class="text-clock">
                             <div class="text-lucideinkt">
-                                <img src="{{ asset('images/Bismillah5.webp') }}" alt="">
+                                <img src="{{ asset('images/bismillah_2.png') }}" alt="">
                             </div>
                             <div class="text-life-minutes">
-                                <img src="{{ asset('images/clockassets/Text-2.webp') }}" alt="">
+                                <img src="{{ asset('images/life-minutes.png') }}" alt="">
                             </div>
                             <button class="clock-button" id="openModalBtn">Lees meer</button>
                         </div>
 
                         <!-- Bovenlaag: sier-ring -->
                         <div class="layer layer-ring">
-                            <img src="{{ asset('images/clockassets/clockeffect_2.png') }}" alt="">
+{{--                            <img src="{{ asset('images/clockassets/clockeffect_2.png') }}" alt="">--}}
                         </div>
 
 {{--                        <div class="layer overlay-ring">--}}

@@ -370,7 +370,7 @@
         align-items: center;
         position: relative;
         z-index: 3;
-        margin-top: 100px;
+        margin-top: 125px;
         max-width: 400px;
         padding-bottom: 50px;
     }
@@ -384,7 +384,7 @@
         margin: 0;
         display: grid;
         place-items: center;
-        filter: drop-shadow(0 8px 24px rgba(0,0,0,.15));
+        /*filter: drop-shadow(0 8px 24px rgba(0,0,0,.15));*/
     }
 
     /* ensure the hero area sits nicely in its column */
@@ -468,20 +468,20 @@
         position: absolute;
         left: 50%; bottom: 50%;
         transform-origin: 50% 100%;
-        background: linear-gradient(0deg,#300d0e 0%,#712022 100%);
+        background: linear-gradient(0deg, #3b2a20 0%, #4a2f24 100%);
         border-radius: 0 0 6px 6px;
         clip-path: polygon(48% 100%,52% 100%,54% 20%,50% 0,46% 20%);
         box-shadow: 0 4px 12px rgba(0,0,0,.18), 0 1.5px 4px rgba(86,32,28,.12);
     }
-    .css-hour-hand  { width: clamp(14px, 3.6vw, 40px); height: clamp(38px, 11vw, 100px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
+    .css-hour-hand  { width: clamp(14px, 3.6vw, 35px); height: clamp(38px, 11vw, 100px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
     .css-minute-hand{ width: clamp(12px, 3.2vw, 35px); height: clamp(52px, 15vw, 120px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
     .css-second-hand{ width: clamp(8px,  2.2vw, 30px); height: clamp(66px, 18vw, 150px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
     .css-clock-center{
         position:absolute; left:50%; top:50%;
-        width: clamp(8px, 2.2vw, 20px); height: clamp(8px, 2.2vw, 20px);
+        width: clamp(8px, 2.2vw, 17px); height: clamp(8px, 2.2vw, 17px);
         transform: translate(-50%,-50%);
-        background: linear-gradient(0deg,#2f0d0d 0%,#712022 100%);
+        background: linear-gradient(0deg,#2b1a14 0%,#513827 100%);
         border-radius: 50%;
         z-index: 10;
     }
@@ -493,11 +493,11 @@
         pointer-events:none;
 
         /* Defaults (you can override anywhere) */
-        --bismillah-y: 30%;
+        --bismillah-y: 28%;
         --minutes-y:   66%;
-        --button-y:    78%;
-        --bismillah-w: 40%;   /* % of the circle’s diameter */
-        --minutes-w:   55%;
+        --button-y:    84%;
+        --bismillah-w: 45%;   /* % of the circle’s diameter */
+        --minutes-w:   57%;
     }
 
     /* All children position by their CENTER point */
@@ -1486,9 +1486,9 @@
         }
 
         .clock-button{
-            top: 79%;
+            top: 84%;
             padding: 0.77rem .75rem;
-            font-size:clamp(11px,1.3vw,11px);
+            font-size:clamp(10px,1.3vw,10px);
         }
 
         .single-product h1 {
@@ -1514,15 +1514,15 @@
 
         .css-hour-hand  {
             width: 25px;
-            height: clamp(38px, 11vw, 90px);
+            height: clamp(70px, 11vw, 90px);
             clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
             z-index: 3;
         }
         .css-minute-hand{ width: 25px; height: 100px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-        .css-second-hand{ width: 20px; height: 130px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
+        .css-second-hand{ width: 20px; height: 120px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
         .clock-button{
-            top: 78%;
+            top: 84%;
             padding: 0.73rem .75rem;
             font-size:clamp(10px,1.3vw,10px);
         }
