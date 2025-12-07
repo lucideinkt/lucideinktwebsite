@@ -365,8 +365,14 @@
        HERO + CLOCK (RESPONSIVE, LOCKED)
        ========================================================= */
     .clock-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         z-index: 3;
+        margin-top: 100px;
+        max-width: 400px;
+        padding-bottom: 50px;
     }
 
     .hero-section{
@@ -468,8 +474,8 @@
         box-shadow: 0 4px 12px rgba(0,0,0,.18), 0 1.5px 4px rgba(86,32,28,.12);
     }
     .css-hour-hand  { width: clamp(14px, 3.6vw, 40px); height: clamp(38px, 11vw, 100px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
-    .css-minute-hand{ width: clamp(12px, 3.2vw, 35px); height: clamp(52px, 15vw, 140px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-    .css-second-hand{ width: clamp(8px,  2.2vw, 30px); height: clamp(66px, 18vw, 180px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
+    .css-minute-hand{ width: clamp(12px, 3.2vw, 35px); height: clamp(52px, 15vw, 120px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
+    .css-second-hand{ width: clamp(8px,  2.2vw, 30px); height: clamp(66px, 18vw, 150px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
     .css-clock-center{
         position:absolute; left:50%; top:50%;
@@ -575,9 +581,10 @@
     .intro-section{
         width:100%;
         max-width:1200px;
-        margin:-50px auto 0;
         position:relative;
         z-index:20;
+        margin: 0 auto;
+        padding-top: 325px;
     }
 
     .intro-section .bismillah{ display:flex; justify-content:center; margin:75px 0 30px; }
@@ -1142,36 +1149,34 @@
         width:100%; display:flex;
         justify-content:center;
         align-items:center;
-        mask-image:linear-gradient(to bottom,transparent 0%,black 0%,black 85%,transparent 100%);
-        padding-top: 140px;
-        padding-bottom: 100px;
+        /*mask-image:linear-gradient(to bottom,transparent 0%,black 0%,black 85%,transparent 100%);*/
+        /*padding-top: 140px;*/
+        /*padding-bottom: 100px;*/
     }
     .bg-video{
         position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; border:none; opacity:40%;
         mask-image:linear-gradient(to bottom,transparent 0%,black 0%,black 85%,transparent 100%);
     }
     .home-hero{
-        display:grid;
+        display:flex;
         justify-content:center;
         align-items:center;
-        grid-template-columns: 1fr 1fr;
         position: relative;
-        max-width: 900px;
-        left: -125px;
-        top: 5px;
+        flex-direction: column-reverse;
     }
     .home-hero .book-shot{
         width:100%;
-        max-width: 1100px;
         position: relative;
         z-index: 2;
     }
 
     .home-hero .book-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
-        top: 10px;
-        right: -220px;
-        width: 900px;
+        max-width: 900px;
+        top: 300px;
     }
 
     /* =========================================================
@@ -1247,12 +1252,6 @@
     @media (max-width:1200px){
         .page.shop .book-box{ grid-template-columns:repeat(3,1fr); gap:20px; }
 
-        .home-hero {
-            grid-template-columns: 1fr;
-            left: 0;
-            top: -20px;
-        }
-
         .home-hero .book-image {
             position: relative;
             margin: 0 auto;
@@ -1264,22 +1263,10 @@
             max-width: 100%;
         }
 
-        .css-hour-hand  { width: clamp(14px, 3.6vw, 40px); height: clamp(38px, 11vw, 90px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
-        .css-minute-hand{ width: clamp(12px, 3.2vw, 35px); height: clamp(52px, 15vw, 140px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-        .css-second-hand{ width: clamp(8px,  2.2vw, 30px); height: clamp(66px, 18vw, 180px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
-
         .clock-image {
             display: flex;
             justify-content: center;
-        }
-
-        .clock-image .hero-section {
-            --size: clamp(260px, 100vw, 60%);
-            top: -325px;
-        }
-
-        .intro-section {
-            margin-top: -425px;
+            padding-bottom: 50px;
         }
 
         .book-presentation{
@@ -1316,28 +1303,23 @@
             display:block;
         }
 
+        .clock-image {
+            margin-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        .home-hero .book-image {
+            max-width: 90%;
+            top: 200px;
+        }
+
         .css-hour-hand  {
             width: 40px;
             height: clamp(38px, 11vw, 90px);
             clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
             z-index: 3;
         }
-        .css-minute-hand{ width: 35px; height: 120px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-        .css-second-hand{ width: 30px; height: clamp(66px, 18vw, 180px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
-        .clock-image .hero-section {
-            --size: clamp(260px, 100vw, 60%);
-            top: -275px;
-        }
-
-        .video-bg-wrapper {
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .intro-section {
-            margin-top: -325px;
-        }
 
         .container.auth-page{ padding-top:calc(var(--header-height) + 40px); align-items:flex-start; }
         .auth-page .form{ padding:20px; margin-top:10px; }
@@ -1430,25 +1412,14 @@
 
         .css-hour-hand  {
             width: 30px;
-            height: clamp(38px, 11vw, 90px);
             clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
             z-index: 3;
         }
-        .css-minute-hand{ width: 30px; height: 120px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-        .css-second-hand{ width: 30px; height: 160px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
-        .clock-image .hero-section {
-            --size: clamp(260px, 100vw, 60%);
-            top: -200px;
-        }
 
         .clock-button{
             padding: 0.77rem .75rem;
             font-size:clamp(11px,1.3vw,11px);
-        }
-
-        .intro-section {
-            margin-top: -250px;
         }
 
         .single-product h1 {
@@ -1457,6 +1428,17 @@
 
         .single-product .price {
             font-size: 20px;
+        }
+
+        .clock-image {
+            margin-top: 20px;
+            padding-bottom: 75px;
+            max-width: 350px;
+        }
+
+        .home-hero .book-image {
+            max-width: 90%;
+            top: 175px;
         }
 
     }
@@ -1468,7 +1450,11 @@
 
     @media (max-width:600px){
         .intro-section .bismillah{ display:flex; justify-content:center; margin:80px 0 30px; }
-        .intro-section{ width:100%; max-width:1200px; margin:50px auto 0; }
+        .intro-section{
+            width:100%;
+            max-width:1200px;
+            padding-top: 150px;
+        }
         .intro-section .title{ font-size:28px; margin:10px 0 20px; }
         .intro-section .grid{ grid-template-columns:1fr; gap:20px; }
         .intro-section .sub-text{ width:100%; margin:10px auto 30px; max-width:800px; text-align:center; color:#224039; }
@@ -1480,8 +1466,9 @@
         .page.shop .book-box{ grid-template-columns:1fr; gap:20px; }
         .page.shop .book-box .card{ padding:0; }
 
-        .intro-section {
-            margin-top: -200px;
+        .clock-image {
+            max-width: 300px;
+            padding-bottom: 100px;
         }
 
         .css-hour-hand  {
@@ -1490,17 +1477,12 @@
             clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
             z-index: 3;
         }
-        .css-minute-hand{ width: 25px; height: 110px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-        .css-second-hand{ width: 20px; height: 140px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
+        .css-minute-hand{ width: 25px; height: 80px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
+        .css-second-hand{ width: 20px; height: 110px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
-        .clock-image .hero-section {
-            --size: clamp(260px, 100vw, 60%);
-            top: -200px;
-        }
-
-        .clock-image .hero-section {
-            --size: clamp(260px, 100vw, 80%);
-            top: -135px;
+        .home-hero .book-image {
+            top: 125px;
+            max-width: 90%;
         }
 
         .clock-button{
@@ -1539,11 +1521,6 @@
         .css-minute-hand{ width: 25px; height: 100px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
         .css-second-hand{ width: 20px; height: 130px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
-        .clock-image .hero-section {
-            --size: clamp(260px, 100vw, 80%);
-            top: -175px;
-        }
-
         .clock-button{
             top: 78%;
             padding: 0.73rem .75rem;
@@ -1554,9 +1531,6 @@
             width: 60%;
         }
 
-        .intro-section {
-            margin-top: -230px;
-        }
     }
 
     @media (max-width:360px){

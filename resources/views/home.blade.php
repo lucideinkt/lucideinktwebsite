@@ -3,10 +3,10 @@
 
         <!-- ===== HERO + CLOCK (Blade) ===== -->
         <!-- Include standalone clock styles (keep this near the top of the blade so it loads for the hero) -->
-        <link rel="stylesheet" href="{{ asset('css/clock.css') }}">
+{{--        <link rel="stylesheet" href="{{ asset('css/clock.css') }}">--}}
 
         <div class="video-bg-wrapper"
-             style="background-image: url('{{ url('/images/bg_background_website.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+             style="background-image: url('{{ url('/images/Website-Banner-new-10.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
             <section class="home-hero">
 
