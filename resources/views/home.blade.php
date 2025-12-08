@@ -1,61 +1,57 @@
 <x-layout>
     <main class="page home">
 
-        <div class="video-bg-wrapper"
-             style="background-image: url('{{ url('/images/Website-Banner-new-10.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <div class="hero-bg-wrapper">
 
-            <section class="home-hero">
+                <section class="home-hero">
 
-                <div class="book-image">
-                    <img class="book-shot" src="{{ asset('images/banner_hero_web.png') }}" alt="">
-                </div>
+                    <div class="book-image">
+                        <img class="book-shot" src="{{ asset('images/banner_hero_web.png') }}" alt="">
+                    </div>
 
-                <div class="clock-image">
+                    <div class="clock-image">
 
-                    <div class="hero-section" style="position: relative; overflow: visible;">
-                        <img class="hero-bg-img" src="{{ asset('images/sun_clock_new.png') }}" alt="" style="position: absolute; left: 50%; top: 50%; transform: translate(-51%, -51%); width: 180%; height: auto; pointer-events: none; z-index: -1;">
+                        <div class="hero-section" style="position: relative; overflow: visible;">
+                            <img class="hero-bg-img" src="{{ asset('images/sun_clock_new_2.png') }}" alt="" style="position: absolute; left: 47%; top: 53%; transform: translate(-50%, -50%); width: 190%; height: auto; pointer-events: none; z-index: -1;">
 
-                        <!-- Achterste laag: draaiende rotor -->
-                        <div class="layer layer-rotor">
-                            <img class="rotating-image" src="{{ asset('images/inner-turning2.webp') }}" alt="">
-                        </div>
-
-                        <!-- Middenlaag: text inside clock -->
-                        <div class="text-clock">
-                            <div class="text-lucideinkt">
-                                <img src="{{ asset('images/bismillah_2.png') }}" alt="">
+                            <!-- Achterste laag: draaiende rotor -->
+                            <div class="layer layer-rotor">
+                                <img class="rotating-image" src="{{ asset('images/inner-turning2.webp') }}" alt="">
                             </div>
-                            <div class="text-life-minutes">
-                                <img src="{{ asset('images/life-minutes.png') }}" alt="">
+
+                            <!-- Middenlaag: text inside clock -->
+                            <div class="text-clock">
+                                <div class="text-lucideinkt">
+                                    <img src="{{ asset('images/bismillah_2.png') }}" alt="">
+                                </div>
+                                <div class="text-life-minutes">
+                                    <img src="{{ asset('images/life-minutes.png') }}" alt="">
+                                </div>
+                                <button class="clock-button" id="openModalBtn">Lees meer</button>
                             </div>
-                            <button class="clock-button" id="openModalBtn">Lees meer</button>
-                        </div>
 
-                        <!-- Bovenlaag: sier-ring -->
-                        <div class="layer layer-ring">
-{{--                            <img src="{{ asset('images/clockassets/clockeffect_2.png') }}" alt="">--}}
-                        </div>
+                            <!-- Bovenlaag: sier-ring -->
+                            <div class="layer layer-ring">
+{{--                                <img src="{{ asset('images/clockassets/clockeffect_2.png') }}" alt="">--}}
+                            </div>
 
-{{--                        <div class="layer overlay-ring">--}}
-{{--                            <img src="{{ asset('images/clockassets/ring_new_3.png') }}" alt="">--}}
-{{--                        </div>--}}
-
-                        <!-- Voorste laag: CSS klok -->
-                        <div class="layer layer-clock">
-                            <div class="css-clock-wrapper">
-                                <div class="css-clock">
-                                    <div class="css-hour-hand"></div>
-                                    <div class="css-minute-hand"></div>
-                                    <div class="css-second-hand"></div>
-                                    <div class="css-clock-center"></div>
+                            <!-- Voorste laag: CSS klok -->
+                            <div class="layer layer-clock">
+                                <div class="css-clock-wrapper">
+                                    <div class="css-clock">
+                                        <div class="css-hour-hand"></div>
+                                        <div class="css-minute-hand"></div>
+                                        <div class="css-second-hand"></div>
+                                        <div class="css-clock-center"></div>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
-            </section>
+                </section>
+            </div>
         </div>
 
         <div class="section-wrapper">
