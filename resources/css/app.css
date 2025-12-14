@@ -258,23 +258,27 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     align-items:center;
     justify-content:center;
     gap:40px;
+    flex-direction: column;
 }
 
 .desktop-navbar-container .navbar{
     position:relative;
     padding:20px;
-    border-radius:10px;
+    border-radius:50px;
     z-index:0;
     overflow:hidden;
-    background-color:var(--surface-2);
+    /*background-color:var(--surface-2);*/
+    background-image: url("../images/bg-menu.png");
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-top: -15px;
+    border: 4px solid var(--surface-2);
 }
 
 .desktop-navbar-container .navbar::before{
     content:""; position:absolute; inset:0; background-size:cover; background-position:center; opacity:.2; z-index:0; pointer-events:none;
 }
 .desktop-navbar-container .navbar a,
-.desktop-navbar-container .navbar .fa-cart-shopping{ color:var(--main-font-color); }
+.desktop-navbar-container .navbar .fa-cart-shopping{ color:var(--surface-2); }
 .desktop-navbar-container a,
 .desktop-navbar-container .fa-cart-shopping{
     position:relative;
@@ -370,9 +374,9 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     align-items: center;
     position: relative;
     z-index: 3;
-    margin-top: 125px;
+    margin-top: 225px;
     max-width: 400px;
-    padding-bottom: 50px;
+    margin-bottom: -260px;
 }
 
 .hero-section{
@@ -399,10 +403,10 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 }
 
 /* Z order */
-.layer-ring { z-index: 1; }
-.layer-bg   { z-index: 2; }
-.layer-rotor{ z-index: 3; }
-.layer-clock{ z-index: 4; }
+.layer-ring  { z-index: 1; }
+.layer-bg    { z-index: 2; }
+.layer-rotor { z-index: 3; }
+.layer-clock { z-index: 4; }
 .text-clock,
 .text-lucideinkt,
 .text-life-minutes { z-index: 8; }
@@ -432,12 +436,14 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 
 /* Rotor, centered and rotating */
 .layer-rotor img{
-    width: 68%;
-    height: 68%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    opacity: .2;
+    opacity: 0.4;
     animation: spin 40s linear infinite;
     will-change: transform;
+    position: relative;
+    top: 3%;
 }
 @keyframes spin{ from{transform:rotate(0)} to{transform:rotate(-360deg)} }
 
@@ -453,7 +459,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 /* Clock wrapper, proportional */
 .css-clock-wrapper{
     position: absolute;
-    left: 50%; top: 50%;
+    left: 51%; top: 52%;
     transform: translate(-50%, -50%);
     width: 70%;
     height: 70%;
@@ -561,10 +567,13 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 
 /* Small tweaks on compact screens */
 @media (max-width:600px){
-    .css-clock-wrapper{ width:76%; height:76%; }
+    .css-clock-wrapper{
+        width:76%;
+        height:76%;
+    }
     .text-lucideinkt  { top: 30%; width: clamp(120px, 49%, 280px); }
     .text-life-minutes{ top: 66%; width: clamp(130px, 55%, 300px); }
-    .clock-button{ top:78%; }
+    .clock-button{ top:79%; }
     .grd-bg{ opacity:.28; width:66%; height:66%; }
 }
 
@@ -1152,7 +1161,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     /*mask-image:linear-gradient(to bottom,transparent 0%,black 0%,black 85%,transparent 100%);*/
     /*padding-top: 140px;*/
     /*padding-bottom: 100px;*/
-    background-image: url("../images/Website-Banner-new-10.png");
+    background-image: url("../images/bg_without_bsn.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1305,7 +1314,10 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     .logo-container img{ width:100px; }
     .desktop-navbar-container, .header.dashboard .desktop-navbar-container{ display:none; }
     .container.page{ padding-top:90px; }
-    .page.home{ padding-top:80px; }
+    .page.home{
+        padding-top:80px;
+        overflow: auto;
+    }
 
     .header-box{ position:relative; display:flex; justify-content:space-between; padding:0 20px; align-items:center; height:80px; }
     .navbar-cart-sidebar-toggle{ display:flex; gap:10px; }
@@ -1533,7 +1545,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     .css-second-hand{ width: 20px; height: 120px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
     .clock-button{
-        top: 84%;
+        top: 85%;
         padding: 0.73rem .75rem;
         font-size:clamp(10px,1.3vw,10px);
     }

@@ -12,11 +12,11 @@
                     <div class="clock-image">
 
                         <div class="hero-section" style="position: relative; overflow: visible;">
-                            <img class="hero-bg-img" src="{{ asset('images/sun_clock_new_2.png') }}" alt="" style="position: absolute; left: 47%; top: 53%; transform: translate(-50%, -50%); width: 190%; height: auto; pointer-events: none; z-index: -1;">
+                            <img class="hero-bg-img" src="{{ asset('images/sun_clock_new_3.png') }}" alt="" style="position: absolute; left: 47%; top: 53%; transform: translate(-50%, -50%); width: 190%; height: auto; pointer-events: none; z-index: -1;">
 
                             <!-- Achterste laag: draaiende rotor -->
                             <div class="layer layer-rotor">
-                                <img class="rotating-image" src="{{ asset('images/inner-turning2.webp') }}" alt="">
+                                <img class="rotating-image" src="{{ asset('images/sparkle_sun.png') }}" alt="">
                             </div>
 
                             <!-- Middenlaag: text inside clock -->
