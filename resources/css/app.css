@@ -236,18 +236,77 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     position:fixed;
     top:0; z-index:30;
     background:transparent;
-    transition:background .3s,
-    box-shadow .3s;
+    transition:background .3s, box-shadow .3s, transform .22s ease;
     width:100%;
+    transform:translateY(0);
+    will-change:transform;
 }
-.header.scrolled{ background:var(--surface-1)!important; box-shadow:var(--shadow-1); }
+.header.hidden{
+    transform:translateY(-100%);
+}
+
+/*.header.scrolled{ background:var(--surface-1)!important; box-shadow:var(--shadow-1); }*/
+/* Keep the header compact when scrolled so the logo can disappear without leaving empty space */
+.header.scrolled .container{
+    padding:10px 0;
+}
+
+/* Default: horizontal layout (desktop). Mobile will stack below. */
 .header .container{
-    display:flex; justify-content:space-between; align-items:center; flex-direction:column; gap:20px; height:auto; padding:25px 0;
+    display:flex; justify-content:space-between; align-items:center; flex-direction:row; gap:20px; height:auto; padding:25px 0;
+    transition:padding .22s ease;
 }
+@media (max-width: 768px){
+    .header .container{ flex-direction:column; padding:20px 0; }
+}
+
+
+.logo-container{
+    /* ensure anything that moves/up-translates is clipped and won't leave space */
+    overflow:hidden;
+    max-height:100px; /* reserve space for the logo when visible */
+    transition:max-height .22s ease, opacity .22s ease, padding .22s ease;
+    display:block;
+}
+.logo-container img{
+    width:100px;
+    transition:transform .22s ease, opacity .22s ease;
+    will-change:transform, opacity;
+    display:block;
+}
+/* On scrolled: hide the logo container itself (shrinks height to 0) and fade image */
+.header.scrolled .logo-container{
+    max-height:0; /* collapses the logo area */
+    opacity:0;
+    padding:0;
+    margin:0;
+}
+.header.scrolled .logo-container img{
+    transform:translateY(-120%);
+    opacity:0;
+    pointer-events:none;
+}
+
 .logo-container.desktop{ display:flex; justify-content:center; align-items:center; margin:0; }
 .logo-container.mobile{ display:none; }
-.logo-container img{ width:100px; }
+
 .logo-container a{ display:flex; justify-content:center; align-items:center; }
+
+/* Extra helper class to ensure logo hides when JS toggles it directly */
+.logo-container.logo-hidden{
+    max-height:0 !important;
+    opacity:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+}
+.logo-container.logo-hidden img{ transform:translateY(-120%) !important; opacity:0 !important; pointer-events:none; }
+
+/* Fallback: if JS toggles the image directly */
+.logo-hidden-img{ transform:translateY(-120%) !important; opacity:0 !important; pointer-events:none; transition:transform .22s ease, opacity .22s ease; }
+
+/* small upward movement when user scrolls down */
+.header.shrink{ transform:translateY(-8px); }
+.header.scrolled.shrink{ transform:translateY(-8px); }
 
 .desktop-navbar-container{
     position:relative;
@@ -547,10 +606,6 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-@media (max-width:992px){
-
 }
 
 
@@ -1160,7 +1215,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     align-items:center;
     /*mask-image:linear-gradient(to bottom,transparent 0%,black 0%,black 85%,transparent 100%);*/
     /*padding-top: 140px;*/
-    /*padding-bottom: 100px;*/
+    padding-bottom: 100px;
     background-image: url("../images/bg_without_bsn.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -1328,12 +1383,13 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 
     .clock-image {
         margin-top: 20px;
-        padding-bottom: 50px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
 
     .home-hero .book-image {
         max-width: 90%;
-        top: 300px;
+        top: 375px;
     }
 
     .css-hour-hand  {
@@ -1455,13 +1511,13 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 
     .clock-image {
         margin-top: 20px;
-        padding-bottom: 75px;
+        padding-bottom: 0px;
         max-width: 350px;
     }
 
     .home-hero .book-image {
         max-width: 90%;
-        top: 250px;
+        top: 300px;
     }
 
 }
@@ -1491,7 +1547,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 
     .clock-image {
         max-width: 300px;
-        padding-bottom: 100px;
+        padding-bottom: 0px;
     }
 
     .css-hour-hand  {
@@ -1504,7 +1560,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     .css-second-hand{ width: 20px; height: 110px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
     .home-hero .book-image {
-        top: 100px;
+        top: 250px;
         max-width: 90%;
     }
 
@@ -1554,6 +1610,11 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
         width: 60%;
     }
 
+    .home-hero .book-image {
+        top: 200px;
+        max-width: 90%;
+    }
+
 }
 
 @media (max-width:360px){
@@ -1566,3 +1627,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
         font-size:clamp(10px,1.3vw,10px);
     }
 }
+
+/* small upward movement when user scrolls down */
+.header.shrink{ transform:translateY(-8px); }
+.header.scrolled.shrink{ transform:translateY(-8px); }

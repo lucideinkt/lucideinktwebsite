@@ -49,17 +49,20 @@
                     </li>
                 </div>
 
-
-              <div class="desktop-navbar-container">
+            <div class="desktop-navbar-container">
 
               <div class="logo-container desktop">
                   <a href="{{ route('home') }}"><img src="{{ url('/images/new_logo.png') }}" alt=""></a>
               </div>
 
-                <nav class="navbar">
+               <nav class="navbar">
                     <x-navbar></x-navbar>
                 </nav>
             </div>
+
+{{--            <div class="logo-container mobile">--}}
+{{--                <a href="{{ route('home') }}"><img src="{{ url('/images/new_logo.png') }}" alt=""></a>--}}
+{{--            </div>--}}
 
             <div class="navbar-cart-sidebar-toggle">
                 <div class="sidebar-toggle">

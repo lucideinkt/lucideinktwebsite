@@ -963,6 +963,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    let lastScroll = window.scrollY || 0;
+    const header = document.querySelector('.header');
+    const SCROLL_DELTA = 10; // ignore tiny scrolls
+    const SCROLLED_THRESHOLD = 50; // when header should switch to "scrolled" state (logo collapse)
+    let ticking = false;
 
+    const DEBUG_HEADER = !!window.__debugHeader; // set window.__debugHeader = true in console to enable
+
+    if (header) {
+        let logoContainer = header.querySelector('.logo-container');
+        let logoImg = logoContainer ? logoContainer.querySelector('img') : header.querySelector('img');
+        // set initial state based on current scroll
+        if ((window.scrollY || 0) > SCROLLED_THRESHOLD) {
+            header.classList.add('scrolled');
+            if (logoContainer) logoContainer.classList.add('logo-hidden');
+            else if (logoImg) logoImg.classList.add('logo-hidden-img');
+        } else {
+            header.classList.remove('scrolled');
+            if (logoContainer) logoContainer.classList.remove('logo-hidden');
+            else if (logoImg) logoImg.classList.remove('logo-hidden-img');
+        }
+
+        window.addEventListener('scroll', () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                const current = window.scrollY || window.pageYOffset || 0;
+
+                // ignore small movements
+                if (Math.abs(current - lastScroll) <= SCROLL_DELTA) {
+                    ticking = false;
+                    return;
+                }
+
+                if (current <= 0) {
+                    // at very top -> ensure non-scrolled (logo visible) and no shrink
+                    header.classList.remove('scrolled', 'shrink');
+                    if (logoContainer) logoContainer.classList.remove('logo-hidden');
+                    else if (logoImg) logoImg.classList.remove('logo-hidden-img');
+                    if (DEBUG_HEADER) console.debug('[header] top: remove scrolled/shrink');
+                } else if (current > lastScroll) {
+                    // scrolling down -> immediately collapse logo and move header up slightly
+                    header.classList.add('shrink');
+                    header.classList.add('scrolled');
+                    if (logoContainer) logoContainer.classList.add('logo-hidden');
+                    else if (logoImg) logoImg.classList.add('logo-hidden-img');
+                    if (DEBUG_HEADER) console.debug('[header] down: add shrink+scrolled, logo hidden', { current, lastScroll });
+                } else {
+                    // scrolling up -> restore header position and show logo
+                    header.classList.remove('shrink');
+                    header.classList.remove('scrolled');
+                    if (logoContainer) logoContainer.classList.remove('logo-hidden');
+                    else if (logoImg) logoImg.classList.remove('logo-hidden-img');
+                    if (DEBUG_HEADER) console.debug('[header] up: remove shrink+scrolled, logo visible', { current, lastScroll });
+                }
+
+                lastScroll = current;
+                ticking = false;
+            });
+        });
+    }
 
 });
