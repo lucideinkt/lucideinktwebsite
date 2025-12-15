@@ -24,10 +24,10 @@
     --mobile-header-height:70px;
     --text-font-size:18px;
     --text-font-size-page:17px;
-    --text-font-size-menu-item:19px;
+    --text-font-size-menu-item:20px;
     --bg-parchment:#f7d99e;
     --surface-1:#fff7d6;
-    --surface-2:#feedd0;
+    --surface-2: #EDEDCA;
     --surface-3:#faf9f7;
     --surface-4:#fff;
     --border-1:#D8C7A6;
@@ -65,7 +65,8 @@ html,body{
     margin:0; padding:0;
     font-family:var(--font-regular),sans-serif;
     font-weight:400; color:var(--main-font-color);
-    background:var(--bg-parchment); line-height:1.8;
+    background: radial-gradient(circle at center, #fffaf0 0%, #F2EAD1 35%, #e3d1b4 65%, #b99b70 100%);
+    line-height:1.8;
     font-size:var(--text-font-size-page);
 }
 h1,h2,h3,h4,h5,h6{ margin-top:0; line-height:normal; }
@@ -75,6 +76,10 @@ a{ text-decoration:none; color:var(--main-font-color); }
 .container{ width:100%; max-width:1500px; margin:0 auto; padding:0 15px; }
 i{ color:var(--ink-1); }
 .active{ text-decoration:underline; text-underline-offset:6px; }
+.text-container {
+    max-width: 800px;
+    padding:0 15px;
+}
 
 .auth-page {
     padding-top: 100px;
@@ -344,7 +349,12 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     z-index:1;
     color:var(--main-font-color);
 }
-.desktop-navbar-container a{ font-family:'CinzelBold',serif; }
+.desktop-navbar-container a{
+    font-family: "itc-benguiat", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
 .nav-item .fa-gauge{ font-size:20px; }
 .logout-button button{
     border:none; background:var(--green-2);
@@ -369,7 +379,9 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 .header .navbar ul{ display:flex; align-items:center; justify-content:center; }
 .header .navbar ul li a{ font-size:var(--text-font-size-menu-item); padding:10px 15px; }
 
-.navbar-cart-sidebar-toggle{ display:none; }
+.navbar-cart-sidebar-toggle{
+    display:none;
+}
 .navbar-cart-sidebar-toggle li{ list-style:none; }
 .sidebar .nav-item.cart{ display:none; }
 .fa-cart-shopping{
@@ -642,66 +654,26 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
    ========================================================= */
 .section-wrapper{ padding:0 15px!important; }
 
-.intro-section{
+.home.intro-section{
     width:100%;
-    max-width:1200px;
     position:relative;
     z-index:20;
     margin: 0 auto;
-    padding-top: 325px;
+    background-color: #939a71;
+    color: #F2EAD1; /* fallback for non-supporting browsers */
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 200px;
 }
 
-.intro-section .bismillah{ display:flex; justify-content:center; margin:75px 0 30px; }
-.intro-section .bismillah img{ width:100%; max-width:500px; opacity:100%; }
-.intro-section .title{ text-align:center; font-family:'CinzelBold'; font-size:40px; margin:20px 0; }
-.intro-section .sub-text{ width:100%; margin:0 auto 40px; max-width:800px; text-align:center; color:#224039; }
-.intro-section .grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
-.intro-section .grid .card{
-    background-color:var(--surface-2);
-    padding:30px;
-    border-radius:10px;
-    text-align:center; color:#224039;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-.card h3{ color:var(--main-font-color); }
-
-.quote-section{
-    color:var(--surface-2);
-    width:100%;
-    max-width:1200px;
-    margin:50px auto;
-    text-align:center;
-    background-color:#224039;
-    border-radius:10px;
-    padding:50px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+.home.intro-section .text-container {
+    margin: 0 auto;
 }
 
-.quote-section .sub-text{ margin-bottom:0; }
-
-.book-presentation{
-    background-color:var(--surface-2);
-    width:100%;
-    max-width:1200px;
-    border-radius:10px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    padding:50px;
-    margin:0 auto 50px;
-    align-items:center;
-    box-shadow:rgba(0, 0, 0, 0.16) 0px 1px 4px;
+.home.intro-section .title {
+    font-family: "CinzelBold";
+    font-size: 25px;
 }
-.book-presentation .book-image{ display:flex; justify-content:center; }
-.book-presentation .book-image img{
-    width:100%;
-}
-.book-presentation .text{ color:#224039; }
-.book-presentation .title{ color:var(--main-font-color); }
-
-/* bismillah inline (home) */
-.bismillah{ position:relative; display:flex; justify-content:center; width:100%; top:50px; margin-bottom:80px; }
-.bismillah img{ width:8%; min-width:150px; }
 
 /* =========================================================
    FORMS: AUTH / PROFILE / GENERIC FORM GRID
@@ -1216,10 +1188,11 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     /*mask-image:linear-gradient(to bottom,transparent 0%,black 0%,black 85%,transparent 100%);*/
     /*padding-top: 140px;*/
     padding-bottom: 100px;
-    background-image: url("../images/bg_without_bsn.png");
+    background-image: url("../images/bg-new-web.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-bottom: 20px solid #939A71;
 }
 
 @media (max-width:992px){
@@ -1354,30 +1327,52 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 
 @media (max-width:992px){
     .btn{ font-size:15px; }
+
     .header{
         padding:0;
         position:fixed;
         width:100%;
-        background:var(--surface-2);
         height:80px;
-        box-shadow:var(--shadow-1);
         color: var(--main-font-color);
     }
+
+    .header-box{
+        position:relative;
+        display:flex;
+        justify-content:space-between;
+        padding:0 20px;
+        align-items:center;
+        height:80px;
+    }
+
+
     .header .container{ height:80px; flex-direction:row; padding:0 15px; }
     .logo-container.desktop{ display:none; }
-    .logo-container.mobile{ display:block; }
-    .logo-container img{ width:100px; }
+    .logo-container.mobile{
+        display:block;
+    }
+    .logo-container img{
+        width:70px;
+    }
+
     .desktop-navbar-container, .header.dashboard .desktop-navbar-container{ display:none; }
     .container.page{ padding-top:90px; }
     .page.home{
-        padding-top:80px;
         overflow: auto;
     }
 
-    .header-box{ position:relative; display:flex; justify-content:space-between; padding:0 20px; align-items:center; height:80px; }
-    .navbar-cart-sidebar-toggle{ display:flex; gap:10px; }
+    .home.intro-section {
+        margin-top: 300px;
+    }
 
-    .sidebar-toggle {
+
+
+    .navbar-cart-sidebar-toggle{
+        display:flex;
+        gap:10px;
+    }
+
+   .sidebar-toggle {
         display:block;
     }
 
@@ -1389,15 +1384,12 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 
     .home-hero .book-image {
         max-width: 90%;
-        top: 375px;
+        top: 400px;
     }
 
-    .css-hour-hand  {
-        width: 40px;
-        height: clamp(38px, 11vw, 90px);
-        clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
-        z-index: 3;
-    }
+    .css-hour-hand  { width: clamp(14px, 3.6vw, 35px); height: clamp(38px, 11vw, 80px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
+    .css-minute-hand{ width: clamp(12px, 3.2vw, 35px); height: clamp(52px, 15vw, 110px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
+    .css-second-hand{ width: clamp(8px,  2.2vw, 30px); height: clamp(66px, 18vw, 120px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
 
     .container.auth-page{ padding-top:calc(var(--header-height) + 40px); align-items:flex-start; }
@@ -1484,16 +1476,21 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
         margin-top: -15px;
     }
 
+    .hero-section {
+        max-width: 80%;
+        margin-top: 65px;
+    }
+
+
+
 }
 
 @media (max-width:768px){
     .page.shop .book-box{ grid-template-columns:repeat(1,1fr); gap:12px; }
 
-    .css-hour-hand  {
-        width: 30px;
-        clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
-        z-index: 3;
-    }
+    .css-hour-hand  { width: clamp(14px, 3.6vw, 35px); height: clamp(38px, 11vw, 70px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
+    .css-minute-hand{ width: clamp(12px, 3.2vw, 35px); height: clamp(52px, 15vw, 80px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
+    .css-second-hand{ width: clamp(8px,  2.2vw, 30px); height: clamp(66px, 18vw, 110px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
 
     .clock-button{
@@ -1520,6 +1517,10 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
         top: 300px;
     }
 
+    .home.intro-section {
+        margin-top: 200px;
+    }
+
 }
 
 @media (max-width:700px){
@@ -1536,7 +1537,12 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     }
     .intro-section .title{ font-size:28px; margin:10px 0 20px; }
     .intro-section .grid{ grid-template-columns:1fr; gap:20px; }
-    .intro-section .sub-text{ width:100%; margin:10px auto 30px; max-width:800px; text-align:center; color:#224039; }
+    .intro-section .sub-text{
+        width:100%;
+        margin:10px auto 30px;
+        max-width:800px;
+        text-align:center;
+    }
 
     .page.checkout .checkout-grid{ grid-template-columns:1fr; width:100%; }
     .page.checkout .name-box,.page.checkout .housnumber-box{ grid-template-columns:1fr; gap:0; }
@@ -1550,23 +1556,18 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
         padding-bottom: 0px;
     }
 
-    .css-hour-hand  {
-        width: 25px;
-        height: clamp(38px, 11vw, 90px);
-        clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
-        z-index: 3;
-    }
-    .css-minute-hand{ width: 25px; height: 80px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-    .css-second-hand{ width: 20px; height: 110px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
+    .css-hour-hand  { width: clamp(14px, 3.6vw, 35px); height: clamp(38px, 11vw, 70px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
+    .css-minute-hand{ width: clamp(12px, 3.2vw, 35px); height: clamp(52px, 15vw, 75px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
+    .css-second-hand{ width: clamp(10px,  2.2vw, 30px); height: clamp(66px, 18vw, 90px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
     .home-hero .book-image {
-        top: 250px;
+        top: 300px;
         max-width: 90%;
     }
 
     .clock-button{
         top: 84%;
-        padding: 0.77rem .75rem;
+        padding: 0.5rem .5rem;
         font-size:clamp(10px,1.3vw,10px);
     }
 
@@ -1586,23 +1587,22 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
         padding: 20px;
     }
 
+    .home.intro-section {
+        margin-top: 150px;
+    }
+
 }
 
 @media (max-width:480px){
     .page.shop .book-box{ grid-template-columns:repeat(1,1fr); gap:20px; }
 
-    .css-hour-hand  {
-        width: 25px;
-        height: clamp(70px, 11vw, 90px);
-        clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%);
-        z-index: 3;
-    }
-    .css-minute-hand{ width: 25px; height: 100px; clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
-    .css-second-hand{ width: 20px; height: 120px; clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
+    .css-hour-hand  { width: clamp(20px, 3.6vw, 50px); height: clamp(50px, 11vw, 70px); clip-path: polygon(38% 100%,62% 100%,52% 10%,48% 10%); z-index: 3; }
+    .css-minute-hand{ width: clamp(17px, 3.2vw, 50px); height: clamp(70px, 15vw, 80px); clip-path: polygon(40% 100%,60% 100%,52% 10%,48% 10%); z-index: 2; }
+    .css-second-hand{ width: clamp(15px,  2.2vw, 50px); height: clamp(90px, 18vw, 140px); clip-path: polygon(42% 100%,58% 100%,53% 10%,47% 10%); z-index: 4; }
 
     .clock-button{
         top: 85%;
-        padding: 0.73rem .75rem;
+        padding: 0.5rem .5rem;
         font-size:clamp(10px,1.3vw,10px);
     }
 
@@ -1611,8 +1611,12 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     }
 
     .home-hero .book-image {
-        top: 200px;
+        top: 225px;
         max-width: 90%;
+    }
+
+    .home.intro-section {
+        margin-top: 125px;
     }
 
 }
@@ -1622,12 +1626,37 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     .page.shop .book-box .card{ }
 
     .clock-button{
-        top: 78%;
-        padding: 0.72rem .75rem;
+        top: 85%;
+        padding: 0.5rem .5rem;
         font-size:clamp(10px,1.3vw,10px);
+    }
+
+    .home.intro-section {
+        margin-top: 100px;
     }
 }
 
 /* small upward movement when user scrolls down */
 .header.shrink{ transform:translateY(-8px); }
 .header.scrolled.shrink{ transform:translateY(-8px); }
+
+@media (max-width: 991.98px) {
+    .header.scrolled {
+        background: #939a71 !important;
+        box-shadow: var(--shadow-1);
+        height: 60px;
+    }
+
+    .header.scrolled .fa-cart-shopping {
+        color: #F2EAD1;
+    }
+
+    .header.scrolled .sidebar-toggle .fa-bars {
+        color: #F2EAD1;
+    }
+
+    .header.scrolled .header-box {
+        height: 60px;
+    }
+}
+

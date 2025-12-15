@@ -998,25 +998,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (current <= 0) {
-                    // at very top -> ensure non-scrolled (logo visible) and no shrink
-                    header.classList.remove('scrolled', 'shrink');
-                    if (logoContainer) logoContainer.classList.remove('logo-hidden');
-                    else if (logoImg) logoImg.classList.remove('logo-hidden-img');
-                    if (DEBUG_HEADER) console.debug('[header] top: remove scrolled/shrink');
-                } else if (current > lastScroll) {
-                    // scrolling down -> immediately collapse logo and move header up slightly
-                    header.classList.add('shrink');
-                    header.classList.add('scrolled');
-                    if (logoContainer) logoContainer.classList.add('logo-hidden');
-                    else if (logoImg) logoImg.classList.add('logo-hidden-img');
-                    if (DEBUG_HEADER) console.debug('[header] down: add shrink+scrolled, logo hidden', { current, lastScroll });
-                } else {
-                    // scrolling up -> restore header position and show logo
-                    header.classList.remove('shrink');
+                    // at very top -> ensure non-scrolled (logo visible)
                     header.classList.remove('scrolled');
                     if (logoContainer) logoContainer.classList.remove('logo-hidden');
                     else if (logoImg) logoImg.classList.remove('logo-hidden-img');
-                    if (DEBUG_HEADER) console.debug('[header] up: remove shrink+scrolled, logo visible', { current, lastScroll });
+                    if (DEBUG_HEADER) console.debug('[header] top: remove scrolled');
+                } else if (current > lastScroll) {
+                    // scrolling down -> immediately collapse logo
+                    header.classList.add('scrolled');
+                    if (logoContainer) logoContainer.classList.add('logo-hidden');
+                    else if (logoImg) logoImg.classList.add('logo-hidden-img');
+                    if (DEBUG_HEADER) console.debug('[header] down: add scrolled, logo hidden', { current, lastScroll });
+                } else {
+                    // scrolling up -> restore header position and show logo
+                    header.classList.remove('scrolled');
+                    if (logoContainer) logoContainer.classList.remove('logo-hidden');
+                    else if (logoImg) logoImg.classList.remove('logo-hidden-img');
+                    if (DEBUG_HEADER) console.debug('[header] up: remove scrolled, logo visible', { current, lastScroll });
                 }
 
                 lastScroll = current;
