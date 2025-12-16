@@ -6,7 +6,7 @@
                 <section class="home-hero">
 
                     <div class="book-image">
-                        <img class="book-shot" src="{{ asset('images/banner_hero_web.png') }}" alt="">
+                        <img class="book-shot" src="{{ asset('images/books_composiet.png') }}" alt="">
                     </div>
 
                     <div class="clock-image">
