@@ -54,9 +54,12 @@
 
             <div class="desktop-navbar-container">
 
-              <div class="logo-container desktop">
-                  <a href="{{ route('home') }}"><img src="{{ url('/images/new_logo.png') }}" alt=""></a>
-              </div>
+              @if(request()->routeIs('home'))
+                <div class="logo-container desktop">
+                    <a href="{{ route('home') }}"><img src="{{ url('/images/new_logo.png') }}" alt=""></a>
+                </div>
+              @endif
+
 
                <nav class="navbar">
                     <x-navbar></x-navbar>
