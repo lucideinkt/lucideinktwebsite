@@ -36,7 +36,7 @@
 
     @auth
     <li class="nav-item" style="margin-right: 20px;">
-        <a class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route("dashboard") }}"></i> Dashboard</a>
+        <a class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route("dashboard") }}"><span class="first-letter">D</span>ASHBOARD</a>
     </li>
     @endauth
 </ul>

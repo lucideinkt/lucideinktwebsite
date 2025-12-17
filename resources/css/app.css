@@ -393,7 +393,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
 .fa-cart-shopping{
     color: var(--main-font-color);
     position:relative;
-    top:-1px;
+    top: 2px;
 }
 .cart-quantity{
     background:var(--main-color); color:var(--ink-inverse); font-size:14px; padding:3px; border-radius:4px; position:relative; left:-10px; top:-10px;
