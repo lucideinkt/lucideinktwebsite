@@ -1,23 +1,23 @@
 <ul>
     <li class="nav-item">
-        <a class="{{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}"><span class="first-letter">H</span>ome</a>
+        <a class="{{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}"><span class="first-letter">H</span>OME</a>
     </li>
     <li class="nav-item">
-        <a class="{{ request()->routeIs('risale') ? 'active' : '' }}" href="{{ route('risale') }}"><span class="first-letter">R</span>isale-i Nur</a>
+        <a class="{{ request()->routeIs('risale') ? 'active' : '' }}" href="{{ route('risale') }}"><span class="first-letter">R</span>İSALE-İ NUR</a>
     </li>
     <li class="nav-item">
-        <a class="{{ request()->routeIs('saidnursi') ? 'active' : '' }}"  href="{{ route("saidnursi")  }}"><span class="first-letter">S</span>aid Nursi</a>
+        <a class="{{ request()->routeIs('saidnursi') ? 'active' : '' }}"  href="{{ route("saidnursi")  }}"><span class="first-letter">S</span>AİD NURSÎ</a>
     </li>
     <li class="nav-item">
-        <a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}"><span class="first-letter">W</span>inkel</a>
+        <a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}"><span class="first-letter">W</span>INKEL</a>
     </li>
     <li class="nav-item">
-        <a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route("contact") }}"><span class="first-letter">C</span>ontact</a>
+        <a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route("contact") }}"><span class="first-letter">C</span>ONTACT</a>
     </li>
 
     @guest
     <li class="nav-item">
-        <a class="{{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route("login") }}"><span class="first-letter">A</span>ccount</a>
+        <a class="{{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route("login") }}"><span class="first-letter">A</span>CCOUNT</a>
     </li>
     @endguest
 

@@ -354,6 +354,7 @@ thead{ border-left:1px solid var(--ink-1); border-right:1px solid var(--ink-1); 
     font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .desktop-navbar-container a .first-letter{
