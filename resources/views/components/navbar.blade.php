@@ -21,6 +21,8 @@
     </li>
     @endguest
 
+
+
     <li class="nav-item cart">
         <a href="{{ route('cartPage') }}"><i
             class="fa-solid fa-cart-shopping"></i>

@@ -963,6 +963,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Header scroll up effect
     let lastScroll = window.scrollY || 0;
     const header = document.querySelector('.header');
     const SCROLL_DELTA = 10; // ignore tiny scrolls
