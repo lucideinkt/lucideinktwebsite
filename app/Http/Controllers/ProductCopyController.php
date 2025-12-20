@@ -20,7 +20,6 @@ class ProductCopyController extends Controller
      */
     public function index()
     {
-        $this->authorize('viewAny', ProductCopy::class);
         $productCopies = ProductCopy::orderBy('created_at', 'desc')
             ->paginate(10);
         return view('productcopies.index', ['productCopies' => $productCopies]);
@@ -31,7 +30,6 @@ class ProductCopyController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', ProductCopy::class);
         return view('productcopies.create');
     }
 
@@ -60,7 +58,6 @@ class ProductCopyController extends Controller
     public function edit(string $id)
     {
         $productCopy = ProductCopy::findOrFail($id);
-        $this->authorize('update', $productCopy);
         return view('productcopies.edit', ['productCopy' => $productCopy]);
     }
 
@@ -88,7 +85,6 @@ class ProductCopyController extends Controller
     public function destroy(string $id)
     {
         $productCopy = ProductCopy::findOrFail($id);
-        $this->authorize('delete', $productCopy);
         $productCopy->update([
             'updated_by' => auth()->id(),
             'deleted_by' => auth()->id(),

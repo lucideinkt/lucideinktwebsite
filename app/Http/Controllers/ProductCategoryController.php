@@ -21,7 +21,6 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        $this->authorize('viewAny', ProductCategory::class);
         $productCategories = ProductCategory::orderBy('created_at', 'desc')
             ->paginate(10);
         return view('productcategories.index', ['productCategories' => $productCategories]);
@@ -32,7 +31,6 @@ class ProductCategoryController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', ProductCategory::class);
         return view('productcategories.create');
     }
 
@@ -70,7 +68,6 @@ class ProductCategoryController extends Controller
     public function edit(string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $this->authorize('update', $category);
         return view('productcategories.edit', ['category' => $category]);
     }
 
@@ -111,7 +108,6 @@ class ProductCategoryController extends Controller
     public function destroy(string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $this->authorize('delete', $category);
         $category->update([
             'updated_by' => auth()->id(),
             'deleted_by' => auth()->id(),

@@ -126,8 +126,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $this->authorize('viewAny', Product::class);
-
         $products = Product::with(['category', 'productCopy'])
             ->orderBy('title', 'desc')
             ->paginate(10);
@@ -140,7 +138,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', Product::class);
         $products = Product::orderBy('title', 'asc')->get();
         $categories = ProductCategory::orderBy('name', 'asc')->get();
         $productCopies = ProductCopy::orderBy('name', 'asc')->get();
@@ -238,7 +235,6 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $product = Product::findOrFail($id);
-        $this->authorize('update', $product);
 
         $products = Product::orderBy('title', 'asc')->get();
         $categories = ProductCategory::orderBy('name', 'asc')->get();
@@ -343,7 +339,6 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         $product = Product::findOrFail($id);
-        $this->authorize('delete', $product);
 
         // Verwijder afbeeldingen uit storage
         for ($i = 1; $i <= 4; $i++) {

@@ -20,7 +20,6 @@ class ShippingCostController extends Controller
      */
     public function index()
     {
-        $this->authorize('viewAny', ShippingCost::class);
         $shippingCosts = ShippingCost::orderBy('created_at', 'desc')->paginate(10);
         return view('shippingcosts.index', ['shippingCosts' => $shippingCosts]);
     }
@@ -30,7 +29,6 @@ class ShippingCostController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', ShippingCost::class);
         return view('shippingcosts.create');
     }
 
@@ -57,7 +55,6 @@ class ShippingCostController extends Controller
     public function edit(string $id)
     {
         $shippingCost = ShippingCost::findOrFail($id);
-        $this->authorize('update', $shippingCost);
         return view('shippingcosts.edit', ['shippingCost' => $shippingCost]);
     }
 
@@ -84,7 +81,6 @@ class ShippingCostController extends Controller
     public function destroy(string $id)
     {
         $shippingCost = ShippingCost::findOrFail($id);
-        $this->authorize('delete', $shippingCost);
         $shippingCost->update([
             'updated_by' => auth()->id(),
             'deleted_by' => auth()->id(),

@@ -19,8 +19,6 @@ class DiscountCodeController extends Controller
      */
     public function index()
     {
-        $this->authorize('viewAny', DiscountCode::class);
-
         $discountCodes = DiscountCode::orderBy('created_at', 'desc')
             ->paginate(10);
 
@@ -32,8 +30,6 @@ class DiscountCodeController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', DiscountCode::class);
-
         return view('discountcodes.create');
     }
 
@@ -63,7 +59,6 @@ class DiscountCodeController extends Controller
     public function edit(string $id)
     {
         $discountCode = DiscountCode::findOrFail($id);
-        $this->authorize('update', $discountCode);
         return view('discountcodes.edit', ['discountCode' => $discountCode]);
     }
 
@@ -93,7 +88,6 @@ class DiscountCodeController extends Controller
     public function destroy(string $id)
     {
         $discountCode = DiscountCode::findOrFail($id);
-        $this->authorize('delete', $discountCode);
         $discountCode->delete();
 
         return redirect()->route('discountIndex')

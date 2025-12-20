@@ -21,7 +21,6 @@ class UserController extends Controller
 
     public function index()
     {
-        $this->authorize('viewAny', User::class);
         $users = User::paginate(10);
         return view('users.index', ['users' => $users]);
     }
@@ -29,7 +28,6 @@ class UserController extends Controller
     public function show(string $id)
     {
         $user = User::findOrFail($id);
-        $this->authorize('view', $user);
         $customer = Customer::where('billing_email', $user->email)->with('orders')->first();
         return view('users.show', [
             'user' => $user,
@@ -39,7 +37,6 @@ class UserController extends Controller
 
     public function create()
     {
-        $this->authorize('create', User::class);
         return view('users.create');
     }
 
