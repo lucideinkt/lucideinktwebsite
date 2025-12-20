@@ -7,6 +7,8 @@ use App\Models\ProductCopy;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Encoders\JpegEncoder;
@@ -153,64 +155,9 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        $this->authorize('create', Product::class);
-
-        $messages = [
-            'title.required' => 'De productnaam is verplicht.',
-            'title.string' => 'De productnaam moet tekst zijn.',
-            'title.max' => 'De productnaam mag maximaal 255 tekens zijn.',
-            'is_published.required' => 'Geef aan of het product gepubliceerd is.',
-            'is_published.boolean' => 'Ongeldige waarde voor gepubliceerd.',
-            'short_description.string' => 'Korte omschrijving moet tekst zijn.',
-            'long_description.string' => 'Lange omschrijving moet tekst zijn.',
-            'price.numeric' => 'Prijs moet een getal zijn.',
-            'price.min' => 'Prijs mag niet negatief zijn.',
-            'stock.numeric' => 'Voorraad moet een getal zijn.',
-            'stock.min' => 'Voorraad mag niet negatief zijn.',
-            'category_id.exists' => 'Ongeldige categorie.',
-            'product_copy_id.exists' => 'Ongeldige kopie.',
-            'weight.numeric' => 'Gewicht moet een getal zijn.',
-            'weight.min' => 'Gewicht mag niet negatief zijn.',
-            'height.numeric' => 'Hoogte moet een getal zijn.',
-            'height.min' => 'Hoogte mag niet negatief zijn.',
-            'width.numeric' => 'Breedte moet een getal zijn.',
-            'width.min' => 'Breedte mag niet negatief zijn.',
-            'depth.numeric' => 'Diepte moet een getal zijn.',
-            'depth.min' => 'Diepte mag niet negatief zijn.',
-            'image_1.image' => 'Afbeelding 1 moet een afbeelding zijn.',
-            'image_1.mimes' => 'Afbeelding 1 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_1.max' => 'Afbeelding 1 mag maximaal 2MB zijn.',
-            'image_2.image' => 'Afbeelding 2 moet een afbeelding zijn.',
-            'image_2.mimes' => 'Afbeelding 2 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_2.max' => 'Afbeelding 2 mag maximaal 2MB zijn.',
-            'image_3.image' => 'Afbeelding 3 moet een afbeelding zijn.',
-            'image_3.mimes' => 'Afbeelding 3 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_3.max' => 'Afbeelding 3 mag maximaal 2MB zijn.',
-            'image_4.image' => 'Afbeelding 4 moet een afbeelding zijn.',
-            'image_4.mimes' => 'Afbeelding 4 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_4.max' => 'Afbeelding 4 mag maximaal 2MB zijn.',
-        ];
-
-        $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'is_published' => 'required|boolean',
-            'short_description' => 'nullable|string',
-            'long_description' => 'nullable|string',
-            'price' => 'nullable|numeric|min:0',
-            'stock' => 'nullable|numeric|min:0',
-            'category_id' => 'nullable|exists:product_categories,id',
-            'product_copy_id' => 'nullable|integer|exists:product_copies,id',
-            'weight' => 'nullable|numeric|min:0',
-            'height' => 'nullable|numeric|min:0',
-            'width' => 'nullable|numeric|min:0',
-            'depth' => 'nullable|numeric|min:0',
-            'image_1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-            'image_2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-            'image_3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-            'image_4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-        ], $messages);
+        $validated = $request->validated();
 
         $copy = !empty($validated['product_copy_id'])
             ? ProductCopy::find($validated['product_copy_id'])
@@ -257,6 +204,7 @@ class ProductController extends Controller
             }
         }
 
+        $user = auth()->user();
         $product = Product::create([
             'title' => $title,
             'base_title' => $baseTitle,
@@ -277,7 +225,7 @@ class ProductController extends Controller
             'image_2' => $validated['image_2'] ?? null,
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
-            'created_by' => auth()->id(),
+            'created_by' => $user->first_name . ' ' . $user->last_name,
         ]);
 
         return redirect()->route('productIndex')->with('success',
@@ -307,66 +255,10 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProductRequest $request, string $id)
     {
         $product = Product::findOrFail($id);
-        $this->authorize('update', $product);
-
-        $messages = [
-            'title.required' => 'De productnaam is verplicht.',
-            'title.string' => 'De productnaam moet tekst zijn.',
-            'title.max' => 'De productnaam mag maximaal 255 tekens zijn.',
-            'is_published.required' => 'Geef aan of het product gepubliceerd is.',
-            'is_published.boolean' => 'Ongeldige waarde voor gepubliceerd.',
-            'short_description.string' => 'Korte omschrijving moet tekst zijn.',
-            'long_description.string' => 'Lange omschrijving moet tekst zijn.',
-            'price.numeric' => 'Prijs moet een getal zijn.',
-            'price.min' => 'Prijs mag niet negatief zijn.',
-            'stock.numeric' => 'Voorraad moet een getal zijn.',
-            'stock.min' => 'Voorraad mag niet negatief zijn.',
-            'category_id.exists' => 'Ongeldige categorie.',
-            'product_copy_id.exists' => 'Ongeldige kopie.',
-            'weight.numeric' => 'Gewicht moet een getal zijn.',
-            'weight.min' => 'Gewicht mag niet negatief zijn.',
-            'height.numeric' => 'Hoogte moet een getal zijn.',
-            'height.min' => 'Hoogte mag niet negatief zijn.',
-            'width.numeric' => 'Breedte moet een getal zijn.',
-            'width.min' => 'Breedte mag niet negatief zijn.',
-            'depth.numeric' => 'Diepte moet een getal zijn.',
-            'depth.min' => 'Diepte mag niet negatief zijn.',
-            'image_1.image' => 'Afbeelding 1 moet een afbeelding zijn.',
-            'image_1.mimes' => 'Afbeelding 1 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_1.max' => 'Afbeelding 1 mag maximaal 2MB zijn.',
-            'image_2.image' => 'Afbeelding 2 moet een afbeelding zijn.',
-            'image_2.mimes' => 'Afbeelding 2 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_2.max' => 'Afbeelding 2 mag maximaal 2MB zijn.',
-            'image_3.image' => 'Afbeelding 3 moet een afbeelding zijn.',
-            'image_3.mimes' => 'Afbeelding 3 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_3.max' => 'Afbeelding 3 mag maximaal 2MB zijn.',
-            'image_4.image' => 'Afbeelding 4 moet een afbeelding zijn.',
-            'image_4.mimes' => 'Afbeelding 4 moet jpeg, png, jpg, gif of svg zijn.',
-            'image_4.max' => 'Afbeelding 4 mag maximaal 2MB zijn.',
-        ];
-
-        $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'is_published' => 'required|boolean',
-            'short_description' => 'nullable|string',
-            'long_description' => 'nullable|string',
-            'price' => 'nullable|numeric|min:0',
-            'stock' => 'nullable|numeric|min:0',
-            'product_copy_id' => 'nullable|integer|exists:product_copies,id',
-            'category_id' => 'nullable|exists:product_categories,id',
-            'parent_id' => 'nullable|exists:products,id',
-            'weight' => 'nullable|numeric|min:0',
-            'height' => 'nullable|numeric|min:0',
-            'width' => 'nullable|numeric|min:0',
-            'depth' => 'nullable|numeric|min:0',
-            'image_1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-            'image_2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-            'image_3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-            'image_4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
-        ], $messages);
+        $validated = $request->validated();
 
         $copy = !empty($validated['product_copy_id'])
             ? ProductCopy::find($validated['product_copy_id'])
@@ -440,7 +332,6 @@ class ProductController extends Controller
             'image_2' => $validated['image_2'] ?? null,
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
-            'created_by' => auth()->id(),
         ]);
 
         return redirect()->back()->with('success', 'Het product is succesvol bijgewerkt.');

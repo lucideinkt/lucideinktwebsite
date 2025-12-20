@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ProductCopy;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductCopyRequest;
+use App\Http\Requests\UpdateProductCopyRequest;
 use Illuminate\Validation\Rule;
 
 class ProductCopyController extends Controller
@@ -36,24 +38,9 @@ class ProductCopyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductCopyRequest $request)
     {
-        $this->authorize('create', ProductCopy::class);
-        $validated = $request->validate([
-            'name' => [
-                'required',
-                'string',
-                'max:255',
-                Rule::unique('product_copies', 'name')->whereNull('deleted_at'),
-            ],
-            'is_published' => 'required|boolean',
-        ], [
-            'name.required' => 'Naam is verplicht.',
-            'name.unique' => 'Deze naam is al in gebruik.',
-            'name.max' => 'De lengte mag niet meer dan 255 karakters zijn',
-            'is_published.required' => 'Publicatie status is verplicht.',
-            'is_published.boolean' => 'Publicatie status moet een geldige waarde zijn.',
-        ]);
+        $validated = $request->validated();
 
         $name = $validated['name'];
 
@@ -80,24 +67,10 @@ class ProductCopyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProductCopyRequest $request, string $id)
     {
         $productCopy = ProductCopy::findOrFail($id);
-        $this->authorize('update', $productCopy);
-        $validated = $request->validate([
-            'name' => [
-                'required',
-                'string',
-                'max:255',
-                Rule::unique('product_copies', 'name')->whereNull('deleted_at')->ignore($productCopy->id),
-            ],
-            'is_published' => 'required|boolean',
-        ], [
-            'name.required' => 'Naam is verplicht.',
-            'name.max' => 'De lengte mag niet meer dan 255 karakters zijn',
-            'is_published.required' => 'Publicatie status is verplicht.',
-            'is_published.boolean' => 'Publicatie status moet een geldige waarde zijn.',
-        ]);
+        $validated = $request->validated();
 
         $name = $validated['name'];
 
