@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth', 'role:admin,user']);
-    }
-
     public function editPage()
     {
         $user = auth()->user();

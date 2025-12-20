@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MyOrderController;
@@ -31,10 +32,11 @@ Route::middleware(['auth', 'role:admin,user'])->group(function () {
 
 	// My Orders
 	Route::get('/dashboard/my-orders', [MyOrderController::class, 'showMyOrders'])->name('showMyOrders');
-	Route::get('/dashboard/my-orders/{id}', [MyOrderController::class, 'showMyOrder'])->name('showMyOrder');
+	Route::get('/dashboard/my-orders/{id}', [MyOrderController::class, 'showMyOrder'])->name('showMyOrder');	
 	Route::get('/dashboard/my-orders/{id}/invoice', [MyOrderController::class, 'download_invoice'])->name('my_orders.invoice');
-
+   
 });
+
 
 // Only admin can access
 Route::middleware(['auth', 'role:admin'])->group(function () {
@@ -70,11 +72,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 	// Export orders
 	Route::get('/dashboard/orders/export', [OrderController::class, 'exportOrders'])->name('exportOrders');
 	Route::post('/dashboard/orders/create', [OrderController::class, 'store'])->name('orderStore');
-	Route::put('/dashboard/orders/{id}', [OrderController::class, 'update'])->name('orderUpdate');
+	Route::put('/dashboard/orders/{id}', [OrderController::class, 'update'])->name('orderUpdate');    
 	Route::post('/dashboard/orders/generate-invoice/{id}', [OrderController::class, 'generateInvoice'])->name('generateInvoice');
 	Route::post('/dashboard/orders/send-email/{id}', [OrderController::class, 'sendOrderEmailWithInvoice'])->name('sendOrderEmailWithInvoice');
 	Route::get('/dashboard/orders/invoice/{id}', [OrderController::class, 'download_invoice'])->name('orders.invoice');
-	Route::get('/dashboard/orders/{id}', [OrderController::class, 'show'])->name('orderShow');
+	Route::get('/dashboard/orders/{id}', [OrderController::class, 'show'])->name('orderShow');    
+
 
 	// Customers
 	Route::get('/dashboard/customers', [CustomerController::class, 'index'])->name('customerIndex');
@@ -114,11 +117,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
   Route::delete('/dashboard/shippingcosts/delete/{id}', [ShippingCostController::class, 'destroy'])->name('shippingCostDelete');
   Route::get('/dashboard/shippingcosts/delete/{id}', [ShippingCostController::class, 'get'])->name('shippingCostDeleteGet');
 
-    // Admin/custom pickup locations API (used by admin order page custom widget)
-    Route::get('/pickup-locations', [PickupLocationController::class, 'index'])->name('pickup.locations');
 });
 
-// ----- Publicly available pages ----
 
 // Shop
 Route::get('/winkel', [ShopController::class, 'index'])->name('shop');
@@ -164,8 +164,12 @@ Route::get('/contact', function () { return view('contact'); })->name('contact')
 Route::get('/home2', function () { return view('home2'); })->name('home2');
 Route::get('/home3', function () { return view('home3'); })->name('home3');
 
+
 // Mollie payments
 Route::get('/payment/success/', [CheckoutController::class, 'paymentSuccess'])->name('payment.success');
 Route::post('/webhooks/mollie', [CheckoutController::class, 'payment
 Webhook'])->name('webhooks.mollie');
+
+// Admin/custom pickup locations API (used by admin order page custom widget)
+Route::get('/pickup-locations', [PickupLocationController::class, 'index'])->name('pickup.locations');
 

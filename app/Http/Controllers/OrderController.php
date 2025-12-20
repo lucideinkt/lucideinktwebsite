@@ -52,6 +52,8 @@ class OrderController extends Controller
 
     public function index()
     {
+        $this->authorize('viewAny', Order::class);
+
         $orders = Order::with(['items', 'customer'])
             ->orderBy('created_at', 'desc')
             ->paginate(10);
@@ -63,6 +65,7 @@ class OrderController extends Controller
     {
 
         $order = Order::with(['items', 'customer'])->findOrFail($id);
+        $this->authorize('view', $order);
 
         $consignmentId = $order->myparcel_consignment_id;
         $consignmentData = null;
@@ -84,6 +87,7 @@ class OrderController extends Controller
 
     public function create()
     {
+        $this->authorize('create', Order::class);
         $products = Product::with('category')->orderBy('title')->get();
 
         return view('orders.create', compact('products'));
@@ -91,6 +95,9 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+
+        $this->authorize('create', Order::class);
+
         $data = $this->validateOrder($request);
 
         [$lines, $totalBefore] = $this->buildOrderLines($data['items']);
@@ -141,6 +148,7 @@ class OrderController extends Controller
     public function update(Request $request, string $id)
     {
         $order = Order::findOrFail($id);
+        $this->authorize('update', $order);
 
         $request->validate([
             'order-status' => 'required|in:pending,shipped,cancelled,paid,completed',
@@ -555,6 +563,7 @@ class OrderController extends Controller
     public function orderUpdatePackageType(Request $request, string $id)
     {
         $order = Order::findOrFail($id);
+        $this->authorize('update', $order);
 
         $request->validate([
             'package_type' => 'required|in:1,2,3,4'
@@ -643,6 +652,7 @@ class OrderController extends Controller
     public function generateLabel(string $id)
     {
         $order = Order::findOrFail($id);
+        $this->authorize('update', $order);
 
         if (!$order->myparcel_consignment_id) {
             return back()->withErrors([

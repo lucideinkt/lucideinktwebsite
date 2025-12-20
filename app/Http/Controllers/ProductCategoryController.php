@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
-use App\Http\Requests\StoreProductCategoryRequest;
-use App\Http\Requests\UpdateProductCategoryRequest;
 use Illuminate\Validation\Rule;
 
 class ProductCategoryController extends Controller
@@ -21,6 +19,7 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', ProductCategory::class);
         $productCategories = ProductCategory::orderBy('created_at', 'desc')
             ->paginate(10);
         return view('productcategories.index', ['productCategories' => $productCategories]);
@@ -31,15 +30,31 @@ class ProductCategoryController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', ProductCategory::class);
         return view('productcategories.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductCategoryRequest $request)
+    public function store(Request $request)
     {
-        $validated = $request->validated();
+        $this->authorize('create', ProductCategory::class);
+        $validated = $request->validate([
+            'name' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('product_categories', 'name')->whereNull('deleted_at'),
+            ],
+            'is_published' => 'required|boolean',
+        ], [
+            'name.required' => 'Naam is verplicht.',
+            'name.unique' => 'Deze naam is al in gebruik.',
+            'name.max' => 'De lengte mag niet meer dan 255 karakters zijn',
+            'is_published.required' => 'Publicatie status is verplicht.',
+            'is_published.boolean' => 'Publicatie status moet een geldige waarde zijn.',
+        ]);
 
         $name = $validated['name'];
         $slug = Str::slug($name);
@@ -68,16 +83,31 @@ class ProductCategoryController extends Controller
     public function edit(string $id)
     {
         $category = ProductCategory::findOrFail($id);
+        $this->authorize('update', $category);
         return view('productcategories.edit', ['category' => $category]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProductCategoryRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $validated = $request->validated();
+        $this->authorize('update', $category);
+        $validated = $request->validate([
+            'name' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('product_categories', 'name')->whereNull('deleted_at')->ignore($category->id),
+            ],
+            'is_published' => 'required|boolean',
+        ], [
+            'name.required' => 'Naam is verplicht.',
+            'name.max' => 'De lengte mag niet meer dan 255 karakters zijn',
+            'is_published.required' => 'Publicatie status is verplicht.',
+            'is_published.boolean' => 'Publicatie status moet een geldige waarde zijn.',
+        ]);
 
         $name = $validated['name'];
         $slug = Str::slug($name);
@@ -108,6 +138,7 @@ class ProductCategoryController extends Controller
     public function destroy(string $id)
     {
         $category = ProductCategory::findOrFail($id);
+        $this->authorize('delete', $category);
         $category->update([
             'updated_by' => auth()->id(),
             'deleted_by' => auth()->id(),
