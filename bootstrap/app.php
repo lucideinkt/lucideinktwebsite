@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Register middleware aliases (Laravel 12 style)
+        // Register middleware aliases
         $middleware->alias(['role' => CheckRole::class]);
         // If you want to apply to specific groups instead:
         // $middleware->appendToGroup('web', CheckRole::class);
