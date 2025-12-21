@@ -6,7 +6,7 @@
             <section class="home-hero">
 
                 <div class="book-image">
-                    <img class="book-shot" src="{{ asset('images/books_composiet.png') }}" alt="">
+                    <img class="book-shot" src="{{ asset('images/banner_hero_with_buttherfly.png') }}" alt="">
                 </div>
 
                 <div class="clock-image">
@@ -55,15 +55,12 @@
 
             </section>
         </div>
-
         <section class="home intro-section">
             <div class="text-container">
-                <h2 class="title">Welkom op Lucide Inkt</h2>
+                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>
                 <div class="sub-text">
                     <p>
-                        Lucide Inkt is een non-profit organisatie toegewijd aan de vertaling en publicatie van de <em>Risale-i
-                            Nur</em>, in het Nederlands en Engels. Wij brengen deze betekenisvolle werken uit om
-                        geloofswaarheden helder en toegankelijk te maken.
+                        Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de Qur'anische richtlijen van de Risale-i Nur. Met Nederlandse en Engelse vertalingen van deze boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste bestaansvragen van de mens.
                     </p>
                 </div>
             </div>
@@ -81,7 +78,7 @@
                         verwelken en vergaan tijdens dit aardse bestaan, ontkiemen en floreren ze in het rijk der
                         eeuwigheid. Afhankelijk van de wijze waarop ze verstrijken, zullen ze ofwel als duistere
                         voortbrengselen van onachtzaamheid, ofwel als stralende vruchten van weldaden tot de mens
-                        wederkeren.
+                        wederkeren..
                     </p>
                 </div>
             </div>
