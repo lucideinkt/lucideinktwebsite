@@ -81,7 +81,7 @@
                         verwelken en vergaan tijdens dit aardse bestaan, ontkiemen en floreren ze in het rijk der
                         eeuwigheid. Afhankelijk van de wijze waarop ze verstrijken, zullen ze ofwel als duistere
                         voortbrengselen van onachtzaamheid, ofwel als stralende vruchten van weldaden tot de mens
-                        wederkeren.
+                        wederkeren..
                     </p>
                 </div>
             </div>
