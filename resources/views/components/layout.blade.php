@@ -71,6 +71,9 @@
             <nav class="navbar">
                 <x-navbar></x-navbar>
             </nav>
+            <div class="navbar-glow">
+                <img src="{{ url('/images/glow.png') }}" alt="">
+            </div>
         </div>
 
         <div class="logo-container mobile">

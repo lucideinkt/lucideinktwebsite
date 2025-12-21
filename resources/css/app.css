@@ -55,6 +55,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Herina';
+    src: url('../fonts/gtherina-regular.otf') format('opentype');
+    font-style: normal;
+}
+
 :root {
     --main-color: #ab0f14;
     --secondary-color: #fffcf4;
@@ -66,7 +72,7 @@
     --header-height: 80px;
     --mobile-header-height: 70px;
     --text-font-size: 18px;
-    --text-font-size-page: 17px;
+    --text-font-size-page: 18px;
     --text-font-size-menu-item: 20px;
     --bg-parchment: #f7d99e;
     --surface-1: #fff7d6;
@@ -571,6 +577,15 @@ thead {
     flex-direction: column;
 }
 
+.desktop-navbar-container .navbar-glow img {
+    width: 500px;
+    position: relative;
+    z-index: 10;
+    top: -41px;
+    opacity: 70%;
+    /*left: -100px;*/
+}
+
 .desktop-navbar-container .navbar {
     position: relative;
     padding: 10px 20px;
@@ -1012,8 +1027,19 @@ thead {
 }
 
 .home.intro-section .title {
-    font-family: "CinzelBold";
-    font-size: 25px;
+    font-family: "Herina";
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.home.intro-section .title .title-u:before {
+    content: "\E026";
+}
+
+.home.intro-section .title .title-k:before {
+    content: "\E012";
 }
 
 /* =========================================================
@@ -2761,6 +2787,21 @@ thead {
 }
 
 @media (max-width: 600px) {
+    :root {
+        --main-color: #ab0f14;
+        --secondary-color: #fffcf4;
+        --font-light: 'DelimaMTProLight';
+        --font-regular: 'DelimaMTProRegular', sans-serif;
+        --font-bold: 'DelimaMTProBold', sans-serif;
+        --font-regular-weight: 500;
+        --main-font-color: #620505;
+        --header-height: 80px;
+        --mobile-header-height: 70px;
+        --text-font-size: 18px;
+        --text-font-size-page: 17px;
+        --text-font-size-menu-item: 20px;
+    }
+
     .intro-section .bismillah {
         display: flex;
         justify-content: center;
@@ -2773,9 +2814,9 @@ thead {
         padding-top: 150px;
     }
 
-    .intro-section .title {
-        font-size: 28px;
-        margin: 10px 0 20px;
+    .home.intro-section .title {
+        font-size: 32px;
+        margin-bottom: 25px;
     }
 
     .intro-section .grid {
