@@ -72,7 +72,7 @@
                 <x-navbar></x-navbar>
             </nav>
             <div class="navbar-glow">
-                <img src="{{ url('/images/glow.png') }}" alt="">
+                <img src="{{ url('/images/glow-3.png') }}" alt="">
             </div>
         </div>
 

@@ -17,7 +17,7 @@
 
                         <!-- Achterste laag: draaiende rotor -->
                         <div class="layer layer-rotor">
-                            <img class="rotating-image" src="{{ asset('images/sun-flare-transparant.png') }}" alt="">
+                            <img class="rotating-image" src="{{ asset('images/sun-ring-2.png') }}" alt="">
                         </div>
 
                         <!-- Middenlaag: text inside clock -->
