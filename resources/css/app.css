@@ -581,7 +581,7 @@ thead {
     width: 500px;
     position: relative;
     z-index: 10;
-    top: -41px;
+    top: -36px;
     opacity: 70%;
     /*left: -100px;*/
 }
@@ -852,14 +852,14 @@ thead {
 
 /* Rotor, centered and rotating */
 .layer-rotor img {
-    width: 146%;
-    height: 146%;
+    width: 109%;
+    height: 109%;
     object-fit: contain;
     opacity: 0.4;
     animation: spin 40s linear infinite;
     will-change: transform;
     position: relative;
-    top: -13.9%;
+    top: 1%;
     left: 0.6%;
 }
 
