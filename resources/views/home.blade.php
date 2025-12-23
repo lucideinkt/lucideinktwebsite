@@ -5,6 +5,10 @@
 
             <section class="home-hero">
 
+                <div class="ustadh-image">
+                    <img src="{{ asset('images/ustadh-half.png') }}" alt="ustadh">
+                </div>
+
                 <div class="book-image">
                     <img class="book-shot" src="{{ asset('images/banner_hero_with_buttherfly.png') }}" alt="">
                 </div>
