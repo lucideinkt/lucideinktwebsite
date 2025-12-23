@@ -2271,7 +2271,8 @@ thead {
     justify-content: center;
     align-items: center;
     padding-bottom: 100px;
-    background-image: url("../images/bg-new-web.png");
+    /* background-image: url("../images/bg-new-web.png"); */
+    background-image: url("../images/bg-new-4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
