@@ -59,13 +59,38 @@
 
             </section>
         </div>
-        <section class="home intro-section">
+
+        <section class="white-section below-books">
+            <div class="container"></div>
+        </section>
+
+        <section class="home colored-section intro-section">
             <div class="text-container">
                 <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>
                 <div class="sub-text">
                     <p>
                         Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de Qur'anische richtlijen van de Risale-i Nur. Met Nederlandse en Engelse vertalingen van deze boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste bestaansvragen van de mens.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="white-section">
+            <div class="container new-translation">
+                <h2 class="title">Onze Nieuwste Vertaling:<br>Het Traktaat over de Herzameling</h2>
+                <div class="home-book-grid">
+                    <div class="book">
+                        <img src="{{ asset('images/books/herzameling/herzameling_front_NL_PS.png') }}" alt="">
+                    </div>
+                    <div class="book">
+                        <img src="{{ asset('images/books/herzameling/herzameling_front_NL-TR_PS.png') }}" alt="">
+                    </div>
+                    <div class="book">
+                        <img src="{{ asset('images/books/herzameling/herzameling_front_EN_PS.png') }}" alt="">
+                    </div>
+                    <div class="book">
+                        <img src="{{ asset('images/books/herzameling/herzameling_front_EN-TR_PS.png') }}" alt="">
+                    </div>
                 </div>
             </div>
         </section>
