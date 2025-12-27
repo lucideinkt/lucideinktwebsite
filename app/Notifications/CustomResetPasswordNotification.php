@@ -9,7 +9,7 @@ class CustomResetPasswordNotification extends ResetPassword
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(__('Wachtwoord resetten'))
+            ->subject(__('Wachtwoord opnieuw instellen — Lucide Inkt'))
             ->view('emails.password-reset', [
                 'token' => $this->token,
                 'email' => $notifiable->email,

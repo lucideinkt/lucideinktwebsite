@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ __('Bestelling betaald') }}</title>
+  <title>{{ __('Nieuwe bestelling - ordernummer: ' . $order->id) }}</title>
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -103,17 +103,7 @@
 </head>
 <body>
   <div class="email-container">
-    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
-      <tr>
-        <td style="text-align:left; font-size:15px; color:#555; vertical-align:top;">
-          Stichting Lucide Inkt<br>
-          Kerspellaan 12<br>
-          7824 JG Emmen<br>
-          info@lucideinkt.nl<br>
-        </td>
-      </tr>
-    </table>
-    <h3>{{ __('Bedankt voor je bestelling!') }}</h3>
+    <h3>{{ __('Nieuwe bestelling') }}</h3>
     <div class="meta">
       <span><strong>{{ __('Ordernummer:') }}</strong> {{ $order->id }}</span><br>
       <span><strong>{{ __('Besteldatum:') }}</strong> {{ $order->created_at->format('d-m-Y H:i') }}</span>
@@ -224,14 +214,6 @@
 
         </tfoot>
       </table>
-    </div>
-    <div class="summary">
-      <strong>{{ __('Je bestelling wordt zo snel mogelijk verzonden. Je ontvangt een e-mail zodra je pakket onderweg is.') }}</strong>
-    </div>
-    <div class="footer">
-      {{ __('Heb je vragen? Neem gerust contact met ons op.') }}<br>
-      {{ __('Met vriendelijke groet,') }}<br>
-      {{ config('app.name') }}
     </div>
   </div>
 </body>

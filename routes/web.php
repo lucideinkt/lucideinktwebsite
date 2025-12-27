@@ -32,9 +32,9 @@ Route::middleware(['auth', 'role:admin,user'])->group(function () {
 
 	// My Orders
 	Route::get('/dashboard/my-orders', [MyOrderController::class, 'showMyOrders'])->name('showMyOrders');
-	Route::get('/dashboard/my-orders/{id}', [MyOrderController::class, 'showMyOrder'])->name('showMyOrder');	
+	Route::get('/dashboard/my-orders/{id}', [MyOrderController::class, 'showMyOrder'])->name('showMyOrder');
 	Route::get('/dashboard/my-orders/{id}/invoice', [MyOrderController::class, 'download_invoice'])->name('my_orders.invoice');
-   
+
 });
 
 
@@ -72,11 +72,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 	// Export orders
 	Route::get('/dashboard/orders/export', [OrderController::class, 'exportOrders'])->name('exportOrders');
 	Route::post('/dashboard/orders/create', [OrderController::class, 'store'])->name('orderStore');
-	Route::put('/dashboard/orders/{id}', [OrderController::class, 'update'])->name('orderUpdate');    
+	Route::put('/dashboard/orders/{id}', [OrderController::class, 'update'])->name('orderUpdate');
 	Route::post('/dashboard/orders/generate-invoice/{id}', [OrderController::class, 'generateInvoice'])->name('generateInvoice');
 	Route::post('/dashboard/orders/send-email/{id}', [OrderController::class, 'sendOrderEmailWithInvoice'])->name('sendOrderEmailWithInvoice');
 	Route::get('/dashboard/orders/invoice/{id}', [OrderController::class, 'download_invoice'])->name('orders.invoice');
-	Route::get('/dashboard/orders/{id}', [OrderController::class, 'show'])->name('orderShow');    
+	Route::get('/dashboard/orders/{id}', [OrderController::class, 'show'])->name('orderShow');
 
 
 	// Customers
@@ -119,7 +119,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 });
 
-
 // Shop
 Route::get('/winkel', [ShopController::class, 'index'])->name('shop');
 Route::get('/winkel/product/{slug}', [ShopController::class, 'show'])->name('productShow');
@@ -134,7 +133,7 @@ Route::delete('/winkel/cart/delete', [CartController::class, 'deleteItemFromCart
 // Checkout
 Route::get('/winkel/checkout', [CheckoutController::class, 'create'])->name('checkoutPage');
 Route::post('/winkel/checkout', [CheckoutController::class, 'store'])->name('storeCheckout');
-Route::get('/winkel/checkout/success', [CheckoutController::class, 'checkoutSuccess'])->name('checkoutSuccessPage');
+Route::get('/winkel/checkout/success/{id?}', [CheckoutController::class, 'checkoutSuccess'])->name('checkoutSuccessPage');
 Route::post('/winkel/checkout/apply-discount-code', [CheckoutController::class, 'applyDiscountCode'])->name('applyDiscountCode');
 Route::delete('/winkel/checkout/remove-discount-code', [CheckoutController::class, 'removeDiscountCode'])->name('removeDiscountCode');
 
@@ -148,9 +147,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->n
 
 // Forgot password
 Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.request')->middleware('guest');
-Route::post('/forgot-password', [AuthController::class, 'sendPasswordResetLink'])
-	->name('password.email')
-	->middleware(['guest', 'throttle:3,10']); // max 3 requests per 10 minutes
+Route::post('/forgot-password', [AuthController::class, 'sendPasswordResetLink'])->name('password.email')->middleware(['guest', 'throttle:3,10']); // max 3 requests per 10 minutes
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('password.reset')->middleware('guest');
 Route::get('/reset-password', [AuthController::class, 'get'])->name('resetNoToken')->middleware('guest');
 Route::post('/reset-password', [AuthController::class, 'resetPasswordHandler'])->name('password.update')->middleware('guest');
@@ -161,14 +158,9 @@ Route::get('/risale-i-nur', function () { return view('risale'); })->name('risal
 Route::get('/said-nursi', function () { return view('saidnursi'); })->name('saidnursi');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
 
-Route::get('/home2', function () { return view('home2'); })->name('home2');
-Route::get('/home3', function () { return view('home3'); })->name('home3');
-
-
 // Mollie payments
 Route::get('/payment/success/', [CheckoutController::class, 'paymentSuccess'])->name('payment.success');
-Route::post('/webhooks/mollie', [CheckoutController::class, 'payment
-Webhook'])->name('webhooks.mollie');
+Route::post('/webhooks/mollie', [CheckoutController::class, 'paymentWebhook'])->name('webhooks.mollie');
 
 // Admin/custom pickup locations API (used by admin order page custom widget)
 Route::get('/pickup-locations', [PickupLocationController::class, 'index'])->name('pickup.locations');
