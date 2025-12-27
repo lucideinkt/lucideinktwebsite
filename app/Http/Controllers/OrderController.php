@@ -204,7 +204,7 @@ class OrderController extends Controller
     public function sendOrderEmailWithInvoice(string $id)
     {
         $order = Order::findOrFail($id);
-        Mail::to($order->customer->billing_email)->send(new OrderPaidMail($order->fresh()));
+        Mail::to($order->customer->billing_email)->queue(new OrderPaidMail($order->fresh()));
 
         return back()->with('success', 'E-mail met factuur is verstuurd');
     }

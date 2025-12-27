@@ -25,8 +25,10 @@
                     Kerspellaan 12<br>
                     7824 JG Emmen<br>
                     info@lucideinkt.nl<br>
-                    KvK: 12345678<br>
-                    BTW: NL123456789B01
+                    KvK: 54486890<br>
+                    IBAN: NL44 RABO 0142 3642 23<br>
+                    Factuur vrijgesteld van OB O.G.V. artikel 25
+                    wet OB.
                 </td>
             </tr>
         </table>

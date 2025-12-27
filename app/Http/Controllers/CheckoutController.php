@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewOrderMail;
 use App\Mail\OrderPaidMail;
 use App\Mail\WelcomeMail;
 use Carbon\Carbon;
@@ -18,9 +19,9 @@ class CheckoutController extends Controller
 {
     protected MollieApiClient $mollie;
 
-    public function __construct(MollieApiClient $mollie)
+    public function __construct()
     {
-        $this->mollie = $mollie;
+        $this->mollie = new MollieApiClient();
         $this->mollie->setApiKey(config('mollie.key'));
     }
 
@@ -118,20 +119,29 @@ class CheckoutController extends Controller
         return $this->checkoutError('Je betaling is mislukt of geannuleerd.');
     }
 
-    public function checkoutSuccess()
+    public function checkoutSuccess($id = null)
     {
-        $orderId = session('checkout_success_order_id');
+        // Try to get order ID from URL parameter first, then fallback to session
+        $orderId = $id ?: session('checkout_success_order_id');
+
         if (!$orderId) {
             return redirect()->route('home');
         }
 
         $order = Order::with('items')->find($orderId);
 
+        if (!$order) {
+            return redirect()->route('home')->with('error', 'Order niet gevonden.');
+        }
+
         $delivery = json_decode($order->myparcel_delivery_json, true);
         $pickupLocation = '';
         if (!empty($delivery['deliveryType']) && strtolower($delivery['deliveryType']) === 'pickup') {
             $pickupLocation = $delivery['pickup'] ?? $delivery['pickupLocation'] ?? null;
         }
+
+        // Clear session data if it exists (for backward compatibility)
+        session()->forget('checkout_success_order_id');
 
         return view('checkout.success',
             [
@@ -298,7 +308,7 @@ class CheckoutController extends Controller
         ]);
 
         event(new Registered($user));
-        Mail::to($user->email)->send(new WelcomeMail($user));
+        Mail::to($user->email)->queue(new WelcomeMail($user));
 
         return $user;
     }
@@ -434,11 +444,11 @@ class CheckoutController extends Controller
             ]);
         }
 
-        // ✅ Build full address (billing or shipping fallback)
+        // Build full address (billing or shipping fallback)
         $address = [
             'cc' => $order->shipping_country ?? $order->billing_country,
             'city' => $order->shipping_city ?? $order->billing_city,
-            // ✅ normalize: strip spaces + uppercase
+            // normalize: strip spaces + uppercase
             'postalCode' => strtoupper(preg_replace('/\s+/', '',
                 $order->shipping_postal_code ?? $order->billing_postal_code)),
             'street' => $order->shipping_street ?? $order->billing_street,
@@ -513,7 +523,7 @@ class CheckoutController extends Controller
         if ($amount <= 0) {
             $order->update(['status' => 'completed', 'payment_status' => 'paid', 'paid_at' => now()]);
             session()->forget(['cart', 'discount_code']);
-            return redirect()->route('payment.success', ['order' => $order->id]);
+            return redirect()->route('checkoutSuccessPage', ['id' => $order->id]);
         }
 
         $payment = $this->mollie->payments->create([
@@ -532,20 +542,48 @@ class CheckoutController extends Controller
 
     private function handlePaidOrder(Order $order)
     {
+        // Check if order was already paid to avoid duplicate processing
+        $wasAlreadyPaid = $order->payment_status === 'paid';
+
         $order->update(['status' => 'completed', 'payment_status' => 'paid', 'paid_at' => now()]);
 
+        // Only generate invoice and send emails for newly paid orders
+        if (!$wasAlreadyPaid) {
+            $this->generateInvoiceAndSendEmails($order);
+        }
+
+        session()->forget('cart');
+
+        return redirect()->route('checkoutSuccessPage', ['id' => $order->id]);
+    }
+
+    private function generateInvoiceAndSendEmails(Order $order): void
+    {
         // Invoice
         $pdf = Pdf::loadView('invoices.order', ['order' => $order])->output();
         $path = 'invoices/factuur_'.$order->id.'.pdf';
         Storage::disk('public')->put($path, $pdf);
         $order->forceFill(['invoice_pdf_path' => $path])->save();
 
-        Mail::to($order->customer->billing_email)->send(new OrderPaidMail($order->fresh()));
+        Mail::to($order->customer->billing_email)->queue(new OrderPaidMail($order->fresh()));
 
-        session()->forget('cart');
-        session()->flash('checkout_success_order_id', $order->id);
 
-        return redirect()->route('checkoutSuccessPage');
+        $adminEmail = env('LUCIDE_INKT_MAIL');
+        if ($adminEmail) {
+            try {
+                Mail::to($adminEmail)->queue(new NewOrderMail($order->fresh()));
+            } catch (\Throwable $e) {
+                Log::error('Failed to queue NewOrderMail to admin', [
+                    'order_id' => $order->id,
+                    'admin_email' => $adminEmail,
+                    'error' => $e->getMessage(),
+                ]);
+            }
+        } else {
+            Log::warning('Admin email not configured (LUCIDE_INKT_MAIL missing)', ['order_id' => $order->id]);
+        }
+
+        $order->update(['customer_email_sent_at' => now()]);
     }
 
     private function updateOrderPaymentStatus(Order $order, $payment): void

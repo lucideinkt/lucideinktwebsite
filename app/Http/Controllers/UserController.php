@@ -59,7 +59,7 @@ class UserController extends Controller
         event(new Registered($user));
 
         // Send registration email
-        Mail::to($user->email)->send(new NewUserMail($user));
+        Mail::to($user->email)->queue(new NewUserMail($user));
 
         // Optionally log the user in
         // auth()->login($user);

@@ -33,10 +33,10 @@ class OrderPaidMail extends Mailable
             $pickupLocation = $delivery['pickup'] ?? $delivery['pickupLocation'] ?? null;
         }
 
-        return $this->subject('Uw bestelling bij Lucide Inkt')
-            ->view('emails.orderpaid', 
-            ['order' => $this->order, 
-            'delivery' =>  $delivery, 
+        return $this->subject('Jouw bestelling bij Lucide Inkt')
+            ->view('emails.orderpaid',
+            ['order' => $this->order,
+            'delivery' =>  $delivery,
             'pickupLocation' => $pickupLocation
             ])
             ->attach($pathOnDisk, [
