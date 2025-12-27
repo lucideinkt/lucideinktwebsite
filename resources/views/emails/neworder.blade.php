@@ -107,7 +107,7 @@
         color: #fff !important;
         text-decoration: none;
         border-radius: 4px;
-        margin-top: 16px;
+        margin-bottom: 16px;
         font-size: 16px;
         font-weight: 400;
     }
