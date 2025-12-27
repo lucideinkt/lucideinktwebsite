@@ -99,6 +99,18 @@
       margin-top: 30px;
       text-align: left;
     }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #ab0f14;
+        color: #fff !important;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 400;
+    }
   </style>
 </head>
 <body>
