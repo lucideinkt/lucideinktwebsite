@@ -99,11 +99,24 @@
       margin-top: 30px;
       text-align: left;
     }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #ab0f14;
+        color: #fff !important;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 400;
+    }
   </style>
 </head>
 <body>
   <div class="email-container">
     <h3>{{ __('Nieuwe bestelling') }}</h3>
+      <a href="https://lucideinkt.nl/login" class="btn">{{ __('Inloggen om bestelling te verwerken') }}</a>
     <div class="meta">
       <span><strong>{{ __('Ordernummer:') }}</strong> {{ $order->id }}</span><br>
       <span><strong>{{ __('Besteldatum:') }}</strong> {{ $order->created_at->format('d-m-Y H:i') }}</span>
