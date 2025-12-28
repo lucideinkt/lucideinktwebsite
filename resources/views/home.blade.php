@@ -10,13 +10,13 @@
                 </div>
 
                 <div class="book-image">
-                    <img class="book-shot d" src="{{ asset('images/banner_hero_with_buttherfly.png') }}" alt="">
+                    <img class="book-shot d" src="{{ asset('images/books_round_1.png') }}" alt="">
                 </div>
 
                 <div class="clock-image">
 
                     <div class="hero-section" style="position: relative; overflow: visible;">
-                        <img class="hero-bg-img" src="{{ asset('images/sun_clock_new_4.png') }}" alt=""
+                        <img class="hero-bg-img" src="{{ asset('images/sun_clock_new_3.png') }}" alt=""
                              style="position: absolute; left: 47%; top: 53%; transform: translate(-50%, -50%); width: 190%; height: auto; pointer-events: none; z-index: -1;">
 
                         <!-- Achterste laag: draaiende rotor -->
