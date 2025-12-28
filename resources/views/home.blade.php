@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="book-image">
-                    <img class="book-shot d" src="{{ asset('images/books_round_1.png') }}" alt="">
+                    <img class="book-shot d" src="{{ asset('images/hero-books.png') }}" alt="">
                 </div>
 
                 <div class="clock-image">
