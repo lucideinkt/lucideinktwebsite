@@ -78,21 +78,60 @@
         <section class="white-section">
             <div class="container new-translation">
                 <h2 class="title">Onze Nieuwste Vertaling:<br>Het Traktaat over de Herzameling</h2>
+                <div class="divider"></div>
+                <div class="sub-text">
+                    <p>
+                        Het Traktaat over de Herzameling uit de Risale-i Nur toont met krachtige bewijzen uit natuur en openbaring dat de wederopstanding noodzakelijk, mogelijk en rechtvaardig is—en biedt zo helderheid, zekerheid en hoop voor wie bewust wil geloven.
+                    </p>
+                </div>
                 <div class="home-book-grid">
                     <div class="book">
                         <img src="{{ asset('images/books/herzameling/herzameling_front_NL_PS.png') }}" alt="">
+                        <p class="under-text">- Nederlands -</p>
+                        <a href="#">
+                            <button class="btn">Bekijken</button>
+                        </a>
                     </div>
                     <div class="book">
                         <img src="{{ asset('images/books/herzameling/herzameling_front_NL-TR_PS.png') }}" alt="">
+                        <p class="under-text">- Nederlands  & Turks -</p>
+                        <a href="#">
+                            <button class="btn">Bekijken</button>
+                        </a>
                     </div>
                     <div class="book">
                         <img src="{{ asset('images/books/herzameling/herzameling_front_EN_PS.png') }}" alt="">
+                        <p class="under-text">- Engels -</p>
+                        <a href="#">
+                            <button class="btn">Bekijken</button>
+                        </a>
                     </div>
                     <div class="book">
                         <img src="{{ asset('images/books/herzameling/herzameling_front_EN-TR_PS.png') }}" alt="">
+                        <p class="under-text">- Engels & Turks -</p>
+                        <a href="#">
+                            <button class="btn">Bekijken</button>
+                        </a>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="colored-section books">
+                <div class="container risale">
+                    <div class="first">
+                        <h2 class="title">Wat is de Risale-i Nur?</h2>
+                        <p class="sub-text">
+                            Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
+                        </p>
+                        <a href="#">
+                            <button class="btn">...Lees Meer</button>
+                        </a>
+                    </div>
+                    <div class="second">
+                        <img src="{{ asset('images/standing.png') }}" alt="">
+                    </div>
+                </div>
         </section>
 
         <!-- Modal Structure -->
