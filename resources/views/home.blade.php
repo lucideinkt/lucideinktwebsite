@@ -134,6 +134,18 @@
                 </div>
         </section>
 
+        <section class="white-section">
+            <div class="outer-slider-box">
+                <div class="container slider">
+                    <p>“Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: ‘Mijn weg is juist’ of ‘Mijn weg is beter’ te zeggen. Jij hebt echter niet het recht om: ‘Slechts mijn weg is juist’ te zeggen.”</p>
+
+                    <p>“Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden.”</p>
+
+                    <p>“Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste.”</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Modal Structure -->
         <div id="leesMeerModal" class="custom-modal">
             <div class="custom-modal-overlay"></div>
