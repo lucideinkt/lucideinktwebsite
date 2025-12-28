@@ -2528,9 +2528,9 @@ thead {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: 300px;
     /* background-image: url("../images/bg-new-web.png"); */
-    background-image: url("../images/bg-new-4.jpg");
+    background-image: url("../images/new-bg-canvas_2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2539,7 +2539,11 @@ thead {
 
 @media (max-width: 992px) {
     .hero-bg-wrapper {
-        background-image: url("../images/bg-new-4.jpg");
+        background-image: url("../images/new-bg-canvas_2.png");
+        background-size: cover;
+        padding-bottom: 375px;
+        background-position: center calc(50% - 225px);
+        margin-bottom: -250px;
     }
 }
 
