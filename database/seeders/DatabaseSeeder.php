@@ -36,6 +36,14 @@ class DatabaseSeeder extends Seeder
             'password' => static::$password ??= Hash::make('12345678'),
         ]);
 
+        User::create([
+            'first_name' => 'Soner',
+            'last_name' => 'Altin',
+            'email' => 'dogus2011@gmail.com',
+            'role' => 'admin',
+            'password' => static::$password ??= Hash::make('12345678'),
+        ]);
+
         $category = ProductCategory::create([
               'name' => 'Risale-i Nur',
               'slug' => Str::slug('Risale-i Nur'),
