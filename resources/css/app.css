@@ -581,8 +581,8 @@ thead {
 .desktop-navbar-container .navbar-glow img {
     width: 500px;
     position: relative;
-    z-index: 10;
-    top: -36px;
+    z-index: 5;
+    top: -19px;
     opacity: 70%;
     /*left: -100px;*/
 }
@@ -633,6 +633,11 @@ thead {
 
 .desktop-navbar-container a .first-letter {
     font-size: 140% !important;
+}
+
+.desktop-navbar-container .nav-item a {
+    position: relative;
+    z-index: 10;
 }
 
 .nav-item .fa-gauge {
@@ -990,7 +995,13 @@ thead {
     height: 20px;
     border: none;
     border-radius: 20px;
-    background: linear-gradient(135deg, #647f54 0%, #8fa97a 100%);
+    /*background: linear-gradient(135deg, #647f54 0%, #8fa97a 100%);*/
+    /*background-color: #6F7752;*/
+    background: linear-gradient(
+        180deg,
+        #6F7752 0%,
+        #7E8860 100%
+    );
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     display: flex;
     align-items: center;
@@ -1025,8 +1036,16 @@ thead {
 }
 
 .colored-section {
-    background-color: #939a71;
-    color: #F2EAD1;
+    /*background-color: #6F7752;*/
+    /*background: linear-gradient(*/
+    /*    180deg,*/
+    /*    #6F7752 0%,*/
+    /*    #7E8860 100%*/
+    /*);*/
+    background:
+    linear-gradient(180deg, #6F7752, #7E8860);
+    background-blend-mode: overlay;
+    color: #EFE9D8;
 }
 
 .below-books {
@@ -1068,7 +1087,7 @@ thead {
 
 .new-translation {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
 }
 
 .new-translation .title {
@@ -1076,8 +1095,16 @@ thead {
     letter-spacing: 2px;
     font-size: 50px;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     text-align: center;
+}
+
+.new-translation .sub-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .home-book-grid .book img {
@@ -1090,6 +1117,117 @@ thead {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.home-book-grid .book {
+    justify-content: center;
+    align-items: center;
+}
+
+.home-book-grid .book .under-text {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.home-book-grid .book .btn {
+    margin: 0 auto;
+    padding: 0 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid var(--main-font-color);
+    background: var(--surface-2);
+    color: var(--main-font-color);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: filter .1s ease-in-out;
+    font-size: 16px;
+    font-family: var(--font-bold);
+}
+
+.divider {
+    border: none;
+    border-bottom: 3px solid var(--main-font-color);
+    width: 50px;
+    margin: 0 auto;
+}
+
+.colored-section.books {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.colored-section .risale .title {
+    font-family: "Herina";
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.colored-section .risale .first {
+    width: 100%;
+    max-width: 700px;
+}
+
+.colored-section .risale .second {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.colored-section .risale .second img {
+    max-width: 445px;
+}
+
+.colored-section .risale {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #F6F1E3;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--main-font-color);
+    box-shadow: var(--shadow-1);
+    flex-wrap: wrap;
+}
+
+.colored-section .risale::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/bg-art.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.colored-section .risale .btn {
+    padding: 0 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid var(--main-font-color);
+    background: var(--main-font-color);
+    color: var(--surface-2);
+    height: 40px;
+    display: flex;
+    gap: 5px;
+    transition: filter .1s ease-in-out;
+    font-size: 16px;
+    font-family: var(--font-bold);
+    margin-bottom: 50px;
 }
 
 /* =========================================================
@@ -2326,7 +2464,7 @@ thead {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-bottom: 20px solid #939A71;
+    border-bottom: 20px solid #6F7752;
 }
 
 @media (max-width: 992px) {
@@ -2991,7 +3129,14 @@ thead {
 
     .new-translation .title {
         font-size: 32px;
-        margin-bottom: 35px;
+    }
+
+    .colored-section .risale .second img {
+        max-width: 300px;
+    }
+
+    .colored-section .risale .title {
+        font-size: 32px;
     }
 
 }
