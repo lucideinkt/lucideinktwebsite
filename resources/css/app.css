@@ -1050,6 +1050,8 @@ thead {
 
 .below-books {
   padding: 100px 0;
+    margin-top: -100px;
+    display: none;
 }
 
 .section-wrapper {
@@ -1059,10 +1061,12 @@ thead {
 .home.intro-section {
     width: 100%;
     position: relative;
-    z-index: 20;
+    z-index: 10;
     margin: 0 auto;
     text-align: center;
     padding: 50px 0;
+    padding-top: 120px;
+    margin-top: -110px;
 }
 
 .home.intro-section .text-container {
@@ -2528,22 +2532,27 @@ thead {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 300px;
+    padding-bottom: 1000px;
     /* background-image: url("../images/bg-new-web.png"); */
-    background-image: url("../images/new-bg-canvas_2.png");
+    background-image: url("../images/bg-new-gold-transparant.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-bottom: 20px solid #6F7752;
+    z-index: 20;
+    /*border-bottom: 20px solid #6F7752;*/
 }
 
 @media (max-width: 992px) {
+    /*.hero-bg-wrapper {*/
+    /*    background-image: url("../images/new-bg-canvas_2.png");*/
+    /*    background-size: cover;*/
+    /*    padding-bottom: 375px;*/
+    /*    background-position: center calc(50% - 225px);*/
+    /*    margin-bottom: -250px;*/
+    /*}*/
+
     .hero-bg-wrapper {
-        background-image: url("../images/new-bg-canvas_2.png");
-        background-size: cover;
-        padding-bottom: 375px;
-        background-position: center calc(50% - 225px);
-        margin-bottom: -250px;
+        padding-bottom: 500px;
     }
 }
 
@@ -3269,6 +3278,10 @@ thead {
         padding-bottom: 100px;
     }
 
+    .hero-bg-wrapper {
+        padding-bottom: 350px;
+    }
+
 }
 
 @media (max-width: 360px) {
@@ -3302,5 +3315,7 @@ thead {
         padding-top: 40px;
         padding-bottom: 60px;
     }
+
+
 
 }

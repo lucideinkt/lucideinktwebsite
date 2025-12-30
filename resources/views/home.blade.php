@@ -5,13 +5,13 @@
 
             <section class="home-hero">
 
-                <div class="ustadh-image">
-                    <img src="{{ asset('images/ustadh-half.png') }}" alt="ustadh">
-                </div>
+{{--                <div class="ustadh-image">--}}
+{{--                    <img src="{{ asset('images/ustadh-half.png') }}" alt="ustadh">--}}
+{{--                </div>--}}
 
-                <div class="book-image">
-                    <img class="book-shot d" src="{{ asset('images/hero-books.png') }}" alt="">
-                </div>
+{{--                <div class="book-image">--}}
+{{--                    <img class="book-shot d" src="{{ asset('images/hero-books.png') }}" alt="">--}}
+{{--                </div>--}}
 
                 <div class="clock-image">
 
@@ -64,7 +64,7 @@
             <div class="container"></div>
         </section>
 
-        <section class="home colored-section intro-section">
+        <section class="home white-section intro-section">
             <div class="text-container">
                 <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>
                 <div class="sub-text">
@@ -75,7 +75,7 @@
             </div>
         </section>
 
-        <section class="white-section">
+        <section class="colored-section">
             <div class="container new-translation">
                 <h2 class="title">Onze Nieuwste Vertaling:<br>Het Traktaat over de Herzameling</h2>
                 <div class="divider"></div>
