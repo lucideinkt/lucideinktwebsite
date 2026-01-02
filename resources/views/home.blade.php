@@ -1,7 +1,8 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper">
+
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/background-new-first.png') }}');">
 
             <section class="home-hero">
 
