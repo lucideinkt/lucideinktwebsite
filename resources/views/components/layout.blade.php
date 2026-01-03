@@ -52,9 +52,9 @@
             <li class="nav-item">
                 <a href="{{ route('cartPage') }}"><i
                         class="fa-solid fa-cart-shopping"></i>
-                    @if (session('cart') && count(session('cart')))
-                        <span class="cart-quantity">{{ collect(session('cart'))->sum('quantity') }}</span>
-                    @endif
+                    <span class="cart-quantity" style="display: {{ (session('cart') && count(session('cart'))) ? 'inline-block' : 'none' }};">
+                        {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
+                    </span>
                 </a>
             </li>
         </div>
@@ -111,10 +111,12 @@
         });
 
         let thumbnails = document.getElementsByClassName('thumbnail');
+        let productDetailThumbnails = document.getElementsByClassName('product-detail-thumbnail');
+        let thumbnailsList = thumbnails.length > 0 ? thumbnails : productDetailThumbnails;
         let current;
 
-        for (let i = 0; i < thumbnails.length; i++) {
-            initThumbnail(thumbnails[i], i);
+        for (let i = 0; i < thumbnailsList.length; i++) {
+            initThumbnail(thumbnailsList[i], i);
         }
 
         function initThumbnail(thumbnail, index) {
@@ -124,14 +126,16 @@
         }
 
         splide.on('mounted move', function () {
-            let thumbnail = thumbnails[splide.index];
+            let thumbnail = thumbnailsList[splide.index];
 
             if (thumbnail) {
                 if (current) {
                     current.classList.remove('is-active');
+                    current.classList.remove('active');
                 }
 
                 thumbnail.classList.add('is-active');
+                thumbnail.classList.add('active');
                 current = thumbnail;
             }
         });

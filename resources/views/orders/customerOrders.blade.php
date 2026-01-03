@@ -52,7 +52,9 @@
 
                     </tbody>
                 </table>
-                {{ $orders->links('vendor.pagination.custom') }}
+                @if($orders->hasPages() && $orders->lastPage() > 1)
+                    {{ $orders->links('vendor.pagination.custom') }}
+                @endif
             </div>
 
         </main>

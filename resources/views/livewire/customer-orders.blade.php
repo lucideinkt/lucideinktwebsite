@@ -1,13 +1,6 @@
 <div class="customer-orders">
     <div class="orders-header">
         <h2>Mijn Bestellingen</h2>
-        <div class="orders-filters">
-            <select class="filter-select">
-                <option>Alle bestellingen</option>
-                <option>Deze week</option>
-                <option>Deze maand</option>
-            </select>
-        </div>
     </div>
 
     @if(session('success'))
@@ -71,9 +64,11 @@
             </div>
         </div>
 
-        <div class="orders-pagination">
-            {{ $orders->links('vendor.pagination.custom') }}
-        </div>
+        @if($orders->hasPages() && $orders->lastPage() > 1)
+            <div class="orders-pagination">
+                {{ $orders->links('vendor.pagination.custom') }}
+            </div>
+        @endif
     @else
         <div class="orders-empty-state">
             <div class="empty-state-icon">
@@ -90,9 +85,6 @@
         }
 
         .orders-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 2rem;
         }
 
@@ -101,26 +93,6 @@
             font-weight: 600;
             color: var(--main-font-color, #620505);
             margin: 0;
-        }
-
-        .orders-filters {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .filter-select {
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border-1, #D8C7A6);
-            border-radius: 6px;
-            background: var(--surface-4, #fff);
-            color: var(--main-font-color, #620505);
-            font-size: 0.875rem;
-            cursor: pointer;
-            font-family: var(--font-regular);
-        }
-
-        .filter-select:hover {
-            border-color: var(--border-2, #d8d8d8);
         }
 
         .orders-table-container {
@@ -327,19 +299,6 @@
         }
 
         @media (max-width: 768px) {
-            .orders-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .orders-filters {
-                width: 100%;
-            }
-
-            .filter-select {
-                width: 100%;
-            }
 
             .order-row {
                 padding: 1rem;

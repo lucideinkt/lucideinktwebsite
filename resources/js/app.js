@@ -886,6 +886,56 @@ document.addEventListener('DOMContentLoaded', () => {
     setupPasswordToggles();
   }).observe(document.body, { childList: true, subtree: true });
 
+  // ------------------------------------------------------------
+  // Livewire Cart Events
+  // ------------------------------------------------------------
+  function updateCartBadge(totalQuantity) {
+    // Update all cart quantity badges
+    document.querySelectorAll('.cart-quantity').forEach(badge => {
+      if (totalQuantity > 0) {
+        badge.textContent = totalQuantity;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.textContent = '0';
+        badge.style.display = 'none';
+      }
+    });
+  }
+
+  // Listen for Livewire events (Livewire v3)
+  if (window.Livewire) {
+    Livewire.on('cart-updated', (event) => {
+      const totalQuantity = event[0]?.totalQuantity || event?.totalQuantity || 0;
+      updateCartBadge(totalQuantity);
+    });
+
+    Livewire.on('cart-success', (event) => {
+      const message = event[0]?.message || event?.message || 'Product toegevoegd aan winkelwagen!';
+      showToast(message, false);
+    });
+
+    Livewire.on('cart-error', (event) => {
+      const message = event[0]?.message || event?.message || 'Er is een fout opgetreden.';
+      showToast(message, true);
+    });
+  }
+
+  // Also listen for browser events (fallback)
+  window.addEventListener('cart-updated', (event) => {
+    const totalQuantity = event.detail?.totalQuantity || 0;
+    updateCartBadge(totalQuantity);
+  });
+
+  window.addEventListener('cart-success', (event) => {
+    const message = event.detail?.message || 'Product toegevoegd aan winkelwagen!';
+    showToast(message, false);
+  });
+
+  window.addEventListener('cart-error', (event) => {
+    const message = event.detail?.message || 'Er is een fout opgetreden.';
+    showToast(message, true);
+  });
+
     /* ===== Realtime klok-animatie =====
        Bereken elke frame de echte tijd → geen drift, altijd synchroon.
        Wil je versnellen/vertragen? Zet multipliers <> 1.

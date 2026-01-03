@@ -26,13 +26,9 @@
     <li class="nav-item cart">
         <a href="{{ route('cartPage') }}"><i
             class="fa-solid fa-cart-shopping"></i>
-        @if(session('cart') && count(session('cart')))
-        <span class="cart-quantity">
-            {{
-            collect(session('cart'))->sum('quantity')
-            }}
+        <span class="cart-quantity" style="display: {{ (session('cart') && count(session('cart'))) ? 'inline-block' : 'none' }};">
+            {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
         </span>
-        @endif
         </a>
     </li>
 
