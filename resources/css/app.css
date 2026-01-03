@@ -989,6 +989,7 @@ thead {
     top: var(--button-y);
     pointer-events: auto;
     padding: 0.82rem .75rem;
+    padding-top: 0.89rem;
     font-size: clamp(12px, 1.3vw, 12px);
     letter-spacing: .08em;
     text-transform: uppercase;
