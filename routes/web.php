@@ -155,6 +155,8 @@ Route::post('/reset-password', [AuthController::class, 'resetPasswordHandler'])-
 // Pages
 Route::get('/', function () { return view('home'); })->name('home');
 Route::get('/home2', function () { return view('home2'); })->name('home2');
+Route::get('/home3', function () { return view('home3'); })->name('home3');
+Route::get('/home4', function () { return view('home4'); })->name('home4');
 Route::get('/risale-i-nur', function () { return view('risale'); })->name('risale');
 Route::get('/said-nursi', function () { return view('saidnursi'); })->name('saidnursi');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
