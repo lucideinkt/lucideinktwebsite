@@ -104,37 +104,40 @@
 </body>
 
 <script>
-    let splide = new Splide('#main-slider', {
-        pagination: false,
-    });
-
-    let thumbnails = document.getElementsByClassName('thumbnail');
-    let current;
-
-    for (let i = 0; i < thumbnails.length; i++) {
-        initThumbnail(thumbnails[i], i);
-    }
-
-    function initThumbnail(thumbnail, index) {
-        thumbnail.addEventListener('click', function () {
-            splide.go(index);
+    const mainSlider = document.getElementById('main-slider');
+    if (mainSlider) {
+        let splide = new Splide('#main-slider', {
+            pagination: false,
         });
-    }
 
-    splide.on('mounted move', function () {
-        let thumbnail = thumbnails[splide.index];
+        let thumbnails = document.getElementsByClassName('thumbnail');
+        let current;
 
-        if (thumbnail) {
-            if (current) {
-                current.classList.remove('is-active');
-            }
-
-            thumbnail.classList.add('is-active');
-            current = thumbnail;
+        for (let i = 0; i < thumbnails.length; i++) {
+            initThumbnail(thumbnails[i], i);
         }
-    });
 
-    splide.mount();
+        function initThumbnail(thumbnail, index) {
+            thumbnail.addEventListener('click', function () {
+                splide.go(index);
+            });
+        }
+
+        splide.on('mounted move', function () {
+            let thumbnail = thumbnails[splide.index];
+
+            if (thumbnail) {
+                if (current) {
+                    current.classList.remove('is-active');
+                }
+
+                thumbnail.classList.add('is-active');
+                current = thumbnail;
+            }
+        });
+
+        splide.mount();
+    }
 
     lightbox.option({
         'albumLabel': "%1 / %2",

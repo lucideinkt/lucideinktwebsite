@@ -895,6 +895,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const minuteEl = document.querySelector('.css-minute-hand');
         const secondEl = document.querySelector('.css-second-hand');
 
+        // Only run clock animation if all elements exist
+        if (!hourEl || !minuteEl || !secondEl) return;
+
         const speed = { hour: 400, minute: 100, second: 4 }; // 1 = realtime
 
         function frame(){
@@ -926,42 +929,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('openModalBtn');
     const closeBtn = document.getElementById('closeModalBtn');
     const scrollModalContent = document.getElementById('scrollModalContent');
-    function openScrollModal() {
-        modal.classList.remove('hidden');
-        // Force reflow to allow transition
-        void modal.offsetWidth;
-        modal.classList.add('show');
-        modal.classList.remove('fading-out');
-        scrollModalContent.classList.remove('close');
-        setTimeout(function() {
-            scrollModalContent.classList.add('open');
-        }, 10);
-    }
-    function closeScrollModal() {
-        scrollModalContent.classList.remove('open');
-        scrollModalContent.classList.add('close');
-        modal.classList.add('fading-out');
-        modal.classList.remove('show');
-        setTimeout(function() {
-            modal.classList.add('hidden');
+    
+    if (modal && openBtn && closeBtn && scrollModalContent) {
+        function openScrollModal() {
+            modal.classList.remove('hidden');
+            // Force reflow to allow transition
+            void modal.offsetWidth;
+            modal.classList.add('show');
             modal.classList.remove('fading-out');
             scrollModalContent.classList.remove('close');
-        }, 1100); // match the new slower transition duration
+            setTimeout(function() {
+                scrollModalContent.classList.add('open');
+            }, 10);
+        }
+        function closeScrollModal() {
+            scrollModalContent.classList.remove('open');
+            scrollModalContent.classList.add('close');
+            modal.classList.add('fading-out');
+            modal.classList.remove('show');
+            setTimeout(function() {
+                modal.classList.add('hidden');
+                modal.classList.remove('fading-out');
+                scrollModalContent.classList.remove('close');
+            }, 1100); // match the new slower transition duration
+        }
+        // Initially hide modal
+        modal.classList.add('hidden');
+        openBtn.addEventListener('click', openScrollModal);
+        closeBtn.addEventListener('click', closeScrollModal);
+        window.addEventListener('click', function(e) {
+            if (e.target === modal || e.target.classList.contains('custom-modal-overlay')) {
+                closeScrollModal();
+            }
+        });
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeScrollModal();
+            }
+        });
     }
-    // Initially hide modal
-    modal.classList.add('hidden');
-    openBtn.addEventListener('click', openScrollModal);
-    closeBtn.addEventListener('click', closeScrollModal);
-    window.addEventListener('click', function(e) {
-        if (e.target === modal || e.target.classList.contains('custom-modal-overlay')) {
-            closeScrollModal();
-        }
-    });
-    window.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeScrollModal();
-        }
-    });
 
     // Header scroll up effect
     let lastScroll = window.scrollY || 0;
