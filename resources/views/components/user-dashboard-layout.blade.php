@@ -27,6 +27,15 @@
                             <span>Mijn Bestellingen</span>
                         </a>
                     </li>
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}" id="logout-form" style="display: none;">
+                            @csrf
+                        </form>
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="menu-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Uitloggen</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>

@@ -46,8 +46,13 @@
                         <div class="order-actions-col">
                             <div class="order-actions">
                                 @if($order->status === 'completed')
-                                    <button type="button" class="btn-order-again" onclick="orderAgain({{ $order->id }})">
-                                        Opnieuw bestellen
+                                    <button type="button" class="btn-order-again" wire:click="orderAgain({{ $order->id }})" wire:loading.attr="disabled">
+                                        <span wire:loading.remove wire:target="orderAgain({{ $order->id }})">
+                                            Opnieuw bestellen
+                                        </span>
+                                        <span wire:loading wire:target="orderAgain({{ $order->id }})">
+                                            <i class="fa-solid fa-spinner fa-spin"></i> Toevoegen...
+                                        </span>
                                     </button>
                                 @elseif($order->status === 'pending' || $order->status === 'shipped')
                                     <button type="button" class="btn-cancel-order" onclick="cancelOrder({{ $order->id }})">
@@ -325,9 +330,48 @@
             }
         }
 
-        function orderAgain(orderId) {
-            // TODO: Implement order again functionality
-            console.log('Order again:', orderId);
+        // Listen for order-again events
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('order-again-success', (event) => {
+                const message = event[0]?.message || event?.message || 'Producten toegevoegd aan winkelwagen!';
+                showToast(message, false);
+            });
+
+            Livewire.on('order-again-warning', (event) => {
+                const message = event[0]?.message || event?.message || 'Producten toegevoegd met waarschuwingen.';
+                showToast(message, false);
+            });
+
+            Livewire.on('order-again-error', (event) => {
+                const message = event[0]?.message || event?.message || 'Er is een fout opgetreden.';
+                showToast(message, true);
+            });
+        });
+
+        // Fallback for browser events
+        window.addEventListener('order-again-success', (event) => {
+            const message = event.detail?.message || 'Producten toegevoegd aan winkelwagen!';
+            showToast(message, false);
+        });
+
+        window.addEventListener('order-again-warning', (event) => {
+            const message = event.detail?.message || 'Producten toegevoegd met waarschuwingen.';
+            showToast(message, false);
+        });
+
+        window.addEventListener('order-again-error', (event) => {
+            const message = event.detail?.message || 'Er is een fout opgetreden.';
+            showToast(message, true);
+        });
+
+        function showToast(message, isError) {
+            // Use the existing toast function from app.js if available
+            if (typeof window.showToast === 'function') {
+                window.showToast(message, isError);
+            } else {
+                // Fallback alert
+                alert(message);
+            }
         }
     </script>
 </div>

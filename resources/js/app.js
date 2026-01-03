@@ -81,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => toast.classList.remove('show'), 2000);
   };
 
+  // Expose showToast globally for use in other scripts
+  window.showToast = showToast;
+
   // ------------------------------------------------------------
   // Page setup
   // ------------------------------------------------------------
