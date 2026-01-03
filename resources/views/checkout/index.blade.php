@@ -52,7 +52,7 @@
                         <div class="form-input">
                             <label for="billing_email">E-mailadres</label>
                             <input type="email" name="billing_email" autocomplete="email"
-                                value="{{ old('billing_email') }}">
+                                value="{{ old('billing_email', auth()->check() ? auth()->user()->email : '') }}">
                             @error('billing_email')
                                 <div class="error">{{ $message }}</div>
                             @enderror
