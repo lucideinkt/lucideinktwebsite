@@ -1044,16 +1044,21 @@ thead {
 }
 
 .colored-section {
-    /*background-color: #6F7752;*/
-    /*background: linear-gradient(*/
-    /*    180deg,*/
-    /*    #6F7752 0%,*/
-    /*    #7E8860 100%*/
-    /*);*/
-    background:
-    linear-gradient(180deg, #6F7752, #7E8860);
-    background-blend-mode: overlay;
-    color: #EFE9D8;
+    position: relative;
+    z-index: 0;
+    color: #fff6e0;
+}
+
+.colored-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/bg-wood.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .below-books {
@@ -1073,8 +1078,6 @@ thead {
     margin: 0 auto;
     text-align: center;
     padding: 50px 0;
-    padding-top: 120px;
-    margin-top: -110px;
 }
 
 .home.intro-section .text-container {
@@ -1100,6 +1103,7 @@ thead {
 .new-translation {
     padding-top: 50px;
     padding-bottom: 70px;
+    color: #ece5c2;
 }
 
 .new-translation .title {
@@ -1161,7 +1165,7 @@ thead {
 
 .divider {
     border: none;
-    border-bottom: 3px solid var(--main-font-color);
+    border-bottom: 3px solid #ece5c2;
     width: 50px;
     margin: 0 auto;
 }
@@ -2545,8 +2549,17 @@ thead {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 22;
+}
+
+.gradient-border {
+    width: 100%;
+    height: 20px;
+    background: #FAD99B;
+    background: radial-gradient(circle,rgba(250, 217, 155, 1) 0%, rgba(240, 201, 138, 1) 50%, rgba(159, 77, 33, 1) 100%);
+    opacity: 1;
+    position: relative;
     z-index: 20;
-    /*border-bottom: 20px solid #6F7752;*/
 }
 
 @media (max-width: 992px) {
