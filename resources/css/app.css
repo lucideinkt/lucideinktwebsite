@@ -73,7 +73,7 @@
     --mobile-header-height: 70px;
     --text-font-size: 18px;
     --text-font-size-page: 18px;
-    --text-font-size-menu-item: 20px;
+    --text-font-size-menu-item: 23px;
     --bg-parchment: #f7d99e;
     --surface-1: #F6F1E3;
     --surface-2: #F6F1E3;
@@ -589,7 +589,9 @@ thead {
 
 .desktop-navbar-container .navbar {
     position: relative;
-    padding: 10px 20px;
+    padding: 0px 20px;
+    padding-top: 15px;
+    padding-bottom: 14px;
     border-radius: 50px;
     z-index: 0;
     overflow: hidden;
@@ -597,7 +599,7 @@ thead {
     background-image: url("../images/bg-menu.png");
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-top: 20px;
-    border: 4px solid var(--surface-2);
+    border: 4px solid #f5dfac;
 }
 
 .desktop-navbar-container .navbar::before {
@@ -611,16 +613,12 @@ thead {
     pointer-events: none;
 }
 
-.desktop-navbar-container .navbar a,
-.desktop-navbar-container .navbar .fa-cart-shopping {
-    color: var(--surface-2);
-}
-
 .desktop-navbar-container a,
-.desktop-navbar-container .fa-cart-shopping {
+.desktop-navbar-container .fa-solid {
     position: relative;
     z-index: 1;
-    color: var(--main-font-color);
+    font-size: 20px;
+    color: #fff6e0;
 }
 
 .desktop-navbar-container a {
@@ -629,6 +627,7 @@ thead {
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #fff6e0;
 }
 
 .desktop-navbar-container a .first-letter {
@@ -666,9 +665,16 @@ thead {
     justify-content: center;
 }
 
+.header .navbar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .header .navbar ul li a {
     font-size: var(--text-font-size-menu-item);
-    padding: 10px 15px;
+    padding: 0px 15px;
+    line-height: 0;
 }
 
 .navbar-cart-sidebar-toggle {
@@ -975,6 +981,7 @@ thead {
 .text-life-minutes {
     top: var(--y, var(--minutes-y));
     width: var(--w, var(--minutes-w));
+    padding-right: 9px;
 }
 
 .text-lucideinkt img,

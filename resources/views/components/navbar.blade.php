@@ -17,7 +17,7 @@
 
     @guest
     <li class="nav-item">
-        <a class="{{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route("login") }}"><span class="first-letter">A</span>CCOUNT</a>
+        <a class="{{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route("login") }}"><i class="fa-solid fa-user"></i></a>
     </li>
     @endguest
 
