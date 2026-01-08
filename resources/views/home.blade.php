@@ -1,17 +1,17 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/001_background.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/004_background.webp') }}');">
 
             <section class="home-hero">
 
-{{--                <div class="ustadh-image">--}}
-{{--                    <img src="{{ asset('images/ustadh-half.png') }}" alt="ustadh">--}}
-{{--                </div>--}}
+                {{--                <div class="ustadh-image">--}}
+                {{--                    <img src="{{ asset('images/ustadh-half.png') }}" alt="ustadh">--}}
+                {{--                </div>--}}
 
-{{--                <div class="book-image">--}}
-{{--                    <img class="book-shot d" src="{{ asset('images/hero-books.png') }}" alt="">--}}
-{{--                </div>--}}
+                {{--                <div class="book-image">--}}
+                {{--                    <img class="book-shot d" src="{{ asset('images/hero-books.png') }}" alt="">--}}
+                {{--                </div>--}}
 
                 <div class="clock-image">
 
@@ -119,34 +119,34 @@
 
         <div class="gradient-border"></div>
 
-{{--        <section class="colored-section books">--}}
-{{--                <div class="container risale">--}}
-{{--                    <div class="first">--}}
-{{--                        <h2 class="title">Wat is de Risale-i Nur?</h2>--}}
-{{--                        <p class="sub-text">--}}
-{{--                            Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.--}}
-{{--                        </p>--}}
-{{--                        <a href="#">--}}
-{{--                            <button class="btn">...Lees Meer</button>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="second">--}}
-{{--                        <img src="{{ asset('images/standing.png') }}" alt="">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--        </section>--}}
+        {{--        <section class="colored-section books">--}}
+        {{--                <div class="container risale">--}}
+        {{--                    <div class="first">--}}
+        {{--                        <h2 class="title">Wat is de Risale-i Nur?</h2>--}}
+        {{--                        <p class="sub-text">--}}
+        {{--                            Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.--}}
+        {{--                        </p>--}}
+        {{--                        <a href="#">--}}
+        {{--                            <button class="btn">...Lees Meer</button>--}}
+        {{--                        </a>--}}
+        {{--                    </div>--}}
+        {{--                    <div class="second">--}}
+        {{--                        <img src="{{ asset('images/standing.png') }}" alt="">--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--        </section>--}}
 
-{{--        <section class="white-section">--}}
-{{--            <div class="outer-slider-box">--}}
-{{--                <div class="container slider">--}}
-{{--                    <p>“Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: ‘Mijn weg is juist’ of ‘Mijn weg is beter’ te zeggen. Jij hebt echter niet het recht om: ‘Slechts mijn weg is juist’ te zeggen.”</p>--}}
+        {{--        <section class="white-section">--}}
+        {{--            <div class="outer-slider-box">--}}
+        {{--                <div class="container slider">--}}
+        {{--                    <p>“Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: ‘Mijn weg is juist’ of ‘Mijn weg is beter’ te zeggen. Jij hebt echter niet het recht om: ‘Slechts mijn weg is juist’ te zeggen.”</p>--}}
 
-{{--                    <p>“Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden.”</p>--}}
+        {{--                    <p>“Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden.”</p>--}}
 
-{{--                    <p>“Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste.”</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </section>--}}
+        {{--                    <p>“Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste.”</p>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </section>--}}
 
         <!-- Modal Structure -->
         <div id="leesMeerModal" class="custom-modal">

@@ -61,9 +61,9 @@
 
         <div class="desktop-navbar-container">
 
-            @if(request()->routeIs('home') || request()->routeIs('home2') || request()->routeIs('home3'))
+            @if(request()->routeIs('home'))
                 <div class="logo-container desktop">
-                    <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.png') }}" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.webp') }}" alt=""></a>
                 </div>
             @endif
 
@@ -77,7 +77,7 @@
         </div>
 
         <div class="logo-container mobile">
-            <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.png') }}" alt=""></a>
+            <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.webp') }}" alt=""></a>
         </div>
 
         <div class="navbar-cart-sidebar-toggle">
