@@ -986,6 +986,34 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (logoImg) logoImg.classList.remove('logo-hidden-img');
         }
 
+        // Handle viewport changes for responsive testing
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const current = window.scrollY || window.pageYOffset || 0;
+                const isMobile = window.innerWidth <= 992;
+                const LOGO_REAPPEAR_THRESHOLD = isMobile ? 60 : 100;
+
+                // Re-apply current scroll state with new mobile/desktop logic
+                if (current <= 0) {
+                    header.classList.remove('scrolled');
+                    if (logoContainer) logoContainer.classList.remove('logo-hidden');
+                    else if (logoImg) logoImg.classList.remove('logo-hidden-img');
+                } else if (current <= LOGO_REAPPEAR_THRESHOLD) {
+                    header.classList.remove('scrolled');
+                    if (logoContainer) logoContainer.classList.remove('logo-hidden');
+                    else if (logoImg) logoImg.classList.remove('logo-hidden-img');
+                } else {
+                    header.classList.remove('scrolled');
+                    if (logoContainer) logoContainer.classList.add('logo-hidden');
+                    else if (logoImg) logoImg.classList.add('logo-hidden-img');
+                }
+
+                if (DEBUG_HEADER) console.debug('[header] viewport changed', { current, isMobile, threshold: LOGO_REAPPEAR_THRESHOLD });
+            }, 150);
+        });
+
         window.addEventListener('scroll', () => {
             if (ticking) return;
             ticking = true;
@@ -1010,12 +1038,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (logoContainer) logoContainer.classList.add('logo-hidden');
                     else if (logoImg) logoImg.classList.add('logo-hidden-img');
                     if (DEBUG_HEADER) console.debug('[header] down: add scrolled, logo hidden', { current, lastScroll });
-                } else {
-                    // scrolling up -> restore header position and show logo
-                    header.classList.remove('scrolled');
-                    if (logoContainer) logoContainer.classList.remove('logo-hidden');
-                    else if (logoImg) logoImg.classList.remove('logo-hidden-img');
-                    if (DEBUG_HEADER) console.debug('[header] up: remove scrolled, logo visible', { current, lastScroll });
+                } else if (current < lastScroll) {
+                    // scrolling up -> check if close enough to top to show logo
+                    const isMobile = window.innerWidth <= 992;
+                    const LOGO_REAPPEAR_THRESHOLD = isMobile ? 60 : 100;
+
+                    if (current <= LOGO_REAPPEAR_THRESHOLD) {
+                        // close to top -> show logo
+                        header.classList.remove('scrolled');
+                        if (logoContainer) logoContainer.classList.remove('logo-hidden');
+                        else if (logoImg) logoImg.classList.remove('logo-hidden-img');
+                        if (DEBUG_HEADER) console.debug('[header] up near top: show logo', { current, lastScroll, isMobile, threshold: LOGO_REAPPEAR_THRESHOLD });
+                    } else {
+                        // scrolling up but still far from top -> show header but keep logo hidden
+                        header.classList.remove('scrolled');
+                        if (logoContainer) logoContainer.classList.add('logo-hidden');
+                        else if (logoImg) logoImg.classList.add('logo-hidden-img');
+                        if (DEBUG_HEADER) console.debug('[header] up far from top: hide logo', { current, lastScroll, isMobile, threshold: LOGO_REAPPEAR_THRESHOLD });
+                    }
                 }
 
                 lastScroll = current;
