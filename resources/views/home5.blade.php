@@ -1,7 +1,8 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/bg-ustadh_2.png') }}');">
+
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/background-new-first.png') }}');">
 
             <section class="home-hero">
 
@@ -59,7 +60,6 @@
 
             </section>
         </div>
-        <div class="gradient-border"></div>
 
         <section class="white-section below-books">
             <div class="container"></div>
@@ -76,16 +76,13 @@
             </div>
         </section>
 
-        <div class="gradient-border"></div>
-
-
         <section class="colored-section">
             <div class="container new-translation">
                 <h2 class="title">Onze Nieuwste Vertaling:<br>Het Traktaat over de Herzameling</h2>
                 <div class="divider"></div>
                 <div class="sub-text">
                     <p>
-                        Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk.
+                        Het Traktaat over de Herzameling uit de Risale-i Nur toont met krachtige bewijzen uit natuur en openbaring dat de wederopstanding noodzakelijk, mogelijk en rechtvaardig is—en biedt zo helderheid, zekerheid en hoop voor wie bewust wil geloven.
                     </p>
                 </div>
                 <div class="home-book-grid">
