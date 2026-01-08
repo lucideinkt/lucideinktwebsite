@@ -1,17 +1,17 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/newest-background_2.png') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/003_background.webp') }}');">
 
             <section class="home-hero">
 
-{{--                <div class="ustadh-image">--}}
-{{--                    <img src="{{ asset('images/ustadh-half.png') }}" alt="ustadh">--}}
-{{--                </div>--}}
+                {{--                <div class="ustadh-image">--}}
+                {{--                    <img src="{{ asset('images/ustadh-half.png') }}" alt="ustadh">--}}
+                {{--                </div>--}}
 
-{{--                <div class="book-image">--}}
-{{--                    <img class="book-shot d" src="{{ asset('images/hero-books.png') }}" alt="">--}}
-{{--                </div>--}}
+                {{--                <div class="book-image">--}}
+                {{--                    <img class="book-shot d" src="{{ asset('images/hero-books.png') }}" alt="">--}}
+                {{--                </div>--}}
 
                 <div class="clock-image">
 
@@ -59,10 +59,7 @@
 
             </section>
         </div>
-
-        <section class="white-section below-books">
-            <div class="container"></div>
-        </section>
+        <div class="gradient-border"></div>
 
         <section class="home white-section intro-section">
             <div class="text-container">
@@ -75,39 +72,42 @@
             </div>
         </section>
 
+        <div class="gradient-border"></div>
+
+
         <section class="colored-section">
             <div class="container new-translation">
-                <h2 class="title">Onze Nieuwste Vertaling:<br>Het Traktaat over de Herzameling</h2>
+                <h2 class="title">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span class="title-in"></span>g</h2>
                 <div class="divider"></div>
                 <div class="sub-text">
                     <p>
-                        Het Traktaat over de Herzameling uit de Risale-i Nur toont met krachtige bewijzen uit natuur en openbaring dat de wederopstanding noodzakelijk, mogelijk en rechtvaardig is—en biedt zo helderheid, zekerheid en hoop voor wie bewust wil geloven.
+                        Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk.
                     </p>
                 </div>
                 <div class="home-book-grid">
-                    <div class="book">
-                        <img src="{{ asset('images/books/herzameling/herzameling_front_NL_PS.png') }}" alt="">
+                    <div class="book one">
+                        <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="">
                         <p class="under-text">- Nederlands -</p>
                         <a href="#">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
-                    <div class="book">
-                        <img src="{{ asset('images/books/herzameling/herzameling_front_NL-TR_PS.png') }}" alt="">
+                    <div class="book two">
+                        <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}" alt="">
                         <p class="under-text">- Nederlands  & Turks -</p>
                         <a href="#">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
-                    <div class="book">
-                        <img src="{{ asset('images/books/herzameling/herzameling_front_EN_PS.png') }}" alt="">
+                    <div class="book three">
+                        <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="">
                         <p class="under-text">- Engels -</p>
                         <a href="#">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
-                    <div class="book">
-                        <img src="{{ asset('images/books/herzameling/herzameling_front_EN-TR_PS.png') }}" alt="">
+                    <div class="book four">
+                        <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="">
                         <p class="under-text">- Engels & Turks -</p>
                         <a href="#">
                             <button class="btn">Bekijken</button>
@@ -117,34 +117,36 @@
             </div>
         </section>
 
-        <section class="colored-section books">
-                <div class="container risale">
-                    <div class="first">
-                        <h2 class="title">Wat is de Risale-i Nur?</h2>
-                        <p class="sub-text">
-                            Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
-                        </p>
-                        <a href="#">
-                            <button class="btn">...Lees Meer</button>
-                        </a>
-                    </div>
-                    <div class="second">
-                        <img src="{{ asset('images/standing.png') }}" alt="">
-                    </div>
-                </div>
-        </section>
+        <div class="gradient-border"></div>
 
-        <section class="white-section">
-            <div class="outer-slider-box">
-                <div class="container slider">
-                    <p>“Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: ‘Mijn weg is juist’ of ‘Mijn weg is beter’ te zeggen. Jij hebt echter niet het recht om: ‘Slechts mijn weg is juist’ te zeggen.”</p>
+        {{--        <section class="colored-section books">--}}
+        {{--                <div class="container risale">--}}
+        {{--                    <div class="first">--}}
+        {{--                        <h2 class="title">Wat is de Risale-i Nur?</h2>--}}
+        {{--                        <p class="sub-text">--}}
+        {{--                            Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.--}}
+        {{--                        </p>--}}
+        {{--                        <a href="#">--}}
+        {{--                            <button class="btn">...Lees Meer</button>--}}
+        {{--                        </a>--}}
+        {{--                    </div>--}}
+        {{--                    <div class="second">--}}
+        {{--                        <img src="{{ asset('images/standing.png') }}" alt="">--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--        </section>--}}
 
-                    <p>“Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden.”</p>
+        {{--        <section class="white-section">--}}
+        {{--            <div class="outer-slider-box">--}}
+        {{--                <div class="container slider">--}}
+        {{--                    <p>“Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: ‘Mijn weg is juist’ of ‘Mijn weg is beter’ te zeggen. Jij hebt echter niet het recht om: ‘Slechts mijn weg is juist’ te zeggen.”</p>--}}
 
-                    <p>“Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste.”</p>
-                </div>
-            </div>
-        </section>
+        {{--                    <p>“Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden.”</p>--}}
+
+        {{--                    <p>“Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste.”</p>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </section>--}}
 
         <!-- Modal Structure -->
         <div id="leesMeerModal" class="custom-modal">
