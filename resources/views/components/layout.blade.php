@@ -61,7 +61,7 @@
 
         <div class="desktop-navbar-container">
 
-            @if(request()->routeIs('home'))
+            @if(request()->routeIs('home') || request()->routeIs('home2') || request()->routeIs('home3'))
                 <div class="logo-container desktop">
                     <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.png') }}" alt=""></a>
                 </div>
