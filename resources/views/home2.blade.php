@@ -15,9 +15,8 @@
 
                 <div class="clock-image">
 
-                    <div class="hero-section" style="position: relative; overflow: visible;">
-                        <img class="hero-bg-img" src="{{ asset('images/sun_clock_new_3.png') }}" alt=""
-                             style="position: absolute; left: 47%; top: 53%; transform: translate(-50%, -50%); width: 190%; height: auto; pointer-events: none; z-index: -1;">
+                    <img class="hero-bg-img" src="{{ asset('images/001_sun_clock_background.webp') }}" alt=""
+                         style="position: absolute; left: 49%; top: 51.5%; transform: translate(-50%, -50%); width: 150%; height: auto; pointer-events: none; z-index: -1;">
 
                         <!-- Achterste laag: draaiende rotor -->
                         <div class="layer layer-rotor">
