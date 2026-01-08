@@ -155,6 +155,13 @@ i {
     text-underline-offset: 6px;
 }
 
+/* Ensure active styling works for desktop navbar */
+.desktop-navbar-container a.active,
+.desktop-navbar-container .nav-item a.active {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+}
+
 .text-container {
     max-width: 800px;
     padding: 0 15px;
@@ -576,14 +583,16 @@ thead {
     justify-content: center;
     /*gap:40px;*/
     flex-direction: column;
+    pointer-events: auto;
 }
 
 .desktop-navbar-container .navbar-glow img {
     width: 500px;
     position: relative;
-    z-index: 5;
+    z-index: 40;
     top: -19px;
     opacity: 70%;
+    pointer-events: none;
     /*left: -100px;*/
 }
 
@@ -593,17 +602,17 @@ thead {
     padding-top: 13px;
     padding-bottom: 12px;
     border-radius: 50px;
-    z-index: 0;
+    z-index: 30;
     overflow: hidden;
     /*background-color:var(--surface-2);*/
     background-image: url("../images/001_leather_background.webp");
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
-    pointer-events: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-top: 20px;
     border: 4px solid #f5dfac;
+    pointer-events: auto;
 }
 
 .desktop-navbar-container .navbar::before {
@@ -613,16 +622,18 @@ thead {
     background-size: cover;
     background-position: center;
     opacity: .2;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
 }
 
 .desktop-navbar-container a,
 .desktop-navbar-container .fa-solid {
     position: relative;
-    z-index: 1;
+    z-index: 100;
     font-size: 20px;
-    color: rgb(245, 223, 172)
+    color: rgb(245, 223, 172);
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .desktop-navbar-container a {
@@ -631,7 +642,10 @@ thead {
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgb(245, 223, 172)
+    color: rgb(245, 223, 172);
+    pointer-events: auto;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .desktop-navbar-container a .first-letter {
@@ -640,7 +654,16 @@ thead {
 
 .desktop-navbar-container .nav-item a {
     position: relative;
-    z-index: 10;
+    z-index: 101;
+    pointer-events: auto;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.desktop-navbar-container .nav-item {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto;
 }
 
 .nav-item .fa-gauge {
