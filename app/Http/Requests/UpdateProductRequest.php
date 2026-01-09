@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use App\Models\Product;
+use App\Models\ProductCopy;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Validator;
 
 class UpdateProductRequest extends FormRequest
 {
@@ -41,6 +43,47 @@ class UpdateProductRequest extends FormRequest
             'image_2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
             'image_3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
             'image_4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
+        ];
+    }
+
+    /**
+     * Get the "after" validation callables for the request.
+     *
+     * @return array
+     */
+    public function after(): array
+    {
+        return [
+            function (Validator $validator) {
+                $validated = $validator->validated();
+                $title = trim($validated['title'] ?? '');
+                
+                if (empty($title)) {
+                    return;
+                }
+
+                $productId = $this->route('id');
+                $copy = !empty($validated['product_copy_id'])
+                    ? ProductCopy::find($validated['product_copy_id'])
+                    : null;
+
+                // base_title altijd zonder exemplaar
+                if ($copy && $copy->name) {
+                    $baseTitle = preg_replace('/\s*-\s*'.preg_quote($copy->name, '/').'$/iu', '', $title);
+                } else {
+                    $baseTitle = $title;
+                }
+
+                // title = base_title + exemplaar (indien aanwezig)
+                if ($copy && $copy->name) {
+                    $title = $baseTitle.' - '.$copy->name;
+                }
+
+                // Uniekheid check (exclude current product)
+                if (Product::where('title', $title)->whereNull('deleted_at')->where('id', '!=', $productId)->exists()) {
+                    $validator->errors()->add('title', 'Deze producttitel bestaat al.');
+                }
+            }
         ];
     }
 
