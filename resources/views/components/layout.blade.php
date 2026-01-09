@@ -38,14 +38,22 @@
     {{-- Adobe stylesheet fonts --}}
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
 
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    {{-- Polyfill for crypto.randomUUID --}}
+    <script>
+        if (!window.crypto || !window.crypto.randomUUID) {
+            if (!window.crypto) window.crypto = {};
+            window.crypto.randomUUID = function() {
+                return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+                    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+                );
+            };
+        }
+    </script>
+
+    @vite(['resources/js/main.js', 'resources/css/app.css'])
 </head>
 
 <body style="position: relative;">
-{{--    <div--}}
-{{--        style="position: fixed; inset: 0; z-index: 40; background-image: url('{{ asset('images/sand-texture-min.webp') }}'); background-size: cover; background-position: center; opacity: 0.1; pointer-events: none;">--}}
-{{--    </div>--}}
-
 <header class="header">
     <div class="header-box">
         <div class="navbar-cart-sidebar-toggle">
@@ -61,9 +69,9 @@
 
         <div class="desktop-navbar-container">
 
-            @if(request()->routeIs('home') || request()->routeIs('home2'))
+            @if(request()->routeIs('home'))
                 <div class="logo-container desktop">
-                    <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.png') }}" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.webp') }}" alt=""></a>
                 </div>
             @endif
 
@@ -77,7 +85,7 @@
         </div>
 
         <div class="logo-container mobile">
-            <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.png') }}" alt=""></a>
+            <a href="{{ route('home') }}"><img src="{{ url('/images/logo_new_2.webp') }}" alt=""></a>
         </div>
 
         <div class="navbar-cart-sidebar-toggle">
@@ -143,10 +151,25 @@
         splide.mount();
     }
 
-    lightbox.option({
-        'albumLabel': "%1 / %2",
-        'alwaysShowNavOnTouchDevices': true
-    })
+            if (thumbnail) {
+                if (current) {
+                    current.classList.remove('is-active');
+                }
+
+                thumbnail.classList.add('is-active');
+                current = thumbnail;
+            }
+        });
+
+        splide.mount();
+    }
+
+    if (typeof lightbox !== 'undefined') {
+        lightbox.option({
+            'albumLabel': "%1 / %2",
+            'alwaysShowNavOnTouchDevices': true
+        })
+    }
 </script>
 
 </html>
