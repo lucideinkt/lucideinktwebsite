@@ -2113,11 +2113,24 @@ thead {
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.product-detail-image-wrapper .splide {
+    min-height: 400px;
+}
+
+.product-detail-image-wrapper .splide__track {
+    min-height: 400px;
+}
+
+.product-detail-image-wrapper .splide__list {
+    min-height: 400px;
+}
+
 .product-detail-image-wrapper .splide__slide {
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
+    min-height: 400px;
 }
 
 .product-detail-image-wrapper .splide__slide img {
@@ -3408,10 +3421,23 @@ thead {
 .copy-toast.show {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto; /* Enable clicking links when shown */
 }
 
 .copy-toast.error {
     background: var(--red-2);
+}
+
+.copy-toast .toast-cart-link {
+    color: var(--ink-inverse);
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.copy-toast .toast-cart-link:hover {
+    opacity: 0.8;
 }
 
 /* custom confirm modal */

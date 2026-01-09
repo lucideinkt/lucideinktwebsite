@@ -20,6 +20,7 @@ export function initLivewireCart() {
         });
     }
 
+
     // Listen for Livewire events (Livewire v3)
     if (window.Livewire) {
         Livewire.on('cart-updated', (event) => {
@@ -29,7 +30,7 @@ export function initLivewireCart() {
 
         Livewire.on('cart-success', (event) => {
             const message = event[0]?.message || event?.message || 'Product toegevoegd aan winkelwagen!';
-            window.showToast(message, false);
+            window.showToast(message, false, true); // Show with cart link
         });
 
         Livewire.on('cart-error', (event) => {
@@ -46,7 +47,7 @@ export function initLivewireCart() {
 
     window.addEventListener('cart-success', (event) => {
         const message = event.detail?.message || 'Product toegevoegd aan winkelwagen!';
-        window.showToast(message, false);
+        window.showToast(message, false, true); // Show with cart link
     });
 
     window.addEventListener('cart-error', (event) => {

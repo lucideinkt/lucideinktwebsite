@@ -8,7 +8,7 @@
                     <i class="fa-solid fa-book"></i>
                 </div>
             @endif
-            
+
             @if ($product->stock > 0 && $product->stock <= 3)
                 <div class="product-card-badge product-card-badge-warning">
                     <span>Lage voorraad</span>
@@ -35,7 +35,7 @@
                 <span class="product-card-price-amount">€{{ number_format($product->price, 2) }}</span>
             </div>
 
-            <button 
+            <button
                 type="button"
                 class="product-card-button"
                 wire:click="addToCart"
@@ -44,7 +44,7 @@
             >
                 <span wire:loading.remove wire:target="addToCart">
                     <i class="fa-solid fa-cart-plus"></i>
-                    <span>Koop nu</span>
+                    <span>Voeg toe</span>
                 </span>
                 <span wire:loading wire:target="addToCart" class="product-card-button-loading">
                     <i class="fa-solid fa-spinner fa-spin"></i>
