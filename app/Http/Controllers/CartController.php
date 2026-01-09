@@ -47,7 +47,7 @@ class CartController extends Controller
             // If we normalized keys, make sure session contains normalized cart
             session(['cart' => $cart]);
         }
-        return view('cart.index', ['cart' => $cart]);
+        return view('cart.index');
     }
 
     public function addToCart(Request $request)
