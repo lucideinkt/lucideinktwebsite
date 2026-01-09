@@ -51,6 +51,7 @@
     </script>
 
     @vite(['resources/js/main.js', 'resources/css/app.css'])
+    @livewireStyles
 </head>
 
 <body style="position: relative;">
@@ -109,60 +110,10 @@
 </div>
 
 {{ $slot }}
-</body>
+
+@livewireScripts
 
 <script>
-    const mainSlider = document.getElementById('main-slider');
-    if (mainSlider) {
-        let splide = new Splide('#main-slider', {
-            pagination: false,
-        });
-
-        let thumbnails = document.getElementsByClassName('thumbnail');
-        let productDetailThumbnails = document.getElementsByClassName('product-detail-thumbnail');
-        let thumbnailsList = thumbnails.length > 0 ? thumbnails : productDetailThumbnails;
-        let current;
-
-        for (let i = 0; i < thumbnailsList.length; i++) {
-            initThumbnail(thumbnailsList[i], i);
-        }
-
-        function initThumbnail(thumbnail, index) {
-            thumbnail.addEventListener('click', function () {
-                splide.go(index);
-            });
-        }
-
-        splide.on('mounted move', function () {
-            let thumbnail = thumbnailsList[splide.index];
-
-            if (thumbnail) {
-                if (current) {
-                    current.classList.remove('is-active');
-                    current.classList.remove('active');
-                }
-
-                thumbnail.classList.add('is-active');
-                thumbnail.classList.add('active');
-                current = thumbnail;
-            }
-        });
-
-        splide.mount();
-    }
-
-            if (thumbnail) {
-                if (current) {
-                    current.classList.remove('is-active');
-                }
-
-                thumbnail.classList.add('is-active');
-                current = thumbnail;
-            }
-        });
-
-        splide.mount();
-    }
 
     if (typeof lightbox !== 'undefined') {
         lightbox.option({
@@ -172,4 +123,5 @@
     }
 </script>
 
+</body>
 </html>

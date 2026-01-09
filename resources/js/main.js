@@ -14,6 +14,10 @@ window.axios = axios;
 import { formatEuro } from './utils/format.js';
 import { showToast } from './utils/toast.js';
 
+// Make utilities available globally
+window.formatEuro = formatEuro;
+window.showToast = showToast;
+
 // Import all features
 import { initShippingCostCalculator } from './features/shipping.js';
 import { initSidebarToggles } from './features/sidebar.js';
@@ -22,7 +26,7 @@ import { initFormLoaders } from './features/form-loader.js';
 import { initAlternateShipping } from './features/alternate-shipping.js';
 import { initOrderCalculation } from './features/order-calc.js';
 import { initCopyPaymentLink } from './features/payment-link.js';
-import { setupConfirmationModals } from './features/confirm-modal.js';
+import { setupConfirmationModals, setupLivewireConfirmations } from './features/confirm-modal.js';
 import { initDiscountCode } from './features/discount-code.js';
 import { initMyParcelWidget } from './features/myparcel.js';
 import { setupPasswordToggles } from './features/password-toggle.js';
@@ -65,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initOrderCalculation();
     initCopyPaymentLink();
     setupConfirmationModals();
+    setupLivewireConfirmations();
     initDiscountCode();
     initMyParcelWidget();
     setupPasswordToggles();
