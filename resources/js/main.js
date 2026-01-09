@@ -29,6 +29,8 @@ import { setupPasswordToggles } from './features/password-toggle.js';
 import { initAnimatedClock } from './features/clock.js';
 import { initReadMoreModal } from './features/read-more-modal.js';
 import { initHeaderScrollEffect } from './features/header-scroll.js';
+import { initShippingCost } from './features/shipping-cost.js';
+import { initLivewireCart } from './features/live-wire-cart.js';
 
 // Import observers
 import { initMutationObserver } from './observers/mutation-observer.js';
@@ -68,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMyParcelWidget();
     setupPasswordToggles();
     initAnimatedClock();
+    initLivewireCart();
     initReadMoreModal();
     initHeaderScrollEffect();
 

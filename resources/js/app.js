@@ -32,11 +32,15 @@ function showToast(message, isError = false) {
     setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
+// Expose globally for use in imported modules
+window.showToast = showToast;
+
 // ============================================================
 // AXIOS SETUP (for API requests)
 // ============================================================
 
 import axios from 'axios';
+import { initLivewireCart } from './features/live-wire-cart.js';
 
 // Set CSRF token for all API requests
 const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
@@ -1029,6 +1033,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initAnimatedClock();
+
+    // ----------------------------------------------------------
+    // LIVEWIRE CART EVENTS
+    // ----------------------------------------------------------
+
+    initLivewireCart();
 
     // ----------------------------------------------------------
     // HOME PAGE "READ MORE" MODAL
