@@ -125,44 +125,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ignore errors
     }
 
-    // ----------------------------------------------------------
-    // SIDEBAR TOGGLES
-    // ----------------------------------------------------------
+  const showToast = (msg, isError = false) => {
+    const toast = ensureToast();
+    toast.textContent = msg;
+    toast.classList.remove('show', 'error');
+    if (isError) toast.classList.add('error');
+    void toast.offsetWidth; // reflow
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  };
 
-    function initSidebarToggles() {
-        // Main sidebar
-        const sidebar = document.querySelector('.sidebar');
-        const toggleBtn = document.querySelector('.sidebar-toggle');
-        const closeBtn = document.querySelector('.close-toggle');
+  // Expose showToast globally for use in other scripts
+  window.showToast = showToast;
 
-        if (sidebar && toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
-            });
-        }
-
-        if (sidebar && closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                sidebar.classList.remove('open');
-            });
-        }
-
-        // Dashboard sidebar
-        const adminSidebar = document.querySelector('.sidebar.admin-panel');
-        const adminToggle = document.querySelector('.admin-sidebar-toggle');
-        const adminContainer = document.querySelector('.container.page.dashboard');
-
-        if (adminSidebar && adminToggle && adminContainer) {
-            adminToggle.addEventListener('click', () => {
-                adminSidebar.classList.toggle('open');
-                adminToggle.classList.toggle('open');
-                adminContainer.classList.toggle('open');
-
-                adminSidebar.classList.toggle('close');
-                adminToggle.classList.toggle('close');
-                adminContainer.classList.toggle('close');
-            });
-        }
+  // ------------------------------------------------------------
+  // Page setup
+  // ------------------------------------------------------------
+  try {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
     }
 
     initSidebarToggles();
@@ -994,14 +975,69 @@ document.addEventListener('DOMContentLoaded', () => {
         const minuteHand = document.querySelector('.css-minute-hand');
         const secondHand = document.querySelector('.css-second-hand');
 
-        if (!hourHand || !minuteHand || !secondHand) return;
+  // ------------------------------------------------------------
+  // Livewire Cart Events
+  // ------------------------------------------------------------
+  function updateCartBadge(totalQuantity) {
+    // Update all cart quantity badges
+    document.querySelectorAll('.cart-quantity').forEach(badge => {
+      if (totalQuantity > 0) {
+        badge.textContent = totalQuantity;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.textContent = '0';
+        badge.style.display = 'none';
+      }
+    });
+  }
 
-        // Speed multipliers (1 = realtime)
-        const speed = {
-            hour: 400,
-            minute: 100,
-            second: 4
-        };
+  // Listen for Livewire events (Livewire v3)
+  if (window.Livewire) {
+    Livewire.on('cart-updated', (event) => {
+      const totalQuantity = event[0]?.totalQuantity || event?.totalQuantity || 0;
+      updateCartBadge(totalQuantity);
+    });
+
+    Livewire.on('cart-success', (event) => {
+      const message = event[0]?.message || event?.message || 'Product toegevoegd aan winkelwagen!';
+      showToast(message, false);
+    });
+
+    Livewire.on('cart-error', (event) => {
+      const message = event[0]?.message || event?.message || 'Er is een fout opgetreden.';
+      showToast(message, true);
+    });
+  }
+
+  // Also listen for browser events (fallback)
+  window.addEventListener('cart-updated', (event) => {
+    const totalQuantity = event.detail?.totalQuantity || 0;
+    updateCartBadge(totalQuantity);
+  });
+
+  window.addEventListener('cart-success', (event) => {
+    const message = event.detail?.message || 'Product toegevoegd aan winkelwagen!';
+    showToast(message, false);
+  });
+
+  window.addEventListener('cart-error', (event) => {
+    const message = event.detail?.message || 'Er is een fout opgetreden.';
+    showToast(message, true);
+  });
+
+    /* ===== Realtime klok-animatie =====
+       Bereken elke frame de echte tijd → geen drift, altijd synchroon.
+       Wil je versnellen/vertragen? Zet multipliers <> 1.
+    */
+    (function(){
+        const hourEl   = document.querySelector('.css-hour-hand');
+        const minuteEl = document.querySelector('.css-minute-hand');
+        const secondEl = document.querySelector('.css-second-hand');
+
+        // Only run clock animation if all elements exist
+        if (!hourEl || !minuteEl || !secondEl) return;
+
+        const speed = { hour: 400, minute: 100, second: 4 }; // 1 = realtime
 
         function updateClock() {
             const now = new Date();
@@ -1024,51 +1060,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
             requestAnimationFrame(updateClock);
         }
+        requestAnimationFrame(frame);
+    })();
 
-        requestAnimationFrame(updateClock);
-    }
-
-    initAnimatedClock();
-
-    // ----------------------------------------------------------
-    // HOME PAGE "READ MORE" MODAL
-    // ----------------------------------------------------------
-
-    function initReadMoreModal() {
-        const modal = document.getElementById('leesMeerModal');
-        const openButton = document.getElementById('openModalBtn');
-        const closeButton = document.getElementById('closeModalBtn');
-        const content = document.getElementById('scrollModalContent');
-
-        if (!modal || !openButton || !closeButton || !content) return;
-
-        // Initially hide modal
-        modal.classList.add('hidden');
-
-        function openModal() {
+    /* Home page modal */
+    const modal = document.getElementById('leesMeerModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const scrollModalContent = document.getElementById('scrollModalContent');
+    
+    if (modal && openBtn && closeBtn && scrollModalContent) {
+        function openScrollModal() {
             modal.classList.remove('hidden');
-            void modal.offsetWidth; // Force reflow
+            // Force reflow to allow transition
+            void modal.offsetWidth;
             modal.classList.add('show');
             modal.classList.remove('fading-out');
-            content.classList.remove('close');
-
-            setTimeout(() => {
-                content.classList.add('open');
+            scrollModalContent.classList.remove('close');
+            setTimeout(function() {
+                scrollModalContent.classList.add('open');
             }, 10);
         }
-
-        function closeModal() {
-            content.classList.remove('open');
-            content.classList.add('close');
+        function closeScrollModal() {
+            scrollModalContent.classList.remove('open');
+            scrollModalContent.classList.add('close');
             modal.classList.add('fading-out');
             modal.classList.remove('show');
-
-            setTimeout(() => {
+            setTimeout(function() {
                 modal.classList.add('hidden');
                 modal.classList.remove('fading-out');
-                content.classList.remove('close');
-            }, 1100);
+                scrollModalContent.classList.remove('close');
+            }, 1100); // match the new slower transition duration
         }
+        // Initially hide modal
+        modal.classList.add('hidden');
+        openBtn.addEventListener('click', openScrollModal);
+        closeBtn.addEventListener('click', closeScrollModal);
+        window.addEventListener('click', function(e) {
+            if (e.target === modal || e.target.classList.contains('custom-modal-overlay')) {
+                closeScrollModal();
+            }
+        });
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeScrollModal();
+            }
+        });
+    }
 
         // Event listeners
         openButton.addEventListener('click', openModal);
