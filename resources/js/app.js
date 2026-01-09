@@ -32,11 +32,15 @@ function showToast(message, isError = false) {
     setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
+// Expose globally for use in imported modules
+window.showToast = showToast;
+
 // ============================================================
 // AXIOS SETUP (for API requests)
 // ============================================================
 
 import axios from 'axios';
+import { initLivewireCart } from './features/live-wire-cart.js';
 
 // Set CSRF token for all API requests
 const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
@@ -1060,17 +1064,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
             requestAnimationFrame(updateClock);
         }
-        requestAnimationFrame(frame);
-    })();
 
-    /* Home page modal */
-    const modal = document.getElementById('leesMeerModal');
-    const openBtn = document.getElementById('openModalBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const scrollModalContent = document.getElementById('scrollModalContent');
-    
-    if (modal && openBtn && closeBtn && scrollModalContent) {
-        function openScrollModal() {
+        requestAnimationFrame(updateClock);
+    }
+
+    initAnimatedClock();
+
+    // ----------------------------------------------------------
+    // LIVEWIRE CART EVENTS
+    // ----------------------------------------------------------
+
+    initLivewireCart();
+
+    // ----------------------------------------------------------
+    // HOME PAGE "READ MORE" MODAL
+    // ----------------------------------------------------------
+
+    function initReadMoreModal() {
+        const modal = document.getElementById('leesMeerModal');
+        const openButton = document.getElementById('openModalBtn');
+        const closeButton = document.getElementById('closeModalBtn');
+        const content = document.getElementById('scrollModalContent');
+
+        if (!modal || !openButton || !closeButton || !content) return;
+
+        // Initially hide modal
+        modal.classList.add('hidden');
+
+        function openModal() {
             modal.classList.remove('hidden');
             // Force reflow to allow transition
             void modal.offsetWidth;
