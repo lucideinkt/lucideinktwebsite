@@ -19,7 +19,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@3.4"></script>
   <script src="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/myparcel.lib.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/style.css" />
-  @vite(['resources/js/app.js', 'resources/css/dashboard.css'])
+  @vite(['resources/js/main.js', 'resources/css/dashboard.css'])
 </head>
 
 <body style="position: relative">

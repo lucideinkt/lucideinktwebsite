@@ -111,14 +111,12 @@
                             <strong>Betaallink:</strong>
                             <div class="payment-link-box">
 
-                                <button class="btn small" id="payment-link">
-                                    <a style="color: #fff;" href="{{ $order->payment_link }}" target="_blank">Ga naar
-                                        betaallink</a>
-                                </button>
-                                <button class="btn small" id="copy-payment-link"
+                                 <a class="btn small" id="payment-link" style="color: #fff;" href="{{ $order->payment_link }}" target="_blank">Ga naar
+                                    betaallink</a>
+                                <span class="btn small" id="copy-payment-link"
                                         data-payment-link="{{ $order->payment_link }}">
                                     Kopieer betaallink
-                                </button>
+                                </span>
                             </div>
                             </p>
                         @endif

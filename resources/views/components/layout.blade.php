@@ -38,14 +38,22 @@
     {{-- Adobe stylesheet fonts --}}
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
 
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    {{-- Polyfill for crypto.randomUUID --}}
+    <script>
+        if (!window.crypto || !window.crypto.randomUUID) {
+            if (!window.crypto) window.crypto = {};
+            window.crypto.randomUUID = function() {
+                return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+                    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+                );
+            };
+        }
+    </script>
+
+    @vite(['resources/js/main.js', 'resources/css/app.css'])
 </head>
 
 <body style="position: relative;">
-{{--    <div--}}
-{{--        style="position: fixed; inset: 0; z-index: 40; background-image: url('{{ asset('images/sand-texture-min.webp') }}'); background-size: cover; background-position: center; opacity: 0.1; pointer-events: none;">--}}
-{{--    </div>--}}
-
 <header class="header">
     <div class="header-box">
         <div class="navbar-cart-sidebar-toggle">
@@ -104,42 +112,52 @@
 </body>
 
 <script>
-    let splide = new Splide('#main-slider', {
-        pagination: false,
-    });
+    /*
+    * This is the code for the image slider on the single product page
+    * */
 
-    let thumbnails = document.getElementsByClassName('thumbnail');
-    let current;
+    const sliderElement = document.getElementById('main-slider');
 
-    for (let i = 0; i < thumbnails.length; i++) {
-        initThumbnail(thumbnails[i], i);
-    }
-
-    function initThumbnail(thumbnail, index) {
-        thumbnail.addEventListener('click', function () {
-            splide.go(index);
+    if (sliderElement) {
+        let splide = new Splide('#main-slider', {
+            pagination: false,
         });
+
+        let thumbnails = document.getElementsByClassName('thumbnail');
+        let current;
+
+        for (let i = 0; i < thumbnails.length; i++) {
+            initThumbnail(thumbnails[i], i);
+        }
+
+        function initThumbnail(thumbnail, index) {
+            thumbnail.addEventListener('click', function () {
+                splide.go(index);
+            });
+        }
+
+        splide.on('mounted move', function () {
+            let thumbnail = thumbnails[splide.index];
+
+            if (thumbnail) {
+                if (current) {
+                    current.classList.remove('is-active');
+                }
+
+                thumbnail.classList.add('is-active');
+                current = thumbnail;
+            }
+        });
+
+        splide.mount();
     }
 
-    splide.on('mounted move', function () {
-        let thumbnail = thumbnails[splide.index];
-
-        if (thumbnail) {
-            if (current) {
-                current.classList.remove('is-active');
-            }
-
-            thumbnail.classList.add('is-active');
-            current = thumbnail;
-        }
-    });
-
-    splide.mount();
-
-    lightbox.option({
-        'albumLabel': "%1 / %2",
-        'alwaysShowNavOnTouchDevices': true
-    })
+    if (typeof lightbox !== 'undefined') {
+        lightbox.option({
+            'albumLabel': "%1 / %2",
+            'alwaysShowNavOnTouchDevices': true
+        })
+    }
 </script>
 
 </html>
