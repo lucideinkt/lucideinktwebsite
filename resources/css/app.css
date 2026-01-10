@@ -1088,13 +1088,15 @@ thead {
 .white-section {
     position: relative;
     z-index: 0;
+    background-color: #F5E6CA;
+    /*#E8D5B5*/
 }
 
 .white-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/001_white_section.webp");
+    background-image: url("background-image: url("https://www.transparenttextures.com/patterns/parchment.png");");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3633,13 +3635,14 @@ thead {
 .gradient-border {
     width: 100%;
     height: 15px;
-    background: linear-gradient(
-        to right,
-        rgba(185, 165, 120, 0.9) 0%,
-        rgba(215, 198, 160, 0.9) 50%,
-        rgba(185, 165, 120, 0.9) 100%
-    );
-    /*box-shadow: 0 2px 8px rgba(120, 90, 40, 0.35);*/
+    /*background: linear-gradient(*/
+    /*    to right,*/
+    /*    rgba(185, 165, 120, 0.9) 0%,*/
+    /*    rgba(215, 198, 160, 0.9) 50%,*/
+    /*    rgba(185, 165, 120, 0.9) 100%*/
+    /*);*/
+    background-color: #C5A059;
+    box-shadow: 0 2px 8px rgba(120, 90, 40, 0.35);
     opacity: 1;
     position: relative;
     z-index: 20;
