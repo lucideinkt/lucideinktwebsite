@@ -211,7 +211,7 @@
         <section class="colored-section newsletter-section">
             <div class="container newsletter-container">
                 <div class="newsletter-content">
-                    <h2 class="newsletter-title">Schrijf je in voor onze Niewsbrief</h2>
+                    <h2 class="title newsletter-title">Schrijf je in voor onze Niewsbrief</h2>
                     <p class="newsletter-description">
                         Ontvang updates over nieuwe vertalingen, inspirerende citaten en belangrijke aankondigingen van Lucide Inkt.
                     </p>
