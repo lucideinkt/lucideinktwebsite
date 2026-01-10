@@ -1096,11 +1096,11 @@ thead {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("background-image: url("https://www.transparenttextures.com/patterns/parchment.png");");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    pointer-events: none;
+    /*background-image: url("../images/001_white_section.webp");*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*pointer-events: none;*/
     z-index: -1;
 }
 
@@ -1151,6 +1151,11 @@ thead {
     font-size: 50px;
     font-weight: 300;
     margin-bottom: 20px;
+    color: #620505;
+    filter:
+    drop-shadow(1px 1px 0 #580404)
+    drop-shadow(1px 1px 0 #4a0303)
+    drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
 }
 
 .home.intro-section .title .title-u:before {
