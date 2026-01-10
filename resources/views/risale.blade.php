@@ -2,4 +2,5 @@
 <main class="container page">
     <h2>Risale-i Nur</h2>
 </main>
+    <x-footer></x-footer>
 </x-layout>
