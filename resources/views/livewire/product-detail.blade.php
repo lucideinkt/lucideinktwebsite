@@ -45,48 +45,90 @@
             <h1 class="product-detail-title">{{ $product->title }}</h1>
         </div>
 
-        <div class="product-detail-price-section">
-            <span class="product-detail-price">€{{ number_format($product->price, 2) }}</span>
-            @if ($product->stock > 0 && $product->stock <= 3)
-                <span class="product-detail-stock-badge product-detail-stock-warning">Lage voorraad</span>
-            @elseif ($product->stock == 0)
-                <span class="product-detail-stock-badge product-detail-stock-error">Niet op voorraad</span>
+        <div class="product-detail-price-wrapper">
+            <div class="product-detail-price-section">
+                <span class="product-detail-price">€{{ number_format($product->price, 2) }}</span>
+                @if ($product->stock > 0 && $product->stock <= 3)
+                    <span class="product-detail-stock-badge product-detail-stock-warning">Lage voorraad</span>
+                @elseif ($product->stock == 0)
+                    <span class="product-detail-stock-badge product-detail-stock-error">Niet op voorraad</span>
+                @endif
+            </div>
+
+            @if ($product->short_description)
+                <div class="product-detail-short-description">
+                    <p>{{ $product->short_description }}</p>
+                </div>
             @endif
+
+            <div class="product-detail-form">
+                <div class="product-detail-quantity">
+                    <label for="quantity">Aantal</label>
+                    <select wire:model="quantity" id="quantity" class="product-detail-quantity-select">
+                        @for ($i = 1; $i <= 10; $i++)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    class="product-detail-add-to-cart"
+                    wire:click="addToCart"
+                    wire:loading.attr="disabled"
+                    @if($product->stock == 0) disabled @endif
+                >
+                    <span wire:loading.remove wire:target="addToCart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Aan winkelwagen toevoegen</span>
+                    </span>
+                    <span wire:loading wire:target="addToCart">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        <span>Toevoegen...</span>
+                    </span>
+                </button>
+            </div>
         </div>
+
+        {{-- Product Details / Book Information --}}
+        @if ($product->pages || $product->binding_type || $product->ean_code)
+            <div class="product-detail-specifications">
+                <div class="product-detail-book-info">
+                    @if ($product->pages)
+                        <div class="product-detail-info-item">
+                            <span class="product-detail-info-label">Aantal pagina's</span>
+                            <span class="product-detail-info-value">{{ $product->pages }}</span>
+                        </div>
+                    @endif
+                    @if ($product->binding_type)
+                        <div class="product-detail-info-item">
+                            <span class="product-detail-info-label">Uitvoering</span>
+                            <span class="product-detail-info-value">
+                                @if($product->binding_type === 'hardcover')
+                                    Hardcover
+                                @elseif($product->binding_type === 'softcover')
+                                    Softcover
+                                @else
+                                    {{ $product->binding_type }}
+                                @endif
+                            </span>
+                        </div>
+                    @endif
+                    @if ($product->ean_code)
+                        <div class="product-detail-info-item">
+                            <span class="product-detail-info-label">EAN Code</span>
+                            <span class="product-detail-info-value">{{ $product->ean_code }}</span>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        @endif
 
         @if ($product->long_description)
             <div class="product-detail-description">
                 <p>{{ $product->long_description }}</p>
             </div>
         @endif
-
-        <div class="product-detail-form">
-            <div class="product-detail-quantity">
-                <label for="quantity">Aantal</label>
-                <select wire:model="quantity" id="quantity" class="product-detail-quantity-select">
-                    @for ($i = 1; $i <= 10; $i++)
-                        <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-                </select>
-            </div>
-
-            <button
-                type="button"
-                class="product-detail-add-to-cart"
-                wire:click="addToCart"
-                wire:loading.attr="disabled"
-                @if($product->stock == 0) disabled @endif
-            >
-                <span wire:loading.remove wire:target="addToCart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <span>Aan winkelwagen toevoegen</span>
-                </span>
-                <span wire:loading wire:target="addToCart">
-                    <i class="fa-solid fa-spinner fa-spin"></i>
-                    <span>Toevoegen...</span>
-                </span>
-            </button>
-        </div>
     </div>
 </div>
 

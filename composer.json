@@ -15,7 +15,8 @@
         "maatwebsite/excel": "^3.1",
         "mollie/laravel-mollie": "^3.1",
         "myparcelnl/sdk": "^10.1",
-        "nesbot/carbon": "^3.10"
+        "nesbot/carbon": "^3.10",
+        "ralphjsmit/laravel-seo": "^1.7"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.16",

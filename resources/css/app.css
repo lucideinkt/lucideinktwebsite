@@ -745,21 +745,38 @@ thead {
     display: none;
 }
 
+.navbar-cart-sidebar-toggle .nav-item.cart a,
+.nav-item.cart a {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    line-height: 1;
+}
+
 .fa-cart-shopping {
     color: var(--main-font-color);
-    position: relative;
-    top: 2px;
+    font-size: 1.25rem;
+    display: inline-block;
 }
 
 .cart-quantity {
-    background: var(--main-color);
-    color: var(--ink-inverse);
-    font-size: 14px;
-    padding: 3px;
-    border-radius: 4px;
-    position: relative;
-    left: -10px;
-    top: -10px;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #dc2626;
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 3px 4px;
+    border-radius: 50%;
+    min-width: 18px;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================================
@@ -1153,9 +1170,7 @@ thead {
     margin-bottom: 20px;
     color: #620505;
     filter:
-    drop-shadow(1px 1px 0 #580404)
-    drop-shadow(1px 1px 0 #4a0303)
-    drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
+        drop-shadow(1px 1px 0 #580404) drop-shadow(1px 1px 0 #4a0303) drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
 }
 
 .home.intro-section .title .title-u:before {
@@ -2113,11 +2128,11 @@ thead {
 }
 
 .product-detail-image-wrapper {
-    background: #fbf3e4;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
 }
 
 .product-detail-image-wrapper .splide {
@@ -2145,7 +2160,7 @@ thead {
     height: auto;
     max-height: 600px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 .product-detail-thumbnails {
@@ -2162,12 +2177,12 @@ thead {
     flex-shrink: 0;
     width: 80px;
     height: 80px;
-    border-radius: 8px;
+    border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
     border: 2px solid transparent;
-    background: #fbf3e4;
-    padding: 4px;
+    background: transparent;
+    padding: 0;
 }
 
 .product-detail-thumbnail.active,
@@ -2187,8 +2202,8 @@ thead {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #fbf3e4;
-    border-radius: 16px;
+    background: transparent;
+    border-radius: 0;
     padding: 60px 24px;
     min-height: 400px;
     color: rgba(0, 0, 0, 0.3);
@@ -2217,15 +2232,16 @@ thead {
 }
 
 .product-detail-category {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     color: var(--ink-muted);
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
+    margin-bottom: 0;
 }
 
 .product-detail-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--main-font-color);
     line-height: 1.3;
@@ -2233,27 +2249,47 @@ thead {
     word-break: break-word;
 }
 
+.product-detail-price-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 .product-detail-price-section {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .product-detail-price {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 700;
     color: var(--main-font-color);
-    letter-spacing: 0.01em;
+    letter-spacing: -0.02em;
+}
+
+.product-detail-short-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    margin-top: -4px;
+}
+
+.product-detail-short-description p {
+    margin: 0;
 }
 
 .product-detail-stock-badge {
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
 .product-detail-stock-warning {
@@ -2266,10 +2302,46 @@ thead {
     color: var(--ink-inverse);
 }
 
+.product-detail-specifications {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.product-detail-book-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 0;
+}
+
+.product-detail-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+}
+
+.product-detail-info-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: auto;
+}
+
+.product-detail-info-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--main-font-color);
+}
+
 .product-detail-description {
-    font-size: 1.05rem;
+    font-size: 0.9375rem;
     line-height: 1.7;
     color: var(--main-font-color);
+    margin-top: 4px;
 }
 
 .product-detail-description p {
@@ -2278,37 +2350,41 @@ thead {
 
 .product-detail-form {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 8px;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 0;
 }
 
 .product-detail-quantity {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    flex-shrink: 0;
 }
 
 .product-detail-quantity label {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--main-font-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .product-detail-quantity-select {
-    width: 100px;
-    padding: 10px 14px;
+    width: 70px;
+    padding: 10px 12px;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
+    border-radius: 6px;
     background: var(--surface-1);
     color: var(--main-font-color);
-    font-size: 1rem;
+    font-size: 0.9375rem;
     cursor: pointer;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 36px;
+    background-position: right 10px center;
+    padding-right: 32px;
 }
 
 .product-detail-quantity-select:focus {
@@ -2321,17 +2397,23 @@ thead {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 14px 28px;
+    gap: 8px;
+    padding: 12px 24px;
     background: var(--green-1);
     color: var(--ink-inverse);
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 6px;
+    font-size: 0.9375rem;
     font-weight: 600;
     cursor: pointer;
-    width: 100%;
-    max-width: 400px;
+    flex: 1;
+    min-width: 180px;
+    transition: background 0.2s ease;
+}
+
+.product-detail-add-to-cart:hover:not(:disabled) {
+    background: var(--green-1);
+    opacity: 0.9;
 }
 
 .product-detail-add-to-cart:disabled {
@@ -2341,7 +2423,7 @@ thead {
 }
 
 .product-detail-add-to-cart i {
-    font-size: 1rem;
+    font-size: 0.9375rem;
     color: inherit;
 }
 
@@ -2483,11 +2565,32 @@ thead {
     }
 
     .product-detail-title {
-        font-size: 1.75rem;
+        font-size: 1.625rem;
     }
 
     .product-detail-price {
-        font-size: 1.75rem;
+        font-size: 1.625rem;
+    }
+
+    .product-detail-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .product-detail-quantity {
+        width: 100%;
+    }
+
+    .product-detail-quantity-select {
+        width: 100%;
+    }
+
+    .product-detail-add-to-cart {
+        width: 100%;
+    }
+
+    .product-detail-book-info {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -2497,7 +2600,7 @@ thead {
     }
 
     .product-detail-image-wrapper {
-        padding: 16px;
+        padding: 0;
     }
 
     .product-detail-title {
@@ -2508,8 +2611,12 @@ thead {
         font-size: 1.5rem;
     }
 
+    .product-detail-price-wrapper {
+        padding: 20px 0;
+    }
+
     .product-detail-add-to-cart {
-        max-width: 100%;
+        width: 100%;
     }
 }
 
@@ -3432,7 +3539,8 @@ thead {
 .copy-toast.show {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto; /* Enable clicking links when shown */
+    pointer-events: auto;
+    /* Enable clicking links when shown */
 }
 
 .copy-toast.error {
