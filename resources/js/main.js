@@ -34,6 +34,7 @@ import { initAnimatedClock } from './features/clock.js';
 import { initReadMoreModal } from './features/read-more-modal.js';
 import { initHeaderScrollEffect } from './features/header-scroll.js';
 import { initLivewireCart } from './features/live-wire-cart.js';
+import { initContactForm } from './features/contact-form.js';
 
 // Import observers
 import { initMutationObserver } from './observers/mutation-observer.js';
@@ -77,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLivewireCart();
     initReadMoreModal();
     initHeaderScrollEffect();
+    initContactForm();
 
     // Initialize observer (must be last)
     initMutationObserver();

@@ -1,18 +1,4 @@
 <div class="contact-form-wrapper">
-    @if (session()->has('contact-success'))
-        <div class="alert alert-success" style="position: relative; margin-bottom: 24px;">
-            {{ session('contact-success') }}
-            <button type="button" class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
-        </div>
-    @endif
-
-    @if (session()->has('contact-error'))
-        <div class="alert alert-error" style="position: relative; margin-bottom: 24px;">
-            {{ session('contact-error') }}
-            <button type="button" class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
-        </div>
-    @endif
-
     <div class="contact-form-box">
         <form wire:submit.prevent="submit" class="contact-form">
             <div class="form-input">

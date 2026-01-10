@@ -76,8 +76,7 @@ class ContactForm extends Component
             $this->success = true;
             $this->reset(['name', 'email', 'country', 'subject', 'message']);
             
-            session()->flash('contact-success', 'Bedankt! Uw bericht is verzonden. We nemen zo spoedig mogelijk contact met u op.');
-            $this->dispatch('contact-form-submitted');
+            $this->dispatch('contact-success', message: 'Bedankt! Uw bericht is verzonden. We nemen zo spoedig mogelijk contact met u op.');
         } catch (\Exception $e) {
             Log::error('Contact form error: ' . $e->getMessage(), [
                 'exception' => $e,
@@ -85,7 +84,7 @@ class ContactForm extends Component
                 'name' => $this->name,
                 'email' => $this->email,
             ]);
-            session()->flash('contact-error', 'Er is een fout opgetreden bij het verzenden van uw bericht. Probeer het later opnieuw of neem contact op via ' . config('mail.from.address', 'info@lucideinkt.nl'));
+            $this->dispatch('contact-error', message: 'Er is een fout opgetreden bij het verzenden van uw bericht. Probeer het later opnieuw.');
         }
     }
 
