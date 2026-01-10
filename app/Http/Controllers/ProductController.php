@@ -9,116 +9,17 @@ use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Services\ImageCompressionService;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Encoders\JpegEncoder;
-use Intervention\Image\Encoders\PngEncoder;
-use Intervention\Image\Encoders\WebpEncoder;
 
 class ProductController extends Controller
 {
-    public function __construct()
+    protected ImageCompressionService $imageCompressionService;
+
+    public function __construct(ImageCompressionService $imageCompressionService)
     {
         $this->middleware(['auth', 'role:admin']);
-    }
-
-    // Helper to compress and store an uploaded image so it's <= 1 MB when possible
-    private function compressAndStore($file)
-    {
-        if (!$file) {
-            return null;
-        }
-
-        // Preserve SVGs as-is (Intervention rasterizes vector images)
-        $mime = $file->getMimeType();
-        if ($mime === 'image/svg+xml') {
-            return $file->store('product_images', 'public');
-        }
-
-        try {
-            // Instantiate ImageManager (prefer imagick if available)
-            if (extension_loaded('imagick')) {
-                $manager = ImageManager::imagick();
-            } else {
-                $manager = ImageManager::gd();
-            }
-
-            // Use v3 API: read() to create image instance and orient() to fix rotation
-            $image = $manager->read($file->getRealPath())->orient();
-        } catch (\Exception $e) {
-            // If processing fails, fallback to storing original upload
-            return $file->store('product_images', 'public');
-        }
-
-        $targetMaxBytes = 1024 * 1024; // 1 MB
-        $originalWidth = $image->width();
-        $originalHeight = $image->height();
-
-        $scale = 1.0;
-        $quality = 90;
-        $finalEncoded = null;
-        $usedEncoder = 'jpg';
-
-        // If PNG, try to preserve transparency: prefer WebP (if supported) or PNG indexed encoding
-        $isPng = in_array($mime, ['image/png'], true);
-        $canUseWebp = extension_loaded('imagick') || function_exists('imagewebp');
-
-        // Progressive strategy: reduce quality first (for lossy encoders), then dimensions
-        while (true) {
-            $tmp = clone $image;
-            $newWidth = (int) max(1, $originalWidth * $scale);
-            $newHeight = (int) max(1, $originalHeight * $scale);
-
-            $tmp->resize($newWidth, $newHeight, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-
-            if ($isPng) {
-                // Prefer WebP for smaller size when available (WebP supports alpha)
-                if ($canUseWebp) {
-                    $encoded = (string) $tmp->encode(new WebpEncoder($quality));
-                    $usedEncoder = 'webp';
-                } else {
-                    // Use indexed PNG to try to reduce size while preserving alpha
-                    $encoded = (string) $tmp->encode(new PngEncoder(true, true));
-                    $usedEncoder = 'png';
-                }
-            } else {
-                // Encode as JPEG for strong compression (most uploads are photos)
-                $encoded = (string) $tmp->encode(new JpegEncoder($quality));
-                $usedEncoder = 'jpg';
-            }
-
-            $size = strlen($encoded);
-
-            if ($size <= $targetMaxBytes) {
-                $finalEncoded = $encoded;
-                break;
-            }
-
-            if (!$isPng && $quality > 30) {
-                $quality -= 5;
-                continue;
-            }
-
-            if ($scale > 0.5) {
-                $scale -= 0.1; // reduce dimensions by 10%
-                $quality = 80; // restore quality for the new size
-                continue;
-            }
-
-            // If we can't get under 1MB, accept the best effort
-            $finalEncoded = $encoded;
-            break;
-        }
-
-        // Save with a unique filename and correct extension
-        $ext = $usedEncoder === 'webp' ? 'webp' : ($usedEncoder === 'png' ? 'png' : 'jpg');
-        $filename = 'product_images/' . time() . '_' . Str::random(8) . '.' . $ext;
-        Storage::disk('public')->put($filename, $finalEncoded);
-
-        return $filename;
+        $this->imageCompressionService = $imageCompressionService;
     }
 
     /**
@@ -178,16 +79,6 @@ class ProductController extends Controller
             $title = $baseTitle.' - '.$copy->name;
         }
 
-        // Uniekheid check
-        /*
-         * This regex removes a suffix from $title that matches " - <copy name>" (with optional spaces around the dash), where \<copy name\> is the value of $copy->name.
-          It matches any whitespace, a dash, more whitespace, then the copy name at the end of the string (case-insensitive, Unicode).
-          For example, if $title is Book - Special Edition and $copy->name is Special Edition, it will return Book.
-         * */
-        if (Product::where('title', $title)->whereNull('deleted_at')->exists()) {
-            return back()->withInput()->withErrors(['title' => 'Deze producttitel bestaat al.']);
-        }
-
         // Slug genereren
         $slug = Str::slug($title);
         $originalSlug = $slug;
@@ -200,7 +91,7 @@ class ProductController extends Controller
         for ($i = 1; $i <= 4; $i++) {
             $imageField = 'image_'.$i;
             if ($request->hasFile($imageField)) {
-                $validated[$imageField] = $this->compressAndStore($request->file($imageField));
+                $validated[$imageField] = $this->imageCompressionService->compressAndStore($request->file($imageField));
             }
         }
 
@@ -279,11 +170,6 @@ class ProductController extends Controller
             $title = $baseTitle.' - '.$copy->name;
         }
 
-        // Uniekheid check
-        if (Product::where('title', $title)->whereNull('deleted_at')->where('id', '!=', $product->id)->exists()) {
-            return back()->withInput()->withErrors(['title' => 'Deze producttitel bestaat al.']);
-        }
-
         // Slug genereren
         $slug = Str::slug($title);
         $originalSlug = $slug;
@@ -306,7 +192,7 @@ class ProductController extends Controller
                 if (!empty($product->$imageField) && Storage::disk('public')->exists($product->$imageField)) {
                     Storage::disk('public')->delete($product->$imageField);
                 }
-                $validated[$imageField] = $this->compressAndStore($request->file($imageField));
+                $validated[$imageField] = $this->imageCompressionService->compressAndStore($request->file($imageField));
             } else {
                 $validated[$imageField] = $product->$imageField;
             }
