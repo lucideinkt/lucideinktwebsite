@@ -1305,13 +1305,10 @@ thead {
 }
 
 .newsletter-title {
-    font-family: var(--font-herina);
-    font-weight: 400;
-    font-size: 42px;
     color: #fff6e0;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
     margin-top: 0 !important;
+    text-align: center;
+    font-size: 32px !important;
 }
 
 .newsletter-description {
@@ -1393,10 +1390,6 @@ thead {
 
     .newsletter-icon {
         font-size: 50px;
-    }
-
-    .newsletter-title {
-        font-size: 32px;
     }
 
     .newsletter-description {
@@ -1642,10 +1635,6 @@ thead {
 
 .risale-section .risale-content .title {
     text-align: left;
-    margin-bottom: 20px;
-    font-family: var(--font-herina);
-    font-size: 50px;
-    font-weight: 400;
 }
 
 .risale-section .risale-content .sub-text {
@@ -1734,6 +1723,14 @@ thead {
     }
 }
 
+/* Universal Title Styling - applies to all .title elements on homepage */
+.title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
 
 .home.intro-section .title {
     font-family: var(--font-herina);
@@ -4788,7 +4785,8 @@ thead {
         padding-bottom: 30px;
     }
 
-    .home.intro-section .title {
+    .home.intro-section .title,
+    .title {
         font-size: 32px;
         margin-bottom: 25px;
     }
@@ -4896,9 +4894,6 @@ thead {
         /*max-width: 175px;*/
     }
 
-    .new-translation .title {
-        font-size: 32px;
-    }
 
     .colored-section .risale .second img {
         max-width: 300px;
@@ -4926,6 +4921,10 @@ thead {
 
     .home-book-grid .four {
         max-width: 175px;
+    }
+
+    .new-translation .title {
+        font-size: 32px;
     }
 
 }
