@@ -73,7 +73,7 @@
     --mobile-header-height: 70px;
     --text-font-size: 18px;
     --text-font-size-page: 18px;
-    --text-font-size-menu-item: 20px;
+    --text-font-size-menu-item: 23px;
     --bg-parchment: #f7d99e;
     --surface-1: #F6F1E3;
     --surface-2: #F6F1E3;
@@ -161,6 +161,13 @@ i {
 .active {
     text-decoration: underline;
     text-underline-offset: 6px;
+}
+
+/* Ensure active styling works for desktop navbar */
+.desktop-navbar-container a.active,
+.desktop-navbar-container .nav-item a.active {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
 }
 
 .text-container {
@@ -605,28 +612,36 @@ thead {
     justify-content: center;
     /*gap:40px;*/
     flex-direction: column;
+    pointer-events: auto;
 }
 
 .desktop-navbar-container .navbar-glow img {
     width: 500px;
     position: relative;
-    z-index: 5;
+    z-index: 40;
     top: -19px;
     opacity: 70%;
+    pointer-events: none;
     /*left: -100px;*/
 }
 
 .desktop-navbar-container .navbar {
     position: relative;
-    padding: 10px 20px;
+    padding: 0px 20px;
+    padding-top: 13px;
+    padding-bottom: 12px;
     border-radius: 50px;
-    z-index: 0;
+    z-index: 30;
     overflow: hidden;
     /*background-color:var(--surface-2);*/
-    background-image: url("../images/bg-menu.png");
+    background-image: url("../images/001_leather_background.webp");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-top: 20px;
-    border: 4px solid var(--surface-2);
+    border: 4px solid #f5dfac;
+    pointer-events: auto;
 }
 
 .desktop-navbar-container .navbar::before {
@@ -636,20 +651,18 @@ thead {
     background-size: cover;
     background-position: center;
     opacity: .2;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
 }
 
-.desktop-navbar-container .navbar a,
-.desktop-navbar-container .navbar .fa-cart-shopping {
-    color: var(--surface-2);
-}
-
 .desktop-navbar-container a,
-.desktop-navbar-container .fa-cart-shopping {
+.desktop-navbar-container .fa-solid {
     position: relative;
-    z-index: 1;
-    color: var(--main-font-color);
+    z-index: 100;
+    font-size: 20px;
+    color: rgb(245, 223, 172);
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .desktop-navbar-container a {
@@ -658,6 +671,10 @@ thead {
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: rgb(245, 223, 172);
+    pointer-events: auto;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .desktop-navbar-container a .first-letter {
@@ -666,7 +683,16 @@ thead {
 
 .desktop-navbar-container .nav-item a {
     position: relative;
-    z-index: 10;
+    z-index: 101;
+    pointer-events: auto;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.desktop-navbar-container .nav-item {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto;
 }
 
 .nav-item .fa-gauge {
@@ -695,9 +721,16 @@ thead {
     justify-content: center;
 }
 
+.header .navbar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .header .navbar ul li a {
     font-size: var(--text-font-size-menu-item);
-    padding: 10px 15px;
+    padding: 0px 15px;
+    line-height: 0;
 }
 
 .navbar-cart-sidebar-toggle {
@@ -1009,6 +1042,7 @@ thead {
 .text-life-minutes {
     top: var(--y, var(--minutes-y));
     width: var(--w, var(--minutes-w));
+    padding-right: 9px;
 }
 
 .text-lucideinkt img,
@@ -1023,6 +1057,7 @@ thead {
     top: var(--button-y);
     pointer-events: auto;
     padding: 0.82rem .75rem;
+    padding-top: 0.89rem;
     font-size: clamp(12px, 1.3vw, 12px);
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -1053,32 +1088,38 @@ thead {
 .white-section {
     position: relative;
     z-index: 0;
+    background-color: #F5E6CA;
+    /*#E8D5B5*/
 }
 
 .white-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/bg-art.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.07;
-    pointer-events: none;
+    /*background-image: url("../images/001_white_section.webp");*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*pointer-events: none;*/
     z-index: -1;
 }
 
 .colored-section {
-    /*background-color: #6F7752;*/
-    /*background: linear-gradient(*/
-    /*    180deg,*/
-    /*    #6F7752 0%,*/
-    /*    #7E8860 100%*/
-    /*);*/
-    background:
-        linear-gradient(180deg, #6F7752, #7E8860);
-    background-blend-mode: overlay;
-    color: #EFE9D8;
+    position: relative;
+    z-index: 0;
+    color: #fff6e0;
+}
+
+.colored-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/001_leather_background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .below-books {
@@ -1098,8 +1139,6 @@ thead {
     margin: 0 auto;
     text-align: center;
     padding: 50px 0;
-    padding-top: 120px;
-    margin-top: -110px;
 }
 
 .home.intro-section .text-container {
@@ -1112,6 +1151,11 @@ thead {
     font-size: 50px;
     font-weight: 300;
     margin-bottom: 20px;
+    color: #620505;
+    filter:
+    drop-shadow(1px 1px 0 #580404)
+    drop-shadow(1px 1px 0 #4a0303)
+    drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
 }
 
 .home.intro-section .title .title-u:before {
@@ -1122,9 +1166,38 @@ thead {
     content: "\E012";
 }
 
+.new-translation .title-h:before {
+    content: "\E007";
+}
+
+.new-translation .title-t:before {
+    content: "\E024";
+}
+
+.new-translation .title-r:before {
+    content: "\E022";
+}
+
+.new-translation .title-a-one:before {
+    content: "\E000";
+}
+
+.new-translation .title-e-r:before {
+    content: "\E049";
+}
+
+.new-translation .title-me:before {
+    content: "\E057";
+}
+
+.new-translation .title-in:before {
+    content: "\E04E";
+}
+
 .new-translation {
     padding-top: 50px;
     padding-bottom: 70px;
+    color: #ece5c2;
 }
 
 .new-translation .title {
@@ -1146,7 +1219,22 @@ thead {
 
 .home-book-grid .book img {
     width: 100%;
-    max-width: 300px;
+}
+
+.home-book-grid .one {
+    max-width: 287px;
+}
+
+.home-book-grid .two {
+    max-width: 302px;
+}
+
+.home-book-grid .three {
+    max-width: 297px;
+}
+
+.home-book-grid .four {
+    max-width: 303px;
 }
 
 .home-book-grid {
@@ -1186,7 +1274,7 @@ thead {
 
 .divider {
     border: none;
-    border-bottom: 3px solid var(--main-font-color);
+    border-bottom: 3px solid #ece5c2;
     width: 50px;
     margin: 0 auto;
 }
@@ -2032,11 +2120,24 @@ thead {
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.product-detail-image-wrapper .splide {
+    min-height: 400px;
+}
+
+.product-detail-image-wrapper .splide__track {
+    min-height: 400px;
+}
+
+.product-detail-image-wrapper .splide__list {
+    min-height: 400px;
+}
+
 .product-detail-image-wrapper .splide__slide {
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
+    min-height: 400px;
 }
 
 .product-detail-image-wrapper .splide__slide img {
@@ -3327,10 +3428,23 @@ thead {
 .copy-toast.show {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto; /* Enable clicking links when shown */
 }
 
 .copy-toast.error {
     background: var(--red-2);
+}
+
+.copy-toast .toast-cart-link {
+    color: var(--ink-inverse);
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.copy-toast .toast-cart-link:hover {
+    opacity: 0.8;
 }
 
 /* custom confirm modal */
@@ -3504,8 +3618,39 @@ thead {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 22;
+}
+
+/*.gradient-border {*/
+/*    width: 100%;*/
+/*    height: 15px;*/
+/*    background: linear-gradient(*/
+/*        to right,*/
+/*        #c9a85d 0%,*/
+/*        #e7d3a1 25%,*/
+/*        #f5ebcf 50%,*/
+/*        #e7d3a1 75%,*/
+/*        #c9a85d 100%*/
+/*    );*/
+/*    opacity: 1;*/
+/*    position: relative;*/
+/*    z-index: 20;*/
+/*}*/
+
+.gradient-border {
+    width: 100%;
+    height: 15px;
+    /*background: linear-gradient(*/
+    /*    to right,*/
+    /*    rgba(185, 165, 120, 0.9) 0%,*/
+    /*    rgba(215, 198, 160, 0.9) 50%,*/
+    /*    rgba(185, 165, 120, 0.9) 100%*/
+    /*);*/
+    background-color: #C5A059;
+    box-shadow: 0 2px 8px rgba(120, 90, 40, 0.35);
+    opacity: 1;
+    position: relative;
     z-index: 20;
-    /*border-bottom: 20px solid #6F7752;*/
 }
 
 @media (max-width: 992px) {
@@ -3518,7 +3663,7 @@ thead {
     /*}*/
 
     .hero-bg-wrapper {
-        padding-bottom: 500px;
+        padding-bottom: 550px;
     }
 }
 
@@ -3945,22 +4090,37 @@ thead {
     }
 
     .header.scrolled {
-        background: #939a71 !important;
-        box-shadow: var(--shadow-1);
+        background-color: #f6f1e3;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         height: 60px;
     }
 
     .header.scrolled .fa-cart-shopping {
-        color: #F2EAD1;
+        color: var(--main-font-color);
     }
 
     .header.scrolled .sidebar-toggle .fa-bars {
-        color: #F2EAD1;
+        color: var(--main-font-color);
     }
 
     .header.scrolled .header-box {
         height: 60px;
     }
+
+    /* Ensure logo stays hidden on mobile when intended */
+    .logo-container.logo-hidden {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .logo-container.logo-hidden img {
+        transform: translateY(-120%) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
 
     .ustadh-image img {
         width: 400px;
@@ -4179,7 +4339,7 @@ thead {
 
     .home-book-grid .book img {
         width: 100%;
-        max-width: 175px;
+        /*max-width: 175px;*/
     }
 
     .new-translation .title {
@@ -4192,6 +4352,26 @@ thead {
 
     .colored-section .risale .title {
         font-size: 32px;
+    }
+
+    .hero-bg-wrapper {
+        padding-bottom: 500px;
+    }
+
+    .home-book-grid .one {
+        max-width: 167px;
+    }
+
+    .home-book-grid .two {
+        max-width: 175px;
+    }
+
+    .home-book-grid .three {
+        max-width: 172px;
+    }
+
+    .home-book-grid .four {
+        max-width: 175px;
     }
 
 }
@@ -4251,7 +4431,11 @@ thead {
     }
 
     .hero-bg-wrapper {
-        padding-bottom: 350px;
+        padding-bottom: 440px;
+    }
+
+    .home-hero {
+        margin-top: -15px;
     }
 
 }
