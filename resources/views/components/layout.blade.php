@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @stack('head')
-    @unless(request()->routeIs('productShow'))
-    <title>
-        @if(app()->environment('staging'))
-            Staging Lucide Inkt
+    
+    @if(!request()->routeIs('productShow'))
+        @if(isset($SEOData))
+            {!! seo($SEOData) !!}
         @else
-            Lucide Inkt
+            {!! seo() !!}
         @endif
-    </title>
-    @endunless
+    @endif
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />

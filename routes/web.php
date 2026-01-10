@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\PickupLocationController;
 use App\Http\Controllers\ShippingCostController;
+use App\Http\Controllers\PageController;
 
 
 // Both admin and user can access
@@ -153,9 +154,9 @@ Route::get('/reset-password', [AuthController::class, 'get'])->name('resetNoToke
 Route::post('/reset-password', [AuthController::class, 'resetPasswordHandler'])->name('password.update')->middleware(['guest', 'throttle:5,1']); // max 5 attempts per minute
 
 // Pages
-Route::get('/', function () { return view('home'); })->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/risale-i-nur', function () { return view('risale'); })->name('risale');
-Route::get('/said-nursi', function () { return view('saidnursi'); })->name('saidnursi');
+Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
 
 // Mollie payments
