@@ -46,7 +46,8 @@ class ProductController extends Controller
         $categories = ProductCategory::orderBy('name', 'asc')->get();
         $productCopies = ProductCopy::orderBy('name', 'asc')->get();
 
-        return view('products.create', [
+        return view('products.form', [
+            'product' => null,
             'products' => $products,
             'categories' => $categories,
             'productCopies' => $productCopies
@@ -95,6 +96,15 @@ class ProductController extends Controller
             }
         }
 
+        // Convert comma-separated tags string to array
+        if (!empty($validated['seo_tags'])) {
+            $tags = array_map('trim', explode(',', $validated['seo_tags']));
+            $tags = array_filter($tags); // Remove empty values
+            $validated['seo_tags'] = !empty($tags) ? array_values($tags) : null;
+        } else {
+            $validated['seo_tags'] = null;
+        }
+
         $user = auth()->user();
         $product = Product::create([
             'title' => $title,
@@ -112,10 +122,17 @@ class ProductController extends Controller
             'height' => $validated['height'] ?? null,
             'width' => $validated['width'] ?? null,
             'depth' => $validated['depth'] ?? null,
+            'pages' => $validated['pages'] ?? null,
+            'binding_type' => $validated['binding_type'] ?? null,
+            'ean_code' => $validated['ean_code'] ?? null,
             'image_1' => $validated['image_1'] ?? null,
             'image_2' => $validated['image_2'] ?? null,
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
+            'seo_description' => $validated['seo_description'] ?? null,
+            'seo_author' => $validated['seo_author'] ?? null,
+            'seo_robots' => $validated['seo_robots'] ?? null,
+            'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
             'created_by' => $user->first_name . ' ' . $user->last_name,
         ]);
 
@@ -135,7 +152,7 @@ class ProductController extends Controller
         $categories = ProductCategory::orderBy('name', 'asc')->get();
         $productCopies = ProductCopy::orderBy('name', 'asc')->get();
 
-        return view('products.edit', [
+        return view('products.form', [
             'product' => $product,
             'products' => $products,
             'categories' => $categories,
@@ -198,6 +215,15 @@ class ProductController extends Controller
             }
         }
 
+        // Convert comma-separated tags string to array
+        if (!empty($validated['seo_tags'])) {
+            $tags = array_map('trim', explode(',', $validated['seo_tags']));
+            $tags = array_filter($tags); // Remove empty values
+            $validated['seo_tags'] = !empty($tags) ? array_values($tags) : null;
+        } else {
+            $validated['seo_tags'] = null;
+        }
+
         $product->update([
             'title' => $title,
             'base_title' => $baseTitle,
@@ -214,10 +240,17 @@ class ProductController extends Controller
             'height' => $validated['height'] ?? null,
             'width' => $validated['width'] ?? null,
             'depth' => $validated['depth'] ?? null,
+            'pages' => $validated['pages'] ?? null,
+            'binding_type' => $validated['binding_type'] ?? null,
+            'ean_code' => $validated['ean_code'] ?? null,
             'image_1' => $validated['image_1'] ?? null,
             'image_2' => $validated['image_2'] ?? null,
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
+            'seo_description' => $validated['seo_description'] ?? null,
+            'seo_author' => $validated['seo_author'] ?? null,
+            'seo_robots' => $validated['seo_robots'] ?? null,
+            'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
         ]);
 
         return redirect()->back()->with('success', 'Het product is succesvol bijgewerkt.');

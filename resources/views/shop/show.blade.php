@@ -1,4 +1,7 @@
 <x-layout>
+    @push('head')
+        {!! seo($product) !!}
+    @endpush
     <main class="container page product">
         <x-breadcrumbs :items="[
             ['label' => 'Home', 'url' => route('home')],
