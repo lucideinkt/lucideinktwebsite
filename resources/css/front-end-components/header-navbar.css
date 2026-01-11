@@ -1,0 +1,401 @@
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 30;
+    background: transparent;
+    transition: background .3s, box-shadow .3s, transform .22s ease;
+    width: 100%;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.header.hidden {
+    transform: translateY(-100%);
+}
+
+/*.header.scrolled{ background:var(--surface-1)!important; box-shadow:var(--shadow-1); }*/
+/* Keep the header compact when scrolled so the logo can disappear without leaving empty space */
+.header.scrolled .container {
+    padding: 10px 0;
+}
+
+/* Default: horizontal layout (desktop). Mobile will stack below. */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    height: auto;
+    padding: 25px 0;
+    transition: padding .22s ease;
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+}
+
+.header .active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* Ensure active styling works for desktop navbar */
+.desktop-navbar-container a.active,
+.desktop-navbar-container .nav-item a.active {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+}
+
+.text-container {
+    max-width: 800px;
+    padding: 0 15px;
+}
+
+
+.logo-container {
+    /* ensure anything that moves/up-translates is clipped and won't leave space */
+    overflow: hidden;
+    max-height: 100px;
+    /* reserve space for the logo when visible */
+    transition: max-height .22s ease, opacity .22s ease, padding .22s ease;
+    display: block;
+}
+
+.logo-container img {
+    width: 100px;
+    transition: transform .22s ease, opacity .22s ease;
+    will-change: transform, opacity;
+    display: block;
+}
+
+/* On scrolled: hide the logo container itself (shrinks height to 0) and fade image */
+.header.scrolled .logo-container {
+    max-height: 0;
+    /* collapses the logo area */
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.header.scrolled .logo-container img {
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo-container.desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.logo-container.mobile {
+    display: none;
+}
+
+.logo-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Extra helper class to ensure logo hides when JS toggles it directly */
+.logo-container.logo-hidden {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.logo-container.logo-hidden img {
+    transform: translateY(-120%) !important;
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+/* Fallback: if JS toggles the image directly */
+.logo-hidden-img {
+    transform: translateY(-120%) !important;
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: transform .22s ease, opacity .22s ease;
+}
+
+/* small upward movement when user scrolls down */
+.header.shrink {
+    transform: translateY(-8px);
+}
+
+.header.scrolled.shrink {
+    transform: translateY(-8px);
+}
+
+.desktop-navbar-container {
+    position: relative;
+    background: transparent;
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*gap:40px;*/
+    flex-direction: column;
+    pointer-events: auto;
+}
+
+.desktop-navbar-container .navbar-glow img {
+    width: 500px;
+    position: relative;
+    z-index: 40;
+    top: -19px;
+    opacity: 70%;
+    pointer-events: none;
+    /*left: -100px;*/
+}
+
+.desktop-navbar-container .navbar {
+    position: relative;
+    padding: 0px 20px;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    border-radius: 50px;
+    z-index: 30;
+    overflow: hidden;
+    /*background-color:var(--surface-2);*/
+    background-image: url("../../images/001_leather_background.webp");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-top: 20px;
+    border: 4px solid #f5dfac;
+    pointer-events: auto;
+}
+
+.desktop-navbar-container .navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: .2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.desktop-navbar-container a,
+.desktop-navbar-container .fa-solid {
+    position: relative;
+    z-index: 100;
+    font-size: 20px;
+    color: rgb(245, 223, 172);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.desktop-navbar-container a {
+    font-family: "itc-benguiat", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(245, 223, 172);
+    pointer-events: auto;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.desktop-navbar-container a .first-letter {
+    font-size: 140% !important;
+}
+
+.desktop-navbar-container .nav-item a {
+    position: relative;
+    z-index: 101;
+    pointer-events: auto;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.desktop-navbar-container .nav-item {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto;
+}
+
+.nav-item .fa-gauge {
+    font-size: 20px;
+}
+
+.logout-button button {
+    border: none;
+    background: var(--green-2);
+    border-radius: 4px;
+    color: var(--ink-inverse);
+}
+
+/* Nav lists */
+.header .navbar ul,
+.sidebar .navbar ul,
+.sidebar.admin-panel .navbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .navbar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .navbar ul li a {
+    font-size: var(--text-font-size-menu-item);
+    padding: 0px 15px;
+    line-height: 0;
+}
+
+.navbar-cart-sidebar-toggle {
+    display: none;
+}
+
+.navbar-cart-sidebar-toggle li {
+    list-style: none;
+}
+
+.sidebar .nav-item.cart {
+    display: none;
+}
+
+.navbar-cart-sidebar-toggle .nav-item.cart a,
+.nav-item.cart a {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    line-height: 1;
+}
+
+.fa-cart-shopping {
+    color: var(--main-font-color);
+    font-size: 1.25rem;
+    display: inline-block;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #dc2626;
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 3px 4px;
+    border-radius: 50%;
+    min-width: 18px;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 0;
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        color: var(--main-font-color);
+    }
+
+    .header-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+        height: 80px;
+    }
+
+
+    .header .container {
+        height: 80px;
+        flex-direction: row;
+        padding: 0 15px;
+    }
+
+    .logo-container.desktop {
+        display: none;
+    }
+
+    .logo-container.mobile {
+        display: block;
+    }
+
+    .logo-container img {
+        width: 70px;
+    }
+
+    .desktop-navbar-container,
+    .header.dashboard .desktop-navbar-container {
+        display: none;
+    }
+
+
+    .navbar-cart-sidebar-toggle {
+        display: flex;
+        gap: 10px;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .header.scrolled {
+        background-color: #f6f1e3;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        height: 60px;
+    }
+
+    .header.scrolled .fa-cart-shopping {
+        color: var(--main-font-color);
+    }
+
+    .header.scrolled .sidebar-toggle .fa-bars {
+        color: var(--main-font-color);
+    }
+
+    .header.scrolled .header-box {
+        height: 60px;
+    }
+
+    /* Ensure logo stays hidden on mobile when intended */
+    .logo-container.logo-hidden {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .logo-container.logo-hidden img {
+        transform: translateY(-120%) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}

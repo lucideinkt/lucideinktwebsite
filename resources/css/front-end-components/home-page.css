@@ -1,0 +1,655 @@
+/* =========================================================
+   HOME PAGE STYLES
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   SECTION BACKGROUNDS
+   --------------------------------------------------------- */
+
+/* White/Cream Section with Subtle Leather Texture */
+.white-section {
+    position: relative;
+    z-index: 0;
+    background-color: #F5E6CA;
+}
+
+.white-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/001_leather_background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.035;
+    filter: brightness(1.4) contrast(0.5);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Colored Section with Full Leather Texture */
+.colored-section {
+    position: relative;
+    z-index: 0;
+    color: #fff6e0;
+}
+
+.colored-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/001_leather_background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* ---------------------------------------------------------
+   TYPOGRAPHY - TITLES & DECORATIVE ELEMENTS
+   --------------------------------------------------------- */
+
+/* Herina Font Utility Class */
+.font-herina {
+    font-family: var(--font-herina);
+}
+
+/* Main Page Titles */
+.home .title {
+    line-height: 3.4rem;
+}
+
+.home .title,
+.home.intro-section .title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.new-translation .title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.colored-section .risale .title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Decorative Divider */
+.home .divider {
+    border: none;
+    border-bottom: 3px solid #ece5c2;
+    width: 50px;
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   HERINA FONT SPECIAL CHARACTER REPLACEMENTS
+   --------------------------------------------------------- */
+
+.home.intro-section .title .title-u::before,
+.herina-u::before {
+    content: var(--herina-u);
+}
+
+.home.intro-section .title .title-k::before,
+.herina-k::before {
+    content: var(--herina-k);
+}
+
+.new-translation .title-h::before,
+.herina-h::before {
+    content: var(--herina-h);
+}
+
+.new-translation .title-t::before,
+.herina-t::before {
+    content: var(--herina-t);
+}
+
+.new-translation .title-in::before,
+.herina-in::before {
+    content: "\E04E";
+}
+
+.new-translation .title-r::before,
+.herina-r::before {
+    content: var(--herina-r);
+}
+
+.new-translation .title-a-one::before,
+.herina-a-one::before {
+    content: var(--herina-a-one);
+}
+
+.new-translation .title-e-r::before,
+.herina-e-r::before {
+    content: var(--herina-e-r);
+}
+
+.new-translation .title-me::before,
+.herina-me::before {
+    content: var(--herina-me);
+}
+
+
+/* ---------------------------------------------------------
+   LAYOUT - SECTION WRAPPERS & CONTAINERS
+   --------------------------------------------------------- */
+.hero-bg-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 22;
+}
+
+.gradient-border {
+    width: 100%;
+    height: 15px;
+    background-color: #C5A059;
+    box-shadow: 0 2px 8px rgba(120, 90, 40, 0.35);
+    opacity: 1;
+    position: relative;
+    z-index: 20;
+}
+
+/* Home Section Wrappers */
+.home.section-wrapper {
+    padding: 0 15px !important;
+}
+
+.home.below-books {
+    padding: 100px 0;
+    margin-top: -100px;
+    display: none;
+}
+
+/* Intro Section */
+.home.intro-section {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.home.intro-section .text-container {
+    margin: 0 auto;
+}
+
+.home-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column-reverse;
+    margin-bottom: -190px;
+}
+
+.home-hero .book-shot {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.home-hero .book-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 900px;
+    top: 300px;
+    z-index: 10;
+}
+
+
+/* ---------------------------------------------------------
+   NEW TRANSLATION SECTION
+   --------------------------------------------------------- */
+
+.new-translation {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    color: #ece5c2;
+}
+
+.new-translation .sub-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+/* ---------------------------------------------------------
+   BOOK GRID DISPLAY
+   --------------------------------------------------------- */
+
+.home-book-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.home-book-grid .book {
+    justify-content: center;
+    align-items: center;
+}
+
+.home-book-grid .book img {
+    width: 100%;
+}
+
+/* Individual Book Sizes */
+.home-book-grid .one {
+    max-width: 287px;
+}
+
+.home-book-grid .two {
+    max-width: 302px;
+}
+
+.home-book-grid .three {
+    max-width: 297px;
+}
+
+.home-book-grid .four {
+    max-width: 303px;
+}
+
+.home-book-grid .book .under-text {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/* Book Grid Button */
+.home-book-grid .book .btn {
+    margin: 0 auto;
+    padding: 0 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #f5e6ca;
+    background: #f5e6ca;
+    color: var(--main-font-color);
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: filter 0.1s ease-in-out;
+    font-size: 16px;
+    font-family: var(--font-bold);
+}
+
+
+
+/* ---------------------------------------------------------
+   RISALE-I NUR SECTION (What is the Risale-i Nur)
+   --------------------------------------------------------- */
+
+.risale-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.risale-section .text-container.risale-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.risale-section .risale-content {
+    text-align: left;
+}
+
+.risale-section .risale-content .title {
+    text-align: left;
+}
+
+.risale-section .risale-content .sub-text {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+/* Read More Link */
+.risale-section .read-more-link {
+    display: block;
+    align-items: center;
+    gap: 8px;
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    margin-top: -5px;
+}
+
+.risale-section .read-more-link:hover {
+    opacity: 1;
+    gap: 12px;
+}
+
+.risale-section .read-more-link i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.risale-section .read-more-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Risale Image */
+.risale-section .risale-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.risale-section .risale-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   SAID NURSI SECTION (Who is Said Nursi)
+   --------------------------------------------------------- */
+
+.said-nursi-section .text-container.risale-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Desktop: Image on Left, Content on Right */
+.said-nursi-section .said-nursi-image {
+    order: 1;
+}
+
+.said-nursi-section .risale-content {
+    order: 2;
+}
+
+.said-nursi-section .said-nursi-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 4px solid rgba(98, 5, 5, 0.1);
+}
+
+
+/* ---------------------------------------------------------
+   COLORED BOOKS SECTION
+   --------------------------------------------------------- */
+
+.colored-section.books {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.colored-section .risale {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #F6F1E3;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--main-font-color);
+    box-shadow: var(--shadow-1);
+    flex-wrap: wrap;
+}
+
+.colored-section .risale::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/bg-art.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.colored-section .risale .first {
+    width: 100%;
+    max-width: 700px;
+}
+
+.colored-section .risale .second {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.colored-section .risale .second img {
+    max-width: 445px;
+}
+
+.colored-section .risale .btn {
+    padding: 0 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid var(--main-font-color);
+    background: var(--main-font-color);
+    color: var(--surface-2);
+    height: 40px;
+    display: flex;
+    gap: 5px;
+    transition: filter 0.1s ease-in-out;
+    font-size: 16px;
+    font-family: var(--font-bold);
+    margin-bottom: 50px;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE DESIGN - MOBILE
+   --------------------------------------------------------- */
+
+/* Mobile: Stack vertically for screens 992px and smaller */
+@media screen and (max-width: 992px) {
+    .page.home {
+        overflow: auto;
+    }
+
+    .below-books {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .hero-bg-wrapper {
+        padding-bottom: 550px;
+    }
+
+    .said-nursi-section .text-container.risale-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Show image first on mobile */
+    .said-nursi-section .said-nursi-image {
+        order: -1;
+    }
+
+    .said-nursi-section .risale-content {
+        order: 1;
+    }
+
+    .said-nursi-section .said-nursi-image img {
+        max-height: 450px;
+    }
+
+    .risale-section .text-container.risale-grid {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .risale-section .risale-content {
+        text-align: center;
+    }
+
+    .risale-section .risale-content .title {
+        text-align: center;
+    }
+
+    .risale-section .risale-content .sub-text {
+        text-align: center;
+    }
+
+    .risale-section .risale-image {
+        order: -1; /* Show image first on mobile */
+    }
+
+    .risale-section .risale-image img {
+        max-height: 400px;
+    }
+
+    .home .title {
+        line-height: 3.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .home .title {
+        line-height: 2.5rem;
+    }
+
+    .intro-section .bismillah {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0 30px;
+    }
+
+    .home.intro-section {
+        width: 100%;
+        max-width: 1200px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .home.intro-section .title,
+    .title {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .intro-section .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .intro-section .sub-text {
+        width: 100%;
+        margin: 10px auto 30px;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .home-book-grid .book img {
+        width: 100%;
+        /*max-width: 175px;*/
+    }
+
+    .home-book-grid .book .btn {
+        padding-top: 1px;
+    }
+
+    .colored-section .risale .second img {
+        max-width: 300px;
+    }
+
+    .colored-section .risale .title {
+        font-size: 32px;
+    }
+
+    .hero-bg-wrapper {
+        padding-bottom: 500px;
+    }
+
+    .home-book-grid .one {
+        max-width: 167px;
+    }
+
+    .home-book-grid .two {
+        max-width: 175px;
+    }
+
+    .home-book-grid .three {
+        max-width: 172px;
+    }
+
+    .home-book-grid .four {
+        max-width: 175px;
+    }
+
+    .new-translation .title {
+        font-size: 32px;
+    }
+
+    .home .title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .below-books {
+        padding-top: 40px;
+        padding-bottom: 100px;
+    }
+
+    .hero-bg-wrapper {
+        padding-bottom: 440px;
+    }
+
+    .home-hero {
+        margin-top: -15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .below-books {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+}

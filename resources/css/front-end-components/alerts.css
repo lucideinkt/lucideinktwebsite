@@ -1,0 +1,44 @@
+/* =========================================================
+   Alerts
+   ========================================================= */
+
+.alert {
+    border-radius: 4px !important;
+    padding: 2px 15px;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--surface-2);
+    box-shadow: var(--shadow-1);
+}
+
+.alert a {
+    color: var(--ink-1);
+    text-decoration: underline;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 0;
+    color: var(--success-text);
+}
+
+.alert-success {
+    background: #fbf3e4;
+    color: var(--ink-1);
+    border-left: 4px solid #28a745;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.alert-error {
+    background: #fbf3e4;
+    color: var(--error-text);
+    border-left: 4px solid var(--red-1);
+    width: 100%;
+    margin-bottom: 0;
+}

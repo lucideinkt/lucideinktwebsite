@@ -1,0 +1,64 @@
+/* =========================================================
+   SIDEBARS (MOBILE + ADMIN)
+   ========================================================= */
+.sidebar-toggle {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-toggle .fa-bars {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--main-font-color);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -225px;
+    width: 225px;
+    height: 100vh;
+    padding: 20px;
+    background: var(--surface-2);
+    box-shadow: var(--shadow-1);
+    transition: right .3s ease;
+    z-index: 50;
+    overflow: auto;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar .navbar ul li a {
+    font-size: var(--text-font-size-menu-item);
+    transition: color .1s ease-in-out;
+    color: var(--main-font-color) !important;
+    background: none !important;
+    text-decoration: none;
+}
+
+.sidebar .navbar ul li a.active {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+}
+
+.sidebar .close-toggle {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+
+.sidebar .close-toggle .fa-xmark {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--main-font-color);
+}

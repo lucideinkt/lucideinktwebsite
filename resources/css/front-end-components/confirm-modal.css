@@ -1,0 +1,54 @@
+/* =========================================================
+   Confirm Modal
+   ========================================================= */
+.custom-confirm-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-confirm-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(44, 32, 16, .18);
+    backdrop-filter: blur(1px);
+    z-index: 0;
+}
+
+.custom-confirm-modal-content {
+    position: relative;
+    z-index: 1;
+    background: var(--surface-1);
+    border-radius: 10px;
+    box-shadow: var(--shadow-3);
+    padding: 32px 28px 22px;
+    min-width: 320px;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-confirm-modal-message {
+    font-size: 18px;
+    color: var(--main-font-color);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.custom-confirm-modal-actions {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+}
+
+.custom-confirm-modal .btn.confirm-btn,
+.custom-confirm-modal .btn.cancel-btn {
+    color: var(--ink-inverse);
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(171, 15, 20, .08);
+}
