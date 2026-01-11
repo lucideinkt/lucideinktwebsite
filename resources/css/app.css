@@ -1127,11 +1127,13 @@ thead {
     content: "";
     position: absolute;
     inset: 0;
-    /*background-image: url("../images/001_white_section.webp");*/
-    /*background-size: cover;*/
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
-    /*pointer-events: none;*/
+    background-image: url("../images/001_leather_background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.035;
+    filter: brightness(1.4) contrast(0.5);
+    pointer-events: none;
     z-index: -1;
 }
 
