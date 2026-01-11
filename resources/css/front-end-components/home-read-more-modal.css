@@ -1,0 +1,106 @@
+/* =========================================================
+   Homepage read more modal
+   ========================================================= */
+
+.custom-modal {
+    position: fixed;
+    inset: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+    display: grid;
+    place-items: center;
+    z-index: var(--z-modal, 9999);
+    overflow: auto;
+    padding: clamp(12px, 2vw, 32px);
+    --modal-backdrop: rgba(0, 0, 0, .35);
+}
+
+.custom-modal.hidden {
+    display: none;
+}
+
+.custom-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--modal-backdrop);
+    backdrop-filter: blur(6px) saturate(120%);
+    opacity: 0;
+    transition: opacity .28s ease;
+    z-index: calc(var(--z-modal, 9999) - 1);
+    pointer-events: none;
+}
+
+.custom-modal.show .custom-modal-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.custom-modal.fading-out .custom-modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-modal-content.scroll-effect {
+    position: relative;
+    z-index: var(--z-modal, 9999);
+    width: min(92vw, 420px);
+    max-height: 80vh;
+    background: linear-gradient(135deg, #f3e5c8 0%, #ead8b7 50%, #dec9a8 100%);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .18);
+    border: 1px solid rgba(191, 163, 107, .9);
+    color: var(--green-2);
+    overflow: visible;
+    transform: translateY(8px) scale(.98);
+    opacity: 0;
+    transition: transform .32s cubic-bezier(.2, .8, .2, 1), opacity .22s ease;
+    will-change: transform, opacity;
+}
+
+.custom-modal-content.scroll-effect.open {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.custom-modal-content.scroll-effect.close {
+    transform: translateY(8px) scale(.98);
+    opacity: 0;
+    transition: transform .26s ease, opacity .2s ease;
+}
+
+.scroll-inner {
+    padding: clamp(18px, 3vw, 36px);
+    overflow-y: auto;
+    max-height: calc(80vh - 40px);
+}
+
+.custom-modal-close {
+    position: absolute;
+    top: clamp(8px, 1.4vw, 14px);
+    right: clamp(10px, 2vw, 18px);
+    font-size: clamp(18px, 2.4vw, 24px);
+    color: #a13e1c;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-modal-close:focus {
+    outline: 3px solid rgba(161, 62, 28, .15);
+    outline-offset: 2px;
+}
+
+.custom-modal-close:hover {
+    color: #b85c38;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .custom-modal-overlay,
+    .custom-modal-content.scroll-effect {
+        transition: none !important;
+    }
+}

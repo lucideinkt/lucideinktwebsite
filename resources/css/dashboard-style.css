@@ -1,0 +1,9 @@
+/* =========================================================
+   MODULAR CSS - Dashboard ENTRY POINT
+   Lucide Inkt Webshop
+   ========================================================= */
+
+/* =========================================================
+   Legacy dashboard.css to gradually extract en remove styles into components
+   ========================================================= */
+@import './dashboard.css';

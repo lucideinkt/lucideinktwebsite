@@ -1,0 +1,43 @@
+/* =========================================================
+   RESETS
+   ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-regular), sans-serif;
+    font-weight: 400;
+    color: var(--main-font-color);
+    background-color: #f5e6ca;
+    line-height: 1.8;
+    font-size: var(--text-font-size-page);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    line-height: 2.5rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
+i {
+    color: var(--ink-1);
+}

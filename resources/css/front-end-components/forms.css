@@ -1,0 +1,16 @@
+.form .form-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form .form-input .btn {
+    width: fit-content;
+}
+
+.form-input .error {
+    font-size: 14px;
+    margin-top: 0;
+    color: var(--red-1);
+    margin-bottom: -15px;
+}

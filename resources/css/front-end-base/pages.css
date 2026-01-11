@@ -1,0 +1,24 @@
+/* =========================================================
+   Front-End pages
+   ========================================================= */
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container.page {
+    padding-top: 100px;
+}
+
+.page h1,
+.page h2 {
+    margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+    .container.page {
+        padding-top: 90px;
+    }
+}

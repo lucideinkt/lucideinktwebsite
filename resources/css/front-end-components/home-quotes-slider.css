@@ -1,0 +1,149 @@
+/* =========================================================
+   Homepage quotes slider
+   ========================================================= */
+
+.quotes-section {
+    padding: 75px 15px;
+}
+
+.quotes-section .quote-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#quotes-slider {
+    padding: 0 50px;
+}
+
+#quotes-slider .splide__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-card {
+    background: rgba(255, 246, 224, 0.05);
+    border: 2px solid rgba(236, 229, 194, 0.3);
+    border-radius: 16px;
+    padding: 50px 40px;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-icon {
+    font-size: 48px;
+    color: #fff6e0 !important;
+    opacity: 0.5;
+    margin-bottom: 25px;
+    line-height: 1;
+    text-align: center;
+}
+
+.quote-icon i {
+    color: #fff6e0 !important;
+}
+
+.quote-text {
+    font-size: 20px;
+    line-height: 1.9;
+    color: #fff6e0;
+    font-style: italic;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.quote-source {
+    font-size: 16px;
+    color: #ece5c2;
+    text-align: center;
+    font-weight: 600;
+    font-family: var(--font-bold);
+    opacity: 0.8;
+}
+
+/* Splide arrows styling */
+#quotes-slider .splide__arrow {
+    background: rgba(236, 229, 194, 0.2);
+    border: 2px solid rgba(236, 229, 194, 0.4);
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+#quotes-slider .splide__arrow:hover {
+    background: rgba(236, 229, 194, 0.3);
+    border-color: rgba(236, 229, 194, 0.6);
+}
+
+#quotes-slider .splide__arrow svg {
+    fill: #ece5c2;
+}
+
+/* Splide pagination styling */
+#quotes-slider .splide__pagination {
+    bottom: -40px;
+}
+
+#quotes-slider .splide__pagination__page {
+    background: rgba(236, 229, 194, 0.3);
+    border: 1px solid rgba(236, 229, 194, 0.4);
+    width: 12px;
+    height: 12px;
+    transition: all 0.3s ease;
+}
+
+#quotes-slider .splide__pagination__page.is-active {
+    background: #ece5c2;
+    border-color: #ece5c2;
+    transform: scale(1.3);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .quotes-section {
+        padding: 50px 15px;
+    }
+
+    #quotes-slider {
+        padding: 0 20px;
+    }
+
+    .quote-card {
+        padding: 35px 25px;
+    }
+
+    .quote-icon {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .quote-text {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .quote-source {
+        font-size: 14px;
+    }
+
+    #quotes-slider .splide__pagination {
+        bottom: -30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #quotes-slider {
+        padding: 0 10px;
+    }
+
+    .quote-card {
+        padding: 30px 20px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,87 @@
+/* =========================================================
+   Auth pages
+   ========================================================= */
+.auth-page {
+    padding-top: 100px;
+}
+
+.container.auth-page {
+    min-height: 100vh;
+    display: flex;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-page .form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-1);
+    padding: 20px 50px;
+    width: 100%;
+    max-width: 450px;
+    margin: 50px auto 0;
+    background: var(--surface-2);
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.auth-page .form h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-page .form .form-input label {
+    margin-bottom: 0;
+}
+
+.auth-page .form-input .error {
+    font-size: 14px;
+    margin-top: 0;
+    color: var(--red-1);
+}
+
+.auth-page .form-input a {
+    text-decoration: underline;
+}
+
+.auth-page .form .alert-error {
+    background: #fbf3e4;
+    color: var(--error-text);
+    border-left: 4px solid var(--red-1);
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.auth-page .form .alert-success {
+    background: #fbf3e4;
+    color: var(--ink-1);
+    border-left: 4px solid #28a745;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.auth-page .remember-me-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.auth-page .remember-me-box .remember-me {
+    margin: 0;
+    height: 18px;
+    width: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .container.auth-page {
+        padding-top: calc(var(--header-height) + 40px);
+        align-items: flex-start;
+    }
+
+    .auth-page .form {
+        padding: 20px;
+        margin-top: 10px;
+    }
+}
