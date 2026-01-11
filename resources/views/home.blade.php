@@ -64,6 +64,7 @@
         <section class="home white-section intro-section">
             <div class="text-container">
                 <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>
+{{--                <h2 class="title">Welkom op Lucide Inkt</h2>--}}
                 <div class="sub-text">
                     <p>
                         Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de Qur'anische richtlijen van de Risale-i Nur. Met Nederlandse en Engelse vertalingen van deze boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste bestaansvragen van de mens.
@@ -119,34 +120,154 @@
 
         <div class="gradient-border"></div>
 
-        {{--        <section class="colored-section books">--}}
-        {{--                <div class="container risale">--}}
-        {{--                    <div class="first">--}}
-        {{--                        <h2 class="title">Wat is de Risale-i Nur?</h2>--}}
-        {{--                        <p class="sub-text">--}}
-        {{--                            Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.--}}
-        {{--                        </p>--}}
-        {{--                        <a href="#">--}}
-        {{--                            <button class="btn">...Lees Meer</button>--}}
-        {{--                        </a>--}}
-        {{--                    </div>--}}
-        {{--                    <div class="second">--}}
-        {{--                        <img src="{{ asset('images/standing.png') }}" alt="">--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--        </section>--}}
+        <section class="white-section intro-section risale-section">
+                    <div class="text-container risale-grid">
+                        <div class="risale-content">
+                            <h2 class="title">Wat is de Risale-i Nur?</h2>
+                            <div class="sub-text">
+                                <p>
+                                    Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
+                                </p>
+                                <a href="{{ route('risale') }}" class="read-more-link">
+                                    Lees meer <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="risale-image">
+                            <img src="{{ asset('images/standing.png') }}" alt="Risale-i Nur">
+                        </div>
+                    </div>
+                </section>
 
-        {{--        <section class="white-section">--}}
-        {{--            <div class="outer-slider-box">--}}
-        {{--                <div class="container slider">--}}
-        {{--                    <p>“Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: ‘Mijn weg is juist’ of ‘Mijn weg is beter’ te zeggen. Jij hebt echter niet het recht om: ‘Slechts mijn weg is juist’ te zeggen.”</p>--}}
+        <div class="gradient-border"></div>
 
-        {{--                    <p>“Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden.”</p>--}}
+        <section class="colored-section quotes-section">
+            <div class="container quote-section">
+                <div id="quotes-slider" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="quote-card">
+                                    <div class="quote-icon">
+                                        <i class="fa-solid fa-quote-left"></i>
+                                    </div>
+                                    <p class="quote-text">
+                                        "Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: 'Mijn weg is juist' of 'Mijn weg is beter' te zeggen. Jij hebt echter niet het recht om: 'Slechts mijn weg is juist' te zeggen."
+                                    </p>
+                                    <div class="quote-source">- Risale-i Nur</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="quote-card">
+                                    <div class="quote-icon">
+                                        <i class="fa-solid fa-quote-left"></i>
+                                    </div>
+                                    <p class="quote-text">
+                                        "Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden."
+                                    </p>
+                                    <div class="quote-source">- Risale-i Nur</div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="quote-card">
+                                    <div class="quote-icon">
+                                        <i class="fa-solid fa-quote-left"></i>
+                                    </div>
+                                    <p class="quote-text">
+                                        "Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste."
+                                    </p>
+                                    <div class="quote-source">- Risale-i Nur</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        {{--                    <p>“Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste.”</p>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--        </section>--}}
+        <div class="gradient-border"></div>
+
+        <section class="white-section intro-section risale-section said-nursi-section">
+            <div class="text-container risale-grid">
+                <div class="risale-image said-nursi-image">
+                    <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
+                </div>
+                <div class="risale-content">
+                    <h2 class="title">Wie is Said Nursi?</h2>
+                    <div class="sub-text">
+                        <p>
+                            Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
+                        </p>
+                        <a href="{{ route('saidnursi') }}" class="read-more-link">
+                            Lees meer <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="gradient-border"></div>
+
+        <section class="colored-section newsletter-section">
+            <div class="container newsletter-container">
+                <div class="newsletter-content">
+                    <h2 class="title newsletter-title">Schrijf je in voor onze Niewsbrief</h2>
+                    <p class="newsletter-description">
+                        Ontvang updates over nieuwe vertalingen, inspirerende citaten en belangrijke aankondigingen van Lucide Inkt.
+                    </p>
+                    <form class="newsletter-form" action="#" method="POST">
+                        @csrf
+                        <div class="newsletter-input-group">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Uw e-mailadres"
+                                required
+                                class="newsletter-input"
+                            >
+                            <button type="submit" class="newsletter-btn">
+                                <span>Aanmelden</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <p class="newsletter-privacy">
+                            We respecteren uw privacy. U kunt zich op elk moment afmelden.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="gradient-border"></div>
+
+        <x-footer></x-footer>
+
+        <div class="gradient-border"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const quotesSlider = document.getElementById('quotes-slider');
+                if (quotesSlider && typeof Splide !== 'undefined') {
+                    new Splide('#quotes-slider', {
+                        type: 'loop',
+                        autoplay: true,
+                        interval: 5000,
+                        speed: 800,
+                        pauseOnHover: true,
+                        pauseOnFocus: true,
+                        arrows: true,
+                        pagination: false,
+                        perPage: 1,
+                        gap: '2rem',
+                        breakpoints: {
+                            768: {
+                                arrows: false,
+                            }
+                        }
+                    }).mount();
+                }
+            });
+        </script>
 
         <!-- Modal Structure -->
         <div id="leesMeerModal" class="custom-modal">
