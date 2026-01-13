@@ -304,7 +304,6 @@
     font-size: 0.9375rem;
     font-weight: 600;
     cursor: pointer;
-    flex: 1;
     min-width: 180px;
     transition: background 0.2s ease;
 }

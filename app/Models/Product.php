@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use RalphJSmit\Laravel\SEO\SchemaCollection;
-use RalphJSmit\Laravel\SEO\Support\SEOData;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Product extends Model
 {
-    use HasFactory, SoftDeletes, HasSEO;
+    use HasFactory, HasSEO, SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -43,7 +43,7 @@ class Product extends Model
         'seo_canonical_url',
         'created_by',
         'updated_by',
-        'deleted_by'
+        'deleted_by',
     ];
 
     protected $casts = [
@@ -54,7 +54,7 @@ class Product extends Model
     {
         return $this->belongsTo(User::class, 'updated_by');
     }
-    
+
     public function category()
     {
         return $this->belongsTo(ProductCategory::class, 'category_id');
@@ -73,14 +73,14 @@ class Product extends Model
         // Use image_1 as the main image, convert to full URL if needed
         $image = null;
         $imageUrl = null;
-        if (!empty($this->image_1)) {
+        if (! empty($this->image_1)) {
             $image = $this->image_1;
             // If image is not a full URL, make it one
-            if (!filter_var($image, FILTER_VALIDATE_URL)) {
+            if (! filter_var($image, FILTER_VALIDATE_URL)) {
                 if (str_starts_with($image, 'image/') || str_starts_with($image, 'images/')) {
                     $imageUrl = asset($image);
                 } else {
-                    $imageUrl = asset('storage/' . $image);
+                    $imageUrl = asset('storage/'.$image);
                 }
             } else {
                 $imageUrl = $image;
@@ -91,14 +91,14 @@ class Product extends Model
         // Prepare additional images for Product schema
         $additionalImages = [];
         for ($i = 2; $i <= 4; $i++) {
-            $imageField = 'image_' . $i;
-            if (!empty($this->$imageField)) {
+            $imageField = 'image_'.$i;
+            if (! empty($this->$imageField)) {
                 $additionalImage = $this->$imageField;
-                if (!filter_var($additionalImage, FILTER_VALIDATE_URL)) {
+                if (! filter_var($additionalImage, FILTER_VALIDATE_URL)) {
                     if (str_starts_with($additionalImage, 'image/') || str_starts_with($additionalImage, 'images/')) {
                         $additionalImages[] = asset($additionalImage);
                     } else {
-                        $additionalImages[] = asset('storage/' . $additionalImage);
+                        $additionalImages[] = asset('storage/'.$additionalImage);
                     }
                 } else {
                     $additionalImages[] = $additionalImage;
@@ -108,7 +108,7 @@ class Product extends Model
 
         // Determine product type - use Book schema if book-specific properties exist, otherwise use Product
         $isBook = $this->pages || $this->binding_type || $this->ean_code;
-        
+
         // Build JSON-LD structured data
         $schema = SchemaCollection::make()
             ->add(function (SEOData $SEOData) use ($url, $imageUrl, $additionalImages, $isBook) {
@@ -135,8 +135,8 @@ class Product extends Model
                         $baseSchema['numberOfPages'] = $this->pages;
                     }
                     if ($this->binding_type) {
-                        $baseSchema['bookFormat'] = $this->binding_type === 'hardcover' 
-                            ? 'https://schema.org/Hardcover' 
+                        $baseSchema['bookFormat'] = $this->binding_type === 'hardcover'
+                            ? 'https://schema.org/Hardcover'
                             : 'https://schema.org/Paperback';
                     }
                 }
@@ -178,5 +178,4 @@ class Product extends Model
             schema: $schema,
         );
     }
-
 }

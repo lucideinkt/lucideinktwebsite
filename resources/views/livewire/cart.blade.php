@@ -1,5 +1,5 @@
 <div class="cart-page">
-    <h2>Winkelwagen</h2>
+    <h2>Winkelmand</h2>
 
     @if (session('success'))
         <div class="alert alert-success" style="position: relative; margin-bottom: 2rem;">
@@ -47,7 +47,7 @@
                             $slug = $prod?->slug ?? null;
                         }
                         $productUrl = $slug ? url('/winkel/product/' . $slug) : url('/product/' . $productId);
-                        $quantity = $quantities[$productId] ?? $item['quantity'] ?? 1;
+                        $quantity = $quantities[$productId] ?? ($item['quantity'] ?? 1);
                     @endphp
 
                     <div class="cart-item-row">
@@ -61,21 +61,23 @@
                             <h3 class="cart-item-title">
                                 <a href="{{ $productUrl }}">{{ $item['name'] }}</a>
                             </h3>
-                            <div class="cart-item-price">€ {{ number_format($item['price'], 2, ',', '.') }} per stuk</div>
+                            <div class="cart-item-price">€ {{ number_format($item['price'], 2, ',', '.') }} per stuk
+                            </div>
                         </div>
 
                         <div class="cart-item-row-2-wrapper">
                             <div class="cart-item-quantity">
                                 <div class="qty-control">
-                                    <button type="button" class="qty-btn qty-decrease" wire:click="decrement({{ $productId }})"
-                                        aria-label="Decrease quantity">
+                                    <button type="button" class="qty-btn qty-decrease"
+                                        wire:click="decrement({{ $productId }})" aria-label="Decrease quantity">
                                         &minus;
                                     </button>
-                                    <input type="number" class="qty-input" value="{{ $quantity }}" min="1" max="1000"
+                                    <input type="number" class="qty-input" value="{{ $quantity }}" min="1"
+                                        max="1000"
                                         wire:change="updateQuantity({{ $productId }}, $event.target.value)"
                                         wire:loading.attr="disabled">
-                                    <button type="button" class="qty-btn qty-increase" wire:click="increment({{ $productId }})"
-                                        aria-label="Increase quantity">
+                                    <button type="button" class="qty-btn qty-increase"
+                                        wire:click="increment({{ $productId }})" aria-label="Increase quantity">
                                         +
                                     </button>
                                 </div>
@@ -87,7 +89,7 @@
 
                             <div class="cart-item-action">
                                 <button type="button" class="btn-remove" wire:click="removeItem({{ $productId }})"
-                                    wire:confirm="Weet je zeker dat je dit product uit je winkelwagen wilt verwijderen?">
+                                    wire:confirm="Weet je zeker dat je dit product uit je winkelmand wilt verwijderen?">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </div>
@@ -110,8 +112,8 @@
                 Afrekenen
             </a>
             <button type="button" class="btn-clear" wire:click="clearCart"
-                wire:confirm="Weet je zeker dat je de hele winkelwagen wilt legen?">
-                Winkelwagen legen
+                wire:confirm="Weet je zeker dat je de hele winkelmand wilt legen?">
+                Winkelmand legen
             </button>
         </div>
     @else
@@ -119,8 +121,8 @@
             <div class="empty-state-icon">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <h3>Winkelwagen is leeg</h3>
-            <p>Je hebt nog geen producten toegevoegd aan je winkelwagen.</p>
+            <h3>Winkelmand is leeg</h3>
+            <p>Je hebt nog geen producten toegevoegd aan je winkelmand.</p>
             <a href="{{ route('shop') }}" class="btn-shop">Ga naar de winkel</a>
         </div>
     @endif

@@ -11,9 +11,9 @@ export function initAnimatedClock() {
     if (!hourHand || !minuteHand || !secondHand) return;
 
     const speed = {
-        hour: 400,
-        minute: 100,
-        second: 4
+        hour: 200,
+        minute: 50,
+        second: 2
     };
 
     function updateClock() {

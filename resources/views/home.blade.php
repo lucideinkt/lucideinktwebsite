@@ -8,7 +8,7 @@
 
                     <div class="hero-section" style="position: relative; overflow: visible;">
                         <img class="hero-bg-img" src="{{ asset('images/001_sun_clock_background.webp') }}" alt=""
-                             style="position: absolute; left: 49%; top: 51.5%; transform: translate(-50%, -50%); width: 150%; height: auto; pointer-events: none; z-index: -1;">
+                            style="position: absolute; left: 49%; top: 51.5%; transform: translate(-50%, -50%); width: 150%; height: auto; pointer-events: none; z-index: -1;">
 
                         <!-- Achterste laag: draaiende rotor -->
                         <div class="layer layer-rotor">
@@ -55,10 +55,13 @@
         <section class="home white-section intro-section">
             <div class="text-container">
                 <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>
-{{--                <h2 class="title">Welkom op Lucide Inkt</h2>--}}
+                {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
                 <div class="sub-text">
                     <p>
-                        Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de Qur'anische richtlijen van de Risale-i Nur. Met Nederlandse en Engelse vertalingen van deze boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste bestaansvragen van de mens.
+                        Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de
+                        Qur'anische richtlijen van de Risale-i Nur. Met Nederlandse en Engelse vertalingen van deze
+                        boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste
+                        bestaansvragen van de mens.
                     </p>
                 </div>
             </div>
@@ -69,11 +72,17 @@
 
         <section class="colored-section">
             <div class="container new-translation">
-                <h2 class="title">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span class="title-in"></span>g</h2>
+                <h2 class="title">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
+                        class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
+                    ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
+                        class="title-in"></span>g</h2>
                 <div class="divider"></div>
                 <div class="sub-text">
                     <p>
-                        Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk.
+                        Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te
+                        leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen
+                        het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?
+                        Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk.
                     </p>
                 </div>
                 <div class="home-book-grid">
@@ -85,8 +94,9 @@
                         </a>
                     </div>
                     <div class="book two">
-                        <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}" alt="">
-                        <p class="under-text">- Nederlands  & Turks -</p>
+                        <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}"
+                            alt="">
+                        <p class="under-text">- Nederlands & Turks -</p>
                         <a href="#">
                             <button class="btn">Bekijken</button>
                         </a>
@@ -112,23 +122,29 @@
         <div class="gradient-border"></div>
 
         <section class="white-section intro-section risale-section">
-                    <div class="text-container risale-grid">
-                        <div class="risale-content">
-                            <h2 class="title">Wat is de Risale-i Nur?</h2>
-                            <div class="sub-text">
-                                <p>
-                                    Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
-                                </p>
-                                <a href="{{ route('risale') }}" class="read-more-link">
-                                    Lees meer <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="risale-image">
-                            <img src="{{ asset('images/standing.png') }}" alt="Risale-i Nur">
-                        </div>
+            <div class="text-container risale-grid">
+                <div class="risale-content">
+                    <h2 class="title">Wat is de Risale-i Nur?</h2>
+                    <div class="sub-text">
+                        <p>
+                            Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en
+                            de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald,
+                            waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de
+                            tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen
+                            aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent
+                            belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
+                            De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
+                        </p>
+                        <a href="{{ route('risale') }}" class="read-more-link">
+                            Lees meer <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
-                </section>
+                </div>
+                <div class="risale-image">
+                    <img src="{{ asset('images/standing.png') }}" alt="Risale-i Nur">
+                </div>
+            </div>
+        </section>
 
         <div class="gradient-border"></div>
 
@@ -143,7 +159,9 @@
                                         <i class="fa-solid fa-quote-left"></i>
                                     </div>
                                     <p class="quote-text">
-                                        "Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om: 'Mijn weg is juist' of 'Mijn weg is beter' te zeggen. Jij hebt echter niet het recht om: 'Slechts mijn weg is juist' te zeggen."
+                                        "Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om:
+                                        'Mijn weg is juist' of 'Mijn weg is beter' te zeggen. Jij hebt echter niet het
+                                        recht om: 'Slechts mijn weg is juist' te zeggen."
                                     </p>
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
@@ -154,7 +172,9 @@
                                         <i class="fa-solid fa-quote-left"></i>
                                     </div>
                                     <p class="quote-text">
-                                        "Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende en voorbijgaande aangelegenheden."
+                                        "Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich
+                                        verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende
+                                        en voorbijgaande aangelegenheden."
                                     </p>
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
@@ -165,7 +185,10 @@
                                         <i class="fa-solid fa-quote-left"></i>
                                     </div>
                                     <p class="quote-text">
-                                        "Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een vereiste."
+                                        "Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene
+                                        Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van
+                                        vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een
+                                        vereiste."
                                     </p>
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
@@ -187,7 +210,13 @@
                     <h2 class="title">Wie is Said Nursi?</h2>
                     <div class="sub-text">
                         <p>
-                            Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.  De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
+                            Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en
+                            de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald,
+                            waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de
+                            tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen
+                            aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent
+                            belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
+                            De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
                         </p>
                         <a href="{{ route('saidnursi') }}" class="read-more-link">
                             Lees meer <i class="fa-solid fa-arrow-right"></i>
@@ -204,18 +233,14 @@
                 <div class="newsletter-content">
                     <h2 class="title newsletter-title">Schrijf je in voor onze Niewsbrief</h2>
                     <p class="newsletter-description">
-                        Ontvang updates over nieuwe vertalingen, inspirerende citaten en belangrijke aankondigingen van Lucide Inkt.
+                        Ontvang updates over nieuwe vertalingen, inspirerende citaten en belangrijke aankondigingen van
+                        Lucide Inkt.
                     </p>
                     <form class="newsletter-form" action="#" method="POST">
                         @csrf
                         <div class="newsletter-input-group">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Uw e-mailadres"
-                                required
-                                class="newsletter-input"
-                            >
+                            <input type="email" name="email" placeholder="Uw e-mailadres" required
+                                class="newsletter-input">
                             <button type="submit" class="newsletter-btn">
                                 <span>Aanmelden</span>
                                 <i class="fa-solid fa-paper-plane"></i>

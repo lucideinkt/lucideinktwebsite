@@ -1,0 +1,29 @@
+.said-nursi-page__text-box .title {
+    margin-top: 10px;
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.said-nursi-page__text-box {
+    background-color: var(--surface-1);
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-1);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 600px) {
+    .said-nursi-page__text-box .title {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+}

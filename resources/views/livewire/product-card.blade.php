@@ -35,16 +35,11 @@
                 <span class="product-card-price-amount">€{{ number_format($product->price, 2) }}</span>
             </div>
 
-            <button
-                type="button"
-                class="product-card-button"
-                wire:click="addToCart"
-                wire:loading.attr="disabled"
-                @if($product->stock == 0) disabled @endif
-            >
+            <button type="button" class="product-card-button" wire:click="addToCart" wire:loading.attr="disabled"
+                @if ($product->stock == 0) disabled @endif>
                 <span wire:loading.remove wire:target="addToCart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <span>Voeg toe</span>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>In winkelmand</span>
                 </span>
                 <span wire:loading wire:target="addToCart" class="product-card-button-loading">
                     <i class="fa-solid fa-spinner fa-spin"></i>
@@ -54,4 +49,3 @@
         </div>
     </div>
 </div>
-
