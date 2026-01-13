@@ -1,13 +1,14 @@
 <div class="product-detail-grid">
-    @if(count($productImages) > 0)
+    @if (count($productImages) > 0)
         <div class="product-detail-image-section" wire:ignore>
             <div class="product-detail-image-wrapper">
                 <div id="main-slider" class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach($productImages as $idx => $img)
+                            @foreach ($productImages as $idx => $img)
                                 <li class="splide__slide">
-                                    <a data-lightbox="books" href="{{ $img }}" data-title="{{ $product->title }}">
+                                    <a data-lightbox="books" href="{{ $img }}"
+                                        data-title="{{ $product->title }}">
                                         <img data-lightbox="books" src="{{ $img }}"
                                             alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy">
                                     </a>
@@ -17,11 +18,12 @@
                     </div>
                 </div>
 
-                @if(count($productImages) > 1)
+                @if (count($productImages) > 1)
                     <ul id="thumbnails" class="product-detail-thumbnails">
-                        @foreach($productImages as $idx => $img)
+                        @foreach ($productImages as $idx => $img)
                             <li class="product-detail-thumbnail">
-                                <img src="{{ $img }}" alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy">
+                                <img src="{{ $img }}" alt="{{ $product->title }} {{ $idx + 1 }}"
+                                    loading="lazy">
                             </li>
                         @endforeach
                     </ul>
@@ -71,16 +73,11 @@
                     </select>
                 </div>
 
-                <button
-                    type="button"
-                    class="product-detail-add-to-cart"
-                    wire:click="addToCart"
-                    wire:loading.attr="disabled"
-                    @if($product->stock == 0) disabled @endif
-                >
+                <button type="button" class="product-detail-add-to-cart" wire:click="addToCart"
+                    wire:loading.attr="disabled" @if ($product->stock == 0) disabled @endif>
                     <span wire:loading.remove wire:target="addToCart">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span>Aan winkelwagen toevoegen</span>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>In winkelmand</span>
                     </span>
                     <span wire:loading wire:target="addToCart">
                         <i class="fa-solid fa-spinner fa-spin"></i>
@@ -104,7 +101,7 @@
                         <div class="product-detail-info-item">
                             <span class="product-detail-info-label">Uitvoering</span>
                             <span class="product-detail-info-value">
-                                @if($product->binding_type === 'hardcover')
+                                @if ($product->binding_type === 'hardcover')
                                     Hardcover
                                 @elseif($product->binding_type === 'softcover')
                                     Softcover
@@ -134,7 +131,9 @@
 
 <script>
     document.addEventListener('livewire:init', () => {
-        Livewire.hook('morph.added', ({ el }) => {
+        Livewire.hook('morph.added', ({
+            el
+        }) => {
             if (el.id === 'main-slider') {
                 setTimeout(() => {
                     const mainSlider = document.getElementById('main-slider');
@@ -159,7 +158,8 @@
                             speed: 400,
                         });
 
-                        const thumbnails = document.querySelectorAll('.product-detail-thumbnail');
+                        const thumbnails = document.querySelectorAll(
+                            '.product-detail-thumbnail');
                         let current;
 
                         thumbnails.forEach((thumbnail, index) => {
@@ -240,4 +240,3 @@
         }, 150);
     })();
 </script>
-

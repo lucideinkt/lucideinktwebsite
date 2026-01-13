@@ -22,7 +22,7 @@
             <div class="alert alert-error">
                 <div>
                     <div>
-                        <a style="text-decoration: none" href="{{ route('cartPage') }}">← Terug naar winkelwagen</a>
+                        <a style="text-decoration: none" href="{{ route('cartPage') }}">← Terug naar winkelmand</a>
                     </div>
                     {!! $errors->first('stock') !!}
                 </div>
@@ -145,7 +145,8 @@
                         <div class="form-input">
                             <label for="billing_country">Land</label>
                             <select name="billing_country" autocomplete="country">
-                                <option value="NL" {{ old('billing_country') == 'nl' ? 'selected' : '' }}>Nederland
+                                <option value="NL" {{ old('billing_country') == 'nl' ? 'selected' : '' }}>
+                                    Nederland
                                 </option>
                                 <option value="BE" {{ old('billing_country') == 'be' ? 'selected' : '' }}>België
                                 </option>
@@ -162,8 +163,10 @@
                         </div>
 
 
-                        <div style="height: 0px; margin-bottom: 0" class="form-input myparcel_choice" style="visibility: hidden">
-                            <input style="height: 0px" type="radio" checked name="myparcel_choice" value="with_myparcel" id="with_myparcel">
+                        <div style="height: 0px; margin-bottom: 0" class="form-input myparcel_choice"
+                            style="visibility: hidden">
+                            <input style="height: 0px" type="radio" checked name="myparcel_choice"
+                                value="with_myparcel" id="with_myparcel">
                         </div>
 
                     </div>
@@ -270,7 +273,7 @@
                 </div>
 
                 <div class="item order-details checkout-card">
-                    <p class="back-to-cart"><a href="{{ route('cartPage') }}">← Terug naar winkelwagen</a></p>
+                    <p class="back-to-cart"><a href="{{ route('cartPage') }}">← Terug naar winkelmand</a></p>
 
                     <h3 class="checkout-section-title">Bestelling</h3>
 
@@ -342,29 +345,31 @@
                     <input type="hidden" name="myparcel_delivery_options" id="myparcel_delivery_options" />
 
                     @guest
-                    <div class="checkout-create-account">
-                        <div class="form-input customer-account">
-                            <p>
-                                <b>Nog geen account? (optioneel)</b><br>
-                                Vul hieronder je gegevens en een wachtwoord in, we maken dan automatisch een account voor je aan.
-                                Heb je al een account? <a style="text-decoration: underline" href="{{ route('login') }}">Log dan in</a> om je eerdere bestellingen te bekijken.
-                            </p>
-                        </div>
+                        <div class="checkout-create-account">
+                            <div class="form-input customer-account">
+                                <p>
+                                    <b>Nog geen account? (optioneel)</b><br>
+                                    Vul hieronder je gegevens en een wachtwoord in, we maken dan automatisch een account
+                                    voor je aan.
+                                    Heb je al een account? <a style="text-decoration: underline"
+                                        href="{{ route('login') }}">Log dan in</a> om je eerdere bestellingen te bekijken.
+                                </p>
+                            </div>
 
-                        <div class="create-account-box">
-                            <div class="form-input">
-                                <label for="password">Wachtwoord</label>
-                                <input type="password" name="password">
-                                @error('password')
-                                <div class="error">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-input">
-                                <label for="password_confirmation">Bevestig wachtwoord</label>
-                                <input type="password" name="password_confirmation">
+                            <div class="create-account-box">
+                                <div class="form-input">
+                                    <label for="password">Wachtwoord</label>
+                                    <input type="password" name="password">
+                                    @error('password')
+                                        <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-input">
+                                    <label for="password_confirmation">Bevestig wachtwoord</label>
+                                    <input type="password" name="password_confirmation">
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endguest
 
                     <div class="place-order">
