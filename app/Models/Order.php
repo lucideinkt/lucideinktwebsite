@@ -25,6 +25,7 @@ class Order extends Model
         'shipping_cost_id',
         'shipping_cost_amount',
         'total_before',
+        'order_note',
 
         // Shipping fields
         'shipping_first_name',

@@ -21,7 +21,6 @@ class ContactForm extends Component
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'country' => 'required|in:Nederland,België,Anders',
             'subject' => 'required|string|max:255',
             'message' => 'required|string|max:5000',
         ];
@@ -36,8 +35,6 @@ class ContactForm extends Component
             'email.required' => 'Het e-mailadres is verplicht.',
             'email.email' => 'Voer een geldig e-mailadres in.',
             'email.max' => 'Het e-mailadres mag maximaal 255 tekens bevatten.',
-            'country.required' => 'Het land is verplicht.',
-            'country.in' => 'Selecteer een geldig land.',
             'subject.required' => 'Het onderwerp is verplicht.',
             'subject.string' => 'Het onderwerp moet tekst zijn.',
             'subject.max' => 'Het onderwerp mag maximaal 255 tekens bevatten.',
@@ -50,15 +47,15 @@ class ContactForm extends Component
     public function submit()
     {
         $this->validate();
-    
+
 
         try {
             // Use LUCIDE_INKT_MAIL for contact form (same as admin email for orders)
             // Fallback to MAIL_FROM_ADDRESS, then to info@lucideinkt.nl
-            $recipientEmail = env('LUCIDE_INKT_MAIL') 
-                ?: config('mail.from.address') 
+            $recipientEmail = env('LUCIDE_INKT_MAIL')
+                ?: config('mail.from.address')
                 ?: 'info@lucideinkt.nl';
-            
+
             if (empty($recipientEmail)) {
                 throw new \Exception('E-mail adres is niet geconfigureerd. Controleer LUCIDE_INKT_MAIL of MAIL_FROM_ADDRESS in .env');
             }
@@ -75,7 +72,7 @@ class ContactForm extends Component
 
             $this->success = true;
             $this->reset(['name', 'email', 'country', 'subject', 'message']);
-            
+
             $this->dispatch('contact-success', message: 'Bedankt! Uw bericht is verzonden. We nemen zo spoedig mogelijk contact met u op.');
         } catch (\Exception $e) {
             Log::error('Contact form error: ' . $e->getMessage(), [

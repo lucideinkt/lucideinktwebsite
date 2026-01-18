@@ -68,14 +68,14 @@
         </div>
     </main>
 
+    <div class="gradient-border"></div>
+    <x-footer></x-footer>
 
     <style>
         .auth-page {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - var(--header-height, 80px));
-            padding: 2rem 1rem;
         }
 
         .login-card {

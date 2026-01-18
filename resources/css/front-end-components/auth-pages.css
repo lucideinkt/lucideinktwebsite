@@ -6,7 +6,6 @@
 }
 
 .container.auth-page {
-    min-height: 100vh;
     display: flex;
     max-width: 100%;
     box-sizing: border-box;

@@ -19,9 +19,18 @@ export function showToast(message, isError = false, showCartLink = false) {
     // Clear previous content
     toast.innerHTML = '';
 
-    // Add message
+    // Add icon and message wrapper
     const messageSpan = document.createElement('span');
-    messageSpan.textContent = message;
+
+    // Add icon
+    const icon = document.createElement('i');
+    icon.className = isError ? 'fas fa-exclamation-circle toast-icon' : 'fas fa-check-circle toast-icon';
+    messageSpan.appendChild(icon);
+
+    // Add message text
+    const messageText = document.createTextNode(message);
+    messageSpan.appendChild(messageText);
+
     toast.appendChild(messageSpan);
 
     // Add cart link if requested
@@ -30,11 +39,18 @@ export function showToast(message, isError = false, showCartLink = false) {
         cartLink.href = '/winkel/cart';
         cartLink.textContent = 'Bekijk winkelwagen';
         cartLink.className = 'toast-cart-link';
-        cartLink.style.marginLeft = '10px';
-        cartLink.style.textDecoration = 'underline';
-        cartLink.style.fontWeight = 'bold';
         toast.appendChild(cartLink);
     }
+
+    // Add close button
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'toast-close';
+    closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+    closeBtn.setAttribute('aria-label', 'Sluiten');
+    closeBtn.onclick = () => {
+        toast.classList.remove('show');
+    };
+    toast.appendChild(closeBtn);
 
     toast.classList.remove('show', 'error');
     if (isError) toast.classList.add('error');
@@ -42,5 +58,6 @@ export function showToast(message, isError = false, showCartLink = false) {
     void toast.offsetWidth; // Force reflow
     toast.classList.add('show');
 
-    setTimeout(() => toast.classList.remove('show'), 4000); // Show longer when there's a link
+    // Verwijder automatische verwijdering - gebruiker moet nu zelf sluiten
+    // setTimeout(() => toast.classList.remove('show'), 4000);
 }

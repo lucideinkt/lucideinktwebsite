@@ -17,6 +17,14 @@
     margin-top: 20px;
 }
 
+.page {
+    padding-bottom: 50px;
+}
+
+.page.home {
+    padding-bottom: 0px;
+}
+
 @media (max-width: 992px) {
     .container.page {
         padding-top: 90px;
