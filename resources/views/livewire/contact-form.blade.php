@@ -18,19 +18,6 @@
             </div>
 
             <div class="form-input">
-                <label for="country">Land <span class="required">*</span></label>
-                <select id="country" wire:model.blur="country">
-                    <option value="">Selecteer een land</option>
-                    <option value="Nederland">Nederland</option>
-                    <option value="België">België</option>
-                    <option value="Anders">Anders</option>
-                </select>
-                @error('country')
-                    <div class="error">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="form-input">
                 <label for="subject">Onderwerp <span class="required">*</span></label>
                 <input type="text" id="subject" wire:model.blur="subject" placeholder="Voer het onderwerp in">
                 @error('subject')

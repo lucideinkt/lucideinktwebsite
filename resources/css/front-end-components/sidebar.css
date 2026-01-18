@@ -2,7 +2,6 @@
    SIDEBARS (MOBILE + ADMIN)
    ========================================================= */
 .sidebar-toggle {
-    display: none;
     justify-content: center;
     align-items: center;
 }

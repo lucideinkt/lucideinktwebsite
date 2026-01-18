@@ -34,13 +34,13 @@
 
                 <div class="order-summary-card">
                     <h2 class="order-summary-title">Jouw bestelling</h2>
-                    
+
                     <div class="order-items">
                         <div class="order-items-header">
                             <span class="order-item-col product">Product</span>
                             <span class="order-item-col subtotal">Subtotaal</span>
                         </div>
-                        
+
                         @foreach($order->items as $item)
                             <div class="order-item-row">
                                 <span class="order-item-product">
@@ -53,7 +53,7 @@
 
                     <div class="order-totals">
                         <div class="order-total-divider"></div>
-                        
+
                         <div class="order-total-row">
                             <span class="order-total-label">Totaal</span>
                             <span class="order-total-value">€ {{ number_format($order->total_before, 2, ',', '.') }}</span>
@@ -97,9 +97,9 @@
                             <span class="order-total-label">Verzendkosten</span>
                             <span class="order-total-value">€ {{ number_format($shippingAmount, 2, ',', '.') }}</span>
                         </div>
-                        
+
                         <div class="order-total-divider"></div>
-                        
+
                         <div class="order-total-row final-total">
                             <span class="order-total-label">Totaal (incl. verzendkosten)</span>
                             <span class="order-total-value">€ {{ number_format($totalInclShipping, 2, ',', '.') }}</span>
@@ -243,4 +243,7 @@
             </div>
         @endif
     </main>
+
+    <div class="gradient-border"></div>
+    <x-footer></x-footer>
 </x-layout>

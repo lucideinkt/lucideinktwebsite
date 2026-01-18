@@ -156,6 +156,14 @@
                             @enderror
                         </div>
 
+                        <div class="form-input">
+                            <label for="order_note">Bestelnotitie (optioneel)</label>
+                            <textarea name="order_note" id="order_note" rows="4" placeholder="Eventuele opmerkingen bij uw bestelling...">{{ old('order_note') }}</textarea>
+                            @error('order_note')
+                                <div class="error">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         <div class="form-input alt-shipping">
                             <label for="alt-shipping">Verzenden naar een ander adres?</label>
                             <input type="checkbox" name="alt-shipping" id="alt-shipping"
@@ -383,6 +391,9 @@
         </form>
     </main>
 
+    <div class="gradient-border"></div>
+    <x-footer></x-footer>
+
     <style>
         .checkout-page-title {
             font-size: 28px;
@@ -418,6 +429,7 @@
             font-weight: 600;
             color: var(--main-font-color);
             margin: 0 0 2rem 0;
+            margin-bottom: 0.5rem;
             font-family: var(--font-bold);
         }
 
@@ -434,7 +446,8 @@
         }
 
         .checkout-card .form-input input,
-        .checkout-card .form-input select {
+        .checkout-card .form-input select,
+        .checkout-card .form-input textarea {
             width: 100%;
             padding: 12px 16px;
             border: 1px solid var(--border-1);
@@ -447,8 +460,15 @@
             box-sizing: border-box;
         }
 
+        .checkout-card .form-input textarea {
+            resize: vertical;
+            min-height: 100px;
+            line-height: 1.5;
+        }
+
         .checkout-card .form-input input:focus,
-        .checkout-card .form-input select:focus {
+        .checkout-card .form-input select:focus,
+        .checkout-card .form-input textarea:focus {
             outline: none;
             border-color: var(--main-color);
             box-shadow: 0 0 0 3px rgba(171, 15, 20, 0.1);
