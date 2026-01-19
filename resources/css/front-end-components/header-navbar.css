@@ -365,6 +365,14 @@
         gap: 10px;
     }
 
+    .navbar-cart-sidebar-toggle .cart {
+        margin-top: 10px;
+    }
+
+    .navbar-cart-sidebar-toggle .sidebar-toggle {
+        margin-top: 4px;
+    }
+
     .sidebar-toggle {
         display: block;
     }
