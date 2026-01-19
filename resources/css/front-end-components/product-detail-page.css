@@ -4,13 +4,13 @@
 
 .product-detail {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .product-detail-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 32px;
     align-items: start;
 }
 
@@ -63,8 +63,8 @@
 
 .product-detail-thumbnails {
     display: flex;
-    gap: 12px;
-    margin-top: 16px;
+    gap: 8px;
+    margin-top: 12px;
     padding: 0;
     list-style: none;
     overflow-x: auto;
@@ -120,13 +120,13 @@
 .product-detail-info {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .product-detail-header {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
 }
 
 .product-detail-category {
@@ -150,8 +150,8 @@
 .product-detail-price-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 20px 0;
+    gap: 12px;
+    padding: 16px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -209,14 +209,14 @@
 .product-detail-book-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 16px;
+    gap: 12px;
     padding: 0;
 }
 
 .product-detail-info-item {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
     padding: 0;
 }
 
@@ -239,7 +239,7 @@
     font-size: 0.9375rem;
     line-height: 1.7;
     color: var(--main-font-color);
-    margin-top: 4px;
+    margin-top: 0;
 }
 
 .product-detail-description p {
@@ -511,9 +511,13 @@
 
 /* Product Detail Responsive */
 @media (max-width: 968px) {
+    .product-detail {
+        margin-bottom: 20px;
+    }
+
     .product-detail-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 16px;
     }
 
     .product-detail-image-section {
@@ -521,12 +525,55 @@
         top: 0;
     }
 
+    .product-detail-image-wrapper .splide {
+        min-height: 300px;
+    }
+
+    .product-detail-image-wrapper .splide__track {
+        min-height: 300px;
+    }
+
+    .product-detail-image-wrapper .splide__list {
+        min-height: 300px;
+    }
+
+    .product-detail-image-wrapper .splide__slide {
+        min-height: 300px;
+    }
+
+    .product-detail-image-wrapper .splide__slide img {
+        max-height: 400px;
+    }
+
+    .product-detail-thumbnails {
+        gap: 6px;
+        margin-top: 15px;
+    }
+
+    .product-detail-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+
+    .product-detail-info {
+        gap: 12px;
+    }
+
+    .product-detail-header {
+        gap: 2px;
+    }
+
     .product-detail-title {
-        font-size: 1.625rem;
+        font-size: 1.5rem;
     }
 
     .product-detail-price {
-        font-size: 1.625rem;
+        font-size: 1.5rem;
+    }
+
+    .product-detail-price-wrapper {
+        gap: 10px;
+        padding: 12px 0;
     }
 
     .product-detail-form {
@@ -548,6 +595,11 @@
 
     .product-detail-book-info {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .product-detail-info-item {
+        gap: 2px;
     }
 }
 
@@ -562,28 +614,72 @@
 }
 
 @media (max-width: 640px) {
+    .product-detail {
+        margin-bottom: 15px;
+    }
+
     .product-detail-grid {
-        gap: 24px;
+        gap: 12px;
     }
 
     .product-detail-image-wrapper {
         padding: 0;
     }
 
+    .product-detail-image-wrapper .splide {
+        min-height: 250px;
+    }
+
+    .product-detail-image-wrapper .splide__track {
+        min-height: 250px;
+    }
+
+    .product-detail-image-wrapper .splide__list {
+        min-height: 250px;
+    }
+
+    .product-detail-image-wrapper .splide__slide {
+        min-height: 250px;
+    }
+
+    .product-detail-image-wrapper .splide__slide img {
+        max-height: 300px;
+    }
+
+    .product-detail-thumbnails {
+        gap: 4px;
+        margin-top: 30px;
+    }
+
+    .product-detail-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+
+    .product-detail-info {
+        gap: 10px;
+    }
+
     .product-detail-title {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
 
     .product-detail-price {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
 
     .product-detail-price-wrapper {
-        padding: 20px 0;
+        gap: 8px;
+        padding: 10px 0;
     }
 
     .product-detail-add-to-cart {
         width: 100%;
+        padding: 10px 20px;
+    }
+
+    .product-detail-book-info {
+        gap: 8px;
     }
 }
 
