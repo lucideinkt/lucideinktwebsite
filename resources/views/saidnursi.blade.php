@@ -1,106 +1,48 @@
 <x-layout>
     <main class="container page">
+        <div class="said-nursi-page__text-box">
+            <h1 class="title">Wie is Said Nursî?</h1>
+            <h2 class="sub-title">1878–1960</h2>
 
-        <div class="said-nursi-page__text-box ">
+            <blockquote>
+                <p>"Ik zal de wereld bewijzen dat de Qur'an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"</p>
+            </blockquote>
 
-            <h1 class="title">Bediüzzaman Said Nursi</h1>
+            <p>Dit was de reactie van Said Nursî toen hij in zijn vroege twintiger jaren de volgende tekst in een krant las:</p>
 
-            <p>De hoogaanzienlijke dienaren van de religie die volgens de bekendmaking van bepaalde Âhadith aan het
-                begin
-                van elke eeuw zullen verschijnen, zijn niet reformistisch maar volgzaam. Dat wil zeggen dat zij niet uit
-                zichzelf iets nieuws fabriceren en nieuwe grondbeginselen presenteren. Via de weg waarop zij de
-                Islamitische
-                basisprincipes, de geloofsfundamenten en de Mohammedaanse Soenna tot in de details strikt navolgen,
-                herstellen en bestendigen zij de religie, onthullen zij de waarheden en de kernpunten van de religie,
-                verhinderen en verwerpen zij de vervalsingen die mensen in de religie willen mengen, verdrijven en
-                beëindigen zij het onrecht waaraan de religie wordt blootgesteld, stabiliseren zij de Wetten des Heren,
-                en
-                onthullen en openbaren zij de eerbiedwaardigheid en de verhevenheid van Goddelijke Standpunten. Zonder
-                een
-                verandering aan de basismethodiek aan te brengen of de kerngedachten aan te tasten, hanteren zij nieuwe
-                beschrijvingsmethodes, nieuwe redeneringen conform de heersende denkwijze, en nieuwe uiteenzettingen en
-                detailleringen wanneer zij hun taak vervullen.</p>
+            <blockquote>
+                <p>"In het Britse Lagerhuis hield de Minister van Koloniën een toespraak. Met de Qur'an in zijn hand zei hij: 'Zolang deze Qur'an in handen van de moslims is, zullen wij nooit over hen kunnen heersen. Wij moeten – koste wat kost – óf deze Qur'an uit hun handen nemen óf de moslims van de Qur'an vervreemden.'"</p>
+            </blockquote>
 
-            <p><strong>Wat de Risale-i Nur en Zijn vertolker betreft:</strong></p>
+            <p>Dit duistere bericht ontstak een brandend vuur in de jonge Said. Met een onwankelbare vastberadenheid stippelde hij zijn levenspad uit. Zonder ooit op zijn besluit terug te komen, zou hij de rest van zijn leven volledig wijden aan de dienst van de Qur'an. De ultieme vrucht van deze onverzettelijke keuze rijpte geleidelijk uit tot de Risale-i Nur.</p>
 
-            <p>In dit waardevolle werk schuilt een verheven zegenrijkheid en een grenzeloze voortreffelijkheid die nooit
-                eerder in een dergelijke mate zijn geconstateerd. En het is gebleken dat dit werk de zegeningen van het
-                Goddelijke Licht, de Zon van leiding en de Schittering van gelukzaligheid alias de Heilige Qur’an als
-                geen
-                enkel ander werk heeft geërfd. Aldus is het niet meer dan evident dat de essentie van dit werk uit het
-                Pure
-                Licht van de Qur’an bestaat, dat dit werk meer zegeningen uit de Mohammedaanse Lichten dan de werken van
-                heiligen draagt, dat het aandeel, de betrokkenheid en de heilige inbreng van de onberispelijke profeet
-                bij
-                dit werk meer dan bij de werken van heiligen voorkomen, en dat de begiftigde en de vertolker van dit
-                werk
-                een spirituele persoonlijkheid bezit met gaven en volmaaktheden die naar dezelfde verhouding verheven en
-                onvergelijkelijk zijn; dit is een waarheid die zo helder is als de zon.</p>
+            <h3>Jeugd en opleiding</h3>
+            <p>In een afgelegen dorp in Oost-Anatolië genaamd Nurs was hij ter wereld gekomen. Zijn vader Mirza was een Godvrezende veehouder; zijn moeder Nuriye een vrome dorpsvrouw. Terwijl zijn vader hun dieren altijd muilkorfde wanneer hij ze naar hun graasweide bracht – zodat ze onderweg geen hap van andermans gewas namen – gaf zijn moeder hem altijd alleen borstvoeding nadat zij de rituele wassing had verricht. Zo genoot Said Nursî een uiterst zuivere opvoeding die bijdroeg aan de gezegende ontplooiing van zijn buitengewone gaven.</p>
 
-            <p>Waarlijk, om omstandigheden te beteren was dat uitzonderlijke individu al in zijn kinderjaren zonder
-                enige
-                vooropleiding in drie maanden studietijd als erfgenaam van primaire, moderne, spirituele en materiële
-                wetenschappen, evenals wetenschappen omtrent kosmische geheimen en Goddelijke Wijsheden aangesteld.
-                Nooit
-                eerder is iemand met een dusdanig alzijdige gave gezegend. Een dergelijk wonder van kennis is niet
-                eerder
-                verschenen. Er kan absoluut niet aan getwijfeld worden dat de vertolker van de Risale-i Nur in deze
-                hoedanigheid van top tot teen is uitgerust met een voorbeeldige kuisheid, een formidabele heldhaftigheid
-                en
-                een volmaakte zelfgenoegzaamheid die aan zijn buitengewoon sterke karakter zijn ontsproten. Dit maakt
-                hem op
-                zichzelf een scheppingswonder, een belichaming van Gratie en een puur Godsgeschenk.</p>
+            <p>Van kinds af aan dorstte hij naar kennis. Dit dreef hem ertoe om op negenjarige leeftijd zijn ouderhuis te verlaten. In de studiejaren die volgden, verbleef hij in verscheidene medresses. Een studie die normaliter vijftien jaar duurt, rondde hij in drie maanden af. Voordat hij de pubertijd bereikte, ontving hij op veertienjarige leeftijd zijn "idjazah" (onderwijsbevoegdheid). Geleerden die getuigen waren van zijn onmiskenbare begaafdheid gaven hem de eretitel "Bediüzzaman" (de onvergelijkelijke des tijds).</p>
 
-            <p>Dat fenomeen had nog voor zijn pubertijd als ongeëvenaarde geleerde de hele wetenschapswereld uitgedaagd.
-                Alle geleerden die een discussie met hem aangingen, had hij een nederlaag toegebracht en tot zwijgen
-                gebracht. Waar hij zich ook bevond, elke vraag die aan hem gesteld werd, had hij zonder aarzeling met
-                een
-                absolute doeltreffendheid afdoend beantwoord. Vanaf zijn veertiende jaar had hij de functie van
-                leermeester
-                bekleed, en onophoudelijk zegeningen van kennis en lichten van wijsheid verspreid. De subtiliteit en
-                diepgang in zijn beschrijvingen, de verhevenheid en kracht in zijn verwoordingen, de diepe
-                vooruitziendheid,
-                de visie en de lumineuze wijsheid in zijn uiteenzettingen hebben de geleerden versteld doen staan en ze
-                aangedreven om hem terecht de ontzaglijke titel: “Bediüzzaman” (het wonder des tijds) te schenken.</p>
+            <h3>De Goddelijke beschikking</h3>
+            <p>Op een dag had hij de profeet Mohammed (s.a.w) in zijn droom gezien en hem om kennis verzocht. Daarop gaf de profeet hem de tijding dat hem Qur'anische kennis geschonken zou worden, op voorwaarde dat hij geen vragen aan de oemma zou stellen. Deze tijding werd tijdens zijn leven verwezenlijkt. Op jeugdige leeftijd werd hij bekend als een uitblinkende geleerde van zijn tijdperk. Nooit stelde hij vragen aan anderen, terwijl hij altijd op alle vragen die hem gesteld werden heldere antwoorden gaf. Naarmate de tijd verstreek, bleek dat hij door de Goddelijke Beschikking was uitverkozen om een belangrijke taak te vervullen.</p>
 
-            <p>Een dergelijk individu dat zich met zijn verheven vaardigheden en zijn gezegende kennis op een
-                volwaardige
-                wijze aan het verspreiden en authenticeren van de Mohammedaanse religie heeft gewijd, geniet uiteraard
-                de
-                allerhoogste aandacht, de meest verheven toezicht en de bijstand van de meester der profeten. En hij is
-                zonder twijfel bezitter van edele eigenschappen die op bevel en commando van de heiligste profeet
-                voortgaat,
-                op basis van zijn regelingen handelt, en als erfgenaam en reflectant van zijn lichten en waarheden
-                dienst
-                verricht.</p>
+            <h3>De Mudjeddid</h3>
+            <p>Zoals in een Hadith is overgeleverd, heeft de profeet Mohammed (s.a.w) het volgende verkondigd: "Aan het begin van elke eeuw zal ALLAH een "Mudjeddid" (vernieuwer) zenden." Deze "Mudjeddid" zal vertroebelde waarheden herstellen. Elke Mudjeddid is een uitverkoren geleerde die in zijn tijd de Qur'an en de Sunnah op de meest correcte wijze interpreteert en op de beste wijze verklaart. Zonder enige verandering in de Islamitische basisprincipes of kerngedachtes aan te brengen, hanteert een Mudjeddid nieuwe beschrijvingsmethodes en redeneringen om alle problemen en vraagstukken van de heersende tijdgeest te ontwarren en op te lossen.</p>
 
-            <p>De Mohammedaanse Lichten, de Ahmedaanse leerstellingen en de zegeningen uit Goddelijke Radiaties die hij
-                op
-                de stralendste wijze laat schitteren, de aritmetische aanduidingen uit de Qur’an en de Âhadith die naar
-                hem
-                leiden, de profetische aanspreking in de vorm van aritmetische kennisgevingen in Ontzaglijke Aya’s die
-                op
-                hem is gericht, zijn bewijzen die er geen twijfel over laten bestaan dat die persoon in het kader van
-                het
-                geloof een glanzende spiegel van profeetschap, een ultieme vrucht van lichternis uit de boom van
-                profeetschap en de laatste waarheidspreker via de taal van profeetschap is; gezien zijn geloofsdienst is
-                hij
-                de allerlaatste gelukzalige drager van de Goddelijke Lichternis.</p>
+            <p>Omdat de tijdgenoten van Said Nursî zonneklare herkenningstekenen van een Mudjeddid bij hem zagen, noemden zij hem "de Mudjeddid van het einde der tijden". In de Risale-i Nur geeft Said Nursî echter aan dat hem de titel "Mudjeddid" tijdelijk is toegekend om die uiteindelijk over te dragen aan de Risale-i Nur.</p>
 
-            <p><em>Namens de Nur-studenten die in de derde Yûsufische medresse slechts een enkele les van
-                    El’Hoedjetoe-z’Zehrâ en Zoehratoe-n’Noer hebben meegekregen:</em></p>
+            <h3>Zijn levenswerk</h3>
+            <p>Zijn gehele drieëntachtigjarige bestaan op aarde had hij gewijd aan de geloofsdienst. Ongeacht waar hij zich bevond – in een medresse, op het slagveld, in krijgsgevangenschap, in ballingschap of in een staatsgevangenis – niets kon hem ervan weerhouden om met al zijn kracht te ijveren voor de Islam. Uiteindelijk heeft hij bij Gods Gratie zijn levenswerk kunnen vervolmaken.</p>
 
-            <p><em>Ahmed Feyzi, Ahmed Nazif, Salahaddin, Zübeyr, Ceylan, Sungur, Tabancalı</em></p>
+            <h3>Uit zijn biografie</h3>
+            <p>Ter afsluiting volgt nu een tekst van Said Nursî zelf uit zijn biografie:</p>
 
-            <p>Ondanks dat ze mij honderdmaal meer aandeel geven dan dat ik verdien, durf ik de dragers van deze namen
-                niet
-                te krenken. Ik zwijg en aanvaard die achting namens de spirituele persoonlijkheid van de Risale-i
-                Nur-studenten.</p>
+            <p>Denken zij daadwerkelijk dat ik een zelfzuchtig persoon ben die er slechts op uit is om zijn eigen nefs te redden? Om het geloof van de gemeenschap te redden, heb ik zowel mijn wereld als mijn hiernamaals opgeofferd. Gedurende heel mijn ruim tachtigjarige leven heb ik geen aards genot gekend. Mijn hele leven heb ik op slagvelden, in krijgsgevangenschap of in staatsgevangenissen doorgebracht. Er is geen pijn die ik niet heb geproefd, geen kwelling die ik niet heb ondergaan. Voor krijgsraden ben ik als een woeste misdadiger behandeld; als een verstotene ben ik van oord naar oord verbannen. In staatsgevangenissen werd mij maandenlang elke vorm van contact ontzegd. Ik ben herhaaldelijk vergiftigd en heb velerlei vernederingen moeten verduren. Er zijn tijden geweest waarin ik de dood duizendmaal boven het leven verkoos. Als mijn religie mij niet van zelfmoord had weerhouden, zou Said vandaag waarschijnlijk onder de grond vergaan zijn.</p>
 
-            <p><em>Said Nursî</em></p>
+            <p>Mijn aard verdraagt geen schimp en smaad. De waardigheid en onversaagdheid van de Islam staan mij niet toe om daarvoor te zwichten. Mocht ik er toch mee geconfronteerd worden, dan maakt het niet uit wie tegenover mij staat – hetzij de wreedste despoot, hetzij de bloeddorstigste commandant – ik zal mij niet voor hem vernederen; ik zal hem zijn wreedheid en bloeddorstigheid recht in het gezicht werpen. Of hij mij vervolgens in de kerker gooit of tot de galg veroordeelt, is totaal niet van belang. Zulke omstandigheden hebben zich overigens al voorgedaan; ik heb dit alles al meegemaakt. Hadden het hart en geweten van een wrede commandant nog enkele minuten zijn onrecht getolereerd, dan zou Said als gehangene vandaag in de schare der onschuldigen zijn opgenomen.</p>
 
+            <p>Voorwaar, in een aaneenschakeling van beproevingen en rampen is heel mijn leven zwaar en bitter verlopen. Op het pad ten dienste van het geloof, de gelukzaligheid en de vrede van de gemeenschap heb ik mijn nefs en mijn wereld opgeofferd – al mijn geschonden rechten verklaar ik halal. Zelfs de schenders bid ik niets kwaads toe. Want langs deze weg is de Risale-i Nur een middel geworden dat inmiddels het geloof van minstens honderdduizenden, of naar zeggen zelfs miljoenen mensen heeft gered – het exacte aantal weet ik niet, maar de officier van justitie in Afyon had het over vijfhonderdduizend, en wellicht is het nog meer. Met de dood had ik alleen mezelf kunnen redden. Echter, door in leven te blijven en alle moeiten en beproevingen te verdragen, heb ik dienst mogen verrichten om het geloof van zovelen te redden. ALLAH zij duizendmaal geprezen.</p>
+
+            <p>Om het geloof van de gemeenschap in veiligheid te brengen, heb ik op dat pad ook mijn hiernamaals opgeofferd. In mijn ogen bestaat er noch liefde voor het paradijs, noch vrees voor de hel. Namens het geloof van niet alleen de Turkse gemeenschap van 25 miljoen, maar van de gehele Islamitische gemeenschap van honderden miljoenen mensen, mogen niet één, maar duizend Saids opgeofferd worden. Als onze Qur'an op aarde zonder volgers achterblijft, dan verlang ik ook niet naar het paradijs; ook daar zal het dan een kerker voor mij zijn. Als ik zou zien dat het geloof van mijn volk veiliggesteld is, dan ben ik bereid om in de vlammen van de hel te branden. Want terwijl mijn lichaam dan knettert in het vuur, zal mijn hart veranderen in een weelderige rozentuin.</p>
         </div>
-
     </main>
     <div class="gradient-border"></div>
     <x-footer></x-footer>
