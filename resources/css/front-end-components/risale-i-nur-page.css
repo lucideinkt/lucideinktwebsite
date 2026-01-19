@@ -4,7 +4,7 @@
     letter-spacing: 2px;
     font-size: 50px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: center;
     font-size: 50px;
 }
@@ -21,9 +21,22 @@
     margin-right: auto;
 }
 
+.risale-i-nur-page__text-box .sub-title {
+    text-align: center;
+    margin-top: 0;
+}
+
 @media (max-width: 600px) {
     .risale-i-nur-page__text-box .title {
         font-size: 32px;
-        margin-bottom: 25px;
+        margin-bottom: 0px;
+    }
+
+    .risale-i-nur-page__text-box .sub-title {
+        font-size: 20px;
+    }
+
+    .risale-i-nur-page__text-box {
+        padding: 30px 20px;
     }
 }
