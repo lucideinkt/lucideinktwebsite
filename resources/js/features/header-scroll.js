@@ -42,22 +42,24 @@ export function initHeaderScrollEffect() {
 
             const isMobile = window.innerWidth <= 992;
             const logoThreshold = isMobile ? 60 : 100;
+            const scrolledThreshold = 60; // Keep header filled until 60px from top
 
-            if (currentScrollY <= 0) {
+            if (currentScrollY <= scrolledThreshold) {
                 header.classList.remove('scrolled');
                 logoContainer?.classList.remove('logo-hidden');
                 logoImg?.classList.remove('logo-hidden-img');
             } else if (currentScrollY > lastScrollY) {
+                // Scrolling down
                 header.classList.add('scrolled');
                 logoContainer?.classList.add('logo-hidden');
                 logoImg?.classList.add('logo-hidden-img');
             } else {
+                // Scrolling up - keep scrolled state unless near top
+                header.classList.add('scrolled');
                 if (currentScrollY <= logoThreshold) {
-                    header.classList.remove('scrolled');
                     logoContainer?.classList.remove('logo-hidden');
                     logoImg?.classList.remove('logo-hidden-img');
                 } else {
-                    header.classList.remove('scrolled');
                     logoContainer?.classList.add('logo-hidden');
                     logoImg?.classList.add('logo-hidden-img');
                 }
@@ -75,19 +77,21 @@ export function initHeaderScrollEffect() {
             const currentScrollY = window.scrollY || 0;
             const isMobile = window.innerWidth <= 992;
             const logoThreshold = isMobile ? 60 : 100;
+            const scrolledThreshold = 60;
 
-            if (currentScrollY <= 0) {
-                header.classList.remove('scrolled');
-                logoContainer?.classList.remove('logo-hidden');
-                logoImg?.classList.remove('logo-hidden-img');
-            } else if (currentScrollY <= logoThreshold) {
+            if (currentScrollY <= scrolledThreshold) {
                 header.classList.remove('scrolled');
                 logoContainer?.classList.remove('logo-hidden');
                 logoImg?.classList.remove('logo-hidden-img');
             } else {
-                header.classList.remove('scrolled');
-                logoContainer?.classList.add('logo-hidden');
-                logoImg?.classList.add('logo-hidden-img');
+                header.classList.add('scrolled');
+                if (currentScrollY <= logoThreshold) {
+                    logoContainer?.classList.remove('logo-hidden');
+                    logoImg?.classList.remove('logo-hidden-img');
+                } else {
+                    logoContainer?.classList.add('logo-hidden');
+                    logoImg?.classList.add('logo-hidden-img');
+                }
             }
         }, 150);
     });

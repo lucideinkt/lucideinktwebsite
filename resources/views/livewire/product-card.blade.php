@@ -39,11 +39,11 @@
                 @if ($product->stock == 0) disabled @endif>
                 <span wire:loading.remove wire:target="addToCart">
                     <i class="fa-solid fa-bag-shopping"></i>
-                    <span>In winkelmand</span>
+                    <span class="in-cart">In winkelmand</span>
                 </span>
                 <span wire:loading wire:target="addToCart" class="product-card-button-loading">
                     <i class="fa-solid fa-spinner fa-spin"></i>
-                    <span>Toevoegen...</span>
+{{--                    <span class="adding">Toevoegen...</span>--}}
                 </span>
             </button>
         </div>
