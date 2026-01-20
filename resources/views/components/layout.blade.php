@@ -59,18 +59,16 @@
 <body style="position: relative;">
     <header class="header">
         <div class="header-box">
-            <div class="navbar-cart-sidebar-toggle">
-                <li class="nav-item cart">
-                    <a href="{{ route('cartPage') }}">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        @if(session('cart') && count(session('cart')))
-                            <span class="cart-quantity">
-                                {{ collect(session('cart'))->sum('quantity') }}
+                <div class="navbar-cart-sidebar-toggle">
+                    <li class="nav-item">
+                        <a href="{{ route('cartPage') }}"><i
+                                class="fa-solid fa-bag-shopping"></i>
+                            <span class="cart-quantity" style="display: {{ session('cart') && count(session('cart')) ? 'inline-block' : 'none' }};" id="cart-quantity-mobile">
+                                {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
                             </span>
-                        @endif
-                    </a>
-                </li>
-            </div>
+                        </a>
+                    </li>
+                </div>
 
             <div class="desktop-navbar-container">
 
@@ -118,6 +116,42 @@
     @livewireScripts
 
     <script>
+        // Listen for Livewire cart-updated event
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('cart-updated', (event) => {
+                const totalQuantity = event.totalQuantity || event[0]?.totalQuantity || 0;
+
+                // Update mobile cart counter
+                const mobileCounter = document.getElementById('cart-quantity-mobile');
+                if (mobileCounter) {
+                    mobileCounter.textContent = totalQuantity;
+                    mobileCounter.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
+                }
+
+                // Update desktop cart counter
+                const desktopCounter = document.getElementById('cart-quantity-desktop');
+                if (desktopCounter) {
+                    desktopCounter.textContent = totalQuantity;
+                    desktopCounter.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
+                }
+            });
+
+            // Listen for cart success message
+            Livewire.on('cart-success', (event) => {
+                const message = event.message || event[0]?.message || 'Product toegevoegd aan winkelwagen!';
+                if (window.showToast) {
+                    window.showToast(message, false);
+                }
+            });
+
+            // Listen for cart error message
+            Livewire.on('cart-error', (event) => {
+                const message = event.message || event[0]?.message || 'Er is een fout opgetreden.';
+                if (window.showToast) {
+                    window.showToast(message, true);
+                }
+            });
+        });
 
         if (typeof lightbox !== 'undefined') {
             lightbox.option({
