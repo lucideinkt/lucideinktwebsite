@@ -324,6 +324,13 @@
     color: inherit;
 }
 
+.product-detail-add-to-cart .small-plus {
+    position: relative;
+    left: -18px;
+    top: -10px;
+    font-size: 0.6em;
+}
+
 .product-detail-add-to-cart .loader {
     display: none;
 }

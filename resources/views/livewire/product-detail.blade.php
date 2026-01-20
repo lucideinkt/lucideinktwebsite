@@ -8,9 +8,9 @@
                             @foreach ($productImages as $idx => $img)
                                 <li class="splide__slide">
                                     <a data-lightbox="books" href="{{ $img }}"
-                                        data-title="{{ $product->title }}">
+                                       data-title="{{ $product->title }}">
                                         <img data-lightbox="books" src="{{ $img }}"
-                                            alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy">
+                                             alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy">
                                     </a>
                                 </li>
                             @endforeach
@@ -23,7 +23,7 @@
                         @foreach ($productImages as $idx => $img)
                             <li class="product-detail-thumbnail">
                                 <img src="{{ $img }}" alt="{{ $product->title }} {{ $idx + 1 }}"
-                                    loading="lazy">
+                                     loading="lazy">
                             </li>
                         @endforeach
                     </ul>
@@ -74,9 +74,10 @@
                 </div>
 
                 <button type="button" class="product-detail-add-to-cart" wire:click="addToCart"
-                    wire:loading.attr="disabled" @if ($product->stock == 0) disabled @endif>
+                        wire:loading.attr="disabled" @if ($product->stock == 0) disabled @endif>
                     <span wire:loading.remove wire:target="addToCart">
                         <i class="fa-solid fa-bag-shopping"></i>
+                        <i class="fa-solid fa-plus small-plus"></i>
                         <span>In winkelmand</span>
                     </span>
                     <span wire:loading wire:target="addToCart">
@@ -132,8 +133,8 @@
 <script>
     document.addEventListener('livewire:init', () => {
         Livewire.hook('morph.added', ({
-            el
-        }) => {
+                                          el
+                                      }) => {
             if (el.id === 'main-slider') {
                 setTimeout(() => {
                     const mainSlider = document.getElementById('main-slider');

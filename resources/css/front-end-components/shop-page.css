@@ -239,6 +239,11 @@
     gap: 8px;
 }
 
+.small-plus {
+    position: relative;
+    display: none;
+}
+
 .product-card-button i {
     font-size: 0.9rem;
     color: inherit;
@@ -316,6 +321,20 @@
 }
 
 @media (max-width: 600px) {
+    .adding {
+        display: none;
+    }
+
+    .product .small-plus {
+        display: none;
+    }
+
+    .small-plus {
+        display: inline-block;
+        top: -1px;
+        font-size: 12px !important;
+    }
+
     .product-card-button .in-cart {
         display: none;
     }

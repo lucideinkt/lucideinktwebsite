@@ -36,14 +36,15 @@
             </div>
 
             <button type="button" class="product-card-button" wire:click="addToCart" wire:loading.attr="disabled"
-                @if ($product->stock == 0) disabled @endif>
+                    @if ($product->stock == 0) disabled @endif>
                 <span wire:loading.remove wire:target="addToCart">
                     <i class="fa-solid fa-bag-shopping"></i>
+                    <i class="fa-solid fa-plus small-plus"></i>
                     <span class="in-cart">In winkelmand</span>
                 </span>
                 <span wire:loading wire:target="addToCart" class="product-card-button-loading">
                     <i class="fa-solid fa-spinner fa-spin"></i>
-{{--                    <span class="adding">Toevoegen...</span>--}}
+                    <span class="adding">Toevoegen...</span>
                 </span>
             </button>
         </div>
