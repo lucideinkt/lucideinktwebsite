@@ -1,7 +1,7 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/004_background.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/005_background.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
@@ -72,10 +72,13 @@
 
         <section class="colored-section">
             <div class="container new-translation">
-                <h2 class="title">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
-                        class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
-                    ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
-                        class="title-in"></span>g</h2>
+                <div class="title-wrapper">
+                    <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="">
+                    <h2 class="title">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
+                            class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
+                        ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
+                            class="title-in"></span>g</h2>
+                </div>
                 <div class="divider"></div>
                 <div class="sub-text">
                     <p>
@@ -121,7 +124,7 @@
 
         <div class="gradient-border"></div>
 
-        <section class="white-section intro-section risale-section">
+        <section class="white-section risale-section">
             <div class="text-container risale-grid">
                 <div class="risale-content">
                     <h2 class="title">Wat is de Risale-i Nur?</h2>
@@ -141,7 +144,7 @@
                     </div>
                 </div>
                 <div class="risale-image">
-                    <img src="{{ asset('images/standing.png') }}" alt="Risale-i Nur">
+                    <img src="{{ asset('images/books_standing_new.webp') }}" alt="Risale-i Nur">
                 </div>
             </div>
         </section>
@@ -201,7 +204,7 @@
 
         <div class="gradient-border"></div>
 
-        <section class="white-section intro-section risale-section said-nursi-section">
+        <section class="white-section risale-section said-nursi-section">
             <div class="text-container risale-grid">
                 <div class="risale-image said-nursi-image">
                     <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
