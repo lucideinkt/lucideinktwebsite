@@ -41,16 +41,14 @@
     }
 }
 
-.header .active {
-    text-decoration: underline;
-    text-underline-offset: 6px;
-}
-
 /* Ensure active styling works for desktop navbar */
 .desktop-navbar-container a.active,
 .desktop-navbar-container .nav-item a.active {
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important;
+    text-shadow:
+        0 0 10px rgba(245, 223, 172, 0.6),
+        0 0 20px rgba(245, 223, 172, 0.4),
+        0 0 30px rgba(245, 223, 172, 0.2);
+    filter: brightness(1.2);
 }
 
 .text-container {

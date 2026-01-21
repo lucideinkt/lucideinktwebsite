@@ -10,7 +10,7 @@
             </span>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="#">Meer Informatie</a></li>
+            <li><a href="{{ route('risale') }}">Meer Informatie</a></li>
             <li><a href="#">Online Lezen</a></li>
             <li><a href="#">Audioboeken</a></li>
         </ul>
