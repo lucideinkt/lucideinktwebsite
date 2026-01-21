@@ -220,6 +220,14 @@
     transition: all 0.2s ease;
     white-space: nowrap;
     flex-shrink: 0;
+    flex-wrap: nowrap;
+}
+
+.product-card-button > span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
 }
 
 
@@ -282,6 +290,7 @@
     .product-card-button {
         padding: 8px 12px;
         font-size: 0.85rem;
+        min-width: fit-content;
     }
 
     .product-card-title {
@@ -337,6 +346,11 @@
 
     .product-card-button .in-cart {
         display: none;
+    }
+
+    .product-card-button {
+        justify-content: center;
+        min-width: 50px;
     }
 
     .page.shop .book-box {
