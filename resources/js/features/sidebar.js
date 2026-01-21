@@ -25,15 +25,33 @@ export function initSidebarToggles() {
     const sidebarDropdowns = sidebar?.querySelectorAll('.nav-item.dropdown > a');
     if (sidebarDropdowns) {
         sidebarDropdowns.forEach(dropdownLink => {
-            dropdownLink.addEventListener('click', (e) => {
-                // Only prevent default on mobile (when sidebar is visible)
+            // Variable to track if we've handled the interaction
+            let touchHandled = false;
+
+            // Handle touch events (mobile)
+            dropdownLink.addEventListener('touchstart', (e) => {
                 if (window.innerWidth <= 992) {
                     e.preventDefault();
+                    touchHandled = true;
                     const parentLi = dropdownLink.closest('.nav-item.dropdown');
                     if (parentLi) {
-                        const wasOpen = parentLi.classList.contains('open');
                         parentLi.classList.toggle('open');
-                        console.log('Dropdown toggled:', wasOpen ? 'closed' : 'opened', parentLi);
+                    }
+                }
+            }, { passive: false });
+
+            // Handle click events (backup for non-touch devices)
+            dropdownLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    // If touch already handled this, skip
+                    if (touchHandled) {
+                        touchHandled = false;
+                        return;
+                    }
+                    const parentLi = dropdownLink.closest('.nav-item.dropdown');
+                    if (parentLi) {
+                        parentLi.classList.toggle('open');
                     }
                 }
             });
