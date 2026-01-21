@@ -48,7 +48,7 @@
         0 0 10px rgba(245, 223, 172, 0.6),
         0 0 20px rgba(245, 223, 172, 0.4),
         0 0 30px rgba(245, 223, 172, 0.2);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
 
 .text-container {
@@ -547,6 +547,15 @@ li.nav-item.dropdown {
         margin-top: 0px;
     }
 
+    .sidebar .nav-item.dropdown > a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+
     .sidebar .dropdown-menu {
         position: static;
         transform: none;
@@ -572,6 +581,7 @@ li.nav-item.dropdown {
         visibility: visible;
         max-height: 200px;
         margin-left: 10px;
+        margin-top: 8px;
     }
 
     .sidebar .dropdown-menu li {
@@ -584,15 +594,9 @@ li.nav-item.dropdown {
     }
 
     .sidebar .navbar ul .dropdown-menu li a {
-        font-size: 10px !important;
+        font-size: 12px !important;
         padding: 5px 10px;
         text-transform: none;
-    }
-
-    .sidebar .nav-item.dropdown > a {
-        display: flex;
-        align-items: center;
-        gap: 8px;
     }
 
     .sidebar .nav-item.dropdown > a .fa-chevron-down {
@@ -610,13 +614,21 @@ li.nav-item.dropdown {
         transform: rotate(180deg) !important;
     }
 
-    /* Disable hover rotation on mobile */
-    .sidebar .nav-item.dropdown:hover > a .fa-chevron-down {
-        transform: rotate(0deg);
-    }
+    /* Disable all hover effects on mobile/touch devices */
+    @media (hover: none) and (pointer: coarse) {
+        .sidebar .nav-item.dropdown:hover > a .fa-chevron-down {
+            transform: rotate(0deg);
+        }
 
-    .sidebar .nav-item.dropdown.open:hover > a .fa-chevron-down {
-        transform: rotate(180deg) !important;
+        .sidebar .nav-item.dropdown.open:hover > a .fa-chevron-down {
+            transform: rotate(180deg) !important;
+        }
+
+        /* Prevent any hover-triggered dropdown behavior */
+        .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+        }
     }
 }
 
