@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDF Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #525659;
+            overflow: hidden;
+        }
+
+        #toolbar {
+            background: #323639;
+            padding: 12px 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            flex-wrap: wrap;
+        }
+
+        #toolbar button {
+            background: #474B4F;
+            border: 1px solid #5E6366;
+            color: white;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            touch-action: manipulation;
+            transition: background 0.2s;
+        }
+
+        #toolbar button:hover {
+            background: #5E6366;
+        }
+
+        #toolbar button:active {
+            background: #6E7376;
+        }
+
+        #toolbar button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #pageInfo {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        #pageNum {
+            width: 60px;
+            text-align: center;
+            padding: 8px 4px;
+            border: 1px solid #5E6366;
+            background: #474B4F;
+            color: white;
+            border-radius: 4px;
+            font-size: 16px;
+            min-height: 44px;
+        }
+
+        #zoom-level {
+            min-width: 50px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            #toolbar {
+                padding: 8px 6px;
+                gap: 4px;
+            }
+
+            #toolbar button {
+                padding: 8px 10px;
+                font-size: 14px;
+                min-width: 40px;
+                min-height: 40px;
+            }
+
+            #pageInfo {
+                font-size: 11px;
+                gap: 4px;
+                flex-shrink: 1;
+                margin: 0;
+            }
+
+            #pageNum {
+                width: 45px;
+                font-size: 13px;
+                padding: 6px 2px;
+                min-height: 40px;
+            }
+
+            #zoom-level {
+                font-size: 12px;
+                min-width: 42px;
+            }
+
+            .spacer {
+                flex: 0;
+                width: 4px;
+            }
+        }
+
+        #viewer-container {
+            width: 100%;
+            height: calc(100vh - 40px);
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .pdf-page-canvas {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            background: white;
+            margin-bottom: 10px;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+        }
+
+        .spacer {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="toolbar">
+        <div id="pageInfo">
+            Blz: <input type="number" id="pageNum" min="1" value="1"> / <span id="pageCount">-</span>
+        </div>
+        <div class="spacer"></div>
+        <button id="zoom-out" title="Uitzoomen">
+            <span style="font-size: 20px; font-weight: bold;">−</span>
+        </button>
+        <span id="zoom-level">100%</span>
+        <button id="zoom-in" title="Inzoomen">
+            <span style="font-size: 20px; font-weight: bold;">+</span>
+        </button>
+        <button id="fullscreen" title="Volledig scherm">
+            <span>⛶</span>
+        </button>
+    </div>
+
+    <div id="viewer-container">
+        <!-- Canvases will be dynamically added here -->
+    </div>
+
+    <div id="loading">PDF wordt geladen...</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        // Configure PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        // Get URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfUrl = urlParams.get('file');
+
+        if (!pdfUrl) {
+            document.getElementById('loading').textContent = 'Geen PDF opgegeven';
+            throw new Error('No PDF URL provided');
+        }
+
+        // State
+        let pdfDoc = null;
+        let scale = 1.0; // Default 100% zoom
+        let pageElements = [];
+        let renderedPages = new Set();
+
+        // Elements
+        const viewerContainer = document.getElementById('viewer-container');
+        const pageCountSpan = document.getElementById('pageCount');
+        const pageNumInput = document.getElementById('pageNum');
+        const zoomInBtn = document.getElementById('zoom-in');
+        const zoomOutBtn = document.getElementById('zoom-out');
+        const zoomLevelSpan = document.getElementById('zoom-level');
+        const fullscreenBtn = document.getElementById('fullscreen');
+        const loading = document.getElementById('loading');
+
+
+        // Render a single page
+        function renderPage(pageNum, canvas) {
+            if (!pdfDoc) return Promise.resolve();
+
+            return pdfDoc.getPage(pageNum).then(function(page) {
+                const viewport = page.getViewport({ scale: scale });
+                const context = canvas.getContext('2d');
+
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                return page.render(renderContext).promise.then(function() {
+                    renderedPages.add(pageNum);
+                });
+            });
+        }
+
+        // Re-render visible pages (when zooming)
+        function reRenderVisiblePages() {
+            // Get viewport height for visibility check
+            const viewportHeight = window.innerHeight;
+
+            // First, clear all rendered flags for visible pages
+            const visiblePages = [];
+            pageElements.forEach(function(pageEl) {
+                const canvas = pageEl.canvas;
+                const pageNum = pageEl.pageNum;
+
+                // Check if visible (or close to visible)
+                const rect = canvas.getBoundingClientRect();
+                const isVisible = rect.top < viewportHeight + 1000 && rect.bottom > -1000;
+
+                if (isVisible) {
+                    visiblePages.push({ canvas: canvas, pageNum: pageNum });
+                    // Clear the rendered flag
+                    renderedPages.delete(pageNum);
+                    // Clear canvas
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    // Remove min height so canvas can resize
+                    canvas.style.minHeight = '';
+                }
+            });
+
+            // Now render all visible pages with new scale
+            visiblePages.forEach(function(page) {
+                renderPage(page.pageNum, page.canvas);
+            });
+        }
+
+        // Update zoom level display
+        function updateZoomLevel() {
+            zoomLevelSpan.textContent = Math.round(scale * 100) + '%';
+        }
+
+        // Get current visible page
+        function getCurrentVisiblePage() {
+            const containerRect = viewerContainer.getBoundingClientRect();
+            const containerTop = containerRect.top;
+            const containerMiddle = containerTop + (containerRect.height / 2);
+
+            for (let i = 0; i < pageElements.length; i++) {
+                const canvas = pageElements[i].canvas;
+                const rect = canvas.getBoundingClientRect();
+
+                // Check if the middle of the viewport is within this page
+                if (rect.top <= containerMiddle && rect.bottom >= containerMiddle) {
+                    return pageElements[i].pageNum;
+                }
+            }
+
+            // Fallback: find first visible page
+            for (let i = 0; i < pageElements.length; i++) {
+                const canvas = pageElements[i].canvas;
+                const rect = canvas.getBoundingClientRect();
+
+                if (rect.top < containerRect.bottom && rect.bottom > containerTop) {
+                    return pageElements[i].pageNum;
+                }
+            }
+
+            return 1;
+        }
+
+        // Scroll to specific page
+        function scrollToPage(pageNum) {
+            if (pageNum < 1 || pageNum > pageElements.length) {
+                return;
+            }
+
+            const pageEl = pageElements[pageNum - 1];
+            if (pageEl && pageEl.canvas) {
+                pageEl.canvas.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                pageNumInput.value = pageNum;
+            }
+        }
+
+        // Update page number input based on scroll position
+        function updatePageNumber() {
+            const currentPage = getCurrentVisiblePage();
+            if (currentPage > 0 && pageNumInput.value != currentPage) {
+                pageNumInput.value = currentPage;
+            }
+        }
+
+        // Intersection Observer for lazy loading
+        const observerOptions = {
+            root: null,
+            rootMargin: '500px', // Load pages 500px before they become visible
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const canvas = entry.target;
+                    const pageNum = parseInt(canvas.dataset.page);
+
+                    if (!renderedPages.has(pageNum)) {
+                        renderPage(pageNum, canvas);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Event listeners
+        zoomInBtn.addEventListener('click', function() {
+            scale += 0.25;
+            updateZoomLevel();
+            reRenderVisiblePages();
+        });
+
+        zoomOutBtn.addEventListener('click', function() {
+            if (scale <= 0.5) return;
+            scale -= 0.25;
+            updateZoomLevel();
+            reRenderVisiblePages();
+        });
+
+        fullscreenBtn.addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        // Page number input - go to page on Enter or blur
+        pageNumInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const pageNum = parseInt(this.value);
+                scrollToPage(pageNum);
+                this.blur();
+            }
+        });
+
+        pageNumInput.addEventListener('change', function() {
+            const pageNum = parseInt(this.value);
+            scrollToPage(pageNum);
+        });
+
+        // Track scroll position and update page number display
+        let scrollTimeout;
+        viewerContainer.addEventListener('scroll', function() {
+            // Update page number display after scroll stops (debounced)
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function() {
+                updatePageNumber();
+            }, 200);
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT') return;
+
+            if (e.key === '+' || e.key === '=') {
+                scale += 0.25;
+                updateZoomLevel();
+                reRenderVisiblePages();
+            } else if (e.key === '-') {
+                if (scale > 0.5) {
+                    scale -= 0.25;
+                    updateZoomLevel();
+
+                    reRenderVisiblePages();
+                }
+            } else if (e.key === 'f' || e.key === 'F') {
+                fullscreenBtn.click();
+            }
+        });
+
+        // Load PDF
+        console.log('Loading PDF from:', pdfUrl);
+
+        const loadingTask = pdfjsLib.getDocument({
+            url: pdfUrl,
+            cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+            cMapPacked: true
+        });
+
+        loadingTask.promise.then(function(pdf) {
+            pdfDoc = pdf;
+            const numPages = pdf.numPages;
+            pageCountSpan.textContent = numPages;
+
+            // Create placeholder canvases for all pages
+            for (let i = 1; i <= numPages; i++) {
+                const canvas = document.createElement('canvas');
+                canvas.className = 'pdf-page-canvas';
+                canvas.id = 'pdf-page-' + i;
+                canvas.dataset.page = i;
+
+                // Set placeholder appearance
+                canvas.style.background = '#f0f0f0';
+                canvas.width = 800;
+                canvas.height = 1000; // Initial placeholder size
+
+                viewerContainer.appendChild(canvas);
+
+                pageElements.push({
+                    canvas: canvas,
+                    pageNum: i
+                });
+
+                // Observe canvas for lazy loading
+                observer.observe(canvas);
+            }
+
+            loading.style.display = 'none';
+            updateZoomLevel();
+
+            // Set max value for page number input
+            pageNumInput.max = numPages;
+
+
+            console.log('PDF loaded, pages will render as you scroll');
+        }).catch(function(error) {
+            console.error('Error loading PDF:', error);
+            loading.textContent = 'Fout bij het laden van PDF: ' + error.message;
+        });
+    </script>
+</body>
+</html>

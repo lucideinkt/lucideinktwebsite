@@ -295,7 +295,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 0;
     padding: 12px 24px;
     background: var(--green-1);
     color: var(--ink-inverse);
@@ -319,6 +319,13 @@
     background: var(--ink-muted);
 }
 
+.product-detail-add-to-cart > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+}
+
 .product-detail-add-to-cart i {
     font-size: 0.9375rem;
     color: inherit;
@@ -326,9 +333,14 @@
 
 .product-detail-add-to-cart .small-plus {
     position: relative;
-    left: -18px;
-    top: -10px;
+    left: -12px;
+    top: -8px;
     font-size: 0.6em;
+}
+
+.product-detail-add-to-cart > span > span {
+    margin-left: 8px;
+    margin-top: 2px;
 }
 
 .product-detail-add-to-cart .loader {

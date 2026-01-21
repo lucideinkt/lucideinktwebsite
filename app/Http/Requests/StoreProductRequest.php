@@ -44,6 +44,7 @@ class StoreProductRequest extends FormRequest
             'image_2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
             'image_3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
             'image_4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
+            'pdf_file' => 'nullable|file|mimes:pdf|max:51200',
             'seo_description' => 'nullable|string|max:500',
             'seo_tags' => 'nullable|string|max:500',
             'seo_author' => 'nullable|string|max:255',
@@ -63,7 +64,7 @@ class StoreProductRequest extends FormRequest
             function (Validator $validator) {
                 $validated = $validator->validated();
                 $title = trim($validated['title'] ?? '');
-                
+
                 if (empty($title)) {
                     return;
                 }
@@ -138,6 +139,9 @@ class StoreProductRequest extends FormRequest
             'image_4.image' => 'Afbeelding 4 moet een afbeelding zijn.',
             'image_4.mimes' => 'Afbeelding 4 moet jpeg, png, jpg, gif of svg zijn.',
             'image_4.max' => 'Afbeelding 4 mag maximaal 2MB zijn.',
+            'pdf_file.file' => 'PDF bestand moet een bestand zijn.',
+            'pdf_file.mimes' => 'PDF bestand moet een PDF zijn.',
+            'pdf_file.max' => 'PDF bestand mag maximaal 50MB zijn.',
             'seo_description.string' => 'SEO beschrijving moet tekst zijn.',
             'seo_description.max' => 'SEO beschrijving mag maximaal 500 tekens zijn.',
             'seo_tags.string' => 'SEO tags moet tekst zijn.',

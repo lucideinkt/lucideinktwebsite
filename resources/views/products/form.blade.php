@@ -228,6 +228,47 @@
                     @endfor
                 </div>
 
+                {{-- PDF File for Online Reading --}}
+                <div class="section pdf-section">
+                    <h3>Online Lezen</h3>
+                    <div class="form-input">
+                        <label for="pdf_file">PDF Bestand</label>
+                        <div class="custom-file-input-wrapper">
+                            <input type="file" name="pdf_file" id="pdf_file" accept="application/pdf" class="custom-file-input">
+                            <label for="pdf_file" class="custom-file-label">
+                                <span id="pdf_file_label_text">
+                                    @if(isset($product) && $product->pdf_file)
+                                        {{ basename($product->pdf_file) }}
+                                    @else
+                                        Kies PDF bestand...
+                                    @endif
+                                </span>
+                            </label>
+
+                            {{-- Current PDF info --}}
+                            @if(isset($product) && $product->pdf_file)
+                                <div style="margin-top: 10px;">
+                                    <p class="current-file">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                        Huidig bestand:
+                                        <a href="{{ asset('storage/' . $product->pdf_file) }}" target="_blank" style="color: var(--green-2); text-decoration: underline;">
+                                            Bekijk PDF
+                                        </a>
+                                    </p>
+                                    <button type="button" class="btn small" id="remove-pdf-btn">
+                                        Verwijder PDF
+                                    </button>
+                                    <input type="checkbox" name="delete_pdf_file" id="delete_pdf_file" value="1" style="display:none;">
+                                </div>
+                            @endif
+                        </div>
+                        <small class="help-text">Upload een PDF bestand om dit boek beschikbaar te maken in de Online Lezen bibliotheek. Max 50MB.</small>
+                        @error('pdf_file')
+                        <div class="error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
                 {{-- SEO Fields --}}
                 <div class="section seo-section">
                     <h3>SEO Instellingen</h3>
@@ -284,5 +325,38 @@
                 <button type="submit" class="btn"><span class="loader"></span>Opslaan</button>
             </div>
         </form>
+
+        <script>
+            // PDF file upload handler
+            document.addEventListener('DOMContentLoaded', function() {
+                const pdfInput = document.getElementById('pdf_file');
+                const pdfLabel = document.getElementById('pdf_file_label_text');
+                const removePdfBtn = document.getElementById('remove-pdf-btn');
+                const deletePdfCheckbox = document.getElementById('delete_pdf_file');
+
+                if (pdfInput) {
+                    pdfInput.addEventListener('change', function(e) {
+                        if (e.target.files.length > 0) {
+                            const fileName = e.target.files[0].name;
+                            if (pdfLabel) {
+                                pdfLabel.textContent = fileName;
+                            }
+                        }
+                    });
+                }
+
+                if (removePdfBtn && deletePdfCheckbox) {
+                    removePdfBtn.addEventListener('click', function() {
+                        if (confirm('Weet u zeker dat u dit PDF bestand wilt verwijderen?')) {
+                            deletePdfCheckbox.checked = true;
+                            removePdfBtn.style.display = 'none';
+                            if (pdfLabel) {
+                                pdfLabel.textContent = 'PDF wordt verwijderd bij opslaan';
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
     </main>
 </x-dashboard-layout>

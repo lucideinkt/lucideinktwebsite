@@ -17,5 +17,7 @@
             @endif
         </div>
     </main>
+        <div class="gradient-border"></div>
+        <x-footer></x-footer>
 </x-layout>
 

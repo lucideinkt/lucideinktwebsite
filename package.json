@@ -17,6 +17,7 @@
     "dependencies": {
         "@myparcel/delivery-options": "^6.18.0",
         "@splidejs/splide": "^4.1.4",
-        "glightbox": "^3.3.1"
+        "glightbox": "^3.3.1",
+        "pdfjs-dist": "^5.4.530"
     }
 }
