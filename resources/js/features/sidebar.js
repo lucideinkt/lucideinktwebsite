@@ -9,16 +9,45 @@ export function initSidebarToggles() {
     const toggleBtn = document.querySelector('.sidebar-toggle');
     const closeBtn = document.querySelector('.close-toggle');
 
+    // Create overlay element
+    let overlay = document.querySelector('.sidebar-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'sidebar-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    // Function to open sidebar
+    function openSidebar() {
+        sidebar?.classList.add('open');
+        overlay?.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    // Function to close sidebar
+    function closeSidebar() {
+        sidebar?.classList.remove('open');
+        overlay?.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
     if (sidebar && toggleBtn) {
         toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
+            if (sidebar.classList.contains('open')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
         });
     }
 
     if (sidebar && closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            sidebar.classList.remove('open');
-        });
+        closeBtn.addEventListener('click', closeSidebar);
+    }
+
+    // Close sidebar when clicking on overlay
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
     }
 
     // Dropdown toggles in sidebar (mobile)
