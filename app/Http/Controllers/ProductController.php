@@ -96,6 +96,11 @@ class ProductController extends Controller
             }
         }
 
+        // PDF bestand verwerken
+        if ($request->hasFile('pdf_file')) {
+            $validated['pdf_file'] = $request->file('pdf_file')->store('pdfs', 'public');
+        }
+
         // Convert comma-separated tags string to array
         if (!empty($validated['seo_tags'])) {
             $tags = array_map('trim', explode(',', $validated['seo_tags']));
@@ -129,6 +134,7 @@ class ProductController extends Controller
             'image_2' => $validated['image_2'] ?? null,
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
+            'pdf_file' => $validated['pdf_file'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
@@ -215,6 +221,25 @@ class ProductController extends Controller
             }
         }
 
+        // PDF bestand verwerken
+        if ($request->has('delete_pdf_file') && $product->pdf_file) {
+            // Verwijder bestaande PDF
+            if (Storage::disk('public')->exists($product->pdf_file)) {
+                Storage::disk('public')->delete($product->pdf_file);
+            }
+            $validated['pdf_file'] = null;
+        } elseif ($request->hasFile('pdf_file')) {
+            // Verwijder oude PDF als die bestaat
+            if (!empty($product->pdf_file) && Storage::disk('public')->exists($product->pdf_file)) {
+                Storage::disk('public')->delete($product->pdf_file);
+            }
+            // Upload nieuwe PDF
+            $validated['pdf_file'] = $request->file('pdf_file')->store('pdfs', 'public');
+        } else {
+            // Behoud bestaande PDF
+            $validated['pdf_file'] = $product->pdf_file;
+        }
+
         // Convert comma-separated tags string to array
         if (!empty($validated['seo_tags'])) {
             $tags = array_map('trim', explode(',', $validated['seo_tags']));
@@ -247,6 +272,7 @@ class ProductController extends Controller
             'image_2' => $validated['image_2'] ?? null,
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
+            'pdf_file' => $validated['pdf_file'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
@@ -272,6 +298,11 @@ class ProductController extends Controller
             }
         }
 
+        // Verwijder PDF bestand
+        if (!empty($product->pdf_file) && Storage::disk('public')->exists($product->pdf_file)) {
+            Storage::disk('public')->delete($product->pdf_file);
+        }
+
         $product->update([
             'updated_by' => auth()->id(),
             'deleted_by' => auth()->id(),
@@ -279,6 +310,7 @@ class ProductController extends Controller
             'image_2' => '',
             'image_3' => '',
             'image_4' => '',
+            'pdf_file' => '',
         ]);
 
         $product->delete();

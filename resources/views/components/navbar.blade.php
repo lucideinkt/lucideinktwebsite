@@ -4,14 +4,14 @@
                 class="first-letter">H</span>OME</a>
     </li>
     <li class="nav-item dropdown">
-        <a class="{{ request()->routeIs('risale') ? 'active' : '' }}" href="{{ route('risale') }}">
+        <a class="{{ request()->routeIs('risale') || request()->routeIs('onlineLezen') ? 'active' : '' }}" href="{{ route('risale') }}">
             <span>
                 <span class="first-letter">R</span>İSALE-İ NUR <i class="fa-solid fa-chevron-down"></i>
             </span>
         </a>
         <ul class="dropdown-menu">
             <li><a href="{{ route('risale') }}">Meer Informatie</a></li>
-            <li><a href="#">Online Lezen</a></li>
+            <li><a href="{{ route('onlineLezen') }}">Online Lezen</a></li>
             <li><a href="#">Audioboeken</a></li>
         </ul>
     </li>

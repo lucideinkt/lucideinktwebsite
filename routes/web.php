@@ -19,6 +19,7 @@ use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\PickupLocationController;
 use App\Http\Controllers\ShippingCostController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\OnlineLezenController;
 
 
 // Both admin and user can access
@@ -158,6 +159,26 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/risale-i-nur', function () { return view('risale'); })->name('risale');
 Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
+
+// Online Reading
+Route::get('/online-lezen', [OnlineLezenController::class, 'index'])->name('onlineLezen');
+Route::get('/online-lezen/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
+
+// PDF Proxy for PDF.js viewer (with CORS headers)
+Route::get('/pdf-proxy/{path}', function ($path) {
+    $fullPath = storage_path('app/public/' . $path);
+
+    if (!file_exists($fullPath)) {
+        abort(404);
+    }
+
+    return response()->file($fullPath, [
+        'Content-Type' => 'application/pdf',
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Allow-Methods' => 'GET, OPTIONS',
+        'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept',
+    ]);
+})->where('path', '.*')->name('pdf.proxy');
 
 // Mollie payments
 Route::get('/payment/success/', [CheckoutController::class, 'paymentSuccess'])->name('payment.success');

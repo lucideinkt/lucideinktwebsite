@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+
+class OnlineLezenController extends Controller
+{
+    /**
+     * Display the online reading library
+     */
+    public function index()
+    {
+        // Get only published products that have a PDF file
+        $products = Product::with(['category', 'productCopy'])
+            ->where('is_published', 1)
+            ->whereNotNull('pdf_file')
+            ->where('pdf_file', '!=', '')
+            ->orderBy('title', 'asc')
+            ->get();
+
+        return view('online-lezen', compact('products'));
+    }
+
+    /**
+     * Display the PDF reader for a specific book
+     */
+    public function read($slug)
+    {
+        $product = Product::where('slug', $slug)
+            ->where('is_published', 1)
+            ->firstOrFail();
+
+        return view('online-lezen-reader', compact('product'));
+    }
+}
