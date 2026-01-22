@@ -1,7 +1,7 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/005_background.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/006_background_new.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
@@ -54,7 +54,7 @@
 
         <section class="home white-section intro-section">
             <div class="text-container">
-                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>
+{{--                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>--}}
                 {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
                 <div class="sub-text">
                     <p>
