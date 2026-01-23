@@ -23,7 +23,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <html dir="ltr" mozdisallowselectionprint>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="google" content="notranslate">
     <title>PDF.js viewer</title>
 
@@ -33,14 +33,79 @@ See https://github.com/adobe-type-tools/cmap-resources
 
     <link rel="stylesheet" href="viewer.css">
 
-
       <style>
           #toolbarViewerRight {
               display: none;
           }
+
+          /* Prevent zoom and pinch gestures */
+          * {
+              -webkit-user-select: none;
+              -webkit-touch-callout: none;
+              -webkit-tap-highlight-color: transparent;
+          }
+
+          html, body {
+              touch-action: pan-y pan-x !important;
+              -ms-touch-action: pan-y pan-x !important;
+              overscroll-behavior: none;
+              -webkit-text-size-adjust: 100%;
+          }
+
+          #viewerContainer {
+              touch-action: pan-y pan-x !important;
+              overscroll-behavior: contain;
+          }
+
+          .page {
+              touch-action: pan-y pan-x !important;
+          }
       </style>
 
   <script src="viewer.mjs" type="module"></script>
+
+  <script>
+      // Prevent all zoom gestures
+      document.addEventListener('DOMContentLoaded', function() {
+          let lastTouchEnd = 0;
+
+          // Prevent double-tap zoom
+          document.addEventListener('touchend', function(e) {
+              const now = Date.now();
+              if (now - lastTouchEnd <= 300) {
+                  e.preventDefault();
+              }
+              lastTouchEnd = now;
+          }, { passive: false });
+
+          // Prevent pinch zoom gestures
+          document.addEventListener('gesturestart', function(e) {
+              e.preventDefault();
+          }, { passive: false });
+
+          document.addEventListener('gesturechange', function(e) {
+              e.preventDefault();
+          }, { passive: false });
+
+          document.addEventListener('gestureend', function(e) {
+              e.preventDefault();
+          }, { passive: false });
+
+          // Prevent multi-touch zoom
+          document.addEventListener('touchmove', function(e) {
+              if (e.touches && e.touches.length > 1) {
+                  e.preventDefault();
+              }
+          }, { passive: false });
+
+          // Disable wheel zoom (Ctrl+scroll)
+          document.addEventListener('wheel', function(e) {
+              if (e.ctrlKey || e.metaKey) {
+                  e.preventDefault();
+              }
+          }, { passive: false });
+      });
+  </script>
   </head>
 
   <body tabindex="0">
