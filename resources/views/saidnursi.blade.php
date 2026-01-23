@@ -2,7 +2,7 @@
     <main class="container page">
         <div class="said-nursi-page__text-box">
             <h1 class="title">Wie is Said Nursî?</h1>
-            <h2 class="sub-title">1878–1960</h2>
+            <h2 class="sub-title">1878 – 1960</h2>
 
             <blockquote>
                 <p>"Ik zal de wereld bewijzen dat de Qur'an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"</p>

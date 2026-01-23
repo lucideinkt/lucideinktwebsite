@@ -1,0 +1,288 @@
+/**
+ * PDF.js Viewer Customization
+ *
+ * Dit bestand bevat CSS overrides voor de PDF.js viewer
+ * Schakel opties in/uit door regels te uncommenten
+ */
+
+/* ============================================
+   TOOLBAR KNOPPEN VERBERGEN
+   ============================================ */
+
+
+/* Download knop verbergen (aanbevolen voor webshop) */
+#download,
+#downloadButton {
+    display: none !important;
+}
+
+/* Print knop verbergen (optioneel) */
+/* Uncomment onderstaande regels om print te verbergen */
+/*
+#print,
+#printButton {
+    display: none !important;
+}
+*/
+
+/* Open File knop verbergen (aanbevolen) */
+#openFile,
+#openFileButton {
+    display: none !important;
+}
+
+/* Presentation Mode verbergen (optioneel) */
+/*
+#presentationMode,
+#presentationModeButton {
+    display: none !important;
+}
+*/
+
+/* View Bookmark verbergen (optioneel) */
+/*
+#viewBookmark,
+#viewBookmarkButton {
+    display: none !important;
+}
+*/
+
+/* ============================================
+   SECUNDAIRE TOOLBAR
+   ============================================ */
+
+/* Hele secundaire toolbar verbergen (vereenvoudigt UI) */
+/*
+#secondaryToolbar {
+    display: none !important;
+}
+#secondaryToolbarToggle {
+    display: none !important;
+}
+*/
+
+/* Individuele secundaire toolbar items */
+/*
+#firstPage,
+#lastPage {
+    display: none !important;
+}
+*/
+
+/*
+#pageRotateCw,
+#pageRotateCcw {
+    display: none !important;
+}
+*/
+
+/*
+#cursorSelectTool,
+#cursorHandTool {
+    display: none !important;
+}
+*/
+
+/*
+#scrollVertical,
+#scrollHorizontal,
+#scrollWrapped {
+    display: none !important;
+}
+*/
+
+/*
+#spreadNone,
+#spreadOdd,
+#spreadEven {
+    display: none !important;
+}
+*/
+
+/*
+#documentProperties {
+    display: none !important;
+}
+*/
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+/* Hele sidebar verbergen (optioneel) */
+/*
+#sidebarContainer {
+    display: none !important;
+}
+#sidebarToggle {
+    display: none !important;
+}
+*/
+
+/* Individuele sidebar tabs verbergen */
+/*
+#viewThumbnail {
+    display: none !important;
+}
+*/
+
+/*
+#viewOutline {
+    display: none !important;
+}
+*/
+
+/*
+#viewAttachments {
+    display: none !important;
+}
+*/
+
+/* ============================================
+   VOLLEDIGE TOOLBAR VERBERGEN
+   ============================================ */
+
+/* Uncomment om ALLE toolbar elementen te verbergen */
+/* Alleen de PDF zelf wordt getoond */
+/*
+#toolbarContainer {
+    display: none !important;
+}
+#sidebarContainer {
+    display: none !important;
+}
+*/
+
+/* ============================================
+   ZOEK FUNCTIONALITEIT
+   ============================================ */
+
+/* Zoek balk verbergen (niet aanbevolen) */
+/*
+#viewFind {
+    display: none !important;
+}
+#findbar {
+    display: none !important;
+}
+*/
+
+/* ============================================
+   NAVIGATIE KNOPPEN
+   ============================================ */
+
+/* Pagina navigatie verbergen (niet aanbevolen) */
+/*
+#previous,
+#next {
+    display: none !important;
+}
+*/
+
+/* Pagina nummer input verbergen */
+/*
+#pageNumber {
+    display: none !important;
+}
+*/
+
+/* ============================================
+   ZOOM CONTROLS
+   ============================================ */
+
+/* Zoom knoppen verbergen (niet aanbevolen) */
+/*
+#zoomOut,
+#zoomIn {
+    display: none !important;
+}
+*/
+
+/* Zoom dropdown verbergen */
+/*
+#scaleSelect {
+    display: none !important;
+}
+*/
+
+/* ============================================
+   CUSTOM STYLING (OPTIONEEL)
+   ============================================ */
+
+/* Toolbar achtergrondkleur aanpassen */
+/*
+#toolbarContainer {
+    background-color: #2c1810 !important;
+}
+*/
+
+/* Toolbar knoppen kleur aanpassen */
+/*
+.toolbarButton {
+    color: #d4af37 !important;
+}
+.toolbarButton:hover {
+    background-color: rgba(212, 175, 55, 0.1) !important;
+}
+*/
+
+/* PDF viewer achtergrondkleur */
+/*
+#viewerContainer {
+    background-color: #f5f5f5 !important;
+}
+*/
+
+/* Sidebar styling */
+/*
+#sidebarContainer {
+    background-color: #2c1810 !important;
+    color: #d4af37 !important;
+}
+*/
+
+/* ============================================
+   RESPONSIVE AANPASSINGEN
+   ============================================ */
+
+/* Op mobiele apparaten extra elementen verbergen */
+@media screen and (max-width: 768px) {
+    /* Secundaire toolbar altijd verbergen op mobiel */
+    #secondaryToolbar {
+        display: none !important;
+    }
+
+    /* Sidebar standaard verbergen op mobiel */
+    /*
+    #sidebarContainer {
+        display: none !important;
+    }
+    */
+}
+
+/* ============================================
+   AANBEVOLEN CONFIGURATIE VOOR WEBSHOP
+   ============================================ */
+
+/*
+Voor een boeken webshop is dit een goede basis configuratie:
+- Download verbergen (al actief bovenaan)
+- Open File verbergen (al actief bovenaan)
+- Print optioneel verbergen
+- Behoud: navigatie, zoom, zoeken, presentatie modus
+
+Uncomment indien gewenst:
+*/
+
+/*
+body.pdfviewer-webshop {
+    #download, #downloadButton,
+    #openFile, #openFileButton {
+        display: none !important;
+    }
+
+    #print, #printButton {
+        display: none !important;
+    }
+}
+*/
