@@ -1,4 +1,7 @@
 <x-layout>
+    {{-- Disable pinch zoom to prevent page jumping --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <main class="container page online-reader">
         <x-breadcrumbs :items="[
           ['label' => 'Home', 'url' => route('home')],
@@ -111,6 +114,16 @@
 
             pdfViewer.src = viewerUrl;
 
+            // Prevent double-tap zoom on PDF viewer
+            let lastTouchEnd = 0;
+            pdfViewer.addEventListener('touchend', function(e) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    e.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+
             // Opslaan huidige pagina elke 2 seconden EN update window.currentPdfPage
             setInterval(function() {
                 try {
@@ -152,6 +165,22 @@
     </div>
 
     <style>
+        /* Prevent zoom and page jumping */
+        body {
+            touch-action: pan-y pan-x;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .pdf-iframe,
+        .pdf-iframe-fullscreen {
+            touch-action: pan-y pan-x;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
         .btn.btn-primary:hover {
             background: var(--green-2);
             transform: none;
@@ -284,6 +313,16 @@
             let pageCheckInterval = null;
 
             if (!openBtn || !modal || !fullscreenIframe) return;
+
+            // Prevent double-tap zoom on fullscreen PDF viewer
+            let lastTouchEnd = 0;
+            fullscreenIframe.addEventListener('touchend', function(e) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    e.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
 
             function detectPageNumber() {
                 if (!modal.classList.contains('active')) return;
