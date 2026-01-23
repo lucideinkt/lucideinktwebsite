@@ -1,6 +1,21 @@
 <x-layout>
-    {{-- Disable pinch zoom to prevent page jumping --}}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    @push('head')
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+            /* Prevent all zoom and touch gestures */
+            * {
+                -webkit-user-select: none;
+                -webkit-touch-callout: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            html, body {
+                touch-action: pan-y pan-x;
+                -ms-touch-action: pan-y pan-x;
+                overscroll-behavior: none;
+            }
+        </style>
+    @endpush
 
     <main class="container page online-reader">
         <x-breadcrumbs :items="[
@@ -114,15 +129,38 @@
 
             pdfViewer.src = viewerUrl;
 
-            // Prevent double-tap zoom on PDF viewer
+            // Comprehensive zoom prevention
             let lastTouchEnd = 0;
+            let lastScale = 1;
+
+            // Prevent double-tap zoom
             pdfViewer.addEventListener('touchend', function(e) {
                 const now = Date.now();
                 if (now - lastTouchEnd <= 300) {
                     e.preventDefault();
                 }
                 lastTouchEnd = now;
-            }, false);
+            }, { passive: false });
+
+            // Prevent pinch zoom gesture
+            pdfViewer.addEventListener('gesturestart', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            pdfViewer.addEventListener('gesturechange', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            pdfViewer.addEventListener('gestureend', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            // Prevent multi-touch zoom
+            pdfViewer.addEventListener('touchmove', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
 
             // Opslaan huidige pagina elke 2 seconden EN update window.currentPdfPage
             setInterval(function() {
@@ -170,15 +208,29 @@
             touch-action: pan-y pan-x;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
+            overscroll-behavior: none;
         }
 
         .pdf-iframe,
         .pdf-iframe-fullscreen {
-            touch-action: pan-y pan-x;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            touch-action: pan-y pan-x !important;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            pointer-events: auto;
+            will-change: transform;
+        }
+
+        .pdf-viewer-wrapper,
+        .fullscreen-modal {
+            touch-action: pan-y pan-x !important;
+            overscroll-behavior: contain;
+        }
+
+        /* Disable iOS bounce/rubber band effect */
+        .pdf-viewer-wrapper {
+            -webkit-overflow-scrolling: auto;
         }
 
         .btn.btn-primary:hover {
@@ -314,15 +366,48 @@
 
             if (!openBtn || !modal || !fullscreenIframe) return;
 
-            // Prevent double-tap zoom on fullscreen PDF viewer
+            // Comprehensive zoom prevention for fullscreen
             let lastTouchEnd = 0;
+
+            // Prevent double-tap zoom
             fullscreenIframe.addEventListener('touchend', function(e) {
                 const now = Date.now();
                 if (now - lastTouchEnd <= 300) {
                     e.preventDefault();
                 }
                 lastTouchEnd = now;
-            }, false);
+            }, { passive: false });
+
+            // Prevent pinch zoom gesture
+            fullscreenIframe.addEventListener('gesturestart', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            fullscreenIframe.addEventListener('gesturechange', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            fullscreenIframe.addEventListener('gestureend', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            // Prevent multi-touch zoom
+            fullscreenIframe.addEventListener('touchmove', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+            // Also prevent zoom on modal itself
+            modal.addEventListener('gesturestart', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            modal.addEventListener('touchmove', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
 
             function detectPageNumber() {
                 if (!modal.classList.contains('active')) return;
