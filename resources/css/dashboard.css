@@ -317,7 +317,6 @@ select:focus {
     border: none;
     color: #bbb;
     font-size: 18px;
-    padding: 6px;
 }
 
 /* =========================================================
@@ -2064,15 +2063,15 @@ thead {
     .user-profile-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .user-profile-card-full {
         grid-column: 1;
     }
-    
+
     .order-stats {
         grid-template-columns: 1fr;
     }
-    
+
     .profile-fields-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -2765,6 +2764,104 @@ thead {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* --- Dropdown Fixes for Desktop Navbar --- */
+.desktop-navbar-container, .desktop-navbar-container .navbar {
+    overflow: visible !important;
+    position: static !important;
+    z-index: auto !important;
+}
+
+.nav-item.dropdown {
+    position: relative !important;
+}
+
+.nav-item .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 180px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-radius: 0 0 8px 8px;
+    z-index: 9999;
+    padding: 0.5em 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s, visibility 0.18s;
+    flex-direction: column;
+    display: flex;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.nav-item.dropdown:hover > .dropdown-menu,
+.nav-item.dropdown:focus-within > .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Sidebar dropdown styles */
+.sidebar .nav-item.dropdown {
+    position: relative;
+}
+
+.sidebar .dropdown-menu {
+    display: none;
+    position: static;
+    left: unset;
+    top: unset;
+    min-width: 0;
+    background: #f7f7f7;
+    box-shadow: none;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    min-width: 180px;
+    min-height: 0;
+    transition: none;
+}
+
+.sidebar .nav-item.dropdown.open > .dropdown-menu {
+    display: flex;
+}
+
+.sidebar .dropdown-menu li {
+    width: 100%;
+}
+
+.sidebar .dropdown-menu a {
+    display: block;
+    padding: 10px 30px;
+    color: #333;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar .dropdown-menu a:hover {
+    background: #f7ecd7;
+    color: #5a4327;
+}
+
 
 /* =========================================================
    MEDIA QUERIES
