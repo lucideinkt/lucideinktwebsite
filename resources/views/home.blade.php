@@ -63,9 +63,15 @@
                         boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste
                         bestaansvragen van de mens.
                     </p>
+
+                    <button class="read-more-btn" id="openIntroModalBtn">
+                        <span class="read-more-text">Lees meer</span>
+                        <i class="fa-solid fa-arrow-right read-more-icon"></i>
+                    </button>
                 </div>
             </div>
         </section>
+
 
         <div class="gradient-border"></div>
 
@@ -88,6 +94,9 @@
                         Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk.
                     </p>
                 </div>
+
+                <img class="rose-patels" src="{{ asset('images/RosePetals.webp') }}" alt="">
+
                 <div class="home-book-grid">
                     <div class="book one">
                         <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="">
@@ -234,25 +243,13 @@
         <section class="colored-section newsletter-section">
             <div class="container newsletter-container">
                 <div class="newsletter-content">
-                    <h2 class="title newsletter-title">Schrijf je in voor onze Niewsbrief</h2>
+                    <h2 class="title newsletter-title">Schrijf je in voor onze Nieuwsbrief</h2>
                     <p class="newsletter-description">
                         Ontvang updates over nieuwe vertalingen, inspirerende citaten en belangrijke aankondigingen van
                         Lucide Inkt.
                     </p>
-                    <form class="newsletter-form" action="#" method="POST">
-                        @csrf
-                        <div class="newsletter-input-group">
-                            <input type="email" name="email" placeholder="Uw e-mailadres" required
-                                class="newsletter-input">
-                            <button type="submit" class="newsletter-btn">
-                                <span>Aanmelden</span>
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </div>
-                        <p class="newsletter-privacy">
-                            We respecteren uw privacy. U kunt zich op elk moment afmelden.
-                        </p>
-                    </form>
+
+                    <livewire:newsletter-form />
                 </div>
             </div>
         </section>
@@ -265,6 +262,7 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+                // Quotes Slider
                 const quotesSlider = document.getElementById('quotes-slider');
                 if (quotesSlider && typeof Splide !== 'undefined') {
                     new Splide('#quotes-slider', {
@@ -285,10 +283,58 @@
                         }
                     }).mount();
                 }
+
+                // Intro Modal
+                const introModal = document.getElementById('introModal');
+                const openIntroBtn = document.getElementById('openIntroModalBtn');
+                const closeIntroBtn = document.getElementById('closeIntroModalBtn');
+                const introContent = document.getElementById('introModalContent');
+
+                if (introModal && openIntroBtn && closeIntroBtn && introContent) {
+                    function openIntroModal() {
+                        introModal.classList.remove('hidden');
+                        void introModal.offsetWidth;
+                        introModal.classList.add('show');
+                        introModal.classList.remove('fading-out');
+                        introContent.classList.remove('close');
+
+                        setTimeout(() => introContent.classList.add('open'), 10);
+                    }
+
+                    function closeIntroModal() {
+                        introContent.classList.remove('open');
+                        introContent.classList.add('close');
+                        introModal.classList.add('fading-out');
+                        introModal.classList.remove('show');
+
+                        setTimeout(() => {
+                            introModal.classList.add('hidden');
+                            introModal.classList.remove('fading-out');
+                            introContent.classList.remove('close');
+                        }, 1100);
+                    }
+
+                    openIntroBtn.addEventListener('click', openIntroModal);
+                    closeIntroBtn.addEventListener('click', closeIntroModal);
+
+                    window.addEventListener('click', (event) => {
+                        if (event.target === introModal || event.target.classList.contains('custom-modal-overlay')) {
+                            if (introModal.classList.contains('show')) {
+                                closeIntroModal();
+                            }
+                        }
+                    });
+
+                    window.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape' && introModal.classList.contains('show')) {
+                            closeIntroModal();
+                        }
+                    });
+                }
             });
         </script>
 
-        <!-- Modal Structure -->
+        <!-- Clock Modal Structure -->
         <div id="leesMeerModal" class="custom-modal">
             <div class="custom-modal-overlay"></div>
             <div class="custom-modal-content scroll-effect" id="scrollModalContent">
@@ -301,6 +347,27 @@
                         eeuwigheid. Afhankelijk van de wijze waarop ze verstrijken, zullen ze ofwel als duistere
                         voortbrengselen van onachtzaamheid, ofwel als stralende vruchten van weldaden tot de mens
                         wederkeren..
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intro Modal Structure -->
+        <div id="introModal" class="custom-modal hidden">
+            <div class="custom-modal-overlay"></div>
+            <div class="custom-modal-content scroll-effect" id="introModalContent">
+                <span class="custom-modal-close" id="closeIntroModalBtn">&times;</span>
+                <div class="scroll-inner">
+                    <p>
+                        Onze missie is om deze waardevolle kennis toegankelijk te maken voor een breed publiek,
+                        zodat mensen van alle achtergronden kunnen profiteren van de diepgaande inzichten die de
+                        Risale-i Nur biedt.
+                    </p>
+                    <p>
+                        Omdat de mens geschapen is voor de oneindige eeuwigheid, schuilt zijn diepste behoefte in de antwoorden op geloofsvragen die zijn eeuwige hiernamaals aanbelangen. In een tijd waarin geloofswaarheden zoals nooit tevoren bespot en verloochend worden, biedt de Risale-i Nur zulke krachtige traktaten ten bewijze van die waarheden, dat geen enkele tegenspraak ze ooit nog tot wankelen kan brengen. Tevens wordt in deze boekenreeks beschreven hoe Godsdienstigheid op de Godgevalligste wijze rechtzinnig kan worden betracht.
+                    </p>
+                    <p>
+                        Met zulke essentiële elementen voor ogen bestaat het uiteindelijke doel van Lucide Inkt uit dienstverlening volgens de principes van de Risale-i Nur, in overeenstemming met de scheppingsreden van onze Heer; opdat wij Zijn Tevredenheid mogen verwerven en zoveel mogelijk broeders en zusters mogen bijstaan op hun levensweg — die insha'ALLAH zal uitmonden in eeuwige gelukzaligheid.
                     </p>
                 </div>
             </div>

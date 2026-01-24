@@ -7,3 +7,9 @@
    Legacy dashboard.css to gradually extract en remove styles into components
    ========================================================= */
 @import './dashboard.css';
+
+/* =========================================================
+   Newsletter Module
+   ========================================================= */
+@import './newsletter.css';
+

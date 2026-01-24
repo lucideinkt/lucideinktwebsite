@@ -170,6 +170,22 @@
           </li>
         </a>
         @endrole
+
+        @role('admin')
+        <a href="{{ route('admin.newsletter.index') }}">
+          <li class="nav-item {{ request()->routeIs('admin.newsletter.*') ? 'active-admin-link' : '' }}">
+            <span class="{{ request()->routeIs('admin.newsletter.*') ? 'active-admin-link' : '' }}">Abonnees</span>
+          </li>
+        </a>
+        @endrole
+
+        @role('admin')
+        <a href="{{ route('newsletter.campaigns.index') }}">
+          <li class="nav-item {{ request()->routeIs('newsletter.campaigns.*') ? 'active-admin-link' : '' }}">
+            <span class="{{ request()->routeIs('newsletter.campaigns.*') ? 'active-admin-link' : '' }}">Nieuwsbrieven</span>
+          </li>
+        </a>
+        @endrole
       </ul>
     </nav>
     @auth

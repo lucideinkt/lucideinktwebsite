@@ -151,6 +151,38 @@
                     window.showToast(message, true);
                 }
             });
+
+            // Listen for newsletter success message
+            Livewire.on('newsletter-success', (event) => {
+                const message = event.message || event[0]?.message || 'Bedankt voor uw inschrijving!';
+                if (window.showToast) {
+                    window.showToast(message, false);
+                }
+            });
+
+            // Listen for newsletter info message
+            Livewire.on('newsletter-info', (event) => {
+                const message = event.message || event[0]?.message || 'U bent al ingeschreven.';
+                if (window.showToast) {
+                    window.showToast(message, false);
+                }
+            });
+
+            // Listen for contact form success
+            Livewire.on('contact-success', (event) => {
+                const message = event.message || event[0]?.message || 'Bericht verzonden!';
+                if (window.showToast) {
+                    window.showToast(message, false);
+                }
+            });
+
+            // Listen for contact form error
+            Livewire.on('contact-error', (event) => {
+                const message = event.message || event[0]?.message || 'Er is een fout opgetreden.';
+                if (window.showToast) {
+                    window.showToast(message, true);
+                }
+            });
         });
 
         if (typeof lightbox !== 'undefined') {
