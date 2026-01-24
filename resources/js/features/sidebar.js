@@ -101,3 +101,24 @@ export function initSidebarToggles() {
         });
     }
 }
+
+// SIDEBAR DROPDOWN: Only for .sidebar .nav-item.dropdown
+export function setupSidebarDropdowns() {
+    // Remove all open classes on load
+    document.querySelectorAll('.sidebar .nav-item.dropdown').forEach(function (item) {
+        item.classList.remove('open');
+    });
+    // Add click event to toggle dropdown
+    document.querySelectorAll('.sidebar .nav-item.dropdown > a').forEach(function (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            var parent = this.parentElement;
+            // Close all other dropdowns
+            document.querySelectorAll('.sidebar .nav-item.dropdown.open').forEach(function (item) {
+                if (item !== parent) item.classList.remove('open');
+            });
+            // Toggle this dropdown
+            parent.classList.toggle('open');
+        });
+    });
+}

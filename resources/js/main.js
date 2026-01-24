@@ -20,7 +20,7 @@ window.showToast = showToast;
 
 // Import all features
 import { initShippingCostCalculator } from './features/shipping.js';
-import { initSidebarToggles } from './features/sidebar.js';
+import { initSidebarToggles, setupSidebarDropdowns } from './features/sidebar.js';
 import { initImagePickers } from './features/image-picker.js';
 import { initFormLoaders } from './features/form-loader.js';
 import { initAlternateShipping } from './features/alternate-shipping.js';
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initReadMoreModal();
     initHeaderScrollEffect();
     initContactForm();
+    setupSidebarDropdowns();
 
     // Initialize observer (must be last)
     initMutationObserver();
