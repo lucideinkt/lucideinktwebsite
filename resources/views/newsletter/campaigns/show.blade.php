@@ -5,7 +5,7 @@
                 <a href="{{ route('newsletter.campaigns.index') }}" class="btn btn-secondary mb-2">
                     <i class="fa-solid fa-arrow-left"></i> Terug naar overzicht
                 </a>
-{{--                <h2>{{ $newsletter->subject }}</h2>--}}
+{{--                <h2>{{ $newsletter->subject }}!</h2>--}}
             </div>
             <div class="header-actions">
                 @if($newsletter->isDraft())
