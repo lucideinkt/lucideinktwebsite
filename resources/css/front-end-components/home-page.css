@@ -64,6 +64,9 @@
 /* ---------------------------------------------------------
    TYPOGRAPHY - TITLES & DECORATIVE ELEMENTS
    --------------------------------------------------------- */
+h2 {
+    margin-top: 0!important;
+}
 
 /* Herina Font Utility Class */
 .font-herina {
@@ -180,7 +183,7 @@
 
 .gradient-border {
     width: 100%;
-    height: 10px;
+    height: 4px;
     background: linear-gradient(
         to right,
         rgba(197, 160, 89, 0) 0%,
@@ -215,7 +218,7 @@
     z-index: 10;
     margin: 0 auto;
     text-align: center;
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .home.intro-section .text-container {
@@ -312,7 +315,7 @@
 
 .new-translation {
     padding-top: 80px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     color: #ece5c2;
     text-align: center;
     position: relative;
@@ -432,8 +435,8 @@
 .risale-section {
     display: flex;
     justify-content: center;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .risale-section .text-container.risale-grid {
@@ -680,6 +683,10 @@
 }
 
 @media (max-width: 600px) {
+    .intro-section .sub-text p {
+        font-size: 18px;
+    }
+
     .home .title {
         line-height: 2.5rem;
     }
@@ -710,7 +717,7 @@
 
     .intro-section .sub-text {
         width: 100%;
-        margin: 10px auto 30px;
+        margin: 10px auto 20px;
         max-width: 800px;
         text-align: center;
     }
@@ -770,6 +777,26 @@
 
     .home .title {
         font-size: 32px;
+    }
+
+    .risale-section {
+       padding-top: 40px;
+       padding-bottom: 40px;
+    }
+
+    .new-translation {
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .quotes-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .newsletter-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 }
 
