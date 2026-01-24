@@ -1,7 +1,7 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/006_background_new.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/008_background_cloudless.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
@@ -359,15 +359,10 @@
                 <span class="custom-modal-close" id="closeIntroModalBtn">&times;</span>
                 <div class="scroll-inner">
                     <p>
-                        Onze missie is om deze waardevolle kennis toegankelijk te maken voor een breed publiek,
-                        zodat mensen van alle achtergronden kunnen profiteren van de diepgaande inzichten die de
-                        Risale-i Nur biedt.
-                    </p>
-                    <p>
                         Omdat de mens geschapen is voor de oneindige eeuwigheid, schuilt zijn diepste behoefte in de antwoorden op geloofsvragen die zijn eeuwige hiernamaals aanbelangen. In een tijd waarin geloofswaarheden zoals nooit tevoren bespot en verloochend worden, biedt de Risale-i Nur zulke krachtige traktaten ten bewijze van die waarheden, dat geen enkele tegenspraak ze ooit nog tot wankelen kan brengen. Tevens wordt in deze boekenreeks beschreven hoe Godsdienstigheid op de Godgevalligste wijze rechtzinnig kan worden betracht.
                     </p>
                     <p>
-                        Met zulke essentiële elementen voor ogen bestaat het uiteindelijke doel van Lucide Inkt uit dienstverlening volgens de principes van de Risale-i Nur, in overeenstemming met de scheppingsreden van onze Heer; opdat wij Zijn Tevredenheid mogen verwerven en zoveel mogelijk broeders en zusters mogen bijstaan op hun levensweg — die insha'ALLAH zal uitmonden in eeuwige gelukzaligheid.
+                        Met zulke essentiële elementen voor ogen bestaat het uiteindelijke doel van Lucide Inkt uit dienstverlening volgens de principes van de Risale-i Nur, in overeenstemming met de scheppingsreden van onze Heer; opdat wij Zijn Tevredenheid mogen verwerven en zoveel mogelijk broeders en zusters mogen bijstaan op hun levensweg — die insha’ALLAH zal uitmonden in eeuwige gelukzaligheid.
                     </p>
                 </div>
             </div>
