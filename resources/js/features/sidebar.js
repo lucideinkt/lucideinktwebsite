@@ -59,29 +59,35 @@ export function initSidebarToggles() {
 
             // Handle touch events (mobile)
             dropdownLink.addEventListener('touchstart', (e) => {
-                if (window.innerWidth <= 992) {
-                    e.preventDefault();
-                    touchHandled = true;
-                    const parentLi = dropdownLink.closest('.nav-item.dropdown');
-                    if (parentLi) {
-                        parentLi.classList.toggle('open');
-                    }
+                // Prevent navigation and toggle dropdown on touch
+                e.preventDefault();
+                touchHandled = true;
+                const parentLi = dropdownLink.closest('.nav-item.dropdown');
+                if (parentLi) {
+                    // Close other open dropdowns
+                    document.querySelectorAll('.sidebar .nav-item.dropdown.open').forEach(function (item) {
+                        if (item !== parentLi) item.classList.remove('open');
+                    });
+                    parentLi.classList.toggle('open');
                 }
             }, { passive: false });
 
-            // Handle click events (backup for non-touch devices)
+            // Handle click events (desktop / non-touch)
             dropdownLink.addEventListener('click', (e) => {
-                if (window.innerWidth <= 992) {
-                    e.preventDefault();
-                    // If touch already handled this, skip
-                    if (touchHandled) {
-                        touchHandled = false;
-                        return;
-                    }
-                    const parentLi = dropdownLink.closest('.nav-item.dropdown');
-                    if (parentLi) {
-                        parentLi.classList.toggle('open');
-                    }
+                // Prevent navigation and toggle dropdown
+                e.preventDefault();
+                // If touch already handled this, skip
+                if (touchHandled) {
+                    touchHandled = false;
+                    return;
+                }
+                const parentLi = dropdownLink.closest('.nav-item.dropdown');
+                if (parentLi) {
+                    // Close other open dropdowns
+                    document.querySelectorAll('.sidebar .nav-item.dropdown.open').forEach(function (item) {
+                        if (item !== parentLi) item.classList.remove('open');
+                    });
+                    parentLi.classList.toggle('open');
                 }
             });
         });
@@ -99,6 +105,22 @@ export function initSidebarToggles() {
                 el.classList.toggle('close');
             });
         });
+
+        // Close button inside admin sidebar (top-right)
+        const adminClose = adminSidebar.querySelector('.close-toggle');
+        if (adminClose) {
+            adminClose.addEventListener('click', () => {
+                // ensure classes mirror the closed state
+                adminSidebar.classList.remove('open');
+                adminSidebar.classList.add('close');
+
+                adminToggle.classList.remove('open');
+                adminToggle.classList.add('close');
+
+                adminContainer.classList.remove('open');
+                adminContainer.classList.add('close');
+            });
+        }
     }
 }
 

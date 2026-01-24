@@ -692,13 +692,24 @@ thead {
 .sidebar .close-toggle {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .sidebar .close-toggle .fa-xmark {
     font-size: 20px;
     cursor: pointer;
     color: var(--main-font-color);
+    background: rgba(255,255,255,0.06);
+    padding: 6px;
+    border-radius: 6px;
+}
+
+/* ensure close icon is visible on desktop */
+@media (min-width: 993px) {
+    .sidebar.admin-panel .close-toggle {
+        display: flex;
+    }
 }
 
 .sidebar.admin-panel {
@@ -753,7 +764,7 @@ thead {
 .sidebar.admin-panel .navbar ul {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 15px;
 }
 
 .sidebar.admin-panel .navbar ul li a {
@@ -768,42 +779,17 @@ thead {
 .sidebar.admin-panel .close-toggle {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .sidebar.admin-panel .close-toggle .fa-xmark {
     font-size: 20px;
     cursor: pointer;
-    display: none;
-}
-
-.sidebar.admin-panel li {
-    padding: 10px 0;
-}
-
-.sidebar.admin-panel .logout-button {
-    margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sidebar.admin-panel .logout-icon-btn {
-    width: 100%;
-    height: 45px;
-    border: none;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    color: var(--ink-inverse);
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
-}
-
-.sidebar.admin-panel .logout-icon-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    background: rgba(255,255,255,0.06);
+    padding: 6px;
+    border-radius: 6px;
 }
 
 /* =========================================================
@@ -2815,51 +2801,47 @@ thead {
     pointer-events: auto;
 }
 
-/* Sidebar dropdown styles */
-.sidebar .nav-item.dropdown {
-    position: relative;
+/* allow click toggles to show desktop dropdowns too */
+.nav-item.dropdown.open > .dropdown-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
-.sidebar .dropdown-menu {
-    display: none;
-    position: static;
-    left: unset;
-    top: unset;
-    min-width: 0;
-    background: #f7f7f7;
-    box-shadow: none;
-    border-radius: 0 0 8px 8px;
-    z-index: 1000;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-    border: 1px solid #e0e0e0;
-    min-width: 180px;
-    min-height: 0;
-    transition: none;
+/* Final tweaks: ensure sidebar dropdown is positioned and visible above other layers */
+.sidebar .nav-item.dropdown > .dropdown-menu {
+    position: relative !important; /* allow z-index to take effect within sidebar */
+    z-index: 2000 !important;
+    background: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+    border-radius: 6px !important;
+    margin: 6px 0 0 0 !important;
+    padding: 6px 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    max-height: 240px !important;
+    overflow: auto !important;
 }
 
 .sidebar .nav-item.dropdown.open > .dropdown-menu {
-    display: flex;
+    display: block !important; /* block so it flows inside sidebar */
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
-.sidebar .dropdown-menu li {
-    width: 100%;
+/* Ensure links inside are visible */
+.sidebar .nav-item.dropdown > .dropdown-menu li a {
+    color: #333 !important;
+    background: transparent !important;
 }
 
-.sidebar .dropdown-menu a {
-    display: block;
-    padding: 10px 30px;
-    color: #333;
-    background: none;
-    border: none;
-    width: 100%;
-    text-align: left;
-}
-
-.sidebar .dropdown-menu a:hover {
-    background: #f7ecd7;
-    color: #5a4327;
+/* Small spacing fix so dropdown items appear stacked */
+.sidebar .nav-item.dropdown > .dropdown-menu li {
+    display: block !important;
+    margin: 0 !important;
 }
 
 
@@ -2874,24 +2856,46 @@ thead {
 }
 
 @media (max-width: 992px) {
-    .btn {
-        font-size: 15px;
+    html body .admin-sidebar-toggle {
+        /* was left:12px; top:14px; now vertically center */
+        left: 12px;
+        top: 40px !important;
+        transform: translate(0, -50%);
+    }
+    html body.admin-sidebar-open .admin-sidebar-toggle {
+        /* move right but stay vertically centered */
+        transform: translate(230px, -50%);
     }
 
-    .header {
-        padding: 0;
-        position: fixed;
-        width: 100%;
-        background: var(--green-2);
-        height: 80px;
-        box-shadow: var(--shadow-1);
-        border-bottom: 4px solid var(--gold-2);
-    }
-
+    /* ensure header container is the positioning context for absolute children */
     .header .container {
-        height: 80px;
-        flex-direction: row;
-        padding: 0 15px;
+        position: relative;
+    }
+
+    /* Keep cart + sidebar icons pinned to the right and vertically centered */
+    .navbar-cart-sidebar-toggle {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1200;
+        align-items: center;
+    }
+
+    .navbar-cart-sidebar-toggle li {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-cart-sidebar-toggle a,
+    .navbar-cart-sidebar-toggle .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 6px;
     }
 
     .logo-container.desktop {
@@ -3152,5 +3156,561 @@ thead {
 
     .page.shop .book-box .card {
         padding: 15px;
+    }
+}
+
+/* ===== Admin toggle final override (placed at end to avoid conflicts) ===== */
+/* Ensure toggle is fixed top-left and not affected by older padding-left rules */
+html body .admin-sidebar-toggle {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1000;
+    padding-left: 0 !important; /* reset legacy padding-left quickly */
+    transform: translateX(0);
+    transition: transform .28s ease, left .28s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 8px;
+}
+
+/* Move toggle when admin panel is open (body marker) */
+html body.admin-sidebar-open .admin-sidebar-toggle {
+    /* Move right roughly sidebar width minus gap */
+    transform: translateX(230px);
+}
+
+/* Small screens: keep toggle near left and avoid translation */
+@media (max-width: 992px) {
+    html body .admin-sidebar-toggle {
+        left: 12px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    html body.admin-sidebar-open .admin-sidebar-toggle {
+        transform: translate(230px, -50%);
+    }
+
+    /* ensure header container is the positioning context for absolute children */
+    .header .container {
+        position: relative;
+    }
+
+    /* Keep cart + sidebar icons pinned to the right and vertically centered */
+    .navbar-cart-sidebar-toggle {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1200;
+        align-items: center;
+    }
+
+    .navbar-cart-sidebar-toggle li {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-cart-sidebar-toggle a,
+    .navbar-cart-sidebar-toggle .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 6px;
+    }
+
+    .logo-container.desktop {
+        display: none;
+    }
+
+    .logo-container.mobile {
+        display: block;
+    }
+
+    .logo-container img {
+        width: 100px;
+    }
+
+    .desktop-navbar-container,
+    .header.dashboard .desktop-navbar-container {
+        display: none;
+    }
+
+    .container.page {
+        padding-top: 100px;
+    }
+
+    .page.home {
+        padding-top: 80px;
+    }
+
+    .header-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+        height: 80px;
+    }
+
+    .navbar-cart-sidebar-toggle {
+        display: flex;
+        gap: 10px;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .container.auth-page {
+        padding-top: calc(var(--header-height) + 40px);
+        align-items: flex-start;
+    }
+
+    .auth-page .form {
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    .sidebar.admin-panel {
+        left: -250px;
+    }
+
+    .sidebar.admin-panel.open {
+        left: 0;
+    }
+
+    .admin-sidebar-toggle {
+        padding-left: 0;
+        cursor: pointer;
+    }
+
+    .admin-sidebar-toggle.open {
+        padding-left: 255px;
+    }
+
+    .container.page.dashboard {
+        padding-left: 15px;
+        padding-top: 100px;
+    }
+
+    .container.page.dashboard.open {
+        padding-left: 15px;
+    }
+
+    .page.shop .book-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .total-cart-box .button-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page.cart .table thead {
+        display: none;
+    }
+
+    .page.cart .table,
+    .page.cart .table tbody,
+    .page.cart .table tr,
+    .page.cart .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .page.cart table {
+        background: transparent;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .page.cart .table tr {
+        margin-bottom: 18px;
+        background: var(--surface-1);
+        box-shadow: var(--shadow-1);
+        padding: 10px 0;
+        border-radius: 4px;
+    }
+
+    .page.cart .table {
+        box-shadow: none;
+        border-radius: 4px;
+    }
+
+    .page.cart .table td {
+        position: relative;
+        padding-left: 120px;
+        min-height: 40px;
+        border-bottom: none;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .page.cart .table td:before {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+        font-weight: bold;
+        color: var(--ink-muted);
+        font-size: 14px;
+        white-space: nowrap;
+        content: attr(data-label);
+    }
+
+    .page.cart .td-img img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .product-form .grid-box {
+        grid-template-columns: auto;
+    }
+
+    .page.product .alert {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .order-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .page.shop .book-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .order-addresses {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .order-address-block {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-section .bismillah {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0 30px;
+    }
+
+    .intro-section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 50px auto 0;
+    }
+
+    .intro-section .title {
+        font-size: 28px;
+        margin: 10px 0 20px;
+    }
+
+    .intro-section .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .intro-section .sub-text {
+        width: 100%;
+        margin: 10px auto 30px;
+        max-width: 800px;
+        text-align: center;
+        color: #224039;
+    }
+
+    .page.checkout .checkout-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .page.checkout .name-box,
+    .page.checkout .housnumber-box {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .page.checkout {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    .page.shop .book-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .page.shop .book-box .card {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .page.shop .book-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .page.shop .book-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .page.shop .book-box .card {
+        padding: 15px;
+    }
+}
+
+/* ===== Admin toggle final override (placed at end to avoid conflicts) ===== */
+/* Ensure toggle is fixed top-left and not affected by older padding-left rules */
+html body .admin-sidebar-toggle {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1000;
+    padding-left: 0 !important; /* reset legacy padding-left quickly */
+    transform: translateX(0);
+    transition: transform .28s ease, left .28s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 8px;
+}
+
+/* Move toggle when admin panel is open (body marker) */
+html body.admin-sidebar-open .admin-sidebar-toggle {
+    /* Move right roughly sidebar width minus gap */
+    transform: translateX(230px);
+}
+
+/* Small screens: keep toggle near left and avoid translation */
+@media (max-width: 992px) {
+    html body .admin-sidebar-toggle {
+        /* was left:12px; top:14px; now vertically center */
+        left: 12px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    html body.admin-sidebar-open .admin-sidebar-toggle {
+        /* move right but stay vertically centered */
+        transform: translate(230px, -50%);
+    }
+
+    /* ensure header container is the positioning context for absolute children */
+    .header .container {
+        position: relative;
+    }
+
+    /* Keep cart + sidebar icons pinned to the right and vertically centered */
+    .navbar-cart-sidebar-toggle {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1200;
+        align-items: center;
+    }
+
+    .navbar-cart-sidebar-toggle li {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-cart-sidebar-toggle a,
+    .navbar-cart-sidebar-toggle .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 6px;
+    }
+
+    .logo-container.desktop {
+        display: none;
+    }
+
+    .logo-container.mobile {
+        display: block;
+    }
+
+    .logo-container img {
+        width: 100px;
+    }
+
+    .desktop-navbar-container,
+    .header.dashboard .desktop-navbar-container {
+        display: none;
+    }
+
+    .container.page {
+        padding-top: 100px;
+    }
+
+    .page.home {
+        padding-top: 80px;
+    }
+
+    .header-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+        height: 80px;
+    }
+
+    .navbar-cart-sidebar-toggle {
+        display: flex;
+        gap: 10px;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .container.auth-page {
+        padding-top: calc(var(--header-height) + 40px);
+        align-items: flex-start;
+    }
+
+    .auth-page .form {
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    .sidebar.admin-panel {
+        left: -250px;
+    }
+
+    .sidebar.admin-panel.open {
+        left: 0;
+    }
+
+    .admin-sidebar-toggle {
+        padding-left: 0;
+        cursor: pointer;
+    }
+
+    .admin-sidebar-toggle.open {
+        padding-left: 255px;
+    }
+
+    .container.page.dashboard {
+        padding-left: 15px;
+        padding-top: 100px;
+    }
+
+    .container.page.dashboard.open {
+        padding-left: 15px;
+    }
+
+    .page.shop .book-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .total-cart-box .button-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page.cart .table thead {
+        display: none;
+    }
+
+    .page.cart .table,
+    .page.cart .table tbody,
+    .page.cart .table tr,
+    .page.cart .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .page.cart table {
+        background: transparent;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .page.cart .table tr {
+        margin-bottom: 18px;
+        background: var(--surface-1);
+        box-shadow: var(--shadow-1);
+        padding: 10px 0;
+        border-radius: 4px;
+    }
+
+    .page.cart .table {
+        box-shadow: none;
+        border-radius: 4px;
+    }
+
+    .page.cart .table td {
+        position: relative;
+        padding-left: 120px;
+        min-height: 40px;
+        border-bottom: none;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .page.cart .table td:before {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+        font-weight: bold;
+        color: var(--ink-muted);
+        font-size: 14px;
+        white-space: nowrap;
+        content: attr(data-label);
+    }
+
+    .page.cart .td-img img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .product-form .grid-box {
+        grid-template-columns: auto;
+    }
+
+    .page.product .alert {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .order-grid {
+        grid-template-columns: 1fr;
     }
 }

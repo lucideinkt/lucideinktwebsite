@@ -186,24 +186,19 @@
           </li>
         </a>
         @endrole
+          @auth
+              <form class="logout-button" action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  <button type="submit" class="logout-icon-btn" title="Uitloggen">
+                      <i class="fa-solid fa-right-from-bracket"></i> Uitloggen
+                  </button>
+              </form>
+          @endauth
       </ul>
     </nav>
-    @auth
-      <form class="logout-button" action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit" class="logout-icon-btn" title="Uitloggen">
-          <i class="fa-solid fa-right-from-bracket"></i>
-        </button>
-      </form>
-    @endauth
   </div>
 
   {{ $slot  }}
 </body>
-
-<script>
-
-
-</script>
 
 </html>
