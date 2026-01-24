@@ -6,67 +6,95 @@
    LIBRARY PAGE - Book Grid
    --------------------------------------------------------- */
 
+.online-lezen {
+    min-height: 60vh;
+    padding-bottom: 60px;
+}
+
 .online-lezen-header {
     text-align: center;
-    margin-bottom: 40px;
-    padding: 0 20px;
+    margin-bottom: 60px;
+    padding: 0px 20px 0;
 }
 
 .online-lezen-title {
     font-family: var(--font-herina);
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 400;
     color: var(--main-font-color);
-    margin-bottom: 15px;
-    letter-spacing: 2px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+.online-lezen-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--green-2), transparent);
 }
 
 .online-lezen-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--ink-2);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+    max-width: 500px;
+    margin: 20px auto 0;
+    line-height: 1.8;
 }
 
 .online-lezen-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px;
-    margin-bottom: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
 }
 
 .online-book-card {
-    background: var(--surface-1);
-    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-2);
+    border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: var(--shadow-1);
+    position: relative;
 }
 
 .online-book-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .online-book-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .online-book-image-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 3/4;
+    padding-top: 75%;
+    background: #fbf3e4;
     overflow: hidden;
-    background: linear-gradient(135deg, #f5f5f0 0%, #e8e4d9 100%);
+    border-radius: 12px 12px 0 0;
 }
 
 .online-book-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -75,19 +103,20 @@
 }
 
 .online-book-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 4rem;
-    color: var(--ink-muted);
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .online-book-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(171, 15, 20, 0.95) 0%, rgba(139, 12, 16, 0.95) 100%);
+    background: linear-gradient(135deg,
+        rgba(171, 15, 20, 0.92) 0%,
+        rgba(139, 12, 16, 0.92) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,35 +137,50 @@
 }
 
 @keyframes floatIcon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .online-book-overlay span {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .online-book-content {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
+    flex-grow: 1;
+    gap: 8px;
+    background: var(--surface-2);
 }
 
 .online-book-title {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--main-font-color);
-    margin: 0 0 10px 0;
+    margin: 0;
     line-height: 1.4;
-    min-height: 2.8rem;
+    min-height: auto;
 }
 
 .online-book-category {
     font-size: 0.9rem;
-    color: var(--green-2);
-    margin: 0 0 5px 0;
-    font-weight: 500;
+    color: var(--ink-muted);
+    margin: 0;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    display: block;
+    padding: 0;
+    background: none;
+    border-radius: 0;
 }
 
 .online-book-language {
@@ -144,24 +188,35 @@
     color: var(--ink-2);
     margin: 0;
     font-style: italic;
+    display: block;
+}
+
+.online-book-language::before {
+    content: '';
+    display: none;
 }
 
 .online-lezen-empty {
     grid-column: 1 / -1;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
     color: var(--ink-2);
 }
 
 .online-lezen-empty i {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    opacity: 0.3;
+    font-size: 6rem;
+    margin-bottom: 24px;
+    opacity: 0.2;
+    background: linear-gradient(135deg, var(--green-2), var(--green-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .online-lezen-empty p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0;
+    color: var(--ink-3);
 }
 
 
@@ -406,7 +461,13 @@
 
 @media (max-width: 992px) {
     .online-lezen-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .online-lezen-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 32px;
     }
 
     .reader-header {
@@ -446,29 +507,115 @@
 
 @media (max-width: 768px) {
     .online-lezen-header {
-        margin: 30px 0 40px;
+        margin-bottom: 40px;
+        padding: 0px 20px 0;
     }
 
     .online-lezen-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .online-lezen-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .online-lezen-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 0 15px;
+    }
+
+    .online-book-card {
+        border-radius: 12px;
+    }
+
+    .online-book-content {
+        padding: 18px;
+    }
+
+    .online-book-title {
+        font-size: 1.05rem;
+    }
+
+    .online-book-overlay i {
+        font-size: 3rem;
+    }
+
+    .online-book-overlay span {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .online-lezen-header {
+        margin-bottom: 32px;
+        padding: 0px 15px 0;
+    }
+
+    .online-lezen-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .online-lezen-title::after {
+        width: 60px;
+        height: 2px;
     }
 
     .online-lezen-subtitle {
         font-size: 1rem;
+        line-height: 1.6;
     }
 
     .online-lezen-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        padding: 0 10px;
+    }
+
+    .online-book-card {
+        max-width: none;
+        margin: 0;
     }
 
     .online-book-content {
-        padding: 15px;
+        padding: 16px;
     }
 
     .online-book-title {
         font-size: 1rem;
-        min-height: auto;
+    }
+
+    .online-book-category {
+        font-size: 0.85rem;
+    }
+
+    .online-book-language {
+        font-size: 0.85rem;
+    }
+
+    .online-book-overlay i {
+        font-size: 2.5rem;
+    }
+
+    .online-book-overlay span {
+        font-size: 0.95rem;
+        padding: 6px 14px;
+        letter-spacing: 1px;
+    }
+
+    .online-lezen-empty {
+        padding: 60px 15px;
+    }
+
+    .online-lezen-empty i {
+        font-size: 4rem;
+    }
+
+    .online-lezen-empty p {
+        font-size: 1.1rem;
     }
 
     .pdf-iframe {

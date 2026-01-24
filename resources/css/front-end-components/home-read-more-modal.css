@@ -41,7 +41,7 @@
 .custom-modal-content.scroll-effect {
     position: relative;
     z-index: var(--z-modal, 9999);
-    width: min(92vw, 420px);
+    width: min(92vw, 600px);
     max-height: 80vh;
     background: linear-gradient(135deg, #f3e5c8 0%, #ead8b7 50%, #dec9a8 100%);
     border-radius: 16px;

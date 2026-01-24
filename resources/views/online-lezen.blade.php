@@ -7,7 +7,7 @@
 
         <div class="online-lezen-header">
             <h1 class="online-lezen-title">Online Bibliotheek</h1>
-            <p class="online-lezen-subtitle">Lees onze boeken direct online, wanneer en waar u maar wilt</p>
+            <p class="online-lezen-subtitle">Ontdek en lees onze boeken direct online, waar en wanneer je maar wilt</p>
         </div>
 
         <div class="online-lezen-grid">
@@ -50,12 +50,13 @@
                 </div>
             @empty
                 <div class="online-lezen-empty">
-                    <i class="fa-solid fa-books"></i>
-                    <p>Er zijn momenteel geen boeken beschikbaar om online te lezen.</p>
+                    <i class="fa-solid fa-book-open"></i>
+                    <p>Er zijn momenteel geen boeken beschikbaar om online te lezen.<br>Kom binnenkort terug voor nieuwe toevoegingen!</p>
                 </div>
             @endforelse
         </div>
     </main>
+
     <div class="gradient-border"></div>
     <x-footer></x-footer>
 </x-layout>

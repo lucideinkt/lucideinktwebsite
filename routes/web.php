@@ -20,6 +20,9 @@ use App\Http\Controllers\PickupLocationController;
 use App\Http\Controllers\ShippingCostController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\OnlineLezenController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\NewsletterAdminController;
+use App\Http\Controllers\NewsletterCampaignController;
 
 
 // Both admin and user can access
@@ -119,6 +122,29 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
   Route::delete('/dashboard/shippingcosts/delete/{id}', [ShippingCostController::class, 'destroy'])->name('shippingCostDelete');
   Route::get('/dashboard/shippingcosts/delete/{id}', [ShippingCostController::class, 'get'])->name('shippingCostDeleteGet');
 
+	// Newsletter subscribers - Full CRUD
+	Route::get('/dashboard/newsletter', [NewsletterAdminController::class, 'index'])->name('admin.newsletter.index');
+	Route::get('/dashboard/newsletter/create', [NewsletterAdminController::class, 'create'])->name('admin.newsletter.create');
+	Route::post('/dashboard/newsletter', [NewsletterAdminController::class, 'store'])->name('admin.newsletter.store');
+	Route::get('/dashboard/newsletter/{id}/edit', [NewsletterAdminController::class, 'edit'])->name('admin.newsletter.edit');
+	Route::put('/dashboard/newsletter/{id}', [NewsletterAdminController::class, 'update'])->name('admin.newsletter.update');
+	Route::post('/dashboard/newsletter/{id}/toggle', [NewsletterAdminController::class, 'toggleStatus'])->name('admin.newsletter.toggle');
+	Route::delete('/dashboard/newsletter/{id}', [NewsletterAdminController::class, 'destroy'])->name('admin.newsletter.destroy');
+	Route::post('/dashboard/newsletter/bulk-delete', [NewsletterAdminController::class, 'bulkDelete'])->name('admin.newsletter.bulkDelete');
+	Route::get('/dashboard/newsletter/export', [NewsletterAdminController::class, 'export'])->name('admin.newsletter.export');
+
+	// Newsletter campaigns
+	Route::get('/dashboard/newsletter/campaigns', [NewsletterCampaignController::class, 'index'])->name('newsletter.campaigns.index');
+	Route::get('/dashboard/newsletter/campaigns/create', [NewsletterCampaignController::class, 'create'])->name('newsletter.campaigns.create');
+	Route::post('/dashboard/newsletter/campaigns', [NewsletterCampaignController::class, 'store'])->name('newsletter.campaigns.store');
+	Route::get('/dashboard/newsletter/campaigns/{newsletter}', [NewsletterCampaignController::class, 'show'])->name('newsletter.campaigns.show');
+	Route::get('/dashboard/newsletter/campaigns/{newsletter}/edit', [NewsletterCampaignController::class, 'edit'])->name('newsletter.campaigns.edit');
+	Route::put('/dashboard/newsletter/campaigns/{newsletter}', [NewsletterCampaignController::class, 'update'])->name('newsletter.campaigns.update');
+	Route::delete('/dashboard/newsletter/campaigns/{newsletter}', [NewsletterCampaignController::class, 'destroy'])->name('newsletter.campaigns.destroy');
+	Route::post('/dashboard/newsletter/campaigns/{newsletter}/send', [NewsletterCampaignController::class, 'send'])->name('newsletter.campaigns.send');
+	Route::post('/dashboard/newsletter/campaigns/{newsletter}/duplicate', [NewsletterCampaignController::class, 'duplicate'])->name('newsletter.campaigns.duplicate');
+	Route::post('/dashboard/newsletter/campaigns/{newsletter}/resend', [NewsletterCampaignController::class, 'resend'])->name('newsletter.campaigns.resend');
+
 });
 
 // Shop
@@ -153,6 +179,10 @@ Route::post('/forgot-password', [AuthController::class, 'sendPasswordResetLink']
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('password.reset')->middleware('guest');
 Route::get('/reset-password', [AuthController::class, 'get'])->name('resetNoToken')->middleware('guest');
 Route::post('/reset-password', [AuthController::class, 'resetPasswordHandler'])->name('password.update')->middleware(['guest', 'throttle:5,1']); // max 5 attempts per minute
+
+// Newsletter
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+Route::get('/newsletter/unsubscribe/{token}', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 
 // Pages
 Route::get('/', [PageController::class, 'home'])->name('home');
