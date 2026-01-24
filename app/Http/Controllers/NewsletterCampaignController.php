@@ -7,6 +7,7 @@ use App\Models\Newsletter;
 use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Mail;
 
 class NewsletterCampaignController extends Controller
 {
@@ -130,7 +131,7 @@ class NewsletterCampaignController extends Controller
             return back()->with('error', 'Deze nieuwsbrief is al verstuurd of wordt momenteel verstuurd.');
         }
 
-        $subscribers = NewsletterSubscriber::subscribed()->get();
+        $subscribers = \App\Models\NewsletterSubscriber::subscribed()->get();
 
         if ($subscribers->isEmpty()) {
             return back()->with('error', 'Er zijn geen actieve abonnees om naar te verzenden.');
@@ -144,20 +145,25 @@ class NewsletterCampaignController extends Controller
 
         $newsletter->markAsSending();
 
-        // Dispatch jobs to queue
+        $sent = 0;
+        $failed = 0;
+
         foreach ($subscribers as $subscriber) {
-            SendNewsletterJob::dispatch($newsletter, $subscriber);
+            try {
+                Mail::to($subscriber->email)->queue(new \App\Mail\NewsletterMail($newsletter, $subscriber));
+                $sent++;
+            } catch (\Exception $e) {
+                $failed++;
+                // \Log::error($e);
+            }
         }
 
-        // Start queue worker in background (Windows compatible)
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            // Windows
-            shell_exec('start /B php ' . base_path('artisan') . ' queue:work --stop-when-empty --tries=3 --timeout=60 > NUL 2>&1');
-        } else {
-            // Linux/Mac
-            shell_exec('php ' . base_path('artisan') . ' queue:work --stop-when-empty --tries=3 --timeout=60 > /dev/null 2>&1 &');
-        }
+        $newsletter->update([
+            'sent_count' => $sent,
+            'failed_count' => $failed,
+        ]);
+        $newsletter->markAsSent();
 
-        return back()->with('success', "Nieuwsbrief wordt verstuurd naar {$subscribers->count()} abonnees! De verzending verloopt automatisch op de achtergrond.");
+        return back()->with('success', "Nieuwsbrief is in de queue gezet voor {$sent} abonnees. Mislukt bij {$failed}.");
     }
 }
