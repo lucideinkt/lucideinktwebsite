@@ -1,8 +1,31 @@
 @if(auth()->user()->role === 'user')
     <x-layout>
-        <x-user-dashboard-layout>
-            <livewire:customer-orders />
-        </x-user-dashboard-layout>
+        <main class="container page user-dashboard">
+            <x-breadcrumbs :items="[
+                ['label' => 'Home', 'url' => route('home')],
+                ['label' => 'Dashboard', 'url' => route('dashboard')],
+                ['label' => 'Mijn Bestellingen', 'url' => route('showMyOrders')]
+            ]" />
+
+            <div class="dashboard-header">
+                <h1 class="dashboard-title font-herina">Mijn Bestellingen</h1>
+                <p class="dashboard-subtitle">Overzicht van al jouw geplaatste bestellingen</p>
+            </div>
+
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                    <button type="button" class="alert-close"
+                        onclick="this.parentElement.style.display='none';">&times;</button>
+                </div>
+            @endif
+
+            <x-user-dashboard-layout>
+                <livewire:customer-orders />
+            </x-user-dashboard-layout>
+        </main>
+        <div class="gradient-border"></div>
+        <x-footer></x-footer>
     </x-layout>
 @else
     <x-dashboard-layout>

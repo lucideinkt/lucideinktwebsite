@@ -36,7 +36,7 @@ class AuthController extends Controller
 
         if (auth()->attempt($validated, $request->filled('remember'))) {
             $request->session()->regenerate();
-            return redirect()->route('dashboard')->with('success', 'Je bent ingelogd!');
+            return redirect()->route('dashboard');
         }
 
         return back()->with('error', 'De inloggegevens kloppen niet.');

@@ -4,7 +4,7 @@
 
 .product-detail {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 .product-detail-grid {
@@ -272,9 +272,9 @@
 .product-detail-quantity-select {
     width: 70px;
     padding: 10px 12px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 6px;
-    background: var(--surface-1);
+    border: 2px solid rgba(197, 160, 89, 0.25);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
     color: var(--main-font-color);
     font-size: 0.9375rem;
     cursor: pointer;
@@ -283,12 +283,14 @@
     background-repeat: no-repeat;
     background-position: right 10px center;
     padding-right: 32px;
+    transition: all 0.3s ease;
 }
 
 .product-detail-quantity-select:focus {
     outline: none;
-    border-color: var(--green-1);
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+    border-color: rgba(197, 160, 89, 0.6);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .product-detail-add-to-cart {

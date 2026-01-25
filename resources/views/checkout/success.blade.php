@@ -28,7 +28,7 @@
                     <div class="success-icon">
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
-                    <h1 class="success-title">Bestelling geplaatst!</h1>
+                    <h1 class="success-title font-herina">Bestelling geplaatst!</h1>
                     <p class="success-subtitle">Bedankt voor je bestelling. We hebben deze in goede orde ontvangen.</p>
                 </div>
 

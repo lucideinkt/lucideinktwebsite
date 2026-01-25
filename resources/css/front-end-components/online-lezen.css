@@ -7,25 +7,29 @@
    --------------------------------------------------------- */
 
 .online-lezen {
+    max-width: 1280px;
+    margin: 0 auto;
     min-height: 60vh;
     padding-bottom: 60px;
 }
 
 .online-lezen-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     padding: 0px 20px 0;
 }
 
 .online-lezen-title {
     font-family: var(--font-herina);
-    font-size: 3.5rem;
+    font-size: 50px;
     font-weight: 400;
     color: var(--main-font-color);
     margin-bottom: 20px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     position: relative;
     display: inline-block;
+    line-height: 3.4rem;
+    margin-top: 0px !important;
 }
 
 .online-lezen-title::after {
@@ -36,22 +40,29 @@
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, var(--green-2), transparent);
+    background: linear-gradient(
+        to right,
+        rgba(218, 165, 32, 0.5) 0%,
+        rgba(197, 160, 89, 0.8) 50%,
+        rgba(218, 165, 32, 0.5) 100%
+    );
 }
 
 .online-lezen-subtitle {
-    font-size: 1.2rem;
-    color: var(--ink-2);
-    max-width: 500px;
+    font-size: 1.125rem;
+    color: var(--main-font-color);
+    opacity: 0.75;
+    max-width: 600px;
     margin: 20px auto 0;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 .online-lezen-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: stretch;
+    padding: 0;
 }
 
 .online-book-card {
@@ -115,8 +126,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg,
-        rgba(171, 15, 20, 0.92) 0%,
-        rgba(139, 12, 16, 0.92) 100%);
+        rgba(51, 51, 51, 0.92) 0%,
+        rgba(20, 20, 20, 0.92) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -225,7 +236,8 @@
    --------------------------------------------------------- */
 
 .online-reader {
-    max-width: 1400px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .reader-header {
@@ -562,11 +574,13 @@
     .online-lezen-title::after {
         width: 60px;
         height: 2px;
+        bottom: -2px;
     }
 
     .online-lezen-subtitle {
         font-size: 1rem;
         line-height: 1.6;
+        margin-top: 0px;
     }
 
     .online-lezen-grid {
@@ -685,5 +699,9 @@
 
     .reader-title {
         font-size: 1.4rem;
+    }
+
+    .online-lezen-title::after {
+        margin-top: -10px;
     }
 }

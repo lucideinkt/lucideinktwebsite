@@ -1,141 +1,86 @@
 @if(auth()->user()->role === 'user')
     <x-layout>
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-                <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+        <main class="container page user-dashboard">
+            <x-breadcrumbs :items="[
+                ['label' => 'Home', 'url' => route('home')],
+                ['label' => 'Dashboard', 'url' => route('dashboard')],
+                ['label' => 'Mijn Bestellingen', 'url' => route('showMyOrders')],
+                ['label' => 'Bestelling #' . $order->id, 'url' => route('showMyOrder', $order->id)]
+            ]" />
+
+            <div class="dashboard-header">
+                <h1 class="dashboard-title font-herina">Bestelling #{{ $order->id }}</h1>
+                <p class="dashboard-subtitle">Gedetailleerd overzicht van je bestelling</p>
             </div>
-        @endif
-        <x-user-dashboard-layout>
-            <div class="order-detail-page">
-                <h2>Bestelling #{{ $order->id }}</h2>
 
-                <div class="order-addresses-grid">
-                    <div class="order-address-card">
-                        <h3 class="address-card-title">
-                            <i class="fa-solid fa-user"></i>
-                            Klantgegevens
-                        </h3>
-                        <div class="address-card-content">
-                            <p class="address-name">{{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</p>
-                            <p class="address-email">
-                                <i class="fa-solid fa-envelope"></i>
-                                {{ $order->customer->billing_email }}
-                            </p>
-                            @if($order->customer->billing_phone)
-                                <p class="address-phone">
-                                    <i class="fa-solid fa-phone"></i>
-                                    {{ $order->customer->billing_phone }}
-                                </p>
-                            @endif
-                            <p class="address-date">
-                                <i class="fa-solid fa-calendar"></i>
-                                {{ $order->created_at->format('d-m-Y H:i') }}
-                            </p>
-                        </div>
-                    </div>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                    <button type="button" class="alert-close"
+                        onclick="this.parentElement.style.display='none';">&times;</button>
+                </div>
+            @endif
 
-                    <div class="order-address-card">
-                        <h3 class="address-card-title">
-                            <i class="fa-solid fa-receipt"></i>
-                            Bestelling
-                        </h3>
-                        <div class="address-card-content">
-                            <p><strong>Status:</strong> {{ $order->status_label }}</p>
-                            <p><strong>Totaal:</strong> € {{ number_format($order->total, 2, ',', '.') }}</p>
-                            <p><strong>Betaalstatus:</strong> {{ $order->payment_status_label ?? 'Onbekend' }}</p>
-                            @if (!empty($order->invoice_pdf_path))
-                                <p>
-                                    <strong>Factuur:</strong>
-                                    <a href="{{ route('orders.invoice', $order->id) }}" class="invoice-link" target="_blank">Download factuur</a>
-                                </p>
-                            @endif
-                            @if ($order->myparcel_track_trace_url)
-                                <p>
-                                    <strong>Track & Trace:</strong>
-                                    <a href="{{ $order->myparcel_track_trace_url }}" class="invoice-link" target="_blank">
-                                        {{ $order->myparcel_barcode ?? 'Bekijk zending' }}
-                                    </a>
-                                </p>
-                            @endif
-                            @if ($order->myparcel_delivery_type)
-                                @php
-                                    $deliveryTypesShort = [
-                                        'standard' => 'Thuisbezorging',
-                                        'pickup' => 'Afhaalpunt',
-                                    ];
-                                @endphp
-                                <p><strong>Bezorgtype:</strong> {{ $deliveryTypesShort[$order->myparcel_delivery_type] ?? ucfirst($order->myparcel_delivery_type ?? '-') }}</p>
-                            @endif
-                        </div>
-                    </div>
-
-                    @if($order->myparcel_delivery_type == 'pickup' && isset($pickupLocation))
+            <x-user-dashboard-layout>
+                <div class="order-detail-container">
+                    <div class="order-info-cards">
                         <div class="order-address-card">
                             <h3 class="address-card-title">
-                                <i class="fa-solid fa-map-marker-alt"></i>
-                                Afhaalpunt
+                                <i class="fa-solid fa-receipt"></i>
+                                Bestelinformatie
                             </h3>
                             <div class="address-card-content">
-                                <p class="location-name">{{ $pickupLocation['locationName'] ?? '-' }}</p>
-                                <p class="location-address">
-                                    {{ $pickupLocation['street'] ?? '' }} {{ $pickupLocation['number'] ?? '' }}<br>
-                                    {{ $pickupLocation['postalCode'] ?? '' }} {{ $pickupLocation['city'] ?? '' }}
-                                </p>
-                            </div>
-                        </div>
-                    @endif
-
-                    <div class="order-address-card">
-                        <h3 class="address-card-title">
-                            <i class="fa-solid fa-file-invoice"></i>
-                            Factuuradres
-                        </h3>
-                        <div class="address-card-content">
-                            <p class="address-name">{{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</p>
-                            @if($order->customer->billing_company)
-                                <p class="address-company">{{ $order->customer->billing_company }}</p>
-                            @endif
-                            <p class="address-street">
-                                {{ $order->customer->billing_street }} {{ $order->customer->billing_house_number }}{{ $order->customer->billing_house_number_addition ? ' '.$order->customer->billing_house_number_addition : '' }}
-                            </p>
-                            <p class="address-city">
-                                {{ $order->customer->billing_postal_code }} {{ $order->customer->billing_city }}
-                            </p>
-                            <p class="address-country">
-                                {{ config('countries.' . $order->customer->billing_country) ?? $order->customer->billing_country }}
-                            </p>
-                        </div>
-                    </div>
-
-                    @if($order->shipping_street)
-                        <div class="order-address-card">
-                            <h3 class="address-card-title">
-                                <i class="fa-solid fa-shipping-fast"></i>
-                                Verzendadres
-                            </h3>
-                            <div class="address-card-content">
-                                <p class="address-name">{{ $order->shipping_first_name }} {{ $order->shipping_last_name }}</p>
-                                @if($order->shipping_company)
-                                    <p class="address-company">{{ $order->shipping_company }}</p>
+                                <div class="info-row">
+                                    <span class="info-label">Status:</span>
+                                    <span class="info-value order-status-badge status-{{ $order->status }}">{{ $order->status_label }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Datum:</span>
+                                    <span class="info-value">{{ $order->created_at->format('d-m-Y H:i') }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Betaalstatus:</span>
+                                    <span class="info-value">{{ $order->payment_status_label ?? 'Onbekend' }}</span>
+                                </div>
+                                @if ($order->myparcel_delivery_type)
+                                    @php
+                                        $deliveryTypesShort = [
+                                            'standard' => 'Thuisbezorging',
+                                            'pickup' => 'Afhaalpunt',
+                                        ];
+                                    @endphp
+                                    <div class="info-row">
+                                        <span class="info-label">Bezorgtype:</span>
+                                        <span class="info-value">{{ $deliveryTypesShort[$order->myparcel_delivery_type] ?? ucfirst($order->myparcel_delivery_type ?? '-') }}</span>
+                                    </div>
                                 @endif
-                                <p class="address-street">
-                                    {{ $order->shipping_street }} {{ $order->shipping_house_number }}{{ $order->shipping_house_number_addition ? ' '.$order->shipping_house_number_addition : '' }}
-                                </p>
-                                <p class="address-city">
-                                    {{ $order->shipping_postal_code }} {{ $order->shipping_city }}
-                                </p>
-                                <p class="address-country">
-                                    {{ config('countries.' . $order->shipping_country) ?? $order->shipping_country }}
-                                </p>
+                                @if ($order->myparcel_track_trace_url)
+                                    <div class="info-row">
+                                        <span class="info-label">Track & Trace:</span>
+                                        <span class="info-value">
+                                            <a href="{{ $order->myparcel_track_trace_url }}" class="order-link" target="_blank">
+                                                {{ $order->myparcel_barcode ?? 'Bekijk zending' }}
+                                            </a>
+                                        </span>
+                                    </div>
+                                @endif
+                                @if (!empty($order->invoice_pdf_path))
+                                    <div class="info-row">
+                                        <span class="info-label">Factuur:</span>
+                                        <span class="info-value">
+                                            <a href="{{ route('orders.invoice', $order->id) }}" class="order-link" target="_blank">
+                                                <i class="fa-solid fa-file-pdf"></i> Download PDF
+                                            </a>
+                                        </span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
-                    @else
+
                         <div class="order-address-card">
                             <h3 class="address-card-title">
-                                <i class="fa-solid fa-shipping-fast"></i>
-                                Verzendadres
+                                <i class="fa-solid fa-file-invoice"></i>
+                                Factuuradres
                             </h3>
                             <div class="address-card-content">
                                 <p class="address-name">{{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</p>
@@ -151,223 +96,163 @@
                                 <p class="address-country">
                                     {{ config('countries.' . $order->customer->billing_country) ?? $order->customer->billing_country }}
                                 </p>
+                                <p class="address-email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    {{ $order->customer->billing_email }}
+                                </p>
                             </div>
                         </div>
-                    @endif
-                </div>
 
-                <div class="order-summary-card">
-                    <h2 class="order-summary-title">Producten</h2>
-                    <div class="order-items-table">
-                        <div class="order-items-header">
-                            <span class="order-item-col product">Product</span>
-                            <span class="order-item-col quantity">Aantal</span>
-                            <span class="order-item-col price">Stukprijs</span>
-                            <span class="order-item-col subtotal">Subtotaal</span>
-                        </div>
-                        @forelse ($order->items as $item)
-                            <div class="order-item-row">
-                                <span class="order-item-product">{{ $item->product_name }}</span>
-                                <span class="order-item-quantity">{{ $item->quantity }}</span>
-                                <span class="order-item-price">€ {{ number_format($item->unit_price, 2, ',', '.') }}</span>
-                                <span class="order-item-subtotal">€ {{ number_format($item->subtotal, 2, ',', '.') }}</span>
+                        @if($order->myparcel_delivery_type == 'pickup' && isset($pickupLocation))
+                            <div class="order-address-card">
+                                <h3 class="address-card-title">
+                                    <i class="fa-solid fa-map-marker-alt"></i>
+                                    Afhaalpunt
+                                </h3>
+                                <div class="address-card-content">
+                                    <p class="location-name"><strong>{{ $pickupLocation['locationName'] ?? '-' }}</strong></p>
+                                    <p class="location-address">
+                                        {{ $pickupLocation['street'] ?? '' }} {{ $pickupLocation['number'] ?? '' }}<br>
+                                        {{ $pickupLocation['postalCode'] ?? '' }} {{ $pickupLocation['city'] ?? '' }}
+                                    </p>
+                                </div>
                             </div>
-                        @empty
-                            <div class="order-item-row empty-state">
-                                <span>Geen items gevonden in deze bestelling.</span>
+                        @else
+                            <div class="order-address-card">
+                                <h3 class="address-card-title">
+                                    <i class="fa-solid fa-shipping-fast"></i>
+                                    Verzendadres
+                                </h3>
+                                <div class="address-card-content">
+                                    @if($order->shipping_street)
+                                        <p class="address-name">{{ $order->shipping_first_name }} {{ $order->shipping_last_name }}</p>
+                                        @if($order->shipping_company)
+                                            <p class="address-company">{{ $order->shipping_company }}</p>
+                                        @endif
+                                        <p class="address-street">
+                                            {{ $order->shipping_street }} {{ $order->shipping_house_number }}{{ $order->shipping_house_number_addition ? ' '.$order->shipping_house_number_addition : '' }}
+                                        </p>
+                                        <p class="address-city">
+                                            {{ $order->shipping_postal_code }} {{ $order->shipping_city }}
+                                        </p>
+                                        <p class="address-country">
+                                            {{ config('countries.' . $order->shipping_country) ?? $order->shipping_country }}
+                                        </p>
+                                    @else
+                                        <p class="address-name">{{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</p>
+                                        @if($order->customer->billing_company)
+                                            <p class="address-company">{{ $order->customer->billing_company }}</p>
+                                        @endif
+                                        <p class="address-street">
+                                            {{ $order->customer->billing_street }} {{ $order->customer->billing_house_number }}{{ $order->customer->billing_house_number_addition ? ' '.$order->customer->billing_house_number_addition : '' }}
+                                        </p>
+                                        <p class="address-city">
+                                            {{ $order->customer->billing_postal_code }} {{ $order->customer->billing_city }}
+                                        </p>
+                                        <p class="address-country">
+                                            {{ config('countries.' . $order->customer->billing_country) ?? $order->customer->billing_country }}
+                                        </p>
+                                    @endif
+                                </div>
                             </div>
-                        @endforelse
+                        @endif
                     </div>
 
-                    <div class="order-totals">
-                        <div class="order-total-divider"></div>
-                        
-                        <div class="order-total-row">
-                            <span class="order-total-label">Totaal</span>
-                            <span class="order-total-value">€ {{ number_format($order->total_before ?? $order->total, 2, ',', '.') }}</span>
+                    <div class="order-summary-card">
+                        <h3 class="order-summary-title">Producten</h3>
+                        <div class="order-items-list">
+                            <div class="order-items-header">
+                                <span class="order-item-col product">Product</span>
+                                <span class="order-item-col quantity">Aantal</span>
+                                <span class="order-item-col price">Stukprijs</span>
+                                <span class="order-item-col subtotal">Subtotaal</span>
+                            </div>
+                            @forelse ($order->items as $item)
+                                <div class="order-item-row">
+                                    <div class="order-item-product">
+                                        <span class="product-name">{{ $item->product_name }}</span>
+                                    </div>
+                                    <div class="order-item-quantity">
+                                        <span class="mobile-label">Aantal:</span>
+                                        <span>{{ $item->quantity }}</span>
+                                    </div>
+                                    <div class="order-item-price">
+                                        <span class="mobile-label">Stukprijs:</span>
+                                        <span>€ {{ number_format($item->unit_price, 2, ',', '.') }}</span>
+                                    </div>
+                                    <div class="order-item-subtotal">
+                                        <span class="mobile-label">Subtotaal:</span>
+                                        <span>€ {{ number_format($item->subtotal, 2, ',', '.') }}</span>
+                                    </div>
+                                </div>
+                            @empty
+                                <div class="order-item-row empty-state">
+                                    <span>Geen items gevonden in deze bestelling.</span>
+                                </div>
+                            @endforelse
                         </div>
 
-                        @if ($order->discount_value > 0)
-                            <div class="order-total-row discount">
-                                <span class="order-total-label">Korting
-                                    @if($order->discount_code)
-                                        <span class="discount-code-label">({{ $order->discount_code }})</span>
-                                    @endif
-                                </span>
-                                <span class="order-total-value">
-                                    @if($order->discount_type == 'percent')
-                                        -{{ (int)$order->discount_value }}%
-                                    @elseif($order->discount_type == 'amount')
-                                        -€ {{ number_format($order->discount_value, 2, ',', '.') }}
-                                    @endif
-                                </span>
+                        <div class="order-totals">
+                            <div class="order-total-divider"></div>
+
+                            <div class="order-total-row">
+                                <span class="order-total-label">Subtotaal</span>
+                                <span class="order-total-value">€ {{ number_format($order->total_before ?? ($order->total - (is_numeric($order->shipping_cost_amount) ? $order->shipping_cost_amount : 0)), 2, ',', '.') }}</span>
                             </div>
 
-                            @if($order->discount_type == 'percent')
-                                <div class="order-total-row discount-amount">
-                                    <span class="order-total-label">Kortingsbedrag</span>
-                                    <span class="order-total-value">-€ {{ number_format($order->discount_price_total, 2, ',', '.') }}</span>
+                            @if ($order->discount_value > 0)
+                                <div class="order-total-row discount">
+                                    <span class="order-total-label">Korting
+                                        @if($order->discount_code)
+                                            <span class="discount-code-tag">{{ $order->discount_code }}</span>
+                                        @endif
+                                    </span>
+                                    <span class="order-total-value">
+                                        @if($order->discount_type == 'percent')
+                                            -{{ (int)$order->discount_value }}%
+                                        @elseif($order->discount_type == 'amount')
+                                            -€ {{ number_format($order->discount_value, 2, ',', '.') }}
+                                        @endif
+                                    </span>
+                                </div>
+
+                                @if($order->discount_type == 'percent')
+                                    <div class="order-total-row discount-amount">
+                                        <span class="order-total-label">Kortingsbedrag</span>
+                                        <span class="order-total-value">-€ {{ number_format($order->discount_price_total, 2, ',', '.') }}</span>
+                                    </div>
+                                @endif
+
+                                <div class="order-total-row after-discount">
+                                    <span class="order-total-label">Totaal na korting</span>
+                                    <span class="order-total-value">€ {{ number_format($order->total_after_discount, 2, ',', '.') }}</span>
                                 </div>
                             @endif
 
-                            <div class="order-total-row after-discount">
-                                <span class="order-total-label">Totaal na korting</span>
-                                <span class="order-total-value">€ {{ number_format($order->total_after_discount, 2, ',', '.') }}</span>
+                            @php
+                                $shippingAmount = is_numeric($order->shipping_cost_amount) ? $order->shipping_cost_amount : (is_object($order->shipping_cost_amount) ? ($order->shipping_cost_amount->amount ?? 0) : 0);
+                            @endphp
+
+                            @if($shippingAmount > 0)
+                                <div class="order-total-row shipping">
+                                    <span class="order-total-label">Verzendkosten</span>
+                                    <span class="order-total-value">€ {{ number_format($shippingAmount, 2, ',', '.') }}</span>
+                                </div>
+                            @endif
+
+                            <div class="order-total-divider"></div>
+
+                            <div class="order-total-row final-total">
+                                <span class="order-total-label">Totaal (incl. BTW)</span>
+                                <span class="order-total-value">€ {{ number_format($order->total, 2, ',', '.') }}</span>
                             </div>
-                        @endif
-
-                        @php
-                            $shippingAmount = is_numeric($order->shipping_cost_amount) ? $order->shipping_cost_amount : (is_object($order->shipping_cost_amount) ? ($order->shipping_cost_amount->amount ?? 0) : 0);
-                            $totalInclShipping = $order->total;
-                        @endphp
-
-                        @if($shippingAmount > 0)
-                            <div class="order-total-row shipping">
-                                <span class="order-total-label">Verzendkosten</span>
-                                <span class="order-total-value">€ {{ number_format($shippingAmount, 2, ',', '.') }}</span>
-                            </div>
-                        @endif
-
-                        <div class="order-total-divider"></div>
-                        
-                        <div class="order-total-row final-total">
-                            <span class="order-total-label">Totaal (incl. verzendkosten)</span>
-                            <span class="order-total-value">€ {{ number_format($totalInclShipping, 2, ',', '.') }}</span>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <style>
-                .order-detail-page {
-                    width: 100%;
-                }
-
-                .order-detail-page h2 {
-                    font-size: 1.75rem;
-                    font-weight: 600;
-                    color: var(--main-font-color, #620505);
-                    margin-bottom: 2rem;
-                }
-
-                .order-addresses-grid {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 25px;
-                    margin-bottom: 30px;
-                }
-
-                .invoice-link {
-                    color: var(--blue-1, #0d6efd);
-                    text-decoration: underline;
-                    transition: color 0.2s ease;
-                }
-
-                .invoice-link:hover {
-                    color: #0b5ed7;
-                }
-
-                .order-items-table {
-                    margin-bottom: 16px;
-                }
-
-                .order-items-header {
-                    display: grid;
-                    grid-template-columns: 2fr 0.8fr 1fr 1fr;
-                    gap: 15px;
-                    padding: 8px 0;
-                    border-bottom: 2px solid var(--main-font-color);
-                    margin-bottom: 10px;
-                }
-
-                .order-item-col.product {
-                    font-weight: 600;
-                    color: var(--main-font-color);
-                    font-size: 16px;
-                }
-
-                .order-item-col.quantity,
-                .order-item-col.price,
-                .order-item-col.subtotal {
-                    font-weight: 600;
-                    color: var(--main-font-color);
-                    font-size: 16px;
-                    text-align: right;
-                }
-
-                .order-item-row {
-                    display: grid;
-                    grid-template-columns: 2fr 0.8fr 1fr 1fr;
-                    gap: 15px;
-                    padding: 8px 0;
-                    border-bottom: 1px solid var(--border-2);
-                    align-items: center;
-                }
-
-                .order-item-row:last-of-type {
-                    border-bottom: none;
-                }
-
-                .order-item-row.empty-state {
-                    grid-template-columns: 1fr;
-                    text-align: center;
-                    padding: 2rem;
-                    color: var(--ink-muted);
-                    font-style: italic;
-                    border-bottom: none;
-                }
-
-                .order-item-product {
-                    font-size: 16px;
-                    color: var(--main-font-color);
-                    line-height: 1.5;
-                }
-
-                .order-item-quantity,
-                .order-item-price,
-                .order-item-subtotal {
-                    font-size: 16px;
-                    color: var(--main-font-color);
-                    font-weight: 500;
-                    text-align: right;
-                }
-
-                .address-date {
-                    margin-top: 8px;
-                    color: var(--ink-muted);
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                }
-
-                .address-date i {
-                    font-size: 14px;
-                    color: var(--main-color);
-                }
-
-                @media (max-width: 768px) {
-                    .order-addresses-grid {
-                        grid-template-columns: 1fr;
-                        gap: 20px;
-                    }
-
-                    .order-items-header,
-                    .order-item-row {
-                        grid-template-columns: 1fr;
-                        gap: 8px;
-                    }
-
-                    .order-item-col.quantity,
-                    .order-item-col.price,
-                    .order-item-col.subtotal,
-                    .order-item-quantity,
-                    .order-item-price,
-                    .order-item-subtotal {
-                        text-align: left;
-                    }
-                }
-            </style>
-        </x-user-dashboard-layout>
+            </x-user-dashboard-layout>
+        </main>
+        <div class="gradient-border"></div>
+        <x-footer></x-footer>
     </x-layout>
 @else
     <x-dashboard-layout>

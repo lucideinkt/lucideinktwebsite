@@ -3,42 +3,80 @@
    ========================================================= */
 
 .alert {
-    border-radius: 4px !important;
-    padding: 2px 15px;
-    max-width: 400px;
+    border-radius: 10px !important;
+    padding: 1rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--surface-2);
     box-shadow: var(--shadow-1);
+    margin-bottom: 2rem !important;
+    border: 1px solid var(--border-1);
+    position: relative;
+    gap: 1rem;
 }
 
 .alert a {
-    color: var(--ink-1);
+    color: var(--main-color);
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .alert-close {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
-    padding-right: 0;
-    color: var(--success-text);
+    padding: 0;
+    color: inherit;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.alert-close:hover {
+    opacity: 1;
 }
 
 .alert-success {
-    background: #fbf3e4;
-    color: var(--ink-1);
-    border-left: 4px solid #28a745;
+    background: var(--success-bg);
+    color: var(--success-text);
+    border-left: 4px solid var(--green-1);
+    border-color: var(--success-border);
+    border-left-color: var(--green-1);
     margin-bottom: 0;
     width: 100%;
 }
 
 .alert-error {
-    background: #fbf3e4;
+    background: var(--error-bg);
     color: var(--error-text);
     border-left: 4px solid var(--red-1);
+    border-color: var(--error-border);
+    border-left-color: var(--red-1);
     width: 100%;
     margin-bottom: 0;
+}
+
+.alert-info {
+    background: #e7f1ff;
+    color: #084298;
+    border-left: 4px solid var(--blue-1);
+    border-color: #b6d4fe;
+    border-left-color: var(--blue-1);
+    width: 100%;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .alert {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem !important;
+    }
 }
