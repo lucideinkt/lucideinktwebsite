@@ -39,6 +39,7 @@
 
     {{-- Adobe stylesheet fonts --}}
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ixm0jkz.css">
 
     {{-- Polyfill for crypto.randomUUID --}}
     <script>

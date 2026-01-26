@@ -1,7 +1,7 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/008_background_cloudless.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/010_background_banner.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
@@ -53,21 +53,25 @@
         <div class="gradient-border"></div>
 
         <section class="home white-section intro-section">
+            <img class="moon-left" src="{{ asset('images/half_moon.webp') }}" alt="">
+            <img class="moon-right" src="{{ asset('images/half_moon.webp') }}" alt="">
+
             <div class="text-container">
 {{--                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>--}}
                 {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
                 <div class="sub-text">
                     <p>
                         Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de
-                        Qur'anische richtlijen van de Risale-i Nur. Met Nederlandse en Engelse vertalingen van deze
+                        Qur'anische richtlijen van de Risale-i Nur.
+                        <br>Met Nederlandse en Engelse vertalingen van deze
                         boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste
                         bestaansvragen van de mens.
                     </p>
 
-                    <button class="read-more-btn" id="openIntroModalBtn">
-                        <span class="read-more-text">Lees meer</span>
-                        <i class="fa-solid fa-arrow-right read-more-icon"></i>
-                    </button>
+{{--                    <button class="read-more-btn" id="openIntroModalBtn">--}}
+{{--                        <span class="read-more-text">Lees meer</span>--}}
+{{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+{{--                    </button>--}}
                 </div>
             </div>
         </section>
