@@ -21,7 +21,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.7;
+    opacity: 1;
     /*filter: brightness(1.4) contrast(0.5);*/
     pointer-events: none;
     z-index: -1;
@@ -85,6 +85,12 @@ h2 {
     font-size: 50px;
     font-weight: 400;
     margin-bottom: 20px;
+}
+
+.new-translation .title.trans {
+    color: rgb(245, 223, 172);
+    text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);
+    filter: brightness(1.1);
 }
 
 .new-translation .title {
@@ -226,13 +232,25 @@ h2 {
     max-width: 800px;
 }
 
+.intro-section .sub-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    flex-direction: column;
+}
+
 .intro-section .sub-text p {
-    font-size: 24px;
+    font-size: 22px;
     font-family: "trajan-pro-3", serif;
     font-weight: 700;
     font-style: normal;
     margin-bottom: 0;
-    line-height: 1.5;
+    line-height: 1.3;
+    color: #871719;
+    transform: scaleX(1.10);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
 }
 
 /* Read More Button Styling */
@@ -244,7 +262,7 @@ h2 {
     color: white;
     border: none;
     padding: 14px 28px;
-    border-radius: 8px;
+    border-radius: 20px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -411,6 +429,9 @@ h2 {
 .home-book-grid .book .under-text {
     font-size: 0.8em;
     text-align: center;
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
 }
 
 /* Book Grid Button */
@@ -464,6 +485,10 @@ h2 {
 .risale-section .risale-content .sub-text {
     text-align: left;
     margin-bottom: 0;
+}
+
+.new-translation .sub-text {
+    color: rgb(245, 223, 172);
 }
 
 /* Read More Link */

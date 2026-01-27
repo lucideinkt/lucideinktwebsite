@@ -1,7 +1,7 @@
 <x-layout>
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/010_background_banner.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/011_background.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
@@ -56,22 +56,28 @@
             <img class="moon-left" src="{{ asset('images/half_moon.webp') }}" alt="">
             <img class="moon-right" src="{{ asset('images/half_moon.webp') }}" alt="">
 
+{{--            <img style="width: 100%;height: 50%" class="letters-stars" src="{{ asset('images/letters_stars.webp') }}" alt="">--}}
+
             <div class="text-container">
 {{--                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>--}}
                 {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
                 <div class="sub-text">
                     <p>
-                        Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de
-                        Qur'anische richtlijen van de Risale-i Nur.
-                        <br>Met Nederlandse en Engelse vertalingen van deze
-                        boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste
+                        Lucide Inkt is een non-profit organisatie,<br>
+                        toegewijd aan het verlenen van diensten<br>
+                        volgens de Qur'anische richtlijen<br>
+                        van de Risale-i Nur.<br>
+                        Met Nederlandse en Engelse<br>
+                        vertalingen van deze boekenreeks<br>
+                        streven wij ernaar zoekers te voorzien<br>
+                        van antwoorden op de belangrijkste<br>
                         bestaansvragen van de mens.
                     </p>
 
-{{--                    <button class="read-more-btn" id="openIntroModalBtn">--}}
-{{--                        <span class="read-more-text">Lees meer</span>--}}
+                    <button class="read-more-btn" id="openIntroModalBtn">
+                        <span class="read-more-text">Meer informatie</span>
 {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
-{{--                    </button>--}}
+                    </button>
                 </div>
             </div>
         </section>
@@ -84,7 +90,7 @@
             <div class="container new-translation">
                 <div class="title-wrapper">
                     <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="">
-                    <h2 class="title">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
+                    <h2 class="title trans">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
                             class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
                         ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
                             class="title-in"></span>g</h2>
@@ -363,9 +369,20 @@
                 <span class="custom-modal-close" id="closeIntroModalBtn">&times;</span>
                 <div class="scroll-inner">
                     <p>
-                        Omdat de mens geschapen is voor de oneindige eeuwigheid, schuilt zijn diepste behoefte in de antwoorden op geloofsvragen die zijn eeuwige hiernamaals aanbelangen. In een tijd waarin geloofswaarheden zoals nooit tevoren bespot en verloochend worden, biedt de Risale-i Nur zulke krachtige traktaten ten bewijze van die waarheden, dat geen enkele tegenspraak ze ooit nog tot wankelen kan brengen. Tevens wordt in deze boekenreeks beschreven hoe Godsdienstigheid op de Godgevalligste wijze rechtzinnig kan worden betracht.
+                        Lucide Inkt is een non-profit organisatie,
+                        toegewijd aan het verlenen van diensten
+                        volgens de Qur'anische richtlijen
+                        van de Risale-i Nur.
+                        Met Nederlandse en Engelse
+                        vertalingen van deze boekenreeks
+                        streven wij ernaar zoekers te voorzien
+                        van antwoorden op de belangrijkste
+                        bestaansvragen van de mens.
                     </p>
                     <p>
+                        Omdat de mens geschapen is voor de oneindige eeuwigheid, schuilt zijn diepste behoefte in de antwoorden op geloofsvragen die zijn eeuwige hiernamaals aanbelangen. In een tijd waarin geloofswaarheden zoals nooit tevoren bespot en verloochend worden, biedt de Risale-i Nur zulke krachtige traktaten ten bewijze van die waarheden, dat geen enkele tegenspraak ze ooit nog tot wankelen kan brengen. Tevens wordt in deze boekenreeks beschreven hoe Godsdienstigheid op de Godgevalligste wijze rechtzinnig kan worden betracht.
+                    </p>
+                    <p style="margin-bottom: 0">
                         Met zulke essentiële elementen voor ogen bestaat het uiteindelijke doel van Lucide Inkt uit dienstverlening volgens de principes van de Risale-i Nur, in overeenstemming met de scheppingsreden van onze Heer; opdat wij Zijn Tevredenheid mogen verwerven en zoveel mogelijk broeders en zusters mogen bijstaan op hun levensweg — die insha’ALLAH zal uitmonden in eeuwige gelukzaligheid.
                     </p>
                 </div>

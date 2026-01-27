@@ -35,21 +35,22 @@
 
 .quote-icon {
     font-size: 48px;
-    color: #fff6e0 !important;
-    opacity: 0.5;
+    opacity: 1;
     margin-bottom: 25px;
     line-height: 1;
     text-align: center;
 }
 
 .quote-icon i {
-    color: #fff6e0 !important;
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
 }
 
 .quote-text {
     font-size: 20px;
     line-height: 1.9;
-    color: #fff6e0;
+    color: rgb(245, 223, 172);
     font-style: italic;
     margin-bottom: 25px;
     text-align: center;
@@ -57,11 +58,13 @@
 
 .quote-source {
     font-size: 16px;
-    color: #ece5c2;
     text-align: center;
     font-weight: 600;
     font-family: var(--font-bold);
-    opacity: 0.8;
+    opacity: 1;
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
 }
 
 /* Splide arrows styling */

@@ -72,6 +72,10 @@
     max-height: calc(80vh - 40px);
 }
 
+.scroll-inner p:last-child {
+    margin-bottom: 0;
+}
+
 .custom-modal-close {
     position: absolute;
     top: clamp(8px, 1.4vw, 14px);

@@ -22,10 +22,11 @@
 }
 
 .newsletter-title {
-    color: #fff6e0;
     margin-top: 0 !important;
     text-align: center;
     font-size: 32px !important;
+    color: rgb(245, 223, 172);
+    text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);
 }
 
 .newsletter-description {
@@ -34,6 +35,7 @@
     line-height: 1.7;
     margin-bottom: 40px;
     opacity: 0.9;
+    color: rgb(245, 223, 172);
 }
 
 .newsletter-form {
