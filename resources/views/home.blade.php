@@ -62,17 +62,15 @@
 {{--                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>--}}
                 {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
                 <div class="sub-text">
-                    <p>
-                        Lucide Inkt is een non-profit organisatie,<br>
-                        toegewijd aan het verlenen van diensten<br>
-                        volgens de Qur'anische richtlijen<br>
-                        van de Risale-i Nur.<br>
-                        Met Nederlandse en Engelse<br>
-                        vertalingen van deze boekenreeks<br>
-                        streven wij ernaar zoekers te voorzien<br>
-                        van antwoorden op de belangrijkste<br>
-                        bestaansvragen van de mens.
-                    </p>
+                    <p>Lucide Inkt is een non-profit organisatie,</p>
+                    <p>toegewijd aan het verlenen van diensten</p>
+                    <p>volgens de Qur'anische richtlijen</p>
+                    <p>van de Risale-i Nur.</p>
+                    <p>Met Nederlandse en Engelse</p>
+                    <p>vertalingen van deze boekenreeks</p>
+                    <p>streven wij ernaar zoekers te voorzien</p>
+                    <p>van antwoorden op de belangrijkste</p>
+                    <p>bestaansvragen van de mens.</p>
 
                     <button class="read-more-btn" id="openIntroModalBtn">
                         <span class="read-more-text">Meer informatie</span>
