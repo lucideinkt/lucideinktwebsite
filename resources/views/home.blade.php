@@ -103,7 +103,7 @@
                     </p>
                 </div>
 
-                <img class="rose-patels" src="{{ asset('images/RosePetals.webp') }}" alt="">
+                <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">
 
                 <div class="home-book-grid">
                     <div class="book one">
