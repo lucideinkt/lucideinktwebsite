@@ -94,13 +94,22 @@
                             class="title-in"></span>g</h2>
                 </div>
                 <div class="divider"></div>
-                <div class="sub-text">
-                    <p>
-                        Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te
-                        leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen
-                        het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?
-                        Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk.
-                    </p>
+                <div class="sub-text one">
+                        <p>Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk</p>
+                        <p>een ellendig leven te leiden en vervolgens voorgoed te verdwijnen?</p>
+                        <p>Of schuilt er meer achter zijn bestaan dan alleen het aardse,</p>
+                        <p>waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?</p>
+                        <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden</p>
+                        <p>in dit waardevolle werk.</p>
+                </div>
+
+                <div class="sub-text two">
+                    Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk
+                    een ellendig leven te leiden en vervolgens voorgoed te verdwijnen?
+                    Of schuilt er meer achter zijn bestaan dan alleen het aardse,
+                    waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?
+                    Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden
+                    in dit waardevolle werk.
                 </div>
 
                 <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">
