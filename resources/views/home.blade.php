@@ -112,8 +112,6 @@
                     in dit waardevolle werk.
                 </div>
 
-                <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">
-
                 <div class="home-book-grid">
                     <div class="book one">
                         <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="">
@@ -130,6 +128,9 @@
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
+
+                    <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">
+
                     <div class="book three">
                         <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="">
                         <p class="under-text">- Engels -</p>

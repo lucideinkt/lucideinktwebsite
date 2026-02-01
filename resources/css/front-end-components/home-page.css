@@ -91,6 +91,7 @@ h2 {
     color: rgb(245, 223, 172);
     text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);
     filter: brightness(1.1);
+    margin-bottom: 0px;
 }
 
 .new-translation .title {
@@ -122,6 +123,7 @@ h2 {
     background-color: rgb(245, 223, 172);
     text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);
     filter: brightness(1.1);
+    display: none;
 }
 
 
@@ -373,7 +375,7 @@ h2 {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     position: relative;
     z-index: 1;
 }
@@ -389,13 +391,13 @@ h2 {
 
 .new-translation .rose-patels {
     position: absolute;
-    left: 35%;
-    top: 60%;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    max-width: 1000px;
+    max-width: 850px;
     height: auto;
-    z-index: -1;
+    z-index: 0;
     opacity: 1;
     pointer-events: none;
 }
@@ -417,6 +419,8 @@ h2 {
 .home-book-grid .book {
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .home-book-grid .book img {
@@ -657,7 +661,7 @@ h2 {
 @media screen and (max-width: 1270px) {
     .new-translation .rose-patels {
         left: 50%;
-        top: 40%;
+        top: 50%;
         max-width: 900px;
     }
 }
@@ -836,10 +840,15 @@ h2 {
     }
 
     .new-translation .rose-patels {
-        max-width: 700px;
+        width: 600px;
         opacity: 1;
         left: 50%;
-        top: 45%;
+        top: 50%;
+        z-index: 0;
+    }
+
+    .home-book-grid {
+        z-index: 2;
     }
 
     .home .title {
@@ -892,10 +901,10 @@ h2 {
     }
 
     .new-translation .rose-patels {
-        max-width: 500px;
+        width: 500px;
         opacity: 1;
         left: 50%;
-        top: 47%;
+        top: 50%;
     }
 }
 
