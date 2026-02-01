@@ -2,41 +2,166 @@
     margin-top: 10px;
     font-family: var(--font-herina);
     letter-spacing: 2px;
-    font-size: 50px;
+    font-size: 36px;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-align: center;
-    font-size: 50px;
 }
 
 .said-nursi-page__text-box {
     background-color: var(--surface-1);
     border-radius: 10px;
-    padding: 40px;
+    padding: 40px 60px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     box-shadow: var(--shadow-1);
-    max-width: 1200px;
+    max-width: 1075px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.said-nursi-page__text-box .top-images {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 30px;
+}
+
+.said-nursi-page__text-box .top-images img:nth-child(1) {
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.said-nursi-page__text-box .top-images img:nth-child(2) {
+    width: 225px;
+    height: auto;
+    object-fit: contain;
+}
+
+.said-nursi-page__text-box .top-images img:nth-child(3) {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7;
 }
 
 .said-nursi-page__text-box .sub-title {
     text-align: center;
     margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    padding-right: 22px;
 }
+
+.said-nursi-page__text-box blockquote {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.said-nursi-page__text-box blockquote p {
+    text-align: left;
+    font-style: italic;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    text-indent: 50px;
+}
+
+.said-nursi-page__text-box p {
+    text-align: justify;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-indent: 0;
+    text-indent: 50px;
+}
+
+.said-nursi-page__text-box > img {
+    display: block;
+    margin: 25px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.said-nursi-page__text-box > img[src*="said_nursi_standing"] {
+    width: 350px;
+    float: left;
+    margin: 0 30px 20px 0;
+}
+
+.said-nursi-page__text-box > img[src*="said_nursi_wijzend"] {
+    width: 350px;
+    float: right;
+    margin: 0 0 0px 30px;
+    margin-top: -40px;
+}
+
+.said-nursi-page__text-box > img[src*="rose_end"] {
+    width: 200px;
+    margin-top: 30px;
+    clear: both;
+    opacity: 0.7;
+}
+
 
 @media (max-width: 600px) {
     .said-nursi-page__text-box .title {
-        font-size: 32px;
-        margin-bottom: 0px;
+        font-size: 28px;
+        margin-bottom: 15px;
     }
 
     .said-nursi-page__text-box .sub-title {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .said-nursi-page__text-box {
         padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .said-nursi-page__text-box .top-images {
+        gap: 15px;
+    }
+
+    .said-nursi-page__text-box .top-images img:nth-child(1) {
+        width: 60px;
+    }
+
+    .said-nursi-page__text-box .top-images img:nth-child(2) {
+        width: 120px;
+    }
+
+    .said-nursi-page__text-box .top-images img:nth-child(3) {
+        width: 60px;
+    }
+
+    .said-nursi-page__text-box > img[src*="said_nursi_standing"],
+    .said-nursi-page__text-box > img[src*="said_nursi_wijzend"] {
+        float: none;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .said-nursi-page__text-box > img[src*="said_nursi_standing"] {
+        width: 150px;
+    }
+
+    .said-nursi-page__text-box > img[src*="said_nursi_wijzend"] {
+        width: 130px;
+    }
+
+    .said-nursi-page__text-box > img[src*="rose_end"] {
+        width: 100px;
+    }
+
+    .said-nursi-page__text-box p {
+        text-indent: 25px;
+        text-align: left;
     }
 }
+
+
