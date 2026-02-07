@@ -53,6 +53,27 @@
     gap: 12px;
 }
 
+.sozler-logo {
+    font-family: 'Barla';
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+.sozler-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.sozler-nesriyat {
+    font-family: 'Barla-Aria';
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
 .footer-social a {
     width: 36px;
     height: 36px;
@@ -170,6 +191,10 @@
     }
 
     .footer-contact li {
+        justify-content: center;
+    }
+
+    .sozler-grid {
         justify-content: center;
     }
 }

@@ -7,12 +7,19 @@
                 <p class="footer-description">
                     Een non-profit organisatie toegewijd aan het verspreiden van de Risale-i Nur door middel van Nederlandse en Engelse vertalingen.
                 </p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <p style="font-weight: 500;font-size: 14px;margin-bottom: 5px;">
+                    <strong>In samenwerking met</strong>
+                </p>
+                <div class="sozler-grid">
+                    <h4 class="sozler-logo">
+                       Sözler
+                    </h4>
+                    <p class="sozler-nesriyat">Neşriyat</p>
                 </div>
+{{--                <div class="footer-social">--}}
+{{--                    <a href="mailto:info@lucideinkt.nl" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>--}}
+{{--                </div>--}}
+                <img src="" alt="">
             </div>
 
             <!-- Column 2: Snelle Links -->
@@ -21,9 +28,10 @@
                 <ul class="footer-links">
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('shop') }}">Winkel</a></li>
-                    <li><a href="#">Over Ons</a></li>
-                    <li><a href="#">De Risale-i Nur</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ route('saidnursi') }}">Said Nursi</a></li>
+                    <li><a href="{{ route('risale') }}">De Risale-i Nur</a></li>
+                    <li><a href="{{ route('onlineLezen') }}">Online Lezen</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
 
@@ -48,16 +56,8 @@
                         <span>Nederland</span>
                     </li>
                     <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <span>+31 (0)6 123 4567</span>
-                    </li>
-                    <li>
                         <i class="fa-solid fa-envelope"></i>
                         <span>info@lucideinkt.nl</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-clock"></i>
-                        <span>Ma-Vr: 9:00 - 17:00</span>
                     </li>
                 </ul>
             </div>
@@ -66,7 +66,6 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <p>&copy; {{ date('Y') }} Lucide Inkt. Alle rechten voorbehouden.</p>
-            <p class="footer-tagline">Verlichtend inzicht door de Risale-i Nur</p>
         </div>
     </div>
 </section>

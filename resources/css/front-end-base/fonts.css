@@ -62,3 +62,15 @@
     src: url('../../fonts/gtherina-regular.otf') format('opentype');
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Barla';
+    src: url('../../fonts/Barla-Liva-Nur.ttf') format('opentype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Barla-Aria';
+    src: url('../../fonts/Barla-Aria-Script.ttf') format('opentype');
+    font-style: normal;
+}

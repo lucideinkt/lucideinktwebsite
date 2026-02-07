@@ -12,7 +12,7 @@
         <ul class="dropdown-menu">
             <li><a href="{{ route('risale') }}">Meer Informatie</a></li>
             <li><a href="{{ route('onlineLezen') }}">Online Lezen</a></li>
-            <li><a href="#">Audioboeken</a></li>
+{{--            <li><a href="#">Audioboeken</a></li>--}}
         </ul>
     </li>
     <li class="nav-item">

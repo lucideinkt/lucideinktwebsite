@@ -109,17 +109,21 @@
 
                 <div class="home-book-grid">
                     <div class="book one">
-                        <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
+                            <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="">
+                        </a>
                         <p class="under-text">- Nederlands -</p>
-                        <a href="#">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands') }}">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
                     <div class="book two">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
                         <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}"
                             alt="">
+                        </a>
                         <p class="under-text">- Nederlands & Turks -</p>
-                        <a href="#">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
@@ -127,16 +131,20 @@
                     <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">
 
                     <div class="book three">
-                        <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
+                            <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="">
+                        </a>
                         <p class="under-text">- Engels -</p>
-                        <a href="#">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
                     <div class="book four">
-                        <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
+                            <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="">
+                        </a>
                         <p class="under-text">- Engels & Turks -</p>
-                        <a href="#">
+                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
@@ -149,7 +157,7 @@
         <section class="white-section risale-section">
             <div class="text-container risale-grid">
                 <div class="risale-content">
-                    <h2 class="title">Wat is de Risale-i Nur?</h2>
+                    <h2 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h2>
                     <div class="sub-text">
                         <p>
                             Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele.
@@ -230,7 +238,7 @@
                     <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
                 </div>
                 <div class="risale-content">
-                    <h2 class="title">Wie is Said Nursi?</h2>
+                    <h2 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h2>
                     <div class="sub-text">
                         <p>
                             Om het geloof van de gemeenschap in veiligheid te brengen, heb ik op dat pad ook mijn hiernamaals opgeofferd. In mijn ogen bestaat er noch liefde voor het paradijs, noch vrees voor de hel. Namens het geloof van niet alleen de Turkse gemeenschap van 25 miljoen, maar van de gehele Islamitische gemeenschap van honderden miljoenen mensen, mogen niet één, maar duizend Saids opgeofferd worden. Als onze Qur’an op aarde zonder volgers achterblijft, dan verlang ik ook niet naar het paradijs; ook daar zal het dan een gevangenis voor mij zijn. Als ik zou zien dat het geloof van mijn volk is veiliggesteld, dan ben ik bereid om in de vlammen van de hel te branden. Want terwijl mijn lichaam dan knettert in het vuur, zal in mijn hart een rozentuin van gelukzaligheid ontbloeien.
