@@ -8,34 +8,81 @@
     font-size: 50px;
 }
 
+.risale-w::before {
+    content: "\E02D";
+}
+
+.risale-r::before {
+    content: "\E020";
+}
+
+.risale-ur::before {
+    content: "\E06A";
+}
+
 .risale-i-nur-page__text-box {
-    background-color: var(--surface-1);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
-    padding: 40px;
+    padding: 40px 60px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     box-shadow: var(--shadow-1);
-    max-width: 1200px;
+    max-width: 1075px;
     margin-left: auto;
     margin-right: auto;
 }
 
+
 .risale-i-nur-page__text-box .sub-title {
     text-align: center;
     margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.risale-i-nur-page__text-box p {
+    text-align: justify;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-indent: 50px;
+}
+
+.risale-i-nur-page__text-box > img {
+    display: block;
+    margin: 25px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.risale-i-nur-page__text-box > img[src*="boeken-stapel"] {
+    width: 400px;
+    margin: 25px auto;
 }
 
 @media (max-width: 600px) {
     .risale-i-nur-page__text-box .title {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: 25px;
     }
 
     .risale-i-nur-page__text-box .sub-title {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .risale-i-nur-page__text-box {
         padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .risale-i-nur-page__text-box p {
+        text-indent: 25px;
+        text-align: left;
+    }
+
+    .risale-i-nur-page__text-box > img[src*="boeken-stapel"] {
+        width: 250px;
     }
 }

@@ -1,22 +1,23 @@
 <x-layout>
     <main class="container page">
         <div class="risale-i-nur-page__text-box">
-            <h1 class="title">Wat is de Risale-i Nur?</h1>
+            <h1 class="title"><span class="risale-w"></span>at is de <span class="risale-r"></span>isale-i N<span class="risale-ur"></span>?</h1>
             <p>
-                Tafsirs zijn Qur'anexegeses die in twee hoofdcategorieën worden onderscheiden: de letterlijke en de spirituele.
-                Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen systematisch aangehaald, waarna de betekenissen van de woorden en zinnen met uitvoerige bewijzen en taalkundige analyses worden toegelicht. Deze methode richt zich voornamelijk op de uiterlijke betekenis van de tekst en de historische context waarin de verzen zijn geopenbaard.
-            </p>
-            <p>
-                Bij de tweede categorie, de spirituele Tafsirs, worden Qur'anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, diepgaand beargumenteerd en systematisch ontvouwd.
-                Deze benadering duikt in de diepere betekenislagen van de Goddelijke openbaring en legt de filosofische en spirituele fundamenten van het geloof bloot. Hoewel deze tweede soort van eminent belang is voor een wezenlijk begrip van de Qur'an, wordt ze in de traditionele letterlijke Tafsirs helaas soms slechts ter aanvulling beknopt opgenomen of zelfs geheel buiten beschouwing gelaten.
-            </p>
-            <p>
-                De Risale-i Nur daarentegen heeft direct deze tweede, spirituele benadering als grondslag genomen en tot haar primaire missie verheven.
-                Immers, tegenover de hedendaagse spirituele ziektes, materialistische stromingen en antireligieuze indoctrinaties kan een geloofsovertuiging die louter op imitatie en blinde navolging berust moeilijk standhouden. In een tijdperk waarin wetenschap en ratio centraal staan, is een oppervlakkig geloof zonder diepgaand inzicht kwetsbaar en fragiel. Alleen een gegronde overtuiging die op oprecht onderzoek, kritisch nadenken en stevige argumentatie is gebaseerd, zou zich effectief kunnen weren tegen de onophoudelijke aanvallen van atheïstische propaganda en nihilistische denkbeelden.
-            </p>
-            <p>
-                Om een onwrikbare overtuiging en een bewust, weloverwogen geloof te verschaffen, heeft de Risale-i Nur derhalve elke vorm van subjectiviteit, emotionaliteit en ongefundeerde beweringen vermeden.
-                Met uiterst objectieve, rationele en doorslaggevende argumenten worden in deze gezegende boekenreeks zelfs de meest abstracte en lastigste geloofswaarheden volwaardig en toegankelijk uiteengezet. De verklaringen spreken zowel het verstand als het hart aan, waardoor ze een harmonieuze balans creëren tussen ratio en spiritualiteit. Als een ware spirituele tafsir van de Qur'an, geschreven voor de moderne mens, voldoet de Risale-i Nur aan alle intellectuele en spirituele behoeften van deze tijd, mits de lezer dit meesterwerk met een oprecht zoekend en onbevooroordeeld hart benadert.
+                Tafsirs zijn Qur’anexegeses die in <strong>twee categorieën</strong> worden onderscheiden: <strong>de letterlijke en de spirituele</strong>.
+
+                <p>
+                <strong>Bij de bekende</strong>, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht.
+                </p>
+
+                <p>
+                <strong>Bij de tweede</strong>, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
+                </p>
+
+                <img src="{{ asset('images/boeken-stapel.webp') }}" alt="Risale-i Nur">
+
+                <p>
+                <strong>In de Risale-i Nur daarentegen</strong> wordt deze tweede benadering niet ter aanvulling, maar direct als grondslag gehanteerd. De verankering van fundamentele geloofswaarheden is het primaire doel van deze spirituele Tafsir. Immers, tegenover de hedendaagse spirituele ziektes en antireligieuze indoctrinaties kan een geloofsovertuiging die op navolging berust moeilijk standhouden. Alleen een gegronde overtuiging die op onderzoek is gebaseerd, zou zich effectief kunnen weren tegen de onophoudelijke aanvallen van atheïstische propaganda. Om een onwrikbare overtuiging en een bewust geloof te verschaffen, heeft de Risale-i Nur derhalve elke vorm van subjectiviteit vermeden; met uiterst objectieve, rationele en doorslaggevende argumenten worden in deze gezegende boekenreeks zelfs de lastigste geloofswaarheden volwaardig uiteengezet. <strong>Als een ware spirituele tafsir van de Qur’an voldoet de Risale-i Nur aan alle behoeften van deze tijd. Het enige wat van de lezer gevraagd wordt, is lezen met een aandachtige blik en een onbevooroordeeld hart</strong>.
+                </p>
             </p>
         </div>
     </main>
