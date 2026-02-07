@@ -85,7 +85,6 @@
     text-align: left;
     font-style: italic;
     margin: 0;
-    font-size: 18px;
     line-height: 1.6;
     text-indent: 50px;
 }
@@ -93,7 +92,6 @@
 .said-nursi-page__text-box p {
     text-align: justify;
     margin-bottom: 15px;
-    font-size: 18px;
     line-height: 1.8;
     text-indent: 50px;
 }
@@ -106,7 +104,7 @@
 }
 
 .said-nursi-page__text-box > img[src*="said_nursi_standing"] {
-    width: 319px;
+    width: 363px;
     float: left;
     margin: 0 30px 20px 0;
 }

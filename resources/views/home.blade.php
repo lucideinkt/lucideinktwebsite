@@ -62,16 +62,11 @@
 {{--                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>--}}
                 {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
                 <div class="sub-text">
-                    <p>Lucide Inkt is een non-profit organisatie,</p>
-                    <p>toegewijd aan het verlenen van diensten</p>
-                    <p>volgens de Qur'anische richtlijen</p>
-                    <p>van de Risale-i Nur.</p>
-                    <p>Met Nederlandse en Engelse</p>
-                    <p>vertalingen van deze boekenreeks</p>
-                    <p>streven wij ernaar zoekers te voorzien</p>
-                    <p>van antwoorden op de belangrijkste</p>
-                    <p>bestaansvragen van de mens.</p>
-
+                    <p>Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van</p>
+                    <p>diensten volgens de Qur'anische richtlijen van de Risale-i Nur.</p>
+                    <p>Met Nederlandse en Engelse vertalingen van deze boekenreeks</p>
+                    <p>streven wij ernaar zoekers te voorzien van antwoorden</p>
+                    <p>op de belangrijkste bestaansvragen van de mens.</p>
                     <button class="read-more-btn" id="openIntroModalBtn">
                         <span class="read-more-text">Meer informatie</span>
 {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
@@ -157,13 +152,11 @@
                     <h2 class="title">Wat is de Risale-i Nur?</h2>
                     <div class="sub-text">
                         <p>
-                            Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en
-                            de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald,
-                            waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de
-                            tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen
-                            aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent
-                            belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
-                            De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
+                            Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele.
+
+                            Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht.
+
+                            Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
                         </p>
                         <a href="{{ route('risale') }}" class="read-more-link">
                             Lees meer <i class="fa-solid fa-arrow-right"></i>
@@ -240,13 +233,7 @@
                     <h2 class="title">Wie is Said Nursi?</h2>
                     <div class="sub-text">
                         <p>
-                            Tafsirs zijn Qur'anexegeses die in twee categorieën worden onderscheiden: de letterlijke en
-                            de spirituele. Bij de bekende, letterlijke Tafsirs worden Qur'anische verzen aangehaald,
-                            waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht. Bij de
-                            tweede, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen
-                            aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent
-                            belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
-                            De Risale-i Nur daarentegen heeft direct deze tweede benadering als grondslag genomen.
+                            Om het geloof van de gemeenschap in veiligheid te brengen, heb ik op dat pad ook mijn hiernamaals opgeofferd. In mijn ogen bestaat er noch liefde voor het paradijs, noch vrees voor de hel. Namens het geloof van niet alleen de Turkse gemeenschap van 25 miljoen, maar van de gehele Islamitische gemeenschap van honderden miljoenen mensen, mogen niet één, maar duizend Saids opgeofferd worden. Als onze Qur’an op aarde zonder volgers achterblijft, dan verlang ik ook niet naar het paradijs; ook daar zal het dan een gevangenis voor mij zijn. Als ik zou zien dat het geloof van mijn volk is veiliggesteld, dan ben ik bereid om in de vlammen van de hel te branden. Want terwijl mijn lichaam dan knettert in het vuur, zal in mijn hart een rozentuin van gelukzaligheid ontbloeien.
                         </p>
                         <a href="{{ route('saidnursi') }}" class="read-more-link">
                             Lees meer <i class="fa-solid fa-arrow-right"></i>

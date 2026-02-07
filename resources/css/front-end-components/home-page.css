@@ -235,7 +235,7 @@ h2 {
 
 .home.intro-section .text-container {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .intro-section .sub-text {
@@ -247,15 +247,11 @@ h2 {
 }
 
 .intro-section .sub-text p {
-    font-size: 115%;
-    font-family: griffon, serif;
-    font-style: normal;
-    font-weight: 700;
-    text-transform: uppercase;
+    /*font-family: griffon, serif;*/
+    font-weight: 400;
     margin-bottom: 0;
     color: #871719;
     /*transform: scaleX(1.10);*/
-    letter-spacing: 0px;
     margin-bottom: 0px;
     word-break: none;
 }
@@ -386,7 +382,6 @@ h2 {
 
 .new-translation .sub-text p {
     margin-bottom: 0px;
-    font-size: 20px;
 }
 
 .new-translation .rose-patels {
