@@ -164,7 +164,7 @@
 }
 
 .product-detail-price {
-    font-size: 1.875rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--main-font-color);
     letter-spacing: -0.02em;
@@ -271,7 +271,7 @@
 
 .product-detail-quantity-select {
     width: 70px;
-    padding: 10px 12px;
+    padding: 9px 12px;
     border: 2px solid rgba(197, 160, 89, 0.25);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.8);
@@ -294,6 +294,7 @@
 }
 
 .product-detail-add-to-cart {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,6 +309,7 @@
     cursor: pointer;
     min-width: 180px;
     transition: background 0.2s ease;
+    top: -1px;
 }
 
 .product-detail-add-to-cart:hover:not(:disabled) {

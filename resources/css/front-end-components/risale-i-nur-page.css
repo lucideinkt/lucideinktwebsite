@@ -56,10 +56,18 @@
     height: auto;
 }
 
-.risale-i-nur-page__text-box > img[src*="boeken-stapel"] {
-    width: 375px;
-    margin: 25px auto;
-    display: inline;
+/* Desktop: hide stapel-one, show stapel-two floating right */
+.risale-i-nur-page__text-box img.stapel-one {
+    display: none;
+}
+
+.risale-i-nur-page__text-box img.stapel-two {
+    width: 385px;
+    float: right;
+    margin: 0 0 20px 30px;
+    shape-margin: 20px;
+    position: relative;
+    top: 15px;
 }
 
 .risale-i-nur-page__text-box > img[src*="oval-orna"] {
@@ -89,7 +97,16 @@
         text-align: left;
     }
 
-    .risale-i-nur-page__text-box > img[src*="boeken-stapel"] {
-        width: 250px;
+    /* Mobile: show stapel-one centered, hide stapel-two */
+    .risale-i-nur-page__text-box img.stapel-one {
+        display: block;
+        width: 300px;
+        float: none;
+        margin: 25px auto;
+        position: static;
+    }
+
+    .risale-i-nur-page__text-box img.stapel-two {
+        display: none;
     }
 }
