@@ -7,7 +7,6 @@
 
         <div class="cart-header">
             <h1 class="cart-title font-herina">Winkelmand</h1>
-            <p class="cart-subtitle">Bekijk en beheer je geselecteerde producten</p>
         </div>
 
         <livewire:cart />

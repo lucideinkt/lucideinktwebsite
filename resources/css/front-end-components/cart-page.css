@@ -15,7 +15,7 @@
 /* Cart Header - matching shop/online lezen */
 .cart-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 0px 20px 0;
 }
 
@@ -508,7 +508,7 @@
 
 @media (max-width: 768px) {
     .cart-header {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         padding: 0px 20px 0;
     }
 
@@ -601,7 +601,7 @@
 
 @media (max-width: 576px) {
     .cart-header {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
         padding: 0px 15px 0;
     }
 

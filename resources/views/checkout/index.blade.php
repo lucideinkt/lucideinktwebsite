@@ -8,7 +8,6 @@
 
         <div class="checkout-header">
             <h1 class="checkout-page-title font-herina">Afrekenen</h1>
-            <p class="checkout-subtitle">Vul je gegevens in om je bestelling af te ronden</p>
         </div>
 
         @if (session('success'))
