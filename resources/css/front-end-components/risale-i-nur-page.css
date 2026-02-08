@@ -59,10 +59,11 @@
 .risale-i-nur-page__text-box > img[src*="boeken-stapel"] {
     width: 375px;
     margin: 25px auto;
+    display: inline;
 }
 
 .risale-i-nur-page__text-box > img[src*="oval-orna"] {
-    width: 200px;
+    width: 125px;
     margin-top: 30px;
     clear: both;
     opacity: 0.3;

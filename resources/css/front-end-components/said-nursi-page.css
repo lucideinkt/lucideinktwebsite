@@ -50,7 +50,7 @@
 }
 
 .said-nursi-page__text-box .top-images img:nth-child(1) {
-    width: 325px;
+    width: 350px;
     height: auto;
     object-fit: contain;
 }
@@ -103,17 +103,16 @@
     height: auto;
 }
 
-.said-nursi-page__text-box > img[src*="said_nursi_standing"] {
+.said-nursi-page__text-box > img[src*="ustadh_country"] {
     width: 363px;
     float: left;
-    margin: 0 30px 20px 0;
+    margin: 5px 30px 20px 0;
 }
 
-.said-nursi-page__text-box > img[src*="said_nursi_wijzend"] {
+.said-nursi-page__text-box > img[src*="ustadh_court"] {
     width: 350px;
     float: right;
-    margin: 0 0 0px 30px;
-    margin-top: -40px;
+    margin: 11px 0 0px 30px;
 }
 
 .said-nursi-page__text-box > img[src*="roses_new"] {

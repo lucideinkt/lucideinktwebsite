@@ -24,7 +24,7 @@
 
         <div class="shop-header">
             <h1 class="shop-title">Onze Winkel</h1>
-            <p class="shop-subtitle">Ontdek onze collectie boeken en bestel direct online</p>
+{{--            <p class="shop-subtitle">Ontdek onze collectie boeken en bestel direct online</p>--}}
         </div>
 
         <div class="book-box product-cards-grid">

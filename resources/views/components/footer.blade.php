@@ -22,6 +22,18 @@
                 <img src="" alt="">
             </div>
 
+            <!-- Column 3: Informatie -->
+            <div class="footer-column">
+                <h3 class="footer-title">Informatie</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Verzending & Levering</a></li>
+                    <li><a href="#">Algemene Voorwaarden</a></li>
+                    <li><a href="#">Privacybeleid</a></li>
+                    <li><a href="#">Retourbeleid</a></li>
+                    <li><a href="#">Veelgestelde Vragen</a></li>
+                </ul>
+            </div>
+
             <!-- Column 2: Snelle Links -->
             <div class="footer-column">
                 <h3 class="footer-title">Snelle Links</h3>
@@ -32,18 +44,6 @@
                     <li><a href="{{ route('risale') }}">De Risale-i Nur</a></li>
                     <li><a href="{{ route('onlineLezen') }}">Online Lezen</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Informatie -->
-            <div class="footer-column">
-                <h3 class="footer-title">Informatie</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Verzending & Levering</a></li>
-                    <li><a href="#">Algemene Voorwaarden</a></li>
-                    <li><a href="#">Privacybeleid</a></li>
-                    <li><a href="#">Retourbeleid</a></li>
-                    <li><a href="#">Veelgestelde Vragen</a></li>
                 </ul>
             </div>
 
@@ -61,6 +61,7 @@
                     </li>
                 </ul>
             </div>
+
         </div>
 
         <!-- Footer Bottom -->

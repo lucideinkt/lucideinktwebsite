@@ -42,7 +42,7 @@
 }
 
 .footer-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
     color: rgba(98, 5, 5, 0.7);
     margin-bottom: 20px;
@@ -106,7 +106,7 @@
 .footer-links a {
     color: rgba(98, 5, 5, 0.7);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     transition: all 0.3s ease;
     display: inline-block;
 }
@@ -127,7 +127,7 @@
     align-items: flex-start;
     gap: 12px;
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 16px;
     color: rgba(98, 5, 5, 0.7);
 }
 
@@ -145,7 +145,7 @@
 }
 
 .footer-bottom p {
-    font-size: 14px;
+    font-size: 16px;
     color: rgba(98, 5, 5, 0.6);
     margin: 5px 0;
 }

@@ -26,6 +26,9 @@
     --herina-me: "\E057";
     --herina-w: "\E02D";
     --text-font-size-page: 19px;
+    @media only screen and (max-width: 600px) {
+            --text-font-size-page: 18px;
+    }
     --text-font-size-menu-item: 23px;
     --bg-parchment: #f7d99e;
     --surface-1: #F6F1E3;
