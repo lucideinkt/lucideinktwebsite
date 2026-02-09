@@ -326,6 +326,8 @@
     border-radius: 12px;
     margin-bottom: 40px;
     box-shadow: var(--shadow-1);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .reader-description h2 {
@@ -337,7 +339,6 @@
 }
 
 .description-short {
-    font-size: 18px;
     font-weight: 500;
     color: var(--main-font-color);
     margin: 0 0 15px 0;
@@ -389,7 +390,6 @@
 }
 
 .reader-cta p {
-    font-size: 1.15rem;
     margin: 0 0 35px 0;
     color: #fff6e0;
     font-weight: 400;
@@ -475,10 +475,6 @@
 
     .reader-cta h3 {
         font-size: 1.8rem;
-    }
-
-    .reader-cta p {
-        font-size: 1.05rem;
     }
 }
 
@@ -635,9 +631,7 @@
         font-size: 1.4rem;
     }
 
-    .reader-cta p {
-        font-size: 1rem;
-    }
+
 
     .reader-cta-actions {
         flex-direction: column;
