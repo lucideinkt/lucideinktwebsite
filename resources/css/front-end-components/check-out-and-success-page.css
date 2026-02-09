@@ -76,6 +76,8 @@
     padding: 24px;
     box-shadow: var(--shadow-1);
     border-radius: 10px;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .item input,
@@ -104,6 +106,10 @@
     cursor: pointer;
 }
 
+.item p {
+    font-size: 17px;
+}
+
 .item input:focus,
 .item textarea:focus,
 .item select:focus {
@@ -121,6 +127,12 @@
     border-radius: 4px;
     box-shadow: var(--shadow-1);
     margin-top: 10px;
+    background: var(--surface-3);
+    border-radius: 8px;
+}
+
+.page.checkout label {
+    font-size: 15px;
 }
 
 .checkout-create-account p {
@@ -174,6 +186,8 @@
 .page.checkout .customer-details.alternate {
     margin-top: 20px;
     display: none;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .page.checkout .customer-details.alternate.open {
@@ -302,7 +316,7 @@
 
 .container.page.checkout.success .fa-circle-check {
     font-size: 50px;
-    color: #27ae60;
+    color: #2e7d32;
 }
 
 /* Checkout Success - Redesigned */
@@ -382,6 +396,8 @@
     padding: 24px;
     box-shadow: var(--shadow-1);
     margin-top: -20px;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .order-summary-title {
@@ -528,11 +544,12 @@
 }
 
 .order-address-card {
-    background: var(--surface-2);
     border-radius: 12px;
     padding: 24px;
     box-shadow: var(--shadow-1);
-    border: 1px solid var(--border-1);
+    background-color: #f5ecce !important;
+    background-image: url("../../images/little-pluses.png") !important;
+    border: none !important;
 }
 
 .address-card-title {
@@ -625,6 +642,8 @@
     align-items: flex-start;
     gap: 15px;
     box-shadow: var(--shadow-1);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .order-confirmation-note i {
@@ -899,12 +918,27 @@
 }
 
 @media (max-width: 992px) {
+    .checkout-page-title {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
     .page.checkout .checkout-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
+    .checkout-header {
+        margin-bottom: 20px;
+        padding: 0px 20px 0;
+    }
+
+    .checkout-page-title {
+        font-size: 2.2rem;
+        letter-spacing: 1.5px;
+    }
+
     .order-addresses {
         flex-direction: column;
         gap: 18px;
@@ -917,6 +951,22 @@
 }
 
 @media (max-width: 600px) {
+    .checkout-header {
+        margin-bottom: 20px;
+        padding: 0px 15px 0;
+    }
+
+    .checkout-page-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .checkout-page-title::after {
+        width: 60px;
+        height: 2px;
+        bottom: -2px;
+    }
+
     .page.checkout .checkout-grid {
         grid-template-columns: 1fr;
         width: 100%;
@@ -933,5 +983,13 @@
         max-width: 100%;
         overflow-x: hidden;
         box-sizing: border-box;
+        padding-bottom: 0;
     }
 }
+
+@media (max-width: 480px) {
+    .checkout-page-title {
+        font-size: 1.6rem;
+    }
+}
+

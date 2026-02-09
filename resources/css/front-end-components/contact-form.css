@@ -32,6 +32,8 @@
     box-shadow: var(--shadow-1);
     transition: all 0.3s ease;
     position: relative;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 /* Header Section */

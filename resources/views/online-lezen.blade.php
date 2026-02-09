@@ -38,13 +38,27 @@
                             </div>
                         </div>
                         <div class="online-book-content">
-                            <h3 class="online-book-title">{{ $product->title }}</h3>
-                            @if ($product->category)
+                            @php
+                                [$mainTitle, $subTitle] = array_pad(
+                                    explode(' - ', $product->title, 2),
+                                    2,
+                                    null
+                                );
+                            @endphp
+
+                            <h3 class="online-book-title">
+                                {{ $mainTitle }}
+                                @if($subTitle)
+                                    <br>
+                                    <span class="online-book-subtitle">{{ $subTitle }}</span>
+                                @endif
+                            </h3>
+                        @if ($product->category)
                                 <p class="online-book-category">{{ $product->category->name }}</p>
                             @endif
-                            @if ($product->productCopy)
-                                <p class="online-book-language">{{ $product->productCopy->name }}</p>
-                            @endif
+{{--                            @if ($product->productCopy)--}}
+{{--                                <p class="online-book-language">{{ $product->productCopy->name }}</p>--}}
+{{--                            @endif--}}
                         </div>
                     </a>
                 </div>

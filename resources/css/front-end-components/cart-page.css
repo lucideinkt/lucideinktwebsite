@@ -99,10 +99,12 @@
     padding: 24px;
     box-shadow: var(--shadow-1);
     margin-bottom: 2rem;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .cart-items-title {
-    font-size: 1.5rem;
+    font-size: 22px;
     color: var(--main-font-color);
     margin: 0 0 24px;
     font-weight: 600;
@@ -169,7 +171,7 @@
 
 .cart-item-title {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 17px;
     font-weight: 600;
     color: var(--main-font-color);
     line-height: 1.4;
@@ -227,7 +229,7 @@
 
 .qty-input {
     width: 60px;
-    height: 38px;
+    height: 34px;
     text-align: center;
     border: 2px solid rgba(197, 160, 89, 0.25);
     border-radius: 6px;
@@ -298,13 +300,13 @@
 }
 
 .cart-total-label {
-    font-size: 1.125rem;
+    font-size: 20px;
     font-weight: 600;
     color: var(--main-font-color);
 }
 
 .cart-total-value {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 700;
     color: var(--main-font-color);
 }
@@ -334,7 +336,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 5px 20px;
+    padding: 3px 20px;
     background: var(--green-1);
     color: var(--ink-inverse);
     border: none;
@@ -382,6 +384,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .empty-state-icon {
@@ -543,7 +547,7 @@
     }
 
     .cart-item-title {
-        font-size: 1rem;
+        font-size: 17px;
     }
 
     .cart-item-price {

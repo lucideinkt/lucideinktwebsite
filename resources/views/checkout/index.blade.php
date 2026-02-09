@@ -181,7 +181,7 @@
 
                         <div style="height: 0px; margin-bottom: 0" class="form-input myparcel_choice"
                             style="visibility: hidden">
-                            <input style="height: 0px" type="radio" checked name="myparcel_choice"
+                            <input hidden style="height: 0px" type="radio" checked name="myparcel_choice"
                                 value="with_myparcel" id="with_myparcel">
                         </div>
 

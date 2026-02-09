@@ -21,6 +21,8 @@
     border-radius: 10px;
     padding: 2.5rem;
     box-shadow: var(--shadow-1);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 /* Auth Form */
@@ -46,8 +48,8 @@
 }
 
 .auth-form .form-input label {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 400;
     color: var(--main-font-color);
     margin-bottom: 0.5rem;
 }
@@ -105,7 +107,7 @@ input[type="password"]::-ms-clear {
 }
 
 .remember-me-box label {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--main-font-color);
     cursor: pointer;
     margin: 0;

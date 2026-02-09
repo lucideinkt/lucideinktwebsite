@@ -135,13 +135,15 @@
 .product-card {
     display: flex;
     flex-direction: column;
-    background: #fbf3e4;
+    /*background: #fbf3e4;*/
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow-1);
     position: relative;
     padding-top: 20px;
     padding-bottom: 5px;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
 }
 
 .product-card-link {
@@ -153,7 +155,7 @@
     position: relative;
     width: 100%;
     padding-top: 100%;
-    background: #fbf3e4;
+    /*background: #fbf3e4;*/
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }

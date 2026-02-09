@@ -68,13 +68,16 @@
 .online-book-card {
     display: flex;
     flex-direction: column;
-    background: var(--surface-2);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow-1);
     position: relative;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 
 .online-book-link {
     text-decoration: none;
@@ -87,8 +90,7 @@
 .online-book-image-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 75%;
-    background: #fbf3e4;
+    padding-top: 100%;
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }
@@ -99,8 +101,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 20px;
+    object-fit: cover;
+    padding: 0;
 }
 
 .online-book-placeholder {
@@ -108,36 +110,60 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4rem;
+    font-size: 3rem;
     color: rgba(0, 0, 0, 0.2);
 }
 
 .online-book-overlay {
-    display: none !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 12px;
+    z-index: 5;
 }
 
+.online-book-overlay i {
+    font-size: 3rem;
+    color: #fff;
+}
 
+.online-book-overlay span {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
 
 .online-book-content {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 30px;
     flex-grow: 1;
     gap: 8px;
-    background: var(--surface-2);
 }
 
 .online-book-title {
-    font-size: 1rem;
+    font-size: 17px;
     font-weight: 600;
     color: var(--main-font-color);
     margin: 0;
     line-height: 1.4;
     min-height: auto;
+    transition: color 0.2s ease;
 }
 
 .online-book-category {
-    font-size: 0.9rem;
+    font-size: 16px;
     color: var(--ink-muted);
     margin: 0;
     font-weight: 400;
@@ -396,13 +422,6 @@
     color: var(--main-font-color);
 }
 
-.reader-cta-actions .btn-primary:hover {
-    background: #ece5c2;
-    border-color: #ece5c2;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
 .reader-cta-actions .btn-secondary {
     background: transparent;
     color: #fff6e0;
@@ -412,15 +431,6 @@
 .reader-cta-actions .btn-secondary .fa-solid {
     color: #fff6e0;
 }
-
-.reader-cta-actions .btn-secondary:hover {
-    background: rgba(236, 229, 194, 0.1);
-    border-color: rgba(236, 229, 194, 0.8);
-    color: #fff6e0;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
 
 /* ---------------------------------------------------------
    RESPONSIVE DESIGN
@@ -489,7 +499,7 @@
 
     .online-lezen-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        gap: 12px;
         padding: 0 15px;
     }
 
@@ -498,11 +508,11 @@
     }
 
     .online-book-content {
-        padding: 18px;
+        padding: 12px;
     }
 
     .online-book-title {
-        font-size: 1.05rem;
+        font-size: 17px;
     }
 
     .online-book-overlay i {
@@ -540,7 +550,7 @@
 
     .online-lezen-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 12px;
         padding: 0 10px;
     }
 
@@ -550,7 +560,7 @@
     }
 
     .online-book-content {
-        padding: 16px;
+        padding: 10px;
     }
 
     .online-book-title {
@@ -641,7 +651,7 @@
 @media (max-width: 480px) {
     .online-lezen-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 10px;
     }
 
     .online-lezen-title {
@@ -658,5 +668,17 @@
 
     .online-lezen-title::after {
         margin-top: -10px;
+    }
+
+    .online-book-content {
+        padding: 8px;
+    }
+
+    .online-book-title {
+        font-size: 15px;
+    }
+
+    .online-book-category {
+        font-size: 14px;
     }
 }
