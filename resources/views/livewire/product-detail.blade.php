@@ -41,10 +41,25 @@
 
     <div class="product-detail-info">
         <div class="product-detail-header">
-            @if (isset($product->category) && !empty($product->category->name))
+            @php
+                [$mainTitle, $subTitle] = array_pad(
+                    explode(' - ', $product->title, 2),
+                    2,
+                    null
+                );
+            @endphp
+
+            <h1 class="product-detail-title">
+                {{ $mainTitle }}
+                @if($subTitle)
+                    <br>
+                    <span class="product-detail-subtitle">{{ $subTitle }}</span>
+                @endif
+            </h1>
+
+        @if (isset($product->category) && !empty($product->category->name))
                 <span class="product-detail-category">{{ $product->category->name }}</span>
             @endif
-            <h1 class="product-detail-title">{{ $product->title }}</h1>
         </div>
 
         <div class="product-detail-price-wrapper">

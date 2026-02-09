@@ -61,7 +61,7 @@
             <div class="text-container">
 {{--                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>--}}
                 {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
-                <div class="sub-text">
+                <div class="sub-text one">
                     <p>Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van</p>
                     <p>diensten volgens de Qur'anische richtlijen van de Risale-i Nur.</p>
                     <p>Met Nederlandse en Engelse vertalingen van deze boekenreeks</p>
@@ -70,6 +70,20 @@
                     <button class="read-more-btn" id="openIntroModalBtn">
                         <span class="read-more-text">Meer informatie</span>
 {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+                    </button>
+                </div>
+
+                <div class="sub-text two">
+                    <p>
+                    Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van
+                    diensten volgens de Qur'anische richtlijen van de Risale-i Nur.
+                    Met Nederlandse en Engelse vertalingen van deze boekenreeks
+                    streven wij ernaar zoekers te voorzien van antwoorden
+                    op de belangrijkste bestaansvragen van de mens.
+                    </p>
+                    <button class="read-more-btn" id="openIntroModalBtn">
+                        <span class="read-more-text">Meer informatie</span>
+                        {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
                     </button>
                 </div>
             </div>

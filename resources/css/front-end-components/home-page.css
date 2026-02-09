@@ -256,6 +256,10 @@ h2 {
     word-break: none;
 }
 
+.sub-text.two {
+    display: none;
+}
+
 /* Read More Button Styling */
 .read-more-btn {
     display: inline-flex;
@@ -729,9 +733,6 @@ h2 {
         line-height: 3.4rem;
     }
 
-    .intro-section .sub-text p {
-        font-size: 100%;
-    }
 
     .new-translation .sub-text.one {
         display: none;
@@ -745,9 +746,6 @@ h2 {
 }
 
 @media (max-width: 600px) {
-    .intro-section .sub-text p {
-       font-size: 68%;
-    }
 
     .home.intro-section .text-container {
         padding: 0 2px;
@@ -761,6 +759,20 @@ h2 {
         display: flex;
         justify-content: center;
         margin: 80px 0 30px;
+    }
+
+    .sub-text.one {
+        display: none;
+    }
+
+    .sub-text.two {
+        display: block;
+        padding: 0 15px;
+        padding-bottom: 10px;
+    }
+
+    .sub-text.two p {
+        margin-bottom: 0px;
     }
 
     .home.intro-section {

@@ -136,6 +136,7 @@
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-bottom: 0;
+    margin-top: 5px;
 }
 
 .product-detail-title {
@@ -145,6 +146,7 @@
     line-height: 1.3;
     margin: 0;
     word-break: break-word;
+    margin-top: 10px !important;
 }
 
 .product-detail-price-wrapper {
@@ -427,6 +429,7 @@
 
 .page.product {
     max-width: 1280px;
+    padding-bottom: 30px;
 }
 
 .page.product .back-link {
@@ -688,7 +691,7 @@
     }
 
     .product-detail-price {
-        font-size: 1.375rem;
+        font-size: 1.200rem;
     }
 
     .product-detail-price-wrapper {

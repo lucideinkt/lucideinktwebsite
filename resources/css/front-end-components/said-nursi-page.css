@@ -115,11 +115,10 @@
     margin: 11px 0 0px 30px;
 }
 
-.said-nursi-page__text-box > img[src*="roses_new"] {
-    width: 200px;
+.said-nursi-page__text-box > img[src*="rose-frame"] {
+    width: 450px;
     margin-top: 30px;
     clear: both;
-    opacity: 0.7;
 }
 
 
@@ -170,8 +169,8 @@
         width: 130px;
     }
 
-    .said-nursi-page__text-box > img[src*="roses_new"] {
-        width: 100px;
+    .said-nursi-page__text-box > img[src*="rose-frame"] {
+        width: 250px;
     }
 
     .said-nursi-page__text-box p {
