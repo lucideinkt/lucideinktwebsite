@@ -23,7 +23,21 @@
 
     <div class="product-card-content">
         <a href="{{ route('productShow', $product->slug) }}" class="product-card-title-link">
-            <h3 class="product-card-title">{{ $product->title }}</h3>
+            @php
+                [$mainTitle, $subTitle] = array_pad(
+                    explode(' - ', $product->title, 2),
+                    2,
+                    null
+                );
+            @endphp
+
+            <h3 class="product-card-title">
+                {{ $mainTitle }}
+                @if($subTitle)
+                    <br>
+                    <span class="product-card-subtitle">{{ $subTitle }}</span>
+                @endif
+            </h3>
         </a>
 
         @if ($product->category)
