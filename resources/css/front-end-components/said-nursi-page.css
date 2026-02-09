@@ -113,6 +113,8 @@
     width: 350px;
     float: right;
     margin: 11px 0 0px 30px;
+    margin-bottom: 20px;
+
 }
 
 .said-nursi-page__text-box > img[src*="rose-frame"] {
