@@ -189,6 +189,15 @@ Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+Route::get('/algemene-voorwaarden', function () {
+    return view('algemene-voorwaarden');
+})->name('algemeneVoorwaarden');
+Route::get('/privacybeleid', function () {
+    return view('privacybeleid');
+})->name('privacybeleid');
+Route::get('/verzending-levering', function () {
+    return view('verzending-levering');
+})->name('verzendingLevering');
 
 // Online Reading
 Route::get('/online-lezen', [OnlineLezenController::class, 'index'])->name('onlineLezen');

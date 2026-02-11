@@ -26,11 +26,9 @@
             <div class="footer-column">
                 <h3 class="footer-title">Informatie</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Verzending & Levering</a></li>
-                    <li><a href="#">Algemene Voorwaarden</a></li>
-                    <li><a href="#">Privacybeleid</a></li>
-                    <li><a href="#">Retourbeleid</a></li>
-                    <li><a href="#">Veelgestelde Vragen</a></li>
+                    <li><a href="{{ route('algemeneVoorwaarden') }}">Algemene Voorwaarden</a></li>
+                    <li><a href="{{ route('verzendingLevering') }}">Verzending & Levering</a></li>
+                    <li><a href="{{ route('privacybeleid') }}">Privacybeleid</a></li>
                 </ul>
             </div>
 
