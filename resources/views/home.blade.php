@@ -67,7 +67,7 @@
                     <p>Met Nederlandse en Engelse vertalingen van deze boekenreeks</p>
                     <p>streven wij ernaar zoekers te voorzien van antwoorden</p>
                     <p>op de belangrijkste bestaansvragen van de mens.</p>
-                    <button class="read-more-btn" id="openIntroModalBtn">
+                    <button class="read-more-btn" onclick="openIntroModal()">
                         <span class="read-more-text">Meer informatie</span>
 {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
                     </button>
@@ -75,13 +75,13 @@
 
                 <div class="sub-text two">
                     <p>
-                    Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van
-                    diensten volgens de Qur'anische richtlijen van de Risale-i Nur.
+                    Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van diensten
+                    volgens de Qur'anische richtlijen van de Risale-i Nur.
                     Met Nederlandse en Engelse vertalingen van deze boekenreeks
                     streven wij ernaar zoekers te voorzien van antwoorden
                     op de belangrijkste bestaansvragen van de mens.
                     </p>
-                    <button class="read-more-btn" id="openIntroModalBtn">
+                    <button class="read-more-btn" onclick="openIntroModal()">
                         <span class="read-more-text">Meer informatie</span>
                         {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
                     </button>
@@ -288,6 +288,39 @@
         <div class="gradient-border"></div>
 
         <script>
+            // Intro Modal Functions - MUST be global for onclick to work
+            function openIntroModal() {
+                const introModal = document.getElementById('introModal');
+                const introContent = document.getElementById('introModalContent');
+
+                if (introModal && introContent) {
+                    introModal.classList.remove('hidden');
+                    void introModal.offsetWidth;
+                    introModal.classList.add('show');
+                    introModal.classList.remove('fading-out');
+                    introContent.classList.remove('close');
+                    setTimeout(() => introContent.classList.add('open'), 10);
+                }
+            }
+
+            function closeIntroModal() {
+                const introModal = document.getElementById('introModal');
+                const introContent = document.getElementById('introModalContent');
+
+                if (introModal && introContent) {
+                    introContent.classList.remove('open');
+                    introContent.classList.add('close');
+                    introModal.classList.add('fading-out');
+                    introModal.classList.remove('show');
+
+                    setTimeout(() => {
+                        introModal.classList.add('hidden');
+                        introModal.classList.remove('fading-out');
+                        introContent.classList.remove('close');
+                    }, 1100);
+                }
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
                 // Quotes Slider
                 const quotesSlider = document.getElementById('quotes-slider');
@@ -311,39 +344,15 @@
                     }).mount();
                 }
 
-                // Intro Modal
+                // Add event listeners for close button and overlay
+                const closeBtn = document.getElementById('closeIntroModalBtn');
                 const introModal = document.getElementById('introModal');
-                const openIntroBtn = document.getElementById('openIntroModalBtn');
-                const closeIntroBtn = document.getElementById('closeIntroModalBtn');
-                const introContent = document.getElementById('introModalContent');
 
-                if (introModal && openIntroBtn && closeIntroBtn && introContent) {
-                    function openIntroModal() {
-                        introModal.classList.remove('hidden');
-                        void introModal.offsetWidth;
-                        introModal.classList.add('show');
-                        introModal.classList.remove('fading-out');
-                        introContent.classList.remove('close');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', closeIntroModal);
+                }
 
-                        setTimeout(() => introContent.classList.add('open'), 10);
-                    }
-
-                    function closeIntroModal() {
-                        introContent.classList.remove('open');
-                        introContent.classList.add('close');
-                        introModal.classList.add('fading-out');
-                        introModal.classList.remove('show');
-
-                        setTimeout(() => {
-                            introModal.classList.add('hidden');
-                            introModal.classList.remove('fading-out');
-                            introContent.classList.remove('close');
-                        }, 1100);
-                    }
-
-                    openIntroBtn.addEventListener('click', openIntroModal);
-                    closeIntroBtn.addEventListener('click', closeIntroModal);
-
+                if (introModal) {
                     window.addEventListener('click', (event) => {
                         if (event.target === introModal || event.target.classList.contains('custom-modal-overlay')) {
                             if (introModal.classList.contains('show')) {
