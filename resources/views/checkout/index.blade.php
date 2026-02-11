@@ -60,7 +60,8 @@
                         <div class="form-input">
                             <label for="billing_email">E-mailadres</label>
                             <input type="email" name="billing_email" autocomplete="email"
-                                value="{{ old('billing_email', auth()->check() ? auth()->user()->email : '') }}">
+                                value="{{ old('billing_email', auth()->check() ? auth()->user()->email : '') }}"
+                                @auth readonly style="background-color: #f5f5f5;" @endauth>
                             @error('billing_email')
                                 <div class="error">{{ $message }}</div>
                             @enderror

@@ -1899,6 +1899,57 @@ thead {
     margin: 5px 0;
 }
 
+.order-addresses-container {
+    display: flex;
+    gap: 35px;
+}
+
+.order-address-box {
+    flex: 1;
+    border: 1px solid var(--border-1);
+    border-radius: 8px;
+    padding: 20px;
+    background: var(--surface-1);
+    box-shadow: var(--shadow-1);
+    transition: box-shadow 0.3s ease;
+}
+
+.order-address-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.order-address-box h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--main-color);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-1);
+}
+
+.order-address-box p {
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.order-address-box p strong {
+    color: var(--ink-muted);
+    font-weight: 500;
+    font-size: 14px;
+    min-width: 140px;
+    flex-shrink: 0;
+}
+
+.order-address-box p:last-child {
+    margin-bottom: 0;
+}
+
 /* User Profile Section */
 .user-profile-section {
     margin: 24px 0;
@@ -2061,6 +2112,108 @@ thead {
     .profile-fields-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .order-info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .order-info {
+        padding: 12px;
+    }
+
+    .order-info .order-info-item {
+        padding: 12px;
+    }
+
+    .order-addresses-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .order-address-box {
+        padding: 16px;
+    }
+
+    .order-address-box h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .order-address-box p {
+        flex-direction: column;
+        gap: 5px;
+        margin: 8px 0;
+        align-items: flex-start;
+    }
+
+    .order-address-box p strong {
+        min-width: auto;
+        margin-bottom: 3px;
+    }
+
+    .order-info h3 {
+        font-size: 16px;
+    }
+
+    .order-info select {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .order-info .btn.small {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .payment-link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .payment-link-box .btn {
+        width: 100%;
+    }
+
+    .shipment-info-block form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shipment-info-block select {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .shipment-info-block .btn {
+        width: 100%;
+    }
+
+    .btn-primary {
+        width: 100% !important;
+    }
+
+    .page.dashboard h2 {
+        font-size: 22px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px 6px;
+    }
+
+    .order-button-box {
+        flex-direction: column;
+    }
+
+    .order-button-box .btn {
+        width: 100%;
     }
 }
 

@@ -19,13 +19,31 @@ class Customer extends Model
         'billing_company',
         'billing_street',
         'billing_house_number',
-        'billing_house_number_addition',
+        'billing_house_number-add',
         'billing_postal_code',
         'billing_city',
         'billing_country',
         'billing_phone',
 
     ];
+
+    /**
+     * Get the billing house number addition attribute.
+     * This is an accessor for backward compatibility since the database column uses hyphens.
+     */
+    public function getBillingHouseNumberAdditionAttribute()
+    {
+        return $this->attributes['billing_house_number-add'] ?? null;
+    }
+
+    /**
+     * Set the billing house number addition attribute.
+     * This is a mutator for backward compatibility since the database column uses hyphens.
+     */
+    public function setBillingHouseNumberAdditionAttribute($value)
+    {
+        $this->attributes['billing_house_number-add'] = $value;
+    }
 
     /**
      * Get the orders for the customer.

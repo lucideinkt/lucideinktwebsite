@@ -315,11 +315,19 @@ class CheckoutController extends Controller
     {
         return Customer::updateOrCreate(
             ['billing_email' => $request->billing_email],
-            $request->only([
-                'billing_first_name', 'billing_last_name', 'billing_email', 'billing_company',
-                'billing_street', 'billing_house_number', 'billing_house_number-add',
-                'billing_postal_code', 'billing_city', 'billing_country', 'billing_phone'
-            ])
+            [
+                'billing_first_name' => $request->billing_first_name,
+                'billing_last_name' => $request->billing_last_name,
+                'billing_email' => $request->billing_email,
+                'billing_company' => $request->billing_company,
+                'billing_street' => $request->billing_street,
+                'billing_house_number' => $request->billing_house_number,
+                'billing_house_number-add' => $request->input('billing_house_number-add'),
+                'billing_postal_code' => $request->billing_postal_code,
+                'billing_city' => $request->billing_city,
+                'billing_country' => $request->billing_country,
+                'billing_phone' => $request->billing_phone,
+            ]
         );
     }
 
@@ -385,6 +393,9 @@ class CheckoutController extends Controller
                 'shipping_company' => $this->getShippingField($request, 'company'),
                 'shipping_street' => $this->getShippingField($request, 'street'),
                 'shipping_house_number' => $this->getShippingField($request, 'house_number'),
+                'shipping_house_number_addition' => $request->boolean('alt-shipping')
+                    ? $request->input('shipping_house_number-add')
+                    : $request->input('billing_house_number-add'),
                 'shipping_postal_code' => $this->getShippingField($request, 'postal_code'),
                 'shipping_city' => $this->getShippingField($request, 'city'),
                 'shipping_country' => $shippingCountry,

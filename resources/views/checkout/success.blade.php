@@ -233,6 +233,18 @@
                             </div>
                         </div>
                     @endif
+
+                        @if($order->order_note)
+                            <div class="order-note-card">
+                                <h3 class="order-note-title">
+                                    <i class="fa-solid fa-sticky-note"></i>
+                                    Bestelnotitie
+                                </h3>
+                                <div class="order-note-content">
+                                    <p>{{ $order->order_note }}</p>
+                                </div>
+                            </div>
+                        @endif
                 </div>
 
                 <div class="order-confirmation-note">

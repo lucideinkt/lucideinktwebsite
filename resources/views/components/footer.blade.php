@@ -59,6 +59,10 @@
                         <i class="fa-solid fa-envelope"></i>
                         <span>info@lucideinkt.nl</span>
                     </li>
+                    <li>
+                        <i class="fa-solid fa-building"></i>
+                        <span>KvK nummer: 54486890</span>
+                    </li>
                 </ul>
             </div>
 

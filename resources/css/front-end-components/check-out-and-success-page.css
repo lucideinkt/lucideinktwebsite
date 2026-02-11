@@ -633,6 +633,45 @@
     color: var(--main-color);
 }
 
+.order-note-card {
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-1);
+    background-color: #f5ecce !important;
+    background-image: url("../../images/little-pluses.png") !important;
+    border: none !important;
+}
+
+.order-note-title {
+    font-size: 20px;
+    color: var(--main-font-color);
+    margin: 0 0 20px;
+    font-family: var(--font-bold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-1);
+}
+
+.order-note-title i {
+    font-size: 18px;
+    color: var(--main-color);
+}
+
+.order-note-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.order-note-content p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--main-font-color);
+}
+
 .order-confirmation-note {
     background: var(--surface-2);
     border-left: 4px solid var(--main-color);

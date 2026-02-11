@@ -118,6 +118,12 @@
       <span><strong>{{ __('Ordernummer:') }}</strong> {{ $order->id }}</span><br>
       <span><strong>{{ __('Besteldatum:') }}</strong> {{ $order->created_at->format('d-m-Y H:i') }}</span>
     </div>
+    @if($order->order_note)
+    <div style="background: #fffbea; border-left: 4px solid #f59e0b; padding: 12px 16px; margin-bottom: 18px; border-radius: 4px;">
+      <strong style="color: #92400e;">Bestelnotitie:</strong><br>
+      <span style="color: #78350f;">{{ $order->order_note }}</span>
+    </div>
+    @endif
     <div class="address-blocks">
         {{-- Bezorgtype en afleveradres --}}
         @if(isset($delivery) && !empty($delivery['deliveryType']) && strtolower($delivery['deliveryType']) === 'pickup')

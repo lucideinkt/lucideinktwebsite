@@ -42,6 +42,12 @@
                                     <span class="info-label">Betaalstatus:</span>
                                     <span class="info-value">{{ $order->payment_status_label ?? 'Onbekend' }}</span>
                                 </div>
+                                @if($order->order_note)
+                                    <div class="info-row">
+                                        <span class="info-label">Bestelnotitie:</span>
+                                        <span class="info-value">{{ $order->order_note }}</span>
+                                    </div>
+                                @endif
                                 @if ($order->myparcel_delivery_type)
                                     @php
                                         $deliveryTypesShort = [
@@ -274,6 +280,10 @@
                         <p><strong>Status:</strong> {{ $order->status_label }}</p>
                         <p><strong>Totaal:</strong> € {{ number_format($order->total, 2) }}</p>
                         <p><strong>Betaalstatus:</strong> {{ $order->payment_status_label ?? 'Onbekend' }}</p>
+                        @if($order->order_note)
+                            <p><strong>Bestelnotitie:</strong><br>
+                            <span style="background: #ffdfbf; padding: 10px; border-radius: 4px; display: block; margin-top: 5px;">{{ $order->order_note }}</span></p>
+                        @endif
                         @if (!empty($order->invoice_pdf_path))
                             <p><strong>Factuur:</strong>
                                 <a style="text-decoration: underline" href="{{ route('orders.invoice', $order->id) }}"
