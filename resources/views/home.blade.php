@@ -108,18 +108,25 @@
                         <p>een ellendig leven te leiden en vervolgens voorgoed te verdwijnen?</p>
                         <p>Of schuilt er meer achter zijn bestaan dan alleen het aardse,</p>
                         <p>waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?</p>
-                        <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden</p>
-                        <p>in dit waardevolle werk.</p>
+                        <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
+
+                    <button class="read-more-btn" onclick="openHerzamelingModal()">
+                        <span class="read-more-text">Lees Meer</span>
+                        {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+                    </button>
                 </div>
 
                 <div class="sub-text two">
-                    Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk
-                    een ellendig leven te leiden en vervolgens voorgoed te verdwijnen?
-                    Of schuilt er meer achter zijn bestaan dan alleen het aardse,
-                    waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?
-                    Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden
-                    in dit waardevolle werk.
+                    <span>
+                    Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.
+                    </span>
+                    <button class="read-more-btn" onclick="openHerzamelingModal()">
+                        <span class="read-more-text">Lees Meer</span>
+                        {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+                    </button>
                 </div>
+
+
 
                 <div class="home-book-grid">
                     <div class="book one">
@@ -321,6 +328,39 @@
                 }
             }
 
+            // Herzameling Modal Functions - MUST be global for onclick to work
+            function openHerzamelingModal() {
+                const herzamelingModal = document.getElementById('herzamelingModal');
+                const herzamelingContent = document.getElementById('herzamelingModalContent');
+
+                if (herzamelingModal && herzamelingContent) {
+                    herzamelingModal.classList.remove('hidden');
+                    void herzamelingModal.offsetWidth;
+                    herzamelingModal.classList.add('show');
+                    herzamelingModal.classList.remove('fading-out');
+                    herzamelingContent.classList.remove('close');
+                    setTimeout(() => herzamelingContent.classList.add('open'), 10);
+                }
+            }
+
+            function closeHerzamelingModal() {
+                const herzamelingModal = document.getElementById('herzamelingModal');
+                const herzamelingContent = document.getElementById('herzamelingModalContent');
+
+                if (herzamelingModal && herzamelingContent) {
+                    herzamelingContent.classList.remove('open');
+                    herzamelingContent.classList.add('close');
+                    herzamelingModal.classList.add('fading-out');
+                    herzamelingModal.classList.remove('show');
+
+                    setTimeout(() => {
+                        herzamelingModal.classList.add('hidden');
+                        herzamelingModal.classList.remove('fading-out');
+                        herzamelingContent.classList.remove('close');
+                    }, 1100);
+                }
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
                 // Quotes Slider
                 const quotesSlider = document.getElementById('quotes-slider');
@@ -367,6 +407,30 @@
                         }
                     });
                 }
+
+                // Add event listeners for herzameling modal
+                const closeHerzamelingBtn = document.getElementById('closeHerzamelingModalBtn');
+                const herzamelingModal = document.getElementById('herzamelingModal');
+
+                if (closeHerzamelingBtn) {
+                    closeHerzamelingBtn.addEventListener('click', closeHerzamelingModal);
+                }
+
+                if (herzamelingModal) {
+                    window.addEventListener('click', (event) => {
+                        if (event.target === herzamelingModal || event.target.classList.contains('custom-modal-overlay')) {
+                            if (herzamelingModal.classList.contains('show')) {
+                                closeHerzamelingModal();
+                            }
+                        }
+                    });
+
+                    window.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape' && herzamelingModal.classList.contains('show')) {
+                            closeHerzamelingModal();
+                        }
+                    });
+                }
             });
         </script>
 
@@ -410,6 +474,53 @@
                     </p>
                     <p style="margin-bottom: 0">
                         Met zulke essentiële elementen voor ogen bestaat het uiteindelijke doel van Lucide Inkt uit dienstverlening volgens de principes van de Risale-i Nur, in overeenstemming met de scheppingsreden van onze Heer; opdat wij Zijn Tevredenheid mogen verwerven en zoveel mogelijk broeders en zusters mogen bijstaan op hun levensweg — die insha’ALLAH zal uitmonden in eeuwige gelukzaligheid.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Herzameling Modal Structure -->
+        <div id="herzamelingModal" class="custom-modal hidden">
+            <div class="custom-modal-overlay"></div>
+            <div class="custom-modal-content scroll-effect" id="herzamelingModalContent">
+                <span class="custom-modal-close" id="closeHerzamelingModalBtn">&times;</span>
+                <div class="scroll-inner">
+                    <h2 style="text-align: center; margin-bottom: 20px; font-size: 22px">Onze nieuwste vertaling:<br>"Het Traktaat over de Herzameling"</h2>
+
+                    <p>
+                        Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.
+                    </p>
+
+                    <h3 style="margin-top: 25px; margin-bottom: 10px;font-size: 20px">Waarom "Herzameling"?</h3>
+
+                    <p>
+                        In plaats van gangbare vertalingen zoals "wederopstanding" of "herrijzenis", hebben wij ervoor gekozen om de Turkse term 'haşir' als "herzameling" te vertalen, omdat deze vertaling de betekenis van 'haşir' nauwkeuriger weergeeft. De term is namelijk afgeleid van de Arabische wortel 'ح-ش-ر', wat letterlijk "verzamelen" betekent. Hoewel dit woord in het Arabisch in bredere zin wordt gebruikt, verwijst het in het Turks specifiek naar de grote herzameling in het hiernamaals die na de ondergang van deze wereld zal plaatsvinden.
+                    </p>
+
+                    <p>
+                        Bediüzzaman Said Nursî licht toe dat tijdens deze herzameling zich drie hoofdfases zullen voltrekken: de hereniging van de zielen met hun lichamen, de wederopwekking van die lichamen én hun wederopbouw uit de atomen waaruit ze oorspronkelijk waren samengesteld. Vervolgens zal de gehele mensheid uit de menselijke geschiedenis op het grote verzamelplein worden bijeengebracht om aan ALLAH verantwoording af te leggen. Hoewel de wederopstanding weliswaar een essentieel onderdeel is van dit proces, dekt ze niet de volledige, wezenlijke betekenis van de term 'haşir'. Om de betekenis van deze beladen term meer recht te doen, hebben wij ''haşir'' als "herzameling" vertaald.
+                    </p>
+
+                    <h3 style="margin-top: 25px; margin-bottom: 10px;font-size: 20px">Inhoud van het boek</h3>
+
+                    <p>
+                        Aan de hand van een symbolisch verhaal worden waarheden over de herzameling en het hiernamaals verhelderd. Tevens worden verscheidene voorbeelden aangevoerd, zoals een ontbonden militaire eenheid waarvan de gedemobiliseerde soldaten met één bevel opnieuw tot een eenheid kunnen worden gebracht, om zodoende te illustreren hoe de verspreide Goddelijke 'soldaten', oftewel de "atomen" van ontbonden mensenlichamen, op bevel van de Schepper tot een lichaam kunnen worden herzameld.
+                    </p>
+
+                    <p>
+                        Ook worden Qur'anische voorbeelden aangehaald, zoals een verstreken lente waarin talloze schepselen van een hele voorjaarswereld sterven en ontbinden tijdens de winter; gedurende de daaropvolgende lente worden soortgelijke schepselen herzameld, waarna geleidelijk opnieuw een complete voorjaarswereld wordt samengesteld. Voor een Schepper Die ieder jaar ontelbare soorten vergane schepselen herschept, is de herschepping van de mensheid uiteraard geen uitdaging.
+                    </p>
+
+                    <p>
+                        Met dergelijke waarneembare voorbeelden uit het bestaan bewijst dit werk dat de realisatie van de herzameling in het hiernamaals wel degelijk mogelijk is. Daarnaast toont het aan dat de dag des oordeels en de eeuwigheid in het hiernamaals van wezenlijk belang zijn voor een menswaardig bestaan. De menselijke potenties die in de aard van de mens zijn verankerd, kunnen immers alleen op basis van het geloof in het hiernamaals waardig ontkiemen en floreren.
+                    </p>
+
+                    <p>
+                        Hoe zal de mens anders voldoening kunnen vinden wanneer zijn meest natuurlijke wensen onvervuld blijven, zoals eeuwige liefde willen vinden, terwijl eeuwigheid niet bestaat; onvergankelijke banden willen vormen, terwijl hij op den duur van alles zal moeten scheiden; verheven doelen willen nastreven, terwijl alles uiteindelijk in het niets zal verdwijnen?
+                    </p>
+
+                    <p style="margin-bottom: 0">
+                        Zulke onvermijdelijke realiteiten vereisen dat de mensheid op het grote verzamelplein bijeen wordt gebracht om voor de Schepper verantwoording af te leggen, opdat voor ieder mens zijn rechtmatige verblijfplaats in de eeuwigheid kan worden vastgesteld.
                     </p>
                 </div>
             </div>
