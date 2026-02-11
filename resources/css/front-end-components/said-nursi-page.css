@@ -82,7 +82,6 @@
 }
 
 .said-nursi-page__text-box blockquote p {
-    text-align: left;
     font-style: italic;
     margin: 0;
     line-height: 1.6;
@@ -94,6 +93,12 @@
     margin-bottom: 15px;
     line-height: 1.8;
     text-indent: 50px;
+}
+
+.saw-honorific {
+    font-size: 26px;
+    line-height: 0;
+    vertical-align: -3px;
 }
 
 .said-nursi-page__text-box > img {
