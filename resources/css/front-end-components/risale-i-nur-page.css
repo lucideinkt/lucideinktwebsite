@@ -51,7 +51,7 @@
 
 .risale-i-nur-page__text-box > img {
     display: block;
-    margin: 25px auto;
+    margin: 5px auto;
     max-width: 100%;
     height: auto;
 }
@@ -70,7 +70,7 @@
     top: 15px;
 }
 
-.risale-i-nur-page__text-box > img[src*="oval-orna"] {
+.risale-i-nur-page__text-box > img[src*="oval_ornament"] {
     width: 125px;
     margin-top: 30px;
     clear: both;
