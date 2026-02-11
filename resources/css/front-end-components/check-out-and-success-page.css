@@ -200,14 +200,75 @@
     align-items: center;
     flex-direction: row;
     margin-bottom: 0;
+    gap: 10px;
 }
 
-.page.checkout .alt-shipping input,
-.page.checkout .customer-account input {
-    width: 15px;
-    margin-left: 15px;
-    margin-top: 0;
+.page.checkout .alt-shipping input[type="checkbox"],
+.page.checkout .customer-account input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
     cursor: pointer;
+    flex-shrink: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid rgba(197, 160, 89, 0.5);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    position: relative;
+    transition: all 0.2s ease;
+    padding: 3px;
+}
+
+.page.checkout .alt-shipping input[type="checkbox"]:checked,
+.page.checkout .customer-account input[type="checkbox"]:checked {
+    background: var(--green-1);
+    border-color: var(--green-1);
+}
+
+.page.checkout .alt-shipping input[type="checkbox"]:checked::after,
+.page.checkout .customer-account input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.page.checkout .alt-shipping label,
+.page.checkout .customer-account label {
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hide myparcel_choice radio completely */
+.form-input.myparcel_choice,
+.myparcel_choice {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    opacity: 0 !important;
+}
+
+.form-input.myparcel_choice input,
+.myparcel_choice input {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .page.checkout .form-input.password {
