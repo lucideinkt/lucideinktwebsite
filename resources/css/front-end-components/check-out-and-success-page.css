@@ -218,7 +218,7 @@
     background: rgba(255, 255, 255, 0.8);
     position: relative;
     transition: all 0.2s ease;
-    padding: 7px;
+    padding: 0;
 }
 
 .page.checkout .alt-shipping input[type="checkbox"]:checked,
@@ -1084,6 +1084,11 @@
         overflow-x: hidden;
         box-sizing: border-box;
         padding-bottom: 0;
+    }
+
+    .page.checkout .alt-shipping input[type="checkbox"],
+    .page.checkout .customer-account input[type="checkbox"] {
+        margin-bottom: 2px;
     }
 }
 
