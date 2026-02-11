@@ -227,18 +227,18 @@
     border-color: var(--green-1);
 }
 
-.page.checkout .alt-shipping input[type="checkbox"]:checked::after,
-.page.checkout .customer-account input[type="checkbox"]:checked::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 1;
-}
+/*.page.checkout .alt-shipping input[type="checkbox"]:checked::after,*/
+/*.page.checkout .customer-account input[type="checkbox"]:checked::after {*/
+/*    content: '✓';*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    color: white;*/
+/*    font-size: 11px;*/
+/*    font-weight: bold;*/
+/*    line-height: 1;*/
+/*}*/
 
 .page.checkout .alt-shipping label,
 .page.checkout .customer-account label {
@@ -1088,7 +1088,7 @@
 
     .page.checkout .alt-shipping input[type="checkbox"],
     .page.checkout .customer-account input[type="checkbox"] {
-        margin-bottom: 2px;
+        margin-bottom: 4px;
     }
 }
 
