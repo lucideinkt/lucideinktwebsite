@@ -64,7 +64,7 @@
                     <li class="nav-item">
                         <a href="{{ route('cartPage') }}"><i
                                 class="fa-solid fa-bag-shopping"></i>
-                            <span class="cart-quantity" style="display: {{ session('cart') && count(session('cart')) ? 'inline-block' : 'none' }};" id="cart-quantity-mobile">
+                            <span class="cart-quantity" style="display: {{ session('cart') && count(session('cart')) ? 'flex' : 'none' }};" id="cart-quantity-mobile">
                                 {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
                             </span>
                         </a>

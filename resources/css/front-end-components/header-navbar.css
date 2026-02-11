@@ -591,6 +591,7 @@ li.nav-item.dropdown {
     .header.scrolled .fa-cart-shopping,
     .header.scrolled .fa-bag-shopping {
         color: rgb(245, 223, 172) !important;
+        margin-top: 7px;
     }
 
     .header.scrolled .sidebar-toggle .fa-bars {

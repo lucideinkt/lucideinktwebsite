@@ -39,7 +39,7 @@
         <li class="nav-item">
           <a class="{{ request()->routeIs('cartPage') ? 'active' : '' }}" href="{{ route('cartPage') }}"><i
               class="fa-solid fa-cart-shopping"></i>
-            <span class="cart-quantity" style="display: {{ (session('cart') && count(session('cart'))) ? 'inline-block' : 'none' }};">
+            <span class="cart-quantity" style="display: {{ (session('cart') && count(session('cart'))) ? 'flex' : 'none' }};">
               {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
             </span>
           </a>

@@ -40,7 +40,7 @@
         <a href="{{ route('cartPage') }}">
             <i class="fa-solid fa-bag-shopping"></i>
             <span class="cart-quantity" id="cart-quantity-desktop"
-                style="display: {{ session('cart') && count(session('cart')) ? 'inline-block' : 'none' }};">
+                style="display: {{ session('cart') && count(session('cart')) ? 'flex' : 'none' }};">
                 {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
             </span>
         </a>
