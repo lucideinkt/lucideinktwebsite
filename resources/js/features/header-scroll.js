@@ -15,16 +15,28 @@ export function initHeaderScrollEffect() {
 
     const logoContainer = header.querySelector('.logo-container');
     const logoImg = logoContainer ? logoContainer.querySelector('img') : header.querySelector('img');
+    const desktopNavbar = header.querySelector('.desktop-navbar-container');
+    const desktopHamburger = header.querySelector('.desktop-hamburger-toggle');
 
     // Set initial state
     if (window.scrollY > SCROLLED_THRESHOLD) {
         header.classList.add('scrolled');
         logoContainer?.classList.add('logo-hidden');
         logoImg?.classList.add('logo-hidden-img');
+
+        // Show hamburger, hide desktop navbar when scrolled (desktop only)
+        if (window.innerWidth > 992) {
+            desktopNavbar?.classList.add('hidden');
+            desktopHamburger?.classList.add('visible');
+        }
     } else {
         header.classList.remove('scrolled');
         logoContainer?.classList.remove('logo-hidden');
         logoImg?.classList.remove('logo-hidden-img');
+
+        // Show desktop navbar, hide hamburger when at top
+        desktopNavbar?.classList.remove('hidden');
+        desktopHamburger?.classList.remove('visible');
     }
 
     window.addEventListener('scroll', () => {
@@ -48,11 +60,21 @@ export function initHeaderScrollEffect() {
                 header.classList.remove('scrolled');
                 logoContainer?.classList.remove('logo-hidden');
                 logoImg?.classList.remove('logo-hidden-img');
+
+                // Show desktop navbar, hide hamburger when at top
+                desktopNavbar?.classList.remove('hidden');
+                desktopHamburger?.classList.remove('visible');
             } else if (currentScrollY > lastScrollY) {
                 // Scrolling down
                 header.classList.add('scrolled');
                 logoContainer?.classList.add('logo-hidden');
                 logoImg?.classList.add('logo-hidden-img');
+
+                // Show hamburger, hide desktop navbar when scrolled (desktop only)
+                if (!isMobile) {
+                    desktopNavbar?.classList.add('hidden');
+                    desktopHamburger?.classList.add('visible');
+                }
             } else {
                 // Scrolling up - keep scrolled state unless near top
                 header.classList.add('scrolled');
@@ -62,6 +84,12 @@ export function initHeaderScrollEffect() {
                 } else {
                     logoContainer?.classList.add('logo-hidden');
                     logoImg?.classList.add('logo-hidden-img');
+                }
+
+                // Keep hamburger visible when scrolled down (desktop only)
+                if (!isMobile && currentScrollY > scrolledThreshold) {
+                    desktopNavbar?.classList.add('hidden');
+                    desktopHamburger?.classList.add('visible');
                 }
             }
 
@@ -83,6 +111,10 @@ export function initHeaderScrollEffect() {
                 header.classList.remove('scrolled');
                 logoContainer?.classList.remove('logo-hidden');
                 logoImg?.classList.remove('logo-hidden-img');
+
+                // Show desktop navbar, hide hamburger when at top
+                desktopNavbar?.classList.remove('hidden');
+                desktopHamburger?.classList.remove('visible');
             } else {
                 header.classList.add('scrolled');
                 if (currentScrollY <= logoThreshold) {
@@ -91,6 +123,16 @@ export function initHeaderScrollEffect() {
                 } else {
                     logoContainer?.classList.add('logo-hidden');
                     logoImg?.classList.add('logo-hidden-img');
+                }
+
+                // Show hamburger on desktop when scrolled
+                if (!isMobile) {
+                    desktopNavbar?.classList.add('hidden');
+                    desktopHamburger?.classList.add('visible');
+                } else {
+                    // On mobile, ensure hamburger is always in the right state
+                    desktopNavbar?.classList.remove('hidden');
+                    desktopHamburger?.classList.remove('visible');
                 }
             }
         }, 150);

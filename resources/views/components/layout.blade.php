@@ -71,6 +71,11 @@
                     </li>
                 </div>
 
+            <!-- Desktop Hamburger Toggle (visible when scrolled) -->
+            <div class="desktop-hamburger-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
             <div class="desktop-navbar-container">
 
                 @if(request()->routeIs('home'))

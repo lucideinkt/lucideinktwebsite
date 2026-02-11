@@ -7,6 +7,7 @@ export function initSidebarToggles() {
     // Main sidebar
     const sidebar = document.querySelector('.sidebar');
     const toggleBtn = document.querySelector('.sidebar-toggle');
+    const desktopToggleBtn = document.querySelector('.desktop-hamburger-toggle');
     const closeBtn = document.querySelector('.close-toggle');
 
     // Create overlay element
@@ -31,8 +32,20 @@ export function initSidebarToggles() {
         document.body.style.overflow = ''; // Restore scrolling
     }
 
+    // Mobile sidebar toggle
     if (sidebar && toggleBtn) {
         toggleBtn.addEventListener('click', () => {
+            if (sidebar.classList.contains('open')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    }
+
+    // Desktop hamburger toggle (appears when scrolled)
+    if (sidebar && desktopToggleBtn) {
+        desktopToggleBtn.addEventListener('click', () => {
             if (sidebar.classList.contains('open')) {
                 closeSidebar();
             } else {
@@ -50,46 +63,38 @@ export function initSidebarToggles() {
         overlay.addEventListener('click', closeSidebar);
     }
 
-    // Dropdown toggles in sidebar (mobile)
+    // Dropdown toggles in sidebar - Works for both mobile and desktop
     const sidebarDropdowns = sidebar?.querySelectorAll('.nav-item.dropdown > a');
-    if (sidebarDropdowns) {
+    if (sidebarDropdowns && sidebarDropdowns.length > 0) {
         sidebarDropdowns.forEach(dropdownLink => {
-            // Variable to track if we've handled the interaction
-            let touchHandled = false;
-
-            // Handle touch events (mobile)
-            dropdownLink.addEventListener('touchstart', (e) => {
-                // Prevent navigation and toggle dropdown on touch
-                e.preventDefault();
-                touchHandled = true;
-                const parentLi = dropdownLink.closest('.nav-item.dropdown');
-                if (parentLi) {
-                    // Close other open dropdowns
-                    document.querySelectorAll('.sidebar .nav-item.dropdown.open').forEach(function (item) {
-                        if (item !== parentLi) item.classList.remove('open');
-                    });
-                    parentLi.classList.toggle('open');
-                }
-            }, { passive: false });
-
-            // Handle click events (desktop / non-touch)
+            // Handle click events for dropdown toggle
             dropdownLink.addEventListener('click', (e) => {
-                // Prevent navigation and toggle dropdown
+                // Always prevent navigation for dropdown links
                 e.preventDefault();
-                // If touch already handled this, skip
-                if (touchHandled) {
-                    touchHandled = false;
-                    return;
-                }
+                e.stopPropagation();
+
                 const parentLi = dropdownLink.closest('.nav-item.dropdown');
                 if (parentLi) {
-                    // Close other open dropdowns
+                    const isOpen = parentLi.classList.contains('open');
+
+                    // Close all open dropdowns first
                     document.querySelectorAll('.sidebar .nav-item.dropdown.open').forEach(function (item) {
-                        if (item !== parentLi) item.classList.remove('open');
+                        item.classList.remove('open');
                     });
-                    parentLi.classList.toggle('open');
+
+                    // Toggle this dropdown (opposite of previous state)
+                    if (!isOpen) {
+                        parentLi.classList.add('open');
+                    }
                 }
+
+                return false; // Extra safeguard against navigation
             });
+
+            // Also prevent default on touchstart for mobile
+            dropdownLink.addEventListener('touchstart', (e) => {
+                // Don't prevent default here as it will be handled by click
+            }, { passive: true });
         });
     }
 
@@ -124,23 +129,10 @@ export function initSidebarToggles() {
     }
 }
 
-// SIDEBAR DROPDOWN: Only for .sidebar .nav-item.dropdown
+// SIDEBAR DROPDOWN: Reset dropdown states
 export function setupSidebarDropdowns() {
-    // Remove all open classes on load
+    // Remove all open classes on load to ensure clean state
     document.querySelectorAll('.sidebar .nav-item.dropdown').forEach(function (item) {
         item.classList.remove('open');
-    });
-    // Add click event to toggle dropdown
-    document.querySelectorAll('.sidebar .nav-item.dropdown > a').forEach(function (dropdownToggle) {
-        dropdownToggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            var parent = this.parentElement;
-            // Close all other dropdowns
-            document.querySelectorAll('.sidebar .nav-item.dropdown.open').forEach(function (item) {
-                if (item !== parent) item.classList.remove('open');
-            });
-            // Toggle this dropdown
-            parent.classList.toggle('open');
-        });
     });
 }
