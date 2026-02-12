@@ -2867,6 +2867,37 @@ thead {
     appearance: radio;
 }
 
+/* Control the SVG icon that acts as the visible radio button */
+.myparcel-delivery-options label > span > span > svg {
+    height: 15px !important;
+    width: 15px !important;
+    min-height: 15px !important;
+    min-width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+}
+
+/* Target all SVG icons in the delivery options more broadly */
+.myparcel-delivery-options svg {
+    height: 15px !important;
+    width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+}
+
+/* Ensure the span wrapper doesn't expand */
+.myparcel-delivery-options label > span > span {
+    height: 15px !important;
+    width: 15px !important;
+    min-height: 15px !important;
+    min-width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 .myparcel-delivery-options .mp-border.mp-p-5.mp-rounded-lg.mp-mb-2 {
     display: none;
 }

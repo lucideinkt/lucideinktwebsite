@@ -47,7 +47,7 @@
     border-radius: 16px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, .18);
     border: 1px solid rgba(191, 163, 107, .9);
-    color: var(--green-2);
+    color: #203f21;
     overflow: visible;
     transform: translateY(8px) scale(.98);
     opacity: 0;
