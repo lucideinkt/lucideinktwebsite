@@ -268,6 +268,55 @@ export function initMyParcelWidget() {
             }
         }
 
+        // Force resize SVG icons to 15px (fixes iOS display issue)
+        function forceSvgResize() {
+            const svgs = document.querySelectorAll('.myparcel-delivery-options svg');
+            const spans = document.querySelectorAll('.myparcel-delivery-options label > span > span');
+
+            svgs.forEach(svg => {
+                svg.style.setProperty('height', '15px', 'important');
+                svg.style.setProperty('width', '15px', 'important');
+                svg.style.setProperty('max-height', '15px', 'important');
+                svg.style.setProperty('max-width', '15px', 'important');
+                svg.setAttribute('height', '15');
+                svg.setAttribute('width', '15');
+            });
+
+            spans.forEach(span => {
+                span.style.setProperty('height', '15px', 'important');
+                span.style.setProperty('width', '15px', 'important');
+                span.style.setProperty('max-height', '15px', 'important');
+                span.style.setProperty('max-width', '15px', 'important');
+            });
+        }
+
+        // Observe widget container for changes and resize SVGs
+        const container = document.querySelector(WIDGET_SELECTOR);
+        if (container) {
+            const observer = new MutationObserver((mutations) => {
+                // Check if SVGs were added
+                const hasSvgChanges = mutations.some(mutation =>
+                    Array.from(mutation.addedNodes).some(node =>
+                        node.nodeType === 1 && (node.tagName === 'SVG' || node.querySelector('svg'))
+                    )
+                );
+
+                if (hasSvgChanges) {
+                    forceSvgResize();
+                }
+            });
+
+            observer.observe(container, {
+                childList: true,
+                subtree: true
+            });
+
+            // Also run on initial load with delay
+            setTimeout(forceSvgResize, 100);
+            setTimeout(forceSvgResize, 500);
+            setTimeout(forceSvgResize, 1000);
+        }
+
         // Listen for radio changes
         myparcelRadios.forEach(radio => {
             radio.addEventListener('change', (event) => {

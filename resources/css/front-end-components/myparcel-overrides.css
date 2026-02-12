@@ -71,15 +71,26 @@
     max-width: 15px !important;
 }
 
-/* Target all SVG icons in the delivery options more broadly */
+/* Target all SVG's in the widget more broadly and use transform scale as fallback */
 .myparcel-delivery-options svg {
     height: 15px !important;
     width: 15px !important;
     max-height: 15px !important;
     max-width: 15px !important;
+    transform: scale(0.625) !important; /* 15/24 = 0.625 to scale down from 24px to 15px */
+    transform-origin: center !important;
 }
 
-/* Ensure the span wrapper doesn't expand */
+/* Specifically target the arrow SVG that's used as radio indicator */
+.myparcel-delivery-options label > span > span > svg[viewBox="0 0 24 25"] {
+    height: 15px !important;
+    width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+    transform: scale(1) !important; /* Reset scale after general rule */
+}
+
+/* Ensure the span wrapper doesn't expand and accounts for scaled SVG */
 .myparcel-delivery-options label > span > span {
     height: 15px !important;
     width: 15px !important;
@@ -90,6 +101,22 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    overflow: hidden !important;
+}
+
+/* Additional targeting for iOS Safari specificity */
+@supports (-webkit-touch-callout: none) {
+    .myparcel-delivery-options svg {
+        height: 15px !important;
+        width: 15px !important;
+        max-height: 15px !important;
+        max-width: 15px !important;
+    }
+
+    .myparcel-delivery-options label > span > span {
+        height: 15px !important;
+        width: 15px !important;
+    }
 }
 
 .myparcel-delivery-options .mp-border.mp-p-5.mp-rounded-lg.mp-mb-2 {
