@@ -77,6 +77,15 @@
     opacity: 0.3;
 }
 
+/* Show desktop version, hide mobile version by default */
+.risale-i-nur-page__text-box .let-mobile {
+    display: none;
+}
+
+.risale-i-nur-page__text-box .let-desk {
+    display: block;
+}
+
 @media (max-width: 600px) {
     .risale-i-nur-page__text-box .title {
         font-size: 28px;
@@ -95,6 +104,15 @@
     .risale-i-nur-page__text-box p {
         text-indent: 25px;
         text-align: left;
+    }
+
+    /* Hide desktop version, show mobile version */
+    .risale-i-nur-page__text-box .let-desk {
+        display: none;
+    }
+
+    .risale-i-nur-page__text-box .let-mobile {
+        display: block;
     }
 
     /* Mobile: show stapel-one centered, hide stapel-two */

@@ -2,9 +2,15 @@
     <main class="container page">
         <div class="risale-i-nur-page__text-box">
             <h1 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h1>
-            <p>
-                Tafsirs zijn Qur’anexegeses die in <strong>twee categorieën</strong> worden onderscheiden: <strong>de letterlijke en <br>de spirituele</strong>
+            <p class="let-desk">
+                Tafsirs zijn Qur’anexegeses die in <strong>twee categorieën</strong> worden onderscheiden: <strong>de letterlijke en
+                    <br>de spirituele</strong>
             </p>
+
+            <p class="let-mobile">
+                Tafsirs zijn Qur’anexegeses die in <strong>twee categorieën</strong> worden onderscheiden: <strong>de letterlijke en de spirituele</strong>
+            </p>
+
                 <p>
                 <strong>Bij de bekende</strong>, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht.
                 </p>
