@@ -51,7 +51,7 @@
 
 .myparcel-delivery-options input[type="radio"] {
     margin-top: 0;
-    height: 15px;
+    height: 15px !important;
 }
 
 .myparcel-delivery-options .mp-border.mp-p-5.mp-rounded-lg.mp-mb-2 {

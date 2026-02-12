@@ -121,7 +121,7 @@ input[type="password"]::-ms-clear {
     justify-content: center;
     gap: 8px;
     padding: 10px 20px;
-    background: var(--green-1);
+    background: #2c582f;
     color: var(--ink-inverse);
     border: none;
     border-radius: 4px;

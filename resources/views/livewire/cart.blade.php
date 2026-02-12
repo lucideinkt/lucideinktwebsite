@@ -106,7 +106,7 @@
         </div>
 
         <div class="cart-actions">
-            <a href="{{ route('checkoutPage') }}" class="btn-checkout">
+            <a href="{{ route('checkoutPage') }}" class="btn-checkout btn">
                 <i class="fa-solid fa-credit-card"></i>
                 Afrekenen
             </a>

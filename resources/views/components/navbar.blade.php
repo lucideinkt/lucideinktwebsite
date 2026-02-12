@@ -31,7 +31,7 @@
     @guest
         <li class="nav-item">
             <a class="{{ request()->routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">
-                <span class="user-account">Account </span><i class="fa-solid fa-user"></i></a>
+                <span class="account-text"><span class="first-letter">A</span>CCOUNT </span><i class="fa-solid fa-user"></i></a>
         </li>
     @endguest
 

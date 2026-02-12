@@ -195,6 +195,9 @@ Route::get('/algemene-voorwaarden', function () {
 Route::get('/privacybeleid', function () {
     return view('privacybeleid');
 })->name('privacybeleid');
+Route::get('/retourbeleid', function () {
+    return view('retourbeleid');
+})->name('retourbeleid');
 Route::get('/verzending-levering', function () {
     return view('verzending-levering');
 })->name('verzendingLevering');

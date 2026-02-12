@@ -28,6 +28,7 @@
                 <ul class="footer-links">
                     <li><a href="{{ route('algemeneVoorwaarden') }}">Algemene Voorwaarden</a></li>
                     <li><a href="{{ route('verzendingLevering') }}">Verzending & Levering</a></li>
+                    <li><a href="{{ route('retourbeleid') }}">Retourbeleid</a></li>
                     <li><a href="{{ route('privacybeleid') }}">Privacybeleid</a></li>
                 </ul>
             </div>

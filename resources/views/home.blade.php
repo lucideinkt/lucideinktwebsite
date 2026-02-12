@@ -110,20 +110,33 @@
                         <p>waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?</p>
                         <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 
-                    <button class="read-more-btn" onclick="openHerzamelingModal()">
-                        <span class="read-more-text">Lees Meer</span>
-                        {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
-                    </button>
+                    <div style="display: inline-block; border-bottom: 2px solid rgb(245, 223, 172); padding-bottom: 4px;">
+                        <a style="color: rgb(245, 223, 172);text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);filter: brightness(1.1); position: relative; top: 10px;" href="http://lucideinktwebshop.test/risale-i-nur" class="read-more-link">
+                            Lees meer <i style="color: #f5dfac" class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+{{--                    <button class="read-more-btn" onclick="openHerzamelingModal()">--}}
+{{--                        <span class="read-more-text">Lees Meer</span>--}}
+{{--                                                <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+{{--                    </button>--}}
                 </div>
 
                 <div class="sub-text two">
                     <span>
                     Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.
                     </span>
-                    <button class="read-more-btn" onclick="openHerzamelingModal()">
-                        <span class="read-more-text">Lees Meer</span>
-                        {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
-                    </button>
+
+                    <div style="display: inline-block; border-bottom: 2px solid rgb(245, 223, 172); padding-bottom: 4px;">
+                        <a style="color: rgb(245, 223, 172);text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);filter: brightness(1.1); position: relative; top: 10px;" href="http://lucideinktwebshop.test/risale-i-nur" class="read-more-link">
+                            Lees meer <i style="color: #f5dfac" class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+{{--                    <button class="read-more-btn" onclick="openHerzamelingModal()">--}}
+{{--                        <span class="read-more-text">Lees Meer</span>--}}
+{{--                                                <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+{{--                    </button>--}}
                 </div>
 
 
@@ -185,7 +198,7 @@
 
                             Bij de bekende, letterlijke Tafsirs worden Qur’anische verzen aangehaald, waarna de betekenissen van de woorden en zinnen met bewijzen worden toegelicht.
 
-                            Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
+                            Bij de tweede, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd.
                         </p>
                         <a href="{{ route('risale') }}" class="read-more-link">
                             Lees meer <i class="fa-solid fa-arrow-right"></i>
@@ -255,19 +268,22 @@
 
         <section class="white-section risale-section said-nursi-section">
             <div class="text-container risale-grid">
-                <div class="risale-image said-nursi-image">
-                    <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
-                </div>
                 <div class="risale-content">
                     <h2 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h2>
+                    <div class="risale-image said-nursi-image mobile-only">
+                        <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
+                    </div>
                     <div class="sub-text">
                         <p>
-                            Om het geloof van de gemeenschap in veiligheid te brengen, heb ik op dat pad ook mijn hiernamaals opgeofferd. In mijn ogen bestaat er noch liefde voor het paradijs, noch vrees voor de hel. Namens het geloof van niet alleen de Turkse gemeenschap van 25 miljoen, maar van de gehele Islamitische gemeenschap van honderden miljoenen mensen, mogen niet één, maar duizend Saids opgeofferd worden. Als onze Qur’an op aarde zonder volgers achterblijft, dan verlang ik ook niet naar het paradijs; ook daar zal het dan een gevangenis voor mij zijn. Als ik zou zien dat het geloof van mijn volk is veiliggesteld, dan ben ik bereid om in de vlammen van de hel te branden. Want terwijl mijn lichaam dan knettert in het vuur, zal in mijn hart een rozentuin van gelukzaligheid ontbloeien.
+                            "Ik zal de wereld bewijzen dat de Qur'an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"
                         </p>
                         <a href="{{ route('saidnursi') }}" class="read-more-link">
                             Lees meer <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
+                </div>
+                <div class="risale-image said-nursi-image desktop-only">
+                    <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
                 </div>
             </div>
         </section>

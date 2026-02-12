@@ -16,19 +16,17 @@
 .sidebar {
     position: fixed;
     top: 0;
-    right: -280px;
-    width: 280px;
+    right: -300px;
+    width: 300px;
     height: 100vh;
-    padding: 20px;
-    background-image: url("../../images/001_leather_background.webp");
-    background-size: cover;
-    background-position: center;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-    transition: right .4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    background: #f5e6ca;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+    transition: right .3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 100;
     overflow-y: auto;
     overflow-x: hidden;
-    border-left: 4px solid #f5dfac;
+    border-left: 1px solid #f5e6ca;
 }
 
 .sidebar.open {
@@ -38,8 +36,9 @@
 .sidebar .navbar ul {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
+    gap: 0;
+    margin-top: 0;
+    padding: 0;
 }
 
 .sidebar .navbar ul li {
@@ -47,69 +46,68 @@
 }
 
 .sidebar .navbar ul li a {
-    font-family: "itc-benguiat", serif;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     transition: all .2s ease;
-    color: rgb(245, 223, 172) !important;
-    background: none !important;
+    color: var(--main-font-color) !important;
+    background: transparent !important;
     text-decoration: none;
     display: block;
-    padding: 10px 14px;
-    border-radius: 8px;
+    padding: 18px 25px;
+    border-radius: 0;
     position: relative;
+    border-bottom: 1px solid rgba(98, 5, 5, 0.08);
 }
 
 .sidebar .navbar ul li a .first-letter {
-    font-size: 120%;
-    font-weight: 600;
+    font-size: 110%;
+    font-weight: 700;
 }
 
 .sidebar .navbar ul li a:hover {
-    background: rgba(245, 223, 172, 0.1) !important;
-    transform: translateX(-4px);
-    text-shadow:
-        0 0 10px rgba(245, 223, 172, 0.6),
-        0 0 20px rgba(245, 223, 172, 0.4);
+    background: rgba(98, 5, 5, 0.05) !important;
+    transform: none;
+    text-shadow: none;
+    padding-left: 30px;
 }
 
 .sidebar .navbar ul li a.active {
-    background: rgba(245, 223, 172, 0.15) !important;
-    text-shadow:
-        0 0 10px rgba(245, 223, 172, 0.7),
-        0 0 20px rgba(245, 223, 172, 0.5);
-    font-weight: 600;
-    border-left: 3px solid #f5dfac;
+    background: rgba(98, 5, 5, 0.08) !important;
+    text-shadow: none;
+    font-weight: 700;
+    border-left: 4px solid var(--main-font-color);
+    padding-left: 21px;
 }
 
 .sidebar .close-toggle {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid rgba(245, 223, 172, 0.2);
+    padding: 20px 25px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(98, 5, 5, 0.08);
+    background: #f5e6ca;
 }
 
 .sidebar .close-toggle .fa-xmark {
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
-    color: rgb(245, 223, 172);
-    padding: 8px;
-    border-radius: 50%;
+    color: var(--main-font-color);
+    padding: 6px;
+    border-radius: 4px;
     transition: all .2s ease;
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .sidebar .close-toggle .fa-xmark:hover {
-    background: rgba(245, 223, 172, 0.15);
-    transform: rotate(90deg);
-    box-shadow: 0 0 15px rgba(245, 223, 172, 0.4);
+    background: rgba(98, 5, 5, 0.08);
+    transform: none;
+    box-shadow: none;
 }
 
 /* Dropdown styles in sidebar - Override desktop navbar dropdown styles */
@@ -120,10 +118,11 @@
 }
 
 .sidebar .nav-item.dropdown > a .fa-chevron-down {
-    font-size: 10px;
-    margin-left: 8px;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    color: rgb(245, 223, 172);
+    font-size: 9px;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+    color: var(--main-font-color);
+    opacity: 0.7;
 }
 
 /* Prevent hover effects on sidebar dropdown chevron */
@@ -162,11 +161,11 @@
     visibility: hidden;
     display: block !important;
     flex-direction: column;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.3s ease,
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                padding 0.3s ease,
+                margin 0.3s ease;
     will-change: max-height, opacity;
 }
 
@@ -174,9 +173,9 @@
     max-height: 500px;
     opacity: 1;
     visibility: visible;
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
-    margin-bottom: 6px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .sidebar .dropdown-menu li {
@@ -213,31 +212,35 @@
 .sidebar .dropdown-menu li a {
     font-size: 14px !important;
     text-transform: none !important;
-    letter-spacing: 0.5px;
-    padding: 7px 14px 7px 28px !important;
+    letter-spacing: 0.3px;
+    padding: 14px 20px 14px 40px !important;
     margin: 0 !important;
     border: none !important;
     border-left: none !important;
-    border-radius: 6px !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(98, 5, 5, 0.05) !important;
     display: block;
     width: 100%;
     text-align: left;
     white-space: normal;
+    background: rgba(98, 5, 5, 0.02) !important;
 }
 
 .sidebar .dropdown-menu li a:hover {
-    background: rgba(245, 223, 172, 0.12) !important;
+    background: rgba(98, 5, 5, 0.06) !important;
+    padding-left: 45px !important;
 }
 
 /* Cart icon styling in sidebar */
 .sidebar .nav-item.cart a {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .sidebar .nav-item.cart .fa-bag-shopping {
-    font-size: 20px;
+    font-size: 18px;
+    color: var(--main-font-color);
 }
 
 .sidebar .nav-item.cart .cart-quantity {
@@ -256,32 +259,33 @@
 
 /* User account styling in sidebar */
 .sidebar .nav-item a .fa-user {
-    font-size: 18px;
-    margin-left: 8px;
-    color: rgb(245, 223, 172) !important;
+    font-size: 16px;
+    margin-left: 6px;
+    color: var(--main-font-color) !important;
+    opacity: 0.9;
 }
 
-.sidebar .nav-item a .user-account {
+/* Show account text in sidebar only */
+.sidebar .account-text {
     display: inline !important;
-    color: rgb(245, 223, 172) !important;
 }
+
 
 /* Scrollbar styling for sidebar */
 .sidebar::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 
 .sidebar::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    background: transparent;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background: rgba(245, 223, 172, 0.4);
+    background: rgba(98, 5, 5, 0.2);
     border-radius: 10px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
-    background: rgba(245, 223, 172, 0.6);
+    background: rgba(98, 5, 5, 0.3);
 }
 

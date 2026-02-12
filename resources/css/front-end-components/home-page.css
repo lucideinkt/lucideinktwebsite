@@ -265,7 +265,7 @@ h2 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, var(--green-1) 0%, var(--green-2) 100%);
+    background: linear-gradient(135deg, #205923 0%, #224039 100%);
     color: white;
     border: none;
     padding: 14px 28px;
@@ -298,8 +298,7 @@ h2 {
 }
 
 .read-more-btn:hover {
-    background: linear-gradient(135deg, var(--green-2) 0%, var(--green-1) 100%);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #224039 0%, #2e7d32 100%);
     box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
 }
 
@@ -548,7 +547,7 @@ h2 {
 }
 
 .risale-section .risale-image img {
-    max-width: 100%;
+    max-width: 500px;
     height: auto;
     max-height: 500px;
     object-fit: contain;
@@ -582,6 +581,14 @@ h2 {
     border: 4px solid rgba(98, 5, 5, 0.1);
 }
 
+/* Show/hide mobile and desktop versions */
+.said-nursi-section .mobile-only {
+    display: none;
+}
+
+.said-nursi-section .desktop-only {
+    display: flex;
+}
 
 /* ---------------------------------------------------------
    COLORED BOOKS SECTION
@@ -688,6 +695,16 @@ h2 {
         grid-template-columns: 1fr;
     }
 
+    /* Show mobile version, hide desktop version */
+    .said-nursi-section .mobile-only {
+        display: flex;
+        margin: 20px 0;
+    }
+
+    .said-nursi-section .desktop-only {
+        display: none;
+    }
+
     /* Show image first on mobile */
     .said-nursi-section .said-nursi-image {
         order: -1;
@@ -726,7 +743,7 @@ h2 {
     }
 
     .risale-section .risale-image img {
-        max-height: 400px;
+        max-height: 300px;
     }
 
     .home .title {

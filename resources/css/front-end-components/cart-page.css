@@ -263,7 +263,7 @@
     width: 36px;
     height: 36px;
     border: none;
-    background: #dc3545 !important;
+    background: #90000e !important;
     color: white !important;
     border-radius: 4px;
     cursor: pointer;
@@ -275,10 +275,6 @@
 
 .btn-remove i {
     color: white !important;
-}
-
-.btn-remove:hover {
-    background: #c82333 !important;
 }
 
 .cart-totals {
@@ -337,7 +333,7 @@
     justify-content: center;
     gap: 8px;
     padding: 3px 20px;
-    background: var(--green-1);
+    background: #2c582f;
     color: var(--ink-inverse);
     border: none;
     border-radius: 4px;
@@ -360,12 +356,7 @@
 }
 
 .btn-clear {
-    background: #dc3545;
-}
-
-.btn-clear:hover {
-    background: #c82333;
-    color: white;
+    background: #90000e;
 }
 
 /* Empty State - matching contact form box style */
