@@ -2857,7 +2857,14 @@ thead {
 
 .myparcel-delivery-options input[type="radio"] {
     margin-top: 0;
-    height: 15px;
+    height: 15px !important;
+    width: 15px !important;
+    min-height: 15px !important;
+    min-width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+    -webkit-appearance: radio;
+    appearance: radio;
 }
 
 .myparcel-delivery-options .mp-border.mp-p-5.mp-rounded-lg.mp-mb-2 {
