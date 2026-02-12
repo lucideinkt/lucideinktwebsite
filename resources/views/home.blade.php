@@ -110,11 +110,11 @@
                         <p>waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?</p>
                         <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 
-                    <div style="display: inline-block; border-bottom: 2px solid rgb(245, 223, 172); padding-bottom: 4px;">
+                    <p style="display: inline-block; border-bottom: 2px solid rgb(245, 223, 172); padding-bottom: 4px;">
                         <a style="color: rgb(245, 223, 172);text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);filter: brightness(1.1); position: relative; top: 10px;" href="http://lucideinktwebshop.test/risale-i-nur" class="read-more-link">
                             Lees meer <i style="color: #f5dfac" class="fa-solid fa-arrow-right"></i>
                         </a>
-                    </div>
+                    </p>
 
 {{--                    <button class="read-more-btn" onclick="openHerzamelingModal()">--}}
 {{--                        <span class="read-more-text">Lees Meer</span>--}}
@@ -123,15 +123,15 @@
                 </div>
 
                 <div class="sub-text two">
-                    <span>
+                    <p>
                     Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.
-                    </span>
+                    </p>
 
-                    <div style="display: inline-block; border-bottom: 2px solid rgb(245, 223, 172); padding-bottom: 4px;">
+                    <p style="display: inline-block; border-bottom: 2px solid rgb(245, 223, 172); padding-bottom: 4px;">
                         <a style="color: rgb(245, 223, 172);text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);filter: brightness(1.1); position: relative; top: 10px;" href="http://lucideinktwebshop.test/risale-i-nur" class="read-more-link">
                             Lees meer <i style="color: #f5dfac" class="fa-solid fa-arrow-right"></i>
                         </a>
-                    </div>
+                    </p>
 
 {{--                    <button class="read-more-btn" onclick="openHerzamelingModal()">--}}
 {{--                        <span class="read-more-text">Lees Meer</span>--}}
