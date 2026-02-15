@@ -559,35 +559,79 @@ h2 {
    --------------------------------------------------------- */
 
 .said-nursi-section .text-container.risale-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
 }
 
-/* Desktop: Image on Left, Content on Right */
-.said-nursi-section .said-nursi-image {
-    order: 1;
-}
-
+/* Desktop: Title, Image, then Quote */
 .said-nursi-section .risale-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.said-nursi-section .risale-content .title {
+    order: 1;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.said-nursi-section .said-nursi-image.mobile-only {
     order: 2;
+}
+
+.said-nursi-section .risale-content .sub-text {
+    order: 3;
+    text-align: center;
+    max-width: 700px;
+    margin: 10px auto 0;
+}
+
+.said-nursi-section .risale-content .sub-text p {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #871719;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.3px;
+}
+
+.said-nursi-section .risale-content .sub-text a {
+    font-weight: 400;
+    margin-top: -10px;
 }
 
 .said-nursi-section .said-nursi-image img {
     max-width: 100%;
     height: auto;
-    max-height: 600px;
+    max-height: 400px;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     border: 4px solid rgba(98, 5, 5, 0.1);
 }
 
-/* Show/hide mobile and desktop versions */
+/* Show mobile version on both mobile and desktop, hide desktop version */
 .said-nursi-section .mobile-only {
-    display: none;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
 }
 
 .said-nursi-section .desktop-only {
-    display: flex;
+    display: none;
+}
+
+.said-nursi-section .mobile-only img {
+    max-width: 600px;
+}
+
+/* Said Nursi Read More Link */
+.said-nursi-section .read-more-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 /* ---------------------------------------------------------
@@ -695,24 +739,10 @@ h2 {
         grid-template-columns: 1fr;
     }
 
-    /* Show mobile version, hide desktop version */
     .said-nursi-section .mobile-only {
-        display: flex;
         margin: 20px 0;
     }
 
-    .said-nursi-section .desktop-only {
-        display: none;
-    }
-
-    /* Show image first on mobile */
-    .said-nursi-section .said-nursi-image {
-        order: -1;
-    }
-
-    .said-nursi-section .risale-content {
-        order: 1;
-    }
 
     .said-nursi-section .said-nursi-image img {
         max-height: 450px;
@@ -906,6 +936,14 @@ h2 {
     .read-more-btn {
         font-size: 14px;
         height: 35px;
+    }
+
+    .said-nursi-section .risale-content .sub-text p {
+        font-size: 18px;
+    }
+
+    .said-nursi-section .risale-content .sub-text a {
+        font-size: 15px;
     }
 }
 

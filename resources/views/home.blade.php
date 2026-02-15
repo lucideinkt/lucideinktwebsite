@@ -162,7 +162,7 @@
                         </a>
                     </div>
 
-                    <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">
+{{--                    <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">--}}
 
                     <div class="book three">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
@@ -384,7 +384,7 @@
                     new Splide('#quotes-slider', {
                         type: 'loop',
                         autoplay: true,
-                        interval: 5000,
+                        interval: 12000,
                         speed: 800,
                         pauseOnHover: true,
                         pauseOnFocus: true,
