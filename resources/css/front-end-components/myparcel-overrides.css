@@ -109,7 +109,38 @@
     max-width: 45px !important;
     transform: scale(0.40) !important;
     transform-origin: left center !important;
+    margin-right: -25px !important;
+    cursor: pointer;
+    accent-color: #2c582f !important;
+}
+
+/* Replace the content of mp-not-sr-only with a chevron */
+.myparcel-delivery-options .mp-not-sr-only {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.hover\:mp-text-gray-900:hover {
+    color: var(--main-font-color);
+}
+
+/* Add chevron using ::before on mp-not-sr-only */
+.myparcel-delivery-options .mp-not-sr-only::before {
+    content: "▸" !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    display: inline-block !important;
+    transition: transform 0.2s ease !important;
+    line-height: 1 !important;
     margin-right: 4px !important;
+    color: var(--main-font-color);
+}
+
+/* Rotate chevron when parent svg has mp-rotate-90 class */
+.myparcel-delivery-options .mp-rotate-90.mp-not-sr-only::before {
+    transform: rotate(90deg) !important;
 }
 
 
@@ -121,6 +152,14 @@
 .myparcel-delivery-options .mp-pl-4.mp-py-2 button:active,
 .myparcel-delivery-options .mp-pl-4.mp-py-2 button::selection {
     background-color: rgb(243 244 246/var(--mp-tw-bg-opacity));
+}
+
+.myparcel-delivery-options button {
+    font-size: 17px;
+}
+
+.myparcel-delivery-options b {
+    font-size: 17px;
 }
 
 .myparcel-delivery-options .mp-pl-4 {
