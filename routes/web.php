@@ -185,6 +185,9 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/risale-i-nur', function () {
     return view('risale');
 })->name('risale');
+Route::get('/herzameling', function () {
+    return view('herzameling');
+})->name('herzameling');
 Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi');
 Route::get('/contact', function () {
     return view('contact');
