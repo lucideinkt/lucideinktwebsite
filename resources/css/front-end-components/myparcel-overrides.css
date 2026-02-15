@@ -39,13 +39,17 @@
     -webkit-appearance: radio !important;
     appearance: radio !important;
     flex-shrink: 0 !important;
-    transform: scale(1) !important;
+    transform: scale(0.65) !important;
+    transform-origin: left center !important;
+    margin-right: 4px !important;
 }
 
 /* iOS Safari fix */
 @supports (-webkit-touch-callout: none) {
     .mp-choice input[type="radio"] {
         font-size: 16px !important;
+        transform: scale(0.65) !important;
+        transform-origin: left center !important;
     }
 }
 
@@ -73,8 +77,10 @@
     max-width: 15px !important;
     -webkit-appearance: radio !important;
     appearance: radio !important;
-    transform: scale(1) !important;
+    transform: scale(0.65) !important;
+    transform-origin: left center !important;
     flex-shrink: 0 !important;
+    margin-right: 4px !important;
 }
 
 /* iOS Safari fix - prevent auto-zoom and enforce size */
@@ -87,7 +93,23 @@
         min-width: 15px !important;
         max-height: 15px !important;
         max-width: 15px !important;
+        transform: scale(0.65) !important;
+        transform-origin: left center !important;
     }
+}
+
+/* Additional selector to override inline styles from MyParcel JS */
+#myparcel-delivery-options input[type="radio"],
+#myparcel-delivery-options input[type="radio"][style] {
+    height: 15px !important;
+    width: 15px !important;
+    min-height: 15px !important;
+    min-width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+    transform: scale(0.65) !important;
+    transform-origin: left center !important;
+    margin-right: 4px !important;
 }
 
 
