@@ -204,7 +204,7 @@
 @media (max-width: 768px) {
     .herzameling-page__text-box .title {
         font-size: 32px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         letter-spacing: 1.5px;
     }
 
@@ -262,15 +262,14 @@
 @media (max-width: 600px) {
     .herzameling-page__text-box .title {
         font-size: 28px;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         letter-spacing: 1px;
         margin-left: 0px;
     }
 
     /* Force line break before 'herzameling' word on mobile */
-    .herzameling-page__text-box .title .title-h:nth-of-type(2)::before {
-        content: '\A';
-        white-space: pre;
+    .herzameling-page__text-box .title .word-break-mobile {
+        display: block;
     }
 
     .herzameling-page__text-box .sub-title {
@@ -306,8 +305,9 @@
 
 @media (max-width: 480px) {
     .herzameling-page__text-box .title {
-        font-size: 24px;
+        font-size: 28px;
         line-height: 1.6;
+        margin-bottom: 25px;
     }
 
     .herzameling-page__text-box .sub-title {

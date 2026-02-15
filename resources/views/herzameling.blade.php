@@ -1,11 +1,11 @@
 <x-layout>
     <main class="container page">
         <div class="herzameling-page__text-box">
-            <h1 class="title"><span class="title-h"></span>et <span class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t ov<span class="title-e-r"></span> de <span class="title-h"></span>e<span class="title-r"></span>za<span class="title-me"></span>l<span class="title-in"></span>g</h1>
+            <h1 class="title"><span class="title-h"></span>et <span class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t ov<span class="title-e-r"></span> de <span class="word-break-mobile"><span class="title-h"></span>e<span class="title-r"></span>za<span class="title-me"></span>l<span class="title-in"></span>g</span></h1>
 
             <p>Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 
-            <p>Waarom <strong style="font-family: DelimaMTProBold">"Herzameling"?</strong></h2>
+            <p>Waarom <strong style="font-family: DelimaMTProBold">"Herzameling"?</strong></p>
 
             <p>In plaats van gangbare vertalingen zoals <strong>"wederopstanding"</strong> of <strong>"herrijzenis"</strong>, hebben wij ervoor gekozen om de Turkse term <strong>'haşir'</strong> als <strong>"herzameling"</strong> te vertalen, omdat deze vertaling de betekenis van 'haşir' nauwkeuriger weergeeft. De term is namelijk afgeleid van de Arabische wortel <strong>'ح-ش-ر',</strong> wat letterlijk <strong>"verzamelen"</strong> betekent. Hoewel dit woord in het Arabisch in bredere zin wordt gebruikt, verwijst het in het Turks specifiek naar de grote herzameling in het hiernamaals die na de ondergang van deze wereld zal plaatsvinden.</p>
 
