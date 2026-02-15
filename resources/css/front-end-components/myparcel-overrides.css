@@ -30,9 +30,23 @@
 .mp-choice input[type="radio"] {
     margin-top: 2px;
     accent-color: var(--red-2);
-    height: 15px;
-    width: 15px;
-    flex-shrink: 0;
+    height: 15px !important;
+    width: 15px !important;
+    min-height: 15px !important;
+    min-width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+    -webkit-appearance: radio !important;
+    appearance: radio !important;
+    flex-shrink: 0 !important;
+    transform: scale(1) !important;
+}
+
+/* iOS Safari fix */
+@supports (-webkit-touch-callout: none) {
+    .mp-choice input[type="radio"] {
+        font-size: 16px !important;
+    }
 }
 
 .mp-choice label span {
@@ -51,8 +65,29 @@
 
 .myparcel-delivery-options input[type="radio"] {
     margin-top: -2px;
-    height: 15px;
-    width: 15px;
+    height: 15px !important;
+    width: 15px !important;
+    min-height: 15px !important;
+    min-width: 15px !important;
+    max-height: 15px !important;
+    max-width: 15px !important;
+    -webkit-appearance: radio !important;
+    appearance: radio !important;
+    transform: scale(1) !important;
+    flex-shrink: 0 !important;
+}
+
+/* iOS Safari fix - prevent auto-zoom and enforce size */
+@supports (-webkit-touch-callout: none) {
+    .myparcel-delivery-options input[type="radio"] {
+        font-size: 16px !important;
+        height: 15px !important;
+        width: 15px !important;
+        min-height: 15px !important;
+        min-width: 15px !important;
+        max-height: 15px !important;
+        max-width: 15px !important;
+    }
 }
 
 
