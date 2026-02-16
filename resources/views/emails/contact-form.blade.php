@@ -102,7 +102,7 @@
 
         <div class="footer">
             Dit bericht is verzonden via het contactformulier op de website.<br>
-            Je kunt direct antwoorden op dit e-mailadres om contact op te nemen met Lucide Inkt.
+            Je kunt direct antwoorden op dit e-mailadres om contact op te nemen met {{ $name }}.
         </div>
     </div>
 </body>
