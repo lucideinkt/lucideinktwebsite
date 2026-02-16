@@ -24,18 +24,19 @@
 .newsletter-title {
     margin-top: 0 !important;
     text-align: center;
-    font-size: 32px !important;
+    font-size: 50px;
     color: rgb(245, 223, 172);
     text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);
 }
 
 .newsletter-description {
-    font-size: 19px;
     color: #fff6e0;
+    margin: 0 auto;
     line-height: 1.7;
     margin-bottom: 40px;
     opacity: 0.9;
     color: rgb(245, 223, 172);
+    max-width: 600px;
 }
 
 .newsletter-form {
@@ -118,6 +119,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    ..newsletter-title {
+        font-size: 32px;
+    }
+
     .newsletter-input-group {
         flex-direction: column;
         gap: 12px;
@@ -131,5 +136,9 @@
 
     .newsletter-input {
         width: 100%;
+    }
+
+    .newsletter-description {
+        max-width: 315px;
     }
 }

@@ -145,17 +145,23 @@
     margin-top: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
 .herzameling-page__text-box .link-with-capital {
     font-size: 18px;
     text-decoration: none;
     color: var(--main-font-color);
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1;
 }
 
 .herzameling-page__text-box .link-with-capital::first-letter {
-    font-size: 28px;
+    font-size: 23px;
     font-weight: bold;
+    line-height: 1;
 }
 
 .bottom-books-box {
@@ -250,12 +256,8 @@
         font-size: 18px;
     }
 
-    .herzameling-page__text-box .link-with-capital a {
-        font-size: 18px;
-    }
-
     .herzameling-page__text-box .link-with-capital::first-letter {
-        font-size: 24px;
+        font-size: 23px;
     }
 }
 
@@ -295,7 +297,7 @@
     }
 
     .herzameling-page__text-box .link-with-capital::first-letter {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .bottom-books-box {
@@ -332,7 +334,7 @@
     }
 
     .herzameling-page__text-box .link-with-capital::first-letter {
-        font-size: 20px;
+        font-size: 21px;
     }
 }
 

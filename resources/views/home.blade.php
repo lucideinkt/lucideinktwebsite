@@ -295,8 +295,7 @@
                 <div class="newsletter-content">
                     <h2 class="title newsletter-title">Schrijf je in voor onze Nieuwsbrief</h2>
                     <p class="newsletter-description">
-                        Ontvang updates over nieuwe vertalingen, inspirerende citaten en belangrijke aankondigingen van
-                        Lucide Inkt.
+                        Ontvang updates over nieuwe vertalingen en belangrijke aankondigingen van Lucide Inkt.
                     </p>
 
                     <livewire:newsletter-form />
