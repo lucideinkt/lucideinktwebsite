@@ -8,8 +8,7 @@
 
             <div class="dashboard-header">
                 <h1 class="dashboard-title font-herina">Mijn Dashboard</h1>
-                <p class="dashboard-subtitle">Welkom terug, {{ auth()->user()->first_name }}! Beheer hier je profiel en bestellingen.</p>
-            </div>
+                <p class="dashboard-subtitle">Welkom terug, {{ auth()->user()->first_name }}!             </div>
 
             @if(session('success'))
                 <div class="alert alert-success">

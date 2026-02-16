@@ -14,9 +14,10 @@
 
             @if(session('success'))
                 <div class="alert alert-success">
-                    {{ session('success') }}
+                    <span class="alert-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <span class="alert-text">{{ session('success') }}</span>
                     <button type="button" class="alert-close"
-                        onclick="this.parentElement.style.display='none';">&times;</button>
+                        onclick="this.parentElement.style.display='none';">×</button>
                 </div>
             @endif
 
@@ -33,9 +34,10 @@
             <h2>Mijn Bestellingen</h2>
             @if(session('success'))
                 <div class="alert alert-success" style="position: relative;">
-                    {{ session('success') }}
+                    <span class="alert-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <span class="alert-text">{{ session('success') }}</span>
                     <button type="button" class="alert-close"
-                        onclick="this.parentElement.style.display='none';">&times;</button>
+                        onclick="this.parentElement.style.display='none';">×</button>
                 </div>
             @endif
             <div class="table-wrapper">

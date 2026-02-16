@@ -3,17 +3,19 @@
         {{-- <h2>Winkel</h2> --}}
         @if (session('success'))
             <div class="alert alert-success">
-                {{ session('success') }}
+                <span class="alert-icon"><i class="fa-solid fa-circle-check"></i></span>
+                <span class="alert-text">{{ session('success') }}</span>
                 <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+                    onclick="this.parentElement.style.display='none';">×</button>
             </div>
         @endif
 
         @if (session('error'))
             <div class="alert alert-error">
-                {{ session('error') }}
+                <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                <span class="alert-text">{{ session('error') }}</span>
                 <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+                    onclick="this.parentElement.style.display='none';">×</button>
             </div>
         @endif
 

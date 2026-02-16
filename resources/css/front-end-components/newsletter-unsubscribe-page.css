@@ -1,0 +1,160 @@
+/* =========================================================
+   NEWSLETTER UNSUBSCRIBE PAGE
+   ========================================================= */
+
+.newsletter-unsubscribe-page__text-box {
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
+    border-radius: 10px;
+    padding: 60px 60px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    box-shadow: var(--shadow-1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.newsletter-unsubscribe-page__text-box .title {
+    font-family: var(--font-herina);
+    letter-spacing: 1.5px;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--main-font-color);
+    line-height: 1.3;
+}
+
+.unsubscribe-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.unsubscribe-icon-wrapper .fa-envelope-open-text {
+    font-size: 60px;
+    color: var(--main-color);
+    opacity: 1;
+}
+
+.unsubscribe-message {
+    font-family: var(--font-regular);
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--main-font-color);
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unsubscribe-actions {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.unsubscribe-actions .btn {
+    font-family: var(--font-regular);
+    padding: 14px 32px;
+    font-size: 17px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.unsubscribe-actions .btn i {
+    font-size: 18px;
+}
+
+.ornament-divider {
+    display: block;
+    margin: 40px auto 20px;
+    max-width: 150px;
+    opacity: 0.6;
+}
+
+.unsubscribe-actions .fa-solid.fa-home {
+    color: #fff;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .newsletter-unsubscribe-page__text-box {
+        padding: 40px 30px;
+        margin-top: 10px;
+    }
+
+    .newsletter-unsubscribe-page__text-box .title {
+        font-size: 32px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .unsubscribe-icon-wrapper .fa-envelope-open-text {
+        font-size: 60px;
+    }
+
+    .unsubscribe-message {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .unsubscribe-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .unsubscribe-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .ornament-divider {
+        max-width: 100px;
+        margin: 30px auto 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-unsubscribe-page__text-box {
+        padding: 30px 20px;
+        border-radius: 8px;
+    }
+
+    .newsletter-unsubscribe-page__text-box .title {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .unsubscribe-icon-wrapper .fa-envelope-open-text {
+        font-size: 50px;
+    }
+
+    .unsubscribe-message {
+        font-size: 15px;
+    }
+
+    .unsubscribe-actions .btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+
+
