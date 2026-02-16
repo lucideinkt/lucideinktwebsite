@@ -8,9 +8,10 @@
 }
 
 .sidebar-toggle .fa-bars {
-    font-size: 20px;
+    font-size: 22px;
     cursor: pointer;
     color: var(--main-font-color);
+    margin-right: -3px;
 }
 
 .sidebar {
