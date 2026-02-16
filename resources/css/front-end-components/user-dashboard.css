@@ -59,14 +59,16 @@
     gap: 32px;
 }
 
-/* Dashboard Navigation - Tabs style */
+/* Dashboard Navigation - Tabs style with parchment background */
 .user-dashboard-nav {
-    background: var(--surface-2);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
-    padding: 8px;
-    box-shadow: var(--shadow-1);
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     width: fit-content;
     margin: 0 auto;
+    border: 2px solid var(--border-1);
 }
 
 .user-dashboard-nav ul {
@@ -88,6 +90,7 @@
     font-size: 16px;
     font-weight: 500;
     transition: all 0.3s ease;
+    background-color: transparent;
 }
 
 .user-dashboard-nav .fa-solid {
@@ -95,13 +98,15 @@
 }
 
 .user-dashboard-nav .nav-item:hover {
-    background: rgba(171, 15, 20, 0.05);
+    background: rgba(171, 15, 20, 0.1);
     color: var(--main-color);
+    transform: translateY(-2px);
 }
 
 .user-dashboard-nav .nav-item.active {
-    background: #333;
+    background: var(--main-color);
     color: #fff;
+    box-shadow: 0 2px 8px rgba(171, 15, 20, 0.3);
 }
 
 .user-dashboard-nav .nav-item.active .fa-solid {
@@ -117,7 +122,7 @@
     width: 100%;
 }
 
-/* Overview Cards */
+/* Overview Cards - Parchment style */
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -125,23 +130,24 @@
 }
 
 .overview-card {
-    background: var(--surface-2);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
     border-radius: 12px;
     padding: 32px;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid transparent;
+    border: 2px solid var(--border-1);
 }
 
 .overview-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-color: var(--border-1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--main-color);
 }
 
 .card-icon {
@@ -154,6 +160,7 @@
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    border: 2px solid rgba(171, 15, 20, 0.2);
 }
 
 .card-info h3 {
@@ -161,6 +168,7 @@
     color: var(--main-font-color);
     margin: 0 0 10px 0;
     font-weight: 600;
+    font-family: var(--font-bold);
 }
 
 .card-info p {
@@ -176,28 +184,33 @@
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    background: var(--green-1);
+    background: var(--main-color);
     color: white;
-    border-radius: 4px;
+    border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     transition: all 0.2s ease;
     width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .btn-dashboard:hover {
-    opacity: 0.9;
+    background: var(--red-2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Profile Form Styles */
+/* Profile Form Styles - Parchment background */
 .profile-card {
-    background: var(--surface-2);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
     padding: 2.5rem;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     max-width: 800px;
     margin: 0 auto;
+    border: 2px solid var(--border-1);
 }
 
 .profile-form {
@@ -285,7 +298,7 @@
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: var(--green-1);
+    background: var(--green-2);
     color: white;
     border: none;
     border-radius: 4px;
@@ -293,11 +306,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-}
-
-.profile-form .btn-primary:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+    font-size: 18px;
 }
 
 @media (max-width: 768px) {
@@ -501,12 +510,13 @@
 }
 
 .btn-order-again {
-    background: var(--green-1);
+    background: var(--green-2);
     color: white;
 }
 
-.btn-order-again:hover {
-    opacity: 0.9;
+.user-dashboard-container
+.fa-solid.fa-eye {
+    color: var(--main-font-color);
 }
 
 .order-info-cards {
@@ -811,6 +821,8 @@
 
     .dashboard-subtitle {
         font-size: 1rem;
+        margin-top: 10px;
+        margin-bottom: 25px;
     }
 
     .user-dashboard-nav {
