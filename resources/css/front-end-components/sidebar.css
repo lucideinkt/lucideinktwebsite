@@ -24,7 +24,7 @@
     background: #f5e6ca;
     box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
     transition: right .3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 100;
+    z-index: 110;
     overflow-y: auto;
     overflow-x: hidden;
     border-left: 1px solid #f5e6ca;
