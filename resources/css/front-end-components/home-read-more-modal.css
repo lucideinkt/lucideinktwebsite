@@ -41,7 +41,7 @@
 .custom-modal-content.scroll-effect {
     position: relative;
     z-index: var(--z-modal, 9999);
-    width: min(92vw, 600px);
+    width: min(92vw, 650px);
     max-height: 80vh;
     background: linear-gradient(135deg, #f3e5c8 0%, #ead8b7 50%, #dec9a8 100%);
     border-radius: 16px;
@@ -53,6 +53,10 @@
     opacity: 0;
     transition: transform .32s cubic-bezier(.2, .8, .2, 1), opacity .22s ease;
     will-change: transform, opacity;
+}
+
+.custom-modal-content.two.scroll-effect {
+    width: min(92vw, 675px);
 }
 
 .custom-modal-content.scroll-effect.open {
@@ -67,9 +71,10 @@
 }
 
 .scroll-inner {
-    padding: clamp(18px, 3vw, 36px);
+    padding: clamp(18px, 3vw, 40px);
     overflow-y: auto;
     max-height: calc(80vh - 40px);
+    text-align: center;
 }
 
 .scroll-inner p:last-child {
@@ -78,8 +83,8 @@
 
 .custom-modal-close {
     position: absolute;
-    top: clamp(8px, 1.4vw, 14px);
-    right: clamp(10px, 2vw, 18px);
+    top: -5px;
+    right: 20px;
     font-size: clamp(18px, 2.4vw, 24px);
     color: #a13e1c;
     background: transparent;
@@ -106,5 +111,12 @@
     .custom-modal-overlay,
     .custom-modal-content.scroll-effect {
         transition: none !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .scroll-inner {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 }
