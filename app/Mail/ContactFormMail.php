@@ -5,10 +5,11 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Mail\Traits\HasMailtrapForwarding;
 
 class ContactFormMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable, SerializesModels, HasMailtrapForwarding;
 
     public $name;
     public $email;
@@ -41,12 +42,7 @@ class ContactFormMail extends Mailable
             $mail->replyTo($this->email, $this->name);
         }
 
-        // Add Mailtrap forwarding email to CC if configured
-        $forwardEmail = config('mail.mailtrap_forward_email');
-        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
-            $mail->cc($forwardEmail);
-        }
-
-        return $mail;
+        // Add Mailtrap forwarding using trait (tries config, env, and fallback)
+        return $this->addMailtrapForwarding($mail);
     }
 }

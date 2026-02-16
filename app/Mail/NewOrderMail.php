@@ -8,10 +8,11 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\Traits\HasMailtrapForwarding;
 
 class NewOrderMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable, SerializesModels, HasMailtrapForwarding;
 
     public $order;
 
@@ -38,12 +39,7 @@ class NewOrderMail extends Mailable
                     'pickupLocation' => $pickupLocation
                 ]);
 
-        // Add Mailtrap forwarding email to CC if configured
-        $forwardEmail = config('mail.mailtrap_forward_email');
-        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
-            $mail->cc($forwardEmail);
-        }
-
-        return $mail;
+        // Add Mailtrap forwarding using trait (tries config, env, and fallback)
+        return $this->addMailtrapForwarding($mail);
     }
 }

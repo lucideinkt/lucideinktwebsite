@@ -6,10 +6,11 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Mail\Traits\HasMailtrapForwarding;
 
 class NewUserMail extends Mailable
 {
-  use Queueable, SerializesModels;
+  use Queueable, SerializesModels, HasMailtrapForwarding;
 
   public $user;
 
@@ -26,13 +27,8 @@ class NewUserMail extends Mailable
     $mail = $this->subject('Welkom bij Lucide Inkt')
       ->view('emails.new-user', ['user' => $this->user]);
 
-    // Add Mailtrap forwarding email to CC if configured
-    $forwardEmail = config('mail.mailtrap_forward_email');
-    if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
-        $mail->cc($forwardEmail);
-    }
-
-    return $mail;
+    // Add Mailtrap forwarding using trait (tries config, env, and fallback)
+    return $this->addMailtrapForwarding($mail);
   }
 
 }
