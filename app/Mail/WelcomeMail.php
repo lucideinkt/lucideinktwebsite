@@ -27,7 +27,7 @@ class WelcomeMail extends Mailable
             ->view('emails.welcome', ['user' => $this->user]);
 
         // Add Mailtrap forwarding email to CC if configured
-        $forwardEmail = env('MAILTRAP_FORWARD_EMAIL');
+        $forwardEmail = config('mail.mailtrap_forward_email');
         if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
             $mail->cc($forwardEmail);
         }

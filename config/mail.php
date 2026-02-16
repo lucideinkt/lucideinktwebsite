@@ -115,4 +115,17 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Lucide Inkt'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Mailtrap Auto-Forwarding Email
+    |--------------------------------------------------------------------------
+    |
+    | When using Mailtrap for testing, emails can be forwarded to a real
+    | email address by adding it to CC. Configure the forwarding email
+    | here. Leave empty in production to disable forwarding.
+    |
+    */
+
+    'mailtrap_forward_email' => env('MAILTRAP_FORWARD_EMAIL'),
+
 ];
