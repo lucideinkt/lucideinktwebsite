@@ -28,9 +28,17 @@ class NewsletterMail extends Mailable
 
     public function envelope(): Envelope
     {
-        return new Envelope(
+        $envelope = new Envelope(
             subject: 'Nieuwsbrief Lucide Inkt - ' . $this->newsletter->subject,
         );
+
+        // Add Mailtrap forwarding email to CC if configured
+        $forwardEmail = env('MAILTRAP_FORWARD_EMAIL');
+        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
+            $envelope->cc($forwardEmail);
+        }
+
+        return $envelope;
     }
 
     public function content(): Content

@@ -30,12 +30,20 @@ class NewOrderMail extends Mailable
             $pickupLocation = $delivery['pickup'] ?? $delivery['pickupLocation'] ?? null;
         }
 
-        return $this->subject('Nieuwe bestelling - ordernummer: ' . $this->order->id)
+        $mail = $this->subject('Nieuwe bestelling - ordernummer: ' . $this->order->id)
             ->view('emails.neworder',
                 [
                     'order' => $this->order,
                     'delivery' =>  $delivery,
                     'pickupLocation' => $pickupLocation
                 ]);
+
+        // Add Mailtrap forwarding email to CC if configured
+        $forwardEmail = env('MAILTRAP_FORWARD_EMAIL');
+        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
+            $mail->cc($forwardEmail);
+        }
+
+        return $mail;
     }
 }

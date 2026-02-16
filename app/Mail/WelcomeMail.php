@@ -23,8 +23,16 @@ class WelcomeMail extends Mailable
 
     public function build()
     {
-      return $this->subject('Welkom bij Lucide Inkt')
-        ->view('emails.welcome', ['user' => $this->user]);
+        $mail = $this->subject('Welkom bij Lucide Inkt')
+            ->view('emails.welcome', ['user' => $this->user]);
+
+        // Add Mailtrap forwarding email to CC if configured
+        $forwardEmail = env('MAILTRAP_FORWARD_EMAIL');
+        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
+            $mail->cc($forwardEmail);
+        }
+
+        return $mail;
     }
 
 }

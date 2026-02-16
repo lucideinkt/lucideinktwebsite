@@ -33,7 +33,7 @@ class OrderPaidMail extends Mailable
             $pickupLocation = $delivery['pickup'] ?? $delivery['pickupLocation'] ?? null;
         }
 
-        return $this->subject('Jouw bestelling bij Lucide Inkt')
+        $mail = $this->subject('Jouw bestelling bij Lucide Inkt')
             ->view('emails.orderpaid',
             ['order' => $this->order,
             'delivery' =>  $delivery,
@@ -43,5 +43,13 @@ class OrderPaidMail extends Mailable
                 'as' => 'factuur.pdf',
                 'mime' => 'application/pdf',
             ]);
+
+        // Add Mailtrap forwarding email to CC if configured
+        $forwardEmail = env('MAILTRAP_FORWARD_EMAIL');
+        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
+            $mail->cc($forwardEmail);
+        }
+
+        return $mail;
     }
 }

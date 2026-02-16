@@ -41,6 +41,12 @@ class ContactFormMail extends Mailable
             $mail->replyTo($this->email, $this->name);
         }
 
+        // Add Mailtrap forwarding email to CC if configured
+        $forwardEmail = env('MAILTRAP_FORWARD_EMAIL');
+        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
+            $mail->cc($forwardEmail);
+        }
+
         return $mail;
     }
 }
