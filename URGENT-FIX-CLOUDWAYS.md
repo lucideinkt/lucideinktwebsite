@@ -119,10 +119,13 @@ php artisan tinker
 ```
 
 ```php
-// Test de trait direct
->>> $mail = new \App\Mail\ContactFormMail('Test', 'test@test.com', 'NL', 'Test', 'Test');
->>> $mail->getForwardingEmail()
+// Test de trait direct - simpele test
+>>> (new \App\Mail\ContactFormMail('Test', 'test@test.com', 'NL', 'Test', 'Test'))->getForwardingEmail()
 // Moet returnen: "lucideinkt@gmail.com"
+
+// Of gebruik de uitgebreide debug test
+>>> (new \App\Mail\ContactFormMail('Test', 'test@test.com', 'NL', 'Test', 'Test'))->testForwardingEmail()
+// Toont welke methode werkt (config/env/hardcoded)
 ```
 
 **✅ Als je `"lucideinkt@gmail.com"` ziet = HET WERKT!**

@@ -26,8 +26,9 @@ trait HasMailtrapForwarding
 
     /**
      * Get forwarding email from config, env, or hardcoded fallback
+     * PUBLIC for testing purposes
      */
-    protected function getForwardingEmail(): ?string
+    public function getForwardingEmail(): ?string
     {
         // Method 1: Try config (best practice)
         $email = config('mail.mailtrap_forward_email');
@@ -47,6 +48,46 @@ trait HasMailtrapForwarding
         }
 
         return null;
+    }
+
+    /**
+     * Test method to verify forwarding email detection
+     * Returns debug info about which method worked
+     */
+    public function testForwardingEmail(): array
+    {
+        $result = [
+            'final_email' => null,
+            'method_used' => null,
+            'app_env' => app()->environment(),
+            'config_value' => config('mail.mailtrap_forward_email'),
+            'env_value' => env('MAILTRAP_FORWARD_EMAIL'),
+            'hardcoded_fallback' => app()->environment('staging', 'local', 'development') ? 'lucideinkt@gmail.com' : null,
+        ];
+
+        // Try config
+        if ($result['config_value'] && $result['config_value'] !== '') {
+            $result['final_email'] = $result['config_value'];
+            $result['method_used'] = 'config';
+            return $result;
+        }
+
+        // Try env
+        if ($result['env_value'] && $result['env_value'] !== '') {
+            $result['final_email'] = $result['env_value'];
+            $result['method_used'] = 'env';
+            return $result;
+        }
+
+        // Try hardcoded
+        if ($result['hardcoded_fallback']) {
+            $result['final_email'] = $result['hardcoded_fallback'];
+            $result['method_used'] = 'hardcoded';
+            return $result;
+        }
+
+        $result['method_used'] = 'none';
+        return $result;
     }
 }
 
