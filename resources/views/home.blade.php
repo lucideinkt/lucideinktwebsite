@@ -322,6 +322,9 @@
                     introModal.classList.remove('fading-out');
                     introContent.classList.remove('close');
                     setTimeout(() => introContent.classList.add('open'), 10);
+
+                    // Prevent background scrolling
+                    document.body.style.overflow = 'hidden';
                 }
             }
 
@@ -334,6 +337,9 @@
                     introContent.classList.add('close');
                     introModal.classList.add('fading-out');
                     introModal.classList.remove('show');
+
+                    // Re-enable background scrolling immediately
+                    document.body.style.overflow = '';
 
                     setTimeout(() => {
                         introModal.classList.add('hidden');
@@ -355,6 +361,9 @@
                     herzamelingModal.classList.remove('fading-out');
                     herzamelingContent.classList.remove('close');
                     setTimeout(() => herzamelingContent.classList.add('open'), 10);
+
+                    // Prevent background scrolling
+                    document.body.style.overflow = 'hidden';
                 }
             }
 
@@ -367,6 +376,9 @@
                     herzamelingContent.classList.add('close');
                     herzamelingModal.classList.add('fading-out');
                     herzamelingModal.classList.remove('show');
+
+                    // Re-enable background scrolling immediately
+                    document.body.style.overflow = '';
 
                     setTimeout(() => {
                         herzamelingModal.classList.add('hidden');
@@ -450,18 +462,43 @@
         </script>
 
         <!-- Clock Modal Structure -->
-        <div id="leesMeerModal" class="custom-modal">
+        <div id="leesMeerModal" class="custom-modal clock">
             <div class="custom-modal-overlay"></div>
             <div class="custom-modal-content scroll-effect" id="scrollModalContent">
                 <span class="custom-modal-close" id="closeModalBtn">&times;</span>
-                <div class="scroll-inner">
+                <div class="scroll-inner desktop">
                     <p>
-                        Waarlijk, dit voortrazende leven is een diepe slaap; het vloeit als een droom voorbij… Maar wees
-                        beraden, want de vluchtige minuten des levens dienen als zaden. Terwijl ze ogenschijnlijk
-                        verwelken en vergaan tijdens dit aardse bestaan, ontkiemen en floreren ze in het rijk der
-                        eeuwigheid. Afhankelijk van de wijze waarop ze verstrijken, zullen ze ofwel als duistere
-                        voortbrengselen van onachtzaamheid, ofwel als stralende vruchten van weldaden tot de mens
-                        wederkeren..
+                        <span style="font-feature-settings: 'ss02'">W</span>aarlijk, dit voort<span style="font-feature-settings: 'ss03'">r</span>azende leven is een diepe slaap;<br>
+                        het vloei<span style="font-feature-settings: 'ss02'">t</span> als een droom voorbij...<br>
+                        <span style="font-feature-settings: 'ss02'">M</span>aar wees beraden,<br>
+                        want de vluchti<span style="font-feature-settings: 'ss03'">g</span>e minuten des levens<br>
+                        dienen als zaden.<br>
+                        <span style="font-feature-settings: 'ss02'">T</span>erwijl ze ogenschijnlijk verwelken en vergaan<br>
+                        tijdens dit aardse bes<span style="font-feature-settings: 'ss02'">t</span>aan,<br>
+                        ontkiemen en floreren ze in het rijk der eeuwigheid.<br>
+                        <span style="font-feature-settings: 'ss02'">A</span>fhankelijk van de wijze waarop ze verstrijken,<br>
+                        zullen ze ofwel:<br>
+                        als duistere voortbren<span style="font-feature-settings: 'ss03'">g</span>selen van onachtzaamheid,<br>
+                        ofwel als st<span style="font-feature-settings: 'ss03'">r</span>alende vruchten van weldaden<br>
+                        tot de mens wederkeren.
+                    </p>
+                </div>
+
+                <div class="scroll-inner mobile">
+                    <p>
+                        <span style="font-feature-settings: 'ss02'">W</span>aarlijk, dit voort<span style="font-feature-settings: 'ss03'">r</span>azende leven is een diepe slaap;
+                        het vloei<span style="font-feature-settings: 'ss02'">t</span> als een droom voorbij...
+                        <span style="font-feature-settings: 'ss02'">M</span>aar wees beraden,
+                        want de vluchti<span style="font-feature-settings: 'ss03'">g</span>e minuten des levens
+                        dienen als zaden.
+                        <span style="font-feature-settings: 'ss02'">T</span>erwijl ze ogenschijnlijk verwelken en vergaan
+                        tijdens dit aardse bes<span style="font-feature-settings: 'ss02'">t</span>aan,
+                        ontkiemen en floreren ze in het rijk der eeuwigheid.
+                        <span style="font-feature-settings: 'ss02'">A</span>fhankelijk van de wijze waarop ze verstrijken,
+                        zullen ze ofwel:
+                        als duistere voortbren<span style="font-feature-settings: 'ss03'">g</span>selen van onachtzaamheid,
+                        ofwel als st<span style="font-feature-settings: 'ss03'">r</span>alende vruchten van weldaden
+                        tot de mens wederkeren.
                     </p>
                 </div>
             </div>

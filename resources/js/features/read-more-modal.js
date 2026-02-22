@@ -20,6 +20,9 @@ export function initReadMoreModal() {
         modal.classList.remove('fading-out');
         content.classList.remove('close');
 
+        // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
+
         setTimeout(() => content.classList.add('open'), 10);
     }
 
@@ -28,6 +31,9 @@ export function initReadMoreModal() {
         content.classList.add('close');
         modal.classList.add('fading-out');
         modal.classList.remove('show');
+
+        // Re-enable background scrolling immediately
+        document.body.style.overflow = '';
 
         setTimeout(() => {
             modal.classList.add('hidden');
@@ -41,12 +47,14 @@ export function initReadMoreModal() {
 
     window.addEventListener('click', (event) => {
         if (event.target === modal || event.target.classList.contains('custom-modal-overlay')) {
-            closeModal();
+            if (modal.classList.contains('show')) {
+                closeModal();
+            }
         }
     });
 
     window.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && modal.classList.contains('show')) {
             closeModal();
         }
     });

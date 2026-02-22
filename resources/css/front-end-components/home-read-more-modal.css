@@ -2,6 +2,33 @@
    Homepage read more modal
    ========================================================= */
 
+/* Prevent layout shift when body scroll is locked */
+body.modal-open {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0);
+}
+
+/* Clock modal specific styles */
+
+.custom-modal.clock .scroll-inner p,
+.custom-modal.clock .scroll-inner,
+#leesMeerModal .scroll-inner p,
+#leesMeerModal .scroll-inner .desktop p,
+#leesMeerModal .scroll-inner .mobile p,
+#leesMeerModal p {
+    font-family: roca, "Times New Roman", serif !important;
+    font-weight: 400 !important;  /* Light - lightest available weight for Roca */
+    font-style: normal !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    text-rendering: optimizeLegibility;
+
+    /* OpenType features */
+    font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+    font-size: 20px;
+}
+
 .custom-modal {
     position: fixed;
     inset: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
@@ -12,6 +39,7 @@
     padding: clamp(12px, 2vw, 32px);
     --modal-backdrop: rgba(0, 0, 0, .35);
 }
+
 
 .custom-modal.hidden {
     display: none;
@@ -35,6 +63,10 @@
 
 .custom-modal.fading-out .custom-modal-overlay {
     opacity: 0;
+    pointer-events: none;
+}
+
+.custom-modal.fading-out {
     pointer-events: none;
 }
 
@@ -75,6 +107,16 @@
     overflow-y: auto;
     max-height: calc(80vh - 40px);
     text-align: center;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.scroll-inner.desktop {
+    display: block;
+}
+
+.scroll-inner.mobile {
+    display: none;
 }
 
 .scroll-inner p:last-child {
@@ -83,27 +125,44 @@
 
 .custom-modal-close {
     position: absolute;
-    top: -5px;
-    right: 20px;
-    font-size: clamp(18px, 2.4vw, 24px);
-    color: #a13e1c;
-    background: transparent;
-    border: none;
+    top: -8px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 1;
+    color: #f5ede0;
+    background: #8b6f47;
+    border: 1.5px solid #c9b18a;
+    border-radius: 50%;
     cursor: pointer;
-    z-index: 3;
-    padding: 6px;
+    z-index: 10;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08),
+                0 1px 2px rgba(0, 0, 0, 0.06);
+    font-weight: 400;
+    user-select: none;
 }
 
 .custom-modal-close:focus {
-    outline: 3px solid rgba(161, 62, 28, .15);
+    outline: 2px solid rgba(139, 111, 71, .3);
     outline-offset: 2px;
 }
 
 .custom-modal-close:hover {
-    color: #b85c38;
+    background: #9d7d52;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12),
+                0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.custom-modal-close:active {
+    transform: scale(0.96);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -118,5 +177,49 @@
     .scroll-inner {
         padding-top: 40px;
         padding-bottom: 40px;
+    }
+
+    .scroll-inner.desktop {
+        display: none;
+    }
+
+    .scroll-inner.mobile {
+        display: block;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .custom-modal-close {
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        border-width: 1.5px;
+        background: #8b6f47;
+    }
+
+    .custom-modal-close:hover,
+    .custom-modal-close:active {
+        background: #9d7d52;
+    }
+
+    .custom-modal.clock .scroll-inner p,
+    .custom-modal.clock .scroll-inner,
+    #leesMeerModal .scroll-inner p,
+    #leesMeerModal .scroll-inner .desktop p,
+    #leesMeerModal .scroll-inner .mobile p,
+    #leesMeerModal p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .custom-modal-close {
+        top: -6px;
+        right: -6px;
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
     }
 }

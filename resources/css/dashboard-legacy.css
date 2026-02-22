@@ -2064,15 +2064,15 @@ thead {
     .user-profile-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .user-profile-card-full {
         grid-column: 1;
     }
-    
+
     .order-stats {
         grid-template-columns: 1fr;
     }
-    
+
     .profile-fields-grid {
         grid-template-columns: 1fr;
         gap: 20px;
