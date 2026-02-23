@@ -613,6 +613,11 @@
     border: none !important;
 }
 
+/* Make delivery card span full width */
+.order-delivery-card {
+    grid-column: 1 / -1;
+}
+
 .address-card-title {
     font-size: 20px;
     color: var(--main-font-color);
@@ -701,6 +706,7 @@
     background-color: #f5ecce !important;
     background-image: url("../../images/little-pluses.png") !important;
     border: none !important;
+    grid-column: 1 / -1;
 }
 
 .order-note-title {

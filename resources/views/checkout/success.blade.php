@@ -107,71 +107,7 @@
                 </div>
 
                 <div class="order-addresses-grid">
-                    @if(isset($delivery) && !empty($delivery['deliveryType']) && strtolower($delivery['deliveryType']) === 'pickup')
-                        <div class="order-address-card">
-                            <h3 class="address-card-title">
-                                <i class="fa-solid fa-map-marker-alt"></i>
-                                Bezorging
-                            </h3>
-                            <div class="address-card-content">
-                                <p class="delivery-type"><strong>Afhalen bij afhaalpunt</strong></p>
-                                @if($pickupLocation)
-                                    <div class="pickup-location">
-                                        <p class="location-name">{{ $pickupLocation['locationName'] ?? '-' }}</p>
-                                        <p class="location-address">
-                                            {{ $pickupLocation['street'] ?? '' }} {{ $pickupLocation['number'] ?? '' }}<br>
-                                            {{ $pickupLocation['postalCode'] ?? '' }} {{ $pickupLocation['city'] ?? '' }}
-                                        </p>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    @else
-                        <div class="order-address-card">
-                            <h3 class="address-card-title">
-                                <i class="fa-solid fa-truck"></i>
-                                Bezorging
-                            </h3>
-                            <div class="address-card-content">
-                                <p class="delivery-type"><strong>Thuisbezorging</strong></p>
-                            </div>
-                        </div>
-                    @endif
-
-                    <div class="order-address-card">
-                        <h3 class="address-card-title">
-                            <i class="fa-solid fa-file-invoice"></i>
-                            Factuuradres
-                        </h3>
-                        <div class="address-card-content">
-                            <p class="address-name">
-                                {{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}
-                            </p>
-                            @if($order->customer->billing_company)
-                                <p class="address-company">{{ $order->customer->billing_company }}</p>
-                            @endif
-                            <p class="address-street">
-                                {{ $order->customer->billing_street }} {{ $order->customer->billing_house_number }}{{ $order->customer->billing_house_number_addition ? ' '.$order->customer->billing_house_number_addition : '' }}
-                            </p>
-                            <p class="address-city">
-                                {{ $order->customer->billing_postal_code }} {{ $order->customer->billing_city }}
-                            </p>
-                            <p class="address-country">
-                                {{ config('countries.' . $order->customer->billing_country) ?? $order->customer->billing_country }}
-                            </p>
-                            @if($order->customer->billing_phone)
-                                <p class="address-phone">
-                                    <i class="fa-solid fa-phone"></i>
-                                    {{ $order->customer->billing_phone }}
-                                </p>
-                            @endif
-                            <p class="address-email">
-                                <i class="fa-solid fa-envelope"></i>
-                                {{ $order->customer->billing_email }}
-                            </p>
-                        </div>
-                    </div>
-
+                    {{-- Verzendadres and Factuuradres side-by-side --}}
                     @if($order->shipping_street)
                         <div class="order-address-card">
                             <h3 class="address-card-title">
@@ -234,17 +170,83 @@
                         </div>
                     @endif
 
-                        @if($order->order_note)
-                            <div class="order-note-card">
-                                <h3 class="order-note-title">
-                                    <i class="fa-solid fa-sticky-note"></i>
-                                    Bestelnotitie
-                                </h3>
-                                <div class="order-note-content">
-                                    <p>{{ $order->order_note }}</p>
-                                </div>
+                    <div class="order-address-card">
+                        <h3 class="address-card-title">
+                            <i class="fa-solid fa-file-invoice"></i>
+                            Factuuradres
+                        </h3>
+                        <div class="address-card-content">
+                            <p class="address-name">
+                                {{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}
+                            </p>
+                            @if($order->customer->billing_company)
+                                <p class="address-company">{{ $order->customer->billing_company }}</p>
+                            @endif
+                            <p class="address-street">
+                                {{ $order->customer->billing_street }} {{ $order->customer->billing_house_number }}{{ $order->customer->billing_house_number_addition ? ' '.$order->customer->billing_house_number_addition : '' }}
+                            </p>
+                            <p class="address-city">
+                                {{ $order->customer->billing_postal_code }} {{ $order->customer->billing_city }}
+                            </p>
+                            <p class="address-country">
+                                {{ config('countries.' . $order->customer->billing_country) ?? $order->customer->billing_country }}
+                            </p>
+                            @if($order->customer->billing_phone)
+                                <p class="address-phone">
+                                    <i class="fa-solid fa-phone"></i>
+                                    {{ $order->customer->billing_phone }}
+                                </p>
+                            @endif
+                            <p class="address-email">
+                                <i class="fa-solid fa-envelope"></i>
+                                {{ $order->customer->billing_email }}
+                            </p>
+                        </div>
+                    </div>
+
+                    {{-- Bezorging below addresses (full width) --}}
+                    @if(isset($delivery) && !empty($delivery['deliveryType']) && strtolower($delivery['deliveryType']) === 'pickup')
+                        <div class="order-address-card order-delivery-card">
+                            <h3 class="address-card-title">
+                                <i class="fa-solid fa-map-marker-alt"></i>
+                                Bezorging
+                            </h3>
+                            <div class="address-card-content">
+                                <p class="delivery-type"><strong>Afhalen bij afhaalpunt</strong></p>
+                                @if($pickupLocation)
+                                    <div class="pickup-location">
+                                        <p class="location-name">{{ $pickupLocation['locationName'] ?? '-' }}</p>
+                                        <p class="location-address">
+                                            {{ $pickupLocation['street'] ?? '' }} {{ $pickupLocation['number'] ?? '' }}<br>
+                                            {{ $pickupLocation['postalCode'] ?? '' }} {{ $pickupLocation['city'] ?? '' }}
+                                        </p>
+                                    </div>
+                                @endif
                             </div>
-                        @endif
+                        </div>
+                    @else
+                        <div class="order-address-card order-delivery-card">
+                            <h3 class="address-card-title">
+                                <i class="fa-solid fa-truck"></i>
+                                Bezorging
+                            </h3>
+                            <div class="address-card-content">
+                                <p class="delivery-type"><strong>Thuisbezorging</strong></p>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if($order->order_note)
+                        <div class="order-note-card">
+                            <h3 class="order-note-title">
+                                <i class="fa-solid fa-sticky-note"></i>
+                                Bestelnotitie
+                            </h3>
+                            <div class="order-note-content">
+                                <p>{{ $order->order_note }}</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="order-confirmation-note">
