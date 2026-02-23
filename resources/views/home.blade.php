@@ -465,7 +465,7 @@
         <div id="leesMeerModal" class="custom-modal clock">
             <div class="custom-modal-overlay"></div>
             <div class="custom-modal-content scroll-effect" id="scrollModalContent">
-                <span class="custom-modal-close" id="closeModalBtn">&times;</span>
+                <span class="custom-modal-close" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></span>
                 <div class="scroll-inner desktop">
                     <p>
                         <span style="font-feature-settings: 'ss02'">W</span>aarlijk, dit voort<span style="font-feature-settings: 'ss03'">r</span>azende leven is een diepe slaap;<br>

@@ -154,6 +154,11 @@ body.modal-open {
     text-align: center;
 }
 
+.custom-modal-close .fa-xmark {
+    color: #f5ede0;
+    font-size: 11px;
+}
+
 .custom-modal-close:focus {
     outline: 2px solid rgba(139, 111, 71, .3);
     outline-offset: 2px;
@@ -199,8 +204,8 @@ body.modal-open {
     .custom-modal-close {
         top: 8px;
         right: 8px;
-        width: 32px;
-        height: 32px;
+        width: 25px;
+        height: 25px;
         font-size: 18px;
         border-width: 1.5px;
         background: #8b6f47;
