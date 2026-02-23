@@ -27,6 +27,10 @@ body.modal-open {
     /* OpenType features */
     font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
     font-size: 20px;
+
+    color: var(--main-font-color);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .custom-modal {
@@ -73,13 +77,14 @@ body.modal-open {
 .custom-modal-content.scroll-effect {
     position: relative;
     z-index: var(--z-modal, 9999);
-    width: min(92vw, 650px);
+    width: min(92vw, 575px);
     max-height: 80vh;
     background: linear-gradient(135deg, #f3e5c8 0%, #ead8b7 50%, #dec9a8 100%);
     border-radius: 16px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, .18);
     border: 1px solid rgba(191, 163, 107, .9);
-    color: #203f21;
+    /*color: #203f21;*/
+    color: var(--main-font-color);
     overflow: visible;
     transform: translateY(8px) scale(.98);
     opacity: 0;
@@ -137,7 +142,7 @@ body.modal-open {
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
@@ -145,6 +150,8 @@ body.modal-open {
                 0 1px 2px rgba(0, 0, 0, 0.06);
     font-weight: 400;
     user-select: none;
+    padding: 0;
+    text-align: center;
 }
 
 .custom-modal-close:focus {
