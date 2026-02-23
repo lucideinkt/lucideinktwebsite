@@ -508,7 +508,7 @@
         <div id="introModal" class="custom-modal hidden">
             <div class="custom-modal-overlay"></div>
             <div class="custom-modal-content two scroll-effect" id="introModalContent">
-                <span class="custom-modal-close" id="closeIntroModalBtn">&times;</span>
+                <span class="custom-modal-close" id="closeIntroModalBtn"><i class="fa-solid fa-xmark"></i></span>
                 <div class="scroll-inner two">
                     <p>
                         Lucide Inkt is een non-profit organisatie,
