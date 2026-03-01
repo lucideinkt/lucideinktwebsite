@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :SEOData="$SEOData">
     <main class="container page contact-page">
         <x-breadcrumbs :items="[
           ['label' => 'Home', 'url' => route('home')],

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :SEOData="$SEOData">
     <main class="page home">
 
         <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/011_background.webp') }}');">

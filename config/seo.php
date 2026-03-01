@@ -69,7 +69,7 @@ return [
          *
          * For example, if you have a page with the url '/foo/about-me', we'll automatically set the title to 'About me' and append the site suffix.
          */
-        'infer_title_from_url' => true,
+        'infer_title_from_url' => false,
 
         /**
          * Use this setting to provide a suffix that will be added after the title on each page.
@@ -82,7 +82,7 @@ return [
          * so you'll need to add the suffix manually if you want that. If set to null, we'll determine the title
          * just like the other pages.
          */
-        'homepage_title' => null,
+        'homepage_title' => 'Lucide Inkt | Risale-i Nur Vertalingen',
     ],
 
     'description' => [
@@ -91,7 +91,7 @@ return [
          * where we don't have a description set via an associated ->seo model or via
          * the ->getDynamicSEOData() method.
          */
-        'fallback' => null,
+        'fallback' => 'Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de Qur\'anische richtlijnen van de Risale-i Nur.',
     ],
 
     'image' => [
