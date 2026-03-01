@@ -21,14 +21,14 @@
 
 .online-lezen-title {
     font-family: var(--font-herina);
-    font-size: 50px;
+    font-size: 52px;
     font-weight: 400;
     color: var(--main-font-color);
     margin-bottom: 20px;
     letter-spacing: 2px;
     position: relative;
     display: inline-block;
-    line-height: 3.4rem;
+    line-height: 1.2;
     margin-top: 0px !important;
 }
 
@@ -485,7 +485,7 @@
     }
 
     .online-lezen-title {
-        font-size: 2.2rem;
+        font-size: 38px;
         letter-spacing: 1.5px;
     }
 
@@ -521,15 +521,17 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .online-lezen-header {
         margin-bottom: 20px;
         padding: 0px 15px 0;
     }
 
     .online-lezen-title {
-        font-size: 1.8rem;
+        font-size: 30px;
         letter-spacing: 1px;
+        margin-bottom: 10px;
+        line-height: 1.6;
     }
 
     .online-lezen-title::after {

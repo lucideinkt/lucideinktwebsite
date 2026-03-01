@@ -13,28 +13,44 @@
     margin-bottom: 20px;
 }
 
+.shop-header-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
 .shop-title {
-    font-family: var(--font-herina);
-    font-size: 50px;
-    font-weight: 400;
-    color: #fffcf4;
-    margin-bottom: 0px;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    line-height: 1.2;
-    margin-top: 0px !important;
-    background-image: url('../../images/wooden_bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    padding: 45px 200px;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    opacity: 1;
+    /*font-family: var(--font-herina);*/
+    /*font-size: 50px;*/
+    /*font-weight: 400;*/
+    /*color: #fffcf4;*/
+    /*margin-bottom: 0px;*/
+    /*letter-spacing: 2px;*/
+    /*position: relative;*/
+    /*display: inline-block;*/
+    /*line-height: 1.2;*/
+    /*margin-top: 0px !important;*/
+    /*background-image: url('../../images/our_store.webp');*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*border-radius: 10px;*/
+    /*padding: 45px 200px;*/
+    /*padding-top: 20px;*/
+    /*padding-bottom: 15px;*/
+    /*text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);*/
+    /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
+    /*opacity: 1;*/
 }
 
 .shop-title::after {
@@ -507,6 +523,10 @@
     .page.shop .book-box {
         margin-top: 10px;
     }
+
+    .shop-header-image {
+        width: 300px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -542,6 +562,10 @@
 
     .product-cards-grid {
         margin-top: 0;
+    }
+
+    .shop-header-image {
+        width: 275px;
     }
 }
 
