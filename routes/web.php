@@ -182,16 +182,10 @@ Route::get('/newsletter/unsubscribe/{token}', [NewsletterController::class, 'uns
 
 // Pages
 Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/risale-i-nur', function () {
-    return view('risale');
-})->name('risale');
-Route::get('/herzameling', function () {
-    return view('herzameling');
-})->name('herzameling');
+Route::get('/risale-i-nur', [PageController::class, 'risale'])->name('risale');
+Route::get('/herzameling', [PageController::class, 'herzameling'])->name('herzameling');
 Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi');
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/algemene-voorwaarden', function () {
     return view('algemene-voorwaarden');
 })->name('algemeneVoorwaarden');

@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {{-- Additional meta tags for better social sharing --}}
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Lucide Inkt">
+    <meta name="twitter:card" content="summary_large_image">
+
     @stack('head')
 
     @if(!request()->routeIs('productShow'))
