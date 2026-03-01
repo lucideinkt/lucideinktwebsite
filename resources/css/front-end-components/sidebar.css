@@ -11,7 +11,8 @@
     font-size: 22px;
     cursor: pointer;
     color: var(--main-font-color);
-    margin-right: -3px;
+    margin-right: 0px;
+    margin-top: 0px;
 }
 
 .sidebar {
