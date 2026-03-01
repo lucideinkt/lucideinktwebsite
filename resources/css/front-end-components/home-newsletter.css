@@ -136,7 +136,9 @@
 
     .newsletter-input {
         width: 100%;
+        padding: 10px 15px;
     }
+
 
     .newsletter-description {
         max-width: 315px;

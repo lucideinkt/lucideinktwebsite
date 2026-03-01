@@ -513,31 +513,185 @@ h2 {
 
 /* Read More Link */
 .risale-section .read-more-link {
-    display: block;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    color: var(--main-color);
+    gap: 10px;
+    padding: 4px 30px;
+    background: linear-gradient(135deg, rgba(153, 109, 63, 0.12) 0%, rgba(197, 160, 89, 0.08) 100%);
+    border: 2px solid rgba(153, 109, 63, 0.3);
+    border-radius: 20px;
+    color: #620505;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0px;
     transition: all 0.3s ease;
-    opacity: 0.8;
-    margin-top: -5px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 8px rgba(153, 109, 63, 0.15);
+    margin-top: 0px;
+    font-family: var(--font-bold);
+}
+
+.risale-section .read-more-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(153, 109, 63, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.risale-section .read-more-link:hover::before {
+    left: 100%;
 }
 
 .risale-section .read-more-link:hover {
-    opacity: 1;
-    gap: 12px;
+    background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
+    border-color: rgba(153, 109, 63, 0.5);
+    color: #620505;
+    box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
 }
 
 .risale-section .read-more-link i {
     font-size: 14px;
     transition: transform 0.3s ease;
+    color: #620505;
 }
 
 .risale-section .read-more-link:hover i {
-    transform: translateX(3px);
+    transform: translateX(4px);
 }
+
+/* Said Nursi Read More Link */
+.said-nursi-section .read-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 30px;
+    background: linear-gradient(135deg, rgba(153, 109, 63, 0.12) 0%, rgba(197, 160, 89, 0.08) 100%);
+    border: 2px solid rgba(153, 109, 63, 0.3);
+    border-radius: 20px;
+    color: #620505;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 8px rgba(153, 109, 63, 0.15);
+    margin-top: 15px;
+    font-family: var(--font-bold);
+}
+
+.said-nursi-section .read-more-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(153, 109, 63, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.said-nursi-section .read-more-link:hover::before {
+    left: 100%;
+}
+
+.said-nursi-section .read-more-link:hover {
+    background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
+    border-color: rgba(153, 109, 63, 0.5);
+    color: #620505;
+    box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
+}
+
+.said-nursi-section .read-more-link i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    color: #620505;
+}
+
+.said-nursi-section .read-more-link:hover i {
+    transform: translateX(4px);
+}
+
+/* Herzameling Button in Colored Section */
+.colored-section .herzameling-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 30px;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.25) 0%, rgba(245, 223, 172, 0.20) 100%);
+    border: 2px solid rgba(245, 223, 172, 0.6);
+    border-radius: 20px;
+    color: rgb(255, 245, 220);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: var(--font-bold);
+}
+
+.colored-section .herzameling-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 223, 172, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.colored-section .herzameling-btn:hover::before {
+    left: 100%;
+}
+
+.colored-section .herzameling-btn:hover {
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.35) 0%, rgba(245, 223, 172, 0.30) 100%);
+    border-color: rgba(245, 223, 172, 0.8);
+    color: rgb(255, 250, 235);
+    text-shadow: 0 0 8px rgba(245, 223, 172, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+    /*transform: translateY(-2px);*/
+    box-shadow: 0 4px 20px rgba(245, 223, 172, 0.3), 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.colored-section .herzameling-btn i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    color: rgb(245, 223, 172);
+}
+
+.colored-section .herzameling-btn:hover i {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .colored-section .herzameling-btn {
+        padding: 4px 24px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .colored-section .herzameling-btn {
+        padding: 4px 20px;
+        font-size: 14px;
+    }
+}
+
 
 /* Risale Image */
 .risale-section .risale-image {
@@ -594,6 +748,7 @@ h2 {
     font-style: italic;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     letter-spacing: 0.3px;
+    margin-bottom: 30px;
 }
 
 .said-nursi-section .risale-content .sub-text a {
@@ -631,7 +786,7 @@ h2 {
     display: inline-block;
     margin-top: 15px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 /* ---------------------------------------------------------
@@ -858,6 +1013,7 @@ h2 {
 
     .home-book-grid .book .btn {
         padding-top: 1px;
+        font-size: 14px;
     }
 
     .colored-section .risale .second img {
@@ -943,8 +1099,13 @@ h2 {
     }
 
     .said-nursi-section .risale-content .sub-text a {
-        font-size: 15px;
+        font-size: 14px;
     }
+
+    .risale-section .read-more-link {
+        font-size: 14px;
+    }
+
 }
 
 @media (max-width: 480px) {
