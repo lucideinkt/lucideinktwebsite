@@ -11,10 +11,10 @@ class PageController extends Controller
     {
         return view('home', [
             'SEOData' => new SEOData(
-                title: 'Lucide Inkt | Risale-i Nur Vertalingen',
-                description: 'Lucide Inkt is een non-profit organisatie toegewijd aan het verlenen van diensten volgens de Qur\'anische richtlijnen van de Risale-i Nur. Met Nederlandse en Engelse vertalingen van deze boekenreeks streven wij ernaar zoekers te voorzien van antwoorden op de belangrijkste bestaansvragen van de mens.',
+                title: 'Lucide Inkt | Nederlandse en Engelse vertalingen van de Risale-i Nur',
+                description: 'Lucide Inkt is een non-profit organisatie die zich richt op de verspreiding van geloofswaarheden die omschreven zijn in de boekenreeks van de Risale-i Nur.',
                 url: route('home'),
-                image: secure_url('images/logo_newest.webp'),
+                image: secure_url('images/books_standing_new.webp'),
                 author: 'Lucide Inkt',
                 locale: 'nl_NL',
                 site_name: 'Lucide Inkt',
@@ -27,10 +27,10 @@ class PageController extends Controller
     {
         return view('saidnursi', [
             'SEOData' => new SEOData(
-                title: 'Bediüzzaman Said Nursi - Lucide Inkt',
-                description: 'Bediüzzaman Said Nursi, de vertolker van de Risale-i Nur. Een uitzonderlijk individu dat zich met verheven vaardigheden en gezegende kennis op een volwaardige wijze aan het verspreiden en authenticeren van de Mohammedaanse religie heeft gewijd.',
+                title: 'Lucide Inkt | Bediüzzaman Said Nursi',
+                description: 'Ik zal de wereld bewijzen dat de Qur’an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!',
                 url: route('saidnursi'),
-                image: secure_url('images/logo_newest.webp'),
+                image: secure_url('images/said_nursi_sharp.jpg'),
                 author: 'Lucide Inkt',
                 locale: 'nl_NL',
                 site_name: 'Lucide Inkt',
@@ -43,10 +43,10 @@ class PageController extends Controller
     {
         return view('risale', [
             'SEOData' => new SEOData(
-                title: 'Risale-i Nur - De Verlichting van de Qur\'an',
-                description: 'De Risale-i Nur is een commentaar op de Qur\'an die de geloofswaarheden aan het licht brengt met krachtige redeneringen. Ontdek deze spirituele Tafsir en haar diepgaande wijsheid.',
+                title: 'Lucide Inkt | Wat is de Risale-i Nur?',
+                description: 'Als een ware spirituele tafsir van de Qur’an voldoet de Risale-i Nur aan alle behoeften van deze tijd. Het enige wat van de lezer gevraagd wordt, is lezen met een aandachtige blik en een onbevooroordeeld hart.',
                 url: route('risale'),
-                image: secure_url('images/logo_newest.webp'),
+                image: secure_url('images/books-stapel.webp'),
                 author: 'Lucide Inkt',
                 locale: 'nl_NL',
                 site_name: 'Lucide Inkt',
@@ -59,10 +59,10 @@ class PageController extends Controller
     {
         return view('herzameling', [
             'SEOData' => new SEOData(
-                title: 'Herzameling - Het Hiernamaals | Lucide Inkt',
-                description: 'Definitieve antwoorden op cruciale bestaansvragen. Ontdek waarom de herzameling in het hiernamaals noodzakelijk is met onbetwistbare redenaties uit de Risale-i Nur.',
+                title: 'Lucide Inkt | Het Traktaat over de Herzameling',
+                description: 'Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.',
                 url: route('herzameling'),
-                image: secure_url('images/logo_newest.webp'),
+                image: secure_url('images/books/herzameling/NederlandsHerzameling.webp'),
                 author: 'Lucide Inkt',
                 locale: 'nl_NL',
                 site_name: 'Lucide Inkt',
@@ -75,10 +75,10 @@ class PageController extends Controller
     {
         return view('contact', [
             'SEOData' => new SEOData(
-                title: 'Contact - Lucide Inkt',
+                title: 'Lucide Inkt | Contact',
                 description: 'Neem contact op met Lucide Inkt voor vragen over de Risale-i Nur vertalingen of onze diensten.',
                 url: route('contact'),
-                image: secure_url('images/logo_newest.webp'),
+                image: secure_url('images/books_standing_new.webp'),
                 author: 'Lucide Inkt',
                 locale: 'nl_NL',
                 site_name: 'Lucide Inkt',
