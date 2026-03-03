@@ -8,14 +8,14 @@ use Illuminate\View\Component;
 
 class Layout extends Component
 {
-    public $SEOData;
+    public $seoData;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($SEOData = null)
+    public function __construct($seoData = null)
     {
-        $this->SEOData = $SEOData;
+        $this->seoData = $seoData;
     }
 
     /**

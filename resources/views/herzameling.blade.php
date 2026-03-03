@@ -1,4 +1,4 @@
-<x-layout :SEOData="$SEOData">
+<x-layout :seo-data="$SEOData">
     <main class="container page">
         <div class="herzameling-page__text-box">
             <h1 class="title"><span class="title-h"></span>et <span class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t ov<span class="title-e-r"></span> de <span class="word-break-mobile"><span class="title-h"></span>e<span class="title-r"></span>za<span class="title-me"></span>l<span class="title-in"></span>g</span></h1>

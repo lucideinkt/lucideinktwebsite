@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :seo-data="$SEOData">
     <main class="container page shop">
         {{-- <h2>Winkel</h2> --}}
         @if (session('success'))

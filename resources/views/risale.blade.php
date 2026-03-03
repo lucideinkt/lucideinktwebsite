@@ -1,4 +1,4 @@
-<x-layout :SEOData="$SEOData">
+<x-layout :seo-data="$SEOData">
     <main class="container page">
         <div class="risale-i-nur-page__text-box">
             <h1 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h1>

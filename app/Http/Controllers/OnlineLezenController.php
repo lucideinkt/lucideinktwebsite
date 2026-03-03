@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\SEOService;
 use Illuminate\Http\Request;
 
 class OnlineLezenController extends Controller
@@ -20,7 +21,10 @@ class OnlineLezenController extends Controller
             ->orderBy('title', 'asc')
             ->get();
 
-        return view('online-lezen', compact('products'));
+        return view('online-lezen', [
+            'products' => $products,
+            'SEOData' => SEOService::getPageSEO('online-lezen'),
+        ]);
     }
 
     /**
@@ -32,6 +36,9 @@ class OnlineLezenController extends Controller
             ->where('is_published', 1)
             ->firstOrFail();
 
-        return view('online-lezen-reader', compact('product'));
+        return view('online-lezen-reader', [
+            'product' => $product,
+            'SEOData' => SEOService::getProductSEO($product, 'online-lezen'),
+        ]);
     }
 }

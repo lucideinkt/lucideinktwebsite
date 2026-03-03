@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCopy as ProductCopy;
+use App\Services\SEOService;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -17,7 +18,10 @@ class ShopController extends Controller
             ->get();
 //            ->unique('base_slug');
 
-        return view('shop.index', ['products' => $products]);
+        return view('shop.index', [
+            'products' => $products,
+            'SEOData' => SEOService::getPageSEO('shop'),
+        ]);
     }
 
     public function show(string $slug)

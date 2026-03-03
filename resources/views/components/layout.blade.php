@@ -14,9 +14,17 @@
     @stack('head')
 
     @if(!request()->routeIs('productShow'))
-        @if(isset($SEOData))
-            {!! seo($SEOData) !!}
+        @if(isset($seoData))
+            {{-- Debug: seoData is set --}}
+            @if(config('app.debug'))
+                <!-- SEOData Debug: Title={{ $seoData->title ?? 'NULL' }}, Description={{ $seoData->description ?? 'NULL' }} -->
+            @endif
+            {!! seo($seoData) !!}
         @else
+            {{-- Debug: seoData is NOT set, using defaults --}}
+            @if(config('app.debug'))
+                <!-- SEOData Debug: Using default SEO data -->
+            @endif
             {!! seo() !!}
         @endif
     @endif
