@@ -30,13 +30,19 @@ class OnlineLezenController extends Controller
     /**
      * Display the PDF reader for a specific book
      */
-    public function read($slug)
+    public function read(Request $request, $slug)
     {
         $product = Product::where('slug', $slug)
             ->where('is_published', 1)
             ->firstOrFail();
 
-        return view('online-lezen-reader', [
+        // Check if fullscreen mode is requested
+        $isFullscreen = $request->query('fullscreen') === '1';
+
+        // Use fullscreen layout if parameter is present
+        $view = $isFullscreen ? 'online-lezen-reader-fullscreen' : 'online-lezen-reader';
+
+        return view($view, [
             'product' => $product,
             'SEOData' => SEOService::getProductSEO($product, 'online-lezen'),
         ]);

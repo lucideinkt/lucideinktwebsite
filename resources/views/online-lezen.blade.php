@@ -13,7 +13,7 @@
         <div class="online-lezen-grid">
             @forelse ($products as $product)
                 <div class="online-book-card">
-                    <a href="{{ route('onlineLezenRead', $product->slug) }}" class="online-book-link">
+                    <a href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link">
                         <div class="online-book-image-wrapper">
                             @if ($product->image_1)
                                 @php

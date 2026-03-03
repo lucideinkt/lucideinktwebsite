@@ -289,7 +289,7 @@
         /* Close button */
         .fullscreen-close-btn {
             position: absolute;
-            top: 20px;
+            top: 40px;
             right: 20px;
             background-color: rgba(255, 255, 255, 0.9);
             border: none;
@@ -489,6 +489,7 @@
                 document.body.style.overflow = '';
 
                 if (pdfContainer) pdfContainer.style.display = 'block';
+
 
                 // Reload normal iframe with last known page
                 if (normalIframe && lastKnownPage > 0) {
