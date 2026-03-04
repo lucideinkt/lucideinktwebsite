@@ -214,6 +214,90 @@
         }
     </script>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Terug naar boven">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <style>
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #620505 0%, #8b0707 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(98, 5, 5, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.show {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: linear-gradient(135deg, #8b0707 0%, #620505 100%);
+            box-shadow: 0 6px 16px rgba(98, 5, 5, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(98, 5, 5, 0.3);
+        }
+
+        .back-to-top i {
+            pointer-events: none;
+            color: #f5dfac;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 18px;
+            }
+        }
+    </style>
+
+    <script>
+        // Back to Top functionality
+        const backToTopBtn = document.getElementById('backToTop');
+
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll to top when clicked
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
 </body>
 
 </html>
