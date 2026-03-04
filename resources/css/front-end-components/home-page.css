@@ -274,11 +274,11 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 20px;
+    margin-top: 10px;
     box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
     position: relative;
     overflow: hidden;
-    margin-top: 10px;
+    font-family: var(--font-bold);
 }
 
 .read-more-btn::before {

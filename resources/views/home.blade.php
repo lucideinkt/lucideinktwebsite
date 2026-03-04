@@ -46,9 +46,26 @@
                         </div>
 
                     </div>
+
+                    <!-- CTA Buttons on the right side -->
+                    <div class="hero-cta-buttons">
+                        <a href="{{ route('onlineLezen') }}" class="hero-cta-btn">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span class="cta-span">Online Lezen</span>
+                        </a>
+                        <a href="#" class="hero-cta-btn">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span class="cta-span">Online Luisteren</span>
+                        </a>
+                    </div>
+
                 </div>
 
             </section>
+
+
+
+
         </div>
         <div class="gradient-border"></div>
 

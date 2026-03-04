@@ -10,6 +10,8 @@
     margin-top: 225px;
     max-width: 400px;
     margin-bottom: -260px;
+    /* Prevent buttons from affecting layout */
+    overflow: visible;
 }
 
 .hero-section {
@@ -293,8 +295,6 @@
     }
 
     .clock-image {
-        display: flex;
-        justify-content: center;
         padding-bottom: 50px;
     }
 
@@ -450,3 +450,221 @@
         font-size: clamp(10px, 1.3vw, 10px);
     }
 }
+
+/* =========================================================
+   HERO CTA BUTTONS (Online Lezen & Winkel)
+   ========================================================= */
+.hero-cta-buttons {
+    position: absolute;
+    left: 100%; /* Position relative to right edge of clock-image */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 20;
+    margin-left: 10px; /* Space from clock edge */
+    pointer-events: auto; /* Ensure buttons are clickable */
+    width: max-content; /* Don't expand parent */
+}
+
+.hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 4px 16px;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.25) 0%, rgba(245, 223, 172, 0.20) 100%);
+    border: 2px solid rgba(245, 223, 172, 0.6);
+    border-radius: 18px;
+    color: rgb(255, 245, 220);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    font-family: var(--font-bold);
+    white-space: nowrap;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.hero-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta-btn:hover::before {
+    left: 100%;
+}
+
+.hero-cta-btn:hover {
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.4) 0%, rgba(245, 223, 172, 0.35) 100%);
+    border-color: rgba(245, 223, 172, 0.8);
+    color: rgb(255, 245, 220);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta-btn:active {
+    transform: translateX(2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.hero-cta-btn i {
+    font-size: 16px;
+    color: rgb(255, 245, 220);
+}
+
+.hero-cta-btn span {
+    color: rgb(255, 245, 220);
+}
+
+/* Responsive adjustments for CTA buttons */
+@media (max-width: 1400px) {
+    .hero-cta-buttons {
+        margin-left: 8px;
+        gap: 12px;
+    }
+
+    .hero-cta-btn {
+        padding: 7px 14px;
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .hero-cta-btn i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-cta-buttons {
+        margin-left: 8px;
+        gap: 10px;
+    }
+
+    .hero-cta-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+        gap: 5px;
+    }
+
+    .hero-cta-btn i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-cta-buttons {
+        margin-left: -40px;
+        gap: 8px;
+        margin-top: 40px;
+    }
+
+    .hero-cta-btn {
+        padding: 5px 10px;
+        font-size: 14px;
+        gap: 4px;
+    }
+
+    .hero-cta-btn i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-cta-buttons {
+        margin-left: -40px;
+        gap: 8px;
+    }
+
+    .hero-cta-btn {
+        padding: 5px 9px;
+        font-size: 12px;
+        gap: 3px;
+        border-radius: 14px;
+    }
+
+    .hero-cta-btn i {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-cta-buttons {
+        margin-left: -20px;
+        gap: 12px;
+    }
+
+    .hero-cta-btn {
+        padding: 4px 8px;
+        font-size: 8px;
+        gap: 3px;
+        border-radius: 14px;
+        border-width: 1.5px;
+        width: 60px;
+    }
+
+    .hero-cta-btn i {
+        font-size: 16px;
+    }
+
+    .cta-span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-cta-buttons {
+        margin-left: -25px;
+        gap: 12px;
+        margin-top: 40px;
+    }
+
+    .hero-cta-btn {
+        padding: 4px 8px;
+        font-size: 8px;
+        gap: 3px;
+        border-radius: 14px;
+        border-width: 1.5px;
+        width: 60px;
+    }
+
+    .hero-cta-btn i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 376px) {
+    .hero-cta-buttons {
+        margin-left: -32px;
+        gap: 12px;
+        margin-top: 40px;
+    }
+
+    .hero-cta-btn {
+        padding: 4px 8px;
+        font-size: 8px;
+        gap: 3px;
+        border-radius: 14px;
+        border-width: 1.5px;
+        width: 60px;
+    }
+
+    .hero-cta-btn i {
+        font-size: 16px;
+    }
+}
+
