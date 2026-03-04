@@ -242,6 +242,10 @@
             visibility: hidden;
             transform: translateY(20px);
             pointer-events: none;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .back-to-top.show {
@@ -276,6 +280,15 @@
                 right: 20px;
                 font-size: 18px;
             }
+
+            .back-to-top:hover {
+                /* Disable hover effect on mobile */
+                transform: translateY(0);
+            }
+
+            .back-to-top:active {
+                transform: scale(0.95);
+            }
         }
     </style>
 
@@ -292,13 +305,19 @@
             }
         });
 
-        // Smooth scroll to top when clicked
-        backToTopBtn.addEventListener('click', () => {
+        // Function to scroll to top
+        const scrollToTop = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
-        });
+        };
+
+        // Handle both click and touch events for better mobile support
+        backToTopBtn.addEventListener('click', scrollToTop);
+        backToTopBtn.addEventListener('touchstart', scrollToTop, { passive: false });
     </script>
 
 </body>
