@@ -231,7 +231,7 @@
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
@@ -239,13 +239,16 @@
             z-index: 999;
             transition: all 0.3s ease;
             opacity: 0;
+            visibility: hidden;
             transform: translateY(20px);
+            pointer-events: none;
         }
 
         .back-to-top.show {
-            display: flex;
             opacity: 1;
+            visibility: visible;
             transform: translateY(0);
+            pointer-events: auto;
         }
 
         .back-to-top:hover {
