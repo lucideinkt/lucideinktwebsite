@@ -19,7 +19,7 @@
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 650px; margin: 0 auto;">
                     <!-- Header with subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 3px 3px 0 0;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 3px 3px 0 0;"></td>
                     </tr>
                     <!-- Main content -->
                     <tr>
@@ -37,13 +37,13 @@
                                 </tr>
                             </table>
 
-                            <h1 style="color: #224039; font-size: 24px; margin: 0 0 16px 0; font-weight: 600;">{{ __('Nieuwe bestelling') }}</h1>
+                            <h1 style="color: #620505; font-size: 24px; margin: 0 0 16px 0; font-weight: 600;">{{ __('Nieuwe bestelling') }}</h1>
 
                             <!-- CTA Button -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
                                 <tr>
                                     <td style="padding: 10px 0;">
-                                        <a href="https://lucideinkt.nl/login" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, #224039 0%, #2e7d32 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 15px; font-weight: 600; box-shadow: 0 2px 8px rgba(34, 64, 57, 0.3);">{{ __('Inloggen om bestelling te verwerken') }}</a>
+                                        <a href="https://lucideinkt.nl/login" style="display: inline-block; padding: 12px 28px; background: #2c582f; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 15px; font-weight: 600; box-shadow: 0 2px 8px rgba(34, 64, 57, 0.3);">{{ __('Inloggen om bestelling te verwerken') }}</a>
                                     </td>
                                 </tr>
                             </table>
@@ -77,7 +77,7 @@
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f9f9f9; border-radius: 6px; border: 1px solid #e8e8e8;">
                                             <tr>
                                                 <td style="padding: 20px; font-size: 14px; line-height: 1.6; color: #333;">
-                                                    <strong style="color: #224039; font-size: 15px; display: block; margin-bottom: 8px;">{{ __('Verzendadres') }}</strong>
+                                                    <strong style="color: #620505; font-size: 15px; display: block; margin-bottom: 8px;">{{ __('Verzendadres') }}</strong>
                                                     @if($order->shipping_street)
                                                         {{ $order->shipping_first_name }} {{ $order->shipping_last_name }}<br>
                                                         @if($order->shipping_company)
@@ -109,7 +109,7 @@
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f9f9f9; border-radius: 6px; border: 1px solid #e8e8e8;">
                                             <tr>
                                                 <td style="padding: 20px; font-size: 14px; line-height: 1.6; color: #333;">
-                                                    <strong style="color: #224039; font-size: 15px; display: block; margin-bottom: 8px;">{{ __('Factuuradres') }}</strong>
+                                                    <strong style="color: #620505; font-size: 15px; display: block; margin-bottom: 8px;">{{ __('Factuuradres') }}</strong>
                                                     {{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}<br>
                                                     @if($order->customer->billing_company)
                                                         {{ $order->customer->billing_company }}<br>
@@ -133,13 +133,13 @@
                                 <tr>
                                     <td style="padding: 20px; font-size: 14px; line-height: 1.6; color: #333;">
                                         @if(isset($delivery) && !empty($delivery['deliveryType']) && strtolower($delivery['deliveryType']) === 'pickup')
-                                            <strong style="color: #224039; font-size: 15px; display: block; margin-bottom: 8px;">Bezorging</strong>
+                                            <strong style="color: #620505; font-size: 15px; display: block; margin-bottom: 8px;">Bezorging</strong>
                                             Afhalen bij afhaalpunt<br>
                                             {{ $pickupLocation['locationName'] ?? '-' }}<br>
                                             {{ $pickupLocation['street'] ?? '' }} {{ $pickupLocation['number'] ?? '' }}<br>
                                             {{ $pickupLocation['postalCode'] ?? '' }} {{ $pickupLocation['city'] ?? '' }}
                                         @else
-                                            <strong style="color: #224039; font-size: 15px; display: block; margin-bottom: 8px;">Bezorging</strong>
+                                            <strong style="color: #620505; font-size: 15px; display: block; margin-bottom: 8px;">Bezorging</strong>
                                             Thuisbezorging
                                         @endif
                                     </td>
@@ -150,10 +150,10 @@
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; margin-bottom: 24px;">
                                 <thead>
                                     <tr style="background-color: #f9f9f9;">
-                                        <th style="padding: 12px; text-align: left; font-size: 14px; font-weight: 600; color: #224039; border-bottom: 2px solid #e0e0e0;">{{ __('Product') }}</th>
-                                        <th style="padding: 12px; text-align: center; font-size: 14px; font-weight: 600; color: #224039; border-bottom: 2px solid #e0e0e0;">{{ __('Aantal') }}</th>
-                                        <th style="padding: 12px; text-align: right; font-size: 14px; font-weight: 600; color: #224039; border-bottom: 2px solid #e0e0e0;">{{ __('Stukprijs') }}</th>
-                                        <th style="padding: 12px; text-align: right; font-size: 14px; font-weight: 600; color: #224039; border-bottom: 2px solid #e0e0e0;">{{ __('Subtotaal') }}</th>
+                                        <th style="padding: 12px; text-align: left; font-size: 14px; font-weight: 600; color: #620505; border-bottom: 2px solid #e0e0e0;">{{ __('Product') }}</th>
+                                        <th style="padding: 12px; text-align: center; font-size: 14px; font-weight: 600; color: #620505; border-bottom: 2px solid #e0e0e0;">{{ __('Aantal') }}</th>
+                                        <th style="padding: 12px; text-align: right; font-size: 14px; font-weight: 600; color: #620505; border-bottom: 2px solid #e0e0e0;">{{ __('Stukprijs') }}</th>
+                                        <th style="padding: 12px; text-align: right; font-size: 14px; font-weight: 600; color: #620505; border-bottom: 2px solid #e0e0e0;">{{ __('Subtotaal') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -168,8 +168,8 @@
                                 </tbody>
                                 <tfoot>
                                     <tr style="background-color: #fafafa;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #224039;">{{ __('Totaal') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #224039;">€ {{ number_format($order->total_before, 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">{{ __('Totaal') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">€ {{ number_format($order->total_before, 2, ',', '.') }}</td>
                                     </tr>
                                     @if(isset($order->discount_type) && $order->discount_price_total > 0)
                                     <tr style="background-color: #fafafa;">
@@ -177,8 +177,8 @@
                                         <td style="padding: 12px; text-align: right; font-size: 14px; color: #666;">-€ {{ number_format($order->discount_price_total, 2, ',', '.') }}</td>
                                     </tr>
                                     <tr style="background-color: #fafafa;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #224039;">{{ __('Totaal na korting') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #224039;">€ {{ number_format($order->total - $order->discount_price_total, 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">{{ __('Totaal na korting') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">€ {{ number_format($order->total - $order->discount_price_total, 2, ',', '.') }}</td>
                                     </tr>
                                     @endif
                                     @if(!empty($order->shipping_cost_amount) && $order->shipping_cost_amount > 0)
@@ -187,8 +187,8 @@
                                         <td style="padding: 12px; text-align: right; font-size: 14px; color: #666;">€ {{ is_numeric($order->shipping_cost_amount) ? number_format($order->shipping_cost_amount, 2, ',', '.') : number_format((float)($order->shipping_cost_amount->amount ?? 0), 2, ',', '.') }}</td>
                                     </tr>
                                     <tr style="background-color: #f0f0f0;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #224039;">{{ __('Totaal incl. verzendkosten') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #224039;">€ {{ number_format($order->total, 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #620505;">{{ __('Totaal incl. verzendkosten') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #620505;">€ {{ number_format($order->total, 2, ',', '.') }}</td>
                                     </tr>
                                     @endif
                                 </tfoot>
@@ -198,7 +198,7 @@
                     </tr>
                     <!-- Bottom subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 0 0 3px 3px;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 0 0 3px 3px;"></td>
                     </tr>
                 </table>
             </td>

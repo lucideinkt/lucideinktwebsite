@@ -19,12 +19,12 @@
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto;">
                     <!-- Header with subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 3px 3px 0 0;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 3px 3px 0 0;"></td>
                     </tr>
                     <!-- Main content -->
                     <tr>
                         <td style="background-color: #ffffff; padding: 40px 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
-                            <h1 style="color: #224039; font-size: 24px; margin: 0 0 24px 0; font-weight: 600; text-align: left;">Nieuw contactformulier bericht</h1>
+                            <h1 style="color: #620505; font-size: 24px; margin: 0 0 24px 0; font-weight: 600; text-align: left;">Nieuw contactformulier bericht</h1>
 
                             <!-- Contact info box -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f9f9f9; border-radius: 6px; margin-bottom: 24px; border: 1px solid #e8e8e8;">
@@ -33,22 +33,22 @@
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                             <tr>
                                                 <td style="padding: 8px 0; font-size: 15px; line-height: 1.6; color: #333;">
-                                                    <strong style="color: #224039; display: inline-block; min-width: 120px;">Naam:</strong> {{ $name }}
+                                                    <strong style="color: #620505; display: inline-block; min-width: 120px;">Naam:</strong> {{ $name }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="padding: 8px 0; font-size: 15px; line-height: 1.6; color: #333;">
-                                                    <strong style="color: #224039; display: inline-block; min-width: 120px;">E-mailadres:</strong> <a href="mailto:{{ $email }}" style="color: #996d3f; text-decoration: none;">{{ $email }}</a>
+                                                    <strong style="color: #620505; display: inline-block; min-width: 120px;">E-mailadres:</strong> <a href="mailto:{{ $email }}" style="color: #996d3f; text-decoration: none;">{{ $email }}</a>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="padding: 8px 0; font-size: 15px; line-height: 1.6; color: #333;">
-                                                    <strong style="color: #224039; display: inline-block; min-width: 120px;">Land:</strong> {{ $country }}
+                                                    <strong style="color: #620505; display: inline-block; min-width: 120px;">Land:</strong> {{ $country }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="padding: 8px 0; font-size: 15px; line-height: 1.6; color: #333;">
-                                                    <strong style="color: #224039; display: inline-block; min-width: 120px;">Onderwerp:</strong> {{ $subject }}
+                                                    <strong style="color: #620505; display: inline-block; min-width: 120px;">Onderwerp:</strong> {{ $subject }}
                                                 </td>
                                             </tr>
                                         </table>
@@ -57,10 +57,10 @@
                             </table>
 
                             <!-- Message box -->
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #fafafa; border-left: 3px solid #224039; border-radius: 4px; margin-bottom: 24px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #fafafa; border-left: 3px solid #620505; border-radius: 4px; margin-bottom: 24px;">
                                 <tr>
                                     <td style="padding: 20px;">
-                                        <p style="margin: 0 0 12px 0; font-size: 15px; font-weight: 600; color: #224039;">Bericht:</p>
+                                        <p style="margin: 0 0 12px 0; font-size: 15px; font-weight: 600; color: #620505;">Bericht:</p>
                                         <div style="font-size: 15px; line-height: 1.6; color: #333; white-space: pre-wrap;">{{ $messageText }}</div>
                                     </td>
                                 </tr>
@@ -79,7 +79,7 @@
                     </tr>
                     <!-- Bottom subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 0 0 3px 3px;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 0 0 3px 3px;"></td>
                     </tr>
                 </table>
             </td>

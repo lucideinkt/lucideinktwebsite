@@ -19,7 +19,7 @@
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto;">
                     <!-- Header with subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 3px 3px 0 0;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 3px 3px 0 0;"></td>
                     </tr>
                     <!-- Main content -->
                     <tr>
@@ -28,7 +28,7 @@
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e8e8e8;">
                                 <tr>
                                     <td>
-                                        <h1 style="color: #224039; font-size: 24px; margin: 0 0 8px 0; font-weight: 600;">Nieuwsbrief Lucide Inkt</h1>
+                                        <h1 style="color: #620505; font-size: 24px; margin: 0 0 8px 0; font-weight: 600;">Nieuwsbrief Lucide Inkt</h1>
                                         <p style="font-size: 16px; color: #666; margin: 0; font-weight: 500;">{{ $newsletter->subject }}</p>
                                     </td>
                                 </tr>
@@ -51,11 +51,11 @@
                                     <td style="padding-top: 20px; border-top: 1px solid #e8e8e8; font-size: 13px; line-height: 1.6; color: #666;">
                                         <p style="margin: 0 0 12px 0; font-size: 13px; color: #888;">Je ontvangt deze nieuwsbrief omdat je je hebt ingeschreven op onze website.</p>
                                         <p style="margin: 0 0 16px 0;">
-                                            <a href="{{ $unsubscribeUrl }}" style="color: #224039; text-decoration: none; font-size: 13px;">Klik hier om je uit te schrijven</a>
+                                            <a href="{{ $unsubscribeUrl }}" style="color: #620505; text-decoration: none; font-size: 13px;">Klik hier om je uit te schrijven</a>
                                         </p>
                                         <p style="margin: 16px 0 0 0; font-size: 13px; color: #666;">
                                             Met vriendelijke groet,<br>
-                                            <strong style="color: #224039;">Lucide Inkt</strong>
+                                            <strong style="color: #620505;">Lucide Inkt</strong>
                                         </p>
                                         <p style="margin: 12px 0 0 0; font-size: 12px; color: #aaa;">
                                             © {{ date('Y') }} Lucide Inkt. Alle rechten voorbehouden.
@@ -67,7 +67,7 @@
                     </tr>
                     <!-- Bottom subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 0 0 3px 3px;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 0 0 3px 3px;"></td>
                     </tr>
                 </table>
             </td>

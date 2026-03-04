@@ -19,12 +19,12 @@
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto;">
                     <!-- Header with subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 3px 3px 0 0;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 3px 3px 0 0;"></td>
                     </tr>
                     <!-- Main content -->
                     <tr>
                         <td style="background-color: #ffffff; padding: 40px 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
-                            <h1 style="color: #224039; font-size: 24px; margin: 0 0 24px 0; font-weight: 600; text-align: left;">{{ __('Wachtwoord opnieuw instellen') }}</h1>
+                            <h1 style="color: #620505; font-size: 24px; margin: 0 0 24px 0; font-weight: 600; text-align: left;">{{ __('Wachtwoord opnieuw instellen') }}</h1>
 
                             <!-- Greeting -->
                             <p style="font-size: 15px; line-height: 1.6; color: #333; margin: 0 0 16px 0;">{{ __('Beste') }} {{ $first_name }},</p>
@@ -41,7 +41,7 @@
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 24px;">
                                 <tr>
                                     <td align="center" style="padding: 10px 0;">
-                                        <a href="{{ url('reset-password', $token) . '?email=' . urlencode($email) }}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #224039 0%, #2e7d32 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 600; box-shadow: 0 2px 8px rgba(34, 64, 57, 0.3);">{{ __('Wachtwoord resetten') }}</a>
+                                        <a href="{{ url('reset-password', $token) . '?email=' . urlencode($email) }}" style="display: inline-block; padding: 14px 32px; background: #2c582f; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 600; box-shadow: 0 2px 8px rgba(34, 64, 57, 0.3);">{{ __('Wachtwoord resetten') }}</a>
                                     </td>
                                 </tr>
                             </table>
@@ -60,7 +60,7 @@
                                 <tr>
                                     <td style="padding-top: 20px; border-top: 1px solid #e8e8e8; font-size: 13px; line-height: 1.6; color: #666;">
                                         {{ __('Met vriendelijke groet,') }}<br>
-                                        <strong style="color: #224039;">Lucide Inkt</strong>
+                                        <strong style="color: #620505;">Lucide Inkt</strong>
                                     </td>
                                 </tr>
                             </table>
@@ -68,7 +68,7 @@
                     </tr>
                     <!-- Bottom subtle border -->
                     <tr>
-                        <td style="background-color: #224039; height: 3px; border-radius: 0 0 3px 3px;"></td>
+                        <td style="background-color: #620505; height: 3px; border-radius: 0 0 3px 3px;"></td>
                     </tr>
                 </table>
             </td>
