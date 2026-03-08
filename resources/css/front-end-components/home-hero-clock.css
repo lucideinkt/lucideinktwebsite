@@ -647,7 +647,7 @@
 
 @media (max-width: 480px) {
     .hero-cta-buttons {
-        margin-left: -42px;
+        margin-left: -25px;
         gap: 8px;
         margin-top: 40px;
     }
@@ -671,7 +671,7 @@
 
 @media (max-width: 376px) {
     .hero-cta-buttons {
-        margin-left: -50px;
+        margin-left: -35px;
         gap: 12px;
         margin-top: 40px;
     }
