@@ -210,49 +210,79 @@ Route::get('/audioboeken/{slug}', [AudiobooksController::class, 'listen'])->name
 
 // Audio streaming route (same method as PDF proxy - more reliable on Cloudways)
 Route::get('/stream/audio/{path}', function ($path) {
-    // Try multiple possible locations for the audio file
-    $possiblePaths = [
-        storage_path('app/public/audio/' . $path),
-        storage_path('app/public/' . $path),
-        public_path('storage/audio/' . $path),
-        public_path('audio/' . $path),
-    ];
+    try {
+        // Try multiple possible locations for the audio file
+        $possiblePaths = [
+            storage_path('app/public/audio/' . $path),
+            storage_path('app/public/' . $path),
+            public_path('storage/audio/' . $path),
+            public_path('audio/' . $path),
+        ];
 
-    $fullPath = null;
-    foreach ($possiblePaths as $testPath) {
-        if (file_exists($testPath) && is_file($testPath)) {
-            $fullPath = $testPath;
-            break;
-        }
-    }
-
-    if (!$fullPath) {
-        \Log::error('Audio file not found', [
+        \Log::info('Audio stream request', [
             'requested_path' => $path,
-            'tried_paths' => $possiblePaths,
+            'trying_paths' => $possiblePaths,
         ]);
-        abort(404, 'Audio file not found');
+
+        $fullPath = null;
+        $checkedPaths = [];
+
+        foreach ($possiblePaths as $testPath) {
+            $exists = file_exists($testPath);
+            $isFile = $exists && is_file($testPath);
+            $checkedPaths[] = [
+                'path' => $testPath,
+                'exists' => $exists,
+                'is_file' => $isFile,
+                'readable' => $exists && is_readable($testPath),
+            ];
+
+            if ($isFile) {
+                $fullPath = $testPath;
+                break;
+            }
+        }
+
+        if (!$fullPath) {
+            \Log::error('Audio file not found after checking all paths', [
+                'requested_path' => $path,
+                'checked_paths' => $checkedPaths,
+            ]);
+            abort(404, 'Audio file not found');
+        }
+
+        \Log::info('Audio file found', [
+            'path' => $fullPath,
+            'size' => filesize($fullPath),
+        ]);
+
+        // Detect mime type based on extension
+        $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+        $mimeTypes = [
+            'mp3' => 'audio/mpeg',
+            'm4a' => 'audio/mp4',
+            'ogg' => 'audio/ogg',
+            'wav' => 'audio/wav',
+        ];
+        $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
+
+        // Use response()->file() like PDF proxy (more reliable than stream)
+        return response()->file($fullPath, [
+            'Content-Type' => $mimeType,
+            'Accept-Ranges' => 'bytes',
+            'Cache-Control' => 'public, max-age=31536000',
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Methods' => 'GET, OPTIONS',
+            'Access-Control-Allow-Headers' => 'Range',
+        ]);
+    } catch (\Exception $e) {
+        \Log::error('Audio stream exception', [
+            'path' => $path,
+            'error' => $e->getMessage(),
+            'trace' => $e->getTraceAsString(),
+        ]);
+        abort(500, 'Error streaming audio: ' . $e->getMessage());
     }
-
-    // Detect mime type based on extension
-    $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-    $mimeTypes = [
-        'mp3' => 'audio/mpeg',
-        'm4a' => 'audio/mp4',
-        'ogg' => 'audio/ogg',
-        'wav' => 'audio/wav',
-    ];
-    $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
-
-    // Use response()->file() like PDF proxy (more reliable than stream)
-    return response()->file($fullPath, [
-        'Content-Type' => $mimeType,
-        'Accept-Ranges' => 'bytes',
-        'Cache-Control' => 'public, max-age=31536000',
-        'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Allow-Methods' => 'GET, OPTIONS',
-        'Access-Control-Allow-Headers' => 'Range',
-    ]);
 })->where('path', '.*')->name('audio.stream');
 
 // PDF Proxy for PDF.js viewer (with CORS headers)
@@ -273,29 +303,49 @@ Route::get('/pdf-proxy/{path}', function ($path) {
 
 // Audio Proxy (simpler route, like PDF proxy - most reliable)
 Route::get('/audio-proxy/{path}', function ($path) {
-    $fullPath = storage_path('app/public/audio/' . $path);
+    try {
+        $fullPath = storage_path('app/public/audio/' . $path);
 
-    if (!file_exists($fullPath)) {
-        \Log::error('Audio proxy: file not found', ['path' => $fullPath]);
-        abort(404, 'Audio file not found');
+        \Log::info('Audio proxy request', [
+            'requested_path' => $path,
+            'full_path' => $fullPath,
+            'exists' => file_exists($fullPath),
+            'is_file' => file_exists($fullPath) && is_file($fullPath),
+            'readable' => file_exists($fullPath) && is_readable($fullPath),
+        ]);
+
+        if (!file_exists($fullPath)) {
+            \Log::error('Audio proxy: file not found', [
+                'path' => $fullPath,
+                'storage_path_base' => storage_path('app/public/audio/'),
+            ]);
+            abort(404, 'Audio file not found');
+        }
+
+        $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+        $mimeTypes = [
+            'mp3' => 'audio/mpeg',
+            'm4a' => 'audio/mp4',
+            'ogg' => 'audio/ogg',
+            'wav' => 'audio/wav',
+        ];
+        $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
+
+        return response()->file($fullPath, [
+            'Content-Type' => $mimeType,
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Methods' => 'GET, OPTIONS',
+            'Access-Control-Allow-Headers' => 'Range, Origin, X-Requested-With, Content-Type, Accept',
+            'Accept-Ranges' => 'bytes',
+        ]);
+    } catch (\Exception $e) {
+        \Log::error('Audio proxy exception', [
+            'path' => $path,
+            'error' => $e->getMessage(),
+            'trace' => $e->getTraceAsString(),
+        ]);
+        abort(500, 'Error in audio proxy: ' . $e->getMessage());
     }
-
-    $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-    $mimeTypes = [
-        'mp3' => 'audio/mpeg',
-        'm4a' => 'audio/mp4',
-        'ogg' => 'audio/ogg',
-        'wav' => 'audio/wav',
-    ];
-    $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
-
-    return response()->file($fullPath, [
-        'Content-Type' => $mimeType,
-        'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Allow-Methods' => 'GET, OPTIONS',
-        'Access-Control-Allow-Headers' => 'Range, Origin, X-Requested-With, Content-Type, Accept',
-        'Accept-Ranges' => 'bytes',
-    ]);
 })->where('path', '.*')->name('audio.proxy');
 
 // Mollie payments
