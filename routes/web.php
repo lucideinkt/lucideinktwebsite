@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AudiobooksController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -202,6 +203,10 @@ Route::get('/verzending-levering', function () {
 // Online Reading
 Route::get('/online-lezen', [OnlineLezenController::class, 'index'])->name('onlineLezen');
 Route::get('/online-lezen/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
+
+// Audiobooks
+Route::get('/audioboeken', [AudiobooksController::class, 'index'])->name('audiobooks');
+Route::get('/audioboeken/{slug}', [AudiobooksController::class, 'listen'])->name('audiobooksListen');
 
 // PDF Proxy for PDF.js viewer (with CORS headers)
 Route::get('/pdf-proxy/{path}', function ($path) {

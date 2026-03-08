@@ -47,6 +47,7 @@ class UpdateProductRequest extends FormRequest
             'image_3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
             'image_4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:30720',
             'pdf_file' => 'nullable|file|mimes:pdf|max:51200',
+            'audio_file' => 'nullable|file|mimes:mp3,mpga,mpeg,m4a,ogg,wav|max:102400',
             'seo_description' => 'nullable|string|max:500',
             'seo_tags' => 'nullable|string|max:500',
             'seo_author' => 'nullable|string|max:255',

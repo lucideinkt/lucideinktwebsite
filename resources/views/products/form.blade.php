@@ -269,6 +269,47 @@
                     </div>
                 </div>
 
+                {{-- Audio File for Online Listening --}}
+                <div class="section audio-section">
+                    <h3>Online Luisteren</h3>
+                    <div class="form-input">
+                        <label for="audio_file">Audio Bestand</label>
+                        <div class="custom-file-input-wrapper">
+                            <input type="file" name="audio_file" id="audio_file" accept="audio/*,.mp3,.m4a,.ogg,.wav" class="custom-file-input">
+                            <label for="audio_file" class="custom-file-label">
+                                <span id="audio_file_label_text">
+                                    @if(isset($product) && $product->audio_file)
+                                        {{ basename($product->audio_file) }}
+                                    @else
+                                        Kies audio bestand...
+                                    @endif
+                                </span>
+                            </label>
+
+                            {{-- Current Audio info --}}
+                            @if(isset($product) && $product->audio_file)
+                                <div style="margin-top: 10px;">
+                                    <p class="current-file">
+                                        <i class="fa-solid fa-headphones"></i>
+                                        Huidig bestand:
+                                        <a href="{{ asset('storage/' . $product->audio_file) }}" target="_blank" style="color: var(--green-2); text-decoration: underline;">
+                                            Beluister Audio
+                                        </a>
+                                    </p>
+                                    <button type="button" class="btn small" id="remove-audio-btn">
+                                        Verwijder Audio
+                                    </button>
+                                    <input type="checkbox" name="delete_audio_file" id="delete_audio_file" value="1" style="display:none;">
+                                </div>
+                            @endif
+                        </div>
+                        <small class="help-text">Upload een audiobestand om dit boek beschikbaar te maken in de Audioboeken bibliotheek. Max 100MB. Formaten: MP3, M4A, OGG, WAV.</small>
+                        @error('audio_file')
+                        <div class="error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
                 {{-- SEO Fields --}}
                 <div class="section seo-section">
                     <h3>SEO Instellingen</h3>
@@ -352,6 +393,35 @@
                             removePdfBtn.style.display = 'none';
                             if (pdfLabel) {
                                 pdfLabel.textContent = 'PDF wordt verwijderd bij opslaan';
+                            }
+                        }
+                    });
+                }
+
+                // Audio file upload handler
+                const audioInput = document.getElementById('audio_file');
+                const audioLabel = document.getElementById('audio_file_label_text');
+                const removeAudioBtn = document.getElementById('remove-audio-btn');
+                const deleteAudioCheckbox = document.getElementById('delete_audio_file');
+
+                if (audioInput) {
+                    audioInput.addEventListener('change', function(e) {
+                        if (e.target.files.length > 0) {
+                            const fileName = e.target.files[0].name;
+                            if (audioLabel) {
+                                audioLabel.textContent = fileName;
+                            }
+                        }
+                    });
+                }
+
+                if (removeAudioBtn && deleteAudioCheckbox) {
+                    removeAudioBtn.addEventListener('click', function() {
+                        if (confirm('Weet u zeker dat u dit audiobestand wilt verwijderen?')) {
+                            deleteAudioCheckbox.checked = true;
+                            removeAudioBtn.style.display = 'none';
+                            if (audioLabel) {
+                                audioLabel.textContent = 'Audio wordt verwijderd bij opslaan';
                             }
                         }
                     });

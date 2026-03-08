@@ -587,7 +587,7 @@
     }
 
     .hero-cta-btn i {
-        font-size: 22px;
+        font-size: 23px;
     }
 
     .hero-cta-btn i {
@@ -613,7 +613,11 @@
     }
 
     .hero-cta-btn i {
-        font-size: 20px;
+        font-size: 23px;
+    }
+
+    .cta-span {
+        font-size: 12px;
     }
 }
 
@@ -632,11 +636,12 @@
     }
 
     .hero-cta-btn i {
-        font-size: 18px;
+        font-size: 23px;
     }
 
     .cta-span {
         /*display: none;*/
+        font-size: 12px;
     }
 }
 

@@ -53,7 +53,7 @@
                             <i class="fa-solid fa-book-open"></i>
                             <span class="cta-span">LEZEN</span>
                         </a>
-                        <a href="#" class="hero-cta-btn">
+                        <a href="{{ route('audiobooks') }}" class="hero-cta-btn">
                             <i class="fa-solid fa-headphones"></i>
                             <span class="cta-span">LUISTEREN</span>
                         </a>

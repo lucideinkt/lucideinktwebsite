@@ -37,6 +37,7 @@ class Product extends Model
         'image_3',
         'image_4',
         'pdf_file',
+        'audio_file',
         'seo_description',
         'seo_tags',
         'seo_author',

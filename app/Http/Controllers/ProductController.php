@@ -101,6 +101,11 @@ class ProductController extends Controller
             $validated['pdf_file'] = $request->file('pdf_file')->store('pdfs', 'public');
         }
 
+        // Audio bestand verwerken
+        if ($request->hasFile('audio_file')) {
+            $validated['audio_file'] = $request->file('audio_file')->store('audio', 'public');
+        }
+
         // Convert comma-separated tags string to array
         if (!empty($validated['seo_tags'])) {
             $tags = array_map('trim', explode(',', $validated['seo_tags']));
@@ -135,6 +140,7 @@ class ProductController extends Controller
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
             'pdf_file' => $validated['pdf_file'] ?? null,
+            'audio_file' => $validated['audio_file'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
@@ -240,6 +246,25 @@ class ProductController extends Controller
             $validated['pdf_file'] = $product->pdf_file;
         }
 
+        // Audio bestand verwerken
+        if ($request->has('delete_audio_file') && $product->audio_file) {
+            // Verwijder bestaande audio
+            if (Storage::disk('public')->exists($product->audio_file)) {
+                Storage::disk('public')->delete($product->audio_file);
+            }
+            $validated['audio_file'] = null;
+        } elseif ($request->hasFile('audio_file')) {
+            // Verwijder oude audio als die bestaat
+            if (!empty($product->audio_file) && Storage::disk('public')->exists($product->audio_file)) {
+                Storage::disk('public')->delete($product->audio_file);
+            }
+            // Upload nieuwe audio
+            $validated['audio_file'] = $request->file('audio_file')->store('audio', 'public');
+        } else {
+            // Behoud bestaande audio
+            $validated['audio_file'] = $product->audio_file;
+        }
+
         // Convert comma-separated tags string to array
         if (!empty($validated['seo_tags'])) {
             $tags = array_map('trim', explode(',', $validated['seo_tags']));
@@ -273,6 +298,7 @@ class ProductController extends Controller
             'image_3' => $validated['image_3'] ?? null,
             'image_4' => $validated['image_4'] ?? null,
             'pdf_file' => $validated['pdf_file'] ?? null,
+            'audio_file' => $validated['audio_file'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
@@ -303,6 +329,11 @@ class ProductController extends Controller
             Storage::disk('public')->delete($product->pdf_file);
         }
 
+        // Verwijder audio bestand
+        if (!empty($product->audio_file) && Storage::disk('public')->exists($product->audio_file)) {
+            Storage::disk('public')->delete($product->audio_file);
+        }
+
         $product->update([
             'updated_by' => auth()->id(),
             'deleted_by' => auth()->id(),
@@ -311,6 +342,7 @@ class ProductController extends Controller
             'image_3' => '',
             'image_4' => '',
             'pdf_file' => '',
+            'audio_file' => '',
         ]);
 
         $product->delete();

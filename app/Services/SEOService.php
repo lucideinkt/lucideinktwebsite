@@ -90,6 +90,13 @@ class SEOService
                 'image' => secure_url('images/books_standing_new.webp'),
                 'type' => 'website',
             ],
+            'audiobooks' => [
+                'title' => 'Audio Bibliotheek | Lucide Inkt',
+                'description' => 'Beluister onze audioboeken. Ontdek de Risale-i Nur vertalingen in audioformaat, waar en wanneer je maar wilt.',
+                'url' => route('audiobooks'),
+                'image' => secure_url('images/books_standing_new.webp'),
+                'type' => 'website',
+            ],
         ];
 
         return $pages[$page] ?? [];
@@ -99,19 +106,27 @@ class SEOService
      * Generate SEO data for a product
      *
      * @param \App\Models\Product $product
-     * @param string $context 'shop'|'online-lezen'
+     * @param string $context 'shop'|'online-lezen'|'audiobooks'
      * @return SEOData
      */
     public static function getProductSEO($product, string $context = 'shop'): SEOData
     {
-        $titleSuffix = $context === 'online-lezen' ? ' | Online Lezen | Lucide Inkt' : ' | Lucide Inkt';
+        $titleSuffix = match($context) {
+            'online-lezen' => ' | Online Lezen | Lucide Inkt',
+            'audiobooks' => ' | Audiobooks | Lucide Inkt',
+            default => ' | Lucide Inkt',
+        };
+
+        $url = match($context) {
+            'online-lezen' => route('onlineLezenRead', $product->slug),
+            'audiobooks' => route('audiobooksListen', $product->slug),
+            default => route('productShow', $product->slug),
+        };
 
         return new SEOData(
             title: $product->title . $titleSuffix,
             description: $product->seo_description ?: $product->short_description ?: 'Ontdek ' . $product->title . ' bij Lucide Inkt.',
-            url: $context === 'online-lezen'
-                ? route('onlineLezenRead', $product->slug)
-                : route('productShow', $product->slug),
+            url: $url,
             image: $product->image_1 ? secure_url($product->image_1) : secure_url('images/books_standing_new.webp'),
             author: 'Lucide Inkt',
             locale: 'nl_NL',
