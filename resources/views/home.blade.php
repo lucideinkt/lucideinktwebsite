@@ -55,7 +55,7 @@
                         </a>
                         <a href="{{ route('audiobooks') }}" class="hero-cta-btn">
                             <i class="fa-solid fa-headphones"></i>
-                            <span class="cta-span">LUISTEREN</span>
+                            <span class="cta-span">AUDIO</span>
                         </a>
                     </div>
 
