@@ -204,24 +204,38 @@ Route::get('/verzending-levering', function () {
 Route::get('/online-lezen', [OnlineLezenController::class, 'index'])->name('onlineLezen');
 Route::get('/online-lezen/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
 
-// Audiobooks
-Route::get('/audiobooks', [AudiobooksController::class, 'index'])->name('audiobooks');
-Route::get('/audiobooks/{slug}', [AudiobooksController::class, 'listen'])->name('audiobooksListen');
+// Audioboeken (Audiobooks)
+Route::get('/audioboeken', [AudiobooksController::class, 'index'])->name('audiobooks');
+Route::get('/audioboeken/{slug}', [AudiobooksController::class, 'listen'])->name('audiobooksListen');
 
 // Audio streaming route (bypasses direct file access permissions)
 Route::get('/stream/audio/{path}', function ($path) {
-    $fullPath = storage_path('app/public/audio/' . $path);
+    // Try multiple possible locations for the audio file
+    $possiblePaths = [
+        storage_path('app/public/audio/' . $path),
+        storage_path('app/public/' . $path),
+        public_path('storage/audio/' . $path),
+        public_path('audio/' . $path),
+    ];
 
-    if (!file_exists($fullPath)) {
+    $fullPath = null;
+    foreach ($possiblePaths as $testPath) {
+        if (file_exists($testPath) && is_file($testPath)) {
+            $fullPath = $testPath;
+            break;
+        }
+    }
+
+    if (!$fullPath) {
+        \Log::error('Audio file not found', [
+            'requested_path' => $path,
+            'tried_paths' => $possiblePaths,
+        ]);
         abort(404, 'Audio file not found');
     }
 
-    $file = fopen($fullPath, 'rb');
-    $size = filesize($fullPath);
-    $mimeType = 'audio/mpeg';
-
     // Detect mime type based on extension
-    $extension = pathinfo($fullPath, PATHINFO_EXTENSION);
+    $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
     $mimeTypes = [
         'mp3' => 'audio/mpeg',
         'm4a' => 'audio/mp4',
@@ -230,9 +244,19 @@ Route::get('/stream/audio/{path}', function ($path) {
     ];
     $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
 
-    return response()->stream(function() use ($file) {
-        fpassthru($file);
-        fclose($file);
+    $size = filesize($fullPath);
+
+    return response()->stream(function() use ($fullPath) {
+        $file = fopen($fullPath, 'rb');
+        if ($file === false) {
+            \Log::error('Failed to open audio file', ['path' => $fullPath]);
+            return;
+        }
+        try {
+            fpassthru($file);
+        } finally {
+            fclose($file);
+        }
     }, 200, [
         'Content-Type' => $mimeType,
         'Content-Length' => $size,
