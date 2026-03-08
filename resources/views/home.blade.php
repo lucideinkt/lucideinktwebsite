@@ -51,11 +51,11 @@
                     <div class="hero-cta-buttons">
                         <a href="{{ route('onlineLezen') }}" class="hero-cta-btn">
                             <i class="fa-solid fa-book-open"></i>
-                            <span class="cta-span">Online Lezen</span>
+                            <span class="cta-span">LEZEN</span>
                         </a>
                         <a href="#" class="hero-cta-btn">
                             <i class="fa-solid fa-headphones"></i>
-                            <span class="cta-span">Online Luisteren</span>
+                            <span class="cta-span">LUISTEREN</span>
                         </a>
                     </div>
 
@@ -128,8 +128,9 @@
                         <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 
                     <p style="margin-top: 20px;">
-                        <a href="{{ route('herzameling') }}" class="herzameling-btn">
-                            Lees meer <i class="fa-solid fa-arrow-right"></i>
+                        <a href="{{ route('herzameling') }}" class="">
+{{--                            Lees meer <i class="fa-solid fa-arrow-right"></i>--}}
+                            <img width="200px" src="{{ asset('images/knop_lees_meer2.png') }}" alt="">
                         </a>
                     </p>
 
@@ -145,8 +146,9 @@
                     </p>
 
                     <p style="margin-top: 20px;">
-                        <a href="{{ route('herzameling') }}" class="herzameling-btn">
-                            Lees meer <i class="fa-solid fa-arrow-right"></i>
+                        <a href="{{ route('herzameling') }}" class="">
+{{--                            Lees meer <i class="fa-solid fa-arrow-right"></i>--}}
+                            <img width="175px" src="{{ asset('images/knop_lees_meer2.png') }}" alt="">
                         </a>
                     </p>
 
