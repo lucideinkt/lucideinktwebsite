@@ -17,6 +17,7 @@
     text-align: center;
     margin-bottom: 20px;
     padding: 0px 20px 0;
+
 }
 
 .audiobooks-title {
@@ -188,7 +189,7 @@
 .audiobooks-empty {
     grid-column: 1 / -1;
     text-align: center;
-    padding: 100px 20px;
+    padding: 20px 20px;
     color: var(--ink-2);
 }
 
@@ -199,7 +200,7 @@
 }
 
 .audiobooks-empty p {
-    font-size: 1.125rem;
+    font-size: 17px;
     line-height: 1.8;
 }
 
@@ -258,11 +259,16 @@
     .audio-play-button i {
         font-size: 20px;
     }
+
+    .audiobooks-empty {
+        padding-bottom: 0;
+    }
 }
 
 @media (max-width: 480px) {
     .audiobooks-title {
         font-size: 28px;
+        line-height: 1.6;
     }
 
     .audiobooks-header {

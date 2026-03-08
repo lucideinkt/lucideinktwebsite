@@ -10,60 +10,60 @@
 {{--            <p class="online-lezen-subtitle">Ontdek en lees onze boeken direct online, waar en wanneer je maar wilt</p>--}}
         </div>
 
-        <div class="online-lezen-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="online-lezen-grid">
             @forelse ($products as $product)
-                <img width="200px" src="{{ asset('/images/knop2.webp') }}" alt="">
+{{--                <img width="200px" src="{{ asset('/images/knop2.webp') }}" alt="">--}}
 
-{{--                <div class="online-book-card">--}}
-{{--                    <a href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link">--}}
-{{--                        <div class="online-book-image-wrapper">--}}
-{{--                            @if ($product->image_1)--}}
-{{--                                @php--}}
-{{--                                    $imagePath = $product->image_1;--}}
-{{--                                    if (Str::startsWith($imagePath, 'https://')) {--}}
-{{--                                        $imageUrl = $imagePath;--}}
-{{--                                    } elseif (Str::startsWith($imagePath, 'image/books/') || Str::startsWith($imagePath, 'images/books/')) {--}}
-{{--                                        $imageUrl = asset($imagePath);--}}
-{{--                                    } else {--}}
-{{--                                        $imageUrl = asset('storage/' . $imagePath);--}}
-{{--                                    }--}}
-{{--                                @endphp--}}
-{{--                                <img src="{{ $imageUrl }}" alt="{{ $product->title }}" class="online-book-image" loading="lazy">--}}
-{{--                            @else--}}
-{{--                                <div class="online-book-placeholder">--}}
-{{--                                    <i class="fa-solid fa-book"></i>--}}
-{{--                                </div>--}}
-{{--                            @endif--}}
-{{--                            <div class="online-book-overlay">--}}
-{{--                                <i class="fa-solid fa-book-open"></i>--}}
-{{--                                <span>Lees Online</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="online-book-content">--}}
-{{--                            @php--}}
-{{--                                [$mainTitle, $subTitle] = array_pad(--}}
-{{--                                    explode(' - ', $product->title, 2),--}}
-{{--                                    2,--}}
-{{--                                    null--}}
-{{--                                );--}}
-{{--                            @endphp--}}
+                <div class="online-book-card">
+                    <a href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link">
+                        <div class="online-book-image-wrapper">
+                            @if ($product->image_1)
+                                @php
+                                    $imagePath = $product->image_1;
+                                    if (Str::startsWith($imagePath, 'https://')) {
+                                        $imageUrl = $imagePath;
+                                    } elseif (Str::startsWith($imagePath, 'image/books/') || Str::startsWith($imagePath, 'images/books/')) {
+                                        $imageUrl = asset($imagePath);
+                                    } else {
+                                        $imageUrl = asset('storage/' . $imagePath);
+                                    }
+                                @endphp
+                                <img src="{{ $imageUrl }}" alt="{{ $product->title }}" class="online-book-image" loading="lazy">
+                            @else
+                                <div class="online-book-placeholder">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                            @endif
+                            <div class="online-book-overlay">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>Lees Online</span>
+                            </div>
+                        </div>
+                        <div class="online-book-content">
+                            @php
+                                [$mainTitle, $subTitle] = array_pad(
+                                    explode(' - ', $product->title, 2),
+                                    2,
+                                    null
+                                );
+                            @endphp
 
-{{--                            <h3 class="online-book-title">--}}
-{{--                                {{ $mainTitle }}--}}
-{{--                                @if($subTitle)--}}
-{{--                                    <br>--}}
-{{--                                    <span class="online-book-subtitle">{{ $subTitle }}</span>--}}
-{{--                                @endif--}}
-{{--                            </h3>--}}
-{{--                        @if ($product->category)--}}
-{{--                                <p class="online-book-category">{{ $product->category->name }}</p>--}}
-{{--                            @endif--}}
-{{--                            @if ($product->productCopy)--}}
-{{--                                <p class="online-book-language">{{ $product->productCopy->name }}</p>--}}
-{{--                            @endif--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
+                            <h3 class="online-book-title">
+                                {{ $mainTitle }}
+                                @if($subTitle)
+                                    <br>
+                                    <span class="online-book-subtitle">{{ $subTitle }}</span>
+                                @endif
+                            </h3>
+                        @if ($product->category)
+                                <p class="online-book-category">{{ $product->category->name }}</p>
+                            @endif
+                            @if ($product->productCopy)
+                                <p class="online-book-language">{{ $product->productCopy->name }}</p>
+                            @endif
+                        </div>
+                    </a>
+                </div>
             @empty
                 <div class="online-lezen-empty">
                     <i class="fa-solid fa-book-open"></i>
