@@ -39,17 +39,26 @@
                 @if ($product->audio_file)
                     @php
                         $audioPath = $product->audio_file;
+
                         if (Str::startsWith($audioPath, 'https://') || Str::startsWith($audioPath, 'http://')) {
                             // External URL
                             $audioUrl = $audioPath;
                         } else {
-                            // Use audio-proxy route (like PDF proxy - more reliable than stream)
-                            $filename = basename($audioPath);
-                            $audioUrl = route('audio.proxy', ['path' => $filename]);
+                            // Remove 'audio/' prefix if present (uploaded files have this)
+                            $cleanPath = str_replace('audio/', '', $audioPath);
+
+                            // Try direct storage URL first (this works on Cloudways)
+                            $audioUrl = asset('storage/audio/' . $cleanPath);
+
+                            // Also provide audio-proxy as fallback
+                            $audioProxyUrl = route('audio.proxy', ['path' => $cleanPath]);
                         }
                     @endphp
                     <audio controls preload="metadata" controlsList="nodownload">
                         <source src="{{ $audioUrl }}" type="audio/mpeg">
+                        @if(isset($audioProxyUrl))
+                            <source src="{{ $audioProxyUrl }}" type="audio/mpeg">
+                        @endif
                         <source src="{{ $audioUrl }}" type="audio/ogg">
                         <source src="{{ $audioUrl }}" type="audio/mp4">
                         Uw browser ondersteunt het audio element niet.
