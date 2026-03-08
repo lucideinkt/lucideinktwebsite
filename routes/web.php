@@ -208,7 +208,7 @@ Route::get('/online-lezen/{slug}', [OnlineLezenController::class, 'read'])->name
 Route::get('/audioboeken', [AudiobooksController::class, 'index'])->name('audiobooks');
 Route::get('/audioboeken/{slug}', [AudiobooksController::class, 'listen'])->name('audiobooksListen');
 
-// Audio streaming route (bypasses direct file access permissions)
+// Audio streaming route (same method as PDF proxy - more reliable on Cloudways)
 Route::get('/stream/audio/{path}', function ($path) {
     // Try multiple possible locations for the audio file
     $possiblePaths = [
@@ -244,25 +244,14 @@ Route::get('/stream/audio/{path}', function ($path) {
     ];
     $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
 
-    $size = filesize($fullPath);
-
-    return response()->stream(function() use ($fullPath) {
-        $file = fopen($fullPath, 'rb');
-        if ($file === false) {
-            \Log::error('Failed to open audio file', ['path' => $fullPath]);
-            return;
-        }
-        try {
-            fpassthru($file);
-        } finally {
-            fclose($file);
-        }
-    }, 200, [
+    // Use response()->file() like PDF proxy (more reliable than stream)
+    return response()->file($fullPath, [
         'Content-Type' => $mimeType,
-        'Content-Length' => $size,
         'Accept-Ranges' => 'bytes',
         'Cache-Control' => 'public, max-age=31536000',
         'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Allow-Methods' => 'GET, OPTIONS',
+        'Access-Control-Allow-Headers' => 'Range',
     ]);
 })->where('path', '.*')->name('audio.stream');
 
@@ -281,6 +270,33 @@ Route::get('/pdf-proxy/{path}', function ($path) {
         'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept',
     ]);
 })->where('path', '.*')->name('pdf.proxy');
+
+// Audio Proxy (simpler route, like PDF proxy - most reliable)
+Route::get('/audio-proxy/{path}', function ($path) {
+    $fullPath = storage_path('app/public/audio/' . $path);
+
+    if (!file_exists($fullPath)) {
+        \Log::error('Audio proxy: file not found', ['path' => $fullPath]);
+        abort(404, 'Audio file not found');
+    }
+
+    $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+    $mimeTypes = [
+        'mp3' => 'audio/mpeg',
+        'm4a' => 'audio/mp4',
+        'ogg' => 'audio/ogg',
+        'wav' => 'audio/wav',
+    ];
+    $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
+
+    return response()->file($fullPath, [
+        'Content-Type' => $mimeType,
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Allow-Methods' => 'GET, OPTIONS',
+        'Access-Control-Allow-Headers' => 'Range, Origin, X-Requested-With, Content-Type, Accept',
+        'Accept-Ranges' => 'bytes',
+    ]);
+})->where('path', '.*')->name('audio.proxy');
 
 // Mollie payments
 Route::get('/payment/success/', [CheckoutController::class, 'paymentSuccess'])->name('payment.success');

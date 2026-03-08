@@ -168,6 +168,12 @@ echo "-------------------------------------------"
 echo "Audioboeken routes:"
 php artisan route:list --path=audio 2>/dev/null || php artisan route:list | grep -i audio
 echo ""
+echo "Verwacht:"
+echo "  ✓ /audio-proxy/{path} (primaire route - zoals PDF)"
+echo "  ✓ /stream/audio/{path} (backup route)"
+echo "  ✓ /audioboeken (index)"
+echo "  ✓ /audioboeken/{slug} (player)"
+echo ""
 
 # Stap 9: Clear alle caches
 echo -e "${BLUE}🗑️  Stap 9: Clear alle caches${NC}"

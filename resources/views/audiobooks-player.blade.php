@@ -40,14 +40,15 @@
                     @php
                         $audioPath = $product->audio_file;
                         if (Str::startsWith($audioPath, 'https://') || Str::startsWith($audioPath, 'http://')) {
+                            // External URL
                             $audioUrl = $audioPath;
                         } else {
-                            // Use streaming route to bypass permission issues
+                            // Use audio-proxy route (like PDF proxy - more reliable than stream)
                             $filename = basename($audioPath);
-                            $audioUrl = route('audio.stream', ['path' => $filename]);
+                            $audioUrl = route('audio.proxy', ['path' => $filename]);
                         }
                     @endphp
-                    <audio controls preload="metadata">
+                    <audio controls preload="metadata" controlsList="nodownload">
                         <source src="{{ $audioUrl }}" type="audio/mpeg">
                         <source src="{{ $audioUrl }}" type="audio/ogg">
                         <source src="{{ $audioUrl }}" type="audio/mp4">
