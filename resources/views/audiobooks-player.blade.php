@@ -39,10 +39,12 @@
                 @if ($product->audio_file)
                     @php
                         $audioPath = $product->audio_file;
-                        if (Str::startsWith($audioPath, 'https://')) {
+                        if (Str::startsWith($audioPath, 'https://') || Str::startsWith($audioPath, 'http://')) {
                             $audioUrl = $audioPath;
                         } else {
-                            $audioUrl = asset('storage/' . $audioPath);
+                            // Use streaming route to bypass permission issues
+                            $filename = basename($audioPath);
+                            $audioUrl = route('audio.stream', ['path' => $filename]);
                         }
                     @endphp
                     <audio controls preload="metadata">

@@ -205,8 +205,42 @@ Route::get('/online-lezen', [OnlineLezenController::class, 'index'])->name('onli
 Route::get('/online-lezen/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
 
 // Audiobooks
-Route::get('/audioboeken', [AudiobooksController::class, 'index'])->name('audiobooks');
-Route::get('/audioboeken/{slug}', [AudiobooksController::class, 'listen'])->name('audiobooksListen');
+Route::get('/audiobooks', [AudiobooksController::class, 'index'])->name('audiobooks');
+Route::get('/audiobooks/{slug}', [AudiobooksController::class, 'listen'])->name('audiobooksListen');
+
+// Audio streaming route (bypasses direct file access permissions)
+Route::get('/stream/audio/{path}', function ($path) {
+    $fullPath = storage_path('app/public/audio/' . $path);
+
+    if (!file_exists($fullPath)) {
+        abort(404, 'Audio file not found');
+    }
+
+    $file = fopen($fullPath, 'rb');
+    $size = filesize($fullPath);
+    $mimeType = 'audio/mpeg';
+
+    // Detect mime type based on extension
+    $extension = pathinfo($fullPath, PATHINFO_EXTENSION);
+    $mimeTypes = [
+        'mp3' => 'audio/mpeg',
+        'm4a' => 'audio/mp4',
+        'ogg' => 'audio/ogg',
+        'wav' => 'audio/wav',
+    ];
+    $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
+
+    return response()->stream(function() use ($file) {
+        fpassthru($file);
+        fclose($file);
+    }, 200, [
+        'Content-Type' => $mimeType,
+        'Content-Length' => $size,
+        'Accept-Ranges' => 'bytes',
+        'Cache-Control' => 'public, max-age=31536000',
+        'Access-Control-Allow-Origin' => '*',
+    ]);
+})->where('path', '.*')->name('audio.stream');
 
 // PDF Proxy for PDF.js viewer (with CORS headers)
 Route::get('/pdf-proxy/{path}', function ($path) {
