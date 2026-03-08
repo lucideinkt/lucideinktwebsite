@@ -14,7 +14,7 @@
         <div class="online-lezen-grid" style="margin-bottom: 20px;justify-content: center;align-items: center">
             @forelse ($products as $product)
 
-                <a style="display: flex;justify-content: center;align-items: center" href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link"><img width="90%" src="{{ asset('/images/natuur_online_lezen.png') }}" alt=""></a>
+                <a style="display: flex;justify-content: center;align-items: center" href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link"><img width="90%" src="{{ asset('/images/natuur_online_lezen.webp') }}" alt=""></a>
 
 
 
@@ -79,7 +79,7 @@
         <div class="online-lezen-grid" style="margin-bottom: 20px;justify-content: center;align-items: center">
             @forelse ($products as $product)
 
-                <a style="display: flex;justify-content: center;align-items: center" href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link"><img width="90%" src="{{ asset('/images/mirakeln_online_lezen.png') }}" alt=""></a>
+                <a style="display: flex;justify-content: center;align-items: center" href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link"><img width="90%" src="{{ asset('/images/mirakeln_online_lezen.webp') }}" alt=""></a>
 
 
 
