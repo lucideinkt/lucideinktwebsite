@@ -10,7 +10,7 @@
     max-width: 1280px;
     margin: 0 auto;
     min-height: 60vh;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 .online-lezen-header {
@@ -63,6 +63,7 @@
     gap: 32px;
     align-items: stretch;
     padding: 0;
+    background: transparent;
 }
 
 .online-book-card {
@@ -85,6 +86,16 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    background: transparent !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.online-book-link img {
+    background: transparent !important;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: normal;
 }
 
 .online-book-image-wrapper {

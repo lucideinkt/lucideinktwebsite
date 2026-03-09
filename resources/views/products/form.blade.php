@@ -267,6 +267,37 @@
                         <div class="error">{{ $message }}</div>
                         @enderror
                     </div>
+
+                    <div class="form-input">
+                        <label for="online_lezen_image">Online Lezen Afbeelding</label>
+                        <div class="custom-file-input-wrapper">
+                            <input type="file" name="online_lezen_image" id="online_lezen_image" accept="image/*" class="custom-file-input">
+                            <label for="online_lezen_image" class="custom-file-label">
+                                <span id="online_lezen_image_label_text">Kies afbeelding...</span>
+                            </label>
+
+                            {{-- Preview afbeelding --}}
+                            <div id="online_lezen_image_preview" style="display: flex; align-items:center;margin-top:5px;">
+                                @if(isset($product) && $product->online_lezen_image)
+                                    <img
+                                      src="{{ asset($product->online_lezen_image) }}"
+                                      alt="Online Lezen"
+                                      style="max-width:150px;max-height:150px;">
+                                @endif
+                            </div>
+
+                            @if(isset($product) && $product->online_lezen_image)
+                                <button type="button" class="btn small" id="remove-online-lezen-image-btn">
+                                    Verwijder Afbeelding
+                                </button>
+                                <input type="checkbox" name="delete_online_lezen_image" id="delete_online_lezen_image" value="1" style="display:none;">
+                            @endif
+                        </div>
+                        <small class="help-text">Upload een afbeelding die gebruikt wordt op de Online Lezen index pagina. Aanbevolen formaat: 800x1200px. Max 5MB.</small>
+                        @error('online_lezen_image')
+                        <div class="error">{{ $message }}</div>
+                        @enderror
+                    </div>
                 </div>
 
                 {{-- Audio File for Online Listening --}}
@@ -393,6 +424,49 @@
                             removePdfBtn.style.display = 'none';
                             if (pdfLabel) {
                                 pdfLabel.textContent = 'PDF wordt verwijderd bij opslaan';
+                            }
+                        }
+                    });
+                }
+
+                // Online Lezen Image upload handler
+                const onlineLezenImageInput = document.getElementById('online_lezen_image');
+                const onlineLezenImageLabel = document.getElementById('online_lezen_image_label_text');
+                const onlineLezenImagePreview = document.getElementById('online_lezen_image_preview');
+                const removeOnlineLezenImageBtn = document.getElementById('remove-online-lezen-image-btn');
+                const deleteOnlineLezenImageCheckbox = document.getElementById('delete_online_lezen_image');
+
+                if (onlineLezenImageInput) {
+                    onlineLezenImageInput.addEventListener('change', function(e) {
+                        if (e.target.files.length > 0) {
+                            const file = e.target.files[0];
+                            const fileName = file.name;
+                            if (onlineLezenImageLabel) {
+                                onlineLezenImageLabel.textContent = fileName;
+                            }
+
+                            // Show preview
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                if (onlineLezenImagePreview) {
+                                    onlineLezenImagePreview.innerHTML = '<img src="' + event.target.result + '" alt="Preview" style="max-width:150px;max-height:150px;">';
+                                }
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                }
+
+                if (removeOnlineLezenImageBtn && deleteOnlineLezenImageCheckbox) {
+                    removeOnlineLezenImageBtn.addEventListener('click', function() {
+                        if (confirm('Weet u zeker dat u deze afbeelding wilt verwijderen?')) {
+                            deleteOnlineLezenImageCheckbox.checked = true;
+                            removeOnlineLezenImageBtn.style.display = 'none';
+                            if (onlineLezenImagePreview) {
+                                onlineLezenImagePreview.innerHTML = '';
+                            }
+                            if (onlineLezenImageLabel) {
+                                onlineLezenImageLabel.textContent = 'Afbeelding wordt verwijderd bij opslaan';
                             }
                         }
                     });

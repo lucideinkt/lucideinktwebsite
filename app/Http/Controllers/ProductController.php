@@ -106,6 +106,11 @@ class ProductController extends Controller
             $validated['audio_file'] = $request->file('audio_file')->store('audio', 'public');
         }
 
+        // Online Lezen afbeelding verwerken
+        if ($request->hasFile('online_lezen_image')) {
+            $validated['online_lezen_image'] = $this->imageCompressionService->compressAndStore($request->file('online_lezen_image'));
+        }
+
         // Convert comma-separated tags string to array
         if (!empty($validated['seo_tags'])) {
             $tags = array_map('trim', explode(',', $validated['seo_tags']));
@@ -141,6 +146,7 @@ class ProductController extends Controller
             'image_4' => $validated['image_4'] ?? null,
             'pdf_file' => $validated['pdf_file'] ?? null,
             'audio_file' => $validated['audio_file'] ?? null,
+            'online_lezen_image' => $validated['online_lezen_image'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
@@ -265,6 +271,25 @@ class ProductController extends Controller
             $validated['audio_file'] = $product->audio_file;
         }
 
+        // Online Lezen afbeelding verwerken
+        if ($request->has('delete_online_lezen_image') && $product->online_lezen_image) {
+            // Verwijder bestaande afbeelding
+            if (Storage::disk('public')->exists($product->online_lezen_image)) {
+                Storage::disk('public')->delete($product->online_lezen_image);
+            }
+            $validated['online_lezen_image'] = null;
+        } elseif ($request->hasFile('online_lezen_image')) {
+            // Verwijder oude afbeelding als die bestaat
+            if (!empty($product->online_lezen_image) && Storage::disk('public')->exists($product->online_lezen_image)) {
+                Storage::disk('public')->delete($product->online_lezen_image);
+            }
+            // Upload nieuwe afbeelding (gebruik de bestaande compressie functie)
+            $validated['online_lezen_image'] = $this->imageCompressionService->compressAndStore($request->file('online_lezen_image'));
+        } else {
+            // Behoud bestaande afbeelding
+            $validated['online_lezen_image'] = $product->online_lezen_image;
+        }
+
         // Convert comma-separated tags string to array
         if (!empty($validated['seo_tags'])) {
             $tags = array_map('trim', explode(',', $validated['seo_tags']));
@@ -299,6 +324,7 @@ class ProductController extends Controller
             'image_4' => $validated['image_4'] ?? null,
             'pdf_file' => $validated['pdf_file'] ?? null,
             'audio_file' => $validated['audio_file'] ?? null,
+            'online_lezen_image' => $validated['online_lezen_image'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
@@ -334,6 +360,11 @@ class ProductController extends Controller
             Storage::disk('public')->delete($product->audio_file);
         }
 
+        // Verwijder online lezen afbeelding
+        if (!empty($product->online_lezen_image) && Storage::disk('public')->exists($product->online_lezen_image)) {
+            Storage::disk('public')->delete($product->online_lezen_image);
+        }
+
         $product->update([
             'updated_by' => auth()->id(),
             'deleted_by' => auth()->id(),
@@ -343,6 +374,7 @@ class ProductController extends Controller
             'image_4' => '',
             'pdf_file' => '',
             'audio_file' => '',
+            'online_lezen_image' => '',
         ]);
 
         $product->delete();

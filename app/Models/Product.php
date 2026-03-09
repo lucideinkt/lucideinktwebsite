@@ -38,6 +38,7 @@ class Product extends Model
         'image_4',
         'pdf_file',
         'audio_file',
+        'online_lezen_image',
         'seo_description',
         'seo_tags',
         'seo_author',

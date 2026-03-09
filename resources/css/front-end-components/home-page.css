@@ -191,6 +191,7 @@ h2 {
     background-size: cover;
     background-position: center;
     z-index: 22;
+    margin-bottom: -64px;
 }
 
 .gradient-border {
@@ -208,7 +209,7 @@ h2 {
     );
     opacity: 0.8;
     position: relative;
-    z-index: 20;
+    z-index: 23;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
@@ -227,7 +228,7 @@ h2 {
 .home.intro-section {
     width: 100%;
     position: relative;
-    z-index: 10;
+    z-index: 23;
     margin: 0 auto;
     text-align: center;
     padding: 10px 0;
@@ -888,6 +889,7 @@ h2 {
 
     .hero-bg-wrapper {
         padding-bottom: 625px;
+        margin-bottom: -30px;
     }
 
     .said-nursi-section .text-container.risale-grid {

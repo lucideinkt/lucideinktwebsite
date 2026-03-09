@@ -4,7 +4,7 @@
             <h1 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h1>
 
             <div class="top-images">
-            <img src="{{ asset('images/said_nursi_passport.webp') }}" alt="">
+            <img src="{{ asset('images/ustadh_passport.webp') }}" alt="">
             </div>
 
             <h2 class="sub-title"><em>1878 – 1960</em></h2>

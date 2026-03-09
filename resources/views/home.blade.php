@@ -1,7 +1,7 @@
 <x-layout :seo-data="$SEOData">
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/011_background.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/hero_banner_new.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
