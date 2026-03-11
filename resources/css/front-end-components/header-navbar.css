@@ -507,7 +507,6 @@ li.nav-item.dropdown {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background-color: #f5e6ca !important;
         padding: 10px;
         border-radius: 50%;
     }
@@ -596,7 +595,6 @@ li.nav-item.dropdown {
 
     .navbar-cart-sidebar-toggle .sidebar-toggle {
         margin-top: 0;
-        background-color: #f5e6ca !important;
         padding: 10px;
         border-radius: 50%;
         display: flex;

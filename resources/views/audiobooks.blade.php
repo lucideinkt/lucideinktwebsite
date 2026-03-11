@@ -60,7 +60,7 @@
             @empty
                 <div class="audiobooks-empty">
                     <i class="fa-solid fa-headphones"></i>
-                    <p>Er zijn momenteel geen audioboeken beschikbaar om te beluisteren.<br>Kom binnenkort terug voor nieuwe toevoegingen!</p>
+                    <p>Binnenkort insha’ALLAH!</p>
                 </div>
             @endforelse
         </div>

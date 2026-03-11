@@ -36,7 +36,7 @@
            @empty
                 <div class="online-lezen-empty">
                     <i class="fa-solid fa-book-open"></i>
-                    <p>Er zijn momenteel geen boeken beschikbaar om online te lezen.<br>Kom binnenkort terug voor nieuwe toevoegingen!</p>
+                    <p>Binnenkort insha’ALLAH!</p>
                 </div>
             @endforelse
         </div>

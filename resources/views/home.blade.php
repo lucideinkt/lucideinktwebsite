@@ -1,7 +1,7 @@
 <x-layout :seo-data="$SEOData">
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/hero_banner_new.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/new_banner_hero.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
@@ -80,7 +80,7 @@
                 {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
                 <div class="sub-text one">
                     <p>Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van</p>
-                    <p>diensten volgens de Qur'anische richtlijen van de Risale-i Nur.</p>
+                    <p>diensten volgens de Qur'anische richtlijnen van de Risale-i Nur.</p>
                     <p>Met Nederlandse en Engelse vertalingen van deze boekenreeks</p>
                     <p>streven wij ernaar zoekers te voorzien van antwoorden</p>
                     <p>op de belangrijkste bestaansvragen van de mens.</p>
@@ -93,7 +93,7 @@
                 <div class="sub-text two">
                     <p>
                     Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van diensten
-                    volgens de Qur'anische richtlijen van de Risale-i Nur.
+                    volgens de Qur'anische richtlijnen van de <br>Risale-i Nur.
                     Met Nederlandse en Engelse vertalingen van deze boekenreeks
                     streven wij ernaar zoekers te voorzien van antwoorden
                     op de belangrijkste bestaansvragen van de mens.

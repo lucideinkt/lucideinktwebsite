@@ -463,7 +463,7 @@
     flex-direction: column;
     gap: 15px;
     z-index: 20;
-    margin-left: 10px; /* Space from clock edge */
+    margin-left: 35px; /* Space from clock edge */
     pointer-events: auto; /* Ensure buttons are clickable */
     width: max-content; /* Don't expand parent */
 }
