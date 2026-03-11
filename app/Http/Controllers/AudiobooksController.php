@@ -15,7 +15,6 @@ class AudiobooksController extends Controller
     {
         // Get only published products that have an audio file
         $products = Product::with(['category', 'productCopy'])
-            ->where('is_published', 1)
             ->whereNotNull('audio_file')
             ->where('audio_file', '!=', '')
             ->orderBy('title', 'asc')

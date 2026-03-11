@@ -14,3 +14,9 @@
     color: var(--red-1);
     margin-bottom: -15px;
 }
+
+.required {
+    color: var(--main-color);
+    font-weight: 700;
+}
+

@@ -27,7 +27,7 @@
         <h2 class="auth-title">Wachtwoord vergeten</h2>
 
         <div class="form-input">
-          <label for="email">E-mail</label>
+          <label for="email">E-mail <span class="required">*</span></label>
           <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control">
           @error('email')
             <div class="error">{{ $message }}</div>

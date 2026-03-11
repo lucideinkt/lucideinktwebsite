@@ -15,7 +15,6 @@ class OnlineLezenController extends Controller
     {
         // Get only published products that have a PDF file
         $products = Product::with(['category', 'productCopy'])
-            ->where('is_published', 1)
             ->whereNotNull('pdf_file')
             ->where('pdf_file', '!=', '')
             ->orderBy('title', 'asc')
@@ -33,7 +32,6 @@ class OnlineLezenController extends Controller
     public function read(Request $request, $slug)
     {
         $product = Product::where('slug', $slug)
-            ->where('is_published', 1)
             ->firstOrFail();
 
         // Check if fullscreen mode is requested

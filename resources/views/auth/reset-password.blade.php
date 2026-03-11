@@ -13,7 +13,7 @@
                 <h2 class="auth-title">Wachtwoord resetten</h2>
 
                 <div class="form-input">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail <span class="required">*</span></label>
                     <input type="email" name="email" id="email" value="{{ old('email', request()->email) }}" class="form-control">
                     @error('email')
                         <div class="error">{{ $message }}</div>
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="form-input">
-                    <label for="password">Nieuw wachtwoord</label>
+                    <label for="password">Nieuw wachtwoord <span class="required">*</span></label>
                     <input type="password" name="password" id="password" class="form-control">
                     @error('password')
                         <div class="error">{{ $message }}</div>
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="form-input">
-                    <label for="password_confirmation">Bevestig wachtwoord</label>
+                    <label for="password_confirmation">Bevestig wachtwoord <span class="required">*</span></label>
                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
                 </div>
 

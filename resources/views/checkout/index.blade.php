@@ -58,7 +58,7 @@
                         @endauth
 
                         <div class="form-input">
-                            <label for="billing_email">E-mailadres</label>
+                            <label for="billing_email">E-mailadres <span class="required">*</span></label>
                             <input type="email" name="billing_email" autocomplete="email"
                                 value="{{ old('billing_email', auth()->check() ? auth()->user()->email : '') }}"
                                 @auth readonly style="background-color: #f5f5f5;" @endauth>
@@ -69,7 +69,7 @@
 
                         <div class="name-box">
                             <div class="form-input">
-                                <label for="billing_first_name">Voornaam</label>
+                                <label for="billing_first_name">Voornaam <span class="required">*</span></label>
                                 <input type="text" name="billing_first_name" autocomplete="given-name"
                                     value="{{ old('billing_first_name') }}">
                                 @error('billing_first_name')
@@ -77,7 +77,7 @@
                                 @enderror
                             </div>
                             <div class="form-input">
-                                <label for="billing_last_name">Achternaam</label>
+                                <label for="billing_last_name">Achternaam <span class="required">*</span></label>
                                 <input type="text" name="billing_last_name" autocomplete="family-name"
                                     value="{{ old('billing_last_name') }}">
                                 @error('billing_last_name')
@@ -88,7 +88,7 @@
 
                         <div class="street-box">
                             <div class="form-input street">
-                                <label for="billing_street">Straatnaam</label>
+                                <label for="billing_street">Straatnaam <span class="required">*</span></label>
                                 <input type="text" name="billing_street" autocomplete="address-line1"
                                     value="{{ old('billing_street') }}">
                                 @error('billing_street')
@@ -97,7 +97,7 @@
                             </div>
                             <div class="housnumber-box">
                                 <div class="form-input">
-                                    <label for="billing_house_number">Huisnummer</label>
+                                    <label for="billing_house_number">Huisnummer <span class="required">*</span></label>
                                     <input type="number" name="billing_house_number" autocomplete="address-line2"
                                         value="{{ old('billing_house_number') }}">
                                     @error('billing_house_number')
@@ -116,7 +116,7 @@
                         </div>
 
                         <div class="form-input">
-                            <label for="billing_postal_code">Postcode</label>
+                            <label for="billing_postal_code">Postcode <span class="required">*</span></label>
                             <input type="text" name="billing_postal_code" autocomplete="postal-code"
                                 value="{{ old('billing_postal_code') }}">
                             @error('billing_postal_code')
@@ -125,7 +125,7 @@
                         </div>
 
                         <div class="form-input">
-                            <label for="billing_city">Plaats</label>
+                            <label for="billing_city">Plaats <span class="required">*</span></label>
                             <input type="text" name="billing_city" autocomplete="address-level2"
                                 value="{{ old('billing_city') }}">
                             @error('billing_city')
@@ -143,7 +143,7 @@
                         </div>
 
                         <div class="form-input">
-                            <label for="billing_company">Bedrijfsnaam (optioneel)</label>
+                            <label for="billing_company">Bedrijfsnaam</label>
                             <input type="text" name="billing_company" autocomplete="organization"
                                 value="{{ old('billing_company') }}">
                             @error('billing_company')
@@ -152,7 +152,7 @@
                         </div>
 
                         <div class="form-input">
-                            <label for="billing_country">Land</label>
+                            <label for="billing_country">Land <span class="required">*</span></label>
                             <select name="billing_country" autocomplete="country">
                                 <option value="NL" {{ old('billing_country') == 'nl' ? 'selected' : '' }}>
                                     Nederland
@@ -268,7 +268,7 @@
                         </div>
 
                         <div class="form-input">
-                            <label for="shipping_company">Bedrijfsnaam (optioneel)</label>
+                            <label for="shipping_company">Bedrijfsnaam</label>
                             <input type="text" name="shipping_company" autocomplete="shipping organization"
                                 value="{{ old('shipping_company') }}">
                             @error('shipping_company')
