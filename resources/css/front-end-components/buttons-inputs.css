@@ -99,7 +99,7 @@ select:focus {
 
 @media (max-width: 992px) {
     .btn {
-        font-size: 15px;
+        font-size: 15px !important;
     }
 }
 

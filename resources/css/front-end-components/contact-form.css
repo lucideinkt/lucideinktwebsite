@@ -311,4 +311,8 @@
     .contact-form .form-actions {
         margin-top: 1rem;
     }
+
+    .contact-submit-btn {
+        font-size: 15px;
+    }
 }

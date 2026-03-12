@@ -83,6 +83,10 @@
     margin-right: 4px !important;
 }
 
+.myparcel-delivery-options label {
+    cursor: pointer;
+}
+
 /* iOS Safari fix - prevent auto-zoom and enforce size */
 @supports (-webkit-touch-callout: none) {
     .myparcel-delivery-options input[type="radio"] {
