@@ -1,7 +1,7 @@
 <x-layout :seo-data="$SEOData">
     <main class="page home">
 
-        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/new_banner_hero_2.webp') }}');">
+        <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/new_banner_hero_3.webp') }}');">
 
             <section class="home-hero">
                 <div class="clock-image">
@@ -326,7 +326,6 @@
 
         <x-footer></x-footer>
 
-        <div class="gradient-border"></div>
 
         <script>
             // Intro Modal Functions - MUST be global for onclick to work

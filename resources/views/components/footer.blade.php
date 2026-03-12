@@ -67,9 +67,9 @@
 
         </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <p>&copy; {{ date('Y') }} Lucide Inkt. Alle rechten voorbehouden.</p>
-        </div>
     </div>
 </section>
+<!-- Footer Bottom -->
+<div class="footer-bottom">
+    <p>&copy; {{ date('Y') }} Lucide Inkt. Alle rechten voorbehouden.</p>
+</div>

@@ -7,7 +7,7 @@
 
         <div class="online-lezen-header">
             <h1 class="online-lezen-title">Online Bibliotheek</h1>
-{{--            <p class="online-lezen-subtitle">Ontdek en lees onze boeken direct online, waar en wanneer je maar wilt</p>--}}
+            <p class="online-lezen-subtitle">Klik op een titel om te lezen</p>
         </div>
 
 

@@ -1,7 +1,7 @@
 <div>
     <form wire:submit.prevent="submit" class="newsletter-form">
         <div class="newsletter-input-group">
-            <input
+            <input style="border: 1px solid rgba(236, 229, 194, 0.3)!important;outline: none!important;box-shadow: none!important;"
                 type="email"
                 wire:model="email"
                 placeholder="Uw e-mailadres"

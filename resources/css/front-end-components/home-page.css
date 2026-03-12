@@ -196,7 +196,7 @@ h2 {
 
 .gradient-border {
     width: 100%;
-    height: 4px;
+    height: 10px;
     background: linear-gradient(
         to right,
         rgba(197, 160, 89, 0) 0%,
@@ -207,7 +207,7 @@ h2 {
         rgba(212, 175, 55, 0.12) 85%,
         rgba(197, 160, 89, 0) 100%
     );
-    opacity: 0.8;
+    opacity: 1;
     position: relative;
     z-index: 23;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
