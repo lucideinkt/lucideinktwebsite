@@ -191,7 +191,7 @@ h2 {
     background-size: cover;
     background-position: center;
     z-index: 22;
-    margin-bottom: -64px;
+    margin-bottom: -48px;
 }
 
 .gradient-border {
@@ -1028,6 +1028,7 @@ h2 {
 
     .hero-bg-wrapper {
         padding-bottom: 550px;
+        margin-bottom: -24px;
     }
 
     .home-book-grid .one {

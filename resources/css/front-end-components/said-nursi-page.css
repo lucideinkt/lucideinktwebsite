@@ -207,7 +207,7 @@
     }
 
     .said-nursi-page__text-box > img[src*="rose-frame"] {
-        width: 250px;
+        width: 100%;
     }
 
     .said-nursi-page__text-box p {

@@ -172,8 +172,7 @@
     z-index: 30;
     overflow: visible;
     /*background-color:var(--surface-2);*/
-    /*background-image: url("../../images/001_leather_background.webp");*/
-    background-image: url("../../images/RedCanvas.webp");
+    background-image: url("../../images/001_leather_background.webp");
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -258,8 +257,7 @@
     top: calc(100% + 5px);
     left: 50%;
     transform: translateX(-50%);
-    /*background-image: url("../../images/001_leather_background.webp");*/
-    background-image: url("../../images/RedCanvas.webp");
+    background-image: url("../../images/001_leather_background.webp");
     background-size: cover;
     border: 2px solid #f5dfac;
     border-radius: 10px;
@@ -458,8 +456,7 @@ li.nav-item.dropdown {
     justify-content: center;
     align-items: center;
     z-index: 60;
-    /*background-image: url("../../images/001_leather_background.webp");*/
-    background-image: url("../../images/RedCanvas.webp");
+    background-image: url("../../images/001_leather_background.webp");
     background-size: cover;
     background-position: center;
     border: 3px solid #f5dfac;
