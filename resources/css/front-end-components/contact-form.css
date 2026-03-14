@@ -234,7 +234,7 @@
     }
 
     .contact-form-box {
-        padding: 2rem 1.25rem;
+        padding: 3rem 1.25rem;
     }
 
     .contact-form-title {
@@ -254,7 +254,7 @@
 
 @media (max-width: 600px) {
     .contact-form-box {
-        padding: 2rem;
+        padding: 3rem;
     }
 
     .contact-form-header {
@@ -289,7 +289,7 @@
 
 @media (max-width: 480px) {
     .contact-form-box {
-        padding: 1.5rem 1rem;
+        padding: 2.5rem 1rem;
         border-radius: 12px;
     }
 
