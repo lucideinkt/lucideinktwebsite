@@ -14,7 +14,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: .25rem;
-    line-height: 1.5;
+    line-height: 0;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -23,7 +23,7 @@
 .bc-item {
     display: flex;
     align-items: center;
-    line-height: 1;
+    line-height: 0;
 }
 
 /* Links and current item */
@@ -31,7 +31,7 @@
     font-weight: 600;
     color: var(--bc-text);
     text-decoration: none;
-    line-height: 1;
+    line-height: 0;
     align-self: center;
 }
 
@@ -41,7 +41,7 @@
 
 .bc-current {
     color: var(--bc-dim);
-    line-height: 1;
+    line-height: 0;
     align-self: center;
 }
 
