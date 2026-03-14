@@ -136,7 +136,7 @@
                 <div class="section">
                     <div class="form-input">
                         <label for="pages">Aantal pagina's</label>
-                        <input type="number" name="pages" id="pages" value="{{ old('pages', $product->pages ?? '') }}" min="1">
+                        <input type="number" name="pages" id="pages" value="{{ old('pages', $product->pages ?? '') }}" min="0">
                         @error('pages')
                         <div class="error">{{ $message }}</div>
                         @enderror
