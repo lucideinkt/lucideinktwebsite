@@ -1,77 +1,79 @@
 /* =========================================================
-   Breadcrumbs — pill style
+   Breadcrumbs
    ========================================================= */
 .bc {
+    --bc-text: var(--main-font-color);
+    --bc-dim: var(--main-font-color);
+    --bc-sep: var(--main-font-color);
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
 .bc-list {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: .35rem;
+    flex-wrap: wrap;
+    gap: .25rem;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-/* Each list item just centers its child */
 .bc-item {
-    display: flex;
-    align-items: center;
-}
-
-/* The pill itself */
-.bc-pill {
     display: inline-flex;
     align-items: center;
-    gap: .35rem;
-    padding: .25rem .75rem;
-    border-radius: 999px;
-    font-size: .82rem;
+}
+
+/* Links and current item */
+.bc-link {
     font-weight: 600;
-    letter-spacing: .02em;
-    line-height: 1;
-    white-space: nowrap;
-    transition: background .15s, color .15s;
-}
-
-/* Clickable pill */
-.bc-pill--link {
-    background: rgba(98, 5, 5, .08);
-    color: var(--main-font-color);
-    text-decoration: none;
-    border: 1px solid rgba(98, 5, 5, .18);
-}
-
-.bc-pill--link:hover {
-    background: rgba(98, 5, 5, .16);
+    color: var(--bc-text);
     text-decoration: none;
 }
 
-/* Current / last pill */
-.bc-pill--current {
-    background: var(--main-font-color);
-    color: #fffcf4;
-    border: 1px solid var(--main-font-color);
-    cursor: default;
+.bc-link:hover {
+    text-decoration: none;
 }
 
-/* Icon inside pill */
-.bc-pill-icon {
-    font-size: .75rem;
-    opacity: .85;
+.bc-current {
+    color: var(--bc-dim);
 }
 
-/* Slash separator */
+/* Icons */
+.bc-home {
+    width: 16px;
+    height: 16px;
+    opacity: .8;
+    margin-right: .25rem;
+    display: inline-block;
+}
+
 .bc-sep {
-    display: flex;
-    align-items: center;
-    color: var(--main-font-color);
-    opacity: .4;
-    font-size: .85rem;
-    font-weight: 400;
+    margin: 0 .2rem;
+    color: var(--bc-sep);
     user-select: none;
-    padding: 0 .1rem;
+    display: inline-flex;
+}
+
+.bc-chevron {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+}
+
+.bc-chev {
+    font-size: 12px;
+    color: var(--main-font-color);
+}
+
+/* Optional: tighter spacing on small screens */
+@media (max-width: 480px) {
+    .bc-list {
+        gap: .15rem;
+    }
+
+    .bc-sep {
+        margin: 0 .2rem;
+    }
 }
