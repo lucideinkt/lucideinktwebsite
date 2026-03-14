@@ -26,7 +26,7 @@
 
         <div class="shop-header">
 {{--            <img class="shop-header-image" src="{{ asset('images/our-store-second.webp') }}" alt="Onze Winkel">--}}
-            <h1 class="shop-title">Onze Winkel</h1>
+            <h1 class="shop-title">Winkel</h1>
 {{--            <p class="shop-subtitle">Ontdek onze collectie boeken en bestel direct online</p>--}}
         </div>
 

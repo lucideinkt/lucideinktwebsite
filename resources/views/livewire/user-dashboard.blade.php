@@ -27,7 +27,7 @@
                 <i class="fa-solid fa-book-open"></i>
             </div>
             <div class="card-info">
-                <h3>Online Bibliotheek</h3>
+                <h3>Bibliotheek</h3>
                 <p>Lees direct je aangeschafte boeken online.</p>
                 <a href="{{ route('onlineLezen') }}" class="btn-dashboard">Naar bibliotheek</a>
             </div>

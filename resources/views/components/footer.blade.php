@@ -37,11 +37,11 @@
             <div class="footer-column">
                 <h3 class="footer-title">Snelle Links</h3>
                 <ul class="footer-links">
-                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('shop') }}">Winkel</a></li>
                     <li><a href="{{ route('saidnursi') }}">Said Nursi</a></li>
                     <li><a href="{{ route('risale') }}">De Risale-i Nur</a></li>
-                    <li><a href="{{ route('onlineLezen') }}">Online Lezen</a></li>
+                    <li><a href="{{ route('onlineLezen') }}">Bibliotheek</a></li>
+                    <li><a href="{{ route('audiobooks') }}">Audioboeken</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
@@ -56,7 +56,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-envelope"></i>
-                        <span>info@lucideinkt.nl</span>
+                        <span><a style="color: rgba(98, 5, 5, 0.7);" href="mailto:info@lucideinkt.nl">info@lucideinkt.nl</a></span>
                     </li>
                     <li>
                         <i class="fa-solid fa-building"></i>

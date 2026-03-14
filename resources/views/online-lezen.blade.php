@@ -2,11 +2,11 @@
     <main class="container page online-lezen">
         <x-breadcrumbs :items="[
           ['label' => 'Home', 'url' => route('home')],
-          ['label' => 'Online Lezen', 'url' => route('onlineLezen')],
+          ['label' => 'Bibliotheek', 'url' => route('onlineLezen')],
         ]" />
 
         <div class="online-lezen-header">
-            <h1 class="online-lezen-title">Online Bibliotheek</h1>
+            <h1 class="online-lezen-title">Bibliotheek</h1>
             <p class="online-lezen-subtitle">Klik op een titel om te lezen</p>
         </div>
 

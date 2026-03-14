@@ -201,8 +201,8 @@ Route::get('/verzending-levering', function () {
 })->name('verzendingLevering');
 
 // Online Reading
-Route::get('/online-lezen', [OnlineLezenController::class, 'index'])->name('onlineLezen');
-Route::get('/online-lezen/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
+Route::get('/bibliotheek', [OnlineLezenController::class, 'index'])->name('onlineLezen');
+Route::get('/bibliotheek/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
 
 // Audioboeken (Audiobooks)
 Route::get('/audioboeken', [AudiobooksController::class, 'index'])->name('audiobooks');
