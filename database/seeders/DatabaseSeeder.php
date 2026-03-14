@@ -176,7 +176,7 @@ class DatabaseSeeder extends Seeder
               'is_published' => 1,
               'product_copy_id' => $nlTrCopy->id,
               'stock' => 100,
-              'image_1' => 'images/books/afwegingen/afwegingen_nl-tr_front_2.png',
+              'image_1' => 'images/books/afwegingen/afwegingen_nl-tr_front_3.png',
               'image_2' => 'images/books/afwegingen/afwegingen_nl-tr_inside.webp',
               'image_3' => 'images/books/afwegingen/afwegingen_nl-tr_case.webp',
               'seo_description' => '',
