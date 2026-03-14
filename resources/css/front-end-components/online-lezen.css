@@ -657,8 +657,10 @@
 
 @media (max-width: 480px) {
     .online-lezen-grid {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 25px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0;
+        margin-bottom: 0;
     }
 
     .online-lezen-grid a {

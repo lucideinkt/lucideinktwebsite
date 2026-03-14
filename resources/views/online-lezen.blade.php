@@ -11,7 +11,7 @@
         </div>
 
 
-        <div class="online-lezen-grid" style="margin-bottom: 20px;justify-content: center;align-items: center">
+        <div class="online-lezen-grid" style="justify-content: center;align-items: center">
             @forelse ($products as $product)
                 <a href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link">
                     @if($product->online_lezen_image)
