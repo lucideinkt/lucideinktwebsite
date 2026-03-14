@@ -51,9 +51,8 @@
     height: 16px;
     opacity: .8;
     margin-right: .25rem;
-    display: inline-block;
+    display: block;
     flex-shrink: 0;
-    vertical-align: middle;
 }
 
 .bc-sep {
