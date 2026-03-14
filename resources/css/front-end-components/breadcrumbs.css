@@ -14,16 +14,16 @@
     align-items: center;
     flex-wrap: wrap;
     gap: .25rem;
-    line-height: 0;
+    line-height: 1;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .bc-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    line-height: 0;
+    vertical-align: middle;
 }
 
 /* Links and current item */
@@ -31,8 +31,8 @@
     font-weight: 600;
     color: var(--bc-text);
     text-decoration: none;
-    line-height: 0;
-    align-self: center;
+    display: inline-flex;
+    align-items: center;
 }
 
 .bc-link:hover {
@@ -41,8 +41,8 @@
 
 .bc-current {
     color: var(--bc-dim);
-    line-height: 0;
-    align-self: center;
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Icons */
