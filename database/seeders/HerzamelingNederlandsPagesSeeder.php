@@ -181,9 +181,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
                 'content' => '<div class="page" id="9">
     <p class="text-end page-number">#9</p>
 
-    <p class="text-center text-bold">
-      Dit geeft aan dat elders
-      een Ultieme Berechting zal plaatsvinden.
+    <p class="text-center text-bold text-center-constrained">
+      Dit geeft aan dat elders een Ultieme Berechting zal plaatsvinden.
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 10px;">
@@ -213,9 +212,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       verlaten en emigreren.
     </p>
 
-    <p class="text-center text-bold">
-      Dit geeft aan dat hun vereffening aan
-      de Ultieme Berechting wordt overgelaten!
+    <p class="text-center text-bold text-center-constrained">
+      Dit geeft aan dat hun vereffening aan de Ultieme Berechting wordt overgelaten!
     </p>
   </div>'
             ],
@@ -239,9 +237,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       rechtvaardigheid voldaan. In de meeste gevallen gaan dwazen zoals jij ongestraft hier vandaan.
     </p>
 
-    <p class="text-center text-bold">
-      Dit geeft aan dat dergelijke onafgehandelde zaken
-      aan de Ultieme Berechting worden overgelaten.
+    <p class="text-center text-bold text-center-constrained">
+      Dit geeft aan dat dergelijke onafgehandelde zaken aan de Ultieme Berechting worden overgelaten.
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET VIERDE AANZICHT</p>
@@ -299,9 +296,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
                 'content' => '<div class="page" id="12">
     <p class="text-end page-number">#12</p>
 
-    <p class="text-center text-bold">
-      Dit geeft aan dat ze op weg zijn naar
-      een eeuwig schouwparadijs...
+    <p class="text-center text-bold text-center-constrained">
+      Dit geeft aan dat ze op weg zijn naar een eeuwig schouwparadijs...
     </p>
 
     <p class="text-center text-bold small-title">HET VIJFDE AANZICHT</p>
@@ -367,10 +363,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       staan.
     </p>
 
-    <p class="text-center text-bold">
-      De aanwezigen in deze beproevingsplaats zijn dus
-      niet aan henzelf overgelaten; zalige paleizen en
-      beangstigende kerkers staan hen te wachten.
+    <p class="text-center text-bold text-center-constrained">
+      De aanwezigen in deze beproevingsplaats zijn dus niet aan henzelf overgelaten; zalige paleizen en beangstigende kerkers staan hen te wachten.
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ZESDE AANZICHT</p>
@@ -439,11 +433,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       zijn met de zuivere en zalige originelen van alle voorbeelden en verschijnselen die wij hier waarnemen.
     </p>
 
-    <p class="text-center text-bold">
-      De inspanningen hier zijn dus daarvoor bedoeld.
-      Hier wordt gewerkt, daar wordt beloning uitgeloofd.
-      Voor iedereen is daar een gelukzaligheid naargelang
-      zijn potentie weggelegd...
+    <p class="text-center text-bold text-center-constrained">
+      De inspanningen hier zijn dus daarvoor bedoeld. Hier wordt gewerkt, daar wordt beloning uitgeloofd. Voor iedereen is daar een gelukzaligheid naargelang zijn potentie weggelegd...
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ZEVENDE AANZICHT</p>
@@ -516,9 +507,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       handelingen plegen die zijn statigheid en digniteit aantasten, en zijn genadige karakter geenszins kan aanvaarden, worden ze hier niet bestraft.
     </p>
 
-    <p class="text-center text-bold">
-      Dit betekent dat zulke onafgehandelde zaken aan
-      de Ultieme Berechting worden overgelaten...
+    <p class="text-center text-bold text-center-constrained">
+      Dit betekent dat zulke onafgehandelde zaken aan de Ultieme Berechting worden overgelaten...
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ACHTSTE AANZICHT</p>
@@ -559,9 +549,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       ons, voor alle wezens, voor hem en voor zijn rijk eveneens hoogstnodig.
     </p>
 
-    <p class="text-center text-bold">
-      Al bij al zal een Ultieme Berechting plaatsvinden,
-      en een Sublime Gelukzaligheid geschonken worden.
+    <p class="text-center text-bold text-center-constrained">
+      Al bij al zal een Ultieme Berechting plaatsvinden, en een Sublime Gelukzaligheid geschonken worden.
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET NEGENDE AANZICHT</p>
@@ -618,9 +607,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       en standhouden... Het rust dus op aanhoudende, vaststaande, onvergankelijke, stabiele, volmaakte en voortreffelijke beschikkingen die dat sultanaat waard zijn....
     </p>
 
-    <p class="text-center text-bold">
-      Er bestaat dus een ander oord
-      waarnaar onontkoombaar gemigreerd zal worden...
+    <p class="text-center text-bold text-center-constrained">
+      Er bestaat dus een ander oord waarnaar onontkoombaar gemigreerd zal worden...
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET TIENDE AANZICHT</p>
@@ -700,11 +688,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       Deze voorbijgaande en onbestendige omstandigheden werpen dus blijvende beelden en eeuwige vruchten af.
     </p>
 
-    <p class="text-center text-bold">
-      Al bij al zijn deze ceremoniën dus bedoeld voor een
-      Sublieme Gelukzaligheid en een Ultieme Berechting,
-      en voor meerdere verheven doeleinden
-      die ons onbekend zijn...
+    <p class="text-center text-bold text-center-constrained">
+      Al bij al zijn deze ceremoniën dus bedoeld voor een Sublieme Gelukzaligheid en een Ultieme Berechting, en voor meerdere verheven doeleinden die ons onbekend zijn...
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ELFDE AANZICHT</p>
@@ -749,12 +734,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       werkelijkheden tot hun tegenpolen verworden. Echter, volgens de unanieme opvatting van alle intellectuelen – <span class="text-italic">met uitzondering van de bezopen sofisten die het bestaan van alles ontkennen</span> – is de verwording van werkelijkheden ondenkbaar.
     </p>
 
-    <p class="text-center text-bold">
-      Al bij al bestaat elders een ander oord, waar een
-      Ultieme Berechting, een Alhoge Gerechtigheid en
-      een Grandioze Begiftiging zullen plaatsvinden, opdat
-      deze genade, wijsheid, gratie en rechtvaardigheid
-      volwaardig tot hun recht kunnen komen...
+    <p class="text-center text-bold text-center-constrained">
+      Al bij al bestaat elders een ander oord, waar een Ultieme Berechting, een Alhoge Gerechtigheid en een Grandioze Begiftiging zullen plaatsvinden, opdat deze genade, wijsheid, gratie en rechtvaardigheid volwaardig tot hun recht kunnen komen...
     </p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET TWAALFDE AANZICHT</p>

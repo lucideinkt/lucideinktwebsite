@@ -226,6 +226,13 @@
 .book-reader-scope .text-bold    { font-weight: 600; }
 .book-reader-scope .text-red     { color: var(--main-font-color); }
 .book-reader-scope .text-center  { text-align: center; hyphens: none; }
+.book-reader-scope .text-center-constrained {
+    text-align: center;
+    hyphens: none;
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .book-reader-scope .text-end     { text-align: right; }
 
 .book-reader-scope .small-title {
