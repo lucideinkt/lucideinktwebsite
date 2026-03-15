@@ -39,6 +39,7 @@ class Product extends Model
         'pdf_file',
         'audio_file',
         'online_lezen_image',
+        'book_content',
         'seo_description',
         'seo_tags',
         'seo_author',
@@ -66,6 +67,11 @@ class Product extends Model
     public function productCopy()
     {
         return $this->belongsTo(ProductCopy::class, 'product_copy_id');
+    }
+
+    public function bookPages()
+    {
+        return $this->hasMany(BookPage::class)->orderBy('page_number');
     }
 
     public function getDynamicSEOData(): SEOData

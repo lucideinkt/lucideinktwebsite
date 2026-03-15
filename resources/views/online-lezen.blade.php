@@ -13,7 +13,12 @@
 
         <div class="online-lezen-grid" style="justify-content: center;align-items: center">
             @forelse ($products as $product)
-                <a href="{{ route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']) }}" class="online-book-link">
+                @php
+                    $href = $product->book_pages_count > 0
+                        ? route('onlineLezenReadHtml', $product->slug)
+                        : route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']);
+                @endphp
+                <a href="{{ $href }}" class="online-book-link">
                     @if($product->online_lezen_image)
                         <img src="{{ asset($product->online_lezen_image) }}" alt="{{ $product->title }}" style="width: 90%; background: transparent; display: block; margin: 0 auto;">
                     @elseif($product->image_1)

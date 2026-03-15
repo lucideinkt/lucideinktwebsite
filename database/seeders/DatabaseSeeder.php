@@ -530,5 +530,6 @@ class DatabaseSeeder extends Seeder
             Product::create($book);
         }
 
+        $this->call(HerzamelingNederlandsPagesSeeder::class);
     }
 }

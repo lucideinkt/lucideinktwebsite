@@ -92,6 +92,16 @@
         @endrole
 
         @role('admin')
+        <a href="{{ route('bookContent.index') }}">
+          <li
+            class="nav-item {{ request()->routeIs('bookContent.index') || request()->routeIs('bookContent.edit') ? 'active-admin-link' : '' }}">
+            <span
+              class="{{ request()->routeIs('bookContent.index') || request()->routeIs('bookContent.edit') ? 'active-admin-link' : '' }}">Book Content</span>
+          </li>
+        </a>
+        @endrole
+
+        @role('admin')
         <a href="{{ route('productCategoryIndex') }}">
           <li
             class="nav-item {{ request()->routeIs('productCategoryIndex') || request()->routeIs('productCategoryCreatePage') || request()->routeIs('productCategoryEditPage') ? 'active-admin-link' : '' }}">

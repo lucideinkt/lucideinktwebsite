@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AudiobooksController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookContentController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CustomerController;
@@ -142,6 +143,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/dashboard/newsletter/campaigns/{newsletter}/duplicate', [NewsletterCampaignController::class, 'duplicate'])->name('newsletter.campaigns.duplicate');
     Route::post('/dashboard/newsletter/campaigns/{newsletter}/resend', [NewsletterCampaignController::class, 'resend'])->name('newsletter.campaigns.resend');
 
+    // Book Content (HTML boekinhoud — per pagina)
+    Route::get('/dashboard/book-content',                          [BookContentController::class, 'index'])->name('bookContent.index');
+    Route::get('/dashboard/book-content/{id}/edit',                [BookContentController::class, 'edit'])->name('bookContent.edit');
+    Route::put('/dashboard/book-content/{id}',                     [BookContentController::class, 'update'])->name('bookContent.update');
+    Route::post('/dashboard/book-content/{id}/pages',              [BookContentController::class, 'storePage'])->name('bookContent.storePage');
+    Route::delete('/dashboard/book-content/{id}/pages/{pageId}',   [BookContentController::class, 'destroyPage'])->name('bookContent.destroyPage');
+    Route::post('/dashboard/book-content/{id}/reorder',            [BookContentController::class, 'reorder'])->name('bookContent.reorder');
+
 });
 
 // Shop
@@ -202,6 +211,7 @@ Route::get('/verzending-levering', function () {
 
 // Online Reading
 Route::get('/bibliotheek', [OnlineLezenController::class, 'index'])->name('onlineLezen');
+Route::get('/bibliotheek/{slug}/lees', [OnlineLezenController::class, 'readHtml'])->name('onlineLezenReadHtml');
 Route::get('/bibliotheek/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
 
 // Audioboeken (Audiobooks)

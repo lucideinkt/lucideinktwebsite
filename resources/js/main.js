@@ -35,6 +35,7 @@ import { initReadMoreModal } from './features/read-more-modal.js';
 import { initHeaderScrollEffect } from './features/header-scroll.js';
 import { initLivewireCart } from './features/live-wire-cart.js';
 import { initContactForm } from './features/contact-form.js';
+import { readerBook } from './features/reader-book.js';
 
 // Import observers
 import { initMutationObserver } from './observers/mutation-observer.js';
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderScrollEffect();
     initContactForm();
     setupSidebarDropdowns();
+    readerBook();
 
     // Initialize observer (must be last)
     initMutationObserver();

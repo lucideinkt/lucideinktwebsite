@@ -106,21 +106,22 @@ class SEOService
      * Generate SEO data for a product
      *
      * @param \App\Models\Product $product
-     * @param string $context 'shop'|'online-lezen'|'audiobooks'
+     * @param string $context 'shop'|'online-lezen'|'online-lezen-html'|'audiobooks'
      * @return SEOData
      */
     public static function getProductSEO($product, string $context = 'shop'): SEOData
     {
         $titleSuffix = match($context) {
-            'online-lezen' => ' | Online Lezen | Lucide Inkt',
-            'audiobooks' => ' | Audiobooks | Lucide Inkt',
-            default => ' | Lucide Inkt',
+            'online-lezen', 'online-lezen-html' => ' | Online Lezen | Lucide Inkt',
+            'audiobooks'                         => ' | Audioboeken | Lucide Inkt',
+            default                              => ' | Lucide Inkt',
         };
 
         $url = match($context) {
-            'online-lezen' => route('onlineLezenRead', $product->slug),
-            'audiobooks' => route('audiobooksListen', $product->slug),
-            default => route('productShow', $product->slug),
+            'online-lezen-html' => route('onlineLezenReadHtml', $product->slug),
+            'online-lezen'      => route('onlineLezenRead', $product->slug),
+            'audiobooks'        => route('audiobooksListen', $product->slug),
+            default             => route('productShow', $product->slug),
         };
 
         return new SEOData(

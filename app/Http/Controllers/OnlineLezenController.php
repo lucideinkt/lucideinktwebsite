@@ -13,16 +13,21 @@ class OnlineLezenController extends Controller
      */
     public function index()
     {
-        // Get only published products that have a PDF file
         $products = Product::with(['category', 'productCopy'])
-            ->whereNotNull('pdf_file')
-            ->where('pdf_file', '!=', '')
+            ->withCount('bookPages')
+            ->where(function ($q) {
+                $q->whereNotNull('pdf_file')->where('pdf_file', '!=', '')
+                  ->orWhere(function ($q2) {
+                      $q2->whereNotNull('book_content')->where('book_content', '!=', '');
+                  })
+                  ->orWhereHas('bookPages');
+            })
             ->orderBy('title', 'asc')
             ->get();
 
         return view('online-lezen', [
             'products' => $products,
-            'SEOData' => SEOService::getPageSEO('online-lezen'),
+            'SEOData'  => SEOService::getPageSEO('online-lezen'),
         ]);
     }
 
@@ -31,8 +36,13 @@ class OnlineLezenController extends Controller
      */
     public function read(Request $request, $slug)
     {
-        $product = Product::where('slug', $slug)
+        $product = Product::where('slug', '=', $slug)
             ->firstOrFail();
+
+        // Als product HTML pagina's heeft → stuur door naar schone HTML lezer
+        if ($product->bookPages()->exists()) {
+            return redirect()->route('onlineLezenReadHtml', $slug);
+        }
 
         // Check if fullscreen mode is requested
         $isFullscreen = $request->query('fullscreen') === '1';
@@ -45,4 +55,26 @@ class OnlineLezenController extends Controller
             'SEOData' => SEOService::getProductSEO($product, 'online-lezen'),
         ]);
     }
+
+    /**
+     * Schone HTML lezer pagina
+     */
+    public function readHtml($slug)
+    {
+        $product = Product::where('slug', '=', $slug)->firstOrFail();
+
+        $pages = $product->bookPages()->orderBy('page_number')->get();
+
+        abort_if($pages->isEmpty(), 404);
+
+        return view('online-lezen-html-reader', [
+            'product' => $product,
+            'pages'   => $pages,
+            'SEOData' => SEOService::getProductSEO($product, 'online-lezen-html'),
+        ]);
+    }
 }
+
+
+
+
