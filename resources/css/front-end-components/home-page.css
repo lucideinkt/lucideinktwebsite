@@ -191,7 +191,7 @@ h2 {
     background-size: cover;
     background-position: center;
     z-index: 22;
-    margin-bottom: -48px;
+    margin-bottom: -25px;
 }
 
 .gradient-border {
@@ -889,7 +889,7 @@ h2 {
 
     .hero-bg-wrapper {
         padding-bottom: 625px;
-        margin-bottom: -30px;
+        margin-bottom: -10px;
     }
 
     .said-nursi-section .text-container.risale-grid {
@@ -1028,7 +1028,7 @@ h2 {
 
     .hero-bg-wrapper {
         padding-bottom: 550px;
-        margin-bottom: -24px;
+        margin-bottom: -10px;
     }
 
     .home-book-grid .one {
@@ -1119,6 +1119,7 @@ h2 {
 
     .hero-bg-wrapper {
         padding-bottom: 510px;
+        margin-bottom: -5px;
     }
 
     .home-hero {
