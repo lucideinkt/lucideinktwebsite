@@ -182,7 +182,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="text-end page-number">#9</p>
 
     <p class="text-center text-bold">
-      Dit geeft aan dat elders<br />
+      Dit geeft aan dat elders
       een Ultieme Berechting zal plaatsvinden.
     </p>
 
@@ -214,7 +214,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      Dit geeft aan dat hun vereffening aan<br />
+      Dit geeft aan dat hun vereffening aan
       de Ultieme Berechting wordt overgelaten!
     </p>
   </div>'
@@ -240,7 +240,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      Dit geeft aan dat dergelijke onafgehandelde zaken<br />
+      Dit geeft aan dat dergelijke onafgehandelde zaken
       aan de Ultieme Berechting worden overgelaten.
     </p>
 
@@ -300,7 +300,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="text-end page-number">#12</p>
 
     <p class="text-center text-bold">
-      Dit geeft aan dat ze op weg zijn naar<br />
+      Dit geeft aan dat ze op weg zijn naar
       een eeuwig schouwparadijs...
     </p>
 
@@ -368,8 +368,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      De aanwezigen in deze beproevingsplaats zijn dus<br />
-      niet aan henzelf overgelaten; zalige paleizen en<br />
+      De aanwezigen in deze beproevingsplaats zijn dus
+      niet aan henzelf overgelaten; zalige paleizen en
       beangstigende kerkers staan hen te wachten.
     </p>
 
@@ -440,9 +440,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      De inspanningen hier zijn dus daarvoor bedoeld.<br />
-      Hier wordt gewerkt, daar wordt beloning uitgeloofd.<br />
-      Voor iedereen is daar een gelukzaligheid naargelang<br />
+      De inspanningen hier zijn dus daarvoor bedoeld.
+      Hier wordt gewerkt, daar wordt beloning uitgeloofd.
+      Voor iedereen is daar een gelukzaligheid naargelang
       zijn potentie weggelegd...
     </p>
 
@@ -517,7 +517,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      Dit betekent dat zulke onafgehandelde zaken aan<br />
+      Dit betekent dat zulke onafgehandelde zaken aan
       de Ultieme Berechting worden overgelaten...
     </p>
 
@@ -560,7 +560,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      Al bij al zal een Ultieme Berechting plaatsvinden,<br />
+      Al bij al zal een Ultieme Berechting plaatsvinden,
       en een Sublime Gelukzaligheid geschonken worden.
     </p>
 
@@ -619,7 +619,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      Er bestaat dus een ander oord<br />
+      Er bestaat dus een ander oord
       waarnaar onontkoombaar gemigreerd zal worden...
     </p>
 
@@ -701,9 +701,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      Al bij al zijn deze ceremoniën dus bedoeld voor een<br />
-      Sublieme Gelukzaligheid en een Ultieme Berechting,<br />
-      en voor meerdere verheven doeleinden<br />
+      Al bij al zijn deze ceremoniën dus bedoeld voor een
+      Sublieme Gelukzaligheid en een Ultieme Berechting,
+      en voor meerdere verheven doeleinden
       die ons onbekend zijn...
     </p>
 
@@ -750,10 +750,10 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-center text-bold">
-      Al bij al bestaat elders een ander oord, waar een<br />
-      Ultieme Berechting, een Alhoge Gerechtigheid en<br />
-      een Grandioze Begiftiging zullen plaatsvinden, opdat<br />
-      deze genade, wijsheid, gratie en rechtvaardigheid<br />
+      Al bij al bestaat elders een ander oord, waar een
+      Ultieme Berechting, een Alhoge Gerechtigheid en
+      een Grandioze Begiftiging zullen plaatsvinden, opdat
+      deze genade, wijsheid, gratie en rechtvaardigheid
       volwaardig tot hun recht kunnen komen...
     </p>
 
