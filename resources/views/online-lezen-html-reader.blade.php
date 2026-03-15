@@ -56,7 +56,7 @@
         </div>
 
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
-            <button class="reader-btn" id="font-smaller" title="Kleinere tekst" aria-label="Kleinere tekst">A−</button>
+            <button class="reader-btn" id="font-smaller" title="Kleinere tekst" aria-label="Kleinere tekst">A&minus;</button>
             <button class="reader-btn" id="font-larger"  title="Grotere tekst"  aria-label="Grotere tekst">A+</button>
             <button class="reader-btn reader-btn-icon" id="dark-mode-toggle" title="Donkere modus" aria-label="Donkere modus aan/uit">
                 <i class="fa-solid fa-moon" id="dark-mode-icon" aria-hidden="true"></i>
@@ -69,21 +69,21 @@
         <div class="reader-progress-fill" id="progress-fill"></div>
     </div>
 
-    {{-- Bottom bar — huidig paginanummer + spring naar pagina ── --}}
+    {{-- Bottom bar --}}
     <nav class="reader-bottombar" aria-label="Paginanavigatie">
         <span class="reader-page-label">Pagina</span>
-        <span class="reader-page-current" id="page-current">—</span>
+        <span class="reader-page-current" id="page-current">&mdash;</span>
         <div class="reader-page-jump">
             <button class="reader-page-btn" id="page-jump-btn" aria-haspopup="listbox" aria-expanded="false">
                 <i class="fa-solid fa-list-ol" aria-hidden="true"></i> Spring naar
             </button>
             <div class="reader-page-dropdown" id="page-dropdown" role="listbox" aria-label="Kies pagina">
-                @foreach($pages as $page)
+                @foreach($allPageMeta as $meta)
                     <button
                         class="reader-page-dropdown-item"
-                        data-page="{{ $page->page_number }}"
+                        data-page="{{ $meta->page_number }}"
                         role="option"
-                    >Pagina {{ $page->page_number }}</button>
+                    >Pagina {{ $meta->page_number }}</button>
                 @endforeach
             </div>
         </div>
@@ -91,24 +91,31 @@
 
     {{-- Boekinhoud --}}
     <main class="reader-wrap">
-        <article class="book-reader-scope" id="reader-content" lang="nl" data-product-id="{{ $product->id }}">
-
+        <article class="book-reader-scope" id="reader-content" lang="nl"
+            data-product-id="{{ $product->id }}"
+            data-api-url="{{ route('onlineLezenPagesApi', $product->slug) }}"
+            data-last-page="{{ $pages->last()->page_number }}"
+            data-total-pages="{{ $allPageMeta->count() }}"
+        >
             @php $bookTitle = $pages->first()?->book_title; @endphp
             @if($bookTitle)
             <div class="text-center page-title-series">
                 <p>Uit de Reeks van de Risale-i Nur</p>
                 <h1 class="book-title">{{ $bookTitle }}</h1>
-                <p>Bedîüzzaman Said Nursî</p>
+                <p>Bedi&uuml;zzaman Said Nurs&icirc;</p>
             </div>
             @endif
 
             @foreach($pages as $page)
                 {!! $page->content !!}
             @endforeach
+
+            {{-- Sentinel: IntersectionObserver watches this to trigger lazy loading --}}
+            <div id="lazy-sentinel" style="height:1px;"></div>
         </article>
 
         <div class="reader-end">
-            <p>✦ &nbsp; Einde &nbsp; ✦</p>
+            <p>&#10022; &nbsp; Einde &nbsp; &#10022;</p>
             <a href="{{ route('onlineLezen') }}" class="btn-terug">
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Terug naar Bibliotheek
             </a>
@@ -125,162 +132,211 @@
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
 
-        const readerEl    = document.getElementById('reader-content');
+        const readerEl     = document.getElementById('reader-content');
         const progressFill = document.getElementById('progress-fill');
         const pageCurrent  = document.getElementById('page-current');
         const dropdown     = document.getElementById('page-dropdown');
         const jumpBtn      = document.getElementById('page-jump-btn');
         const toTopBtn     = document.getElementById('to-top-btn');
+        const sentinel     = document.getElementById('lazy-sentinel');
 
         if (!readerEl) return;
 
-        // ── Build page map ──
-        const pageEls = Array.from(readerEl.querySelectorAll('.page'));
-        if (!pageEls.length) return;
+        const API_URL_VAL = readerEl.dataset.apiUrl;
 
-        const pageMap = {};
-        pageEls.forEach(el => {
-            const numEl = el.querySelector('.page-number');
-            let n = numEl ? parseInt((numEl.textContent || '').replace(/[^0-9]/g, ''), 10) : NaN;
-            if (!n) n = parseInt(el.getAttribute('id') || '', 10);
-            if (n && !isNaN(n)) pageMap[n] = el;
-        });
-
-        const sorted    = Object.keys(pageMap).map(Number).sort((a, b) => a - b);
+        // All page numbers known upfront (lightweight - no content loaded)
+        const allPageNumbers = @json($allPageMeta->pluck('page_number')->toArray());
+        const sorted    = allPageNumbers.slice().sort((a, b) => a - b);
         const firstPage = sorted[0];
 
-        // ── Helpers ──
+        // pageMap: only tracks pages that are currently in the DOM
+        const pageMap = {};
+        function registerPageEls() {
+            readerEl.querySelectorAll('.page').forEach(el => {
+                const numEl = el.querySelector('.page-number');
+                let n = numEl ? parseInt((numEl.textContent || '').replace(/[^0-9]/g, ''), 10) : NaN;
+                if (!n) n = parseInt(el.getAttribute('id') || '', 10);
+                if (n && !isNaN(n)) pageMap[n] = el;
+            });
+        }
+        registerPageEls();
+
+        let lastLoadedPage = parseInt(readerEl.dataset.lastPage || '0', 10);
+        let isLoading      = false;
+        let allLoaded      = sorted.every(n => pageMap[n]);
+
+        // --- Helpers ---
         function updateUI(page) {
             if (pageCurrent) pageCurrent.textContent = page;
             if (progressFill) {
-                const pct = Math.round(((sorted.indexOf(page) + 1) / sorted.length) * 100);
+                const idx = sorted.indexOf(page);
+                const pct = idx >= 0 ? Math.round(((idx + 1) / sorted.length) * 100) : 0;
                 progressFill.style.width = pct + '%';
             }
         }
-
-        function save(page) {
-            try { localStorage.setItem(STORAGE_KEY, String(page)); } catch (_) {}
-        }
-
-        function load() {
-            try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; }
-        }
-
-        function saveFont(size) {
-            try { localStorage.setItem(FONT_KEY, String(size)); } catch (_) {}
-        }
-
-        function loadFont() {
-            try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; }
-        }
-
-        function applyFont(size) {
-            readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = size + 'px'; });
-        }
+        function save(page)    { try { localStorage.setItem(STORAGE_KEY, String(page)); }  catch (_) {} }
+        function load()        { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
+        function saveFont(sz)  { try { localStorage.setItem(FONT_KEY, String(sz)); }       catch (_) {} }
+        function loadFont()    { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; }     catch (_) { return null; } }
+        function applyFont(sz) { readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; }); }
 
         function visiblePage() {
             let closest = null, best = Infinity;
-            sorted.forEach(n => {
+            Object.keys(pageMap).forEach(n => {
                 const d = Math.abs(pageMap[n].getBoundingClientRect().top - TOPBAR_H);
-                if (d < best) { best = d; closest = n; }
+                if (d < best) { best = d; closest = parseInt(n, 10); }
             });
             return closest || firstPage;
         }
 
+        // --- Lazy load: fetch next batch from the API ---
+        function loadMorePages(upToPage) {
+            if (isLoading || allLoaded) return Promise.resolve();
+            isLoading = true;
+
+            const limit = upToPage ? Math.min(upToPage - lastLoadedPage, 20) : 10;
+            if (limit <= 0) { isLoading = false; return Promise.resolve(); }
+
+            return fetch(`${API_URL_VAL}?after=${lastLoadedPage}&limit=${limit}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (!data.pages || !data.pages.length) { allLoaded = true; return; }
+
+                    const savedFont = loadFont();
+                    const fragment  = document.createDocumentFragment();
+
+                    data.pages.forEach(p => {
+                        if (pageMap[p.page_number]) return; // already in DOM
+                        const wrapper = document.createElement('div');
+                        wrapper.innerHTML = p.content;
+                        Array.from(wrapper.childNodes).forEach(node => fragment.appendChild(node));
+                        lastLoadedPage = Math.max(lastLoadedPage, p.page_number);
+                    });
+
+                    if (sentinel && sentinel.parentNode) {
+                        sentinel.parentNode.insertBefore(fragment, sentinel);
+                    }
+                    registerPageEls();
+                    if (savedFont) applyFont(savedFont);
+
+                    allLoaded = !data.has_more;
+                    if (allLoaded && sentinel && sentinel.parentNode) sentinel.remove();
+                })
+                .catch(e => console.error('Lazy load error:', e))
+                .finally(() => { isLoading = false; });
+        }
+
+        // IntersectionObserver: auto-load next batch when scrolling near bottom
+        if (sentinel && 'IntersectionObserver' in window) {
+            const obs = new IntersectionObserver(
+                entries => { if (entries[0].isIntersecting) loadMorePages(); },
+                { rootMargin: '400px' }
+            );
+            obs.observe(sentinel);
+        }
+
+        // jumpTo: loads the page via API first if not yet in DOM, then scrolls
         function jumpTo(page, smooth) {
+            if (pageMap[page]) {
+                _scrollTo(page, smooth);
+            } else {
+                loadMorePages(page).then(() => {
+                    if (pageMap[page]) _scrollTo(page, smooth);
+                });
+            }
+        }
+
+        function _scrollTo(page, smooth) {
             const el = pageMap[page];
             if (!el) return;
-            window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - TOPBAR_H, behavior: smooth ? 'smooth' : 'auto' });
+            window.scrollTo({
+                top: el.getBoundingClientRect().top + window.scrollY - TOPBAR_H,
+                behavior: smooth ? 'smooth' : 'auto'
+            });
             updateUI(page);
             save(page);
         }
 
-        // ── Scroll listener ──
+        // --- Scroll listener ---
         let saveTimer = null;
         window.addEventListener('scroll', function () {
-            // to-top button
             if (toTopBtn) toTopBtn.classList.toggle('show', window.scrollY > 300);
-            // page label — update on every tick
             const cur = visiblePage();
             updateUI(cur);
-            // debounce save — read visiblePage again at fire time so it's never stale
             clearTimeout(saveTimer);
             saveTimer = setTimeout(() => save(visiblePage()), 300);
         }, { passive: true });
 
-        // ── Dropdown ──
+        // --- Dropdown ---
         if (dropdown && jumpBtn) {
             dropdown.querySelectorAll('.reader-page-dropdown-item').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation(); // prevent document click-outside from firing simultaneously
+                btn.addEventListener('click', e => {
+                    e.stopPropagation();
                     jumpTo(parseInt(btn.dataset.page, 10), true);
                     dropdown.classList.remove('open');
                     jumpBtn.setAttribute('aria-expanded', 'false');
                 });
             });
-
-            jumpBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // prevent document click-outside from closing immediately
+            jumpBtn.addEventListener('click', e => {
+                e.stopPropagation();
                 dropdown.classList.toggle('open');
                 jumpBtn.setAttribute('aria-expanded', String(dropdown.classList.contains('open')));
             });
-
             document.addEventListener('click', ev => {
                 if (!dropdown.contains(ev.target) && !jumpBtn.contains(ev.target) && dropdown.classList.contains('open')) {
                     dropdown.classList.remove('open');
                     jumpBtn.setAttribute('aria-expanded', 'false');
                 }
             });
-
             document.addEventListener('keydown', ev => {
-                if ((ev.key === 'Escape') && dropdown.classList.contains('open')) {
+                if (ev.key === 'Escape' && dropdown.classList.contains('open')) {
                     dropdown.classList.remove('open');
                     jumpBtn.setAttribute('aria-expanded', 'false');
                 }
             });
         }
 
-        // ── Font size ──
+        // --- Font size ---
         document.getElementById('font-smaller')?.addEventListener('click', () => {
-            const pages = readerEl.querySelectorAll('.page');
-            const current = parseFloat(getComputedStyle(pages[0]).fontSize) || 18;
-            const next = Math.max(12, current - 1);
-            applyFont(next);
-            saveFont(next);
+            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || 18;
+            const next = Math.max(12, cur - 1);
+            applyFont(next); saveFont(next);
         });
         document.getElementById('font-larger')?.addEventListener('click', () => {
-            const pages = readerEl.querySelectorAll('.page');
-            const current = parseFloat(getComputedStyle(pages[0]).fontSize) || 18;
-            const next = Math.min(36, current + 1);
-            applyFont(next);
-            saveFont(next);
+            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || 18;
+            const next = Math.min(36, cur + 1);
+            applyFont(next); saveFont(next);
         });
 
-        // ── Dark mode ──
+        // --- Dark mode ---
         document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
 
-        // ── To-top ──
+        // --- To-top ---
         toTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // ── Restore progress — wait for full layout before scrolling ──
+        // --- Restore reading progress on load ---
         function restoreProgress() {
-            // restore font size first (affects layout/scroll positions)
             const savedFont = loadFont();
             if (savedFont) applyFont(savedFont);
 
-            const saved = load();
-            const startPage = (saved && pageMap[saved]) ? saved : firstPage;
-            jumpTo(startPage, false);
-            // sync label to what actually ended up visible
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
+            const saved     = load();
+            const startPage = (saved && sorted.includes(saved)) ? saved : null;
+
+            // Nothing saved or first page: scroll to top so title is visible
+            if (!startPage || startPage === firstPage) {
+                window.scrollTo({ top: 0 });
+                updateUI(firstPage);
+            } else {
+                // Page might not be in DOM yet — fetch first, then scroll
+                jumpTo(startPage, false);
+                requestAnimationFrame(() => requestAnimationFrame(() => {
                     const actual = visiblePage();
                     updateUI(actual);
                     save(actual);
-                });
-            });
+                }));
+            }
         }
 
         if (document.readyState === 'complete') {

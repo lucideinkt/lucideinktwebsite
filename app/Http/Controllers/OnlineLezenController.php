@@ -57,20 +57,49 @@ class OnlineLezenController extends Controller
     }
 
     /**
-     * Schone HTML lezer pagina
+     * Schone HTML lezer pagina — laadt alleen de eerste batch server-side
      */
     public function readHtml($slug)
     {
         $product = Product::where('slug', '=', $slug)->firstOrFail();
 
-        $pages = $product->bookPages()->orderBy('page_number')->get();
+        // First batch rendered server-side (fast initial load)
+        $initialPages = $product->bookPages()->orderBy('page_number')->limit(5)->get();
 
-        abort_if($pages->isEmpty(), 404);
+        abort_if($initialPages->isEmpty(), 404);
+
+        // All page numbers + book_title for dropdown + progress bar (lightweight)
+        $allPageMeta = $product->bookPages()
+            ->orderBy('page_number')
+            ->get(['page_number', 'book_title']);
 
         return view('online-lezen-html-reader', [
-            'product' => $product,
-            'pages'   => $pages,
-            'SEOData' => SEOService::getProductSEO($product, 'online-lezen-html'),
+            'product'      => $product,
+            'pages'        => $initialPages,
+            'allPageMeta'  => $allPageMeta,
+            'SEOData'      => SEOService::getProductSEO($product, 'online-lezen-html'),
+        ]);
+    }
+
+    /**
+     * JSON API — geeft pagina's terug na een bepaald paginanummer
+     */
+    public function pagesApi($slug, Request $request)
+    {
+        $product = Product::where('slug', '=', $slug)->firstOrFail();
+
+        $after = (int) $request->query('after', 0);
+        $limit = min((int) $request->query('limit', 10), 20); // max 20 per request
+
+        $pages = $product->bookPages()
+            ->orderBy('page_number')
+            ->where('page_number', '>', $after)
+            ->limit($limit)
+            ->get(['page_number', 'content']);
+
+        return response()->json([
+            'pages'    => $pages,
+            'has_more' => $product->bookPages()->where('page_number', '>', $after)->count() > $limit,
         ]);
     }
 }
