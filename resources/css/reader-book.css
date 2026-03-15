@@ -165,7 +165,7 @@
 
 .book-reader-scope .page-title-chapter h2 {
     margin-top: 0;
-    font-size: 1.35em;
+    font-size: 1.6em;
     color: var(--main-font-color);
     font-weight: 500;
 }
@@ -256,10 +256,25 @@
     line-height: 2;
     direction: rtl;
     text-align: center;
-    font-feature-settings: 'ss14', 'ss04';
+    font-feature-settings: 'ss04', 'ss14', 'ss15';
+    letter-spacing: 0;
+    word-spacing: 0;
     color: #ca2a2a;
     margin: 0.3em 0 0.3em;
     display: block;
+}
+
+.book-reader-scope .text-arabic-inline {
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: 1.2em;
+    line-height: inherit;
+    direction: rtl;
+    display: inline;
+    unicode-bidi: embed;
+    font-feature-settings: 'ss04', 'ss14', 'ss15';
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
@@ -867,5 +882,9 @@ body.dark-mode .reader-to-top { background: #b06030; }
 
     .fn-popover.fn-popover--show {
         transform: translateX(-50%) translateY(-50%) scale(1) !important;
+    }
+
+    .book-reader-scope .page-title-chapter h2 {
+        font-size: 1.4em;
     }
 }

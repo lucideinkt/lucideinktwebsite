@@ -37,7 +37,7 @@
                 <strong style="font-family: DelimaMTProBold">
                 <a class="link-with-capital" href="{{ route('shop') }}">Bestel Hier</a>
                 |
-                <a class="link-with-capital" href="{{ url('/online-lezen/het-traktaat-over-de-herzameling-nederlands?fullscreen=1') }}">Lees Online</a>
+                <a class="link-with-capital" href="{{ url('/bibliotheek/het-traktaat-over-de-herzameling-nederlands/lees') }}">Lees Online</a>
                 </strong>
             </p>
         </div>

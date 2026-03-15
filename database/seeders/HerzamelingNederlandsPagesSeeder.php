@@ -801,6 +801,188 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
   </div>'
             ],
+            [
+                'page_number' => 26,
+                'content' => '<div class="page" id="26">
+    <p class="text-end page-number">#26</p>
+
+    <p>
+      Bovendien draagt die stralende adjudant zulke emblemen, dat buiten blinden zoals jij iedereen met ontwijfelbare zekerheid weet dat hij de waarachtige uitvaardiger van de vorstelijke bevelen is.
+    </p>
+
+    <p>
+      Nu rijst de vraag of de transitie van dit land, waarover de nobelste adjudant aan de hand van dat ultieme decreet met al zijn kracht dawa en mededelingen heeft gedaan, ooit nog in twijfel kan worden getrokken. Uiteraard kan dat niet! Tenzij jij alles wat wij tot dusver hebben waargenomen gaat ontkennen!
+    </p>
+
+    <p>
+      Welnu, mijn vriend, het woord is aan jou. Vertel, wat heb jij hierop te zeggen?
+    </p>
+
+    <p class="text-italic">
+      – Wat kan ik zeggen? Kan hier nog iets tegenin gebracht worden? Is het mogelijk om de zon in de middaggloed tegen te gaan? Ik zeg alleen: <sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span>, <span class="text-italic">God zij honderdduizendmaal dank; ik ben verlost van de overheersing van mijn waanideeën en begeerten, ik ben gered van de greep van mijn nefs en lusten, ik ben bevrijd van permanente gevangenschap en opsluiting, en ik ben tot het inzicht gekomen dat buiten deze chaotische en instabiele gastenverblijven een gelukzalig oord in de vorstelijke nabijheid bestaat, en wij zijn daarvoor gekandideerd.</span>"
+    </p>
+
+    <p>
+      Voorwaar, dit symbolische verhaal dat zinspeelt op de herzameling en het hiernamaals is hier afgerond. Bij Gods Gratie gaan wij nu over naar de verheven waarheden. In aansluiting op de voorgaande "Twaalf Aanzichten" gaan wij "Twaalf Samenhangende Waarheden" uiteenzetten, beginnend met een "Voorwoord".
+    </p>
+
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p"><sup>8</sup> "Alle lof zij ALLAH."</p>
+    </div>
+  </div>'
+            ],
+            [
+                'page_number' => 27,
+                'content' => '<div class="page" id="27">
+    <p class="text-end page-number">#27</p>
+
+    <div class="text-center page-title-chapter delima-font">
+      <h2>Voorwoord</h2>
+    </div>
+
+    <p>
+      [Met een aantal <span class="text-bold">"Aanwijzingen"</span> zullen wij bepaalde onderwerpen aanstippen die uiteengezet zijn in andere delen, namelijk in de <span class="text-bold">Tweeëntwintigste</span>, <span class="text-bold">Negentiende</span> en <span class="text-bold">Zesentwintigste Woorden</span>.]
+    </p>
+
+    <div class="text-center">
+      <p class="text-center text-bold small-title">De Eerste Aanwijzing</p>
+    </div>
+
+    <p>
+      De dwaas en zijn vertrouwde vriend uit het verhaal staan symbool voor drie waarheden.
+    </p>
+
+    <p>
+      <span class="text-bold">In eerste instantie</span> belichamen ze mijn kwaadgezinde nefs en mijn hart.
+    </p>
+
+    <p>
+      <span class="text-bold">In tweede instantie</span> vertegenwoordigen ze de filosofiestudenten en de leerlingen van de Qur\'an-el\'Hakîm.
+    </p>
+
+    <p>
+      <span class="text-bold">In derde instantie</span> representeren ze de Islamitische Oemma en het volk des ongeloofs.
+    </p>
+
+    <p>
+      De allerergste dwaling van de filosofiestudenten, de ongelovigen en de kwaadgezinde nefs bestaat uit het miskennen van de Alwaarachtige.
+    </p>
+
+    <p>
+      De vertrouwde man uit het verhaal zei:
+    </p>
+
+    <p class="text-italic">
+      "Een letter kan niet zonder een schrijver tot stand komen; een wet kan niet zonder een regeerder in werking treden."</span> Voortredenerend zeggen wij:
+    </p>
+
+    <p>
+      Wanneer we spreken over een boek, waarin een ander boek in elk woord met een micro-pen is vastgelegd, en een gestructureerde ode in elke letter in minuscuul schrift is geschreven, dan is het absoluut ondenkbaar dat een dergelijk boek geen schrijver heeft.
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 28,
+                'content' => '<div class="page" id="28">
+    <p class="text-end page-number">#28</p>
+
+    <p>
+      Evenzo is het in talloze opzichten ondenkbaar dat dit universum geen Auteur heeft. Immers, dit universum is een dusdanig boek, dat elke bladzijde ervan vele boeken bevat. Er schuilt zelfs een boek in elk woord, een ode in elke letter. Het aardoppervlak is een bladzijde; kijk hoeveel boeken daarover zijn uitgespreid. Een boom is een woord; kijk hoeveel bladzijden die beslaat. Een vrucht is een letter, een zaadje is een punt. Dat punt bevat het programma en de inhoud van een enorme boom.
+    </p>
+
+    <p>
+      Voorwaar, een dergelijk boek kan alleen zijn voortgevloeid uit de Machtspen van een Glorieuze Entiteit Die over Ontzaglijke en Elegante Attributen beschikt, en een Eindeloze Macht en Wijsheid bezit. Aldus noodzaakt de waarneming van de wereld imaan <span class="text-italic">(geloof)</span>, mits men niet dronken is van dwaling...
+    </p>
+
+    <p>
+      Bovendien is een woning zonder bouwmeester eveneens onbestaanbaar. Met name als het gaat om een woonpaleis dat met voortreffelijke kunstwerken, merkwaardige gravures en unieke versierselen is gedecoreerd, en elke bouwsteen ervan zo kunstig als een paleis is vervaardigd. Geen enkel verstand zou kunnen aanvaarden dat zo\'n woning zonder bouwmeester tot stand zou kunnen komen; een dergelijke constructie behoeft een uiterst bekwame kunstenaar.
+    </p>
+
+    <p>
+      Vooral als in dat paleis ware structuren om het uur zo vloeiend als beelden op een bioscoopdoek materialiseren, en met perfecte orde zo moeiteloos als het wisselen van kleren worden vervangen, terwijl daarenboven in elk verschijnend beeld verscheidene microstructuren worden gecreëerd.
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 29,
+                'content' => '<div class="page" id="29">
+    <p class="text-end page-number">#29</p>
+
+    <p>
+      Evenzo behoeft dit universum een Alwijze, Alwetende en Almachtige Kunstenaar. Immers, dit grandioze universum is een paleis waarin de zon en de maan als lampen, en de sterren als kaarsen dienen. De tijd is een draad; een lijn waarop Die Ontzaglijke Kunstenaar jaarlijks een andere wereld vestigt en tentoonstelt. De verschijning van de wereld die Hij vestigt, ververst hij op 360 geordende manieren. Met perfecte Orde en Wijsheid brengt Hij veranderingen aan. Het aardoppervlak laat Hij dienen als een tafel van gunsten die Hij elke lente met 300.000 soorten kunstwerken decoreert en met ontelbare soorten geschenken belaadt. En ondanks dat al die kunstwerken en geschenken uiterst dicht op elkaar warrig met elkaar verweven zijn, worden ze met uiterst distinctieve kenmerken van elkaar onderscheiden. Zo kun je andere aspecten verder afwegen…
+    </p>
+
+    <p class="text-bold">
+      Hoe kan iemand tegenover de Kunstenaar van zo\'n paleis onachtzaam blijven?
+    </p>
+
+    <p>
+      Bovendien kun je nagaan wat voor dwaze waanzin het zou zijn om op een wolkeloze middag de zon te ontkennen, terwijl haar schittering en reflectie op alle luchtbellen op het zeeoppervlak, op alle glimmende objecten op het aardoppervlak en op alle kristallen in sneeuwvlokken te zien zijn en waargenomen worden. Want zodra één enkele zon ontkend en niet aanvaard wordt, is het noodzakelijk om evenveel wezenlijke en zelfstandige zonnetjes te aanvaarden als het bestaande aantal waterdrupp­els, luchtbellen en reflecterende deeltjes. Er moet dan verondersteld worden dat ieder atoom, dat slechts ruimte heeft voor één atoompje, de waarheid van een geweldige zon omvat.
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 30,
+                'content' => '<div class="page" id="30">
+    <p class="text-end page-number">#30</p>
+
+    <p>
+      Evenzo is het een nog grotere waanzin en dwaling om na het aanschouwen van dit ordelijke universum, dat binnen een aaneenschakeling van gebeurtenissen voortdurend met wijsheid verandering ondergaat en aldoor systematisch wordt ververst, alsnog de Ontzaglijke Schepper en Zijn Volmaakte Eigenschappen te ontkennen. Want er moet dan verondersteld worden dat alles, zelfs elk atoom, een absolute Goddelijkheid omvat.
+    </p>
+
+    <p>
+      Bijvoorbeeld, elk luchtdeeltje kan zich in elke bloem, in elke vrucht en in elk blad een weg banen en er binnen werk verrichten. Als dit deeltje geen functionaris zou zijn, dan moet het bekend zijn met de bouwprogramma\'s, de gedaantes en de structuren van alle kunstwerken waarin het kan treden en werken om effectief te functioneren. Kortom, het moet dan over een omvattende kennis en macht beschikken om te kunnen doen wat het doet.
+    </p>
+
+    <p>
+      Bijvoorbeeld, elk gronddeeltje kan voor alle verschillende soorten zaden en pitten als basis en bakermat dienen. Als dit deeltje geen functionaris zou zijn, dan zou het over zoveel figuurlijke apparaten en machines als het aantal grassprieten en bomen moeten beschikken. Óf er zou aan dat deeltje een kunstvaardigheid en macht toegekend moeten worden waarmee het de bouwprogramma\'s van alle plantensoorten kan lezen en verwezenlijken, en alle vormen waarmee ze bekleed worden kan onderscheiden en weven. Trek deze vergelijking door naar andere wezens, opdat je inziet dat in alles vele evidente bewijzen voor de Goddelijke Eenheid te vinden zijn.
+    </p>
+
+    <p>
+      Waarlijk, uit één iets alles voortbrengen en uit alles één iets vervaardigen, is een daad die uitsluitend
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 31,
+                'content' => '<div class="page" id="31">
+    <p class="text-end page-number">#31</p>
+
+    <p>
+      is voorbehouden aan de Al-Schepper. Sla acht op het Glorieuze Vers: <span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span><sup>1</sup>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
+    </p>
+
+    <div class="text-center page-title-chapter delima-font">
+      <h3>De Tweede Aanwijzing</h3>
+    </div>
+
+    <p>
+      In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <span class="text-italic">"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</span> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>.
+    </p>
+
+    <p>
+      Waarlijk, voor de Heilige Kunstenaar van zo\'n prachtig universum is een dergelijke Nobele Godsbode zo onmisbaar als licht is voor de zon. Want net zoals de zon zonder het uitstralen van licht ondenkbaar is, is het eveneens onmogelijk dat Goddelijkheid Zich niet via de afvaardiging van profeten zou openbaren.
+    </p>
+
+    <p>
+      Is het bovendien ooit voor mogelijk te houden dat een schoonheid, verankerd in eindeloze volmaaktheid, zichzelf niet aan de hand van een onthullend en beschrijvend medium zou willen veraanschouwelijken?
+    </p>
+
+    <p>
+      En is het voor mogelijk te houden dat een volmaakt kunstenaarschap, doordrenkt met sublieme schoonheid, niet aan de hand van een belangwekkende heraut gepresenteerd zou willen worden?
+    </p>
+
+    <p>
+      En is het ooit voor mogelijk te houden dat bij een Universele Heerschappij, gevoerd over een Alomvattend Sultanaat, er geen wens zou bestaan om binnen
+    </p>
+
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p"><sup>1</sup> "En er is niets, of het verheerlijkt Hem met lof."</p>
+    </div>
+  </div>'
+            ],
         ];
     }
 }
