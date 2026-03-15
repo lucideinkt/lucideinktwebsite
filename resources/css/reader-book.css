@@ -10,7 +10,7 @@
 }
 
 @font-face {
-    font-family: 'DelimaProLight';
+    font-family: 'DelimaProRegular';
     src: url('../fonts/DelimaMTPro-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
@@ -48,7 +48,7 @@
 
 /* â”€â”€ Basis â”€â”€ */
 .book-reader-scope {
-    font-family: 'DelimaProLight', Georgia, serif;
+    font-family: 'DelimaProRegular', Georgia, serif;
     font-size: var(--reader-font-size, 18px);
     line-height: 1.85;
     color: #2a1a0a;
@@ -228,7 +228,7 @@
     text-underline-offset: 2px;
 }
 
-.book-reader-scope .delima-font  { font-family: 'DelimaProLight', serif; }
+.book-reader-scope .delima-font  { font-family: 'DelimaProRegular', serif; }
 
 /* â”€â”€ Arabische tekst â”€â”€ */
 .book-reader-scope .text-arabic {
@@ -293,7 +293,7 @@
     max-width: min(320px, 90vw);
     line-height: 1.55;
     font-size: 14px;
-    font-family: 'DelimaProLight', Georgia, serif;
+    font-family: 'DelimaProRegular', Georgia, serif;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     opacity: 0;
     pointer-events: none;
@@ -447,7 +447,7 @@ body.dark-mode .reader-topbar { background: rgba(28,18,9,0.96); border-bottom-co
     display: inline-flex; align-items: center; gap: 6px;
     color: #790000; text-decoration: none;
     font-size: 14px; font-weight: 600;
-    font-family: 'DelimaProLight', serif;
+    font-family: 'DelimaProRegular', serif;
     letter-spacing: 0.02em;
     transition: opacity .2s;
     white-space: nowrap; flex-shrink: 0;
@@ -462,7 +462,7 @@ body.dark-mode .reader-topbar-divider { background: rgba(255,255,255,0.12); }
 .reader-book-title {
     font-size: 13px; color: #999; font-style: italic;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    font-family: 'DelimaProLight', serif; min-width: 0;
+    font-family: 'DelimaProRegular', serif; min-width: 0;
 }
 body.dark-mode .reader-book-title { color: #666; }
 
@@ -475,7 +475,7 @@ body.dark-mode .reader-book-title { color: #666; }
     border-radius: 6px; color: #790000; cursor: pointer;
     font-size: 13px; padding: 5px 10px; line-height: 1;
     transition: background .15s, border-color .15s;
-    font-family: 'DelimaProLight', serif; user-select: none;
+    font-family: 'DelimaProRegular', serif; user-select: none;
 }
 .reader-btn:hover { background: rgba(180,140,60,0.15); }
 .reader-btn:active { background: rgba(180,140,60,0.25); }
@@ -510,7 +510,7 @@ body.dark-mode .reader-progress-fill { background: linear-gradient(90deg, #e8a87
 .reader-end {
     margin-top: 56px; padding-top: 32px;
     border-top: 1px solid rgba(0,0,0,0.08);
-    text-align: center; font-family: 'DelimaProLight', serif;
+    text-align: center; font-family: 'DelimaProRegular', serif;
 }
 body.dark-mode .reader-end { border-top-color: rgba(255,255,255,0.07); }
 .reader-end p { font-size: 14px; color: #aaa; margin-bottom: 20px; letter-spacing: 0.1em; }
@@ -520,7 +520,7 @@ body.dark-mode .reader-end { border-top-color: rgba(255,255,255,0.07); }
     padding: 9px 20px; border-radius: 6px;
     text-decoration: none; font-size: 13px; font-weight: 500;
     transition: background .2s, transform .15s;
-    font-family: 'DelimaProLight', serif;
+    font-family: 'DelimaProRegular', serif;
 }
 .reader-end .btn-terug i { color: inherit; font-size: 12px; }
 .reader-end .btn-terug:hover { background: #5a0000; transform: translateY(-1px); }
@@ -538,7 +538,7 @@ body.dark-mode .reader-end .btn-terug:hover { background: #904020; }
     z-index: 200;
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     transition: background .3s, border-color .3s;
-    font-family: 'DelimaProLight', serif;
+    font-family: 'DelimaProRegular', serif;
 }
 body.dark-mode .reader-bottombar { background: rgba(28,18,9,0.97); border-top-color: rgba(232,168,124,0.15); }
 
@@ -560,7 +560,7 @@ body.dark-mode .reader-page-current { color: #e8a87c; }
     background: none; border: 1px solid rgba(180,140,60,0.35);
     border-radius: 6px; color: #5a3a00; cursor: pointer;
     font-size: 12px; padding: 4px 10px;
-    font-family: 'DelimaProLight', serif;
+    font-family: 'DelimaProRegular', serif;
     transition: background .15s; white-space: nowrap;
 }
 .reader-page-btn:hover { background: rgba(180,140,60,0.15); }
@@ -591,7 +591,7 @@ body.dark-mode .reader-page-dropdown { background: #1e130a; border-color: rgba(2
     padding: 7px 16px;
     background: none; border: none;
     text-align: left; font-size: 13px;
-    font-family: 'DelimaProLight', serif;
+    font-family: 'DelimaProRegular', serif;
     color: #2a1a0a; cursor: pointer;
     transition: background .1s; white-space: nowrap;
 }
