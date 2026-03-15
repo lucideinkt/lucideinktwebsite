@@ -33,7 +33,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       <p><em>Aangaande Hashr - De Herzameling</em></p>
     </div>
 
-    <p class="text-red text-bold">OPMERKING</p>
+    <p class="text-red text-bold small-title">OPMERKING</p>
 
     <p>
       De reden waarom ik de metaforen en voorbeelden in deze traktaten in verhaalvorm heb geschreven, is om
@@ -86,7 +86,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <p class="text-italic">
       “Wat ben jij aan het doen? Je zult bestraft worden en mij ook in de moeilijkheden brengen! Deze goederen behoren de staat toe.
-      Alle lieden van dit volk, inclusief kinderen, zijn ofwel soldaten ofwel functionarissen. Momenteel zijn ze met bepaalde civiele taken belast,
+      Alle lieden van dit volk, inclusief de kinderen, zijn ofwel soldaten ofwel functionarissen. Momenteel zijn ze met bepaalde civiele taken belast,
       vandaar dat zij jou niet tegenhouden. Maar hier heerst een strikte orde! De vorst heeft overal telefoons aangesloten en agenten gestationeerd.
       Kom dus snel tot bezinning en gedraag je naar behoren!”
     </p>
@@ -116,7 +116,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <p class="text-italic">
       “Geen dorp is zonder beheerder. Geen speld ontstaat zonder vervaardiger; ze moet een maker hebben. Geen letter kan tot
-      stand komen zonder schrijver, dit weet je! Hoe zou dan eindeloos goederen en land dan zonder regeerder kunnen zijn? En kijk
+      stand komen zonder schrijver, dit weet je! Hoe zou dit eindeloos geordende land dan zonder regeerder kunnen zijn? En kijk
       naar al deze weelde! Elk uur lijkt het alsof een trein<sup>3</sup>
       uit het verborgene ladingen waardevolle en kunstrijke goederen komt aanvoeren, waarna ze weer verdwijnen. Hoe zouden al deze
       producten nou bezitterloos kunnen zijn? En hoe zit het met alle alom zichtbare mededelingsbrieven en toelichtende geschriften,
@@ -168,7 +168,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       dat dagelijks gedeeltelijk wordt bevolkt en ontvolkt, op een dag volledig zal worden ontruimd en verwoest.”
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 18px;">HET EERSTE AANZICHT</p>
+    <p class="text-center text-bold small-title" style="margin-top: 18px;">HET EERSTE AANZICHT</p>
 
     <p>
       Is het ooit voor mogelijk te houden dat in een rijk – met name zo’n grandioos sultanaat – geen beloningen voor de volgzame dienaren noch straffen voor de
@@ -186,7 +186,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       een Ultieme Berechting zal plaatsvinden.
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 10px;">
+    <p class="text-center text-bold small-title" style="margin-top: 10px;">
       HET TWEEDE AANZICHT
     </p>
 
@@ -197,7 +197,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p>
       Hetzij de armste, hetzij de zwakste, iedereen wordt voortreffelijk in onderhoud voorzien.
       Eenzame zieken worden uitstekend verzorgd. Bovendien is dit land rijk aan kostelijke gerechten,
-      kostbare dienSchalen, juwelen emblemen, sierlijke gewaden en majestelijke festijnen.
+      kostbare dienschalen, juwelen emblemen, sierlijke gewaden en majestelijke festijnen.
       Kijk om je heen! Afgezien van dwazen als jij komt iedereen zijn plicht zorgvuldig na.
       Niemand gaat ook maar een greintje zijn boekje te buiten. In een sfeer van vrees en ontzag
       verricht zelfs het grootste individu nederig zijn dienst met optimale onderdanigheid.
@@ -224,7 +224,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
                 'content' => '<div class="page" id="10">
     <p class="text-end page-number">#10</p>
 
-    <p class="text-center text-bold">HET DERDE AANZICHT</p>
+    <p class="text-center text-bold small-title">HET DERDE AANZICHT</p>
 
     <p>
       Kijk met wat voor verheven wijsheid en orde de ontwikkelingen zich ontvouwen, en met wat voor ware
@@ -236,7 +236,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <p>
       Echter, in deze streken worden voor geen duizendste aan deze vereisten van wijsheid en
-      rechtvaardigheid voldaan. In de meeste gevallen gaan dwazen zoals jij ongestraft hier vanaan.
+      rechtvaardigheid voldaan. In de meeste gevallen gaan dwazen zoals jij ongestraft hier vandaan.
     </p>
 
     <p class="text-center text-bold">
@@ -244,7 +244,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       aan de Ultieme Berechting worden overgelaten.
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 14px;">HET VIERDE AANZICHT</p>
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET VIERDE AANZICHT</p>
 
     <p>
       Aanschouw! De ontelbare unieke edelstenen in deze tentoonstellingsruimtes en de onvergelijkelijke
@@ -304,18 +304,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       een eeuwig schouwparadijs...
     </p>
 
-    <p class="text-center text-bold">HET VIJFDE AANZICHT</p>
+    <p class="text-center text-bold small-title">HET VIJFDE AANZICHT</p>
 
     <p>
       Aanschouw! Blijkens de activiteiten die zich hier afspelen, beschikt die onvergelijkelijke majesteit over
-      een geweldig mededogen. Want hij snel elk slachtoffer te hulp. Hij reageert op elke vraag en elk verzoek.
+      een geweldig mededogen. Want hij komt snel elk slachtoffer te hulp. Hij reageert op elke vraag en elk verzoek.
       Kijk! Zodra hij ook maar de geringste behoefte bij zijn nietigste onderdaan ontwaart, komt hij daaraan
       meedogend tegemoet. Als een schaap van een herder zijn poot bezeert, stuurt hij meteen een zalf of een
       veearts.
     </p>
 
     <p>
-      Kom, laten we verdergaan. Op het eiland daar ginder vindt een grote bijeenkomst plaats. Alle notabelen van
+      Kom, laten we verdergaan. Op het eiland daarginder vindt een grote bijeenkomst plaats. Alle notabelen van
       dit land hebben zich daar verzameld.
     </p>
 
@@ -363,7 +363,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       voorbeelden van zijn gunsten te demonstreren, zal hij
       uiteraard zijn ware schatten, zijn volmaaktheden en
       zijn voortreffelijkheden in het centrum van zijn rijk op
-      zo’n sublieme wijze tentoonstellen, en zulke schouwplaatsen openen, dat het verstand(en) versteld zal laten
+      zo\'n sublieme wijze tentoonstellen, en zulke schouwplaatsen openen, dat het verstanden versteld zal laten
       staan.
     </p>
 
@@ -373,7 +373,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       beangstigende kerkers staan hen te wachten.
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 14px;">HET ZESDE AANZICHT</p>
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ZESDE AANZICHT</p>
 
     <p>
       Kom en aanschouw! Deze opzienbarende treinen, vliegtuigen, voorzieningen, magazijnen, galerieën en
@@ -390,8 +390,10 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       grandioos, albeheersend sultanaat bestaat<sup>4</sup>.
     </p>
 
-    <p class="footnote-p">
-      <sup>4</sup> <span class="text-bold">Bijvoorbeeld</span>, wanneer het bevel: <span class="text-italic">“Presenteer geweer! Bevestig bajonet!”</span> tijdens een oorlogsoefening op een exercitieterrein wordt uitgevoerd,
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        <sup>4</sup> <span class="text-bold">Bijvoorbeeld</span>, wanneer het bevel: <span class="text-italic">“Presenteer geweer! Bevestig bajonet!”</span> tijdens een oorlogsoefening op een exercitieterrein wordt uitgevoerd,
       dan neemt een geweldig leger dat in gelid staat de gedaante aan van een doornig eikenwoud.
     </p>
 
@@ -414,8 +416,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       Tijdeloze Sultan paradeert met de juwelen emblemen die de Sultan aan de planten heeft bevestigd om zijn prachtige geschenken te veraanschouwelijken.
       Deze toestand duidt aan dat alle planten en bomen gehoor geven aan het bevel des Heren: <span class="text-italic">“Doe de juwelen van de kunst des Heren om, speld de Goddelijke
       Scheppingsemblemen genaamd ‘bloemen en vruchten’ op, en floreer!”</span> Zo transformeert het aardoppervlak nagenoeg in een fantastisch legerkamp waar soldaten op een
-      fenomenale feestdag in getooide tenuen met glimmende emblemen paraderen. →
-    </p>
+      fenomenale feestdag in getooide tenuen met glimmende emblemen paraderen. &rarr;
+      </p>
+    </div>
   </div>'
             ],
             [
@@ -443,18 +446,20 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       zijn potentie weggelegd...
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 14px;">HET ZEVENDE AANZICHT</p>
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ZEVENDE AANZICHT</p>
 
     <p>
       Kom, laten we een beetje rondreizen en kijken naar wat voor ontwikkelingen zich zoal voordoen in deze beschaafde gemeenschap.
       Kijk! Overal, in elke hoek, zijn velerlei camera’s geplaatst die beelden vastleggen.
     </p>
 
-    <hr class="hr-footnote" />
-    <p class="footnote-p">
-      Voorwaar, deze voorzieningen en versieringen die met zoveel wijsheid en orde worden verwezenlijkt, tonen uiteraard aan de
-      niet-blinden dat dit op bevel van een Almachtige Sultan en een Alwijze Regeerder geschiedt.
-    </p>
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        Voorwaar, deze voorzieningen en versieringen die met zoveel wijsheid en orde worden verwezenlijkt, tonen uiteraard aan de
+        niet-blinden dat dit op bevel van een Almachtige Sultan en een Alwijze Regeerder geschiedt.
+      </p>
+    </div>
   </div>'
             ],
             [
@@ -480,9 +485,10 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       bewarende regeerder, die zelfs de gewoonste handelingen van zijn geringste onderdanen niet verwaarloost,
     </p>
 
-    <hr class="hr-footnote" />
-    <p class="footnote-p">
-      <sup>5</sup> De betekenissen waarop gezinspeeld wordt in dit aanzicht, worden deels in “De Zevende Waarheid” verklaard.
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        <sup>5</sup> De betekenissen waarop gezinspeeld wordt in dit aanzicht, worden deels in “De Zevende Waarheid” verklaard.
       Hier willen wij er alleen op wijzen dat met de grote specifieke camera van de vorst het “Bewaartableau”
       <span class="text-arabic delima-font" dir="rtl" lang="ar">لَوْحُ مَحْفُوظ</span> wordt bedoeld. In “Het Zesentwintigste Woord”
       is de bestaanswerkelijkheid van het Bewaartableau als volgt bewezen:
@@ -494,7 +500,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       Grote Bewaartableau is geschreven – onthullen, openbaren en
       bewijzen uiteraard ook het bestaan van een Subliem Geheugen, een Universeel Grootboek en een Ultiem Bewaartableau
       – voor scherpe verstanden worden ze zelfs zichtbaar.
-    </p>
+      </p>
+    </div>
   </div>'
             ],
             [
@@ -514,7 +521,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       de Ultieme Berechting worden overgelaten...
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 14px;">HET ACHTSTE AANZICHT</p>
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ACHTSTE AANZICHT</p>
 
     <p>
       Kom, dan zal ik jou nu de vorstelijke decreten voor-
@@ -531,9 +538,12 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-      Kijk nu, o dwaas! Jij beaamt jouw valse waanideeën,
-      jouw bazelende verstand en jouw bedrieglijke nefs.
-      Ondertussen verlooch-
+      Kijk nu, o dwaas! Jij beaamt jouw valse waanideeën, jouw bazelende verstand en jouw bedrieglijke nefs.
+      Ondertussen verloochen jij een entiteit die geen enkele reden heeft om ontrouw of inconsequent te zijn;
+      een majesteit wiens integriteit in geen enkel opzicht met inconsistentie kan harmoniëren, en wiens
+      waarachtigheid door alle zichtbare activiteiten wordt bevestigd. Hiervoor verdien jij uiteraard een
+      geweldige straf! Jij lijkt op een reiziger die zijn ogen voor het zonlicht sluit en in het domein van zijn
+      verbeelding staart,
     </p>
   </div>'
             ],
@@ -543,12 +553,10 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="text-end page-number">#18</p>
 
     <p>
-      waar zijn waan als een vuurvlieg zijn angstwekkende
-      pad tracht te verlichten met het schijnsel dat van zijn
-      hoofd afschermert. Aangezien de vorst een belofte heeft
-      gedaan, zal hij zijn belofte uiteraard vervullen! Tevens
-      is de vervulling van zijn belofte niet alleen uiterst eenvoudig voor hem, het is voor ons, voor alle wezens,
-      voor hem en voor zijn rijk eveneens hoogstnodig.
+      waar zijn waan als een vuurvlieg zijn angstwekkende pad tracht te verlichten met het schijnsel dat van
+      zijn hoofd afschermert. Aangezien de vorst een belofte heeft gedaan, zal hij zijn belofte uiteraard
+      vervullen! Tevens is de vervulling van zijn belofte niet alleen uiterst eenvoudig voor hem, het is voor
+      ons, voor alle wezens, voor hem en voor zijn rijk eveneens hoogstnodig.
     </p>
 
     <p class="text-center text-bold">
@@ -556,7 +564,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       en een Sublime Gelukzaligheid geschonken worden.
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 14px;">HET NEGENDE AANZICHT</p>
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET NEGENDE AANZICHT</p>
 
     <p>
       Kom, wij gaan nu een aantal leiders van deze kringen en gemeenschappen bezoeken<sup>6</sup>. Zoals je ziet, beschikt elk van hen over een privételefoon waarmee hij
@@ -574,13 +582,15 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       overleveringsketenen evenaren en uit kracht van een
     </p>
 
-    <hr class="hr-footnote" />
-    <p class="footnote-p">
-      <sup>6</sup> De betekenissen die in dit aanzicht worden geïllustreerd, zullen in “De Achtste Waarheid” worden onthuld. Bijvoorbeeld, de leiders van de kringen vertegenwoordigen de profeten en de heiligen. De telefoon symboliseert een band met
-      de Heer die zich vormt in het medium van openbaringen
-      (<em>wahy</em>) en de ontvanger van ingevingen (<em>ilhām</em>), oftewel het
-      hart. <span class="text-italic">(Het hart dient als de hoorn van die telefoon.)</span>
-    </p>
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        <sup>6</sup> De betekenissen die in dit aanzicht worden geïllustreerd, zullen in "De Achtste Waarheid" worden onthuld. Bijvoorbeeld, de leiders van de kringen vertegenwoordigen de profeten en de heiligen. De telefoon symboliseert een band met
+        de Heer die zich vormt in het medium van openbaringen
+        (<em>wahy</em>) en de ontvanger van ingevingen (<em>ilhām</em>), oftewel het
+        hart. <span class="text-italic">(Het hart dient als de hoorn van die telefoon.)</span>
+      </p>
+    </div>
   </div>'
             ],
             [
@@ -613,22 +623,24 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       waarnaar onontkoombaar gemigreerd zal worden...
     </p>
 
-    <p class="text-center text-bold" style="margin-top: 14px;">HET TIENDE AANZICHT</p>
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET TIENDE AANZICHT</p>
 
     <p>
       Kom, vandaag wordt het Sultanische Nieuwjaar gevierd<sup>7</sup>. Er zal een overgang plaatsvinden; merkwaardi-
     </p>
 
-    <hr class="hr-footnote" />
-    <p class="footnote-p">
-      <sup>7</sup> De inhoud van dit “Aanzicht” zal in “De Negende Waarheid” worden onthuld. Bijvoorbeeld, de nieuwjaarsdag representeert het lenteseizoen. Het groene, bloemige woestijnland symboliseert het aardoppervlak gedurende de lente. De
-      veranderende beelden en weergaven duiden op de periode
-      vanaf de aanvang van de lente tot aan het einde van de
-      zomer, waarin de Almachtige en Ontzaglijke Kunstenaar, de
-      Alwijze en Sublime Voortbrenger, allerlei soorten voorjaarswezens, zomercreaties en voedingsmiddelen voor dieren en
-      mensen met perfecte orde verandert, met volmaakte Genade
-      ververst, en achtereenvolgens afzendt.
-    </p>
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        <sup>7</sup> De inhoud van dit "Aanzicht" zal in "De Negende Waarheid" worden onthuld. Bijvoorbeeld, de nieuwjaarsdag representeert het lenteseizoen. Het groene, bloemige woestijnland symboliseert het aardoppervlak gedurende de lente. De
+        veranderende beelden en weergaven duiden op de periode
+        vanaf de aanvang van de lente tot aan het einde van de
+        zomer, waarin de Almachtige en Ontzaglijke Kunstenaar, de
+        Alwijze en Sublime Voortbrenger, allerlei soorten voorjaarswezens, zomercreaties en voedingsmiddelen voor dieren en
+        mensen met perfecte orde verandert, met volmaakte Genade
+        ververst, en achtereenvolgens afzendt.
+      </p>
+    </div>
   </div>'
             ],
             [
@@ -666,6 +678,145 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       transities ieder uur voor jouw ogen plaats! Deze verzamelingen, ontbindingen en omstandigheden leiden tot de conclusie dat
       al deze rappe samenkomsten en scheidingen, deze constructies en destructies een hoger doel dienen. Voor een uur durende
       samenkomst wordt immers grofweg een tienjarige investering gedaan. Deze huidige toestanden op zichzelf
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 21,
+                'content' => '<div class="page" id="21">
+    <p class="text-end page-number">#21</p>
+
+    <p>
+      zijn dus niet het einddoel; ze dienen veeleer als een representatie, een simulatie van iets hogers. De vorst
+      brengt ze op een miraculeuze wijze tot stand, opdat de beelden ervan worden opgenomen en gecompileerd,
+      en de resultaten ervan worden bewaard en geregistreerd –
+      <span class="text-italic">net zoals alles tijdens een militair examen op een oefenterrein wordt vastgelegd en genoteerd.</span>
+      Dit betekent dus dat een geweldige bijeenzameling zal plaatsvinden waarbij de verdere gang van zaken om
+      de resultaten van deze toestanden zal draaien.
+    </p>
+
+    <p>
+      Tevens zullen de beeldopnames in een grandioze tentoonstellingsruimte voor eeuwig worden weergegeven.
+      Deze voorbijgaande en onbestendige omstandigheden werpen dus blijvende beelden en eeuwige vruchten af.
+    </p>
+
+    <p class="text-center text-bold">
+      Al bij al zijn deze ceremoniën dus bedoeld voor een<br />
+      Sublieme Gelukzaligheid en een Ultieme Berechting,<br />
+      en voor meerdere verheven doeleinden<br />
+      die ons onbekend zijn...
+    </p>
+
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ELFDE AANZICHT</p>
+
+    <p>
+      Kom, o koppige vriend! Laten we een vliegreis maken en vervolgens in een trein stappen die ons naar
+      het oosten of westen – <span class="text-italic">oftewel het verleden of de toekomst</span> – kan vervoeren. Laten we kijken wat voor soort
+      mirakelen deze wonderdadige majesteit in andere streken demonstreert.
+    </p>
+
+    <p>
+      Voorwaar, aanschouw! Merkwaardigheden zoals de verblijven, terreinen en tentoonstellingsruimtes die we
+      eerder zagen, zijn overal aanwezig. Alleen op het gebied van kunst en gedaante verschillen ze van elkaar.
+      Maar als je aandachtig observeert, dan zul je in al die instabiele verblijven, tijdelijke terreinen en vergankelij-
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 22,
+                'content' => '<div class="page" id="22">
+    <p class="text-end page-number">#22</p>
+
+    <p>
+      ke galerijen bemerken wat voor ordeningen van een zonneklare wijsheid, wat voor tekenen van een evidente bijstand, wat voor verschijnselen van een verheven rechtvaardigheid en wat voor vruchten van een omvangrijke genade er te zien zijn. Iedereen die niet kortzichtig is, ziet met een ontwijfelbare zekerheid in dat een volmaaktere wijsheid dan zijn wijsheid, een schonere gratie dan zijn gratie, een omvangrijkere genade dan zijn genade en een subliemere rechtvaardigheid dan zijn rechtvaardigheid noch bestaanbaar noch voorstelbaar zijn.
+    </p>
+
+    <p>
+      Als wij zouden uitgaan van jouw waan dat binnen de kring van zijn rijk geen eeuwige verblijven, verheven gewesten, permanente woningen en onvergankelijke leefgebieden bestaan, waar vaste bewoners en gelukzalige onderdanen leven, hoe zou de situatie er dan uitzien? De werkelijkheden van de heersende wijsheid, gratie, genade en rechtvaardigheid kunnen in dit vergankelijke land duidelijk niet tot hun recht komen. Mocht er elders ook geen plaats zijn waar die werkelijkheden volwaardig tot uiting kunnen komen, dan zullen wij, zoals een dwaas die op klaarlichte dag de zon ontkent terwijl hij haar licht aanschouwt, de wijsheid voor onze ogen moeten loochenen, de gratie die wij ondervinden moeten loochenen, de genade die wij waarnemen moeten loochenen, en de rechtvaardigheid met al haar sterke en onmiskenbare verschijnselen en tekenen allemaal moeten loochenen.
+    </p>
+
+    <p>
+      Bovendien moeten wij aannemen dat de regisseur van deze wijze beschikkingen, weldadige activiteiten en genaderijke gunsten – <span class="text-italic">God verhoede</span> – een roekeloze spelleider en een wrede tiran is. Dit zou betekenen dat
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 23,
+                'content' => '<div class="page" id="23">
+    <p class="text-end page-number">#23</p>
+
+    <p>
+      werkelijkheden tot hun tegenpolen verworden. Echter, volgens de unanieme opvatting van alle intellectuelen – <span class="text-italic">met uitzondering van de bezopen sofisten die het bestaan van alles ontkennen</span> – is de verwording van werkelijkheden ondenkbaar.
+    </p>
+
+    <p class="text-center text-bold">
+      Al bij al bestaat elders een ander oord, waar een<br />
+      Ultieme Berechting, een Alhoge Gerechtigheid en<br />
+      een Grandioze Begiftiging zullen plaatsvinden, opdat<br />
+      deze genade, wijsheid, gratie en rechtvaardigheid<br />
+      volwaardig tot hun recht kunnen komen...
+    </p>
+
+    <p class="text-center text-bold small-title" style="margin-top: 14px;">HET TWAALFDE AANZICHT</p>
+
+    <p>
+      Kom, laten we terugkeren. Wij gaan nu de leiders en officieren van deze gemeenschappen ontmoeten en hun uitrustingen onderzoeken, zodat wij kunnen vaststellen of die uitrustingen zijn gegeven om alleen kortstondig op dat beproevingsterrein te overleven, of om een gelukzalig leven in een ander oord te verwerven.
+    </p>
+
+    <p>
+      Wij kunnen niet ieder individu en elke uitrusting analyseren. Maar om een indruk te krijgen, gaan wij het <span class="text-bold">identiteitsbewijs</span> en het <span class="text-bold">handboek</span> van deze officier bekijken. Op dit identiteitsbewijs staan de <span class="text-bold">rang</span>, het <span class="text-bold">loon</span>, de taak, de wensen en de <span class="text-bold">gedragscode</span> van de officier vermeld.
+    </p>
+
+    <p>
+      Kijk, deze rang kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <span class="text-italic">"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</span> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze taak niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukza-
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 24,
+                'content' => '<div class="page" id="24">
+    <p class="text-end page-number">#24</p>
+
+    <p>
+      ligheid in de nabijheid van de vorst te verwerven. Ook deze <span class="text-bold">wensen</span> corresponderen niet met een paardaags bestaan in dit gastenverblijf; alleen een lang en gelukzalig leven kan ze bevredigen. Overigens onthult deze <span class="text-bold">gedragscode</span> eveneens dat de eigenaar van dit identiteitsbewijs bestemd is voor een ander oord; hij werkt voor een andere wereld.
+    </p>
+
+    <p>
+      Kijk, in deze <span class="text-bold">handboeken</span> zijn de gebruiksinstructies van de uitrustingen en de bijbehorende verantwoordelijkheden vastgelegd. Als er buiten dit terrein elders geen verheven en permanent oord bestaat, dan verliezen dit officiële <span class="text-bold">handboek</span> en dat legitieme <span class="text-bold">identiteitsbewijs</span> volledig hun betekenis. Tevens zal deze geachte officier, nobele commandant en gerespecteerde leider vervallen tot een niveau dat hem lager, ongelukkiger, hopelozer, ellendiger, rampzaliger, armer en zwakker maakt dan iedereen.
+    </p>
+
+    <p>
+      Voorwaar, overweeg deze analyse. Waar je ook op let, alles getuigt ervan dat na deze eindigheid een eeuwigheid zal volgen.
+    </p>
+
+    <p>
+      Begrijp dus, o vriend, dit tijdelijke land dient als een akker. Het is een oefenterrein; een handelsplaats. Op den duur zullen ongetwijfeld een Ultieme Berechting en een Sublieme Gelukzaligheid volgen. Wanneer je dit ontkent, dan zul je alle identiteitsbewijzen, handboeken, uitrustingen en gedragscodes van al deze officieren, en daarenboven alle ordeningen in dit land moeten ontkennen. Zelfs de regering en het staand beleid zul je moeten loochenen. Op dat moment kun jij noch mens noch een bewust wezen worden genoemd; je zult dan verstandelozer dan de sofisten zijn.
+    </p>
+  </div>'
+            ],
+            [
+                'page_number' => 25,
+                'content' => '<div class="page" id="25">
+    <p class="text-end page-number">#25</p>
+
+    <p>
+      Je moet beslist niet denken dat de bewijzen voor de transitie van dit land beperkt zijn tot deze <span class="text-italic">"Twaalf Aanzichten"</span>. Er zijn in feite ontelbare indicaties en bewijzen die aantonen dat dit onbestendige en wisselvallige land getransformeerd zal worden tot een onvergankelijk en stabiel land. Bovendien zijn er talloze aanwijzingen en tekenen die aangeven dat de inwoners hier uit deze tijdelijke gastenverblijven zullen worden gehaald en naar het eeuwige centrum van het sultanaat zullen worden overgeplaatst. Tot besluit zal ik je nog één bewijs laten zien dat sterker is dan de vorige <span class="text-italic">"Twaalf Aanzichten"</span>.
+    </p>
+
+    <p>
+      Kom kijken! Daar in de verte, in die drukke menigte, staat de drager van het hoogaanzienlijke embleem; de nobele adjudant die wij voorheen op het schiereiland hadden gezien. Hij houdt een preek. Laten wij ook gaan en luisteren naar wat hij verkondigt. Kijk, die stralende adjudant informeert over het ultieme decreet dat op die verheven hoogte is ingegrift, zeggende:
+    </p>
+
+    <p class="text-italic">
+      "Bereid jullie voor! Jullie zullen naar een ander, permanent land migreren… en wel een land dat dit oord slechts op een gevangenis doet lijken. Jullie zullen naar het sultanatische centrum van onze vorst reizen, waar jullie zijn genade en gratie zullen ondervinden, op voorwaarde dat jullie dit decreet aandachtig aanhoren en opvolgen… Anders, als jullie in opstand komen en niet luisteren, dan zullen jullie in huiveringwekkende kerkers worden gesmeten."
+    </p>
+
+    <p>
+      Zo deelt hij tijdingen mee…
+    </p>
+
+    <p>
+      Zoals je ziet, is het ultieme decreet voorzien van zo\'n miraculeus zegel, dat het op geen enkele wijze kan worden vervalst. Afgezien van dwazen zoals jij, weet iedereen dat het decreet toebehoort aan de vorst.
     </p>
   </div>'
             ],

@@ -71,11 +71,19 @@
 
     {{-- Bottom bar --}}
     <nav class="reader-bottombar" aria-label="Paginanavigatie">
-        <span class="reader-page-label">Pagina</span>
-        <span class="reader-page-current" id="page-current">&mdash;</span>
+        <button class="reader-nav-arrow" id="page-prev-btn" aria-label="Vorige pagina" title="Vorige pagina">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+
         <div class="reader-page-jump">
-            <button class="reader-page-btn" id="page-jump-btn" aria-haspopup="listbox" aria-expanded="false">
-                <i class="fa-solid fa-list-ol" aria-hidden="true"></i> Spring naar
+            <button class="reader-page-btn" id="page-jump-btn" aria-haspopup="listbox" aria-expanded="false" title="Ga naar pagina">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span class="reader-page-btn-label">
+                    <span id="page-current">&mdash;</span>
+                    <span class="reader-page-sep">/</span>
+                    <span class="reader-page-total">{{ $allPageMeta->max('page_number') }}</span>
+                </span>
+                <i class="fa-solid fa-chevron-up reader-page-chevron" aria-hidden="true"></i>
             </button>
             <div class="reader-page-dropdown" id="page-dropdown" role="listbox" aria-label="Kies pagina">
                 @foreach($allPageMeta as $meta)
@@ -87,6 +95,10 @@
                 @endforeach
             </div>
         </div>
+
+        <button class="reader-nav-arrow" id="page-next-btn" aria-label="Volgende pagina" title="Volgende pagina">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
     </nav>
 
     {{-- Boekinhoud --}}
@@ -95,7 +107,7 @@
             data-product-id="{{ $product->id }}"
             data-api-url="{{ route('onlineLezenPagesApi', $product->slug) }}"
             data-last-page="{{ $pages->last()->page_number }}"
-            data-total-pages="{{ $allPageMeta->count() }}"
+            data-total-pages="{{ $allPageMeta->max('page_number') }}"
         >
             @php $bookTitle = $pages->first()?->book_title; @endphp
             @if($bookTitle)
@@ -108,6 +120,7 @@
 
             @foreach($pages as $page)
                 {!! $page->content !!}
+                <div class="end-of-page-hr"></div>
             @endforeach
 
             {{-- Sentinel: IntersectionObserver watches this to trigger lazy loading --}}
@@ -137,6 +150,8 @@
         const pageCurrent  = document.getElementById('page-current');
         const dropdown     = document.getElementById('page-dropdown');
         const jumpBtn      = document.getElementById('page-jump-btn');
+        const prevBtn      = document.getElementById('page-prev-btn');
+        const nextBtn      = document.getElementById('page-next-btn');
         const toTopBtn     = document.getElementById('to-top-btn');
         const sentinel     = document.getElementById('lazy-sentinel');
 
@@ -210,6 +225,10 @@
                         const wrapper = document.createElement('div');
                         wrapper.innerHTML = p.content;
                         Array.from(wrapper.childNodes).forEach(node => fragment.appendChild(node));
+                        // Add divider after each page
+                        const hr = document.createElement('div');
+                        hr.className = 'end-of-page-hr';
+                        fragment.appendChild(hr);
                         lastLoadedPage = Math.max(lastLoadedPage, p.page_number);
                     });
 
@@ -268,31 +287,61 @@
         }, { passive: true });
 
         // --- Dropdown ---
+        function openDropdown() {
+            dropdown.classList.add('open');
+            jumpBtn.setAttribute('aria-expanded', 'true');
+            // Mark current page as active and scroll it into view
+            const cur = visiblePage();
+            dropdown.querySelectorAll('.reader-page-dropdown-item').forEach(btn => {
+                const isActive = parseInt(btn.dataset.page, 10) === cur;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', String(isActive));
+                if (isActive) {
+                    // Small delay so dropdown is visible first
+                    requestAnimationFrame(() => btn.scrollIntoView({ block: 'center' }));
+                }
+            });
+        }
+        function closeDropdown() {
+            dropdown.classList.remove('open');
+            jumpBtn.setAttribute('aria-expanded', 'false');
+        }
+
         if (dropdown && jumpBtn) {
             dropdown.querySelectorAll('.reader-page-dropdown-item').forEach(btn => {
                 btn.addEventListener('click', e => {
                     e.stopPropagation();
                     jumpTo(parseInt(btn.dataset.page, 10), true);
-                    dropdown.classList.remove('open');
-                    jumpBtn.setAttribute('aria-expanded', 'false');
+                    closeDropdown();
                 });
             });
             jumpBtn.addEventListener('click', e => {
                 e.stopPropagation();
-                dropdown.classList.toggle('open');
-                jumpBtn.setAttribute('aria-expanded', String(dropdown.classList.contains('open')));
+                dropdown.classList.contains('open') ? closeDropdown() : openDropdown();
             });
             document.addEventListener('click', ev => {
                 if (!dropdown.contains(ev.target) && !jumpBtn.contains(ev.target) && dropdown.classList.contains('open')) {
-                    dropdown.classList.remove('open');
-                    jumpBtn.setAttribute('aria-expanded', 'false');
+                    closeDropdown();
                 }
             });
             document.addEventListener('keydown', ev => {
-                if (ev.key === 'Escape' && dropdown.classList.contains('open')) {
-                    dropdown.classList.remove('open');
-                    jumpBtn.setAttribute('aria-expanded', 'false');
-                }
+                if (ev.key === 'Escape' && dropdown.classList.contains('open')) closeDropdown();
+            });
+        }
+
+        // --- Prev / Next page buttons ---
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                const cur = visiblePage();
+                const idx = sorted.indexOf(cur);
+                if (idx > 0) jumpTo(sorted[idx - 1], true);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const cur = visiblePage();
+                const idx = sorted.indexOf(cur);
+                if (idx < sorted.length - 1) jumpTo(sorted[idx + 1], true);
             });
         }
 
