@@ -57,14 +57,14 @@ class OnlineLezenController extends Controller
     }
 
     /**
-     * Schone HTML lezer pagina — laadt alleen de eerste batch server-side
+     * Schone HTML lezer pagina — laadt alle pagina's server-side to disable lazy loading
      */
     public function readHtml($slug)
     {
         $product = Product::where('slug', '=', $slug)->firstOrFail();
 
-        // First batch rendered server-side (fast initial load)
-        $initialPages = $product->bookPages()->orderBy('page_number')->limit(5)->get();
+        // Render all pages server-side for immediate availability in the reader
+        $initialPages = $product->bookPages()->orderBy('page_number')->get();
 
         abort_if($initialPages->isEmpty(), 404);
 
@@ -103,7 +103,3 @@ class OnlineLezenController extends Controller
         ]);
     }
 }
-
-
-
-

@@ -128,16 +128,6 @@
 
     wireFootnotes();
 
-    // Re-wire after lazy-loaded pages are inserted
-    if ('MutationObserver' in window) {
-        const mo = new MutationObserver(() => {
-            wireFootnotes();
-            // Also re-resolve continuations that were pending before new pages arrived
-            resolveContinuations();
-        });
-        mo.observe(readerEl, { childList: true, subtree: false });
-    }
-
     // ── Popover ────────────────────────────────────────────────────────────
     let popover = null;
     let activeBtn = null;

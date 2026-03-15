@@ -47,7 +47,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ<sup>1</sup>
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    <p style="margin: 0 auto;max-width: 500px" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
       فَانْظُرْ اِلٰۤى اٰثاَرِ رَحْمَتِ اللهِ كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا اِنَّ ذٰلِكَ لَمُحْيِى الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ<sup>2</sup>
     </p>
 
@@ -345,7 +345,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p>
       Zo brengt hij vele smeekbeden tot uiting; jij hoort het ook. Is het nou ooit voor mogelijk te houden dat
       zo’n meedogende en machtige vorst het kleinste verzoek van zijn geringste onderdaan zorgvuldig inwilligt,
-      maar de mooiste wens van zijn geliefste en nobelste adjudant niet vervult? Daar komt nog bij dat de wens
+      maar de mooiste wens van zijn geliefdste en nobelste adjudant niet vervult? Daar komt nog bij dat de wens
       van die geliefde iedereens wens is, de vorst ook welgevallig is, en bovendien strookt met wat de vorstelijke
       genade en rechtvaardigheid vereisen. Overigens is het
       verhoren van die wens eenvoudig voor de vorst; het is
@@ -544,7 +544,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <p>
       waar zijn waan als een vuurvlieg zijn angstwekkende pad tracht te verlichten met het schijnsel dat van
-      zijn hoofd afschermert. Aangezien de vorst een belofte heeft gedaan, zal hij zijn belofte uiteraard
+      zijn hoofd afschemert. Aangezien de vorst een belofte heeft gedaan, zal hij zijn belofte uiteraard
       vervullen! Tevens is de vervulling van zijn belofte niet alleen uiterst eenvoudig voor hem, het is voor
       ons, voor alle wezens, voor hem en voor zijn rijk eveneens hoogstnodig.
     </p>
@@ -874,7 +874,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p class="text-italic">
-      "Een letter kan niet zonder een schrijver tot stand komen; een wet kan niet zonder een regeerder in werking treden."</span> Voortredenerend zeggen wij:
+      "Een letter kan niet zonder een schrijver tot stand komen; een wet kan niet zonder een regeerder in werking treden." Voortredenerend zeggen wij:
     </p>
 
     <p>
@@ -918,7 +918,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-      Bovendien kun je nagaan wat voor dwaze waanzin het zou zijn om op een wolkeloze middag de zon te ontkennen, terwijl haar schittering en reflectie op alle luchtbellen op het zeeoppervlak, op alle glimmende objecten op het aardoppervlak en op alle kristallen in sneeuwvlokken te zien zijn en waargenomen worden. Want zodra één enkele zon ontkend en niet aanvaard wordt, is het noodzakelijk om evenveel wezenlijke en zelfstandige zonnetjes te aanvaarden als het bestaande aantal waterdrupp­els, luchtbellen en reflecterende deeltjes. Er moet dan verondersteld worden dat ieder atoom, dat slechts ruimte heeft voor één atoompje, de waarheid van een geweldige zon omvat.
+      Bovendien kun je nagaan wat voor dwaze waanzin het zou zijn om op een wolkeloze middag de zon te ontkennen, terwijl haar schittering en reflectie op alle luchtbellen op het zeeoppervlak, op alle glimmende objecten op het aardoppervlak en op alle kristallen in sneeuwvlokken te zien zijn en waargenomen worden. Want zodra één enkele zon ontkend en niet aanvaard wordt, is het noodzakelijk om evenveel wezenlijke en zelfstandige zonnetjes te aanvaarden als het bestaande aantal waterdruppels, luchtbellen en reflecterende deeltjes. Er moet dan verondersteld worden dat ieder atoom, dat slechts ruimte heeft voor één atoompje, de waarheid van een geweldige zon omvat.
     </p>
   </div>'
             ],
@@ -950,11 +950,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="text-end page-number">#31</p>
 
     <p>
-      is voorbehouden aan de Al-Schepper. Sla acht op het Glorieuze Vers: <span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span><sup>1</sup>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
+      is voorbehouden aan de Al-Schepper. Sla acht op het Glorieuze Vers: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
     </p>
 
-    <div class="text-center page-title-chapter delima-font">
-      <h3>De Tweede Aanwijzing</h3>
+    <div class="text-center">
+      <p class="text-center text-bold small-title">De Tweede Aanwijzing</p>
     </div>
 
     <p>
@@ -983,6 +983,2211 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </div>
   </div>'
             ],
+            [
+                'page_number' => 32,
+                'content' => '<div class="page" id="32">
+    <p class="text-end page-number">#32</p>
+
+    <p>
+      alle lagen van diversiteiten en verscheidenheden de monarchale Eenheid en Soevereiniteit aan de hand van
+      een tweevleugelige zendeling bekend te maken? Tweevleugelig wil zeggen dat die zendeling zich enerzijds,
+      in verband met zijn universele dienaarschap, als vertegenwoordiger van alle bestaanslagen van diversiteiten
+      op het Goddelijke Hof richt, terwijl hij zich anderzijds, in verband met zijn Nabijheid tot ALLAH en zijn
+      profeetschap, als functionaris van het Goddelijke Hof op alle bestaanslagen van diversiteiten richt.
+    </p>
+
+    <p>
+      En is het ooit voor mogelijk te houden dat een inherente Bezitter van Eindeloze Pracht de bekoorlijkheden
+      van Zijn Schoonheid en de subtiele nuances van Zijn Charme niet in spiegels zou willen aanschouwen
+      en tentoonstellen? Hiervoor zal Hij een geliefde boodschapper verkiezen, die enerzijds Zijn geliefde is omdat
+      hij zichzelf met zijn dienaarschap geliefd bij Hem maakt en als Zijn spiegel fungeert, terwijl hij anderzijds Zijn
+      boodschapper is die bij Zijn schepselen liefde voor Hem doet ontvlammen en Zijn Schone Namen demonstreert.
+    </p>
+
+    <p>
+      En is het ooit voor mogelijk te houden dat een Bezitter van schatten overladen met verbazende mirakelen
+      en zeldzame kostbaarheden geen wil of wens zou hebben om ze met behulp van een vaardige beschrijver en
+      toelichtende tentoonsteller publiekelijk te onthullen om Zijn verborgen Volmaaktheden te openbaren?
+    </p>
+
+    <p>
+      En is het voor mogelijk te houden dat Hij dit universum versiert met creaties die de volmaaktheden van
+      al Zijn Namen uitdrukken, en het aldus doet lijken op een museaal schouwpaleis gedecoreerd met unieke en
+      fijnzinnige kunstwerken, maar vervolgens geen geleerde gids aanstelt om verlichting te verschaffen?
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 33,
+                'content' => '<div class="page" id="33">
+    <p class="text-end page-number">#33</p>
+
+    <p>
+      En is het ooit voor mogelijk te houden dat de Eigenaar van deze kosmos het doel en plan achter de
+      overgangen in dit universum, en het mysterie van de drie lastige vragen over waar wezens vandaan komen,
+      waar ze naartoe gaan en wat ze inhouden, niet aan de hand van een afgezant zal laten ontvouwen?
+    </p>
+
+    <p>
+      En is het ooit voor mogelijk te houden dat de Ontzaglijke Kunstenaar, Die Zichzelf met zulke fraaie
+      kunstwerken aan bewuste wezens bekendmaakt en met waardevolle gunsten geliefd maakt, niet aan die
+      bewuste wezens via een afgezant zal laten weten wat Hem behaagt en wat Hij als tegenprestatie verlangt?
+    </p>
+
+    <p>
+      En is het ooit voor mogelijk te houden dat de Schepper de mensheid creëert met een bewustzijn dat gehecht
+      is aan diversiteit en een potentie die geschikt is voor een universeel dienaarschap, maar desondanks
+      niet haar aandacht via een onderwijzende gids van diversiteit naar Eenheid zal willen verleggen?
+    </p>
+
+    <p>
+      Zo zijn er nog vele profetische taken die elk op zichzelf absoluut aantonen dat Goddelijkheid niet zonder
+      profeetschap kan… In het licht van de voornoemde eigenschappen en taken rest nu de vraag of er ooit iemand
+      is verschenen die bekwamer en rijker was dan Mohammed de Arabier <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>? Heeft de tijd ooit iemand
+      getoond die de rang van profeetschap en de taak van verkondiging waardiger was dan hij? Nooit
+      en te nimmer! Hij is de meester van alle profeten, de imam van alle gezanten, de mentor van alle gezuiverden,
+      de nabijste onder Gods nabije dienaren, de volmaaktste van alle creaties en de sultan van alle geestelijke
+      gidsen.
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 34,
+                'content' => '<div class="page" id="34">
+    <p class="text-end page-number">#34</p>
+
+    <p>
+      Waarlijk, afgezien van de ontelbare bewijzen voor zijn profeetschap waarover erkende waarheidsonderzoekers
+      unaniem zijn, zoals de maansplijting, het water dat uit zijn vingers vloeide en nog circa duizend
+      verwante mirakelen, is de Glorierijke Qur\'an als oceaan van waarheden met veertig miraculeuze aspecten een
+      ultiem mirakel dat voldoende is om zijn profeetschap zonneklaar aan te tonen. Omdat wij in andere traktaten,
+      en met name in <span class="text-italic">"Het Vijfentwintigste Woord"</span>, bijna veertig miraculeuze aspecten van de Qur\'an hebben
+      behandeld, zullen wij het hierbij laten.
+    </p>
+
+    <div class="text-center">
+      <p class="text-center text-bold small-title">De Derde Aanwijzing</p>
+    </div>
+
+    <p>
+      Laat de volgende gedachte niet bij je opkomen:
+    </p>
+
+    <p class="text-italic">
+      "Wat voor belang heeft deze minuscule mens nou, dat deze geweldige wereld voor de rekenschap van zijn daden
+      zal sluiten en een andere dimensie zal ontluiken?"
+    </p>
+
+    <p>
+      Immers, omdat deze minuscule mens op basis van zijn omvattende aard als leidsman van alle wezens, als
+      heraut van het Goddelijke Sultanaat en als vervuller van een universeel dienaarschap kan optreden, bekleedt
+      hij een positie die van groot belang is.
+    </p>
+
+    <p>
+      Ook de volgende gedachte moet je niet voeden:
+    </p>
+
+    <p class="text-italic">
+      "Hoe kan de mens gedurende een kortstondig leven een eeuwige straf verdienen?"
+    </p>
+
+    <p>
+      Immers, ondanks dat dit universum de status en waardigheid van <span class="text-bold">"de Schriftuur van de Soevereine
+      <span class="text-italic">(Samed)</span>"</span> bekleedt, stort ongeloof het in een afgrond van betekenisloosheid en doelloosheid, wat beledigend
+      is tegenover het hele universum. Daarnaast leidt de ontkenning die inherent is aan ongeloof tot de verwer-
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 35,
+                'content' => '<div class="page" id="35">
+    <p class="text-end page-number">#35</p>
+
+    <p>
+      ping van alle Heilige Goddelijke Namen waarvan de reflecties en verwevingen bij alle wezens te zien zijn.
+      Tevens is ongeloof een loochening van alle talloze bewijzen die de Waarachtigheid en Getrouwheid van de
+      Alwaarachtige aantonen. <span class="text-italic text-bold">Aldus is ongeloof een grenzeloos misdrijf – en een grenzeloos misdrijf behoeft een grenzeloze straf.</span>
+    </p>
+
+    <div class="text-center">
+      <p class="text-center text-bold small-title">De Vierde Aanwijzing</p>
+    </div>
+
+    <p>
+      Zoals wij in het verhaal aan de hand van <span class="text-bold">"Twaalf Aanzichten"</span> hebben gezien, is het geenszins mogelijk
+      dat een vorst van zo\'n statuur wél een land heeft dat hij als een tijdelijk gastenverblijf beheert, maar elders,
+      in het centrum van zijn geweldige sultanaat, geen ander, stabiel en permanent land bezit waar zijn majesteit
+      ten volle tot haar recht komt.
+    </p>
+
+    <p>
+      Evenzo is het geenszins mogelijk dat de Eeuwige Schepper deze tijdelijke wereld wél creëert, maar een
+      eeuwige wereld níet formeert. Het is onmogelijk dat de Tijdeloze Kunstenaar dit onvergelijkelijke en vergankelijke
+      universum schept, maar geen ander, stabiel en permanent universum tot stand brengt. Voorzeker, het
+      is onmogelijk dat de Alwijze, Almachtige en Genadige Voortbrenger deze wereld als een tentoonstellingsruimte,
+      als een oefenterrein en als een akker creëert, maar het oord van het hiernamaals waarop alle doelen van
+      deze wereld gericht zijn niet schept.
+    </p>
+
+    <p>
+      Toegang tot deze waarheid kan via <span class="text-bold">"Twaalf Poorten"</span> worden verkregen. Met <span class="text-bold">"Twaalf Waarheden"</span> kunnen
+      die poorten worden ontgrendeld. We zullen met de kortste en eenvoudigste beginnen…
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 36,
+                'content' => '<div class="page" id="36">
+    <p class="text-end page-number">#36</p>
+
+    <div class="text-center text-center-constrained">
+      <p class="text-center text-bold small-title">De Eerste Waarheid</p>
+      <p class="text-center"><span class="text-italic text-bold">De poort van Gods Heerschappij en Sultanaat; Een glimp van de Naam "Rab" (Heer).</span></p>
+    </div>
+
+    <p>
+      Is het ooit voor mogelijk te houden dat de Heer, gezien de hoedanigheid van Zijn Heerschappij en het
+      Sultanaat van Zijn Goddelijkheid, dit universum heeft opgericht om Zijn Volmaaktheden middels sublieme
+      doelen en verheven wensen te tonen, zonder een beloning uit te loven aan de gelovigen die met geloof
+      en dienaarschap aan Zijn doeleinden en wensen beantwoorden? En zal Hij de dwalers, die afwijzend en
+      spottend reageren op die wensen, er ongestraft mee laten wegkomen?
+    </p>
+
+    <div class="text-center text-center-constrained">
+      <p class="text-center text-bold small-title">De Tweede Waarheid</p>
+      <p class="text-center"><span class="text-italic text-bold">De poort van Vrijgevigheid en Genadigheid; Een glimp van de Namen: "de Genereuze en de Genadige"</span>
+      <span class="text-arabic" dir="rtl" lang="ar">اَلْكَرِيمُ وَالرَّحِيمُ</span></p>
+    </div>
+
+    <p>
+      Is het ooit voor mogelijk te houden dat de Heer van deze wereld, Die blijkens Zijn waarneembare werken
+      Bezitter is van een Grenzeloze Generositeit en Genade, evenals een Eindeloze Statigheid en Digniteit, geen
+      beloning naar Zijn Generositeit en Genade, noch straf conform Zijn Statigheid en Digniteit zal toekennen?
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 37,
+                'content' => '<div class="page" id="37">
+    <p class="text-end page-number">#37</p>
+
+    <p>
+      Waarlijk, wanneer de voortgang van deze wereld in ogenschouw wordt genomen, dan blijkt dat aan ieder
+      levend wezen, vanaf de onbekwaamste en zwakste<sup>1</sup> tot aan de sterkste levensvorm, passend onderhoud wordt
+      verstrekt. Het weekste en onkundigste wezen wordt van het beste onderhoud voorzien. Elke hulpbehoevende
+      wordt via onverwachte wegen hulp toegesneld. De festijnen en schenkingen vinden met zo\'n verheven
+      generositeit plaats, dat ze onmiskenbaar de dirigering van een eindeloos Genereuze Hand laten zien.
+    </p>
+
+    <p>
+      <span class="text-italic text-bold">Bijvoorbeeld</span>, in de lente worden alle bomen als paradijselijke schoonheden in zijden gewaden bekleed,
+      met bloemen en vruchten als sieraden getooid, en als bedienden aangesteld, waarop ze ons via hun elegante
+      handen in de gedaante van takken allerlei heerlijke en beeldige vruchten serveren. En uit de hand van een
+      giftig insect worden wij met genezende en zalige honing gevoed. En aan de hand van een handeloze rups
+      worden wij met de mooiste en zachtste kledij bekleed. En een grote schat van Genade wordt voor ons in een
+      klein zaadje bewaard.
+    </p>
+
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        <sup>1</sup> Halal onderhoud wordt niet met kundigheid verworven, maar op basis van behoeftigheid geschonken.
+        Een onomstotelijk bewijs hiervan is het contrast tussen het zuivere levensonderhoud van onkundige borelingen
+        en het schaarse levensonderhoud van kundige beesten, of de forse lichamen van onintelligente vissen en de
+        magere lichamen van intelligente, sluwe vossen en apen die door de strijd voor hun levensonderhoud iel blijven.
+      </p>
+      <p class="footnote-p">
+        Onderhoud is dus omgekeerd evenredig gecorreleerd met kundigheid en keuze. Hoe meer een wezen op zijn
+        kunde en keuze rekent, des te zwaarder de lasten van levensonderhoud zullen zijn.
+      </p>
+    </div>
+  </div>',
+            ],
+            [
+                'page_number' => 38,
+                'content' => '<div class="page" id="38">
+    <p class="text-end page-number">#38</p>
+
+    <p>
+      Uit deze verschijnselen kan duidelijk worden afgeleid hoe prachtig de Generositeit en hoe subtiel de Genade
+      zijn waaraan ze ontspruiten.
+    </p>
+
+    <p>
+      En op mensen en enkele beesten na, komt alles – <span class="text-italic">vanaf de zon, de maan en de aarde tot aan het allerkleinste schepsel</span> –
+      zijn plicht uiterst zorgvuldig na, zonder ook maar een greintje buiten zijn grenzen te treden. In de
+      alomtegenwoordigheid van een geweldige Majesteit heerst een universele gehoorzaamheid. Dit toont aan dat
+      alles handelt op bevel van een Hoogst Ontzaglijke Bezitter van Statigheid.
+    </p>
+
+    <p>
+      En het genadevolle mededogen van alle moeders<sup>2</sup>, hetzij plant, dier of mens, en de heilzame voeding
+      zoals melk, afgestemd op de opvoeding van hun machteloze en zwakke nageslacht, laten onmiskenbaar zien
+      hoe verreikend de invloed is die een glimp van Genade uitoefent. Al bij al bezit de Beheerder van deze
+      wereld een eindeloze Generositeit, een grenzeloze Genade, en een oneindige Glorie en Statigheid… Oneindige
+    </p>
+
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        <sup>2</sup> Waarlijk, een hongerige leeuwin die haar zwakke welp boven haarzelf verkiest en het vlees dat ze vangt
+        niet zelf eet, maar aan haar jong geeft; een laffe kip die een hond of leeuw aanvalt om haar kuikens te
+        beschermen; en een vijgenboom die zelf modder consumeert, terwijl ze haar nakomelingen, oftewel haar
+        vruchten, zuivere melk schenkt, zijn allemaal verschijnselen die klaarblijkelijk aan de niet-blinden tonen
+        dat ze volgens het Plan van een eindeloos Genadig, Genereus en Meedogend Opperwezen handelen.
+      </p>
+      <p class="footnote-p">
+        Waarlijk, het feit dat onbewuste wezens zoals planten en dieren taken vervullen waarvoor een uiterst omvattend
+        bewustzijn en wijsheid vereist zijn, laat noodzakelijkerwijs zien dat er een Alwetende en Alwijze Entiteit
+        is Die ze dirigeert; ze handelen namens Hem.
+      </p>
+    </div>
+  </div>',
+            ],
+            [
+                'page_number' => 39,
+                'content' => '<div class="page" id="39">
+    <p class="text-end page-number">#39</p>
+
+    <p>
+      Glorie en Statigheid vereisen de disciplinering van de zedelozen. Eindeloze Generositeit vereist eindeloze
+      begunstiging. Grenzeloze Genade vereist een aansluitende weldadigheid.
+    </p>
+
+    <p>
+      Echter, gelijkwaardig aan een druppel uit de oceaan, kan slechts één deel uit de miljoenen aspecten van
+      deze vereisten een plek vinden en tot uiting komen in deze vergankelijke wereld en dit kortstondige leven.
+      Er moet dus een oord van gelukzaligheid bestaan dat recht doet aan die Goddelijke Generositeit en Genade.
+      Anders, vergelijkbaar met de ontkenning van de zon wanneer ze de dag met haar licht verguldt, zal het
+      bestaan van deze waarneembare Genade verloochend moeten worden. Immers, omdat onomkeerbare ondergang
+      zonder kans op wederkeer mededogen in ellende, liefde in smart, begunstiging in kwelling, het verstand
+      in een vervloekt marteltuig, en genot in leed verandert, gaat de waarheid van Genade onvermijdelijk verloren.
+    </p>
+
+    <p>
+      Bovendien moet er ook een oord van bestraffing zijn waar de voornoemde Glorie en Statigheid tot Hun recht
+      kunnen komen. Immers, in de meeste gevallen behoudt een onderdukker zijn trots, terwijl de onderdrukte
+      vernederd blijft wanneer zij van dit aardrijk vertrekken en vergaan. <span class="text-bold">Dit geeft aan dat deze zaken aan de
+      Ultieme Berechting worden overgelaten; ze zijn uitgesteld en worden dus niet genegeerd.</span>
+    </p>
+
+    <p>
+      Soms brengt Hij ook straf op aarde ten uitvoer. De rampen waaraan opstandige en oproerige volkeren uit
+      vroegere tijdperken ten prooi zijn gevallen, laten zien dat de mens niet toezichtloos is. Hij is altijd vatbaar
+      voor een klap van Glorie en Digniteit.
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 40,
+                'content' => '<div class="page" id="40">
+    <p class="text-end page-number">#40</p>
+
+    <p>
+      Waarlijk, te midden van heel het bestaan, is het de mens die met een aanzienlijke taak en een waardevolle
+      potentie is toegerust. Wanneer vervolgens de Heer der mensheid Zichzelf met zoveel uitgebalanceerde
+      kunstwerken kenbaar maakt, maar de mens Hem niet middels geloof erkent; en wanneer de Heer Zichzelf met
+      zoveel sierlijke genadevruchten geliefd maakt, maar de mens zichzelf niet bij Hem middels dienaarschap
+      geliefd maakt; en wanneer de Heer met zoveel verscheidene soorten gunsten Zijn Genegenheid en Genade laat
+      zien, maar de mens Hem niet met dank en lof eerbiedigt, is het dan voor mogelijk te houden dat zo\'n mens
+      ongestraft zal blijven en geen verantwoording zal moeten afleggen? En zal het Ontzaglijke Opperwezen, de
+      Bezitter van Digniteit en Statigheid, geen oord van vergelding oprichten?
+    </p>
+
+    <p>
+      En wanneer gelovigen in antwoord op Zijn Zelfonthulling erkenning betuigen middels geloof, in antwoord
+      op Zijn liefdebetoon wederliefde koesteren en verspreiden middels dienaarschap, en in antwoord op Zijn
+      Genade eerbied bewijzen middels dankbetuiging, is het dan voor mogelijk te houden dat die Barmhartige
+      Genadige hen geen eeuwige gelukzaligheid in een oord van beloning zal schenken?
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 41,
+                'content' => '<div class="page" id="41">
+    <p class="text-end page-number">#41</p>
+
+    <div class="text-center text-center-constrained">
+      <p class="text-center text-bold small-title">De Derde Waarheid</p>
+      <p class="text-center"><span class="text-italic text-bold">De poort van Wijsheid en Rechtvaardigheid; Een glimp van de Namen: "de Alwijze en de Rechtvaardige"</span>
+      <span class="text-arabic" dir="rtl" lang="ar">اَلْحَكِيمُ وَالْعَادِلُ</span></p>
+    </div>
+
+    <p>
+      Is het ooit voor mogelijk te houden<sup>1</sup> dat het Ontzaglijke Opperwezen, enerzijds laat zien hoe Hij de
+      Heerschappij over Zijn Sultanaat voert met de Wijsheid en orde, de Rechtvaardigheid en balans die zich
+      vanaf de atomen tot aan de zonnen voordoen, maar anderzijds de gelovigen, die toevlucht tot de Beschermende
+      Vleugel van Zijn Heerschappij nemen, en zich met geloof en dienaarschap aan Zijn heersende Wijsheid en
+      Rechtvaardigheid conformeren, niet zal begenadigen?
+    </p>
+
+    <div class="page-footnote">
+      <hr class="hr-footnote" />
+      <p class="footnote-p">
+        <sup>1</sup> De formulering: <span class="text-italic text-bold">"Is het ooit voor mogelijk te houden"</span> wordt vaak herhaald om een belangrijk
+        geheim uit te drukken. Ongeloof en dwaling rijzen voornamelijk op wanneer iets als vergezocht wordt
+        aangemerkt. Met andere woorden, wanneer iemand iets onwaarschijnlijk en buiten het bereik van het verstand
+        acht, dan neigt hij ertoe datgene te ontkennen. Echter, in <span class="text-bold">"Het Traktaat over de Herzameling"</span> is
+        onbetwistbaar aangetoond dat juist het pad van ongeloof en de weg van dwaling doordrenkt zijn met
+        vergezochteden, onwaarschijnlijkheden, onredelijkheden, onaannemelijkheden en onoverkomelijke problematieken.
+        Tevens wordt aangetoond dat reële mogelijkheden, logische waarschijnlijkheden en onontkoombare aannemelijkheden
+        te vinden zijn op het pad des geloofs en in de laan van de Islam.
+      </p>
+      <p class="footnote-p">
+        <span class="text-bold">Conclusie:</span> terwijl filosofen tot ontkenning neigen wanneer ze iets vergezocht achten, maakt
+        <span class="text-bold">"Het Tiende Woord"</span> middels de retorische vraagvorm duidelijk aan welke kant daadwerkelijke vergezochtheid
+        ligt, en legt hen zodoende de hand op de mond.
+      </p>
+    </div>
+  </div>',
+            ],
+            [
+                'page_number' => 42,
+                'content' => '<div class="page" id="42">
+    <p class="text-end page-number">#42</p>
+
+    <p>
+      En zal Hij de zedelozen, die zich met verloochening en ongehoorzaamheid tegen die Wijsheid en
+      Rechtvaardigheid verzetten, niet disciplineren?
+    </p>
+
+    <p>
+      In deze tijdelijke wereld wordt bij de mens voor geen duizendste aan die Wijsheid en Rechtvaardigheid
+      voldaan; de vervulling ervan is dus uitgesteld. De meeste dwalers blijven onbestraft en de meeste
+      gelovigen onbeloond wanneer ze deze wereld verlaten en vergaan. Dit geeft aan dat een Ultieme Berechting
+      en een Sublieme Gelukzaligheid zullen volgen.
+    </p>
+
+    <p class="text-italic text-bold">
+      Waarlijk, de Entiteit Die deze wereld beheert, brengt ontwikkelingen met een eindeloze Wijsheid tot stand.
+      Wil je hier een bewijs voor?
+    </p>
+
+    <p>
+      <span class="text-bold">Bij alles beoogt Hij voordelen en nuttigheden.</span> Zie je dan niet dat alle
+      menselijke organen, beenderen en aderen, en zelfs alle cellen en delen van het lichaam, afgestemd zijn op
+      nuttigheden en wijsheden? In bepaalde organen verweeft Hij zelfs zoveel wijsheden en gunstigheden als het
+      aantal vruchten aan een boom. Dit laat zien dat alle ontwikkelingen middels een Hand van Eindeloze
+      Wijsheid plaatsvinden.
+    </p>
+
+    <p>
+      Ook de aanwezigheid van eindeloze orde in de kunstige creatie van alles toont aan dat ontwikkelingen zich
+      volgens een eindeloze Wijsheid voltrekken. Waarlijk, de wijze waarop het gedetailleerde programma van een
+      elegante bloem in haar minuscule zaadje wordt opgeslagen, of de manier waarop de pagina van daden, de
+      levensgeschiedenis en het onderdelenregister van een enorme boom met de spirituele Pen des Lots in een
+      klein zaadje worden vastgelegd, wijzen erop dat een Pen van Eindeloze Wijsheid actief is.
+    </p>
+  </div>',
+            ],
+            [
+                'page_number' => 43,
+                'content' => '<div class="page" id="43"> <p class="text-end page-number">#43</p>
+<p>
+  Ook de aanwezigheid van een uiterst subliem kunstenaarschap in de schepping van alle wezens toont
+  aan dat alles het ontwerp is van een Oneindig Wijze Kunstenaar. Waarlijk, de wijze waarop de samenvatting
+  van het hele universum, de sleutels tot alle schatten van Genade en de spiegels van alle Goddelijke Namen
+  in het kleine mensenlichaam zijn gevestigd, getuigt van een Wijsheid binnen een uiterst subliem kunstenaarschap.
+  Voorwaar, is het ooit voor mogelijk te houden dat een dergelijke Wijsheid, heersend over het universele
+  beleid van de Goddelijke Heerschappij, de gehoorzame gelovigen die toevlucht onder de Vleugel van die
+  Heerschappij zoeken, niet zal willen begenadigen en niet eeuwig zal begiftigen?
+</p>
+
+<p class="text-italic text-bold">
+  Wil je ook bewijs dat ontwikkelingen zich met rechtvaardigheid en balans voltrekken?
+</p>
+
+<p>
+  De wijze waarop alles volgens nauwkeurige afwegingen en specifieke afmetingen een bestaan wordt gegeven,
+  met een gedaante wordt bekleed en in de meest geschikte omgeving wordt gedepositioneerd, toont aan dat
+  ontwikkelingen volgens een eindeloze Rechtvaardigheid en Balans tot stand komen. En de manier waarop het
+  inherente recht van elk wezen in evenredigheid met zijn potentie wordt toegekend, wat inhoudt dat alle benodigdheden
+  voor zijn bestaan en alle uitrustingen voor zijn overleving op de meest gepaste wijze worden verstrekt,
+  laat een Hand van grenzeloze Rechtvaardigheid zien. Ook de voortdurende beantwoording van alles wat in de
+  taal van potentie, de taal van natuurlijke behoeftigheid en de taal van urgentie wordt gevraagd en verzocht,
+  getuigt van een eindeloze Rechtvaardigheid en Wijsheid.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 44,
+                'content' => '<div class="page" id="44"> <p class="text-end page-number">#44</p>
+<p>
+  Voorwaar, is het ooit voor mogelijk te houden dat zo’n Rechtvaardigheid en Wijsheid, Die zelfs aan
+  de kleinste behoefte van het nietigste schepsel tegemoetkomen, de ultieme behoefte van het aanzienlijkste
+  schepsel, oftewel de eeuwigheidsbehoefte van de mens, zullen verwaarlozen? Zullen Ze zijn dringendste
+  verzoek en cruciaalste vraag onbeantwoord laten? Zullen Ze de Majesteit van de Goddelijke Heerschappij niet
+  in stand houden door de rechten van Gods dienaren te beschermen? De mens die in deze vergankelijke wereld
+  een vluchtig leven leidt, kan en zal de werkelijkheid van zo’n Rechtvaardigheid hier niet ervaren. Hij wordt
+  dus overgeleverd aan een Ultieme Berechting. Ware rechtvaardigheid vereist immers dat deze kleine mens
+  niet naar zijn fysieke nietigheid, maar naar de ernst van zijn misdaden, het belang van zijn wezen en de
+  omvang van zijn verantwoordelijkheid wordt beloond of bestraft.
+</p>
+
+<p>
+  Aangezien deze vergankelijke, voorbijgaande wereld bij verre na niet in staat is om de mens, die voor eeuwigheid
+  is geschapen, de vereiste Rechtvaardigheid en Wijsheid te bieden, is het niet meer dan vanzelfsprekend dat
+  elders een permanente hel en een eeuwig paradijs zijn klaargemaakt door de Ontzaglijke Bezitter van Schoonheid,
+  Die Rechtvaardig is; de Schone Bezitter van Glorie, Die Alwijs is...
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 45,
+                'content' => '<div class="page" id="45"> <p class="text-end page-number">#45</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Vierde Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Vrijgevigheid en Schoonheid; Een glimp van de Namen: “de Vrijgevige en de Schone”</span></p>
+  <p class="text-center">
+    <span class="text-arabic" dir="rtl" lang="ar">اَلْجَوَادُ وَ الْجَمِيلُ</span>
+  </p>
+</div>
+
+<p>
+  Is het ooit voor mogelijk te houden dat een grenzeloze Vrijgevigheid en Gulheid, een oneindige weelde,
+  een overvloed aan onuitputtelijke schatten, een onvergelijkelijke, eeuwige Schoonheid, en een onberispelijke,
+  eindeloze Volmaaktheid niet zouden verlangen naar een gelukzalig oord en een rijk van festijnen waar
+  dankbare behoeftigen, smachtende weerspiegelaars en verwonderde toeschouwers voor altijd zullen verblijven?
+</p>
+
+<p>
+  Waarlijk, de wijze waarop het aangezicht van de wereld met zoveel sierlijke kunstwerken is getooid, de
+  maan en de zon tot lampen zijn aangesteld, het aardoppervlak als een tafel van gunsten met de kostelijkste
+  voedselsoorten is beladen, vruchtdragende bomen als fruitschalen dienstbaar zijn gemaakt, en vernieuwingen
+  seizoensgewijs menigmaal teweeg worden gebracht, getuigt van een grenzeloze Vrijgevigheid en Gulheid.
+</p>
+
+<p>
+  Zo’n grenzeloze Vrijgevigheid en Gulheid, zo’n onuitputtelijke weelde en Genadigheid, vereisen een eeuwig
+  festijn in een gelukzalig oord waar al het gewenste altijd voorradig is. Tevens vergen ze ongetwijfeld dat de
+  genieters van dat festijn in dat gelukzalige oord blijven voortbestaan en daar voor altijd verblijven, opdat ze
+  niet door eindigheid en scheiding worden gekweld. Want net zoals het einde van leed plezier verschaft,
+  brengt het einde van plezier leed teweeg. Een dergelijke Gulheid zal geen dergelijk leed willen verwekken;
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 46,
+                'content' => '<div class="page" id="46"> <p class="text-end page-number">#46</p>
+<p>
+  Ze zou veeleer verlangen naar een eeuwig paradijs bevolkt door eeuwige behoeftigen. Grenzeloze vrijgevigheid
+  en gulheid willen immers eindeloos begiftigen en begunstigen. Eindeloos begiftigen en begunstigen
+  vereisen op hun beurt eindeloze afhankelijkheid en ontvankelijkheid. Dit vergt weer het voortbestaan van
+  de begiftigde, opdat hij voor die aanhoudende begunstiging zijn dankbaarheid en afhankelijkheid kan
+  betuigen. Anders is een beperkte genieting die spoedig door eindigheid verbittert onverenigbaar met de eisen
+  van een dergelijke Vrijgevigheid en Gulheid.
+</p>
+
+<p>
+  Bezichtig ook de Goddelijke kunstgalerijen die zich over het gehele aardrijk uitstrekken. Let op de mededelingsbrieven
+  des Heren in de handen van de planten en dieren die over het aardoppervlak zijn uitgespreid<sup>1</sup>.
+  Geef gehoor aan de profeten en heiligen die de herauten zijn van de schoonheden der Goddelijke Heerschappij.
+  Zie hoe zij unaniem de Feilloze Volmaaktheden van de Ontzaglijke Kunstenaar onthullen en verklaren door Zijn
+  buitengewone kunstwerken tentoon te stellen en de aandacht daarop te vestigen.
+</p>
+
+<p>
+  De Kunstenaar van deze wereld bezit dus bijzonder waardevolle, verbazingwekkende en verborgen Volmaaktheden
+  Die Hij aan de hand van deze voortreffelijke kunstwerken wil demonstreren. Verborgen, feilloze
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>1</sup> Waarlijk, een fijn bewerkte, elegante bloem of een kunstrijke, sierlijke vrucht die aan een haardunne tak van
+    een beendroge boom hangt, is uiteraard een mededelingsbrief waaruit bewuste wezens de kunstzinnige sublimiteit
+    van een uiterst kunstlievende, wonderbaarlijke en Alwijze Kunstenaar kunnen aflezen. Zo kun je deze observatie van
+    planten ook toepassen op dieren…
+  </p>
+</div>
+  </div>'
+            ],
+            [
+                'page_number' => 47,
+                'content' => '<div class="page" id="47"> <p class="text-end page-number">#47</p>
+
+<p>
+  Volmaaktheden verlangen immers naar onthulling in het bijzijn van toeschouwers die ze met uitingen van
+  <span class="text-italic">“mâshâ’ALLAH”</span> waarderen en bewonderen. Daarnaast willen permanente Volmaaktheden permanent zichtbaar
+  zijn, wat weer het voortbestaan van waarderende bewonderaars vereist. Want in de ogen van een bewonderaar
+  die niet blijvend is, zullen Volmaaktheden hun waarde verliezen.<sup>2</sup>
+</p>
+
+<p>
+  En zoals het daglicht de zon kenbaar maakt, zo onthullen de mooie, kunstrijke, stralende en sierlijke wezens
+  die over het aangezicht van het universum zijn uitgespreid, de sublimiteit van een onvergelijkelijke, spirituele
+  Schoonheid; ze kenschetsen de subtiliteiten van een verborgen, weergaloze Pracht.<sup>3</sup> De glimpen van de
+  Onberispelijke Pracht en Heilige Schoonheid beduiden dat in elke Goddelijke Naam vele verborgen schatten schuilen.
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>2</sup> Waarlijk, zoals een klassiek voorbeeld luidt, was er eens een schone dame van wereldklasse die een ordinaire
+    beminnaar van zich wegjoeg. Om zichzelf te troosten, zei die man: <span class="text-italic">“Bah, wat was zij lelijk zeg!”</span>
+    Zodoende verloochenende hij de schoonheid van die schone vrouw. Ook was er eens een beer die onder een zoete
+    druiventros kroop om druiven te eten. Echter, zijn klauwen reikten niet tot die druiven, noch was hij in staat om
+    de druivenstok te beklimmen. Om zichzelf te troosten, zei hij in zijn eigen taal: <span class="text-italic">“Die druiven zijn vast
+    en zeker zuur”</span>, waarna hij brommend wegslenterde.
+  </p>
+  <p class="footnote-p">
+    <sup>3</sup> Terwijl wezens in hun rol als spiegels achtereenvolgens vergaan en verdwijnen, zijn de glimpen van diezelfde
+    pracht en schoonheid te zien op de gedaantes en gelaten van hun opvolgers. Dit laat zien dat die Schoonheid niet
+    hen toebehoort... Die Schoonheden zijn veeleer Aya’s en tekenen van een Onberispelijke Pracht en een Heilige
+    Schoonheid.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 48,
+                'content' => '<div class="page" id="48"> <p class="text-end page-number">#48</p>
+
+<p>
+  Voorwaar, de Bezitter van een verborgen Schoonheid Die zo verheven en onvergelijkelijk is, zal Zijn Eigen
+  Pracht in een spiegel willen aanschouwen, en de niveaus van Zijn Pracht, de dimensies van Zijn Schoonheid,
+  middels een bewuste en smachtende weerspiegelaar willen bezichtigen. Bovendien zal Hij door anderen
+  gezien willen worden om Zijn geliefde Schoonheid ook door hun ogen waar te nemen.
+</p>
+
+<p class="text-bold">
+  Hij wil Zijn Schoonheid dus op twee manieren aanschouwen:
+</p>
+
+<p>
+  <span class="text-italic text-bold">Enerzijds</span> wil Hij Zijn Schoonheid in verscheidene spiegels met distinctieve kleuren direct aanschouwen.
+</p>
+
+<p>
+  <span class="text-italic text-bold">Anderzijds</span> wil Hij Zijn Schoonheid door de ogen van smachtende toeschouwers en verwonderde bewonderaars bezichtigen.
+</p>
+
+<p>
+  Pracht en Schoonheid willen dus zien en gezien worden. De realisatie van zien en gezien worden vereist
+  het bestaan van smachtende toeschouwers en verwonderde bewonderaars. Omdat die Pracht en Schoonheid
+  tevens eeuwig en onverwelkbaar zijn, verlangen Ze eveneens naar het permanente voortbestaan van Hun
+  bewonderaars. Want een eeuwige Schoonheid kan geen genoegen nemen met een vergankelijke bewonderaar.
+</p>
+
+<p>
+  Immers, een toeschouwer die gedoemd is tot eeuwige ondergang zonder wederkeer, zal bij de gedachte
+  aan zijn eindigheid zijn liefde zien overgaan in haat; zijn verwondering zal uitlopen op een teleurstelling,
+  zijn eerbied zal omslaan in minachting. Want de egocentrische mens is niet alleen vijandig tegenover het
+  onbevattelijke, maar ook afkerig van het onbereikbare. Hierdoor kan zijn binnenwereld ten opzichte van een
+</p>
+  </div>'
+            ],
+            [
+                'page_number' => 49,
+                'content' => '<div class="page" id="49"> <p class="text-end page-number">#49</p>
+<p>
+  Schoonheid Die eeuwige liefde, eindeloze passie en grenzeloze bewondering verdient, vervuld zijn van vijandschap,
+  wrok en ontkenning. Voorwaar, het geheim achter de vijandschap van een kafir jegens ALLAH kan
+  hieruit worden begrepen.
+</p>
+
+<p>
+  De grenzeloze Gulheid en Vrijgevigheid, de onvergelijkelijke Schoonheid en Pracht, en de feilloze
+  Volmaaktheden in kwestie verlangen dus naar eeuwige dankbetuigers, aanbidders en bewonderaars...
+</p>
+
+<p>
+  Desondanks zien wij dat iedereen in dit wereldse gastenverblijf spoedig vertrekt en verdwijnt. Bezoekers
+  proeven maar een vleugje van die Vrijgevigheid. Hun eetlust wordt opgewekt, maar ze vertrekken voordat ze
+  kunnen eten. Ze werpen slechts een vluchtige blik op een vonkje of een zwakke schaduw van die Schoonheid
+  en Volmaaktheid, waarna ze onverzadigd vergaan.
+</p>
+
+<p class="text-bold">
+  Ze trekken dus naar een eeuwig schouwparadijs.
+</p>
+
+<p class="text-italic text-bold">Conclusie:</p>
+
+<p>
+  Net zoals deze wereld met al haar wezens onmiskenbaar duidt op haar Ontzaglijke Kunstenaar, zo beduiden,
+  onthullen en vereisen de Eigenschappen en de Heilige Namen van de Ontzaglijke Kunstenaar het oord van
+  het hiernamaals.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 50,
+                'content' => '<div class="page" id="50"> <p class="text-end page-number">#50</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Vijfde Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Mededogen en het Mohammedaanse dienaarschap</span> <span class="text-arabic-inline" dir="rtl" lang="ar">عَلَيْهِ ٱلصَّلَاةُ وَٱلسَّلَامُ</span><span class="text-italic text-bold">; Een glimp van de Namen: “de Antwoorder en de Genadige”</span></p>
+  <p class="text-center">
+    <span class="text-arabic" dir="rtl" lang="ar">اَلْمُجِيبُ وَالرَّحِيمُ</span>
+  </p>
+</div>
+
+<p>
+  Is het ooit voor mogelijk te houden dat een Heer met een eindeloze Meedogendheid en Genade: enerzijds
+  de geringste behoefte van Zijn onbeduidendste schepsel ziet en vanuit onverwachte wegen met volmaakte
+  Compassie bevredigt, de stilste aanroep van Zijn meest verborgen schepsel verneemt en redding schenkt, en
+  op alle zowel verbale als non-verbale wensen reageert, terwijl Hij anderzijds de ultieme behoefte van Zijn
+  grootste onderdaan<sup>1</sup> en geliefdste schepsel ziet maar
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>1</sup> Waarlijk, een eminentie die inmiddels 1350 jaar aan het hoofd staat van een sultanaat dat nog altijd heerst en door
+    de eeuwen heen doorgaans meer dan 350 miljoen onderdanen beheert; een leider wiens volgelingen allemaal dagelijks
+    hun eed van trouw opnieuw afleggen, terwijl ze zijn volmaaktheden bevestigen en zijn bevelen met volwaardige
+    gehoorzaamheid opvolgen; een individu wiens spirituele tint de helft van de aarde en een vijfde van de mensheid heeft
+    doordrenkt en bekleurd; een excellentie die de geliefde der harten en de opvoeder der zielen is geworden, zal uiteraard
+    de uitverkoren onderdaan zijn van de Heer Die over dit universum regeert.
+  </p>
+  <p class="footnote-p">
+    En wanneer de meeste bestaansvormen in het universum elk één van zijn miraculeuze vruchten voor hem dragen om
+    zijn missie en functie toe te juichen, dan is het niet meer dan vanzelfsprekend dat die eminentie het allergeliefdste
+    schepsel van de Schepper der kosmos is.
+  </p>
+  <p class="footnote-p">
+    Tevens is eeuwigheid een behoefte van de gehele mensheid waarnaar ze met al haar potenties verlangt. &rarr;
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 51,
+                'content' => '<div class="page" id="51"> <p class="text-end page-number">#51</p>
+
+<p>
+  niet bevredigt en vervult, en de meest verheven bede verneemt maar niet aanvaardt?
+</p>
+
+<p>
+  Waarlijk, de zichtbare gratie en geriefelijkheid in bijvoorbeeld de wijze waarop zwakke en jonge dieren in
+  onderhoud en opvoeding worden voorzien, tonen aan dat de Eigenaar van dit universum Zijn Heerschappij
+  met een grenzeloze Genade voert. Is het dan mogelijk dat zo’n Meedogendheid, Die zo Genadig over de
+  Goddelijke Heerschappij heerst, de mooiste bede van de voortreffelijkste der schepselen niet zal verhoren?
+</p>
+
+<p>
+  Deze waarheid die ik reeds in “Het Negentiende Woord” heb uitgelegd, zullen wij hier wederom als
+  volgt ontvouwen... O vriend die meeluistert met mijn nefs! In het symbolische verhaal hadden wij het over
+  een bijeenkomst op een eiland waar een nobele adjudant een toespraak voorlas. We zullen nu de waarheid
+  van deze symboliek ophelderen.
+</p>
+
+<p>
+  Kom, laten wij ons van het heden onthechten, in gedachten naar de gelukzalige eeuw reizen en het Arabische
+  schiereiland bezoeken, opdat wij de Nobelste Godsbode tijdens de uitvoering van zijn missie en de
+  beoefening van zijn dienaarschap kunnen ontmoeten. Aanschouw! Zoals deze eminentie op basis van zijn
+  profeetschap en leiding de sleutelpersoon en het middel is voor de verwerving van eeuwige gelukzaligheid,
+  zo is hij op basis van zijn dienaarschap en bede eveneens de bestaansreden van die gelukzaligheid en de
+  aanleiding voor de schepping van het paradijs.
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    Want deze behoefte haalt de mens uit de diepste diepten en eleveert hem tot de allerhoogste hoogtes. Uiteraard
+    is deze behoefte een ultieme behoefte die de uitverkoren onderdaan namens allen aan de Vervuller van behoeften zal
+    voordragen.
+  </p>
+</div>
+  </div>'
+            ],
+            [
+                'page_number' => 52,
+                'content' => '<div class="page" id="52"> <p class="text-end page-number">#52</p>
+
+<p>
+  Kijk nu mee! Terwijl die eminentie om eeuwige gelukzaligheid bidt, staat hij in zo’n sublieme salaat en in
+  zo’n verheven gebed, dat vrijwel dit hele schiereiland, en zelfs de hele aarde, zich bij zijn majestueuze salaat
+  aansluiten en met hem meebidden. Zijn dienaarschap omvat immers niet alleen het dienaarschap van zijn
+  volgzame oemma, maar belichaamt op basis van het unanimiteitsgeheim ook het collectieve dienaarschap
+  van alle profeten.
+</p>
+
+<p>
+  Bovendien verricht hij die sublieme salaat en zijn smeekbede te midden van zo’n geweldige gemeenschap,
+  dat vrijwel alle verlichte en volmaakte Adamskinderen, vanaf de tijd van Adam tot het heden en voorts tot
+  aan de oordeelsdag volgzaam met hem meedoen en “âmîn” op zijn bede zeggen.<sup>2</sup>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>2</sup> Waarlijk, vanaf het moment waarop de Ahmedaanse smeekbede <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span> werd
+    verricht tot aan het heden gelden alle salaats en zegenwensen van heel zijn oemma als een ononderbroken en gezamenlijk
+    uitgesproken “âmîn” op zijn bede. Zelfs elke zegen die hem wordt toegewenst, geldt als een afzonderlijke “âmîn” op zijn bede.
+    De salaat en vrede die tijdens elk gebed door ieder lid van zijn oemma over hem worden afgebeden, en de bede die de volgers
+    van de Shafi-school na elke iqama voor hem verrichten, gelden als een zeer krachtige en gemeenschappelijke “âmîn” op zijn
+    bede om eeuwige gelukzaligheid.
+  </p>
+  <p class="footnote-p">
+    Voorwaar, om oneindigheid en eeuwige gelukzaligheid te bereiken – <span class="text-italic">waar ieder mens in de natuurlijke taal van zijn
+    menselijke aard tot al zijn kracht naar verlangt</span> – bidt de profeet Ahmed <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span> namens de
+    gehele mensheid, waarop de verlichte mensen achter hem “âmîn” zeggen.
+  </p>
+  <p class="footnote-p text-bold">
+    Is het ooit voor mogelijk te houden dat deze bede onverhoord zal blijven?
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 53,
+                'content' => '<div class="page" id="53"> <p class="text-end page-number">#53</p>
+
+<p>
+  Kijk! De behoefte aan eeuwigheid waarvoor hij bidt is zo universeel, dat niet alleen de aardbewoners, maar
+  ook de hemelingen en zelfs alle wezens zich aansluiten bij zijn smeekbede; in de taal van hun houding zeggen ze:
+</p>
+
+<p class="text-italic text-bold">
+  “O Heer, vervul zijn wens! Verhoor zijn bede! Ook wij verlangen dit!”
+</p>
+
+<p>
+  En kijk, de wijze waarop hij om eeuwige gelukzaligheid bidt, is zo ontroerend, zo liefdevol, zo vurig en zo
+  deemoedig, dat hij het hele universum tot tranen roert en meevoert om aan zijn bede deel te nemen.
+</p>
+
+<p>
+  Kijk! Hij beoogt daarenboven zo’n nobel doel wanneer hij om gelukzaligheid bidt, dat hij daarmee de mens
+  evenals alle schepselen vanuit de diepste laagtes van complete vernietiging, verderf, onwaarding, nutteloosheid
+  en futiliteit, verheft tot de hoogste hoogtes van waarde en eeuwigheid, waarbij ze een verheven functie bekleden
+  als <span class="text-italic text-bold">“de Schrifturen van de Soevereine”</span>.
+</p>
+
+<p>
+  Kijk! Hij bidt met zo’n verheven intensiteit en smeekt met zo’n zoete aanroep, dat zijn stem als het ware
+  het hele bestaan, de hemelen en het Oppertoon bereikt, in vervoering brengt en aanzet tot het uiten van:
+  <span class="text-italic text-bold">“Âmîn o ALLAH, âmîn!”</span><sup>3</sup>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>3</sup> Waarlijk, aangezien de Beheerder van deze wereld al Zijn beschikkingen willens en wetens waarneembaar
+    met Wijsheid ten uitvoer brengt, is het geenszins mogelijk dat Die Beheerder onbewust en onwetend is van wat het
+    uitverkoren individu onder Zijn creatie verricht.
+  </p>
+  <p class="footnote-p">
+    Aangezien Die Alwetende Beheerder op de hoogte is van wat dat uitverkoren individu verricht en verzoekt, is het
+    eveneens geenszins mogelijk dat Hij daar onverschillig tegenover zou blijven en er geen waarde aan zou hechten. &rarr;
+  </p>
+</div>
+  </div>'
+            ],
+            [
+                'page_number' => 54,
+                'content' => '<div class="page" id="54"> <p class="text-end page-number">#54</p>
+
+<p>
+  Kijk! Degene tot Wie hij bidt om gelukzaligheid en eeuwigheid is tevens zo Alhorend, Generous en Almachtig,
+  zo Alziend, Genadig en Alwetend, dat Die Majesteit klaarblijkelijk de geheimste wens en stilste aanroep van
+  de meest verborgen levensvorm ziet, verneemt en meedogend verhoort.
+</p>
+
+<p class="text-italic text-bold">
+  Zelfs wanneer een wens in de taal van houding wordt uitgedrukt, reageert Hij daarop.
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    En aangezien Die Almachtige en Genadige Beheerder niet onverschillig zal blijven tegenover de beden van de
+    uitverkorene, is het eveneens geenszins mogelijk dat Hij ze niet zal verhoren.
+  </p>
+
+<p class="footnote-p">
+  Waarlijk, dankzij de Lichternis van de Ahmedaanse Persoonlijkheid <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>
+  is de gestalte van de wereld veranderd. De ware aard van de mens en het hele universum is dankzij dat Licht
+  verschenen; dientengevolge is gebleken dat elke creatie in dit universum een brief is van de Soevereine
+  <span class="text-italic">(Samed)</span> waarvan Goddelijke Namen kunnen worden afgelezen; ieder schepsel is een aangestelde functionaris
+  met een waardevol en betekenisvol bestaan bestemd voor eeuwigheid. Zonder dat Licht zou het bestaan als
+  waardeloos, betekenisloos, zinloos, futiel en warrig speeltje van toevalligheden hopeloos verstrikt blijven in de
+  duisternissen van waan, gedoemd tot absolute vernietiging.
+</p class="footnote-p">
+
+<p class="footnote-p">
+  Voorwaar, vanwege dit geheim zeggen niet alleen mensen “âmîn” op de beden van de Ahmedaanse Persoonlijkheid
+  <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>, maar ook het hele bestaan, vanaf de Oppertoon tot aan de aardbodem,
+  de geosfeer tot aan de Pleiaden, toont een trotse verbondenheid met zijn Lichternis. De ziel van het Ahmedaanse
+  dienaarschap <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span> is in feite een bede. In wezen zijn alle bewegingen en
+  diensten van het heelal een vorm van bede.
+</p>
+
+<p class="footnote-p">
+  <span class="text-italic text-bold">Bijvoorbeeld,</span> de beweging van een zaadje geldt als een bede aan zijn Schepper om uit te
+  mogen bloeien tot boom...
+</p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 55,
+                'content' => '<div class="page" id="55"> <p class="text-end page-number">#55</p>
+
+<p>
+  Hij begenadigt en reageert met zo’n Wijsheid, Alziendheid en Genadigheid, dat het een einde maakt
+  aan alle twijfel:
+</p>
+
+<p class="text-italic text-bold">
+  De alomheersende vorming en voorzienigheid worden uitsluitend door de Alhorende en Alziende gerealiseerd,
+  en kunnen alleen aan de Genereuze en Genadige worden toegekend.
+</p>
+
+<p>
+  Terwijl de glorie der mensheid en tijdeloze uitblinker van het bestaan alle adamskinderen op aarde achter
+  zich verzamelt en zijn handpalmen tot de Oppertoon richt om te bidden binnen de waarheidskring van het
+  Ahmedaanse dienaarschap <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>, waarin de essentie van het menselijke
+  dienaarschap schuilt, rijst de vraag waar deze trots van het universum om smeekt. Laten wij luisteren...
+</p>
+
+<p>
+  Kijk! Voor zowel zichzelf als zijn oemma wenst hij eeuwige gelukzaligheid. Hij wil oneindigheid; hij wil
+  het paradijs. En de wensen van alle Heilige Goddelijke Namen Die Hun Schoonheden in de spiegels der
+  wezens weergeven, betrekt hij bij zijn verzoeken. Hij vraagt Die Namen om te bemiddelen, je ziet het.
+</p>
+
+<p>
+  Al zouden de ontelbare redenen en bewijzen voor het bestaan van het hiernamaals ontbreken, dan zou
+  één enkele bede van deze eminentie alsnog voldoende zijn voor de Genadige Schepper om het paradijs te
+  creëren, wat ten aanzien van Zijn Macht zo licht is als de creatie van onze lente.<sup>4</sup>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>4</sup> Waarlijk, op het aardoppervlak – <span class="text-italic">dat in verhouding tot het hiernamaals slechts een knappe pagina is</span> –
+    worden vele voortreffelijke voorbeelden van kunst, en talloze illustraties van de herzameling en de herrijzenis
+    tentoongesteld; &rarr;
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 56,
+                'content' => '<div class="page" id="56"> <p class="text-end page-number">#56</p>
+
+<p>
+  Waarlijk, voor de Absolute Almacht Die gedurende onze lente het aardoppervlak in een verzamelplaats
+  verandert en honderdduizend voorbeelden van de herzameling creëert, kan de creatie van het paradijs toch
+  niet bezwarend zijn?
+</p>
+
+<p class="text-bold">Kortom:</p>
+
+<p>
+  Net zoals het profeetschap van de eindprofeet tot de totstandkoming van dit beproevingsoord heeft geleid
+  en hem de bestemming heeft gemaakt van het geheim:
+  <sup>5</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَوْلَاكَ لَوْلَاكَ لَمَا خَلَقْتُ اْلأَفْلَاكَ</span>,
+  zo heeft zijn dienaarschap tot de ontluiking van het rijk der gelukzaligheid geleid.
+</p>
+
+<p>
+  Is het dan voor mogelijk te houden dat de evidente orde in de wereld – <span class="text-italic">die alle verstanden versteld doet
+  staan</span> – het onberispelijke kunstenaarschap – <span class="text-italic">dat met Genade is doordrenkt</span> – en de onvergelijkelijke schoonheid
+  – <span class="text-italic">die de Goddelijke Heerschappij heeft vervuld</span> – ooit zoiets lelijks, zoiets genadeloos en zoiets ordeloos als
+  het onbeantwoord laten van zijn bede zouden permitteren?
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    op die enkele pagina worden meer dan driehonderdduizend soorten uitgebalanceerde creaties als boeken uiterst ordelijk
+    geschreven en vastgelegd. Dit is uiteraard uitdagender dan de bouw en schepping van het elegante en gestructureerde
+    paradijs in het ruime rijk van het hiernamaals.
+  </p>
+  <p class="footnote-p">
+    Waarlijk, net zoals het paradijs veruit verheven is boven de lente, kan verondersteld worden dat de schepping van de
+    lentetuinen in gelijke mate gecompliceerder en verbazender is dan die van het paradijs.
+  </p>
+  <p class="footnote-p">
+    <sup>5</sup> <span class="text-italic text-bold">“Was het niet voor jou, was het niet voor jou, dan had Ik de hemelsferen niet geschapen.”</span>
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 57,
+                'content' => '<div class="page" id="57"> <p class="text-end page-number">#57</p>
+
+<p>
+  Met andere woorden, zou de Schepper de simpelste en onbeduidendste wensen en stemmen aandachtig
+  aanhoren, inwilligen en vervullen, maar de belangrijkste en dringendste wensen waardeloos achten, niet
+  begrijpen en negeren? God verhoede, dit is geenszins mogelijk! Een dergelijke Schoonheid kan nimmer zoiets
+  lelijks aanvaarden en verlelijken.<sup>6</sup>
+</p>
+
+<p class="text-center text-bold">Conclusie:</p>
+
+<p class="text-center text-bold text-center-constrained">
+  Zoals de Nobelste Godsbode <span class="text-arabic-inline" dir="rtl" lang="ar">عَلَيْهِ ٱلصَّلَاةُ وَٱلسَّلَامُ</span> de poort tot de wereld heeft geopend met zijn
+  profeetschap, zo ontgrendelt hij de poort tot het hiernamaals met zijn dienaarschap.
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+  عَلَيْهِ صَلَوَاتُ الرَّحْمٰنِ مِلْءَ الدُّنْيَا وَدَارِ الْجِنَانِ<sup>7</sup>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>6</sup> Waarlijk, het is universeel aanvaard dat de omvorming van waarheden onmogelijk is. Onder de varianten daarvan
+    valt iets dat omvormt tot zijn tegenpool onder een meerlagige onmogelijkheid. Vooral als het gaat om iets dat enerzijds
+    zijn wezenlijke hoedanigheid behoudt, terwijl het anderzijds tegelijkertijd in zijn tegenpool verandert, is er sprake van
+    een duizendvoudige onmogelijkheid. Denk bijvoorbeeld aan een eindeloze schoonheid die tegelijkertijd zowel daadwerkelijk
+    mooi als lelijk is.
+  </p>
+  <p class="footnote-p">
+    Voorwaar, in onze context zou dit suggereren dat de Schone Heerschappij, Die waarneembaar en onbetwistbaar bestaat,
+    enerzijds Haar inherente Schoonheid behoudt, terwijl Ze anderzijds tegelijkertijd wezenlijk lelijk wordt. Voorwaar, onder
+    alle onmogelijkheden en verzinsels in de wereld staat deze bovenaan de lijst der absurditeiten...
+  </p>
+  <p class="footnote-p">
+    <sup>7</sup> Mogen de zegeningen van de Genadige naar de omvang van de aarde en het oord der paradijzen op hem neerdalen.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 58,
+                'content' => '<div class="page" id="58"> <p class="text-end page-number">#58</p>
+<p class="text-center-constrained">
+  <span class="text-arabic delima-font" dir="rtl" lang="ar">
+    اللّٰهُمَّ صَلِّ وَسَلِّمْ
+    عَلَى عَبْدِكَ وَرَسُولِكَ ذٰلِكَ الْحَبِيبِ الَّذِى
+    هُوَ سَيِّدُ الْكَوْنَيْنِ وَفَخْرُ الْعَالَمَيْنِ وَحَيَاةُ الدَّارَيْنِ
+    وَسِيلَةُ السَّعَادَتَيْنِ وَذُو الْجَنَاحَيْنِ وَرَسُولُ الثَّقَلَيْنِ
+    وَعَلٰى اٰلِهِ وَصَحْبِهِ اَجْمَعِينَ
+    وَعَلٰى اِخْوَانِهِ مِنَ النَّبِيِّينَ وَالْمُرْسَلِينَ
+    اٰمِينَ<sup>8</sup>
+  </span>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>8</sup> O ALLAH, laat zegeningen en vrede neerdalen over Uw dienaar en Uw gezant; de geliefde die gekenmerkt is als de
+    meester van beide dimensies, de trots van beide werelden, het leven van beide domeinen en het middel tot beide
+    gelukzaligheden, de tweevleugelige boodschapper voor zowel mens als djinn, en over al zijn familieleden en metgezellen,
+    en over zijn gebroeders onder de gezanten en profeten... Âmîn.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 59,
+                'content' => '<div class="page" id="59"> <p class="text-end page-number">#59</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Zesde Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Majesteit en Oneindigheid; Een glimp van de Namen: “de Ontzaglijke en de Eeuwige”</span></p>
+  <p class="text-center">
+    <span class="text-arabic" dir="rtl" lang="ar">اَلْجَلِيلُ وَالْبَاقِى</span>
+  </p>
+</div>
+
+<p>
+  Is het ooit voor mogelijk te houden dat een Majesteitelijke Heerschappij, waarbij alle bestaansvormen –
+  <span class="text-italic">vanaf de zonnen en bomen tot aan de atomen</span> – als gehoorzame soldaten worden beheerst en beheerd,
+  slechts beperkt kan zijn tot dit wereldse gastenverblijf waar arme stervelingen een vluchtig leven leiden? Zal de Heerser
+  geen blijvend, oneindig domein conform Zijn Majesteit, geen eeuwig, verheven centrum voor Zijn Heerschappij creëren?
+</p>
+
+<p>
+  Waarlijk, de majesteitelijke processen zoals de seizoenen die systematisch veranderen, de imponerende
+  bewegingen zoals de wentelingen van planeten die als vliegende vaartuigen voortreizen, de geweldige
+  betuigingen die de aarde voor de mens als wieg en de zon voor de aardbewoners als lamp doen dienen,
+  de geweldige overgangen zoals de wederopwekking en optooiing van het dode en dorre aardoppervlak,
+  en dergelijke zichtbare verschijnselen in het universum tonen altezamen aan dat vanachter de schermen
+  een fenomenale Heerschappij van een grandioos Sultanaat regeert. Een Heerschappij Die over een dusdanig
+  Sultanaat wordt gevoerd, behoeft waardige onderdanen en een aansluitend manifestatieveld.
+</p>
+
+<p>
+  Echter, je ziet dat de aanzienlijkste onderdanen en getrouwen met de omvattendste aard in een zorgelijke
+  staat tijdelijk zijn bijeengekomen in dit aardse gasten-
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 60,
+                'content' => '<div class="page" id="60"> <p class="text-end page-number">#60</p>
+
+<p>
+  verblijf. Ondertussen loopt het verblijf zelf elke dag vol en leeg.
+</p>
+
+<p>
+  Overigens verblijven alle onderdanen tijdelijk op dit beproevingsterrein om hun dienstbaarheid op de proef
+  te stellen. Ondertussen ondergaat het terrein zelf ieder uur verandering.
+</p>
+
+<p>
+  Tevens vertoeven al die onderdanen enkele minuten in deze tentoonstellingsruimte om in de wonderlijke
+  galerijen van de wereldse marktplaats de voorbeelden van de kostbare geschenken en de antieke kunstwerken
+  van de Ontzaglijke Kunstenaar met een handelaarsblik te bezichtigen, waarna ze verdwijnen. Ondertussen
+  maakt deze tentoonstellingsruimte zelf elke minuut een overgang door. Wie vertrekt, komt niet terug; wie
+  komt, zal vroeg of laat vertrekken.
+</p>
+
+<p>
+  Waarlijk, deze omstandigheden tonen ongetwijfeld aan dat voorbij dit gastenverblijf, dit terrein en deze
+  tentoonstellingsruimte, in een domein waar het centrum en manifestatieveld van dat oneindige Sultanaat
+  zijn gelegen, eeuwige paleizen en permanente woningen zijn gevestigd, omgeven met tuinen en schatten
+  gevuld met de zuiverste en verhevenste oervormen van alle voorbeelden en verschijnselen die wij in deze
+  wereld waar hebben mogen nemen. De inspanningen hier zijn dus daarvoor bedoeld. Hier wordt gewerkt,
+  daar wordt beloning verstrekt. Voor iedereen is daar een gelukzaligheid conform zijn potentie weggelegd,
+  mits hij niet tot de verliezers behoort.
+</p>
+
+<p>
+  Waarlijk, het is ondenkbaar dat zo’n oneindig Sultanaat beperkt is tot deze vergankelijke wezens en
+  vervliegende schimmen op aarde. Observeer deze waarheid door de verrekijker van deze gelijkenis:
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 61,
+                'content' => '<div class="page" id="61"> <p class="text-end page-number">#61</p>
+<p>
+  Stel je voor dat jij tijdens een reis een herberg langs de weg ontwaart die een hoogachtbaar individu voor
+  zijn bezoekers heeft opgebouwd. Om zijn gasten een nacht ter lering en vermaak te bieden, besteedt hij
+  miljoenen goudstukken aan de decoratie van de herberg. De gasten worden een korte tijd gegund om een
+  vluchtige blik op enkele versieringen te werpen en een vleugje van de aanwezige gunsten te proeven, waarna
+  ze onverzadigd vertrekken.
+</p>
+
+<p>
+  Echter, elke bezoeker legt met zijn persoonlijke camera beelden vast van de verschijningen die hij in de
+  herberg aantreft. Daarnaast houden de bedienden van het hoogachtbaar individu de gedragingen van de
+  gasten zorgvuldig bij; ze registreren alles. Ook zie je dat die gastheer dagelijks de waardevolle decoraties
+  grotendeels afbreekt, en nieuwe versieringen voor de nieuwe gasten vervaardigt.
+</p>
+
+<p>
+  Nadat jij dit hebt aanschouwd, zou jij het dan nog betwijfelen dat de gastheer – <span class="text-italic">die langs deze weg deze
+  herberg heeft gebouwd</span> – over oneindige, hemelse woonverblijven; over onuitputtelijke, waardevolle schatten,
+  en over een onophoudelijke, geweldige vrijgevigheid beschikt? Met de gastvrijheid die hij in deze herberg
+  demonstreert, wekt hij bij zijn gasten de interesse op voor alles wat hij in zijn nabijheid bewaart. Daarnaast
+  ontketent hij een verlangen naar de geschenken die hij voor hen heeft klaargemaakt.
+</p>
+
+<p>
+  Evenzo, wanneer je de toestand van dit aardse gastenverblijf zonder dronkenschap aandachtig observeert,
+  dan zul je de navolgende “Negen Kernpunten” ontwaren:
+</p>
+  </div>'
+            ],
+            [
+                'page_number' => 62,
+                'content' => '<div class="page" id="62"> <p class="text-end page-number">#62</p>
+
+<p class="text-bold">Het Eerste Kernpunt</p>
+
+<p>
+  Je zult ontwaren dat deze wereld – <span class="text-italic">evenals die herberg</span> – niet voor haarzelf bestaat... het is ondenkbaar
+  dat ze uit haarzelf deze gedaante heeft aangenomen. Ze is veeleer volgens wijsheid opgericht als een aldoor
+  vol- en leeglopen gastverblijf voor de karavanen der schepselen die komen en gaan.
+</p>
+
+<p class="text-bold">Het Tweede Kernpunt</p>
+
+<p>
+  Je zult ontwaren dat de bewoners van deze herberg gasten zijn; hun Genereuze Heer nodigt hen uit naar
+  het vredesoord.
+</p>
+
+<p class="text-bold">Het Derde Kernpunt</p>
+
+<p>
+  Je zult ontwaren dat de decoraties in deze wereld niet alleen voor genot of vermaak zijn bedoeld. Immers,
+  ondanks dat aardse bekoorlijkheden kortstondig genot verschaffen, levert de scheiding met ze langdurig leed op.
+  Ze geven je een voorproef, ontvlammen verlangens, maar verzadigen niet. Want de levensduur van ofwel het
+  aardse schoon ofwel jou is te kort om verzadiging te schenken. Deze waardevolle doch kortstondige mooiheden
+  zijn dus bedoeld om lering te bieden<sup>1</sup>, dankbaarheid te ontwaken en interesse voor hun onvergankelijke
+  oervormen op te roepen. Zo dienen ze nog velerlei verheven doeleinden.
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>1</sup> Waarlijk, hoewel de waarde en kunstzinnige complexiteit van elk schepsel hoogverheven en fraai zijn, heeft het een
+    korte levensduur. Dit geeft aan dat deze schepselen voorbeelden zijn; ze dienen als illustraties van andere bestaansvormen.
+    En aangezien er een sfeer heerst waarin ze de aandacht van hun klanten op hun oervormen lijken te richten, kan uiteraard
+    geconcludeerd, beargumenteerd en bevestigd worden dat zulke sierlijke schepselen in deze wereld voorbeelden zijn van de
+    paradijselijke gunsten die de Barmhartige Genadige voor Zijn geliefde dienaren heeft bereid.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 63,
+                'content' => '<div class="page" id="63"> <p class="text-end page-number">#63</p>
+
+<p class="text-bold">Het vierde fundament</p>
+
+<p>
+  Je zult ontwaren dat de decoraties in deze wereld als voorbeelden en illustraties dienen van de gunsten voor
+  de gelovigen die bij de Genade van de Barmhartige in het paradijs zijn opgeslagen.<sup>2</sup>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>2</sup> Waarlijk, elk schepsel heeft verscheidene bestaansredenen en verschaft meerdere levensresultaten die niet beperkt
+    zijn tot alleen het aardse en de nefs – <span class="text-italic">zoals gewaand wordt door de dwalers.</span> Een schepsel kan dus niet
+    bevlekt worden met zinloosheid en onwijsheid. Voorzeker, de bestaansredenen en levensresultaten van elk schepsel
+    worden onderverdeeld in drie categorieën.
+  </p>
+  <p class="footnote-p">
+    <span class="text-bold">De eerste en meest verheven categorie</span> is gericht op zijn Kunstenaar. Hierbij behoren de voortreffelijke juwelen van
+    Goddelijke Kunstenaarschap waarmee een schepsel is getooid, paradegewijs gepresenteerd te worden ter aanschouwing van
+    de Tijdeloze Getuige. Voor deze Goddelijke Aanschouwing is een voorbijflitsend levensmoment voldoende. Zelfs de potentie
+    van een schepsel, die als een ongerealiseerde intentie niet tot ontplooiing is kunnen komen, is hierbij voldoende. Voorwaar,
+    de delicate creaties die snel vergaan, en de kunstrijke wonderwerken in de vorm van zaden en pitten die zich niet
+    materialiseren, oftewel niet ontkiemen, voldoen volledig aan dit doel; ze zijn immuun voor nutteloosheid en futiliteit.
+    Het primaire doel van elk schepsel impliceert dus: de machtsmirakelen en kunstwerken van zijn Kunstenaar met zijn leven
+    en bestaan tentoonstellen, en deze ter aanschouwing van de Ontzaglijke Sultan presenteren.
+  </p>
+  <p class="footnote-p">
+    <span class="text-bold">De tweede categorie</span> van bestaansredenen en levensresultaten is gericht op bewuste wezens. Hierbij dient elk schepsel
+    als een waarheid onthullende brief, een subtiele ode en een zinrijk woord van de Ontzaglijke Kunstenaar dat gepresenteerd
+    wordt ter aanschouwing van engelen, djinns, dieren en mensen; het nodigt ze uit tot contemplatie. Voor ieder bewust wezen
+    dat naar een dergelijk schepsel kijkt, is het dus een leerrijke bron van bezinning. &rarr;
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 64,
+                'content' => '<div class="page" id="64"> <p class="text-end page-number">#64</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <span class="text-bold">De derde categorie</span> van bestaansredenen en levensresultaten is gericht op de nefs <span class="text-italic">(het eigen zelf)</span>
+    van een schepsel. Hierbij staan genot, amusement, overleven, comfort en dergelijke specifieke resultaten centraal.
+    Bijvoorbeeld, als wij kijken naar het doel van een onderdaan die als stuurman dient op een groot sultansschip, dan zien wij
+    dat slechts één procent van alle scheepsaangelegenheden betrekking heeft op zijn persoonlijke loon, terwijl negenennegentig
+    procent gewijd is aan de sultan. Evenzo geldt voor elk schepsel dat wanneer één doel bestemd is voor zijn nefs en de wereld,
+    negenennegentig doelen gericht zijn tot zijn Kunstenaar.
+  </p>
+  <p class="footnote-p">
+    Voorwaar, deze uiteenlopende doelen zorgen ervoor dat wijsheid en zuinigheid harmoniëren met hun ogenschijnlijke tegenpolen,
+    bestaande uit vrijgevigheid en gulheid – <span class="text-italic">met name Gods grenzeloze Gulheid.</span> Het geheim van deze harmonie is het
+    volgende:
+  </p>
+  <p class="footnote-p">
+    Uit het oogpunt van specifieke doelen heersen vrijgevigheid en gulheid. Hierbij manifesteert de Naam: <span class="text-bold">“de Vrijgevige”</span>.
+    In het kader van zulke specifieke doelen is er bijvoorbeeld een overvloed aan vruchten en granen, wat een grenzeloze
+    vrijgevigheid weergeeft. Echter, uit het oogpunt van universele doelen heerst wijsheid. Hierbij manifesteert de Naam:
+    <span class="text-bold">“de Alwijze”.</span> Zoals een rijk beladen boom vele vruchten draagt, zo bevat elke vrucht eveneens velerlei doelen
+    die onderverdeeld zijn in de voornoemde drie categorieën. Deze universele doelen geven dus een eindeloze wijsheid en
+    zuinigheid weer. Zo komen eindeloze wijsheid en grenzeloze gulheid als ogenschijnlijke tegenpolen feilloos bijeen.
+    <span class="text-italic text-bold">Bijvoorbeeld,</span> een doel van een leger is de handhaving van de openbare orde. Voor dit doel zijn er soldaten
+    in overvloed en kan hun aantal zelfs te veel lijken. Echter, voor taken zoals het bewaken van grenzen en het bestrijden
+    van vijanden is dit aantal net voldoende en aldus perfect in balans met wijsheid. Zo wordt de wijsheid van een regering
+    met haar majesteit verenigd. Aldus kan men stellen dat er in dat leger geen sprake is van overbodigheid.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 64,
+                'content' => '<div class="page" id="64"> <p class="text-end page-number">#64</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <span class="text-bold">De derde categorie</span> van bestaansredenen en levensresultaten is gericht op de nefs <span class="text-italic">(het eigen zelf)</span>
+    van een schepsel. Hierbij staan genot, amusement, overleven, comfort en dergelijke specifieke resultaten centraal.
+    Bijvoorbeeld, als wij kijken naar het doel van een onderdaan die als stuurman dient op een groot sultansschip, dan zien wij
+    dat slechts één procent van alle scheepsaangelegenheden betrekking heeft op zijn persoonlijke loon, terwijl negenennegentig
+    procent gewijd is aan de sultan. Evenzo geldt voor elk schepsel dat wanneer één doel bestemd is voor zijn nefs en de wereld,
+    negenennegentig doelen gericht zijn tot zijn Kunstenaar.
+  </p>
+  <p class="footnote-p">
+    Voorwaar, deze uiteenlopende doelen zorgen ervoor dat wijsheid en zuinigheid harmoniëren met hun ogenschijnlijke tegenpolen,
+    bestaande uit vrijgevigheid en gulheid – <span class="text-italic">met name Gods grenzeloze Gulheid.</span> Het geheim van deze harmonie is het
+    volgende:
+  </p>
+  <p class="footnote-p">
+    Uit het oogpunt van specifieke doelen heersen vrijgevigheid en gulheid. Hierbij manifesteert de Naam: <span class="text-bold">“de Vrijgevige”</span>.
+    In het kader van zulke specifieke doelen is er bijvoorbeeld een overvloed aan vruchten en granen, wat een grenzeloze
+    vrijgevigheid weergeeft. Echter, uit het oogpunt van universele doelen heerst wijsheid. Hierbij manifesteert de Naam:
+    <span class="text-bold">“de Alwijze”.</span> Zoals een rijk beladen boom vele vruchten draagt, zo bevat elke vrucht eveneens velerlei doelen
+    die onderverdeeld zijn in de voornoemde drie categorieën. Deze universele doelen geven dus een eindeloze wijsheid en
+    zuinigheid weer. Zo komen eindeloze wijsheid en grenzeloze gulheid als ogenschijnlijke tegenpolen feilloos bijeen.
+    <span class="text-italic text-bold">Bijvoorbeeld,</span> een doel van een leger is de handhaving van de openbare orde. Voor dit doel zijn er soldaten
+    in overvloed en kan hun aantal zelfs te veel lijken. Echter, voor taken zoals het bewaken van grenzen en het bestrijden
+    van vijanden is dit aantal net voldoende en aldus perfect in balans met wijsheid. Zo wordt de wijsheid van een regering
+    met haar majesteit verenigd. Aldus kan men stellen dat er in dat leger geen sprake is van overbodigheid.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 65,
+                'content' => '<div class="page" id="65"> <p class="text-end page-number">#65</p>
+
+<p class="text-bold">Het Vijfde Fundament</p>
+
+<p>
+  Je zult ontwaren dat de bestemming van deze vergankelijke creaties geen vernietiging kan zijn; ze zijn
+  niet geschapen om even te verschijnen en vervolgens te verdwijnen.
+</p>
+
+<p>
+  Ze komen veeleer kortstondig in het bestaan bijeen en nemen een gewenste houding aan, opdat hun
+  gedaantes opgenomen, hun gelijkenissen bewaard, hun betekenissen doorgrond en hun resultaten opgeslagen
+  kunnen worden... Dit resulteert onder meer in de vereeuwiging van blijvende beelden voor het eeuwige
+  volk. Verder zullen ze in het eeuwige rijk nog diverse doeleinden dienen.
+</p>
+
+<p>
+  Een bewijs dat schepselen voor eeuwigheid zijn geschapen, niet voor vergankelijkheid zijn bestemd, en
+  – <span class="text-italic">ondanks hun fysieke teloorgang</span> – in feite na hun taakvervulling worden vrijgesteld, kan worden
+  afgeleid uit het feit dat een vergankelijk schepsel in één opzicht vergaat, terwijl het in velerlei opzichten
+  blijft voortbestaan.
+</p>
+
+<p>
+  Kijk bijvoorbeeld naar een bloem die zich als een woord van Goddelijke Macht manifesteert. Ze kijkt ons
+  even glimlachend aan, waarna ze zich snel achter de sluier van vergankelijkheid verschuilt. Zoals een woord
+  dat uit jouw mond vloeit, verdwijnt ze, terwijl ze duizenden gelijkenissen aan haar publiek nalaat. In evenredigheid
+  met het aantal verstanden dat haar opneemt, vereeuwigt ze haar betekenissen in de geesten. Want nadat
+  ze haar betekenis heeft ontvouwd, is haar taak volbracht, waarna ze vertrekt. Echter, voordat ze vertrekt,
+  laat ze haar fysieke gedaante in de geheugens
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 66,
+                'content' => '<div class="page" id="66"> <p class="text-end page-number">#66</p>
+
+<p>
+  van al haar toeschouwers en haar spirituele wezen in al haar zaden na. Elk geheugen en elk zaad zijn als
+  het ware een foto waarop haar schoonheid wordt bewaard en een burcht waarin haar voortbestaan wordt
+  gewaarborgd.
+</p>
+
+<p>
+  Indien dit het geval is bij een kunstwerk dat zich op het simpelste levensniveau bevindt, kun je wel nagaan
+  hoezeer de mens, die zich op het allerhoogste levensniveau bevindt en een eeuwige ziel bezit, in relatie staat
+  tot de eeuwigheid. De wijze waarop de samenstellingswet – <span class="text-italic">die verwant is aan een ziel</span> – en de gelijkenis van
+  elke grote bloem- en vruchtdragende plant gedurende woelige ontwikkelingsstadia uiterst ordelijk in minuscule
+  zaden worden vereeuwigd en bewaard, geeft aan hoezeer de bewuste en lumineuze mensenziel –
+  <span class="text-italic">die als belichaming van een Goddelijke wet over een zeer omvattend en verheven wezen beschikt, en met
+  een extern bestaan is bekleed</span> – verbonden is met de eeuwigheid.
+</p>
+
+<p class="text-bold">Het Zesde Fundament</p>
+
+<p>
+  Je zult ontwaren dat de mens niet als een dier met een touw om zijn nek vrij is gelaten om te grazen waar
+  hij wil. Integendeel, alle beelden van zijn daden worden opgenomen en alle uitwerkingen van zijn handelingen
+  worden vastgelegd voor rekenschap.
+</p>
+
+<p class="text-bold">Het Zevende Fundament</p>
+
+<p>
+  Je zult ontwaren dat de afbraak die de mooie schepselen van de lente en zomer in de herfst ondergaan,
+  geen vernietiging is, maar een vrijstelling na de voltooiing van hun taken.<sup>3</sup> Daarnaast is het een ontrui-
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>3</sup> Waarlijk, wanneer vruchten, bloesems en bladeren verschijnen aan de toppen en takken van een boom, &rarr;
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 67,
+                'content' => '<div class="page" id="67"> <p class="text-end page-number">#67</p>
+
+<p>
+  ming om ruimte vrij te maken voor de schepselen die de volgende lente zullen verschijnen; het is een voorbereiding
+  op de komst van de nieuwe functionarissen en dienstplichtigen. Tevens is het een vermaning van
+  de Feilloze voor bewuste wezens die door onachtzaamheid hun taken vergeten en door dronkenschap hun
+  dankbetoon verzaken.
+</p>
+
+<p class="text-bold">Het Achtste Fundament</p>
+
+<p>
+  Je zult ontwaren dat de Tijdeloze Kunstenaar van deze tijdelijke wereld een ander, eeuwig rijk bezit
+  waarnaar Hij Zijn dienaren dirigeert en waarvoor Hij een passie in hen ontvlamt.
+</p>
+
+<p class="text-bold">Het Negende Fundament</p>
+
+<p>
+  Je zult ontwaren dat de Barmhartige in dat rijk giften voor zijn uitverkoren onderdanen heeft bereid die
+  door geen oog zijn aanschouwd, door geen oor zijn vernomen, en in geen mensenhart zijn opgekomen. Dit
+  is wat wij geloven...
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    die zich manifesteert als een voedingsschat van Genade, dan verwelken ze geleidelijk. Nadat ze hun taak voltooien,
+    behoren ze te vertrekken, opdat de poort voor hun navolgende plaatsvervangers niet wordt gesloten. Anders zal de
+    omvang van Genade ingeperkt en de diensten van hun gebroeders verhinderd worden. Tevens zullen ze zelf door de
+    teloorgang van hun jeugd in een ellendige en erbarmelijke staat vervallen. Voorwaar, in dit kader is ook de lente een
+    vruchtbare boom die aan de herzameling doet denken. Ieder tijdperk binnen de mensenwereld is een leerrijke boom. Ook
+    de aarde is een machtsboom gelijkend aan een verzamelplaats van bijzonderheden. En de wereld is eveneens een wonderlijke
+    boom waarvan de vruchten naar de bazaar van het hiernamaals worden gezonden.
+  </p>
+</div>
+  </div>'
+            ],
+            [
+                'page_number' => 68,
+                'content' => '<div class="page" id="68"> <p class="text-end page-number">#68</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Zevende Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Bewaring en Preservatie; Een glimp van de Namen: “de Bewaarder en de Opzichter”</span></p>
+  <p class="text-center">
+    <span class="text-arabic" dir="rtl" lang="ar">اَلْحَفِيظُ وَالرَّقِيبُ</span>
+  </p>
+</div>
+
+<p>
+  Is het ooit voor mogelijk te houden dat enerzijds, zowel in de hemel als op de aarde, op het land en in
+  de zee, overal een Bewaring heerst, waarbij alles – <span class="text-italic">hetzij nat of droog, groot of klein, gewoon of verheven</span> –
+  binnen een perfecte orde en balans wordt bewaard, en de daaruit voortvloeiende gevolgen volgens een bepaalde
+  rekenschap worden uitgezeefd, maar anderzijds, als het aankomt op de mens – <span class="text-italic">die een omvattende aard bezit,
+  de rang van ‘ultieme khalief’ bekleedt en de taak met de grootste verantwoordelijkheid draagt</span> – zullen zijn daden
+  en handelingen, die direct betrekking hebben op Gods universele Heerschappij, dan niet worden bewaard, niet
+  door de zeef van rekenschap worden gehaald en niet op de balans van Rechtvaardigheid worden afgewogen
+  om een passende straf of beloning vast te stellen? Dit is absoluut onmogelijk!
+</p>
+
+<p>
+  Waarlijk, de Entiteit Die dit universum beheert, bewaart alles binnen een bepaalde orde en balans. Orde
+  en balans zijn verschijnselen van Kennis en Wijsheid, gecombineerd met Wil en Macht. Immers, bij het
+  ontstaan van een schepsel zien wij dat het uiterst geordend en gebalanceerd wordt geschapen. Ook de fysieke
+  veranderingen die een schepsel gedurende zijn leven ondergaat, voltrekken zich op een ordelijke wijze,
+  terwijl het geheel van deze veranderingen eveneens afgestemd is op een ordelijk systeem.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 69,
+                'content' => '<div class="page" id="69"> <p class="text-end page-number">#69</p>
+
+<p>
+  Wij zien immers dat aan het leven van elk wezen een einde wordt gebracht nadat het zijn taak heeft voltooid,
+  waarna het deze waarneembare wereld verlaat. Echter, in geheugens – <span class="text-italic">die als bewaartableaus dienen</span><sup>1</sup> –
+  en in spiegels van gelijkenissen bewaart de Ontzaglijke Bewaarder velerlei verschijningsvormen van dat wezen;
+  Hij graveert de levensgeschiedenis ervan in diens zaden en voortbrengselen. Zodoende vereeuwigt Hij elk wezen
+  in zichtbare en onzichtbare spiegels.
+</p>
+
+<p>
+  <span class="text-italic text-bold">Bijvoorbeeld,</span> het geheugen van de mens, de vrucht van een boom, de pit van een vrucht en het
+  zaad van een bloem geven de geweldige reikwijdte van de wet der Bewaring weer.
+</p>
+
+<p>
+  Zie je dan niet dat alle specifieke dadenschriften, samenstellingswetten en uiterlijke gelijkenissen van alle
+  bloemrijke en vruchtdragende flora van een weelderige lente in compacte zaadjes worden opgeschreven en
+  bewaard? In een volgende lente worden hun dadenschriften volgens een bepaalde rekenschap ontvouwd, waardoor
+  er met een voortreffelijke Orde en Wijsheid een geweldige nieuwe voorjaarse wereld ontstaat. Dit toont aan
+  hoe ruimschoots de wet der Bewaring van kracht is.
+</p>
+
+<p>
+  Indien bij zulke voorbijgaande, simpele, onbestendige en onbeduidende zaken al een dusdanige Bewaring
+  heerst, kan het dan ooit mogelijk zijn dat de daden van mensen – <span class="text-italic">die in de verborgen wereld, het hiernamaals
+  en de zielenwereld aanzienlijke vruchten met betrekking tot Gods universele Heerschappij afwerpen</span> – niet onder
+  een waakzaam Oog worden bewaard en zorgvuldig worden vastgelegd? Dit is absoluut onmogelijk!
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p"><sup>1</sup> Zie de voetnoot in “Het Zevende Aanzicht”.</p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 70,
+                'content' => '<div class="page" id="70"> <p class="text-end page-number">#70</p>
+
+<p>
+  Waarlijk, blijkens deze manifestatie van Bewaring wijdt de Eigenaar van heel dit bestaan veel zorg aan
+  het toezicht over alles wat zich afspeelt in Zijn rijk. Hij hanteert Zijn Gezag met optimale aandacht en voert
+  de Heerschappij over Zijn Sultanaat met uiterste precisie; zozeer, dat Hij zelfs de kleinste gebeurtenis en
+  de geringste dienst zelf vastlegt en laat vastleggen. De beelden van alles wat zich in Zijn rijk afspeelt, slaat
+  Hij in meerdere bewaarplaatsen op.
+</p>
+
+<p class="text-bold">
+  Deze Bewaring duidt aan dat er een aanzienlijk grootboek voor de rekenschap van daden zal worden opgeslagen.
+</p>
+
+<p>
+  En vooral de grote daden en gewichtige handelingen van de mens, die gezien zijn wezen het omvattendste,
+  nobelste en geëerdste schepsel is, zullen aan een doorslaggevende rekenschap en afweging worden onderworpen;
+  zijn dadenschrift zal worden onthuld.
+</p>
+
+<p>
+  Kan het dan ooit mogelijk zijn dat de mens met het khalifaat en de grootste verantwoordelijkheidstaak wordt
+  vernobeld, en tot getuige van de Universele Gesteldheden des Heren wordt verkozen, en vervolgens overal
+  binnen de kringen der diversiteiten zijn rol als heraut van de Goddelijke Eenheid openbaar maakt, en met
+  zijn deelname aan de verheerlijkingen en godsdienstoefeningen van de meeste bestaansvormen tot de rang van
+  opzichter en getuige rijst, om uiteindelijk ongestoord in het graf te rusten zonder ooit gewekt te worden?
+  Zal hij niet voor al zijn zowel kleine als grote daden ter verantwoording worden geroepen? Zal hij niet
+  voorttrekken naar de herzamelplaats en de Ultieme Berechting ondergaan? Dit is absoluut onmogelijk!
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 71,
+                'content' => '<div class="page" id="71"> <p class="text-end page-number">#71</p>
+
+<p>
+  En dat de Heer bij machte is om alle toekomstige mogelijkheden<sup>2</sup> te realiseren, wordt bevestigd door alle
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>2</sup> Waarlijk, het gehele verleden, dat vanaf het heden teruggaat tot aan het begin der schepping, bestaat volledig uit
+    vaststaande gebeurtenissen. Alle verstreken dagen, jaren en eeuwen in de geschiedenis zijn regels, pagina’s en boeken
+    die met de Pen der Beschikking zijn opgetekend. De Hand van Macht heeft daarin de mirakelen van Goddelijke Ayaat
+    met volmaakte Wijsheid en Orde geschreven. De toekomst, die zich vanaf het heden tot de dag der opstanding en de
+    entree in het paradijs uitstrekt, en tot aan de oneindige eeuwigheid doorloopt, is een tijdruimte die volledig uit mogelijkheden
+    bestaat. Kortom, het verleden bestaat uit vaststaande gebeurtenissen; de toekomst bestaat uit mogelijkheden.
+  </p>
+  <p class="footnote-p">
+    Voorwaar, wanneer deze twee tijdlijnen tegenover elkaar worden gebracht, dan zal niemand betwijfelen of de Entiteit Die
+    de dag van gisteren met alle toenmalige wezens heeft geschapen, bij machte is om de dag van morgen met alle bijbehorende
+    wezens te scheppen. Zo zijn de wezens en fenomenen binnen de mysterieuze tijdruimte van het verleden ongetwijfeld
+    mirakelen van een Ontzaglijke Almacht. Ze getuigen ervan dat Die Almacht absoluut in staat is om de gehele toekomst
+    met haar mogelijkheden te creëren en alle gerelateerde wonderen te onthullen.
+  </p>
+  <p class="footnote-p">
+    Waarlijk, degene die één appel wil scheppen, moet bij machte zijn om alle appels op aarde te scheppen en een geweldige
+    lente voort te brengen. Wie de lente niet kan creëren, kan evenmin één appel creëren. Die appel wordt immers in de
+    weverij van het voorjaar vervaardigd. Hij Die één appel kan creëren, kan evenzeer een lente creëren. Een appel is in
+    wezen een miniatuur van een boom, een tuin, en wellicht zelfs een heel universum. Bovendien is een appelpit, die
+    de hele levensgeschiedenis van een enorme boom draagt, een dusdanig kunstrijk wonderwerk, dat Degene Die haar
+    zodanig heeft gecreëerd, tegenover niets machteloos staat.&rarr;
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 72,
+                'content' => '<div class="page" id="72"> <p class="text-end page-number">#72</p>
+
+<p>
+  vroegere gebeurtenissen die zich als mirakelen van Macht hebben voltrokken, en door de winter en de
+  lente die Hij naar de gelijkenis van de herrijzenis en de herzameling steeds opnieuw blijft voortbrengen.
+  Hoe denkt de mens zich dan te kunnen onttrekken aan het bestaan om aan zo’n Ontzaglijke Almacht te
+  ontkomen? Of waant de mens dat hij onder de grond voor Hem kan schuilen?
+</p>
+
+<p>
+  Aangezien in deze wereld geen waardige rekenschap wordt afgelegd en geen oordeel wordt uitgesproken,
+  zal er uiteraard een Ultieme Berechting komen en een eindeloze gelukzaligheid volgen.
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    Evenzo is Degene Die de dag van vandaag heeft geschapen in staat om de dag van de herrijzenis te scheppen.
+    En de Entiteit Die de lente kan voortbrengen, is eveneens bij machte om de herzameling te verwezenlijken.
+    Hij Die alle werelden van het verleden aan de koord des tijds met volmaakte Wijsheid en Orde heeft aaneengeregen
+    en getoond, kan en zal uiteraard een ander universum aan de tijdlijn van de toekomst rijgen en tentoonstellen.
+  </p>
+  <p class="footnote-p">
+    In verscheidene “Woorden”, en vooral in “Het Tweeëntwintigste Woord”, hebben wij deugdelijk bewezen
+    dat degene die niet alles kan creëren, in wezen niets kan creëren, terwijl degene die één iets kan scheppen,
+    alles kan creëren.
+  </p>
+  <p class="footnote-p">
+    En wanneer de schepping van wezens aan één enkele Entiteit wordt overgelaten, dan komen alle wezens zo
+    eenvoudig als één wezen tot stand; er zal een natuurlijke eenvoud optreden. Wordt de schepping van wezens
+    daarentegen aan meerdere oorzaken overgelaten en aan diversiteiten toegedicht, dan zal de totstandkoming
+    van één wezen zo lastig zijn als de schepping van alle wezens; er zullen onoverkomelijke complicaties opdoemen.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 73,
+                'content' => '<div class="page" id="73"> <p class="text-end page-number">#73</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Achtste Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Belofte en Bedreiging; Een glimp van de Namen: “de Schone en de Ontzaglijke”</span></p>
+  <p class="text-center">
+    <span class="text-arabic" dir="rtl" lang="ar">اَلْجَمِيلُ وَالْجَلِيلُ</span>
+  </p>
+</div>
+
+<p>
+  Is het ooit voor mogelijk te houden dat de Alwetende en Almachtige Kunstenaar van al deze kunstige
+  creaties Zijn herhaaldelijke Beloften en Goddelijke Dreigementen, Die door alle profeten middels massale
+  overleveringsketenen zijn verkondigd, en door alle getrouwen en heiligen unaniem zijn bevestigd, niet zal
+  waarmaken, en zodoende – <span class="text-italic">God verhoede</span> – Zijn onmacht en onwetendheid zal tonen? Daar komt bij dat
+  het voldoen aan de vereisten van Zijn Beloftes en Dreigementen Zijn Macht geenszins bezwaart; het is zeer
+  licht en gemakkelijk voor Hem, vergelijkbaar met het gemak waarmee de talloze wezens van de verstreken
+  lente het aankomende voorjaar – deels identiek<sup>1</sup> en deels gelijksortig<sup>2</sup> – worden herschapen.
+</p>
+
+<p class="text-bold">
+  Bovendien is de waarmaking van Zijn belofte niet alleen voor ons, maar voor alle wezens, voor Hemzelf en
+  voor de Heerschappij van Zijn Sultanaat van essentieel belang.
+</p>
+
+<p>
+  De verbreking van Zijn belofte daarentegen druist in tegen zowel de integriteit van Zijn regeermacht als
+  de omvattendheid van Zijn Kennis. Immers, beloftebreuk komt voort uit ofwel onwetendheid ofwel onmacht.
+</p>
+
+<p class="text-italic text-bold">
+  O loochenaar! Besef jij wel wat voor dwaze misdaad jij met je ongeloof en ontkenning begaat?
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p"><sup>1</sup> Zoals de wortels van bomen en grasplanten.</p>
+  <p class="footnote-p"><sup>2</sup> Zoals bladeren en vruchten.</p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 74,
+                'content' => '<div class="page" id="74"> <p class="text-end page-number">#74</p>
+
+<p>
+  Je beaamt jouw valse waan, jouw ijlende verstand en jouw bedrieglijke nefs. Ondertussen verloochen jij
+  een Entiteit Die geenszins ontrouw of inconsequent hoeft te zijn; een Majesteit Wiens Statigheid en Integriteit
+  het absoluut niet betaamt om inconsistent te zijn, en Wiens Trouwheid en Waarachtigheid door alle
+  zichtbare activiteiten wordt onderlijnd. In je oneindige miezierigheid bega jij een eindeloos misdrijf! Hiervoor
+  verdien jij uiteraard een zware, grenzeloze straf. Dat één tand van sommige helbewoners zo groot als een
+  berg zal zijn, is als maatstaf vermeld om de omvang van hun misdrijf aan te duiden.
+</p>
+
+<p>
+  Jij lijkt op een reiziger die zijn ogen voor het zonlicht sluit en in het domein van zijn verbeelding staart,
+  waar zijn waan als een vuurvlieg zijn angstwekkende pad tracht te verlichten met het schijnsel dat van zijn
+  hoofd afschermt.
+</p>
+
+<p>
+  Met alle creaties in het bestaan als Zijn trouwe Woorden Die waarheden verkondigen, en alle gebeurtenissen
+  in het universum als Zijn eloquente Ayaat Die werkelijkheden uitdrukken, heeft de Alwaarachtige een belofte
+  uitgesproken... Uiteraard zal Hij Zijn belofte waarmaken; Hij zal een Ultieme Berechting verwezenlijken en
+  een sublieme gelukzaligheid schenken.
+</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Negende Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Verlevendiging en Doding; Een glimp van de Namen: “De Allevende en Consistente, de Schenker des levens en Brenger des doods”</span></p>
+  <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَلْحَىُّ الْقَيُّومُ ۞ اَلْمُحْيِى وَالْمُمِيتُ</p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 75,
+                'content' => '<div class="page" id="75"> <p class="text-end page-number">#75</p>
+
+<p>
+  Is het ooit voor mogelijk te houden dat Degene Die de grote, dode en dorre aarde tot leven wekt, en Die
+  bij deze opwekking meer dan driehonderdduizend soorten schepselen soort voor soort zo wonderlijk als de
+  menselijke herzameling bijeenbrengt en veraanschouwelijkt, en zodoende Zijn Macht demonstreert, en Die
+  tijdens deze verzameling en veraanschouwelijking binnen grenzeloze vermengingen en verwervingen met
+  perfecte distincties en onderscheidingen de reikwijdte van Zijn Kennis demonstreert, en Die in al Zijn Hemelse
+  Decreten de herzameling van de mens belooft, en zodoende de aandacht van al Zijn dienaren op de eeuwige
+  gelukzaligheid richt, en alle creaties zij aan zij, schouder aan schouder, hand in hand eendrachtig binnen
+  de kring van Zijn Bevel en Wil laat circuleren, en ze als elkaars helpers onderwerpt, en zodoende de grandeur
+  van Zijn Heerschappij demonstreert, en Die de mensheid als de omvattendste, fragielste, teerhartigste,
+  delicaatste en afhankelijkste vrucht van de scheppingsboom voortbrengt, als gesprekspartner verkiest, alles
+  tot haar dienst stelt, en zodoende aantoont hoeveel waarde Hij aan de mensheid hecht, al bij al, is het
+  denkbaar dat zo’n Genadige Almachtige, zo’n Alwetende Alwijze, de herrijzenis niet zal realiseren, de herzameling
+  niet zal of kan waarmaken, de mensheid niet opnieuw tot leven zal of kan wekken, de Ultieme Berechting
+  niet kan verwezenlijken, en het paradijs en de hel niet kan scheppen? God verhoede!
+</p>
+
+<p>
+  Waarlijk, de Glorierijke Beheerder van deze wereld brengt elke eeuw, elk jaar en elke dag op het krappe
+  oppervlak van deze tijdelijke aarde vele gelijkenissen, voorbeelden en tekenen van de Ultieme Herzameling
+  en het veld van de herrijzenis tot stand.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 76,
+                'content' => '<div class="page" id="76"> <p class="text-end page-number">#76</p>
+
+<p>
+  Zo zien wij bijvoorbeeld dat Hij tijdens de voorjaarse bijeenzameling in vijf à zes dagen meer dan driehonderdduizend
+  kleine en grote plant- en diersoorten bijeenbrengt en veraanschouwelijkt. De wortels van alle
+  boom- en grassoorten, inclusief bepaalde diersoorten, brengt Hij opnieuw tot leven en herstelt Hij in ere.
+  Andere schepselen brengt Hij nagenoeg als identieke exemplaren van hun voorgangers voort. Hoewel zaden
+  met minimale materiële verschillen zo dicht met elkaar vermengd zijn, worden ze met voortreffelijke onderscheidingen
+  en karakteristieken op een zeer vlotte, uitvoerige en soepele wijze in zes dagen of zes weken
+  binnen een perfecte orde en balans tot leven gebracht. Is het dan aannemelijk dat voor de Uitvoerder van
+  deze werken iets zwaar kan vallen; dat Hij de hemelen en de aarde niet in zes dagen kan scheppen, en de
+  mensheid niet met één oproep kan herzamelen? God verhoede!
+</p>
+
+<p>
+  Stel je voor dat er een schrijver met wondergaven bestaat. Zonder in verwarring te raken, iets weg te laten
+  of een vergissing te maken, schrijft hij op een prachtige wijze driehonderdduizend boeken met vervaagde
+  of verdwenen letters op één enkele pagina binnen één uur volledig uit. Vervolgens zegt iemand tegen jou:
+</p>
+
+<p class="text-italic">
+  “Deze schrijver, die de oorspronkelijke auteur is van jouw boek dat in het water is gevallen, zal dat boek in
+  één minuut uit zijn geheugen herschrijven.”
+</p>
+
+<p>
+  Zou jij dan kunnen zeggen: “Dat kan hij niet; ik geloof jou niet...”?
+</p>
+
+<p>
+  Of stel je voor dat een miraculeuze sultan ter vertoning van macht of ter lering en vermaak voor jouw
+  ogen met één sein bergen verzet, continenten herschikt en zeeën in land verandert. Vervolgens zie je dat een
+</p>
+  </div>'
+            ],
+            [
+                'page_number' => 77,
+                'content' => '<div class="page" id="77"> <p class="text-end page-number">#77</p>
+
+<p>
+  groot rotsblok in een vallei is gerold, waardoor de weg van de gasten die de sultan speciaal voor een feestmaal
+  heeft uitgenodigd, versperd is geraakt; ze kunnen niet verder... Iemand zegt tegen jou:
+  <span class="text-italic">“De sultan zal dat rotsblok – hoe groot het ook is – met één sein verzetten of verpulveren. Hij zal
+  zijn gasten niet aan hun lot overlaten.”</span> Zou jij dan zeggen: <span class="text-italic">“Hij zal dat rotsblok niet verplaatsen”</span> of:
+  <span class="text-italic">“Hij is daartoe niet in staat...”</span>?
+</p>
+
+<p>
+  Of stel je voor dat een bevelvoerder in één dag een compleet nieuw leger van enorme omvang opricht.
+  Vervolgens zegt iemand: <span class="text-italic">“Die bevelvoerder zal met een bazuingeschal de rustende soldaten van de
+  ontbonden bataljons bijeenroepen, waarop de bataljons onder zijn gezag paraat zullen staan.”</span> Als jij daarop
+  zegt: <span class="text-italic">“Dat geloof ik niet!”</span>, dan besef jij ook hoe dwaas jouw reactie is.
+</p>
+
+<p>
+  Voorwaar, indien jij deze drie voorbeelden hebt begrepen, kijk dan toe! De Tijdeloze Schoonschrijver slaat
+  voor onze ogen de witte pagina van de winter om, vouwt de groene bladzijden van de lente en zomer open,
+  en legt met de Pen der Beschikking en Macht op de pagina van het aardoppervlak meer dan driehonderdduizend
+  soorten wezens in de mooiste vorm vast. Ze bevinden zich weliswaar zeer dicht op elkaar, toch haalt Hij
+  ze niet door elkaar. Hij schrijft ze allemaal gelijktijdig uit, zonder dat ze elkaar hinderen. Hoewel hun ontwerp
+  en uiterlijk van elkaar verschillen, raakt Hij nimmer in de war; nooit begaat Hij een fout in Zijn Schrijverschap.
+</p>
+
+<p>
+  Waarlijk, als er gesproken wordt over de Alwijze Bewaarder, Die het zielsprogramma van de grootste boomsoort
+  in het kleinste zaadje ter grootte van een stipje vestigt en bewaart, mag er toch geen vraag op-
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 78,
+                'content' => '<div class="page" id="78"> <p class="text-end page-number">#78</p>
+
+<p>
+  rijzen als: <span class="text-italic">“Kan Hij de zielen van overledenen bewaren?”</span> En als het gaat om de Almachtige Entiteit,
+  Die de aardbol als een slingersteen laat wentelen, is het toch niet gepast om een opmerking te maken als:
+  <span class="text-italic">“Hoe zal Hij deze aarde, die het pad van Zijn gasten op weg naar het hiernamaals versperd, kunnen
+  verzetten of verwoesten?”</span>
+</p>
+
+<p>
+  En wanneer we het hebben over het Ontzaglijke Opperwezen, Die vanuit het niets in de lichamelijke bataljons
+  van alle legers der levende wezens met volmaakte orde atomen op Zijn bevel: <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">كُنْ فَيَكُونُ</span>
+  rekruteert en stationeert, en zodoende nieuwe legers creëert, kan er dan twijfel zijn over Zijn Vermogen om de
+  elementaire deeltjes en basiselementen van de bataljons der lichamen, die elkaar vanaf hun eerste formatie al
+  kennen, met één oproep weer bijeen te brengen?
+</p>
+
+<p>
+  En vergelijkbaar met de voorjaarse bijeenzameling, kun je in elk tijdperk en elke eeuw op aarde, bij elke
+  wisseling van dag en nacht, en zelfs bij elke vorming en verdwijning van de wolken in het luchtruim met eigen
+  ogen zien hoeveel voorbeelden, illustraties en tekenen van de herzameling Hij samenweeft... Als jij jezelf in
+  gedachten duizend jaar terugplaatst en de twee vleugels des tijds, bestaande uit het verleden en de toekomst,
+  met elkaar vergelijkt, dan zul jij zoveel illustraties van de herzameling en voorbeelden van de herrijzenis
+  aanschouwen als het aantal eeuwen en dagen dat binnen die tijdspannen valt. Wanneer jij je vervolgens, ondanks
+  zoveel voorbeelden en illustraties aanschouwd te hebben, de fysieke herzameling alsnog ontkent omdat jij het te
+  vergezocht en ondenkbaar acht, dan besef jij ook hoe absurd dat is.
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p"><sup>3</sup> “(God zegt) Wees! en het wordt.”</p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 79,
+                'content' => '<div class="page" id="79"> <p class="text-end page-number">#79</p>
+
+<p>
+  Kijk naar wat het Ultieme Decreet zegt over de waarheid in kwestie:
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+  فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا<br>
+  اِنَّ ذٰلِكَ لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ<sup>4</sup>
+</p>
+
+<p class="text-bold">Kortom:</p>
+
+<p>
+  Er is helemaal niets dat de herzameling in de weg staat, terwijl alles haar verwezenlijking vereist.
+</p>
+
+<p>
+  Waarlijk, een Entiteit Die deze verbazende verzamelplaats van de enorme aarde als een simpele levensvorm
+  laat sterven en herleven, en haar voor mens en dier als een aangename wieg en een fraai schip laat dienen,
+  en voor de bewoners van dit gastenverblijf de zon als een verlichtende en verwarmende lamp laat werken,
+  terwijl Hij voor Zijn engelen de planeten als vervoersmiddelen laat fungeren, voert zo’n majesteitelijke en
+  eindeloze Heerschappij, zo’n grandioos en omvangrijk Bewind, dat het uiteraard niet enkel gevestigd is en
+  staande blijft op deze voorbijgaande, onbestendige, wankelbare, onbeduidende, veranderlijke, oneeuwige,
+  gebrekkige en onvolmaakte wereldse aangelegenheden.
+</p>
+
+<p>
+  Elders bestaat dus een aanhoudend, bestendig, onvergankelijk en majestueus oord dat Zijn Heerschappij
+  en Soevereiniteit recht doet; Hij bezit een ander rijk dat eeuwig is. Hij laat ons daarvoor werken en no-
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>4</sup> “Aanschouw de sporen van ALLAH’s Genade, hoe Hij de aarde na haar dood doet herleven. Voorzeker, Hij is Degene
+    Die de doden tot leven brengt, en Hij bezit Macht over alles.” <em>– Qur’an, 30:50</em>
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 80,
+                'content' => '<div class="page" id="80"> <p class="text-end page-number">#80</p>
+
+<p>
+  digt ons daartoe uit... En dat Hij ons daarnaartoe zal overplaatsen, wordt beaamd door alle leidende
+  bezitters van stralende zielen, lumineuze harten en verlichte verstanden, die vanuit het schijnbare tot de
+  waarheidszijn gerezen en de nabijheid van Zijn Tegenwoordigheid hebben mogen genieten. Unaniem verkondigen
+  zij dat Hij zowel beloning als bestraffing heeft voorbereid. Tevens leveren zij over dat Hij herhaaldelijk
+  stellige beloftes en hevige dreigementen tot uiting brengt.
+</p>
+
+<p>
+  Zoals men weet, is het breken van een belofte zowel schandelijk als beschamend, en aldus geenszins verenigbaar
+  met Zijn Glorie en Heiligheid. Tevens kan de herroeping van een dreigement alleen voortkomen uit
+  vergeving of onmacht. Echter, ongeloof is een ultiem misdrijf dat onvergeeflijk is.<sup>5</sup>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>5</sup> Waarlijk, omdat ongeloof (koefr) alle wezens van hun waarde berooft en van betekenisloosheid beticht, is het een
+    belediging jegens het hele universum... en omdat het de glimpen van Goddelijke Namen in de spiegels der wezens
+    ontkent, is het een bespotting van alle Heilige Namen... en omdat het alle eenheidsgetuigenissen van bestaansvormen
+    verwerpt, is het een verloochening van alle schepselen... Al deze aspecten zorgen ervoor dat de menselijke potentie
+    zodanig ontaardt, dat ze het niet meer verdient om heil en deugd te aanvaarden. Bovendien is het een immense
+    verduistering waarbij de rechten van alle schepselen en alle Goddelijke Namen worden geschonden.
+  </p>
+  <p class="footnote-p">
+    Voorwaar, de bescherming van deze rechten en het onvermogen van een ongelovige om heil te aanvaarden, leiden
+    uiteindelijk tot de onvergeeflijkheid van ongeloof.
+    <span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّ الشِّرْكَ لَظُلْمٌ عَظِيمٌ</span>
+    <span class="text-italic text-bold">“Voorzeker, afgoderij is een gigantische duisternis.”</span>
+    <em>– Qur’an, 31:13</em> drukt deze betekenis uit.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 81,
+                'content' => '<div class="page" id="81"> <p class="text-end page-number">#81</p>
+
+<p>
+  Daarnaast is de Absolute Almacht verheven en heilig boven elke vorm van onmacht.
+</p>
+
+<p>
+  Wat de bevestigers en verkondigers betreft: hoewel hun wegen, mentaliteiten en leertradities uiteenlopen,
+  heerst onder hen een volstrekt unanieme overeenstemming over de kern van deze kwestie. Hun talrijkheid
+  evenaart het niveau van massale overleveringsketenen <span class="text-italic">(tewatur)</span> en hun boodschap draagt de kracht van een
+  collectieve consensus <span class="text-italic">(idjma)</span>. Qua status zijn zij de sterren onder de mensheid, de ogen van een gemeenschap
+  en de trots van een natie. In het kader van onze kwestie zijn zij zowel experts als bewijsvoerders.
+</p>
+
+<p>
+  In kunst of wetenschap worden twee experts verkozen boven duizenden ondeskundigen, en bij een verkondiging
+  genieten twee bewijsvoerders de voorkeur boven duizenden tegensprekers. Bijvoorbeeld, twee mannen die de
+  verschijning van de Ramadan-maan aankondigen, ontkrachten de ontkenning van duizenden ontkenners.
+</p>
+
+<p class="text-bold">Conclusie:</p>
+
+<p>
+  Een betrouwbaardere verkondiging, een krachtigere bewering en een evidenter waarheid zijn in deze wereld
+  simpelweg onbestaanbaar. Al bij al is de aarde een akker; het verzamelveld is een dorsvloer; het paradijs en
+  de hel zijn de bewaaarplaatsen van de oogst.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 82,
+                'content' => '<div class="page" id="82"> <p class="text-end page-number">#82</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Tiende Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Wijsheid, Gratie, Genade en Rechtvaardigheid; Een glimp van de Namen: “De Alwijze, de Genereuze, de Rechtvaardige en de Barmhartige.”</span></p>
+  <p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَكِيمُ ۞ اَلْكَرِيمُ ۞ اَلْعَادِلُ ۞ اَلرَّحِيمُ</p>
+</div>
+
+<p>
+  Is het ooit voor mogelijk te houden dat de Ontzaglijke Eigenaar van het geschapen Rijk in dit vergankelijke
+  gastenverblijf van de wereld, in dit tijdelijke terrein van beproeving en in deze instabiele tentoonstellingsruimte
+  van de aarde zo veel tekenen van een stralende Wijsheid, een waarneembare Gratie, een overweldigende
+  Rechtvaardigheid en een omvangrijke Genade demonstreert, maar desondanks, binnen de kring van
+  Zijn Domein, in de materiële en immateriële wereld, niet over bestendige woningen met eeuwige bewoners,
+  eeuwige verblijven met onvergankelijke schepselen beschikt, waardoor de waarheden van deze zichtbare
+  Wijsheid, Gratie, Rechtvaardigheid en Genade helemaal verloren gaan?
+</p>
+
+<p>
+  En kan het ooit aanvaardbaar zijn dat Die Alwijze Entiteit uit alle schepselen de mens voor Zichzelf tot
+  universele gesprekspartner en alomvattende spiegel uitverkiest, hem de inhoud van alle Genadeschatten laat
+  proeven, aftasten en onderkennen, Zichzelf met al Zijn Namen aan hem openbaart, en hem zowel liefheeft
+  als geliefd maakt, om uiteindelijk die arme mens de toegang tot Zijn Eeuwige Rijk te weigeren? Zal Hij de
+  mens niet tot het oord der gelukzaligheid uitnodigen om hem daar voor altijd te vervullen van geluk?
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 83,
+                'content' => '<div class="page" id="83"> <p class="text-end page-number">#83</p>
+
+<p>
+  En kan het redelijkerwijs ooit aannemelijk zijn dat Hij zelfs een creatie zoals een zaadje met de taken
+  van een boom belast, met zoveel wijsheden als zijn bloesems belaadt, en met zoveel nuttigheden als zijn
+  vruchten verrijkt, om uiteindelijk al die taken, wijsheden en nuttigheden aan een aards doel zo miniem als
+  een zaadkorrel te wijden? Zal Hij hun bestemming tot slechts een aards bestaan met minder waarde dan een
+  mosterdzaad beperken? Zal Hij deze aangelegenheden niet als zaden voor de wereld der betekenissen en als
+  zaaïland voor de wereld van het hiernamaals laten dienen, opdat alles zijn ware en waardige doel kan bereiken?
+  Zal Hij al deze geweldige ceremoniën doelloos, leeg en vergeefs laten eindigen? Zal Hij hun bestaan niet op
+  de wereld der betekenissen en de wereld van het hiernamaals afstemmen, opdat hun ware doelen en hun waardige
+  vruchten aan het licht kunnen komen?
+</p>
+
+<p>
+  Waarlijk, is het ooit voor mogelijk te houden dat Hij, door dit alles zo in strijd met de waarheid te brengen,
+  Zijn Wezenlijke Attributen: de Alwijze, de Genereuze, de Rechtvaardige en de Genadige als Hun tegenpolen
+  – <span class="text-italic">God verhoede</span> – zal laten afbeelden, en zodoende alle waarheden in het universum die van Zijn
+  Wijsheid, Generositeit, Rechtvaardigheid en Genade getuigen ronduit zal verloochenen; de getuigenissen van
+  alle bestaansvormen zal verwerpen, en de bewijzingen van alle creaties zal ontkrachten? En kan het verstand
+  ooit aanvaarden dat Hij het hoofd en de interne zintuigen van de mens met zoveel taken als zijn hoofdhaaren
+  belast, om hem uiteindelijk een aardse vergoeding ter waarde van een haarspriet toe te kennen? Zal Hij ingaan
+  tegen Zijn ware Rechtvaardigheid en wezenlijke Wijsheid door zoiets betekenisloos tot stand te brengen?
+</p>
+  </div>'
+            ],
+            [
+                'page_number' => 84,
+                'content' => '<div class="page" id="84"> <p class="text-end page-number">#84</p>
+
+<p>
+  En is het ooit voor mogelijk te houden dat Hij elke levensvorm, elk orgaan – <span class="text-italic">zoals de tong</span> –
+  en elke creatie met zoveel wijsheden en nuttigheden als de voortbrengselen en vruchten van een boom uitrust,
+  en zodoende bewijst en demonstreert dat Hij een Alwijze Entiteit is, maar vervolgens de grootste wijsheid,
+  het voornaamste nut en het hoogstnodige resultaat dat wijsheid werkelijk wijsheid, gunst werkelijk gunst en
+  genade werkelijk genade maakt, en dat zowel de bron als het doel van alle wijsheden, gunsten, genaden en
+  nuttigheden belichaamt, bestaande uit eeuwigheid, het eeuwige samenzijn en oneindige gelukzaligheid, niet
+  zal schenken, en bijgevolg al Zijn ondernemingen in de afgrond van absolute futiliteit zal laten verzinken?
+  Zal Hij Zichzelf presenteren als iemand die een prachtig paleis bouwt met duizenden gravures op elke steen,
+  duizenden decoraties aan elke wand, en duizenden kostbare apparaten en huishoudelijke benodigdheden in
+  elke kamer, maar het vervolgens niet met een koepel overdekt, waardoor alles bederft en vergeefs vergaat?
+  God verhoede!
+</p>
+
+<p class="text-bold">
+  Pure heil brengt heil tot stand. Sublieme schoonheid brengt pracht teweeg. Uit Absolute Wijsheid vloeit
+  niets zinloos voort.
+</p>
+
+<p>
+  Waarlijk, iedereen die in gedachten de geschiedenis induikt en het verleden bereist, zal zien dat de wereld
+  die wij thans als een tijdelijk verblijf, een beproevingsterrein en een kunstgalerij ervaren, voorafgegaan is
+  aan zoveel vergane verblijven, terreinen, galerijen en werelden als het aantal verstreken jaren. Hoewel ze in
+  voorkomen en hoedanigheid van elkaar verschillen, vertonen ze gelijkenissen in ordelijke en wonderlijke
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 85,
+                'content' => '<div class="page" id="85"> <p class="text-end page-number">#85</p>
+
+<p>
+  aspecten; ze lijken op elkaar wat betreft het tonen van de Macht en de Wijsheid van de Kunstenaar.
+</p>
+
+<p>
+  Bovendien zal hij bij die instabiele woningen, vergankelijke terreinen en tijdelijke galerijen ordeningen
+  van zo’n stralende Wijsheid, signalen van zo’n evidente Gratie, tekenen van zo’n overweldigende Gerechtigheid
+  en vruchten van zo’n omvattende Genade ontwaren, dat hij – <span class="text-italic">zolang hij niet blind is</span> – met volle overtuiging
+  zal inzien dat de volmaaktheid van Die Wijsheid niet kan worden overtroffen, dat de schoonheid van Die Gratie
+  met Haar onmiskenbare uitwerkingen niet kan worden overschitterd, dat het ontzag van Die Gerechtigheid met
+  Haar waarneembare tekenen niet kan worden geëvenaard, en dat de omvattendheid van Die Genade met Haar
+  zichtbare vruchten niet kan worden voorbijgestreefd.
+</p>
+
+<p>
+  Als wij nu uitgaan van de onwaarschijnlijke aanname dat de Tijdeloze Sultan, Die al deze ontwikkelingen
+  beheert, de gasten voortdurend vervangt en de gastenverblijven aldoor verandert, in Zijn Rijk geen eeuwige
+  verblijven, verheven gewesten, permanente woningen en onvergankelijke leefgebieden bezit, waar vaste bewoners
+  en gelukzalige dienaren leven, dan zullen de waarheden van de vier Spirituele Elementen – Wijsheid, Rechtvaardigheid,
+  Gratie en Genade – Die zo krachtig en universeel zijn als licht, lucht, water en aarde verloochenend
+  moeten worden, en Hun bestaan dat zo waarneembaar is als de voornoemde vier fysieke elementen zou eveneens
+  ontkend moeten worden. Want het is bekend dat deze vergankelijke aarde met al haar weelde niet in staat is om
+  Hun waarheden volwaardig tot uitdrukking te brengen.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 86,
+                'content' => '<div class="page" id="86"> <p class="text-end page-number">#86</p>
+
+<p>
+  Als elders ook geen plaats bestaat waar Ze volledig tot uiting kunnen komen, dan zullen wij, zoals een
+  dwaas die op klaarlichte dag de zon ontkent terwijl hij haar licht aanschouwt, de alomtegenwoordige Wijsheid
+  voor onze ogen, de Gratie Die wij elk moment bij onszelf en bij de meeste wezens kunnen ontwaren, de
+  Gerechtigheid met al haar krachtige en onmiskenbare tekenen<sup>6</sup>, en de alom zichtbare Genade allemaal moeten
+  loochenen. Daarnaast moeten wij aannemen dat de Regisseur van de wijze beschikkingen, weldadige
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>6</sup> Waarlijk, Rechtvaardigheid kent twee varianten. <span class="text-italic text-bold">De ene is distributief, de andere is vergeldend.</span>
+  </p>
+  <p class="footnote-p">
+    <span class="text-italic text-bold">De distributieve variant impliceert:</span> de rechthebbende geven waar hij recht op heeft. Deze vorm van
+    Rechtvaardigheid heeft in deze wereld een hele evidente reikwijdte. Immers, zoals in “De Derde Waarheid” is bewezen,
+    worden alle wensen die een wezen in de taal van potentie, in de taal van natuurlijke behoeftigheid en in de taal van
+    hoogdringendheid voordraagt aan zijn Ontzaglijke Voortbrenger waarneembaar verhoord; alle rechten die essentieel zijn
+    voor zijn bestaan en leven worden volgens specifieke afwegingen en vastgestelde maatstaven toegekend. De aanwezigheid
+    van deze rechtvaardigheid is dus net zo zeker als het bestaan en het leven zelf.
+  </p>
+  <p class="footnote-p">
+    <span class="text-italic text-bold">De tweede variant is vergeldend.</span> Hierbij worden onrechtplegers gedisciplineerd. Met andere woorden, het recht dat
+    onrechtplegers toekomt, wordt toegepast middels kastijding en bestraffing. Hoewel deze variant in deze wereld niet volledig
+    tot uiting komt, zijn er talloze tekenen en aanwijzingen die het bestaan van deze waarheid laten aanvoelen. Waarlijk,
+    vanaf de stammen van Âd en Thamood tot aan de opstandige volkeren van deze tijd: de disciplinerende klappen en kwellende
+    straffen die hen troffen tonen absoluut aan dat er een uiterst verheven Rechtvaardigheid heerst.
+  </p>
+</div>
+  </div>'
+            ],
+            [
+                'page_number' => 87,
+                'content' => '<div class="page" id="87"> <p class="text-end page-number">#87</p>
+
+<p>
+  activiteiten en genaderijke gunsten die wij in dit universum aanschouwen – <span class="text-italic">God verhoede</span> – een roekeloze
+  spelleider en wrede tiran is, wat een uiterst onmogelijke verwording van werkelijkheden zou impliceren.
+  Zelfs de dwaze sofisten die heel het bestaan en hun eigen existentie ontkennen, zouden moeite hebben om
+  deze gedachtegang serieus te nemen.
+</p>
+
+<p>
+  Kortom, deze zichtbare wereldse gesteldheden, waarbij geweldige samenkomsten tijdens het leven en snelle
+  scheidingen tijdens de dood, grandioze verzamelingen en rappe ontbindingen, opzienbarende ceremoniën en
+  grootschalige manifestaties plaatsvinden, staan totaal niet in verhouding tot hun kortstondige, geringe vruchten
+  en hun waardeloze, tijdelijke doelen die voor deze vergankelijke wereld bestemd zijn. Immers, dit komt er
+  nagenoeg op neer dat een kleine kiezelsteen met bergen aan wijsheden en doelen wordt beladen, terwijl een
+  enorme berg slechts een miniem en vluchtig doel ter grootte van een kiezelsteen moet dienen, wat indruist
+  tegen elk gezond verstand en elke wijsheid.
+</p>
+
+<p>
+  Het feit dat deze bestaansvormen en gesteldheden zozeer in wanverhouding staan tot hun wereldse doeleinden
+  getuigt er absoluut van dat de aangezichten van wezens tot de wereld der betekenissen zijn gewend, waar hun
+  waardige vruchten worden afgeworpen. Hun ogen zijn gevestigd op Gods Heilige Namen. Hun doelen zijn
+  gericht op de wereld. Hun kernen ontkiemen onder de grond van het aardse bestaan, terwijl hun bloemen
+  ontluiken in de wereld der gelijkenissen. In overeenstemming met de potentie die de mens bezit, zaait hij en
+  wordt hij gezaaid in dit leven; in het hiernamaals zal hij de oogst binnenhalen.
+</p>
+  </div>'
+            ],
+            [
+                'page_number' => 88,
+                'content' => '<div class="page" id="88"> <p class="text-end page-number">#88</p>
+
+<p>
+  Waarlijk, als je deze creaties aanschouwt op basis van hun aangezicht dat tot de Goddelijke Namen en
+  het hiernamaals is gewend, dan zul je ontwaren dat elk zaad dat zich als machtsmirakel manifesteert, een
+  doel zo groot als een boom draagt. Elke bloem die als een Woord van Wijsheid verschijnt<sup>7</sup>, bevat zoveel
+  betekenissen als de bloesems van een boom. En elke vrucht die als een wonderlijk kunstwerk en een compositie
+  van Genade ontplooit, bevat zoveel wijsheden als de vruchten van een boom. Dat ze voor ons als voedingsmiddel
+  dient, is slechts één van die duizenden wijsheden, waarbij ze haar taak afrondt, haar betekenis uitdrukt,
+  sterft en in onze maag wordt begraven.
+</p>
+
+<p>
+  Aangezien deze vergankelijke creaties elders eeuwige vruchten voortbrengen, blijvende weergaven nalaten,
+  onsterfelijke betekenissen uitdrukken en tijdeloze verheerlijkingen verrichten, en aangezien de mens pas werkelijk
+  mens wordt en te midden van het vergankelijke een weg naar de eeuwigheid vindt wanneer hij dit aspect van
+  hen in ogenschouw neemt, komt alles erop neer dat deze wezens, die in de draaikolk van leven en dood bijeenkomen
+  en uiteengaan, een hoger doel dienen...
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p">
+    <sup>7</sup> <span class="text-bold">Vraag:</span><br>
+    <span class="text-italic">“Waarom haalt u bij uw voorbeelden vooral bloemen, zaden en vruchten aan?”</span>
+  </p>
+  <p class="footnote-p">
+    <span class="text-bold">Het antwoord:</span><br>
+    Omdat ze tot de antiekste, wonderbaarlijkste en delicaatste mirakelen van Macht behoren. De naturalisten, dwaalgeesten
+    en filosofen hebben het fijne schrift dat de Pen der Beschikking en Macht in hen heeft vastgelegd, niet kunnen lezen,
+    waardoor ze in het moeras van naturalisme zijn verdronken.
+  </p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 89,
+                'content' => '<div class="page" id="89"> <p class="text-end page-number">#89</p>
+
+<p>
+  Deze toestanden lijken op scenario’s die opgezet en uitgewerkt worden om iets na te bootsen en af te beelden.
+  Bijvoorbeeld, voor kortstondige bijeenkomsten die gevolgd worden door scheidingen, worden soms hoge kosten
+  gemaakt om opnames te maken en samen te stellen voor permanente vertoningen in theaters.
+</p>
+
+<p>
+  Evenzo wordt in deze wereld een kortstondig persoonlijk en gemeenschappelijk leven ervaren voor onder
+  meer het volgende doel:
+</p>
+
+<p>
+  Opnames maken en samenstellen, resultaten van daden vastleggen en bewaren, opdat ze op een ultiem verzamelveld
+  kunnen worden beoordeeld, in een grandioze tentoonstellingsruimte kunnen worden gepresenteerd, en de
+  kwalificatie voor een sublieme gelukzaligheid kan worden aangetoond. In een Hadîth-el’Sharîf wordt deze
+  waarheid als volgt verwoord:
+</p>
+
+<p class="text-italic text-bold text-center">
+  “De wereld is een akker voor het hiernamaals.”
+</p>
+
+<p>
+  Aangezien de aarde bestaat, en aangezien verschijnselen op aarde aanduiden dat Wijsheid, Gratie, Genade
+  en Rechtvaardigheid eveneens bestaan, staat het zo vast als het bestaan van de aarde dat het hiernamaals
+  ook bestaat. Aangezien alles op aarde in zekere zin op die wereld is gericht, betekent dit dat de bestemming
+  het hiernamaals is. Het hiernamaals ontkennen impliceert het ontkennen van de aarde en al wat ze bevat.
+</p>
+
+<p class="text-center text-bold">Conclusie:</p>
+
+<p class="text-center text-bold text-center-constrained">
+  Net zoals het doodsuur en het graf
+  de mens te wachten staan,
+  kijken het paradijs en de hel evenzeer
+  afwachtend uit naar de komst van de mens.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 90,
+                'content' => '<div class="page" id="90"> <p class="text-end page-number">#90</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Elfde Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Mensheid; Een glimp van de Naam: “De Alwaarachtige.”</span></p>
+  <p class="text-center">
+    <span class="text-arabic" dir="rtl" lang="ar">اَلْحَقُّ</span>
+  </p>
+</div>
+
+<p>
+  Is het ooit voor mogelijk te houden dat de Alwaarachtige en Rechtmatige Aanbedene, ten aanzien van Zijn
+  Absolute Heerschappij over alle werelden in het universum, de mens als de aanzienlijkste onderdaan tegenover
+  Zijn Universele Heerschappij, de diepst denkende adressaat van Zijn Feilloze Toespraak, en de
+  omvattendste spiegel van Zijn Namen creëert, en hem volgens de mooiste compositie als Zijn prachtigste
+  Machtsmirakel formeert, en bij hem zodoende zowel Zijn Ultieme Naam als het ultieme niveau van Elke
+  Naam manifesteert, en hem met de fijnste weeginstrumenten en apparaten uitrust, en daarmee in staat stelt
+  om Zijn Genadeschatten af te wegen en te onderkennen, terwijl Hij hem daarenboven de meest behoeftige
+  aan Zijn eindeloze gunsten, de meest lijdende onder vergankelijkheid, de meest smachtende naar eeuwigheid,
+  de meest tedere, delicate, arme en afhankelijke in het dierenrijk, en de meest vatbare voor leed en ellende
+  in het leven van het aardrijk maakt, maar qua potentie in de meest verheven vorm en met de hoogste aard
+  schept, om hem al bij al uiteindelijk niet naar een eeuwig oord te zenden waar zijn potenties tot hun recht
+  kunnen komen en waar heel zijn wezen terecht naar verlangt?
+</p>
+
+<p>
+  Zal Hij zodoende de waarheid van het mens-zijn tenietdoen? Zal Hij lijnrecht in strijd met Zijn Eigen
+  Waarachtigheid een onrecht begaan dat weerzinwekkend is in de ogen van de waarheid?
+</p>
+
+  </div>'
+            ],
+
+
+
         ];
     }
 }

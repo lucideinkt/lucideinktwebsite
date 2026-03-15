@@ -42,6 +42,32 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     @vite(['resources/js/main.js', 'resources/css/front-end-style.css'])
+    <style>
+        /* Reader loading overlay */
+        #reader-loader {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.86);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 180ms ease, visibility 180ms ease;
+        }
+        #reader-loader.visible { opacity: 1; visibility: visible; }
+        #reader-loader .spinner {
+            width: 64px;
+            height: 64px;
+            border: 6px solid rgba(0,0,0,0.12);
+            border-top-color: #7b3f3f;
+            border-radius: 50%;
+            animation: reader-spin 1s linear infinite;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        @keyframes reader-spin { to { transform: rotate(360deg); } }
+    </style>
 </head>
 <body>
 
@@ -139,6 +165,11 @@
         <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
     </button>
 
+    {{-- Loading overlay shown while pages load --}}
+    <div id="reader-loader" aria-hidden="true">
+        <div class="spinner" role="status" aria-label="Pagina wordt geladen"></div>
+    </div>
+
     <script>
     (function () {
         const TOPBAR_H    = 72;
@@ -154,6 +185,10 @@
         const nextBtn      = document.getElementById('page-next-btn');
         const toTopBtn     = document.getElementById('to-top-btn');
         const sentinel     = document.getElementById('lazy-sentinel');
+        const loaderEl     = document.getElementById('reader-loader');
+
+        function showLoader() { if (loaderEl) { loaderEl.classList.add('visible'); loaderEl.setAttribute('aria-hidden','false'); } }
+        function hideLoader() { if (loaderEl) { loaderEl.classList.remove('visible'); loaderEl.setAttribute('aria-hidden','true'); } }
 
         if (!readerEl) return;
 
@@ -176,9 +211,47 @@
         }
         registerPageEls();
 
-        let lastLoadedPage = parseInt(readerEl.dataset.lastPage || '0', 10);
-        let isLoading      = false;
-        let allLoaded      = sorted.every(n => pageMap[n]);
+        // Compute lastLoadedPage based on pages already rendered server-side
+        // so we only fetch pages that are missing. If none present, start at 0.
+        let lastLoadedPage = (function(){
+            try {
+                const nums = Object.keys(pageMap).map(n => parseInt(n, 10)).filter(Boolean);
+                return nums.length ? Math.max.apply(null, nums) : 0;
+            } catch (_) { return 0; }
+        })();
+         let isLoading      = false;
+         let allLoaded      = sorted.every(n => pageMap[n]);
+
+        // initial loader state: show while we still need to fetch pages
+        if (allLoaded) {
+            hideLoader();
+        } else {
+            showLoader();
+        }
+
+        // --- Eager load: fetch all remaining pages from the API (disable lazy IntersectionObserver) ---
+        // This will repeatedly call the existing loadMorePages(upToPage) until the API reports no more pages.
+        async function eagerLoadAllPages() {
+            try {
+                if (allLoaded) { hideLoader(); return; }
+                const maxPage = sorted[sorted.length - 1];
+                // Keep requesting batches until server indicates there are no more pages
+                while (!allLoaded) {
+                    // request up to `maxPage` — loadMorePages will cap the batch size
+                    await loadMorePages(maxPage);
+                    // brief pause to allow DOM updates and avoid tight-looping
+                    await new Promise(r => setTimeout(r, 50));
+                }
+                hideLoader();
+            } catch (err) {
+                console.error('Eager load error:', err);
+                // hide loader so user can see partial content and any errors
+                hideLoader();
+            }
+        }
+
+        // Start eager loading in the background (non-blocking)
+        eagerLoadAllPages();
 
         // --- Helpers ---
         function updateUI(page) {
@@ -242,16 +315,7 @@
                     if (allLoaded && sentinel && sentinel.parentNode) sentinel.remove();
                 })
                 .catch(e => console.error('Lazy load error:', e))
-                .finally(() => { isLoading = false; });
-        }
-
-        // IntersectionObserver: auto-load next batch when scrolling near bottom
-        if (sentinel && 'IntersectionObserver' in window) {
-            const obs = new IntersectionObserver(
-                entries => { if (entries[0].isIntersecting) loadMorePages(); },
-                { rootMargin: '400px' }
-            );
-            obs.observe(sentinel);
+                .finally(() => { isLoading = false; if (allLoaded) hideLoader(); });
         }
 
         // jumpTo: loads the page via API first if not yet in DOM, then scrolls
