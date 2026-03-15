@@ -82,6 +82,11 @@
         </div>
 
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
+            @if(!empty($tocEntries))
+            <button class="reader-btn reader-btn-icon" id="toc-toggle-btn" title="Inhoudsopgave" aria-label="Inhoudsopgave tonen/verbergen" aria-expanded="false">
+                <i class="fa-solid fa-list" aria-hidden="true"></i>
+            </button>
+            @endif
             <button class="reader-btn" id="font-smaller" title="Kleinere tekst" aria-label="Kleinere tekst">A&minus;</button>
             <button class="reader-btn" id="font-larger"  title="Grotere tekst"  aria-label="Grotere tekst">A+</button>
             <button class="reader-btn reader-btn-icon" id="dark-mode-toggle" title="Donkere modus" aria-label="Donkere modus aan/uit">
@@ -164,6 +169,22 @@
     <button class="reader-to-top" id="to-top-btn" aria-label="Terug naar boven">
         <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
     </button>
+
+    {{-- Inhoudsopgave panel (sidebar drawer) — only rendered when the book has TOC entries --}}
+    @if(!empty($tocEntries))
+    <nav id="toc-panel" class="toc-panel" role="dialog" aria-label="Inhoudsopgave" aria-hidden="true">
+        <div class="toc-panel-header">
+            <span class="toc-panel-title"><i class="fa-solid fa-list" style="margin-right:7px;font-size:12px;opacity:0.6;" aria-hidden="true"></i>Inhoudsopgave</span>
+            <button class="toc-panel-close" id="toc-close-btn" aria-label="Sluit inhoudsopgave">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="toc-panel-body" id="toc-panel-body">
+            {{-- Items worden ingevuld door JavaScript --}}
+        </div>
+    </nav>
+    <div id="toc-backdrop" class="toc-backdrop" aria-hidden="true"></div>
+    @endif
 
     {{-- Loading overlay shown while pages load --}}
     <div id="reader-loader" aria-hidden="true">
@@ -428,6 +449,114 @@
 
         // --- To-top ---
         toTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // --- TOC Panel ---
+        const TOC_DATA = @json($tocEntries ?? []);
+
+        const tocPanel      = document.getElementById('toc-panel');
+        const tocPanelBody  = document.getElementById('toc-panel-body');
+        const tocToggleBtn  = document.getElementById('toc-toggle-btn');
+        const tocCloseBtn   = document.getElementById('toc-close-btn');
+        const tocBackdrop   = document.getElementById('toc-backdrop');
+
+        function buildTocPanel() {
+            if (!tocPanelBody || !TOC_DATA.length) return;
+            const frag = document.createDocumentFragment();
+            TOC_DATA.forEach(entry => {
+                const btn = document.createElement('button');
+                btn.className = 'toc-panel-item' +
+                    (entry.level === 'main' ? ' toc-panel-main' : ' toc-panel-sub');
+                btn.dataset.page = entry.page;
+                btn.setAttribute('type', 'button');
+
+                const info = document.createElement('span');
+                info.className = 'toc-panel-item-info';
+
+                const title = document.createElement('span');
+                title.className = 'toc-panel-item-title';
+                title.textContent = entry.title;
+                info.appendChild(title);
+
+                if (entry.subtitle) {
+                    const sub = document.createElement('span');
+                    sub.className = 'toc-panel-item-subtitle';
+                    sub.textContent = entry.subtitle;
+                    info.appendChild(sub);
+                }
+
+                const pn = document.createElement('span');
+                pn.className = 'toc-panel-item-page';
+                pn.textContent = 'p.' + entry.page;
+
+                btn.appendChild(info);
+                btn.appendChild(pn);
+                frag.appendChild(btn);
+            });
+            tocPanelBody.appendChild(frag);
+
+            // Bind click events
+            tocPanelBody.querySelectorAll('.toc-panel-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const page = parseInt(btn.dataset.page, 10);
+                    if (page) { jumpTo(page, true); closeToc(); }
+                });
+            });
+        }
+
+        function markActiveTocItem() {
+            if (!tocPanelBody) return;
+            const cur = visiblePage();
+            // Find the last TOC entry whose page <= current page
+            const items = Array.from(tocPanelBody.querySelectorAll('.toc-panel-item'));
+            let activeEl = null;
+            items.forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.page, 10) <= cur) activeEl = btn;
+            });
+            if (activeEl) activeEl.classList.add('active');
+        }
+
+        function openToc() {
+            if (!tocPanel) return;
+            tocPanel.classList.add('open');
+            tocPanel.setAttribute('aria-hidden', 'false');
+            tocToggleBtn?.setAttribute('aria-expanded', 'true');
+            if (tocBackdrop) { tocBackdrop.classList.add('open'); tocBackdrop.setAttribute('aria-hidden', 'false'); }
+            markActiveTocItem();
+            // Scroll active item into view
+            requestAnimationFrame(() => {
+                const active = tocPanelBody?.querySelector('.toc-panel-item.active');
+                if (active) active.scrollIntoView({ block: 'center' });
+            });
+        }
+
+        function closeToc() {
+            if (!tocPanel) return;
+            tocPanel.classList.remove('open');
+            tocPanel.setAttribute('aria-hidden', 'true');
+            tocToggleBtn?.setAttribute('aria-expanded', 'false');
+            if (tocBackdrop) { tocBackdrop.classList.remove('open'); tocBackdrop.setAttribute('aria-hidden', 'true'); }
+        }
+
+        buildTocPanel();
+        tocToggleBtn?.addEventListener('click', () => {
+            tocPanel?.classList.contains('open') ? closeToc() : openToc();
+        });
+        tocCloseBtn?.addEventListener('click', closeToc);
+        tocBackdrop?.addEventListener('click', closeToc);
+        document.addEventListener('keydown', ev => {
+            if (ev.key === 'Escape' && tocPanel?.classList.contains('open')) closeToc();
+        });
+
+        // Handle data-toc-page clicks in the book content (seeder page inhoudsopgave)
+        readerEl.addEventListener('click', e => {
+            const btn = e.target.closest('[data-toc-page]');
+            if (btn) {
+                e.preventDefault();
+                const page = parseInt(btn.dataset.tocPage, 10);
+                if (page) jumpTo(page, true);
+            }
+        });
 
         // --- Restore reading progress on load ---
         function restoreProgress() {

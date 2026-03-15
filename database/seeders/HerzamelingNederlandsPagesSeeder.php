@@ -22,7 +22,6 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
         // Add page definitions here. Keep it empty for now or add a few sample pages.
         // You can paste the HTML of each page into the 'content' field.
         return [
-            // Example starter page, replace or add pages later
             [
                 'page_number' => 5,
                 'content' => '<div class="page" id="5">
@@ -2776,7 +2775,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-  فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا<br>
+  فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا
   اِنَّ ذٰلِكَ لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ<sup>4</sup>
 </p>
 
@@ -3094,11 +3093,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 <div class="page-footnote">
   <hr class="hr-footnote" />
   <p class="footnote-p">
-    <sup>7</sup> <span class="text-bold">Vraag:</span><br>
+    <sup>7</sup> <span class="text-bold">Vraag:</span>
     <span class="text-italic">“Waarom haalt u bij uw voorbeelden vooral bloemen, zaden en vruchten aan?”</span>
   </p>
   <p class="footnote-p">
-    <span class="text-bold">Het antwoord:</span><br>
+    <span class="text-bold">Het antwoord:</span>
     Omdat ze tot de antiekste, wonderbaarlijkste en delicaatste mirakelen van Macht behoren. De naturalisten, dwaalgeesten
     en filosofen hebben het fijne schrift dat de Pen der Beschikking en Macht in hen heeft vastgelegd, niet kunnen lezen,
     waardoor ze in het moeras van naturalisme zijn verdronken.
@@ -3185,6 +3184,767 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
   </div>'
             ],
+            [
+                'page_number' => 91,
+                'content' => '<div class="page" id="91"> <p class="text-end page-number">#91</p>
+
+<p>
+  En kan het ooit mogelijk zijn dat de Algerechtigde Regeerder en Absolute Genadige de mens voorziet van
+  een dusdanige potentie, dat hij daarmee de ultieme verantwoordelijkheid – <span class="text-italic">waarvoor de aarde, de hemelen en
+  de bergen terugdeinsden</span> – kan dragen, wat wil zeggen dat hij met zijn persoonlijke afwegingen en beperkte
+  kunstvaardigheden de omvattende Eigenschappen, de universele Gesteldheden en de eindeloze manifestaties
+  van zijn Schepper kan afwegen en onderkennen, en dat de Heer hem als het meest fragiele, delicate, gevoelige,
+  machteloze en zwakke wezen op aarde schept, maar desondanks tot een soort officiële rentmeester
+  van alle plantaardige en dierlijke schepselen op aarde aanstelt, en hem toelaat om in hun verheerlijkingen
+  en godsdienstoefeningen te mengen, en zodoende hem als miniatuur van Zijn Goddelijke Beleid in het universum
+  afbeeldt, en via hem Zijn Feilloze Heerschappij in daad en woord door het heelal openbaart, hem boven
+  zijn engelen verkiest en met de rang van Khalifaat bekleedt, om uiteindelijk het doel, het resultaat en de
+  vrucht van al deze taken – <span class="text-italic">bestaande uit eeuwige gelukzaligheid</span> – niet aan hem te schenken?
+</p>
+
+<p>
+  Zal Hij onder al Zijn schepselen uitgerekend de mens in de meest ongelukkige, wanhopige, rampzalige,
+  zorgelijke en vernederende toestand laten storten, en de meest gezegende, stralende en gelukzalige gift van
+  Wijsheid – <span class="text-italic">bekend als het verstand</span> – voor hem tot een vervloekt en duister marteltuig maken, en aldus
+  een meedogenloosheid begaan die voluit in strijd is met Zijn absolute Wijsheid en geheel indruist tegen Zijn
+  absolute Genadigheid?
+</p>
+
+<p class="text-bold">
+  God verhoede!
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 92,
+                'content' => '<div class="page" id="92"> <p class="text-end page-number">#92</p>
+
+<p>
+  <span class="text-bold">Conclusie:</span> Toen wij naar het identiteitsbewijs en het handboek van de officier uit het symbolische
+  verhaal keken, zagen wij dat zijn rang, zijn taak, zijn loon, zijn gedragscode en zijn uitrusting niet voor dat tijdelijke
+  terrein waren bestemd; die officier zou naar een permanent oord trekken en bereidde zich daarop voor. Evenzo zijn
+  alle subtiliteiten in het ‘identiteitsbewijs’ van het mensenhart, alle vermogens in het ‘handboek’ van het mensenverstand
+  en alle instrumenten van de menselijke potentie volledig en eensgezind afgestemd op de eeuwige gelukzaligheid; ze
+  zijn daarvoor bestemd en daarvoor verstrekt. Zowel erkende waarheidsonderzoekers als spirituele waarnemers zijn
+  unaniem over deze kwestie.
+</p>
+
+<p>
+  Bijvoorbeeld, als aan het voorstellingsvermogen – <span class="text-italic">dat als de portrettist van het verstand dient</span> – het volgende
+  wordt voorgesteld: <span class="text-italic">“Jou zal een miljoenjarig bestaan inclusief wereldheerschappij worden geschonken, maar daarna
+  zul jij in het niets verdwijnen”</span> dan zal de mens, op voorwaarde dat zijn waan hem niet misleidt en zijn nefs niet
+  ingrijpt, geen vreugdekreet uitslaan maar een zucht van weemoed slaken. Dit laat zien dat het grootste aanbod van het
+  vergankelijke zelfs niet het kleinste instrument en zintuig van de mens kan bevredigen.
+</p>
+
+<p>
+  Voorwaar, op basis van deze potentie van de mens tonen zijn ambities – <span class="text-italic">die tot aan de eeuwigheid reiken</span> –
+  zijn gedachten – <span class="text-italic">die het universum omvatten</span> – en zijn verlangens – <span class="text-italic">die over de varianten van eeuwige
+  gelukzaligheden zijn uitgespreid</span> – dat deze mens geschapen is voor eeuwigheid en op weg is naar de eeuwigheid.
+  Deze wereld is voor hem een gastenverblijf en een wachtruimte voor zijn hiernamaals.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 93,
+                'content' => '<div class="page" id="93"> <p class="text-end page-number">#93</p>
+
+<div class="text-center text-center-constrained">
+  <p class="text-center text-bold small-title">De Twaalfde Waarheid</p>
+  <p class="text-center"><span class="text-italic text-bold">De poort van Profeetschap en Revelatie; Een glimp van: “In de Naam van ALLAH, de Barmhartige, de Genadige.”</span></p>
+  <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ</p>
+</div>
+
+<p>
+  Waarlijk, terwijl alle Godsgezanten – <span class="text-italic">ondersteund door hun mirakelen</span> – zijn woorden beamen, alle heiligen –
+  <span class="text-italic">ondersteund door hun waarnemingen en kerâmaat</span> – zijn dawa bevestigen, en alle gezuiverden –
+  <span class="text-italic">ondersteund door hun waarheidsvindingen</span> – zijn waarachtigheid erkennen, heeft de Nobelste Godsbode
+  <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>, steunend op de kracht van duizend vervulde mirakelen, met al zijn kracht,
+  tezamen met de Leerrijke Qur’an – <span class="text-italic">Die Zelf met Zijn veertig miraculeuze aspecten ook op duizenden onbetwistbare Ayaat
+  steunt</span> – de weg naar het hiernamaals en de poort tot het paradijs met volstrekte zekerheid geopend. Is het nog
+  voor mogelijk te houden dat deze gesloten kunnen worden door loze influisteringen en twijfels die nog zwakker
+  zijn dan een vliegenvleugel?
+</p>
+
+<p class="text-center">✧ ✧ ✧</p>
+
+<p>
+  Uit de voorgaande “Waarheden” is helder geworden dat het concept van de “Herzameling” zo’n diepgewortelde
+  waarheid is, dat zelfs een kracht die de aarde uit haar baan zou kunnen slingeren en zou kunnen verwoesten
+  niet in staat zal zijn om die waarheid tot wankelen te brengen. Immers, die waarheid wordt door de
+  Alwaarachtige met alle vereisten van Zijn Namen en Eigenschappen gespecificeerd, door de Nobelste Godsbode
+  met al zijn mirakelen en redeneringen beaamd, door de Qur’an-el’Hakîm met al Zijn waarheden en
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 94,
+                'content' => '<div class="page" id="94"> <p class="text-end page-number">#94</p>
+
+<p>
+  Ayaat bewezen, en door dit universum met al zijn kosmische Ayaat en leerrijke gesteldheden benadrukt.
+</p>
+
+<p>
+  Kan het dan ooit voor mogelijk worden gehouden dat enerzijds het Noodzakelijke Opperwezen en het hele
+  bestaan – <span class="text-italic">buiten de kafirs om</span> – dit concept van de herzameling unaniem bevestigen, maar anderzijds
+  satanische influisteringen met minder kracht dan een haarspriet zo’n verheven en gegrondveste berg van een
+  waarheid tot wankelen kunnen brengen of kunnen wegvagen? God verhoede!
+</p>
+
+<p>
+  Je moet beslist niet denken dat de bewijzen voor de herzameling beperkt zijn tot de “Twaalf Waarheden”
+  die wij besproken hebben. Verre van! Alleen de Qur’an-el’Hakîm op Zich – <span class="text-italic">Die ons de voorgaande “Twaalf
+  Waarheden” heeft onderricht</span> – wijst nog op duizenden aspecten die ieder op zich als een krachtig teken aangeven
+  dat onze Schepper ons van dit vergankelijke oord naar een eeuwig rijk zal overplaatsen.
+</p>
+
+<p>
+  Tevens moet je beslist niet denken – <span class="text-italic">zoals we eerder aangaven</span> – dat de Goddelijke Namen Die de
+  herzameling vereisen, beperkt zijn tot de Namen: <span class="text-italic">“de Alwijze”, “de Genereuze”, “de Genadige”, “de
+  Rechtvaardige” en “de Bewaarder”.</span> Verre van! Alle Goddelijke Namen Die Zich ten behoeve van de regelingen in het
+  universum manifesteren, vereisen en benodigen het hiernamaals.
+</p>
+
+<p>
+  Je moet ook niet denken dat de kosmische Ayaat in het universum Die de herzameling bewijzen, beperkt zijn
+  tot wat wij behandeld hebben. Verre van! Zoals gordijnen die naar links en rechts kunnen opschuiven, bevatten
+  de meeste bestaansvormen aspecten en hoedanigheden die enerzijds getuigen van de Kunstenaar en anderzijds
+  duiden op de herzameling.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 95,
+                'content' => '<div class="page" id="95"> <p class="text-end page-number">#95</p>
+
+<p>
+  Bijvoorbeeld, zoals de kunstrijke pracht binnen de mooiste compositie van de mens de Kunstenaar laat
+  zien, zo laat de abrupte vergankelijkheid van zijn omvattende capaciteit binnen die sublieme compositie de
+  herzameling zien. Soms kunnen twee perspectieven op één aspect zowel de Kunstenaar als de herzameling
+  weergeven.
+</p>
+
+<p>
+  Bijvoorbeeld, de orde van Wijsheid, de elegantie van Gratie, de balans van Gerechtigheid en de gunst
+  van Genade zijn bij de meeste bestaansvormen waarneembaar. Wanneer de aard van hun manifestaties in
+  ogenschouw wordt genomen, dan zullen ze aantonen dat ze aan de Machtshand van de Wijze, Genereuze,
+  Rechtvaardige en Genadige Kunstenaar zijn ontsproten. Evenzo, wanneer hun kracht en onbeperktheid worden
+  bekeken en vergeleken met het onbeduidende en korte bestaan van deze vergankelijke wezens die hen
+  manifesteren, dan zal het hiernamaals verschijnen. Al bij al reciteert en weergeeft alles in de taal van zijn
+  houding:
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+  اٰمَنْتُ بِاللّٰهِ وَبِالْيَوْمِ اْلاٰخِرِ<sup>1</sup>
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p"><sup>1</sup> “Ik geloof in ALLAH en in de Laatste Dag.”</p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 96,
+                'content' => '<div class="page" id="96"> <p class="text-end page-number">#96</p>
+
+<div class="text-center page-title-chapter delima-font">
+  <h2>Slot</h2>
+</div>
+
+<p>
+  De voorgaande “Twaalf Waarheden” bevestigen, vervolmaken en bekrachtigen elkaar. Gezamenlijk vormen
+  ze een harmonisch geheel en brengen de conclusie aan het licht. Welke waan zou deze twaalf ijzersterke muren
+  van diamant kunnen doorbreken en schade kunnen toebrengen aan de ondoordringbare burcht waarin het
+  geloof in de herzameling is gevestigd?
+</p>
+
+<p>
+  De edele Aya: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ إِلَّا كَنَفْسٍ وَاحِدَةٍ</span> geeft
+  het volgende aan: <span class="text-italic text-bold">“De schepping en herzameling van alle mensen is voor de Goddelijke Macht zo licht
+  als de schepping en herzameling van één mens.”</span> Waarlijk, zo is de werkelijkheid. In een traktaat getiteld
+  <span class="text-italic">“Het Punt”</span> heb ik in het hoofdstuk over de herzameling uitgebreid geschreven over de waarheid
+  die deze Aya uitdrukt. Hier zullen wij met enkele gelijkenissen uit dat traktaat een beknopte schets ervan
+  presenteren. Wie interesse heeft, kan <span class="text-italic">“Het Punt”</span> raadplegen.
+</p>
+
+<p>
+  <span class="text-italic text-bold">Bijvoorbeeld:</span> <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَلِلّٰهِ الْمَثَلُ اْلأَعْلٰى</span> – een gelijkenis
+  aanvoeren is geen overtreding – als de zon volgens het geheim van “lichternis” haar glimp naar eigen wil zou
+  kunnen afgeven, dan zou ze met hetzelfde gemak zowel aan één enkel deeltje als aan talloze transparante objecten
+  een reflectie kunnen schenken.
+</p>
+
+<div class="page-footnote">
+  <hr class="hr-footnote" />
+  <p class="footnote-p"><sup>1</sup> “Noch jullie schepping noch jullie verwekking is anders dan die van één nefs.” <em>– Qur’an, 31:28</em></p>
+  <p class="footnote-p"><sup>2</sup> “Aan ALLAH behoort de hoogste gelijkenis.” <em>– Qur’an, 16:60</em></p>
+</div>
+
+  </div>'
+            ],
+            [
+                'page_number' => 97,
+                'content' => '<div class="page" id="97"> <p class="text-end page-number">#97</p>
+
+<p>
+  En volgens het geheim van “transparantie” zijn de minuscule pupil van een transparant deeltje en het
+  wijde oppervlak van de oceaan gelijk in het ontvangen van de weerkaatsing van de zon.
+</p>
+
+<p>
+  En volgens het geheim van “ordening” kan een kind met zijn vinger zowel zijn speelgoedbootje als een
+  gigantische dreadnought laten draaien.
+</p>
+
+<p>
+  En volgens het geheim van “gehoorzaamheid” kan een commandant met één en hetzelfde bevel zowel
+  één soldaat als een heel leger in beweging brengen.
+</p>
+
+<p>
+  En volgens het geheim van “evenwicht” bevindt zich in de kosmische ruimte een balans. Laten we ons voorstellen
+  dat ze zo gevoelig, nauwkeurig en kolossaal is, dat haar twee schalen zowel twee walnoten kunnen
+  waarnemen als twee zonnen kunnen dragen en wegen. Terwijl ze van die twee walnoten op haar schalen de
+  ene naar de hemelen kan tillen en de andere naar de aarde kan laten zakken, kan ze in het geval van twee
+  zonnen eveneens met dezelfde kracht de ene naar de oppertroon verheffen en de andere naar de aardbodem
+  laten dalen.
+</p>
+
+<p>
+  In deze alledaagse, gebrekkige en vergankelijke wereld der mogelijkheden leiden de geheimen van lichternis,
+  transparantie, ordening, gehoorzaamheid en evenwicht er dus toe dat het grootste gelijk is aan het
+  kleinste; ontelbare zaken ogen gelijkwaardig aan één zaak.
+</p>
+
+<p>
+  Als we dan kijken naar de lichtrijke manifestaties van Gods wezenlijke, eindeloze en volmaakte Macht,
+  naar de spirituele transparantie van al het geschapene, naar de ordeningen van Wijsheid en het lot, naar
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 98,
+                'content' => '<div class="page" id="98"> <p class="text-end page-number">#98</p>
+
+<p>
+  de volstrekte gehoorzaamheid van alle creaties aan de Goddelijke scheppingswetten, en naar het evenwicht
+  der mogelijkheden waarbij bestaan en niet-bestaan in balans zijn, dan blijkt uit deze geheimen dat begrippen
+  als ‘veel’ of ‘weinig’, ‘groot’ of ‘klein’ uiteraard eveneens gelijkwaardig zijn voor de Schepper; met één
+  oproep kan Hij alle mensen herzamelen als waren zij één mens.
+</p>
+
+<p class="text-italic text-bold">
+  Bovendien ontstaan de niveaus van sterkte en zwakte door de invloed van hun tegenpolen.
+</p>
+
+<p class="text-bold">Bijvoorbeeld:</p>
+
+<p>
+  De mate van warmte wordt door de invloed van kou bepaald. De waarde van schoonheid wordt door de
+  invloed van lelijkheid geconstateerd. De sterkte van licht wordt door de invloed van donkerte vastgesteld.
+  Echter, als iets wezenlijk is en niet accidenteel, dan kan zijn tegenpool geen invloed erop uitoefenen. Want
+  in dat geval zouden twee tegenpolen moeten samenkomen, wat onmogelijk is. Bij iets dat puur en wezenlijk
+  is, bestaan dus geen gradaties.
+</p>
+
+<p>
+  Aangezien de Macht van de Absolute Almacht wezenlijk is en niet accidenteel – <span class="text-italic">zoals dat het geval is bij
+  het mogelijke</span> – en aangezien Zijn Macht volmaakt is, kan de tegenpool daarvan, oftewel onmacht, geenszins
+  invloed erop uitoefenen. Een lente scheppen is voor het Ontzaglijke Opperwezen dus zo eenvoudig als de
+  creatie van een bloem. Zou de schepping aan oorzaken worden toegeschreven, dan zou een bloem zo lastig
+  als een lente tot stand komen. De wederopwekking en herzameling van alle mensen is voor Hem aldus zo
+  licht als de wederopwekking van één nefs.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 99,
+                'content' => '<div class="page" id="99"> <p class="text-end page-number">#99</p>
+
+<p>
+  Wat wij vanaf het begin tot hiertoe hebben verklaard in de symbolische “Aanzichten” en de “Waarheden”
+  over de kwestie van de herzameling, is te danken aan de zegen <span class="text-italic">(feyz)</span> van de Qur’an-el’Hakîm.
+  Het is bedoeld om de nefs tot overgave en het hart tot aanvaarding te brengen. Het ware Woord behoort
+  echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten we luisteren:
+</p>
+
+
+<div class="text-center" style="margin-top: 40px;">
+<div style="border-bottom: 2px solid #ca2a2a;"></div>
+  <p class="text-red text-bold small-title">{Noot van de vertalers:</p>
+  <p class="text-red">
+  Hierop volgen passages uit de Qur’an. De oorspronkelijke Qur’anpassages staan op de rechterpagina’s; de
+  vertalingen op de linker. Echter, zoals elders in de Risale-i Nur is vermeld, willen wij ook hier onderstrepen
+  dat een ware vertaling van de Qur’an in wezen onmogelijk is. De beladen termen van de Arabische taal,
+  evenals de oneindige zegeningen in de Qur’anische Verzen, kunnen uiteraard niet overgebracht worden in een
+  andere taal.
+</p>
+
+<p class="text-red text-italic text-bold">
+  Wij hopen dan ook dat de lezer beseft dat onze menselijke formuleringen het Goddelijke Woord geenszins
+  recht doen; onze vertalingen zijn hoogstens zeer doffe schaduwen van de alomstralende Ayaat.}
+</p>
+</div>
+  </div>'
+            ],
+
+[
+    'page_number' => 100,
+    'content' => '<div class="page" id="100">
+    <p class="text-end page-number">#100</p>
+
+    <p class="text-center text-italic">“Aan ALLAH behoort het beslissende bewijs.”</p>
+    <p class="text-center text-italic"><em>– Qur’an, 6:149</em></p>
+
+    <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+      “Aanschouw de sporen van ALLAH’s Genade, hoe Hij de aarde
+      na haar dood doet herleven.
+      Voorzeker, Hij is Degene Die
+      de doden tot leven brengt,
+      en Hij bezit Macht over alles.”
+    </p>
+    <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 30:50</em></p>
+
+    <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+      “(De ongelovige) vraagt: ‘Wie zal
+      de beenderen doen herleven
+      nadat ze zijn uiteengevallen?’
+      Zeg: ‘Hij Die ze aanvankelijk
+      heeft gecreëerd, zal ze doen
+      herleven’, en ‘Hij bezit kennis
+      over al het geschapene.’”
+    </p>
+    <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 36:78-79</em></p>
+
+  </div>'
+],
+            [
+                'page_number' => 101,
+                'content' => '<div class="page" id="101"> <p class="text-end page-number">#101</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+  فَلِلّٰهِ الْحُجَّةُ الْبَالِغَةُ ۞
+</p>
+
+  <div class="text-center text-red">✧</div>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+  فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ
+  كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا اِنَّ ذٰلِكَ
+  لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ ۞
+</p>
+
+  <div class="text-center text-red">✧</div>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+  قَالَ مَنْ يُحْيِ الْعِظَامَ
+  وَهِىَ رَمِيمٌ ۞ قُلْ يُحْيِيهَا الَّذِى
+  اَنْشَاَهَا اَوَّلَ مَرَّةٍ
+  وَهُوَ بِكُلِّ خَلْقٍ عَلِيمٌ ۞
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 102,
+                'content' => '<div class="page" id="102"> <p class="text-end page-number">#102</p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 600px;">
+  “O mensen,
+  vrees jullie Heer!
+  Voorzeker,
+  de beving van het Uur
+  is een immens gebeuren!
+  Op die dag zul je zien
+  dat iedere zogende moeder
+  haar zuigeling zal vergeten,
+  en elke zwangere vrouw
+  zal haar last laten vallen.
+  De mensen
+  zul je in een staat
+  van dronkenschap aantreffen,
+  doch ze zijn niet dronken –
+  maar de straf van ALLAH
+  is zwaar.”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 22:1-2</em></p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 103,
+                'content' => '<div class="page" id="103"> <p class="text-end page-number">#103</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
+  يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمْ
+  اِنَّ زَلْزَلَةَ السَّاعَةِ شَىْءٌ عَظِيمٌ ۞
+  يَوْمَ تَرَوْنَهَا تَذْهَلُ
+  كُلُّ مُرْضِعَةٍ عَمَّا أَرْضَعَتْ
+  وَتَضَعُ كُلُّ ذَاتِ حَمْلٍ حَمْلَهَا
+  وَتَرَى النَّاسَ سُكَارٰى
+  وَمَا هُمْ بِسُكَارٰى
+  وَلٰكِنَّ عَذَابَ اللّٰهِ شَدِيدٌ ۞
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 104,
+                'content' => '<div class="page" id="104"> <p class="text-end page-number">#104</p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+  “ALLAH,
+  buiten Wie geen God bestaat,
+  zal jullie op de dag der opstanding
+  bijeenzamelen,
+  daarover bestaat
+  geen twijfel!
+  En wie spreekt
+  waarachtiger dan ALLAH?”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 4:87</em></p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+  “Welzeker,
+  de vromen verkeren
+  in gelukzaligheid.
+  En de verdorvenen verwijlen
+  in een gloeiend vuur.”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 82:13-14</em></p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 105,
+                'content' => '<div class="page" id="105"> <p class="text-end page-number">#105</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+  اَللّٰهُ لَا إِلٰهَ إِلَّا هُوَ
+  لَيَجْمَعَنَّكُمْ إِلٰى يَوْمِ الْقِيَامَةِ
+  لَا رَيْبَ فِيهِ
+  وَمَنْ أَصْدَقُ مِنَ اللّٰهِ حَدِيثًا ۞
+</p>
+
+<div class="text-center text-red">✧</div>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+  إِنَّ الْأَبْرَارَ لَفِى نَعِيمٍ
+  وَإِنَّ الْفُجَّارَ لَفِى جَحِيمٍ
+</p>
+  </div>'
+            ],
+            [
+                'page_number' => 106,
+                'content' => '<div class="page" id="106"> <p class="text-end page-number">#106</p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+  “Wanneer de aarde
+  tijdens haar laatste stuipen siddert
+  en haar lasten naar buiten werpt,
+  en de mens vraagt
+  wat haar overkomt,
+  zal de dag zijn
+  waarop ze haar verhaal vertelt,
+  zodra jouw Heer haar
+  daartoe inspireert.
+  Die dag zullen mensen
+  groepsgewijs verschijnen
+  om hun daden te bezichtigen.
+  Wie ook maar een weldaad
+  zo licht als een stofdeeltje verricht,
+  zal dat aanschouwen.
+  En wie ook maar een wandaad
+  zo licht als een stofdeeltje bedrijft,
+  zal dat eveneens aanschouwen.”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 99:1-8</em></p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 107,
+                'content' => '<div class="page" id="107"> <p class="text-end page-number">#107</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+  اِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا ۞
+  وَأَخْرَجَتِ الْأَرْضُ أَثْقَالَهَا ۞
+  وَقَالَ الْإِنْسَانُ مَالَهَا ۞
+  يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا ۞
+  بِأَنَّ رَبَّكَ أَوْحٰى لَهَا ۞
+  يَوْمَئِذٍ يَصْدُرُ النَّاسُ أَشْتَاتًا لِيُرَوْا أَعْمَالَهُمْ ۞
+  فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ ۞
+  وَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ ۞
+</p>
+  </div>'
+            ],
+            [
+                'page_number' => 108,
+                'content' => '<div class="page" id="108"> <p class="text-end page-number">#108</p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+  “El’Qâri’ah!
+  Wat is El’Qâri’ah?
+  En wat kan jou besef geven
+  van El’Qâri’ah?
+  Een dag waarop mensen ogen
+  als verstrooide motten,
+  en bergen als geplozen wolvlokken.
+  Wiens balans die dag beladen is,
+  zal leven in voldoening.
+  En wiens balans tekortschiet,
+  zal Hâwiyeh
+  als zijn moeder ontmoeten.
+  En hoe zou jij kunnen
+  beseffen wat zij is?
+  ‘Een laaiend inferno!’”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 101:1-8</em></p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 109,
+                'content' => '<div class="page" id="109"> <p class="text-end page-number">#109</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
+  اَلْقَارِعَةُ ۞ مَا الْقَارِعَةُ
+  وَمَٓا أَدْرٰيكَ مَا الْقَارِعَةُ ۞ يَوْمَ يَكُونُ
+  النَّاسُ كَالْفَرَاشِ الْمَبْثُوثِ ۞
+  وَتَكُونُ الْجِبَالُ كَالْعِهْنِ الْمَنْفُوشِ ۞
+  فَأَمَّا مَنْ ثَقُلَتْ مَوَازِينُهُ ۞
+  فَهُوَ فِى عِيشَةٍ رَاضِيَةٍ ۞
+  وَأَمَّا مَنْ خَفَّتْ مَوَازِينُهُ ۞
+  فَأُمُّهُ هَاوِيَةٌ ۞ وَمَٓا أَدْرٰيكَ مَا هِيَهْ ۞
+  نَارٌ حَامِيَةٌ ۞
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 110,
+                'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+  “Wat verborgen is
+  in de hemelen en op aarde,
+  is bekend bij ALLAH.
+  Het Uur
+  is nader dan een oogwenk,
+  of zelfs dichterbij.
+  Voorzeker,
+  ALLAH bezit Macht
+  over alles.”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 16:77</em></p>
+
+  </div>'
+            ],
+
+            [
+                'page_number' => 111,
+                'content' => '<div class="page" id="111"> <p class="text-end page-number">#111</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+  وَلِلّٰهِ
+  غَيْبُ السَّمٰوَاتِ وَالْأَرْضِ
+  وَمَٓا أَمْرُ السَّاعَةِ
+  إِلَّا كَلَمْحِ الْبَصَرِ
+  أَوْ هُوَ أَقْرَبُ ۞
+  إِنَّ اللّٰهَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ
+</p>
+  </div>'
+            ],
+
+            [
+                'page_number' => 112,
+                'content' => '<div class="page" id="112"> <p class="text-end page-number">#112</p>
+
+<p>
+  Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en laten wij reageren met:
+  <span class="text-bold">“Wij geloven en beamen dit.”</span>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+  آمَنْتُ بِاللّٰهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ وَالْيَوْمِ الْاٰخِرِ
+  وَبِالْقَدَرِ خَيْرِهِ وَشَرِّهِ مِنَ اللّٰهِ تَعَالٰى وَالْبَعْثُ
+  بَعْدَ الْمَوْتِ حَقٌّ وَأَنَّ الْجَنَّةَ حَقٌّ وَالنَّارَ حَقٌّ
+  وَأَنَّ الشَّفَاعَةَ حَقٌّ وَأَنَّ مُنْكَرًا وَنَكِيرًا حَقٌّ
+  وَأَنَّ اللّٰهَ يَبْعَثُ مَنْ فِى الْقُبُورِ
+  أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ
+  اَللّٰهُمَّ صَلِّ عَلٰى أَلْطَفِ وَأَشْرَفِ وَأَكْمَلِ
+  ثَمَرَاتِ طُوبٰى رَحْمَتِكَ الَّذِى أَرْسَلْتَهُ رَحْمَةً لِلْعَالَمِينَ
+  وَسِيلَةً لِوُصُولِنَا إِلٰى أَزْيَنِ وَأَحْسَنِ وَأَجَلِّ وَأَعْلٰى ثَمَرَاتِ
+  تِلْكَ الطُّوبٰى الْمُتَدَلِّيَةِ مِنْ دَارِ الْاٰخِرَةِ أَىِ الْجَنَّةِ
+  اَللّٰهُمَّ أَجِرْنَا وَوَالِدَيْنَا مِنَ النَّارِ
+  وَأَدْخِلْنَا وَوَالِدَيْنَا الْجَنَّةَ مَعَ الْأَبْرَارِ
+  بِجَاهِ نَبِيِّكَ الْمُخْتَارِ آمِينَ
+</p>
+
+  </div>'
+            ],
+
+            [
+                'page_number' => 113,
+                'content' => '<div class="page" id="113"> <p class="text-end page-number">#113</p>
+
+<p class="text-center text-bold text-center-constrained">
+  “Ik geloof in ALLAH, in Zijn engelen, in Zijn Boeken en
+  in Zijn profeten, in de Laatste Dag en in het Lot, waarbij
+  zowel heil als onheil onderworpen zijn aan
+  ALLAH, de Verhevene.
+</p>
+
+<p class="text-center text-bold text-center-constrained">
+  Ik geloof in de werkelijkheid van de herrijzenis na de
+  dood, de werkelijkheid van het paradijs, de werkelijkheid
+  van het hellevuur, de werkelijkheid van de bemiddeling,
+  en de werkelijkheid van Moenker en Nekier
+  <span class="text-italic">(de twee engelen die de overledenen in het graf ondervragen).</span>
+</p>
+
+<p class="text-center text-bold text-center-constrained">
+  Ik geloof dat ALLAH de overledenen
+  uit hun graven zal laten rijzen.
+</p>
+
+<p class="text-center text-bold text-center-constrained">
+  Ik getuig dat er geen God is behalve ALLAH, en ik getuig
+  dat Mohammed de boodschapper is van ALLAH.”
+</p>
+
+<p class="text-center text-bold text-center-constrained">
+  “O ALLAH, laat zegeningen neerdalen op Uw subtielste,
+  edelste, volmaaktste en prachtigste vrucht van Uw
+  Tûba-boom der Genade, die U heeft afgevaardigd als genade
+  voor alle werelden, en als middel voor ons om de
+  mooiste, schoonste, subliemste en verhevenste vruchten
+  van die Tûba-boom te bereiken, die hangen in de hoogtes
+  van het hiernamaals, in de gewesten van het paradijs. O
+  ALLAH, behoed ons en onze ouders voor het vuur, schenk
+  ons en onze ouders toegang tot het paradijs, in het gezelschap
+  van de rechtschapenen, omwille van de eer van Uw
+  uitverkoren profeet, âmîn.”
+</p>
+
+<p>
+  O broeder die dit traktaat naar eer en geweten bestudeert. Zeg niet:
+  <span class="text-italic">“Waarom kan ik dit ‘Tiende Woord’ niet meteen volledig begrijpen?”</span>
+  En wees niet ontmoedigd als alles niet direct helemaal helder wordt. Want zelfs een filosofisch genie zoals
+  Ibn Sina <span class="text-italic">(Avicenna)</span> zei:
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+  اَلْحَشْرُ لَيْسَ عَلٰى مَقَايِيسِ عَقْلِيَّةٍ
+</p>
+
+  </div>'
+            ],
+
+            [
+                'page_number' => 114,
+                'content' => '<div class="page" id="114"> <p class="text-end page-number">#114</p>
+
+<p class="text-italic">
+  “De herzameling laat zich niet meten naar de maatstaf van het verstand.”
+</p>
+
+<p>Hij concludeerde:</p>
+
+<p class="text-italic">
+  “Wij geloven, maar voor het verstand is deze weg onbegaanbaar.”
+</p>
+
+<p>
+  Bovendien hebben alle islamgeleerden unaniem als volgt geoordeeld:
+  <span class="text-italic">“De herzameling is een geloofskwestie die is overgeleverd. Het bewijs ervan berust op transmissie.
+  Met het verstand alleen kan ze niet bereikt worden.”</span>
+  Het is dan ook vanzelfsprekend dat zo’n diep en spiritueel verheven pad niet opeens kan veranderen in een
+  openbare laan die voor ieder verstand toegankelijk is.
+</p>
+
+<p>
+  In dit tijdperk, waarin traditionele navolging en overgave nagenoeg verloren zijn, behoren wij duizendmaal
+  dank te betuigen omdat wij, met de zegen van de Qur’an en de Gratie van de Genadige Schepper, ten opzichte
+  van zo’n diep en verheven pad zo genereus zijn begunstigd. Want het is voldoende om ons imaan
+  <span class="text-italic">(geloof)</span> te redden. Wij horen tevreden te zijn met wat wij eruit begrijpen en naar meer diepgang te streven
+  door dit traktaat herhaaldelijk te bestuderen. Een reden waarom de herzameling niet met het verstand wordt
+  benaderd, schuilt in het volgende geheim:
+</p>
+
+<p>
+  De ultieme herzameling zal geschieden via de manifestatie van Gods Ultieme Naam. Daarom behoren eerst
+  de majestueuze activiteiten van de Alwaarachtige, die zich voltrekken via de manifestatie van zowel Zijn Ultieme
+  Naam als het ultieme niveau van elke Goddelijke Naam, aanschouwd en gepresenteerd te worden, waarna
+  de ultieme herzameling zo helder als de lente eenvoudig bewezen, ten volle beaamd en met onwankelbare
+  zekerheid aanvaard kan worden.
+</p>
+
+  </div>'
+            ],
+            [
+                'page_number' => 115,
+                'content' => '<div class="page" id="115"> <p class="text-end page-number">#115</p>
+<p>
+  In dit “Tiende Woord” worden deze activiteiten dankzij de zegen van de Qur’an op deze wijze veraanschouwelijkt
+  en gepresenteerd. Anders, als het verstand slechts aan zijn eigen bekrompen en beperkte principes zou worden
+  overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging.
+</p>
+
+  </div>'
+            ],
+
+            [
+                'page_number' => 116,
+                'content' => '<div class="page" id="116"> <p class="text-end page-number">#116</p>
+
+
+<p class="text-italic">
+  Hoewel “Het Tiende Woord” hier eindigt, heeft de auteur in het oorspronkelijke traktaat bepaalde aanvullende
+  delen uit de Risale-i Nur als bijlagen opgenomen. Tot onze grote spijt is het ons in deze editie niet gelukt
+  om deze bijlagen te vertalen. Moge ALLAH ons in staat stellen om deze in de eerstvolgende druk ook te vertalen
+  en toe te voegen.
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+  رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً
+  إِنَّكَ أَنتَ الْوَهَّابُ
+</p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+  “O Heer,
+  laat onze harten niet dwalen
+  nadat U ons hebt geleid.
+  Schenk ons Genade vanuit Uw Verhevenheid.
+  Voorzeker, U bent de Vrijgevige Schenker.”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 3:8</em></p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+  وَآخِرُ دَعْوَاهُمْ أَنِ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ
+</p>
+
+<p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
+  “En zij eindigen hun beden met:
+  alle lof zij ALLAH,
+  de Heer der werelden.”
+</p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 10:10</em></p>
+
+<p class="text-end text-italic" style="margin-top: 24px;">De Vertalers</p>
+
+  </div>'
+            ],
+
 
 
 

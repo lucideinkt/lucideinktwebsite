@@ -77,6 +77,7 @@ class OnlineLezenController extends Controller
             'product'      => $product,
             'pages'        => $initialPages,
             'allPageMeta'  => $allPageMeta,
+            'tocEntries'   => config('book_toc.' . $slug, []),
             'SEOData'      => SEOService::getProductSEO($product, 'online-lezen-html'),
         ]);
     }
