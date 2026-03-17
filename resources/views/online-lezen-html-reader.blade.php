@@ -470,7 +470,10 @@
                     touch2.pageY - touch1.pageY
                 );
 
-                const scale = currentDist / pinchStartDist;
+                // Apply dampening for smaller, more sensitive steps
+                const rawScale = currentDist / pinchStartDist;
+                const dampening = 0.3; // Lower = smaller steps, more sensitive
+                const scale = 1 + (rawScale - 1) * dampening;
                 const newSize = pinchStartFontSize * scale;
                 const clampedSize = Math.max(12, Math.min(36, newSize));
 
