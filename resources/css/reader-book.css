@@ -190,7 +190,7 @@
 
 /* â”€â”€ Voetnoten â”€â”€ */
 .book-reader-scope .page-footnote {
-    display: block; /* was: none â€” nu zichtbaar */
+    display: none; /* was: none — nu zichtbaar */
     margin-top: 1.8em;
 }
 
@@ -309,25 +309,29 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(121, 0, 0, 0.10);
+    background: none;
     border: none;
     border-bottom: none;
-    padding: 0;
+    padding: 0!important;
     margin: 0 1px;
     cursor: pointer;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1;
+    font-size: 0.75rem;
+    font-weight: 800;
     vertical-align: super;
     font-family: inherit;
-    color: var(--main-font-color, #790000);
-    border-radius: 50%;
-    width: 1.5em;
-    height: 1.5em;
-    transition: background 0.15s, color 0.15s;
+    color: #ca2a2a;
     position: relative;
-    text-decoration: none;
+    text-decoration: underline;
 }
+
+.book-reader-scope .fn-ref sup:before {
+    content: "[";
+}
+
+.book-reader-scope .fn-ref sup:after {
+    content: "]";
+}
+
 
 .book-reader-scope .fn-ref sup {
     font-size: inherit;
@@ -337,22 +341,22 @@
 }
 .book-reader-scope .fn-ref:hover,
 .book-reader-scope .fn-ref:focus {
-    background: rgba(121, 0, 0, 0.08);
+    background: none;
     outline: none;
 }
 .book-reader-scope .fn-ref--active {
-    background: rgba(121, 0, 0, 0.14);
-    color: #5a0000;
+    background: none;
+    color: #ca2a2a;
 }
 body.dark-mode .book-reader-scope .fn-ref {
     color: #e8a87c;
-    background: rgba(232, 168, 124, 0.13);
+    background: none;
 }
 body.dark-mode .book-reader-scope .fn-ref:hover {
-    background: rgba(232, 168, 124, 0.22);
+    background: none;
 }
 body.dark-mode .book-reader-scope .fn-ref--active {
-    background: rgba(232, 168, 124, 0.30);
+    background: none;
     color: #f0c090;
 }
 
@@ -362,35 +366,43 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     z-index: 9000;
     width: min(440px, calc(100vw - 24px));
     max-height: 60vh;
-    overflow-y: auto;
-    overscroll-behavior: contain;
     background: #fffdf5;
     border: 1px solid rgba(180, 140, 60, 0.35);
     border-radius: 10px;
     box-shadow:
         0 4px 6px rgba(0,0,0,0.06),
         0 10px 28px rgba(0,0,0,0.13);
-    padding: 12px 36px 14px 14px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: column;
     opacity: 0;
     transform: translateY(6px) scale(0.97);
     transition: opacity 0.18s ease, transform 0.18s ease;
     pointer-events: none;
+    overflow: hidden;
 }
 .fn-popover.fn-popover--show {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
 }
+.fn-popover__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    /*background: rgba(202, 42, 42, 0.04);*/
+    border-bottom: 1px solid rgba(180, 140, 60, 0.2);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 .fn-popover__num {
     flex-shrink: 0;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
-    color: #790000;
-    background: rgba(121,0,0,0.08);
+    color: #ca2a2a;
+    background: rgba(202,42,42,0.1);
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -398,14 +410,36 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     align-items: center;
     justify-content: center;
     line-height: 1;
-    margin-top: 2px;
+}
+.fn-popover__close {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    color: #999;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.12s, color 0.12s;
+    flex-shrink: 0;
+}
+.fn-popover__close:hover { background: rgba(0,0,0,0.08); color: #555; }
+.fn-popover__body {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 14px;
+    flex: 1;
 }
 .fn-popover__text {
     font-family: 'DelimaProRegular', Georgia, serif;
     font-size: 16px;
     line-height: 1.6;
     color: #2a1a0a;
-    flex: 1;
 }
 .fn-popover__text p,
 .fn-popover__text .fn-popover__para {
@@ -413,29 +447,9 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     padding: 0;
 }
 .fn-popover__text p + p,
-.fn-popover__text .fn-popover__para {
+.fn-popover__text .fn-popover__para + .fn-popover__para {
     margin-top: 0.65em;
 }
-.fn-popover__close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 22px;
-    height: 22px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1;
-    color: #aaa;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    transition: background 0.12s, color 0.12s;
-}
-.fn-popover__close:hover { background: rgba(0,0,0,0.07); color: #555; }
 
 /* dark mode */
 body.dark-mode .fn-popover {
@@ -445,9 +459,13 @@ body.dark-mode .fn-popover {
         0 4px 6px rgba(0,0,0,0.35),
         0 10px 28px rgba(0,0,0,0.55);
 }
+body.dark-mode .fn-popover__header {
+    background: rgba(255, 123, 123, 0.08);
+    border-bottom-color: rgba(232, 168, 124, 0.2);
+}
 body.dark-mode .fn-popover__num {
-    color: #f0c090;
-    background: rgba(232, 168, 124, 0.18);
+    color: #ff9a9a;
+    background: rgba(255, 123, 123, 0.15);
 }
 body.dark-mode .fn-popover__text {
     color: #e8d8b0;
@@ -632,7 +650,7 @@ body.dark-mode .reader-end p { color: #555; }
 /* Tooltip */
 body.dark-mode .reader-tooltip {
     background: #160e05;
-    border-color: rgba(232,168,124,0.2);
+    border-color: rgba(232, 168, 124, 0.2);
     color: #e8d8b0;
 }
 body.dark-mode .reader-tooltip::before { border-bottom-color: #160e05; }

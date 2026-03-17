@@ -442,6 +442,60 @@
             applyFont(next); saveFont(next);
         });
 
+        // --- Pinch-to-zoom for font size (touch gestures) ---
+        let pinchStartDist = null;
+        let pinchStartFontSize = null;
+
+        readerEl.addEventListener('touchstart', e => {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                pinchStartDist = Math.hypot(
+                    touch2.pageX - touch1.pageX,
+                    touch2.pageY - touch1.pageY
+                );
+                const currentPage = readerEl.querySelector('.page');
+                pinchStartFontSize = currentPage ? parseFloat(getComputedStyle(currentPage).fontSize) || 18 : 18;
+            }
+        }, { passive: false });
+
+        readerEl.addEventListener('touchmove', e => {
+            if (e.touches.length === 2 && pinchStartDist !== null) {
+                e.preventDefault();
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDist = Math.hypot(
+                    touch2.pageX - touch1.pageX,
+                    touch2.pageY - touch1.pageY
+                );
+
+                const scale = currentDist / pinchStartDist;
+                const newSize = pinchStartFontSize * scale;
+                const clampedSize = Math.max(12, Math.min(36, newSize));
+
+                applyFont(clampedSize);
+            }
+        }, { passive: false });
+
+        readerEl.addEventListener('touchend', e => {
+            if (e.touches.length < 2 && pinchStartDist !== null) {
+                // Save final font size
+                const currentPage = readerEl.querySelector('.page');
+                if (currentPage) {
+                    const finalSize = parseFloat(getComputedStyle(currentPage).fontSize) || 18;
+                    saveFont(finalSize);
+                }
+                pinchStartDist = null;
+                pinchStartFontSize = null;
+            }
+        });
+
+        readerEl.addEventListener('touchcancel', () => {
+            pinchStartDist = null;
+            pinchStartFontSize = null;
+        });
+
         // --- Dark mode ---
         document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');

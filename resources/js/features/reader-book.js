@@ -164,9 +164,13 @@
         popover.setAttribute('role', 'tooltip');
         popover.setAttribute('aria-live', 'polite');
         popover.innerHTML =
-            `<span class="fn-popover__num">${num}</span>` +
-            `<div class="fn-popover__text">${html}</div>` +
-            `<button class="fn-popover__close" aria-label="Sluiten" type="button">&#215;</button>`;
+            `<div class="fn-popover__header">` +
+                `<span class="fn-popover__num">${num}</span>` +
+                `<button class="fn-popover__close" aria-label="Sluiten" type="button">&#215;</button>` +
+            `</div>` +
+            `<div class="fn-popover__body">` +
+                `<div class="fn-popover__text">${html}</div>` +
+            `</div>`;
 
         document.body.appendChild(popover);
         lockBodyScroll();
