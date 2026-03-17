@@ -5,15 +5,16 @@
     <title>Factuur #{{ $order->id }}</title>
     <style>
         @page {
-            margin: 15px;
+            margin: 12mm;
         }
         body {
             font-family: 'DejaVu Sans', 'Arial', sans-serif;
             background: #ffffff;
-            color: #333;
+            color: #222;
             margin: 0;
-            padding: 15px;
-            font-size: 12px;
+            padding: 12px;
+            font-size: 13px;
+            line-height: 1.5;
         }
         .invoice-container {
             max-width: 100%;
@@ -23,13 +24,13 @@
         }
         .header-border {
             background-color: #620505;
-            height: 3px;
-            margin-bottom: 15px;
+            height: 4px;
+            margin-bottom: 12px;
         }
         .header-section {
             display: table;
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
         }
         .header-left {
             display: table-cell;
@@ -44,25 +45,27 @@
         }
         h1 {
             color: #620505;
-            font-size: 22px;
-            margin: 0 0 4px 0;
-            font-weight: 600;
+            font-size: 26px;
+            margin: 0 0 6px 0;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
         .meta {
-            font-size: 12px;
-            color: #666;
-            line-height: 1.5;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
         }
         .meta strong {
-            color: #333;
+            color: #222;
+            font-weight: 600;
         }
         .company-info {
-            font-size: 11px;
-            color: #666;
-            line-height: 1.5;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.65;
         }
         .addresses-section {
-            margin: 15px 0;
+            margin: 12px 0 14px;
             display: table;
             width: 100%;
         }
@@ -70,79 +73,88 @@
             display: table-cell;
             width: 50%;
             vertical-align: top;
-            padding-right: 10px;
+            padding-right: 8px;
         }
         .address-column:last-child {
             padding-right: 0;
-            padding-left: 10px;
+            padding-left: 8px;
         }
         .address-box {
-            padding: 12px;
-            font-size: 11px;
-            background: #f9f9f9;
-            border: 1px solid #e8e8e8;
-            border-radius: 4px;
-            line-height: 1.6;
+            padding: 10px 12px;
+            font-size: 12px;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            line-height: 1.7;
+            min-height: 120px;
         }
         .address-box strong {
-            font-size: 12px;
+            font-size: 13px;
             color: #620505;
             display: block;
             margin-bottom: 6px;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 0.01em;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 11px;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
+            margin: 12px 0;
+            font-size: 12px;
+            border: 1px solid #ddd;
         }
         th, td {
-            padding: 8px;
+            padding: 9px 10px;
             text-align: left;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #eee;
         }
         th {
-            background: #f9f9f9;
+            background: #f5f5f5;
             color: #620505;
-            font-weight: 600;
-            font-size: 11px;
-            border-bottom: 2px solid #e0e0e0;
+            font-weight: 700;
+            font-size: 12px;
+            border-bottom: 2px solid #ddd;
+            letter-spacing: 0.02em;
         }
         tbody tr:last-child td {
-            border-bottom: none;
+            border-bottom: 1px solid #ddd;
+        }
+        tbody td {
+            color: #333;
         }
         tfoot tr {
             background: #fafafa;
         }
         tfoot td {
             font-weight: 600;
-            color: #620505;
-            border-bottom: none;
-            font-size: 11px;
+            color: #444;
+            border-bottom: 1px solid #eee;
+            font-size: 12px;
+            padding: 7px 10px;
         }
         tfoot tr:last-child {
             background: #f0f0f0;
         }
         tfoot tr:last-child td {
             font-weight: 700;
-            font-size: 12px;
+            font-size: 14px;
             color: #620505;
+            border-bottom: none;
+            padding: 10px;
         }
         .summary {
-            margin-top: 15px;
-            padding: 12px;
+            margin-top: 12px;
+            padding: 11px 14px;
             background: #e8f5e9;
-            border-left: 3px solid #2c582f;
+            border-left: 4px solid #2c582f;
             border-radius: 4px;
-            font-size: 12px;
+            font-size: 13px;
             color: #1e4620;
-            line-height: 1.6;
+            line-height: 1.65;
         }
         .summary strong {
             color: #1e4620;
+            font-weight: 700;
         }
         .summary.unpaid {
             background: #fffbea;
@@ -151,24 +163,26 @@
         }
         .summary.unpaid strong {
             color: #92400e;
+            font-weight: 700;
         }
         .summary.unpaid span {
             color: #78350f;
             display: block;
-            margin-top: 4px;
+            margin-top: 5px;
+            font-size: 12px;
         }
         .payment-info {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #e8e8e8;
-            font-size: 11px;
-            color: #666;
-            line-height: 1.6;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.7;
         }
         .footer-border {
             background-color: #620505;
-            height: 3px;
-            margin-top: 20px;
+            height: 4px;
+            margin-top: 16px;
         }
     </style>
 </head>
