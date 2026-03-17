@@ -309,7 +309,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: none;
+    background: rgba(202,42,42,0.1);
     border: none;
     border-bottom: none;
     width: 22px;
@@ -319,14 +319,16 @@
     cursor: pointer;
     font-size: 0.75rem;
     font-weight: 800;
-    vertical-align: super;
+    line-height: 1;
+    vertical-align: middle;
     font-family: inherit;
     color: #ca2a2a;
     position: relative;
     text-decoration: none;
-    background: rgba(202,42,42,0.1);
     border-radius: 50%;
     transition: background 0.15s ease;
+    /* Fix for mobile centering */
+    transform: translateY(-0.25em);
 }
 
 .book-reader-scope .fn-ref sup:before {
@@ -343,6 +345,9 @@
     line-height: 1;
     vertical-align: baseline;
     pointer-events: none;
+    position: relative;
+    top: 0;
+    display: block;
 }
 .book-reader-scope .fn-ref:hover,
 .book-reader-scope .fn-ref:focus {
