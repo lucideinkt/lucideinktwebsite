@@ -433,12 +433,12 @@
         // --- Font size ---
         document.getElementById('font-smaller')?.addEventListener('click', () => {
             const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || 18;
-            const next = Math.max(12, cur - 1);
+            const next = Math.max(12, cur - 0.5); // Smaller 0.5px steps for smoother transitions
             applyFont(next); saveFont(next);
         });
         document.getElementById('font-larger')?.addEventListener('click', () => {
             const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || 18;
-            const next = Math.min(36, cur + 1);
+            const next = Math.min(36, cur + 0.5); // Smaller 0.5px steps for smoother transitions
             applyFont(next); saveFont(next);
         });
 
@@ -472,7 +472,7 @@
 
                 // Apply dampening for smaller, more sensitive steps
                 const rawScale = currentDist / pinchStartDist;
-                const dampening = 0.3; // Lower = smaller steps, more sensitive
+                const dampening = 0.15; // Lower = smaller steps, more sensitive, smoother
                 const scale = 1 + (rawScale - 1) * dampening;
                 const newSize = pinchStartFontSize * scale;
                 const clampedSize = Math.max(12, Math.min(36, newSize));
