@@ -49,11 +49,15 @@
                     const clone = fp.cloneNode(true);
                     const firstSup = clone.querySelector('sup');
                     if (firstSup) firstSup.remove();
-                    const html = clone.innerHTML.trim();
+                    let html = clone.innerHTML.trim();
+                    // Remove arrow characters from popover (but not from original footnote)
+                    html = html.replace(/\s*→\s*$/g, '').replace(/\s*&rarr;\s*$/g, '');
                     if (currentNum && html) footnoteMap[currentNum] = html;
                 } else if (currentNum) {
                     // Continuation paragraph on the same page
-                    const html = fp.innerHTML.trim();
+                    let html = fp.innerHTML.trim();
+                    // Remove arrow characters from popover
+                    html = html.replace(/\s*→\s*$/g, '').replace(/\s*&rarr;\s*$/g, '');
                     if (html) footnoteMap[currentNum] += '<p class="fn-popover__para">' + html + '</p>';
                 }
             });
@@ -164,10 +168,7 @@
         popover.setAttribute('role', 'tooltip');
         popover.setAttribute('aria-live', 'polite');
         popover.innerHTML =
-            `<div class="fn-popover__header">` +
-                `<span class="fn-popover__num">${num}</span>` +
-                `<button class="fn-popover__close" aria-label="Sluiten" type="button">&#215;</button>` +
-            `</div>` +
+            `<button class="fn-popover__close" aria-label="Sluiten" type="button">&#215;</button>` +
             `<div class="fn-popover__body">` +
                 `<div class="fn-popover__text">${html}</div>` +
             `</div>`;

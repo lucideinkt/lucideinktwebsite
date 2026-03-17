@@ -27,6 +27,10 @@
     z-index: -1;
 }
 
+.intro-section .sub-text {
+    color: var(--main-font-color);
+}
+
 /* Colored Section with Full Leather Texture */
 .colored-section {
     position: relative;
@@ -251,7 +255,6 @@ h2 {
     /*font-family: griffon, serif;*/
     font-weight: 400;
     margin-bottom: 0;
-    color: #871719;
     /*transform: scaleX(1.10);*/
     margin-bottom: 0px;
     word-break: none;

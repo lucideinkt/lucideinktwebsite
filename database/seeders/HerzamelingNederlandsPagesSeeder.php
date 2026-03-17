@@ -42,12 +42,13 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
       fictieve verhalen, maar wezenlijke waarheden.
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-      بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ<sup>1</sup>
+    <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ ٱللهِ ٱلرَّحْمٰنِ ٱلرَّحِيْمِ
+     <sup>1</sup>
     </p>
 
     <p style="margin: 0 auto;max-width: 500px" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-      فَانْظُرْ اِلٰۤى اٰثاَرِ رَحْمَتِ اللهِ كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا اِنَّ ذٰلِكَ لَمُحْيِى الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ<sup>2</sup>
+      فَانْظُرْ اِلٰٓى اٰثَارِ رَحْمَتِ اللّٰهِ كَيْفَ يُحْيِى الْاَرْضَ بَعْدَ مَوْتِهَا
+ اِنَّ ذٰلِكَ لَمُحْيِى الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدٖيرٌ<sup>2</sup>
     </p>
 
     <div class="page-footnote">

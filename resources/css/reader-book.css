@@ -33,6 +33,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Besmellah';
+    src: url('../fonts/Besmellah.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* =========================================================
    BOOK READER â€” gescoopt onder .book-reader-scope
    zodat niets op de rest van de site wordt overschreven
@@ -91,10 +99,21 @@
     orphans: 3;
     widows: 3;
     color: var(--main-font-color);
+    text-indent: 1.5em;
 }
 
 .book-reader-scope span {
     line-height: inherit;
+}
+
+/* Remove indentation from styled paragraphs */
+.book-reader-scope .page-title-series p,
+.book-reader-scope .page-title-chapter p,
+.book-reader-scope .footnote-p,
+.book-reader-scope .text-center,
+.book-reader-scope .text-center-constrained,
+.book-reader-scope .text-end {
+    text-indent: 0;
 }
 
 /* â”€â”€ Boektitel blok (serietitel + hoofdtitel + auteur) â”€â”€ */
@@ -264,6 +283,20 @@
     display: block;
 }
 
+.book-reader-scope .text-arabic-bismillah {
+    font-family: 'Besmellah', serif;
+    font-size: 1.65em;
+    line-height: 2;
+    direction: rtl;
+    text-align: center;
+    font-feature-settings: 'salt' 3; /* Stylistic alternates - position 3 */
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+    margin: 0.3em 0 0.3em;
+    display: block;
+}
+
 .book-reader-scope .text-arabic-inline {
     font-family: 'OmarNaskhRegular', serif;
     font-size: 1.2em;
@@ -309,7 +342,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #2c582f;
+    background: rgba(202,42,42,0.1);
     border: none;
     width: 20px;
     height: 20px;
@@ -321,7 +354,7 @@
     line-height: 20px;
     vertical-align: baseline;
     font-family: inherit;
-    color: #fbf0cb;
+    color: var(--main-font-color);
     position: relative;
     text-decoration: none;
     border-radius: 50%;
@@ -351,12 +384,12 @@
 }
 .book-reader-scope .fn-ref:hover,
 .book-reader-scope .fn-ref:focus {
-    background: #2c582f;
+    background: rgba(202,42,42,0.15);
     outline: none;
 }
 .book-reader-scope .fn-ref--active {
-    background: #2c582f;
-    color: #fbf0cb;
+    background: rgba(202,42,42,0.2);
+    color: var(--main-font-color);
 }
 body.dark-mode .book-reader-scope .fn-ref {
     color: #e8d8b0;
@@ -388,75 +421,58 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     transform: translateY(6px) scale(0.97);
     transition: opacity 0.18s ease, transform 0.18s ease;
     pointer-events: none;
-    overflow: hidden;
+    overflow: visible;
 }
 .fn-popover.fn-popover--show {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
 }
-.fn-popover__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 14px;
-    /*background: rgba(202, 42, 42, 0.04);*/
-    border-bottom: 1px solid rgba(180, 140, 60, 0.2);
-    flex-shrink: 0;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-.fn-popover__num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    padding: 0 !important;
-    margin: 0 2px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 800;
-    line-height: 1;
-    vertical-align: baseline;
-    font-family: inherit;
-    color: var(--main-font-color)   ;
-    position: relative;
-    text-decoration: none;
-    border-radius: 50%;
-    transition: background 0.15s ease;
-}
-
 .fn-popover__close {
-    width: 24px;
-    height: 24px;
-    border: none;
-    background: none;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #b48c3c;
+    background: #8b6f47;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 400;
     line-height: 1;
-    color: #999;
-    border-radius: 4px;
+    color: #f5ede0;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    transition: background 0.12s, color 0.12s;
-    flex-shrink: 0;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    z-index: 10;
+    user-select: none;
 }
-.fn-popover__close:hover { background: rgba(0,0,0,0.08); color: #555; }
+.fn-popover__close:hover {
+    background: #9d7d52;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.fn-popover__close:active {
+    transform: scale(0.96);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 .fn-popover__body {
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: 14px;
+    padding: 16px 18px;
     flex: 1;
 }
 .fn-popover__text {
     font-family: 'DelimaProRegular', Georgia, serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.65;
     color: #2a1a0a;
+    text-align: left;
 }
 .fn-popover__text p,
 .fn-popover__text .fn-popover__para {
@@ -468,31 +484,83 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     margin-top: 0.65em;
 }
 
+/* Inherit all book-reader-scope utility classes in popover */
+.fn-popover__text .text-italic { font-style: italic; }
+.fn-popover__text .text-bold { font-weight: 600; }
+.fn-popover__text .text-red { color: #ca2a2a; }
+.fn-popover__text .text-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+.fn-popover__text .text-center { text-align: center; }
+.fn-popover__text em { font-style: italic; }
+.fn-popover__text strong { font-weight: 600; }
+
+/* Arabic text in popover */
+.fn-popover__text .text-arabic,
+.fn-popover__text .text-arabic-inline,
+.fn-popover__text .delima-font .text-arabic,
+.fn-popover__text .delima-font .text-arabic-inline,
+.fn-popover__text span[dir="rtl"],
+.fn-popover__text span[lang="ar"] {
+    font-family: 'OmarNaskhRegular', serif !important;
+    direction: rtl;
+    font-feature-settings: 'ss04', 'ss14', 'ss15';
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+}
+.fn-popover__text .text-arabic {
+    font-size: 1.4em;
+    line-height: inherit;
+    display: inline;
+    unicode-bidi: embed;
+    margin: 0;
+}
+.fn-popover__text .text-arabic-inline {
+    font-size: 1.15em;
+    display: inline;
+    unicode-bidi: embed;
+}
+.fn-popover__text .delima-font {
+    font-family: 'DelimaProRegular', serif;
+}
+
 /* dark mode */
 body.dark-mode .fn-popover {
     background: #1e1510;
     border-color: rgba(255, 120, 120, 0.25);
     box-shadow:
-        0 4px 6px rgba(0,0,0,0.6),
-        0 10px 28px rgba(0,0,0,0.8);
+        0 4px 6px rgba(0, 0, 0, 0.6),
+        0 10px 28px rgba(0, 0, 0, 0.8);
 }
-body.dark-mode .fn-popover__header {
-    background: rgba(255, 120, 120, 0.1);
-    border-bottom-color: rgba(255, 120, 120, 0.2);
+body.dark-mode .fn-popover__close {
+    background: #a0825a;
+    border-color: #c9b18a;
+    color: #2a1a0a;
 }
-body.dark-mode .fn-popover__num {
-    color: #ffcaca;
-    background: rgba(255, 120, 120, 0.25);
+body.dark-mode .fn-popover__close:hover {
+    background: #b89668;
+    color: #1a1108;
+    transform: scale(1.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 body.dark-mode .fn-popover__text {
     color: #ecdcc0;
 }
-body.dark-mode .fn-popover__close {
-    color: #a89070;
+body.dark-mode .fn-popover__text .text-red { color: #ff9a9a; }
+body.dark-mode .fn-popover__text .text-arabic,
+body.dark-mode .fn-popover__text .text-arabic-inline,
+body.dark-mode .fn-popover__text .delima-font .text-arabic,
+body.dark-mode .fn-popover__text .delima-font .text-arabic-inline,
+body.dark-mode .fn-popover__text span[dir="rtl"],
+body.dark-mode .fn-popover__text span[lang="ar"] {
+    color: #e8a87c;
+    font-family: 'OmarNaskhRegular', serif !important;
 }
-body.dark-mode .fn-popover__close:hover {
-    background: rgba(255, 120, 120, 0.15);
-    color: #ffa5a5;
+body.dark-mode .fn-popover__text .text-underline {
+    text-decoration-color: rgba(255, 154, 154, 0.6);
 }
 
 /* =========================================================
@@ -653,6 +721,7 @@ body.dark-mode .book-reader-scope .footnote-p sup { color: #b0a080; }
 
 /* Arabic */
 body.dark-mode .book-reader-scope .text-arabic { color: #e8a87c; }
+body.dark-mode .book-reader-scope .text-arabic-inline { color: #e8a87c; }
 
 /* Sup pointer (legacy) */
 body.dark-mode .book-reader-scope .sup-pointer { color: #e8a87c; }
