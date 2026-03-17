@@ -36,9 +36,8 @@
 @font-face {
     font-family: 'Besmellah';
     src: url('../fonts/Besmellah.ttf') format('truetype');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 /* =========================================================
@@ -258,8 +257,6 @@
     color: #ca2a2a;
 }
 
-
-
 .book-reader-scope .text-underline {
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -283,18 +280,13 @@
     display: block;
 }
 
-.book-reader-scope .text-arabic-bismillah {
-    font-family: 'Besmellah', serif;
-    font-size: 1.65em;
-    line-height: 2;
-    direction: rtl;
-    text-align: center;
-    font-feature-settings: 'salt' 3; /* Stylistic alternates - position 3 */
-    letter-spacing: 0;
-    word-spacing: 0;
+/* Footnote superscript within bismillah */
+.book-reader-scope .text-arabic-bismillah sup {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    vertical-align: super;
     color: #ca2a2a;
-    margin: 0.3em 0 0.3em;
-    display: block;
 }
 
 .book-reader-scope .text-arabic-inline {
@@ -342,8 +334,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(202,42,42,0.1);
-    border: none;
+    background: rgba(202,42,42,0.12);
+    border: 1px solid rgba(202,42,42,0.25);
     width: 20px;
     height: 20px;
     padding: 0 !important;
@@ -358,9 +350,10 @@
     position: relative;
     text-decoration: none;
     border-radius: 50%;
-    transition: background 0.15s ease;
+    transition: all 0.15s ease;
     top: -0.8em;
     text-align: center;
+    box-shadow: 0 1px 2px rgba(202,42,42,0.08);
 }
 
 .book-reader-scope .fn-ref sup:before {
@@ -382,26 +375,14 @@
     margin: 0;
     padding: 0;
 }
-.book-reader-scope .fn-ref:hover,
-.book-reader-scope .fn-ref:focus {
-    background: rgba(202,42,42,0.15);
-    outline: none;
-}
-.book-reader-scope .fn-ref--active {
-    background: rgba(202,42,42,0.2);
-    color: var(--main-font-color);
-}
+
 body.dark-mode .book-reader-scope .fn-ref {
     color: #e8d8b0;
-    background: rgba(255, 120, 120, 0.22);
+    background: rgba(255, 120, 120, 0.20);
+    border-color: rgba(255, 120, 120, 0.35);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
-body.dark-mode .book-reader-scope .fn-ref:hover {
-    background: rgba(255, 120, 120, 0.32);
-}
-body.dark-mode .book-reader-scope .fn-ref--active {
-    background: rgba(255, 120, 120, 0.42);
-    color: #e8d8b0;
-}
+
 
 /* ── Voetnoot popover ── */
 .fn-popover {
@@ -434,32 +415,22 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     right: -6px;
     width: 20px;
     height: 20px;
-    border: 1.5px solid #b48c3c;
-    background: #8b6f47;
+    border: 1.5px solid rgba(202,42,42,0.35);
+    background: #ca2a2a;
     cursor: pointer;
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
-    color: #f5ede0;
+    color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     transition: all 0.2s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 4px rgba(202,42,42,0.25), 0 1px 2px rgba(0, 0, 0, 0.08);
     z-index: 10;
     user-select: none;
-}
-.fn-popover__close:hover {
-    background: #9d7d52;
-    color: #fff;
-    transform: scale(1.08);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-.fn-popover__close:active {
-    transform: scale(0.96);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .fn-popover__body {
     overflow-y: auto;
@@ -536,16 +507,12 @@ body.dark-mode .fn-popover {
         0 10px 28px rgba(0, 0, 0, 0.8);
 }
 body.dark-mode .fn-popover__close {
-    background: #a0825a;
-    border-color: #c9b18a;
-    color: #2a1a0a;
+    background: #802929;
+    border-color: rgba(184, 72, 72, 0.5);
+    color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
 }
-body.dark-mode .fn-popover__close:hover {
-    background: #b89668;
-    color: #1a1108;
-    transform: scale(1.08);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
-}
+
 body.dark-mode .fn-popover__text {
     color: #ecdcc0;
 }

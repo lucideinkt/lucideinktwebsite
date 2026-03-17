@@ -289,6 +289,11 @@
         function loadFont()    { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; }     catch (_) { return null; } }
         function applyFont(sz) { readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; }); }
 
+        // Dark mode localStorage functions
+        const DARK_MODE_KEY = 'reader-dark-mode';
+        function saveDarkMode(isDark) { try { localStorage.setItem(DARK_MODE_KEY, isDark ? '1' : '0'); } catch (_) {} }
+        function loadDarkMode() { try { return localStorage.getItem(DARK_MODE_KEY) === '1'; } catch (_) { return false; } }
+
         function visiblePage() {
             let closest = null, best = Infinity;
             Object.keys(pageMap).forEach(n => {
@@ -500,8 +505,37 @@
         });
 
         // --- Dark mode ---
-        document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+
+        // Function to update icon based on dark mode state
+        function updateDarkModeIcon(isDark) {
+            if (isDark) {
+                // In dark mode, show sun icon (to switch back to light)
+                darkModeIcon?.classList.remove('fa-moon');
+                darkModeIcon?.classList.add('fa-sun');
+                darkModeToggle?.setAttribute('title', 'Lichte modus');
+                darkModeToggle?.setAttribute('aria-label', 'Lichte modus aan/uit');
+            } else {
+                // In light mode, show moon icon (to switch to dark)
+                darkModeIcon?.classList.remove('fa-sun');
+                darkModeIcon?.classList.add('fa-moon');
+                darkModeToggle?.setAttribute('title', 'Donkere modus');
+                darkModeToggle?.setAttribute('aria-label', 'Donkere modus aan/uit');
+            }
+        }
+
+        // Initialize dark mode from localStorage
+        if (loadDarkMode()) {
+            document.body.classList.add('dark-mode');
+            updateDarkModeIcon(true);
+        }
+
+        // Toggle dark mode on click
+        darkModeToggle?.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark-mode');
+            saveDarkMode(isDark);
+            updateDarkModeIcon(isDark);
         });
 
         // --- To-top ---
