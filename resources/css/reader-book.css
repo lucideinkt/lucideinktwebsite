@@ -309,7 +309,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(202,42,42,0.1);
+    background: #2c582f;
     border: none;
     width: 20px;
     height: 20px;
@@ -321,7 +321,7 @@
     line-height: 1;
     vertical-align: baseline;
     font-family: inherit;
-    color: var(--main-font-color);
+    color: #fbf0cb;
     position: relative;
     text-decoration: none;
     border-radius: 50%;
@@ -349,12 +349,12 @@
 }
 .book-reader-scope .fn-ref:hover,
 .book-reader-scope .fn-ref:focus {
-    background: rgba(202,42,42,0.15);
+    background: #2c582f;
     outline: none;
 }
 .book-reader-scope .fn-ref--active {
-    background: rgba(202,42,42,0.2);
-    color: var(--main-font-color);
+    background: #2c582f;
+    color: #fbf0cb;
 }
 body.dark-mode .book-reader-scope .fn-ref {
     color: #e8d8b0;
@@ -409,19 +409,17 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(202, 42, 42, 0.1);
+    background: none;
     border: none;
-    width: 20px;
-    height: 20px;
     padding: 0 !important;
     margin: 0 2px;
     cursor: pointer;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 800;
     line-height: 1;
     vertical-align: baseline;
     font-family: inherit;
-    color: var(--main-font-color);
+    color: var(--main-font-color)   ;
     position: relative;
     text-decoration: none;
     border-radius: 50%;
