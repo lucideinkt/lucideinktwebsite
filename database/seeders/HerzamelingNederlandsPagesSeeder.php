@@ -471,8 +471,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-      Is het nou ooit voor mogelijk te houden dat een al-
-      bewarende regeerder, die zelfs de gewoonste handelingen van zijn geringste onderdanen niet verwaarloost,
+      Is het nou ooit voor mogelijk te houden dat een albewarende regeerder, die zelfs de gewoonste handelingen van zijn geringste onderdanen niet verwaarloost,
     </p>
 
     <div class="page-footnote">
@@ -513,14 +512,12 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ACHTSTE AANZICHT</p>
 
     <p>
-      Kom, dan zal ik jou nu de vorstelijke decreten voor-
-      lezen. Kijk, herhaaldelijk brengt hij zijn beloften en
+      Kom, dan zal ik jou nu de vorstelijke decreten voorlezen. Kijk, herhaaldelijk brengt hij zijn beloften en
       zijn heftige dreigementen onder woorden, zeggende:
       <span class="text-italic">“Ik zal jullie uit jullie huidige verblijven halen en naar het centrum van mijn rijk brengen,
       waar ik de gehoorzamen zal verblijden en de opstandelingen zal opsluiten. Ik zal dat vergankelijke land verwoesten
       en een ander oord met eeuwige paleizen en kerkers oprichten.”</span>
-      De waar-
-      making van zijn beloften is zeer eenvoudig voor hem,
+      De waarmaking van zijn beloften is zeer eenvoudig voor hem,
       terwijl het voor zijn onderdanen van primair belang is.
       Beloftebreuk daarentegen staat in schril contrast met
       de integriteit van zijn regeermacht.
