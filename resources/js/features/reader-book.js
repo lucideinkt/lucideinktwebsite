@@ -193,12 +193,6 @@
     function positionPopover(btn) {
         if (!popover) return;
 
-        // On mobile the CSS centres the popover via transform — skip JS positioning
-        if (window.innerWidth <= 600) {
-            popover.style.top  = '';
-            popover.style.left = '';
-            return;
-        }
 
         // Reset any inline position so offsetWidth/Height are accurate
         popover.style.top  = '0px';

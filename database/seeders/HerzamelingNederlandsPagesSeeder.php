@@ -42,7 +42,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  fictieve verhalen, maar wezenlijke waarheden.
  </p>
 
- <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحٖيمِ
+ <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+ <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+ <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
  <sup>1</sup>
  </p>
 

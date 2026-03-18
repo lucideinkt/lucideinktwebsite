@@ -280,15 +280,60 @@
     display: block;
 }
 
-/* Footnote superscript within bismillah */
-.book-reader-scope .text-arabic-bismillah sup {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 16px;
-    line-height: 1;
-    vertical-align: super;
-    color: #ca2a2a;
+/* Bismillah SVG container */
+.book-reader-scope .text-arabic-bismillah {
+    text-align: center;
+    margin: 1em auto;
+    display: block;
+    margin-bottom: 0px;
 }
 
+/* Bismillah SVG image */
+.book-reader-scope .bismillah-svg {
+    height: auto;
+    width: 33%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* Hide dark mode SVG by default */
+.book-reader-scope .bismillah-svg-dark {
+    display: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .book-reader-scope .bismillah-svg {
+        width: 33%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .book-reader-scope .bismillah-svg {
+        width: 43%;
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .book-reader-scope .bismillah-svg {
+        width: 53%;
+        max-width: 300px;
+    }
+}
+
+/* Dark mode: hide light SVG and show dark SVG */
+body.dark-mode .book-reader-scope .bismillah-svg-light {
+    display: none;
+}
+
+body.dark-mode .book-reader-scope .bismillah-svg-dark {
+    display: inline-block;
+}
+
+/* Footnote superscript within bismillah */
 .book-reader-scope .text-arabic-inline {
     font-family: 'OmarNaskhRegular', serif;
     font-size: 1.2em;
@@ -346,7 +391,7 @@
     line-height: 20px;
     vertical-align: baseline;
     font-family: inherit;
-    color: var(--main-font-color);
+    color: var(--main-font-color)!important;
     position: relative;
     text-decoration: none;
     border-radius: 50%;
@@ -377,10 +422,10 @@
 }
 
 body.dark-mode .book-reader-scope .fn-ref {
-    color: #e8d8b0;
-    background: rgba(255, 120, 120, 0.20);
-    border-color: rgba(255, 120, 120, 0.35);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    color: #f4d4a8 !important;
+    background: rgba(232, 168, 124, 0.15);
+    border-color: rgba(232, 168, 124, 0.30);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
 
 
@@ -411,26 +456,26 @@ body.dark-mode .book-reader-scope .fn-ref {
 }
 .fn-popover__close {
     position: absolute;
-    top: -6px;
-    right: -6px;
-    width: 20px;
-    height: 20px;
-    border: 1.5px solid rgba(202,42,42,0.35);
-    background: #ca2a2a;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1;
-    color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(202,42,42,0.25), 0 1px 2px rgba(0, 0, 0, 0.08);
+    transition: none;
     z-index: 10;
     user-select: none;
+    background-color: var(--main-font-color);
+    color: #fbf0cb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-align: center;
 }
 .fn-popover__body {
     overflow-y: auto;
@@ -507,10 +552,9 @@ body.dark-mode .fn-popover {
         0 10px 28px rgba(0, 0, 0, 0.8);
 }
 body.dark-mode .fn-popover__close {
-    background: #802929;
-    border-color: rgba(184, 72, 72, 0.5);
-    color: #f5f5f5;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+    background-color: #e8a87c;
+    color: #1c1209;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 }
 
 body.dark-mode .fn-popover__text {
@@ -942,17 +986,10 @@ body.dark-mode .reader-to-top { background: #b06030; }
 
     .fn-popover {
         width: calc(100vw - 32px);
-        left: 50% !important;
-        top: 50% !important;
-        transform: translateX(-50%) translateY(-50%) scale(0.97) !important;
-        bottom: auto;
         border-radius: 12px;
         max-height: 70vh;
     }
 
-    .fn-popover.fn-popover--show {
-        transform: translateX(-50%) translateY(-50%) scale(1) !important;
-    }
 
     .book-reader-scope .page-title-chapter h2 {
         font-size: 1.4em;
