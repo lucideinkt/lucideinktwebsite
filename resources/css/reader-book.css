@@ -134,12 +134,13 @@
 
 .book-reader-scope .book-title {
     font-family: 'BarlaLivaNur', 'DelimaProRegular', Georgia, serif;
-    font-size: 60px;
-    line-height: 1.25;
+    font-size: 80px;
+    line-height: 1.2;
     color: var(--main-font-color);
     margin: 0.4em 0 0.6em;
-    letter-spacing: 0.02em;
     font-weight: 400;
+
+
 }
 
 /* â”€â”€ Pagina blokken â€” naadloos onder elkaar, geen enkele padding â”€â”€ */
@@ -637,11 +638,11 @@ body.dark-mode .fn-popover__text .text-underline {
 
     .book-reader-scope .book-title {
         font-family: 'BarlaLivaNur', 'DelimaProRegular', Georgia, serif;
-        font-size: 50px;
-        line-height: 1.25;
+        font-size: 80px;
+        line-height: 1.2;
         color: var(--main-font-color);
         margin: 0.4em 0 0.6em;
-        letter-spacing: 0.02em;
+        letter-spacing: 0;
         font-weight: 400;
     }
 
@@ -651,6 +652,11 @@ body.dark-mode .fn-popover__text .text-underline {
     .book-reader-scope p {
         text-align: left;
         hyphens: none;
+    }
+
+    .book-reader-scope .book-title {
+        font-size: 70px;
+        line-height: 1.1;
     }
 
     .book-reader-scope .text-arabic {
