@@ -14,7 +14,10 @@ body {
     font-family: var(--font-regular), sans-serif;
     font-weight: 400;
     color: var(--main-font-color);
-    background-color: #f5e6ca;
+    background-image: url("../../images/background_texture_new.webp")!important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     line-height: 1.8;
     font-size: var(--text-font-size-page);
 }
