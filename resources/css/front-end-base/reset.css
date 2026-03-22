@@ -19,7 +19,7 @@ body {
     /*background-position: center;*/
     /*background-repeat: no-repeat;*/
     background-color: #fbf0cb;
-    background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
+    /*background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");*/
     line-height: 1.8;
     font-size: var(--text-font-size-page);
 }
