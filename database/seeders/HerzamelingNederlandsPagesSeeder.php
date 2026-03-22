@@ -3470,7 +3470,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  <p class="text-center text-italic">“Aan ALLAH behoort het beslissende bewijs.”</p>
  <p class="text-center text-italic"><em>– Qur’an, 6:149</em></p>
 
- <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;margin-top: 10px; max-width: 500px;">
  فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ
  كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا اِنَّ ذٰلِكَ
  لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدٖيرٌ
@@ -3486,7 +3486,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  </p>
  <p class="text-center text-italic delima-font" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 30:50</em></p>
 
- <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;margin-top: 10px; max-width: 500px;">
  قَالَ مَنْ يُحْيِ الْعِظَامَ
  وَهِىَ رَمِيمٌ ۞ قُلْ يُحْيِيهَا الَّذِى
  اَنْشَاَهَا اَوَّلَ مَرَّةٍ
@@ -3578,7 +3578,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 </p>
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 4:87</em></p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;margin-top: 10px; max-width: 500px;">
  إِنَّ الْأَبْرَارَ لَفِى نَعِيمٍ
  وَإِنَّ الْفُجَّارَ لَفِى جَحِيمٍ
 </p>
@@ -3756,22 +3756,22 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
          'page_number' => 113,
          'content' => '<div class="page" id="113"> <p class="text-end page-number">#113</p>
 
-<p class="text-center text-bold text-center-constrained">
- “Ik geloof in ALLAH, in Zijn engelen, in Zijn Boeken en
+<p class="text-center text-center-constrained">
+ “Ik geloof in <strong>ALLAH</strong>, in Zijn engelen, in Zijn Boeken en
  in Zijn profeten, in de Laatste Dag en in het Lot, waarbij
  zowel heil als onheil onderworpen zijn aan
- ALLAH, de Verhevene.
+ <strong>ALLAH</strong>, de Verhevene.
 </p>
 
-<p class="text-center text-bold text-center-constrained">
+<p class="text-center text-center-constrained">
  Ik geloof in de werkelijkheid van de herrijzenis na de
  dood, de werkelijkheid van het paradijs, de werkelijkheid
  van het hellevuur, de werkelijkheid van de bemiddeling,
  en de werkelijkheid van Moenker en Nekier
- <span class="text-italic">(de twee engelen die de overledenen in het graf ondervragen).</span>
+ <span class="text-italic">de twee engelen die de overledenen in het graf ondervragen.</span>
 </p>
 
-<p class="text-center text-bold text-center-constrained">
+<p class="text-center text-center-constrained">
  Ik geloof dat ALLAH de overledenen
  uit hun graven zal laten rijzen.
 </p>
@@ -3781,8 +3781,8 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
  dat Mohammed de boodschapper is van ALLAH.”
 </p>
 
-<p class="text-center text-bold text-center-constrained">
- “O ALLAH, laat zegeningen neerdalen op Uw subtielste,
+<p class="text-center text-italic text-center-constrained">
+ “<strong>O ALLAH</strong>, laat zegeningen neerdalen op Uw subtielste,
  edelste, volmaaktste en prachtigste vrucht van Uw
  Tûba-boom der Genade, die U heeft afgevaardigd als genade
  voor alle werelden, en als middel voor ons om de
@@ -3797,13 +3797,13 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
 
 <p>
 O broeder die dit traktaat naar eer en geweten bestudeert. Zeg niet:
-<span class="text-italic">“Waarom kan ik dit ‘Tiende Woord’ niet meteen volledig begrijpen?”</span>
+<span class="text-italic">“Waarom kan ik dit <strong>‘Tiende Woord’</strong> niet meteen volledig begrijpen?”</span>
 En wees niet ontmoedigd als alles niet direct helemaal helder wordt. Want zelfs een filosofisch genie zoals
 Ibn Sina <span class="text-italic">(Avicenna)</span> zei:
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
- اَلْحَشْرُ لَيْسَ عَلٰى مَقَايِيسِ عَقْلِيَّةٍ
+ اَلْحَشْرُ لَيْسَ عَلٰى مَقَايٖيسَ عَقْلِيَّةٍ
 </p>
 
  </div>'
@@ -3813,10 +3813,7 @@ Ibn Sina <span class="text-italic">(Avicenna)</span> zei:
          'content' => '<div class="page" id="114"> <p class="text-end page-number">#114</p>
 
 <p class="text-italic">
- “De herzameling laat zich niet meten naar de maatstaf van het verstand.”
-</p>
-
-<p>Hij concludeerde:</p>
+ “De herzameling laat zich niet meten naar de maatstaf van het verstand.” <span style="font-style: normal">Hij concludeerde:</span></p>
 
 <p class="text-italic">
  “Wij geloven, maar voor het verstand is deze weg onbegaanbaar.”
@@ -3866,7 +3863,7 @@ overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging
 
 
 <p class="text-italic">
- Hoewel “Het Tiende Woord” hier eindigt, heeft de auteur in het oorspronkelijke traktaat bepaalde aanvullende
+ Hoewel <strong>“Het Tiende Woord”</strong> hier eindigt, heeft de auteur in het oorspronkelijke traktaat bepaalde aanvullende
  delen uit de Risale-i Nur als bijlagen opgenomen. Tot onze grote spijt is het ons in deze editie niet gelukt
  om deze bijlagen te vertalen. Moge ALLAH ons in staat stellen om deze in de eerstvolgende druk ook te vertalen
  en toe te voegen.
