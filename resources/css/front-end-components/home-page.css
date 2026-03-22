@@ -11,10 +11,7 @@
     position: relative;
     z-index: 0;
     background-color: #fbf0cb;
-    background-image: url("../../images/background_texture_new.webp")!important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
 }
 
 .white-section.intro-section::before {

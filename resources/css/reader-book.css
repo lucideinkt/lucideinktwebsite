@@ -893,6 +893,7 @@ body.dark-mode .reader-end .btn-terug:hover { background: #904020; }
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     transition: background .3s, border-color .3s;
     font-family: 'DelimaProRegular', serif;
+    padding: 10px 0;
 }
 body.dark-mode .reader-bottombar { background: rgba(28,18,9,0.97); border-top-color: rgba(232,168,124,0.15); }
 
