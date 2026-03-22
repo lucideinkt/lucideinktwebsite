@@ -388,7 +388,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <div class="page-footnote">
     <hr class="hr-footnote" />
     <p class="footnote-p">
-    <sup>4</sup> <span class="text-bold">Bijvoorbeeld</span>, wanneer het bevel: <span class="text-italic">“Presenteer geweer! Bevestig bajonet!”</span> tijdens een oorlogsoefening op een exercitieterrein wordt uitgevoerd,
+    <sup>4</sup> <span class="text-bold">Bijvoorbeeld</span>, wanneer het bevel: <span class="text-italic">“Presenteer geweer! Bevestig bajonet!”</span> tijdens een oorlogsoefening op een exercitieveld wordt uitgevoerd,
     dan neemt een geweldig leger dat in gelid staat de gedaante aan van een doornig eikenwoud.
     </p>
 
@@ -481,13 +481,13 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="footnote-p">
     <sup>5</sup> De betekenissen waarop gezinspeeld wordt in dit aanzicht, worden deels in <span class="text-bold">“De Zevende Waarheid”</span> verklaard.
     Hier willen wij er alleen op wijzen dat met de grote specifieke camera van de vorst het <span class="text-italic">“Bewaartableau”</span>
-    <span class="text-arabic delima-font" dir="rtl" lang="ar">لَوْحُ مَحْفُوظ</span> wordt bedoeld. In <span class="text-bold">“Het Zesentwintigste Woord”</span>
+    <span class="text-arabic delima-font" dir="rtl" lang="ar">لَوْحِ مَحْفُوظْ</span> wordt bedoeld. In <span class="text-bold">“Het Zesentwintigste Woord”</span>
     is de bestaanswerkelijkheid van het Bewaartableau als volgt bewezen:
     </p>
 
     <p class="footnote-p">
     Kleine identiteitsbewijzen duiden op het bestaan van een groot bevolkingsregister, kleine transactiebonnen wijzen op de
-    existentie van een grootboek, en voortvloeiende druppels onthullen de aanwezigheid van een grote waterbron. De geheugens van mensenkinderen, de vruchten van bomen en de zaadjes van vruchten <span class="text-italic">– die als minuscule identiteitsbewijzen gelden, de betekenissen van een mini-bewaartableau belichamen, en als fijne stippen ontrollen aan de Pen waarmee het
+    existentie van een grootboek, en voortvloeiende druppels onthullen de aanwezigheid van een grote waterbron. De geheugens van mensenkinderen, de vruchten van bomen en de zaadjes van vruchten <span class="text-italic">– die als minuscule identiteitsbewijzen gelden, de betekenissen van een mini-bewaartableau belichamen, en als fijne stippen ontvloeien aan de Pen waarmee het
     Grote Bewaartableau is geschreven –</span> onthullen, openbaren en
     bewijzen uiteraard ook het bestaan van een Subliem Geheugen, een Universeel Grootboek en een Ultiem Bewaartableau
     <span class="text-italic">– voor scherpe verstanden worden ze zelfs zichtbaar.</span>
@@ -622,7 +622,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     veranderende beelden en weergaven duiden op de periode
     vanaf de aanvang van de lente tot aan het einde van de
     zomer, waarin de Almachtige en Ontzaglijke Kunstenaar, de
-    Alwijze en Sublime Voortbrenger, allerlei soorten voorjaarswezens, zomercreaties en voedingsmiddelen voor dieren en
+    Alwijze en Sublieme Voortbrenger, allerlei soorten voorjaarswezens, zomercreaties en voedingsmiddelen voor dieren en
     mensen met perfecte orde verandert, met volmaakte Genade
     ververst, en achtereenvolgens afzendt.
     </p>
@@ -700,7 +700,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    Voorwaar, aanschouw! Merkwaardigheden zoals de verblijven, terreinen en tentoonstellingsruimtes die we
+    Voorwaar, aanschouw! Merkwaardigheden zoals de verblijven, terreinen en tentoonstellingsruimtes die wij
     eerder zagen, zijn overal aanwezig. Alleen op het gebied van kunst en gedaante verschillen ze van elkaar.
     Maar als je aandachtig observeert, dan zul je in al die instabiele verblijven, tijdelijke terreinen en vergankelij-
     </p>
@@ -744,11 +744,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    Wij kunnen niet ieder individu en elke uitrusting analyseren. Maar om een indruk te krijgen, gaan wij het <span class="text-bold">identiteitsbewijs</span> en het <span class="text-bold">handboek</span> van deze officier bekijken. Op dit identiteitsbewijs staan de <span class="text-bold">rang</span>, het <span class="text-bold">loon</span>, de taak, de wensen en de <span class="text-bold">gedragscode</span> van de officier vermeld.
+    Wij kunnen niet ieder individu en elke uitrusting analyseren. Maar om een indruk te krijgen, gaan wij het <span class="text-bold">identiteitsbewijs</span> en het <span class="text-bold">handboek</span> van deze officier bekijken. Op dit identiteitsbewijs staan de <span class="text-bold">rang</span>, het <span class="text-bold">loon</span>, de <strong>taak</strong>, de <strong>wensen</strong> en de <span class="text-bold">gedragscode</span> van de officier vermeld.
     </p>
 
     <p>
-    Kijk, deze rang kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <span class="text-italic">"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</span> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze taak niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukza-
+    Kijk, deze <strong>rang</strong> kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <span class="text-italic">"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</span> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze <strong>taak</strong> niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukza-
     </p>
     </div>'
      ],
@@ -780,7 +780,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="text-end page-number">#25</p>
 
     <p>
-    Je moet beslist niet denken dat de bewijzen voor de transitie van dit land beperkt zijn tot deze <span class="text-italic">"Twaalf Aanzichten"</span>. Er zijn in feite ontelbare indicaties en bewijzen die aantonen dat dit onbestendige en wisselvallige land getransformeerd zal worden tot een onvergankelijk en stabiel land. Bovendien zijn er talloze aanwijzingen en tekenen die aangeven dat de inwoners hier uit deze tijdelijke gastenverblijven zullen worden gehaald en naar het eeuwige centrum van het sultanaat zullen worden overgeplaatst. Tot besluit zal ik je nog één bewijs laten zien dat sterker is dan de vorige <span class="text-italic">"Twaalf Aanzichten"</span>.
+    Je moet beslist niet denken dat de bewijzen voor de transitie van dit land beperkt zijn tot deze <span class="text-bold">"Twaalf Aanzichten"</span>. Er zijn in feite ontelbare indicaties en bewijzen die aantonen dat dit onbestendige en wisselvallige land getransformeerd zal worden tot een onvergankelijk en stabiel land. Bovendien zijn er talloze aanwijzingen en tekenen die aangeven dat de inwoners hier uit deze tijdelijke gastenverblijven zullen worden gehaald en naar het eeuwige centrum van het sultanaat zullen worden overgeplaatst. Tot besluit zal ik je nog één bewijs laten zien dat sterker is dan de vorige <span class="text-bold">"Twaalf Aanzichten"</span>.
     </p>
 
     <p>
@@ -822,12 +822,12 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    Voorwaar, dit symbolische verhaal dat zinspeelt op de herzameling en het hiernamaals is hier afgerond. Bij Gods Gratie gaan wij nu over naar de verheven waarheden. In aansluiting op de voorgaande "Twaalf Aanzichten" gaan wij "Twaalf Samenhangende Waarheden" uiteenzetten, beginnend met een "Voorwoord".
+    Voorwaar, dit symbolische verhaal dat zinspeelt op de herzameling en het hiernamaals is hier afgerond. Bij Gods Gratie gaan wij nu over naar de verheven waarheden. In aansluiting op de voorgaande <strong>"Twaalf Aanzichten"</strong> gaan wij <strong>"Twaalf Samenhangende Waarheden"</strong> uiteenzetten, beginnend met een <strong>"Voorwoord"</strong>.
     </p>
 
     <div class="page-footnote">
     <hr class="hr-footnote" />
-    <p class="footnote-p"><sup>8</sup> "Alle lof zij ALLAH."</p>
+    <p class="footnote-p"><sup>8</sup> <span class="text-bold">"Alle lof zij ALLAH."</span></p>
     </div>
     </div>'
      ],
@@ -957,7 +957,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </div>
 
     <p>
-    In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <span class="text-italic">"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</span> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>.
+    In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <span class="text-italic">"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</span> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>.
     </p>
 
     <p>
@@ -978,7 +978,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <div class="page-footnote">
     <hr class="hr-footnote" />
-    <p class="footnote-p"><sup>1</sup> "En er is niets, of het verheerlijkt Hem met lof."</p>
+    <p class="footnote-p"><sup>1</sup> <strong>"En er is niets, of het verheerlijkt Hem met lof."</strong></p>
     </div>
     </div>'
      ],
@@ -1042,7 +1042,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p>
     Zo zijn er nog vele profetische taken die elk op zichzelf absoluut aantonen dat Goddelijkheid niet zonder
     profeetschap kan… In het licht van de voornoemde eigenschappen en taken rest nu de vraag of er ooit iemand
-    is verschenen die bekwamer en rijker was dan Mohammed de Arabier <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>? Heeft de tijd ooit iemand
+    is verschenen die bekwamer en rijker was dan Mohammed de Arabier <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>? Heeft de tijd ooit iemand
     getoond die de rang van profeetschap en de taak van verkondiging waardiger was dan hij? Nooit
     en te nimmer! Hij is de meester van alle profeten, de imam van alle gezanten, de mentor van alle gezuiverden,
     de nabijste onder Gods nabije dienaren, de volmaaktste van alle creaties en de sultan van alle geestelijke
@@ -1060,7 +1060,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     unaniem zijn, zoals de maansplijting, het water dat uit zijn vingers vloeide en nog circa duizend
     verwante mirakelen, is de Glorierijke Qur\'an als oceaan van waarheden met veertig miraculeuze aspecten een
     ultiem mirakel dat voldoende is om zijn profeetschap zonneklaar aan te tonen. Omdat wij in andere traktaten,
-    en met name in <span class="text-italic">"Het Vijfentwintigste Woord"</span>, bijna veertig miraculeuze aspecten van de Qur\'an hebben
+    en met name in <span class="text-bold">"Het Vijfentwintigste Woord"</span>, bijna veertig miraculeuze aspecten van de Qur\'an hebben
     behandeld, zullen wij het hierbij laten.
     </p>
 
@@ -1122,7 +1122,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <p>
     Evenzo is het geenszins mogelijk dat de Eeuwige Schepper deze tijdelijke wereld wél creëert, maar een
-    eeuwige wereld níet formeert. Het is onmogelijk dat de Tijdeloze Kunstenaar dit onvergelijkelijke en vergankelijke
+    eeuwige wereld níét formeert. Het is onmogelijk dat de Tijdeloze Kunstenaar dit onvergelijkelijke en vergankelijke
     universum schept, maar geen ander, stabiel en permanent universum tot stand brengt. Voorzeker, het
     is onmogelijk dat de Alwijze, Almachtige en Genadige Voortbrenger deze wereld als een tentoonstellingsruimte,
     als een oefenterrein en als een akker creëert, maar het oord van het hiernamaals waarop alle doelen van
@@ -1399,7 +1399,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
 <p>
  De wijze waarop alles volgens nauwkeurige afwegingen en specifieke afmetingen een bestaan wordt gegeven,
- met een gedaante wordt bekleed en in de meest geschikte omgeving wordt gedepositioneerd, toont aan dat
+ met een gedaante wordt bekleed en in de meest geschikte omgeving wordt gepositioneerd, toont aan dat
  ontwikkelingen volgens een eindeloze Rechtvaardigheid en Balans tot stand komen. En de manier waarop het
  inherente recht van elk wezen in evenredigheid met zijn potentie wordt toegekend, wat inhoudt dat alle benodigdheden
  voor zijn bestaan en alle uitrustingen voor zijn overleving op de meest gepaste wijze worden verstrekt,
