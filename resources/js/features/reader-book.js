@@ -9,25 +9,38 @@
         return text.endsWith('→') || text.endsWith('\u2192');
     }
 
-    // Remove a trailing → (and surrounding whitespace) from an HTML string
-    function stripTrailingArrow(html) {
-        // Remove the last → char or &rarr; entity, plus optional whitespace around it
-        return html
-            .replace(/(&rarr;|\u2192)\s*$/, '')
-            .replace(/\s+$/, '');
-    }
-
     // Collect continuation paragraphs (footnote-p without <sup>) from the start of
     // a page's .page-footnote, until we hit one that DOES have a <sup>.
+    // Returns an object: { html: string, hasArrow: boolean }
     function getContinuationHtml(nextPage) {
         const fps = nextPage.querySelectorAll('.page-footnote .footnote-p');
         let html = '';
+        let hasArrow = false;
+
         for (const fp of fps) {
             if (fp.querySelector('sup')) break; // reached the next numbered footnote
-            const fpHtml = fp.innerHTML.trim();
-            if (fpHtml) html += '<p class="fn-popover__para">' + fpHtml + '</p>';
+
+            // Clone the entire element to preserve classes like text-bold
+            const clone = fp.cloneNode(true);
+            let fpHtml = clone.innerHTML.trim();
+
+            // Check if this paragraph ends with arrow before stripping
+            if (endsWithArrow(fpHtml)) {
+                hasArrow = true;
+            }
+
+            // Remove arrow characters from the clone
+            clone.innerHTML = clone.innerHTML.replace(/\s*→\s*$/g, '').replace(/\s*&rarr;\s*$/g, '');
+
+            // Add the popover class to preserve styling
+            clone.classList.add('fn-popover__para');
+
+            if (clone.innerHTML.trim()) {
+                html += clone.outerHTML;
+            }
         }
-        return html;
+
+        return { html, hasArrow };
     }
 
     // ── Wire up footnote popovers for every .page ──────────────────────────
@@ -49,26 +62,46 @@
                     const clone = fp.cloneNode(true);
                     const firstSup = clone.querySelector('sup');
                     if (firstSup) firstSup.remove();
+
+                    // Get the inner HTML to check for arrows
                     let html = clone.innerHTML.trim();
-                    // Remove arrow characters from popover (but not from original footnote)
-                    html = html.replace(/\s*→\s*$/g, '').replace(/\s*&rarr;\s*$/g, '');
-                    if (currentNum && html) footnoteMap[currentNum] = html;
+
+                    // Check for arrow BEFORE removing it
+                    if (endsWithArrow(html)) {
+                        arrowNums.add(currentNum);
+                    }
+
+                    // Remove arrow characters from the clone
+                    clone.innerHTML = clone.innerHTML.replace(/\s*→\s*$/g, '').replace(/\s*&rarr;\s*$/g, '');
+
+                    // Add the popover class to preserve styling
+                    clone.classList.add('fn-popover__para');
+
+                    if (currentNum && clone.innerHTML.trim()) {
+                        footnoteMap[currentNum] = clone.outerHTML;
+                    }
                 } else if (currentNum) {
                     // Continuation paragraph on the same page
-                    let html = fp.innerHTML.trim();
-                    // Remove arrow characters from popover
-                    html = html.replace(/\s*→\s*$/g, '').replace(/\s*&rarr;\s*$/g, '');
-                    if (html) footnoteMap[currentNum] += '<p class="fn-popover__para">' + html + '</p>';
+                    const clone = fp.cloneNode(true);
+                    let html = clone.innerHTML.trim();
+
+                    // Check for arrow BEFORE removing it
+                    if (endsWithArrow(html)) {
+                        arrowNums.add(currentNum);
+                    }
+
+                    // Remove arrow characters from the clone
+                    clone.innerHTML = clone.innerHTML.replace(/\s*→\s*$/g, '').replace(/\s*&rarr;\s*$/g, '');
+
+                    // Add the popover class to preserve styling
+                    clone.classList.add('fn-popover__para');
+
+                    if (clone.innerHTML.trim()) {
+                        footnoteMap[currentNum] += clone.outerHTML;
+                    }
                 }
             });
 
-            // Detect which footnotes end with → (continues on next page)
-            Object.keys(footnoteMap).forEach(num => {
-                if (endsWithArrow(footnoteMap[num])) {
-                    footnoteMap[num] = stripTrailingArrow(footnoteMap[num]);
-                    arrowNums.add(num);
-                }
-            });
 
             if (!Object.keys(footnoteMap).length) return;
 
@@ -106,31 +139,71 @@
     // sibling and append its leading (unnumbered) footnote-p paragraphs.
     function resolveContinuations() {
         readerEl.querySelectorAll('.fn-ref[data-needs-continuation]').forEach(btn => {
-            // Find the .page that contains this button
-            const currentPage = btn.closest('.page');
-            if (!currentPage) return;
+            // Get the page we need to look at for continuation
+            // If we've already fetched from some pages, use the last one
+            const lastFetchedPageNum = btn.getAttribute('data-continuation-last-page');
+            let searchStartPage;
+
+            if (lastFetchedPageNum) {
+                // Find the page with this number
+                searchStartPage = readerEl.querySelector(`.page#${lastFetchedPageNum}`);
+            } else {
+                // First time - start from the page containing the button
+                searchStartPage = btn.closest('.page');
+            }
+
+            if (!searchStartPage) return;
 
             // Find the next .page sibling in the DOM
-            let nextPage = currentPage.nextElementSibling;
+            let nextPage = searchStartPage.nextElementSibling;
             while (nextPage && !nextPage.classList.contains('page')) {
                 nextPage = nextPage.nextElementSibling;
             }
             if (!nextPage) return; // next page not loaded yet — will retry on next MutationObserver tick
 
-            const continuationHtml = getContinuationHtml(nextPage);
-            if (!continuationHtml) {
+            const continuation = getContinuationHtml(nextPage);
+            if (!continuation.html) {
                 // No continuation found on next page — remove the marker so we stop retrying
                 btn.removeAttribute('data-needs-continuation');
+                btn.removeAttribute('data-continuation-last-page');
                 return;
             }
 
-            // Append continuation and remove the marker
-            btn.setAttribute('data-html', btn.getAttribute('data-html') + continuationHtml);
-            btn.removeAttribute('data-needs-continuation');
+            // Append continuation HTML
+            btn.setAttribute('data-html', btn.getAttribute('data-html') + continuation.html);
+
+            // Track which page we just fetched from
+            const nextPageId = nextPage.getAttribute('id');
+            btn.setAttribute('data-continuation-last-page', nextPageId);
+
+            // Only remove the marker if this is the final continuation (no arrow in continuation)
+            if (!continuation.hasArrow) {
+                btn.removeAttribute('data-needs-continuation');
+                btn.removeAttribute('data-continuation-last-page');
+            }
+            // If continuation still has an arrow, keep the marker so we'll check the next page too
         });
     }
 
     wireFootnotes();
+
+    // ── Watch for dynamically loaded pages ────────────────────────────────
+    // When new pages are added to the DOM (lazy loading), wire their footnotes
+    // and try to resolve any pending continuations
+    const observer = new MutationObserver(mutations => {
+        let hasNewPages = false;
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                if (node.nodeType === Node.ELEMENT_NODE && node.classList?.contains('page')) {
+                    hasNewPages = true;
+                }
+            });
+        });
+        if (hasNewPages) {
+            wireFootnotes();
+        }
+    });
+    observer.observe(readerEl, { childList: true, subtree: true });
 
     // ── Popover ────────────────────────────────────────────────────────────
     let popover = null;
