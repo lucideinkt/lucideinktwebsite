@@ -197,7 +197,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  <p>
  Hetzij de armste, hetzij de zwakste, iedereen wordt voortreffelijk in onderhoud voorzien.
  Eenzame zieken worden uitstekend verzorgd. Bovendien is dit land rijk aan kostelijke gerechten,
- kostbare dienschalen, juwelen emblemen, sierlijke gewaden en majestelijke festijnen.
+ kostbare dienschalen, juwelen emblemen, sierlijke gewaden en majesteitelijke festijnen.
  Kijk om je heen! Afgezien van dwazen als jij komt iedereen zijn plicht zorgvuldig na.
  Niemand gaat ook maar een greintje zijn boekje te buiten. In een sfeer van vrees en ontzag
  verricht zelfs het grootste individu nederig zijn dienst met optimale onderdanigheid.
@@ -548,7 +548,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  </p>
 
  <p class="text-center text-bold text-center-constrained">
- Al bij al zal een Ultieme Berechting plaatsvinden, en een Sublime Gelukzaligheid geschonken worden.
+ Al bij al zal een Ultieme Berechting plaatsvinden, en een Sublieme Gelukzaligheid geschonken worden.
  </p>
 
  <p class="text-center text-bold small-title" style="margin-top: 14px;">HET NEGENDE AANZICHT</p>
@@ -636,7 +636,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
  <p>
  ge ontwikkelingen gaan optreden. Laten wij op deze prachtige lentedag dat mooie, groene en bloemige
- woestijnland bereiken.
+ woestijnland bereizen.
  </p>
 
  <p>
