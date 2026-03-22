@@ -119,8 +119,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  “Geen dorp is zonder beheerder. Geen speld ontstaat zonder vervaardiger; ze moet een maker hebben. Geen letter kan tot
  stand komen zonder schrijver, dit weet je! Hoe zou dit eindeloos geordende land dan zonder regeerder kunnen zijn? En kijk
  naar al deze weelde! Elk uur lijkt het alsof een trein<sup>3</sup>
- uit het verborgene ladingen waardevolle en kunstrijke goederen komt aanvoeren, waarna ze weer verdwijnen. Hoe zouden al deze
- producten nou bezitterloos kunnen zijn? En hoe zit het met alle alom zichtbare mededelingsbrieven en toelichtende geschriften,
+ uit het verborgene ladingen waardevolle en kunstrijke goederen komt aanvoeren, waarna ze weer verdwijnen... Hoe zouden al deze
+ producten nou bezitterloos kunnen zijn? En hoe zit het met alle alom zichtbare mededelingsbrieven en toelichtende schrifturen,
  alle monogrammen, zegels en signaturen op alle artikelen, en alle vlaggen die in alle uithoeken wapperen? Hoe kunnen die allemaal
  zonder eigenaar zijn? Jij hebt je blijkbaar verdiept in bepaalde westerse studies, maar deze Islamitische geschriften kun je niet
  lezen. Tevens neem je niet de moeite om aan kenners te vragen wat ze inhouden. Kom, dan zal ik jou het vorstelijke decreet voorlezen.”
@@ -164,7 +164,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  <p>Daarop zei zijn vertrouwde vriend:</p>
 
  <p class="text-italic">
- “Aangezien jij zo koppig blijft volharden, kom mee... dan zal ik jou binnen alle eindeloze bewijzen met behulp van ‘Twaalf Aanzichten’ aantonen dat een Ultieme
+ “Aangezien jij zo koppig blijft volharden, kom mee... dan zal ik jou binnen alle eindeloze bewijzen met behulp van <strong>‘Twaalf Aanzichten’</strong> aantonen dat een Ultieme
  Berechting zal plaatsvinden, dat een oord van beloning en begiftiging bestaat, dat een oord van bestraffing en gevangenschap evenzeer bestaat, en dat dit land,
  dat dagelijks gedeeltelijk wordt bevolkt en ontvolkt, op een dag volledig zal worden ontruimd en verwoest.”
  </p>
@@ -305,7 +305,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
  <p>
  Aanschouw! Blijkens de activiteiten die zich hier afspelen, beschikt die onvergelijkelijke majesteit over
- een geweldig mededogen. Want hij komt snel elk slachtoffer te hulp. Hij reageert op elke vraag en elk verzoek.
+ een geweldig mededogen. Want hij snelt elk slachtoffer te hulp. Hij reageert op elke vraag en elk verzoek.
  Kijk! Zodra hij ook maar de geringste behoefte bij zijn nietigste onderdaan ontwaart, komt hij daaraan
  meedogend tegemoet. Als een schaap van een herder zijn poot bezeert, stuurt hij meteen een zalf of een
  veearts.
@@ -321,7 +321,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  bepaalde wensen die hij aan zijn meedogende vorst voordraagt. Heel het volk sluit zich bij hem aan en zegt:
  </p>
 
- <p class="text-italic text-bold">“Wij wensen hetzelfde!”</p>
+ <p class="text-italic">“Wij wensen hetzelfde!”</p>
 
  <p>Ze beamen en ondersteunen hem. Luister; deze geliefde van de vorst zegt:</p>
 
@@ -3501,8 +3501,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  'content' => '<div class="page" id="100">
  <p class="text-end page-number">#100</p>
 
+ <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ فَلِلّٰهِ الْحُجَّةُ الْبَالِغَةُ ۞
+</p>
+
  <p class="text-center text-italic">“Aan ALLAH behoort het beslissende bewijs.”</p>
  <p class="text-center text-italic"><em>– Qur’an, 6:149</em></p>
+
+ <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ
+ كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا اِنَّ ذٰلِكَ
+ لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ ۞
+</p>
 
  <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “Aanschouw de sporen van ALLAH’s Genade, hoe Hij de aarde
@@ -3512,6 +3522,13 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  en Hij bezit Macht over alles.”
  </p>
  <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 30:50</em></p>
+
+ <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ قَالَ مَنْ يُحْيِ الْعِظَامَ
+ وَهِىَ رَمِيمٌ ۞ قُلْ يُحْيِيهَا الَّذِى
+ اَنْشَاَهَا اَوَّلَ مَرَّةٍ
+ وَهُوَ بِكُلِّ خَلْقٍ عَلِيمٌ ۞
+</p>
 
  <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “(De ongelovige) vraagt: ‘Wie zal
@@ -3530,32 +3547,22 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  'page_number' => 101,
  'content' => '<div class="page" id="101"> <p class="text-end page-number">#101</p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
- فَلِلّٰهِ الْحُجَّةُ الْبَالِغَةُ ۞
-</p>
-
- <div class="text-center text-red">✧</div>
-
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
- فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ
- كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا اِنَّ ذٰلِكَ
- لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ ۞
-</p>
-
- <div class="text-center text-red">✧</div>
-
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
- قَالَ مَنْ يُحْيِ الْعِظَامَ
- وَهِىَ رَمِيمٌ ۞ قُلْ يُحْيِيهَا الَّذِى
- اَنْشَاَهَا اَوَّلَ مَرَّةٍ
- وَهُوَ بِكُلِّ خَلْقٍ عَلِيمٌ ۞
-</p>
-
  </div>'
  ],
  [
  'page_number' => 102,
  'content' => '<div class="page" id="102"> <p class="text-end page-number">#102</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
+ يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمْ
+ اِنَّ زَلْزَلَةَ السَّاعَةِ شَىْءٌ عَظِيمٌ ۞
+ يَوْمَ تَرَوْنَهَا تَذْهَلُ
+ كُلُّ مُرْضِعَةٍ عَمَّا أَرْضَعَتْ
+ وَتَضَعُ كُلُّ ذَاتِ حَمْلٍ حَمْلَهَا
+ وَتَرَى النَّاسَ سُكَارٰى
+ وَمَا هُمْ بِسُكَارٰى
+ وَلٰكِنَّ عَذَابَ اللّٰهِ شَدِيدٌ ۞
+</p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 600px;">
  “O mensen,
@@ -3583,22 +3590,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  'page_number' => 103,
  'content' => '<div class="page" id="103"> <p class="text-end page-number">#103</p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
- يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمْ
- اِنَّ زَلْزَلَةَ السَّاعَةِ شَىْءٌ عَظِيمٌ ۞
- يَوْمَ تَرَوْنَهَا تَذْهَلُ
- كُلُّ مُرْضِعَةٍ عَمَّا أَرْضَعَتْ
- وَتَضَعُ كُلُّ ذَاتِ حَمْلٍ حَمْلَهَا
- وَتَرَى النَّاسَ سُكَارٰى
- وَمَا هُمْ بِسُكَارٰى
- وَلٰكِنَّ عَذَابَ اللّٰهِ شَدِيدٌ ۞
-</p>
-
  </div>'
  ],
  [
  'page_number' => 104,
  'content' => '<div class="page" id="104"> <p class="text-end page-number">#104</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ اَللّٰهُ لَا إِلٰهَ إِلَّا هُوَ
+ لَيَجْمَعَنَّكُمْ إِلٰى يَوْمِ الْقِيَامَةِ
+ لَا رَيْبَ فِيهِ
+ وَمَنْ أَصْدَقُ مِنَ اللّٰهِ حَدِيثًا ۞
+</p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “ALLAH,
@@ -3611,6 +3614,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  waarachtiger dan ALLAH?”
 </p>
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 4:87</em></p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ إِنَّ الْأَبْرَارَ لَفِى نَعِيمٍ
+ وَإِنَّ الْفُجَّارَ لَفِى جَحِيمٍ
+</p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “Welzeker,
@@ -3627,24 +3635,22 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  'page_number' => 105,
  'content' => '<div class="page" id="105"> <p class="text-end page-number">#105</p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
- اَللّٰهُ لَا إِلٰهَ إِلَّا هُوَ
- لَيَجْمَعَنَّكُمْ إِلٰى يَوْمِ الْقِيَامَةِ
- لَا رَيْبَ فِيهِ
- وَمَنْ أَصْدَقُ مِنَ اللّٰهِ حَدِيثًا ۞
-</p>
-
-<div class="text-center text-red">✧</div>
-
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
- إِنَّ الْأَبْرَارَ لَفِى نَعِيمٍ
- وَإِنَّ الْفُجَّارَ لَفِى جَحِيمٍ
-</p>
  </div>'
  ],
  [
  'page_number' => 106,
  'content' => '<div class="page" id="106"> <p class="text-end page-number">#106</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+ اِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا ۞
+ وَأَخْرَجَتِ الْأَرْضُ أَثْقَالَهَا ۞
+ وَقَالَ الْإِنْسَانُ مَالَهَا ۞
+ يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا ۞
+ بِأَنَّ رَبَّكَ أَوْحٰى لَهَا ۞
+ يَوْمَئِذٍ يَصْدُرُ النَّاسُ أَشْتَاتًا لِيُرَوْا أَعْمَالَهُمْ ۞
+ فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ ۞
+ وَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ ۞
+</p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “Wanneer de aarde
@@ -3674,21 +3680,23 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  'page_number' => 107,
  'content' => '<div class="page" id="107"> <p class="text-end page-number">#107</p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
- اِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا ۞
- وَأَخْرَجَتِ الْأَرْضُ أَثْقَالَهَا ۞
- وَقَالَ الْإِنْسَانُ مَالَهَا ۞
- يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا ۞
- بِأَنَّ رَبَّكَ أَوْحٰى لَهَا ۞
- يَوْمَئِذٍ يَصْدُرُ النَّاسُ أَشْتَاتًا لِيُرَوْا أَعْمَالَهُمْ ۞
- فَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ ۞
- وَمَنْ يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ ۞
-</p>
  </div>'
  ],
  [
  'page_number' => 108,
  'content' => '<div class="page" id="108"> <p class="text-end page-number">#108</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
+ اَلْقَارِعَةُ ۞ مَا الْقَارِعَةُ
+ وَمَٓا أَدْرٰيكَ مَا الْقَارِعَةُ ۞ يَوْمَ يَكُونُ
+ النَّاسُ كَالْفَرَاشِ الْمَبْثُوثِ ۞
+ وَتَكُونُ الْجِبَالُ كَالْعِهْنِ الْمَنْفُوشِ ۞
+ فَأَمَّا مَنْ ثَقُلَتْ مَوَازِينُهُ ۞
+ فَهُوَ فِى عِيشَةٍ رَاضِيَةٍ ۞
+ وَأَمَّا مَنْ خَفَّتْ مَوَازِينُهُ ۞
+ فَأُمُّهُ هَاوِيَةٌ ۞ وَمَٓا أَدْرٰيكَ مَا هِيَهْ ۞
+ نَارٌ حَامِيَةٌ ۞
+</p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “El’Qâri’ah!
@@ -3715,6 +3723,12 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  'page_number' => 109,
  'content' => '<div class="page" id="109"> <p class="text-end page-number">#109</p>
 
+ </div>'
+ ],
+ [
+ 'page_number' => 110,
+ 'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
+
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
  اَلْقَارِعَةُ ۞ مَا الْقَارِعَةُ
  وَمَٓا أَدْرٰيكَ مَا الْقَارِعَةُ ۞ يَوْمَ يَكُونُ
@@ -3726,12 +3740,6 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  فَأُمُّهُ هَاوِيَةٌ ۞ وَمَٓا أَدْرٰيكَ مَا هِيَهْ ۞
  نَارٌ حَامِيَةٌ ۞
 </p>
-
- </div>'
- ],
- [
- 'page_number' => 110,
- 'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “Wat verborgen is
@@ -3753,14 +3761,6 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  'page_number' => 111,
  'content' => '<div class="page" id="111"> <p class="text-end page-number">#111</p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
- وَلِلّٰهِ
- غَيْبُ السَّمٰوَاتِ وَالْأَرْضِ
- وَمَٓا أَمْرُ السَّاعَةِ
- إِلَّا كَلَمْحِ الْبَصَرِ
- أَوْ هُوَ أَقْرَبُ ۞
- إِنَّ اللّٰهَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ
-</p>
  </div>'
  ],
 
