@@ -110,7 +110,7 @@
         <div class="gradient-border"></div>
 
 
-        <section class="colored-section">
+        <section class="colored-section books-section">
             <div class="container new-translation">
                 <div class="title-wrapper">
                     <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="">

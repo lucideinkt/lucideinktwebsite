@@ -172,7 +172,7 @@
     z-index: 30;
     overflow: visible;
     /*background-color:var(--surface-2);*/
-    background-image: url("../../images/001_leather_background.webp");
+    background-image: url("../../images/new_warm_leather.webp");
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -456,7 +456,7 @@ li.nav-item.dropdown {
     justify-content: center;
     align-items: center;
     z-index: 60;
-    background-image: url("../../images/001_leather_background.webp");
+    background-image: url("../../images/new_warm_leather.webp");
     background-size: cover;
     background-position: center;
     border: 3px solid #f5dfac;

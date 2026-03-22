@@ -38,11 +38,25 @@
     color: #fff6e0;
 }
 
-.colored-section::before {
+.colored-section.books-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/001_leather_background.webp");
+    /*background-image: url("../../images/001_leather_background.webp");*/
+    background-image: url("../../images/leather_ustadh.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.colored-section.quotes-section::before,
+.colored-section.newsletter-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/new_warm_leather.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -363,7 +377,7 @@ h2 {
 
 .new-translation .rose-decoration {
     position: absolute;
-    right: -10%;
+    left: -10%;
     top: 50%;
     transform: translateY(-50%);
     width: 200px;
@@ -877,6 +891,19 @@ h2 {
         top: 50%;
         max-width: 900px;
     }
+
+    .colored-section.books-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /*background-image: url("../../images/001_leather_background.webp");*/
+        background-image: url("../../images/leather_ustadh.webp");
+        background-size: cover;
+        background-position: 80% center;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: -1;
+    }
 }
 
 /* Mobile: Stack vertically for screens 992px and smaller */
@@ -949,6 +976,24 @@ h2 {
         display: block;
         margin-top: 30px;
         margin-bottom: 20px;
+    }
+
+    .colored-section.books-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /*background-image: url("../../images/001_leather_background.webp");*/
+        background-image: url("../../images/leather_ustadh.webp");
+        background-size: cover;
+        background-position: 80% center;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .new-translation .rose-decoration {
+        width: 150px;
+        left: 0%;
     }
 }
 
@@ -1056,7 +1101,7 @@ h2 {
 
     .new-translation .rose-decoration {
         width: 150px;
-        right: -5%;
+        left: -5%;
     }
 
     .new-translation .rose-patels {
@@ -1112,6 +1157,11 @@ h2 {
         font-size: 14px;
     }
 
+    .new-translation .rose-decoration {
+        width: 150px;
+        left: -5%;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1130,8 +1180,8 @@ h2 {
     }
 
     .new-translation .rose-decoration {
-        width: 100px;
-        right: -3%;
+        width: 150px;
+        left: -5%;
     }
 
     .new-translation .rose-patels {
@@ -1139,6 +1189,19 @@ h2 {
         opacity: 1;
         left: 50%;
         top: 50%;
+    }
+
+    .colored-section.books-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /*background-image: url("../../images/001_leather_background.webp");*/
+        background-image: url("../../images/leather_ustadh.webp");
+        background-size: cover;
+        background-position: 80% center;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: -1;
     }
 }
 
