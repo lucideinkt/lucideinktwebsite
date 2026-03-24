@@ -207,7 +207,7 @@
 
         <div class="gradient-border"></div>
 
-        <section class="white-section risale-section">
+        <section class="white-section risale-section bg-new">
             <div class="text-container risale-grid">
                 <div class="risale-content">
                     <h2 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h2>
