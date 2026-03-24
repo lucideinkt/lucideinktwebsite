@@ -70,6 +70,7 @@
     </style>
 </head>
 <body>
+<div class="online-reader-html">
 
     {{-- Topbalk --}}
     <header class="reader-topbar" role="banner">
@@ -679,6 +680,7 @@
         }
     })();
     </script>
+</div>
 </body>
 </html>
 

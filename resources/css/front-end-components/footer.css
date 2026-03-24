@@ -146,6 +146,10 @@
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
+    background-image: url("../../images/background_texture_new.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .footer-bottom p {

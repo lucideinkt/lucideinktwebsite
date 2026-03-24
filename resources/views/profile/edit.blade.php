@@ -1,5 +1,6 @@
 @if(auth()->user()->role === 'user')
   <x-layout>
+      <div class="page-normal-background">
     <main class="container page user-dashboard">
         <x-breadcrumbs :items="[
             ['label' => 'Home', 'url' => route('home')],
@@ -31,6 +32,7 @@
         @endif
 
         <x-user-dashboard-layout>
+
             <div class="profile-card">
                 <form action="{{ route('updateProfile') }}" method="POST" class="profile-form">
                     @csrf
@@ -98,6 +100,7 @@
     </main>
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+      <div class="page-normal-background">
   </x-layout>
 @else
   <x-dashboard-layout>

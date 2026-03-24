@@ -1,4 +1,5 @@
 <x-layout>
+    <div class="page-normal-background">
     @push('head')
         {!! seo($product) !!}
     @endpush
@@ -19,5 +20,6 @@
     </main>
         <div class="gradient-border"></div>
         <x-footer></x-footer>
+        </div>
 </x-layout>
 

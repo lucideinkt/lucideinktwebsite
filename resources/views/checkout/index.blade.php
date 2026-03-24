@@ -1,4 +1,5 @@
 <x-layout>
+    <div class="page-normal-background">
     <main class="container page checkout">
         <x-breadcrumbs :items="[
             ['label' => 'Home', 'url' => route('home')],
@@ -424,5 +425,5 @@
             }
         });
     </script>
-
+</div>
 </x-layout>

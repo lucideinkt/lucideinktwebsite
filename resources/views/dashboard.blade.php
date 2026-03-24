@@ -1,5 +1,6 @@
 @if(auth()->user()->role === 'user')
     <x-layout>
+        <div class="page-normal-background">
         <main class="container page user-dashboard">
             <x-breadcrumbs :items="[
                 ['label' => 'Home', 'url' => route('home')],
@@ -35,6 +36,7 @@
         </main>
         <div class="gradient-border"></div>
         <x-footer></x-footer>
+        </div>
     </x-layout>
 @else
     <x-dashboard-layout>

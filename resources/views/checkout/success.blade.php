@@ -1,4 +1,5 @@
 <x-layout>
+    <div class="page-normal-background">
     <main class="container page checkout success">
         @if(isset($error) && $error)
             <div class="checkout-message error">
@@ -259,4 +260,5 @@
 
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+    </div>
 </x-layout>

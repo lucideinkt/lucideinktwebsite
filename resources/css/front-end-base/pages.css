@@ -1,6 +1,25 @@
 /* =========================================================
    Front-End pages
    ========================================================= */
+.page-normal-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../images/background_texture_new.webp");
+}
+
+.online-reader-html {
+    background-color: #ffe699;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.dark-mode .online-reader-html {
+    background-color: transparent;
+    background-image: none;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
 .container {
     width: 100%;
     max-width: 1500px;

@@ -1,4 +1,5 @@
 <x-layout>
+    <div class="page-normal-background">
     <main class="container page cart-page">
         <x-breadcrumbs :items="[
             ['label' => 'Home', 'url' => route('home')],
@@ -14,4 +15,5 @@
 
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+    </div>
 </x-layout>

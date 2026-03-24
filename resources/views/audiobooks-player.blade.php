@@ -1,4 +1,5 @@
 <x-layout :seo-data="$SEOData">
+    <div class="page-normal-background">
     <main class="container page audiobooks-player">
         <x-breadcrumbs :items="[
           ['label' => 'Home', 'url' => route('home')],
@@ -94,8 +95,8 @@
             </div>
         </div>
     </main>
-
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+    </div>
 </x-layout>
 

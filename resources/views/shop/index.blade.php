@@ -1,4 +1,5 @@
 <x-layout :seo-data="$SEOData">
+    <div class="page-normal-background">
     <main class="container page shop">
         {{-- <h2>Winkel</h2> --}}
         @if (session('success'))
@@ -39,4 +40,5 @@
     </main>
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+    </div>
 </x-layout>

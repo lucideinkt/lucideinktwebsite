@@ -1,4 +1,5 @@
 <x-layout>
+    <div class="page-normal-background">
     <main class="container page">
         <div class="info-page__text-box">
 <h1 class="title">Verzending & Levering</h1>
@@ -19,5 +20,6 @@
     </main>
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+    </div>
 </x-layout>
 

@@ -1,4 +1,5 @@
 <x-layout :seo-data="$SEOData">
+    <div class="page-normal-background">
     @push('head')
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <style>
@@ -527,4 +528,5 @@
 
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+    </div>
 </x-layout>

@@ -1,4 +1,5 @@
 <x-layout :seo-data="$SEOData">
+    <div class="page-normal-background">
     <main class="container page">
         <div class="said-nursi-page__text-box">
             <h1 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h1>
@@ -53,4 +54,5 @@
     </main>
     <div class="gradient-border"></div>
     <x-footer></x-footer>
+    </div>
 </x-layout>
