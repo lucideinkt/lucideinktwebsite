@@ -2,16 +2,21 @@
    Front-End pages
    ========================================================= */
 .page-normal-background {
-    background-size: cover;
+    background-size: 25%;
     background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("../../images/background_texture_new.webp");
+    background-repeat: repeat;
+    background-image: url("../../images/seamless_latest.webp");
 }
 
 .online-reader-html {
-    background-color: #ffedad;
-    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+    background-color: rgba(255, 237, 158, 0.6);
+    background-image: url("https://www.transparenttextures.com/patterns/squairy.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    /*!* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! *!*/
+    /*background-size: 25%;*/
+    /*background-position: center;*/
+    /*background-repeat: repeat;*/
+    /*background-image: url("../../images/seamless_latest.webp");*/
 }
 
 .dark-mode .online-reader-html {

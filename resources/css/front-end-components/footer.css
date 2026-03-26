@@ -3,6 +3,10 @@
    ========================================================= */
 .footer-section {
     padding: 60px 15px 30px;
+    background-size: 25%;
+    background-position: center;
+    background-repeat: repeat;
+    background-image: url("../../images/seamless_latest.webp");
 }
 
 .footer-container {
@@ -146,10 +150,10 @@
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    background-image: url("../../images/background_texture_new.webp");
-    background-size: cover;
+    background-size: 25%;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-image: url("../../images/seamless_latest.webp");
 }
 
 .footer-bottom p {

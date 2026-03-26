@@ -10,21 +10,20 @@
 .white-section {
     position: relative;
     z-index: 0;
-    background-color: #fbf0cb;
-    background-image: url("../../images/background_texture_new.webp");
-    background-size: cover;
+    background-size: 25%;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-image: url("../../images/seamless_latest.webp");
 }
 
 .white-section.intro-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/shiny_bg.webp");
-    background-size: cover;
+    background-size: 25%;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-image: url("../../images/seamless_latest.webp");
     opacity: 1;
     /*filter: brightness(1.4) contrast(0.5);*/
     pointer-events: none;
@@ -501,15 +500,6 @@ h2 {
     justify-content: center;
     padding-top: 60px;
     padding-bottom: 60px;
-}
-
-.white-section.risale-section.bg-new {
-    background-color: #ffedad;
-    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-    background-repeat: repeat;
-    background-size: auto;
-    background-position: center;
 }
 
 .risale-section .text-container.risale-grid {
