@@ -3476,7 +3476,7 @@ afbeeldt, en via hem Zijn Feilloze Heerschappij
 in daad en woord door het heelal openbaart, hem boven
 zijn engelen verkiest en met de rang van Khalifaat
 bekleedt, om uiteindelijk het doel, het resultaat en de
-vrucht van al deze taken <em><strong>– bestaande uit eeuwige gelukzaligheid –</strong></em> niet aan hem te schenken?
+vrucht van al deze taken –<em><strong> bestaande uit eeuwige gelukzaligheid </strong></em>– niet aan hem te schenken?
 </p>
 
 <p>
@@ -3484,7 +3484,7 @@ Zal Hij onder al Zijn schepselen uitgerekend de
 mens in de meest ongelukkige, wanhopige, rampzalige,
 zorgelijke en vernederende toestand laten storten,
 en de meest gezegende, stralende en gelukzalige gift
-van Wijsheid <em><strong>– bekend als het verstand –</strong></em> voor hem
+van Wijsheid –<em><strong> bekend als het verstand </strong></em>– voor hem
 tot een vervloekt en duister marteltuig maken, en aldus
 een meedogenloosheid begaan die voluit in strijd
 is met Zijn absolute Wijsheid en geheel indruist tegen
