@@ -407,6 +407,10 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     padding-top: 1px;
 }
 
+.book-reader-scope .fn-ref:hover {
+
+}
+
 /* Larger tap target for easier clicking (especially on mobile) */
 .book-reader-scope .fn-ref::before {
     content: '';

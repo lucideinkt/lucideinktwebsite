@@ -305,6 +305,47 @@
     }
 
     // ── Event delegation ──────────────────────────────────────────────────
+
+    // Hover functionality
+    readerEl.addEventListener('mouseenter', e => {
+        const btn = e.target.closest('.fn-ref');
+        if (btn && btn !== activeBtn) {
+            showPopover(btn);
+        }
+    }, true); // Use capture phase to ensure we catch all hovers
+
+    readerEl.addEventListener('mouseleave', e => {
+        const btn = e.target.closest('.fn-ref');
+        if (btn && btn === activeBtn) {
+            // Check if mouse is moving to the popover
+            const relatedTarget = e.relatedTarget;
+            if (relatedTarget && popover && popover.contains(relatedTarget)) {
+                return; // Don't hide if moving to popover
+            }
+            hidePopover();
+        }
+    }, true);
+
+    // Keep popover open when hovering over it
+    document.addEventListener('mouseenter', e => {
+        if (e.target.closest('.fn-popover')) {
+            // Mouse entered popover, keep it open
+        }
+    }, true);
+
+    document.addEventListener('mouseleave', e => {
+        const popoverEl = e.target.closest('.fn-popover');
+        if (popoverEl && popoverEl === popover) {
+            // Check if mouse is moving back to the active button
+            const relatedTarget = e.relatedTarget;
+            if (relatedTarget && activeBtn && activeBtn.contains(relatedTarget)) {
+                return; // Don't hide if moving back to button
+            }
+            hidePopover();
+        }
+    }, true);
+
+    // Click functionality (still works)
     readerEl.addEventListener('click', e => {
         const btn = e.target.closest('.fn-ref');
         if (btn) {
