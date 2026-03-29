@@ -305,64 +305,29 @@
     }
 
     // ── Event delegation ──────────────────────────────────────────────────
-
-    // Hover functionality
-    readerEl.addEventListener('mouseenter', e => {
-        const btn = e.target.closest('.fn-ref');
-        if (btn && btn !== activeBtn) {
-            showPopover(btn);
-        }
-    }, true); // Use capture phase to ensure we catch all hovers
-
-    readerEl.addEventListener('mouseleave', e => {
-        const btn = e.target.closest('.fn-ref');
-        if (btn && btn === activeBtn) {
-            // Check if mouse is moving to the popover
-            const relatedTarget = e.relatedTarget;
-            if (relatedTarget && popover && popover.contains(relatedTarget)) {
-                return; // Don't hide if moving to popover
-            }
-            hidePopover();
-        }
-    }, true);
-
-    // Keep popover open when hovering over it
-    document.addEventListener('mouseenter', e => {
-        if (e.target instanceof Element && e.target.closest('.fn-popover')) {
-            // Mouse entered popover, keep it open
-        }
-    }, true);
-
-    document.addEventListener('mouseleave', e => {
-        if (!(e.target instanceof Element)) return;
-        const popoverEl = e.target.closest('.fn-popover');
-        if (popoverEl && popoverEl === popover) {
-            // Check if mouse is moving back to the active button
-            const relatedTarget = e.relatedTarget;
-            if (relatedTarget && activeBtn && activeBtn.contains(relatedTarget)) {
-                return; // Don't hide if moving back to button
-            }
-            hidePopover();
-        }
-    }, true);
-
-    // Click functionality (still works)
     readerEl.addEventListener('click', e => {
         const btn = e.target.closest('.fn-ref');
         if (btn) {
             e.preventDefault();
             e.stopPropagation();
-            if (btn === activeBtn) { hidePopover(); return; }
+            if (btn === activeBtn) {
+                hidePopover();
+                return;
+            }
             showPopover(btn);
             return;
         }
         // Click anywhere else in the reader closes popover
-        if (popover && !popover.contains(e.target)) hidePopover();
+        if (popover && !popover.contains(e.target)) {
+            hidePopover();
+        }
     });
 
-    // Close on outside-reader click
+    // Close on outside-reader click (anywhere on the page)
     document.addEventListener('click', e => {
-        if (popover && !readerEl.contains(e.target) && !popover.contains(e.target)) hidePopover();
+        if (popover && !readerEl.contains(e.target) && !popover.contains(e.target)) {
+            hidePopover();
+        }
     });
 
     document.addEventListener('keydown', e => {
