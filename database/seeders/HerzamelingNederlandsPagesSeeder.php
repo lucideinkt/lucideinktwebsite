@@ -992,7 +992,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="text-end page-number">#31</p>
 
     <p>
-    is voorbehouden aan de Al-Schepper. Sla acht op het Glorieuze Vers: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
+    is voorbehouden aan de Al-Schepper. Sla acht op het Glorieuze Vers: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
     </p>
 
     <div class="text-center">
@@ -1737,7 +1737,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </p>
 
 <p>
- Deze waarheid die ik reeds in <strong>>“Het Negentiende Woord”</strong> heb uitgelegd, zullen wij hier wederom als
+ Deze waarheid die ik reeds in <strong>“Het Negentiende Woord”</strong> heb uitgelegd, zullen wij hier wederom als
  volgt ontvouwen... O vriend die meeluistert met mijn nefs! In het symbolische verhaal hadden wij het over
  een bijeenkomst op een eiland waar een nobele adjudant een toespraak voorlas. We zullen nu de waarheid
  van deze symboliek ophelderen.

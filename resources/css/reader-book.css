@@ -115,6 +115,8 @@
     text-indent: 0;
 }
 
+
+
 /* â”€â”€ Boektitel blok (serietitel + hoofdtitel + auteur) â”€â”€ */
 .book-reader-scope .page-title-series {
     display: block;
@@ -349,7 +351,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 }
 
 .text-arabic-inline.honorific {
-    font-feature-settings: 'ss17' !important;
+    font-feature-settings: 'ss15' !important;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
@@ -516,6 +518,9 @@ body.dark-mode .book-reader-scope .fn-ref {
     margin: 0;
     padding: 0;
     margin-top: 0.65em;
+}
+.fn-popover__text .fn-popover__para:first-child {
+    margin-top: 0;
 }
 .fn-popover__text p + p,
 .fn-popover__text .fn-popover__para + .fn-popover__para {
