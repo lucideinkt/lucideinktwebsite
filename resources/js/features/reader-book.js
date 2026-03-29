@@ -328,12 +328,13 @@
 
     // Keep popover open when hovering over it
     document.addEventListener('mouseenter', e => {
-        if (e.target.closest('.fn-popover')) {
+        if (e.target instanceof Element && e.target.closest('.fn-popover')) {
             // Mouse entered popover, keep it open
         }
     }, true);
 
     document.addEventListener('mouseleave', e => {
+        if (!(e.target instanceof Element)) return;
         const popoverEl = e.target.closest('.fn-popover');
         if (popoverEl && popoverEl === popover) {
             // Check if mouse is moving back to the active button
