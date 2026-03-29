@@ -6,25 +6,25 @@ use Illuminate\Database\Seeder;
 
 class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 {
- protected function productSlug(): string
- {
- // return the exact slug used when creating the product in DatabaseSeeder
- return 'het-traktaat-over-de-herzameling-nederlands';
- }
+    protected function productSlug(): string
+    {
+        // return the exact slug used when creating the product in DatabaseSeeder
+        return 'het-traktaat-over-de-herzameling-nederlands';
+    }
 
- protected function bookTitle(): string
- {
- return 'Het Traktaat Over De Herzameling';
- }
+    protected function bookTitle(): string
+    {
+        return 'Het Traktaat Over De Herzameling';
+    }
 
- protected function pages(): array
- {
- // Add page definitions here. Keep it empty for now or add a few sample pages.
- // You can paste the HTML of each page into the 'content' field.
- return [
-     [
-         'page_number' => 5,
-         'content' => '<div class="page" id="5">
+    protected function pages(): array
+    {
+        // Add page definitions here. Keep it empty for now or add a few sample pages.
+        // You can paste the HTML of each page into the 'content' field.
+        return [
+        [
+            'page_number' => 5,
+            'content' => '<div class="page" id="5">
     <p class="text-end page-number">#5</p>
 
     <div class="text-center page-title-chapter delima-font">
@@ -32,7 +32,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p><em>Aangaande Hashr - De Herzameling</em></p>
     </div>
 
-    <p class="text-red text-bold small-title">OPMERKING</p>
+    <p class="text-red small-title"><strong>OPMERKING</strong></p>
 
     <p>
     De reden waarom ik de metaforen en voorbeelden in deze traktaten in verhaalvorm heb geschreven, is om
@@ -64,46 +64,48 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 6,
-         'content' => '<div class="page" id="6">
+        ],
+
+        [
+            'page_number' => 6,
+            'content' => '<div class="page" id="6">
     <p class="text-end page-number">#6</p>
 
     <p>
     Broeder, indien jij in de eenvoudige volkstaal heldere uitleg over de herzameling
-    <span class="text-italic">(Hashr)</span> en het hiernamaals wenst, kijk dan samen met mijn nefs
-    <span class="text-italic">(wezen)</span> naar dit symbolische verhaal en luister...
+    <em>(Hashr)</em> en het hiernamaals wenst, kijk dan samen met mijn nefs
+    <em>(wezen)</em> naar dit symbolische verhaal en luister...
     </p>
 
     <p>
     Eens waren twee personen op weg naar een paradijselijk mooi land
-    <span class="text-italic">(doelend op deze wereld)</span>. Eenmaal aangekomen, zagen zij dat iedereen
+    <em>(doelend op deze wereld)</em>. Eenmaal aangekomen, zagen zij dat iedereen
     de toegang tot zijn woning en winkel onbewaakt openliet. Zonder een eigenaar in zicht, lagen alle
     goederen en geldmiddelen voor het rapen. Eén van die twee reizigers begon alles wat hij binnen handbereik
     begeerde te stelen of te plunderen. Hij gaf zich over aan zijn begeerte en bedreef allerlei soorten onrecht
     en onzede. Niemand van het volk hield hem tegen. Op den duur zei zijn vriend tegen hem:
     </p>
 
-    <p class="text-italic">
+    <p><em>
     “Wat ben jij aan het doen? Je zult bestraft worden en mij ook in de moeilijkheden brengen! Deze goederen behoren de staat toe.
     Alle lieden van dit volk, inclusief de kinderen, zijn ofwel soldaten ofwel functionarissen. Momenteel zijn ze met bepaalde civiele taken belast,
     vandaar dat zij jou niet tegenhouden. Maar hier heerst een strikte orde! De vorst heeft overal telefoons aangesloten en agenten gestationeerd.
     Kom dus snel tot bezinning en gedraag je naar behoren!”
-    </p>
+    </em></p>
 
     <p>De dwaze reiziger bleef echter volharden en zei:</p>
 
-    <p class="text-italic">
+    <p><em>
     “Jij hebt het mis! Deze goederen zijn geen staatsbezit. Het zijn veeleer producten van een soort liefdadigheidsinstelling en behoren niemand specifiek toe;
     iedereen kan er vrijelijk over beschikken. Ik zie geen enkele reden om afstand te doen van deze schatten. Zolang ik met mijn ogen niets concreets zie,
     zal ik jou niet geloven.”
-    </p>
+    </em></p>
     </div>'
-     ],
-     [
-         'page_number' => 7,
-         'content' => '<div class="page" id="7">
+        ],
+
+        [
+            'page_number' => 7,
+            'content' => '<div class="page" id="7">
     <p class="text-end page-number">#7</p>
 
     <p>
@@ -111,11 +113,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Als eerste zei die dwaas:
     </p>
 
-    <p class="text-italic">“Over welke vorst heb jij het? Ik erken zijn bestaan niet.”</p>
+    <p><em>“Over welke vorst heb jij het? Ik erken zijn bestaan niet.”</em></p>
 
     <p>Daarop zei zijn vriend:</p>
 
-    <p class="text-italic">
+    <p><em>
     “Geen dorp is zonder beheerder. Geen speld ontstaat zonder vervaardiger; ze moet een maker hebben. Geen letter kan tot
     stand komen zonder schrijver, dit weet je! Hoe zou dit eindeloos geordende land dan zonder regeerder kunnen zijn? En kijk
     naar al deze weelde! Elk uur lijkt het alsof een trein<sup>3</sup>
@@ -124,14 +126,14 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     alle monogrammen, zegels en signaturen op alle artikelen, en alle vlaggen die in alle uithoeken wapperen? Hoe kunnen die allemaal
     zonder eigenaar zijn? Jij hebt je blijkbaar verdiept in bepaalde westerse studies, maar deze Islamitische geschriften kun je niet
     lezen. Tevens neem je niet de moeite om aan kenners te vragen wat ze inhouden. Kom, dan zal ik jou het vorstelijke decreet voorlezen.”
-    </p>
+    </em></p>
 
     <p>De dwaas onderbrak hem en zei:</p>
 
-    <p class="text-italic">
+    <p><em>
     “Zelfs als de vorst zou bestaan, wat voor schade zou mijn geringe consumptie hem nou opleveren? Wat zou hij van zijn weelde
     verliezen? Bovendien zijn hier geen kerkers of iets dergelijks te bekennen; nergens zie ik straffen voltrokken worden.”
-    </p>
+    </em></p>
 
     <div class="page-footnote">
     <hr class="hr-footnote" />
@@ -140,34 +142,35 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 8,
-         'content' => '<div class="page" id="8">
+        ],
+
+        [
+            'page_number' => 8,
+            'content' => '<div class="page" id="8">
     <p class="text-end page-number">#8</p>
 
     <p>Zijn vriend antwoordde:</p>
 
-    <p class="text-italic">
+    <p><em>
     “Dit land dat je ziet, is een oefenterrein. Tegelijkertijd is het een galerie waar de buitengewone kunstwerken van de vorst worden tentoongesteld.
     Tevens is het zijn tijdelijke, instabiele gastenverblijf. Zie je dan niet dat dagelijks een karavaan verschijnt, terwijl een andere vertrekt en verdwijnt?
     Het wordt hier voortdurend gevuld en ontruimd. Op een dag zal dit land hervormd worden. Deze bevolking zal naar een ander, permanent rijk worden overgeplaatst.
     Daar zal iedereen voor zijn geleverde diensten ofwel bestraft ofwel beloond worden.”
-    </p>
+    </em></p>
 
     <p>Opnieuw verzette die verraderlijke dwaas zich en zei:</p>
 
-    <p class="text-italic">
+    <p><em>
     “Ik geloof jou niet! Is het ooit voor mogelijk te houden dat dit land wordt verwoest en alles naar een ander land wordt overgeplaatst?”
-    </p>
+    </em></p>
 
     <p>Daarop zei zijn vertrouwde vriend:</p>
 
-    <p class="text-italic">
-    “Aangezien jij zo koppig blijft volharden, kom mee... dan zal ik jou binnen alle eindeloze bewijzen met behulp van <span class="text-bold text-italic">‘Twaalf Aanzichten’</span> aantonen dat een Ultieme
+    <p><em>
+    “Aangezien jij zo koppig blijft volharden, kom mee... dan zal ik jou binnen alle eindeloze bewijzen met behulp van <strong><em>‘Twaalf Aanzichten’</em></strong> aantonen dat een Ultieme
     Berechting zal plaatsvinden, dat een oord van beloning en begiftiging bestaat, dat een oord van bestraffing en gevangenschap evenzeer bestaat, en dat dit land,
     dat dagelijks gedeeltelijk wordt bevolkt en ontvolkt, op een dag volledig zal worden ontruimd en verwoest.”
-    </p>
+    </em></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 18px;">HET EERSTE AANZICHT</p>
 
@@ -176,15 +179,16 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     dwarse opstandelingen zijn weggelegd? Hier worden die vrijwel niet verstrekt...
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 9,
-         'content' => '<div class="page" id="9">
+        ],
+
+        [
+            'page_number' => 9,
+            'content' => '<div class="page" id="9">
     <p class="text-end page-number">#9</p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Dit geeft aan dat elders een Ultieme Berechting zal plaatsvinden.
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 10px;">
     HET TWEEDE AANZICHT
@@ -213,17 +217,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     verlaten en emigreren.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Dit geeft aan dat hun vereffening aan de Ultieme Berechting wordt overgelaten!
-    </p>
+    </strong></p>
     </div>'
-     ],
-     [
-         'page_number' => 10,
-         'content' => '<div class="page" id="10">
+        ],
+
+        [
+            'page_number' => 10,
+            'content' => '<div class="page" id="10">
     <p class="text-end page-number">#10</p>
 
-    <p class="text-center text-bold small-title">HET DERDE AANZICHT</p>
+    <p class="text-center small-title"><strong>HET DERDE AANZICHT</strong></p>
 
     <p>
     Kijk met wat voor verheven wijsheid en orde de ontwikkelingen zich ontvouwen, en met wat voor ware
@@ -238,9 +243,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     rechtvaardigheid voldaan. In de meeste gevallen gaan dwazen zoals jij ongestraft hier vandaan.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Dit geeft aan dat dergelijke onafgehandelde zaken aan de Ultieme Berechting worden overgelaten.
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET VIERDE AANZICHT</p>
 
@@ -258,17 +263,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     antie-
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 11,
-         'content' => '<div class="page" id="11">
+        ],
+
+        [
+            'page_number' => 11,
+            'content' => '<div class="page" id="11">
     <p class="text-end page-number">#11</p>
 
     <p>
     ke kunstwerken van een wonderdadige vorst presenteren en demonstreren: ze veraanschouwelijken zijn
     volmaaktheden, onthullen zijn weergaloze spirituele schoonheid, en omschrijven de subtiliteiten van zijn
     verborgen pracht. De vorst bezit dus zeer belangrijke en verwonderlijke volmaaktheden en spirituele schoonheden. Een verhulde, feilloze volmaaktheid verlangt van nature naar onthulling in het bijzijn van waarderende
-    getuigen die haar met uitingen van <span class="text-bold">“mâshâ’ALLAH”</span> bewonderen. Ook een verborgen schoonheid zonder
+    getuigen die haar met uitingen van <strong>“mâshâ’ALLAH”</strong> bewonderen. Ook een verborgen schoonheid zonder
     aanschouwers wil uiteindelijk zien en gezien worden.
     </p>
 
@@ -291,17 +297,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     en die schoonheid, waarna ze opeens onverzadigd vertrekken.
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 12,
-         'content' => '<div class="page" id="12">
+        ],
+
+        [
+            'page_number' => 12,
+            'content' => '<div class="page" id="12">
     <p class="text-end page-number">#12</p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Dit geeft aan dat ze op weg zijn naar een eeuwig schouwparadijs...
-    </p>
+    </strong></p>
 
-    <p class="text-center text-bold small-title">HET VIJFDE AANZICHT</p>
+    <p class="text-center small-title"><strong>HET VIJFDE AANZICHT</strong></p>
 
     <p>
     Aanschouw! Blijkens de activiteiten die zich hier afspelen, beschikt die onvergelijkelijke majesteit over
@@ -321,27 +328,28 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     bepaalde wensen die hij aan zijn meedogende vorst voordraagt. Heel het volk sluit zich bij hem aan en zegt:
     </p>
 
-    <p class="text-italic">“Wij wensen hetzelfde!”</p>
+    <p><em>“Wij wensen hetzelfde!”</em></p>
 
     <p>Ze beamen en ondersteunen hem. Luister; deze geliefde van de vorst zegt:</p>
 
-    <p class="text-italic text-bold">
+    <p><strong><em>
     “O sultan die ons met pure gunsten meedogend opvoedt! Toon ons de oervormen, de oorsprongen van alle
     voorbeelden en schaduwen die u ons hier laat zien. Dirigeer ons naar de zetel van uw rijk. Laat ons niet
     creperen in deze woestijnen. Verhef ons tot uw tegenwoordigheid. Wees ons genadig. Schenk ons het
     voorrecht om daar ten volle te mogen genieten van uw kostelijke gunsten die u ons hier hebt laten proeven.
     Folter ons
-    </p>
+    </em></strong></p>
     </div>'
-     ],
-     [
-         'page_number' => 13,
-         'content' => '<div class="page" id="13">
+        ],
+
+        [
+            'page_number' => 13,
+            'content' => '<div class="page" id="13">
     <p class="text-end page-number">#13</p>
 
-    <p class="text-italic text-bold">
+    <p><strong><em>
     niet met eindigheid en afstandelijkheid. Dit dankbare volk van u smacht naar u... Breng ons niet ten ondergang door ons te verlaten.”
-    </p>
+    </em></strong></p>
 
     <p>
     Zo brengt hij vele smeekbeden tot uiting; jij hoort het ook. Is het nou ooit voor mogelijk te houden dat
@@ -364,9 +372,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     staan.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     De aanwezigen in deze beproevingsplaats zijn dus niet aan henzelf overgelaten; zalige paleizen en beangstigende kerkers staan hen te wachten.
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ZESDE AANZICHT</p>
 
@@ -375,10 +383,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     evenementen beduiden dat achter de schermen een
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 14,
-         'content' => '<div class="page" id="14">
+        ],
+
+        [
+            'page_number' => 14,
+            'content' => '<div class="page" id="14">
     <p class="text-end page-number">#14</p>
 
     <p>
@@ -388,37 +397,38 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <div class="page-footnote">
     <hr class="hr-footnote" />
     <p class="footnote-p">
-    <sup>4</sup> <span class="text-bold">Bijvoorbeeld</span>, wanneer het bevel: <span class="text-italic">“Presenteer geweer! Bevestig bajonet!”</span> tijdens een oorlogsoefening op een exercitieveld wordt uitgevoerd,
+    <sup>4</sup> <strong>Bijvoorbeeld</strong>, wanneer het bevel: <em>“Presenteer geweer! Bevestig bajonet!”</em> tijdens een oorlogsoefening op een exercitieveld wordt uitgevoerd,
     dan neemt een geweldig leger dat in gelid staat de gedaante aan van een doornig eikenwoud.
     </p>
 
     <p class="footnote-p">
-    <span class="text-bold">Of wanneer het bevel:</span> <span class="text-italic">“Trek jullie ceremoniële tenuen aan! Speld jullie emblemen op!”</span> wordt uitgevaardigd om op een nationale feestdag te paraderen,
+    <strong>Of wanneer het bevel:</strong> <em>“Trek jullie ceremoniële tenuen aan! Speld jullie emblemen op!”</em> wordt uitgevaardigd om op een nationale feestdag te paraderen,
     dan transformeert het hele legerkamp nagenoeg in een levendige siertuin die bezaaid is met kleurrijke bloemen.
     </p>
 
     <p class="footnote-p">
-    <span class="text-bold">Zo beschikt de Onbegonnen Sultan over eindeloze soorten soldaten,</span> waaronder engelen, djinns, mensen en dieren.
+    <strong>Zo beschikt de Onbegonnen Sultan over eindeloze soorten soldaten,</strong> waaronder engelen, djinns, mensen en dieren.
     De onbewuste planten op het veld van het aardrijk vormen ook een divisie, onderhevig aan de wet:
     <span class="text-arabic delima-font" dir="rtl" lang="ar">كُنْ فَيَكُونُ</span> (“Wees!” En het wordt!)
-    Wanneer ze ter verdediging tijdens hun jihad om levensbehoud het Goddelijke bevel: <span class="text-italic">“Vat de wapens op en gord jullie aan!”</span> ontvangen,
+    Wanneer ze ter verdediging tijdens hun jihad om levensbehoud het Goddelijke bevel: <em>“Vat de wapens op en gord jullie aan!”</em> ontvangen,
     en de doornige bomen en planten hun bajonetten opplanten, dan neemt het hele oppervlak de gedaante aan van een fenomenaal legerkamp
     bezaaid met soldaten die zijn uitgerust met steekwapens.
     </p>
 
     <p class="footnote-p">
-    <span class="text-bold">Bovendien geldt elke dag en elke week van de lente als een feestdag voor de plantendivisie,</span> waarbij de ene eenheid na de andere onder het Toeziend Oog van de
+    <strong>Bovendien geldt elke dag en elke week van de lente als een feestdag voor de plantendivisie,</strong> waarbij de ene eenheid na de andere onder het Toeziend Oog van de
     Tijdeloze Sultan paradeert met de juwelen emblemen die de Sultan aan de planten heeft bevestigd om zijn prachtige geschenken te veraanschouwelijken.
-    Deze toestand duidt aan dat alle planten en bomen gehoor geven aan het bevel des Heren: <span class="text-italic">“Doe de juwelen van de kunst des Heren om, speld de Goddelijke
-    Scheppingsemblemen genaamd ‘bloemen en vruchten’ op, en floreer!”</span> Zo transformeert het aardoppervlak nagenoeg in een fantastisch legerkamp waar soldaten op een
+    Deze toestand duidt aan dat alle planten en bomen gehoor geven aan het bevel des Heren: <em>“Doe de juwelen van de kunst des Heren om, speld de Goddelijke
+    Scheppingsemblemen genaamd ‘bloemen en vruchten’ op, en floreer!”</em> Zo transformeert het aardoppervlak nagenoeg in een fantastisch legerkamp waar soldaten op een
     fenomenale feestdag in getooide tenuen met glimmende emblemen paraderen. &rarr;
     </p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 15,
-         'content' => '<div class="page" id="15">
+        ],
+
+        [
+            'page_number' => 15,
+            'content' => '<div class="page" id="15">
     <p class="text-end page-number">#15</p>
 
     <p>
@@ -434,9 +444,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     zijn met de zuivere en zalige originelen van alle voorbeelden en verschijnselen die wij hier waarnemen.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     De inspanningen hier zijn dus daarvoor bedoeld. Hier wordt gewerkt, daar wordt beloning uitgeloofd. Voor iedereen is daar een gelukzaligheid naargelang zijn potentie weggelegd...
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ZEVENDE AANZICHT</p>
 
@@ -447,16 +457,17 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <div class="page-footnote">
     <hr class="hr-footnote" />
-    <p class="footnote-p text-bold">
+    <p class="footnote-p"><strong>
     Voorwaar, deze voorzieningen en versieringen die met zoveel wijsheid en orde worden verwezenlijkt, tonen uiteraard aan de
     niet-blinden dat dit op bevel van een Almachtige Sultan en een Alwijze Regeerder geschiedt.
-    </p>
+    </strong></p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 16,
-         'content' => '<div class="page" id="16">
+        ],
+
+        [
+            'page_number' => 16,
+            'content' => '<div class="page" id="16">
     <p class="text-end page-number">#16</p>
 
     <p>
@@ -479,25 +490,26 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <div class="page-footnote">
     <hr class="hr-footnote" />
     <p class="footnote-p">
-    <sup>5</sup> De betekenissen waarop gezinspeeld wordt in dit aanzicht, worden deels in <span class="text-bold">“De Zevende Waarheid”</span> verklaard.
-    Hier willen wij er alleen op wijzen dat met de grote specifieke camera van de vorst het <span class="text-italic">“Bewaartableau”</span>
-    <span class="text-arabic delima-font" dir="rtl" lang="ar">لَوْحِ مَحْفُوظْ</span> wordt bedoeld. In <span class="text-bold">“Het Zesentwintigste Woord”</span>
+    <sup>5</sup> De betekenissen waarop gezinspeeld wordt in dit aanzicht, worden deels in <strong>“De Zevende Waarheid”</strong> verklaard.
+    Hier willen wij er alleen op wijzen dat met de grote specifieke camera van de vorst het <em>“Bewaartableau”</em>
+    <span class="text-arabic delima-font" dir="rtl" lang="ar">لَوْحِ مَحْفُوظْ</span> wordt bedoeld. In <strong>“Het Zesentwintigste Woord”</strong>
     is de bestaanswerkelijkheid van het Bewaartableau als volgt bewezen:
     </p>
 
     <p class="footnote-p">
     Kleine identiteitsbewijzen duiden op het bestaan van een groot bevolkingsregister, kleine transactiebonnen wijzen op de
-    existentie van een grootboek, en voortvloeiende druppels onthullen de aanwezigheid van een grote waterbron. De geheugens van mensenkinderen, de vruchten van bomen en de zaadjes van vruchten <span class="text-italic">– die als minuscule identiteitsbewijzen gelden, de betekenissen van een mini-bewaartableau belichamen, en als fijne stippen ontvloeien aan de Pen waarmee het
-    Grote Bewaartableau is geschreven –</span> onthullen, openbaren en
+    existentie van een grootboek, en voortvloeiende druppels onthullen de aanwezigheid van een grote waterbron. De geheugens van mensenkinderen, de vruchten van bomen en de zaadjes van vruchten <em>– die als minuscule identiteitsbewijzen gelden, de betekenissen van een mini-bewaartableau belichamen, en als fijne stippen ontvloeien aan de Pen waarmee het
+    Grote Bewaartableau is geschreven –</em> onthullen, openbaren en
     bewijzen uiteraard ook het bestaan van een Subliem Geheugen, een Universeel Grootboek en een Ultiem Bewaartableau
-    <span class="text-italic">– voor scherpe verstanden worden ze zelfs zichtbaar.</span>
+    <em>– voor scherpe verstanden worden ze zelfs zichtbaar.</em>
     </p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 17,
-         'content' => '<div class="page" id="17">
+        ],
+
+        [
+            'page_number' => 17,
+            'content' => '<div class="page" id="17">
     <p class="text-end page-number">#17</p>
 
     <p>
@@ -507,18 +519,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     handelingen plegen die zijn statigheid en digniteit aantasten, en zijn genadige karakter geenszins kan aanvaarden, worden ze hier niet bestraft.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Dit betekent dat zulke onafgehandelde zaken aan de Ultieme Berechting worden overgelaten...
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ACHTSTE AANZICHT</p>
 
     <p>
     Kom, dan zal ik jou nu de vorstelijke decreten voorlezen. Kijk, herhaaldelijk brengt hij zijn beloften en
     zijn heftige dreigementen onder woorden, zeggende:
-    <span class="text-italic">“Ik zal jullie uit jullie huidige verblijven halen en naar het centrum van mijn rijk brengen,
+    <em>“Ik zal jullie uit jullie huidige verblijven halen en naar het centrum van mijn rijk brengen,
     waar ik de gehoorzamen zal verblijden en de opstandelingen zal opsluiten. Ik zal dat vergankelijke land verwoesten
-    en een ander oord met eeuwige paleizen en kerkers oprichten.”</span>
+    en een ander oord met eeuwige paleizen en kerkers oprichten.”</em>
     De waarmaking van zijn beloften is zeer eenvoudig voor hem,
     terwijl het voor zijn onderdanen van primair belang is.
     Beloftebreuk daarentegen staat in schril contrast met
@@ -534,10 +546,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     verbeelding staart,
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 18,
-         'content' => '<div class="page" id="18">
+        ],
+
+        [
+            'page_number' => 18,
+            'content' => '<div class="page" id="18">
     <p class="text-end page-number">#18</p>
 
     <p>
@@ -547,9 +560,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     ons, voor alle wezens, voor hem en voor zijn rijk eveneens hoogstnodig.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Al bij al zal een Ultieme Berechting plaatsvinden, en een Sublieme Gelukzaligheid geschonken worden.
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET NEGENDE AANZICHT</p>
 
@@ -572,17 +585,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <div class="page-footnote">
     <hr class="hr-footnote" />
     <p class="footnote-p">
-    <sup>6</sup> De betekenissen die in dit aanzicht worden geïllustreerd, zullen in <span class="text-bold">"De Achtste Waarheid"</span> worden onthuld. Bijvoorbeeld, de leiders van de kringen vertegenwoordigen de profeten en de heiligen. De telefoon symboliseert een band met
+    <sup>6</sup> De betekenissen die in dit aanzicht worden geïllustreerd, zullen in <strong>"De Achtste Waarheid"</strong> worden onthuld. Bijvoorbeeld, de leiders van de kringen vertegenwoordigen de profeten en de heiligen. De telefoon symboliseert een band met
     de Heer die zich vormt in het medium van openbaringen
     <em>(wahy)</em> en de ontvanger van ingevingen <em>(ilhām)</em>, oftewel het
-    hart. <span class="text-italic">(Het hart dient als de hoorn van die telefoon.)</span>
+    hart. <em>(Het hart dient als de hoorn van die telefoon.)</em>
     </p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 19,
-         'content' => '<div class="page" id="19">
+        ],
+
+        [
+            'page_number' => 19,
+            'content' => '<div class="page" id="19">
     <p class="text-end page-number">#19</p>
 
     <p>
@@ -605,9 +619,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     en standhouden... Het rust dus op aanhoudende, vaststaande, onvergankelijke, stabiele, volmaakte en voortreffelijke beschikkingen die dat sultanaat waard zijn....
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Er bestaat dus een ander oord waarnaar onontkoombaar gemigreerd zal worden...
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET TIENDE AANZICHT</p>
 
@@ -618,7 +632,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <div class="page-footnote">
     <hr class="hr-footnote" />
     <p class="footnote-p">
-    <sup>7</sup> De inhoud van dit <span class="text-bold">"Aanzicht"</span> zal in <span class="text-bold">"De Negende Waarheid"</span> worden onthuld. Bijvoorbeeld, de nieuwjaarsdag representeert het lenteseizoen. Het groene, bloemige woestijnland symboliseert het aardoppervlak gedurende de lente. De
+    <sup>7</sup> De inhoud van dit <strong>"Aanzicht"</strong> zal in <strong>"De Negende Waarheid"</strong> worden onthuld. Bijvoorbeeld, de nieuwjaarsdag representeert het lenteseizoen. Het groene, bloemige woestijnland symboliseert het aardoppervlak gedurende de lente. De
     veranderende beelden en weergaven duiden op de periode
     vanaf de aanvang van de lente tot aan het einde van de
     zomer, waarin de Almachtige en Ontzaglijke Kunstenaar, de
@@ -628,10 +642,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 20,
-         'content' => '<div class="page" id="20">
+        ],
+
+        [
+            'page_number' => 20,
+            'content' => '<div class="page" id="20">
     <p class="text-end page-number">#20</p>
 
     <p>
@@ -656,7 +671,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <p>
     O dwaas, jij vraagt:
-    <span class="text-italic">“Hoe zou dit geweldige land vernietigd en elders opgericht kunnen worden?”</span>
+    <em>“Hoe zou dit geweldige land vernietigd en elders opgericht kunnen worden?”</em>
     </p>
 
     <p>
@@ -666,18 +681,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     samenkomst wordt immers grofweg een tienjarige investering gedaan. Deze huidige toestanden op zichzelf
     </p>
     </div>'
-     ],
+        ],
 
-     [
-         'page_number' => 21,
-         'content' => '<div class="page" id="21">
+        [
+            'page_number' => 21,
+            'content' => '<div class="page" id="21">
     <p class="text-end page-number">#21</p>
 
     <p>
     zijn dus niet het einddoel; ze dienen veeleer als een representatie, een simulatie van iets hogers. De vorst
     brengt ze op een miraculeuze wijze tot stand, opdat de beelden ervan worden opgenomen en gecompileerd,
     en de resultaten ervan worden bewaard en geregistreerd –
-    <span class="text-italic">net zoals alles tijdens een militair examen op een oefenterrein wordt vastgelegd en genoteerd.</span>
+    <em>net zoals alles tijdens een militair examen op een oefenterrein wordt vastgelegd en genoteerd.</em>
     Dit betekent dus dat een geweldige bijeenzameling zal plaatsvinden waarbij de verdere gang van zaken om
     de resultaten van deze toestanden zal draaien.
     </p>
@@ -687,15 +702,15 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Deze voorbijgaande en onbestendige omstandigheden werpen dus blijvende beelden en eeuwige vruchten af.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Al bij al zijn deze ceremoniën dus bedoeld voor een Sublieme Gelukzaligheid en een Ultieme Berechting, en voor meerdere verheven doeleinden die ons onbekend zijn...
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ELFDE AANZICHT</p>
 
     <p>
     Kom, o koppige vriend! Laten we een vliegreis maken en vervolgens in een trein stappen die ons naar
-    het oosten of westen – <span class="text-italic">(oftewel het verleden of de toekomst)</span> – kan vervoeren. Laten we kijken wat voor soort
+    het oosten of westen – <em>(oftewel het verleden of de toekomst)</em> – kan vervoeren. Laten we kijken wat voor soort
     mirakelen deze wonderdadige majesteit in andere streken demonstreert.
     </p>
 
@@ -705,10 +720,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Maar als je aandachtig observeert, dan zul je in al die instabiele verblijven, tijdelijke terreinen en vergankelij-
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 22,
-         'content' => '<div class="page" id="22">
+        ],
+
+        [
+            'page_number' => 22,
+            'content' => '<div class="page" id="22">
     <p class="text-end page-number">#22</p>
 
     <p>
@@ -720,22 +736,23 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    Bovendien moeten wij aannemen dat de regisseur van deze wijze beschikkingen, weldadige activiteiten en genaderijke gunsten – <span class="text-italic">(God verhoede)</span> – een roekeloze spelleider en een wrede tiran is. Dit zou betekenen dat
+    Bovendien moeten wij aannemen dat de regisseur van deze wijze beschikkingen, weldadige activiteiten en genaderijke gunsten – <em>(God verhoede)</em> – een roekeloze spelleider en een wrede tiran is. Dit zou betekenen dat
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 23,
-         'content' => '<div class="page" id="23">
+        ],
+
+        [
+            'page_number' => 23,
+            'content' => '<div class="page" id="23">
     <p class="text-end page-number">#23</p>
 
     <p>
-    werkelijkheden tot hun tegenpolen verworden. Echter, volgens de unanieme opvatting van alle intellectuelen – <span class="text-italic">(met uitzondering van de bezopen sofisten die het bestaan van alles ontkennen)</span> – is de verwording van werkelijkheden ondenkbaar.
+    werkelijkheden tot hun tegenpolen verworden. Echter, volgens de unanieme opvatting van alle intellectuelen – <em>(met uitzondering van de bezopen sofisten die het bestaan van alles ontkennen)</em> – is de verwording van werkelijkheden ondenkbaar.
     </p>
 
-    <p class="text-center text-bold text-center-constrained">
+    <p class="text-center text-center-constrained"><strong>
     Al bij al bestaat elders een ander oord, waar een Ultieme Berechting, een Alhoge Gerechtigheid en een Grandioze Begiftiging zullen plaatsvinden, opdat deze genade, wijsheid, gratie en rechtvaardigheid volwaardig tot hun recht kunnen komen...
-    </p>
+    </strong></p>
 
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET TWAALFDE AANZICHT</p>
 
@@ -744,25 +761,26 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    Wij kunnen niet ieder individu en elke uitrusting analyseren. Maar om een indruk te krijgen, gaan wij het <span class="text-bold">identiteitsbewijs</span> en het <span class="text-bold">handboek</span> van deze officier bekijken. Op dit identiteitsbewijs staan de <span class="text-bold">rang</span>, het <span class="text-bold">loon</span>, de <strong>taak</strong>, de <strong>wensen</strong> en de <span class="text-bold">gedragscode</span> van de officier vermeld.
+    Wij kunnen niet ieder individu en elke uitrusting analyseren. Maar om een indruk te krijgen, gaan wij het <strong>identiteitsbewijs</strong> en het <strong>handboek</strong> van deze officier bekijken. Op dit identiteitsbewijs staan de <strong>rang</strong>, het <strong>loon</strong>, de <strong>taak</strong>, de <strong>wensen</strong> en de <strong>gedragscode</strong> van de officier vermeld.
     </p>
 
     <p>
-    Kijk, deze <strong>rang</strong> kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <span class="text-italic">"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</span> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze <strong>taak</strong> niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukza-
+    Kijk, deze <strong>rang</strong> kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <em>"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</em> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze <strong>taak</strong> niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukza-
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 24,
-         'content' => '<div class="page" id="24">
+        ],
+
+        [
+            'page_number' => 24,
+            'content' => '<div class="page" id="24">
     <p class="text-end page-number">#24</p>
 
     <p>
-    ligheid in de nabijheid van de vorst te verwerven. Ook deze <span class="text-bold">wensen</span> corresponderen niet met een paardaags bestaan in dit gastenverblijf; alleen een lang en gelukzalig leven kan ze bevredigen. Overigens onthult deze <span class="text-bold">gedragscode</span> eveneens dat de eigenaar van dit identiteitsbewijs bestemd is voor een ander oord; hij werkt voor een andere wereld.
+    ligheid in de nabijheid van de vorst te verwerven. Ook deze <strong>wensen</strong> corresponderen niet met een paardaags bestaan in dit gastenverblijf; alleen een lang en gelukzalig leven kan ze bevredigen. Overigens onthult deze <strong>gedragscode</strong> eveneens dat de eigenaar van dit identiteitsbewijs bestemd is voor een ander oord; hij werkt voor een andere wereld.
     </p>
 
     <p>
-    Kijk, in deze <span class="text-bold">handboeken</span> zijn de gebruiksinstructies van de uitrustingen en de bijbehorende verantwoordelijkheden vastgelegd. Als er buiten dit terrein elders geen verheven en permanent oord bestaat, dan verliezen dit officiële <span class="text-bold">handboek</span> en dat legitieme <span class="text-bold">identiteitsbewijs</span> volledig hun betekenis. Tevens zal deze geachte officier, nobele commandant en gerespecteerde leider vervallen tot een niveau dat hem lager, ongelukkiger, hopelozer, ellendiger, rampzaliger, armer en zwakker maakt dan iedereen.
+    Kijk, in deze <strong>handboeken</strong> zijn de gebruiksinstructies van de uitrustingen en de bijbehorende verantwoordelijkheden vastgelegd. Als er buiten dit terrein elders geen verheven en permanent oord bestaat, dan verliezen dit officiële <strong>handboek</strong> en dat legitieme <strong>identiteitsbewijs</strong> volledig hun betekenis. Tevens zal deze geachte officier, nobele commandant en gerespecteerde leider vervallen tot een niveau dat hem lager, ongelukkiger, hopelozer, ellendiger, rampzaliger, armer en zwakker maakt dan iedereen.
     </p>
 
     <p>
@@ -773,23 +791,24 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Begrijp dus, o vriend, dit tijdelijke land dient als een akker. Het is een oefenterrein; een handelsplaats. Op den duur zullen ongetwijfeld een Ultieme Berechting en een Sublieme Gelukzaligheid volgen. Wanneer je dit ontkent, dan zul je alle identiteitsbewijzen, handboeken, uitrustingen en gedragscodes van al deze officieren, en daarenboven alle ordeningen in dit land moeten ontkennen. Zelfs de regering en het staand beleid zul je moeten loochenen. Op dat moment kun jij noch mens noch een bewust wezen worden genoemd; je zult dan verstandelozer dan de sofisten zijn.
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 25,
-         'content' => '<div class="page" id="25">
+        ],
+
+        [
+            'page_number' => 25,
+            'content' => '<div class="page" id="25">
     <p class="text-end page-number">#25</p>
 
     <p>
-    Je moet beslist niet denken dat de bewijzen voor de transitie van dit land beperkt zijn tot deze <span class="text-bold">"Twaalf Aanzichten"</span>. Er zijn in feite ontelbare indicaties en bewijzen die aantonen dat dit onbestendige en wisselvallige land getransformeerd zal worden tot een onvergankelijk en stabiel land. Bovendien zijn er talloze aanwijzingen en tekenen die aangeven dat de inwoners hier uit deze tijdelijke gastenverblijven zullen worden gehaald en naar het eeuwige centrum van het sultanaat zullen worden overgeplaatst. Tot besluit zal ik je nog één bewijs laten zien dat sterker is dan de vorige <span class="text-bold">"Twaalf Aanzichten"</span>.
+    Je moet beslist niet denken dat de bewijzen voor de transitie van dit land beperkt zijn tot deze <strong>"Twaalf Aanzichten"</strong>. Er zijn in feite ontelbare indicaties en bewijzen die aantonen dat dit onbestendige en wisselvallige land getransformeerd zal worden tot een onvergankelijk en stabiel land. Bovendien zijn er talloze aanwijzingen en tekenen die aangeven dat de inwoners hier uit deze tijdelijke gastenverblijven zullen worden gehaald en naar het eeuwige centrum van het sultanaat zullen worden overgeplaatst. Tot besluit zal ik je nog één bewijs laten zien dat sterker is dan de vorige <strong>"Twaalf Aanzichten"</strong>.
     </p>
 
     <p>
     Kom kijken! Daar in de verte, in die drukke menigte, staat de drager van het hoogaanzienlijke embleem; de nobele adjudant die wij voorheen op het schiereiland hadden gezien. Hij houdt een preek. Laten wij ook gaan en luisteren naar wat hij verkondigt. Kijk, die stralende adjudant informeert over het ultieme decreet dat op die verheven hoogte is ingegrift, zeggende:
     </p>
 
-    <p class="text-italic">
+    <p><em>
     "Bereid jullie voor! Jullie zullen naar een ander, permanent land migreren… en wel een land dat dit oord slechts op een gevangenis doet lijken. Jullie zullen naar het sultanatische centrum van onze vorst reizen, waar jullie zijn genade en gratie zullen ondervinden, op voorwaarde dat jullie dit decreet aandachtig aanhoren en opvolgen… Anders, als jullie in opstand komen en niet luisteren, dan zullen jullie in huiveringwekkende kerkers worden gesmeten."
-    </p>
+    </em></p>
 
     <p>
     Zo deelt hij tijdingen mee…
@@ -799,10 +818,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Zoals je ziet, is het ultieme decreet voorzien van zo\'n miraculeus zegel, dat het op geen enkele wijze kan worden vervalst. Afgezien van dwazen zoals jij, weet iedereen dat het decreet toebehoort aan de vorst.
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 26,
-         'content' => '<div class="page" id="26">
+        ],
+
+        [
+            'page_number' => 26,
+            'content' => '<div class="page" id="26">
     <p class="text-end page-number">#26</p>
 
     <p>
@@ -817,9 +837,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Welnu, mijn vriend, het woord is aan jou. Vertel, wat heb jij hierop te zeggen?
     </p>
 
-    <p class="text-italic">
-    – Wat kan ik zeggen? Kan hier nog iets tegenin gebracht worden? Is het mogelijk om de zon in de middaggloed tegen te gaan? Ik zeg alleen: <sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span>, <span class="text-italic">God zij honderdduizendmaal dank; ik ben verlost van de overheersing van mijn waanideeën en begeerten, ik ben gered van de greep van mijn nefs en lusten, ik ben bevrijd van permanente gevangenschap en opsluiting, en ik ben tot het inzicht gekomen dat buiten deze chaotische en instabiele gastenverblijven een gelukzalig oord in de vorstelijke nabijheid bestaat, en wij zijn daarvoor gekandideerd.</span>"
-    </p>
+    <p><em>
+    – Wat kan ik zeggen? Kan hier nog iets tegenin gebracht worden? Is het mogelijk om de zon in de middaggloed tegen te gaan? Ik zeg alleen: <sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span>, <em>God zij honderdduizendmaal dank; ik ben verlost van de overheersing van mijn waanideeën en begeerten, ik ben gered van de greep van mijn nefs en lusten, ik ben bevrijd van permanente gevangenschap en opsluiting, en ik ben tot het inzicht gekomen dat buiten deze chaotische en instabiele gastenverblijven een gelukzalig oord in de vorstelijke nabijheid bestaat, en wij zijn daarvoor gekandideerd.</em>"
+    </em></p>
 
     <p>
     Voorwaar, dit symbolische verhaal dat zinspeelt op de herzameling en het hiernamaals is hier afgerond. Bij Gods Gratie gaan wij nu over naar de verheven waarheden. In aansluiting op de voorgaande <strong>"Twaalf Aanzichten"</strong> gaan wij <strong>"Twaalf Samenhangende Waarheden"</strong> uiteenzetten, beginnend met een <strong>"Voorwoord"</strong>.
@@ -827,13 +847,14 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
     <div class="page-footnote">
     <hr class="hr-footnote" />
-    <p class="footnote-p"><sup>8</sup> <span class="text-bold">"Alle lof zij ALLAH."</span></p>
+    <p class="footnote-p"><sup>8</sup> <strong>"Alle lof zij ALLAH."</strong></p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 27,
-         'content' => '<div class="page" id="27">
+        ],
+
+        [
+            'page_number' => 27,
+            'content' => '<div class="page" id="27">
     <p class="text-end page-number">#27</p>
 
     <div class="text-center page-title-chapter delima-font">
@@ -841,11 +862,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </div>
 
     <p>
-    [Met een aantal <span class="text-bold">"Aanwijzingen"</span> zullen wij bepaalde onderwerpen aanstippen die uiteengezet zijn in andere delen, namelijk in de <span class="text-bold">Tweeëntwintigste</span>, <span class="text-bold">Negentiende</span> en <span class="text-bold">Zesentwintigste Woorden</span>.]
+    [Met een aantal <strong>"Aanwijzingen"</strong> zullen wij bepaalde onderwerpen aanstippen die uiteengezet zijn in andere delen, namelijk in de <strong>Tweeëntwintigste</strong>, <strong>Negentiende</strong> en <strong>Zesentwintigste Woorden</strong>.]
     </p>
 
     <div class="text-center">
-    <p class="text-center text-bold small-title">De Eerste Aanwijzing</p>
+    <p class="text-center small-title"><strong>De Eerste Aanwijzing</strong></p>
     </div>
 
     <p>
@@ -853,15 +874,15 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    <span class="text-bold">In eerste instantie</span> belichamen ze mijn kwaadgezinde nefs en mijn hart.
+    <strong>In eerste instantie</strong> belichamen ze mijn kwaadgezinde nefs en mijn hart.
     </p>
 
     <p>
-    <span class="text-bold">In tweede instantie</span> vertegenwoordigen ze de filosofiestudenten en de leerlingen van de Qur\'an-el\'Hakîm.
+    <strong>In tweede instantie</strong> vertegenwoordigen ze de filosofiestudenten en de leerlingen van de Qur\'an-el\'Hakîm.
     </p>
 
     <p>
-    <span class="text-bold">In derde instantie</span> representeren ze de Islamitische Oemma en het volk des ongeloofs.
+    <strong>In derde instantie</strong> representeren ze de Islamitische Oemma en het volk des ongeloofs.
     </p>
 
     <p>
@@ -872,18 +893,19 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     De vertrouwde man uit het verhaal zei:
     </p>
 
-    <p class="text-italic">
+    <p><em>
     "Een letter kan niet zonder een schrijver tot stand komen; een wet kan niet zonder een regeerder in werking treden." Voortredenerend zeggen wij:
-    </p>
+    </em></p>
 
     <p>
     Wanneer we spreken over een boek, waarin een ander boek in elk woord met een micro-pen is vastgelegd, en een gestructureerde ode in elke letter in minuscuul schrift is geschreven, dan is het absoluut ondenkbaar dat een dergelijk boek geen schrijver heeft.
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 28,
-         'content' => '<div class="page" id="28">
+        ],
+
+        [
+            'page_number' => 28,
+            'content' => '<div class="page" id="28">
     <p class="text-end page-number">#28</p>
 
     <p>
@@ -891,7 +913,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    Voorwaar, een dergelijk boek kan alleen zijn voortgevloeid uit de Machtspen van een Glorieuze Entiteit Die over Ontzaglijke en Elegante Attributen beschikt, en een Eindeloze Macht en Wijsheid bezit. Aldus noodzaakt de waarneming van de wereld imaan <span class="text-italic">(geloof)</span>, mits men niet dronken is van dwaling...
+    Voorwaar, een dergelijk boek kan alleen zijn voortgevloeid uit de Machtspen van een Glorieuze Entiteit Die over Ontzaglijke en Elegante Attributen beschikt, en een Eindeloze Macht en Wijsheid bezit. Aldus noodzaakt de waarneming van de wereld imaan <em>(geloof)</em>, mits men niet dronken is van dwaling...
     </p>
 
     <p>
@@ -902,28 +924,30 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Vooral als in dat paleis ware structuren om het uur zo vloeiend als beelden op een bioscoopdoek materialiseren, en met perfecte orde zo moeiteloos als het wisselen van kleren worden vervangen, terwijl daarenboven in elk verschijnend beeld verscheidene microstructuren worden gecreëerd.
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 29,
-         'content' => '<div class="page" id="29">
+        ],
+
+        [
+            'page_number' => 29,
+            'content' => '<div class="page" id="29">
     <p class="text-end page-number">#29</p>
 
     <p>
     Evenzo behoeft dit universum een Alwijze, Alwetende en Almachtige Kunstenaar. Immers, dit grandioze universum is een paleis waarin de zon en de maan als lampen, en de sterren als kaarsen dienen. De tijd is een draad; een lijn waarop Die Ontzaglijke Kunstenaar jaarlijks een andere wereld vestigt en tentoonstelt. De verschijning van de wereld die Hij vestigt, ververst hij op 360 geordende manieren. Met perfecte Orde en Wijsheid brengt Hij veranderingen aan. Het aardoppervlak laat Hij dienen als een tafel van gunsten die Hij elke lente met 300.000 soorten kunstwerken decoreert en met ontelbare soorten geschenken belaadt. En ondanks dat al die kunstwerken en geschenken uiterst dicht op elkaar warrig met elkaar verweven zijn, worden ze met uiterst distinctieve kenmerken van elkaar onderscheiden. Zo kun je andere aspecten verder afwegen…
     </p>
 
-    <p class="text-bold">
+    <p><strong>
     Hoe kan iemand tegenover de Kunstenaar van zo\'n paleis onachtzaam blijven?
-    </p>
+    </strong></p>
 
     <p>
     Bovendien kun je nagaan wat voor dwaze waanzin het zou zijn om op een wolkeloze middag de zon te ontkennen, terwijl haar schittering en reflectie op alle luchtbellen op het zeeoppervlak, op alle glimmende objecten op het aardoppervlak en op alle kristallen in sneeuwvlokken te zien zijn en waargenomen worden. Want zodra één enkele zon ontkend en niet aanvaard wordt, is het noodzakelijk om evenveel wezenlijke en zelfstandige zonnetjes te aanvaarden als het bestaande aantal waterdruppels, luchtbellen en reflecterende deeltjes. Er moet dan verondersteld worden dat ieder atoom, dat slechts ruimte heeft voor één atoompje, de waarheid van een geweldige zon omvat.
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 30,
-         'content' => '<div class="page" id="30">
+        ],
+
+        [
+            'page_number' => 30,
+            'content' => '<div class="page" id="30">
     <p class="text-end page-number">#30</p>
 
     <p>
@@ -942,10 +966,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Waarlijk, uit één iets alles voortbrengen en uit alles één iets vervaardigen, is een daad die uitsluitend
     </p>
     </div>'
-     ],
-     [
-         'page_number' => 31,
-         'content' => '<div class="page" id="31">
+        ],
+
+        [
+            'page_number' => 31,
+            'content' => '<div class="page" id="31">
     <p class="text-end page-number">#31</p>
 
     <p>
@@ -953,11 +978,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <div class="text-center">
-    <p class="text-center text-bold small-title">De Tweede Aanwijzing</p>
+    <p class="text-center small-title"><strong>De Tweede Aanwijzing</strong></p>
     </div>
 
     <p>
-    In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <span class="text-italic">"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</span> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>.
+    In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <em>"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</em> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>.
     </p>
 
     <p>
@@ -981,10 +1006,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="footnote-p"><sup>1</sup> <strong>"En er is niets, of het verheerlijkt Hem met lof."</strong></p>
     </div>
     </div>'
-     ],
-     [
-         'page_number' => 32,
-         'content' => '<div class="page" id="32">
+        ],
+
+        [
+            'page_number' => 32,
+            'content' => '<div class="page" id="32">
     <p class="text-end page-number">#32</p>
 
     <p>
@@ -1015,10 +1041,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     fijnzinnige kunstwerken, maar vervolgens geen geleerde gids aanstelt om verlichting te verschaffen?
     </p>
     </div>',
-     ],
-     [
-         'page_number' => 33,
-         'content' => '<div class="page" id="33">
+        ],
+
+        [
+            'page_number' => 33,
+            'content' => '<div class="page" id="33">
     <p class="text-end page-number">#33</p>
 
     <p>
@@ -1049,10 +1076,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     gidsen.
     </p>
     </div>',
-     ],
-     [
-         'page_number' => 34,
-         'content' => '<div class="page" id="34">
+        ],
+
+        [
+            'page_number' => 34,
+            'content' => '<div class="page" id="34">
     <p class="text-end page-number">#34</p>
 
     <p>
@@ -1060,22 +1088,22 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     unaniem zijn, zoals de maansplijting, het water dat uit zijn vingers vloeide en nog circa duizend
     verwante mirakelen, is de Glorierijke Qur\'an als oceaan van waarheden met veertig miraculeuze aspecten een
     ultiem mirakel dat voldoende is om zijn profeetschap zonneklaar aan te tonen. Omdat wij in andere traktaten,
-    en met name in <span class="text-bold">"Het Vijfentwintigste Woord"</span>, bijna veertig miraculeuze aspecten van de Qur\'an hebben
+    en met name in <strong>"Het Vijfentwintigste Woord"</strong>, bijna veertig miraculeuze aspecten van de Qur\'an hebben
     behandeld, zullen wij het hierbij laten.
     </p>
 
     <div class="text-center">
-    <p class="text-center text-bold small-title">De Derde Aanwijzing</p>
+    <p class="text-center small-title"><strong>De Derde Aanwijzing</strong></p>
     </div>
 
     <p>
     Laat de volgende gedachte niet bij je opkomen:
     </p>
 
-    <p class="text-italic">
+    <p><em>
     "Wat voor belang heeft deze minuscule mens nou, dat deze geweldige wereld voor de rekenschap van zijn daden
     zal sluiten en een andere dimensie zal ontluiken?"
-    </p>
+    </em></p>
 
     <p>
     Immers, omdat deze minuscule mens op basis van zijn omvattende aard als leidsman van alle wezens, als
@@ -1087,34 +1115,35 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Ook de volgende gedachte moet je niet voeden:
     </p>
 
-    <p class="text-italic">
+    <p><em>
     "Hoe kan de mens gedurende een kortstondig leven een eeuwige straf verdienen?"
-    </p>
+    </em></p>
 
     <p>
-    Immers, ondanks dat dit universum de status en waardigheid van <span class="text-bold">"de Schriftuur van de Soevereine
-    <span class="text-italic">(Samed)</span>"</span> bekleedt, stort ongeloof het in een afgrond van betekenisloosheid en doelloosheid, wat beledigend
+    Immers, ondanks dat dit universum de status en waardigheid van <strong>"de Schriftuur van de Soevereine
+    <em>(Samed)</strong>"</em> bekleedt, stort ongeloof het in een afgrond van betekenisloosheid en doelloosheid, wat beledigend
     is tegenover het hele universum. Daarnaast leidt de ontkenning die inherent is aan ongeloof tot de verwer-
     </p>
     </div>',
-     ],
-     [
-         'page_number' => 35,
-         'content' => '<div class="page" id="35">
+        ],
+
+        [
+            'page_number' => 35,
+            'content' => '<div class="page" id="35">
     <p class="text-end page-number">#35</p>
 
     <p>
     ping van alle Heilige Goddelijke Namen waarvan de reflecties en verwevingen bij alle wezens te zien zijn.
     Tevens is ongeloof een loochening van alle talloze bewijzen die de Waarachtigheid en Getrouwheid van de
-    Alwaarachtige aantonen. <span class="text-italic text-bold">Aldus is ongeloof een grenzeloos misdrijf – en een grenzeloos misdrijf behoeft een grenzeloze straf.</span>
+    Alwaarachtige aantonen. <strong><em>Aldus is ongeloof een grenzeloos misdrijf – en een grenzeloos misdrijf behoeft een grenzeloze straf.</em></strong>
     </p>
 
     <div class="text-center">
-    <p class="text-center text-bold small-title">De Vierde Aanwijzing</p>
+    <p class="text-center small-title"><strong>De Vierde Aanwijzing</strong></p>
     </div>
 
     <p>
-    Zoals wij in het verhaal aan de hand van <span class="text-bold">"Twaalf Aanzichten"</span> hebben gezien, is het geenszins mogelijk
+    Zoals wij in het verhaal aan de hand van <strong>"Twaalf Aanzichten"</strong> hebben gezien, is het geenszins mogelijk
     dat een vorst van zo\'n statuur wél een land heeft dat hij als een tijdelijk gastenverblijf beheert, maar elders,
     in het centrum van zijn geweldige sultanaat, geen ander, stabiel en permanent land bezit waar zijn majesteit
     ten volle tot haar recht komt.
@@ -1130,19 +1159,20 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    Toegang tot deze waarheid kan via <span class="text-bold">"Twaalf Poorten"</span> worden verkregen. Met <span class="text-bold">"Twaalf Waarheden"</span> kunnen
+    Toegang tot deze waarheid kan via <strong>"Twaalf Poorten"</strong> worden verkregen. Met <strong>"Twaalf Waarheden"</strong> kunnen
     die poorten worden ontgrendeld. We zullen met de kortste en eenvoudigste beginnen…
     </p>
     </div>',
-     ],
-     [
-         'page_number' => 36,
-         'content' => '<div class="page" id="36">
+        ],
+
+        [
+            'page_number' => 36,
+            'content' => '<div class="page" id="36">
     <p class="text-end page-number">#36</p>
 
     <div class="text-center text-center-constrained">
-    <p class="text-center text-bold small-title">De Eerste Waarheid</p>
-    <p class="text-center"><span class="text-italic text-bold">De poort van Gods Heerschappij en Sultanaat; Een glimp van de Naam "Rab" <span class="text-italic">(Heer)</span>.</span></p>
+    <p class="text-center small-title"><strong>De Eerste Waarheid</strong></p>
+    <p class="text-center"><strong><em>De poort van Gods Heerschappij en Sultanaat; Een glimp van de Naam "Rab" <em>(Heer)</em></strong>.</em></p>
     </div>
 
     <p>
@@ -1154,8 +1184,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <div class="text-center text-center-constrained">
-    <p class="text-center text-bold small-title">De Tweede Waarheid</p>
-    <p class="text-center"><span class="text-italic text-bold">De poort van Vrijgevigheid en Genadigheid; Een glimp van de Namen: "de Genereuze en de Genadige"</span>
+    <p class="text-center small-title"><strong>De Tweede Waarheid</strong></p>
+    <p class="text-center"><strong><em>De poort van Vrijgevigheid en Genadigheid; Een glimp van de Namen: "de Genereuze en de Genadige"</em></strong>
     <span class="text-arabic" dir="rtl" lang="ar">اَلْكَرِيمُ وَالرَّحِيمُ</span></p>
     </div>
 
@@ -1165,10 +1195,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     beloning naar Zijn Generositeit en Genade, noch straf conform Zijn Statigheid en Digniteit zal toekennen?
     </p>
     </div>',
-     ],
-     [
-         'page_number' => 37,
-         'content' => '<div class="page" id="37">
+        ],
+
+        [
+            'page_number' => 37,
+            'content' => '<div class="page" id="37">
     <p class="text-end page-number">#37</p>
 
     <p>
@@ -1180,7 +1211,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    <span class="text-italic text-bold">Bijvoorbeeld</span>, in de lente worden alle bomen als paradijselijke schoonheden in zijden gewaden bekleed,
+    <strong><em>Bijvoorbeeld</em></strong>, in de lente worden alle bomen als paradijselijke schoonheden in zijden gewaden bekleed,
     met bloemen en vruchten als sieraden getooid, en als bedienden aangesteld, waarop ze ons via hun elegante
     handen in de gedaante van takken allerlei heerlijke en beeldige vruchten serveren. En uit de hand van een
     giftig insect worden wij met genezende en zalige honing gevoed. En aan de hand van een handeloze rups
@@ -1202,10 +1233,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
     </div>
     </div>',
-     ],
-     [
-         'page_number' => 38,
-         'content' => '<div class="page" id="38">
+        ],
+
+        [
+            'page_number' => 38,
+            'content' => '<div class="page" id="38">
     <p class="text-end page-number">#38</p>
 
     <p>
@@ -1214,7 +1246,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
 
     <p>
-    En op mensen en enkele beesten na, komt alles – <span class="text-italic">vanaf de zon, de maan en de aarde tot aan het allerkleinste schepsel</span> –
+    En op mensen en enkele beesten na, komt alles – <em>vanaf de zon, de maan en de aarde tot aan het allerkleinste schepsel</em> –
     zijn plicht uiterst zorgvuldig na, zonder ook maar een greintje buiten zijn grenzen te treden. In de
     alomtegenwoordigheid van een geweldige Majesteit heerst een universele gehoorzaamheid. Dit toont aan dat
     alles handelt op bevel van een Hoogst Ontzaglijke Bezitter van Statigheid.
@@ -1243,10 +1275,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     </p>
     </div>
     </div>',
-     ],
-     [
-         'page_number' => 39,
-         'content' => '<div class="page" id="39">
+        ],
+
+        [
+            'page_number' => 39,
+            'content' => '<div class="page" id="39">
     <p class="text-end page-number">#39</p>
 
     <p>
@@ -1267,8 +1300,8 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p>
     Bovendien moet er ook een oord van bestraffing zijn waar de voornoemde Glorie en Statigheid tot Hun recht
     kunnen komen. Immers, in de meeste gevallen behoudt een onderdukker zijn trots, terwijl de onderdrukte
-    vernederd blijft wanneer zij van dit aardrijk vertrekken en vergaan. <span class="text-bold">Dit geeft aan dat deze zaken aan de
-    Ultieme Berechting worden overgelaten; ze zijn uitgesteld en worden dus niet genegeerd.</span>
+    vernederd blijft wanneer zij van dit aardrijk vertrekken en vergaan. <strong>Dit geeft aan dat deze zaken aan de
+    Ultieme Berechting worden overgelaten; ze zijn uitgesteld en worden dus niet genegeerd.</strong>
     </p>
 
     <p>
@@ -1277,10 +1310,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     voor een klap van Glorie en Digniteit.
     </p>
     </div>',
-     ],
-     [
-         'page_number' => 40,
-         'content' => '<div class="page" id="40">
+        ],
+
+        [
+            'page_number' => 40,
+            'content' => '<div class="page" id="40">
     <p class="text-end page-number">#40</p>
 
     <p>
@@ -1301,15 +1335,16 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     Genadige hen geen eeuwige gelukzaligheid in een oord van beloning zal schenken?
     </p>
     </div>',
-     ],
- [
- 'page_number' => 41,
- 'content' => '<div class="page" id="41">
+        ],
+
+        [
+            'page_number' => 41,
+            'content' => '<div class="page" id="41">
  <p class="text-end page-number">#41</p>
 
  <div class="text-center text-center-constrained">
- <p class="text-center text-bold small-title">De Derde Waarheid</p>
- <p class="text-center"><span class="text-italic text-bold">De poort van Wijsheid en Rechtvaardigheid; Een glimp van de Namen: "de Alwijze en de Rechtvaardige"</span>
+ <p class="text-center small-title"><strong>De Derde Waarheid</strong></p>
+ <p class="text-center"><strong><em>De poort van Wijsheid en Rechtvaardigheid; Een glimp van de Namen: "de Alwijze en de Rechtvaardige"</em></strong>
  <span class="text-arabic" dir="rtl" lang="ar">اَلْحَكٖيمُ وَالْعَادِلُ</span></p>
  </div>
 
@@ -1324,26 +1359,27 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p">
- <sup>1</sup> De formulering: <span class="text-italic text-bold">"Is het ooit voor mogelijk te houden"</span> wordt vaak herhaald om een belangrijk
+ <sup>1</sup> De formulering: <strong><em>"Is het ooit voor mogelijk te houden"</em></strong> wordt vaak herhaald om een belangrijk
  geheim uit te drukken. Ongeloof en dwaling rijzen voornamelijk op wanneer iets als vergezocht wordt
  aangemerkt. Met andere woorden, wanneer iemand iets onwaarschijnlijk en buiten het bereik van het verstand
- acht, dan neigt hij ertoe datgene te ontkennen. Echter, in <span class="text-bold">"Het Traktaat over de Herzameling"</span> is
+ acht, dan neigt hij ertoe datgene te ontkennen. Echter, in <strong>"Het Traktaat over de Herzameling"</strong> is
  onbetwistbaar aangetoond dat juist het pad van ongeloof en de weg van dwaling doordrenkt zijn met
  vergezochteden, onwaarschijnlijkheden, onredelijkheden, onaannemelijkheden en onoverkomelijke problematieken.
  Tevens wordt aangetoond dat reële mogelijkheden, logische waarschijnlijkheden en onontkoombare aannemelijkheden
  te vinden zijn op het pad des geloofs en in de laan van de Islam.
  </p>
  <p class="footnote-p">
- <span class="text-bold">Conclusie:</span> terwijl filosofen tot ontkenning neigen wanneer ze iets vergezocht achten, maakt
- <span class="text-bold">"Het Tiende Woord"</span> middels de retorische vraagvorm duidelijk aan welke kant daadwerkelijke vergezochtheid
+ <strong>Conclusie:</strong> terwijl filosofen tot ontkenning neigen wanneer ze iets vergezocht achten, maakt
+ <strong>"Het Tiende Woord"</strong> middels de retorische vraagvorm duidelijk aan welke kant daadwerkelijke vergezochtheid
  ligt, en legt hen zodoende de hand op de mond.
  </p>
  </div>
  </div>',
- ],
- [
- 'page_number' => 42,
- 'content' => '<div class="page" id="42">
+        ],
+
+        [
+            'page_number' => 42,
+            'content' => '<div class="page" id="42">
  <p class="text-end page-number">#42</p>
 
  <p>
@@ -1358,13 +1394,13 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  en een Sublieme Gelukzaligheid zullen volgen.
  </p>
 
- <p class="text-italic text-bold">
+ <p><strong><em>
  Waarlijk, de Entiteit Die deze wereld beheert, brengt ontwikkelingen met een eindeloze Wijsheid tot stand.
  Wil je hier een bewijs voor?
- </p>
+ </em></strong></p>
 
  <p>
- <span class="text-bold">Bij alles beoogt Hij voordelen en nuttigheden.</span> Zie je dan niet dat alle
+ <strong>Bij alles beoogt Hij voordelen en nuttigheden.</strong> Zie je dan niet dat alle
  menselijke organen, beenderen en aderen, en zelfs alle cellen en delen van het lichaam, afgestemd zijn op
  nuttigheden en wijsheden? In bepaalde organen verweeft Hij zelfs zoveel wijsheden en gunstigheden als het
  aantal vruchten aan een boom. Dit laat zien dat alle ontwikkelingen middels een Hand van Eindeloze
@@ -1379,10 +1415,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  klein zaadje worden vastgelegd, wijzen erop dat een Pen van Eindeloze Wijsheid actief is.
  </p>
  </div>',
- ],
- [
- 'page_number' => 43,
- 'content' => '<div class="page" id="43"> <p class="text-end page-number">#43</p>
+        ],
+
+        [
+            'page_number' => 43,
+            'content' => '<div class="page" id="43"> <p class="text-end page-number">#43</p>
 <p>
  Ook de aanwezigheid van een uiterst subliem kunstenaarschap in de schepping van alle wezens toont
  aan dat alles het ontwerp is van een Oneindig Wijze Kunstenaar. Waarlijk, de wijze waarop de samenvatting
@@ -1393,9 +1430,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  Heerschappij zoeken, niet zal willen begenadigen en niet eeuwig zal begiftigen?
 </p>
 
-<p class="text-italic text-bold">
+<p><strong><em>
  Wil je ook bewijs dat ontwikkelingen zich met rechtvaardigheid en balans voltrekken?
-</p>
+</em></strong></p>
 
 <p>
  De wijze waarop alles volgens nauwkeurige afwegingen en specifieke afmetingen een bestaan wordt gegeven,
@@ -1409,10 +1446,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
  </div>'
- ],
- [
- 'page_number' => 44,
- 'content' => '<div class="page" id="44"> <p class="text-end page-number">#44</p>
+        ],
+
+        [
+            'page_number' => 44,
+            'content' => '<div class="page" id="44"> <p class="text-end page-number">#44</p>
 <p>
  Voorwaar, is het ooit voor mogelijk te houden dat zo’n Rechtvaardigheid en Wijsheid, Die zelfs aan
  de kleinste behoefte van het nietigste schepsel tegemoetkomen, de ultieme behoefte van het aanzienlijkste
@@ -1433,14 +1471,15 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
  </div>'
- ],
- [
- 'page_number' => 45,
- 'content' => '<div class="page" id="45"> <p class="text-end page-number">#45</p>
+        ],
+
+        [
+            'page_number' => 45,
+            'content' => '<div class="page" id="45"> <p class="text-end page-number">#45</p>
 
 <div class="text-center text-center-constrained">
- <p class="text-center text-bold small-title">De Vierde Waarheid</p>
- <p class="text-center"><span class="text-italic text-bold">De poort van Vrijgevigheid en Schoonheid; Een glimp van de Namen: “de Vrijgevige en de Schone”</span></p>
+ <p class="text-center small-title"><strong>De Vierde Waarheid</strong></p>
+ <p class="text-center"><strong><em>De poort van Vrijgevigheid en Schoonheid; Een glimp van de Namen: “de Vrijgevige en de Schone”</em></strong></p>
  <p class="text-center">
  <span class="text-arabic" dir="rtl" lang="ar">اَلْجَوَادُ وَ الْجَمٖيلُ</span>
  </p>
@@ -1469,10 +1508,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
  </div>'
- ],
- [
- 'page_number' => 46,
- 'content' => '<div class="page" id="46"> <p class="text-end page-number">#46</p>
+        ],
+
+        [
+            'page_number' => 46,
+            'content' => '<div class="page" id="46"> <p class="text-end page-number">#46</p>
 <p>
  Ze zou veeleer verlangen naar een eeuwig paradijs bevolkt door eeuwige behoeftigen. Grenzeloze vrijgevigheid
  en gulheid willen immers eindeloos begiftigen en begunstigen. Eindeloos begiftigen en begunstigen
@@ -1505,14 +1545,15 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  </p>
 </div>
  </div>'
- ],
- [
- 'page_number' => 47,
- 'content' => '<div class="page" id="47"> <p class="text-end page-number">#47</p>
+        ],
+
+        [
+            'page_number' => 47,
+            'content' => '<div class="page" id="47"> <p class="text-end page-number">#47</p>
 
 <p>
  Volmaaktheden verlangen immers naar onthulling in het bijzijn van toeschouwers die ze met uitingen van
- <span class="text-italic">“mâshâ’ALLAH”</span> waarderen en bewonderen. Daarnaast willen permanente Volmaaktheden permanent zichtbaar
+ <em>“mâshâ’ALLAH”</em> waarderen en bewonderen. Daarnaast willen permanente Volmaaktheden permanent zichtbaar
  zijn, wat weer het voortbestaan van waarderende bewonderaars vereist. Want in de ogen van een bewonderaar
  die niet blijvend is, zullen Volmaaktheden hun waarde verliezen.<sup>2</sup>
 </p>
@@ -1520,19 +1561,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 <p>
  En zoals het daglicht de zon kenbaar maakt, zo onthullen de mooie, kunstrijke, stralende en sierlijke wezens
  die over het aangezicht van het universum zijn uitgespreid, de sublimiteit van een onvergelijkelijke, spirituele
- Schoonheid; ze kenschetsen de subtiliteiten van een verborgen, weergaloze Pracht.<sup>3</sup> De glimpen van de
- Onberispelijke Pracht en Heilige Schoonheid beduiden dat in elke Goddelijke Naam vele verborgen schatten schuilen.
+ Schoonheid; ze kenschetsen de subtiliteiten van een verborgen, weergaloze Pracht.<sup>3</sup> De glimpen van die Onberispelijke Pracht en Heilige Schoonheid beduiden dat in elke Goddelijke Naam vele verborgen schatten schuilen.
 </p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p">
  <sup>2</sup> Waarlijk, zoals een klassiek voorbeeld luidt, was er eens een schone dame van wereldklasse die een ordinaire
- beminnaar van zich wegjoeg. Om zichzelf te troosten, zei die man: <span class="text-italic">“Bah, wat was zij lelijk zeg!”</span>
+ beminnaar van zich wegjoeg. Om zichzelf te troosten, zei die man: <em>“Bah, wat was zij lelijk zeg!”</em>
  Zodoende verloochenende hij de schoonheid van die schone vrouw. Ook was er eens een beer die onder een zoete
  druiventros kroop om druiven te eten. Echter, zijn klauwen reikten niet tot die druiven, noch was hij in staat om
- de druivenstok te beklimmen. Om zichzelf te troosten, zei hij in zijn eigen taal: <span class="text-italic">“Die druiven zijn vast
- en zeker zuur”</span>, waarna hij brommend wegslenterde.
+ de druivenstok te beklimmen. Om zichzelf te troosten, zei hij in zijn eigen taal: <em>“Die druiven zijn vast
+ en zeker zuur”</em>, waarna hij brommend wegslenterde.
  </p>
  <p class="footnote-p">
  <sup>3</sup> Terwijl wezens in hun rol als spiegels achtereenvolgens vergaan en verdwijnen, zijn de glimpen van diezelfde
@@ -1543,10 +1583,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 48,
- 'content' => '<div class="page" id="48"> <p class="text-end page-number">#48</p>
+        ],
+
+        [
+            'page_number' => 48,
+            'content' => '<div class="page" id="48"> <p class="text-end page-number">#48</p>
 
 <p>
  Voorwaar, de Bezitter van een verborgen Schoonheid Die zo verheven en onvergelijkelijk is, zal Zijn Eigen
@@ -1555,16 +1596,16 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  gezien willen worden om Zijn geliefde Schoonheid ook door hun ogen waar te nemen.
 </p>
 
-<p class="text-bold">
+<p><strong>
  Hij wil Zijn Schoonheid dus op twee manieren aanschouwen:
+</strong></p>
+
+<p>
+ <strong><em>Enerzijds</em></strong> wil Hij Zijn Schoonheid in verscheidene spiegels met distinctieve kleuren direct aanschouwen.
 </p>
 
 <p>
- <span class="text-italic text-bold">Enerzijds</span> wil Hij Zijn Schoonheid in verscheidene spiegels met distinctieve kleuren direct aanschouwen.
-</p>
-
-<p>
- <span class="text-italic text-bold">Anderzijds</span> wil Hij Zijn Schoonheid door de ogen van smachtende toeschouwers en verwonderde bewonderaars bezichtigen.
+ <strong><em>Anderzijds</em></strong> wil Hij Zijn Schoonheid door de ogen van smachtende toeschouwers en verwonderde bewonderaars bezichtigen.
 </p>
 
 <p>
@@ -1581,10 +1622,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  onbevattelijke, maar ook afkerig van het onbereikbare. Hierdoor kan zijn binnenwereld ten opzichte van een
 </p>
  </div>'
- ],
- [
- 'page_number' => 49,
- 'content' => '<div class="page" id="49"> <p class="text-end page-number">#49</p>
+        ],
+
+        [
+            'page_number' => 49,
+            'content' => '<div class="page" id="49"> <p class="text-end page-number">#49</p>
 <p>
  Schoonheid Die eeuwige liefde, eindeloze passie en grenzeloze bewondering verdient, vervuld zijn van vijandschap,
  wrok en ontkenning. Voorwaar, het geheim achter de vijandschap van een kafir jegens ALLAH kan
@@ -1603,11 +1645,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  en Volmaaktheid, waarna ze onverzadigd vergaan.
 </p>
 
-<p class="text-bold">
+<p><strong>
  Ze trekken dus naar een eeuwig schouwparadijs.
-</p>
+</strong></p>
 
-<p class="text-italic text-bold">Conclusie:</p>
+<p><strong><em>Conclusie:</em></strong></p>
 
 <p>
  Net zoals deze wereld met al haar wezens onmiskenbaar duidt op haar Ontzaglijke Kunstenaar, zo beduiden,
@@ -1616,14 +1658,15 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
  </div>'
- ],
- [
- 'page_number' => 50,
- 'content' => '<div class="page" id="50"> <p class="text-end page-number">#50</p>
+        ],
+
+        [
+            'page_number' => 50,
+            'content' => '<div class="page" id="50"> <p class="text-end page-number">#50</p>
 
 <div class="text-center text-center-constrained">
- <p class="text-center text-bold small-title">De Vijfde Waarheid</p>
- <p class="text-center"><span class="text-italic text-bold">De poort van Mededogen en het Mohammedaanse dienaarschap</span> <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><span class="text-italic text-bold">; Een glimp van de Namen: “de Antwoorder en de Genadige”</span></p>
+ <p class="text-center small-title"><strong>De Vijfde Waarheid</strong></p>
+ <p class="text-center"><strong><em>De poort van Mededogen en het Mohammedaanse dienaarschap</em></strong> <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong><em>; Een glimp van de Namen: “de Antwoorder en de Genadige”</em></strong></p>
  <p class="text-center">
  <span class="text-arabic" dir="rtl" lang="ar">اَلْمُجٖيبُ وَالرَّحٖيمُ</span>
  </p>
@@ -1658,10 +1701,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 51,
- 'content' => '<div class="page" id="51"> <p class="text-end page-number">#51</p>
+        ],
+
+        [
+            'page_number' => 51,
+            'content' => '<div class="page" id="51"> <p class="text-end page-number">#51</p>
 
 <p>
  niet bevredigt en vervult, en de meest verheven bede verneemt maar niet aanvaardt?
@@ -1675,7 +1719,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
 <p>
- Deze waarheid die ik reeds in “Het Negentiende Woord” heb uitgelegd, zullen wij hier wederom als
+ Deze waarheid die ik reeds in <strong>>“Het Negentiende Woord”</strong> heb uitgelegd, zullen wij hier wederom als
  volgt ontvouwen... O vriend die meeluistert met mijn nefs! In het symbolische verhaal hadden wij het over
  een bijeenkomst op een eiland waar een nobele adjudant een toespraak voorlas. We zullen nu de waarheid
  van deze symboliek ophelderen.
@@ -1699,13 +1743,14 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  </p>
 </div>
  </div>'
- ],
- [
- 'page_number' => 52,
- 'content' => '<div class="page" id="52"> <p class="text-end page-number">#52</p>
+        ],
+
+        [
+            'page_number' => 52,
+            'content' => '<div class="page" id="52"> <p class="text-end page-number">#52</p>
 
 <p>
- Kijk nu mee! Terwijl die eminentie om eeuwige gelukzaligheid bidt, staat hij in zo’n sublieme salaat en in
+ <strong>Kijk nu mee!</strong> Terwijl die eminentie om eeuwige gelukzaligheid bidt, staat hij in zo’n sublieme salaat en in
  zo’n verheven gebed, dat vrijwel dit hele schiereiland, en zelfs de hele aarde, zich bij zijn majestueuze salaat
  aansluiten en met hem meebidden. Zijn dienaarschap omvat immers niet alleen het dienaarschap van zijn
  volgzame oemma, maar belichaamt op basis van het unanimiteitsgeheim ook het collectieve dienaarschap
@@ -1723,35 +1768,35 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  <p class="footnote-p">
  <sup>2</sup> Waarlijk, vanaf het moment waarop de Ahmedaanse smeekbede <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> werd
  verricht tot aan het heden gelden alle salaats en zegenwensen van heel zijn oemma als een ononderbroken en gezamenlijk
- uitgesproken “âmîn” op zijn bede. Zelfs elke zegen die hem wordt toegewenst, geldt als een afzonderlijke “âmîn” op zijn bede.
+ uitgesproken <em>“âmîn”</em> op zijn bede. Zelfs elke zegen die hem wordt toegewenst, geldt als een afzonderlijke <em>“âmîn”</em> op zijn bede.
  De salaat en vrede die tijdens elk gebed door ieder lid van zijn oemma over hem worden afgebeden, en de bede die de volgers
- van de Shafi-school na elke iqama voor hem verrichten, gelden als een zeer krachtige en gemeenschappelijke “âmîn” op zijn
+ van de Shafi-school na elke iqama voor hem verrichten, gelden als een zeer krachtige en gemeenschappelijke <em>“âmîn”</em> op zijn
  bede om eeuwige gelukzaligheid.
  </p>
  <p class="footnote-p">
- Voorwaar, om oneindigheid en eeuwige gelukzaligheid te bereiken – <span class="text-italic">waar ieder mens in de natuurlijke taal van zijn
- menselijke aard tot al zijn kracht naar verlangt</span> – bidt de profeet Ahmed <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> namens de
+ Voorwaar, om oneindigheid en eeuwige gelukzaligheid te bereiken – <em>waar ieder mens in de natuurlijke taal van zijn menselijke aard met al zijn kracht naar verlangt</em> – bidt de profeet Ahmed <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> namens de
  gehele mensheid, waarop de verlichte mensen achter hem <em>“âmîn”</em> zeggen.
  </p>
- <p class="footnote-p text-bold">
+ <p class="footnote-p"><strong>
  Is het ooit voor mogelijk te houden dat deze bede onverhoord zal blijven?
- </p>
+ </strong></p>
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 53,
- 'content' => '<div class="page" id="53"> <p class="text-end page-number">#53</p>
+        ],
+
+        [
+            'page_number' => 53,
+            'content' => '<div class="page" id="53"> <p class="text-end page-number">#53</p>
 
 <p>
  Kijk! De behoefte aan eeuwigheid waarvoor hij bidt is zo universeel, dat niet alleen de aardbewoners, maar
  ook de hemelingen en zelfs alle wezens zich aansluiten bij zijn smeekbede; in de taal van hun houding zeggen ze:
 </p>
 
-<p class="text-italic text-bold">
+<p><em>
  “O Heer, vervul zijn wens! Verhoor zijn bede! Ook wij verlangen dit!”
-</p>
+</em></p>
 
 <p>
  En kijk, de wijze waarop hij om eeuwige gelukzaligheid bidt, is zo ontroerend, zo liefdevol, zo vurig en zo
@@ -1760,15 +1805,15 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
 <p>
  Kijk! Hij beoogt daarenboven zo’n nobel doel wanneer hij om gelukzaligheid bidt, dat hij daarmee de mens
- evenals alle schepselen vanuit de diepste laagtes van complete vernietiging, verderf, onwaarding, nutteloosheid
+ evenals alle schepselen vanuit de diepste laagtes van complete vernietiging, verderf, ontwaarding, nutteloosheid
  en futiliteit, verheft tot de hoogste hoogtes van waarde en eeuwigheid, waarbij ze een verheven functie bekleden
- als <span class="text-italic text-bold">“de Schrifturen van de Soevereine”</span>.
+ als <strong><em>“de Schrifturen van de Soevereine”</em></strong>.
 </p>
 
 <p>
  Kijk! Hij bidt met zo’n verheven intensiteit en smeekt met zo’n zoete aanroep, dat zijn stem als het ware
  het hele bestaan, de hemelen en het Oppertoon bereikt, in vervoering brengt en aanzet tot het uiten van:
- <span class="text-italic text-bold">“Âmîn o ALLAH, âmîn!”</span><sup>3</sup>
+ <em>“Âmîn o ALLAH, âmîn!”</em><sup>3</sup>
 </p>
 
 <div class="page-footnote">
@@ -1784,10 +1829,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  </p>
 </div>
  </div>'
- ],
- [
- 'page_number' => 54,
- 'content' => '<div class="page" id="54"> <p class="text-end page-number">#54</p>
+        ],
+
+        [
+            'page_number' => 54,
+            'content' => '<div class="page" id="54"> <p class="text-end page-number">#54</p>
 
 <p>
  Kijk! Degene tot Wie hij bidt om gelukzaligheid en eeuwigheid is tevens zo Alhorend, Generous en Almachtig,
@@ -1795,9 +1841,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  de meest verborgen levensvorm ziet, verneemt en meedogend verhoort.
 </p>
 
-<p class="text-italic text-bold">
+<p><strong><em>
  Zelfs wanneer een wens in de taal van houding wordt uitgedrukt, reageert Hij daarop.
-</p>
+</em></strong></p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
@@ -1810,14 +1856,14 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  Waarlijk, dankzij de Lichternis van de Ahmedaanse Persoonlijkheid <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>
  is de gestalte van de wereld veranderd. De ware aard van de mens en het hele universum is dankzij dat Licht
  verschenen; dientengevolge is gebleken dat elke creatie in dit universum een brief is van de Soevereine
- <span class="text-italic">(Samed)</span> waarvan Goddelijke Namen kunnen worden afgelezen; ieder schepsel is een aangestelde functionaris
+ <em>(Samed)</em> waarvan Goddelijke Namen kunnen worden afgelezen; ieder schepsel is een aangestelde functionaris
  met een waardevol en betekenisvol bestaan bestemd voor eeuwigheid. Zonder dat Licht zou het bestaan als
  waardeloos, betekenisloos, zinloos, futiel en warrig speeltje van toevalligheden hopeloos verstrikt blijven in de
  duisternissen van waan, gedoemd tot absolute vernietiging.
 </p class="footnote-p">
 
 <p class="footnote-p">
- Voorwaar, vanwege dit geheim zeggen niet alleen mensen “âmîn” op de beden van de Ahmedaanse Persoonlijkheid
+ Voorwaar, vanwege dit geheim zeggen niet alleen mensen <em>“âmîn”</em> op de beden van de Ahmedaanse Persoonlijkheid
  <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, maar ook het hele bestaan, vanaf de Oppertoon tot aan de aardbodem,
  de geosfeer tot aan de Pleiaden, toont een trotse verbondenheid met zijn Lichternis. De ziel van het Ahmedaanse
  dienaarschap <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> is in feite een bede. In wezen zijn alle bewegingen en
@@ -1825,26 +1871,27 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
 <p class="footnote-p">
- <span class="text-italic text-bold">Bijvoorbeeld,</span> de beweging van een zaadje geldt als een bede aan zijn Schepper om uit te
+ <strong><em>Bijvoorbeeld,</em></strong> de beweging van een zaadje geldt als een bede aan zijn Schepper om uit te
  mogen bloeien tot boom...
 </p>
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 55,
- 'content' => '<div class="page" id="55"> <p class="text-end page-number">#55</p>
+        ],
+
+        [
+            'page_number' => 55,
+            'content' => '<div class="page" id="55"> <p class="text-end page-number">#55</p>
 
 <p>
  Hij begenadigt en reageert met zo’n Wijsheid, Alziendheid en Genadigheid, dat het een einde maakt
  aan alle twijfel:
 </p>
 
-<p class="text-italic text-bold">
+<p><strong><em>
  De alomheersende vorming en voorzienigheid worden uitsluitend door de Alhorende en Alziende gerealiseerd,
  en kunnen alleen aan de Genereuze en Genadige worden toegekend.
-</p>
+</em></strong></p>
 
 <p>
  Terwijl de glorie der mensheid en tijdeloze uitblinker van het bestaan alle adamskinderen op aarde achter
@@ -1868,17 +1915,18 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p">
- <sup>4</sup> Waarlijk, op het aardoppervlak – <span class="text-italic">dat in verhouding tot het hiernamaals slechts een knappe pagina is</span> –
+ <sup>4</sup> Waarlijk, op het aardoppervlak – <em>dat in verhouding tot het hiernamaals slechts een knappe pagina is</em> –
  worden vele voortreffelijke voorbeelden van kunst, en talloze illustraties van de herzameling en de herrijzenis
  tentoongesteld; &rarr;
  </p>
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 56,
- 'content' => '<div class="page" id="56"> <p class="text-end page-number">#56</p>
+        ],
+
+        [
+            'page_number' => 56,
+            'content' => '<div class="page" id="56"> <p class="text-end page-number">#56</p>
 
 <p>
  Waarlijk, voor de Absolute Almacht Die gedurende onze lente het aardoppervlak in een verzamelplaats
@@ -1886,7 +1934,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  niet bezwarend zijn?
 </p>
 
-<p class="text-bold">Kortom:</p>
+<p><strong>Kortom:</strong></p>
 
 <p>
  Net zoals het profeetschap van de eindprofeet tot de totstandkoming van dit beproevingsoord heeft geleid
@@ -1896,9 +1944,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
 <p>
- Is het dan voor mogelijk te houden dat de evidente orde in de wereld – <span class="text-italic">die alle verstanden versteld doet
- staan</span> – het onberispelijke kunstenaarschap – <span class="text-italic">dat met Genade is doordrenkt</span> – en de onvergelijkelijke schoonheid
- – <span class="text-italic">die de Goddelijke Heerschappij heeft vervuld</span> – ooit zoiets lelijks, zoiets genadeloos en zoiets ordeloos als
+ Is het dan voor mogelijk te houden dat de evidente orde in de wereld – <em>die alle verstanden versteld doet
+ staan</em> – het onberispelijke kunstenaarschap – <em>dat met Genade is doordrenkt</em> – en de onvergelijkelijke schoonheid
+ – <em>die de Goddelijke Heerschappij heeft vervuld</em> – ooit zoiets lelijks, zoiets genadeloos en zoiets ordeloos als
  het onbeantwoord laten van zijn bede zouden permitteren?
 </p>
 
@@ -1914,15 +1962,16 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  lentetuinen in gelijke mate gecompliceerder en verbazender is dan die van het paradijs.
  </p>
  <p class="footnote-p">
- <sup>5</sup> <span class="text-italic text-bold">“Was het niet voor jou, was het niet voor jou, dan had Ik de hemelsferen niet geschapen.”</span>
+ <sup>5</sup> <strong><em>“Was het niet voor jou, was het niet voor jou, dan had Ik de hemelsferen niet geschapen.”</em></strong>
  </p>
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 57,
- 'content' => '<div class="page" id="57"> <p class="text-end page-number">#57</p>
+        ],
+
+        [
+            'page_number' => 57,
+            'content' => '<div class="page" id="57"> <p class="text-end page-number">#57</p>
 
 <p>
  Met andere woorden, zou de Schepper de simpelste en onbeduidendste wensen en stemmen aandachtig
@@ -1931,12 +1980,12 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  lelijks aanvaarden en verlelijken.<sup>6</sup>
 </p>
 
-<p class="text-center text-bold">Conclusie:</p>
+<p class="text-center"><strong>Conclusie:</strong></p>
 
-<p class="text-center text-bold text-center-constrained">
+<p class="text-center text-center-constrained"><strong>
  Zoals de Nobelste Godsbode <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> de poort tot de wereld heeft geopend met zijn
  profeetschap, zo ontgrendelt hij de poort tot het hiernamaals met zijn dienaarschap.
-</p>
+</strong></p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
  عَلَيْهِ صَلَوَاتُ الرَّحْمٰنِ مِلْءَ الدُّنْيَا وَدَارِ الْجِنَانِ<sup>7</sup>
@@ -1962,10 +2011,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 58,
- 'content' => '<div class="page" id="58"> <p class="text-end page-number">#58</p>
+        ],
+
+        [
+            'page_number' => 58,
+            'content' => '<div class="page" id="58"> <p class="text-end page-number">#58</p>
 <p class="text-center-constrained">
  <span class="text-arabic delima-font" dir="rtl" lang="ar">
  اللّٰهُمَّ صَلِّ وَسَلِّمْ
@@ -1984,19 +2034,20 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
  <sup>8</sup> O ALLAH, laat zegeningen en vrede neerdalen over Uw dienaar en Uw gezant; de geliefde die gekenmerkt is als de
  meester van beide dimensies, de trots van beide werelden, het leven van beide domeinen en het middel tot beide
  gelukzaligheden, de tweevleugelige boodschapper voor zowel mens als djinn, en over al zijn familieleden en metgezellen,
- en over zijn gebroeders onder de gezanten en profeten... Âmîn.
+ en over zijn gebroeders onder de gezanten en profeten... <strong>Âmîn</strong>.
  </p>
 </div>
 
  </div>'
- ],
- [
- 'page_number' => 59,
- 'content' => '<div class="page" id="59"> <p class="text-end page-number">#59</p>
+        ],
+
+        [
+            'page_number' => 59,
+            'content' => '<div class="page" id="59"> <p class="text-end page-number">#59</p>
 
 <div class="text-center text-center-constrained">
- <p class="text-center text-bold small-title">De Zesde Waarheid</p>
- <p class="text-center"><span class="text-italic text-bold">De poort van Majesteit en Oneindigheid; Een glimp van de Namen: “de Ontzaglijke en de Eeuwige”</span></p>
+ <p class="text-center small-title"><strong>De Zesde Waarheid</strong></p>
+ <p class="text-center"><strong><em>De poort van Majesteit en Oneindigheid; Een glimp van de Namen: “de Ontzaglijke en de Eeuwige”</em></strong></p>
  <p class="text-center">
  <span class="text-arabic" dir="rtl" lang="ar">اَلْجَلٖيلُ وَالْبَاقٖى</span>
  </p>
@@ -2004,7 +2055,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 
 <p>
  Is het ooit voor mogelijk te houden dat een Majesteitelijke Heerschappij, waarbij alle bestaansvormen –
- <span class="text-italic">vanaf de zonnen en bomen tot aan de atomen</span> – als gehoorzame soldaten worden beheerst en beheerd,
+ <em>vanaf de zonnen en bomen tot aan de atomen</em> – als gehoorzame soldaten worden beheerst en beheerd,
  slechts beperkt kan zijn tot dit wereldse gastenverblijf waar arme stervelingen een vluchtig leven leiden? Zal de Heerser
  geen blijvend, oneindig domein conform Zijn Majesteit, geen eeuwig, verheven centrum voor Zijn Heerschappij creëren?
 </p>
@@ -2012,7 +2063,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 <p>
  Waarlijk, de majesteitelijke processen zoals de seizoenen die systematisch veranderen, de imponerende
  bewegingen zoals de wentelingen van planeten die als vliegende vaartuigen voortreizen, de geweldige
- betuigingen die de aarde voor de mens als wieg en de zon voor de aardbewoners als lamp doen dienen,
+ beteugelingen die de aarde voor de mens als wieg en de zon voor de aardbewoners als lamp doen dienen,
  de geweldige overgangen zoals de wederopwekking en optooiing van het dode en dorre aardoppervlak,
  en dergelijke zichtbare verschijnselen in het universum tonen altezamen aan dat vanachter de schermen
  een fenomenale Heerschappij van een grandioos Sultanaat regeert. Een Heerschappij Die over een dusdanig
@@ -2020,15 +2071,16 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
 <p>
- Echter, je ziet dat de aanzienlijkste onderdanen en getrouwen met de omvattendste aard in een zorgelijke
+ <strong>Echter</strong>, je ziet dat de aanzienlijkste onderdanen en getrouwen met de omvattendste aard in een zorgelijke
  staat tijdelijk zijn bijeengekomen in dit aardse gasten-
 </p>
 
  </div>'
- ],
- [
- 'page_number' => 60,
- 'content' => '<div class="page" id="60"> <p class="text-end page-number">#60</p>
+        ],
+
+        [
+            'page_number' => 60,
+            'content' => '<div class="page" id="60"> <p class="text-end page-number">#60</p>
 
 <p>
  verblijf. Ondertussen loopt het verblijf zelf elke dag vol en leeg.
@@ -2040,7 +2092,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
 <p>
- Tevens vertoeven al die onderdanen enkele minuten in deze tentoonstellingsruimte om in de wonderlijke
+ <strong>Tevens</strong> vertoeven al die onderdanen enkele minuten in deze tentoonstellingsruimte om in de wonderlijke
  galerijen van de wereldse marktplaats de voorbeelden van de kostbare geschenken en de antieke kunstwerken
  van de Ontzaglijke Kunstenaar met een handelaarsblik te bezichtigen, waarna ze verdwijnen. Ondertussen
  maakt deze tentoonstellingsruimte zelf elke minuut een overgang door. Wie vertrekt, komt niet terug; wie
@@ -2063,10 +2115,11 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 </p>
 
  </div>'
- ],
-     [
-         'page_number' => 61,
-         'content' => '<div class="page" id="61"> <p class="text-end page-number">#61</p>
+        ],
+
+        [
+            'page_number' => 61,
+            'content' => '<div class="page" id="61"> <p class="text-end page-number">#61</p>
 <p>
 Stel je voor dat jij tijdens een reis een herberg langs de weg ontwaart die een hoogachtbaar individu voor
 zijn bezoekers heeft opgebouwd. Om zijn gasten een nacht ter lering en vermaak te bieden, besteedt hij
@@ -2083,8 +2136,8 @@ grotendeels afbreekt, en nieuwe versieringen voor de nieuwe gasten vervaardigt.
 </p>
 
 <p>
-Nadat jij dit hebt aanschouwd, zou jij het dan nog betwijfelen dat de gastheer – <span class="text-italic">(die langs deze weg deze
-herberg heeft gebouwd)</span> – over oneindige, hemelse woonverblijven; over onuitputtelijke, waardevolle schatten,
+Nadat jij dit hebt aanschouwd, zou jij het dan nog betwijfelen dat de gastheer – <em>die langs deze weg deze
+herberg heeft gebouwd</em> – over oneindige, hemelse woonverblijven; over onuitputtelijke, waardevolle schatten,
 en over een onophoudelijke, geweldige vrijgevigheid beschikt? Met de gastvrijheid die hij in deze herberg
 demonstreert, wekt hij bij zijn gasten de interesse op voor alles wat hij in zijn nabijheid bewaart. Daarnaast
 ontketent hij een verlangen naar de geschenken die hij voor hen heeft klaargemaakt.
@@ -2092,30 +2145,31 @@ ontketent hij een verlangen naar de geschenken die hij voor hen heeft klaargemaa
 
 <p>
 Evenzo, wanneer je de toestand van dit aardse gastenverblijf zonder dronkenschap aandachtig observeert,
-dan zul je de navolgende <span class="text-bold">“Negen Kernpunten”</span> ontwaren:
+dan zul je de navolgende <strong>“Negen Kernpunten”</strong> ontwaren:
 </p>
 </div>'
-     ],
-     [
-         'page_number' => 62,
-         'content' => '<div class="page" id="62"> <p class="text-end page-number">#62</p>
+        ],
 
-<p class="text-bold">Het Eerste Kernpunt</p>
+        [
+            'page_number' => 62,
+            'content' => '<div class="page" id="62"> <p class="text-end page-number">#62</p>
+
+<p><strong>Het Eerste Kernpunt</strong></p>
 
 <p>
-Je zult ontwaren dat deze wereld – <span class="text-italic">(evenals die herberg)</span> – niet voor haarzelf bestaat... het is ondenkbaar
+Je zult ontwaren dat deze wereld – <em>evenals die herberg</em> – niet voor haarzelf bestaat... het is ondenkbaar
 dat ze uit haarzelf deze gedaante heeft aangenomen. Ze is veeleer volgens wijsheid opgericht als een aldoor
-vol- en leeglopen gastverblijf voor de karavanen der schepselen die komen en gaan.
+vol- en leeglopend gastenverblijf voor de karavanen der schepselen die komen en gaan.
 </p>
 
-<p class="text-bold">Het Tweede Kernpunt</p>
+<p><strong>Het Tweede Kernpunt</strong></p>
 
 <p>
 Je zult ontwaren dat de bewoners van deze herberg gasten zijn; hun Genereuze Heer nodigt hen uit naar
 het vredesoord.
 </p>
 
-<p class="text-bold">Het Derde Kernpunt</p>
+<p><strong>Het Derde Kernpunt</strong></p>
 
 <p>
 Je zult ontwaren dat de decoraties in deze wereld niet alleen voor genot of vermaak zijn bedoeld. Immers,
@@ -2138,12 +2192,13 @@ paradijselijke gunsten die de Barmhartige Genadige voor Zijn geliefde dienaren h
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 63,
-         'content' => '<div class="page" id="63"> <p class="text-end page-number">#63</p>
+        ],
 
-<p class="text-bold">Het vierde fundament</p>
+        [
+            'page_number' => 63,
+            'content' => '<div class="page" id="63"> <p class="text-end page-number">#63</p>
+
+<p><strong>Het vierde fundament</strong></p>
 
 <p>
 Je zult ontwaren dat de decoraties in deze wereld als voorbeelden en illustraties dienen van de gunsten voor
@@ -2154,12 +2209,12 @@ de gelovigen die bij de Genade van de Barmhartige in het paradijs zijn opgeslage
 <hr class="hr-footnote" />
 <p class="footnote-p">
 <sup>2</sup> Waarlijk, elk schepsel heeft verscheidene bestaansredenen en verschaft meerdere levensresultaten die niet beperkt
-zijn tot alleen het aardse en de nefs – <span class="text-italic">(zoals gewaand wordt door de dwalers.)</span> Een schepsel kan dus niet
+zijn tot alleen het aardse en de nefs – <em>zoals gewaand wordt door de dwalers.</em> Een schepsel kan dus niet
 bevlekt worden met zinloosheid en onwijsheid. Voorzeker, de bestaansredenen en levensresultaten van elk schepsel
 worden onderverdeeld in drie categorieën.
 </p>
 <p class="footnote-p">
-<span class="text-bold">De eerste en meest verheven categorie</span> is gericht op zijn Kunstenaar. Hierbij behoren de voortreffelijke juwelen van
+<strong>De eerste en meest verheven categorie</strong> is gericht op zijn Kunstenaar. Hierbij behoren de voortreffelijke juwelen van
 Goddelijke Kunstenaarschap waarmee een schepsel is getooid, paradegewijs gepresenteerd te worden ter aanschouwing van
 de Tijdeloze Getuige. Voor deze Goddelijke Aanschouwing is een voorbijflitsend levensmoment voldoende. Zelfs de potentie
 van een schepsel, die als een ongerealiseerde intentie niet tot ontplooiing is kunnen komen, is hierbij voldoende. Voorwaar,
@@ -2169,7 +2224,7 @@ Het primaire doel van elk schepsel impliceert dus: de machtsmirakelen en kunstwe
 en bestaan tentoonstellen, en deze ter aanschouwing van de Ontzaglijke Sultan presenteren.
 </p>
 <p class="footnote-p">
-<span class="text-bold">De tweede categorie</span> van bestaansredenen en levensresultaten is gericht op bewuste wezens. Hierbij dient elk schepsel
+<strong>De tweede categorie</strong> van bestaansredenen en levensresultaten is gericht op bewuste wezens. Hierbij dient elk schepsel
 als een waarheid onthullende brief, een subtiele ode en een zinrijk woord van de Ontzaglijke Kunstenaar dat gepresenteerd
 wordt ter aanschouwing van engelen, djinns, dieren en mensen; het nodigt ze uit tot contemplatie. Voor ieder bewust wezen
 dat naar een dergelijk schepsel kijkt, is het dus een leerrijke bron van bezinning. &rarr;
@@ -2177,15 +2232,16 @@ dat naar een dergelijk schepsel kijkt, is het dus een leerrijke bron van bezinni
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 64,
-         'content' => '<div class="page" id="64"> <p class="text-end page-number">#64</p>
+        ],
+
+        [
+            'page_number' => 64,
+            'content' => '<div class="page" id="64"> <p class="text-end page-number">#64</p>
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
 <p class="footnote-p">
-<span class="text-bold">De derde categorie</span> van bestaansredenen en levensresultaten is gericht op de nefs <span class="text-italic">(het eigen zelf)</span>
+<strong>De derde categorie</strong> van bestaansredenen en levensresultaten is gericht op de nefs <em>(het eigen zelf)</em>
 van een schepsel. Hierbij staan genot, amusement, overleven, comfort en dergelijke specifieke resultaten centraal.
 Bijvoorbeeld, als wij kijken naar het doel van een onderdaan die als stuurman dient op een groot sultansschip, dan zien wij
 dat slechts één procent van alle scheepsaangelegenheden betrekking heeft op zijn persoonlijke loon, terwijl negenennegentig
@@ -2194,17 +2250,17 @@ negenennegentig doelen gericht zijn tot zijn Kunstenaar.
 </p>
 <p class="footnote-p">
 Voorwaar, deze uiteenlopende doelen zorgen ervoor dat wijsheid en zuinigheid harmoniëren met hun ogenschijnlijke tegenpolen,
-bestaande uit vrijgevigheid en gulheid – <span class="text-italic">met name Gods grenzeloze Gulheid.</span> Het geheim van deze harmonie is het
+bestaande uit vrijgevigheid en gulheid – <em>met name Gods grenzeloze Gulheid.</em> Het geheim van deze harmonie is het
 volgende:
 </p>
 <p class="footnote-p">
-Uit het oogpunt van specifieke doelen heersen vrijgevigheid en gulheid. Hierbij manifesteert de Naam: <span class="text-bold">“de Vrijgevige”</span>.
+Uit het oogpunt van specifieke doelen heersen vrijgevigheid en gulheid. Hierbij manifesteert de Naam: <strong>“de Vrijgevige”</strong>.
 In het kader van zulke specifieke doelen is er bijvoorbeeld een overvloed aan vruchten en granen, wat een grenzeloze
 vrijgevigheid weergeeft. Echter, uit het oogpunt van universele doelen heerst wijsheid. Hierbij manifesteert de Naam:
-<span class="text-bold">“de Alwijze”.</span> Zoals een rijk beladen boom vele vruchten draagt, zo bevat elke vrucht eveneens velerlei doelen
+<strong>“de Alwijze”.</strong> Zoals een rijk beladen boom vele vruchten draagt, zo bevat elke vrucht eveneens velerlei doelen
 die onderverdeeld zijn in de voornoemde drie categorieën. Deze universele doelen geven dus een eindeloze wijsheid en
 zuinigheid weer. Zo komen eindeloze wijsheid en grenzeloze gulheid als ogenschijnlijke tegenpolen feilloos bijeen.
-<span class="text-italic text-bold">Bijvoorbeeld,</span> een doel van een leger is de handhaving van de openbare orde. Voor dit doel zijn er soldaten
+<strong><em>Bijvoorbeeld,</em></strong> een doel van een leger is de handhaving van de openbare orde. Voor dit doel zijn er soldaten
 in overvloed en kan hun aantal zelfs te veel lijken. Echter, voor taken zoals het bewaken van grenzen en het bestrijden
 van vijanden is dit aantal net voldoende en aldus perfect in balans met wijsheid. Zo wordt de wijsheid van een regering
 met haar majesteit verenigd. Aldus kan men stellen dat er in dat leger geen sprake is van overbodigheid.
@@ -2212,12 +2268,13 @@ met haar majesteit verenigd. Aldus kan men stellen dat er in dat leger geen spra
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 65,
-         'content' => '<div class="page" id="65"> <p class="text-end page-number">#65</p>
+        ],
 
-<p class="text-bold">Het Vijfde Fundament</p>
+        [
+            'page_number' => 65,
+            'content' => '<div class="page" id="65"> <p class="text-end page-number">#65</p>
+
+<p><strong>Het Vijfde Fundament</strong></p>
 
 <p>
 Je zult ontwaren dat de bestemming van deze vergankelijke creaties geen vernietiging kan zijn; ze zijn
@@ -2227,13 +2284,13 @@ niet geschapen om even te verschijnen en vervolgens te verdwijnen.
 <p>
 Ze komen veeleer kortstondig in het bestaan bijeen en nemen een gewenste houding aan, opdat hun
 gedaantes opgenomen, hun gelijkenissen bewaard, hun betekenissen doorgrond en hun resultaten opgeslagen
-kunnen worden... Dit resulteert onder meer in de vereeuwiging van blijvende beelden voor het eeuwige
+kunnen worden... Dit resulteert onder meer in de verweving van blijvende beelden voor het eeuwige
 volk. Verder zullen ze in het eeuwige rijk nog diverse doeleinden dienen.
 </p>
 
 <p>
 Een bewijs dat schepselen voor eeuwigheid zijn geschapen, niet voor vergankelijkheid zijn bestemd, en
-– <span class="text-italic">(ondanks hun fysieke teloorgang)</span> – in feite na hun taakvervulling worden vrijgesteld, kan worden
+– <em>ondanks hun fysieke teloorgang</em> – in feite na hun taakvervulling worden vrijgesteld, kan worden
 afgeleid uit het feit dat een vergankelijk schepsel in één opzicht vergaat, terwijl het in velerlei opzichten
 blijft voortbestaan.
 </p>
@@ -2248,10 +2305,11 @@ laat ze haar fysieke gedaante in de geheugens
 </p>
 
 </div>'
-     ],
-     [
-         'page_number' => 66,
-         'content' => '<div class="page" id="66"> <p class="text-end page-number">#66</p>
+        ],
+
+        [
+            'page_number' => 66,
+            'content' => '<div class="page" id="66"> <p class="text-end page-number">#66</p>
 
 <p>
 van al haar toeschouwers en haar spirituele wezen in al haar zaden na. Elk geheugen en elk zaad zijn als
@@ -2262,14 +2320,14 @@ gewaarborgd.
 <p>
 Indien dit het geval is bij een kunstwerk dat zich op het simpelste levensniveau bevindt, kun je wel nagaan
 hoezeer de mens, die zich op het allerhoogste levensniveau bevindt en een eeuwige ziel bezit, in relatie staat
-tot de eeuwigheid. De wijze waarop de samenstellingswet – <span class="text-italic">(die verwant is aan een ziel)</span> – en de gelijkenis van
+tot de eeuwigheid. De wijze waarop de samenstellingswet – <em>die verwant is aan een ziel</em> – en de gelijkenis van
 elke grote bloem- en vruchtdragende plant gedurende woelige ontwikkelingsstadia uiterst ordelijk in minuscule
 zaden worden vereeuwigd en bewaard, geeft aan hoezeer de bewuste en lumineuze mensenziel –
-<span class="text-italic">(die als belichaming van een Goddelijke wet over een zeer omvattend en verheven wezen beschikt, en met
-een extern bestaan is bekleed)</span> – verbonden is met de eeuwigheid.
+<em>die als belichaming van een Goddelijke wet over een zeer omvattend en verheven wezen beschikt, en met
+een extern bestaan is bekleed</em> – verbonden is met de eeuwigheid.
 </p>
 
-<p class="text-bold">Het Zesde Fundament</p>
+<p><strong>Het Zesde Fundament</strong></p>
 
 <p>
 Je zult ontwaren dat de mens niet als een dier met een touw om zijn nek vrij is gelaten om te grazen waar
@@ -2277,7 +2335,7 @@ hij wil. Integendeel, alle beelden van zijn daden worden opgenomen en alle uitwe
 worden vastgelegd voor rekenschap.
 </p>
 
-<p class="text-bold">Het Zevende Fundament</p>
+<p><strong>Het Zevende Fundament</strong></p>
 
 <p>
 Je zult ontwaren dat de afbraak die de mooie schepselen van de lente en zomer in de herfst ondergaan,
@@ -2292,10 +2350,11 @@ geen vernietiging is, maar een vrijstelling na de voltooiing van hun taken.<sup>
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 67,
-         'content' => '<div class="page" id="67"> <p class="text-end page-number">#67</p>
+        ],
+
+        [
+            'page_number' => 67,
+            'content' => '<div class="page" id="67"> <p class="text-end page-number">#67</p>
 
 <p>
 ming om ruimte vrij te maken voor de schepselen die de volgende lente zullen verschijnen; het is een voorbereiding
@@ -2304,14 +2363,14 @@ de Feilloze voor bewuste wezens die door onachtzaamheid hun taken vergeten en do
 dankbetoon verzaken.
 </p>
 
-<p class="text-bold">Het Achtste Fundament</p>
+<p><strong>Het Achtste Fundament</strong></p>
 
 <p>
 Je zult ontwaren dat de Tijdeloze Kunstenaar van deze tijdelijke wereld een ander, eeuwig rijk bezit
 waarnaar Hij Zijn dienaren dirigeert en waarvoor Hij een passie in hen ontvlamt.
 </p>
 
-<p class="text-bold">Het Negende Fundament</p>
+<p><strong>Het Negende Fundament</strong></p>
 
 <p>
 Je zult ontwaren dat de Barmhartige in dat rijk giften voor zijn uitverkoren onderdanen heeft bereid die
@@ -2332,14 +2391,15 @@ boom waarvan de vruchten naar de bazaar van het hiernamaals worden gezonden.
 </p>
 </div>
 </div>'
-     ],
-     [
-         'page_number' => 68,
-         'content' => '<div class="page" id="68"> <p class="text-end page-number">#68</p>
+        ],
+
+        [
+            'page_number' => 68,
+            'content' => '<div class="page" id="68"> <p class="text-end page-number">#68</p>
 
 <div class="text-center text-center-constrained">
-<p class="text-center text-bold small-title">De Zevende Waarheid</p>
-<p class="text-center"><span class="text-italic text-bold">De poort van Bewaring en Preservatie; Een glimp van de Namen: “de Bewaarder en de Opzichter”</span></p>
+<p class="text-center small-title"><strong>De Zevende Waarheid</strong></p>
+<p class="text-center"><strong><em>De poort van Bewaring en Preservatie; Een glimp van de Namen: “de Bewaarder en de Opzichter”</em></strong></p>
 <p class="text-center">
 <span class="text-arabic" dir="rtl" lang="ar">اَلْحَفٖيظُ وَالرَّقٖيبُ</span>
 </p>
@@ -2347,10 +2407,10 @@ boom waarvan de vruchten naar de bazaar van het hiernamaals worden gezonden.
 
 <p>
 Is het ooit voor mogelijk te houden dat enerzijds, zowel in de hemel als op de aarde, op het land en in
-de zee, overal een Bewaring heerst, waarbij alles – <span class="text-italic">hetzij nat of droog, groot of klein, gewoon of verheven</span> –
+de zee, overal een Bewaring heerst, waarbij alles – <em>hetzij nat of droog, groot of klein, gewoon of verheven</em> –
 binnen een perfecte orde en balans wordt bewaard, en de daaruit voortvloeiende gevolgen volgens een bepaalde
-rekenschap worden uitgezeefd, maar anderzijds, als het aankomt op de mens – <span class="text-italic">die een omvattende aard bezit,
-de rang van <strong>‘ultieme khalief’</strong> bekleedt en de taak met de grootste verantwoordelijkheid draagt</span> – zullen zijn daden
+rekenschap worden uitgezeefd, maar anderzijds, als het aankomt op de mens – <em>die een omvattende aard bezit,
+de rang van <strong>‘ultieme khalief’</strong> bekleedt en de taak met de grootste verantwoordelijkheid draagt</em> – zullen zijn daden
 en handelingen, die direct betrekking hebben op Gods universele Heerschappij, dan niet worden bewaard, niet
 door de zeef van rekenschap worden gehaald en niet op de balans van Rechtvaardigheid worden afgewogen
 om een passende straf of beloning vast te stellen? Dit is absoluut onmogelijk!
@@ -2365,21 +2425,22 @@ terwijl het geheel van deze veranderingen eveneens afgestemd is op een ordelijk 
 </p>
 
 </div>'
-     ],
-     [
-         'page_number' => 69,
-         'content' => '<div class="page" id="69"> <p class="text-end page-number">#69</p>
+        ],
+
+        [
+            'page_number' => 69,
+            'content' => '<div class="page" id="69"> <p class="text-end page-number">#69</p>
 
 <p>
 Wij zien immers dat aan het leven van elk wezen een einde wordt gebracht nadat het zijn taak heeft voltooid,
-waarna het deze waarneembare wereld verlaat. Echter, in geheugens – <span class="text-italic">(die als bewaartableaus dienen)</span><sup>1</sup> –
+waarna het deze waarneembare wereld verlaat. Echter, in geheugens – <em>die als bewaartableaus dienen</em><sup>1</sup> –
 en in spiegels van gelijkenissen bewaart de Ontzaglijke Bewaarder velerlei verschijningsvormen van dat wezen;
 Hij graveert de levensgeschiedenis ervan in diens zaden en voortbrengselen. Zodoende vereeuwigt Hij elk wezen
 in zichtbare en onzichtbare spiegels.
 </p>
 
 <p>
-<span class="text-italic text-bold">Bijvoorbeeld,</span> het geheugen van de mens, de vrucht van een boom, de pit van een vrucht en het
+<strong><em>Bijvoorbeeld,</em></strong> het geheugen van de mens, de vrucht van een boom, de pit van een vrucht en het
 zaad van een bloem geven de geweldige reikwijdte van de wet der Bewaring weer.
 </p>
 
@@ -2393,21 +2454,22 @@ hoe ruimschoots de wet der Bewaring van kracht is.
 
 <p>
 Indien bij zulke voorbijgaande, simpele, onbestendige en onbeduidende zaken al een dusdanige Bewaring
-heerst, kan het dan ooit mogelijk zijn dat de daden van mensen – <span class="text-italic">die in de verborgen wereld, het hiernamaals
-en de zielenwereld aanzienlijke vruchten met betrekking tot Gods universele Heerschappij afwerpen</span> – niet onder
+heerst, kan het dan ooit mogelijk zijn dat de daden van mensen – <em>die in de verborgen wereld, het hiernamaals
+en de zielenwereld aanzienlijke vruchten met betrekking tot Gods universele Heerschappij afwerpen</em> – niet onder
 een waakzaam Oog worden bewaard en zorgvuldig worden vastgelegd? Dit is absoluut onmogelijk!
 </p>
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
-<p class="footnote-p"><sup>1</sup> Zie de voetnoot in <span class="text-bold">“Het Zevende Aanzicht”</span>.</p>
+<p class="footnote-p"><sup>1</sup> Zie de voetnoot in <strong>“Het Zevende Aanzicht”</strong>.</p>
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 70,
-         'content' => '<div class="page" id="70"> <p class="text-end page-number">#70</p>
+        ],
+
+        [
+            'page_number' => 70,
+            'content' => '<div class="page" id="70"> <p class="text-end page-number">#70</p>
 
 <p>
 Waarlijk, blijkens deze manifestatie van Bewaring wijdt de Eigenaar van heel dit bestaan veel zorg aan
@@ -2417,9 +2479,9 @@ de geringste dienst zelf vastlegt en laat vastleggen. De beelden van alles wat z
 Hij in meerdere bewaarplaatsen op.
 </p>
 
-<p class="text-bold">
+<p><strong>
 Deze Bewaring duidt aan dat er een aanzienlijk grootboek voor de rekenschap van daden zal worden opgeslagen.
-</p>
+</strong></p>
 
 <p>
 En vooral de grote daden en gewichtige handelingen van de mens, die gezien zijn wezen het omvattendste,
@@ -2431,17 +2493,18 @@ zijn dadenschrift zal worden onthuld.
 Kan het dan ooit mogelijk zijn dat de mens met het khalifaat en de grootste verantwoordelijkheidstaak wordt
 vernobeld, en tot getuige van de Universele Gesteldheden des Heren wordt verkozen, en vervolgens overal
 binnen de kringen der diversiteiten zijn rol als heraut van de Goddelijke Eenheid openbaar maakt, en met
-zijn deelname aan de verheerlijkingen en godsdienstoefeningen van de meeste bestaansvormen tot de rang van
+zijn deelname aan de verheerlijkingen en Godsdienstoefeningen van de meeste bestaansvormen tot de rang van
 opzichter en getuige rijst, om uiteindelijk ongestoord in het graf te rusten zonder ooit gewekt te worden?
 Zal hij niet voor al zijn zowel kleine als grote daden ter verantwoording worden geroepen? Zal hij niet
 voorttrekken naar de herzamelplaats en de Ultieme Berechting ondergaan? <strong>Dit is absoluut onmogelijk!</strong>
 </p>
 
 </div>'
-     ],
-     [
-         'page_number' => 71,
-         'content' => '<div class="page" id="71"> <p class="text-end page-number">#71</p>
+        ],
+
+        [
+            'page_number' => 71,
+            'content' => '<div class="page" id="71"> <p class="text-end page-number">#71</p>
 
 <p>
 En dat de Heer bij machte is om alle toekomstige mogelijkheden<sup>2</sup> te realiseren, wordt bevestigd door alle
@@ -2475,10 +2538,11 @@ zodanig heeft gecreëerd, tegenover niets machteloos staat.&rarr;
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 72,
-         'content' => '<div class="page" id="72"> <p class="text-end page-number">#72</p>
+        ],
+
+        [
+            'page_number' => 72,
+            'content' => '<div class="page" id="72"> <p class="text-end page-number">#72</p>
 
 <p>
 vroegere gebeurtenissen die zich als mirakelen van Macht hebben voltrokken, en door de winter en de
@@ -2501,7 +2565,7 @@ Hij Die alle werelden van het verleden aan de koord des tijds met volmaakte Wijs
 en getoond, kan en zal uiteraard een ander universum aan de tijdlijn van de toekomst rijgen en tentoonstellen.
 </p>
 <p class="footnote-p">
-In verscheidene <span class="text-bold">“Woorden”</span>, en vooral in <span class="text-bold">“Het Tweeëntwintigste Woord”</span>, hebben wij deugdelijk bewezen
+In verscheidene <strong>“Woorden”</strong>, en vooral in <strong>“Het Tweeëntwintigste Woord”</strong>, hebben wij deugdelijk bewezen
 dat degene die niet alles kan creëren, in wezen niets kan creëren, terwijl degene die één iets kan scheppen,
 alles kan creëren.
 </p>
@@ -2514,14 +2578,15 @@ van één wezen zo lastig zijn als de schepping van alle wezens; er zullen onove
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 73,
-         'content' => '<div class="page" id="73"> <p class="text-end page-number">#73</p>
+        ],
+
+        [
+            'page_number' => 73,
+            'content' => '<div class="page" id="73"> <p class="text-end page-number">#73</p>
 
 <div class="text-center text-center-constrained">
-<p class="text-center text-bold small-title">De Achtste Waarheid</p>
-<p class="text-center"><span class="text-italic text-bold">De poort van Belofte en Bedreiging; Een glimp van de Namen: “de Schone en de Ontzaglijke”</span></p>
+<p class="text-center small-title"><strong>De Achtste Waarheid</strong></p>
+<p class="text-center"><strong><em>De poort van Belofte en Bedreiging; Een glimp van de Namen: “de Schone en de Ontzaglijke”</em></strong></p>
 <p class="text-center">
 <span class="text-arabic" dir="rtl" lang="ar">اَلْجَمٖيلُ وَالْجَلٖيلُ</span>
 </p>
@@ -2531,25 +2596,23 @@ van één wezen zo lastig zijn als de schepping van alle wezens; er zullen onove
 Is het ooit voor mogelijk te houden dat de Alwetende en Almachtige Kunstenaar van al deze kunstige
 creaties Zijn herhaaldelijke Beloften en Goddelijke Dreigementen, Die door alle profeten middels massale
 overleveringsketenen zijn verkondigd, en door alle getrouwen en heiligen unaniem zijn bevestigd, niet zal
-waarmaken, en zodoende – <span class="text-italic">(God verhoede)</span> – Zijn onmacht en onwetendheid zal tonen? Daar komt bij dat
+waarmaken, en zodoende – <em>God verhoede</em> – Zijn onmacht en onwetendheid zal tonen? Daar komt bij dat
 het voldoen aan de vereisten van Zijn Beloftes en Dreigementen Zijn Macht geenszins bezwaart; het is zeer
 licht en gemakkelijk voor Hem, vergelijkbaar met het gemak waarmee de talloze wezens van de verstreken
-lente het aankomende voorjaar – deels identiek<sup>1</sup> en deels gelijksortig<sup>2</sup> – worden herschapen.
+lente het aankomende voorjaar – <em>deels identiek<sup>1</sup> en deels Gelijksoortig<sup>2</sup></em> – worden herschapen.
 </p>
 
-<p class="text-bold">
-Bovendien is de waarmaking van Zijn belofte niet alleen voor ons, maar voor alle wezens, voor Hemzelf en
-voor de Heerschappij van Zijn Sultanaat van essentieel belang.
+<p><strong>Bovendien is de waarmaking van Zijn belofte</strong> niet alleen voor ons, maar voor alle wezens, voor Hemzelf en voor de Heerschappij van Zijn Sultanaat van essentieel belang.
 </p>
 
 <p>
-De verbreking van Zijn belofte daarentegen druist in tegen zowel de integriteit van Zijn regeermacht als
+<strong>De verbreking van Zijn belofte daarentegen</strong> druist in tegen zowel de integriteit van Zijn regeermacht als
 de omvattendheid van Zijn Kennis. Immers, beloftebreuk komt voort uit ofwel onwetendheid ofwel onmacht.
 </p>
 
-<p class="text-italic text-bold">
+<p><strong><em>
 O loochenaar! Besef jij wel wat voor dwaze misdaad jij met je ongeloof en ontkenning begaat?
-</p>
+</em></strong></p>
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
@@ -2558,10 +2621,11 @@ O loochenaar! Besef jij wel wat voor dwaze misdaad jij met je ongeloof en ontken
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 74,
-         'content' => '<div class="page" id="74"> <p class="text-end page-number">#74</p>
+        ],
+
+        [
+            'page_number' => 74,
+            'content' => '<div class="page" id="74"> <p class="text-end page-number">#74</p>
 
 <p>
 Je beaamt jouw valse waan, jouw ijlende verstand en jouw bedrieglijke nefs. Ondertussen verloochen jij
@@ -2586,23 +2650,24 @@ een sublieme gelukzaligheid schenken.
 </p>
 
 <div class="text-center text-center-constrained">
-<p class="text-center text-bold small-title">De Negende Waarheid</p>
-<p class="text-center"><span class="text-italic text-bold">De poort van Verlevendiging en Doding; Een glimp van de Namen: “De Allevende en Consistente, de Schenker des levens en Brenger des doods”</span></p>
+<p class="text-center small-title"><strong>De Negende Waarheid</strong></p>
+<p class="text-center"><strong><em>De poort van Verlevendiging en Doding; Een glimp van de Namen: “De Allevende en Consistente, de Schenker des levens en Brenger des doods”</em></strong></p>
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَلْحَىُّ الْقَيُّومُ ۞ اَلْمُحْيٖى وَالْمُمٖيتُ</p>
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 75,
-         'content' => '<div class="page" id="75"> <p class="text-end page-number">#75</p>
+        ],
+
+        [
+            'page_number' => 75,
+            'content' => '<div class="page" id="75"> <p class="text-end page-number">#75</p>
 
 <p>
 Is het ooit voor mogelijk te houden dat Degene Die de grote, dode en dorre aarde tot leven wekt, en Die
 bij deze opwekking meer dan driehonderdduizend soorten schepselen soort voor soort zo wonderlijk als de
 menselijke herzameling bijeenbrengt en veraanschouwelijkt, en zodoende Zijn <strong>Macht</strong> demonstreert, en Die
 tijdens deze verzameling en veraanschouwelijking binnen grenzeloze vermengingen en verwervingen met
-perfecte distincties en onderscheidingen de reikwijdte van Zijn Kennis demonstreert, en Die in al Zijn Hemelse
+perfecte distincties en onderscheidingen de reikwijdte van Zijn <strong>Kennis</strong> demonstreert, en Die in al Zijn Hemelse
 Decreten de herzameling van de mens belooft, en zodoende de aandacht van al Zijn dienaren op de eeuwige
 gelukzaligheid richt, en alle creaties zij aan zij, schouder aan schouder, hand in hand eendrachtig binnen
 de kring van Zijn Bevel en Wil laat circuleren, en ze als elkaars helpers onderwerpt, en zodoende de grandeur
@@ -2621,10 +2686,11 @@ en het veld van de herrijzenis tot stand.
 </p>
 
 </div>'
-     ],
-     [
-         'page_number' => 76,
-         'content' => '<div class="page" id="76"> <p class="text-end page-number">#76</p>
+        ],
+
+        [
+            'page_number' => 76,
+            'content' => '<div class="page" id="76"> <p class="text-end page-number">#76</p>
 
 <p>
 Zo zien wij bijvoorbeeld dat Hij tijdens de voorjaarse bijeenzameling in vijf à zes dagen meer dan driehonderdduizend
@@ -2644,13 +2710,13 @@ of een vergissing te maken, schrijft hij op een prachtige wijze driehonderdduize
 of verdwenen letters op één enkele pagina binnen één uur volledig uit. Vervolgens zegt iemand tegen jou:
 </p>
 
-<p class="text-italic">
+<p><em>
 “Deze schrijver, die de oorspronkelijke auteur is van jouw boek dat in het water is gevallen, zal dat boek in
 één minuut uit zijn geheugen herschrijven.”
-</p>
+</em></p>
 
 <p>
-Zou jij dan kunnen zeggen: “Dat kan hij niet; ik geloof jou niet...”?
+Zou jij dan kunnen zeggen: <em>“Dat kan hij niet; ik geloof jou niet...”</em>?
 </p>
 
 <p>
@@ -2658,24 +2724,25 @@ Of stel je voor dat een miraculeuze sultan ter vertoning van macht of ter lering
 ogen met één sein bergen verzet, continenten herschikt en zeeën in land verandert. Vervolgens zie je dat een
 </p>
 </div>'
-     ],
-     [
-         'page_number' => 77,
-         'content' => '<div class="page" id="77"> <p class="text-end page-number">#77</p>
+        ],
+
+        [
+            'page_number' => 77,
+            'content' => '<div class="page" id="77"> <p class="text-end page-number">#77</p>
 
 <p>
 groot rotsblok in een vallei is gerold, waardoor de weg van de gasten die de sultan speciaal voor een feestmaal
 heeft uitgenodigd, versperd is geraakt; ze kunnen niet verder... Iemand zegt tegen jou:
-<span class="text-italic">“De sultan zal dat rotsblok – hoe groot het ook is – met één sein verzetten of verpulveren. Hij zal
-zijn gasten niet aan hun lot overlaten.”</span> Zou jij dan zeggen: <span class="text-italic">“Hij zal dat rotsblok niet verplaatsen”</span> of:
-<span class="text-italic">“Hij is daartoe niet in staat...”</span>?
+<em>“De sultan zal dat rotsblok – hoe groot het ook is – met één sein verzetten of verpulveren. Hij zal
+zijn gasten niet aan hun lot overlaten.”</em> Zou jij dan zeggen: <em>“Hij zal dat rotsblok niet verplaatsen”</em> of:
+<em>“Hij is daartoe niet in staat...”</em>?
 </p>
 
 <p>
 Of stel je voor dat een bevelvoerder in één dag een compleet nieuw leger van enorme omvang opricht.
-Vervolgens zegt iemand: <span class="text-italic">“Die bevelvoerder zal met een bazuingeschal de rustende soldaten van de
-ontbonden bataljons bijeenroepen, waarop de bataljons onder zijn gezag paraat zullen staan.”</span> Als jij daarop
-zegt: <span class="text-italic">“Dat geloof ik niet!”</span>, dan besef jij ook hoe dwaas jouw reactie is.
+Vervolgens zegt iemand: <em>“Die bevelvoerder zal met een bazuingeschal de rustende soldaten van de
+ontbonden bataljons bijeenroepen, waarop de bataljons onder zijn gezag paraat zullen staan.”</em> Als jij daarop
+zegt: <em>“Dat geloof ik niet!”</em>, dan besef jij ook hoe dwaas jouw reactie is.
 </p>
 
 <p>
@@ -2693,16 +2760,17 @@ in het kleinste zaadje ter grootte van een stipje vestigt en bewaart, mag er toc
 </p>
 
 </div>'
-     ],
-     [
-         'page_number' => 78,
-         'content' => '<div class="page" id="78"> <p class="text-end page-number">#78</p>
+        ],
+
+        [
+            'page_number' => 78,
+            'content' => '<div class="page" id="78"> <p class="text-end page-number">#78</p>
 
 <p>
-rijzen als: <span class="text-italic">“Kan Hij de zielen van overledenen bewaren?”</span> En als het gaat om de Almachtige Entiteit,
+rijzen als: <em>“Kan Hij de zielen van overledenen bewaren?”</em> En als het gaat om de Almachtige Entiteit,
 Die de aardbol als een slingersteen laat wentelen, is het toch niet gepast om een opmerking te maken als:
-<span class="text-italic">“Hoe zal Hij deze aarde, die het pad van Zijn gasten op weg naar het hiernamaals versperd, kunnen
-verzetten of verwoesten?”</span>
+<em>“Hoe zal Hij deze aarde, die het pad van Zijn gasten op weg naar het hiernamaals versperd, kunnen
+verzetten of verwoesten?”</em>
 </p>
 
 <p>
@@ -2730,10 +2798,11 @@ vergezocht en ondenkbaar acht, dan besef jij ook hoe absurd dat is.
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 79,
-         'content' => '<div class="page" id="79"> <p class="text-end page-number">#79</p>
+        ],
+
+        [
+            'page_number' => 79,
+            'content' => '<div class="page" id="79"> <p class="text-end page-number">#79</p>
 
 <p>
 Kijk naar wat het Ultieme Decreet zegt over de waarheid in kwestie:
@@ -2744,7 +2813,7 @@ Kijk naar wat het Ultieme Decreet zegt over de waarheid in kwestie:
 اِنَّ ذٰلِكَ لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدٖيرٌ<sup>4</sup>
 </p>
 
-<p class="text-bold">Kortom:</p>
+<p><strong>Kortom:</strong></p>
 
 <p>
 Er is helemaal niets dat de herzameling in de weg staat, terwijl alles haar verwezenlijking vereist.
@@ -2774,10 +2843,11 @@ Die de doden tot leven brengt, en Hij bezit Macht over alles.” <em>– Qur’a
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 80,
-         'content' => '<div class="page" id="80"> <p class="text-end page-number">#80</p>
+        ],
+
+        [
+            'page_number' => 80,
+            'content' => '<div class="page" id="80"> <p class="text-end page-number">#80</p>
 
 <p>
 digt ons daartoe uit... En dat Hij ons daarnaartoe zal overplaatsen, wordt beaamd door alle leidende
@@ -2807,16 +2877,17 @@ verduistering waarbij de rechten van alle schepselen en alle Goddelijke Namen wo
 Voorwaar, de bescherming van deze rechten en het onvermogen van een ongelovige om heil te aanvaarden, leiden
 uiteindelijk tot de onvergeeflijkheid van ongeloof.
 <span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّ الشِّرْكَ لَظُلْمٌ عَظٖيمٌ</span>
-<span class="text-italic text-bold">“Voorzeker, afgoderij is een gigantische duisternis.”</span>
+<strong><em>“Voorzeker, afgoderij is een gigantische duisternis.”</em></strong>
 <em>– Qur’an, 31:13</em> drukt deze betekenis uit.
 </p>
 </div>
 
 </div>'
-     ],
-     [
-         'page_number' => 81,
-         'content' => '<div class="page" id="81"> <p class="text-end page-number">#81</p>
+        ],
+
+        [
+            'page_number' => 81,
+            'content' => '<div class="page" id="81"> <p class="text-end page-number">#81</p>
 
 <p>
 Daarnaast is de Absolute Almacht verheven en heilig boven elke vorm van onmacht.
@@ -2825,8 +2896,8 @@ Daarnaast is de Absolute Almacht verheven en heilig boven elke vorm van onmacht.
 <p>
 Wat de bevestigers en verkondigers betreft: hoewel hun wegen, mentaliteiten en leertradities uiteenlopen,
 heerst onder hen een volstrekt unanieme overeenstemming over de kern van deze kwestie. Hun talrijkheid
-evenaart het niveau van massale overleveringsketenen <span class="text-italic">(tewatur)</span> en hun boodschap draagt de kracht van een
-collectieve consensus <span class="text-italic">(idjma)</span>. Qua status zijn zij de sterren onder de mensheid, de ogen van een gemeenschap
+evenaart het niveau van massale overleveringsketenen <em>(tewatur)</em> en hun boodschap draagt de kracht van een
+collectieve consensus <em>(idjma)</em>. Qua status zijn zij de sterren onder de mensheid, de ogen van een gemeenschap
 en de trots van een natie. In het kader van onze kwestie zijn zij zowel experts als bewijsvoerders.
 </p>
 
@@ -2836,7 +2907,7 @@ genieten twee bewijsvoerders de voorkeur boven duizenden tegensprekers. Bijvoorb
 verschijning van de Ramadan-maan aankondigen, ontkrachten de ontkenning van duizenden ontkenners.
 </p>
 
-<p class="text-bold">Conclusie:</p>
+<p><strong>Conclusie:</strong></p>
 
 <p>
 Een betrouwbaardere verkondiging, een krachtigere bewering en een evidenter waarheid zijn in deze wereld
@@ -2845,14 +2916,15 @@ de hel zijn de bewaaarplaatsen van de oogst.
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 82,
-         'content' => '<div class="page" id="82"> <p class="text-end page-number">#82</p>
+        ],
+
+        [
+            'page_number' => 82,
+            'content' => '<div class="page" id="82"> <p class="text-end page-number">#82</p>
 
 <div class="text-center text-center-constrained">
- <p class="text-center text-bold small-title">De Tiende Waarheid</p>
- <p class="text-center"><span class="text-italic text-bold">De poort van Wijsheid, Gratie, Genade en Rechtvaardigheid; Een glimp van de Namen: “De Alwijze, de Genereuze, de Rechtvaardige en de Barmhartige.”</span></p>
+ <p class="text-center small-title"><strong>De Tiende Waarheid</strong></p>
+ <p class="text-center"><strong><em>De poort van Wijsheid, Gratie, Genade en Rechtvaardigheid; Een glimp van de Namen: “De Alwijze, de Genereuze, de Rechtvaardige en de Barmhartige.”</em></strong></p>
  <p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَكٖيمُ ۞ اَلْكَرٖيمُ ۞ اَلْعَادِلُ ۞ اَلرَّحٖيمُ</p>
 </div>
 
@@ -2875,10 +2947,11 @@ mens niet tot het oord der gelukzaligheid uitnodigen om hem daar voor altijd te 
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 83,
-         'content' => '<div class="page" id="83"> <p class="text-end page-number">#83</p>
+        ],
+
+        [
+            'page_number' => 83,
+            'content' => '<div class="page" id="83"> <p class="text-end page-number">#83</p>
 
 <p>
 En kan het redelijkerwijs ooit aannemelijk zijn dat Hij zelfs een creatie zoals een zaadje met de taken
@@ -2895,7 +2968,7 @@ vruchten aan het licht kunnen komen?
 <p>
 Waarlijk, is het ooit voor mogelijk te houden dat Hij, door dit alles zo in strijd met de waarheid te brengen,
 Zijn Wezenlijke Attributen: de Alwijze, de Genereuze, de Rechtvaardige en de Genadige als Hun tegenpolen
-– <span class="text-italic">(God verhoede)</span> – zal laten afbeelden, en zodoende alle waarheden in het universum die van Zijn
+– <em>God verhoede</em> – zal laten afbeelden, en zodoende alle waarheden in het universum die van Zijn
 Wijsheid, Generositeit, Rechtvaardigheid en Genade getuigen ronduit zal verloochenen; de getuigenissen van
 alle bestaansvormen zal verwerpen, en de bewijzingen van alle creaties zal ontkrachten? En kan het verstand
 ooit aanvaarden dat Hij het hoofd en de interne zintuigen van de mens met zoveel taken als zijn hoofdhaaren
@@ -2903,13 +2976,14 @@ belast, om hem uiteindelijk een aardse vergoeding ter waarde van een haarspriet 
 tegen Zijn ware Rechtvaardigheid en wezenlijke Wijsheid door zoiets betekenisloos tot stand te brengen?
 </p>
  </div>'
-     ],
-     [
-         'page_number' => 84,
-         'content' => '<div class="page" id="84"> <p class="text-end page-number">#84</p>
+        ],
+
+        [
+            'page_number' => 84,
+            'content' => '<div class="page" id="84"> <p class="text-end page-number">#84</p>
 
 <p>
-En is het ooit voor mogelijk te houden dat Hij elke levensvorm, elk orgaan – <span class="text-italic">(zoals de tong)</span> –
+En is het ooit voor mogelijk te houden dat Hij elke levensvorm, elk orgaan – <em>(zoals de tong)</em> –
 en elke creatie met zoveel wijsheden en nuttigheden als de voortbrengselen en vruchten van een boom uitrust,
 en zodoende bewijst en demonstreert dat Hij een Alwijze Entiteit is, maar vervolgens de grootste wijsheid,
 het voornaamste nut en het hoogstnodige resultaat dat wijsheid werkelijk wijsheid, gunst werkelijk gunst en
@@ -2922,10 +2996,10 @@ elke kamer, maar het vervolgens niet met een koepel overdekt, waardoor alles bed
 <strong>God verhoede!</strong>
 </p>
 
-<p class="text-bold">
+<p><strong>
 Pure heil brengt heil tot stand. Sublieme schoonheid brengt pracht teweeg. Uit Absolute Wijsheid vloeit
 niets zinloos voort.
-</p>
+</strong></p>
 
 <p>
 Waarlijk, iedereen die in gedachten de geschiedenis induikt en het verleden bereist, zal zien dat de wereld
@@ -2935,10 +3009,11 @@ voorkomen en hoedanigheid van elkaar verschillen, vertonen ze gelijkenissen in o
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 85,
-         'content' => '<div class="page" id="85"> <p class="text-end page-number">#85</p>
+        ],
+
+        [
+            'page_number' => 85,
+            'content' => '<div class="page" id="85"> <p class="text-end page-number">#85</p>
 
 <p>
 aspecten; ze lijken op elkaar wat betreft het tonen van de Macht en de Wijsheid van de Kunstenaar.
@@ -2947,7 +3022,7 @@ aspecten; ze lijken op elkaar wat betreft het tonen van de Macht en de Wijsheid 
 <p>
 Bovendien zal hij bij die instabiele woningen, vergankelijke terreinen en tijdelijke galerijen ordeningen
 van zo’n stralende Wijsheid, signalen van zo’n evidente Gratie, tekenen van zo’n overweldigende Gerechtigheid
-en vruchten van zo’n omvattende Genade ontwaren, dat hij – <span class="text-italic">(zolang hij niet blind is)</span> – met volle overtuiging
+en vruchten van zo’n omvattende Genade ontwaren, dat hij – <em>(zolang hij niet blind is)</em> – met volle overtuiging
 zal inzien dat de volmaaktheid van Die Wijsheid niet kan worden overtroffen, dat de schoonheid van Die Gratie
 met Haar onmiskenbare uitwerkingen niet kan worden overschitterd, dat het ontzag van Die Gerechtigheid met
 Haar waarneembare tekenen niet kan worden geëvenaard, en dat de omvattendheid van Die Genade met Haar
@@ -2965,10 +3040,11 @@ Hun waarheden volwaardig tot uitdrukking te brengen.
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 86,
-         'content' => '<div class="page" id="86"> <p class="text-end page-number">#86</p>
+        ],
+
+        [
+            'page_number' => 86,
+            'content' => '<div class="page" id="86"> <p class="text-end page-number">#86</p>
 
 <p>
 Als elders ook geen plaats bestaat waar Ze volledig tot uiting kunnen komen, dan zullen wij, zoals een
@@ -2981,10 +3057,10 @@ loochenen. Daarnaast moeten wij aannemen dat de Regisseur van de wijze beschikki
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p">
- <sup>6</sup> Waarlijk, Rechtvaardigheid kent twee varianten. <span class="text-italic text-bold">De ene is distributief, de andere is vergeldend.</span>
+ <sup>6</sup> Waarlijk, Rechtvaardigheid kent twee varianten. <strong><em>De ene is distributief, de andere is vergeldend.</em></strong>
  </p>
  <p class="footnote-p">
- <span class="text-italic text-bold">De distributieve variant impliceert:</span> de rechthebbende geven waar hij recht op heeft. Deze vorm van
+ <strong><em>De distributieve variant impliceert:</em></strong> de rechthebbende geven waar hij recht op heeft. Deze vorm van
  Rechtvaardigheid heeft in deze wereld een hele evidente reikwijdte. Immers, zoals in <strong>“De Derde Waarheid”</strong> is bewezen,
  worden alle wensen die een wezen in de taal van potentie, in de taal van natuurlijke behoeftigheid en in de taal van
  hoogdringendheid voordraagt aan zijn Ontzaglijke Voortbrenger waarneembaar verhoord; alle rechten die essentieel zijn
@@ -2992,7 +3068,7 @@ loochenen. Daarnaast moeten wij aannemen dat de Regisseur van de wijze beschikki
  van deze rechtvaardigheid is dus net zo zeker als het bestaan en het leven zelf.
  </p>
  <p class="footnote-p">
- <span class="text-italic text-bold">De tweede variant is vergeldend.</span> Hierbij worden onrechtplegers gedisciplineerd. Met andere woorden, het recht dat
+ <strong><em>De tweede variant is vergeldend.</em></strong> Hierbij worden onrechtplegers gedisciplineerd. Met andere woorden, het recht dat
  onrechtplegers toekomt, wordt toegepast middels kastijding en bestraffing. Hoewel deze variant in deze wereld niet volledig
  tot uiting komt, zijn er talloze tekenen en aanwijzingen die het bestaan van deze waarheid laten aanvoelen. Waarlijk,
  vanaf de stammen van Âd en Thamood tot aan de opstandige volkeren van deze tijd: de disciplinerende klappen en kwellende
@@ -3000,13 +3076,14 @@ loochenen. Daarnaast moeten wij aannemen dat de Regisseur van de wijze beschikki
  </p>
 </div>
  </div>'
-     ],
-     [
-         'page_number' => 87,
-         'content' => '<div class="page" id="87"> <p class="text-end page-number">#87</p>
+        ],
+
+        [
+            'page_number' => 87,
+            'content' => '<div class="page" id="87"> <p class="text-end page-number">#87</p>
 
 <p>
-activiteiten en genaderijke gunsten die wij in dit universum aanschouwen – <span class="text-italic">(God verhoede)</span> – een roekeloze
+activiteiten en genaderijke gunsten die wij in dit universum aanschouwen – <em>(God verhoede)</em> – een roekeloze
 spelleider en wrede tiran is, wat een uiterst onmogelijke verwording van werkelijkheden zou impliceren.
 Zelfs de dwaze sofisten die heel het bestaan en hun eigen existentie ontkennen, zouden moeite hebben om
 deze gedachtegang serieus te nemen.
@@ -3031,10 +3108,11 @@ ontluiken in de wereld der gelijkenissen. In overeenstemming met de potentie die
 wordt hij gezaaid in dit leven; in het hiernamaals zal hij de oogst binnenhalen.
 </p>
  </div>'
-     ],
-     [
-         'page_number' => 88,
-         'content' => '<div class="page" id="88"> <p class="text-end page-number">#88</p>
+        ],
+
+        [
+            'page_number' => 88,
+            'content' => '<div class="page" id="88"> <p class="text-end page-number">#88</p>
 
 <p>
 Waarlijk, als je deze creaties aanschouwt op basis van hun aangezicht dat tot de Goddelijke Namen en
@@ -3057,11 +3135,11 @@ en uiteengaan, een hoger doel dienen...
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p">
- <sup>7</sup> <span class="text-bold">Vraag:</span>
- <span class="text-italic">“Waarom haalt u bij uw voorbeelden vooral bloemen, zaden en vruchten aan?”</span>
+ <sup>7</sup> <strong>Vraag:</strong>
+ <em>“Waarom haalt u bij uw voorbeelden vooral bloemen, zaden en vruchten aan?”</em>
  </p>
  <p class="footnote-p">
- <span class="text-bold">Het antwoord:</span>
+ <strong>Het antwoord:</strong>
  Omdat ze tot de antiekste, wonderbaarlijkste en delicaatste mirakelen van Macht behoren. De naturalisten, dwaalgeesten
  en filosofen hebben het fijne schrift dat de Pen der Beschikking en Macht in hen heeft vastgelegd, niet kunnen lezen,
  waardoor ze in het moeras van naturalisme zijn verdronken.
@@ -3069,10 +3147,11 @@ en uiteengaan, een hoger doel dienen...
 </div>
 
  </div>'
-     ],
-     [
-         'page_number' => 89,
-         'content' => '<div class="page" id="89"> <p class="text-end page-number">#89</p>
+        ],
+
+        [
+            'page_number' => 89,
+            'content' => '<div class="page" id="89"> <p class="text-end page-number">#89</p>
 
 <p>
 Deze toestanden lijken op scenario’s die opgezet en uitgewerkt worden om iets na te bootsen en af te beelden.
@@ -3092,9 +3171,9 @@ kwalificatie voor een sublieme gelukzaligheid kan worden aangetoond. In een Had�
 waarheid als volgt verwoord:
 </p>
 
-<p class="text-italic text-bold text-center">
+<p class="text-center"><em><strong>
 “De wereld is een akker voor het hiernamaals.”
-</p>
+</strong></em></p>
 
 <p>
 Aangezien de aarde bestaat, en aangezien verschijnselen op aarde aanduiden dat Wijsheid, Gratie, Genade
@@ -3103,24 +3182,25 @@ ook bestaat. Aangezien alles op aarde in zekere zin op die wereld is gericht, be
 het hiernamaals is. Het hiernamaals ontkennen impliceert het ontkennen van de aarde en al wat ze bevat.
 </p>
 
-<p class="text-center text-bold">Conclusie:</p>
+<p class="text-center"><strong>Conclusie:</strong></p>
 
-<p class="text-center text-bold text-center-constrained">
+<p class="text-center text-center-constrained"><strong>
 Net zoals het doodsuur en het graf
 de mens te wachten staan,
 kijken het paradijs en de hel evenzeer
 afwachtend uit naar de komst van de mens.
-</p>
+</strong></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 90,
-         'content' => '<div class="page" id="90"> <p class="text-end page-number">#90</p>
+        ],
+
+        [
+            'page_number' => 90,
+            'content' => '<div class="page" id="90"> <p class="text-end page-number">#90</p>
 
 <div class="text-center text-center-constrained">
- <p class="text-center text-bold small-title">De Elfde Waarheid</p>
- <p class="text-center"><span class="text-italic text-bold">De poort van Mensheid; Een glimp van de Naam: “De Alwaarachtige.”</span></p>
+ <p class="text-center small-title"><strong>De Elfde Waarheid</strong></p>
+ <p class="text-center"><strong><em>De poort van Mensheid; Een glimp van de Naam: “De Alwaarachtige.”</em></strong></p>
  <p class="text-center">
  <span class="text-arabic" dir="rtl" lang="ar">اَلْحَقُّ</span>
  </p>
@@ -3147,15 +3227,16 @@ Waarachtigheid een onrecht begaan dat weerzinwekkend is in de ogen van de waarhe
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 91,
-         'content' => '<div class="page" id="91"> <p class="text-end page-number">#91</p>
+        ],
+
+        [
+            'page_number' => 91,
+            'content' => '<div class="page" id="91"> <p class="text-end page-number">#91</p>
 
 <p>
 En kan het ooit mogelijk zijn dat de Algerechtigde Regeerder en Absolute Genadige de mens voorziet van
-een dusdanige potentie, dat hij daarmee de ultieme verantwoordelijkheid – <span class="text-italic">(waarvoor de aarde, de hemelen en
-de bergen terugdeinsden)</span> – kan dragen, wat wil zeggen dat hij met zijn persoonlijke afwegingen en beperkte
+een dusdanige potentie, dat hij daarmee de ultieme verantwoordelijkheid – <em>(waarvoor de aarde, de hemelen en
+de bergen terugdeinsden)</em> – kan dragen, wat wil zeggen dat hij met zijn persoonlijke afwegingen en beperkte
 kunstvaardigheden de omvattende Eigenschappen, de universele Gesteldheden en de eindeloze manifestaties
 van zijn Schepper kan afwegen en onderkennen, en dat de Heer hem als het meest fragiele, delicate, gevoelige,
 machteloze en zwakke wezen op aarde schept, maar desondanks tot een soort officiële rentmeester
@@ -3174,18 +3255,19 @@ een meedogenloosheid begaan die voluit in strijd is met Zijn absolute Wijsheid e
 absolute Genadigheid?
 </p>
 
-<p class="text-bold">
+<p><strong>
 God verhoede!
-</p>
+</strong></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 92,
-         'content' => '<div class="page" id="92"> <p class="text-end page-number">#92</p>
+        ],
+
+        [
+            'page_number' => 92,
+            'content' => '<div class="page" id="92"> <p class="text-end page-number">#92</p>
 
 <p>
-<span class="text-bold">Conclusie:</span> Toen wij naar het identiteitsbewijs en het handboek van de officier uit het symbolische
+<strong>Conclusie:</strong> Toen wij naar het identiteitsbewijs en het handboek van de officier uit het symbolische
 verhaal keken, zagen wij dat zijn rang, zijn taak, zijn loon, zijn gedragscode en zijn uitrusting niet voor dat tijdelijke
 terrein waren bestemd; die officier zou naar een permanent oord trekken en bereidde zich daarop voor. Evenzo zijn
 alle subtiliteiten in het <strong>‘identiteitsbewijs’</strong> van het mensenhart, alle vermogens in het <strong>‘handboek’</strong> van het mensenverstand
@@ -3195,40 +3277,41 @@ unaniem over deze kwestie.
 </p>
 
 <p>
-Bijvoorbeeld, als aan het voorstellingsvermogen – <span class="text-italic">dat als de portrettist van het verstand dient</span> – het volgende
-wordt voorgesteld: <span class="text-italic">“Jou zal een miljoenjarig bestaan inclusief wereldheerschappij worden geschonken, maar daarna
-zul jij in het niets verdwijnen”</span> dan zal de mens, op voorwaarde dat zijn waan hem niet misleidt en zijn nefs niet
+Bijvoorbeeld, als aan het voorstellingsvermogen – <em>dat als de portrettist van het verstand dient</em> – het volgende
+wordt voorgesteld: <em>“Jou zal een miljoenjarig bestaan inclusief wereldheerschappij worden geschonken, maar daarna
+zul jij in het niets verdwijnen”</em> dan zal de mens, op voorwaarde dat zijn waan hem niet misleidt en zijn nefs niet
 ingrijpt, geen vreugdekreet uitslaan maar een zucht van weemoed slaken. Dit laat zien dat het grootste aanbod van het
 vergankelijke zelfs niet het kleinste instrument en zintuig van de mens kan bevredigen.
 </p>
 
 <p>
-<strong>Voorwaar, op basis van deze potentie van de mens tonen zijn ambities</strong> – <span class="text-italic">die tot aan de eeuwigheid reiken</span> –
-zijn gedachten – <span class="text-italic">(die het universum omvatten)</span> <strong>– en zijn verlangens –</strong> <span class="text-italic">die over de varianten van eeuwige
-gelukzaligheden zijn uitgespreid</span> <strong>– dat deze mens geschapen is voor eeuwigheid en op weg is naar de eeuwigheid.
+<strong>Voorwaar, op basis van deze potentie van de mens tonen zijn ambities</strong> – <em>die tot aan de eeuwigheid reiken</em> –
+zijn gedachten – <em>(die het universum omvatten)</em> <strong>– en zijn verlangens –</strong> <em>die over de varianten van eeuwige
+gelukzaligheden zijn uitgespreid</em> <strong>– dat deze mens geschapen is voor eeuwigheid en op weg is naar de eeuwigheid.
 Deze wereld is voor hem een gastenverblijf en een wachtruimte voor zijn hiernamaals.</strong>
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 93,
-         'content' => '<div class="page" id="93"> <p class="text-end page-number">#93</p>
+        ],
+
+        [
+            'page_number' => 93,
+            'content' => '<div class="page" id="93"> <p class="text-end page-number">#93</p>
 
 <div class="text-center text-center-constrained">
- <p class="text-center text-bold small-title">De Twaalfde Waarheid</p>
- <p class="text-center"><span class="text-italic text-bold">De poort van Profeetschap en Revelatie; Een glimp van: “In de Naam van ALLAH, de Barmhartige, de Genadige.”</span></p>
+ <p class="text-center small-title"><strong>De Twaalfde Waarheid</strong></p>
+ <p class="text-center"><strong><em>De poort van Profeetschap en Revelatie; Een glimp van: “In de Naam van ALLAH, de Barmhartige, de Genadige.”</em></strong></p>
 <img style="width: 50%;" src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img style="width: 50%;" src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
 </div>
 
 <p>
-Waarlijk, terwijl alle Godsgezanten – <span class="text-italic">ondersteund door hun mirakelen</span> – zijn woorden beamen, alle heiligen –
-<span class="text-italic">ondersteund door hun waarnemingen en kerâmaat</span> – zijn dawa bevestigen, en alle gezuiverden –
-<span class="text-italic">ondersteund door hun waarheidsvindingen</span> – zijn waarachtigheid erkennen, heeft de Nobelste Godsbode
+Waarlijk, terwijl alle Godsgezanten – <em>ondersteund door hun mirakelen</em> – zijn woorden beamen, alle heiligen –
+<em>ondersteund door hun waarnemingen en kerâmaat</em> – zijn dawa bevestigen, en alle gezuiverden –
+<em>ondersteund door hun waarheidsvindingen</em> – zijn waarachtigheid erkennen, heeft de Nobelste Godsbode
 <span class="text-arabic-inline" dir="rtl" lang="ar">ﷺ</span>, steunend op de kracht van duizend vervulde mirakelen, met al zijn kracht,
-tezamen met de Leerrijke Qur’an – <span class="text-italic">Die Zelf met Zijn veertig miraculeuze aspecten ook op duizenden onbetwistbare Ayaat
-steunt</span> – de weg naar het hiernamaals en de poort tot het paradijs met volstrekte zekerheid geopend. Is het nog
+tezamen met de Leerrijke Qur’an – <em>Die Zelf met Zijn veertig miraculeuze aspecten ook op duizenden onbetwistbare Ayaat
+steunt</em> – de weg naar het hiernamaals en de poort tot het paradijs met volstrekte zekerheid geopend. Is het nog
 voor mogelijk te houden dat deze gesloten kunnen worden door loze influisteringen en twijfels die nog zwakker
 zijn dan een vliegenvleugel?
 </p>
@@ -3244,10 +3327,11 @@ met al zijn mirakelen en redeneringen beaamd, door de Qur’an-el’Hakîm met a
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 94,
-         'content' => '<div class="page" id="94"> <p class="text-end page-number">#94</p>
+        ],
+
+        [
+            'page_number' => 94,
+            'content' => '<div class="page" id="94"> <p class="text-end page-number">#94</p>
 
 <p>
 Ayaat bewezen, en door dit universum met al zijn kosmische Ayaat en leerrijke gesteldheden benadrukt.
@@ -3255,20 +3339,20 @@ Ayaat bewezen, en door dit universum met al zijn kosmische Ayaat en leerrijke ge
 
 <p>
 Kan het dan ooit voor mogelijk worden gehouden dat enerzijds het Noodzakelijke Opperwezen en het hele
-bestaan – <span class="text-italic">buiten de kafirs om</span> – dit concept van de herzameling unaniem bevestigen, maar anderzijds
+bestaan – <em>buiten de kafirs om</em> – dit concept van de herzameling unaniem bevestigen, maar anderzijds
 satanische influisteringen met minder kracht dan een haarspriet zo’n verheven en gegrondveste berg van een
 waarheid tot wankelen kunnen brengen of kunnen wegvagen? God verhoede!
 </p>
 
 <p>
 Je moet beslist niet denken dat de bewijzen voor de herzameling beperkt zijn tot de <strong>“Twaalf Waarheden”</strong>
-die wij besproken hebben. Verre van! Alleen de Qur’an-el’Hakîm op Zich – <span class="text-italic">Die ons de voorgaande <strong>“Twaalf Waarheden”</strong> heeft onderricht</span> – wijst nog op duizenden aspecten die ieder op zich als een krachtig teken aangeven
+die wij besproken hebben. Verre van! Alleen de Qur’an-el’Hakîm op Zich – <em>Die ons de voorgaande <strong>“Twaalf Waarheden”</strong> heeft onderricht</em> – wijst nog op duizenden aspecten die ieder op zich als een krachtig teken aangeven
 dat onze Schepper ons van dit vergankelijke oord naar een eeuwig rijk zal overplaatsen.
 </p>
 
 <p>
-Tevens moet je beslist niet denken – <span class="text-italic">zoals we eerder aangaven</span> – dat de Goddelijke Namen Die de
-herzameling vereisen, beperkt zijn tot de Namen: <span class="text-italic"><strong>“de Alwijze”</strong>, <strong>“de Genereuze”</strong>, <strong>“de Genadige”</strong>, <strong>“de Rechtvaardige”</strong> en <strong>“de Bewaarder”</strong>.</span> Verre van! Alle Goddelijke Namen Die Zich ten behoeve van de regelingen in het
+Tevens moet je beslist niet denken – <em>zoals we eerder aangaven</em> – dat de Goddelijke Namen Die de
+herzameling vereisen, beperkt zijn tot de Namen: <em><strong>“de Alwijze”</strong>, <strong>“de Genereuze”</strong>, <strong>“de Genadige”</strong>, <strong>“de Rechtvaardige”</strong> en <strong>“de Bewaarder”</strong>.</em> Verre van! Alle Goddelijke Namen Die Zich ten behoeve van de regelingen in het
 universum manifesteren, vereisen en benodigen het hiernamaals.
 </p>
 
@@ -3280,10 +3364,11 @@ duiden op de herzameling.
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 95,
-         'content' => '<div class="page" id="95"> <p class="text-end page-number">#95</p>
+        ],
+
+        [
+            'page_number' => 95,
+            'content' => '<div class="page" id="95"> <p class="text-end page-number">#95</p>
 
 <p>
 Bijvoorbeeld, zoals de kunstrijke pracht binnen de mooiste compositie van de mens de Kunstenaar laat
@@ -3312,10 +3397,11 @@ houding:
 </div>
 
  </div>'
-     ],
-     [
-         'page_number' => 96,
-         'content' => '<div class="page" id="96"> <p class="text-end page-number">#96</p>
+        ],
+
+        [
+            'page_number' => 96,
+            'content' => '<div class="page" id="96"> <p class="text-end page-number">#96</p>
 
 <div class="text-center page-title-chapter delima-font">
  <h2>Slot</h2>
@@ -3330,15 +3416,15 @@ geloof in de herzameling is gevestigd?
 
 <p>
 De edele Aya: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ إِلَّا كَنَفْسٍ وَاحِدَةٍ</span> geeft
-het volgende aan: <span class="text-italic text-bold">“De schepping en herzameling van alle mensen is voor de Goddelijke Macht zo licht
-als de schepping en herzameling van één mens.”</span> Waarlijk, zo is de werkelijkheid. In een traktaat getiteld
-<span class="text-italic">“Het Punt”</span> heb ik in het hoofdstuk over de herzameling uitgebreid geschreven over de waarheid
+het volgende aan: <strong><em>“De schepping en herzameling van alle mensen is voor de Goddelijke Macht zo licht
+als de schepping en herzameling van één mens.”</em></strong> Waarlijk, zo is de werkelijkheid. In een traktaat getiteld
+<em>“Het Punt”</em> heb ik in het hoofdstuk over de herzameling uitgebreid geschreven over de waarheid
 die deze Aya uitdrukt. Hier zullen wij met enkele gelijkenissen uit dat traktaat een beknopte schets ervan
-presenteren. Wie interesse heeft, kan <span class="text-italic">“Het Punt”</span> raadplegen.
+presenteren. Wie interesse heeft, kan <em>“Het Punt”</em> raadplegen.
 </p>
 
 <p>
-<span class="text-italic text-bold">Bijvoorbeeld:</span> <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَلِلّٰهِ الْمَثَلُ اْلأَعْلٰى</span> – een gelijkenis
+<strong><em>Bijvoorbeeld:</em></strong> <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَلِلّٰهِ الْمَثَلُ اْلأَعْلٰى</span> – een gelijkenis
 aanvoeren is geen overtreding – als de zon volgens het geheim van “lichternis” haar glimp naar eigen wil zou
 kunnen afgeven, dan zou ze met hetzelfde gemak zowel aan één enkel deeltje als aan talloze transparante objecten
 een reflectie kunnen schenken.
@@ -3351,10 +3437,11 @@ een reflectie kunnen schenken.
 </div>
 
  </div>'
-     ],
-     [
-         'page_number' => 97,
-         'content' => '<div class="page" id="97"> <p class="text-end page-number">#97</p>
+        ],
+
+        [
+            'page_number' => 97,
+            'content' => '<div class="page" id="97"> <p class="text-end page-number">#97</p>
 
 <p>
 En volgens het geheim van <strong>“transparantie”</strong> zijn de minuscule pupil van een transparant deeltje en het
@@ -3391,10 +3478,11 @@ naar de spirituele <strong>transparantie</strong> van al het geschapene, naar de
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 98,
-         'content' => '<div class="page" id="98"> <p class="text-end page-number">#98</p>
+        ],
+
+        [
+            'page_number' => 98,
+            'content' => '<div class="page" id="98"> <p class="text-end page-number">#98</p>
 
 <p>
 de volstrekte <strong>gehoorzaamheid</strong> van alle creaties aan de Goddelijke scheppingswetten, en naar het <strong>evenwicht</strong>
@@ -3403,11 +3491,11 @@ als <em>‘veel’</em> of <em>‘weinig’</em>, <em>‘groot’</em> of <em>�
 oproep kan Hij alle mensen herzamelen als waren zij één mens.
 </p>
 
-<p class="text-italic text-bold">
+<p><strong><em>
 Bovendien ontstaan de niveaus van sterkte en zwakte door de invloed van hun tegenpolen.
-</p>
+</em></strong></p>
 
-<p class="text-bold">Bijvoorbeeld:</p>
+<p><strong>Bijvoorbeeld:</strong></p>
 
 <p>
 De mate van warmte wordt door de invloed van kou bepaald. De waarde van schoonheid wordt door de
@@ -3418,8 +3506,8 @@ is, bestaan dus geen gradaties.
 </p>
 
 <p>
-Aangezien de Macht van de Absolute Almacht wezenlijk is en niet accidenteel – <span class="text-italic">zoals dat het geval is bij
-het mogelijke</span> – en aangezien Zijn Macht volmaakt is, kan de tegenpool daarvan, oftewel onmacht, geenszins
+Aangezien de Macht van de Absolute Almacht wezenlijk is en niet accidenteel – <em>zoals dat het geval is bij
+het mogelijke</em> – en aangezien Zijn Macht volmaakt is, kan de tegenpool daarvan, oftewel onmacht, geenszins
 invloed erop uitoefenen. Een lente scheppen is voor het Ontzaglijke Opperwezen dus zo eenvoudig als de
 creatie van een bloem. Zou de schepping aan oorzaken worden toegeschreven, dan zou een bloem zo lastig
 als een lente tot stand komen. De wederopwekking en herzameling van alle mensen is voor Hem aldus zo
@@ -3427,14 +3515,15 @@ licht als de wederopwekking van één nefs.
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 99,
-         'content' => '<div class="page" id="99"> <p class="text-end page-number">#99</p>
+        ],
+
+        [
+            'page_number' => 99,
+            'content' => '<div class="page" id="99"> <p class="text-end page-number">#99</p>
 
 <p>
 Wat wij vanaf het begin tot hiertoe hebben verklaard in de symbolische <strong>“Aanzichten”</strong> en de <strong>“Waarheden”</strong>
-over de kwestie van de herzameling, is te danken aan de zegen <span class="text-italic">(feyz)</span> van de Qur’an-el’Hakîm.
+over de kwestie van de herzameling, is te danken aan de zegen <em>(feyz)</em> van de Qur’an-el’Hakîm.
 Het is bedoeld om de nefs tot overgave en het hart tot aanvaarding te brengen. Het ware Woord behoort
 echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten we luisteren:
 </p>
@@ -3442,7 +3531,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 
 <div class="text-center" style="margin-top: 40px;">
 <div style="border-bottom: 2px solid #ca2a2a;"></div>
- <p class="text-red text-bold small-title">{Noot van de vertalers:</p>
+ <p class="text-red small-title"><strong>{Noot van de vertalers:</strong></p>
  <p class="text-red">
  Hierop volgen passages uit de Qur’an. De oorspronkelijke Qur’anpassages staan op de rechterpagina’s; de
  vertalingen op de linker. Echter, zoals elders in de Risale-i Nur is vermeld, willen wij ook hier onderstrepen
@@ -3451,24 +3540,25 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  andere taal.
 </p>
 
-<p class="text-red text-italic text-bold">
+<p class="text-red"><em><strong>
  Wij hopen dan ook dat de lezer beseft dat onze menselijke formuleringen het Goddelijke Woord geenszins
  recht doen; onze vertalingen zijn hoogstens zeer doffe schaduwen van de alomstralende Ayaat.}
-</p>
+</strong></em></p>
 </div>
  </div>'
-     ],
-     [
-         'page_number' => 100,
-         'content' => '<div class="page" id="100">
+        ],
+
+        [
+            'page_number' => 100,
+            'content' => '<div class="page" id="100">
  <p class="text-end page-number">#100</p>
 
  <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
  فَلِلّٰهِ الْحُجَّةُ الْبَالِغَةُ ۞
 </p>
 
- <p class="text-center text-italic">“Aan ALLAH behoort het beslissende bewijs.”</p>
- <p class="text-center text-italic"><em>– Qur’an, 6:149</em></p>
+ <p class="text-center"><em>“Aan ALLAH behoort het beslissende bewijs.”</em></p>
+ <p class="text-center"><em><em>– Qur’an, 6:149</em></em></p>
 
  <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;margin-top: 10px; max-width: 500px;">
  فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ
@@ -3505,16 +3595,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 36:78-79</em></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 101,
-         'content' => '<div class="page" id="101"> <p class="text-end page-number">#101</p>
+        ],
+
+        [
+            'page_number' => 101,
+            'content' => '<div class="page" id="101"> <p class="text-end page-number">#101</p>
 
  </div>'
-     ],
-     [
-         'page_number' => 102,
-         'content' => '<div class="page" id="102"> <p class="text-end page-number">#102</p>
+        ],
+
+        [
+            'page_number' => 102,
+            'content' => '<div class="page" id="102"> <p class="text-end page-number">#102</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
  يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمْ
@@ -3548,16 +3640,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 22:1-2</em></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 103,
-         'content' => '<div class="page" id="103"> <p class="text-end page-number">#103</p>
+        ],
+
+        [
+            'page_number' => 103,
+            'content' => '<div class="page" id="103"> <p class="text-end page-number">#103</p>
 
  </div>'
-     ],
-     [
-         'page_number' => 104,
-         'content' => '<div class="page" id="104"> <p class="text-end page-number">#104</p>
+        ],
+
+        [
+            'page_number' => 104,
+            'content' => '<div class="page" id="104"> <p class="text-end page-number">#104</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
  اَللّٰهُ لَا إِلٰهَ إِلَّا هُوَ
@@ -3593,16 +3687,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 82:13-14</em></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 105,
-         'content' => '<div class="page" id="105"> <p class="text-end page-number">#105</p>
+        ],
+
+        [
+            'page_number' => 105,
+            'content' => '<div class="page" id="105"> <p class="text-end page-number">#105</p>
 
  </div>'
-     ],
-     [
-         'page_number' => 106,
-         'content' => '<div class="page" id="106"> <p class="text-end page-number">#106</p>
+        ],
+
+        [
+            'page_number' => 106,
+            'content' => '<div class="page" id="106"> <p class="text-end page-number">#106</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
  اِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا ۞
@@ -3638,16 +3734,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 99:1-8</em></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 107,
-         'content' => '<div class="page" id="107"> <p class="text-end page-number">#107</p>
+        ],
+
+        [
+            'page_number' => 107,
+            'content' => '<div class="page" id="107"> <p class="text-end page-number">#107</p>
 
  </div>'
-     ],
-     [
-         'page_number' => 108,
-         'content' => '<div class="page" id="108"> <p class="text-end page-number">#108</p>
+        ],
+
+        [
+            'page_number' => 108,
+            'content' => '<div class="page" id="108"> <p class="text-end page-number">#108</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
  اَلْقَارِعَةُ ۞ مَا الْقَارِعَةُ
@@ -3681,16 +3779,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 101:1-8</em></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 109,
-         'content' => '<div class="page" id="109"> <p class="text-end page-number">#109</p>
+        ],
+
+        [
+            'page_number' => 109,
+            'content' => '<div class="page" id="109"> <p class="text-end page-number">#109</p>
 
  </div>'
-     ],
-     [
-         'page_number' => 110,
-         'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
+        ],
+
+        [
+            'page_number' => 110,
+            'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
  اَلْقَارِعَةُ ۞ مَا الْقَارِعَةُ
@@ -3718,20 +3818,22 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 16:77</em></p>
 
  </div>'
-     ],
-     [
-         'page_number' => 111,
-         'content' => '<div class="page" id="111"> <p class="text-end page-number">#111</p>
+        ],
+
+        [
+            'page_number' => 111,
+            'content' => '<div class="page" id="111"> <p class="text-end page-number">#111</p>
 
  </div>'
-     ],
-     [
-         'page_number' => 112,
-         'content' => '<div class="page" id="112"> <p class="text-end page-number">#112</p>
+        ],
+
+        [
+            'page_number' => 112,
+            'content' => '<div class="page" id="112"> <p class="text-end page-number">#112</p>
 
 <p>
 Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en laten wij reageren met:
-<span class="text-bold">“Wij geloven en beamen dit.”</span>
+<strong>“Wij geloven en beamen dit.”</strong>
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
@@ -3751,10 +3853,11 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 113,
-         'content' => '<div class="page" id="113"> <p class="text-end page-number">#113</p>
+        ],
+
+        [
+            'page_number' => 113,
+            'content' => '<div class="page" id="113"> <p class="text-end page-number">#113</p>
 
 <p class="text-center text-center-constrained">
  “Ik geloof in <strong>ALLAH</strong>, in Zijn engelen, in Zijn Boeken en
@@ -3768,7 +3871,7 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
  dood, de werkelijkheid van het paradijs, de werkelijkheid
  van het hellevuur, de werkelijkheid van de bemiddeling,
  en de werkelijkheid van Moenker en Nekier
- <span class="text-italic">de twee engelen die de overledenen in het graf ondervragen.</span>
+ <em>de twee engelen die de overledenen in het graf ondervragen.</em>
 </p>
 
 <p class="text-center text-center-constrained">
@@ -3776,12 +3879,12 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
  uit hun graven zal laten rijzen.
 </p>
 
-<p class="text-center text-bold text-center-constrained">
+<p class="text-center text-center-constrained"><strong>
  Ik getuig dat er geen God is behalve ALLAH, en ik getuig
  dat Mohammed de boodschapper is van ALLAH.”
-</p>
+</strong></p>
 
-<p class="text-center text-italic text-center-constrained">
+<p class="text-center text-center-constrained"><em>
  “<strong>O ALLAH</strong>, laat zegeningen neerdalen op Uw subtielste,
  edelste, volmaaktste en prachtigste vrucht van Uw
  Tûba-boom der Genade, die U heeft afgevaardigd als genade
@@ -3793,13 +3896,13 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
  ons en onze ouders toegang tot het paradijs, in het gezelschap
  van de rechtschapenen, omwille van de eer van Uw
  uitverkoren profeet, âmîn.”
-</p>
+</em></p>
 
 <p>
 O broeder die dit traktaat naar eer en geweten bestudeert. Zeg niet:
-<span class="text-italic">“Waarom kan ik dit <strong>‘Tiende Woord’</strong> niet meteen volledig begrijpen?”</span>
+<em>“Waarom kan ik dit <strong>‘Tiende Woord’</strong> niet meteen volledig begrijpen?”</em>
 En wees niet ontmoedigd als alles niet direct helemaal helder wordt. Want zelfs een filosofisch genie zoals
-Ibn Sina <span class="text-italic">(Avicenna)</span> zei:
+Ibn Sina <em>(Avicenna)</em> zei:
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
@@ -3807,22 +3910,23 @@ Ibn Sina <span class="text-italic">(Avicenna)</span> zei:
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 114,
-         'content' => '<div class="page" id="114"> <p class="text-end page-number">#114</p>
+        ],
 
-<p class="text-italic">
- “De herzameling laat zich niet meten naar de maatstaf van het verstand.” <span style="font-style: normal">Hij concludeerde:</span></p>
+        [
+            'page_number' => 114,
+            'content' => '<div class="page" id="114"> <p class="text-end page-number">#114</p>
 
-<p class="text-italic">
+<p><em>
+ “De herzameling laat zich niet meten naar de maatstaf van het verstand.” <span style="font-style: normal">Hij concludeerde:</span></em></p>
+
+<p><em>
  “Wij geloven, maar voor het verstand is deze weg onbegaanbaar.”
-</p>
+</em></p>
 
 <p>
 Bovendien hebben alle islamgeleerden unaniem als volgt geoordeeld:
-<span class="text-italic">“De herzameling is een geloofskwestie die is overgeleverd. Het bewijs ervan berust op transmissie.
-Met het verstand alleen kan ze niet bereikt worden.”</span>
+<em>“De herzameling is een geloofskwestie die is overgeleverd. Het bewijs ervan berust op transmissie.
+Met het verstand alleen kan ze niet bereikt worden.”</em>
 Het is dan ook vanzelfsprekend dat zo’n diep en spiritueel verheven pad niet opeens kan veranderen in een
 openbare laan die voor ieder verstand toegankelijk is.
 </p>
@@ -3831,7 +3935,7 @@ openbare laan die voor ieder verstand toegankelijk is.
 In dit tijdperk, waarin traditionele navolging en overgave nagenoeg verloren zijn, behoren wij duizendmaal
 dank te betuigen omdat wij, met de zegen van de Qur’an en de Gratie van de Genadige Schepper, ten opzichte
 van zo’n diep en verheven pad zo genereus zijn begunstigd. Want het is voldoende om ons imaan
-<span class="text-italic">(geloof)</span> te redden. Wij horen tevreden te zijn met wat wij eruit begrijpen en naar meer diepgang te streven
+<em>(geloof)</em> te redden. Wij horen tevreden te zijn met wat wij eruit begrijpen en naar meer diepgang te streven
 door dit traktaat herhaaldelijk te bestuderen. Een reden waarom de herzameling niet met het verstand wordt
 benaderd, schuilt in het volgende geheim:
 </p>
@@ -3845,10 +3949,11 @@ zekerheid aanvaard kan worden.
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 115,
-         'content' => '<div class="page" id="115"> <p class="text-end page-number">#115</p>
+        ],
+
+        [
+            'page_number' => 115,
+            'content' => '<div class="page" id="115"> <p class="text-end page-number">#115</p>
 <p>
 In dit “Tiende Woord” worden deze activiteiten dankzij de zegen van de Qur’an op deze wijze veraanschouwelijkt
 en gepresenteerd. Anders, als het verstand slechts aan zijn eigen bekrompen en beperkte principes zou worden
@@ -3856,18 +3961,19 @@ overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging
 </p>
 
  </div>'
-     ],
-     [
-         'page_number' => 116,
-         'content' => '<div class="page" id="116"> <p class="text-end page-number">#116</p>
+        ],
+
+        [
+            'page_number' => 116,
+            'content' => '<div class="page" id="116"> <p class="text-end page-number">#116</p>
 
 
-<p class="text-italic">
+<p><em>
  Hoewel <strong>“Het Tiende Woord”</strong> hier eindigt, heeft de auteur in het oorspronkelijke traktaat bepaalde aanvullende
  delen uit de Risale-i Nur als bijlagen opgenomen. Tot onze grote spijt is het ons in deze editie niet gelukt
  om deze bijlagen te vertalen. Moge ALLAH ons in staat stellen om deze in de eerstvolgende druk ook te vertalen
  en toe te voegen.
-</p>
+</em></p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
  رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً
@@ -3896,8 +4002,9 @@ overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging
 
 <p class="text-end text-italic" style="margin-top: 24px;">De Vertalers</p>
 
- </div>'
-     ],
- ];
- }
+</div>'
+        ],
+
+        ];
+    }
 }
