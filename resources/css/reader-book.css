@@ -344,7 +344,6 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
-    -webkit-font-feature-settings: 'ss04', 'ss14', 'ss17'; /* iOS Safari */
     font-feature-settings: 'ss04', 'ss14', 'ss17';
     letter-spacing: 0;
     word-spacing: 0;
@@ -353,13 +352,12 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 
 .book-reader-scope .honorific {
     font-family: 'OmarNaskhRegular', serif;
-    -webkit-font-feature-settings: 'ss17'; /* iOS Safari */
-    font-feature-settings: 'ss17';
     font-size: 1.2em;
     line-height: inherit;
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
+    font-feature-settings: 'ss04', 'ss14', 'ss17';
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
