@@ -27,7 +27,9 @@
 
 @font-face {
     font-family: 'OmarNaskhRegular';
-    src: url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
+    src:
+        url('../fonts/OmarNaskh-Regular.woff2') format('woff2'),
+        url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -356,7 +358,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     line-height: 1;
     direction: rtl;
     unicode-bidi: isolate;
-    display: inline;
+    display: inline-block;
     white-space: nowrap;
     font-feature-settings: "ss15" 1;
     -webkit-font-feature-settings: "ss15" 1;
@@ -364,6 +366,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     word-spacing: 0;
     color: #ca2a2a;
     vertical-align: baseline;
+    text-rendering: optimizeLegibility;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
