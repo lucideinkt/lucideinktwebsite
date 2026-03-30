@@ -350,9 +350,9 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     color: #ca2a2a;
 }
 
-.text-arabic-inline.honorific {
-    font-feature-settings: 'ss15' !important;
+.book-reader-scope .honorific {
     font-family: 'OmarNaskhRegular', serif;
+    font-feature-settings: 'ss15' !important;
     font-size: 1.2em;
     line-height: inherit;
     direction: rtl;

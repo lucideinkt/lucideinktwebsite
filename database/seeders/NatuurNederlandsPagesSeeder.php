@@ -34,7 +34,7 @@ class NatuurNederlandsPagesSeeder extends BookPagesSeeder
 
 <p>
 De Risale-i Nur is een boekenreeks die geschreven
-is door de Islamitische geleerde <strong>Said Nursî</strong> <span class="text-arabic-inline honorific" dir="rtl" lang="ar">رضي الله عنه</span>. Deze
+is door de Islamitische geleerde <strong>Said Nursî</strong> <span class="honorific" dir="rtl" lang="ar">رضي الله عنه</span>. Deze
 boekenreeks bestaat uit twaalf boeken, waaronder: <strong>de
 Woorden</strong> (bestaande uit 33 woorden), <strong>de Brieven</strong>
 (bestaande uit 33 brieven), <strong>de Flitsen</strong> (bestaande uit
@@ -78,12 +78,12 @@ mogen leveren.
 Moge ALLAH dit traktaat vele diensten doen verlenen
 en de vertalers, de broeders die een bijdrage
 hebben geleverd aan de vertaling, de lezers, de Nurstudenten
-en de volgelingen van Mohammed <span class="text-arabic-inline honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> vergeven
+en de volgelingen van Mohammed <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> vergeven
 en zegenen.
 </p>
 
 <p>
-Mogen onze meester Mohammed <span class="text-arabic-inline honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span>, zijn afstammelingen
+Mogen onze meester Mohammed <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span>, zijn afstammelingen
 en zijn metgezellen zoveel vrede en zegeningen
 ontvangen als het aantal letters van dit boek, als
 het aantal sterren in de hemelen en als het aantal atomen
