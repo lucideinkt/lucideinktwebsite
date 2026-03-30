@@ -30,7 +30,7 @@
     src: url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: block; /* block ipv swap: voorkomt render met verkeerd systeem-font tijdens laden */
 }
 
 @font-face {
@@ -344,6 +344,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
+    -webkit-font-feature-settings: 'ss04', 'ss14', 'ss15'; /* iOS Safari */
     font-feature-settings: 'ss04', 'ss14', 'ss15';
     letter-spacing: 0;
     word-spacing: 0;
@@ -352,7 +353,8 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 
 .book-reader-scope .honorific {
     font-family: 'OmarNaskhRegular', serif;
-    font-feature-settings: 'ss15' !important;
+    -webkit-font-feature-settings: 'ss15'; /* iOS Safari */
+    font-feature-settings: 'ss15';
     font-size: 1.2em;
     line-height: inherit;
     direction: rtl;
