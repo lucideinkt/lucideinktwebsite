@@ -30,7 +30,7 @@
     src: url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-    font-display: block; /* block ipv swap: voorkomt render met verkeerd systeem-font tijdens laden */
+    font-display: swap;
 }
 
 @font-face {
@@ -344,10 +344,26 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
-    font-feature-settings: 'ss04', 'ss14', 'ss17';
+    font-feature-settings: 'ss04', 'ss14', 'ss15';
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
+}
+
+.book-reader-scope .honorific {
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: 1.2em;
+    line-height: 1;
+    direction: rtl;
+    unicode-bidi: isolate;
+    display: inline;
+    white-space: nowrap;
+    font-feature-settings: "ss15" 1;
+    -webkit-font-feature-settings: "ss15" 1;
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+    vertical-align: baseline;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
@@ -1189,13 +1205,3 @@ body.dark-mode .toc-panel-item-title { color: #e8d8b0; }
 body.dark-mode .toc-panel-item-subtitle { color: #777; }
 body.dark-mode .toc-panel-item-page { color: #555; }
 
-.book-reader-scope .honorific {
-    font-family: 'OmarNaskhRegular', serif;
-    font-size: 1.2em;
-    line-height: inherit;
-    display: inline;
-    font-feature-settings: 'ss15';
-    letter-spacing: 0;
-    word-spacing: 0;
-    color: #ca2a2a;
-}
