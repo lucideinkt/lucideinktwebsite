@@ -352,6 +352,15 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 
 .text-arabic-inline.honorific {
     font-feature-settings: 'ss15' !important;
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: 1.2em;
+    line-height: inherit;
+    direction: rtl;
+    display: inline;
+    unicode-bidi: isolate;
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
