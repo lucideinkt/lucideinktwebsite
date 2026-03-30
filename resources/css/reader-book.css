@@ -350,19 +350,6 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     color: #ca2a2a;
 }
 
-.book-reader-scope .honorific {
-    font-family: 'OmarNaskhRegular', serif;
-    font-size: 1.2em;
-    line-height: inherit;
-    direction: rtl;
-    display: inline;
-    unicode-bidi: isolate;
-    font-feature-settings: 'ss04', 'ss14', 'ss17';
-    letter-spacing: 0;
-    word-spacing: 0;
-    color: #ca2a2a;
-}
-
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
 .book-reader-scope sup {
     font-size: 0.72em;
@@ -1202,3 +1189,13 @@ body.dark-mode .toc-panel-item-title { color: #e8d8b0; }
 body.dark-mode .toc-panel-item-subtitle { color: #777; }
 body.dark-mode .toc-panel-item-page { color: #555; }
 
+.book-reader-scope .honorific {
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: 1.2em;
+    line-height: inherit;
+    display: inline;
+    font-feature-settings: 'ss15';
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+}
