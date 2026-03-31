@@ -32,6 +32,7 @@
     font-display: swap;
     src:
         url('../fonts/OmarNaskh-Regular.woff2') format('woff2'),
+        url('../fonts/OmarNaskh-Regular.woff') format('woff'),
         url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
 }
 
