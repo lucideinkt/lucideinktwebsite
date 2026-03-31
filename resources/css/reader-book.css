@@ -27,10 +27,12 @@
 
 @font-face {
     font-family: 'OmarNaskhRegular';
-    src:url('../fonts/OmarNaskh-Regular.woff2') format('woff2');  /* Newer browsers */
-    font-weight: 400;
     font-style: normal;
+    font-weight: 400;
     font-display: swap;
+    src:
+        url('../fonts/OmarNaskh-Regular.woff2') format('woff2'),
+        url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -377,17 +379,13 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     unicode-bidi: isolate;
     display: inline;
     white-space: nowrap;
-    color: #ca2a2a;
+    -webkit-font-feature-settings: "ss15";
+    font-feature-settings: "ss15";
     letter-spacing: 0;
     word-spacing: 0;
+    color: #ca2a2a;
     vertical-align: baseline;
-}
-
-@supports (-webkit-touch-callout: none) {
-    .book-reader-scope .honorific {
-        -webkit-font-feature-settings: normal;
-        font-feature-settings: normal;
-    }
+    text-rendering: optimizeLegibility;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
