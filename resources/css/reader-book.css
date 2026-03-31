@@ -27,9 +27,10 @@
 
 @font-face {
     font-family: 'OmarNaskhRegular';
-    src:
-        url('../fonts/OmarNaskh-Regular.woff2') format('woff2'),
-        url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
+    src:url('../fonts/OmarNaskh-Regular.eot') format('embedded-opentype'); /* IE9 + later */
+    src:url('../fonts/OmarNaskh-Regular.eot?#iefix') format('embedded-opentype'), /* IE6 to IE8  */
+        url('../fonts/OmarNaskh-Regular.woff2') format('woff2'),  /* Newer browsers */
+        url('../fonts/OmarNaskh-Regular.ttf') format('truetype'); /* Safari og iOS, Chrome, Android, Firefox and Opera except Opera Mini  */
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -358,7 +359,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     line-height: 1;
     direction: rtl;
     unicode-bidi: isolate;
-    display: inline-block;
+    display: inline;
     white-space: nowrap;
     font-feature-settings: "ss15" 1;
     -webkit-font-feature-settings: "ss15" 1;
