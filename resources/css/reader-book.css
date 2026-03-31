@@ -377,12 +377,24 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     font-size: 1.2em;
     line-height: 1.15;
     direction: rtl;
-    display: inline-block;
+    -webkit-font-feature-settings: "ss15";
+    font-feature-settings: "ss15";
+    display: inline;
     white-space: nowrap;
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
     vertical-align: baseline;
+}
+
+/* ── SVG honorific images ── */
+.honorific-svg {
+    display: inline;
+    height: 1.2em;
+    width: auto;
+    vertical-align: middle;
+    position: relative;
+    top: -0.05em;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
