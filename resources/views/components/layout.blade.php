@@ -55,6 +55,7 @@
     {{-- Adobe stylesheet fonts --}}
     <link rel="stylesheet" href="https://use.typekit.net/ixm0jkz.css">
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
+    <link rel="preload" href="/fonts/OmarNaskh-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
     {{-- Polyfill for crypto.randomUUID --}}
     <script>

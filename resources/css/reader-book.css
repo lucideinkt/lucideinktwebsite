@@ -27,10 +27,7 @@
 
 @font-face {
     font-family: 'OmarNaskhRegular';
-    src:url('../fonts/OmarNaskh-Regular.eot') format('embedded-opentype'); /* IE9 + later */
-    src:url('../fonts/OmarNaskh-Regular.eot?#iefix') format('embedded-opentype'), /* IE6 to IE8  */
-        url('../fonts/OmarNaskh-Regular.woff2') format('woff2'),  /* Newer browsers */
-        url('../fonts/OmarNaskh-Regular.ttf') format('truetype'); /* Safari og iOS, Chrome, Android, Firefox and Opera except Opera Mini  */
+    src:url('../fonts/OmarNaskh-Regular.woff2') format('woff2');  /* Newer browsers */
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -278,7 +275,7 @@
     line-height: 2;
     direction: rtl;
     text-align: center;
-    font-feature-settings: 'ss04', 'ss14', 'ss15';
+    font-feature-settings: 'ss04', 'ss14', 'ss17';
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
@@ -347,7 +344,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
-    font-feature-settings: 'ss04', 'ss14', 'ss15';
+    font-feature-settings: 'ss04', 'ss14', 'ss17';
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
@@ -361,8 +358,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     unicode-bidi: isolate;
     display: inline;
     white-space: nowrap;
-    font-feature-settings: "ss15" 1;
-    -webkit-font-feature-settings: "ss15" 1;
+    font-feature-settings: "ss15";
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
