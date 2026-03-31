@@ -375,10 +375,9 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 .book-reader-scope .honorific {
     font-family: 'OmarNaskhRegular', serif;
     font-size: 1.2em;
-    line-height: 1.1;
+    line-height: 1.15;
     direction: rtl;
-    unicode-bidi: isolate;
-    display: inline;
+    display: inline-block;
     white-space: nowrap;
     -webkit-font-feature-settings: "ss15";
     font-feature-settings: "ss15";
@@ -386,7 +385,6 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     word-spacing: 0;
     color: #ca2a2a;
     vertical-align: baseline;
-    text-rendering: optimizeLegibility;
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
