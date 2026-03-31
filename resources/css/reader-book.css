@@ -372,12 +372,22 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 .book-reader-scope .honorific {
     font-family: 'OmarNaskhRegular', serif;
     font-size: 1.2em;
-    line-height: 1;
+    line-height: 1.1;
     direction: rtl;
     unicode-bidi: isolate;
     display: inline;
     white-space: nowrap;
     color: #ca2a2a;
+    letter-spacing: 0;
+    word-spacing: 0;
+    vertical-align: baseline;
+}
+
+@supports (-webkit-touch-callout: none) {
+    .book-reader-scope .honorific {
+        -webkit-font-feature-settings: normal;
+        font-feature-settings: normal;
+    }
 }
 
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
