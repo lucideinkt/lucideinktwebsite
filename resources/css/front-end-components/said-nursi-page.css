@@ -23,14 +23,7 @@
 }
 
 .said-nursi-page__text-box {
-    /*background-color: var(--surface-1);*/
-    /*background-color: #f5efda;*/
-    /*background-image: url("https://www.transparenttextures.com/patterns/white-texture.png");*/
-
-    /*background-color: #f5efda;*/
-    /*background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");*/
-
-    background-color: #f5ecce;
+    background-color: #fff3cc;
     background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
     padding: 40px 60px;

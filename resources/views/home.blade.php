@@ -111,7 +111,7 @@
 
 
         <section class="colored-section books-section">
-            <div class="container new-translation">
+            <div class="new-translation">
                 <div class="title-wrapper">
                     <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="">
                     <h2 class="title trans">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span

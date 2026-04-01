@@ -1,6 +1,10 @@
 <x-layout>
     <div class="page-normal-background">
     <main class="container page">
+        <x-breadcrumbs :items="[
+            ['label' => 'Home', 'url' => route('home')],
+            ['label' => 'Verzending & Levering', 'url' => route('verzendingLevering')],
+        ]" />
         <div class="info-page__text-box">
 <h1 class="title">Verzending & Levering</h1>
 

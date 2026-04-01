@@ -2,10 +2,14 @@
    Front-End pages
    ========================================================= */
 .page-normal-background {
+    position: relative;
+    z-index: 0;
+    background-image: url("../../images/04-white-papers.jpg");
     background-size: 25%;
     background-position: center;
     background-repeat: repeat;
-    background-image: url("../../images/seamless_latest.webp");
+    background-color: rgba(255, 223, 133, 0.53);
+    background-blend-mode: multiply;
 }
 
 .online-reader-html {
@@ -27,7 +31,7 @@
 
 .container {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 15px;
 }

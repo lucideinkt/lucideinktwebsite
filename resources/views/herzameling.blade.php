@@ -1,8 +1,15 @@
 <x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
     <main class="container page">
+        <x-breadcrumbs :items="[
+            ['label' => 'Home', 'url' => route('home')],
+            ['label' => 'Herzameling', 'url' => route('herzameling')],
+        ]" />
         <div class="herzameling-page__text-box">
-            <h1 class="title"><span class="title-h"></span>et <span class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t ov<span class="title-e-r"></span> de <span class="word-break-mobile"><span class="title-h"></span>e<span class="title-r"></span>za<span class="title-me"></span>l<span class="title-in"></span>g</span></h1>
+            <h1 class="title"><span class="title-h"></span>et <span
+                    class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
+                ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
+                    class="title-in"></span>g</h1>
 
             <p>Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 

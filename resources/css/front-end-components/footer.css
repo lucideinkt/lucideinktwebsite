@@ -2,11 +2,7 @@
    Footer
    ========================================================= */
 .footer-section {
-    padding: 60px 15px 30px;
-    background-size: 25%;
-    background-position: center;
-    background-repeat: repeat;
-    background-image: url("../../images/seamless_latest.webp");
+    padding: 60px 15px 0px;
 }
 
 .footer-container {
@@ -150,10 +146,6 @@
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    background-size: 25%;
-    background-position: center;
-    background-repeat: repeat;
-    background-image: url("../../images/seamless_latest.webp");
 }
 
 .footer-bottom p {

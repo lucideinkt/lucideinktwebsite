@@ -1,6 +1,10 @@
 <x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
     <main class="container page">
+        <x-breadcrumbs :items="[
+            ['label' => 'Home', 'url' => route('home')],
+            ['label' => 'Said Nursî', 'url' => route('saidnursi')],
+        ]" />
         <div class="said-nursi-page__text-box">
             <h1 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h1>
 

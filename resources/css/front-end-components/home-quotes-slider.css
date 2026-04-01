@@ -76,6 +76,11 @@
     transition: all 0.3s ease;
 }
 
+.product-detail-image-wrapper .splide__arrow {
+    background: #fff5d6;;
+}
+
+
 #quotes-slider .splide__arrow:hover {
     background: rgba(236, 229, 194, 0.3);
     border-color: rgba(236, 229, 194, 0.6);
