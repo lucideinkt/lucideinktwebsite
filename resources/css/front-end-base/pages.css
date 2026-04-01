@@ -13,14 +13,14 @@
 }
 
 .online-reader-html {
-    background-color: rgba(255, 237, 158, 0.6);
-    background-image: url("https://www.transparenttextures.com/patterns/squairy.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-    /*!* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! *!*/
-    /*background-size: 25%;*/
-    /*background-position: center;*/
-    /*background-repeat: repeat;*/
-    /*background-image: url("../../images/seamless_latest.webp");*/
+    position: relative;
+    z-index: 0;
+    background-image: url("../../images/04-white-papers.jpg");
+    background-size: 25%;
+    background-position: center;
+    background-repeat: repeat;
+    background-color: rgba(255, 230, 158, 0.53);
+    background-blend-mode: multiply;
 }
 
 .dark-mode .online-reader-html {
