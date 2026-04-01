@@ -3041,7 +3041,7 @@ verloren gaan?
 </p>
 
 <p>
-En kan het ooit aan vaard baar zijn dat Die Alwijze
+En kan het ooit aanvaardbaar zijn dat Die Alwijze
 Entiteit uit alle schepselen de mens voor Zichzelf tot
 universele gesprekspartner en alomvattende spiegel
 uitverkiest, hem de inhoud van alle Genadeschatten
@@ -3225,8 +3225,7 @@ waar hij recht op heeft. Deze vorm van Rechtvaardigheid
 heeft in deze wereld een hele evidente reikwijdte. Immers,
 zoals in <strong>“De Derde Waarheid”</strong> is bewezen, worden
 alle wensen die een wezen in de taal van potentie, in de
-taal van natuurlijke behoeftigheid en in de taal van hoogdrin
-gendheid voordraagt aan zijn Ontzaglijke Voortbrenger
+taal van natuurlijke behoeftigheid en in de taal van hoogdringendheid voordraagt aan zijn Ontzaglijke Voortbrenger
 waarneembaar verhoord; alle rechten die essentieel zijn
 voor zijn bestaan en leven worden volgens specifieke afwegingen
 en vastgestelde maatstaven toegekend. De aanwezigheid
@@ -3568,7 +3567,7 @@ zijn dan een vliegenvleugel?
 <p class="text-center">✧ ✧ ✧</p>
 
 <p>
-Uit de voorgaande <strong><“Waarheden”</strong> is helder geworden dat het concept van de <strong>“Herzameling”</strong> zo’n diepgewortelde
+Uit de voorgaande <strong>“Waarheden”</strong> is helder geworden dat het concept van de <strong>“Herzameling”</strong> zo’n diepgewortelde
 waarheid is, dat zelfs een kracht die de aarde uit haar baan zou kunnen slingeren en zou kunnen
 verwoesten niet in staat zal zijn om die waarheid tot wankelen te brengen. Immers, die waarheid wordt door de
 Alwaarachtige met alle vereisten van Zijn Namen en Eigenschappen gespecificeerd, door de Nobelste Godsbode
@@ -3607,7 +3606,7 @@ universum manifesteren, vereisen en benodigen het hiernamaals.
 
 <p>
 Je moet ook niet denken dat de kosmische Ayaat in het universum Die de herzameling bewijzen, beperkt zijn
-tot wat wij behandeld hebben. Verre van! Zoals gordijnen die naar links en rechts kunnen opschuiven, bevatten
+tot wat wij behandeld hebben. Verre van! Zoals gordijnen die naar links en rechts kunnen openschuiven, bevatten
 de meeste bestaansvormen aspecten en hoedanigheden die enerzijds getuigen van de Kunstenaar en anderzijds
 duiden op de herzameling.
 </p>
@@ -3658,7 +3657,7 @@ houding:
 
 <p>
 De voorgaande <strong>“Twaalf Waarheden”</strong> bevestigen, vervolmaken en bekrachtigen elkaar. Gezamenlijk vormen
-ze een harmonisch geheel en brengen de conclusie aan het licht. Welke waan zou deze twaalf ijzersterke muren
+ze een harmonisch geheel en brengen de conclusie aan het licht. Welke waan zou deze twaalf ijzervaste muren
 van diamant kunnen doorbreken en schade kunnen toebrengen aan de ondoordringbare burcht waarin het
 geloof in de herzameling is gevestigd?
 </p>
@@ -3667,14 +3666,14 @@ geloof in de herzameling is gevestigd?
 De edele Aya: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ إِلَّا كَنَفْسٍ وَاحِدَةٍ</span> geeft
 het volgende aan: <strong><em>“De schepping en herzameling van alle mensen is voor de Goddelijke Macht zo licht
 als de schepping en herzameling van één mens.”</em></strong> Waarlijk, zo is de werkelijkheid. In een traktaat getiteld
-<em>“Het Punt”</em> heb ik in het hoofdstuk over de herzameling uitgebreid geschreven over de waarheid
+<strong>“Het Punt”</strong> heb ik in het hoofdstuk over de herzameling uitgebreid geschreven over de waarheid
 die deze Aya uitdrukt. Hier zullen wij met enkele gelijkenissen uit dat traktaat een beknopte schets ervan
-presenteren. Wie interesse heeft, kan <em>“Het Punt”</em> raadplegen.
+presenteren. Wie interesse heeft, kan <strong>“Het Punt”</strong> raadplegen.
 </p>
 
 <p>
 <strong><em>Bijvoorbeeld:</em></strong> <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَلِلّٰهِ الْمَثَلُ اْلأَعْلٰى</span> – een gelijkenis
-aanvoeren is geen overtreding – als de zon volgens het geheim van “lichternis” haar glimp naar eigen wil zou
+aanvoeren is geen overtreding – als de zon volgens het geheim van <strong>“lichternis”</strong> haar glimp naar eigen wil zou
 kunnen afgeven, dan zou ze met hetzelfde gemak zowel aan één enkel deeltje als aan talloze transparante objecten
 een reflectie kunnen schenken.
 </p>
@@ -3806,7 +3805,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  فَلِلّٰهِ الْحُجَّةُ الْبَالِغَةُ ۞
 </p>
 
- <p class="text-center"><em>“Aan ALLAH behoort het beslissende bewijs.”</em></p>
+ <p class="text-center">“Aan ALLAH behoort het beslissende bewijs.”</p>
  <p class="text-center"><em><em>– Qur’an, 6:149</em></em></p>
 
  <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;margin-top: 10px; max-width: 500px;">
@@ -3833,7 +3832,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 </p>
 
  <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
- “(De ongelovige) vraagt: ‘Wie zal
+ “<em>(De ongelovige)</em> vraagt: ‘Wie zal
  de beenderen doen herleven
  nadat ze zijn uiteengevallen?’
  Zeg: ‘Hij Die ze aanvankelijk
@@ -3883,7 +3882,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  zul je in een staat
  van dronkenschap aantreffen,
  doch ze zijn niet dronken –
- maar de straf van ALLAH
+ maar de straf van <strong>ALLAH</strong>
  is zwaar.”
 </p>
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 22:1-2</em></p>
@@ -3910,14 +3909,14 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 </p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
- “ALLAH,
+ "<strong>ALLAH</strong>,
  buiten Wie geen God bestaat,
  zal jullie op de dag der opstanding
  bijeenzamelen,
  daarover bestaat
  geen twijfel!
  En wie spreekt
- waarachtiger dan ALLAH?”
+ waarachtiger dan <strong>ALLAH</strong>?”
 </p>
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 4:87</em></p>
 
@@ -4056,13 +4055,13 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
  “Wat verborgen is
  in de hemelen en op aarde,
- is bekend bij ALLAH.
+ is bekend bij <strong>ALLAH</strong>.
  Het Uur
  is nader dan een oogwenk,
  of zelfs dichterbij.
  Voorzeker,
- ALLAH bezit Macht
- over alles.”
+ <strong>ALLAH</strong> bezit Macht
+ over <strong>alles</strong>.”
 </p>
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 16:77</em></p>
 
@@ -4086,19 +4085,9 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
- آمَنْتُ بِاللّٰهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ وَالْيَوْمِ الْاٰخِرِ
- وَبِالْقَدَرِ خَيْرِهِ وَشَرِّهِ مِنَ اللّٰهِ تَعَالٰى وَالْبَعْثُ
- بَعْدَ الْمَوْتِ حَقٌّ وَأَنَّ الْجَنَّةَ حَقٌّ وَالنَّارَ حَقٌّ
- وَأَنَّ الشَّفَاعَةَ حَقٌّ وَأَنَّ مُنْكَرًا وَنَكِيرًا حَقٌّ
- وَأَنَّ اللّٰهَ يَبْعَثُ مَنْ فِى الْقُبُورِ
- أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ
- اَللّٰهُمَّ صَلِّ عَلٰى أَلْطَفِ وَأَشْرَفِ وَأَكْمَلِ
- ثَمَرَاتِ طُوبٰى رَحْمَتِكَ الَّذِى أَرْسَلْتَهُ رَحْمَةً لِلْعَالَمِينَ
- وَسِيلَةً لِوُصُولِنَا إِلٰى أَزْيَنِ وَأَحْسَنِ وَأَجَلِّ وَأَعْلٰى ثَمَرَاتِ
- تِلْكَ الطُّوبٰى الْمُتَدَلِّيَةِ مِنْ دَارِ الْاٰخِرَةِ أَىِ الْجَنَّةِ
- اَللّٰهُمَّ أَجِرْنَا وَوَالِدَيْنَا مِنَ النَّارِ
- وَأَدْخِلْنَا وَوَالِدَيْنَا الْجَنَّةَ مَعَ الْأَبْرَارِ
- بِجَاهِ نَبِيِّكَ الْمُخْتَارِ آمِينَ
+اٰمَنْتُ بِاللّٰهِ وَ مَلٰئِكَتِهٖ وَ كُتُبِهٖ وَ رُسُلِهٖ وَ الْيَوْمِ الْاٰخِرِ وَ بِالْقَدَرِ خَيْرِهٖ وَ شَرِّهٖ مِنَ اللّٰهِ تَعَالٰى وَ الْبَعْثُ بَعْدَ الْمَوْتِ حَقٌّ وَ اَنَّ الْجَنَّةَ حَقٌّ وَ النَّارَ حَقٌّ وَ اَنَّ الشَّفَاعَةَ حَقٌّ وَ اَنَّ مُنْكَرًا وَ نَكٖيرًا حَقٌّ وَ اَنَّ اللّٰهَ يَبْعَثُ مَنْ فِى الْقُبُورِ اَشْهَدُ اَنْ لَا اِلٰهَ اِلَّا اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ
+
+اَللّٰهُمَّ صَلِّ عَلٰى اَلْطَفِ وَ اَشْرَفِ وَ اَكْمَلِ وَ اَجْمَلِ ثَمَرَاتِ طُوبَاءِ رَحْمَتِكَ الَّذٖى اَرْسَلْتَهُ رَحْمَةً لِلْعَالَمٖينَ وَ وَسٖيلَةً لِوُصُولِنَا اِلٰى اَزْيَنِ وَ اَحْسَنِ وَ اَجْلٰى وَ اَعْلٰى ثَمَرَاتِ تِلْكَ الطُّوبَاءِ الْمُتَدَلِّيَةِ عَلٰى دَارِ الْاٰخِرَةِ اَىِ الْجَنَّةِ  اَللّٰهُمَّ اَجِرْنَا وَ اَجِرْ وَالِدَيْنَا مِنَ النَّارِ وَ اَدْخِلْنَا وَ اَدْخِلْ وَالِدَيْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ بِجَاهِ نَبِيِّكَ الْمُخْتَارِ اٰمٖينَ
 </p>
 
  </div>'
@@ -4120,16 +4109,16 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
  dood, de werkelijkheid van het paradijs, de werkelijkheid
  van het hellevuur, de werkelijkheid van de bemiddeling,
  en de werkelijkheid van Moenker en Nekier
- <em>de twee engelen die de overledenen in het graf ondervragen.</em>
+ <em>(de twee engelen die de overledenen in het graf ondervragen).</em>
 </p>
 
 <p class="text-center text-center-constrained">
- Ik geloof dat ALLAH de overledenen
+ Ik geloof dat <strong>ALLAH</strong> de overledenen
  uit hun graven zal laten rijzen.
 </p>
 
 <p class="text-center text-center-constrained"><strong>
- Ik getuig dat er geen God is behalve ALLAH, en ik getuig
+ "Ik getuig dat er geen God is behalve ALLAH, en ik getuig
  dat Mohammed de boodschapper is van ALLAH.”
 </strong></p>
 
@@ -4141,10 +4130,10 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
  mooiste, schoonste, subliemste en verhevenste vruchten
  van die Tûba-boom te bereiken, die hangen in de hoogtes
  van het hiernamaals, in de gewesten van het paradijs. O
- ALLAH, behoed ons en onze ouders voor het vuur, schenk
+ <strong>ALLAH</strong>, behoed ons en onze ouders voor het vuur, schenk
  ons en onze ouders toegang tot het paradijs, in het gezelschap
  van de rechtschapenen, omwille van de eer van Uw
- uitverkoren profeet, âmîn.”
+ uitverkoren profeet, <strong>âmîn</strong>.”
 </em></p>
 
 <p>
@@ -4204,7 +4193,7 @@ zekerheid aanvaard kan worden.
             'page_number' => 115,
             'content' => '<div class="page" id="115"> <p class="text-end page-number">#115</p>
 <p>
-In dit “Tiende Woord” worden deze activiteiten dankzij de zegen van de Qur’an op deze wijze veraanschouwelijkt
+In dit <strong>“Tiende Woord”</strong> worden deze activiteiten dankzij de zegen van de Qur’an op deze wijze veraanschouwelijkt
 en gepresenteerd. Anders, als het verstand slechts aan zijn eigen bekrompen en beperkte principes zou worden
 overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging.
 </p>
