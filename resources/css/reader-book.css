@@ -387,16 +387,6 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     vertical-align: baseline;
 }
 
-/* ── SVG honorific images ── */
-.honorific-svg {
-    display: inline;
-    height: 1.2em;
-    width: auto;
-    vertical-align: middle;
-    position: relative;
-    top: -0.05em;
-}
-
 /* â”€â”€ Superscript voetnootreferenties â”€â”€ */
 .book-reader-scope sup {
     font-size: 0.72em;
@@ -808,6 +798,7 @@ body.dark-mode .book-reader-scope .footnote-p sup { color: #b0a080; }
 /* Arabic */
 body.dark-mode .book-reader-scope .text-arabic { color: #e8a87c; }
 body.dark-mode .book-reader-scope .text-arabic-inline { color: #e8a87c; }
+body.dark-mode .book-reader-scope .honorific { color: #e8a87c; }
 
 
 /* Sup pointer (legacy) */
