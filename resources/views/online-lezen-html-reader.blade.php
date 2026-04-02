@@ -162,7 +162,7 @@
         <div class="reader-end">
             <p>&#10022; &nbsp; Einde &nbsp; &#10022;</p>
             <a href="{{ route('onlineLezen') }}" class="btn-terug">
-                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Terug naar Bibliotheek
+                Naar Bibliotheek
             </a>
         </div>
     </main>
