@@ -55,6 +55,35 @@ return [
         ['level' => 'main', 'title' => 'Slot',                    'subtitle' => null, 'page' => 96],
     ],
 
+    'het-traktaat-over-de-natuur' => [
+        ['level' => 'main', 'title' => 'Voorwoord',                  'subtitle' => null, 'page' => 5],
+
+        ['level' => 'main', 'title' => 'De Drieëntwintigste Flits',  'subtitle' => null, 'page' => 9],
+        ['level' => 'sub',  'title' => 'Waarschuwing',               'subtitle' => null, 'page' => 9],
+
+        ['level' => 'main', 'title' => 'Inleiding',                  'subtitle' => null, 'page' => 13],
+
+        ['level' => 'main', 'title' => 'De eerste kwestie',          'subtitle' => null, 'page' => 14],
+        ['level' => 'sub',  'title' => 'De eerste onmogelijkheid',   'subtitle' => null, 'page' => 14],
+        ['level' => 'sub',  'title' => 'De tweede onmogelijkheid',   'subtitle' => null, 'page' => 16],
+        ['level' => 'sub',  'title' => 'De derde onmogelijkheid',    'subtitle' => null, 'page' => 17],
+
+        ['level' => 'main', 'title' => 'De tweede kwestie',          'subtitle' => null, 'page' => 18],
+        ['level' => 'sub',  'title' => 'De eerste onmogelijkheid',   'subtitle' => null, 'page' => 18],
+        ['level' => 'sub',  'title' => 'De tweede onmogelijkheid',   'subtitle' => null, 'page' => 20],
+        ['level' => 'sub',  'title' => 'De derde onmogelijkheid',    'subtitle' => null, 'page' => 21],
+
+        ['level' => 'main', 'title' => 'De derde kwestie',           'subtitle' => null, 'page' => 22],
+        ['level' => 'sub',  'title' => 'De eerste onmogelijkheid',   'subtitle' => null, 'page' => 22],
+        ['level' => 'sub',  'title' => 'De tweede onmogelijkheid',   'subtitle' => null, 'page' => 23],
+        ['level' => 'sub',  'title' => 'De derde onmogelijkheid',    'subtitle' => null, 'page' => 28],
+
+        ['level' => 'main', 'title' => 'Slot',                       'subtitle' => null, 'page' => 41],
+        ['level' => 'sub',  'title' => 'De eerste vraag',            'subtitle' => null, 'page' => 41],
+        ['level' => 'sub',  'title' => 'De tweede vraag',            'subtitle' => null, 'page' => 44],
+        ['level' => 'sub',  'title' => 'De derde vraag',             'subtitle' => null, 'page' => 49],
+    ],
+
     // Add future books here:
     // 'slug-van-volgend-boek' => [ ... ],
 
