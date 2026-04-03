@@ -1,0 +1,1389 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class AfwegingenNederlandsPagesSeeder extends BookPagesSeeder
+{
+    protected function productSlug(): string
+    {
+        // return the exact slug used when creating the product in DatabaseSeeder
+        return 'afwegingen-van-geloof-ongeloof-nederlands';
+    }
+
+    protected function bookTitle(): string
+    {
+        return 'Afwegingen van Geloof & Ongeloof';
+    }
+
+    protected function pages(): array
+    {
+        // Add page definitions here. Keep it empty for now or add a few sample pages.
+        // You can paste the HTML of each page into the 'content' field.
+        return [
+            [
+                'page_number' => 5,
+                'content' => '<div class="page" id="5">
+<p class="text-end page-number">#5</p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<sup>1</sup>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+وَبِهٖ نَسْتَعٖينُ۞ اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمٖينَ وَالصَّلٰوةُ وَالسَّلَامُ عَلٰى سَيِّدِنَا مُحَمَّدٍ
+وَعَلٰى اٰلِهٖ وَصَحْبِهٖ اَجْمَعٖينَ<sup>2</sup>
+</p>
+
+<p><em>
+Een uiterst beduidend antwoord dat eerder op een zeer belangrijke
+vraag is gegeven, zullen wij vanwege zijn belang hier
+in behandeling nemen. Want tijdens een lezing die de Oude
+Said veertig jaar geleden had gegeven, sprak hij op basis van
+een voorgevoel over de buitengewone lessen en invloeden van de
+Risale-i Nur, alsof hij ze destijds al had waargenomen. Daarom
+gaan wij die vraag en dat antwoord hier schrijven.
+</em></p>
+
+<p>
+Aan zowel mij als mijn Nur-broeders wordt door velen regelmatig het
+volgende gevraagd:
+</p>
+
+<p><em>
+“Hoe kan het dat de Risale-i Nur tegenover zoveel tegenstanders, koppige filosofen
+en dwaalgeesten niet wordt overwonnen? Ondanks dat ze een zekere blokkade
+voor de verspreiding van miljoenen waardevolle authentieke boeken over het
+geloof en de Islam hebben opgezet, en ondanks dat ze via zedeloze en wereldse
+pleziertjes vele jongeren en mensen van geloofswaarheden hebben afgehouden, en
+ondanks dat ze met de hevigste aanvallen, wreedste behandelingen, grootste leugens
+en intensiefste antipropaganda ijverden om de Risale-i Nur te ontkrachten
+en de mensen angst in te boezemen om ze van de traktaten te doen laten afzien,
+is de Risale-i Nur op een ongeziene wijze verspreid. Zeshonderdduizend kopieën,
+waarvan de meeste zelfs handgeschreven zijn, worden ondergronds met volle passie
+verspreid en door zowel degenen die ermee bekend zijn als degenen die ermee onbekend
+zijn worden ze met volle passie gelezen. Wat is de wijsheid hierachter?”
+</em></p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+</p>
+<p class="footnote-p">
+<sup>2</sup> En alleen Hem vragen wij om hulp. De lof zij ALLAH; Heer der werelden. Vrede
+en zegeningen zij met onze meester Mohammed, evenals al zijn familieleden en
+metgezellen.
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 6,
+                'content' => '<div class="page" id="6">
+<p class="text-end page-number">#6</p>
+
+<p>
+Op de vele vragen in dit kader geven wij het volgende antwoord:
+</p>
+
+<p>
+De Risale-i Nur, als zijnde een ware Tafsir ontsproten aan een geheim
+mirakel van De Leerrijke Qur’an, toont dat dwaling zelfs in deze wereld een
+geestelijke hel met zich meebrengt, evenals Hij bewijst dat het geloof zelfs
+voor deze wereld een spiritueel paradijs herbergt. Binnen zonden, wandaden
+en verboden genietingen laat Hij vreselijke geestelijke kwellingen zien,
+waarnaast Hij bewijst dat weldaden, goede eigenschappen en handelingen
+binnen het kader van Shariaanse waarheden geestelijke voldoeningen zo zoet
+als paradijselijke genietingen bevatten. Zodoende redt Hij de zondaars en
+de dwalers die in dit opzicht verstandig zijn. Want tegenwoordig heersen er
+twee gevaarlijke gesteldheden.
+</p>
+
+<p>
+<strong>De eerste gesteldheid:</strong> de menselijke gevoelens die blind voor gevolgen
+zijn en een greintje voorhanden genieting de voorkeur boven enorme
+toekomstige genietingen geven, overmeesteren het verstand en het denkvermogen.
+Hierdoor bestaat de enige oplossing om onzedige zondaars van
+zedeloosheid te bevrijden uit het overwinnen van hun gevoelens door binnen
+diezelfde genieting de kwelling ervan te laten zien. En zoals de Aya:
+<sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">يَسْتَحِبُّونَ الْحَيٰوةَ الدُّنْيَا</span> aangeeft, kan iemand van deze tijd die bekend is met
+de diamanten gunsten en genietingen met betrekking tot het hiernamaals
+alsnog de voorkeur aan breekbare stukken aardse glas geven; ondanks dat hij
+gelovig is, kunnen zijn liefde voor de aarde en het bovengenoemde geheim
+ertoe leiden dat hij zich aan het dwaalvolk onderwerpt. De enige manier om
+van dit gevaar gered te worden, is mogelijk door op aarde al helse martelingen
+en kwellingen te laten zien. De Risale-i Nur houdt deze methode aan.
+</p>
+
+<p>
+Anders, tegenover het hedendaagse verzet van het absolute ongeloof, de
+afgedwaalde wetenschap en de zedeloze trends, zullen de kennisgevingen
+over de Hoogste Gerechtigde, de bewijzen voor het bestaan van de hel en de
+beschrijving van haar bestraffingen om mensen van wandaden en zonden te
+doen laten afzien slechts op één van de tien of twintig mensen invloed hebben.
+En nadat hij beïnvloed raakt, kan achteraf alsnog de volgende gedachte
+in hem opkomen:
+</p>
+
+<p><em>
+“De Hoogste Gerechtigde is Genadig en Vergevend, en de hel is nog zo ver van
+ons verwijderd.”
+</em></p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Zij verkiezen het aardse leven.” - <em>De Heilige Qur’an, 14:3</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 7,
+                'content' => '<div class="page" id="7">
+<p class="text-end page-number">#7</p>
+
+<p>
+Zodoende kan hij zijn zedeloosheid alsnog blijven voortzetten; zijn hart
+en zijn ziel kunnen door zijn gevoelens worden overmeesterd.
+</p>
+
+<p>
+Voorwaar, de meeste afwegingen in de Risale-i Nur tonen de ellendige
+en angstaanjagende vruchten die ongeloof en dwaling op aarde afwerpen.
+Zodoende bezorgen ze zelfs bij de koppigste en eigenzinnigste mensen een
+afkeer jegens die kwade ongeoorloofde genietingen en onzedelijkheden, en
+de verstandige onder hen zetten ze aan tot berouw. De korte afwegingen in
+<strong>De Zesde</strong>, <strong>Zevende</strong> en <strong>Achtste Woorden</strong>, evenals de uitgebreide afweging
+in <strong>Het Derde Station van Het Tweeëndertigste Woord</strong>, doen zelfs de onzedelijkste
+persoon in dwaling huiveren en de boodschap van ze beamen.
+</p>
+
+<p>
+Als voorbeeld zullen wij de toestanden uit de Aya <strong>“Nur”</strong> die ik tijdens
+een zielenreis als waarheid had waargenomen in het kort illustreren. Degene
+die interesse heeft in een uitgebreidere uitleg, kan kijken naar het laatste
+gedeelte van <strong>“Sikke-i Gaybiye”</strong>.
+</p>
+
+<p>
+Gedurende die zielenreis aanschouwde ik de wereld van de dieren die
+behoeftig zijn aan onderhoud. Ik keek met de blik van de materialistische
+filosofie. De eindeloze behoeften en de hevige honger waaraan de dieren
+leden, tezamen met hun zwakte en onmacht, lieten die wereld der levenden
+voor mij uiterst treurig en ellendig overkomen. Omdat ik met de blik van
+de dwaalgeesten en de achtelozen keek, begon ik te huiveren. Plotseling zag
+ik die wereld volgens de Wijsheid van De Qur’an, door de loep van het
+geloof, waarna De Naam <strong>“Barmhartige”</strong> naar de verschijning van <strong>“De Onderhouder”</strong>
+opkwam als een stralende zon. Die behoeftige wereld van de
+arme dieren werd met dat Genadige Licht verguld.
+</p>
+
+<p>
+Vervolgens zag ik in het dierenrijk een andere alom erbarmelijke en
+meelijwekkende wereld waarin borelingen zwak en machteloos in een bedroevende
+en ellendige duisternis spartelden. Kijken met de blik van het
+dwaalvolk deed mij een kreet van verdriet slaken. Plotseling reikte het geloof
+mij een bril aan, waarna ik De Naam <strong>“Genadige”</strong> naar de verschijning van
+<strong>“De Meedogende”</strong> zag opkomen. Die droevige wereld werd zo schitterend
+en voortreffelijk tot een vreugdevolle wereld omgevormd en verlicht, dat de
+tranen die door beklag, erbarmen en droefenis uit mijn ogen stroomden,
+omsloegen in vreugdetranen die door blijdschap en dankbaarheid opwelden.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 8,
+                'content' => '<div class="page" id="8">
+<p class="text-end page-number">#8</p>
+
+<p>
+Vervolgens verscheen de wereld van de mensen als een projectie in mijn
+zicht. Ik keek door de loep van het dwaalvolk, waarop die wereld zo duister
+en angstaanjagend oogde, dat ik uit het diepste van mijn hart begon te huiveren.
+Ik uitte mijn ontsteltenis. Want de mensen met hun verlangens en
+wensen die tot de eeuwigheid uitstrekken, hun idealen en gedachten die het
+universum omvatten, hun inzet en natuurlijke aanleg die naar de eeuwige
+oneindigheid, de eeuwige gelukzaligheid en het paradijs smachten, hun ingeschapen
+potenties die onbeperkt en vrij zijn, hun behoeften die op talloze
+doelen gericht zijn, staan ondanks hun zwakte en onmacht continu bloot
+aan de belaging van ontelbare calamiteiten en vijanden, terwijl ze gedurende
+een kortstondig leven elk moment in doodsangst met een uiterst kommerlijk
+inkomen proberen te overleven. Desondanks verduren ze voortdurend
+de vloek van teloorgang en scheiding, wat uiterst kwellend en afgrijselijk is
+voor het hart en het geweten. Deze mensen hebben zich gewend tot het graf
+dat voor het onachtzame volk als de poort tot eeuwige verdoemenis oogt.
+Ze worden één voor één en groepsgewijs in die duistere put geworpen.
+</p>
+
+<p>
+Voorwaar, toen ik de wereld van de mensen in deze duisternis zag, en
+mijn hart, mijn ziel en mijn verstand, samen met al mijn menselijke zintuigen
+en alle atomen van mijn lichaam op het punt stonden om huiverend
+te huilen, werd dankzij een licht en een geloofskracht vanuit De Qur’an die
+bril van dwaling gebroken. Zij gaven mij een blik waarmee ik De Naam
+<strong>Rechtvaardige</strong> naar de verschijning van <strong>De Alwijze</strong>, de Naam <strong>Barmhartige</strong>
+naar de verschijning van <strong>De Genereuze</strong>, De Naam <strong>Genadige</strong> naar
+de verschijning <em>(oftewel de betekenis)</em> van <strong>De Vergever</strong>, De Naam <strong>Herrijzer</strong>
+naar de verschijning van <strong>De Erfgenaam</strong>, De Naam <strong>Levengever</strong> naar
+de verschijning van <strong>De Weldadige</strong>, De Naam <strong>Heer</strong> naar de verschijning
+van <strong>De Eigenaar</strong> één voor één als zonnen zag opkomen. Zij hadden die
+duistere wereld van de mensen waarin vele werelden schuilen volledig opgeklaard
+en verlevendigd, de helse hoedanigheden verdreven en vensters op
+de luminieuze wereld van het hiernamaals geopend. Zodoende sprenkelden
+Zij lichten over die erbarmelijke wereld van de mensen. Evenredig aan het
+aantal atomen in het bestaan zei ik: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ، اَلشُّكْرُ لِلّٰهِ</span>. En met een visuele
+overtuiging zag ik dat ook in deze wereld het geloof een geestelijk paradijs
+en het ongeloof een geestelijke hel met zich meebrengen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “De lof zij ALLAH, dank zij ALLAH.”
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 9,
+                'content' => '<div class="page" id="9">
+<p class="text-end page-number">#9</p>
+
+<p>
+Vervolgens werd de wereld van de aardbol zichtbaar. Tijdens mijn zielenreis
+lieten de grondstellingen van de irreligieuze filosofie een angstaanjagende
+wereld zien. De zeer oude en uiterst versleten aardbol, die met een zeventigmaal
+snellere beweging dan een kanonskogel een vijfentwintigduizendjarige
+afstand in een jaar aflegt, beeft vanbinnen en is elk moment in staat om te
+splijten en uiteen te vallen. De staat van de arme mensheid die op dat angstaanjagende
+schip in een reusachtige leegte reist, oogde voor mij verbijsterend
+en duister. Ik werd duizelig en het werd zwart voor mijn ogen. Daarop sloeg
+ik de bril van die filosofie op de grond kapot. Opeens keek ik met een blik
+die dankzij De Wijsheid der Qur’an werd verlicht, waarop ik zag dat <strong>De
+Almachtige</strong>, <strong>De Alwetende</strong>, <strong>De Heer</strong>, <strong>ALLAH</strong>, <strong>De Heer der hemelen en
+de aarde</strong><sup>1</sup> en <strong>De Bedwinger van de zon en de maan</strong><sup>2</sup> als Namen van De
+Schepper der aarde en hemelen naar de verschijningen van <strong>Genade</strong>, <strong>Glorie</strong>
+en <strong>Heerschappij</strong> als zonnen opkwamen. Zij hadden die duistere, woeste en
+huiveringwekkende wereld zodanig verlicht, dat ik de aardbol zag als een
+uiterst geordend, onderhevig, voortreffelijk, fraai en veilig cruiseschip waarin
+de levensmiddelen van iedereen zijn opgeslagen, en als een schip, een vliegtuig,
+een trein die voor een excursie, voor vermaak en voor handel is klaargemaakt
+om bezielde wezens om de zon, in het land des Heren te laten reizen
+en de voortbrengselen van de zomer, de lente en de herfst aan degenen die
+behoefte aan onderhoud hebben aan te reiken. Evenredig aan het aantal atomen
+van de aardbol zei ik: <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ عَلٰى نِعْمَةِ الْاٖيمَانِ</span>
+</p>
+
+<p>
+Voorwaar, op een dergelijke wijze toont de Risale-i Nur via vele afwegingen
+aan dat zedeloze en afgedwaalde mensen zelfs op aarde een geestelijke
+hel ondergaan, terwijl gelovige en vrome mensen via manifestaties en reflecties
+van het geloof zelfs op aarde in een geestelijk paradijs hemelse zaligheden
+kunnen proeven, omdat ze alles Islamitisch en menselijk verwerken; naargelang
+van hun geloofsovertuiging kunnen zij deze genietingen ondervinden.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> <span class="text-arabic-inline" dir="rtl" lang="ar">رَبُّ السَّمَاوَاتِ وَالْاَرْضِ</span></p>
+<p class="footnote-p"><sup>2</sup> <span class="text-arabic-inline" dir="rtl" lang="ar">مُسَخَّرُ الشَّمْسِ وَالْقَمَرِ</span></p>
+<p class="footnote-p"><sup>3</sup> “De lof zij ALLAH voor de gift des geloofs.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 10,
+                'content' => '<div class="page" id="10">
+<p class="text-end page-number">#10</p>
+
+<p>
+Echter, de stromingen die gedurende deze onstuimige tijden mensen bedwelmen,
+hun aandacht op zinloze zaken richten en verstikken, hebben de
+mensen met een verdovend effect versuft, waardoor het dwaalvolk de geestelijke
+kwelling tijdelijk niet volledig verneemt, terwijl ook het geleide volk
+door onachtzaamheid wordt overmand, en daardoor het ware genot achter
+het geloof niet genoeg op prijs stelt.
+</p>
+
+<p class="text-red"><strong><em>De tweede angstaanjagende gesteldheid van dit tijdperk</em></strong></p>
+
+<p>
+De dwalingen die op pure ongeloof en op wetenschap zijn gebaseerd,
+evenals het verzet dat uit een stijfkoppig ongeloof voortkomt, kwamen vroeger
+aanzienlijk minder voor dan vandaag. Daarom waren de lessen en argumenten
+van vroegere Islamgeleerden in hun tijd volkomen toereikend. Ze
+konden het onzekere ongeloof eenvoudig overwinnen. Omdat het geloof in
+ALLAH gemeenschappelijk was, konden velen na een herinnering aan ALLAH
+en een waarschuwing over de helse bestraffingen van onzedelijkheden
+en dwalingen afzien. Terwijl er vroeger in een hele provincie misschien één
+pure ongelovige leefde, kun je tegenwoordig in een gemeente misschien wel
+honderd aantreffen. De mensen die via wetenschap en kennis in dwaling
+vervallen, en zich koppig tegen geloofswaarheden verzetten, zijn nu in verhouding
+tot vroeger verhonderdvoudigd. Omdat deze koppige dwarsliggers
+zich met een faraonische hoogmoed langs verbijsterende dwaalwegen tegen
+geloofswaarheden verzetten, is er uiteraard behoefte aan een heilige waarheid
+die op deze wereld hun basisbegrippen als een atoombom totaal te gronde
+richt. Zodoende kunnen hun overtredingen worden stopgezet en een deel
+van hen tot geloof worden gebracht.
+</p>
+
+<p>
+Voorwaar, de Hoogste Gerechtigde zij eindeloze malen dank, want de
+Risale-i Nur, die als een pure triakel voor de wonden van deze tijd fungeert,
+en een spiritueel mirakel en schitteringen van Miraculeuze Qur’anrevelaties
+met Zich meedraagt, heeft met vele afwegingen de hardnekkigste dwarsliggers
+met het diamanten zwaard van De Qur’an ontkracht, waarnaast Hij
+zoveel aanwijzingen en bewijzen voor de Goddelijke Eenheid en de waarheden
+des geloofs als het aantal atomen in het universum heeft getoond. De
+Risale-i Nur heeft inmiddels vijfentwintig jaar lang de heftigste aanvallen
+weerstaan en overwonnen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 11,
+                'content' => '<div class="page" id="11">
+<p class="text-end page-number">#11</p>
+
+<p>
+Waarlijk, in de Risale-i Nur tonen de afwegingen van geloof en ongeloof,
+en de vergelijkingen tussen leiding en dwaling de voornoemde waarheid
+evident aan. Bijvoorbeeld, als <strong>De Evidenties</strong> en <strong>De Flitsen</strong> in <strong>De Twee
+Niveaus van Het Tweeëntwintigste Woord</strong>, <strong>Het Eerste Station van Het
+Tweeëndertigste Woord</strong>, <strong>De Vensters van De Drieëndertigste Brief</strong> en <strong>De
+Elf Aanwijzingen in De Staf van Mozes</strong> met andere afwegingen worden
+vergeleken en worden geanalyseerd, dan wordt het duidelijk dat het huidige
+pure ongeloof en het verzet van de stijfkoppige dwaling gebroken en vernietigd
+kunnen worden met de Qur’anische Waarheden die zich in de Risale-i
+Nur manifesteren.
+</p>
+
+<p>
+De delen die de belangrijke mysteriën van de religie en de raadsels van de
+geschapen wereld ontrafelen, zijn in <strong>De Verzameling van Mysteriën</strong> verzameld.
+De delen die op aarde al de hel van het dwaalvolk evenals de paradijselijke
+geneugten van het geleide volk tonen, de delen die aantonen dat het
+geloof een spiritueel zaad van het paradijs en het ongeloof een spiritueel zaad
+van de Zaqqoem-boom dragen, en dergelijke Nur-traktaten zullen inshâ’ALLAH
+ook als een klein boekje worden samengesteld en verspreid.
+</p>
+
+<p class="text-end text-italic">Said Nursî</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 12,
+                'content' => '<div class="page" id="12">
+    <p class="text-end page-number">#12</p>
+
+    <div class="text-center page-title-chapter delima-font">
+    <h2>Het Eerste Woord</h2>
+    </div>
+
+    <p>
+    <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span> is het begin van alle heilzaamheden. Ook wij zullen daarmee beginnen. O mijn ego! Wees ervan bewust dat dit gezegende woord een Islamitisch herkenningsteken is, evenals een litanie die alle wezens in de taal van hun houding onophoudelijk reciteren. Indien jij wil inzien wat voor een geweldige en grenzeloze kracht, wat voor een grote en onuitputtelijke zegen het woord: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span> herbergt, kijk dan naar deze parabel. Luister...
+    </p>
+
+    <p>
+    Iemand die door de Arabische woestijngebieden van bedoeïenen reist, dient de naam van een stamhoofd te hanteren en zich onder zijn hoede te stellen, opdat hij zich tegen de belaging van rovers kan vrijwaren en zijn benodigdheden kan vergaren. Anders zal hij op zichzelf tegenover ontelbare vijanden en behoeften in ellende belanden.
+    </p>
+
+    <p>
+    Voorwaar, eens gingen twee personen de woestijn in om een dergelijke reis af te leggen. De ene persoon was bescheiden, de andere was hoogmoedig. De bescheiden persoon hanteerde de naam van een stamhoofd, de hoogmoedige deed dit niet. De reiziger die de naam van een stamhoofd hanteerde, reisde overal vredig rond. Als een rover hem de pas afsneed, zei hij: <span class="text-italic">“Ik reis in de naam van ‘die en die’ stamhoofd”</span>, waarna die rover zich snel uit de voeten maakte en hem niets aandeed. Wanneer hij een tent instapte, werd hij dankzij die naam eerbiedig behandeld. De hoogmoedige reiziger daarentegen verduurde gedurende zijn reis zoveel onheil, dat het niet te beschrijven is. Hij huiverde voor alles en hij was continu aan het bedelen. Uiteindelijk verloor hij zijn eigenwaarde en werd hij vernederd.
+    </p>
+
+    <p>
+    Voorwaar, o mijn hoogmoedige ego! Jij bent die reiziger. Deze wereld is een woestijn. Jouw onmacht en behoeftigheid kennen geen grenzen. Jouw vijanden en benodigdheden zijn ontelbaar. Aangezien de werkelijkheid zo is,
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote">
+        <p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH (Bismillah).”</p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 13,
+                'content' => '<div class="page" id="13">
+    <p class="text-end page-number">#13</p>
+
+    <p>
+    hanteer dan de Naam van De Eeuwige Eigenaar en Onbegonnen Heerser van deze woestijn, opdat jij van bedelarij tegenover het hele bestaan en van angst voor elk voorval wordt gered.
+    </p>
+
+    <p>
+    Waarlijk, dit woord is een dusdanig gezegende schat, dat het jouw eindeloze onmacht en behoeftigheid met Een Eindeloze Macht en Genade bindt, en binnen het domein van de Genadige Almacht jouw onmacht en behoeftigheid de invloedrijkste bemiddelaar maakt. Waarlijk, degene die op basis van dit woord handelt, lijkt op iemand die in dienst treedt, namens de staat handelt en voor niemand terugdeinst. Met het besef dat hij namens de wet en de staat handelt, kan hij elke taak uitvoeren en alles weerstaan.
+    </p>
+
+    <p>
+    In het begin zeiden wij: <span class="text-italic">“Alle wezens reciteren in de taal van hun houding <span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span><sup>1</sup>.”</span> Klopt dit?
+    </p>
+
+    <p>
+    Waarlijk, als jij zou zien dat één individu alle inwoners van een stad ergens met dwang naartoe drijft en ze daar onder dwang laat werken, dan zou jij ervan overtuigd zijn dat die man niet namens zichzelf, noch op eigen kracht handelt. Hij zal veeleer een soldaat moeten zijn die namens de staat handelt en zich op de kracht van een koning berust.
+    </p>
+
+    <p>
+    Evenzo handelt alles namens de Hoogste Gerechtigde, waardoor minuscule zaadjes en pitjes in staat zijn om gigantische bomen te tillen en geweldige lasten te dragen. Aldus zegt elke boom: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span>, vult zijn handen met de vruchten uit de schat van Genade en serveert ons als een bediende. Elke groentetuin zegt: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span> en fungeert als een ketel in de keuken van Macht waarin vele verscheidene en smakelijke voedselsoorten gelijktijdig worden bereid. Alle gezegende dieren, zoals koeien, kamelen, schapen en geiten, zeggen: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span> en worden melkkranen van Genadige Gratie. Namens De Onderhouder schenken ze ons een uiterst schoon en zuiver voedingsmiddel dat zo waardevol is als levenswater. Alle zijdezachte wortels en wortelharen van elke plant-, boom- en grassoort zeggen: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span>, waarna ze massieve rotsen en aarde kunnen doorboren. Ze zeggen: <span class="text-italic">“In de Naam van ALLAH, in de Naam van De Barmhartige”</span>, waarop alles zich in hun dienst stelt.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 14,
+                'content' => '<div class="page" id="14">
+    <p class="text-end page-number">#14</p>
+
+    <p>
+    Waarlijk, zoals takken die zich in de lucht uitspreiden en vruchten geven, spreiden die wortels zich moeiteloos in de aarde uit en geven groente onder de grond. En ondanks dat tengere groene bladeren maandenlang aan hevige hitte worden blootgesteld, blijven ze vochtig. Deze toestanden bezorgen een harde klap op de mond van de naturalisten. Ze steken een vinger in hun verblinde ogen en zeggen:
+    </p>
+
+    <p class="text-italic">
+    “Verschijnselen zoals hardheid en hitte wat jullie zo vanzelfsprekend achten, zijn ook onderhevig aan een bevel!”
+    </p>
+
+    <p>
+    Immers, zoals de staf van Mûsâ <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> geven die zijdezachte aderen gehoor aan het bevel: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">فَقُلْنَا اضْرِبْ بِعَصَاكَ الْحَجَرَ</span> en doen stenen splijten. En zoals de organen van Ibrahim <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> reciteren die flinterdunne en tengere bladeren onder die schroeiende hitte de Aya: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">يَا نَارُ كُونِي بَرْدًا وَسَلَامًا</span>.
+    </p>
+
+    <p>
+    Aangezien alle wezens impliciet <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span> zeggen, namens ALLAH de gunsten van ALLAH brengen en ons aanreiken, behoren wij ook <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span> te zeggen. Wij dienen namens ALLAH te geven en namens ALLAH aan te nemen. Wij zouden dus niets moeten aannemen van onachtzame mensen die niet namens ALLAH geven.
+    </p>
+
+    <p class="text-red small-title"><strong><em>Vraag</em></strong></p>
+
+    <p class="text-italic">
+    Wij betalen een bepaalde prijs aan mensen die als serveerders fungeren. Wat is eigenlijk de prijs die ALLAH als De Ware Eigenaar van alles van ons vraagt?
+    </p>
+
+    <p class="text-red small-title"><strong><em>Het antwoord</em></strong></p>
+
+    <p>
+    Waarlijk, Die Ware Begunstiger vraagt voor die waardevolle gunsten en goederen drie dingen van ons: <strong>dhikr</strong>, <strong>dank</strong> en <strong>bezinning</strong>. Beginnen met: <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بِسْمِ اللّٰهِ</span> impliceert dhikr. Eindigen met: <sup>4</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> impliceert dank. Tussentijds nadenken en realiseren dat deze waardevolle wonderwerken in de vorm van gunsten in feite machtsmirakelen en genadegiften van de Enige Onafhankelijke zijn, impliceert bezinning.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “Wij zeiden: ‘sla met jouw staf op de rots’” - <em>De Heilige Qur’an, 2:60</em>
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “O vuur, Wees koel en vreedzaam!” - <em>De Heilige Qur’an, 21:69</em>
+        </p>
+        <p class="footnote-p">
+        <sup>3</sup> “In de Naam van ALLAH (Bismillah).”
+        </p>
+        <p class="footnote-p">
+        <sup>4</sup> “De lof zij ALLAH.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 15,
+                'content' => '<div class="page" id="15">
+    <p class="text-end page-number">#15</p>
+
+    <p>
+    Je beseft wel hoe dwaas het zou zijn als je de voeten zou kussen van een simpele man die jou een waardevol geschenk van een koning aanreikt, maar ondertussen niet weet wie de oorspronkelijke eigenaar van dat geschenk is. Evenzo is het duizendmaal dwazer om ogenschijnlijke begunstigers te loven en lief te hebben, zonder De Ware Begunstiger in herinnering te brengen.
+    </p>
+
+    <p>
+    O ego! Als jij geen dusdanige dwaas wilt zijn, geef dan namens ALLAH, ontvang namens ALLAH, begin namens ALLAH en handel namens ALLAH. Vrede zij met je.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 16,
+                'content' => '<div class="page" id="16">
+    <p class="text-end page-number">#16</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Tweede Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+        اَلَّذٖينَ يُؤْمِنُونَ بِالْغَيْبِ<sup>2</sup>
+    </p>
+
+    <p>
+    Indien jij wil inzien wat voor een grote gelukzaligheid en gunst, en wat voor een grote vreugde en rust er schuilgaan in het geloof, kijk dan naar deze parabel. Luister...
+    </p>
+
+    <p>
+    Eens gingen twee personen voor zowel plezier als handel op reis. De ene persoon was zelfzuchtig en ellendig, de andere was vroom en voorspoedig. Beide sloegen een eigen weg in en gingen voort.
+    </p>
+
+    <p>
+    De zelfzuchtige persoon was zowel arrogant als egoïstisch als pessimistisch, waardoor hij als straf voor zijn pessimisme in een uiterst ellendig land was terechtgekomen. Overal zag hij machteloze zwakken wanhoopskreten slaken door de vervolgingen en verwoestingen van meedogenloze woestelingen. Overal waar hij reisde nam hij treurige en ellendige omstandigheden waar. Het hele land had de verschijning van een algemene rouwplaats gekregen. Om niet door deze kwellende en duistere sfeer beïnvloed te raken, kon hij zijn toevlucht nergens anders dan in dronkenschap vinden. Want iedereen oogde voor hem als een vijand en als een vreemdeling. Om zich heen zag hij angstaanjagende lijken en wezen die als bezetenen weenden. Hierdoor werd zijn geweten voortdurend gekweld.
+    </p>
+
+    <p>
+    De andere persoon was vroom, religieus, rechtschapen en welgeaard, waardoor hij naar zijn zienswijze in een heel mooi land was terechtgekomen.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “Zij die geloven in het verborgene” - <em>De Heilige Qur’an, 2:2</em>
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 17,
+                'content' => '<div class="page" id="17">
+    <p class="text-end page-number">#17</p>
+
+    <p>
+    Voorwaar, deze deugdelijke persoon zag dat er in dat land een gemeenschappelijk feest heerste. Overal was er een vreugde, een festiviteit en een extatische sfeer binnen levendige gebedshuizen. Iedereen oogde voor hem als een verwante en als een vriend. In heel het land zag hij dat er met dank en waardering een afscheidsfeest werd gehouden voor de soldaten die hun dienst hadden vervuld. En hij vernam hartstochtelijke uitingen van Gods Grootheid en Eenheid, gevolgd door trommelslagen en melodieën tijdens de verwelkoming van rekruten. In tegenstelling tot de vorige ellendeling die door zowel zijn persoonlijke als het gemeenschappelijke leed werd gekweld, werd deze voorspoedige persoon door zowel zijn persoonlijke als de gemeenschappelijke vreugde verblijd en vervrolijkt. Bovendien kreeg hij de gelegenheid om een gunstige handel te drijven, waarvoor hij ALLAH dankbaar was.
+    </p>
+
+    <p>
+    Vervolgens kwam hij de andere persoon tegen. Hij doorzag zijn toestand en zei:
+    </p>
+
+    <p class="text-italic">
+    “Wat bezielt jou? Jij bent je verstand verloren! Je innerlijke lelijkheden projecteren zich blijkbaar op de buitenwereld, waardoor jij gelach als gehuil en vrijstelling als beroving ziet. Kom tot inkeer en reinig je hart, opdat deze heilloze sluier voor je gezichtsveld verdwijnt en jij de waarheid kunt aanschouwen. Jij bent immers in het land van een uiterst rechtvaardige, genadige, meelevende, bekwame en ordelievende koning. Een land dat zoveel tekenen van vooruitgang en volmaaktheid toont, kan nooit zijn zoals jij je inbeeldt!”
+    </p>
+
+    <p>
+    Daarop kwam die ellendeling tot inkeer. Hij betuigde spijt en zei:
+    </p>
+
+    <p class="text-italic">
+    “Waarlijk, dronkenschap had mij krankzinnig gemaakt. Moge ALLAH tevreden over jou zijn omdat jij mij van een helse toestand hebt bevrijd.”
+    </p>
+
+    <p>
+    O mijn ego! Besef dat die vorige man een ongelovige of een onachtzame zondaar symboliseert. Deze wereld is in zijn optiek een gemeenschappelijke rouwplaats. Alle levensvormen zijn wezen die door de klap van scheiding en teloorgang wenen. Dieren en mensen zijn verlaten eenlingen die door de klauwen van het doodsuur worden verscheurd. Grote wezens als bergen en oceanen zijn gigantische zielloze lijken. Zo zijn er nog vele ellendige, benauwende en huiveringwekkende waanideeën die uit zijn ongeloof en dwaling voortvloeien en hem geestelijk kwellen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 18,
+                'content' => '<div class="page" id="18">
+    <p class="text-end page-number">#18</p>
+
+    <p>
+    De andere persoon symboliseert een gelovige. Hij kent en erkent de Glorieuze Schepper. In zijn optiek is deze wereld een gebedshuis van De Barmhartige, een trainingskamp voor adamskinderen en dieren, en een examenruimte voor mensen en djinns. Elke dierlijke of menselijke sterfte is een vrijstelling. Zij die hun levenstaak hebben afgerond, vertrekken op een voldane wijze van dit vergankelijke oord naar een zorgeloze wereld, opdat er plaats vrijkomt voor nieuwe functionarissen om arbeid te verrichten. Elke dierlijke of menselijke geboorte is een rekrutering, een bewapening en een dienstaanvaarding. Elke levensvorm is een dienstdoende soldaat; een rechtzinnige en tevreden ambtenaar. Alle stemmen worden gevormd door ofwel vereringen en verheerlijkingen tijdens de aanvang van een taak, ofwel dankbetuigingen en uitingen van opluchting tijdens een rustpauze, ofwel liederen die uit enthousiasme gezongen worden tijdens arbeid. Ieder wezen is in de ogen van die gelovige een warmhartige dienaar, een vriendelijke ambtenaar en een innemend boek van De Genereuze Meester en Genadige Eigenaar. Zo zijn er nog vele van zulke subtiele, achtenswaardige, zoete en bevallige waarheden die via zijn geloof aan het licht komen en verschijnen.
+    </p>
+
+    <p>
+    Aldus draagt het geloof een spiritueel zaad van de hemelse Toebâ-boom. Het ongeloof daarentegen bewaart een spiritueel zaad van de helse Zaqqoem-boom.
+    </p>
+
+    <p>
+    Aldus schuilen vrede en zekerheid alleen in de Islam en in het geloof. Daarom dienen wij te allen tijde: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ عَلٰى دٖينِ الْاِسْلَامِ وَكَمَالِ الْاٖيمَانِ</span> te zeggen.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “De lof zij ALLAH voor de Islamitische religie en het volmaakte geloof.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 19,
+                'content' => '<div class="page" id="19">
+    <p class="text-end page-number">#19</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Derde Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+        يَٓا اَيُّهَا النَّاسُ اعْبُدُوا<sup>2</sup>
+    </p>
+
+    <p>
+    Indien jij wil inzien wat voor een grote handel en gelukzaligheid er schuilgaan in Godsdienstigheid, en wat voor een groot verlies en onheil er schuilgaan in zondigheid en onzedelijkheid, kijk dan naar deze parabel. Luister...
+    </p>
+
+    <p>
+    Eens kregen twee soldaten de opdracht om een ver gelegen stad te bezoeken. Samen reisden zij richting hun bestemming, totdat ze bij een splitsing aankwamen. Daar stond een man die hen als volgt aansprak:
+    </p>
+
+    <p class="text-italic">
+    “Op deze rechter weg zal je nergens tegenspoed aantreffen. Daarnaast ondervinden negen van de tien reizigers op die weg veel baat en rust. Op de linker weg daarentegen zal je geen voorspoed ontmoeten. Daarnaast ondervinden negen van de tien reizigers op die weg tegenspoed. Wat afstand betreft zijn beide wegen gelijk. Er is alleen één verschil: omdat er op de linker weg geen orde en gezag heerst, reist de reiziger op die weg zonder bagage en wapen. Zodoende ervaart hij ogenschijnlijk minder moeite; hij ondervindt een vals comfort. De reiziger van de rechter weg waarop een militaire orde heerst, is daarentegen verplicht om een tas van vier kilo gevuld met voedzame levensmiddelen te dragen, inclusief een uitstekend rijkswapen van twee kilo dat elke vijand kan uitschakelen.”
+    </p>
+
+    <p>
+    Nadat de twee soldaten die man hadden uitgehoord, sloeg de voorspoedige soldaat de rechter weg in. Hij belastte zijn rug en zijn schouders met wat bagage, maar zijn hart en zijn ziel werden van de duizenden lasten achter afhankelijkheden en angsten gered.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “O mensen, wees Godsdienstig” - <em>De Heilige Qur’an, 2:21</em>
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 20,
+                'content' => '<div class="page" id="20">
+    <p class="text-end page-number">#20</p>
+
+    <p>
+    De andere ellendige soldaat daarentegen nam afstand van zijn dienst. Hij wilde zich niet aan orde onderwerpen. Zijn lichaam werd van enige lasten gered. Echter, zijn hart werd onder duizenden lasten van afhankelijkheden geplet en zijn ziel werd door talloze angsten onderdrukt. Onderweg bedelde hij bij iedereen en huiverde hij voor alles, totdat hij zijn bestemming had bereikt. Daar werd hij als opstandeling en deserteur ontvangen en bestraft.
+    </p>
+
+    <p>
+    De soldaat die van militaire orde hield, zijn tas en wapen onderhield en de rechter weg aanhield, stelde zich tegenover niemand afhankelijk op, deinsde voor niemand terug en ging met een gerust hart en geweten voort. Uiteindelijk bereikte hij de stad waar hij moest zijn. Daar ontving hij een evenredige beloning voor een eervolle soldaat die zijn taak volwaardig had volbracht.
+    </p>
+
+    <p>
+    Voorwaar, o opstandige ego! Weet dat die twee reizigers de volgers van Goddelijke wetten en de opstandige slaven van hun lusten vertegenwoordigen. Die weg symboliseert de levensweg die vanaf de zielenwereld, langs het graf, naar het hiernamaals loopt. Die tas en dat wapen impliceren Godsdienstigheid en Godsvrees. Godsdienstigheid brengt ogenschijnlijk een last met zich mee, maar haar betekenis herbergt een dusdanige rust en verlichting, dat het niet te beschrijven is. Want een dienaar zegt tijdens zijn gebed: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَشْهَدُ اَنْ لَا اِلهَ اِلَّا اللّٰهُ</span>
+    </p>
+
+    <p class="text-italic">
+    Met andere woorden: “Er is geen Schepper en geen Onderhouder behalve Hij. Voor- en tegenspoed rusten in Zijn Handen. Bovendien is Hij Alwijs; Hij vermijdt futiliteit. Ook is Hij Genadig; Zijn Goedgunstigheid en Zijn Erbarmen zijn omvangrijk.”
+    </p>
+
+    <p>
+    Dankzij die overtuiging ontwaart hij overal een poort tot de schat van Genade, waarop hij met zijn beden aanklopt. En hij ziet dat alles onderhevig is aan het Bevel van Zijn Heer. Bijgevolg neemt hij toevlucht tot Zijn Heer. Gelaten steunt hij zich op Hem en doet hij bij elke calamiteit beroep op Hem. Zijn geloof verschaft hem een absolute zekerheid.
+    </p>
+
+    <p>
+    Waarlijk, zoals het voor elke heilzame eigenschap geldt, bestaat ook de bron van moed uit geloof en dienaarschap. Zoals het voor elke zondige eigenschap geldt, bestaat ook de bron van lafheid uit dwaling.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “Ik getuig dat er geen God is behalve ALLAH.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 21,
+                'content' => '<div class="page" id="21">
+    <p class="text-end page-number">#21</p>
+
+    <p>
+    Waarlijk, een dienaar wiens hart volledig is verlicht, zou wellicht zelfs geen vrees voelen als de aardbol één grote bom zou worden en zou exploderen. Hij zou dat buitengewone Machtsvertoon van de Onafhankelijke veeleer met een aangename verwondering aanschouwen. Echter, als een harteloze en zondige filosoof – die zogenaamd <em>“verlicht”</em> is – een komeet aan de hemel zou signaleren, dan zou hij van angst op de aardbodem bibberen. Hij zou zich dingen beginnen te verbeelden als: <span class="text-italic">“Die komeet gaat toch niet op onze aarde inslaan?”</span> <span class="text-italic">(Eens huiverde Amerika door een dergelijke komeet. Velen hadden in de nacht hun woning verlaten.)</span>
+    </p>
+
+    <p>
+    Waarlijk, hoewel de mens eindeloze behoeften heeft, bestaat zijn kapitaal vrijwel uit niets. En hoewel hij aan talloze calamiteiten wordt blootgesteld, stelt zijn kunnen nagenoeg niets voor. Zijn kapitaal en zijn kunnen reiken vrijwel zo ver als zijn handbereik. Zijn verlangens, wensen, smarten en kwellingen daarentegen reiken zo ver als zijn gezichtsveld en zijn fantasie. Voor een mensenziel die dusdanig machteloos en zwak, behoeftig en afhankelijk is, kan iemand die niet totaal verblind is uiteraard wel inzien wat voor een enorme opbrengst, gelukzaligheid en gunst er in Godsdienstigheid, gelatenheid, Tauhied <em>(monotheïsme)</em> en overgave schuilen. Iedereen weet dat een ongevaarlijke weg de voorkeur boven een gevaarlijke weg geniet, ook al is de kans op gevaar maar tien procent. Echter, naast het feit dat de voornoemde weg van dienaarschap ongevaarlijk is, leidt hij negentig procent van zijn volgers naar een schat van eeuwige gelukzaligheid. De weg van zondigheid en onzedelijkheid daarentegen levert – zoals zondaren zelfs bekennen – niets nuttigs op, terwijl hij negentig procent van zijn volgers naar eeuwige verdoemenis leidt. Volgens de unanieme constatering van ontelbare deskundigen en getuigen is dit consensueel vastgelegd. Ook volgens de berichtgevingen van spirituele waarnemers en ontdekkers staat dit absoluut vast.
+    </p>
+
+    <p>
+    <strong>Tot slot:</strong> zoals het voor het hiernamaals geldt, schuilt ook de wereldse gelukzaligheid in Godsdienstigheid en in krijgsdienst onder Het Gezag van ALLAH. Aldus dienen wij altijd: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ عَلَى الطَّاعَةِ وَالتَّوْفٖيقِ</span> te zeggen en wij behoren dankbaar te zijn omdat wij moslims zijn.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> De lof zij ALLAH voor volgzaamheid en voorspoed.
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 22,
+                'content' => '<div class="page" id="22">
+    <p class="text-end page-number">#22</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Vierde Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+        اَلصَّلَاةُ عِمَادُ الدّٖينِ<sup>2</sup>
+    </p>
+
+    <p>
+    Indien jij zo zeker als tweemaal twee vier is volledig wil inzien hoe waardevol en belangrijk het gebed is, hoe weinig tijd en moeite het kost, en hoe dwaas en benadeeld de verzaker van gebeden is, kijk dan naar deze parabel.
+    </p>
+
+    <p>
+    Eens had een grote heerser aan twee van zijn dienaren beide vierentwintig goudstukken gegeven en ze naar een speciaal en bevallig landgoed op een tweemaandige afstand gezonden, opdat ze daar konden wonen. Voordat ze vertrokken, beval hij hen het volgende:
+    </p>
+
+    <p class="text-italic">
+    “Besteed deze munten aan een biljet en aan overige reiskosten. En koop er spullen mee die benodigd zijn voor jullie verblijf. Op een dag afstand is een station gevestigd. Daar zijn auto’s, boten, treinen en vliegtuigen waarmee je naargelang van je vermogen verder kunt reizen.”
+    </p>
+
+    <p>
+    Nadat ze geïnstrueerd werden, begonnen de twee dienaren aan hun tocht. De ene was voorspoedig en had onderweg naar het station wat geld besteed. Echter, bij die besteding had hij ten genoegen van zijn meester een dusdanig gunstige handel gedreven, dat zijn vermogen verduizendvoudigd werd.
+    </p>
+
+    <p>
+    De andere dienaar was ellendig en dwaas, waardoor hij tijdens zijn reis naar het station drieëntwintig van zijn goudstukken aan zaken als gokken had verkwist. Uiteindelijk had hij nog maar één goudstuk over. Daarop sprak zijn vriend hem als volgt aan:
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “De Salât is de steunpilaar van de religie.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 23,
+                'content' => '<div class="page" id="23">
+    <p class="text-end page-number">#23</p>
+
+    <p class="text-italic">
+    “Koop tenminste met deze munt een biljet, zodat je deze lange weg niet hongerig en te voet hoeft af te leggen. Onze meester is tevens genereus; misschien zal hij genadig zijn en je overtreding door de vingers zien. Jou zullen ze vast ook wel in het vliegtuig toelaten. Dan kunnen wij onze bestemming in een dag bereiken. Anders zal jij gedwongen een tweemaandige reis door de woestijn hongerig, eenzaam en te voet moeten afleggen.”
+    </p>
+
+    <p>
+    Als deze man vervolgens koppig zou doen en zijn ene munt niet aan een biljet zou besteden, wat voor hem als een sleutel tot een schat geldt, maar omwille van kortstondig vermaak aan zedeloze zaken zou verspillen, zou dan zelfs de grootste dwaas niet inzien hoe uiterst onverstandig, nadelig en ellendig hij handelt?
+    </p>
+
+    <p>
+    Voorwaar, o verzaker van gebeden! O mijn ego dat het gebed onderwaardeert! Die heerser symboliseert onze Heer; onze Schepper. Die twee reizende dienaren vertegenwoordigen een praktiserende moslim die zijn gebeden met passie verricht en een onachtzame verzaker van gebeden. Die vierentwintig goudstukken staan voor de dagelijkse vierentwintig uren van ons leven. Dat specifieke landgoed symboliseert het paradijs. Dat station is het graf. Die reis is de weg van de sterveling die via het graf en de wederopstanding naar de eeuwigheid leidt. Die lange weg wordt naar evenredigheid van daden en Godsvrees in verscheidene klassen afgelegd. Sommige Godvrezenden kunnen als de bliksem een afstand van duizend jaar in een dag afleggen. Sommigen kunnen als het inbeeldingsvermogen een afstand van vijftigduizend jaar in een dag afleggen. De Glorieuze Qur’an duidt in twee Aya’s op deze werkelijkheid. Dat biljet vertegenwoordigt het gebed. Een uur is voldoende om de rituele wassing en de vijf geboden gebeden te verrichten. Hoeveel nadeel zal iemand ondervinden, hoeveel onrecht zal iemand zichzelf aandoen en hoe onverstandig zal iemand handelen als hij die drieëntwintig uren aan dit vluchtige aardse leven besteedt, maar geen uurtje aan het oneindige leven benut?
+    </p>
+
+    <p>
+    Als iemands verstand het aanvaardt om de helft van zijn bezittingen te besteden aan een loterij waar duizend mensen aan deelnemen, ondanks dat de winstkans één op duizend is, zou een man die zichzelf verstandig acht dan niet begrijpen hoe onverstandig, onwijs en krankzinnig het is om vervolgens één vierentwintigste deel van zijn bezit niet te besteden aan een oneindige schat, waarvan de winstkans negenennegentig procent zeker is?
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 24,
+                'content' => '<div class="page" id="24">
+    <p class="text-end page-number">#24</p>
+
+    <p>
+    Het gebed herbergt daarenboven een grote rust voor de ziel, het hart en het verstand. Lichamelijk is het ook niet zo belastend. Met de juiste intentie zullen de overige geoorloofde handelingen van degene die zijn gebeden verricht als Godsdienstoefeningen gelden. Zodoende kan de mens zijn gehele levenskapitaal in het hiernamaals investeren en zijn vergankelijke leven vanuit deze optiek vereeuwigen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 25,
+                'content' => '<div class="page" id="25">
+    <p class="text-end page-number">#25</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Vijfde Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+        اِنَّ اللّٰهَ مَعَ الَّذٖينَ اتَّقَوْا وَالَّذٖينَ هُمْ مُحْسِنُونَ<sup>2</sup>
+    </p>
+
+    <p>
+    Indien jij wil inzien in hoeverre het verrichten van gebeden en het vermijden van zonden een ware mensenplicht en een natuurlijke bestaansreden van de mens zijn, kijk dan naar deze parabel. Luister...
+    </p>
+
+    <p>
+    Tijdens een mobilisatie bevonden zich twee soldaten in hetzelfde bataljon; de ene was getraind en plichtsgetrouw, de andere was onervaren en zelfzuchtig. De plichtsgetrouwe soldaat wijdde zich toe aan scholing en Jihad, en bekommerde zich niet om onderhoud en proviand. Hij doorzag immers dat hem onderhouden, hem in uitrusting voorzien, hem verzorgen tijdens ziektes en zelfs hem voeden tijdens noodgevallen taken waren die de staat toebehoorden. Zijn taak bestond uit scholing en Jihad. Zo nu en dan zette hij zich echter wel in voor taken die betrekking hadden op onderhoud en uitrusting, zoals bijvoorbeeld koken en afwassen. Wanneer hem gevraagd werd: <span class="text-italic">“Wat doe jij?”</span> Zei hij: <span class="text-italic">“Ik vervul mijn dienstplicht”</span>, hij zei niet: <span class="text-italic">“Ik werk voor mijn onderhoud.”</span>
+    </p>
+
+    <p>
+    De andere gulzige en onervaren soldaat daarentegen hield zich niet bezig met scholing en strijd. Hij zei: <span class="text-italic">“Die taken behoren de staat toe; mij interesseren ze niet.”</span> Hij dacht alleen aan zijn proviand, zette zich daarvoor in, verliet het bataljon, bezocht markten en dreef handel. Op een dag sprak zijn geschoolde vriend hem als volgt aan:
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “Voorzeker, ALLAH is met de Godvrezenden en met de weldoeners.” - <em>De Heilige Qur’an, 16:128</em>
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 26,
+                'content' => '<div class="page" id="26">
+    <p class="text-end page-number">#26</p>
+
+    <p class="text-italic">
+    “Broeder, jouw ware taak bestaat uit scholing en strijd, daarom ben jij hierheen gezonden. Vertrouw op de koning; hij zal jou geen honger laten lijden. Jou van voedsel voorzien is zijn taak. Bovendien ben jij machteloos en behoeftig; jij kunt jezelf niet altijd in voeding voorzien. Het is nu tijd om Jihad te voeren en te mobiliseren. Ze zullen jou als opstandeling bestempelen en jou bestraffen. Waarlijk, er zijn twee taken die betrekking op ons hebben. De ene taak waarvoor wij zo nu en dan worden ingezet, bestaat uit het onderhouden van ons. Deze taak behoort de koning toe. De andere taak waarbij de koning ons middels faciliteiten ondersteunt, bestaat uit scholing en strijd. Deze taak behoort ons toe.”
+    </p>
+
+    <p>
+    Als die dwaze soldaat geen gehoor aan die geschoolde jihadstrijder geeft, dan kun je wel begrijpen in wat voor gevaar hij zal verkeren.
+    </p>
+
+    <p>
+    Voorwaar, o mijn luie ego! Dat chaotische slagveld symboliseert dit hectische aardse leven. Het leger dat in bataljons is onderverdeeld, vertegenwoordigt de menselijke samenleving. Het desbetreffende bataljon symboliseert de Islamitische gemeenschap van deze eeuw. Wat de twee soldaten betreft, de ene vertegenwoordigt een Godvrezende moslim die zijn religieuze verplichtingen kent en nakomt, en met zijn ego en de duivel Jihad voert om afstand van grote zonden te nemen en geen overtredingen te plegen. De andere vertegenwoordigt een ontspoorde zondaar die zich dermate zorgen over zijn inkomen maakt, dat hij de Ware Onderhouder nagenoeg bekritiseert, afstand van religieuze verplichtingen neemt en voor zijn inkomen elke zonde pleegt. Die scholing en training symboliseren de gebeden <em>(met name de salât)</em>. Die oorlog symboliseert de Jihad tegen het ego en de lusten, en de duivelse djinns en mensen om van zonden en zedeloze karaktereigenschappen verlost te worden, en het hart en de ziel van eeuwige verdoemenis te redden. Wat die twee taken betreft, de ene vertegenwoordigt het schenken en onderhouden van het leven, de andere vertegenwoordigt het bidden en smeken tot de Schenker en Onderhouder van het leven; zekerheid ondervinden door op Hem te vertrouwen.
+    </p>
+
+    <p>
+    Waarlijk, Hij Die één van de stralendste wonderwerken der Onafhankelijke en de voortreffelijkste Wijsheden des Heren – oftewel het leven – heeft gegeven en geschapen, is evenzeer Hij Die dat leven middels onderhoud verzorgt en voortzet; een ander kan het niet zijn. Wil je een bewijs hiervoor? De zwakste en domste dieren <em>(zoals fruitwormen en vissen)</em> worden het best verzorgd. De onmachtigste en fragielste schepselen <em>(zoals kinderen en borelingen)</em> nuttigen het beste onderhoud.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 27,
+                'content' => '<div class="page" id="27">
+    <p class="text-end page-number">#27</p>
+
+    <p>
+    Waarlijk, om in te zien dat het middel tot halal onderhoud niet uit wil en gezag, maar veeleer uit onmacht en zwakte bestaat, is het voldoende om vissen met vossen, borelingen met beesten en bomen met dieren te vergelijken.
+    </p>
+
+    <p>
+    Aldus lijkt degene die zijn gebeden vanwege zijn zorgen over zijn inkomen nalaat, op een soldaat die zijn scholing en post verlaat om op de markt te gaan bedelen. Echter, als iemand na het verrichten van zijn gebed in de Genadige Keuken van de Genereuze Onderhouder zijn proviand zoekt en om anderen niet ten laste te zijn zelf haalt, dan is dat prijzenswaardig en edel; die daad geldt dan ook als een Godsdienstoefening. Tevens tonen de geaardheid en de spirituele zintuigen van de mens dat hij voor Godsdienstigheid is geschapen. Immers, gezien de benodigde handelingen en vaardigheden voor zijn aardse leven kan hij zich niet eens met de miezerigste mus meten. Echter, gezien aanbidding en Godsdienstigheid op basis van kennis en bezinning, wat benodigdheden zijn voor zijn spirituele leven en zijn hiernamaals, dient hij als de sultan en de commandant van alle diersoorten.
+    </p>
+
+    <p>
+    Al met al, o mijn ego! Als jij naar het aardse leven streeft en daarvoor ijvert, dan zal jij de miezerigste mus niet kunnen evenaren. Als jij naar het leven in hiernamaals streeft, dit leven als middel en akker daarvoor acht, en op basis daarvan ijvert, dan zal jij als een grote commandant van de dieren fungeren, en op deze wereld een bevoorrechte en biddende dienaar, en een eerbiedwaardige en gewaardeerde gast van de Hoogste Gerechtigde worden.
+    </p>
+
+    <p>
+    Voorwaar, voor jou bevinden zich deze twee wegen. Jij mag bepalen welke jij verkiest. Vraag de Genadigste der Genadigen om leiding en bijstand.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 28,
+                'content' => '<div class="page" id="28">
+    <p class="text-end page-number">#28</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Zesde Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+        اِنَّ اللّٰهَ اشْتَرٰى مِنَ الْمُؤْمِنٖينَ اَنْفُسَهُمْ وَاَمْوَالَهُمْ بِاَنَّ لَهُمُ الْجَنَّةَ<sup>2</sup>
+    </p>
+
+    <p>
+    Indien jij wil inzien wat voor een profijtelijke handel je drijft en wat voor een verheven rang je behaalt wanneer jij je ziel en je bezittingen aan ALLAH verkoopt, en Zijn dienaar en soldaat wordt, luister dan naar deze parabel.
+    </p>
+
+    <p>
+    Eens had een koning twee personen onder zijn volk gekozen en aan beide een landgoed toevertrouwd. Op dat landgoed bevonden zich een fabriek, een machine, een paard, een wapen en allerlei soorten bruikbaarheden. Omdat er echter een onstuimige oorlog heerste, bleef niets intact; of het verging, of het onderging verandering en verdween. Daarop zond de koning op basis van zijn sublieme genade één van zijn nobelste officieren naar die twee soldaten. De officier reikte ze een buitengewoon meedogend bevelschrift aan waarin de koning hen als volgt aansprak:
+    </p>
+
+    <p class="text-italic">
+    “Verkoop wat ik aan jullie heb toevertrouwd aan mij, opdat ik het voor jullie kan bewaren en het niet vergeefs verloren gaat. Als de oorlog voorbij is, zal ik het jullie in een mooiere vorm teruggeven. Bovendien zal ik voor jullie bezit – wat jullie eigenlijk is toevertrouwd – een zeer hoge prijs geven. Die machine en de apparaten in die fabriek zullen dan namens mij en volgens mijn systeem werken. Zodoende zullen hun waarde en opbrengsten verduizendvoudigen. Al die opbrengsten zal ik aan jullie schenken. Bovendien zijn jullie machteloos en behoeftig. De kosten van die enorme taken kunnen jullie niet dragen. Alle uitgaven en benodigdheden zal ik bekostigen. Alle inkomsten en verdiensten zal ik aan jullie”
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “Voorzeker, ALLAH heeft de zielen en bezittingen van de gelovigen in ruil voor het paradijs gekocht.” - <em>De Heilige Qur’an, 9:111</em>
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 29,
+                'content' => '<div class="page" id="29">
+    <p class="text-end page-number">#29</p>
+
+    <p class="text-italic">
+    schenken. Wat ik aan jullie heb toevertrouwd, zal ik tot op de dag van jullie vrijstelling aan jullie overlaten. Voorwaar, dit is vanuit vijf opzichten winstgevend voor jullie.
+    </p>
+
+    <p class="text-italic">
+    Het zou niet verstandig zijn om dit aanbod af te wijzen. Jullie zien immers ook dat niemand in staat is om zijn bezittingen te behouden. Zoals het voor iedereen geldt, zal alles vroeg of laat ook uit jullie handen glippen. Bovendien zal het voor niets verloren gaan. Daarnaast zullen jullie de enorme prijs die ik aanbied mislopen. Tevens zullen die delicate en waardevolle apparaten en weeginstrumenten volledig in waarde dalen omdat er geen nuttige mijnen en werkzaamheden zullen zijn waarvoor ze kunnen worden toegepast. Ook zullen jullie met het beheer en het onderhoud worden belast. Uiteindelijk zullen jullie straf ondervinden omdat jullie ten opzichte van het toevertrouwde ontrouw zijn geweest. Voorwaar, dit is vanuit vijf opzichten nadelig voor jullie.
+    </p>
+
+    <p class="text-italic">
+    Die verkoop aan mij impliceert dat jullie mijn soldaat worden en namens mij handelen. Zodoende zullen jullie in plaats van een simpele gevangene en losbandige chaoot, een vrije officier van een verheven koning worden.”
+    </p>
+
+    <p>
+    Nadat de twee soldaten de koninklijke belangstelling in dit bevelschrift hadden toegehoord, zei de verstandige van de twee:
+    </p>
+
+    <p class="text-italic">
+    “Ik aanvaard uw voorstel; ik verkoop alles wat aan mij is toevertrouwd met plezier en ik ben u eindeloos dankbaar.”
+    </p>
+
+    <p>
+    De andere was een hoogmoedige en arrogante dronkaard met een faraonisch ego die zo weinig besef van de aardse rampen en tegenspoeden had, dat hij zich gedroeg alsof hij eeuwig op dat landgoed zou verblijven. Hij zei:
+    </p>
+
+    <p class="text-italic">
+    “Ik weiger! Wie is die koning? Ik verkoop mijn eigendom niet; ik ga mijn comfort niet opgeven.”
+    </p>
+
+    <p>
+    Na een korte periode behaalde de eerste persoon een dusdanige positie, dat iedereen bewondering voor hem koesterde. Hij ondervond gratie van de koning en leefde gelukkig in zijn voorbestemde paleis. De andere belandde in een dusdanige positie, dat iedereen medelijden met hem had. Desondanks zei iedereen <em>“Dit is zijn verdiende loon.”</em> Want als resultaat van zijn overtreding had hij zijn welvaart en zijn eigendom verloren. Daarnaast onderging hij straf en kwelling.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 30,
+                'content' => '<div class="page" id="30">
+    <p class="text-end page-number">#30</p>
+
+    <p>
+    Voorwaar, o genotzuchtige ego! Aanschouw het gezicht van de waarheid door de verrekijker van deze parabel. Die koning symboliseert De Onbegonnen en Oneindige Sultan alias jouw Heer, jouw Schepper. Die landgoederen, machines, apparaten en meetinstrumenten symboliseren je bezittingen binnen je levenskring, waaronder je lichaam, ziel en hart, je ogen, tong, verstand en inbeeldingsvermogen, en dergelijke inwendige en uitwendige zintuigen. En die nobelste officier symboliseert de Nobele Profeet. Dat koninklijke bevelschrift is De Leerrijke Qur’an waarin de grote handel in kwestie in de volgende Aya wordt geopenbaard:
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    اِنَّ اللّٰهَ اشْتَرٰى مِنَ الْمُؤْمِنٖينَ اَنْفُسَهُمْ وَاَمْوَالَهُمْ بِاَنَّ لَهُمُ الْجَنَّةَ<sup>1</sup>
+    </p>
+
+    <p>
+    Dat chaotische slagveld is deze hectische wereld; ze is instabiel, beweeglijk en veranderlijk, en ze wekt in elk mensenverstand de volgende gedachte op:
+    <span class="text-italic">“Alles glipt uit onze handen; alles is vergankelijk en zal vroeg of laat vergaan. Bestaat er dan geen manier om alles te bestendigen en te vereeuwigen?”</span>
+    </p>
+
+    <p>
+    Terwijl deze gedachte in de hoofden rondgaat, wordt er opeens de hemelse stem van De Qur’an vernomen; Hij zegt:
+    </p>
+
+    <p class="text-italic">
+    <strong>“Jawel, er bestaat een aangename en eenvoudige manier die een vijfvoudige winst oplevert!”</strong>
+    </p>
+
+    <p><strong>Vraag</strong></p>
+
+    <p class="text-italic"><strong>Wat is die manier?</strong></p>
+
+    <p><strong>Het antwoord</strong></p>
+
+    <p>
+    Het toevertrouwde aan De Ware Eigenaar verkopen. Voorwaar, die verkoop bevat in vijf opzichten winst boven winst.
+    </p>
+
+    <p><strong>De eerste winst</strong></p>
+
+    <p>
+    Vergankelijke bezittingen ondervinden vereeuwiging. Want alles wat gedurende dit vergankelijke leven aan De Ontzaglijke Entiteit alias De Eeuwige Bestendiger wordt gewijd en op Zijn weg wordt besteed, zal vereeuwiging ondervinden en eeuwige vruchten afwerpen. Zodoende zullen levensminuten als pitten en zaden ogenschijnlijk vergaan en bederven. Echter, in de
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “Voorzeker, ALLAH heeft de zielen en bezittingen van de gelovigen in ruil voor het paradijs gekocht.” - <em>De Heilige Qur’an, 9:111</em>
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 31,
+                'content' => '<div class="page" id="31">
+    <p class="text-end page-number">#31</p>
+
+    <p>
+    eeuwige wereld zullen ze als bloemen van gelukzaligheid ontkiemen en ontluiken. En in de tussenwereld zullen ze stralende en gemoedelijke verschijningsvormen krijgen.
+    </p>
+
+    <p><strong>De tweede winst</strong></p>
+
+    <p>
+    Als prijs wordt het paradijs gegeven.
+    </p>
+
+    <p><strong>De derde winst</strong></p>
+
+    <p>
+    De waarde van elk orgaan en zintuig wordt verduizendvoudigd.
+    </p>
+
+    <p>
+    <span class="text-italic"><strong>Bijvoorbeeld</strong>,</span> het verstand is een instrument. Als jij dat instrument niet aan de Hoogste Gerechtigde verkoopt, maar namens je ego laat werken, dan zal het als een dusdanig kwaadaardig, kwellend en kwalijk instrument dienen, dat het je hoofd met alle vroegere bedroevende ellendigheden evenals alle overweldigende toekomstige angsten zal belasten. Zodoende zal het tot een heilloos en verderfelijk instrument verworden. Voorwaar, om deze pijnigingen en benauwingen van het verstand te ontvluchten, neemt een zondaar toevlucht tot dronkenschap of amusement. Als jij het verstand aan De Ware Eigenaar verkoopt en namens Hem laat werken, dan wordt het een dusdanig mystieke sleutel, dat het de poorten tot de eindeloze schatten van Genade en de juwelen van Wijsheid in het universum ontgrendelt. Zodoende stijgt het verstand tot het niveau van een gids des Heren die zijn eigenaar voorbereidt op eeuwige gelukzaligheid.
+    </p>
+
+    <p>
+    <span class="text-italic"><strong>Bijvoorbeeld</strong>,</span> het oog is een zintuig, oftewel het venster vanwaaruit de ziel de wereld bezichtigt. Als jij dat zintuig niet aan de Hoogste Gerechtigde verkoopt, maar omwille van je ego laat werken, dan zal het dalen tot het niveau van een pooier voor lustgevoelens en egoïstische begeerten die jou bepaalde kortstondige en voorbijgaande schoonheden en gedaantes laat zien. Als jij het oog aan zijn Alziende Kunstenaar verkoopt en namens Hem binnen Zijn vastgestelde grenzen laat werken, dan stijgt dit oog tot het niveau van een analist die dit kosmische macro-boek bestudeert, een toeschouwer die de miraculeuze kunstwerken des Heren aanschouwt en een gezegende honingbij die in deze aardse tuin nectar uit de bloemen van Genade haalt.
+    </p>
+
+    <p>
+    <span class="text-italic"><strong>Bijvoorbeeld</strong>,</span> als jij het smaakvermogen van de tong niet aan De Alwijze Voortbrenger verkoopt, maar namens je ego en je maag laat werken, dan zal het dalen tot het niveau van een portier die voor de stal en de fabriek van de
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 32,
+                'content' => '<div class="page" id="32">
+    <p class="text-end page-number">#32</p>
+
+    <p>
+    maag werkt. Zodoende zal zijn waarde verloren gaan. Als jij het aan de Genereuze Onderhouder verkoopt, dan zal het smaakvermogen van de tong stijgen tot het niveau van een deskundige waarnemer van Gods genadegiften en een dankbare fijnproever in de keukens van de Onafhankelijke Almacht.
+    </p>
+
+    <p>
+    Voorwaar, o verstand, wees attent! Wat voor waarde heeft een heilloos instrument ten opzichte van een sleutel tot het universum? O oog, kijk goed! Wat voor waarde heeft een lage pooier ten opzichte van een wetenschappelijke lezer in Gods Bibliotheek? O tong, proef goed! Wat voor waarde heeft een portier van een stal en een poortwachter van een fabriek ten opzichte van een uitverkoren waarnemer van genadegiften? Als je de overige instrumenten en organen ook zo afweegt, dan zal je inzien dat de aard van een gelovige daadwerkelijk het paradijs siert en de aard van een ongelovige daadwerkelijk de hel verdient. De reden waarom elk instrument een dergelijke waarde krijgt, is omdat enerzijds een gelovige op basis van zijn geloof het toevertrouwde van Zijn Schepper namens Hem binnen Zijn vastgestelde grenzen toepast, terwijl anderzijds een ongelovige in opstand komt en het toevertrouwde namens zijn kwaadgezinde ego hanteert.
+    </p>
+
+    <p><strong>De vierde winst</strong></p>
+
+    <p>
+    Ondanks dat de mens zwak is, staat hij bloot aan veel onheil. Ondanks dat hij arm is, heeft hij talloze benodigdheden. Ondanks dat hij machteloos is, zijn de lasten des levens enorm zwaar. Als hij zich niet in gelatenheid op de Ontzaglijke Almachtige steunt, als hij zijn vertrouwen niet in Hem stelt en zich niet aan Hem overgeeft, dan zal zijn geweten voortdurend gekweld worden. Vruchteloze inspanningen, rampen en tegenslagen zullen hem verstikken. Uiteindelijk zal hij ofwel als dronkaard ofwel als beest eindigen.
+    </p>
+
+    <p><strong>De vijfde winst</strong></p>
+
+    <p>
+    Alle Godsdienstoefeningen en verheerlijkingen van die organen en instrumenten, evenals hun opzienbarende opbrengsten, zullen jou tijdens je behoeftigste moment als paradijselijke vruchten worden aangereikt. Hierover zijn spirituele waarnemers, ontdekkers, deskundigen en getuigen unaniem.
+    </p>
+
+    <p>
+    Voorwaar, als je afstand neemt van deze handel die in vijf opzichten winstgevend is, dan zal je naast het mislopen van deze winsten, in vijf opzichten nadeel boven nadeel ondervinden.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 33,
+                'content' => '<div class="page" id="33">
+    <p class="text-end page-number">#33</p>
+
+    <p><strong>Het eerste nadeel</strong></p>
+
+    <p>
+    Je bezittingen en je kinderen waar je zoveel om geeft, je ziel en je begeerten waar je zo verzot op bent, je jeugd en je leven waar je zo van houdt, zullen uit je handen glippen en verdwijnen. Ze zullen slechts zonden en kwellingen voor jou achterlaten en jou daarmee opzadelen.
+    </p>
+
+    <p><strong>Het tweede nadeel</strong></p>
+
+    <p>
+    Je zult straf vanwege ontrouw jegens het toevertrouwde ondergaan. Want door de waardevolste instrumenten voor de waardelooste zaken te gebruiken, heb jij jouw ziel onrecht aangedaan.
+    </p>
+
+    <p><strong>Het derde nadeel</strong></p>
+
+    <p>
+    Al die waardevolle menselijke instrumenten heb jij tot een veel lager niveau dan dat van dieren laten kelderen. Zodoende heb jij de Goddelijke Wijsheid bespot en geschonden.
+    </p>
+
+    <p><strong>Het vierde nadeel</strong></p>
+
+    <p>
+    Ondanks je onmacht en behoeftigheid, heb jij de enorm zware levenslast op je zwakke schouders genomen, waardoor je onder de tegenslagen van teloorgang en scheiding almaar zult weeklagen.
+    </p>
+
+    <p><strong>Het vijfde nadeel</strong></p>
+
+    <p>
+    Fraaie giften van De Barmhartige, zoals het verstand, het hart, het oog en de tong, die gegeven zijn om de fundamenten van het eeuwige leven en de benodigdheden voor gelukzaligheid in het hiernamaals te verschaffen, verworden tot lelijke verschijnselen die de hellepoorten voor jou zullen openen.
+    </p>
+
+    <p>
+    Wij gaan die verkoop nu onder de loep nemen. Is het daadwerkelijk zo zwaar, dat zoveel mensen ervan vluchten? Absoluut niet! Het is helemaal niet zo zwaar. De halal-kring biedt voldoende voldoening. Er is helemaal geen behoefte om in zonden te vervallen. Daarnaast zijn de Goddelijke geboden licht en weinig in aantal. De eer om dienaar en soldaat van ALLAH te mogen zijn is zo behaaglijk, dat het niet te beschrijven is. Je taak houdt slechts in dat jij als een soldaat namens ALLAH begint en te werk gaat, omwille van ALLAH geeft en neemt, en binnen Zijn vastgestelde grenzen en wetgeving handelt en rust ondervindt. Als jij een fout begaat, dan dien je om vergeving te vragen. Je behoort Hem te smeken en de volgende bede te verrichten:
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 34,
+                'content' => '<div class="page" id="34">
+    <p class="text-end page-number">#34</p>
+
+    <p class="text-italic text-center-constrained" style="margin: 18px auto 0 auto; max-width: 500px;">
+    “O Heer! Vergeef ons onze fouten. Aanvaard ons als Uw dienaren. Houd ons getrouw jegens het toevertrouwde, tot het uur waarop U het toevertrouwde terugvordert. Âmîn.”
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 35,
+                'content' => '<div class="page" id="35">
+    <p class="text-end page-number">#35</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Zevende Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+        اٰمَنْتُ بِاللّٰهِ وَبِالْيَوْمِ الْاٰخِرِ<sup>2</sup>
+    </p>
+
+    <p>
+    Indien jij de waarde wil inzien van deze twee mysterieuze spreuken die het complexe mysterie achter het bestaan ontrafelen en voor de mensenziel de poort tot gelukzaligheid openen, en indien jij wil inzien wat voor twee genezende en triakelachtige medicijnen je bemachtigt wanneer jij je geduldig en gelaten op je Schepper berust, en dankbaar tot je Onderhouder bidt en smeekt, en indien jij wil inzien wat voor een belangrijk, waardevol en schitterend toegangsbewijs, wat voor een proviand voor het hiernamaals en wat voor een lichternis voor het graf het zal opleveren als jij gehoor aan De Qur’an geeft, Zijn geboden naleeft, gebeden verricht en afstand van grote zonden neemt, kijk dan naar deze parabel. Luister...
+    </p>
+
+    <p>
+    Eens was er een soldaat die op het slagveld werd beproefd. Terwijl hij in onzekerheid over het behalen van winst of verlies verkeerde, kwam hij in een verbijsterende toestand terecht.
+    </p>
+
+    <p>
+    Aan zijn rechter- en linkerzijde had hij twee diepe wonden opgelopen. Achter hem stond een grote leeuw dreigend op hem te wachten alsof hij elk moment kon toeslaan. Voor hem stond een galg waaraan al zijn geliefden werden opgehangen; hijzelf zou ook aan de beurt komen. Ondanks deze toestand moest hij nog een lange weg afleggen; hij werd gedeporteerd. Terwijl die arme soldaat in deze beangstigende toestand hopeloos aan het peinzen was, kwam er plotseling vanuit zijn rechterzijde een verlichte persoon zoals de heilbrenger Khidr tevoorschijn. Hij zei:
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “Ik geloof in ALLAH en in de laatste dag.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 36,
+                'content' => '<div class="page" id="36">
+    <p class="text-end page-number">#36</p>
+
+    <p><em>
+    “Wees niet wanhopig! Ik zal jou twee spreuken geven en leren. Als jij ze juist hanteert, dan zal die leeuw voor jou in een tam rijdier veranderen. En die galg zal voor jou in een plezierige en ontspannende schommel veranderen. Daarnaast zal ik jou twee medicijnen geven. Als jij ze juist gebruikt, dan zullen je twee beschimmelde wonden tot twee geurige bloemen genaamd ‘Mohammedaanse Rosa’ omvormen. Daarnaast zal ik jou een biljet geven. Daarmee kun je een afstand van een jaar vliegensvlug in een dag afleggen. Voorwaar, mocht je sceptisch over mijn beweringen zijn, beproef ze dan om af te wegen of ze waar zijn.”
+    </em></p>
+
+    <p>
+    Daarop ging hij ze beproeven, waarna hij zijn beweringen ten volle beaamde. Waarlijk, ik, oftewel arme Said, beaam dit ook. Want uit ervaring heb ik ondervonden dat deze beweringen uiterst waarachtig zijn.
+    </p>
+
+    <p>
+    Hierna zag hij opeens aan zijn linkerzijde een duivels sluwe, dronken en bedrieglijke man verschijnen die vele versierselen, verleidingen, fantasieproducten en bedwelmingsmiddelen met zich mee had gebracht. Hij ging tegenover hem staan en zei:
+    </p>
+
+    <p><em>
+    “Hé, vriend! Kom, laten we samen drinken en plezier maken! Laten we samen naar deze mooie vrouwelijke gestaltes kijken, deze leuke liederen beluisteren en deze lekkere gerechten eten.”
+    </em></p>
+
+    <p><em><strong>Vraag:</strong> wat ben je nou stilletjes aan het mompelen?</em></p>
+
+    <p><em><strong>Antwoord:</strong> een spreuk.</em></p>
+
+    <p><em>- Laat die vreemde zaken zitten. Laten we ons plezier niet bederven.</em></p>
+
+    <p><em><strong>Vraag:</strong> wat houd je daar in je hand vast?</em></p>
+
+    <p><em><strong>Antwoord:</strong> een medicijn.</em></p>
+
+    <p><em>- Gooi het weg; jou mankeert toch niks? Het is tijd om te feesten.</em></p>
+
+    <p><em><strong>Vraag:</strong> wat is dat papier met vijf symbolen?</em></p>
+
+    <p><em><strong>Antwoord:</strong> een biljet; een toelatingsbewijs.</em></p>
+
+    <p><em>- Verscheur het. Waarom zouden wij tijdens deze stralende lente op reis gaan?</em></p>
+
+    <p>
+    Met allerlei misleidingen probeerde hij de soldaat te overtuigen. Bijgevolg begon de arme soldaat geïnteresseerd in zijn voorstellen te raken.
+    </p>
+
+    <p>
+    Waarlijk, een mens kan misleid worden. Ook ik ben eens door een dergelijke bedrieger misleid.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 37,
+                'content' => '<div class="page" id="37">
+    <p class="text-end page-number">#37</p>
+
+    <p>
+    Plotseling dreunde er vanuit zijn rechterzijde een donderende stem:
+    </p>
+
+    <p><em>
+    “Trap er niet in! Zeg tegen die bedrieger:
+    </em></p>
+
+    <p><em>
+    Als jij de leeuw achter mij kunt doden, de galg tegenover mij kunt verwijderen, de wonden aan mijn rechter- en linkerzijde kunt genezen, en de reis die op mij te wachten staat kunt annuleren, doe dit dan; laat zien dat je het kan, overtuig ons en kom mij daarna roepen om te feesten. Indien jij hiertoe niet in staat bent, zwijg dan o dwaas! Opdat deze hemelse persoon die als Khidr is verschenen zijn toespraak kan houden.”
+    </em></p>
+
+    <p>
+    Voorwaar, o mijn ego dat tijdens zijn jeugd lachte en nu om zijn gelach huilt! Weet dat de soldaat jou evenals de mens vertegenwoordigt. Die leeuw symboliseert het doodsuur. Die galg symboliseert teloorgang en scheiding; gedurende de dag en nacht cyclus zal elke vriend mettertijd afscheid van je nemen en verdwijnen. De twee wonden symboliseren de mensen met enerzijds een onaangename en eindeloze onmacht, anderzijds een kwellende en oneindige behoeftigheid. Die deportatie en die reis symboliseren de lange reis van beproeving die vanaf de zielenwereld begint en langs de baarmoeder, de jeugd, de ouderdom, de aarde, het graf, de tussenwereld, de opstanding en de brug van Sirât verder gaat. Die twee mysterieuze spreuken symboliseren het geloof in de Hoogste Gerechtigde en het geloof in het hiernamaals.
+    </p>
+
+    <p>
+    Waarlijk, dankzij deze heilige spreuken krijgt de dood voor een gelovig mens de verschijning van een tam rijdier dat hem als Burâq van de aardse gevangenis naar de tuinen van het paradijs en Het Hof van De Barmhartige draagt. Hoogontwikkelde gelovigen die de waarheid achter de dood doorzagen hadden daarom de dood lief. Voordat het doodsuur aanbrak, verlangden ze al naar de dood.
+    </p>
+
+    <p>
+    Teloorgang en scheiding, sterfte en ondergang, en de galg die het tijdsverloop voorstelt, zullen dankzij die spreuk veranderen in heuglijke middelen om de Ontzaglijke Kunstenaars verse, frisse, kleurrijke en verscheidene wonderschriften, machtsverschijnselen en genadebewijzen te bewonderen en te bezichtigen.
+    </p>
+
+    <p>
+    Waarlijk, wanneer de spiegels die de zeven kleuren van de zon weergeven variëren en verversen, of de beelden op een bioscoopdoek veranderen, dan brengen ze mooiere en aangenamere vertoningen tot stand.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 38,
+                'content' => '<div class="page" id="38">
+    <p class="text-end page-number">#38</p>
+
+    <p>
+    Wat die twee medicijnen betreft: het ene medicijn vertegenwoordigt geduld en gelatenheid; steunen op de Macht en vertrouwen op de Wijsheid van jouw Schepper. <em>Klopt deze bewering?</em>
+    </p>
+
+ <p>
+Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zijn onmacht steunt op een Universele Sultan Die slechts “Wees!” hoeft te bevelen om iets tot stand te brengen? Immers, tegenover de angstaanjagendste calamiteit zal hij: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّا لِلّهِ وَاِنَّا اِلَيْهِ رَاجِعُونَ</span> zeggen en zich met een gerust hart op zijn Genadige Schepper berusten.
+</p>
+    <p>
+    Waarlijk, een kenner van ALLAH geniet van zijn onmacht en zijn vrees voor ALLAH. Waarlijk, in vrees schuilt genot. Als een eenjarig kind over een verstand zou beschikken en als hem gevraagd zou worden welke toestand hem het meeste genot oplevert, dan zou hij het volgende zeggen:
+    </p>
+
+    <p><em>
+    “De toestand waarin ik mijn onmacht en mijn zwakte doorzie, de zoete bestraffing van mijn moeder vrees en vervolgens mijn toevlucht weer in haar meedogende schoot zoek.”
+    </em></p>
+
+    <p>
+    Echter, alle genades van alle moeders zijn slechts één Flits van Gods Genade. Daarom hebben hoogontwikkelde gelovigen zoveel genot binnen onmacht en vrees voor ALLAH ondervonden, dat ze innig afstand van hun eigen vermogen en kracht namen, en zich machteloos op ALLAH steunden; hun onmacht en hun vrees hanteerden ze als hun bemiddelaar.
+    </p>
+
+    <p>
+    Het andere medicijn impliceert: in dankbaarheid en tevredenheid beden verrichten, en vertrouwen op de Genade van de Genadige Onderhouder. <em>Klopt deze bewering?</em>
+    </p>
+
+    <p>
+    <strong>Waarlijk</strong>, hoe kunnen behoeftigheid en armoedigheid bezwarend en kwellend zijn voor de gast van een Vrijgevige Genereuze Die het hele aardoppervlak als een tafel met gunsten dekt, de lente als een boeket naast die tafel plaatst en bloemen erover uitstrooit? Zijn behoeftigheid en armoedigheid zullen veeleer de verschijning van zoete verlangens krijgen; naast zijn verlangens zou hij ijveren om zijn behoeftigheid te intensiveren. Daarom waren hoogontwikkelde gelovigen trots op hun behoeftigheid.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “Voorzeker, wij komen van ALLAH en voorzeker, tot Hem is de wederkeer.” - <em>De Heilige Qur’an, 2:156</em>
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 39,
+                'content' => '<div class="page" id="39">
+    <p class="text-end page-number">#39</p>
+
+    <p>
+    Begrijp dit echter niet verkeerd. Wat hier wordt bedoeld is dat jij tegenover ALLAH jouw behoeftigheid verneemt en tot Hem smeekt. Dit wil dus niet zeggen dat jij je behoeftigheid aan het volk laat zien en zodoende de houding van een bedelaar aanneemt.
+    </p>
+
+    <p>
+    Dat biljet symboliseert het nakomen van de geboden – met de salâts voorop – en het loslaten van de grote zonden. <em>Klopt deze bewering?</em>
+    </p>
+
+    <p>
+    <strong>Waarlijk,</strong> volgens de overeenstemming van alle experts en getuigen, evenals alle waarnemers en ontdekkers, kunnen op die lange en duistere weg richting de eeuwige oneindigheid reisbenodigdheden, licht en vervoer alleen bemachtigd worden door de Qur’anische bevelen op te volgen en het verbodene te vermijden. Anders hebben wetenschap en filosofie, kunst en wijsbegeerte geen ene waarde op die weg. Hun lichten reiken slechts tot de poort van het graf.
+    </p>
+
+    <p>
+    O mijn luie ego!
+    </p>
+
+    <p>
+    Hoe weinig eisend, gemakkelijk en licht is het om vijfmaal per dag te bidden en de zeven grote zonden<sup>1</sup> los te laten? Als jij over een onbedorven verstand beschikt, dan zal jij inzien hoe waardevol, hoe belangrijk en hoe geweldig de resultaten, de vruchten en de voordelen ervan zijn. En tegen die persoon die jou tot zonden en onzedelijkheden aanspoort, kun jij het volgende zeggen:
+    </p>
+
+    <p><em>
+    “Als jij de dood kunt doden, de vergankelijkheid van de wereld kunt tenietdoen, de onmacht en behoeftigheid van de mens kunt verhelpen, en de poort van het graf kunt sluiten, vertel het ons dan; we luisteren… Als jij hier echter niet toe in staat bent, houd je dan stil! In het gebedshuis van het heelal leest De Qur’an het universum voor. Laten wij ons met Zijn Licht belichten, laten we naar Zijn Leiding handelen en laten we Hem constant reciteren.”
+    </em></p>
+
+    <p>
+    Waarlijk, Hij is Het Woord en Hij is het waard om Het Woord te worden genoemd. Hij is De Waarheid die van De Ware komt, De Waarheid spreekt, De Waarheid toont en de Lumineuze Wijsheid verspreidt!
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> <strong>Noot van de vertalers:</strong> de auteur heeft de zeven grootste zonden als volgt in <strong><em>"De Bijlage van Barla"</em></strong> opgesomd: moord, overspel, het drinken van alcohol, het verbreken van het contact met de ouders, gokken, het afleggen van een valse getuigenis en het voorstaan van innovaties die schadelijk zijn voor de religie.
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 40,
+                'content' => '<div class="page" id="40">
+    <p class="text-end page-number">#40</p>
+
+    <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    اَللّٰهُمَّ نَوِّرْ قُلُوبَنَا بِنُورِ الْاٖيمَانِ وَالْقُرْاٰنِ اَللّٰهُمَّ اَغْنِنَا بِالْاِفْتِقَارِ اِلَيْكَ وَلَا تُفْقِرْنَا بِالْاِسْتِغْنَاءِ عَنْكَ تَبَرَّاْنَا اِلَيْكَ مِنْ حَوْلِنَا وَقُوَّتِنَا وَالْتَجَأْنَا اِلٰى حَوْلِكَ وَقُوَّتِكَ فَاجْعَلْنَا مِنَ الْمُتَوَكِّلٖينَ عَلَيْكَ وَلَا تَكِلْنَا اِلٰى اَنْفُسِنَا وَاحْفَظْنَا بِحِفْظِكَ وَارْحَمْنَا وَارْحَمِ الْمُؤْمِنٖينَ وَالْمُؤْمِنَاتِ وَصَلِّ وَسَلِّمْ عَلٰى سَيِّدِنَا مُحَمَّدٍ عَبْدِكَ وَنَبِيِّكَ وَصَفِيِّكَ وَخَلٖيلِكَ وَجَمَالِ مُلْكِكَ وَمَلٖيكِ صُنْعِكَ وَعَيْنِ عِنَايَتِكَ وَشَمْسِ هِدَايَتِكَ وَلِسَانِ حُجَّتِكَ وَمِثَالِ رَحْمَتِكَ وَنُورِ خَلْقِكَ وَشَرَفِ مَوْجُودَاتِكَ وَسِرَاجِ وَحْدَتِكَ فٖى كَثْرَةِ مَخْلُوقَاتِكَ وَكَاشِفِ طِلْسِمِ كَائِنَاتِكَ وَدَلَّالِ سَلْطَنَةِ رُبُوبِيَّتِكَ وَمُبَلِّغِ مَرْضِيَّاتِكَ وَمُعَرِّفِ كُنُوزِ اَسْمَائِكَ وَمُعَلِّمِ عِبَادِكَ وَتَرْجُمَانِ اٰيَاتِكَ وَمِرْاٰتِ جَمَالِ رُبُوبِيَّتِكَ وَمَدَارِ شُهُودِكَ وَاِشْهَادِكَ وَحَبٖيبِكَ وَرَسُولِكَ الَّذٖى اَرْسَلْتَهُ رَحْمَةً لِلْعَالَمٖينَ وَعَلٰى اٰلِهٖ وَصَحْبِهٖ اَجْمَعٖينَ وَعَلٰى اِخْوَانِهٖ مِنَ النَّبِيّٖينَ وَالْمُرْسَلٖينَ وَعَلٰى مَلٰئِكَتِكَ الْمُقَرَّبٖينَ وَعَلٰى عِبَادِكَ الصَّالِحٖينَ اٰمٖينَ
+    </p>
+
+    <p class="text-center" style="margin-top: 10px">
+    “O ALLAH, verlicht onze harten met het licht des geloofs en De Qur’an.”
+    </p>
+
+    <p>
+    O ALLAH, verrijk ons door onze behoeftigheid aan U continu te laten vernemen, verarm ons niet door onze behoefte aan Uw Genade te laten vergeten. Wij hebben afstand van onze kracht en vermogen genomen, en toevlucht tot Uw Vermogen en Kracht genomen. Laat ons tot de Godgelaten gelovigen behoren. Laat ons niet over aan ons ego, behoud ons onder Uw Hoede. Wees ons, de gelovige mannen en de gelovige vrouwen Genadig. Laat Uw Vrede en Zegeningen neerdalen op Uw onderdaan, Uw gezant, Uw uitverkorene, Uw vriend, de parel van Uw Rijk, de sultan van Uw kunstwerken, de bron van Uw Gratie, de zon van Uw leiding, de stem van Uw Bewijsvoering, de illustratie van Uw Genade, het Licht van Uw creatie, de eer van het bestaan, de schittering van Uw Eenheid binnen multipliciteit, de oplosser van het kosmische mysterie, de heraut van Uw Sultanaat, de overdrager van Uw Wensen, de beschrijver van de schatten die aan Uw Namen ontspruiten, de onderwijzer van Uw onderdanen, de vertolker van Uw Aya’s, de spiegel van Uw Schone Heerschappij, het middel om U te zien en te laten zien, Uw geliefde, Uw profeet die U als genade voor de werelden heeft gezonden, en over al zijn familieleden en zijn metgezellen, en over zijn broeders: de profeten en de Godsgezanten, en over Uw uitverkoren engelen en Uw zuivere onderdanen; Amîn.
+    </p>
+
+</div>'
+            ],
+        ];
+    }
+}
