@@ -1384,6 +1384,363 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
 
 </div>'
             ],
+            [
+                'page_number' => 41,
+                'content' => '<div class="page" id="41">
+    <p class="text-end page-number">#41</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Achtste Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
+         اَللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَ الْحَىُّ الْقَيُّومُ<sup>2</sup> ۞ اِنَّ الدّٖينَ عِنْدَ اللّٰهِ الْاِسْلَامُ <sup>3</sup>
+    </p>
+
+    <p>
+    Indien jij deze wereld, de mensenziel in deze wereld, en de essentie evenals de waarde van de religie ten opzichte van de mens wil begrijpen, en indien jij wil inzien dat de wereld zonder de ware religie een gevangenis wordt, dat het ongeloof de mens het ellendigste schepsel maakt, en dat de termen: <sup>4</sup><span class="text-arabic-inline" dir="rtl" lang="ar"> يَا اَللّٰهُ</span> en <sup>5</sup><span class="text-arabic-inline" dir="rtl" lang="ar"> لَا اِلٰهَ اِلَّا اللّٰهُ</span> het mysterie achter deze wereld ontrafelen en de mensenziel van duisternis bevrijden, kijk dan naar deze parabel. Luister...
+    </p>
+
+    <p>
+    Vroeger waren er twee broers die samen op een lange reis gingen. Onderweg kwamen ze aan bij een splitsing. Voor die splitsing zagen ze een serieuze man staan. Ze vroegen hem: “Welke weg raadt u aan?” Hij zei:
+    </p>
+
+    <p class="text-italic">
+    “Op de rechter weg zijn jullie verplicht om bepaalde wetten en regels na te leven. Echter, die verplichting brengt veiligheid en voorspoed met zich mee. Op de linker weg heerst er ongebondenheid en vrijheid. Echter, die ongebondenheid brengt gevaar en onheil met zich mee. Welke weg jullie inslaan is aan jullie.”
+    </p>
+
+    <p>
+    Nadat ze de man hadden uitgehoord, zei de welgeaarde broeder: “Ik heb mijn vertrouwen in ALLAH gesteld” en sloeg de rechter weg in; hij had besloten om zich aan orde en discipline te houden.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+        <p class="footnote-p"><sup>2</sup> “ALLAH, er is geen God behalve Hij; Hij is de Allevende, de Consistente.” - <em>De Heilige Qur’an 2:255</em></p>
+        <p class="footnote-p"><sup>3</sup> “Voorzeker, de religie bij ALLAH is de Islam.” - <em>De Heilige Qur’an 3:19</em></p>
+        <p class="footnote-p"><sup>4</sup> “O ALLAH.”</p>
+        <p class="footnote-p"><sup>5</sup> “Er is geen God behalve ALLAH.”</p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 42,
+                'content' => '<div class="page" id="42">
+    <p class="text-end page-number">#42</p>
+
+    <p>
+    De andere karakterloze en buitensporige broer gaf puur vanwege zijn vrijheidszucht de linker weg de voorkeur. Wij gaan deze man, die ogenschijnlijk moeiteloos maar mentaal moeizaam voortgaat, in gedachte volgen:
+    </p>
+
+    <p>
+    Deze man trok over bergen en door dalen, en bereikte uiteindelijk een verlaten woestijn. Daar vernam hij uit het niets een schrikwekkende brul. Hij keek om zich heen en signaleerde opeens een grote leeuw die uit de struiken sprong en op hem afstormde. Daarop vluchtte hij richting een uitgedroogde put van zestig meter diep. Uit angst gooide hij zichzelf in die put. Hij viel, totdat zijn hand halverwege zijn val de tak van een boom raakte, waarop hij die tak onmiddellijk vastgreep en zich eraan vastklampte. Die boom groeide uit de muur van de put en had twee wortels. Twee muizen – waarvan de ene wit en de andere zwart – knaagden aan beide wortels. Hij keek omhoog en zag dat de leeuw hem boven de put als een wachter opwachtte. Hij keek omlaag en ontwaarde een gigantische draak op de bodem van de put. Met een geopende muil naderde die draak zijn voeten die dertig meter boven de bodem hingen. De muil van die draak was zo wijd als de monding van de put. Hij keek naar de muren van de put en zag overal agressieve en giftige insecten. Hij keek naar de top van de boom en bemerkte dat het een vijgenboom was. Echter, vreemd genoeg zag hij dat er vruchten van allerlei verschillende soorten bomen – vanaf walnoten tot aan granaatappels – aan de takken van die vijgenboom hingen.
+    </p>
+
+    <p>
+    Voorwaar, deze man zag vanwege zijn pessimistische denkwijze en zijn dwaasheid niet in dat deze omstandigheden ongewoon waren. Deze voorvallen waren geen resultaten van toeval. Achter deze buitengewone processen scholen mysterieuze geheimen. Het drong niet tot hem door dat hier een hele grote beheerder achter zat. Door deze kwellende toestand begonnen zijn hart, zijn ziel en zijn verstand te huilen en te huiveren, maar zijn kwaadgezinde ego sloot zijn oren voor het gehuil van zijn ziel en zijn hart, en gedroeg zich alsof er niets aan de hand was. Zodoende hield hij zichzelf voor de gek en begon hij de vruchten van die boom te plukken en te eten. Een deel van die vruchten waren echter giftig en schadelijk.
+    </p>
+
+    <p>
+    In een Heilige Hadith heeft de Hoogste Gerechtigde het volgende bekendgemaakt: <span class="text-arabic-inline" dir="rtl" lang="ar">انَاَ عِنْدَ ظنَِّ عَبْدٖى بٖى</span>. Oftewel, <em>“Ik zal mijn onderdaan behandelen naar de wijze waarop hij Mij kent.”</em>
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 43,
+                'content' => '<div class="page" id="43">
+    <p class="text-end page-number">#43</p>
+
+    <p>
+    Voorwaar, omdat deze ellendeling pessimistisch en dwaas was, veronderstelde hij dat alles wat hij zag doodgewoon was en de pure realiteit belichaamde. Deswege werd hij en wordt hij naar zijn opvatting behandeld, en hij zal ook niet anders worden behandeld. Noch zal hij sterven en verlost worden, noch zal hij daadwerkelijk leven; zo zal hij blijven lijden. Wij zullen nu deze ellendeling in zijn ellende laten en terugkeren naar de andere broer om ook zijn toestand te evalueren.
+    </p>
+
+    <p>
+    Voorwaar, deze gezegende en verstandige persoon ging voort, maar ervaarde niet de ellende die zijn broer ervoer. Immers, omdat hij een mooi karakter had, koesterde hij mooie gedachten, interpreteerde hij ontwikkelingen positief en stelde hij zijn gemoed zodoende gerust. Bovendien ondervond hij niet de moeite en de lasten die zijn broer had ondervonden. Want hij kende de orde, stelde zich volgzaam op en ondervond verlichting. Veilig en vredig zette hij zijn reis vrijelijk voort. Enige tijd later belandde hij in een tuin waar allerlei mooie bloemen en vruchten bloeiden. Omdat de tuin echter niet werd onderhouden, groeiden daar ook onreine tuingewassen. Zijn broer was ook in een soortgelijke tuin terechtgekomen. Maar hij had zijn tijd en energie vooral aan de onreine gewassen besteed, waardoor zijn maag van streek raakte en hij zonder een moment rust de tuin had verlaten. Deze persoon daarentegen hield zich aan het principe: <em>“Bekijk alles positief”</em> en schonk geen enkele aandacht aan het onreine. Hij haalde veel baat uit het positieve, kwam goed tot rust en zette vervolgens zijn reis weer voort. Nadat hij een bepaalde weg had afgelegd, liep hij zoals zijn vorige broer een geweldige woestijn in. Plotseling vernam hij de brul van een razende leeuw. Hij schrok, maar hij schrok niet zo erg als zijn broer. Want vanwege zijn optimisme en zijn mooie gedachten kwam hij tot de volgende conclusie: <em>“Deze woestijn heeft een heerser en deze leeuw is hoogstwaarschijnlijk zijn onderdaan die op zijn bevel handelt.”</em> Zodoende ondervond hij troost. Desondanks begon hij ook te vluchten richting een uitgedroogde put van zestig meter diep, waarna hij erin sprong. Net als zijn broer klampte hij zich vast aan de tak van een boom die hij halverwege zijn val had vastgegrepen. Zo bleef hij in de lucht hangen. Hij zag dat twee muizen aan de twee wortels van die boom knaagden. Hij keek omhoog en zag de leeuw, hij keek omlaag en hij zag een draak. Net als zijn broer was hij getuige van een bizar scenario. Ook hij raakte hierdoor ontsteld. Zijn ontsteltenis was echter duizendmaal lichter
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 44,
+                'content' => '<div class="page" id="44">
+    <p class="text-end page-number">#44</p>
+
+    <p>
+    dan die van zijn broer. Want zijn mooie karakter gaf hem mooie gedachten, en zijn mooie gedachten lieten hem de mooie kant van alles zien. Hierdoor kwam het volgende in hem op:
+    </p>
+
+    <p><em>
+    “Er is een samenhang tussen deze vreemde ontwikkelingen. Het ziet ernaar uit dat ze zich volgens een bevel voordoen. Aldus schuilt er een mysterie achter deze ontwikkelingen. Waarlijk, ze zijn onderhevig aan het bevel van een verborgen heerser. Ik ben dus niet alleen. Die verborgen heerser houdt mij in de gaten, hij stelt mij op de proef, hij dirigeert mij ergens heen en hij nodigt mij uit.”
+    </em></p>
+
+    <p>
+    Deze zoete vrees en mooie gedachten wekten de volgende interesse in hem op: <em>“Wie is eigenlijk degene die mij beproeft, zichzelf aan mij bekend wil maken en mij op deze buitengewone wijze tot een doel wendt?”</em>
+    </p>
+
+    <p>
+    Vervolgens baarde deze interesse een liefde voor de eigenaar van dat mysterie. En deze liefde verwekte de wens om het mysterie te ontrafelen. En deze wens gaf hem de wil om een houding aan te nemen die de eigenaar van dat mysterie zou behagen en vergenoegen.
+    </p>
+
+    <p>
+    Hij wierp zijn blik op de top van de boom en zag dat het een vijgenboom was. Desondanks gaf die ene boom de vruchten van duizenden bomen. Op dat moment verdween zijn vrees volledig. Want hij zag absoluut in dat deze boom als een lijst, als een samenvatting en als een demonstratie diende. Hij concludeerde dat de verborgen heerser de voorbeelden van de vruchten uit zijn tuinen op een mysterieuze en miraculeuze wijze aan die boom had gehangen, en die boom zo had versierd om te duiden op de gerechten die hij voor zijn gasten had bereid. Eén enkele boom kan immers geen vruchten van duizenden boomsoorten geven.
+    </p>
+
+    <p>
+    Vervolgens begon hij te smeken, waarna de sleutel tot het mysterie hem werd ingegeven. Hij riep uit:
+    </p>
+
+    <p><em>
+    “O heerser van deze landschappen, mijn lot ligt in uw handen! Ik vraag om uw hulp, ik ben u dienstig, ik wil u vergenoegen en ik ben op zoek naar u!”
+    </em></p>
+
+    <p>
+    Na deze aanroep spleet opeens de muur van de put open. Er verscheen een poort tot een glorieuze, wonderschone en schitterende tuin. De muil van de draak was in die poort veranderd. De leeuw en de draak kregen de verschijning van twee dienaren die hem uitnodigden om binnen te stappen. Bovendien veranderde die leeuw voor hem in een tam rijdier.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 45,
+                'content' => '<div class="page" id="45">
+    <p class="text-end page-number">#45</p>
+
+    <p>
+    Voorwaar, o mijn luie ego en mijn denkbeeldige vriend!
+    </p>
+
+    <p>
+    Laten we nu de situaties van beide broers afwegen, opdat we kunnen zien en beseffen hoe positiviteit positieve vruchten afwerpt en negativiteit negatieve vruchten afwerpt.
+    </p>
+
+    <p><em><strong>Aanschouw:</strong></em></p>
+
+    <p>
+    De ellendige volger van de linker weg huivert omdat hij elk moment in de muil van de draak kan vallen. Deze voorspoedige persoon daarentegen wordt uitgenodigd naar een oogstrelende en vruchtrijke tuin.
+    </p>
+
+    <p>
+    Bovendien wordt het hart van die ellendeling door een heftige ontsteltenis en een hevige angst verscheurd. Deze voorspoedige persoon daarentegen voelt een aangename vermaning en een zoete angst, terwijl hij een liefderijke kennis opdoet tijdens het bezichtigen en bewonderen van buitengewone ontwikkelingen.
+    </p>
+
+    <p>
+    Bovendien wordt die ellendeling door vervreemding, wanhoop en verlatenheid gekweld. Deze voorspoedige persoon daarentegen beleeft smachtend plezier aan de gemoedelijke en hoopvolle sfeer waarin hij verkeert.
+    </p>
+
+    <p>
+    Bovendien ziet die ellendeling zichzelf als een gevangene die aan wilde beesten ten prooi is gevallen. Deze voorspoedige persoon daarentegen is een geëerde gast die de buitengewone dienaren van de Genereuze Heer des huizes leert kennen terwijl hij zich met hen vermaakt.
+    </p>
+
+    <p>
+    Bovendien bespoedigt die ellendeling zijn leed door te eten van giftige vruchten die smakelijk ogen. Immers, die vruchten zijn voorproefjes. Proeven is toegestaan, opdat de proever een klant wordt van de originele exemplaren. Aldus is het niet toegestaan om ze als beesten te verslinden. Deze voorspoedige persoon daarentegen proeft, begrijpt wat de bedoeling is, stelt het eten uit en wacht met verheugenis af op wat zal komen.
+    </p>
+
+    <p>
+    Bovendien heeft die ellendeling zichzelf onrecht aangedaan. Een waarheid en een omstandigheid die zo mooi en zo stralend als daglicht zijn, heeft hij door toedoen van zijn bekrompenheid met donkere en duistere waanideeën in een hel veranderd. Noch verdient hij medelijden, noch heeft hij het recht om te klagen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 46,
+                'content' => '<div class="page" id="46">
+    <p class="text-end page-number">#46</p>
+
+    <p>
+    Bijvoorbeeld, als iemand niet genoeg plezier haalt uit een gezellig feestmaal dat hij met vrienden op een zomerdag in een mooie tuin bijwoont, en als hij zichzelf vervolgens met onreine dranken dronken voert en opeens begint te huilen en te gillen omdat hij zich inbeeldt dat het midwinter is en hij zich naakt en hongerig tussen monsters bevindt, dan verdient diegene geen medelijden. Hij doet zichzelf onrecht aan en hij beledigt zijn vrienden door ze als monsters te zien. De ellendeling uit de parabel is net zo.
+    </p>
+
+    <p>
+    De voorspoedige persoon daarentegen doorziet de waarheid die in feite prachtig is. Nadat hij de schoonheid van de waarheid heeft doorgrond, neemt hij tegenover de volmaaktheid van de eigenaar der waarheid een eerbiedige houding aan. Bijgevolg verdient hij zijn genade. Voorwaar, hier komt het geheim van het volgende Qur’anische Standpunt aan het licht:
+    </p>
+
+    <p><em>
+    <strong>“Weet dat het kwade van jezelf en het goede van ALLAH komt.”</strong>
+    </em></p>
+
+    <p>
+    Als je de overige verschillen ook zo afweegt, dan zal je inzien dat het kwaadgezinde ego van de ellendeling een geestelijke hel voor hem heeft samengesteld, terwijl de goede intentie, de optimistische denkwijze, het goede karakter en de mooie gedachtes van de andere persoon hem een geweldige gunst en gelukzaligheid, een stralende gift en gratie hebben verschaft.
+    </p>
+
+    <p>
+    O mijn ego en o vriend die samen met mijn ego naar dit verhaal luistert! Als jij niet zoals de ellendige broer wil eindigen, maar op de voorspoedige broer wil lijken, luister dan naar De Qur’an, neem Zijn Wetsbepaling in acht, klamp je aan Hem vast en handel naar Zijn Fundamenten.
+    </p>
+
+    <p>
+    Als jij de waarheden in deze parabel hebt begrepen, dan kun je ze voor de waarheden achter de religie, de wereld, de mens en het geloof toepassen. De belangrijkste daartussen zal ik verklaren, probeer de details zelf te ontwaren.
+    </p>
+
+    <p>
+    Voorwaar, de ene broer vertegenwoordigt een gelovige ziel met een zuiver hart, terwijl de andere broer een ongelovige ziel met een verdorven hart vertegenwoordigt. De rechter weg symboliseert de weg van De Qur’an en het geloof, terwijl de linker weg de weg van opstand en ongeloof symboliseert. De tuin op die weg symboliseert het tijdelijke gemeenschapsleven in de menselijke maatschappij en de menselijke beschaving waar heil en onheil, deugd en ondeugd, reinheid en onreinheid zich samen voordoen. Hij die
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 47,
+                'content' => '<div class="page" id="47">
+    <p class="text-end page-number">#47</p>
+
+    <p>
+    verstandig is, zal naar het principe: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">خُذْ مَا صَفَا دَعْ مَا كَدَرْ</span> handelen en met een vredig hart voortgaan.
+    </p>
+
+    <p>
+    Die woestijn symboliseert deze aardbol; de wereld. Die leeuw symboliseert de dood en het doodsuur. Die put symboliseert het mensenlichaam en de levensgang. Die zestig meter diepte vertegenwoordigt de gemiddelde leeftijd der mensheid van zestig jaar. Die boom symboliseert de individuele levensduur en de levensmiddelen. Die zwarte en witte muizen vertegenwoordigen de dag en de nacht.
+    </p>
+
+    <p>
+    Die draak symboliseert de weg naar de tussenwereld die vanaf de monding van het graf begint, en hij symboliseert het portaal naar het hiernamaals. Voor een gelovige is die monding echter een poort die hem van een gevangenis naar een tuin leidt. Die giftige insecten vertegenwoordigen de wereldse calamiteiten. Voor een gelovige gelden ze echter als zoete Goddelijke vermaningen en Barmhartige voorzorgsmaatregelen om de gelovige voor een onachtzame slaap te hoeden.
+    </p>
+
+    <p>
+    Die vruchten aan de boom zijn de wereldse gunsten die De Hoogst Genereuze als een lijst ter herinnering aan de soortgelijke gunsten in het hiernamaals heeft samengesteld; ze dienen als voorproefjes om klanten tot de paradijselijke vruchten uit te nodigen.
+    </p>
+
+    <p>
+    Die ene boom die op zichzelf allerlei verscheidene vruchten voortbrengt, duidt op de Signatuur van de Onafhankelijke Almachtige, de Zegel van de Goddelijke Heerschappij en het Waarmerk van het Goddelijke Sultanaat. Want alles creëren uit één creatie, oftewel, uit één aarde alle planten en vruchten creëren, uit één druppel alle dieren scheppen, uit één simpel voedingsmiddel alle dierlijke organen samenstellen, en hiernaast, één iets uit alles creëren, oftewel, uit uiteenlopende voedselsoorten één specifieke vleessoort creëren en een eenvoudige huid weven, en soortgelijke kunstvaardigheden vormen Specifieke Signaturen, Uitsluitende Zegels en Onnavolgbare Waarmerken van de Ene en Enige Onafhankelijke alias De Onbegonnen en Oneindige Sultan.
+    </p>
+
+    <p>
+    Waarlijk, uit één iets alles en alles uit één iets creëren, is een specifiek teken, een Aya die enkel De Schepper en Machthebber van alles toebehoort.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “Neem het positieve aan, laat het negatieve gaan.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 48,
+                'content' => '<div class="page" id="48">
+    <p class="text-end page-number">#48</p>
+
+    <p>
+    Dat mysterie symboliseert de verborgen wijsheid achter de schepping die met het geloofsgeheim kan worden ontrafeld. De sleutel daartoe is:
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    يَا اَللّٰهُ <sup>1</sup> ۞ لَا اِلٰهَ اِلَّا اللّٰهُ <sup>2</sup> ۞ اَللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَ الْحَىُّ الْقَيُّومُ <sup>3</sup> ۞
+    </p>
+
+    <p>
+    De muil van de draak die in een poort van een tuin verandert, duidt erop dat het graf voor de afgedwaalde en opstandige mensen een deur is die ze langs het gruwelijke land der vergetelheid leidt naar een kuil waar het zo benauwd is als een kerker en zo krap is als de maag van een draak, terwijl het voor de volgers van De Qur’an en het geloof een poort is die ze van de wereldse gevangenis tot de eeuwige tuinen, van de examenruimte tot de paradijselijke gewesten, van de lasten des levens tot de Genade van De Barmhartige leidt. De woeste leeuw die in een vertrouwde dienaar verandert en als een tam rijdier fungeert, duidt erop dat de dood voor het dwaalvolk een pijnlijke eeuwige scheiding met al zijn geliefden is die hem uit zijn valse wereldse paradijs haalt en verjaagt, en hem in gruwel en isolatie in de gevangenis van het graf opsluit. Voor het geleide volk en de volgers van De Qur’an is ze echter:
+    </p>
+
+    <p>• een middel om verenigd te worden met oude vrienden en geliefden die reeds naar de andere wereld zijn geëmigreerd;</p>
+    <p>• een vervoermiddel dat hen naar hun ware vaderland en hun eeuwige zetels van gelukzaligheid vervoert;</p>
+    <p>• een verzoek waarbij ze van de wereldse gevangenis naar de paradijselijke tuinen worden uitgenodigd;</p>
+    <p>• een wachtpost waar ze wachten op de beloning voor hun diensten die ze bij de Gratie van de Genadige Barmhartige zullen ontvangen;</p>
+    <p>• een vrijstelling van de moeiten die de plichten van het leven met zich meebrengen;</p>
+    <p>• een afronding van de scholing en oefeningen die dienaarschap en beproeving vereisen.</p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “O ALLAH.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “Er is geen God behalve ALLAH.”
+        </p>
+        <p class="footnote-p">
+        <sup>3</sup> “Hij is ALLAH, er is geen God behalve Hij; Hij is de Allevende, de Consistente.” - <em>De Heilige Qur’an 2:255</em>
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 49,
+                'content' => '<div class="page" id="49">
+    <p class="text-end page-number">#49</p>
+
+    <p class="text-italic"><strong>Conclusie</strong></p>
+
+    <p>
+    Wie het vergankelijke leven zijn bestaansreden maakt, zal mentaal in een hel verkeren, al bevindt hij zich ogenschijnlijk in een paradijs. En wie zich vastberaden op het eeuwige leven richt, zal gelukzaligheid in beide werelden ondervinden. Hoe akelig en benauwend zijn leven ook is, hij zal alles verwelkomen, tolereren en in dankbaarheid dulden omdat hij zijn wereld als een wachtruimte van het paradijs ziet.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    اَللّٰهُمَّ اجْعَلْنَا مِنْ اَهْلِ السَّعَادَةِ وَ السَّلَامَةِ وَ الْقُرْاٰنِ وَ الْاٖيمَانِ اٰمٖينْ ۞ اَللّٰهُمَّ صَلِّ
+    وَ سَلِّمْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلٰى اٰلِهٖ وَ صَحْبِهٖ بِعَدَدِ جَمٖيعِ الْحُرُوفَاتِ الْمُتَشَكِّلَةِ
+    فٖى جَمٖيعِ الْكَلِمَاتِ الْمُتَمَثِّلَةِ بِاِذْنِ الرَّحْمٰنِ فٖى مَرَايَا تَمَوُّجَاتِ الْهَوَاءِ عِنْدَ قِرَائَةِ
+    كُلِّ كَلِمَةٍ مِنَ الْقُرْاٰنِ مِنْ كُلِّ قَارِءٍ مِنْ اَوَّلِ النُّزُولِ اِلٰى اٰخِرِ الزَّمَانِ وَ ارْحَمْنَا وَ وَالِدَيْنَا
+    وَارْحَمِ الْمُؤْمِنٖينَ وَالْمُؤْمِنَاتِ بِعَدَدِهَا بِرَحْمَتِكَ يَا اَرْحَمَ الرَّاحِمٖينَ ۞
+    اٰمٖينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمٖينَ <sup>1</sup> ۞
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “O ALLAH, laat ons behoren tot de voorspoedige en vredige volgers van De Qur’an en het geloof, Âmîn. O ALLAH, laat zegeningen en vrede neerdalen op onze meester Mohammed, op zijn familieleden en op zijn metgezellen, evenredig aan alle Letters van De Woorden uit De Qur’an die via de recitaties van recitatoren bij Gods Gratie vanaf de eerste openbaring tot aan de dag des oordeels door luchtdeeltjes worden weerkaatst. En wees ons, onze ouders, de gelovige mannen en de gelovige vrouwen naar diezelfde verhouding Genadig, bij Uw Gratie, o Genadigste der Genadigen, Âmîn.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 50,
+                'content' => '<div class="page" id="50">
+    <p class="text-end page-number">#50</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Twaalfde Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <sup>1</sup>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    وَمَنْ يُؤْتَ الْحِكْمَةَ فَقَدْ اُوتِىَ خَيْرًا كَثٖيرًا<sup>2</sup>
+    </p>
+
+    <div class="text-center">
+        <p class="small-title text-center"><strong>De Tweede Essentie</strong></p>
+        <p class="text-center"><em><strong>De afweging van de zedelijke discipline die de Wijsheid van De Leerrijke Qur’an aan het persoonlijke leven verschaft en de lering die de filosofische wijsheid biedt.</strong></em></p>
+    </div>
+
+    <p>
+    Een zuivere student van de filosofie is een farao. Echter, hij is een laaghartige farao die zich omwille van eigenbelangen aan de waardelooste zaak onderwerpt. Alles wat hem baat erkent hij als <em>“zijn heer”</em>.
+    </p>
+
+    <p>
+    Bovendien is die ongelovige student een dwarsligger en een stijfkop. Echter, hij is een trieste dwarsligger die voor één genieting eindeloze schandelijkheden welkom heet. Hij is een zielige stijfkop die zo laag is om de voeten van duivelse mensen voor een waardeloos profijt te kussen.
+    </p>
+
+    <p>
+    Bovendien is die ongelovige student een arrogante geweldenaar. Echter, omdat hij in zijn hart een steunpunt mist, is hij in wezen een uiterst machteloze en pronkzuchtige geweldenaar.
+    </p>
+
+    <p>
+    Bovendien is die student een baatzuchtige egoïst die zijn bereidwilligheid vooral toepast om de lusten van zijn ego, zijn maag en zijn geslachtsdeel te bevredigen; hij is een listige egomaan die onder het mom van nationale belangen zijn eigenbelangen beoogt.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+        <p class="footnote-p">
+        <sup>2</sup> “Hij die wijsheid heeft ontvangen, is met veel heil begunstigd.” - <em>De Heilige Qur’an, 2:269</em>
+        </p>
+    </div>
+
+</div>'
+            ],
         ];
     }
 }
