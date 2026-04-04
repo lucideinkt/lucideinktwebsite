@@ -4,17 +4,17 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
+class OLDHerzamelingNederlandsPagesSeeder extends BookPagesSeeder
 {
     protected function productSlug(): string
     {
         // return the exact slug used when creating the product in DatabaseSeeder
-        return 'het-traktaat-over-de-herzameling-nederlands';
+        return 'OLDhet-traktaat-over-de-herzameling-nederlands';
     }
 
     protected function bookTitle(): string
     {
-        return 'Het Traktaat Over De Herzameling';
+        return 'OLDHet Traktaat Over De Herzameling';
     }
 
     protected function pages(): array
@@ -278,9 +278,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <p>
     Kijk nu naar deze vertoningen! Let op deze mededelingen! Geef gehoor aan deze herauten die de
-    antie ke kunstwerken van een wonderdadige vorst presenteren en demonstreren: ze veraanschouwelijken zijn
-    volmaaktheden, onthullen zijn weergaloze spirituele schoonheid, en omschrijven de subtiliteiten van zijn
-    verborgen pracht.
+    antie-
     </p>
     </div>'
         ],
@@ -290,8 +288,10 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="11">
     <p class="text-end page-number">#11</p>
 
-    <p style="text-indent: 0">
-    De vorst bezit dus zeer belangrijke en verwonderlijke volmaaktheden en spirituele schoonheden. Een verhulde, feilloze volmaaktheid verlangt van nature naar onthulling in het bijzijn van waarderende
+    <p>
+    ke kunstwerken van een wonderdadige vorst presenteren en demonstreren: ze veraanschouwelijken zijn
+    volmaaktheden, onthullen zijn weergaloze spirituele schoonheid, en omschrijven de subtiliteiten van zijn
+    verborgen pracht. De vorst bezit dus zeer belangrijke en verwonderlijke volmaaktheden en spirituele schoonheden. Een verhulde, feilloze volmaaktheid verlangt van nature naar onthulling in het bijzijn van waarderende
     getuigen die haar met uitingen van <strong>“mâshâ’ALLAH”</strong> bewonderen. Ook een verborgen schoonheid zonder
     aanschouwers wil uiteindelijk zien en gezien worden.
     </p>
@@ -355,7 +355,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     voorbeelden en schaduwen die u ons hier laat zien. Dirigeer ons naar de zetel van uw rijk. Laat ons niet
     creperen in deze woestijnen. Verhef ons tot uw tegenwoordigheid. Wees ons genadig. Schenk ons het
     voorrecht om daar ten volle te mogen genieten van uw kostelijke gunsten die u ons hier hebt laten proeven.
-    Folter ons niet met eindigheid en afstandelijkheid.
+    Folter ons
     </em></strong></p>
     </div>'
         ],
@@ -365,8 +365,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="13">
     <p class="text-end page-number">#13</p>
 
-    <p style="text-indent: 0"><strong><em>
-    Dit dankbare volk van u smacht naar u... Breng ons niet ten ondergang door ons te verlaten.”
+    <p><strong><em>
+    niet met eindigheid en afstandelijkheid. Dit dankbare volk van u smacht naar u... Breng ons niet ten ondergang door ons te verlaten.”
     </em></strong></p>
 
     <p>
@@ -398,7 +398,18 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <p>
     Kom en aanschouw! Deze opzienbarende treinen, vliegtuigen, voorzieningen, magazijnen, galerieën en
-    evenementen beduiden dat achter de schermen een grandioos, albeheersend sultanaat bestaat<sup>4</sup>.
+    evenementen beduiden dat achter de schermen een
+    </p>
+    </div>'
+        ],
+
+        [
+            'page_number' => 14,
+            'content' => '<div class="page" id="14">
+    <p class="text-end page-number">#14</p>
+
+    <p>
+    grandioos, albeheersend sultanaat bestaat<sup>4</sup>.
     </p>
 
     <div class="page-footnote">
@@ -430,24 +441,6 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     fenomenale feestdag in getooide tenuen met glimmende emblemen paraderen. &rarr;
     </p>
     </div>
-
-    </div>'
-        ],
-        [
-            'page_number' => 14,
-
-            'content' => '<div class="page empty-page id="14">
-
-    <p class="text-end page-number">#14</p>
-
-    <div class="page-footnote">
-    <hr class="hr-footnote" />
-    <p class="footnote-p"><strong>
-    Voorwaar, deze voorzieningen en versieringen die met zoveel wijsheid en orde worden verwezenlijkt, tonen uiteraard aan de
-    niet-blinden dat dit op bevel van een Almachtige Sultan en een Alwijze Regeerder geschiedt.
-    </strong></p>
-    </div>
-
     </div>'
         ],
 
@@ -480,6 +473,13 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Kijk! Overal, in elke hoek, zijn velerlei camera’s geplaatst die beelden vastleggen.
     </p>
 
+    <div class="page-footnote">
+    <hr class="hr-footnote" />
+    <p class="footnote-p"><strong>
+    Voorwaar, deze voorzieningen en versieringen die met zoveel wijsheid en orde worden verwezenlijkt, tonen uiteraard aan de
+    niet-blinden dat dit op bevel van een Almachtige Sultan en een Alwijze Regeerder geschiedt.
+    </strong></p>
+    </div>
     </div>'
         ],
 
@@ -488,7 +488,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="16">
     <p class="text-end page-number">#16</p>
 
-    <p style="text-indent: 0">
+    <p>
     Overal zitten verscheidene schrijvers aantekeningen te maken. Ze registreren alles. Zelfs de onbeduidendste
     dienst, de gewoonste gebeurtenis slaan ze op.
     </p>
@@ -502,8 +502,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
 
     <p>
-    Is het nou ooit voor mogelijk te houden dat een albewarende regeerder, die zelfs de gewoonste handelingen van zijn geringste onderdanen niet verwaarloost, de aanzienlijkste daden van zijn voornaamste onderdanen niet zal bewaren, niet zal beoordelen, en niet
-    met een gepaste beloning of bestraffing zal vergelden?
+    Is het nou ooit voor mogelijk te houden dat een albewarende regeerder, die zelfs de gewoonste handelingen van zijn geringste onderdanen niet verwaarloost,
     </p>
 
     <div class="page-footnote">
@@ -531,7 +530,9 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="17">
     <p class="text-end page-number">#17</p>
 
-    <p style="text-indent: 0">
+    <p>
+    de aanzienlijkste daden van zijn voornaamste onderdanen niet zal bewaren, niet zal beoordelen, en niet
+    met een gepaste beloning of bestraffing zal vergelden?
     Ondanks dat lieden onder die voornaamste individuen
     handelingen plegen die zijn statigheid en digniteit aantasten, en zijn genadige karakter geenszins kan aanvaarden, worden ze hier niet bestraft.
     </p>
@@ -560,7 +561,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     een majesteit wiens integriteit in geen enkel opzicht met inconsistentie kan harmoniëren, en wiens
     waarachtigheid door alle zichtbare activiteiten wordt bevestigd. Hiervoor verdien jij uiteraard een
     geweldige straf! Jij lijkt op een reiziger die zijn ogen voor het zonlicht sluit en in het domein van zijn
-    verbeelding staart, waar zijn waan als een vuurvlieg zijn angstwekkende pad tracht te verlichten met het schijnsel dat van zijn hoofd afschemert.
+    verbeelding staart,
     </p>
     </div>'
         ],
@@ -570,8 +571,9 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="18">
     <p class="text-end page-number">#18</p>
 
-    <p style="text-indent: 0">
-    Aangezien de vorst een belofte heeft gedaan, zal hij zijn belofte uiteraard
+    <p>
+    waar zijn waan als een vuurvlieg zijn angstwekkende pad tracht te verlichten met het schijnsel dat van
+    zijn hoofd afschemert. Aangezien de vorst een belofte heeft gedaan, zal hij zijn belofte uiteraard
     vervullen! Tevens is de vervulling van zijn belofte niet alleen uiterst eenvoudig voor hem, het is voor
     ons, voor alle wezens, voor hem en voor zijn rijk eveneens hoogstnodig.
     </p>
@@ -595,7 +597,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <p>
     Die verkondigers, die in aantal de leden van massale
-    overleveringsketenen evenaren en uit kracht van een collectieve consensus spreken, delen unaniem het volgende mee:
+    overleveringsketenen evenaren en uit kracht van een
     </p>
 
     <div class="page-footnote">
@@ -614,6 +616,10 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'page_number' => 19,
             'content' => '<div class="page" id="19">
     <p class="text-end page-number">#19</p>
+
+    <p>
+    collectieve consensus spreken, delen unaniem het volgende mee:
+    </p>
 
     <p>
     Het centrum en de zetel van het geweldige sultanaat
@@ -638,7 +644,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET TIENDE AANZICHT</p>
 
     <p>
-    Kom, vandaag wordt het Sultanische Nieuwjaar gevierd<sup>7</sup>. Er zal een overgang plaatsvinden; merkwaardige ontwikkelingen gaan optreden.
+    Kom, vandaag wordt het Sultanische Nieuwjaar gevierd<sup>7</sup>. Er zal een overgang plaatsvinden; merkwaardi-
     </p>
 
     <div class="page-footnote">
@@ -661,8 +667,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="20">
     <p class="text-end page-number">#20</p>
 
-    <p style="text-indent: 0">
-    Laten wij op deze prachtige lentedag dat mooie, groene en bloemige
+    <p>
+    ge ontwikkelingen gaan optreden. Laten wij op deze prachtige lentedag dat mooie, groene en bloemige
     woestijnland bereizen.
     </p>
 
@@ -690,7 +696,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Voorwaar, vergelijkbaar met de transitie van dit land, wat jouw verstand weigert te aanvaarden, vinden vele overgangen en
     transities ieder uur voor jouw ogen plaats! Deze verzamelingen, ontbindingen en omstandigheden leiden tot de conclusie dat
     al deze rappe samenkomsten en scheidingen, deze constructies en destructies een hoger doel dienen. Voor een uur durende
-    samenkomst wordt immers grofweg een tienjarige investering gedaan. Deze huidige toestanden op zichzelf zijn dus niet het einddoel; ze dienen veeleer als een representatie, een simulatie van iets hogers.
+    samenkomst wordt immers grofweg een tienjarige investering gedaan. Deze huidige toestanden op zichzelf
     </p>
     </div>'
         ],
@@ -700,8 +706,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="21">
     <p class="text-end page-number">#21</p>
 
-    <p style="text-indent: 0;">
-    De vorst
+    <p>
+    zijn dus niet het einddoel; ze dienen veeleer als een representatie, een simulatie van iets hogers. De vorst
     brengt ze op een miraculeuze wijze tot stand, opdat de beelden ervan worden opgenomen en gecompileerd,
     en de resultaten ervan worden bewaard en geregistreerd –
     <em>net zoals alles tijdens een militair examen op een oefenterrein wordt vastgelegd en genoteerd.</em>
@@ -729,15 +735,9 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p>
     Voorwaar, aanschouw! Merkwaardigheden zoals de verblijven, terreinen en tentoonstellingsruimtes die wij
     eerder zagen, zijn overal aanwezig. Alleen op het gebied van kunst en gedaante verschillen ze van elkaar.
-    Maar als je aandachtig observeert, dan zul je in al die instabiele verblijven, tijdelijke terreinen en vergankelijke galerijen bemerken wat voor ordeningen van een zonneklare wijsheid, wat voor tekenen van een evidente bijstand, wat voor verschijnselen van een verheven rechtvaardigheid en wat voor vruchten van een omvangrijke genade er te zien zijn.
+    Maar als je aandachtig observeert, dan zul je in al die instabiele verblijven, tijdelijke terreinen en vergankelij-
     </p>
     </div>'
-            /*
-             *
-             * HIER BEN IK GEBLEVEN!!!
-             *
-             *
-             */
         ],
 
         [
@@ -745,8 +745,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="22">
     <p class="text-end page-number">#22</p>
 
-    <p style="text-indent: 0">
-    Iedereen die niet kortzichtig is, ziet met een ontwijfelbare zekerheid in dat een volmaaktere wijsheid dan zijn wijsheid, een schonere gratie dan zijn gratie, een omvangrijkere genade dan zijn genade en een subliemere rechtvaardigheid dan zijn rechtvaardigheid noch bestaanbaar noch voorstelbaar zijn.
+    <p>
+    ke galerijen bemerken wat voor ordeningen van een zonneklare wijsheid, wat voor tekenen van een evidente bijstand, wat voor verschijnselen van een verheven rechtvaardigheid en wat voor vruchten van een omvangrijke genade er te zien zijn. Iedereen die niet kortzichtig is, ziet met een ontwijfelbare zekerheid in dat een volmaaktere wijsheid dan zijn wijsheid, een schonere gratie dan zijn gratie, een omvangrijkere genade dan zijn genade en een subliemere rechtvaardigheid dan zijn rechtvaardigheid noch bestaanbaar noch voorstelbaar zijn.
     </p>
 
     <p>

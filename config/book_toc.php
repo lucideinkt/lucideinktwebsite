@@ -24,7 +24,7 @@ return [
         ['level' => 'sub',  'title' => 'Het Derde Aanzicht',      'subtitle' => null, 'page' => 10],
         ['level' => 'sub',  'title' => 'Het Vierde Aanzicht',     'subtitle' => null, 'page' => 10],
         ['level' => 'sub',  'title' => 'Het Vijfde Aanzicht',     'subtitle' => null, 'page' => 12],
-        ['level' => 'sub',  'title' => 'Het Zesde Aanzicht',      'subtitle' => null, 'page' => 13],
+        ['level' => 'sub',  'title' => 'Het Zesde Aanzicht',      'subtitle' => null, 'page' => 14],
         ['level' => 'sub',  'title' => 'Het Zevende Aanzicht',    'subtitle' => null, 'page' => 15],
         ['level' => 'sub',  'title' => 'Het Achtste Aanzicht',    'subtitle' => null, 'page' => 17],
         ['level' => 'sub',  'title' => 'Het Negende Aanzicht',    'subtitle' => null, 'page' => 18],
