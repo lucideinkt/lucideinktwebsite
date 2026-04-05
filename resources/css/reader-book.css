@@ -923,6 +923,7 @@ body.dark-mode .reader-progress-fill { background: linear-gradient(90deg, #e8a87
 .reader-end {
     padding-top: 32px;
     text-align: center; font-family: 'DelimaProRegular', serif;
+    border-top: 1px solid rgba(var(--main-font-color-rgb, 90, 0, 0), 0.15) !important;
 }
 body.dark-mode .reader-end { border-top-color: rgba(255,255,255,0.07); }
 .reader-end p { font-size: 14px; color: #aaa; margin-bottom: 20px; letter-spacing: 0.1em; }

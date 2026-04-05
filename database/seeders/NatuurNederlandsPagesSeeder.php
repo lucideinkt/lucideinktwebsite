@@ -200,8 +200,7 @@ van het gelovige volk te verstoren en
 te vergiftigen, welk destijds in blijde verkeerde
 wegens de triomf van het Islamitische leger op
 de Grieken. Ik zei: “God verhoede, deze serpent
-zal de fundamenten van het geloof bestoken!”
-Vanuit het perspectief van Gods bestaan en een-</em>
+zal de fundamenten van het geloof bestoken!”</em>
 </p>
 
 <div class="page-footnote">
@@ -228,8 +227,8 @@ jaartelling. Volgens de Christelijke jaartelling was dit het jaar
                 'content' => '<div class="page" id="12">
 <p class="text-end page-number">#12</p>
 
-<p><em>
-heid raadpleegde ik dat vers, en schreef in het
+<p style="text-indent: 0"><em>
+Vanuit het perspectief van Gods bestaan en eenheid raadpleegde ik dat vers, en schreef in het
 Arabisch een uit de Qur’an geïnspireerd bewijsstuk
 dat krachtig genoeg was om de essentie van
 die atheïsten overhoop te halen. Ik had het laten
@@ -294,7 +293,10 @@ Majestueuze Almachtige.
 <p>
 Aangezien er rationeel gezien buiten deze vier wegen
 om geen andere wegen zijn, maakt het zonder
-twijfel of aarzeling de vierde weg – de weg van God-
+twijfel of aarzeling de vierde weg – de weg van Goddelijke eenheid – noodzakelijk en klaarblijkelijk definitief,
+wanneer absoluut bewezen wordt dat de overige
+drie wegen onmogelijk, fictief, uitgesloten en niet
+doenlijk zijn.
 </p>
 
 </div>'
@@ -303,13 +305,6 @@ twijfel of aarzeling de vierde weg – de weg van God-
                 'page_number' => 14,
                 'content' => '<div class="page" id="14">
 <p class="text-end page-number">#14</p>
-
-<p>
-delijke eenheid – noodzakelijk en klaarblijkelijk definitief,
-wanneer absoluut bewezen wordt dat de overige
-drie wegen onmogelijk, fictief, uitgesloten en niet
-doenlijk zijn.
-</p>
 
 <p><em class="text-red"><strong>De eerste weg houdt in:</strong></em> vorming van materie
 en ontstaan van schepselen middels samenkomst van
@@ -340,7 +335,7 @@ gebruikt werd, zou dat mengsel niet kunnen leven en
 zijn werking niet tonen. Ook hebben wij dat levende
 medicijn onderzocht. Uit elk potje werd een substantie
 gebruikt met een specifieke proportie. Als er
-een microscopische dosis tekortschoot of overschoot,
+een microscopische dosis tekortschoot of overschoot, verloor dat medicijn zijn effect.
 </p>
 
 </div>'
@@ -350,8 +345,8 @@ een microscopische dosis tekortschoot of overschoot,
                 'content' => '<div class="page" id="15">
 <p class="text-end page-number">#15</p>
 
-<p>
-verloor dat medicijn zijn effect. Hoewel er meer dan
+<p style="text-indent: 0">
+Hoewel er meer dan
 vijftig van die potjes waren, was er van elk een andere
 dosis genomen, alsof er met een aparte normering gedoseerd
 werd.
@@ -388,7 +383,7 @@ Kortom, in deze fenomenale apotheek van het universum
 kunnen levende substanties, welke gebruikt
 worden naar de balans van het lot en besluit der Preeeuwige
 Alwijze, enkel existentie ondervinden bij de
-gratie van eindeloze wijsheid, onbegrensde kennis en
+gratie van eindeloze wijsheid, onbegrensde kennis en een alomvattende wil.
 </p>
 
 </div>'
@@ -398,8 +393,8 @@ gratie van eindeloze wijsheid, onbegrensde kennis en
                 'content' => '<div class="page" id="16">
 <p class="text-end page-number">#16</p>
 
-<p>
-een alomvattende wil. Een ellendeling die beweert:
+<p style="text-indent: 0">
+Een ellendeling die beweert:
 “Ontelbare blinde en dove elementen, natuurprocessen
 en oorzaken, welke razen zoals vloeden, verrichten
 dit werk” of een suffe bazelaar die raaskalt: “Dat
@@ -521,7 +516,7 @@ O stijfkoppige loochenaar! Jouw ego heeft jou dusdanig
 verdwaasd, dat jij als het ware honderd onmogelijkheden
 eensklaps aanvaardt; want jij bestaat – en
 jij bent geen simpele substantie, niet levenloos en ook
-niet stabiel. Jij lijkt op een constant vernieuwende,
+niet stabiel.
 </p>
 
 </div>'
@@ -531,8 +526,8 @@ niet stabiel. Jij lijkt op een constant vernieuwende,
                 'content' => '<div class="page" id="19">
 <p class="text-end page-number">#19</p>
 
-<p>
-welgeordende machine en een voortdurend renoverend,
+<p style="text-indent: 0">
+Jij lijkt op een constant vernieuwende, welgeordende machine en een voortdurend renoverend,
 voortreffelijk paleis. Ieder moment functioneren
 atomen in jouw lichaam. Jouw lichaam heeft, voornamelijk
 omtrent onderhoud en voortbestaan, een associatie
@@ -652,7 +647,7 @@ ze zich daarenboven met elkaar combineren en op een
 geordende wijze een vorm aannemen – zoals in het
 geval van jouw lichaam – dan is er in elke kring, voor
 ieder onderdeel behoefte aan zoveel drukblokken als
-het aantal toegepaste componenten. Al zou je deze
+het aantal toegepaste componenten.
 </p>
 
 </div>'
@@ -662,8 +657,8 @@ het aantal toegepaste componenten. Al zou je deze
                 'content' => '<div class="page" id="22">
 <p class="text-end page-number">#22</p>
 
-<p>
-honderd vormen van onmogelijkheden mogelijk achten;
+<p style="text-indent: 0">
+Al zou je deze honderd vormen van onmogelijkheden mogelijk achten;
 als het maken van deze geordende kunstige drukletters,
 voortreffelijke drukblokken en pennen niet
 wordt geattribueerd aan één pen, is er voor het maken
@@ -698,7 +693,7 @@ aan blinde, dove en gedachteloze natuur en energie
 worden toegedicht, dan behoort de natuur bij alles
 ontelbare figuurlijke machines en drukkerijen te vestigen,
 of in alles een macht en wijsheid te implanteren
-waarmee het heelal geschapen en beheerd kan wor-
+waarmee het heelal geschapen en beheerd kan worden.
 </p>
 
 </div>'
@@ -708,8 +703,8 @@ waarmee het heelal geschapen en beheerd kan wor-
                 'content' => '<div class="page" id="23">
 <p class="text-end page-number">#23</p>
 
-<p>
-den. Bijvoorbeeld: de reflecties en weerkaatsingen van
+<p style="text-indent: 0">
+Bijvoorbeeld: de reflecties en weerkaatsingen van
 de zon zijn te zien in de atomen van glasstukken en
 druppels op het aardoppervlak. Als de reflecties van
 die miniatuurzonnetjes niet worden geattribueerd aan
@@ -742,7 +737,14 @@ onmetelijk machtige en ingenieuze Entiteit, maar aan
 de natuur worden toegedicht, dan behoort de natuur
 in ieder stukje aarde zoveel drukkerijen en machines in
 voorraad te hebben als de algehele hoeveelheid drukkerijen
-en fabrieken aanwezig in Europa, opdat dat
+en fabrieken aanwezig in Europa, opdat dat stukje aarde de bron kan zijn voor de voeding en vorming
+van ontelbare bloemen en vruchten waar het de
+bakermat en kweekplaats van is. Want bij een schaal
+aarde, die voor bloemen als jardinière dient, is feitelijk
+te zien dat die de vaardigheid bezit om alle gezaaide
+bloemzaadjes – waarvan de vormen en structuren zeer
+verschillen van elkander – stuk voor stuk te formeren
+en modelleren.
 </p>
 
 </div>'
@@ -752,15 +754,8 @@ en fabrieken aanwezig in Europa, opdat dat
                 'content' => '<div class="page" id="24">
 <p class="text-end page-number">#24</p>
 
-<p>
-stukje aarde de bron kan zijn voor de voeding en vorming
-van ontelbare bloemen en vruchten waar het de
-bakermat en kweekplaats van is. Want bij een schaal
-aarde, die voor bloemen als jardinière dient, is feitelijk
-te zien dat die de vaardigheid bezit om alle gezaaide
-bloemzaadjes – waarvan de vormen en structuren zeer
-verschillen van elkander – stuk voor stuk te formeren
-en modelleren. Als dit niet wordt geattribueerd aan
+<p style="text-indent: 0">
+Als dit niet wordt geattribueerd aan
 de Majestueuze Almachtige, kan deze toestand niet
 geschieden wanneer er zich in die schaal met aarde
 geen immateriële, specifieke en natuurlijke machine
@@ -784,8 +779,7 @@ breisels geweven kunnen worden.
 <p>
 Voorwaar, oordeel nu zelf hoezeer de atheïstische
 redeneringen van de naturalisten de grenzen van ratio
-overschrijden. Hoewel dwaze dronkaards in menselijke
-gedaantes die de natuur als vormer zien beweringen
+overschrijden.
 </p>
 
 </div>'
@@ -795,8 +789,9 @@ gedaantes die de natuur als vormer zien beweringen
                 'content' => '<div class="page" id="25">
 <p class="text-end page-number">#25</p>
 
-<p>
-maken als: “Wij zijn intelligente wetenschappers!”,
+<p style="text-indent: 0">
+Hoewel dwaze dronkaards in menselijke
+gedaantes die de natuur als vormer zien beweringen maken als: “Wij zijn intelligente wetenschappers!”,
 kun je zien hoe ver ze verwijderd zijn van intelligentie
 en wetenschap en hoe ze zich een ondoenlijk bijgeloof,
 dat op geen enkele wijze mogelijk is, als weg kunnen
@@ -878,7 +873,7 @@ van een bewijs luidt als volgt:
 Als een man zich bindt met een sultan via krijgsdienst
 of dienaarschap, dan kan die dienaar of soldaat
 de oorzaak zijn van handelingen waarvoor een kracht
-vereist is welke zijn persoonlijke kracht honderddui-
+vereist is welke zijn persoonlijke kracht honderdduizendmaal overtreft.
 </p>
 
 </div>'
@@ -888,8 +883,8 @@ vereist is welke zijn persoonlijke kracht honderddui-
                 'content' => '<div class="page" id="27">
 <p class="text-end page-number">#27</p>
 
-<p>
-zendmaal overtreft. Tevens is hij in staat om namens
+<p style="text-indent: 0">
+Tevens is hij in staat om namens
 de sultan een grootvizier gevangen te nemen; want de
 benodigde accessoires en kracht voor de taken die hij
 verricht en werken die hij samenstelt, draagt hij niet
@@ -914,7 +909,8 @@ vanuit een dennenpit ter grootte van een graankorrel<sup>5</sup>.
 
 <p>
 Als die band wordt verbroken en die ambtenarij
-wordt beëindigd, dan is dat pitje genoodzaakt om de
+wordt beëindigd, dan is dat pitje genoodzaakt om de benodigde accessoires en kracht op eigen houtje te
+dragen.
 </p>
 
 <div class="page-footnote">
@@ -941,9 +937,8 @@ en bloeit uit tot een fysieke dennenboom.
                 'content' => '<div class="page" id="28">
 <p class="text-end page-number">#28</p>
 
-<p>
-benodigde accessoires en kracht op eigen houtje te
-dragen. Op dat moment kan het slechts handelen naar
+<p style="text-indent: 0">
+Op dat moment kan het slechts handelen naar
 de hoeveelheid kracht en krijgsuitrusting aanwezig in
 zijn minuscule bouw. Als de handelingen die hij in
 zijn voorgaande staat met gemak verrichtte, nu van
@@ -980,7 +975,8 @@ gedecoreerd, werd eens betreden door een zeer primitieve
 man. Hij bezichtigde het paleis van binnen en
 zag duizenden kunstig geordende creaturen. Vanwege
 zijn primitiviteit begon hij zich het volgende in te
-beelden: “Zonder externe invloed heeft één van die
+beelden: “Zonder externe invloed heeft één van die creaturen in dat paleis het paleis met al wat zich erin
+bevindt gecreëerd.”
 </p>
 
 </div>'
@@ -990,9 +986,8 @@ beelden: “Zonder externe invloed heeft één van die
                 'content' => '<div class="page" id="29">
 <p class="text-end page-number">#29</p>
 
-<p>
-creaturen in dat paleis het paleis met al wat zich erin
-bevindt gecreëerd.” Maar naar welk creatuur hij zich
+<p style="text-indent: 0">
+Maar naar welk creatuur hij zich
 ook wendde, hij kon zelfs met zijn primitieve verstand
 geen creatuur vinden waaraan hij de creatie kon toedichten.
 Op den duur trof hij een schrift aan waarin
@@ -1023,7 +1018,12 @@ dit een kunstige creatie van de Absoluut Existerende
 Entiteit zou kunnen zijn, Die niet beperkt is tot de
 grenzen der schepping, wendde hij zich van Hem af
 en ontdekte binnen de geschapen grenzen Gods universele
-natuurwetten en het kunstregister des Heren
+natuurwetten en het kunstregister des Heren waaraan de zeer misplaatste en ongegronde benaming
+“natuur” gegeven wordt; deze dienen als het tableau
+van Gods beschikking waarop geschreven en gewist
+wordt en als een schrift dat verandering en vervorming
+ondergaat gedurende manifestaties van Gods
+macht in natuurprocessen.
 </p>
 
 </div>'
@@ -1033,13 +1033,8 @@ natuurwetten en het kunstregister des Heren
                 'content' => '<div class="page" id="30">
 <p class="text-end page-number">#30</p>
 
-<p>
-waaraan de zeer misplaatste en ongegronde benaming
-“natuur” gegeven wordt; deze dienen als het tableau
-van Gods beschikking waarop geschreven en gewist
-wordt en als een schrift dat verandering en vervorming
-ondergaat gedurende manifestaties van Gods
-macht in natuurprocessen. Tevens zei hij: “Deze creaturen
+<p style="text-indent: 0">
+Tevens zei hij: “Deze creaturen
 behoeven klaarblijkelijk een oorzaak. Niets lijkt
 meer betrokken met het bestaan dan dit schrift. Al
 zou geen verstand accepteren dat dit schrift het werk
@@ -1069,7 +1064,7 @@ Eens betrad een zeer primitieve man een opzienbarend
 legerkamp en observeerde de samenscholing en
 geordende handelingen van een volkomen gedisciplineerd
 leger. Hij zag dat een bataljon, legioen en divisie
-met het sein van een soldaat opstond, halt hield,
+met het sein van een soldaat opstond, halt hield, marcheerde en op commando vuurde.
 </p>
 
 </div>'
@@ -1079,8 +1074,8 @@ met het sein van een soldaat opstond, halt hield,
                 'content' => '<div class="page" id="31">
 <p class="text-end page-number">#31</p>
 
-<p>
-marcheerde en op commando vuurde. Zijn woeste en
+<p style="text-indent: 0">
+Zijn woeste en
 primitieve verstand kon een commandant die beveelt
 en commandeert naar de regelgeving van een land en
 de wetten van een sultan niet bevatten, dus verloochende
@@ -1115,7 +1110,7 @@ Aanbedene, wijzend op dit universum, betreden
 door een loochenaar die de puur primitieve,
 atheïstisch-naturalistische gedachtegang aanhield. De
 uit de wijsheid der Pre-eeuwige Sultan ontsproten immateriële
-wetten die binnen de kosmische ordening
+wetten die binnen de kosmische ordening gelden, beschouwde hij als iets materieels.
 </p>
 
 </div>'
@@ -1125,8 +1120,8 @@ wetten die binnen de kosmische ordening
                 'content' => '<div class="page" id="32">
 <p class="text-end page-number">#32</p>
 
-<p>
-gelden, beschouwde hij als iets materieels. Tevens veronderstelde
+<p style="text-indent: 0">
+Tevens veronderstelde
 hij dat de glorieuze wetgeving in de heerschappij,
 de universele natuurwetten der Pre-eeuwige
 Aanbedene, en de bepalingen en regels welke onstoffelijk
@@ -1161,7 +1156,8 @@ is een gevolg, het kan niet de oorsprong zijn.
 een andere weg buiten de vier wegen om niet volgens
 rationele richtlijnen is in te beelden, zoals vermeld aan
 het begin van de <strong>Zestiende Notatie</strong>, is de invaliditeit
-van drie uit de vier redeneringen – blijkens drie evi-
+van drie uit de vier redeneringen – blijkens drie evidente onmogelijkheden op iedere weg – op een absolute
+wijze bewezen.
 </p>
 
 </div>'
@@ -1171,11 +1167,10 @@ van drie uit de vier redeneringen – blijkens drie evi-
                 'content' => '<div class="page" id="33">
 <p class="text-end page-number">#33</p>
 
-<p>
-dente onmogelijkheden op iedere weg – op een absolute
-wijze bewezen. Wat betreft die vierde weg toont
-het aan het begin genoemde vers:
-<span class="text-arabic-inline" dir="rtl" lang="ar">اَفِ اللهِ شَكٌّ فَاطِرِ السَّمٰوَاتِ وَالْاَرْضِ</span><sup>6</sup> onbetwistbaar en
+<p style="text-indent: 0">
+Wat betreft die vierde weg toont
+het aan het begin genoemde vers: <br>
+<sup>6</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَفِ اللهِ شَكٌّ فَاطِرِ السَّمٰوَاتِ وَالْاَرْضِ</span> onbetwistbaar en
 ongetwijfeld, op een klaarblijkelijke wijze, de Goddelijkheid
 aan van de Absoluut Existerende Entiteit
 en wijst erop dat alles regelrecht aan Zijn machtshand
@@ -1201,7 +1196,8 @@ met de oorzaak. Om reflecties van Zijn namen en Zijn
 wijsheid te tonen door een visuele oorzaak en verbintenis
 te creëren binnen orde en structuur, maakte Hij
 oorzaken en de natuur een sluier voor Zijn machtshand,
-opdat zij als bron dienen voor de ogenschijn-
+opdat zij als bron dienen voor de ogenschijnlijke tekortkomingen, wreedaardigheden en gebreken
+van creaties. Zodoende waarborgde Hij Zijn glorie.
 </p>
 
 <div class="page-footnote">
@@ -1218,11 +1214,6 @@ aarde heeft voortgebracht?” - De Heilige Qur’an, 14:10
                 'page_number' => 34,
                 'content' => '<div class="page" id="34">
 <p class="text-end page-number">#34</p>
-
-<p>
-lijke tekortkomingen, wreedaardigheden en gebreken
-van creaties. Zodoende waarborgde Hij Zijn glorie.
-</p>
 
 <p>
 Is het voor een klokkenmaker praktischer om eerst
@@ -1304,7 +1295,8 @@ de specifieke ordening een gedaante geven. In vergelijking
 daarmee is het echter honderdmaal problematischer
 om de bouwstoffen waaruit het lichaam van
 een organisme bestaat, te collecteren vanuit de verste
-uiteinden van het universum en samen te stellen met
+uiteinden van het universum en samen te stellen met een specifieke normering en delicate ordening om die
+tenslotte te overhandigen aan die drukkerij.
 </p>
 
 </div>'
@@ -1314,10 +1306,8 @@ uiteinden van het universum en samen te stellen met
                 'content' => '<div class="page" id="36">
 <p class="text-end page-number">#36</p>
 
-<p>
-een specifieke normering en delicate ordening om die
-tenslotte te overhandigen aan die drukkerij. Hier is
-wederom behoefte aan de macht en wilskracht van de
+<p style="text-indent: 0">
+Hier is wederom behoefte aan de macht en wilskracht van de
 Absoluut Almachtige Die ook die drukkerij geschapen
 heeft. Aldus is dit alternatief betreffende die drukkerij
 een totaal nietszeggend verzinsel.
@@ -1347,7 +1337,8 @@ benodigd zijn voor de vorming van ieder creatuur te
 overhandigen aan de levenloze, onbewuste, gecreëerde,
 gemodelleerde en simplistische dingen welke jullie
 oorzaken en natuur noemen, opdat zij die diepzinnige
-en doelbewuste werken verrichten? Is een dergelijke
+en doelbewuste werken verrichten? Is een dergelijke redenering geen ondoenlijke optie? Wij laten het over
+aan de redelijkheid van jouw onredelijke verstand.
 </p>
 
 </div>'
@@ -1356,11 +1347,6 @@ en doelbewuste werken verrichten? Is een dergelijke
                 'page_number' => 37,
                 'content' => '<div class="page" id="37">
 <p class="text-end page-number">#37</p>
-
-<p>
-redenering geen ondoenlijke optie? Wij laten het over
-aan de redelijkheid van jouw onredelijke verstand.
-</p>
 
 <p>
 De loochenende naturalist zei het volgende:
@@ -1391,7 +1377,10 @@ in een aantal traktaten, bestaat de essentie van regeren
 uit verwerping van interventie. Als het aankomt
 op zijn regeerwijze wijst zelfs een meest simpele regeerder
 of functionaris de ingreep van zijn bloedeigen
-zoon af. Dat daarenboven diverse religieuze sultans,
+zoon af. Dat daarenboven diverse religieuze sultans, ondanks dat ze Khalief waren, hun onschuldige zonen
+doodden op verdenking van interventie, wijst erop
+hoe waarlijk deze “verwerping van interventie”-regel
+heerst binnen het regeren.
 </p>
 
 <div class="page-footnote">
@@ -1408,12 +1397,8 @@ zoon af. Dat daarenboven diverse religieuze sultans,
                 'content' => '<div class="page" id="38">
 <p class="text-end page-number">#38</p>
 
-<p>
-ondanks dat ze Khalief waren, hun onschuldige zonen
-doodden op verdenking van interventie, wijst erop
-hoe waarlijk deze “verwerping van interventie”-regel
-heerst binnen het regeren. Van twee wedijverende
-gouverneurs in een dorp tot aan twee strijdende sultans
+<p style="text-indent: 0">
+Van twee wedijverende gouverneurs in een dorp tot aan twee strijdende sultans
 in een land, uit de geschiedenis met haar bizarre
 chaos blijkt hoe sterk deze vereiste regel meetelt in het
 onafhankelijk regeren.
@@ -1485,13 +1470,6 @@ geven aan andere oorzaken? O vriend die naturalisme
 heeft afgezworen, jij mag het zeggen!
 </p>
 
-<p>
-Hij zei: “De lof behoort ALLAH toe. Afgezien van
-mijn twee weggewerkte twijfels, heeft u mij twee dusdanig
-heldere en krachtige bewijzen geleverd aangaande
-Gods eenheid, dat Hij de Waardige Aanbedene is
-</p>
-
 </div>'
             ],
             [
@@ -1500,7 +1478,10 @@ Gods eenheid, dat Hij de Waardige Aanbedene is
 <p class="text-end page-number">#40</p>
 
 <p>
-en dat er buiten Hem om niets het waard is om aanbeden
+Hij zei: “De lof behoort ALLAH toe. Afgezien van
+mijn twee weggewerkte twijfels, heeft u mij twee dusdanig
+heldere en krachtige bewijzen geleverd aangaande
+Gods eenheid, dat Hij de Waardige Aanbedene is en dat er buiten Hem om niets het waard is om aanbeden
 te worden, dat het verloochenen van die bewijzen
 een grootspraak is die gelijkstaat aan het ontkennen
 van de zon in het daglicht.”
@@ -1591,7 +1572,8 @@ heeft de mens als criterium en balans voor het bestaan
 geschapen. Aan ieder mens heeft Hij binnen deze wereld
 een specifieke wereld geschonken. God toont de
 kleuren van die wereld naar het begrip van zijn hart.
-Bijvoorbeeld, een mens die op een zeer hopeloze en
+Bijvoorbeeld, een mens die op een zeer hopeloze en bedroefde wijze weent, ziet de wereld in een wenende
+en hopeloze staat.
 </p>
 
 </div>'
@@ -1601,9 +1583,8 @@ Bijvoorbeeld, een mens die op een zeer hopeloze en
                 'content' => '<div class="page" id="43">
 <p class="text-end page-number">#43</p>
 
-<p>
-bedroefde wijze weent, ziet de wereld in een wenende
-en hopeloze staat. Een zeer vrolijke en fleurige man
+<p style="text-indent: 0">
+Een zeer vrolijke en fleurige man
 die lacht vanwege zijn volle hoop en vrolijkheid, ziet
 de wereld in een lachende en fleurige staat. Een man
 die op een plechtige en bezinnende wijze gebeden en
@@ -1638,7 +1619,9 @@ van de Hoogste Gerechtigde en Hem toebehoort – én
 hij schendt de volmaakte rechten van de schepping.
 Waarlijk, zoals atheïsme een belediging is voor het bestaan,
 is het nalaten van gebeden een verloochening
-van de volmaaktheid der schepping. Omdat het daar-
+van de volmaaktheid der schepping. Omdat het daarenboven Goddelijke wijsheid schendt, bestaat hetgeen
+hem toekomt uit heftige dreigementen en ernstige
+folteringen.
 </p>
 
 </div>'
@@ -1648,13 +1631,7 @@ van de volmaaktheid der schepping. Omdat het daar-
                 'content' => '<div class="page" id="44">
 <p class="text-end page-number">#44</p>
 
-<p>
-enboven Goddelijke wijsheid schendt, bestaat hetgeen
-hem toekomt uit heftige dreigementen en ernstige
-folteringen.
-</p>
-
-<p>
+<p style="text-indent: 0">
 Voorwaar, om dit toebehoren en deze beschreven
 werkelijkheid te omschrijven, verkoos de miraculeus
 uiteengezette Qur’an op een miraculeuze wijze die felle
@@ -1678,7 +1655,9 @@ creatie en vorming van creaturen, de eindeloze souplesse
 en eenvoud van vorming op het pad van Goddelijke
 eenheid – welke zich voltrekt zoals beschreven
 in uw voorgaande bewijzen – en het uiterste gemak
-dat openlijk getoond wordt in verzen zoals: <br><sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ اِلَّا كَنَفْسٍ وَاحِدَةٍ</span>
+dat openlijk getoond wordt in verzen zoals: <sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ اِلَّا كَنَفْسٍ وَاحِدَةٍ</span> <span class="text-arabic-inline" dir="rtl" lang="ar">وَمَٓا اَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ اَوْ هُوَ اَقْرَبُ<sup>9</sup></span> tonen daarentegen aan dat die fenomenale werkelijkheid
+een meest aanvaardbare en rationele zaak is. Wat
+is het geheim en wijsheid achter deze eenvoud?
 </p>
 
 <div class="page-footnote">
@@ -1686,6 +1665,10 @@ dat openlijk getoond wordt in verzen zoals: <br><sup>8</sup><span class="text-ar
 <p class="footnote-p">
 <sup>8</sup> “Zowel jullie schepping als jullie wederopstanding is zoals die
 van één ziel.” - De Heilige Qur’an, 31:28
+</p>
+<p class="footnote-p">
+<sup>9</sup> “En het uur zal in een oogwenk, of nog spoediger plaatsvinden.”
+- De Heilige Qur’an, 16:77
 </p>
 </div>
 
@@ -1695,11 +1678,6 @@ van één ziel.” - De Heilige Qur’an, 31:28
                 'page_number' => 45,
                 'content' => '<div class="page" id="45">
 <p class="text-end page-number">#45</p>
-
-<p><span class="text-arabic-inline" dir="rtl" lang="ar">وَمَٓا اَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ اَوْ هُوَ اَقْرَبُ <sup>9</sup></span> tonen daarentegen aan dat die fenomenale werkelijkheid
-een meest aanvaardbare en rationele zaak is. Wat
-is het geheim en wijsheid achter deze eenvoud?
-</p>
 
 <p><em>
 Het antwoord:
@@ -1729,10 +1707,6 @@ plaats.
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
-<p class="footnote-p">
-<sup>9</sup> “En het uur zal in een oogwenk, of nog spoediger plaatsvinden.”
-- De Heilige Qur’an, 16:77
-</p>
 <p class="footnote-p">
 <sup>10</sup> “En Hij heeft de macht over alles.” - De Heilige Qur’an, 30:50
 </p>
@@ -1781,7 +1755,9 @@ vruchten geeft met het gemak van één vrucht, omdat
 zijn levensmiddelen worden gegeven vanuit één wortel,
 één centrum en één wet. Als eenheid wordt omgezet
 in diversiteit en de benodigde levensmiddelen
-van elke vrucht vanuit verschillende bronnen worden
+van elke vrucht vanuit verschillende bronnen worden gegeven, wordt de totstandkoming van iedere vrucht
+zo problematisch als de totstandkoming van een
+boom.
 </p>
 
 </div>'
@@ -1791,10 +1767,8 @@ van elke vrucht vanuit verschillende bronnen worden
                 'content' => '<div class="page" id="47">
 <p class="text-end page-number">#47</p>
 
-<p>
-gegeven, wordt de totstandkoming van iedere vrucht
-zo problematisch als de totstandkoming van een
-boom. Bovendien wordt zelfs de vorming van één enkel
+<p style="text-indent: 0">
+Bovendien wordt zelfs de vorming van één enkel
 zaadje, welk een exemplaar en samenvatting is van
 een boom, zo problematisch als de vorming van die
 boom; want de benodigde levensmiddelen die vereist
@@ -1827,7 +1801,7 @@ en de elementen met een fijne filter gefilterd, en de
 bouwstoffen van jouw lichaam met een accurate afweging
 vanuit alle hoeken van de kosmos gecollecteerd
 te worden, opdat jij geformeerd kan worden; want jij
-bent een geordende index, de vrucht, de samenvatting
+bent een geordende index, de vrucht, de samenvatting en het miniregister van het heelal.
 </p>
 
 </div>'
@@ -1837,9 +1811,8 @@ bent een geordende index, de vrucht, de samenvatting
                 'content' => '<div class="page" id="48">
 <p class="text-end page-number">#48</p>
 
-<p>
-en het miniregister van het heelal. Materiële oorzaken
-ordenen en verzamelen slechts. Dat die niet in staat
+<p style="text-indent: 0">
+Materiële oorzaken ordenen en verzamelen slechts. Dat die niet in staat
 zijn om hetgeen zich niet in hun bereik bevindt uit het
 niets te scheppen, wordt door iedere bezitter van een
 verstand bevestigd. Aldus zijn zij genoodzaakt om het
@@ -1870,12 +1843,6 @@ met een externe existentie binnenin het lichaam van
 een minuscuul diertje ingezet moeten worden.
 </p>
 
-<p>
-Voorwaar, doorzie een geheim aangaande de eindeloze
-eenvoud in eenheid en eindeloze problematiek
-in afgoderij en besef welk een wezenlijke, feitelijke en
-</p>
-
 </div>'
             ],
             [
@@ -1884,7 +1851,9 @@ in afgoderij en besef welk een wezenlijke, feitelijke en
 <p class="text-end page-number">#49</p>
 
 <p>
-verheven werkelijkheid er beschreven wordt in het
+Voorwaar, doorzie een geheim aangaande de eindeloze
+eenvoud in eenheid en eindeloze problematiek
+in afgoderij en besef welk een wezenlijke, feitelijke en verheven werkelijkheid er beschreven wordt in het
 vers:
 </p>
 
@@ -1985,18 +1954,7 @@ eenvoudige externe vormgeving aan data van wezens
 waarvan de uitwendige existentie niet bestaat, zoals
 het aanbrengen van een substantie op een geschrift
 geschreven met onzichtbaar inkt om de tekst te doen
-verschijnen, te hoog gegrepen en onmogelijk achten
-</p>
-
-</div>'
-            ],
-            [
-                'page_number' => 51,
-                'content' => '<div class="page" id="51">
-<p class="text-end page-number">#51</p>
-
-<p>
-voor een pre-eeuwige macht welke elk jaar vierhonderdduizend
+verschijnen, te hoog gegrepen en onmogelijk achten voor een pre-eeuwige macht welke elk jaar vierhonderdduizend
 levensvormen gelijktijdig vormgeeft op
 het aardoppervlak, de hemelen en aarde schiep in zes
 dagen en elke lente in zes weken een levende wereld
@@ -2005,6 +1963,13 @@ heelal, en ten gevolge van die gedachtegang vorming
 verloochenen, is een grotere dwaasheid en onwetendheid
 dan die van de voornoemde groep sofisten.
 </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 51,
+                'content' => '<div class="page" id="51">
+<p class="text-end page-number">#51</p>
 
 <p>
 Waarlijk, de Absoluut Almachtige heeft zowel een
