@@ -405,7 +405,7 @@ ook als een klein boekje worden samengesteld en verspreid.
     </p>
 
     <p>
-    Voorwaar, o mijn hoogmoedige ego! Jij bent die reiziger. Deze wereld is een woestijn. Jouw onmacht en behoeftigheid kennen geen grenzen. Jouw vijanden en benodigdheden zijn ontelbaar. Aangezien de werkelijkheid zo is,
+    Voorwaar, o mijn hoogmoedige ego! Jij bent die reiziger. Deze wereld is een woestijn. Jouw onmacht en behoeftigheid kennen geen grenzen. Jouw vijanden en benodigdheden zijn ontelbaar.
     </p>
 
     <div class="page-footnote">
@@ -420,8 +420,8 @@ ook als een klein boekje worden samengesteld en verspreid.
                 'content' => '<div class="page" id="13">
     <p class="text-end page-number">#13</p>
 
-    <p>
-    hanteer dan de Naam van De Eeuwige Eigenaar en Onbegonnen Heerser van deze woestijn, opdat jij van bedelarij tegenover het hele bestaan en van angst voor elk voorval wordt gered.
+    <p style="text-indent: 0">
+    Aangezien de werkelijkheid zo is, hanteer dan de Naam van De Eeuwige Eigenaar en Onbegonnen Heerser van deze woestijn, opdat jij van bedelarij tegenover het hele bestaan en van angst voor elk voorval wordt gered.
     </p>
 
     <p>
@@ -932,7 +932,7 @@ ook als een klein boekje worden samengesteld en verspreid.
     </p>
 
     <p class="text-italic">
-    “Verkoop wat ik aan jullie heb toevertrouwd aan mij, opdat ik het voor jullie kan bewaren en het niet vergeefs verloren gaat. Als de oorlog voorbij is, zal ik het jullie in een mooiere vorm teruggeven. Bovendien zal ik voor jullie bezit – wat jullie eigenlijk is toevertrouwd – een zeer hoge prijs geven. Die machine en de apparaten in die fabriek zullen dan namens mij en volgens mijn systeem werken. Zodoende zullen hun waarde en opbrengsten verduizendvoudigen. Al die opbrengsten zal ik aan jullie schenken. Bovendien zijn jullie machteloos en behoeftig. De kosten van die enorme taken kunnen jullie niet dragen. Alle uitgaven en benodigdheden zal ik bekostigen. Alle inkomsten en verdiensten zal ik aan jullie”
+    “Verkoop wat ik aan jullie heb toevertrouwd aan mij, opdat ik het voor jullie kan bewaren en het niet vergeefs verloren gaat. Als de oorlog voorbij is, zal ik het jullie in een mooiere vorm teruggeven. Bovendien zal ik voor jullie bezit – wat jullie eigenlijk is toevertrouwd – een zeer hoge prijs geven. Die machine en de apparaten in die fabriek zullen dan namens mij en volgens mijn systeem werken. Zodoende zullen hun waarde en opbrengsten verduizendvoudigen. Al die opbrengsten zal ik aan jullie schenken. Bovendien zijn jullie machteloos en behoeftig. De kosten van die enorme taken kunnen jullie niet dragen. Alle uitgaven en benodigdheden zal ik bekostigen. Alle inkomsten en verdiensten zal ik aan jullie” schenken.
     </p>
 
     <div class="page-footnote">
@@ -952,8 +952,8 @@ ook als een klein boekje worden samengesteld en verspreid.
                 'content' => '<div class="page" id="29">
     <p class="text-end page-number">#29</p>
 
-    <p class="text-italic">
-    schenken. Wat ik aan jullie heb toevertrouwd, zal ik tot op de dag van jullie vrijstelling aan jullie overlaten. Voorwaar, dit is vanuit vijf opzichten winstgevend voor jullie.
+    <p class="text-italic" style="text-indent: 0">
+    Wat ik aan jullie heb toevertrouwd, zal ik tot op de dag van jullie vrijstelling aan jullie overlaten. Voorwaar, dit is vanuit vijf opzichten winstgevend voor jullie.
     </p>
 
     <p class="text-italic">
@@ -1025,7 +1025,7 @@ ook als een klein boekje worden samengesteld en verspreid.
     <p><strong>De eerste winst</strong></p>
 
     <p>
-    Vergankelijke bezittingen ondervinden vereeuwiging. Want alles wat gedurende dit vergankelijke leven aan De Ontzaglijke Entiteit alias De Eeuwige Bestendiger wordt gewijd en op Zijn weg wordt besteed, zal vereeuwiging ondervinden en eeuwige vruchten afwerpen. Zodoende zullen levensminuten als pitten en zaden ogenschijnlijk vergaan en bederven. Echter, in de
+    Vergankelijke bezittingen ondervinden vereeuwiging. Want alles wat gedurende dit vergankelijke leven aan De Ontzaglijke Entiteit alias De Eeuwige Bestendiger wordt gewijd en op Zijn weg wordt besteed, zal vereeuwiging ondervinden en eeuwige vruchten afwerpen. Zodoende zullen levensminuten als pitten en zaden ogenschijnlijk vergaan en bederven.
     </p>
 
     <div class="page-footnote">
@@ -1042,8 +1042,8 @@ ook als een klein boekje worden samengesteld en verspreid.
                 'content' => '<div class="page" id="31">
     <p class="text-end page-number">#31</p>
 
-    <p>
-    eeuwige wereld zullen ze als bloemen van gelukzaligheid ontkiemen en ontluiken. En in de tussenwereld zullen ze stralende en gemoedelijke verschijningsvormen krijgen.
+    <p style="text-indent: 0">
+    Echter, in de eeuwige wereld zullen ze als bloemen van gelukzaligheid ontkiemen en ontluiken. En in de tussenwereld zullen ze stralende en gemoedelijke verschijningsvormen krijgen.
     </p>
 
     <p><strong>De tweede winst</strong></p>
@@ -1067,7 +1067,7 @@ ook als een klein boekje worden samengesteld en verspreid.
     </p>
 
     <p>
-    <span class="text-italic"><strong>Bijvoorbeeld</strong>,</span> als jij het smaakvermogen van de tong niet aan De Alwijze Voortbrenger verkoopt, maar namens je ego en je maag laat werken, dan zal het dalen tot het niveau van een portier die voor de stal en de fabriek van de
+    <span class="text-italic"><strong>Bijvoorbeeld</strong>,</span> als jij het smaakvermogen van de tong niet aan De Alwijze Voortbrenger verkoopt, maar namens je ego en je maag laat werken, dan zal het dalen tot het niveau van een portier die voor de stal en de fabriek van de maag werkt.
     </p>
 
 </div>'
@@ -1077,8 +1077,8 @@ ook als een klein boekje worden samengesteld en verspreid.
                 'content' => '<div class="page" id="32">
     <p class="text-end page-number">#32</p>
 
-    <p>
-    maag werkt. Zodoende zal zijn waarde verloren gaan. Als jij het aan de Genereuze Onderhouder verkoopt, dan zal het smaakvermogen van de tong stijgen tot het niveau van een deskundige waarnemer van Gods genadegiften en een dankbare fijnproever in de keukens van de Onafhankelijke Almacht.
+    <p style="text-indent: 0">
+    Zodoende zal zijn waarde verloren gaan. Als jij het aan de Genereuze Onderhouder verkoopt, dan zal het smaakvermogen van de tong stijgen tot het niveau van een deskundige waarnemer van Gods genadegiften en een dankbare fijnproever in de keukens van de Onafhankelijke Almacht.
     </p>
 
     <p>
@@ -1463,7 +1463,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p>
-    Voorwaar, deze gezegende en verstandige persoon ging voort, maar ervaarde niet de ellende die zijn broer ervoer. Immers, omdat hij een mooi karakter had, koesterde hij mooie gedachten, interpreteerde hij ontwikkelingen positief en stelde hij zijn gemoed zodoende gerust. Bovendien ondervond hij niet de moeite en de lasten die zijn broer had ondervonden. Want hij kende de orde, stelde zich volgzaam op en ondervond verlichting. Veilig en vredig zette hij zijn reis vrijelijk voort. Enige tijd later belandde hij in een tuin waar allerlei mooie bloemen en vruchten bloeiden. Omdat de tuin echter niet werd onderhouden, groeiden daar ook onreine tuingewassen. Zijn broer was ook in een soortgelijke tuin terechtgekomen. Maar hij had zijn tijd en energie vooral aan de onreine gewassen besteed, waardoor zijn maag van streek raakte en hij zonder een moment rust de tuin had verlaten. Deze persoon daarentegen hield zich aan het principe: <em>“Bekijk alles positief”</em> en schonk geen enkele aandacht aan het onreine. Hij haalde veel baat uit het positieve, kwam goed tot rust en zette vervolgens zijn reis weer voort. Nadat hij een bepaalde weg had afgelegd, liep hij zoals zijn vorige broer een geweldige woestijn in. Plotseling vernam hij de brul van een razende leeuw. Hij schrok, maar hij schrok niet zo erg als zijn broer. Want vanwege zijn optimisme en zijn mooie gedachten kwam hij tot de volgende conclusie: <em>“Deze woestijn heeft een heerser en deze leeuw is hoogstwaarschijnlijk zijn onderdaan die op zijn bevel handelt.”</em> Zodoende ondervond hij troost. Desondanks begon hij ook te vluchten richting een uitgedroogde put van zestig meter diep, waarna hij erin sprong. Net als zijn broer klampte hij zich vast aan de tak van een boom die hij halverwege zijn val had vastgegrepen. Zo bleef hij in de lucht hangen. Hij zag dat twee muizen aan de twee wortels van die boom knaagden. Hij keek omhoog en zag de leeuw, hij keek omlaag en hij zag een draak. Net als zijn broer was hij getuige van een bizar scenario. Ook hij raakte hierdoor ontsteld. Zijn ontsteltenis was echter duizendmaal lichter
+    Voorwaar, deze gezegende en verstandige persoon ging voort, maar ervaarde niet de ellende die zijn broer ervoer. Immers, omdat hij een mooi karakter had, koesterde hij mooie gedachten, interpreteerde hij ontwikkelingen positief en stelde hij zijn gemoed zodoende gerust. Bovendien ondervond hij niet de moeite en de lasten die zijn broer had ondervonden. Want hij kende de orde, stelde zich volgzaam op en ondervond verlichting. Veilig en vredig zette hij zijn reis vrijelijk voort. Enige tijd later belandde hij in een tuin waar allerlei mooie bloemen en vruchten bloeiden. Omdat de tuin echter niet werd onderhouden, groeiden daar ook onreine tuingewassen. Zijn broer was ook in een soortgelijke tuin terechtgekomen. Maar hij had zijn tijd en energie vooral aan de onreine gewassen besteed, waardoor zijn maag van streek raakte en hij zonder een moment rust de tuin had verlaten. Deze persoon daarentegen hield zich aan het principe: <em>“Bekijk alles positief”</em> en schonk geen enkele aandacht aan het onreine. Hij haalde veel baat uit het positieve, kwam goed tot rust en zette vervolgens zijn reis weer voort. Nadat hij een bepaalde weg had afgelegd, liep hij zoals zijn vorige broer een geweldige woestijn in. Plotseling vernam hij de brul van een razende leeuw. Hij schrok, maar hij schrok niet zo erg als zijn broer. Want vanwege zijn optimisme en zijn mooie gedachten kwam hij tot de volgende conclusie: <em>“Deze woestijn heeft een heerser en deze leeuw is hoogstwaarschijnlijk zijn onderdaan die op zijn bevel handelt.”</em> Zodoende ondervond hij troost. Desondanks begon hij ook te vluchten richting een uitgedroogde put van zestig meter diep, waarna hij erin sprong. Net als zijn broer klampte hij zich vast aan de tak van een boom die hij halverwege zijn val had vastgegrepen. Zo bleef hij in de lucht hangen. Hij zag dat twee muizen aan de twee wortels van die boom knaagden. Hij keek omhoog en zag de leeuw, hij keek omlaag en hij zag een draak. Net als zijn broer was hij getuige van een bizar scenario. Ook hij raakte hierdoor ontsteld. Zijn ontsteltenis was echter duizendmaal lichter dan die van zijn broer.
     </p>
 
 </div>'
@@ -1473,8 +1473,8 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="44">
     <p class="text-end page-number">#44</p>
 
-    <p>
-    dan die van zijn broer. Want zijn mooie karakter gaf hem mooie gedachten, en zijn mooie gedachten lieten hem de mooie kant van alles zien. Hierdoor kwam het volgende in hem op:
+    <p style="text-indent: 0">
+    Want zijn mooie karakter gaf hem mooie gedachten, en zijn mooie gedachten lieten hem de mooie kant van alles zien. Hierdoor kwam het volgende in hem op:
     </p>
 
     <p><em>
@@ -1578,8 +1578,16 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p>
-    Voorwaar, de ene broer vertegenwoordigt een gelovige ziel met een zuiver hart, terwijl de andere broer een ongelovige ziel met een verdorven hart vertegenwoordigt. De rechter weg symboliseert de weg van De Qur’an en het geloof, terwijl de linker weg de weg van opstand en ongeloof symboliseert. De tuin op die weg symboliseert het tijdelijke gemeenschapsleven in de menselijke maatschappij en de menselijke beschaving waar heil en onheil, deugd en ondeugd, reinheid en onreinheid zich samen voordoen. Hij die
+    Voorwaar, de ene broer vertegenwoordigt een gelovige ziel met een zuiver hart, terwijl de andere broer een ongelovige ziel met een verdorven hart vertegenwoordigt. De rechter weg symboliseert de weg van De Qur’an en het geloof, terwijl de linker weg de weg van opstand en ongeloof symboliseert. De tuin op die weg symboliseert het tijdelijke gemeenschapsleven in de menselijke maatschappij en de menselijke beschaving waar heil en onheil, deugd en ondeugd, reinheid en onreinheid zich samen voordoen. Hij die verstandig is, zal naar het principe: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">خُذْ مَا صَفَا دَعْ مَا كَدَرْ</span> handelen en met een vredig hart voortgaan.
     </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “Neem het positieve aan, laat het negatieve gaan.”
+        </p>
+    </div>
+
 
 </div>'
             ],
@@ -1587,10 +1595,6 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'page_number' => 47,
                 'content' => '<div class="page" id="47">
     <p class="text-end page-number">#47</p>
-
-    <p>
-    verstandig is, zal naar het principe: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">خُذْ مَا صَفَا دَعْ مَا كَدَرْ</span> handelen en met een vredig hart voortgaan.
-    </p>
 
     <p>
     Die woestijn symboliseert deze aardbol; de wereld. Die leeuw symboliseert de dood en het doodsuur. Die put symboliseert het mensenlichaam en de levensgang. Die zestig meter diepte vertegenwoordigt de gemiddelde leeftijd der mensheid van zestig jaar. Die boom symboliseert de individuele levensduur en de levensmiddelen. Die zwarte en witte muizen vertegenwoordigen de dag en de nacht.
@@ -1611,13 +1615,6 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     <p>
     Waarlijk, uit één iets alles en alles uit één iets creëren, is een specifiek teken, een Aya die enkel De Schepper en Machthebber van alles toebehoort.
     </p>
-
-    <div class="page-footnote">
-        <hr class="hr-footnote" />
-        <p class="footnote-p">
-        <sup>1</sup> “Neem het positieve aan, laat het negatieve gaan.”
-        </p>
-    </div>
 
 </div>'
             ],
