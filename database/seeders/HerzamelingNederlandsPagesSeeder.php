@@ -732,12 +732,6 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Maar als je aandachtig observeert, dan zul je in al die instabiele verblijven, tijdelijke terreinen en vergankelijke galerijen bemerken wat voor ordeningen van een zonneklare wijsheid, wat voor tekenen van een evidente bijstand, wat voor verschijnselen van een verheven rechtvaardigheid en wat voor vruchten van een omvangrijke genade er te zien zijn.
     </p>
     </div>'
-            /*
-             *
-             * HIER BEN IK GEBLEVEN!!!
-             *
-             *
-             */
         ],
 
         [
@@ -754,7 +748,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
 
     <p>
-    Bovendien moeten wij aannemen dat de regisseur van deze wijze beschikkingen, weldadige activiteiten en genaderijke gunsten – <em>(God verhoede)</em> – een roekeloze spelleider en een wrede tiran is. Dit zou betekenen dat
+    Bovendien moeten wij aannemen dat de regisseur van deze wijze beschikkingen, weldadige activiteiten en genaderijke gunsten – <em>(God verhoede)</em> – een roekeloze spelleider en een wrede tiran is. Dit zou betekenen dat werkelijkheden tot hun tegenpolen verworden.
     </p>
     </div>'
         ],
@@ -764,8 +758,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="23">
     <p class="text-end page-number">#23</p>
 
-    <p>
-    werkelijkheden tot hun tegenpolen verworden. Echter, volgens de unanieme opvatting van alle intellectuelen – <em>(met uitzondering van de bezopen sofisten die het bestaan van alles ontkennen)</em> – is de verwording van werkelijkheden ondenkbaar.
+    <p style="text-indent: 0">
+    Echter, volgens de unanieme opvatting van alle intellectuelen – <em>(met uitzondering van de bezopen sofisten die het bestaan van alles ontkennen)</em> – is de verwording van werkelijkheden ondenkbaar.
     </p>
 
     <p class="text-center text-center-constrained"><strong>
@@ -783,7 +777,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
 
     <p>
-    Kijk, deze <strong>rang</strong> kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <em>"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</em> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze <strong>taak</strong> niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukza-
+    Kijk, deze <strong>rang</strong> kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <em>"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</em> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze <strong>taak</strong> niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukzaligheid in de nabijheid van de vorst te verwerven.
     </p>
     </div>'
         ],
@@ -793,8 +787,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="24">
     <p class="text-end page-number">#24</p>
 
-    <p>
-    ligheid in de nabijheid van de vorst te verwerven. Ook deze <strong>wensen</strong> corresponderen niet met een paardaags bestaan in dit gastenverblijf; alleen een lang en gelukzalig leven kan ze bevredigen. Overigens onthult deze <strong>gedragscode</strong> eveneens dat de eigenaar van dit identiteitsbewijs bestemd is voor een ander oord; hij werkt voor een andere wereld.
+    <p style="text-indent: 0">
+    Ook deze <strong>wensen</strong> corresponderen niet met een paardaags bestaan in dit gastenverblijf; alleen een lang en gelukzalig leven kan ze bevredigen. Overigens onthult deze <strong>gedragscode</strong> eveneens dat de eigenaar van dit identiteitsbewijs bestemd is voor een ander oord; hij werkt voor een andere wereld.
     </p>
 
     <p>
@@ -981,7 +975,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
 
     <p>
-    Waarlijk, uit één iets alles voortbrengen en uit alles één iets vervaardigen, is een daad die uitsluitend
+    Waarlijk, uit één iets alles voortbrengen en uit alles één iets vervaardigen, is een daad die uitsluitend is voorbehouden aan de Al-Schepper.
     </p>
     </div>'
         ],
@@ -991,8 +985,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="31">
     <p class="text-end page-number">#31</p>
 
-    <p>
-    is voorbehouden aan de Al-Schepper. Sla acht op het Glorieuze Vers: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
+    <p style="text-indent: 0">
+    Sla acht op het Glorieuze Vers: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
     </p>
 
     <div class="text-center">
@@ -1016,7 +1010,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
 
     <p>
-    En is het ooit voor mogelijk te houden dat bij een Universele Heerschappij, gevoerd over een Alomvattend Sultanaat, er geen wens zou bestaan om binnen
+    En is het ooit voor mogelijk te houden dat bij een Universele Heerschappij, gevoerd over een Alomvattend Sultanaat, er geen wens zou bestaan om binnen alle lagen van diversiteiten en verscheidenheden de monarchale Eenheid en Soevereiniteit aan de hand van
+    een tweevleugelige zendeling bekend te maken?
     </p>
 
     <div class="page-footnote">
@@ -1031,9 +1026,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="32">
     <p class="text-end page-number">#32</p>
 
-    <p>
-    alle lagen van diversiteiten en verscheidenheden de monarchale Eenheid en Soevereiniteit aan de hand van
-    een tweevleugelige zendeling bekend te maken? Tweevleugelig wil zeggen dat die zendeling zich enerzijds,
+    <p style="text-indent: 0">
+    Tweevleugelig wil zeggen dat die zendeling zich enerzijds,
     in verband met zijn universele dienaarschap, als vertegenwoordiger van alle bestaanslagen van diversiteiten
     op het Goddelijke Hof richt, terwijl hij zich anderzijds, in verband met zijn Nabijheid tot ALLAH en zijn
     profeetschap, als functionaris van het Goddelijke Hof op alle bestaanslagen van diversiteiten richt.
@@ -1140,7 +1134,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p>
     Immers, ondanks dat dit universum de status en waardigheid van <strong>"de Schriftuur van de Soevereine
     <em>(Samed)</strong>"</em> bekleedt, stort ongeloof het in een afgrond van betekenisloosheid en doelloosheid, wat beledigend
-    is tegenover het hele universum. Daarnaast leidt de ontkenning die inherent is aan ongeloof tot de verwer-
+    is tegenover het hele universum. Daarnaast leidt de ontkenning die inherent is aan ongeloof tot de verwerping van alle Heilige Goddelijke Namen waarvan de reflecties en verwevingen bij alle wezens te zien zijn.
     </p>
     </div>',
         ],
@@ -1150,8 +1144,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="35">
     <p class="text-end page-number">#35</p>
 
-    <p>
-    ping van alle Heilige Goddelijke Namen waarvan de reflecties en verwevingen bij alle wezens te zien zijn.
+    <p style="text-indent: 0">
     Tevens is ongeloof een loochening van alle talloze bewijzen die de Waarachtigheid en Getrouwheid van de
     Alwaarachtige aantonen. <strong><em>Aldus is ongeloof een grenzeloos misdrijf – en een grenzeloos misdrijf behoeft een grenzeloze straf.</em></strong>
     </p>
@@ -1274,7 +1267,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     En het genadevolle mededogen van alle moeders<sup>2</sup>, hetzij plant, dier of mens, en de heilzame voeding
     zoals melk, afgestemd op de opvoeding van hun machteloze en zwakke nageslacht, laten onmiskenbaar zien
     hoe verreikend de invloed is die een glimp van Genade uitoefent. Al bij al bezit de Beheerder van deze
-    wereld een eindeloze Generositeit, een grenzeloze Genade, en een oneindige Glorie en Statigheid… Oneindige
+    wereld een eindeloze Generositeit, een grenzeloze Genade, en een oneindige Glorie en Statigheid…
     </p>
 
     <div class="page-footnote">
@@ -1300,8 +1293,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="39">
     <p class="text-end page-number">#39</p>
 
-    <p>
-    Glorie en Statigheid vereisen de disciplinering van de zedelozen. Eindeloze Generositeit vereist eindeloze
+    <p style="text-indent: 0">
+    Oneindige Glorie en Statigheid vereisen de disciplinering van de zedelozen. Eindeloze Generositeit vereist eindeloze
     begunstiging. Grenzeloze Genade vereist een aansluitende weldadigheid.
     </p>
 
@@ -1522,7 +1515,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  festijn in een gelukzalig oord waar al het gewenste altijd voorradig is. Tevens vergen ze ongetwijfeld dat de
  genieters van dat festijn in dat gelukzalige oord blijven voortbestaan en daar voor altijd verblijven, opdat ze
  niet door eindigheid en scheiding worden gekweld. Want net zoals het einde van leed plezier verschaft,
- brengt het einde van plezier leed teweeg. Een dergelijke Gulheid zal geen dergelijk leed willen verwekken;
+ brengt het einde van plezier leed teweeg. Een dergelijke Gulheid zal geen dergelijk leed willen verwekken; Ze zou veeleer verlangen naar een eeuwig paradijs bevolkt door eeuwige behoeftigen.
 </p>
 
  </div>'
@@ -1531,8 +1524,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
         [
             'page_number' => 46,
             'content' => '<div class="page" id="46"> <p class="text-end page-number">#46</p>
-<p>
- Ze zou veeleer verlangen naar een eeuwig paradijs bevolkt door eeuwige behoeftigen. Grenzeloze vrijgevigheid
+<p style="text-indent: 0;">
+ Grenzeloze vrijgevigheid
  en gulheid willen immers eindeloos begiftigen en begunstigen. Eindeloos begiftigen en begunstigen
  vereisen op hun beurt eindeloze afhankelijkheid en ontvankelijkheid. Dit vergt weer het voortbestaan van
  de begiftigde, opdat hij voor die aanhoudende begunstiging zijn dankbaarheid en afhankelijkheid kan
@@ -1550,7 +1543,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
 <p>
  De Kunstenaar van deze wereld bezit dus bijzonder waardevolle, verbazingwekkende en verborgen Volmaaktheden
- Die Hij aan de hand van deze voortreffelijke kunstwerken wil demonstreren. Verborgen, feilloze
+ Die Hij aan de hand van deze voortreffelijke kunstwerken wil demonstreren.
 </p>
 
 <div class="page-footnote">
@@ -1569,8 +1562,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'page_number' => 47,
             'content' => '<div class="page" id="47"> <p class="text-end page-number">#47</p>
 
-<p>
- Volmaaktheden verlangen immers naar onthulling in het bijzijn van toeschouwers die ze met uitingen van
+<p style="text-indent: 0">
+ Verborgen, feilloze Volmaaktheden verlangen immers naar onthulling in het bijzijn van toeschouwers die ze met uitingen van
  <em>“mâshâ’ALLAH”</em> waarderen en bewonderen. Daarnaast willen permanente Volmaaktheden permanent zichtbaar
  zijn, wat weer het voortbestaan van waarderende bewonderaars vereist. Want in de ogen van een bewonderaar
  die niet blijvend is, zullen Volmaaktheden hun waarde verliezen.<sup>2</sup>
@@ -1637,7 +1630,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  Immers, een toeschouwer die gedoemd is tot eeuwige ondergang zonder wederkeer, zal bij de gedachte
  aan zijn eindigheid zijn liefde zien overgaan in haat; zijn verwondering zal uitlopen op een teleurstelling,
  zijn eerbied zal omslaan in minachting. Want de egocentrische mens is niet alleen vijandig tegenover het
- onbevattelijke, maar ook afkerig van het onbereikbare. Hierdoor kan zijn binnenwereld ten opzichte van een
+ onbevattelijke, maar ook afkerig van het onbereikbare.
 </p>
  </div>'
         ],
@@ -1645,8 +1638,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
         [
             'page_number' => 49,
             'content' => '<div class="page" id="49"> <p class="text-end page-number">#49</p>
-<p>
- Schoonheid Die eeuwige liefde, eindeloze passie en grenzeloze bewondering verdient, vervuld zijn van vijandschap,
+<p style="text-indent: 0">
+ Hierdoor kan zijn binnenwereld ten opzichte van een Schoonheid Die eeuwige liefde, eindeloze passie en grenzeloze bewondering verdient, vervuld zijn van vijandschap,
  wrok en ontkenning. Voorwaar, het geheim achter de vijandschap van een kafir jegens ALLAH kan
  hieruit worden begrepen.
 </p>
@@ -1695,7 +1688,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  de geringste behoefte van Zijn onbeduidendste schepsel ziet en vanuit onverwachte wegen met volmaakte
  Compassie bevredigt, de stilste aanroep van Zijn meest verborgen schepsel verneemt en redding schenkt, en
  op alle zowel verbale als non-verbale wensen reageert, terwijl Hij anderzijds de ultieme behoefte van Zijn
- grootste onderdaan<sup>1</sup> en geliefdste schepsel ziet maar
+ grootste onderdaan<sup>1</sup> en geliefdste schepsel ziet maar niet bevredigt en vervult, en de meest verheven bede verneemt maar niet aanvaardt?
 </p>
 
 <div class="page-footnote">
@@ -1724,10 +1717,6 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
         [
             'page_number' => 51,
             'content' => '<div class="page" id="51"> <p class="text-end page-number">#51</p>
-
-<p>
- niet bevredigt en vervult, en de meest verheven bede verneemt maar niet aanvaardt?
-</p>
 
 <p>
  Waarlijk, de zichtbare gratie en geriefelijkheid in bijvoorbeeld de wijze waarop zwakke en jonge dieren in
@@ -2090,7 +2079,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
 <p>
  <strong>Echter</strong>, je ziet dat de aanzienlijkste onderdanen en getrouwen met de omvattendste aard in een zorgelijke
- staat tijdelijk zijn bijeengekomen in dit aardse gasten-
+ staat tijdelijk zijn bijeengekomen in dit aardse gastenverblijf. Ondertussen loopt het verblijf zelf elke dag vol en leeg.
 </p>
 
  </div>'
@@ -2099,10 +2088,6 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
         [
             'page_number' => 60,
             'content' => '<div class="page" id="60"> <p class="text-end page-number">#60</p>
-
-<p>
- verblijf. Ondertussen loopt het verblijf zelf elke dag vol en leeg.
-</p>
 
 <p>
  Overigens verblijven alle onderdanen tijdelijk op dit beproevingsterrein om hun dienstbaarheid op de proef
@@ -2319,7 +2304,7 @@ even glimlachend aan, waarna ze zich snel achter de sluier van vergankelijkheid 
 dat uit jouw mond vloeit, verdwijnt ze, terwijl ze duizenden gelijkenissen aan haar publiek nalaat. In evenredigheid
 met het aantal verstanden dat haar opneemt, vereeuwigt ze haar betekenissen in de geesten. Want nadat
 ze haar betekenis heeft ontvouwd, is haar taak volbracht, waarna ze vertrekt. Echter, voordat ze vertrekt,
-laat ze haar fysieke gedaante in de geheugens
+laat ze haar fysieke gedaante in de geheugens van al haar toeschouwers en haar spirituele wezen in al haar zaden na.
 </p>
 
 </div>'
@@ -2329,8 +2314,8 @@ laat ze haar fysieke gedaante in de geheugens
             'page_number' => 66,
             'content' => '<div class="page" id="66"> <p class="text-end page-number">#66</p>
 
-<p>
-van al haar toeschouwers en haar spirituele wezen in al haar zaden na. Elk geheugen en elk zaad zijn als
+<p style="text-indent: 0">
+Elk geheugen en elk zaad zijn als
 het ware een foto waarop haar schoonheid wordt bewaard en een burcht waarin haar voortbestaan wordt
 gewaarborgd.
 </p>
@@ -2357,7 +2342,7 @@ worden vastgelegd voor rekenschap.
 
 <p>
 Je zult ontwaren dat de afbraak die de mooie schepselen van de lente en zomer in de herfst ondergaan,
-geen vernietiging is, maar een vrijstelling na de voltooiing van hun taken.<sup>3</sup> Daarnaast is het een ontrui-
+geen vernietiging is, maar een vrijstelling na de voltooiing van hun taken.<sup>3</sup>
 </p>
 
 <div class="page-footnote">
@@ -2374,8 +2359,8 @@ geen vernietiging is, maar een vrijstelling na de voltooiing van hun taken.<sup>
             'page_number' => 67,
             'content' => '<div class="page" id="67"> <p class="text-end page-number">#67</p>
 
-<p>
-ming om ruimte vrij te maken voor de schepselen die de volgende lente zullen verschijnen; het is een voorbereiding
+<p style="text-indent: 0">
+Daarnaast is het een ontruiming om ruimte vrij te maken voor de schepselen die de volgende lente zullen verschijnen; het is een voorbereiding
 op de komst van de nieuwe functionarissen en dienstplichtigen. Tevens is het een vermaning van
 de Feilloze voor bewuste wezens die door onachtzaamheid hun taken vergeten en door dronkenschap hun
 dankbetoon verzaken.
@@ -2525,7 +2510,8 @@ voorttrekken naar de herzamelplaats en de Ultieme Berechting ondergaan? <strong>
             'content' => '<div class="page" id="71"> <p class="text-end page-number">#71</p>
 
 <p>
-En dat de Heer bij machte is om alle toekomstige mogelijkheden<sup>2</sup> te realiseren, wordt bevestigd door alle
+En dat de Heer bij machte is om alle toekomstige mogelijkheden<sup>2</sup> te realiseren, wordt bevestigd door alle vroegere gebeurtenissen die zich als mirakelen van Macht hebben voltrokken, en door de winter en de
+lente die Hij naar de gelijkenis van de herrijzenis en de herzameling steeds opnieuw blijft voortbrengen.
 </p>
 
 <div class="page-footnote">
@@ -2562,9 +2548,7 @@ zodanig heeft gecreëerd, tegenover niets machteloos staat.&rarr;
             'page_number' => 72,
             'content' => '<div class="page" id="72"> <p class="text-end page-number">#72</p>
 
-<p>
-vroegere gebeurtenissen die zich als mirakelen van Macht hebben voltrokken, en door de winter en de
-lente die Hij naar de gelijkenis van de herrijzenis en de herzameling steeds opnieuw blijft voortbrengen.
+<p style="text-indent: 0">
 Hoe denkt de mens zich dan te kunnen onttrekken aan het bestaan om aan zo’n Ontzaglijke Almacht te
 ontkomen? Of waant de mens dat hij onder de grond voor Hem kan schuilen?
 </p>
@@ -2753,7 +2737,7 @@ kunnen zeggen: “Dat kan hij niet; ik geloof jou niet…” ?
 Of stel je voor dat een miraculeuze sultan ter vertoning
 van macht of ter lering en vermaak voor jouw
 ogen met één sein bergen verzet, continenten herschikt
-en zeeën in land verandert. Vervolgens zie je dat een
+en zeeën in land verandert.
 </p>
 </div>'
         ],
@@ -2762,8 +2746,8 @@ en zeeën in land verandert. Vervolgens zie je dat een
             'page_number' => 77,
             'content' => '<div class="page" id="77"> <p class="text-end page-number">#77</p>
 
-<p>
-groot rotsblok in een vallei is gerold, waardoor de weg
+<p style="text-indent: 0">
+Vervolgens zie je dat een groot rotsblok in een vallei is gerold, waardoor de weg
 van de gasten die de sultan speciaal voor een feestmaal
 heeft uitgenodigd, versperd is geraakt; ze kunnen
 niet verder… Iemand zegt tegen jou:
@@ -2804,7 +2788,7 @@ in Zijn Schrijverschap.
 Waarlijk, als er gesproken wordt over de Alwijze
 Bewaarder, Die het zielsprogramma van de grootste
 boomsoort in het kleinste zaadje ter grootte van een
-stipje vestigt en bewaart, mag er toch geen vraag op-
+stipje vestigt en bewaart, mag er toch geen vraag oprijzen als: <em>“Kan Hij de zielen van overledenen bewaren?”</em>
 </p>
 
 </div>'
@@ -2814,8 +2798,8 @@ stipje vestigt en bewaart, mag er toch geen vraag op-
             'page_number' => 78,
             'content' => '<div class="page" id="78"> <p class="text-end page-number">#78</p>
 
-<p>
-rijzen als: <em>“Kan Hij de zielen van overledenen bewaren?”</em> En als het gaat om de Almachtige Entiteit, Die de aardbol
+<p style="text-indent: 0">
+En als het gaat om de Almachtige Entiteit, Die de aardbol
 als een slingersteen laat wentelen, is het toch niet
 geplaatst om een opmerking te maken als:
 <em>“Hoe zal Hij deze aarde, die het pad van Zijn gasten op weg naar het
@@ -2901,7 +2885,7 @@ gebrekkige en onvolmaakte wereldse aangelegenheden.
 Elders bestaat dus een aanhoudend, bestendig, onvergankelijk
 en majestueus oord dat Zijn Heerschappij
 en Soevereiniteit recht doet; Hij bezit een ander rijk
-dat eeuwig is. Hij laat ons daarvoor werken en no-
+dat eeuwig is. Hij laat ons daarvoor werken en nodigt ons daartoe uit…
 </p>
 
 <div class="page-footnote">
@@ -2920,8 +2904,8 @@ Die de doden tot leven brengt, en Hij bezit Macht over alles.” <em>– Qur’a
             'page_number' => 80,
             'content' => '<div class="page" id="80"> <p class="text-end page-number">#80</p>
 
-<p>
-digt ons daartoe uit… En dat Hij ons daarnaartoe zal
+<p style="text-indent: 0">
+En dat Hij ons daarnaartoe zal
 overplaatsen, wordt beaamd door alle leidende bezitters
 van stralende zielen, lumineuze harten en verlichte
 verstanden, die vanuit het schijnbare tot de waarheid
@@ -3142,9 +3126,7 @@ induikt en het verleden bereist, zal zien dat de wereld
 die wij thans als een tijdelijk verblijf, een beproevingsterrein
 en een kunstgalerij ervaren, voorafgegaan
 is aan zoveel vergane verblijven, terreinen, galerijen
-en werelden als het aantal verstreken jaren. Hoewel ze
-in voorkomen en hoedanigheid van elkaar verschillen,
-vertonen ze gelijkenissen in ordelijke en wonderlijke
+en werelden als het aantal verstreken jaren.
 </p>
 
  </div>'
@@ -3154,8 +3136,9 @@ vertonen ze gelijkenissen in ordelijke en wonderlijke
             'page_number' => 85,
             'content' => '<div class="page" id="85"> <p class="text-end page-number">#85</p>
 
-<p>
-aspecten; ze lijken op elkaar wat betreft het tonen van
+<p style="text-indent: 0">
+Hoewel ze in voorkomen en hoedanigheid van elkaar verschillen,
+vertonen ze gelijkenissen in ordelijke en wonderlijke aspecten; ze lijken op elkaar wat betreft het tonen van
 de Macht en de Wijsheid van de Kunstenaar.
 </p>
 
@@ -3210,8 +3193,7 @@ voor onze ogen, de Gratie Die wij elk moment bij
 onszelf en bij de meeste wezens kunnen ontwaren, de
 Gerechtigheid met al haar krachtige en onmiskenbare
 tekenen<sup>6</sup>, en de alom zichtbare Genade allemaal moeten
-loochenen. Daarnaast moeten wij aannemen dat
-de Regisseur van de wijze beschikkingen, weldadige
+loochenen.
 </p>
 
 <div class="page-footnote">
@@ -3252,8 +3234,8 @@ aan dat er een uiterst verheven Rechtvaardigheid heerst.
             'page_number' => 87,
             'content' => '<div class="page" id="87"> <p class="text-end page-number">#87</p>
 
-<p>
-activiteiten en genaderijke gunsten die wij in dit universum
+<p style="text-indent: 0">
+Daarnaast moeten wij aannemen dat de Regisseur van de wijze beschikkingen, weldadige activiteiten en genaderijke gunsten die wij in dit universum
 aanschouwen – <em>God verhoede</em> – een roekeloze
 spelleider en wrede tiran is, wat een uiterst onmogelijke
 verwording van werkelijkheden zou impliceren. Zelfs
@@ -3569,9 +3551,7 @@ zijn dan een vliegenvleugel?
 <p>
 Uit de voorgaande <strong>“Waarheden”</strong> is helder geworden dat het concept van de <strong>“Herzameling”</strong> zo’n diepgewortelde
 waarheid is, dat zelfs een kracht die de aarde uit haar baan zou kunnen slingeren en zou kunnen
-verwoesten niet in staat zal zijn om die waarheid tot wankelen te brengen. Immers, die waarheid wordt door de
-Alwaarachtige met alle vereisten van Zijn Namen en Eigenschappen gespecificeerd, door de Nobelste Godsbode
-met al zijn mirakelen en redeneringen beaamd, door de Qur’an-el’Hakîm met al Zijn waarheden en
+verwoesten niet in staat zal zijn om die waarheid tot wankelen te brengen.
 </p>
 
  </div>'
@@ -3581,8 +3561,9 @@ met al zijn mirakelen en redeneringen beaamd, door de Qur’an-el’Hakîm met a
             'page_number' => 94,
             'content' => '<div class="page" id="94"> <p class="text-end page-number">#94</p>
 
-<p>
-Ayaat bewezen, en door dit universum met al zijn kosmische Ayaat en leerrijke gesteldheden benadrukt.
+<p style="text-indent: 0">
+Immers, die waarheid wordt door de Alwaarachtige met alle vereisten van Zijn Namen en Eigenschappen gespecificeerd, door de Nobelste Godsbode
+met al zijn mirakelen en redeneringen beaamd, door de Qur’an-el’Hakîm met al Zijn waarheden en Ayaat bewezen, en door dit universum met al zijn kosmische Ayaat en leerrijke gesteldheden benadrukt.
 </p>
 
 <p>
@@ -3722,7 +3703,10 @@ kleinste; ontelbare zaken ogen gelijkwaardig aan één zaak.
 
 <p>
 Als we dan kijken naar de <strong>lichtrijke</strong> manifestaties van Gods wezenlijke, eindeloze en volmaakte Macht,
-naar de spirituele <strong>transparantie</strong> van al het geschapene, naar de <strong>ordeningen</strong> van Wijsheid en het lot, naar
+naar de spirituele <strong>transparantie</strong> van al het geschapene, naar de <strong>ordeningen</strong> van Wijsheid en het lot, naar de volstrekte <strong>gehoorzaamheid</strong> van alle creaties aan de Goddelijke scheppingswetten, en naar het <strong>evenwicht</strong>
+der mogelijkheden waarbij bestaan en niet-bestaan in balans zijn, dan blijkt uit deze geheimen dat begrippen
+als <em>‘veel’</em> of <em>‘weinig’</em>, <em>‘groot’</em> of <em>‘klein’</em> uiteraard eveneens gelijkwaardig zijn voor de Schepper; met één
+oproep kan Hij alle mensen herzamelen als waren zij één mens.
 </p>
 
  </div>'
@@ -3731,13 +3715,6 @@ naar de spirituele <strong>transparantie</strong> van al het geschapene, naar de
         [
             'page_number' => 98,
             'content' => '<div class="page" id="98"> <p class="text-end page-number">#98</p>
-
-<p>
-de volstrekte <strong>gehoorzaamheid</strong> van alle creaties aan de Goddelijke scheppingswetten, en naar het <strong>evenwicht</strong>
-der mogelijkheden waarbij bestaan en niet-bestaan in balans zijn, dan blijkt uit deze geheimen dat begrippen
-als <em>‘veel’</em> of <em>‘weinig’</em>, <em>‘groot’</em> of <em>‘klein’</em> uiteraard eveneens gelijkwaardig zijn voor de Schepper; met één
-oproep kan Hij alle mensen herzamelen als waren zij één mens.
-</p>
 
 <p><strong><em>
 Bovendien ontstaan de niveaus van sterkte en zwakte door de invloed van hun tegenpolen.
