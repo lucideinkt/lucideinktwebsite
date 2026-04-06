@@ -2039,6 +2039,318 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
 
 </div>'
             ],
+            [
+                'page_number' => 61,
+                'content' => '<div class="page" id="61">
+    <p class="text-end page-number">#61</p>
+
+    <p class="text-center text-red small-title">
+        <strong>Een Aanvulling op Het Tweede Thema van<br>Het Dertiende Woord</strong>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    بِسْمِهٖ سُبْحَاَنَهُ<sup>1</sup>
+    </p>
+
+    <p>
+    Gedetineerden hebben een grote behoefte aan de ware troost van de Risale-i Nur. Vooral degenen die een klap van hun jeugdigheid hebben gekregen, en hun verse en fleurige leven in de gevangenis doorbrengen, hebben een broodnodige behoefte aan de Risale-i Nur.
+    </p>
+
+    <p>
+    Waarlijk, jeugdige besluiten zijn meer op emoties dan op logica gebaseerd. Emoties en begeerten zijn echter blind voor gevolgen. Ze geven een geringe voorhanden genieting de voorkeur boven geweldige toekomstige genietingen. Iemand kan in een minuut zijn wraaklust bevredigen door een moord te plegen, waarna hij tachtigduizend uur de ellende van gevangenschap ondervindt. En door een zedeloos plezier van een uur, kan iemand door eerschending uit angst voor eerwraak en gevangenschap zijn levensgeluk verliezen. Zo zijn er vele gevaren voor de arme jongeren die hun zoetste levensfase in hun zuurste levensjaren kunnen veranderen. Daarnaast is er in het noorden een enorm land dat de lusten van jongeren vurig aanwakkert en deze tijden als een storm oproert. De aandacht van jongeren die zich door blinde en uitzichtloze emoties laten leiden, hebben ze op de mooie dochters en vrouwen van eerzame mensen getrokken. Door bijvoorbeeld toe te staan dat mannen en vrouwen samen naakt de sauna ingaan, vuren ze deze zedeloosheid aan. Tevens vestigen ze de interesses van ellendelingen en armen op de bezittingen van rijken. Dit zijn echter toestanden waar de hele mensheid voor huivert.
+    </p>
+
+    <p>
+    Voorwaar, in dit tijdperk is het voor de Islamitische en Turkse jongeren noodzakelijk geworden om zich heldhaftig op te stellen en dit gevaar dat van twee kanten aanvalt met <em>“De Vruchten”</em>, <em>“De Leidraad voor de Jeugd”</em> en dergelijke scherpe zwaarden van de Risale-i Nur te bestrijden.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> In Zijn Naam; Hij is Feilloos.
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 62,
+                'content' => '<div class="page" id="62">
+    <p class="text-end page-number">#62</p>
+
+    <p>
+    Anders zullen die arme jongeren hun aardse toekomst, hun voorspoed in het leven, hun gelukzaligheid in het hiernamaals en hun eeuwige leven in kwellingen en folteringen omzetten en ruïneren. Daarenboven zullen ze door wangedrag en onzedelijkheid in ziekenhuizen terechtkomen, of door emotionele uitbarstingen in gevangenissen belanden. Met weeklachten en spijtbetuigingen zullen ze tijdens hun ouderdom veel huilen.
+    </p>
+
+    <p>
+    Als een jongeman zichzelf met de Qur’anische discipline en de waarheden uit de Traktaten in bescherming neemt, dan zal hij een ware held, een voorbeeldig mens, een voorspoedige moslim en vanuit een bepaalde optiek een sultan van de overige levenden en dieren worden.
+    </p>
+
+    <p>
+    Waarlijk, als een jongeman in de gevangenis één van de vierentwintig uren uit zijn dagelijkse leven aan de vijf geboden gebeden besteedt, en als hij berouw betuigt voor de daad die hem naar de gevangenis heeft geleid, en als hij – in de gevangenis waar hij reeds voor de meeste zonden wordt behoed – afstand van de overige verderfelijke en ellendige zonden neemt, dan zal hij een grote gunst aan zijn eigen leven, zijn toekomst, zijn land, zijn volk en zijn naasten bewijzen. Daarnaast zal hij via die vergankelijke jeugdigheid van tien à vijftien jaar een eeuwige en stralende jeugdigheid aanwinnen volgens de definitieve mededelingen en blijde tijdingen binnen de Miraculeuze Qur’anrevelaties en alle andere Hemelse Boeken en Geschriften.
+    </p>
+
+    <p>
+    Waarlijk, als hij voor die schone gunst der jeugdigheid met rechtzinnigheid en gehoorzaamheid dank betuigt, dan zal ze intensiveren, vereeuwigd worden en plezier verschaffen. Anders zal ze op een akelige, ellendige en treurige wijze als een nachtmerrie vergaan. Tevens zal ze ertoe leiden dat hij een nare plaag voor zijn familie, zijn land en zijn volk wordt.
+    </p>
+
+    <p>
+    Indien de gedetineerde ten onrechte is veroordeeld, dan zal elk uur van hem – zolang hij Gods geboden nakomt – als een Godsdienstoefening van een dag gelden. Daarnaast zal de gevangenis voor hem als een kluizenaarshut dienen, waardoor hij in de gelegenheid wordt gesteld om tot de vrome asceten te behoren die vroeger de grotten introkken om God te aanbidden.
+    </p>
+
+    <p>
+    Indien de gedetineerde arm, oud en ziek is, en een passie voor geloofswaarheden koestert, dan zal elk uur van hem – op voorwaarde dat hij Gods geboden nakomt en berouw betuigt – als een Godsdienstoefening van twintig uur gelden. Daarnaast zal de gevangenis voor hem als een rusthuis dienen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 63,
+                'content' => '<div class="page" id="63">
+    <p class="text-end page-number">#63</p>
+
+    <p style="text-indent: 0">
+    En voor zijn vrienden die hem meedogend verzorgen, zal ze als een instelling voor liefde, discipline en scholing fungeren. Onder deze omstandigheden zal hij meer plezier uit zijn verblijf in de gevangenis halen dan uit de vrijheid in de warrige buitenwereld waar hij van alle kanten door zonden zou worden bestookt. Zodoende zal de gevangenis hem een uitstekende discipline toedienen. Nadat hij zijn tijd heeft uitgezeten, zal hij niet als een moordenaar of wreker, maar als een berouwvolle, ervaren en gedisciplineerde bevorderaar van het volk de gevangenis verlaten.
+    </p>
+
+    <p>
+    Een aantal betrokken personen die getuigen waren van de buitengewone wijze waarop de zedelijke lessen van de Risale-i Nur de gedetineerden in een korte tijd fatsoeneerden, deelden na hun constatering het volgende mee:
+    </p>
+
+    <p><em>
+    “In plaats van een veroordeelde een vijftienjarige gevangenisstraf op te leggen, zal een scholing van de Risale-i Nur hem in vijftien weken een veel betere discipline toedienen.”
+    </em></p>
+
+    <p>
+    Aangezien de dood niet sterft en het doodsuur verborgen is – het kan elk moment aanbreken – en aangezien de poort van het graf niet gesloten kan worden – alle aardbewoners zullen groepsgewijs door die poort gaan en verdwijnen – en aangezien de Qur’anische Waarheden aantonen dat de dood voor gelovigen geen eeuwige verdoemenis maar een vrijstellingsdocument is, en aangezien de dood door de afgedwaalde en de zedeloze mensen ervaren wordt zoals ze overkomt, namelijk: een oneindige verdoemenis en een eeuwige scheiding met alle geliefden en alle wezens, kan er al bij al geconcludeerd worden dat de voorspoedigste onder deze omstandigheden uiteraard de persoon is die geduldig dank betuigt, zijn tijd in de gevangenis goed benut, de Risale-i Nur lessen volgt en binnen de grenzen van het rechte pad het geloof en De Qur’an dient.
+    </p>
+
+    <p>
+    O mens die verslaafd is aan genot en plezier! Ik heb gedurende mijn vijfenzeventigjarige leven aan de hand van duizenden ervaringen, tekenen en gebeurtenissen met een visuele zekerheid ingezien dat waar genot, smarteloos geluk, pijnloos plezier en voorspoed in het leven alleen binnen de kring van het geloof en de geloofswaarheden te vinden zijn. Anders zal een aardse genieting vele kwellingen met zich meebrengen. Ze zal je één druif laten eten, waarna ze je tien klappen bezorgt en je leven verzuurt.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 64,
+                'content' => '<div class="page" id="64">
+    <p class="text-end page-number">#64</p>
+
+    <p>
+    O arme slachtoffers van gevangenschap! Aangezien jullie wereld huilt en jullie leven is verzuurt, dienen jullie te ijveren opdat jullie hiernamaals ook niet in tranen eindigt, maar jullie toelacht en jullie eeuwige leven zoet wordt. Profiteer dus van de gevangenis. Zoals een uur lange wacht tegen de vijand onder bepaalde zware omstandigheden als een Godsdienstoefening van een jaar kan gelden, kan onder deze zware omstandigheden elk uur tijdens de moeite van een Godsdienstoefening evenzo als vele uren gelden en die moeiten in genades omzetten.
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    بِاسْمِهٖ سُبْحَانَهُ<sup>1</sup> اَلسَّلَامُ عَلَيْكُمْ وَ رَحْمَةُ اللّٰهِ وَ بَرَكَاتُهُ<sup>2</sup>
+    </p>
+
+    <p>
+    Mijn eerbiedwaardige, trouwhartige broeders,
+    </p>
+
+    <p>
+    Voor degenen die in de ellende van gevangenschap zijn vervallen en voor degenen die hen meedogend en trouwhartig bijstaan door onder andere hun voedsel te controleren, zal ik aan de hand van <strong><em>“Drie Punten”</em></strong> iets uitleggen waarin ze een grote troost kunnen vinden.
+    </p>
+
+    <p><strong>Het Eerste Punt</strong></p>
+
+    <p>
+    Elke levensdag die in de gevangenis wordt doorgebracht, kan zo waardevol als een Godsdienstoefening van tien dagen zijn. Vergankelijke uren kunnen gezien hun vruchten impliciet in eeuwige uren veranderen. Gevangenschap van een aantal jaar kan ertoe leiden dat je van een miljoenenjarige gevangenschap in de eeuwige gevangenis kan worden gered.
+    </p>
+
+    <p>
+    Voorwaar, de gelovigen kunnen deze grote en waardevolle winst behalen, op voorwaarde dat ze de geboden gebeden verrichten, berouw betuigen voor de zonde waarvoor ze vastzitten en geduldig dank blijven betuigen. Gevangenschap vormt bij voorbaat al een blokkade voor veel zonden; ze biedt geen gelegenheid tot zondigen.
+    </p>
+
+    <p><strong>Het Tweede Punt</strong></p>
+
+    <p>
+    De teloorgang van genot resulteert in kwelling, evenals de teloorgang van kwelling in genot resulteert.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p"><sup>1</sup> In Zijn Naam; Hij is Feilloos.</p>
+        <p class="footnote-p"><sup>2</sup> Vrede, ALLAH\'s Genade en Zijn Zegeningen zij met jullie.</p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 65,
+                'content' => '<div class="page" id="65">
+    <p class="text-end page-number">#65</p>
+
+    <p>
+    Waarlijk, iedereen die zijn plezierige dagen van vroeger herdenkt, zal door smart en verdriet een geestelijke kwelling vernemen en een droevige zucht slaken. En wanneer hij denkt aan de verstreken dagen die hij in ellende en pijn heeft doorgebracht, dan zal hij door hun teloorgang een geestelijke genieting ervaren en een zucht van opluchting slaken met de gedachte: </p>
+
+    <p><em><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">الْحَمْدُ لِلّٰهِ</span>, Godzijdank, dat onheil heeft zijn zegen achtergelaten en is verdwenen.</em></p>
+
+
+    <p>
+    Aldus zal een tijdelijk moment in kwelling de ziel een geestelijke genieting nalaten, terwijl een vergankelijk moment in genot daarentegen kwelling zal nalaten. Aangezien dit de waarheid is en aangezien de pijnlijke momenten van vroeger samen met hun pijn nu non-existent en verdwenen zijn, terwijl de aankomende onheilspellende dagen momenteel ook non-existent en afwezig zijn, kunnen deze afwezige momenten geen kwelling bezorgen; wat non-existent is kan geen pijn veroorzaken.
+    </p>
+
+    <p>
+    Bijvoorbeeld, het zou dwaas zijn om vandaag aldoor te eten en te drinken uit angst voor de mogelijkheid om de aankomende dagen aan honger en dorst te lijden. Evenzo is het een dwaasheid om momenteel de ellende van verstreken en toekomstige dagen – die thans non-existent en afwezig zijn – nu te gedenken en je geduld te verliezen, je gebrekkige ego over het hoofd te zien en je te gedragen alsof jij je over ALLAH beklaagt door zuchten van ontevredenheid te slaken. Als een mens zijn geduld niet naar links en naar rechts strooit, oftewel over het verleden en de toekomst verspreidt, maar voor de huidige dag bewaart, dan zal dat geduld altijd toereikend zijn en de beproeving zal tienmaal zachter worden.
+    </p>
+
+    <p>
+    Moge dit niet als klacht worden opgevat, maar toen ik tijdens mijn derde jaar in deze Yûsufische medresse een aantal dagen aan een zowel fysieke als geestelijke kwelling en ziekte zoals nooit tevoren leed, en vooral toen ik door de ontzegging van mijn Nur-dienst wanhopig werd, en de kwellingen in mijn hart en ziel mij overweldigden, werd deze voornoemde waarheid mij bij Gods Gratie getoond. Vervolgens werd ik tevreden over mijn ziekte en mijn gevangenschap. Want de volgende gedachte deed mij dank betuigen:
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> De lof zij ALLAH.
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 66,
+                'content' => '<div class="page" id="66">
+    <p class="text-end page-number">#66</p>
+
+    <p><em>
+    “Voor een hulpeloze man als ik die voor de poort van het graf staat, is het enorm verdienstelijk om een uur dat onachtzaam besteed kan worden, om te zetten in een Godsdienstoefening van tien uur.”
+    </em></p>
+
+    <p><strong>Het Derde Punt</strong></p>
+
+    <p>
+    De gedetineerden meedogend behulpzaam zijn, hun benodigde onderhoud aanreiken en hun geestelijke wonden met troost verzorgen, zijn kleine daden waarin grote verdiensten schuilen. Wanneer hen voedsel van buitenaf wordt gebracht, dan wordt dat voedsel voor de betrokken bewakers en alle helpers als aalmoes in hun schrift van weldaden opgeslagen. Vooral als de gevangene oud, ziek, arm of een buitenstaander is, zal de zegen binnen die impliciete aalmoes aanzienlijk toenemen.
+    </p>
+
+    <p style="margin-bottom: 0">
+    Voorwaar, de voorwaarde van deze waardevolle verdienste bestaat uit het uitvoeren van de geboden gebeden, opdat die dienst omwille van ALLAH wordt vervuld. Een andere voorwaarde is dat de begunstigers de behoeftigen trouwhartig, meedogend en blijmoedig te hulp schieten, zonder een gevoel van afhankelijkheid bij ze op te wekken.
+    </p>
+
+    <p style="margin-top: 0" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    بِاسْمِهٖ سُبْحَانَهُ<sup>1</sup> وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup><br>
+    اَلسَّلَامُ عَلَيْكُمْ وَ رَحْمَةُ اللّٰهِ وَ بَرَكَاتُهُ اَبَدًا دَائِمًا<sup>3</sup>
+    </p>
+
+    <p>
+    O mijn gedetineerde vrienden en mijn gelovige broeders,
+    </p>
+
+    <p>
+    Mijn hart werd ingegeven om jullie een waarheid mee te delen die jullie van ellende op aarde evenals ellende in het hiernamaals zal redden. Deze waarheid luidt als volgt:
+    </p>
+
+    <p>
+    Bijvoorbeeld, iemand heeft een broer of een familielid van een ander vermoord. Door binnen een minuut zijn wraaklust te bevredigen, zal hij miljoenen minuten kwelling in zijn hart en de ellende van gevangenschap ondergaan. Daarnaast zal zijn vrees voor de wraakneming door de famigeliefden van het slachtoffer en de gedachte aan de confrontatie met zijn vijanden zijn levensgeluk en zijn levensvreugde volledig wegnemen. Hij zal de kwelling van zowel vrees als woede ondervinden.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p"><sup>1</sup> In Zijn Naam; Hij is Feilloos.</p>
+        <p class="footnote-p"><sup>2</sup> En er is niets of het verheerlijkt Hem met lof.</p>
+        <p class="footnote-p"><sup>3</sup> Vrede, ALLAH\'s Genade en Zijn zegeningen zij met jullie; voor eeuwig en altijd.</p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 67,
+                'content' => '<div class="page" id="67">
+    <p class="text-end page-number">#67</p>
+
+    <p style="text-indent: 0">
+    Hiervoor bestaat er maar één oplossing, namelijk: vrede sluiten zoals De Qur’an opdraagt, evenals rechtvaardigheid, de waarheid, progressie, de menselijkheid en de Islam behoeven en bemoedigen.
+    </p>
+
+    <p>
+    Waarlijk, de waarheid en progressie vereisen vreedzaamheid. Het doodsuur staat vast en verandert niet. Het slachtoffer zou hoe dan ook overlijden op het moment dat zijn doodsuur aanbrak. De moordenaar is slechts een middel voor de voltrekking van Gods Vonnis geweest. Als er geen vrede wordt gesloten, dan zullen beide partijen continu door angst en wraakgevoelens worden gekweld. Daarom beveelt de Islam aan gelovigen om een onderlinge ruzie niet langer dan drie dagen voort te zetten. Als die moord niet door vijandschap en wrok is gepleegd, maar door de stokerij van een huichelaar heeft plaatsgevonden, dan is het noodzakelijk om snel vrede te sluiten. Anders zal die beperkte ramp zich uitbreiden en aanhouden. Als ze vrede sluiten, en als de moordenaar om vergiffenis vraagt en regelmatig voor het slachtoffer bidt, dan zal dat beide partijen veel opleveren en er zal een broederband tot stand komen. Ter vervanging van één vertrokken broer zullen er meerdere gelovige broeders verworven worden. Met overgave aan Gods Vonnis en het Lot zal de vijand vergeven worden. Vooral nadat ze de lessen van de Risale-i Nur hebben vernomen, is het ten behoeve van voorspoed, de persoonlijke en de gemeenschappelijke rust, en de broederschap binnen de kring van de Risale-i Nur noodzakelijk om de onderlinge ruzie stop te zetten.
+    </p>
+
+    <p>
+    In de gevangenis van Denizli werden alle gedetineerden die vijanden van elkaar waren dankzij de Nur-lessen broeders van elkaar. Hun verandering werd een reden voor onze vrijlating; zelfs de ongelovigen en zondaren zeiden: <em>“Mâshâ’ALLAH, moge ALLAH ze zegenen”</em> toen ze die gevangenen zagen. Als resultaat van deze verandering kwamen de gedetineerden volledig tot verademing. Mij is hier opgevallen dat honderd gevangenen door één persoon problemen ervoeren en niet gezamenlijk mochten luchten. Een edelmoedige en gewetensvolle gelovige zal omwille van een persoonlijke kwestie of baat geen honderden nadelen aan andere gelovigen doen laten ondervinden. Als hij een fout begaat en zijn broeders dit wel laat ondervinden, dan dient hij gauw om vergiffenis te vragen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 68,
+                'content' => '<div class="page" id="68">
+    <p class="text-end page-number">#68</p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    بِاسْمِهٖ سُبْحَانَهُ<sup>1</sup> وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup>
+    </p>
+
+    <p>
+    Mijn nieuwe, eerbiedwaardige broeders en oude gedetineerden,
+    </p>
+
+    <p>
+    Ik ben er absoluut van overtuigd geraakt dat jullie uit het oogpunt van Gods Gratie een belangrijke reden zijn waarom wij hier zijn beland. Immers, dankzij de komst van de bemoedigende Traktaten en geloofswaarheden wordt jullie ware troost geboden, opdat jullie van de kwellingen achter deze gevangenschap en de vele wereldse tegenslagen worden gered, jullie treurige en verdrietige leven niet zinloos en voor niets voorbijgaat, en jullie hiernamaals niet zoals jullie aardse leven in tranen eindigt.
+    </p>
+
+    <p>
+    Aangezien dit de waarheid is, behoren jullie ook zoals de gevangenen in Denizli en zoals de Nur-studenten broeders van elkaar te worden. Jullie zien dat ze al jullie spullen, jullie voedsel en jullie soep controleren om te voorkomen dat er messen waarmee jullie elkaar kunnen doden naar binnen worden gesmokkeld. De wachters die jullie trouwhartig dienen, raken hierdoor erg vermoeid. Bovendien mogen jullie niet gezamenlijk luchten omdat ze bang zijn dat jullie elkaar als woeste beesten gaan bestormen.
+    </p>
+
+    <p>
+    Voorwaar, onze nieuwe vrienden die van nature heldhaftig zijn ingesteld, dienen in deze tijden met een grote spirituele heldhaftigheid het volgende tegen de gevangenbewaarders te zeggen:
+    </p>
+
+    <p><em>
+    “Al zouden jullie geen mes maar een revolver in onze handen drukken en ons bevelen om elkaar af te schieten, dan nog zullen wij deze arme lotgenoten van ons niet deren. Ook al koesterden wij vroeger enorme haat en vijandschap jegens elkaar, wij hebben besloten om ons naar het bevel en de discipline van De Qur’an, het geloof, de Islamitische broederschap en het gemeenschapsbelang te handelen, onze rechten onderling halal te verklaren en ons best te doen om elkaar niet te kwetsen”
+    </em></p>
+
+    <p>
+    Zodoende dienen jullie deze gevangenis in een gezegende medresse te veranderen.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p"><sup>1</sup> In Zijn Naam; Hij is Feilloos.</p>
+        <p class="footnote-p"><sup>2</sup> En er is niets of het verheerlijkt Hem met lof.</p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 69,
+                'content' => '<div class="page" id="69">
+    <p class="text-end page-number">#69</p>
+
+    <p class="text-center text-red small-title">
+        <strong><em>Een belangrijke kwestie die mij tijdens de nacht van Qadr werd ingegeven</em></strong>
+    </p>
+
+    <p class="text-center"><strong>(Een Toevoeging aan Het Tweede Thema van Het Dertiende Woord)</strong></p>
+
+    <p>
+    We zullen in het kort duiden op een zeer diepzinnige en veelzijdige waarheid die mij tijdens de nacht van Qadr werd ingegeven. De extreme onrechtvaardigheden, de buitengewone onderdrukkingen en de barbaarse verwoestingen tijdens de tweede wereldoorlog… de honderden onschuldigen die door één vijand in het verderf werden gestort… de vreselijke wanhoop waaraan de verliezers ten prooi waren gevallen… de blinde paniek van de overwinnaars die enerzijds hun gezag wilden behouden, terwijl ze anderzijds enorme gewetenskwelling wegens hun onherstelbare verwoestingen ervoeren… de gemeenschappelijke bewustwording omtrent de complete vergankelijkheid en kortstondigheid van het aardse leven, evenals de bedrieglijkheid en bedwelming van moderne fantasieën… de verheven potenties van de mensheid en de menselijkheid die wereldwijd diepe wonden hebben opgelopen… de onachtzaamheid, de dwaling, en de woeste en dove natuur die onder het zwaard van De Qur’an zijn bezweken… de meest verstikkende, bedrieglijke en sterke sluier van onachtzaamheid en dwaling waarvan het afgrijselijke en meedogenloze gezicht middels de wereldse politiek zichtbaar is geworden… zijn allemaal factoren die ertoe geleid hebben dat de mensheid zonder enige twijfel haar illusionaire liefde voor het lelijke en vergankelijke aardse leven opgeeft, en met al haar kracht op zoek gaat naar haar ware liefde waar de menselijke aard eigenlijk naar op zoek is: het eeuwige leven. In het noorden, het westen en in Amerika zijn de tekenen hiervan inmiddels zichtbaar.
+    </p>
+
+    <p>
+    De Quran met Zijn Miraculeuze Revelaties, Die sinds dertienhonderdzestig jaar elke eeuw driehonderdvijftig miljoen studenten heeft, Die al Zijn Oordelen en Standpunten stuksgewijs door miljoenen waarheidsgetrouwe onderzoekers heeft doen laten ondertekenen, Die met Zijn Heiligheid in de harten van miljoenen Hafizoen is gevestigd en uit hun monden aan de mensheid wordt onderwezen, Die op een ongehoorde wijze het oneindige leven en de eeuwige gelukzaligheid aankondigt, en alle wonden van de mensheid geneest, is een Boek dat met Zijn duizenden intense, krachtige en herhaaldelijke Aya’s zowel openlijk als impliciet tienduizenden malen met onwrikbare en doorslaggevende bewijzen, en met ontelbare en onbetwistbare argumenten het eeuwige leven aankondigt en de gelukzaligheid der mensheid onderwijst.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 70,
+                'content' => '<div class="page" id="70">
+    <p class="text-end page-number">#70</p>
+
+    <p>
+    Bekende redenaren uit Noorwegen, Zweden, Finland en Engeland die openstaan voor De Qur’an, een aanzienlijke organisatie in Amerika die op zoek is naar de ware religie, en soortgelijke ontwikkelingen geven aan dat de wijde werelddelen van de aardbol en de grote regeringen een zoektocht zullen starten. Uiteraard zal de mensheid, mits ze haar verstand niet volledig verliest en geen fysieke of geestelijke verdoemenis meemaakt, op zoek gaan naar de Miraculeuze Revelaties van De Qur’an. En nadat ze Zijn waarheden doorziet, zal ze Hem met hart en ziel omarmen. Immers, gezien deze werkelijkheid kent De Qur’an absoluut geen gelijke; dit is ook onmogelijk, en niets kan dit Ultieme Mirakel vervangen.
+    </p>
+
+    <p class="text-red small-title"><strong>Ten tweede</strong></p>
+
+    <p>
+    De Risale-i Nur heeft als een diamanten zwaard van dit Ultieme Mirakel dienst geleverd en Zijn koppige vijanden tot overgave gedwongen. De Risale-i Nur, Die als verkondiger van Qur’anische schatten het hart, de ziel en de zintuigen volledig verlicht en ze medicijnen aanreikt, en buiten De Qur’an om geen andere basis en bron heeft, en een spiritueel mirakel van De Qur’an is, vervult Zijn taak uitstekend. De extreme antipropaganda en de uiterst halsstarrige heidenen heeft Hij compleet overwonnen, het sterkste fort van dwaling – bestaande uit naturalisme – heeft Hij middels <strong>“Het Traktaat over de Natuur”</strong> volledig te gronde gericht, en de onachtzaamheid achter de massieve, verstikkende en omvangrijke kring der materie en de dikste sluiers van wetenschappen heeft Hij middels <strong>De Zesde Kwestie</strong> en <strong>De Eerste, De Tweede, De Derde</strong> en <strong>De Achtste Argumenten</strong> uit <strong>“De Staf van Mozes”</strong> op een stralende wijze verdreven, waarnaast Hij het Licht van Tauhied heeft getoond.
+    </p>
+
+</div>'
+            ],
         ];
     }
 }
