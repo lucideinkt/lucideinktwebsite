@@ -1738,6 +1738,307 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
 
 </div>'
             ],
+            [
+                'page_number' => 51,
+                'content' => '<div class="page" id="51">
+    <p class="text-end page-number">#51</p>
+
+    <p>
+    Een zuivere student van De Leerrijke Qur’an daarentegen is een dienaar. Echter, zelfs aan de opzienbarendste schepselen onderwerpt hij zich niet; hij is een eerbiedwaardige dienaar die zijn diensten zelfs niet voor een ultiem profijt zoals het paradijs verricht.
+    </p>
+
+    <p>
+    Bovendien is een ware Qur’an-student bescheiden, vreedzaam en zachtaardig. Echter, nimmer zal hij zich tegenover een ander dan zijn Voortbrenger, voorbij Zijn toegestane grenzen, uit eigen wil ondergeschikt opstellen.
+    </p>
+
+    <p>
+    Bovendien is hij behoeftig en zwak; hij is op de hoogte van zijn behoeftigheid en onmacht. Echter, gezien zijn weelde in het hiernamaals die zijn Genereuze Eigenaar voor hem heeft opgeslagen, is hij rijk. En omdat hij zich op de Eindeloze Macht van zijn Meester steunt, is hij sterk.
+    </p>
+
+    <p>
+    Bovendien wendt hij zich slechts tot ALLAH; hij handelt en werkt om Gods Tevredenheid te bereiken en deugdzaamheid te betrachten.
+    </p>
+
+    <p>
+    Voorwaar, de disciplines die de twee wijsheden te bieden hebben, kunnen aan de hand van de afweging tussen de twee studenten worden doorgrond.
+    </p>
+
+    <div class="text-center">
+        <p class="text-red small-title"><strong>De Derde Essentie</strong></p>
+        <p><em><strong>De disciplines die de filosofische wijsheid en de Wijsheid van De Leerrijke Qur’an aan het menselijke gemeenschapsleven bieden</strong></em></p>
+    </div>
+
+    <p>
+    Volgens de filosofische wijsheid is het gemeenschapsleven op kracht gefundeerd. Haar streven is op winst gericht. Haar levensbeschouwing is op strijd gebaseerd. Haar middel om mensen samen te binden, bestaat uit racisme en een negatieve vorm van nationalisme. Haar vruchten bestaan uit de bevrediging van egoïstische lusten en de toename van menselijke behoeften.
+    </p>
+
+    <p>
+    Echter, het kenmerk van kracht is agressie. Het kenmerk van winstbejag is vechten om winst te behalen aangezien de te behalen winst niet voor eenieders wens toereikend is. Het kenmerk van strijd is rivaliteit. Het kenmerk van racisme is rechtsschending aangezien het zich met het verslinden van anderen voedt.
+    </p>
+
+    <p>
+    Voorwaar, deze wijsbegeerte heeft ertoe geleid dat het geluk van de mensheid verloren is gegaan.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 52,
+                'content' => '<div class="page" id="52">
+    <p class="text-end page-number">#52</p>
+
+    <p>
+    De Wijsheid van De Qur’an daarentegen heeft het gemeenschapsleven niet op kracht maar op rechtvaardigheid gefundeerd. Haar streven is niet op winst maar op deugdzaamheid en op Gods Welbehagen gericht. Haar levensbeschouwing is niet op strijd maar op het samenwerkingsprincipe gebaseerd. Haar middel om mensen samen te brengen, bestaat niet uit racisme en nationalisme, maar uit religieuze gemeenzaamheden, beroepsmatige betrekkingen en landelijke belangen.
+    </p>
+
+    <p>
+    Haar doelen blokkeren de drang tot egoïstische lustbevredigingen, stimuleren de ziel tot heilige kennisnemingen, bevredigen verheven gevoelens, dirigeren de mens naar menselijke volmaaktheden en maken de mens daadwerkelijk een mens.
+    </p>
+
+    <p>
+    Het kenmerk van rechtvaardigheid is eendracht. Het kenmerk van deugdzaamheid is saamhorigheid. Het kenmerk van het samenwerkingsprincipe is onderlinge bijstand. Het kenmerk van religie is broederschap en binding. En het ego beteugelen en vastketenen, de ziel naar volmaaktheid dirigeren en vrijlaten, vormen het kenmerk van gelukzaligheid in beide oorden.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 53,
+                'content' => '<div class="page" id="53">
+    <p class="text-end page-number">#53</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Tweede Thema</h2>
+        <p><em>[Uit Het Dertiende Woord]</em></p>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+    <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+    <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+    <sup>1</sup>
+    </p>
+
+    <p class="text-center text-italic">
+    Een dialoog met een aantal jongeren die zich in een verleidelijke beproeving begeven en hun verstand nog niet hebben verloren
+    </p>
+
+    <p>
+    Een aantal jongeren die aan de hedendaagse misleidingen en verleidelijke zonden en amusementen blootstonden, vroegen: <em>“Hoe kunnen wij ons hiernamaals redden?”</em> Zodoende hadden ze de Risale-i Nur om raad verzocht. Daarop zei ik namens de spirituele persoonlijkheid van de Risale-i Nur:
+    </p>
+
+    <p>
+    Het graf bestaat nu eenmaal; niemand kan dit ontkennen. Iedereen zal willens of onwillens in het graf belanden. Het graf kan via drie wegen, op drie manieren betreden worden. Daarbuiten bestaan er geen andere wegen.
+    </p>
+
+    <p><strong>De eerste weg</strong><br>
+    Voor gelovigen is het graf een poort tot een wereld die mooier is dan deze wereld.
+    </p>
+
+    <p><strong>De tweede weg</strong><br>
+    Voor degenen die het hiernamaals erkennen, maar hun leven in dwaling en onzede leiden, is het graf een poort tot een permanente opsluiting en een eenzame gevangenschap waar ze van al hun vrienden worden afgezonderd. Omdat zij het zo zien en geloven, en omdat ze niet volgens de regels van hun geloof leven, staat een dergelijke behandeling hen te wachten.
+    </p>
+
+    <p><strong>De derde weg</strong><br>
+    Voor de verloochenaars en dwalers die niet in het hiernamaals geloven, is het graf een poort tot eeuwige verdoemenis; het is een galg waaraan zij evenals al hun geliefden worden geëxecuteerd. Omdat zij het zo interpreteren, zullen zij als straf ook dat ontmoeten.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 54,
+                'content' => '<div class="page" id="54">
+    <p class="text-end page-number">#54</p>
+
+    <p>
+    Deze laatste twee wegen zijn evident; ze behoeven geen bewijzen, ze zijn met het blote oog waarneembaar. Aangezien het doodsuur verborgen is en de dood elk moment kan komen om je te onthoofden zonder onderscheid tussen oud en jong te maken, is het voor de arme mens ten opzichte van deze grote en opzienbarende waarheid waar hij continu mee geconfronteerd wordt, uiteraard van wereldbelang om een oplossing te vinden om van die eeuwige verdoemenis, die bodemloze en eindeloze isolatie gered te worden, en de poort van het graf voor zichzelf in een poort tot een eeuwige wereld, een eindeloze gelukzaligheid en een wereld van lichternis te veranderen.
+    </p>
+
+    <p>
+    Deze onveranderlijke waarheid doet zich dus via deze drie wegen voor. En honderdvierentwintigduizend trouwhartige boodschappers met beamende tekenen in de vorm van mirakelen in hun handen hebben verkondigd dat op die drie wegen de voornoemde drie waarheden zich voltrekken. Diezelfde verkondiging van Godsgezanten hebben honderdvierentwintig miljoen heiligen middels ontdekkingen, ervaringen en waarnemingen beaamd en ondertekend. En diezelfde verkondiging van Godsgezanten en heiligen hebben ontelbare waarheidsgetrouwe geleerden met onbetwistbare bewijzen op een logische wijze wetenschappelijk geverifieerd<sup>1</sup>. Daarnaast hebben ze met een onwrikbare zekerheid van negenennegentig procent unaniem bekendgemaakt dat alleen geloof en gehoorzaamheid de mens van verdoemenis en van eeuwige gevangenschap kunnen redden, en die weg naar eeuwige gelukzaligheid kunnen laten leiden.
+    </p>
+
+    <p>
+    Als iemand het advies van één enkele boodschapper over het mijden van een weg met één procent kans op ondergang ter harte neemt, maar achteraf niet luistert en die weg alsnog inslaat, dan zal hij uit vrees voor zijn ondergang mentaal dusdanig gekweld worden, dat hij zijn eetlust zal verliezen. Desondanks zijn er honderden duizenden waarheidsgetrouwe en erkende boodschappers die met tekenen bekendmaken dat dwaling en zedeloosheid honderd procent de reden zijn waarom het graf voor onze ogen een galg en een eeuwige gevangenschap in isolatie wordt. Daarnaast laten zij met honderd procent zekerheid weten dat het geloof en dienaarschap die galg verwijderen, die isolatiecel sluiten en het graf voor onze ogen in een poort tot een eeuwige schat en een paleis van gelukzaligheid veranderen.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> De Risale-i Nur is daar één van; iedereen kan de Traktaten raadplegen.
+        </p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 55,
+                'content' => '<div class="page" id="55">
+    <p class="text-end page-number">#55</p>
+
+    <p>
+    Als deze arme mens – en vooral een moslim – tegenover deze verbijsterende, bizarre, angstaanjagende en opzienbarende toestand verwijderd is van geloof en dienaarschap, dan mag de hele wereldheerschappij met alle aardse genietingen aan hem geschonken worden, alsnog blijft de cruciale vraag: bestaat er ook maar iets dat hem zou kunnen verlossen van de pijnlijke kwelling die hij verduurt wegens zijn angst voor het graf op zijn pad waartoe hij elk moment geroepen kan worden? Aangezien ouderdom, ziektes, calamiteiten en de alom plaatsvindende sterftes die kwelling verergeren en in herinnering brengen, maakt het niet uit of dwalers en zedeloze zondaars allerlei soorten pleziertjes beleven; er zal beslist een geestelijke hel in hun harten leven en branden. Echter, een zeer dikke sluier van onachtzaamheid versuft ze, waardoor zij tijdelijk niets vernemen.
+    </p>
+
+    <p>
+    Het gelovige en gehoorzame volk ziet het graf voor zijn ogen als een poort tot een eeuwige schat en een oneindige gelukzaligheid. In de loterij die vanaf de onbegonnenheid is voorbeschikt, is er op basis van zijn geloofsregistratie een lot voor hem gereserveerd dat hem miljarden goudstukken en diamanten zal laten winnen. De spanning die hij ervaart door elk moment <em>“Kom je lot halen”</em> te mogen horen, bezorgt hem een plezier en een geestelijk genot dat zo sterk, wezenlijk en waarachtig is, dat de manifestatie ervan een specifiek paradijs voor hem zou belichamen als dat zaad tot een boom zou uitbloeien. Als iemand desondanks dat plezier en die grote genieting de rug toekeert, en op aandrang van jeugdige verlangens de voorkeur geeft aan zedeloze en vluchtige verboden genietingen die evenals giftige honing vermengd zijn met grenzeloze kwellingen, dan zal hij honderdmaal lager worden dan een dier. Hij kan zich dan niet eens met westerse ongelovigen vergelijken. Want als ongelovige westerlingen onze profeet verloochenen, dan kunnen ze alsnog in andere profeten geloven. Als ze de andere profeten niet kennen, dan kunnen ze alsnog ALLAH erkennen. Als ze ook niets over ALLAH weten, dan kunnen ze alsnog beschikken over enige goede eigenschappen die het middel zijn tot ontwikkeling.
+    </p>
+
+    <p>
+    Echter, een moslim kent zowel de Godsgezanten als zijn Heer als elke vorm van ontwikkeling dankzij Mohammed de Arabier <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span>. Degene die zijn discipline verlaat en uit zijn kring stapt, zal geen enkele andere profeet noch ALLAH kunnen leren kennen, noch zal hij ook maar één grondbeginsel voor de ontwikkeling van zijn ziel kunnen herkennen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 56,
+                'content' => '<div class="page" id="56">
+    <p class="text-end page-number">#56</p>
+
+    <p>
+    Immers, degene die afstand neemt van de disciplinaire fundamenten en de religieuze grondslagen van een eminentie, die als de trots der mensheid inmiddels veertienhonderd jaar lang op een stralende wijze heeft bewezen dat hij voor alle mensen op het gebied van alle waarheden een mentor is, zal uiteraard in geen enkel opzicht meer in staat zijn om een licht of een vooruitgang te herkennen; zo iemand is gedoemd tot absolute afgang.
+    </p>
+
+    <p>
+    Voorwaar, o arme mensen die verslaafd zijn aan de genietingen van het aardse leven en uit angst voor de toekomst ploeteren om een toekomst en een leven op te bouwen! Indien jullie genot, plezier, geluk en rust op aarde willen ondervinden, neem dan genoegen met de genietingen binnen de toegestane kring. Die genietingen schenken jullie genoeg voldoening. Jullie hebben uit de voornoemde verklaring uiteraard kunnen afleiden dat een genieting binnen de verboden kring duizend kwellingen met zich meebrengt.
+    </p>
+
+    <p>
+    Als toekomstige toestanden van bijvoorbeeld vijftig jaar later – zoals opnames uit het verleden die nu bekeken kunnen worden – op een groot scherm zouden worden getoond, dan zouden de zedeloze zondaars met walg en afschuw huilen om de zaken waar ze nu om lachen. Hij die op de aarde en in het hiernamaals eeuwige en aanhoudende gelukzaligheid wil ondervinden, dient binnen de geloofskring de Mohammedaanse discipline <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> als leidraad te nemen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 57,
+                'content' => '<div class="page" id="57">
+    <p class="text-end page-number">#57</p>
+
+    <p class="text-center text-red small-title"><strong><em>Een waarschuwing, een les en een vermaning<br>voor een aantal arme jongeren</em></strong></p>
+
+    <p>
+    Op een dag kwamen een aantal stralende jongeren bij mij op bezoek. Met het oog op de gevaren ten opzichte van het leven, de jeugd en de lusten, vroegen deze jongeren om een sterke vermaning. Zoals ik eerder tegen de jongeren die de Risale-i Nur raadpleegden had gezegd, zei ik:
+    </p>
+
+    <p>
+    Jullie jeugd zal zeker voorbijgaan. Als jullie niet binnen de geoorloofde kring blijven, dan zal jullie jeugd verkwist worden en zowel op aarde als in het graf als in het hiernamaals vele malen meer onheil en ellende met zich meebrengen dan het plezier dat jullie eraan beleven. Indien jullie als dank voor de gunst der jeugdigheid jullie jeugd onder de Islamitische discipline in kuisheid, zedelijkheid en gehoorzaamheid doorbrengen, dan zal die jeugd impliciet aanhouden en de reden voor de verwerving van een eeuwige jeugdigheid worden.
+    </p>
+
+    <p>
+    Wat het leven betreft, als geloof ontbreekt of door opstandigheid geen invloed uitoefent, dan zal het leven, naast een ogenschijnlijk en kortstondig plezier en genot, duizenden malen meer ellende, verdriet en smart opleveren. Want de mens bezit een verstand en een denkvermogen, waardoor hij in tegenstelling tot dieren niet alleen bij het heden, maar van nature ook bij het verleden en de toekomst is betrokken. Ten aanzien van dit tijdsverband kan hij zowel leed als genot ervaren.
+    </p>
+
+    <p>
+    Omdat een dier daarentegen geen denkvermogen bezit, wordt zijn momentele genieting noch door leed uit het verleden, noch door vrees voor de toekomst aangetast. Wanneer een mens echter in dwaling en onachtzaamheid vervalt, dan zullen de smarten uit het verleden en de zorgen om de toekomst zijn momentele genieting enorm verzuren en vergallen. Vooral als die genieting verboden is, zal ze als een honing zijn die in alle opzichten giftig is. Aldus vervalt de mens wat aardse genot betreft tot een honderdmaal lager niveau dan een dier.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 58,
+                'content' => '<div class="page" id="58">
+    <p class="text-end page-number">#58</p>
+
+    <p>
+    Bovendien zijn het leven, het bestaan en zelfs het hele universum voor de afgedwaalde en onachtzame mens alleen de dag waarop hij leeft relevant. Alle vroegere tijden en universa zijn uit het gezichtspunt van zijn dwaling non-existent en dood. Dit wekt vanwege zijn verstandelijke betrokkenheid donkerheden en duisternissen in hem op. Ook de toekomst is uit het gezichtspunt van zijn ongeloof non-existent. En eeuwige scheidingen die door teloorgang ontstaan, brengen via zijn denkvermogen continu duisternissen in zijn leven teweeg.
+    </p>
+
+    <p>
+    Als het geloof het leven verlevendigt, dan zorgt het geloofslicht ervoor dat zowel de toekomst als het verleden verlicht worden en een bestaan krijgen. Evenals het heden zullen ze vanuit het geloofsperspectief verheven geestelijke voeding en bestaanslichten aan de ziel en aan het hart schenken. In <strong>“Het Zevende Verzoek”</strong> uit <strong>“Het Traktaat voor de Ouderen”</strong> wordt er een uitleg van deze waarheid gegeven. Ik adviseer jullie om dat traktaat te raadplegen.
+    </p>
+
+    <p>
+    Voorwaar, zo zit het leven in elkaar. Indien jullie naar het plezier en het genot van het leven verlangen, verlevendig jullie leven dan met het geloof, verlicht het met de geboden en behoedt het door te vluchten van zonden.
+    </p>
+
+    <p>
+    Zoals ik eerder aan andere jongeren had verteld, zal ik jullie aan de hand van een voorbeeld een verbijsterende waarheid achter de dood vertellen die dagelijks ieder moment overal via sterftes wordt getoond.
+    </p>
+
+    <p>
+    Stel je voor dat er voor ons hier een galg is opgesteld. Daarnaast is er een loterijkantoor gevestigd waar loten met hele grote prijzen aan de winnaars worden overhandigd. Wij hier zullen zonder uitzondering alle tien willens of onwillens daartoe uitgenodigd worden; ze zullen ons roepen. Omdat wij echter niet weten wanneer ze ons zullen roepen, kunnen wij elk moment één van de volgende twee mededelingen krijgen:
+    </p>
+
+    <p style="text-indent: 0">
+        <span>• <em>“Kom je ticket naar verdoemenis halen, loop naar de galg!”</em></span><br>
+        <span>• <em>“Er is een loterijbiljet voor jou weggelegd dat jou miljoenen goudstukken zal laten winnen, kom het halen!”</em></span>
+    </p>
+
+    <p>
+    Terwijl wij afwachten, verschijnen er opeens twee personen. De ene is een mooie en bedrieglijke halfnaakte vrouw met een zeer lekker ogend maar giftig gebak in haar hand dat ze ons via verleidingen wil toedienen. De andere persoon is een serieuze, onbedrieglijke en onfeilbare man die meteen na die vrouw naar binnen loopt. Hij zegt:
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 59,
+                'content' => '<div class="page" id="59">
+    <p class="text-end page-number">#59</p>
+
+    <p><em>
+    “Ik heb een talisman en een les voor jullie meegebracht. Indien jullie gehoor aan mij geven en niet van dat gebak eten, dan zullen jullie van die galg gered worden. Met deze talisman kunnen jullie dat unieke loterijbiljet halen. Jullie zien zelf met jullie ogen dat degenen die van dat gebak eten naar de galg lopen, terwijl ze onderweg door het gif van dat gebak vreselijke maagpijn lijden. Degenen die het loterijbiljet hebben gehaald, zijn wellicht niet in zicht en lijken ook naar die galg te lopen. Echter, miljoenen getuigen melden dat zij niet worden opgehangen, maar dat zij die galg een trede maken om moeiteloos naar de kring van begunstiging te stappen. Voorwaar, kijk door de vensters van de geschiedenis. De grootste functionarissen en verheven individuen die deskundig zijn op dit gebied, spreken met een heldere stem en maken het volgende bekend:
+    </em></p>
+
+    <p><em><strong>
+    ‘Zoals jullie degenen die naar de galg lopen met het blote oog waarnemen, kunnen jullie met dezelfde visuele overtuiging er absoluut zeker van zijn dat de bezitters van de talisman dit loterijbiljet ontvangen.’”
+    </strong></em></p>
+
+    <p>
+    Voorwaar, net zoals dit voorbeeld dienen de zedeloze genietingen der jeugdigheid binnen de verboden kring als een giftige honing. Ze leiden ertoe dat het geloof, wat het benodigde biljet en document voor eindeloze weelde en eeuwige gelukzaligheid is, verloren gaat. Als resultaat zullen de dood als galg en het graf als poort tot eeuwige verdoemenis ervaren worden zoals ze ogenschijnlijk overkomen. En omdat het doodsuur verborgen is, maakt het niet uit of je jong of oud bent; elk moment kan het uur aanbreken om je te onthoofden.
+    </p>
+
+    <p>
+    Als je die giftige honing binnen de verboden genietingen verlaat, en als je de Qur’anische talisman bestaande uit het geloof en de geboden aanvaardt, dan zal jij volgens de unanieme kennisgeving van honderdvierentwintigduizend Godsgezanten <span class="honorific" dir="rtl" lang="ar">عليهم السلام</span>, ontelbare heiligen en waarheidsgetrouwe geleerden die hieromtrent tekenen hebben getoond, een winnend loterijbiljet trekken uit de grote voorbeschikte loterij der mensheid, met als prijs: eeuwige gelukzaligheid.
+    </p>
+
+    <p><strong>Tot slot</strong></p>
+
+    <p>
+    De jeugd zal voorbijgaan. Als ze op de zedeloze weg is versleten, dan zal ze zowel op aarde als in het hiernamaals duizenden onheil en leed met zich meebrengen. Indien jullie willen inzien dat zulke jongeren vooral op basis van misbruik en overdaad met zorgelijke ziektes in ziekenhuizen terechtko    men, of door uitbarstingen in gevangenissen of gestichten eindigen, of door de druk van geestelijke kwellingen in bars belanden, dan kunnen jullie de ziekenhuizen, de gevangenissen en de graven raadplegen.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 60,
+                'content' => '<div class="page" id="60">
+    <p class="text-end page-number">#60</p>
+
+    <p>
+    De weeklachten die jullie in ziekenhuizen zullen vernemen, zullen in de meeste gevallen ongetwijfeld geslaakt worden door ziekten die de overdaad en het misbruik van jeugdige begeerten met zich meebrengen. Evenzo zullen de spijtbetuigingen die jullie in gevangenissen zullen vernemen, voornamelijk voortkomen uit de klappen die gevangenen door toedoen van jeugdige uitbarstingen binnen de verboden kring hebben opgelopen. En in het graf en in de tussenwereld, waarvan de poorten voor nieuwkomers continu openen en sluiten, zijn de meeste folteringen resultaten van jeugdige zonden – zoals ook geverifieerd wordt door de waarnemingen van deskundigen op het gebied van het leven in het graf, evenals de bevestigingen en constateringen van alle waarheidsgetrouwe geleerden.
+    </p>
+
+    <p>
+    En raadpleeg de ouderen en de zieken die het merendeel van de mensheid uitmaken. Uiteraard zullen de meesten met pijn en smart het volgende bekennen:
+    </p>
+
+    <p><em>
+    “Wee ons, wij hebben onze jeugd op een zinloze en ongunstige wijze verkwist. Doe absoluut niet zoals wij hebben gedaan!”
+    </em></p>
+
+    <p>
+    Immers, iemand die na een vijf à tien jarig tijdverdrijf binnen de verboden kring der jeugdige genietingen vele jaren op aarde rouwt en treurt, in de tussenwereld kwelling en verlies ondergaat, en in het hiernamaals in de duisternissen van de hel belandt, bevindt zich in de treurigste toestand. Desondanks verdient diegene volgens het geheim achter: <span class="text-arabic-inline" dir="rtl" lang="ar">اَلرَّاضٖى بِالضَّرَرِ لَا يُنْظَرُ لَهُ</span><sup>1</sup>
+    geen medelijden. Want iemand die willens een nadelige weg inslaat, dient niet meedogend behandeld te worden en verdient dit ook niet.
+    </p>
+
+    <p>
+    Moge de Hoogste Gerechtigde ons en jullie van de huidige verleidelijke misleidingen bevrijden en vrijwaren; Âmîn.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p">
+        <sup>1</sup> “Hij die zich moedwillig in gevaar begeeft, heeft geen recht op mededogen.”
+        </p>
+    </div>
+
+</div>'
+            ],
         ];
     }
 }
