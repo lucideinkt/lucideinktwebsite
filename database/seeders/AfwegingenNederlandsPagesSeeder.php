@@ -991,11 +991,11 @@ ook als een klein boekje worden samengesteld en verspreid.
                 'content' => '<div class="page" id="30">
     <p class="text-end page-number">#30</p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Voorwaar, o genotzuchtige ego! Aanschouw het gezicht van de waarheid door de verrekijker van deze parabel. Die koning symboliseert De Onbegonnen en Oneindige Sultan alias jouw Heer, jouw Schepper. Die landgoederen, machines, apparaten en meetinstrumenten symboliseren je bezittingen binnen je levenskring, waaronder je lichaam, ziel en hart, je ogen, tong, verstand en inbeeldingsvermogen, en dergelijke inwendige en uitwendige zintuigen. En die nobelste officier symboliseert de Nobele Profeet. Dat koninklijke bevelschrift is De Leerrijke Qur’an waarin de grote handel in kwestie in de volgende Aya wordt geopenbaard:
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 10px auto 0 auto; max-width: 500px;">
     اِنَّ اللّٰهَ اشْتَرٰى مِنَ الْمُؤْمِنٖينَ اَنْفُسَهُمْ وَاَمْوَالَهُمْ بِاَنَّ لَهُمُ الْجَنَّةَ<sup>1</sup>
     </p>
 
@@ -2368,7 +2368,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         &lt;/p&gt;"><sup>1</sup></button>
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    <p style="margin-top: 0" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
     وَ مَا الْحَيٰوةُ الدُّنْيَا اِلَّا مَتَاعُ الْغُرُورِ<sup>2</sup>
     </p>
 
@@ -2607,23 +2607,23 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         <h2>Perzisch Is Ingegeven</h2>
     </div>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
     هٰذِهِ الْمُنَاجَاةُ تَخَطَّرَتْ فِى الْقَلْبِ هٰكَذَا بِالْبَيَانِ الْفَارِسٖى
     </p>
 
-    <p class="text-italic text-bold">
+    <p class="text-italic text-bold" style="margin-bottom: 0;">
     Oftewel, omdat deze smeekbede mijn hart Perzisch is ingegeven, zal ze in het Perzisch worden geschreven. Dit gedeelte komt ook in het eerder gedrukte Traktaat “Hubâb” voor.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     يَارَبْ! بَشَشْ جِهَتْ نَظَرْ مٖيكَرْدَمْ، دَرْدِ خُودْرَا دَرْمَانْ نَمٖى دٖيدَمْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0;">
     O Heer! Ongelaten en onachtzaam heb ik mij op mijn kunnen en mijn wil berust, en mijn blik over zes kijkrichtingen laten ronddwalen om een genezing voor mijn zorgen te vinden. Helaas heb ik geen genezing voor mijn zorgen kunnen vinden. Impliciet werd mij gezegd: “Zijn jouw zorgen geen toereikende genezingen voor jou?”
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     دَرْرَاسْتْ مٖى دٖيدَمْ كِه: دٖى رُوزْ مَزَارِ پَدَرِ مَنَسْتْ
     </p>
 
@@ -2634,7 +2634,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         <hr class="hr-footnote" />
         <p class="footnote-p"><strong>Voetnoot: </strong>Het geloof weergeeft die enge immense grafakker als een vertrouwde en stralende ontmoetingsruimte, en als een verzamelplaats van geliefden.</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     وَ دَرْ چَپْ دٖيدَمْ كِه: فَرْدَا قَبْرِ مَنَسْتْ
     </p>
 
@@ -2652,7 +2652,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="80">
     <p class="text-end page-number">#80</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     وَ اٖيمْرُوزْ: تَابُوتِ جِسْمِ پُرْ اِضْطِرَابِ مَنَسْتْ
     </p>
 
@@ -2663,7 +2663,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         <hr class="hr-footnote" />
         <p class="footnote-p"><strong>Voetnoot: </strong>Het geloof weergeeft die doodskist als een handelsplaats en een bezienswaardig gastenverblijf.</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     بَرْ سَرِ عُمْرْ جَنَازَۀِ مَنْ اٖيسْتَادَه اَسْتْ
     </p>
 
@@ -2674,7 +2674,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         <hr class="hr-footnote" />
         <p class="footnote-p"><strong>Voetnoot: </strong>Het geloof weergeeft de vrucht van die boom niet als een lijk, maar als een ziel die als ontvanger van een eeuwig leven en eeuwige gelukzaligheid uit zijn oude schulp is gevlogen om door de sterren te reizen.</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     دَرْ قَدَمْ: اٰبِ خَاكِ خِلْقَتِ مَنْ وَ خَاكِسْتَرِ عِظَامِ مَنَسْتْ
     </p>
 
@@ -2685,7 +2685,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         <hr class="hr-footnote" />
         <p class="footnote-p"><strong>Voetnoot: </strong>Het geloof weergeeft die grond als een poort tot Genade en als een sluier voor de salon van het paradijs.</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     چُونْ دَرْ پَسْ مٖينِگَرَمْ، بٖينَمْ: اٖينْ دُنْيَاءِ بٖى بُنْيَادْ هٖيچْ دَرْ هٖيچَسْتْ
     </p>
 
@@ -2703,7 +2703,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="81">
     <p class="text-end page-number">#81</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     وَ دَرْ پٖيشْ: اَنْدَازَۀِ نَظَرْ مٖيكُنَمْ، دَرِ قَبِرْ كُشَادَه اَسْتْ
     </p>
 
@@ -2716,9 +2716,9 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
         <hr class="hr-footnote" />
-        <p class="footnote-p"><strong>Voetnoot: </strong>Het geloof weergeeft die poort van het graf als de poort tot de verlichte wereld en die weg als de weg naar eeuwige gelukzaligheid. Zodoende wordt het zowel een genezing als een zalf voor mijn zorgen.</p>
+        <p style="margin-bottom: 0" class="footnote-p"><strong>Voetnoot: </strong>Het geloof weergeeft die poort van het graf als de poort tot de verlichte wereld en die weg als de weg naar eeuwige gelukzaligheid. Zodoende wordt het zowel een genezing als een zalf voor mijn zorgen.</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     مَرَا جُزْ جُزْءِ اِخْتِيَارٖى چٖيزٖى نٖيسْتْ دَرْ دَسْتْ
     </p>
 
@@ -2729,7 +2729,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         <hr class="hr-footnote" />
         <p class="footnote-p"><strong>Voetnoot: </strong>Het geloof verschaft ter vervanging van die minieme wil een vergunning om beroep te mogen doen op een Grenzeloze Macht; het geloof is in feite een vergunning.</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     كِه اُو جُزْءْ هَمْ عَاجِزْ، هَمْ كُوتَاهُ، و هَمْ كَمْ عَيَارَسْتْ
     </p>
 
@@ -2740,7 +2740,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
         <hr class="hr-footnote" />
         <p class="footnote-p"><strong>Voetnoot: </strong>Het geloof laat die vrije wil namens ALLAH werken, waardoor het voor alles toereikend is; zoals een soldaat die zijn beperkte kracht namens het land laat werken en zodoende in staat is om taken te verrichten die duizenden malen zijn kracht te boven gaan…</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     نَه دَرْ مَاضٖى مَجَالِ حُلُولْ، نَه دَرْ مُسْتَقْبَلْ مَدَارِ نُفُوذْ اَسْتْ
     </p>
 
@@ -2758,71 +2758,71 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="82">
     <p class="text-end page-number">#82</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     مَيْدَانِ اُو اٖينْ زَمَانِ حَالْ، وَ يَكْ اٰنِ سَيَّالَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     De reikwijdte van die vrije wil is beperkt tot dit huidige tijdstip en tot een voorbijvliegend moment.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     بَا اٖينْ هَمَه فَقْرْهَا وَ ضَعْفْهَا، قَلَمِ قُدْرَتِ تُو اٰشِكَارَه نُوِشْتَه اَسْتْ،
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto;">
     دَرْ فِطْرَتِ مَا: مَيْلِ اَبَدْ وَ اَمَلِ سَرْمَدْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Voorwaar, ondanks dat ik totaal terneergeslagen ben door al mijn benodigdheden, mijn zwaktes, mijn behoeftigheid en mijn onmacht, evenals mijn angsten en vrezen die vanuit zes richtingen verhevigd worden, zijn er met de Machtspen op de bladzijde van mijn aard op een klaarblijkelijke wijze wensen geschreven die zich tot aan de eeuwigheid uitstrekken, evenals verlangens die zich tot aan de oneindigheid uitbreiden; ze zijn in mijn wezen gevestigd.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     بَلْكِه هَرْ چِه هَسْتْ، هَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Voorbeelden van alles wat zich op aarde bevindt, zijn aanwezig in mijn aard. Ik heb een band met ze allemaal; ik coördineer en ik werk voor ze.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     دَائِرَۀِ اِحْتِيَاجْ مَانَنْدِ دَائِرَۀِ مَدِّ نَظَرْ بُزُرْگٖى دَارَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     De kring van behoeften is zo wijd als de reikwijdte van het oog.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     خَيَالْ كُدَامْ رَسَدْ، اِحْتِيَاجْ نٖيزْ رَسَدْ
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto;">
     دَرْ دَسْتْ ۞ هَرْچِه نٖيسْتْ دَرْ اِحْتِيَاجْ هَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     De kring van behoeften reikt zelfs zo ver als de fantasie; ook daar schuilen behoeften. De mens heeft behoefte aan alles wat hij niet bij de hand heeft. Hij heeft behoefte aan datgene waar zijn hand niet bij kan, terwijl de behoeften buiten zijn handbereik ontelbaar zijn.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     دَائِرَۀِ اِقْتِدَارْ هَمْچُو دَائِرَۀِ دَسْتِ كُوتَاهْ كُوتَاهَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     De kring van mijn kunnen is echter zo krap en beperkt als de reikwijdte van mijn hand.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     پَسْ فَقْرُ و حَاجَاتِ مَا بَقَدْرِ جِهَانَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Aldus heb ik een wereld van behoeften en benodigdheden.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     وَ سَرْمَايَۀِ مَاهَمْچُو: جُزْءِ «لَا يَتَجَزّٰا» اَسْتْ
     </p>
 
@@ -2833,59 +2833,59 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="83">
     <p class="text-end page-number">#83</p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Mijn vermogen bestaat echter slechts uit een minieme wil.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     اٖينْ جُزْءِ كُدَامْ، وَ اٖينْ كَائِنَاتِ حَاجَاتِ كُدَامَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Voorwaar, hoe kunnen deze wereldgrote behoeften, die pas na miljarden onkosten tot stand kunnen komen, met deze goedkope beperkte wil verworven worden? Hiermee kunnen ze niet aangeschaft worden; hiermee kunnen ze niet verworven worden. Aldus dient er naar een andere oplossing gezocht te worden.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     پَسْ دَرْ رَاهِ تُو، اَزْ اٖينْ جُزْءِ نٖيزْ بَازْ مٖى گُذَشْتَنْ، چَارَۀِ مَنْ اَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Die oplossing bestaat uit het volgende: afzien van je vrije wil, je taken overlaten aan De Goddelijke Wil, afstand nemen van je eigen vermogen en kracht, beroep doen op Het Vermogen en De Kracht van de Hoogste Gerechtigde en je vastklampen aan de waarheid achter Godgelatenheid. O Heer, aangezien dit het middel tot bevrijding is, zie ik op Uw weg af van mijn beperkte wil en neem ik afstand van mijn eigenheid.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     تَا عِنَايَتِ تُو دَسْتْگٖيرِ مَنْ شَوَدْ، رَحْمَتِ بٖى نِهَايَتِ تُو پَنَاهِ مَنْ اَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Opdat Uw Bijstand uit erbarmen voor mijn onmacht en zwakte mijn hand vastpakt, en opdat Uw Genade uit mededogen voor mijn behoeftigheid en armoedigheid mijn toevlucht kan zijn en Haar Poort voor mij opent.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     اٰنْ كَسْ كِه بَحْرِ بٖى نِهَايَتِ رَحْمَتْ يَافْتْ اَسْتْ،
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto;">
     تَكْيَه نَه كُنَدْ بَرْ اٖينْ جُزْءِ اِخْتِيَارٖى كِه يَكْ قَطْرَه سَرَابَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Waarlijk, wie de eindeloze oceaan van Genade ontmoet, zal uiteraard nimmer de illusionaire druppel van zijn beperkte wil vertrouwen en Die Genade verlaten om die wil te raadplegen.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     اَيْوَاهْ! اٖينْ زِنْدِگَانٖى هَمْ چُو خَابَسْتْ
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto;">
     وٖينْ عُمْرِ بٖى بُنْيَادْ هَمْ چُو بَادَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Wee ons, wij zijn misleid! Wij dachten dat dit aardse leven stabiel was. Door die gedachte hebben wij het volledig verkwist. Waarlijk, deze levensloop is een slaap; hij is als een droom verlopen. Ook de rest van dit instabiele leven zal als een bries voorbijvliegen en verdwijnen.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     اِنْسَانْ بَزَوَالْ دُنْيَا بَفَنَا اَسْتْ، اٰمَالْ بٖى بَقَا اٰلَامْ بَبَقَا اَسْتْ
     </p>
 
@@ -2896,43 +2896,43 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="84">
     <p class="text-end page-number">#84</p>
 
-    <p>
+    <p style="margin-bottom: 0">
     De hoogmoedige mens die op zichzelf vertrouwt en zich onsterfelijk waant, is tot teloorgang gedoemd; hij raast richting zijn ondergang. Het mensenverblijf genaamd aarde zal in de nietige duisternis eindigen. Ambities houden niet aan, kwellingen blijven in de ziel voortbestaan.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     بِيا اَىْ نَفْسِ نَ فَرْجَامْ! وُجُودِ فَانٖى خُودْرَا فَدَا كُنْ
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto;">
     خَالِقِ خُودْرَا كِه اٖينْ هَسْتٖى وَدٖيعَه هَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Aangezien dit de waarheid is, ontwaak! O mijn ego dat enorme passie koestert voor dit leven, enorme zorgen koestert voor zijn voortbestaan, enorm verliefd is op de wereld, terwijl hij blootstaat aan talloze verlangens en kwellingen, word wakker! Omdat een vuurvlieg op zijn eigen licht vertrouwt, blijft hij in de grenzeloze duisternis van de nacht ronddwalen. Omdat een honingbij niet op zichzelf vertrouwt, ontmoet hij de zon gedurende de dag; hij komt al zijn bloemige vrienden in het bloemenrijk tegen wanneer ze verguld zijn met zonnestralen. Ook jij zult zoals een vuurvlieg worden als jij je op jezelf, je bestaan en je eigenheid berust. Als jij je vergankelijke bestaan opoffert aan de weg van De Schepper Die jou dat bestaan heeft gegeven, dan zal je zoals de honingbij worden en een eindeloos bestaanslicht ontmoeten. Offer het dus op, want dit bestaan is jou geleend en toevertrouwd.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     وَ مُلْكِ اُو وَ اُو دَادَه فَنَا كُنْ تَا بَقَا يَابَدْ،
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto;">
     اَزْ اٰنْ سِرّٖى كِه: «نَفْىِ نَفْىْ» اِثْبَاتْ اَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     En het is Zijn eigendom; Hij heeft het gegeven. Offer het dus op zonder je aan te stellen en te aarzelen; offer het op, opdat het vereeuwigd wordt. Immers, een ontkenning van een ontkenning is een erkenning. Oftewel, wanneer iets niet afwezig is, dan is het er. Als non-existentie non-existent wordt, dan krijgt ze een bestaan.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     خُدَاىِ پُرْ كَرَمْ خُودْ مُلْكِ خُودْرَا مٖى خَرَدْ اَزْ تُو
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0 auto;">
     بَهَاىِ بٖى گِرَانْ دَادَه بَرَاىِ تُو نِگَاهْ دَارَسْتْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     De Genereuze Schepper koopt Zijn Eigen bezit van jou en geeft jou als prijs het paradijs. Bovendien behoedt Hij dat bezit zorgvuldig en verhoogt Hij zijn waarde. Hij zal het jou in een eeuwige en voortreffelijke vorm teruggeven. O mijn ego, aarzel dus niet en drijf deze handel die in vijf opzichten winst boven winst oplevert, opdat je van vijf nadelen wordt gered en vijf verdiensten verwerft!
     </p>
 
@@ -2951,43 +2951,43 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     &lt;/p&gt;"><sup>1</sup></button>
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;">
     فَلَمَّا اَفَلَ قَالَ لَا اُحِبُّ الْاٰفِلٖينَ <sup>2</sup>
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    <p style="margin-top: 0" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
     لَقَدْ اَبْكَانٖى نَعْىُ { لَا اُحِبُّ الْاٰفِلٖينَ } مِنْ خَلٖيلِ اللّٰهِ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     De uitspraak van Ibrahîm <span class="honorific" dir="rtl" lang="ar">عليه السلام</span> over de dood, luidende: <span class="text-arabic-inline" dir="rtl" lang="ar">لَٓا اُحِبُّ الْاٰفِلٖينَ</span>, waarin de teloorgang en de ondergang van het universum wordt aangekondigd, heeft mij laten huilen.
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     فَصَبَّتْ عَيْنُ قَلْبٖى قَطَرَاتٍ بَاكِيَاتٍ مِنْ شُؤُنِ اللّٰهِ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Het oog van het hart huilde en liet tranen waaruit tranen welden. Terwijl het oog van het hart huilde, was elke druppel die hij liet zo bedroevend, dat die ook tranen teweegbracht en zelf nagenoeg ook huilde. Die druppels zijn de aankomende Perzische passages.
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     لِتَفْسٖيرِ كَلَامٍ مِنْ حَكٖيمٍ اَىْ نَبِىٍّ فٖى كَلَامِ اللّٰهِ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Voorwaar, die druppels vertolken een profetische uitspraak die via een Goddelijke Wijsheid bij Het Woord van ALLAH is inbegrepen.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     نَمٖى زٖيبَاسْتْ «اُفُولْدَه» گُمْ شُدَنْ مَحْبُوبْ
     </p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Een geliefde die tijdens haar ondergang verdwijnt, kan niet mooi worden genoemd. Want een geliefde die tot teloorgang is gedoemd, kan in essentie niet mooi zijn. Zoiets kan niet en behoort niet geliefd te worden met een hart dat als spiegel van de Onafhankelijke voor een eeuwige geliefde is geschapen.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
     نَمٖى اَرْزَدْ «غُرُوبْدَه» غَيْبْ شُدَنْ مَطْلُوبْ
     </p>
 
