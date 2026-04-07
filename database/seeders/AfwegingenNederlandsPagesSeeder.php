@@ -1578,7 +1578,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p>
-    Voorwaar, de ene broer vertegenwoordigt een gelovige ziel met een zuiver hart, terwijl de andere broer een ongelovige ziel met een verdorven hart vertegenwoordigt. De rechter weg symboliseert de weg van De Qur’an en het geloof, terwijl de linker weg de weg van opstand en ongeloof symboliseert. De tuin op die weg symboliseert het tijdelijke gemeenschapsleven in de menselijke maatschappij en de menselijke beschaving waar heil en onheil, deugd en ondeugd, reinheid en onreinheid zich samen voordoen. Hij die verstandig is, zal naar het principe: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">خُذْ مَا صَفَا دَعْ مَا كَدَرْ</span> handelen en met een vredig hart voortgaan.
+    Voorwaar, de ene broer vertegenwoordigt een gelovige ziel met een zuiver hart, terwijl de andere broer een ongelovige ziel met een verdorven hart vertegenwoordigt. De rechter weg symboliseert de weg van De Qur’an en het geloof, terwijl de linker weg de weg van opstand en ongeloof symboliseert. De tuin op die weg symboliseert het tijdelijke gemeenschapsleven in de menselijke maatschappij en de menselijke beschaving waar heil en onheil, deugd en ondeugd, reinheid en onreinheid zich samen voordoen. Hij die verstandig is, zal naar het principe: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">خُذْ مَا صَفَا دَعْ مَا كَدَرْ</span> handelen en met een vredig hart voortgaan.
     </p>
 
     <div class="page-footnote">
