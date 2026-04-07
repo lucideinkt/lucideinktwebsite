@@ -2277,7 +2277,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="68">
     <p class="text-end page-number">#68</p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    <p style="margin-top: 0; margin-bottom: 0;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
     بِاسْمِهٖ سُبْحَانَهُ<sup>1</sup> وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup>
     </p>
 
