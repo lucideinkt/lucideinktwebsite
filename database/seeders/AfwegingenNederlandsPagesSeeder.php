@@ -995,7 +995,7 @@ ook als een klein boekje worden samengesteld en verspreid.
     Voorwaar, o genotzuchtige ego! Aanschouw het gezicht van de waarheid door de verrekijker van deze parabel. Die koning symboliseert De Onbegonnen en Oneindige Sultan alias jouw Heer, jouw Schepper. Die landgoederen, machines, apparaten en meetinstrumenten symboliseren je bezittingen binnen je levenskring, waaronder je lichaam, ziel en hart, je ogen, tong, verstand en inbeeldingsvermogen, en dergelijke inwendige en uitwendige zintuigen. En die nobelste officier symboliseert de Nobele Profeet. Dat koninklijke bevelschrift is De Leerrijke Qur’an waarin de grote handel in kwestie in de volgende Aya wordt geopenbaard:
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 10px auto 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 10px auto 0 auto;">
     اِنَّ اللّٰهَ اشْتَرٰى مِنَ الْمُؤْمِنٖينَ اَنْفُسَهُمْ وَاَمْوَالَهُمْ بِاَنَّ لَهُمُ الْجَنَّةَ<sup>1</sup>
     </p>
 
