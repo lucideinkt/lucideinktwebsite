@@ -919,7 +919,7 @@ ook als een klein boekje worden samengesteld en verspreid.
         <sup>1</sup>
     </p>
 
-    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;">
         اِنَّ اللّٰهَ اشْتَرٰى مِنَ الْمُؤْمِنٖينَ اَنْفُسَهُمْ وَاَمْوَالَهُمْ بِاَنَّ لَهُمُ الْجَنَّةَ<sup>2</sup>
     </p>
 
