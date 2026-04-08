@@ -3184,12 +3184,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     كِه « لَا اِلٰهَ اِلَّا هُوَ » بَرَابَرْ مٖيزَنَدْ عَالَمْ
     </p>
 
-    <p class="tab-desk">
-    Want deze wereld zegt tezamen met al haar wezens via uiteenlopende talen en verscheidene melodieën in de ultieme gebedskring van Godsverering: <span class="text-arabic-inline delima-font">لا اِلٰهَ اِلَّا هُو</span>.
-    Zodoende betuigt ze de Goddelijke Eenheid. Dit strijkt een zalf over de wond die de uitspraak: <br><span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ</span> heeft toegebracht, en in plaats van valse geliefden waarmee de band vroeg of laat verbroken wordt, toont het een Onvergankelijke Geliefde.
-    </p>
-
-    <p class="tab-mob">
+    <p>
     Want deze wereld zegt tezamen met al haar wezens via uiteenlopende talen en verscheidene melodieën in de ultieme gebedskring van Godsverering: <span class="text-arabic-inline delima-font">لا اِلٰهَ اِلَّا هُو</span>.
     Zodoende betuigt ze de Goddelijke Eenheid. Dit strijkt een zalf over de wond die de uitspraak: <span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ</span> heeft toegebracht, en in plaats van valse geliefden waarmee de band vroeg of laat verbroken wordt, toont het een Onvergankelijke Geliefde.
     </p>
