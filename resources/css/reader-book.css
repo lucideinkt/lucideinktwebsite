@@ -301,6 +301,10 @@
     display: block;
 }
 
+.tab-mob {
+    display: none;
+}
+
 /* Bismillah SVG container */
 .book-reader-scope .text-arabic-bismillah {
     text-align: center;
@@ -334,6 +338,14 @@
     .book-reader-scope .bismillah-svg {
         width: 43%;
         max-width: 400px;
+    }
+
+    .tab-mob {
+        display: block;
+    }
+
+    .tab-desk {
+        display: none;
     }
 }
 

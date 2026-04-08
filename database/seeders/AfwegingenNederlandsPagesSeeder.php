@@ -2991,15 +2991,340 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     نَمٖى اَرْزَدْ «غُرُوبْدَه» غَيْبْ شُدَنْ مَطْلُوبْ
     </p>
 
-    <p>
-    Een begeerde die met haar ondergang verdwijnt, is het niet waard om naar verlangd te worden.
-    </p>
-
     <div class="page-footnote">
     <hr class="hr-footnote" />
     <p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
     <p class="footnote-p"><sup>2</sup> “Toen zij (de ster) ten onder ging, zei hij: ‘Ik hou niet van hetgeen ten onder gaat’” - <em>De Heilige Qur’an, 6:76</em></p>
     </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 86,
+                'content' => '<div class="page" id="86">
+    <p class="text-end page-number">#86</p>
+
+    <p style="margin-bottom: 0">
+    Een streven dat tijdens zijn ondergang tot verdwijning is gedoemd, is de belangstelling van het hart en de interesse van het verstand onwaardig; zoiets kan geen bron van verlangens zijn. Het is het niet waard om met smart en verdriet te treuren om zijn vertrek. Vooral het hart mag zich niet daaraan binden en vastklampen.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+    مَحْوْ شُدَنْ مَقْصُودْ « فَنَادَه » نَمٖى خٰواهَمْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Een streven dat vernietigd wordt wanneer het vergaat, is een streven dat onwenselijk is voor mij. Ik ben vergankelijk. Ik verlang niet naar het vergankelijke! Wat kan ik doen?
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+    دَفْنْ شُدَنْ مَعْبُودْ « زَوالْدَه » نَمٖى خٰوانَمْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Een aanbedene die in vergankelijkheid wordt begraven... die zal ik niet aanroepen, die zal ik niet tot mijn toeverlaat maken. Want ik ben uitermate behoeftig en machteloos. Hij die machteloos is, kan mijn gigantische zorgen niet verdrijven, noch zalf over mijn eeuwige wonden strijken. Hoe kan iemand een aanbedene zijn, wanneer hij zichzelf niet van teloorgang kan bevrijden?
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+    عَقْلْ فَرْيَادْ مٖى دَارَدْ، نِدَاءِ ﴿ لا اُحِبُّ الْاٰفِلٖينَ ﴾ مٖى زَنَدْ رُوحَمْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Waarlijk, het verstand dat zich door het zichtbare laat meeslepen, zal huiveren wanneer hij de teloorgang ziet van alles wat hij in dit hectische universum liefheeft. En de ziel die op zoek is naar een eeuwige geliefde, verkondigt de kreet:
+    </p>
+
+   <p class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ<sup>1</sup></p><p style="display: inline;text-indent: 0" class="delima-font">.</p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+    نَمٖى خٰواهَمْ، نَمٖى خٰوانَمْ، نَمٖى تَابَمْ فِرَاقٖى!
+    </p>
+
+    <p style="margin-bottom: 0">
+    Ik weiger, ik wil het niet, scheiding kan ik niet verdragen!
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+    نَمٖى اَرْزَدْ « مَرَاقَه » اٖينْ زَوَالْ دَرْ پَسْ تَلَاقٖى
+    </p>
+
+    <p>
+    Samenkomsten die door teloorgang meteen verzuren, verdienen geen verdriet en aandacht; ze zijn helemaal geen interesse waard. Want zoals de teloorgang van genot kwellend is, is de gedachte aan de teloorgang van genot evenzeer kwellend. Alle literatuur van valse geliefden, oftewel hun poëtische liefdesbetuigingen, zijn kreten van verdriet die ze door deze gedachte aan teloorgang slaken. Als je de ziel van al hun poëzie zou persen, dan zouden daar druppels van treurige kreten uit druipen.
+    </p>
+
+    <div class="page-footnote">
+    <hr class="hr-footnote" />
+    <p class="footnote-p"><sup>1</sup>“Ik hou niet van hetgeen tenondergaat” - <em>De Heilige Qur’an, 6:76</em></p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 87,
+                'content' => '<div class="page" id="87">
+    <p class="text-end page-number">#87</p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    اَزْ اٰنْ دَرْدٖى گِرٖينِ ﴿ لا اُحِبُّ الْاٰفِلٖينَ ﴾ مٖى زَنَدْ قَلْبَمْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Voorwaar, die vergankelijke samenkomsten en die ellendige valse liefdes wekten zoveel zorgen en onheil in mij op, dat mijn hart in het voetspoor van Ibrahîm: <br><span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ<sup>1</sup></span> uitte en uitschreeuwde.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    دَرْ اٖينْ فَانٖى بَقَاخَازٖى بَقَاخٖيزَدْ فَنَادَنْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Als je in deze vergankelijke wereld eeuwigheid wenst, weet dan dat eeuwigheid aan ondergang ontspruit. Laat je kwaadgezinde ego ondergang ondergaan, opdat je eeuwigheid ondervindt.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    فَنَا شُدْ، هَمْ فَدَا كُنْ، هَمْ عَدَمْ بٖينْ، كِه اَزْ دُنْيا « بَقَايَه » راهْ فَنَادَنْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Verlos jezelf van kwade zeden die de kern van aardsgezindheid vormen en verga; offer je bezittingen en je eigendom op aan de weg van de Ware Geliefde. Doorzie de eindbestemming van wezens die nietigheid uitdrukken, want de weg die van deze wereld naar eeuwigheid leidt, loopt langs vergankelijkheid.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    فِكْرْ فٖيزَارْ مٖى دَارَدْ، اَنٖينِ ﴿ لا اُحِبُّ الْاٰفِلٖينَ ﴾ مٖى زَنَدْ وِجْدَانْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    De menselijke denkwijze die de oorzaken induikt, raakt verbijsterd door deze dramatische teloorgang op aarde, waardoor ze terneergeslagen treurt. Het geweten dat naar een waar bestaan verlangt, dient in het voetspoor van Ibrahîm: <span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ<sup>1</sup></span> te reciteren, en de band met valse geliefden en vergankelijke wezens te verbreken, om een band met De Ware Existentie en De Onvergankelijke Geliefde op te bouwen.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    بِدَانْ اَىْ نَفْسِ نَدَانَمْ ! كِه: دَرْ هَرْ فَرْدْ اَزْ فَانٖى<br>
+    دُو رَاهْ هَسْتْ بَ بَٖقى، دُو سِرِّ جَانِ جَانَٖنى
+    </p>
+
+    <p style="margin-bottom: 0">
+    O mijn onwetende ego! Ondanks dat de aarde en de wezens vergankelijk zijn, dien je te weten dat je bij elk vergankelijk wezen twee wegen kunt vinden die naar eeuwigheid leiden. Daarnaast kun je twee flitsen en twee geheimen waarnemen die aan de Adembenemende Manifestaties van de Onvergankelijke Geliefde ontspruiten; mits jij tijdelijke materie en je eigenheid kunt ontstijgen.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    كِه دَرْ نِعْمَتْهَا اِنْعَامْ هَسْتْ وَپَسْ اٰثَارْهَا<br>
+    اَسْمَا بِگٖيرْ مَغْزٖى، وَمٖيزَنْ دَرْ فَنَا اٰنْ قِشْرِ بٖى مَعْنا
+    </p>
+
+    <div class="page-footnote">
+    <hr class="hr-footnote" />
+    <p class="footnote-p"><sup>1</sup>“Ik hou niet van hetgeen tenondergaat” - <em>De Heilige Qur’an, 6:76</em></p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 88,
+                'content' => '<div class="page" id="88">
+    <p class="text-end page-number">#88</p>
+
+    <p style="margin-bottom: 0">
+    Waarlijk, een gunst geeft een begunstiging weer en doet een Barmhartige Aandacht waarnemen. Als je vanuit de gunst de begunstiging kunt bereiken, dan zal je De Begunstiger vinden. Bovendien is een kunstwerk van De Onafhankelijke als een brief die kennis over de Namen van De Ontzaglijke Kunstenaar verschaft. Als je vanuit de schrijfkunst de achterliggende betekenis kunt bereiken, dan zal je langs de weg van Namen De Naamdrager vinden. Aangezien je in staat bent om de essentie en de kern van deze vergankelijke kunstwerken te vinden, probeer die dan te bemachtigen; de betekenisloze schelp en schil kun je zonder mededogen in de stroming der vergankelijkheid achterlaten.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    بَلٖى اٰثَارْهَا گُويَنْدْ: زِاَسْمَا لَفْظِ پُرْ مَعْنَا بِخَانْ مَعْنَا، وَمٖيزَنْ دَرْ هَوَا اٰنْ لَفْظِ بٖى سَوْدَا
+    </p>
+
+    <p style="margin-bottom: 0">
+    Waarlijk, er is niet één kunstwerk onder de kunstwerken, of het is een betekenisvolle belichaming van een woord waarvan je verscheidene Namen van de Ontzaglijke Kunstenaar kunt aflezen. Aangezien kunstwerken uitingen en woorden van Macht zijn, dien je de betekenissen van ze af te lezen, ze ter harte te nemen en de overige betekenisloze uitspraken zonder aarzeling in de orkaan van teloorgang te lozen. Laat jouw betrokkenheid er niet toe leiden dat jij je druk om ze blijft maken.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    عَقْلْ فَرْيَدْ مٖى دَارَدْ، غِيَاثِ ﴿ لا اُحِبُّ الْاٰفِلٖينَ ﴾ مٖيزَنْ اَىْ نَفْسَمْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Voorwaar, het aardse verstand dat een zwak heeft voor het zichtbare en gevoed is door materiële wetenschappen, zal uit verbijstering en frustraties wanhopig huiveren omdat al zijn opgedane meningen in nietigheid zullen verdwijnen. Het zoekt een weg die naar de waarheid leidt. Aangezien de ziel haar handen van al het ondergaande en voorbijgaande heeft teruggetrokken, heeft ook het hart afstand van valse geliefden genomen. Tevens heeft ook het geweten zijn gezicht van vergankelijke wezens afgewend. O mijn arme ego, bevrijd jezelf ook met behulp van de Ibrahimitische uitspraak: <span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ</span>
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    چِه خُوشْ گُويَدْ اُو شَيْدَا « جَامٖى » عِشْقْ خُوىْ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Kijk naar Mewlana Djamî, wiens aard wegens zijn liefde voor ALLAH vrijwel uit liefde is gekneed, en zie hoe hij met zijn prachtige formulering de gezichten van verscheidenheid naar eenheid wendt:
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">يَكٖى خٰواهْ ، يَكٖى خٰوانْ ، يَكٖى جُوىْ ، يَكٖى بٖينْ ، يَكٖى دَانْ ، يَكٖى گُوىْ<sup>1</sup></p>
+
+    <div class="page-footnote">
+    <hr class="hr-footnote" />
+    <p class="footnote-p"><sup>1</sup>Alleen deze regel behoort Mewlana toe.</p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 89,
+                'content' => '<div class="page" id="89">
+    <p class="text-end page-number">#89</p>
+
+    <p style="margin-bottom: 0" class="text-italic">
+    Oftewel,
+    <br>1. Verlang alleen naar De Ene; anderen verdienen je verlangen niet.
+    <br>2. Roep enkel De Ene aan; anderen komen je niet redden.
+    <br>3. Streef alleen naar De Ene; anderen zijn je streven onwaardig.
+    <br>4. Wend je blik op De Ene; anderen zijn niet elk moment zichtbaar, ze verschuilen zich achter de sluier van teloorgang.
+    <br>5. Doe kennis op over De Ene, andere vormen van kennis die jouw Godskennis niet versterken zijn nutteloos.
+    <br>6. Vertel over De Ene, woorden die Hem niet aanbelangen kunnen nutteloos worden geacht.
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    نَعَمْ صَدَقْتَ اَىْ جَامٖى ۞ هُوَ الْمَطْلُوبُ هُوَ الْمَحْبُوبُ هُوَ الْمَقْصُودُ هُوَ الْمَعْبُودُ
+    </p>
+
+    <p style="margin-bottom: 0">
+    Waarlijk, Djamî, u hebt uiterst waarachtig gesproken! De Ware Geliefde, Het Ware Streven, Het Ware Doel, De Ware Aanbedene is niemand anders dan Hij.
+    </p>
+
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    كِه « لَا اِلٰهَ اِلَّا هُوَ » بَرَابَرْ مٖيزَنَدْ عَالَمْ
+    </p>
+
+    <p class="tab-desk">
+    Want deze wereld zegt tezamen met al haar wezens via uiteenlopende talen en verscheidene melodieën in de ultieme gebedskring van Godsverering: <span class="text-arabic-inline delima-font">لا اِلٰهَ اِلَّا هُو</span>.
+    Zodoende betuigt ze de Goddelijke Eenheid. Dit strijkt een zalf over de wond die de uitspraak: <br><span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ</span> heeft toegebracht, en in plaats van valse geliefden waarmee de band vroeg of laat verbroken wordt, toont het een Onvergankelijke Geliefde.
+    </p>
+
+    <p class="tab-mob">
+    Want deze wereld zegt tezamen met al haar wezens via uiteenlopende talen en verscheidene melodieën in de ultieme gebedskring van Godsverering: <span class="text-arabic-inline delima-font">لا اِلٰهَ اِلَّا هُو</span>.
+    Zodoende betuigt ze de Goddelijke Eenheid. Dit strijkt een zalf over de wond die de uitspraak: <span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ</span> heeft toegebracht, en in plaats van valse geliefden waarmee de band vroeg of laat verbroken wordt, toont het een Onvergankelijke Geliefde.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 90,
+                'content' => '<div class="page" id="90">
+    <p class="text-end page-number">#90</p>
+
+    <p>
+    Circa vijfentwintig jaar geleden, toen ik op de heuvel van Yûshâ aan de zeestraat van Istanbul had besloten om afstand van de wereld te nemen, waren er een aantal aanzienlijke vrienden van mij langsgekomen om mij terug naar de wereld te roepen met het verzoek om mijn oude positie weer te bekleden. Ik zei: <em>“Geef mij tot morgen bedenktijd, opdat ik istikhara kan doen.”</em> In de ochtend werden mijn hart de aankomende twee tableaus ingegeven. Ze lijken op gedichten, maar dat zijn ze niet. De herinnering aan die gezegende tijd heeft mij verhinderd om ze aan te passen; ze zijn opgeslagen zoals ze zijn ingegeven. Ze waren aan het eind van Het Drieëntwintigste Woord toegevoegd, maar zijn vanwege hun betrekking op dit thema hier geplaatst.
+    </p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2 style="color: #ca2a2a;">Het Eerste Tableau</h2>
+        <p><em>[Een Tableau dat de realiteit van het aardsgezinde volk afbeeldt]</em></p>
+    </div>
+
+    <p style="margin-bottom: 20px" class="text-italic text-center tab-desk">
+    Roep mij niet naar de aarde…<br>
+
+    Ik ben naar haar gekomen en heb vergankelijkheid gezien<br>
+
+    Aanhoudende onachtzaamheid is een sluier geworden…<br>
+
+    Ik heb het waarheidslicht bedekt gezien<br>
+
+    Alle aanwezige wezens…<br>
+
+    Heb ik als vergankelijke kwalen gezien<br>
+
+    Wat existentie betreft, ik heb haar bekleed…<br>
+
+    Ze was non-existent, ik heb zoveel onheil gezien<br>
+
+    Wat het leven betreft, ik heb het geproefd…<br>
+
+    Ik heb kwelling boven kwelling gezien<br>
+
+    Het verstand is de foltering zelve geworden…<br>
+
+    Voortbestaan heb ik als een vloek gezien<br>
+
+    De levensloop is de loze lust zelve geworden…<br>
+
+    Ontwikkeling heb ik als pure futiliteit gezien<br>
+
+    Handelingen zijn de huichelarij zelve geworden…<br>
+
+    Ambities heb ik als pure leed gezien<br>
+
+    Samenkomsten zijn de definitie van teloorgang geworden…<br>
+
+    Genezing heb ik als pure gif gezien<br>
+
+    Lichten zijn duisternissen geworden…<br>
+
+    Vrienden heb ik als wezen gezien<br>
+
+    Stemmen zijn doodskreten geworden…<br>
+
+    Levenden heb ik als overledenen gezien<br>
+
+    Wetenschap is de kern van waan geworden…<br>
+
+    Ik heb duizenden kwalen binnen wijsheden gezien<br>
+
+    Genot is het leed zelve geworden…<br>
+
+    Ik heb duizend nietigheden in existentie gezien<br>
+
+    Wat liefde betreft, ik heb haar ontmoet…<br>
+
+    Ik heb ondraaglijk leed in scheiding gezien
+    </p>
+
+        <p style="margin-bottom: 20px" class="text-italic text-center tab-mob">
+    Roep mij niet naar de aarde…<br>
+
+    Ik ben naar haar gekomen en heb vergankelijkheid gezien<br>
+
+    Aanhoudende onachtzaamheid is <br>een sluier geworden…<br>
+
+    Ik heb het waarheidslicht bedekt gezien<br>
+
+    Alle aanwezige wezens…<br>
+
+    Heb ik als vergankelijke kwalen gezien<br>
+
+    Wat existentie betreft, ik heb haar bekleed…<br>
+
+    Ze was non-existent, <br>ik heb zoveel onheil gezien<br>
+
+    Wat het leven betreft, ik heb het geproefd…<br>
+
+    Ik heb kwelling boven kwelling gezien<br>
+
+    Het verstand is de foltering zelve geworden…<br>
+
+    Voortbestaan heb ik als een vloek gezien<br>
+
+    De levensloop is de loze <br>lust zelve geworden…<br>
+
+    Ontwikkeling heb ik als pure futiliteit gezien<br>
+
+    Handelingen zijn de <br>huichelarij zelve geworden…<br>
+
+    Ambities heb ik als pure leed gezien<br>
+
+    Samenkomsten zijn de definitie van teloorgang geworden…<br>
+
+    Genezing heb ik als pure gif gezien<br>
+
+    Lichten zijn duisternissen geworden…<br>
+
+    Vrienden heb ik als wezen gezien<br>
+
+    Stemmen zijn doodskreten geworden…<br>
+
+    Levenden heb ik als overledenen gezien<br>
+
+    Wetenschap is de kern van waan geworden…<br>
+
+    Ik heb duizenden kwalen <br>binnen wijsheden gezien<br>
+
+    Genot is het leed zelve geworden…<br>
+
+    Ik heb duizend nietigheden <br>in existentie gezien<br>
+
+    Wat liefde betreft, ik heb haar ontmoet…<br>
+
+    Ik heb ondraaglijk leed in scheiding gezien
+    </p>
 
 </div>'
             ],
