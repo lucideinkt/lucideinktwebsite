@@ -1707,7 +1707,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
 
     <div class="text-center">
         <p class="small-title text-center"><strong>De Tweede Essentie</strong></p>
-        <p class="text-center"><em><strong>De afweging van de zedelijke discipline die de Wijsheid van De Leerrijke Qur’an aan het persoonlijke leven verschaft en de lering die de filosofische wijsheid biedt.</strong></em></p>
+        <p style="margin-bottom: 20px" class="text-center"><em><strong>De afweging van de zedelijke discipline die de Wijsheid van De Leerrijke Qur’an aan het persoonlijke leven verschaft en de lering die de filosofische wijsheid biedt.</strong></em></p>
     </div>
 
     <p>
@@ -1765,7 +1765,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
 
     <div class="text-center">
         <p class="text-red small-title"><strong>De Derde Essentie</strong></p>
-        <p><em><strong>De disciplines die de filosofische wijsheid en de Wijsheid van De Leerrijke Qur’an aan het menselijke gemeenschapsleven bieden</strong></em></p>
+        <p style="margin-bottom: 20px"><em><strong>De disciplines die de filosofische wijsheid en de Wijsheid van De Leerrijke Qur’an aan het menselijke gemeenschapsleven bieden</strong></em></p>
     </div>
 
     <p>
@@ -3320,6 +3320,670 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
 
     Ik heb ondraaglijk leed in scheiding gezien
     </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 91,
+                'content' => '<div class="page" id="91">
+    <p class="text-end page-number">#91</p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2 style="color: #ca2a2a;">Het Tweede Tableau</h2>
+        <p><em>[Een tableau dat de wereld van de geleide mensen en de bezitters van Godsbesef afbeeldt]</em></p>
+    </div>
+
+    <p style="margin-bottom: 20px" class="text-italic text-center tab-desk">
+    De voortdurende onachtzaamheid is voorbij...<br>
+
+    En ik zag het waarheidslicht schitteren<br>
+
+    Existentie is een evidentie voor De Goddelijke Entiteit geworden...<br>
+
+    Het leven is een spiegel van De Ware, doorzie het<br>
+
+    Het verstand is een sleutel tot een schat geworden...<br>
+
+    Vergankelijkheid is een poort tot de eeuwigheid, doorzie het<br>
+
+    De Flits van ontwikkeling is gedoofd...<br>
+
+    Maar een Zon van Schoonheid blijft doorschijnen, doorzie het<br>
+
+    Teloorgang is de essentie van samenkomst geworden...<br>
+
+    Leed is het genot zelve, doorzie het<br>
+
+    Het leven is pure bedrijvigheid geworden...<br>
+
+    Eeuwigheid is de essentie van het leven, doorzie het<br>
+
+    Duisternissen zijn een enveloppe voor licht geworden...<br>
+
+    Achter de dood schuilt in feite het leven, doorzie het<br>
+
+    Alle creaturen zijn vriendelijk geworden...<br>
+
+    Alle stemmen zijn Godsvereringen, doorzie het<br>
+
+    Alle atomen in het bestaan...<br>
+
+    Vereren en verheerlijken God, doorzie het<br>
+
+    Behoeftigheid heb ik als een weelderige schat ontmoet...<br>
+
+    In onmacht schuilt pure macht, doorzie het<br>
+
+    Wanneer je ALLAH hebt gevonden...<br>
+
+    Dan is alles van jou, doorzie het<br>
+
+    Als jij het eigendom van de Eigenaar des Rijks wordt...<br>
+
+    Dan is Zijn Rijk van jou, doorzie het<br>
+
+    Als jij hoogmoedig bezitter van je eigenheid bent...<br>
+
+    Dan is dat een ondoorgrondelijke vloek, doorzie het<br>
+
+    Het is een grenzeloze kwelling, proef het...<br>
+
+    Het is ondraaglijk, doorzie het<br>
+
+    Als jij een ware geleide dienaar bent...<br>
+
+    Dan is dat een grenzeloos genoegen, doorzie het<br>
+
+    Daarin schuilt een ondenkbare zegen, proef het...<br>
+
+    Een eindeloze gelukzaligheid, doorzie het.
+    </p>
+
+    <p style="margin-bottom: 20px" class="text-italic text-center tab-mob">
+    De voortdurende onachtzaamheid <br>is voorbij...<br>
+
+    En ik zag het waarheidslicht schitteren<br>
+
+    Existentie is een evidentie <br>voor De Goddelijke Entiteit geworden...<br>
+
+    Het leven is een spiegel van <br>De Ware, doorzie het<br>
+
+    Het verstand is een sleutel <br>tot een schat geworden...<br>
+
+    Vergankelijkheid is een poort <br>tot de eeuwigheid, doorzie het<br>
+
+    De Flits van ontwikkeling <br>is gedoofd...<br>
+
+    Maar een Zon van Schoonheid blijft <br>doorschijnen, doorzie het<br>
+
+    Teloorgang is de essentie <br>van samenkomst geworden...<br>
+
+    Leed is het genot zelve, doorzie het<br>
+
+    Het leven is pure bedrijvigheid geworden...<br>
+
+    Eeuwigheid is de essentie <br>van het leven, doorzie het<br>
+
+    Duisternissen zijn een enveloppe <br>voor licht geworden...<br>
+
+    Achter de dood schuilt in feite <br>het leven, doorzie het<br>
+
+    Alle creaturen zijn vriendelijk geworden...<br>
+
+    Alle stemmen zijn Godsvereringen, <br>doorzie het<br>
+
+    Alle atomen in het bestaan...<br>
+
+    Vereren en verheerlijken God, <br>doorzie het<br>
+
+    Behoeftigheid heb ik als een <br>weelderige schat ontmoet...<br>
+
+    In onmacht schuilt pure macht, <br>doorzie het<br>
+
+    Wanneer je ALLAH hebt gevonden...<br>
+
+    Dan is alles van jou, doorzie het<br>
+
+    Als jij het eigendom van de <br>Eigenaar des Rijks wordt...<br>
+
+    Dan is Zijn Rijk van jou, doorzie het<br>
+
+    Als jij hoogmoedig bezitter <br>van je eigenheid bent...<br>
+
+    Dan is dat een ondoorgrondelijke <br>vloek, doorzie het<br>
+
+    Het is een grenzeloze kwelling, <br>proef het...<br>
+
+    Het is ondraaglijk, doorzie het<br>
+
+    Als jij een ware geleide <br>dienaar bent...<br>
+
+    Dan is dat een grenzeloos <br>genoegen, doorzie het<br>
+
+    Daarin schuilt een ondenkbare <br>zegen, proef het...<br>
+
+    Een eindeloze gelukzaligheid, <br>doorzie het.
+    </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 92,
+                'content' => '<div class="page" id="92">
+    <p class="text-end page-number">#92</p>
+
+
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Drieëntwintigste Woord</h2>
+    </div>
+
+    <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+    <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+    <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+    <button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+     “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+    &lt;/p&gt;"><sup>1</sup></button>
+    </p>
+
+    <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+    لَقَدْ خَلَقْنَا الْاِنْسَانَ فٖٓى اَحْسَنِ تَقْوٖيمٍ ۞ ثُمَّ رَدَدْنَاهُ اَسْفَلَ سَافِلٖينَ ۞
+    اِلَّا الَّذٖينَ اٰمَنُوا وَ عَمِلُوا الصَّالِحَاتِ<sup>2</sup> ۞
+    </p>
+
+    <div class="text-center page-title-chapter delima-font">
+        <h2>Het Eerste Thema</h2>
+        <p><em>Uit de duizenden bekoorlijkheden des geloofs zullen wij er aan de hand<br>van “Vijf Punten” vijf uiteenzetten</em></p>
+    </div>
+
+    <p class="text-center text-red small-title"><strong>Het Eerste Punt</strong></p>
+
+    <p>
+    De mens stijgt dankzij het geloofslicht naar de allerhoogste hoogtes en bereikt een waarde die bij het paradijs past. En door de duisternissen des ongeloofs vervalt hij tot de allerlaagste laagtes en krijgt hij een gestalte die bij een helbewoner past. Immers, het geloof bindt de mens met zijn Ontzaglijke Kunstenaar; het geloof is een binding. Aldus krijgt de mens ten aanzien van de Goddelijke kunstwerken en de Schoonschriften van de Namen des Heren die zich bij de mens vertonen een waarde. Ongeloof verbreekt die band. Door die verbreking raken de kunstwerken des Heren verborgen. Zijn waarde wordt dan slechts door materie bepaald. Omdat materie echter vergankelijk en voorbijgaand is, en een tijdelijk dierlijk leven dient, is haar waarde vrijwel nietig.
+    </p>
+
+    <div class="page-footnote">
+        <hr class="hr-footnote" />
+        <p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+        <p class="footnote-p"><sup>2</sup> “Voorzeker, Wij hebben de mens volgens de allermooiste compositie geschapen. Vervolgens hebben Wij hem tot de allerlaagste laagtes laten dalen. Behalve degenen die geloven en vrome daden verrichten.” - <em>De Heilige Qur’an, 95:4-5-6</em></p>
+    </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 93,
+                'content' => '<div class="page" id="93">
+<p class="text-end page-number">#93</p>
+
+<p>
+Dit geheim zullen wij aan de hand van een voorbeeld verhelderen. Bijvoorbeeld,
+de materiële waarde en de kunstwaarde van menselijke kunstwerken
+zijn uiteenlopend. Soms zijn ze gelijkwaardig, soms is de materie waardevoller
+en soms heeft een metalen object van vijf cent een kunstwaarde van
+vijf euro. Soms kan een antiek kunstwerk zelfs een miljoen waard zijn, terwijl
+de materie waaruit het is samengesteld geen stuiver waard is. Voorwaar,
+wanneer een dergelijk antiek kunstwerk naar een antiekveiling wordt gebracht,
+de relatie met zijn historische, buitengewoon bekwame en getalenteerde
+kunstenaar wordt aangetoond, dan zal dat kunstwerk met de bekendmaking
+van zijn kunstenaar en de achterliggende kunst voor een miljoen
+kunnen worden verkocht. De materie daarentegen kan bij een oudijzerhandelaar
+misschien voor vijf cent worden ingekocht.
+</p>
+
+<p>
+Voorwaar, de mens is een dergelijk antiek kunstwerk van de Hoogste Gerechtigde
+en een uiterst delicaat en subtiel machtsmirakel. Want God heeft
+de mens aan alle manifestaties van Zijn Namen gekoppeld en bij al Zijn
+Schoonschriften betrokken; Hij heeft de mens als miniatuur van het universum
+geschapen.
+</p>
+
+<p>
+Als het geloofslicht hem bereikt, dan zullen alle betekenisvolle schoonschriften
+op hem via dat licht kunnen worden afgelezen. Die gelovige is dan
+in staat om ze begrijpend te lezen en via die binding maakt hij ze ook leesbaar.
+Met andere woorden, de kunstvaardigheid des Heren vertoont zich bij
+de mens wanneer hij betekenissen uitdrukt als:
+</p>
+
+<p><em>“Ik ben het kunstwerk van de Ontzaglijke Kunstenaar; ik ben Zijn schepsel.
+Zijn Genade en Generositeit hebben mij bereikt.”</em></p>
+
+<p>
+Aldus maakt geloof via de binding met De Kunstenaar alle kunstwerken
+bij de mens zichtbaar. De waarde van de mens wordt dan door de Kunstvaardigheid
+des Heren bepaald zolang de mens als spiegel van De Onafhankelijke
+fungeert. In die toestand wordt deze waardeloze mens dankzij die
+binding een gesprekspartner van God en een gast des Heren die het paradijs
+waardig is.
+</p>
+
+<p>
+Wanneer het ongeloof als het breekpunt van die binding de mens bereikt,
+dan vervallen al Die Betekenisvolle Schoonschriften Die aan De Goddelijke
+Namen ontspruiten in duisternis, waardoor Ze onleesbaar worden. Immers,
+wanneer De Kunstenaar wordt vergeten, dan worden de geestelijke aspecten die betrekking op Hem hebben onbegrijpelijk, waardoor ze zo goed als verloren
+gaan. Het merendeel van die betekenisvolle verheven kunstwerken en
+verheven geestelijke schoonschriften zal verborgen raken.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 94,
+                'content' => '<div class="page" id="94">
+<p class="text-end page-number">#94</p>
+
+<p style="text-indent: 0">
+De overige aspecten en zichtbare elementen zullen aan simpele oorzaken, aan de natuur en
+aan toeval worden toegedicht en volledig worden ontwaard. Ondanks dat ze
+allemaal stuk voor stuk een schitterende diamant zijn, verworden ze tot een
+dof stuk glas. De waarde van ze zal dan alleen betrekking op dierlijke materie
+hebben. Het doel en de vrucht van materie hebben slechts betrekking op
+een beperkt leven, terwijl de mens gedurende een kortstondig leven – zoals
+wij eerder hadden aangegeven – de onmachtigste, behoeftigste en ellendigste
+onder de diersoorten is. Vroeg of laat zal hij ontbinden en verdwijnen. Voorwaar,
+zodoende zal ongeloof de essentie van het mens-zijn verwoesten en
+diamant in kool omzetten.
+</p>
+
+<p class="text-red small-title text-center"><strong>Het Tweede Punt</strong></p>
+
+<p style="margin-bottom: 0">
+Het geloof is een licht; het verlicht de mens en maakt alle op hem geschreven
+brieven van de Onafhankelijke leesbaar. Evenzo verlicht het geloof
+het universum. Het bevrijdt het verleden en de toekomst van duisternissen.
+Dit geheim zullen wij toelichten middels een voorbeeld uit een belevenis
+waarbij ik een geheim van de volgende Edele Aya had waargenomen:
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+اَللّٰهُ وَلِىُّ الَّذٖينَ اٰمَنُوا يُخْرِجُهُمْ مِنَ الظُّلُمَاتِ اِلَى النُّورِ<sup>1</sup>
+</p>
+
+<p>
+In een visioen had ik twee hoge bergen gezien die tegenover elkaar stonden.
+Tussen die bergen was er een verbijsterende brug gelegd. Onder de
+brug was er een hele diepe kloof. Ik bevond mij op die brug. De hele wereld
+was omgeven door een diepe en ondoordringbare duisternis.
+</p>
+
+<p>
+Ik keek aan mijn rechterzijde en zag een oneindige duisternis waarin een
+gigantische grafakker schemerde, oftewel, dit beeldde ik mij in. Ik keek aan
+mijn linkerzijde en het leek alsof mij allerlei dreigende stormen, rampen en
+onheil binnen huiveringwekkende golven van duisternissen te wachten stonden.
+Ik keek onder de brug en veronderstelde dat ik een bodemloze afgrond
+zag. Tegenover deze vreselijke duisternissen had ik slechts een zwakke zaklantaarn
+die ik kon toepassen. Ik zette haar aan en keek met haar gebrekkige licht, waarop er een gruwelijk scenario voor mij verscheen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “ALLAH is de vriend van zij die geloven; Hij leidt ze van de duisternissen naar het licht.” - <em>De Heilige Qur’an, 2:257</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 95,
+                'content' => '<div class="page" id="95">
+<p class="text-end page-number">#95</p>
+
+<p style="text-indent: 0">
+Aan het einde van de brug en eromheen waren er zulke angstaanjagende draken, leeuwen
+en monsters te zien, dat ik het volgende uitriep: <span class="text-italic">“Had ik deze zaklantaarn
+maar niet, dan hoefde ik tenminste deze nachtmerrie niet te zien!”</span> Waar ik die
+lantaarn ook naartoe wendde, alle richtingen lieten mij huiveren. Ik zei: <em>“Deze lantaarn brengt mij onheil.”</em>
+</p>
+
+<p>
+Uiteindelijk raakte ik van streek en sloeg ik de zaklantaarn op de grond
+kapot. Op het moment dat ze brak, leek het alsof ik de knop van een geweldige
+elektrische lamp had ingedrukt die de hele wereld had verlicht; plotseling
+waren alle duisternissen verdwenen. Alles werd met het licht van die
+lamp verguld en de waarheid achter alles werd zichtbaar. Ik zag dat die brug
+in feite een laan was die door het veld van een zeer verzorgd landschap liep.
+En ik ontdekte dat de gigantische grafakker die ik aan mijn rechterzijde had
+gezien, in feite prachtige groene tuinen waren waar bijeenkomsten voor
+Godsdienstoefeningen, dienstverrichtingen, beraad en Godsvereringen onder
+voorzitterschap van verlichte mensen werden gehouden. En aan mijn
+linkerzijde waar ik vreselijke verderfelijke ravijnen en gebergtes meende te
+zien, zag ik versierde, bekoorlijke en innemende heuvels waarachter een glorieus
+feestoord, een schitterend excursie-oord en een verheven lustoord
+schuilden. En ik zag dat de wezens die voor mij als gruwelijke monsters en
+draken overkwamen, tamme kamelen, stieren, schapen, geiten en dergelijke
+vriendelijke dieren bleken te zijn. Hierop zei ik: <span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ عَلٰى نُورِ الْاٖيمَانِ</span><sup>1</sup>
+en reciteerde ik de Edele Aya: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ وَلِىُّ الَّذٖينَ اٰمَنُوا يُخْرِجُهُمْ مِنَ الظُّلُمَاتِ اِلَى النُّورِ</span>
+Vervolgens ontwaakte ik uit dit visioen.
+</p>
+
+<p>
+Voorwaar, die twee bergen symboliseren de begin- en eindfase van het
+leven, oftewel de aardse wereld en de tussenwereld. Die brug symboliseert de
+levensweg. De rechterzijde is het verleden, de linkerzijde is de toekomst. Die
+zaklantaarn vertegenwoordigt het zelfingenomen ego der mensheid dat zich
+op zijn eigen kennis berust en geen gehoor aan de Hemelse Openbaringen
+geeft. De wezens die als monsters werden gewaand, zijn de wereldse gebeurtenissen
+en de opzienbarende schepselen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> De lof zij ALLAH voor het geloofslicht.
+</p>
+<p class="footnote-p">
+<sup>2</sup> “ALLAH is de vriend van zij die geloven; Hij leidt ze van de duisternissen naar het licht.” - <em>De Heilige Qur’an, 2:257</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 96,
+                'content' => '<div class="page" id="96">
+<p class="text-end page-number">#96</p>
+
+<p style="margin-bottom: 0">
+Voorwaar, hij die zich op zijn ego berust, in de duisternissen der dwaling
+is beland en door de donkerte van dwaling is geobsedeerd, lijkt op mijn
+eerste staat uit mijn visioen. Met zijn gebrekkige kennis vol dwaling die als
+een zaklantaarn geldt, ziet hij het verleden als een gigantische grafakker binnen
+de duisternissen van non-existentie. De toekomst ziet hij als een uiterst
+stormachtige woestenij die aan toeval is gebonden. En alle gebeurtenissen en
+wezens die allemaal gehoorzame functionarissen van De Alwijze Genadige
+zijn, beschouwt hij als monsters, waardoor hij zichzelf slachtoffer maakt van
+het oordeel:
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+وَالَّذٖينَ كَفَرُٓوا اَوْلِيَٓاؤُهُمُ الطَّاغُوتُ يُخْرِجُونَهُمْ مِنَ النُّورِ اِلَى الظُّلُمَاتِ<sup>1</sup>
+</p>
+
+<p>
+Als de Goddelijke Leiding te hulp schiet, geloof het hart intreedt, de faraonische
+gezindheid van het ego afbreekt en Het Boek van ALLAH wordt
+aangehoord, dan zal de mens op mijn tweede staat uit mijn visioen lijken.
+Op dat moment zal het universum opeens de kleur van de dageraad krijgen
+en met Het Goddelijke Licht worden verguld. De wereld vertolkt dan de
+Aya: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ</span>. Bijgevolg zal het verleden voor de mens niet
+als een gigantische grafakker ogen. Met het oog van het hart zal hij zien dat
+zuivere zielen groepsgewijs elke eeuw onder het voorzitterschap van een
+Godsgezant of een heilige hun dienaarschap betrachten, hun levenstaak volbrengen,
+waarna ze: <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</span> zeggen, naar hun verheven rangen vliegen en
+de geschiedenis intreden. Wanneer hij aan zijn linkerzijde kijkt, dan zal hij
+vanuit de verte via het geloofslicht achter de bergen van zekere revoluties in
+de tussenwereld en in het hiernamaals paradijselijke tuinen opmerken, waar
+een feestmaal van De Barmhartige in de paleizen van welzaligheid wordt
+gegeven. En verschijnselen als stormen, aardbevingen en orkanen ziet hij als
+onderhevige functionarissen. Hij ziet dat gebeurtenissen zoals stormen en
+neerslag gedurende de lente vanbuiten woest ogen, maar impliciet vele subtiele
+wijsheden herbergen. Bovendien ziet hij de dood als zijn intrede in het
+eeuwige leven en het graf als de poort tot eeuwige gelukzaligheid. De overige
+aspecten kun jij invullen. Weeg de waarheid volgens het voorbeeld af.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> En de vrienden van de ongelovigen zijn de afgoden; zij leiden hen van het licht
+naar de duisternissen - <em>De Heilige Qur’an, 2:257</em>
+</p>
+<p class="footnote-p">
+<sup>2</sup> ALLAH is Het Licht van de hemelen en de aarde - <em>De Heilige Qur’an, 24:35</em>
+</p>
+<p class="footnote-p">
+<sup>3</sup> ALLAH is het grootst.
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 97,
+                'content' => '<div class="page" id="97">
+<p class="text-end page-number">#97</p>
+
+<p class="text-red small-title text-center"><strong>Het Derde Punt</strong></p>
+
+<p>
+Het geloof impliceert zowel licht als kracht. Waarlijk, hij die het ware
+geloof verwerft, kan het heelal uitdagen en zich evenredig aan zijn geloofsovertuiging
+bevrijden van de druk die belevenissen met zich meebrengen.
+Hij zal: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">تَوَكَّلْتُ عَلَى اللّٰهِ</span> zeggen en in volstrekte zekerheid op het schip des
+levens over de geweldige golven van gebeurtenissen varen. Al zijn lasten zal
+hij aan de Machtshand van de Absolute Almacht toevertrouwen. Hij zal de
+aarde vredig verlaten en in de tussenwereld rusten. Vervolgens kan hij naar
+het paradijs vliegen om eeuwige gelukzaligheid te ontmoeten. Anders, als hij
+niet gelaten is, dan zullen de aardse lasten hem niet laten vliegen, maar naar
+de laagste laagtes sleuren. Dit komt dus op het volgende neer: <strong>geloof vereist
+Tauhied, Tauhied vereist overgave, overgave vereist gelatenheid en gelatenheid
+baart gelukzaligheid in beide oorden.</strong>
+</p>
+
+<p>
+Begrijp dit echter niet verkeerd. Gelaten zijn houdt niet in dat je oorzaken
+volledig de rug moet toekeren. Gelatenheid impliceert veeleer dat je
+oorzaken als een sluier voor Gods Machtshand erkent en daar naar handelt.
+Beroep doen op oorzaken behoor je als een fysieke bede te achten, waarbij je
+de gevolgen alleen van de Hoogste Gerechtigde wenst, inziet dat resultaten
+van Hem afkomen en zodoende afhankelijkheid jegens Hem betuigt.
+</p>
+
+<p>
+De toestand van een gelaten persoon en een ongelaten persoon kun je
+aan de hand van het volgende verhaal afwegen:
+</p>
+
+<p>
+Eens waren er twee personen die hun rug en hun hoofd met zware lading
+hadden belast. Ze hadden tickets gehaald voor een scheepsreis op een groot
+schip. De ene persoon stapte op het schip, zette meteen zijn lading neer,
+ging erop zitten en genoot van het uitzicht. De andere persoon stapte ook
+op het schip, maar zette zijn lading niet neer omdat hij dwaas en arrogant
+was. Daarop werd hij als volgt aangesproken:
+</p>
+
+<p>
+<em>“Leg je lading neer en kom tot rust.”</em>
+</p>
+
+<p>Hij zei:</p>
+
+<p>
+<em>“Nee, ik leg mijn lading niet neer; straks raak ik haar kwijt. Ik ben sterk genoeg
+om mijn bezit op mijn rug en op mijn hoofd te dragen.”</em>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Ik heb mijn vertrouwen in ALLAH gesteld.”
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 98,
+                'content' => '<div class="page" id="98">
+<p class="text-end page-number">#98</p>
+
+<p>
+Vervolgens werd hem het volgende gezegd:
+</p>
+
+<p class="text-italic">
+“Dit veilige schip van de sultan is veel sterker dan jij; het kan jouw bezit veel
+beter bewaren. Straks word jij duizelig en val je met jouw lading overboord.
+Naarmate de tijd verstrijkt, zal jouw kracht afnemen. Je kromme rug en je verstandeloze
+hoofd zullen de aldoor toenemende lasten op den duur niet meer
+kunnen dragen. En als de kapitein jou in deze toestand ziet, zal hij jou krankzinnig
+noemen en je overboord gooien, of het volgende opdragen: <strong>‘Hij is verraderlijk!
+Hij trekt ons schip in twijfel en drijft de spot met ons. Neem hem
+gevangen!’</strong> Bovendien zal iedereen jou als een zielenpoot zien. Immers, met je
+grootdoenerij waar je zwakte van afdruipt, je arrogantie waar je onmacht van
+afstraalt en je gemaaktheid waarmee je blijk van huichelarij en laaghartigheid
+geeft, heb jij jezelf in de ogen van opmerkzame mensen tegenover het volk voor
+schut gezet; iedereen lacht je uit.”
+</p>
+
+<p>
+Nadat die arme man deze woorden had aangehoord, kwam hij tot inkeer.
+Hij legde zijn lading neer, ging erop zitten en zei:
+</p>
+
+<p>
+<em>“Godzijdank. Moge ALLAH tevreden over jou zijn. Jij hebt mij van moeite,
+van gevangenschap en van vernedering gered.”</em>
+</p>
+
+<p>
+Voorwaar, o ongelaten mens! Kom ook zoals deze persoon tot inkeer en
+wees gelaten, opdat je van bedelarij tegenover het hele bestaan, van angst
+tegenover elke beleving, van hoogmoed, van vernedering, van wanhoop in
+het hiernamaals en van gevangenschap onder de aardse lasten wordt bevrijd.
+</p>
+
+<p class="text-red small-title text-center"><strong>Het Vierde Punt</strong></p>
+
+<p>
+Het geloof maakt een mens daadwerkelijk een mens; het kan zelfs een
+sultan van hem maken. Aldus bestaat de oorspronkelijke taak van de mens
+uit geloof en uit beden. Ongeloof maakt van de mens een machteloos en
+beestachtig dier. Uit de duizenden bewijzen voor dit standpunt vormt alleen
+het verschil in de wijze waarop een dier en een mens op aarde komen een
+helder bewijs en een onbetwistbare evidentie voor dit standpunt.
+</p>
+
+<p>
+Waarlijk, het verschil in de wijze waarop de mens en een dier op aarde
+komen, laat zien dat menselijkheid door het geloof wordt bepaald. Want
+wanneer een dier op aarde komt, dan lijkt het alsof hij in een andere wereld
+is opgeleid omdat hij zijn volle potentie bereikt zodra hij komt <em>(of in feite
+wordt gezonden)</em>. In twee uur, twee dagen of twee maanden tijd is hij op de hoogte van al zijn levensvoorwaarden, zijn band met het universum en zijn
+overlevingsstrategieën; hij wordt een specialist in zijn vakgebied.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 99,
+                'content' => '<div class="page" id="99">
+<p class="text-end page-number">#99</p>
+
+<p style="text-indent: 0">
+De overlevingstactieken en de kundigheid die een mens in twintig jaar opdoet, leert
+een dier zoals een mus of een bij in twintig dagen; het wordt ze in feite ingegeven.
+Aldus bestaat de oorspronkelijke taak van een dier niet uit onderwijs
+en ontwikkeling, noch uit ontplooiing via het opdoen van Godskennis,
+noch uit het betuigen van onmacht via het vragen om bijstand en het verrichten
+van smeekbeden. Zijn taak bestaat veeleer uit arbeid, werk en fysieke
+dienaarschap conform zijn potentie.
+</p>
+
+<p>
+De mens daarentegen heeft de behoefte om alles te leren en is wat betreft
+de voorwaarden van het leven onwetend wanneer hij op aarde komt. Zelfs
+na twintig jaar kan hij de levensvoorwaarden niet volledig doorgronden. Tot
+aan het einde van zijn leven heeft hij de behoefte om te leren. Daarnaast
+wordt hij op een uiterst machteloze en zwakke wijze naar de aarde gezonden;
+pas na één à twee jaar kan hij op zijn benen staan. Pas na vijftien jaar
+kan hij goed van kwaad onderscheiden, en dankzij de samenwerking in de
+samenleving zijn voordelen opdoen en zich voor gevaren hoeden. Aldus bestaat
+de natuurlijke taak van de mens uit ontplooiing via onderwijs en uit
+dienaarschap via beden. Met andere woorden, hij dient zichzelf bewust het
+volgende af te vragen:
+</p>
+
+<p>
+<em>“Dankzij Wiens Genade word ik met zoveel wijsheid beheerd? Dankzij Wiens
+Generositeit word ik zo meedogend opgevoed? Dankzij Wiens Gunsten word ik
+zo zorgvuldig verzorgd en onderhouden?”</em>
+</p>
+
+<p>
+En ten opzichte van zijn benodigdheden waar zijn vermogen hem in geen
+duizendste kan voorzien, dient hij in de taal van onmacht en behoeftigheid
+de Voorziener in behoeften aan te roepen, te smeken en te aanbidden. Met
+andere woorden, met de vleugels van onmacht en behoeftigheid dient hij
+naar het allerhoogste niveau van dienaarschap te vliegen.
+</p>
+
+<p>
+Aldus is de mens naar deze wereld gekomen om zich door middel van
+kennis en beden te ontwikkelen. Gezien zijn hoedanigheid en zijn potentie
+is alles aan kennis gebonden. En de kern, de bron, het licht en de ziel van
+alle ware kennis zijn gelegen in de kennis over ALLAH, en de kern daarvan
+is gevestigd in het geloof in ALLAH.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 100,
+                'content' => '<div class="page" id="100">
+<p class="text-end page-number">#100</p>
+
+<p>
+En omdat de mens naast zijn grenzeloze onmacht met grenzeloze tegenslagen
+te kampen krijgt en bloot aan de aanvallen van ontelbare vijanden
+staat, en omdat hij naast zijn behoeftigheid ontelbare benodigdheden heeft
+en grenzeloze verlangens koestert, bestaat de oorspronkelijke ingeschapen
+taak van de mens – na het geloof – uit het verrichten van beden. En beden
+vormen de kern van dienaarschap.
+</p>
+
+<p>
+Wanneer een kind iets wil waar hij niet bij kan, dan zal hij daar ofwel om
+huilen ofwel om vragen. Met andere woorden, in een ofwel fysieke ofwel
+verbale taal van machteloosheid zal hij een bede verrichten om zijn doel te
+bereiken. Evenzo geldt de mens als het aller tederste, fragielste en gevoeligste
+kind in de wereld der levenden. Voor Het Hof van de Genadige Barmhartige
+dient hij ofwel met zijn zwakte en onmacht te huilen, ofwel met zijn
+behoeftigheid en armoedigheid te bidden, opdat hij zijn doel kan bereiken
+of dank voor zijn bereikte doel kan betuigen.
+</p>
+
+<p>
+Anders, als hij als een onnozel kind dat om een mug al begint te gillen
+een uitspraak doet als: <em>“Op eigen kracht bedwing ik deze buitengewone zaken – die onbedwingbaar zijn en duizendmaal zijn kracht overschrijden – en met mijn kennis en mijn regelingen onderwerp ik ze”</em> en als hij op basis van die gedachtegang Gods begunstiging verloochent,
+dan handelt hij in strijd met het wezen van het mens-zijn. Daarnaast maakt
+hij zichzelf waardig om een gruwelijke bestraffing te ondergaan.
+</p>
+
+<p class="text-red small-title text-center"><strong>Het Vijfde Punt</strong></p>
+
+<p>
+Zoals het geloof beden als een onmisbare bemiddeling vereist en de menselijke
+aard ze vurig behoeft, worden ze ook door de Hoogste Gerechtigde
+beduid in de Aya: <span class="text-arabic-inline" dir="rtl" lang="ar">قُلْ مَا يَعْبَؤُا بِكُمْ رَبّٖى لَوْلَا دُعَٓاؤُكُمْ</span>. Oftewel,<em> “Wat voor waarde hebben jullie zonder jullie beden?”</em> Daarnaast draagt Hij beden op in de Aya:
+<span class="text-arabic-inline" dir="rtl" lang="ar">اُدْعُونٖٓى اَسْتَجِبْ لَكُمْ<sup>1</sup></span>
+</p>
+
+
+<p>
+
+</p>
+
+
+
+<p class="text-red small-title"><strong><em>Stelling</em></strong></p>
+
+<p>
+Wij verrichten vaak beden, maar ze worden niet aanvaard. De Aya spreekt
+echter universeel en zegt dat elke bede wordt beantwoord.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Roep Mij aan en Ik zal antwoord geven.” - <em>De Heilige Qur’an, 40:60</em>
+</p>
+</div>
 
 </div>'
             ],
