@@ -3196,7 +3196,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="90">
     <p class="text-end page-number">#90</p>
 
-    <p>
+    <p style="margin-bottom: 0">
     Circa vijfentwintig jaar geleden, toen ik op de heuvel van Yûshâ aan de zeestraat van Istanbul had besloten om afstand van de wereld te nemen, waren er een aantal aanzienlijke vrienden van mij langsgekomen om mij terug naar de wereld te roepen met het verzoek om mijn oude positie weer te bekleden. Ik zei: <em>“Geef mij tot morgen bedenktijd, opdat ik istikhara kan doen.”</em> In de ochtend werden mijn hart de aankomende twee tableaus ingegeven. Ze lijken op gedichten, maar dat zijn ze niet. De herinnering aan die gezegende tijd heeft mij verhinderd om ze aan te passen; ze zijn opgeslagen zoals ze zijn ingegeven. Ze waren aan het eind van Het Drieëntwintigste Woord toegevoegd, maar zijn vanwege hun betrekking op dit thema hier geplaatst.
     </p>
 
@@ -5285,6 +5285,1208 @@ Qur’an genadig, o Genadigste der Genadigen, o Gulste der Gulhartigen.
 <sup>2</sup> “En hun slotgebed luidt: de lof zij ALLAH; Heer der werelden.” - <em>De Heilige
 Qur’an, 10:10</em>
 </p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 122,
+                'content' => '<div class="page" id="122">
+<p class="text-end page-number">#122</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>De Vijfde Tak Van<br>Het Vierentwintigste Woord</h2>
+</div>
+
+<p class="text-center text-bold">
+[De Vijfde Tak heeft Vijf Vruchten]
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Eerste Vrucht</strong>
+</p>
+
+<p>
+O mijn egocentrische ego en o mijn aardsgezinde vriend! Liefde is een
+bestaansreden van dit universum. Bovendien is ze zowel het bindmiddel als
+het licht als het leven van dit universum. Omdat de mens de omvattendste
+vrucht van het universum is, zetelt er in het zaad van die vrucht, oftewel zijn
+hart, een liefde die het hele universum kan omvatten.
+</p>
+
+<p>
+<em><strong>Voorwaar, alleen Een Bezitter van Een Grenzeloze Volmaaktheid verdient
+een dergelijke grenzeloze liefde.</strong></em>
+</p>
+
+<p>
+Voorwaar, o mijn ego en o mijn vriend! In de aard van de mens zijn er
+twee apparaten gevestigd die als zintuig voor vrees en liefde fungeren. Die
+liefde en die vrees zullen hoe dan ook ofwel tot het volk ofwel tot de Schepper
+worden gewend. Hierbij is vrees voor het volk een ellendige vloek. Ook
+is liefde voor het volk een vervloekte plaag. Immers, degenen die jij vreest
+zullen geen mededogen voor jou voelen, of ze zullen jouw verzoek om mededogen
+afwijzen. In deze toestand is vrees een ellendige vloek.
+</p>
+
+<p>
+Als het aankomt op liefde, dan zal datgene wat jij liefhebt óf niet op de
+hoogte van jou zijn en jou de rug toekeren zonder afscheid van je te nemen
+<em>(zoals je jeugd en je bezittingen)</em>, óf het zal naar aanleiding van jouw liefde jou
+te schande maken. Zie je dan niet dat negenennegentig procent van de
+mensen die verzeild raken in valse liefdes zich beklagen over hun geliefde?
+De kern van het hart is immers een spiegel van de Onafhankelijke. Wanneer
+aardse geliefden uit die kern van het hart op een afgodische wijze bemind
+worden, dan zal dat in de ogen van die geliefden ondraaglijk en afstotend
+zijn, waardoor ze die liefde zullen verwerpen. Want de aard zal iets wat onnatuurlijk
+en onwaardig is, afwijzen en verwerpen. <em>(Liefdes die op lusten zijn
+gebaseerd laten we buiten beschouwing.)</em>
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 123,
+                'content' => '<div class="page" id="123">
+<p class="text-end page-number">#123</p>
+
+<p>
+Wat jij dus liefhebt, zal óf niet op de hoogte van jou zijn, óf jou te schande
+maken, óf niet bij jou blijven; in weerwil van jou zal het zich van jou
+distantiëren. Dit is de realiteit…dus wend jouw vrees en jouw liefde tot een
+entiteit die jouw vrees in een zoete nederigheid en jouw liefde in een onaantastbare
+gelukzaligheid kan omzetten.
+</p>
+
+<p>
+Waarlijk, vrees voor jouw Ontzaglijke Schepper koesteren, impliceert dat
+jij een weg naar De Meedogendheid van Zijn Genade baant en toevlucht
+tot Hem neemt. Vrees is een zweep die jou in De Schoot van Zijn Genade
+jaagt. Het is bekend dat een moeder haar kind via vreesaanjaging naar haar
+schoot lokt. Die vrees is zeer zoet voor dat kind, want ze leidt hem naar de
+schoot van mededogen. Echter, het totale mededogen van alle moeders is in
+zijn geheel slechts een flits van De Goddelijke Genade. Aldus schuilt er in
+de vrees voor ALLAH een geweldig genot. Aangezien de vrees voor ALLAH
+al een dusdanig genot bevat, kun je wel nagaan wat voor eindeloos genot er
+binnen de liefde voor ALLAH schuilgaat. Bovendien wordt degene die ALLAH
+vreest van de bezwarende en vervloekte vrees voor anderen gered.
+Daarnaast zal ook zijn liefde voor schepselen niet met een pijnlijke scheiding
+eindigen, want zijn liefde is immers op ALLAH gebaseerd.
+</p>
+
+<p>
+Waarlijk, de mens heeft in eerste instantie zijn ego lief. Daarna heeft hij in
+afnemende volgorde zijn verwanten, zijn volk, de levende schepselen, de
+wereld en het universum lief. Hij is respectievelijk betrokken bij al deze kringen.
+De genietingen binnen die kringen kunnen hem plezieren en de kwellingen
+die zich daar voordoen kunnen hem kwetsen. Echter, omdat niets
+gedurende de periodieke stormen in deze instabiele wereld intact blijft, loopt
+het arme mensenhart aldoor wonden op. Wat hij ook vastgrijpt zal vroeg of
+laat uit zijn hand ontsnappen en zijn palm openrijten; soms kan het zelfs
+zijn hand eraf rukken. Hij zal voortdurend kwelling ondergaan. Of hij zal
+zichzelf in onachtzaamheid dronken voeren.
+</p>
+
+<p>
+Aldus, o ego, als jij over een verstand beschikt, fuseer dan al die liefdes en
+geef ze aan hun Ware Eigenaar, opdat je van deze vloeken wordt bevrijd.
+Deze grenzeloze liefdes zijn voor Een Bezitter van een Grenzeloze Volmaaktheid
+en Schoonheid bestemd. Pas op het moment dat jij ze aan hun Ware
+Eigenaar afstaat, kun jij alle creaties namens Hem en gezien hun hoedanigheid
+waarmee ze Hem weerspiegelen liefhebben zonder leed te verduren.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 124,
+                'content' => '<div class="page" id="124">
+<p class="text-end page-number">#124</p>
+
+<p>
+Aldus dient liefde niet rechtstreeks aan het universum te worden besteed.
+Anders zal liefde – ondanks dat ze een uiterst zoete gunst is – tot een uiterst
+kwellende plaag verworden.
+</p>
+
+<p>
+Bovendien is er nog een aspect dat in feite het allerbelangrijkst is. O ego,
+jij besteedt je liefde aan jezelf. Jij maakt jezelf een aanbedene en een geliefde
+voor jezelf. Je offert alles aan je ego op. Je kent nagenoeg een vorm van heerschappij
+aan hem toe. Echter, de redenen om lief te hebben bestaan: ofwel
+uit volmaaktheid – volmaaktheid wordt immers van nature geliefd – ofwel
+uit profijt, ofwel uit genot, ofwel uit heil, ofwel uit soortgelijke redenen die
+het waard zijn om geliefd te worden.
+</p>
+
+<p>
+O ego! In een aantal Woorden hebben wij onbetwistbaar bewezen dat
+jouw ware hoedanigheid uit gebrekkigheid, onvolmaaktheid, behoeftigheid
+en machteloosheid is gekneed. Zoals duisternis naar de mate van haar donkerte
+de helderheid van licht weergeeft, weerspiegel jij omgekeerd evenredig
+met jouw eigenschappen de Volmaaktheid, de Schoonheid, de Macht en de
+Genade van De Ontzaglijke Voortbrenger.
+</p>
+
+<p>
+O ego, jij behoort dus geen liefde maar vijandschap of medelijden voor
+jezelf te koesteren. Of je behoort meedogend voor je ego te zijn nadat jij
+hem hebt ingetoomd. Mocht jij jouw ego liefhebben – aangezien je ego de
+ontvanger van genot en profijt is, en jij een zwak voor genot en profijt hebt
+– geef dan je nietige egoïstische genietingen en profijten niet de voorkeur
+boven grenzeloze genietingen en profijten. Wees niet zoals een vuurvlieg,
+want hij dompelt al zijn vrienden en geliefden in de woestenij der duisternis,
+en neemt genoegen met het sprankje van zijn ego.
+</p>
+
+<p>
+Immers, naast je persoonlijke genot en profijt, zijn alle profijten en gelukzaligheden
+van je medewezens in het hele universum waar jij ook van
+profiteert en gelukkig van wordt, gebonden aan de Aandacht van Een Onbegonnen
+Geliefde. Aldus behoor jij Hem lief te hebben, opdat jij uit zowel
+je persoonlijke gelukzaligheid als al hun gelukzaligheden plezier kunt
+halen en uit de Liefde van De Absolute Volmaaktheid een grenzeloos genot
+kunt ervaren.
+</p>
+
+<p>
+De vurige liefde die jij aan je ego besteedt, is een wezenlijke liefde die voor
+Zijn Wezen is bedoeld; jij maakt misbruik van die liefde en besteedt haar aan
+je eigen wezen. Verscheur dus het ik-complex van je ego en laat Hem zien.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 125,
+                'content' => '<div class="page" id="125">
+<p class="text-end page-number">#125</p>
+
+<p>
+En al jouw liefdes die jij over het bestaan hebt uitgestrooid, ontkiemen
+uit een liefde die voor Zijn Namen en Eigenschappen is gegeven. Jij hebt
+daar misbruik van gemaakt, waardoor je de straf ervan ondervindt. Immers,
+de straf van een misplaatste liefde die ongeoorloofd is, bestaat uit een meedogenloze
+kwelling.
+</p>
+
+<p style="margin-bottom: 0">
+Hij Die via Zijn Genadige en Barmhartige Naam een hemels oord, versierd
+met paradijselijke vrouwen waar al je wensen worden verhoord, voor
+jouw fysieke verlangens heeft klaargemaakt, en met Zijn overige Namen
+eeuwige giften voor alle verlangens van je ziel, je hart, je mystiek, je verstand
+en al je overige zintuigen in dat paradijs voor jou heeft opgeslagen, waarnaast
+Hij Namen bezit waarvan Elk vele geestelijke schatten aan gaven en
+gunsten herbergt, is een Onbegonnen Geliefde Wiens geringste Liefde uiteraard
+het heelal kan overschitteren; het universum kan één minieme manifestatie
+van Zijn Liefde niet vervangen. Geef dus gehoor en wees gehoorzaam
+aan de volgende Onbegonnen Verordening die De Onbegonnen Geliefde
+door Zijn lieveling heeft laten uitspreken:
+</p>
+
+<p style="margin: 0px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اِنْ كُنْتُمْ تُحِبُّونَ اللّٰهَ فَاتَّبِعُونٖى يُحْبِبْكُمُ اللّٰهُ<sup>1</sup></p>
+
+<p class="text-red small-title text-center">
+<strong>De Tweede Vrucht</strong>
+</p>
+
+<p>
+O ego! Dienaarschap is niet de beginfase van een toekomstige vergoeding,
+maar de conclusie van reeds ontvangen gunsten. Waarlijk, wij hebben onze
+vergoeding reeds ontvangen, daarom zijn wij met diensten en met dienaarschap
+belast.
+</p>
+
+<p>
+Immers, o ego, De Ontzaglijke Schepper Die jou met pure heil, oftewel
+met een bestaan heeft bekleed, heeft jou een hongerige maag gegeven. Daarom
+heeft Hij met Zijn Naam <strong>“De Onderhouder”</strong> alle voedselsoorten over
+een tafel van gunsten voor jou uitgespreid.
+</p>
+
+<p>
+Daarnaast heeft Hij jou een delicaat leven gegeven dat evenals de maag
+naar onderhoud verlangt. Hierbij fungeren je ogen, je oren en al je andere
+zintuigen als handen. Daarom heeft Hij een tafel van gunsten ter grootte
+van het aardoppervlak voor die handen klaargezet.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Als jullie ALLAH liefhebben, volg mij dan na, opdat ALLAH jullie zal liefhebben.”
+- <em>De Heilige Qur\'an, 10:58</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 126,
+                'content' => '<div class="page" id="126">
+<p class="text-end page-number">#126</p>
+
+<p>
+Daarnaast heeft Hij jou een menselijkheid gegeven die naar vele spirituele
+vormen van onderhoud en gunsten verlangt. Daarom heeft Hij een tafel van
+gunsten ter grootte van de inwendige en uitwendige wereld voor die maag
+der menselijkheid naar het handbereik van het verstand voor jou uitgespreid.
+</p>
+
+<p>
+Daarnaast heeft Hij jou de Islam en het geloof gegeven. Zij richten zich
+op eindeloze gunsten, voeden zich met de oneindige vruchten van Genade
+en vertegenwoordigen de ultieme menselijkheid. Daarom heeft Hij een tafel
+van gunsten, gelukzaligheden en genietingen voor jou ter beschikking gesteld,
+die – naast de kring der mogelijkheden – de kring van Gods Schone
+Namen en Heilige Eigenschappen omvat.
+</p>
+
+<p>
+Daarnaast heeft Hij jou een geloofslicht in de vorm van liefde gegeven.
+Daarmee heeft Hij jou met een onuitputtelijke tafel van gunsten, gelukzaligheden
+en genietingen begunstigd.
+</p>
+
+<p>
+Al bij al ben jij gezien je fysiek een klein, zwak, machteloos, zielig, beperkt
+en begrensd individu. Bij Zijn Gratie belichaam jij als nietig individu een
+universele en verlichte omvattendheid. Immers, door jou een leven te schenken
+heeft Hij jou vanuit beperktheid tot een variant van omvattendheid,
+door jou een menselijkheid te geven tot een ware omvattendheid, door jou
+de Islam te geven tot een verheven en lumineuze omvattendheid, en door
+jou Godskennis en liefde te geven tot een omvattende lichternis laten stijgen.
+</p>
+
+<p>
+Voorwaar, o ego, deze vergoeding heb jij reeds ontvangen. Als tegenprestatie
+ben jij met een zoete, gunstige, vredige en lichte Godsdienstigheid in
+het kader van dienaarschap belast. Maar zelfs daartegenover stel jij je laks op.
+Al voer jij jouw taak lamlendig uit, alsnog gedraag jij je alsof de voornoemde
+vergoedingen niet voldoende zijn door opdringerig allerlei grote gunsten te
+wensen. Vervolgens stel jij je ook nog eens aan met uitspraken als: <em>“Waarom
+worden mijn beden niet verhoord?”</em>
+</p>
+
+<p style="margin-bottom: 0">
+Waarlijk, jij hebt geen recht om te klagen maar om te smeken. De Hoogste
+Gerechtigde schenkt het paradijs en de eeuwige gelukzaligheid puur op
+basis van Zijn Gratie en Gulheid. Doe altijd beroep op Zijn Genade en
+Gratie, vertrouw Hem en geef gehoor aan deze verordening:
+</p>
+
+<p style="margin: 0px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">قُلْ بِفَضْلِ اللّٰهِ وَبِرَحْمَتِهٖ فَبِذٰلِكَ فَلْيَفْرَحُوا هُوَ خَيْرٌ مِمَّا يَجْمَعُونَ<sup>1</sup></p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Zeg: met de Begunstiging van ALLAH en Zijn Genade kunnen zij verademen;
+dat is heilzamer dan wat zij vergaren.” - <em>De Heilige Qur\'an, 10:58</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 127,
+                'content' => '<div class="page" id="127">
+<p class="text-end page-number">#127</p>
+
+<p><strong><em>Stelling</em></strong></p>
+
+<p>
+<em>Hoe kan ik voor deze universele en grenzeloze gunsten met mijn begrensde en
+individuele capaciteiten dank betuigen?</em>
+</p>
+
+<p><strong><em>Het antwoord</em></strong></p>
+
+<p>
+Met een universele intentie en een onbegrensde overtuiging. Bijvoorbeeld,
+stel dat iemand met een geschenk ter waarde van vijf euro bij een koning op
+bezoek gaat. Onderweg ziet hij dat er allerlei geschenken van aanzienlijke
+individuen ter waarde van miljoenen voor de koning in rijen zijn opgesteld.
+Daarop koestert de bezoeker de volgende gedachte in zijn hart:
+</p>
+
+<p>
+<em>“Mijn geschenk stelt niets voor, wat kan ik doen?”</em>
+</p>
+
+<p>
+Plotseling zegt hij:
+</p>
+
+<p>
+<em>“O mijn heerser! Al deze kostbare geschenken wijd ik namens mijzelf aan u,
+want u bent ze waard. Als mijn vermogen toereikend zou zijn, dan zou ik u ook
+met al deze geschenken begiftigen.”</em>
+</p>
+
+<p>
+Voorwaar, de koning die nergens behoefte aan heeft en de geschenken
+van zijn volk als teken van hun trouwheid en eerbied aanvaardt, zal van
+die arme man deze grote en omvattende intentie en wens, en deze mooie
+en verheven waardigheid van zijn overtuiging als het allergrootste geschenk
+aanvaarden.
+</p>
+
+<p>
+Evenzo zegt een machteloze dienaar tijdens zijn salât:<sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلتَّحِيَّاتُ لِلّٰهِ</span>.
+Met andere woorden:
+</p>
+
+<p class="text-italic">
+“De dienaarschapsgeschenken die alle wezens met hun leven aan U wijden,
+wijd ik allemaal namens mezelf aan U. Als ik bij machte zou zijn, dan zou ik
+zoveel levensgeschenken als hun totale aantal aan U schenken. U bent ze immers
+waard en in feite verdient U veel meer.”
+</p>
+
+<p>
+Voorwaar, deze intentie en overtuiging impliceren een uiterst omvattende
+dankbetuiging.
+</p>
+
+<p>
+De zaden en pitten van planten zijn hun intenties. Bijvoorbeeld, een meloen
+koestert in zijn hart duizenden intenties in de gedaante van pitten,
+zeggende:
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “De levensgeschenken behoren ALLAH toe.”
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 128,
+                'content' => '<div class="page" id="128">
+<p class="text-end page-number">#128</p>
+
+<p style="margin-bottom: 0">
+<em>“O mijn Schepper! Ik wil de geschriften van Uw Schone Namen over vele
+locaties van de aarde uitgebreid openbaren.”</em> Omdat de Hoogste Gerechtigde
+op de hoogte is van de wijze waarop het aankomende zich zal manifesteren,
+aanvaardt Hij die intenties als een vervulde Godsdienstoefening. <em>“De intentie
+van een gelovige is heilzamer dan zijn daden”</em> duidt op dit geheim. En dankzij
+dit geheim wordt het duidelijk waarom er eindeloze verheerlijkingen worden
+betuigd tijdens Godsvereringen als:
+</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+سُبْحَانَكَ وَ بِحَمْدِكَ عَدَدَ خَلْقِكَ وَ رِضَاءَ نَفْسِكَ وَ زِنَةِ عَرْشِكَ وَ مِدَادِ كَلِمَاتِكَ وَ نُسَبِّحُكَ بِجَمٖيعِ تَسْبٖيحَاتِ اَنْبِيَائِكَ وَ اَوْلِيَائِكَ وَ مَلٰئِكَتِكَ<sup>1</sup>
+</p>
+
+<p style="margin-bottom: 0">
+En zoals een generaal de gezamenlijke diensten van alle soldaten namens
+zichzelf aan de koning voordraagt, fungeert de mens als generaal van alle
+wezens, en als commandant van de dieren en planten, en hij bezit de potentie
+om khalief van alle aardse wezens te worden die in zijn eigen specifieke
+wereld als hun vertegenwoordiger: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعٖينُ</span> kan zeggen, en
+de Godsdienstoefeningen en hulpverzoeken van alle volkeren namens zichzelf
+aan de Ontzaglijke Aanbedene kan voordragen. Bovendien zegt hij:
+</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+سُبْحَانَكَ بِجَمٖيعِ تَسْبٖيحَاتِ جَمٖيعِ مَخْلُوقَاتِكَ وَ بِاَلْسِنَةِ جَمٖيعِ مَصْنُوعَاتِكَ<sup>3</sup>
+</p>
+
+<p style="margin-bottom: 0">
+Zodoende laat hij alle wezens namens zichzelf spreken. Bovendien zegt hij:
+</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+اَللّٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ بِعَدَدِ ذَرَّاتِ الْكَائِنَاتِ وَ مُرَكَّبَاتِهَا<sup>4</sup>
+</p>
+
+<p>
+Zodoende spreekt hij namens alles heilwensen over de profeet uit. Want
+alles is betrokken bij Het Licht van Ahmed <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span>. Voorwaar, doorzie de wijsheid
+achter de eindeloze hoeveelheden verheerlijkingen en heilwensen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Feilloos zij U en de lof zij U, naar het aantal van Uw schepselen, naar het behagen
+van Uw Wezen, naar de omvang van Uw Oppertroon, naar de inkt van Uw
+Woorden, Wij verheerlijken U met alle verheerlijkingen van Uw Godsgezanten, Uw
+vrienden en Uw engelen.
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Alleen U dienen wij en alleen U vragen wij om hulp.” - <em>De Heilige Qur\'an, 1:5</em>
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> Feilloos zij U, bij alle verheerlijkingen van al Uw schepselen en bij alle uitdrukkingen
+van al Uw kunstwerken.
+</p>
+
+<p class="footnote-p">
+<sup>4</sup> O ALLAH, laat in evenredigheid met het aantal atomen en deeltjes in het universum
+zegeningen neerdalen op Mohammed.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 129,
+                'content' => '<div class="page" id="129">
+<p class="text-end page-number">#129</p>
+
+<p class="text-red small-title text-center">
+<strong>De Derde Vrucht</strong>
+</p>
+
+<p>
+O ego! Indien jij gedurende een kortstondig leven grenzeloze taken voor
+het hiernamaals wil verrichten, elke levensminuut zo waardevol als een hele
+levensduur wil maken, je gewoonten in Godsdienstoefeningen wil omzetten
+en je onachtzaamheid in Godsbesef wil veranderen, neem dan de achtenswaardige
+Soenna in acht. Want wanneer jij je tijdens een handeling aan de
+Shariaanse gedragslijn houdt, dan zal dat Godsbesef verschaffen. Je handeling
+zal dan als een Godsdienstoefening gelden en in het hiernamaals vele
+vruchten afwerpen.
+</p>
+
+<p>
+Bijvoorbeeld, wanneer jij tijdens een inkoop rekening houdt met wat de
+Sharia verbiedt en toelaat, dan zal jouw gewoonlijke inkoop als een Godsdienstoefening
+gelden. Die herinnering aan de Shariaanse wet doet denken
+aan de Goddelijke Revelaties, waardoor De Eigenaar van de Sharia in je gedachte
+opkomt en jij je tot God richt. Zodoende verschaft het Godsbesef.
+</p>
+
+<p style="margin-bottom: 0">
+Wanneer de achtbare Soenna dus wordt betracht, dan zal dit vergankelijke
+leven eeuwige vruchten afwerpen en als de bron van opbrengsten voor
+een eeuwig leven dienen.
+</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+فَاٰمِنُوا بِاللّٰهِ وَرَسُولِهِ النَّبِىِّ الْاُمِّىِّ الَّذٖى يُؤْمِنُ بِاللّٰهِ وَكَلِمَاتِهٖ وَاتَّبِعُوهُ لَعَلَّكُمْ تَهْتَدُونَ<sup>1</sup>
+</p>
+
+<p style="margin-bottom: 0;">
+Geef gehoor aan deze verordening. IJver om een omvattende ontvanger te
+worden van de manifesterende zegeningen uit een ieder onder Gods Schone
+Namen, Waarvan de Reflecties Zich binnen de wetten van de Sharia en de
+achtenswaardige Soenna voordoen.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Vierde Vrucht</strong>
+</p>
+
+<p>
+O ego! Kijk niet naar de aardsgezinde, de zedeloze en vooral niet naar de
+ongelovige mensen. Laat je niet meeslepen door hun schone schijn en hun
+misleidende verboden genietingen, en doe ze niet na! Want ook al doe je ze
+na, jij zult nooit zoals zij kunnen worden; jij zult uitermate diep zinken en
+zelfs niet als een dier kunnen leven. Want het verstand in je hoofd zal als een
+heilloos instrument fungeren en continu naar je hoofd uithalen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “En geloof in ALLAH en in Zijn profeet; de ongeletterde gezant die in ALLAH en
+in Zijn Woorden gelooft. En volg hem na, opdat jullie leiding mogen ontvangen.” -
+<em>De Heilige Qur\'an, 7:158</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 130,
+                'content' => '<div class="page" id="130">
+<p class="text-end page-number">#130</p>
+
+<p>
+Bijvoorbeeld, er is een paleis met een geweldige verdieping. Op die verdieping
+is er een grote elektrische lamp aangesloten waaraan de lampen van allerlei
+kleine kamers zijn verbonden. Als iemand de knop van die grote elektrische
+lamp omdraait en het licht uitdoet, dan zullen alle kamers in een
+diepe duisternis en in verlatenheid verkeren. Ook is er een ander paleis waarin
+alle kamers voorzien zijn van kleine elektrische lampjes die niet aan de
+grote elektrische lamp zijn verbonden. Als de eigenaar van het paleis de knop
+van de grote elektrische lamp omdraait en de lamp uitzet, dan kunnen de
+lampjes van de overige kamers alsnog werken en de kamers verlichten. Daarmee
+kan de eigenaar zich redden. Inbrekers kunnen hier niet van profiteren.
+</p>
+
+<p>
+Voorwaar, o mijn ego! Het eerste paleis symboliseert een moslim. De
+eminente profeet <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> is de grote elektrische lamp in zijn hart. Als die moslim
+hem vergeet en hem – moge ALLAH ons voor zoiets hoeden – uit zijn hart
+verwijdert, dan kan hij geen enkele profeet meer aanvaarden. In zijn ziel zal
+er geen één plek voor ontwikkeling meer achterblijven. Hij kan zijn Heer
+dan niet eens meer erkennen. Alle kamers en zintuigen in zijn aard zullen in
+duisternis vervallen. En in zijn hart zal er een vreselijke verwoesting en vervreemding
+plaatsvinden. Wat zou jij tegenover deze verwoesting en vervreemding
+kunnen aanwinnen om je gemoed gerust te stellen? Wat voor
+profijt zou jij kunnen behalen om de schade van die verwoesting te herstellen?
+</p>
+
+<p>
+De westerlingen lijken daarentegen op het tweede paleis. Als zij het licht
+van de eminente profeet <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> uit hun hart verwijderen, dan kunnen er volgens
+hen alsnog enige lichten achterblijven – althans, dat veronderstellen zij.
+Zij kunnen alsnog iets vinden voor de spirituele ontwikkeling van hun karakter
+door in zekere zin in Mûsâ en Îsâ <span class="honorific" dir="rtl" lang="ar">عليهم السلام</span> te geloven, en enigermate
+overtuigd van hun Schepper te blijven.
+</p>
+
+<p>
+O kwaadgezinde ego! Ook als jij het volgende zegt: <em>“Ik wil niet als een
+westerling maar als een dier mijn leven leiden”</em>, dan zeg ik zoals ik al zo vaak
+heb gezegd dat jij ook niet als een dier kunt leven. Je hebt immers een verstand
+in je hoofd dat met de klappen van vroegere kwellingen en toekomstige
+angsten naar je gezicht, je ogen en je hoofd uithaalt. Aan één genieting
+voegt hij duizend kwellingen toe. Een dier daarentegen ervaart een onvermengd
+genot en geniet met volle teugen. Aldus behoor je eerst jouw verstand
+uit je hoofd te verwijderen en weg te gooien om een dier te kunnen
+zijn. Doorzie dus de disciplinerende klap achter de Aya: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">كَالْاَنْعَامِ بَلْ هُمْ اَضَلُّ</span>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Zij zijn als dieren en zelfs nog lager.” - <em>De Heilige Qur’an, 7:179</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 131,
+                'content' => '<div class="page" id="131">
+<p class="text-end page-number">#131</p>
+
+<p class="text-red small-title text-center">
+<strong>De Vijfde Vrucht</strong>
+</p>
+
+<p>
+O ego! Zoals wij vaker hebben gezegd, is de mens de vrucht van de scheppingsboom.
+Net als een vrucht is hij het uiteindelijke en omvattendste schepsel.
+Zijn zaad is een hart dat op iedereen is gericht en het universele eenheidsverband
+van alles omvat, terwijl zijn gezicht op multipliciteit, teloorgang en
+de aarde is gericht. Dienaarschap daarentegen is een verbindingsdraad waarmee
+zijn gezicht van teloorgang op eeuwigheid, van het volk op De Ware, van
+multipliciteit op eenheid, van het eindstadium op de oorsprong wordt gericht.
+Of het is een verbindingspunt tussen de oorsprong en het eindstadium.
+</p>
+
+<p>
+Bijvoorbeeld, stel dat een waardevolle vrucht met een bewustzijn een zaad
+zou kunnen worden. Wanneer zij naar de bezielde wezens onder de boom
+zou kijken, op haar schoonheid zou vertrouwen, haarzelf in hun handen zou
+werpen of vanwege onachtzaamheid van haar tak zou vallen, dan zou ze in
+hun handen belanden, verscheurd worden en als een simpele individuele
+vrucht verloren gaan. Als die vrucht haar steunpunt zou vinden, en als ze
+zou inzien dat het zaad in haar het eenheidsverband van de hele boom
+draagt, en het voortbestaan van de boom en de voortgang van zijn ware
+betekenis kan verwezenlijken, dan zal dat ene zaad in die ene vrucht een
+aanhoudende universele waarheid inclusief een aanhoudend leven omvatten.
+</p>
+
+<p>
+Ook als de mens de multipliciteit induikt, in het universum verzuipt,
+door liefde voor de aarde bedwelmd raakt, zich door de glimlach van vergankelijke
+schepselen laat meeslepen en zich in hun schoot werpt, dan zal hij
+uiteraard een eindeloos verlies ondervinden. Hij zal dan zowel in teloorgang
+als in vergankelijkheid als in nietigheid vervallen. Bovendien zal hij zichzelf
+geestelijk executeren. Als hij de geloofsleer uit de Qur’anische Taal met het
+oor van zijn hart beluistert, zijn hoofd heft en zich tot eenheid wendt, dan
+kan hij via de hemelvaart van dienaarschap naar de troon van volmaaktheid
+stijgen en een eeuwig mens worden.
+</p>
+
+<p>
+O mijn ego! Aangezien de werkelijkheid zo is en aangezien jij tot het volk
+van Ibrahîm <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> behoort, zeg dan evenals Ibrahîm:
+<sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَٓا اُحِبُّ الْاٰفِلٖينَ</span>, wend je
+gezicht tot de Eeuwige Geliefde en huil zoals ik.<sup>2</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Ik hou niet van hetgeen tenondergaat” - <em>De Heilige Qur’an, 6:76</em>
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> Omdat de Perzische passages van hier naar Het Tweede Thema van Het Zeventiende
+Woord zijn verplaatst, zijn ze hier niet geschreven.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 132,
+                'content' => '<div class="page" id="132">
+<p class="text-end page-number">#132</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Uit Het Vijfentwintigste Woord</h2>
+</div>
+
+
+
+<p class="text-red small-title text-center">
+<strong>De Tweede Radiatie</strong>
+</p>
+
+<p class="text-center text-bold">
+[Aangaande de jeugdigheid van De Qur’an]
+</p>
+
+<p>
+Elke eeuw behoudt Hij Zijn frisheid en Zijn jeugdigheid, alsof Hij vers is
+neergedaald. Waarlijk, omdat De Qur’an als Onbegonnen Preek alle menselijke
+klassen uit alle tijdperken tegelijk aanspreekt, is een dergelijk aanhoudende
+jeugdigheid ook nodig. Tevens werd en wordt het ook zo ondervonden.
+Ten opzichte van alle eeuwen waarin telkens veranderende opvattingen
+en variërende vaardigheden op de voorgrond staan, is Hij elke eeuw zo bijdetijds,
+dat het lijkt alsof Hij Zich specifiek op die eeuw richt, de aandacht trekt
+en lering biedt. De werken en wetten van mensen zijn net als mensen; ze
+verouderen, ze veranderen en ze worden vervangen. De Standpunten en de
+Wetten van De Qur’an daarentegen zijn zo stabiel en onwrikbaar, dat ze Zijn
+Kracht slechts duidelijker laten zien naarmate eeuwen verstrijken.
+</p>
+
+<p>
+Waarlijk, deze huidige eeuw en de hedendaagse mensen van Het Boek die
+last van overmatig zelfvertrouwen hebben en hun oren zoals nooit te voren
+voor De Qur’an sluiten, hebben zoveel behoefte aan de disciplinaire Aanspreking: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">يَٓا اَهْلَ الْكِتَابِ ۞ يَٓا اَهْلَ الْكِتَابِ</span>, dat die Qur’anische Aanspreking
+nagenoeg rechtstreeks op deze eeuw is gericht. De uitspraak:
+<span class="text-arabic-inline" dir="rtl" lang="ar">يَٓا اَهْلَ الْكِتَابِ</span>
+omvat de betekenis: <em>“mensen van studie”</em>; met al Zijn Kracht, Zijn Frisheid
+en Zijn Jeugdigheid laat Hij over alle uiteinden van de wereld Zijn Oproep
+nagalmen: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">يَٓا اَهْلَ الْكِتَابِ تَعَالَوْا اِلٰى كَلِمَةٍ سَوَٓاءٍ بَيْنَنَا وَبَيْنَكُمْ</span>.
+</p>
+
+<p>
+Ondanks dat de mensen en groeperingen machteloos in hun verzet tegenover
+De Qur’an staan, is de huidige beschaving met al haar verzamelde verzinsels
+van mensen en djinns een verzetsbeweging tegen De Qur’an begonnen;
+met haar begoochelingen verzet ze zich tegen de Qur’anische Mirakelen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “O mensen van Het Boek, o mensen van Het Boek.” - <em>De Heilige Qur’an, 3:64</em>
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “O mensen van Het Boek, komt tot een woord dat voor ons en voor jullie overeenstemmend
+is.” - <em>De Heilige Qur’an, 3:64</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 133,
+                'content' => '<div class="page" id="133">
+<p class="text-end page-number">#133</p>
+
+<p>
+Om het standpunt van de Aya:
+<sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">قُلْ لَئِنِ اجْتَمَعَتِ الْاِنْسُ وَالْجِنُّ</span>
+tegenover deze akelige moderne verzetsbeweging te bewijzen, gaan wij de fundamenten
+en de principes waarmee ze zich verzet, tegenover de Qur’anische Fundamenten
+plaatsen.
+</p>
+
+<p><strong>De eerste graad</strong></p>
+
+<p>
+De afwegingen en de vergelijkingen vanaf <em>Het Eerste Woord</em> tot en met
+<em>Het Vijfentwintigste Woord</em>, evenals de Aya’s aan hun begin Die de waarheden
+van die Woorden dragen, tonen het Miraculeuze Wezen van De
+Qur’an en Zijn overwinning over de huidige beschaving zo zeker als tweemaal
+twee vier is aan.
+</p>
+
+<p><strong>De tweede graad</strong></p>
+
+<p>
+Een aantal principes die in <em>Het Twaalfde Woord</em> zijn beduid, zullen hier
+worden samengevat.
+</p>
+
+<p>
+Voorwaar, de huidige beschaving beschouwt op basis van haar filosofie
+kracht als het steunpunt van het menselijke gemeenschapsleven. Haar streven
+is op winst gericht. Haar levensprincipe is op strijd gebaseerd. Het middel
+om mensen bijeen te brengen, bestaat volgens haar uit racisme en een
+negatieve vorm van nationalisme. Haar doel is gericht op bepaalde zonden
+die de egoïstische lusten bevredigen en de menselijke behoeften intensiveren.
+Echter, het kenmerk van kracht is agressie. Het kenmerk van winstbejag is
+vechten om winst te behalen aangezien de te behalen winst niet voor eenieders
+wens toereikend is. Het kenmerk van strijd is rivaliteit. Het kenmerk
+van racisme is rechtsschending aangezien het zich met het verslinden van
+anderen voedt.
+</p>
+
+<p>
+Voorwaar, uitgaande van deze principes heeft de huidige beschaving met
+al haar bekoorlijkheden slechts twintig procent van de mensheid een ogenschijnlijke
+vorm van geluk kunnen verschaffen, terwijl ze tachtig procent
+van de mensen in het verderf heeft gestort.
+</p>
+
+<p>
+De Qur’anische Wijsheid daarentegen heeft geen kracht maar rechtvaardigheid
+als steunpunt genomen. Haar streven is niet op winst maar op
+deugd en Gods Welbehagen gericht. Haar levensbeschouwing is niet op strijd maar op het samenwerkingsprincipe gebaseerd.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Zeg: al zouden de mensen en de djinns samenkomen....” - <em>De Heilige Qur’an, 17:88</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 134,
+                'content' => '<div class="page" id="134">
+<p class="text-end page-number">#134</p>
+
+<p style="text-indent: 0">
+Haar middel om mensen
+samen te brengen, bestaat niet uit racisme en nationalisme, maar uit religieuze
+gemeenzaamheden, beroepsmatige betrekkingen en landelijke belangen.
+Haar doelen zijn: de verboden begeerten van egoïstische lusten tegengaan,
+de ziel tot heilige kennisnemingen inspireren, verheven gevoelens bevredigen
+en de mens daadwerkelijk mens maken door hem naar menselijke
+volmaaktheden te dirigeren.
+</p>
+
+<p>
+Het kenmerk van rechtvaardigheid is eendracht. Het kenmerk van deugd
+is saamhorigheid. Het kenmerk van het samenwerkingsprincipe is onderlinge
+bijstand. Het kenmerk van religie is broederschap en binding. En het ego
+beteugelen en vastketenen, de ziel naar volmaaktheid dirigeren en vrijlaten,
+vormen het kenmerk van gelukzaligheid in beide oorden.
+</p>
+
+<p>
+Voorwaar, de huidige beschaving is door de schoonheden van de voorgaande
+hemelse religies en vooral van De Qur’an uit een waarachtig oogpunt
+overwonnen.
+</p>
+
+<p class="text-bold">De derde graad</p>
+
+<p class="text-italic">
+Deze graad bevat duizenden kwesties waar wij ter illustratie slechts drie á vier
+van zullen laten zien.
+</p>
+
+<p>
+Waarlijk, omdat de Principes en de Wetten van De Qur’an uit de onbegonnenheid
+zijn opgekomen, gaan Ze richting de eeuwigheid voort. In tegenstelling
+tot de wetten van de beschaving worden Ze niet ouder en zijn Ze
+niet gedoemd tot afsterving; Zij blijven immer jeugdig en sterk.
+</p>
+
+<p style="margin-bottom: 0">
+Bijvoorbeeld, ondanks alle welzijnsinstanties, alle strenge regulaties en wetten,
+en alle normen en waarden van de huidige beschaving, heeft ze twee
+punten uit de aankomende twee Aya’s van De Leerrijke Qur’an niet kunnen
+tegenspreken en is ze overwonnen.
+</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+وَاَقٖيمُوا الصَّلٰوةَ وَاٰتُوا الزَّكٰوةَ<sup>1</sup> ۞ وَاَحَلَّ اللّٰهُ الْبَيْعَ وَحَرَّمَ الرِّبٰوا<sup>2</sup>
+</p>
+
+<p>
+Deze miraculeuze overwinning van De Qur’an gaan wij aan de hand van
+een inleiding verklaren.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “En verricht de Salât en geef de Zakaat.” - <em>De Heilige Qur’an, 2:43</em>
+</p>
+<p class="footnote-p">
+<sup>2</sup> “En ALLAH heeft de handel halal en de rente haram verklaard.” - <em>De Heilige Qur’an, 2:275</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 135,
+                'content' => '<div class="page" id="135">
+<p class="text-end page-number">#135</p>
+
+<p>
+Zoals bewezen in <strong>“İşârâtü’l-İ’câz”</strong> kan de oorsprong van alle oproeren
+binnen de mensheid in één zin worden samengevat, evenals de bron van alle
+zondige karaktereigenschappen in één zin kan worden samengevat.
+</p>
+
+<p class="text-italic">
+<strong>De eerste zin:</strong> “Zolang mijn maag gevuld is, kan het mij niets schelen dat
+anderen sterven van de honger.”
+</p>
+
+<p class="text-italic">
+<strong>De tweede zin:</strong> “Jij werkt, ik eet.”
+</p>
+
+<p>
+Waarlijk, dankzij de balans tussen de elites en de burgers, oftewel de rijken
+en de armen, kan de vrede in het menselijke gemeenschapsleven worden
+gehandhaafd. De essentie van die balans bestaat enerzijds uit de genadigheid
+en het mededogen van de elites, anderzijds uit de eerbied en de volgzaamheid
+van de burgers. De eerste zin heeft de elites tot onrecht, onzedelijkheid
+en meedogenloosheid aangespoord. De tweede zin heeft gevoelens van wrok,
+jaloezie en opstand bij de burgers ontwaakt. Hierdoor is de vrede binnen de
+mensheid inmiddels al een aantal eeuwen verloren gegaan. Daarnaast is in
+deze eeuw via de bekende catastrofes in Europa duidelijk geworden wat voor
+gevolgen de strijd tussen arbeid en kapitaal met zich meebrengt.
+</p>
+
+<p>
+Voorwaar, de beschaving met al haar welzijnsinstanties, haar zedenleer, en
+haar strenge regulaties en wetten heeft geen vrede tussen die twee klassen
+binnen de mensheid kunnen brengen, noch heeft ze de twee diepe wonden
+van het mensenleven kunnen genezen. De Qur’an pakt de eerste zin via de
+verplichting van de Zakaat bij de wortel aan en verschaft genezing. Het
+fundament van de tweede zin vernietigt Hij via het verbod op rente en verschaft
+wederom genezing.
+</p>
+
+<p>
+Waarlijk, De Qur’anische Aya’s staan voor de poort van de wereld en
+zeggen tegen de rente: <em>“Jij mag niet binnentreden!”</em> Ze vermanen mensen en
+zeggen: <em>“Om de deur naar ruzie te sluiten, dienen jullie de deur van de bank
+(rente) te sluiten.”</em> En tegen de studenten van De Qur’an zeggen Ze: <em>“Loop
+niet door die deur!”</em>
+</p>
+
+<p class="text-bold">De tweede essentie</p>
+
+<p>
+De huidige beschaving vindt polygamie onaanvaardbaar; zij vindt het
+Qur’anische Standpunt daaromtrent niet stroken met wijsheid en ze acht
+het strijdig met de menselijke vooruitgang.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 136,
+                'content' => '<div class="page" id="136">
+<p class="text-end page-number">#136</p>
+
+<p>
+Als de wijsheid achter een huwelijk slechts uit lustbevrediging zou bestaan,
+dan zou polygamie juist moeten worden gehandhaafd. Echter, zoals
+zelfs alle dieren bevestigen en de bevruchtingen van planten beamen, bestaat
+de wijsheid en het doel van een huwelijk uit voortplanting. Het genot achter
+lustbevrediging is een kleine vergoeding van de Genadige om die taak te
+doen laten vervullen.
+</p>
+
+<p>
+Aangezien een huwelijk volgens wijsheid in feite omwille van het voortbestaan
+van het geslacht wordt gesloten, kan een vrouw, die hoogstens eenmaal
+per jaar een kind kan baren, slechts de helft van de maand vruchtbaar is en
+op haar vijftigste in de overgang belandt, uiteraard niet genoegzaam zijn
+voor een man die van nature tot zijn honderdste gedurende de meeste periodes
+vruchtbaar is. Om deze reden is de beschaving genoodzaakt om de
+aanwezigheid van vele bordelen te aanvaarden.
+</p>
+
+<p class="text-bold">De derde essentie</p>
+
+<p>
+De onoordeelkundige beschaving bekritiseert De Qur’an om Zijn Aya
+waarin Hij de vrouw een derde van het erfrecht toekent. Echter, de wetten
+met betrekking tot de menselijke samenleving worden op basis van de meerderheid
+bepaald. In de meeste gevallen vindt een vrouw wel een man die
+haar onder zijn hoede neemt, terwijl een man verplicht is om de lasten van
+zijn vrouw op zich te nemen en haar in haar levensbehoeften te voorzien.
+</p>
+
+<p>
+Voorwaar, als een vrouw in dit geval de helft van wat haar toekomt van
+haar vader erft, dan zal haar man de andere helft aanvullen. Als een man het
+dubbele van zijn vader erft, dan zal hij de helft ervan aan het onderhoud van
+zijn vrouw moeten besteden, waardoor hem in feite hetzelfde als zijn zus ten
+deel valt. Voorwaar, de Qur’anische Rechtvaardigheid heeft dit erfrecht vereist,
+daarom heeft De Qur’an zo geoordeeld.<sup>1</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> Een gedeelte uit de verdediging in het verzoekschrift tegen de rechtszaak dat de
+rechtbank tot zwijgen heeft gebracht. Het is een voetnoot voor dit thema geworden.
+<em>“Het gebod in kwestie wordt inmiddels dertienhonderdvijftig jaar lang elke eeuw door
+driehonderdvijftig miljoen mensen als een uiterst heilige en wezenlijke Goddelijke Norm
+voor het gemeenschapsleven geacht. Gesteund door de bevestigingen en overeenstemmingen
+van driehonderdduizend exegeses en in navolging van de ruim dertienhonderdvijftigjarige
+overtuiging van onze voorvaderen heeft iemand een exegese geschreven. Als er op het aardoppervlak
+enige rechtvaardigheid heerst, dan zal het onterechte besluit dat hem hierom
+veroordeelt uiteraard worden ingetrokken en het vonnis zou moeten worden opgeheven.”</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 137,
+                'content' => '<div class="page" id="137">
+<p class="text-end page-number">#137</p>
+
+<p class="text-bold">De vierde essentie</p>
+
+<p>
+Zoals De Qur’an beeldendienst onverbiddelijk verbiedt, verbiedt Hij evenzeer
+een zekere imitatie daarvan, bestaande uit de verafgoding van uiterlijkheden.
+Omdat de beschaving daarentegen uiterlijkheden als zelfbezit beschouwt,
+tracht ze zich tegen De Qur’an te verzetten. Echter, zowel directe als indirecte
+vormen van uiterlijk vertoon impliceren een incarnatie van tirannie, een personificatie
+van pronkerij of een belichaming van lusten waarmee de mensheid
+tot onrecht, pronkerij en lustbevrediging wordt aangespoord.
+</p>
+
+<p>
+Bovendien draagt De Qur’an uit Genade de vrouwen op om zich met de
+sluier van kuisheid te bedekken om hun eer te beschermen, opdat die bronnen
+van mededogen niet onder de voeten van zedeloze lusten worden geschandaliseerd
+en niet als waardeloze lustobjecten worden beschouwd<sup>1</sup>. De
+beschaving daarentegen heeft de vrouwen uit hun nesten gelokt, hun sluiers
+verscheurd en de mensheid losbandig gemaakt. Het gezinsleven kan echter
+dankzij onderlinge liefde en eerbied standhouden. Desondanks heeft ontbloting
+de innige liefde en eerbied aangetast en het gezinsleven vergiftigd.
+</p>
+
+<p>
+Zoals het aankomende voorbeeld zal aantonen, heeft vooral de verafgoding
+van uiterlijkheden de menselijke normen en waarden aangetast en de
+zielen bedorven. Je kunt wel nagaan hoezeer de zeden bederven wanneer het
+lijk van een mooie, overleden en medelijdenswaardige vrouw met een wellustige
+blik wordt bekeken. Evenzo zal de kern van verheven mensenwaarden
+bederven en verloren gaan wanneer er wellustig gekeken wordt naar de
+uiterlijkheden van overleden vrouwen of naar de levende vrouwen wier uiterlijkheden
+als kleine lijken gelden.
+</p>
+
+<p>
+Voorwaar, zoals deze drie voorbeelden zijn er duizenden Qur’anische Thema’s
+die respectievelijk ten dienste staan om de mensheid zowel op aarde als
+in het hiernamaals gelukzaligheid te verschaffen. Andere thema’s kun je met
+de behandelde thema’s vergelijken.
+</p>
+
+<p>
+Zoals de huidige beschaving niet op kan tegen de Qur’anische Principes
+met betrekking tot het menselijke gemeenschapsleven en uit een waarachtig
+oogpunt failliet is tegenover de spirituele mirakelen van De Qur’an, is evenzeer in vijfentwintig <strong>Woorden</strong> aan de hand van afwegingen onbetwistbaar
+aangetoond dat de ziel van de huidige beschaving, bestaande uit Europese
+filosofieën en menselijke ideologieën, machteloos is, terwijl de Qur’anische
+Wijsheid miraculeus is.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> <strong>De Vierentwintigste Flits</strong> uit <strong>De Eenendertigste Brief</strong> heeft op een uiterst doorslaggevende
+wijze bewezen dat de versluiering natuurlijk is voor een vrouw en de
+ontsluiering in strijd is met haar natuur.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 138,
+                'content' => '<div class="page" id="138">
+<p class="text-end page-number">#138</p>
+
+<p style="text-indent: 0">
+In onder andere <strong>Het Elfde</strong> en <strong>Het Twaalfde Woord</strong>
+wordt de onmacht en het faillissement van de filosofische wijsheid, evenals
+de miraculeusheid en de rijkheid van de Qur’anische Wijsheid aangetoond.
+</p>
+
+<p>
+En zoals de huidige beschaving tegenover de wetenschappelijke en praktijkgerichte
+mirakelen binnen de Qur’anische Wijsheid bezwijkt, zijn de literatuur
+en de eloquentie van de beschaving ten aanzien van de Literatuur en
+de Eloquentie van De Qur’an te vergelijken met: het moedeloze gehuil van
+een getroffen wees en het belachelijke gezang van een bezopen dronkaard
+ten aanzien van een passievolle en bemoedigende zang die door een verheven
+geliefde wegens een tijdelijke scheiding droevig wordt gezongen, en een
+zegezang of een bemoedigend volkslied om tot strijd en tot verheven opofferingsgezindheden
+aan te sporen. Literatuur en eloquentie wekken namelijk
+van nature ofwel verdriet ofwel vreugde op.
+</p>
+
+<p>
+Verdriet kent twee vormen. De ene vorm komt voort uit het gemis van
+geliefden. Dit is een duister verdriet dat door de afwezigheid van geliefden
+en door verlatenheid voortkomt. Deze vorm van verdriet wordt door de literatuur
+van de afgedwaalde, naturalistische en onachtzame beschaving opgewekt.
+De tweede vorm komt voort uit de scheiding van geliefden. Hierbij
+zijn er geliefden waarbij scheiding een smachtende vorm van verdriet veroorzaakt.
+Voorwaar, dit is een verdriet dat De Leiding Biedende en Licht Verschaffende
+Qur’an opwekt.
+</p>
+
+<p>
+Vreugde kent ook twee vormen. De ene motiveert het ego om zijn lusten
+te bevredigen. Dit is een karakteristiek van de modernistische literatuur voor
+wie theaters, bioscopen en romans centraal staan. De tweede vorm laat het
+ego zwijgen en wekt in de ziel, het hart, het verstand en de mystiek een
+schone, deugdelijke en onschuldige passie op waarmee de mens wordt aangemoedigd
+om heilige kennis op te doen, opdat hij zijn oorspronkelijke land
+in het eeuwige oord en zijn geliefden in het hiernamaals kan bereiken. Deze
+vreugde die De Qur’an via Zijn Miraculeuze Revelatie opwekt, dirigeert de
+mensheid smachtend naar het paradijs en naar de eeuwige gelukzaligheid
+waar zij De Pracht van ALLAH mag aanschouwen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 139,
+                'content' => '<div class="page" id="139">
+<p class="text-end page-number">#139</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+قُلْ لَئِنِ اجْتَمَعَتِ الْاِنْسُ وَالْجِنُّ عَلٰٓى اَنْ يَاْتُوا بِمِثْلِ هٰذَا الْقُرْاٰنِ لَا يَاْتُونَ بِمِثْلِهٖ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍ ظَهٖيرًا<sup>1</sup>
+</p>
+
+<p>
+Voorwaar, volgens sommige kortzichtige en onoplettende mensen worden
+de opzienbarende boodschap en de grandioze waarheid in Deze Aya overdreven
+overgebracht om eloquent over te komen, terwijl ze volgens hen irreëel
+zijn. God verhoede! Ze zijn niet overdreven, noch zijn ze onwerkelijk; ze belichamen
+een uiterst waarachtige eloquentie, ze zijn haalbaar en ze zijn reëel!
+</p>
+
+<p>
+Een variant hiervan doet zich als volgt voor: als de allermooiste bewoordingen
+van de mensen en de djinns – die niet geïnspireerd zijn door of afkomstig
+zijn van De Qur’an – allemaal als één geheel bijeen worden gebracht, dan kunnen
+ze alsnog niet tippen aan De Qur’an. Dit is immers ook nimmer gelukt;
+nergens is zoiets waargenomen.
+</p>
+
+<p>
+Een tweede variant hiervan schuilt in het volgende: het ultieme eindproduct
+uit de gedachten en de werken van de djinns, de mensen en zelfs de
+duivels, bestaande uit de huidige beschaving, de filosofische wijsheid en de
+westerse literatuur, is machteloos tegenover de Standpunten, de Wijsheid en
+de Eloquentie van De Qur’an. Voorbeelden hieromtrent hebben wij reeds
+laten zien.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Zeg: al zouden de mensen en de djinns samenkomen om een gelijke van deze
+Qur’an te produceren, dan zouden ze er alsnog niet in slagen om een gelijke samen
+te stellen, al zouden ze elkaars helpers zijn.” - <em>De Heilige Qur’an, 17:88</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 140,
+                'content' => '<div class="page" id="140">
+<p class="text-end page-number">#140</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Uit De Vruchten</h2>
+</div>
+
+<p class="text-center text-bold">[Twee voetnoten ter afsluiting van De Tiende Kwestie]</p>
+
+<p class="text-bold">De eerste voetnoot</p>
+
+<p>
+Twaalf jaar geleden<sup>1</sup> had ik vernomen dat één van de extreemste en koppigste
+Godloochenaars zich had voorgenomen om De Qur’an via Zijn vertaling
+te ontkrachten. Hij zei:
+</p>
+
+<p class="text-italic">
+“Laat De Qur’an vertaald worden, opdat het volk inziet wat Hij inhoudt.”
+</p>
+
+<p>
+Met andere woorden, hij had een sluw plan beraamd om aan het volk de
+volgens hem onnodige herhalingen te laten zien en in plaats van De Qur’an
+de vertaling ervan te laten lezen.
+</p>
+
+<p>
+Echter, de onbetwistbare aanwijzingen in de Risale-i Nur hebben deugdelijk
+bewezen dat een getrouwe vertaling van De Qur’an onbestaanbaar is.
+De bijzonderheden en subtiliteiten in De Qur’an die volgens de grammatica
+van de Arabische taal worden uitgedrukt, kunnen in een andere taal niet
+worden gehandhaafd. En de miraculeuze en omvattende termen binnen de
+Qur’anische Woorden, waarvan elke letter vanaf tien tot aan duizend zegeningen
+verschaft, kunnen uiteraard niet door de simpele en beperkte vertalingen
+van mensen worden vervangen, noch kan er in moskeeën in Hun
+plaats iets anders worden gereciteerd. De verspreiding van de Risale-i Nur
+heeft met deze verheldering een bom onder dat sluwe plan gelegd.
+</p>
+
+<p>
+Echter, de huichelaars die door die Godloochenaar zijn opgeleid, trachten
+namens satan de Qur’anische Zon als onnozele kinderen uit te doven door
+er vergeefs naar te blazen. Ik ben van mening dat deze wijsheid mij ertoe
+heeft gedreven om deze <strong>Tiende Kwestie</strong> met enorme tegenzin te schrijven.
+Omdat ik geen contact met de buitenwereld heb, weet ik niet precies hoe de
+ware stand van zaken is.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Twaalf jaar voordat dit traktaat werd geschreven.
+</p>
+
 </div>
 
 </div>'
