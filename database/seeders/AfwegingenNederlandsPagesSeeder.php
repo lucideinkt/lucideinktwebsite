@@ -3987,6 +3987,1308 @@ echter universeel en zegt dat elke bede wordt beantwoord.
 
 </div>'
             ],
+            [
+                'page_number' => 101,
+                'content' => '<div class="page" id="101">
+<p class="text-end page-number">#101</p>
+
+<p><strong><em>Het antwoord</em></strong></p>
+
+<p>
+Er is een verschil tussen antwoord geven en aanvaarden. Er wordt op elke
+bede antwoord gegeven. Echter, een bede aanvaarden en exact datgene geven
+wat gewenst wordt, zijn omstandigheden die gebonden zijn aan De
+Wijsheid van de Hoogste Gerechtigde.
+</p>
+
+<p>
+Bijvoorbeeld, een ziek kind roept: <em>“O dokter, kunt u kijken!”</em>
+</p>
+
+<p>
+De dokter antwoordt: <em>“Hier ben ik, zeg het eens...”</em>
+</p>
+
+<p>
+Het kind zegt: <em>“Mag ik dat medicijn?”</em>
+</p>
+
+<p>
+Daarop zal de dokter ofwel geven wat het kind wil, ofwel voor de bestwil
+van het kind iets beters geven, ofwel niets geven wanneer hij ziet dat een
+ingreep schadelijk voor de ziekte van het kind zal zijn.
+</p>
+
+<p>
+Voorwaar, omdat de Hoogste Gerechtigde en De Absoluut Alwijze alomtegenwoordig
+en toeziend is, zal Hij antwoord op de bede van Zijn onderdaan
+geven. De beangstigende sfeer die door vervreemding en eenzaamheid
+kan ontstaan, zet Hij via Zijn Tegenwoordigheid en Zijn Beantwoording
+om in een vertrouwde sfeer. Echter, Hij zal wensen niet op aandrang van de
+egoïstische lusten en begeerten van de mens verhoren, maar naar aanleiding
+van de Wijsheid des Heren zal Hij ofwel datgene wat de mens wenst, ofwel
+iets beters, ofwel niets geven.
+</p>
+
+<p>
+Bovendien impliceren beden een vorm van dienaarschap. De vruchten
+van dienaarschap worden in het hiernamaals afgeworpen. Aardse doelen geven
+de tijden van de gerelateerde beden en dienaarschappen aan. Die doelen
+zijn echter niet het uiteindelijke streven.
+</p>
+
+<p>
+Bijvoorbeeld, het regengebed is een Godsdienstoefening. Droogte geeft de
+tijd voor die Godsdienstoefening aan. Aldus worden die dienst en bede niet
+verricht om regen teweeg te brengen. Als dat alleen het streven is, dan is die
+bede het niet waard om verhoord te worden aangezien die dienst dan niet
+zuiver is. De ondergang van de zon geeft de tijd voor het avondgebed aan,
+evenals zons- en maansverduisteringen aangeven dat de tijden voor de specifieke
+gebeden genaamd <strong>“Koesoef en Goesoef”</strong> zijn aangebroken. Omdat
+De Goddelijke Majesteit wordt aangekondigd wanneer de stralende Aya’s
+van de nacht en de dag worden versluierd, nodigt de Hoogste Gerechtigde
+zijn onderdanen op die tijdstippen uit om een specifieke Godsdienstoefening te verrichten.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 102,
+                'content' => '<div class="page" id="102">
+<p class="text-end page-number">#102</p>
+
+<p style="text-indent: 0">
+Aldus is dat gebed niet bedoeld om een einde te brengen
+aan de verduisteringen waarvan de duur volgens astronomische berekeningen
+reeds bekend is. Evenzo geeft droogte de tijd voor het regengebed aan.
+Ook wanneer onheil overheerst en rampspoed plaatsvindt, breekt de tijd
+voor bepaalde beden aan. Want op zulke momenten doorziet de mens zijn
+onmacht, waarna hij met beden en supplicaties toevlucht tot Het Hof van
+de Absolute Almacht neemt. Indien onheil na vele beden niet eindigt, dient
+men niet <em>“Mijn beden worden niet verhoord”</em> maar <em>“Het gebedsuur is nog niet
+voorbij”</em> te zeggen. Als de Hoogste Gerechtigde bij Zijn Gratie en Zijn Generositeit
+het onheil verdrijft, dan manifesteert er licht boven lichternis; op
+dat moment komt er een einde aan de bede en wordt Gods Vonnis geveld.
+</p>
+
+<p>
+Beden vormen dus een geheim achter dienaarschap. En dienaarschap
+dient op een zuivere wijze enkel en alleen op ALLAH te worden afgestemd.
+De mens behoort slechts zijn onmacht te betuigen, met beden toevlucht tot
+God te nemen en zich niet met Zijn Heerschappij te bemoeien. Hij dient
+beslissingen aan Hem over te laten, Zijn Wijsheid te vertrouwen en Zijn
+Genade niet in twijfel te trekken.
+</p>
+
+<p>
+Waarlijk, in de werkelijkheid die volgens de openbaringen van expliciete
+Aya\'s vaststaat, verrichten alle wezens een specifieke verheerlijking, een specifieke
+Godsdienstoefening en een specifieke onderwerping. Evenzo bestaat
+alles wat vanuit het universum naar Het Goddelijk Hof stijgt, uit een bede.
+Deze bede wordt:
+</p>
+
+<p>
+<strong>Óf</strong> in de taal van potenties verricht – dit zijn onder andere de beden die
+alle planten en dieren verrichten; in de taal van hun potentie verlangen ze
+van De Ultieme Zegenaar naar een gedaante en wensen ze Zijn Namen
+uitgebreid te manifesteren.
+</p>
+
+<p>
+<strong>Óf</strong> ze wordt in de taal van natuurlijke behoeften verricht – dit zijn de
+beden die alle levenden voor hun basisbehoeften buiten het bereik van hun
+vermogen verrichten; in die taal van natuurlijke behoeften vragen ze van de
+Ultieme Vrijgevige om onderhoud, opdat ze hun leven kunnen voortzetten.
+</p>
+
+<p>
+<strong>Óf</strong> ze wordt in de taal van hoogdringendheid verricht – elke bezitter van
+een ziel die totaal ten einde raad is, verricht noodzakelijkerwijs hoogdringend
+een bede en doet beroep op een Verborgen Beschermer; hij wendt zich
+tot zijn Genadige Heer.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 103,
+                'content' => '<div class="page" id="103">
+<p class="text-end page-number">#103</p>
+
+<p><strong><em>Deze drie soorten beden worden zolang er geen strijdigheid is altijd
+verhoord.</em></strong></p>
+
+<p>
+<strong>De vierde soort</strong> is de bekendste en bestaat uit onze beden. Deze soort
+kent twee vormen. De ene vorm wordt actief en met de houding verricht,
+de andere vorm wordt verbaal en met het hart verricht.
+</p>
+
+<p>
+<em><strong>Bijvoorbeeld,</strong></em> beroep doen op oorzaken is een actieve bede. De samenkomst
+van oorzaken is niet om gevolgen tot stand te brengen, maar om de
+gevolgen van de Hoogste Gerechtigde te wensen door in de taal van gebaren
+een Godgevallige houding aan te nemen. Wanneer iemand bijvoorbeeld een
+akker beploegt, dan klopt hij aan op de poort tot de Schat van Genade.
+Omdat deze actieve vorm van beden op de Naam en Titel van de Ultiem
+Vrijgevige is gericht, wordt hij in de meeste gevallen verhoord.
+</p>
+
+<p>
+<em><strong>De tweede vorm</strong></em> bestaat uit beden die verbaal en met het hart worden
+verricht. Dit impliceert: vragen om de vervulling van wensen die buiten
+handbereik zijn. Het belangrijkste aspect, het mooiste doel en de zoetste
+vrucht hiervan is het volgende: degene die bidt, is ervan bewust dat er Iemand
+is Die de wensen in zijn hart verneemt, alles binnen handbereik heeft,
+al zijn wensen kan vervullen, genadig jegens zijn onmacht is en voorzienig
+ten opzichte van zijn behoeftigheid heerst.
+</p>
+
+<p>
+Voorwaar, o machteloze mens en behoeftige sterveling! De sleutel tot de
+schat van Genade en het middel tot de bron van een onuitputtelijke kracht
+bestaande uit beden dien je niet uit je handen te laten glippen; klamp je eraan
+vast, stijg tot de allerhoogste hoogtes van het mens-zijn, fuseer als een
+sultan alle beden in het hele universum met jouw bede, reciteer als universele
+vertegenwoordiger: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِيَّاكَ نَسْتَعٖينُ</span> en word een schitterende compositie van
+het universum.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Alleen U vragen wij om hulp.” - <em>De Heilige Qur’an, 1:5</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 104,
+                'content' => '<div class="page" id="104">
+<p class="text-end page-number">#104</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Het Tweede Thema</h2>
+</div>
+
+<p class="text-center text-bold">
+[Bestaande uit Vijf Punten aangaande de gelukzaligheid en<br>
+de ongelukkigheid van de mens]
+</p>
+
+<p>
+De mens is volgens de allermooiste compositie geschapen. Hem is een
+uiterst omvattende potentie gegeven. Deswege is hij blootgesteld aan een
+beproeving waarbij hij kan stijgen en zinken tot niveaus, rangen, pieken en
+dalen die vanaf de aller laagste laagtes tot aan de allerhoogste hoogtes, vanaf
+de diepste bodem tot aan de oppertroon, vanaf een atoom tot aan de zon
+uiteenlopend zijn opgesteld. Hij is als een machtsmirakel, als het eindgevolg
+van de schepping en als een buitengewoon kunstwerk naar deze aarde gezonden
+waar twee wegen voor hem zijn geopend die hem naar een grenzeloze
+ofwel neergang ofwel elevatie leiden.
+</p>
+
+<p>
+Voorwaar, het geheim achter deze verbijsterende progressie en regressie
+van de mens zullen wij aan de hand van vijf punten uiteenzetten.
+</p>
+
+<p class="text-red small-title text-center">
+  <strong>Het Eerste Punt</strong>
+</p>
+
+<p>
+De mens is behoeftig aan en betrokken bij de meeste bestaansvormen in
+het universum. Zijn benodigdheden zijn over de hele wereld uitgespreid;
+zijn wensen reiken tot aan de eeuwigheid. Zoals hij verlangt naar een bloem,
+verlangt hij evenzeer naar een geweldige lente. Zoals hij een zwak heeft voor
+een tuin, heeft hij evenzeer een zwak voor het eeuwige paradijs. Zoals hij de
+drang voelt om een vriend te ontmoeten, voelt hij evenzeer de drang om De
+Schone Ontzaglijke te ontmoeten. Zoals hij de behoefte heeft om tijdens
+een familiebezoek de deur te openen waarachter zijn familie hem opwacht,
+heeft hij evenzeer de behoefte om toevlucht te nemen tot Het Hof van de
+Absolute Almacht Die de gigantische deur van de aarde kan sluiten, de deur
+naar de opzienbarende wederopstanding in het hiernamaals kan openen, en
+de aarde met het hiernamaals kan vervangen, opdat hij zijn vrienden – waarvan
+negenennegentig procent naar de tussenwereld zijn geëmigreerd – kan
+bezoeken en van eeuwige scheiding gered kan worden.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 104,
+                'content' => '<div class="page" id="104">
+<p class="text-end page-number">#104</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Het Tweede Thema</h2>
+</div>
+
+<p class="text-center text-bold">
+[Bestaande uit Vijf Punten aangaande de gelukzaligheid en<br>
+de ongelukkigheid van de mens]
+</p>
+
+<p>
+De mens is volgens de allermooiste compositie geschapen. Hem is een
+uiterst omvattende potentie gegeven. Deswege is hij blootgesteld aan een
+beproeving waarbij hij kan stijgen en zinken tot niveaus, rangen, pieken en
+dalen die vanaf de aller laagste laagtes tot aan de allerhoogste hoogtes, vanaf
+de diepste bodem tot aan de oppertroon, vanaf een atoom tot aan de zon
+uiteenlopend zijn opgesteld. Hij is als een machtsmirakel, als het eindgevolg
+van de schepping en als een buitengewoon kunstwerk naar deze aarde gezonden
+waar twee wegen voor hem zijn geopend die hem naar een grenzeloze
+ofwel neergang ofwel elevatie leiden.
+</p>
+
+<p>
+Voorwaar, het geheim achter deze verbijsterende progressie en regressie
+van de mens zullen wij aan de hand van vijf punten uiteenzetten.
+</p>
+
+<p class="text-center text-red small-title">
+<strong>Het Eerste Punt</strong>
+</p>
+
+<p>
+De mens is behoeftig aan en betrokken bij de meeste bestaansvormen in
+het universum. Zijn benodigdheden zijn over de hele wereld uitgespreid;
+zijn wensen reiken tot aan de eeuwigheid. Zoals hij verlangt naar een bloem,
+verlangt hij evenzeer naar een geweldige lente. Zoals hij een zwak heeft voor
+een tuin, heeft hij evenzeer een zwak voor het eeuwige paradijs. Zoals hij de
+drang voelt om een vriend te ontmoeten, voelt hij evenzeer de drang om De
+Schone Ontzaglijke te ontmoeten. Zoals hij de behoefte heeft om tijdens
+een familiebezoek de deur te openen waarachter zijn familie hem opwacht,
+heeft hij evenzeer de behoefte om toevlucht te nemen tot Het Hof van de
+Absolute Almacht Die de gigantische deur van de aarde kan sluiten, de deur
+naar de opzienbarende wederopstanding in het hiernamaals kan openen, en
+de aarde met het hiernamaals kan vervangen, opdat hij zijn vrienden – waarvan
+negenennegentig procent naar de tussenwereld zijn geëmigreerd – kan
+bezoeken en van eeuwige scheiding gered kan worden.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 105,
+                'content' => '<div class="page" id="105">
+<p class="text-end page-number">#105</p>
+
+<p>
+Voorwaar, De Ware Aanbedene van een mens in een dusdanige positie
+kan alleen Een Ontzaglijke Almachtige, Een Schone Genadige en Een Volmaakte
+Alwijze zijn Die de teugels van alles in Zijn Hand heeft, de schatten
+van alles bezit, overal Toeziend en overal Aanwezig is, en vrij is van plaatsgebondenheid,
+verwijderd is van onmacht, rein is van gebreken en verheven is
+boven tekortkomingen. Immers, Hij Die de mens in zijn grenzeloze behoeften
+voorziet, kan alleen Een Bezitter van een Eindeloze Macht en een Alomvattende
+Kennis zijn. Aldus is alleen Hij Degene Die het waard is om aanbeden
+te worden.
+</p>
+
+<p>
+Voorwaar, o mens! Als jij uitsluitend Zijn dienaar wordt, dan zal jij een
+rang boven alle schepselen behalen. Indien jij dienaarschap afwijst, dan zal jij
+een laaghartige dienaar van machteloze schepselen worden. Als jij je op je
+eigenheid en je vermogen berust, Godgelatenheid en beden verlaat, en je
+arrogant en betweterig opstelt, dan zal jij in positief en constructief opzicht
+onbekwamer dan bijen en mieren, en zwakker dan spinnen en muggen
+worden, terwijl je in negatief en destructief opzicht zwaarder dan bergen en
+verderfelijker dan orkanen zult uitvallen.
+</p>
+
+<p>
+Waarlijk, o mens, jij hebt twee kanten. De ene is je constructieve, existentiële,
+heilzame, positieve en actieve kant, de andere is je destructieve, inexistentiële,
+heilloze, negatieve en inactieve kant. Gezien je eerste kant doe je
+onder voor bijen en mussen, en ben je zwakker dan muggen en spinnen.
+Gezien je tweede kant streef je gebergtes, de aarde en de hemelen voorbij.
+Een last waartegenover zij terugdeinsden en hun onmacht betuigden, kun jij
+dragen. Jij begeeft je in dat opzicht in een veel ruimere kring dan zij. Want
+wanneer jij positief en constructief wilt zijn, dan kun jij alleen in evenredigheid
+met je actieradius, je handbereik en je kracht positief en constructief
+zijn. Als jij kwaadaardig en destructief wil zijn, dan zal jouw kwaadaardigheid
+grenzen overschrijden en jouw destructiviteit uitbreiden.
+</p>
+
+<p>
+Bijvoorbeeld, ongeloof is een kwaadaardigheid en een afbraak; het impliceert
+een gemis van een bevestiging. Echter, die ene overtreding brengt het
+beledigen van het hele bestaan, het onderwaarderen van Alle Goddelijke
+Namen en het bespotten van de gehele mensheid met zich mee. Wezens
+bekleden immers een verheven rang en een aanzienlijke functie. Zij zijn de
+brieven van de Heer, de spiegels van de Feilloze en de ambtenaren van God.
+Ongeloof daarentegen verstoot ze van hun rang van weerspiegeling, ambtenaarschap en beduidenis, verlaagt ze tot het niveau van onbeduidende speeltjes
+van toeval, en degradeert ze tot een waardeloze, zinloze en nietige rang
+van vergankelijke substanties die door de afbraak van teloorgang en scheiding
+snel bezwijken en vergaan.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 106,
+                'content' => '<div class="page" id="106">
+<p class="text-end page-number">#106</p>
+
+<p style="text-indent: 0">
+Daarnaast onderwaardeert het ongeloof via
+verloochening De Goddelijke Namen waarvan de schoonschriften, de reflecties
+en de schoonheden in het hele universum en op de spiegels van alle
+wezens te zien zijn. En wat wij menselijkheid noemen, impliceert in feite
+een ordelijke ode van Wijsheid die alle manifestaties van Gods Heilige Namen
+stralend openbaart, een evident mirakel van macht dat als een zaad de
+elementen van een eeuwige boom omvat, een drager van de titel: <em>“Khalief op
+aarde”</em> die met zijn aanvaarding van het ultieme rentmeesterschap de aarde,
+de hemelen en de gebergtes voorbijstreeft en de engelen ontstijgt. Ongeloof
+daarentegen stort die menselijkheid in een kloof waar ze lager, zwakker,
+machtelozer en behoeftiger is dan de ellendigste diersoort, en het maakt van
+haar een betekenisloze, warrige en simplistische weergave die snel verdwijnt.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>Tot slot</strong>
+</p>
+
+<p>
+Het kwaadgezinde ego kan gezien zijn destructieve en heilloze kant grenzeloze
+overtredingen begaan. Gezien zijn constructieve en heilzame kant is
+zijn invloed echter uiterst gering en beperkt. Waarlijk, hij kan een huis in
+een dag verwoesten, terwijl hij het in geen honderd dagen kan opbouwen.
+Indien hij desondanks zijn ego achterwege laat, heil en existentie van Gods
+Gratie wenst, afstand van onheil, afbraak en zelfvertrouwen neemt, berouw
+betoont en een zuivere dienaar wordt, dan zal hij het volgende geheim ondervinden:
+<sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">يُبَدِّلُ اللّٰهُ سَيِّئَاتِهِمْ حَسَنَاتٍ</span>. Zijn onbeperkte potentie tot onheil
+slaat dan om in een onbeperkte potentie tot heil. Hij zal dan de waarde van
+de allermooiste compositie krijgen en naar de allerhoogste hoogtes stijgen.
+</p>
+
+<p>
+Voorwaar, o onachtzame mens! Aanschouw de Gratie en Generositeit van
+de Hoogste Gerechtigde! Ondanks dat het rechtvaardig is om één wandaad als
+duizend en één weldaad als één of helemaal niet te registreren, slaat Hij één
+wandaad op als één, terwijl Hij één weldaad soms als tien, soms als zeventig,
+soms als zevenhonderd en soms als zevenduizend registreert. En doorzie aan de
+hand van dit punt dat een mens door toedoen van zijn daden in de vreselijke
+hel belandt, terwijl hij bij Gods Pure Gratie in het paradijs wordt toegelaten.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “ALLAH zet hun wandaden om in weldaden.” - <em>De Heilige Qur’an, 25:70</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 107,
+                'content' => '<div class="page" id="107">
+<p class="text-end page-number">#107</p>
+
+<p class="text-center text-red small-title">
+<strong>Het Tweede Punt</strong>
+</p>
+
+<p>
+De mens heeft twee kanten. Enerzijds is hij uit het oogpunt van zijn ego
+tot dit aardse leven gewend. Anderzijds is hij uit het oogpunt van zijn dienaarschap
+op het eeuwige leven gericht.
+</p>
+
+<p>
+Gezien zijn eerste kant is hij een dusdanig arm schepsel, dat zijn kapitaal
+slechts bestaat uit een beperkte wil waarmee hij nauwelijks invloed uitoefent,
+een vermogen waarmee hij amper iets voor elkaar krijgt, een levensvonk die
+snel uitdooft en een bestaan in een klein lichaam dat snel bederft. In die
+toestand is hij daarenboven één fragiel en zwak individu onder de ontelbare
+individuen uit de ontelbare bestaansvormen die over de dimensies van het
+universum zijn uitgespreid.
+</p>
+
+<p>
+Gezien zijn tweede kant – en vooral uit het oogpunt van zijn onmacht en
+behoeftigheid die betrekking hebben op dienaarschap – bezit hij een geweldige
+omvattendheid en een geweldige waarde. Want De Alwijze Voortbrenger heeft
+binnen de geestelijke aard van de mens een uiterst opzienbarende onmacht en
+een uiterst verreikende behoeftigheid gevestigd, opdat hij een omvattende en
+uitgebreide spiegel kan zijn voor Een Almachtige Genadige met een Grenzeloze
+Macht en Een Alrijke Genereuze met een Onuitputtelijke Weelde.
+</p>
+
+<p>
+Waarlijk, de mens lijkt op een zaad. Immers, een zaad krijgt van De Goddelijke
+Macht geestelijke en waardevolle instrumenten, en van Het Goddelijke
+Lot een subtiel en belangrijk programma aangereikt, opdat hij onder de
+grond ijvert om uit die krappe wereld te ontsnappen, de ruime wereld van
+het luchtruim te bereiken, in de taal van zijn potentie zijn wens om tot
+boom uit te bloeien aan zijn Schepper voor te dragen en een volmaaktheid
+te ondervinden die hem siert. Als dat zaad naar aanleiding van zijn verkeerde
+instelling de geestelijke instrumenten die hem gegeven zijn onder de grond
+toepast om kwalijke stoffen aan te trekken, dan zal hij spoedig in die krappe
+plek vergeefs bederven en rotten. Als dat zaad zijn geestelijke instrumenten
+aan de totstandkomingswet: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">فَالِقُ الْحَبِّ وَالنَّوٰى</span> onderwerpt en ze juist hanteert,
+dan zal hij uit die krappe wereld treden en tot een grote vruchtdragende
+boom uitgroeien. Zodoende zullen zijn verborgen minuscule en beperkte
+waarheid en ziel een grote omvattende waarheid belichamen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “<em>(ALLAH)</em> laat het zaad ontspruiten.” - <em>De Heilige Qur’an, 6:95</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 108,
+                'content' => '<div class="page" id="108">
+<p class="text-end page-number">#108</p>
+
+<p>
+Voorwaar, evenzo heeft De Goddelijke Macht waardevolle instrumenten
+en Het Goddelijke Lot belangrijke programma’s in de aard van de mens
+gevestigd. Wanneer de mens in deze krappe aardse wereld onder de grond
+van het aardse leven zijn geestelijke instrumenten voor de lusten van zijn ego
+hanteert, dan zal hij zoals een rottend zaad omwille van een simpele genieting
+gedurende een kortstondig leven in een krappe ruimte en een benauwende
+sfeer rotten en bederven. Zijn verdorven ziel zal met een geestelijke
+verantwoordelijkheid worden beladen, waarna hij deze wereld zal verlaten en
+zal verdwijnen.
+</p>
+
+<p>
+Als hij dat zaad van potentie met het levenswater der Islam en het licht
+des geloofs onder de grond van dienaarschap fatsoeneert, de Qur’anische
+Verordeningen in acht neemt en zijn geestelijke instrumenten tot hun ware
+doelen wendt, dan zal dat zaad uiteraard in de figuratieve wereld en in de
+tussenwereld ontkiemen en floreren, en in het hiernamaals en in het paradijs
+als bron van eindeloze volmaaktheden en gunsten tot een eeuwige boom
+uitgroeien en instrumenten ontwikkelen die een aanhoudende waarheid
+omvatten. Zodoende wordt het een waardevol zaad, een schitterende machine,
+en een gezegende en stralende vrucht van deze scheppingsboom.
+</p>
+
+<p>
+Waarlijk, ware progressie kan ondervonden worden wanneer de mens zijn
+hart, zijn mystiek<sup>1</sup>, zijn ziel, zijn verstand, zijn inbeelding en zijn overige
+vermogens die hem gegeven zijn tot het eeuwige leven wendt en elk ervan
+met een waardige en specifieke Godsdienstoefening bezighoudt. Anders, als
+hij zich houdt aan het richtsnoer dat volgens het dwaalvolk progressief is
+door alle zintuigen, het hart en het verstand aan het kwaadgezinde ego te
+onderwerpen en zijn hulpje te maken om het aardse leven tot in de kleinste
+detail te analyseren, en allerlei genietingen van zelfs de laagste soort te proeven,
+dan is dat geen progressie maar een regressie. Een voorbeeld van deze
+waarheid had ik in een visioen als volgt aanschouwd:
+</p>
+
+<p>
+Ik liep een grote stad in waar ik grote paleizen had opgemerkt. Ik keek
+naar de portalen van sommige paleizen en zag dat ze als spectaculaire theatervoorstellingen
+op een zeer amuserende en vermakelijke wijze bij iedereen
+de interesse opwekten en veel aandacht trokken. Eén van die paleizen observeerde ik aandachtig, waarop ik zag dat de paleisheer voor het portaal met
+een hond speelde en hem vermaakte.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> <strong>Noot van de vertalers:</strong> (<span class="text-arabic-inline" dir="rtl" lang="ar">سِرْ</span>) met de mystiek wordt er een geestelijk zintuig bedoeld
+waarmee ALLAH kan worden waargenomen.
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 109,
+                'content' => '<div class="page" id="109">
+<p class="text-end page-number">#109</p>
+
+<p style="text-indent: 0">
+Daarnaast waren er dames die gesprekken
+met vreemde jongemannen hielden. Er waren volwassen vrouwen die
+spelletjes voor kinderen organiseerden. De poortwachter acteerde als een
+commandant die iedereen allerlei opdrachten gaf. Op dat moment besefte ik
+dat de binnenkant van dat enorme paleis helemaal leeg was. Alle subtiele
+taken werden nagelaten. De lieden van het paleis hadden hun morele waarden
+volledig verloren, waardoor ze zich voor het portaal zo gedroegen.
+</p>
+
+<p>
+Vervolgens liep ik door en zag ik verderop een ander groot paleis. Voor
+het portaal van dat paleis zag ik een trouwe waakhond liggen. Daarnaast
+stond een strenge, serieuze en kalme poortwachter. Er heerste een stille sfeer.
+Ik vroeg mij af waarom de twee paleizen zo van elkaar verschilden, waarop
+ik naar binnenliep. Tot mijn grote verbazing zag ik dat het paleis vanbinnen
+uiterst levendig was. Op elke verdieping waren er paleislieden die druk bezig
+waren met verscheidene delicate taken. Op de eerste verdieping hielden
+mannen zich bezig met het onderhoud en het beheer van het paleis. Op de
+tweede verdieping waren meisjes en jongens les aan het volgen. Op de derde
+verdieping waren vrouwen bezig met hele subtiele kunstoefeningen en fraaie
+borduurwerken. Op de bovenste verdieping onderhield de paleisheer contact
+met de koning en vervulde persoonlijk en verheven taken om de vrede onder
+zijn volk te bewaren en zichzelf te ontplooien. Omdat ik onzichtbaar
+voor hen was, kon ik ongehinderd door het paleis wandelen.
+</p>
+
+<p>
+Tenslotte liep ik naar buiten. Ik keek om mij heen en zag dat de hele stad
+gevuld was met deze twee soorten paleizen. Toen ik vroeg wat dit inhield,
+werd het volgende gezegd:
+</p>
+
+<p>
+<em>“De paleizen waarvan de ingangen sensationeel ogen maar vanbinnen leeg
+zijn, behoren de vooraanstaande ongelovigen en de dwalers toe. De andere paleizen
+zijn van de prominente moslims.”</em>
+</p>
+
+<p>
+Daarna had ik in een hoek een paleis opgemerkt waarop de naam: <strong>“Said”</strong>
+stond geschreven. Hierdoor raakte ik verrast en begon ik aandachtig te kijken,
+waarop ik opeens mijn gedaante op dat paleis zag. Uit verbijstering
+werd ik schreeuwend wakker en kwam ik tot mezelf.
+</p>
+
+<p>
+Voorwaar, ik zal dit visioen nu voor jou interpreteren. Moge ALLAH het
+zegenen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 110,
+                'content' => '<div class="page" id="110">
+<p class="text-end page-number">#110</p>
+
+<p>
+Die stad symboliseert het gemeenschapsleven en de menselijke beschaving.
+Die paleizen symboliseren mensen. De paleislieden zijn de menselijke zintuigen
+zoals de ogen, de oren, het hart, de mystiek, de ziel en het verstand, evenals
+het ego, de begeerten, en de wellustige en agressieve aandriften. Alle zintuigen
+van ieder mens hebben verscheidene specifieke taken met betrekking tot
+dienaarschap; ze bezitten een eigen manier van genieten en lijden. Het ego, de
+begeerten, en de wellustige en agressieve aandriften fungeren als een portier en
+als een hond. Voorwaar, die verheven zintuigen aan het ego en de lusten onderwerpen,
+en hun ware taken doen laten vergeten, is uiteraard een regressie
+en geen progressie. De overgebleven aspecten kun je zelf interpreteren.
+</p>
+
+<p class="text-center text-red small-title">
+<strong>Het Derde Punt</strong>
+</p>
+
+<p>
+De mens is wat betreft daden, handelingen en fysieke inspanningen een
+zwak dier en een machteloos schepsel. De reikwijdte van zijn invloed en
+zeggenschap zijn uit dat oogpunt zo beperkt als zijn handbereik. Zelfs tamme
+dieren die hun teugels aan de mens hebben gegeven, hebben een aandeel
+in de menselijke zwakte, onmacht en luiheid gekregen, waardoor er een
+groot verschil tussen hen en hun wilde soortgenoten kan worden geconstateerd
+(zoals tamme geiten en stieren ten opzichte van wilde geiten en stieren).
+</p>
+
+<p>
+Echter, in het kader van emoties, waardering, beden en supplicaties is die
+mens een eerbiedwaardige reiziger in dit aardse verblijf. En Degene bij wie
+hij te gast is, is zo Genereus, dat Die Gastheer oneindige schatten van Genade
+voor hem heeft opengesteld en talloze onvergelijkelijke kunstwerken tot
+zijn beschikking heeft gesteld. En voor zijn vermaak, zijn observatie en zijn
+bevordering heeft Die Gastheer een dusdanig omvangrijke kring geopend en
+verlevendigd, dat de reikwijdte van die kring de diameter van de aarde, het
+oogbereik en zelfs het verbeeldingsvermogen omvat.
+</p>
+
+<p>
+Voorwaar, als de mens zich op zijn ego berust, zijn streven op het aardse
+leven baseert en gebukt onder geldzorgen werkt voor bepaalde vergankelijke
+pleziertjes, dan zal hij in een zeer krappe kring verdrinken en vergaan. Alle
+middelen, instrumenten en zintuigen die hem zijn gegeven, zullen zich over
+hem beklagen en tijdens de wederopstanding zullen ze als aanklagers tegen
+hem getuigen. Als hij zichzelf als gast ziet, zijn levenskapitaal binnen de toegestane
+kring van zijn Genereuze Gastheer besteedt, dan zal hij binnen die
+wijde kring vreedzaam werken voor een eeuwig leven, ontspannen, tot rust komen en vervolgens richting de hoogste hoogtes verder reizen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 111,
+                'content' => '<div class="page" id="111">
+<p class="text-end page-number">#111</p>
+
+<p>
+Daarnaast
+zullen alle middelen en instrumenten die aan deze mens gegeven zijn in het
+hiernamaals op een tevreden wijze voor hem getuigen.
+</p>
+
+<p>
+Waarlijk, alle buitengewone instrumenten die aan de mens zijn gegeven,
+zijn niet voor dit waardeloze aardse leven, maar voor een uiterst waardevol
+en eeuwig leven gegeven. Immers, wanneer wij de mens met een dier vergelijken,
+dan zien we dat de mens wat instrumenten en middelen betreft zeer
+rijk is; hij bezit honderdmaal meer dan een dier. Als het aankomt op aardse
+genietingen en dierlijke levenshandelingen doet hij echter honderdmaal onder
+voor een dier. Want bij elke genieting die hij ondervindt, vangt hij een
+glimp van kwelling op. Kwellingen uit het verleden, angsten voor de toekomst
+en de pijn van teloorgang achter elk genot bederven zijn genietingen
+en laten geen spoor van genot meer achter. Voor een dier geldt dat echter
+niet; hij ervaart genot zonder leed en plezier zonder verdriet. Noch wordt hij
+door leed uit het verleden gekweld, noch wordt hij met toekomstige angsten
+belast. In volle vrede leeft hij, ontspant hij en betuigt hij zijn Schepper dank.
+</p>
+
+<p>
+Kortom, de mens is volgens de allermooiste compositie geschapen. Ondanks
+dat hij qua kapitaal een dier honderdmaal overstijgt, zal hij tot een
+honderdmaal lager niveau dan een dier als een mus vervallen wanneer hij
+zich volledig op het aardse leven werpt. Deze waarheid had ik elders aan de
+hand van een voorbeeld verhelderd. Omdat het betrekking op dit punt
+heeft, zal ik dat voorbeeld hier herhalen.
+</p>
+
+<p>
+Eens gaf een heer aan één van zijn bedienden tien goudstukken en beval
+hem: <em>“Koop hiermee een kostuum van een speciale stof.”</em>
+</p>
+
+<p>
+Aan een andere bediende gaf hij duizend goudstukken, stopte een briefje
+met bepaalde notities in zijn zak en zond hem naar de markt.
+</p>
+
+<p>
+De eerste bediende had met die tien goudstukken een voortreffelijk kostuum
+van de beste stof gekocht. De tweede bediende beging een grote
+dwaasheid; hij bespiedde de vorige bediende, keek niet naar het briefje in
+zijn zak, gaf een winkelier duizend goudstukken en vroeg om een eendelig
+kostuum. Daarop gaf de gewetenloze winkelier een eendelig kostuum van
+de slechtste stof. Daarmee keerde die ellendige bediende terug naar zijn heer,
+waarop hij ernstig werd berispt en hard werd bestraft.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 112,
+                'content' => '<div class="page" id="112">
+<p class="text-end page-number">#112</p>
+
+<p>
+Voorwaar, zelfs iemand met een miniem besef kan wel begrijpen dat de
+tweede dienaar die duizend goudstukken niet had gekregen om er een eendelig
+kostuum mee te halen. Die goudstukken waren veeleer bedoeld voor
+een belangrijke handel.
+</p>
+
+<p>
+Evenzo zijn de spirituele instrumenten en zintuigen van de mens ten opzichte
+van dieren honderdmaal verder ontwikkeld. Bijvoorbeeld, het mensenoog
+dat schoonheid in al haar niveaus kan opmerken, het menselijke
+smaakvermogen dat de smaken van alle voedselsoorten kan onderscheiden,
+het mensenverstand dat de details achter alle waarheden kan doordringen,
+het mensenhart dat naar volmaaktheid in al haar vormen verlangt, en dergelijke
+instrumenten en zintuigen kunnen uiteraard niet vergeleken worden
+met de simpele instrumenten van dieren die beperkt zijn ontwikkeld. Er
+moet echter wel opgemerkt worden dat een specifiek zintuig van een dier
+dat benodigd is voor zijn gegeven taak wel sterk is ontwikkeld. Maar die
+ontwikkeling is specifiek.
+</p>
+
+<p>
+De rijkheid van de mens wat zijn instrumenten betreft, is op het volgende
+geheim gebaseerd: het verstand en het denkvermogen van de mens hebben
+ertoe geleid dat zijn gevoelens en emoties sterk zijn ontwikkeld en ontplooid.
+En de verscheidenheid van zijn benodigdheden hebben vele uiteenlopende
+gevoelens in hem ontwaakt. En zijn gevoeligheid heeft zich in vele vormen
+opgesplitst. En door de omvattendheid van zijn aard koestert hij verlangens
+die op vele verschillende doelen zijn gericht. En omdat hij vele natuurlijke
+taken bezit, hebben zijn zintuigen en instrumenten zich ver ontwikkeld. En
+omdat hem een aard is gegeven met een aanleg om alle soorten Godsdienstoefeningen
+te verrichten, is hem een potentie gegeven die de zaden van alle
+volmaaktheden omvat.
+</p>
+
+<p>
+Voorwaar, een dusdanige rijkheid aan instrumenten en verscheidenheid
+aan vermogens zijn uiteraard niet voor dit waardeloze en kortstondige leven
+op aarde gegeven. De ware opdracht van een dusdanig mens bestaat veeleer
+uit het doorgronden van zijn taken die op oneindige doelen zijn gericht,
+waarna hij zijn machteloosheid, behoeftigheid en gebrekkigheid in de vorm
+van dienaarschap aankondigt, de verheerlijking van wezens via zijn universele
+blik ziet en beaamt, de Barmhartige Bijstand achter gunsten opmerkt en
+dank betuigt, de mirakelen van de Macht des Heren aanschouwt en met een
+leergierige blik bezint.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 113,
+                'content' => '<div class="page" id="113">
+<p class="text-end page-number">#113</p>
+
+<p>
+O aardsgezinde mens die verliefd op het aardse leven en onachtzaam wat
+betreft het geheim achter de allermooiste compositie is! De waarheid achter
+dit aardse leven had de Oude Said in een visioen gezien. Luister naar deze
+illustratieve gebeurtenis die de Oude Said in de Nieuwe Said heeft veranderd:
+</p>
+
+<p>
+Ik zag dat ik als reiziger werd gezonden om een lange weg af te leggen.
+De persoon die mijn meester was, schoot mij telkens een klein beetje geld
+toe van de zestig goudstukken die hij voor mij had weggelegd. Ik besteedde
+dat geld en stapte in een feestelijke herberg. In die herberg had ik in één
+nacht tien goudstukken aan gokken en amusementen, en aan de bevrediging
+van mijn pronkzucht verspild. In de ochtend had ik helemaal geen geld
+meer over. Ik was niet meer in staat om handel te drijven en spullen voor
+mijn bestemming te kopen. Het enige wat van dat geld voor mij was overgebleven,
+waren kwellingen en zonden, en de wonden, trauma’s en letsels die
+ik door die amusementen was opgelopen.
+</p>
+
+<p>
+Terwijl ik mij in die betreurenswaardige toestand begaf, verscheen er opeens
+een man. Hij zei:
+</p>
+
+<p><em>
+“Jij hebt je hele kapitaal verkwist; je hebt een klap verdiend. Jij zult met lege
+handen failliet naar jouw bestemming gaan. Als jij een verstand bezit, dan zal
+je berouw tonen. De poort tot vergiffenis is open. Bewaar vanaf nu uit voorzorg
+telkens de helft van het geld dat jou nog van de overgebleven vijftien goudstukken
+gegeven gaat worden. Met andere woorden, koop er spullen mee die jij nodig
+hebt voor je bestemming.”
+</em></p>
+
+<p>
+Ik zag dat mijn ego hier ontevreden over was. Die man zei toen:
+</p>
+
+<p><em>
+“Bewaar dan één derde.”
+</em></p>
+
+<p>
+Weer nam mijn ego daar geen genoegen mee. Daarop zei die man:
+</p>
+
+<p><em>
+“Eén vierde!”
+</em></p>
+
+<p>
+Ik zag dat mijn ego zijn gewoonten waar hij verslaafd aan was niet kon
+verlaten. Vervolgens keerde die man mij boos de rug toe en vertrok.
+</p>
+
+<p>
+Plotseling kwam ik in een hele andere toestand terecht. Ik zag dat ik mij
+in een trein bevond die met een valsnelheid door een tunnel raasde. Ik raakte
+in paniek, maar ik kon helaas nergens heen vluchten. Vanuit de vensters
+aan de twee zijden van de trein waren er allerlei zeldzame, fascinerende bloemen en lekkere vruchten te zien.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 114,
+                'content' => '<div class="page" id="114">
+<p class="text-end page-number">#114</p>
+
+<p style="text-indent: 0">
+Daarop begon ik als een onbezonnen onwetende
+naar ze te kijken en mijn handen naar ze uit te steken om een
+aantal te plukken. Omdat die bloemen en vruchten echter doornig en stekelig
+waren, staken ze mijn hand wanneer ik ze aanraakte en lieten ze mij
+bloeden. Door de vaart van de trein reten ze mijn hand open en kwamen ze
+mij erg duur te staan. Opeens werd ik door een werker in de trein als volgt
+benaderd:
+</p>
+
+<p><em>
+“Geef mij vijf euro, dan zal ik jou zoveel van die bloemen en vruchten geven
+als je wil. In plaats van die vijf euro loop je door de verwondingen aan je handen
+honderd euro schade op. Bovendien ben je strafbaar bezig; je mag niet zonder
+toestemming van ze plukken.”
+</em></p>
+
+<p>
+Ik begon mij zorgen te maken, waarop ik mijn hoofd naar buiten stak
+om te kijken wanneer de tunnel zou aflopen. Ik keek vooruit en in plaats
+van een tunneluitgang zag ik allemaal gaten. Er werden mensen vanuit die
+lange trein in die gaten gegooid. In de verte zag ik een gat met twee grafstenen
+aan beide uiteinden mijn richting op komen. Uit nieuwsgierigheid keek
+ik aandachtig; ik zag dat er op die grafsteen met grote letters <strong>“Said”</strong> stond
+geschreven. Uit schrik slaakte ik een kreet van verdriet. Plotseling vernam ik
+de stem van de man die mij voor de herberg advies had gegeven. Hij vroeg:
+</p>
+
+<p><em>
+“Ben je tot bezinning gekomen?”
+</em></p>
+
+<p>Ik zei:</p>
+
+<p><em>
+“Ja, maar het is te laat... ik heb geen kracht meer over; ik ben verloren.”
+</em></p>
+
+<p>Hij zei:</p>
+
+<p><em>
+“Vraag om vergeving en wees gelaten!”
+</em></p>
+
+<p>Ik zei:</p>
+
+<p><em>
+“Dat zal ik doen!”
+</em></p>
+
+<p>
+Ik kwam tot mezelf... de Oude Said was verdwenen... en ik zag mezelf
+terug als de Nieuwe Said.
+</p>
+
+<p>
+Voorwaar, ik zal een deel van dit visioen uitleggen, het overige deel kunnen
+jullie zelf invullen; moge ALLAH het zegenen.
+</p>
+
+<p>
+Die reis symboliseert de reis die vanaf de zielenwereld, langs de baarmoeder,
+de jeugd, de ouderdom, het graf, de tussenwereld, de wederopstanding en de brug richting de oneindige eeuwigheid loopt.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 115,
+                'content' => '<div class="page" id="115">
+<p class="text-end page-number">#115</p>
+
+<p style="text-indent: 0">
+Die zestig goudstukken
+symboliseren een zestigjarige levenstijd. Ik schat dat ik vijfenveertig jaar was
+toen ik dit visioen had gezien. Ik kan uiteraard niet zeker zijn, maar een
+zuivere student van De Leerrijke Qur’an had mij overgehaald om de helft
+van mijn overgebleven vijftien jaar ten voordele van mijn hiernamaals te
+besteden. Die herberg bleek voor mij Istanbul te zijn. Die trein symboliseert
+tijd; elke wagon is een jaar. Die tunnel vertegenwoordigt het aardse leven.
+Die doornige bloemen en vruchten zijn de verboden genietingen en zondige
+pleziertjes; wanneer ze beleefd worden, doet het leed achter het besef van
+hun teloorgang het hart bloeden en wanneer ze voorgoed vergaan, rijten ze
+het hart uiteen. Zodoende bezorgen ze bestraffing. De werker in de trein zei:
+</p>
+
+<p><em>
+“Geef mij vijf euro, dan zal ik je er zoveel van geven als je wil.”
+</em></p>
+
+<p>
+De uitleg daarvan luidt als volgt: de genietingen en de voldoeningen die
+een mens binnen de geoorloofde kring via halal activiteiten ervaart, is voldoende
+voor de bevrediging van zijn begeerten; ze laten geen reden na om te
+zondigen. De overige aspecten kun jij zelf invullen.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>Het Vierde Punt</strong>
+</p>
+
+<p>
+De mens lijkt in dit universum op een fragiel en gevoelig kind. Er schuilt
+een grote kracht in zijn zwakte en een grote macht in zijn onmacht. Want
+dankzij de kracht in zijn zwakte en de macht in zijn onmacht zijn deze wezens
+in het bestaan dienstbaar aan hem gesteld. Als de mens zijn zwakte inziet,
+verbaal, non-verbaal en expressief beden verricht, zijn onmacht erkent
+en toevlucht zoekt, dan zal hij de dank voor die dienstbaarheid betuigen.
+Daarnaast zal hij wat zijn doelen betreft zo succesvol zijn en zoveel bereiken,
+dat hij met zijn persoonlijke vermogen niet in staat zou zijn om een honderdste
+daarvan te bereiken. Alleen soms schrijft hij het succes dat hij dankzij
+zijn bede in de taal van zijn houding heeft behaald onterecht aan zijn eigen
+vermogen toe.
+</p>
+
+<p>
+Bijvoorbeeld, de kracht achter de zwakte van een kippenkuiken drijft een
+kip om een leeuw aan te vallen. Een pasgeboren leeuwenwelp maakt een
+woeste en hongerige leeuwin dienstbaar aan zichzelf en laat haar honger lijden
+terwijl hij zichzelf door haar laat voeden. Voorwaar, aanschouw deze opmerkelijke
+kracht binnen zwakte en deze merkwaardige manifestatie van Genade…
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 116,
+                'content' => '<div class="page" id="116">
+<p class="text-end page-number">#116</p>
+
+<p>
+Evenzo leiden de tranen, de vragen of de meelijwekkende hoedanigheid
+van een fragiel kind ertoe dat zijn doelen zodanig worden bereikt en dat
+zulke sterke schepselen zich dienstbaar aan hem opstellen, dat hij geen duizendste
+van die doelen op eigen kracht zou kunnen bereiken. Omdat zijn
+zwakte en zijn onmacht een gevoel van mededogen en bescherming jegens
+hem opwekken, windt hij als het ware grote helden om zijn kleine vinger.
+Als een kind in deze toestand dat mededogen en die bescherming ontkent,
+en met een dwaze arrogantie <em>“Ik onderwerp ze met mijn kracht”</em> zegt, dan zal
+hij uiteraard een klap krijgen.
+</p>
+
+<p>
+Ook als de mens indirect de Genade van zijn Schepper ontkent en Zijn
+Wijsheid beledigt door een uitspraak te doen als Qâroen:<span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّمَٓا اُوتٖيتُهُ عَلٰى عِلْمٍ</span>,
+met andere woorden, als hij zich als volgt over zijn behaalde successen uitlaat:
+<em>“Ik heb alles met mijn eigen kennis en mijn eigen kunnen bereikt”</em>, dan zal
+hij uiteraard een pijnlijke afstraffing verdienen.
+</p>
+
+<p>
+Aldus zijn deze zichtbare heerschappijen, bevorderende ontwikkelingen
+en moderne beschavingen binnen de mensheid niet door haar regularisaties,
+haar overmacht en haar gevechten tot stand gekomen. Alles is veeleer op
+basis van haar zwakte dienstbaar aan haar gesteld; het benodigde wordt haar
+vanwege haar onmacht aangereikt, vanwege haar behoeftigheid gegund, vanwege
+haar onwetendheid ingegeven en vanwege haar armoedigheid geschonken.
+En de oorzaak van haar heerschappij bestaat niet uit haar kracht en
+haar kennis omtrent bewindvoering; mededogen en het Erbarmen des Heren,
+Genade en de Goddelijke Wijsheid hebben ertoe geleid dat alles ten
+dienste van haar is gesteld.
+</p>
+
+<p>
+Waarlijk, een mens die door oogloze schorpioenen, pootloze slangen en
+dergelijk ongedierte wordt overwonnen, wordt uiteraard niet op basis van
+zijn gezag met de zijde van een rups bekleed en met de honing van een giftig
+insect gevoed; dit heeft hij veeleer te danken aan het Gezag des Heren en
+de Begunstiging van De Barmhartige Die Zich als vrucht van zijn menselijke
+onmacht manifesteren.
+</p>
+
+<p>
+O mens, dit is de werkelijkheid! Neem dus afstand van je arrogantie en je
+hoogmoed.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 117,
+                'content' => '<div class="page" id="117">
+<p class="text-end page-number">#117</p>
+
+<p>
+Betoon in het Domein der Goddelijkheid jouw onmacht en jouw
+zwakte in de taal van aanroepingen, verkondig jouw behoeftigheid en jouw benodigdheden in de taal van supplicaties en beden, en laat zien dat jij een
+dienaar bent; zeg: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">حَسْبُنَا اللّٰهُ وَنِعْمَ الْوَكٖيلُ</span> en eleveer. En doe geen uitspraken als:
+</p>
+
+<p>
+<em>“Ik ben nietig. Waarom zou een Absoluut Alwijze aan een onbeduidend
+schepsel als ik dit universum doelbewust dienstbaar stellen en als tegenprestatie
+een universele dank van mij verwachten?”</em>
+</p>
+
+<p style="margin-bottom: 0">
+Want ook al ben jij gezien je ego en je verschijning inderdaad vrijwel
+nietig, alsnog fungeer jij gezien je taak en je rang als:
+</p>
+
+<p style="text-indent: 0.5em;margin-bottom: 0">• een aandachtige observeerder van dit geweldige universum;
+<p style="text-indent: 0.5em;margin-bottom: 0">• een eloquente tong van dit diepzinnige bestaan;</p>
+<p style="text-indent: 0.5em;margin-bottom: 0">• een begrijpende lezer van dit kosmische boek;</p>
+<p style="text-indent: 0.5em;margin-bottom: 0">• een verwonderde waarnemer van deze Godverheerlijkende schepselen;</p>
+<p style="text-indent: 0.5em;margin-top:0;">• een geëerde leidsman van deze Godsdienstige creaties.</p>
+
+
+<p>
+Waarlijk, o mens! Uit het oogpunt van je vegetatieve fysiek en je dierlijke
+ego ben jij een onvermogend element, een onbeduidend individu, een behoeftig
+schepsel en een zwak dier dat door de kolkende golven van voortvloeiende
+wezens wordt meegesleept. Echter, als jij jezelf ontwikkelt aan de
+hand van de discipline der Islam – die met het geloofslicht is verlicht en de
+Lichternis van Godsliefde omvat – dan zal jij uit het oogpunt van jouw
+mens-zijn een sultan binnen jouw dienaarschap belichamen, een universaliteit
+binnen jouw individualiteit omvatten en een wereld binnen jouw miniformaat
+herbergen; binnen je nietige hoedanigheid word jij een observeerder
+met een dusdanig hoge rang en een dusdanig ruime observatiekring, dat jij
+het volgende kunt zeggen:
+</p>
+
+<p>
+<em>“Mijn Genadige Heer heeft de aarde voor mij als woning gecreëerd. De maan
+en de zon laat Hij als de lampen van mijn woning fungeren. De lente is een
+rozenboeket, de zomer is een tafel van gunsten en de dieren heeft Hij als mijn
+dienaren aangesteld. En de planten heeft Hij als de sierlijke benodigdheden van
+mijn woning laten ontkiemen.”</em>
+</p>
+
+<p>
+Tot slot, als jij gehoor aan je ego en aan satan geeft, dan zal je in de laagste
+laagtes belanden. Als je gehoor aan de waarheid en aan De Qur’an geeft,
+dan zal je naar de hoogste hoogtes stijgen en een schitterende compositie
+van het universum worden.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “ALLAH is toereikend voor ons, en Hij is De Ultieme Beschermheer.” - <em>De Heilige Qur’an, 3:173</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 118,
+                'content' => '<div class="page" id="118">
+<p class="text-end page-number">#118</p>
+
+<p class="text-center text-red small-title">
+<strong>Het Vijfde Punt</strong>
+</p>
+
+<p>
+De mens is als een ambtenaar en als gast naar deze wereld gezonden. Hem
+zijn uiterst waardevolle potenties gegeven. En in evenredigheid met die potenties
+zijn hem waardevolle taken toevertrouwd. En om de mens in het kader
+van zijn bestaansreden en die taken te laten werken, wordt hij regelmatig
+bemoedigd en streng vermaand. De kernpunten van de menselijke taak en
+dienaarschap waarop wij elders licht hebben geworpen, gaan wij hier samenvatten,
+opdat het geheim achter <strong>“de allermooiste compositie”</strong> helder wordt.
+</p>
+
+<p>
+Voorwaar, nadat de mens dit universum intreedt, krijgt hij in twee opzichten
+te maken met dienaarschap. Enerzijds bekleedt hij een indirecte
+vorm van dienaarschap via bezinning. Anderzijds bekleedt hij een directe,
+een aansprekende vorm van dienaarschap via smeekbeden.
+</p>
+
+<p>
+<strong>De indirecte vorm</strong> impliceert: de zichtbare Heerschappij des Heren in
+het universum deemoedig erkennen, en de daarin heersende volmaaktheden
+en schoonheden verwonderd bezichtigen.
+</p>
+
+<p>
+Vervolgens de schoonschriften van Gods Heilige Namen die zich als onvergelijkelijke
+kunstwerken voordoen onderling leerzuchtig aan elkaar laten
+zien, openbaren en bekendmaken.
+</p>
+
+<p>
+Vervolgens de juwelen van de Namen des Heren – Die respectievelijk als
+een verborgen spirituele schat gelden – met de weger van het besef afwegen
+en met de waardemeter van het hart een eerbiedige waarde geven.
+</p>
+
+<p>
+Vervolgens de bladzijden der wezens en de pagina’s der hemelen en aarde,
+die als de door de Machtspen geschreven geschriften gelden, bestuderen en
+verwonderd daarop bezinnen.
+</p>
+
+<p>
+Vervolgens de sierlijke en subtiele kunstwerken bij deze wezens met bewondering
+aanschouwen, in liefde voor de kennis die ze over hun Schone
+Voortbrenger verschaffen ontvlammen, en met passie naar de ontmoeting
+en de Aandacht van hun Volmaakte Kunstenaar verlangen.
+</p>
+
+<p>
+<strong>De directe vorm</strong> impliceert: het besef van Gods Alomtegenwoordigheid
+en aanspreekbaarheid. Hierbij gaat de mens van de creatie over naar De Creator,
+waardoor hij ziet dat er Een Ontzaglijke Kunstenaar is Die middels de
+mirakelen in Zijn kunstwerken Zichzelf wil voorstellen en bekend wil maken.
+Daarop reageert hij dan met geloof en Godskennis.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 119,
+                'content' => '<div class="page" id="119">
+<p class="text-end page-number">#119</p>
+
+<p>
+Vervolgens ziet hij dat er Een Genadige Heer is Die via de schone vruchten
+van Zijn Genade Zichzelf geliefd wil maken. Daarop maakt hij met een
+uitsluitende liefde en een exclusieve aanbidding zichzelf bij Hem geliefd.
+</p>
+
+<p>
+Vervolgens ziet hij dat er Een Genereuze Begunstiger is Die hem met
+prachtige materiële en immateriële gunsten omringt. Daarop betuigt hij met
+zijn daden, zijn houding, zijn uitspraken en – als hij zou kunnen – met al
+zijn zintuigen en organen dank, lof en waardering.
+</p>
+
+<p>
+Vervolgens ziet hij dat er Een Ontzaglijke Bezitter van Schoonheid is Die
+via de weerspiegelingen in dit bestaan Zijn Grootheid, Zijn Perfectie, Zijn
+Glorie en Zijn Schoonheid wil tonen en de aandacht Daarop wil trekken.
+Daarop zegt hij: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ، سُبْحَانَ اللّٰهِ</span> en knielt nederig met verwondering en
+liefde neer.
+</p>
+
+<p>
+Vervolgens ziet hij dat er een Alzijdig Alrijke is Die met een Grenzeloze
+Vrijgevigheid Zijn Onuitputtelijke Weelde en schatten laat zien. Daarop
+draagt hij met glorificatie en lof zijn verzoeken en wensen in volstrekte behoeftigheid
+voor.
+</p>
+
+<p>
+Vervolgens ziet hij dat Die Ontzaglijke Voortbrenger het aardoppervlak
+als een expositieruimte heeft ingericht waarin Hij al Zijn antieke kunstwerken
+tentoonstelt. Daarop zegt hij: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا شَاءَ اللّٰهُ</span> uit waardering, <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">بَارَكَ اللّٰهُ</span> uit bewondering,
+<sup>4</sup><span class="text-arabic-inline" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</span> uit verwondering en <sup>5</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</span> uit admiratie.
+</p>
+
+<p>
+Vervolgens ziet hij dat er Een Ene Enigheid is Die met Zijn Onvervalsbare
+Signaturen, Zijn Specifieke Zegels, Zijn Persoonlijke Waarmerken en Zijn
+Soevereine Verordeningen op alle wezens in dit kosmische paleis een stempel
+van Eenheid heeft gedrukt en de Aya’s van Tauhied heeft geschreven. En aan
+alle horizonnen van dit bestaan laat Hij het vaandel van Eenheid wapperen
+en openbaart Hij Zijn Heerschappij. Daarop reageert hij met beaming, geloof,
+Tauhied, overtuiging, erkenning en dienaarschap.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “ALLAH is het grootst, ALLAH is Feilloos.”
+</p>
+<p class="footnote-p">
+<sup>2</sup> “ALLAH heeft het gewild.”
+</p>
+<p class="footnote-p">
+<sup>3</sup> “ALLAH heeft het gezegend.”
+</p>
+<p class="footnote-p">
+<sup>4</sup> “ALLAH is Feilloos.”
+</p>
+<p class="footnote-p">
+<sup>5</sup> “ALLAH is het Grootst.”
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 120,
+                'content' => '<div class="page" id="120">
+<p class="text-end page-number">#120</p>
+
+<p>
+Voorwaar, aan de hand van zulke Godsdienstoefeningen en bezinningen
+kan hij een waar mens worden en aantonen dat hij volgens de allermooiste
+compositie is geschapen. Dankzij de zegen des geloofs wordt hij een vertrouwde
+khalief op aarde die het toevertrouwde waardig is.
+</p>
+
+<p>
+O onachtzame mens die volgens de allermooiste compositie is geschapen
+maar desondanks zichzelf door zijn kwade wil richting de laagste laagtes laat
+slepen, luister naar mij! Tijdens de dronkenschap van mijn jeugd kwam de
+wereld ook voor mij leuk en aantrekkelijk over zoals ze nu voor jou overkomt.
+Echter, op het moment dat ik uit de dronkenschap der jeugdigheid
+bij de dageraad van mijn ouderdom ontwaakte, zag ik dat het mooi ogende
+gezicht van de wereld dat niet op het hiernamaals is gericht in feite afgrijselijk
+is, terwijl haar gezicht dat gericht is op het hiernamaals prachtig is.
+</p>
+
+<p>
+Kijk naar de twee waarachtige tableaus in <strong>Het Tweede Thema van Het
+Zeventiende Woord</strong> en aanschouw het ook.
+</p>
+
+<p>
+Het eerste tableau beschrijft de waarheid achter de wereld van de dwalers
+die ik vroeger zoals het dwaalvolk – maar dan zonder dronkenschap – door
+de sluier van onachtzaamheid had aanschouwd.
+</p>
+
+<p>
+Het tweede tableau duidt op de waarheid achter de wereld van de geleide
+en Godsbewuste mensen. Ik heb het gelaten zoals het in eerste instantie is
+geschreven. De twee tableaus lijken op gedichten, maar dat zijn ze niet.
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+سُبْحَانَكَ لَا عِلْمَ لَنَا اِلَّا مَا عَلَّمْتَنَا اِنَّكَ اَنْتَ الْعَلٖيمُ الْحَكٖيمُ<sup>1</sup>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin:">
+رَبِّ اشْرَحْ لٖى صَدْرٖى ۞ وَيَسِّرْ لٖٓى اَمْرٖى ۞ وَاحْلُلْ عُقْدَةً مِنْ لِسَانٖى ۞ يَفْقَهُوا قَوْلٖى ۞<sup>2</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over
+geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - <em>De Heilige Qur’an, 2:32</em>
+</p>
+<p class="footnote-p">
+<sup>2</sup> “O Heer, verruim mijn borst. Verlicht mijn taak. Ontbind de knoop in mijn tong,
+opdat ze mijn formulering begrijpen.” - <em>De Heilige Qur’an, 20:25-28</em>
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 121,
+                'content' => '<div class="page" id="121">
+<p class="text-end page-number">#121</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+اَللّٰهُمَّ صَلِّ وَ سَلِّمْ عَلَى الذَّاتِ الْمُحَمَّدِيَّةِ اللَّطٖيفَةِ الْاَحَدِيَّةِ شَمْسِ سَمَاءِ الْاَسْرَارِ وَ مَظْهَرِ الْاَنْوَارِ وَ مَرْكَزِ مَدَارِ الْجَلَالِ وَ قُطْبِ فَلَكِ الْجَمَالِ ۞ اَللّٰهُمَّ بِسِرِّهٖ لَدَيْكَ وَ بِسَيْرِهٖ اِلَيْكَ اٰمِنْ خَوْفٖى وَ اَقِلْ عُثْرَتٖى وَ اَذْهِبْ حُزْنٖى وَ حِرْصٖى وَ كُنْ لٖى وَ خُذْنٖى اِلَيْكَ مِنّٖى وَ ارْزُقْنِى الْفَنَاءَ عَنّٖى وَ لَا تَجْعَلْنٖى مَفْتُونًا بِنَفْسٖى مَحْجُوبًا بِحِسّٖى وَاكْشِفْ لٖى عَنْ كُلِّ سِرٍّ مَكْتُومٍ ۞ يَا حَىُّ ۞ يَا قَيُّومُ ۞ يَا حَىُّ ۞ يَا قَيُّومُ ۞ يَا حَىُّ ۞ يَا قَيُّومُ ۞ وَ ارْحَمْنٖى وَارْحَمْ رُفَقَائٖى وَ ارْحَمْ اَهْلِ الْاٖيمَانِ وَ الْقُرْاٰنِ ۞ اٰمٖينَ يَا اَرْحَمَ الرَّاحِمٖينَ وَ يَا اَكْرَمَ الْاَكْرَمٖينَ<sup>1</sup>۞
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;">
+وَ اٰخِرُ دَعْوٰيهُمْ اَنِ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمٖينَ<sup>2</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> O ALLAH, laat zegeningen neerdalen op de enige en prachtige essentie van Mohammed,
+de Zon aan de hemel der mysteries, de Manifestant der Lichternissen, de
+Kern van de Ontzaglijke kring, de Piek van de kosmische schoonheid. O ALLAH,
+omwille van zijn geheim met betrekking tot U en zijn reis naar U, vraag ik U om
+mij veilig te stellen van mijn angsten, te verlossen van mijn gebreken, en te bevrijden
+van mijn leed en mijn hebzucht. Wees er voor mij, red mij van mezelf en neem mij
+tot U. Begunstig mij door mij de kans te geven om mijn eigenheid omwille van
+U te mogen opofferen. Hoed mij voor de onderwerping aan mijn ego en voor de
+blindheid van mijn emoties. Onthul voor mij alle verholen geheimen... o Allevende,
+o Consistente... o Allevende, o Consistente... o Allevende, o Consistente... wees mij
+genadig, wees mijn vrienden genadig, wees de gelovigen en de dienaren van De
+Qur’an genadig, o Genadigste der Genadigen, o Gulste der Gulhartigen.
+</p>
+<p class="footnote-p">
+<sup>2</sup> “En hun slotgebed luidt: de lof zij ALLAH; Heer der werelden.” - <em>De Heilige
+Qur’an, 10:10</em>
+</p>
+</div>
+
+</div>'
+            ],
         ];
     }
 }
