@@ -6491,6 +6491,1043 @@ ware stand van zaken is.
 
 </div>'
             ],
+            [
+                'page_number' => 141,
+                'content' => '<div class="page" id="141">
+<p class="text-end page-number">#141</p>
+
+<p><strong>De Tweede Voetnoot</strong></h2>
+
+<p>
+Na onze vrijlating van de gevangenis in Denizli, zat ik op een hoge verdieping
+van het bekende Şehir hotel. Tegenover mij waren er mooie tuinen
+met veel populierbomen die als het ware in een gebedskring met hun takken
+en bladeren op een uiterst fraaie en bevallige wijze via de aanraking van de
+wind met extatische en bekoorlijke bewegingen dansten. Mijn sombere hart,
+dat door de scheiding van mijn vrienden en mijn eenzaamheid bedroefd
+was, raakte hierdoor ontroerd. Plotseling dacht ik aan de herfst en de winter
+seizoenen, waarna er een onachtzaamheid in mij ontwaakte. Ik kreeg zoveel
+medelijden met die sierlijke populieren en de levende schepselen die in een
+uiterst vreugdevolle sfeer onschuldig genoten, dat ik tranen in mijn ogen
+kreeg. Doordat ik de vernietigingen en scheidingen onder de versierde sluier
+van het universum gedacht en ontwaarde, hadden scheidingen en vernietigingen
+naar de schaal van het universum zich in mijn hoofd verzameld.
+</p>
+
+<p>
+Opeens schoot het Licht van de Mohammedaanse Waarheid
+<span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> mij te hulp.
+Dat Licht zette die ontelbare smarten en droefenissen om in vreugdes.
+Uit de miljoenen zegeningen van dat Licht waarmee iedereen en elke gelovige
+gezegend wordt, was ik alleen voor het deel dat mij op dat moment bereikte,
+bevrijdde en geruststelde, de persoonlijkheid van Mohammed
+<span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span>
+eeuwig dankbaar. Immers:
+</p>
+
+<p>
+Door mijn onachtzame blik oogden die gezegende schepselen als inactieve
+wezens die gedurende een vruchteloos seizoen niet uit vreugde bewogen,
+maar uit angst voor non-existentie en scheiding trilden en in nietigheid eindigden.
+Bijgevolg werden mijn gevoelens die iedereen koestert, zoals liefde
+voor eeuwigheid, passie voor schoonheid, zwakte voor existentie, mededogen
+voor medeschepselen en hartstocht voor het leven zodanig in ontroering
+gebracht, dat de wereld in een geestelijke hel en het verstand in een marteltuig
+veranderden. Op dat moment werd de sluier opgeheven door het Licht
+dat Mohammed
+<span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span>
+als geschenk naar de mensheid had gebracht. In plaats
+van verdoemenis, non-existentie, nietigheid, inactiviteit, nutteloosheid,
+scheiding en vergankelijkheid, toonde dat Licht dat elke populierboom zoveel
+wijsheden en betekenissen als het aantal van zijn bladeren droeg. En
+zoals in de Risale-i Nur is bewezen, toonde dat Licht dat wezens doelen en
+taken bezitten die in drie categorieën worden opgesplitst.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 142,
+                'content' => '<div class="page" id="142">
+<p class="text-end page-number">#142</p>
+
+<p>
+<span class="text-bold">De eerste categorie</span> is op de Namen van De Ontzaglijke Kunstenaar gericht.
+Bijvoorbeeld, wanneer een constructeur een buitengewone machine
+samenstelt, dan zal iedereen die zijn werk waardeert: <em>“Mâshâ’ALLAH, moge
+ALLAH het zegenen”</em> zeggen en hem applaudisseren. Evenzo zal die machine
+door exact haar gegeven taak uit te voeren in de taal van haar houding haar
+samensteller prijzen en applaudisseren. Elke levende en elk wezen is een dergelijke
+machine; ze prijst en applaudisseert haar Samensteller.
+</p>
+
+<p>
+<span class="text-bold">De tweede categorie</span> bestaat uit de wijsheden die op de blikken van de
+levenden en de bewuste wezens zijn gericht. Voor hen is deze wereld een
+bezinningsruimte; elk wezen is een boek dat Godskennis verschaft. Schepselen
+laten hun betekenissen in het verstand van bewuste wezens achter, hun
+gedaantes worden in de bestaanskring van de geheugens, op de tableaus der
+gelijkenissen en in de schriften van de verborgen wereld opgeslagen, waarna
+ze de zichtbare wereld verlaten en zich naar de verborgen wereld terugtrekken.
+Aldus laten zij één zichtbare bestaansvorm achter, terwijl ze vele spirituele,
+verborgen en wetenschappelijke bestaansvormen verwerven.
+</p>
+
+<p>
+Waarlijk, aangezien ALLAH bestaat en Zijn Kennis alles omvat, bestaat
+er vanuit een waarachtig perspectief uiteraard geen non-existentie, verdoemenis,
+nietigheid, ondergang en vergankelijkheid in de wereld van een gelovige.
+En de wereld van een ongelovige is gevuld met non-existenties, scheidingen,
+nietigheden en vergankelijkheden. Voorwaar, het aankomende
+gezegde dat vaak wordt uitgesproken, onderwijst deze waarheid:
+</p>
+
+<p>
+<em>“Voor hem die op de hoogte is van ALLAH\'s bestaan, bestaat alles. Voor hem
+die onbekend is met ALLAH\'s bestaan, bestaat niets; alles is nietig voor hem.”</em>
+</p>
+
+<p class="text-bold">Conclusie</p>
+
+<p>
+Zoals het geloof de mens tijdens zijn sterfuur van eeuwige verdoemenis
+redt, bevrijdt het evenzeer iedereens persoonlijke wereld van verdoemenis en
+van de duisternissen der nietigheid. Ongeloof daarentegen – vooral als het
+absolute ongeloof aangaat – verdoemt de mens evenals zijn persoonlijke wereld
+tijdens zijn sterfuur; het werpt hem in de duisternissen van een geestelijke
+hel en zet de geneugten van het leven om in zure giffen. Mogen de
+oren suizen van zij die hun aardse leven boven hun leven in het hiernamaals
+verkiezen! Laat ze ofwel een oplossing hiervoor vinden, ofwel het geloof intreden
+opdat ze van deze angstaanjagende ondergang gered worden!
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 143,
+                'content' => '<div class="page" id="143">
+<p class="text-end page-number">#143</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Uit Het Zesentwintigste Woord</h2>
+</div>
+
+<p class="text-center text-bold">[Het laatste gedeelte van Het Derde Thema en Het Vierde Thema]</p>
+
+<p class="text-bold">Stelling</p>
+
+<p class="text-italic">
+Het lot heeft ons vastgeketend en ons de vrijheid ontnomen. Het hart en de
+ziel verlangen naar verruiming en naar bewegingsvrijheid. Levert het geloof in
+het lot ze geen last en druk op?
+</p>
+
+<p class="text-bold">Het antwoord</p>
+
+<p>
+Absoluut niet! Naast dat het geen last oplevert, bezorgt het een vreugde;
+het levert een licht dat een grenzeloze verzachting, een rust, een troost en
+een verademing met zich meebrengt, en vrede en zekerheid verschaft. Immers,
+als de mens niet in het lot gelooft, dan is hij verplicht om binnen een
+kleine kring en een beperkte speelruimte met een tijdelijke vrijheid een wereldgrote
+last op de schouders van zijn arme ziel te dragen. Want de mens is
+betrokken bij het hele universum. Hij heeft grenzeloze doelen en wensen.
+Omdat zijn macht, zijn wil en zijn vrijheid daarentegen geen miljoenste
+daarvan kunnen realiseren, kun je wel nagaan wat voor zware en geweldige
+geestelijke druk hij ondervindt.
+</p>
+
+<p>
+Voorwaar, het geloof in het lot gooit alle lasten op het schip der beschikking,
+en het biedt de ziel en het hart een bewegingsruimte waarin ze zich in
+alle rust met een ideale vrijheid kunnen ontwikkelen. Het zal alleen de beperkte
+vrijheid van het kwaadgezinde ego verdrijven, en zijn faraoniteit, zijn
+heerschappij en zijn lustgerichte invloed ondermijnen.
+</p>
+
+<p>
+Het geloof in het lot is zo zoet en behaaglijk, dat het niet te beschrijven is.
+Aan de hand van het aankomende voorbeeld zullen wij slechts een glimp
+van die zoetheid en behaaglijkheid laten zien.
+</p>
+
+<p>
+Twee personen stapten in het rijk van een koning. Ze kwamen in een
+buitengewone streek terecht waar ze een speciaal paleis van de koning betraden.
+De ene persoon wist niets over de koning en wilde daar als een plunderaar
+een plek voor zichzelf veroveren.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 144,
+                'content' => '<div class="page" id="144">
+<p class="text-end page-number">#144</p>
+
+<p style="text-indent: 0">
+Echter, het benodigde beheer, het onderhoud en de onkosten van de paleistuin en het paleis, de bediening van de
+beschikbare machines, de verzorging van de aanwezige dieren en soortgelijke
+bezwarende lasten had hij op zichzelf genomen, waardoor hij continu werd
+gekweld. De tuin die paradijselijk mooi was, kreeg voor hem een helse gedaante.
+Hij koesterde voor alles medelijden, maar kon niets beheren. Hij
+bracht zijn tijd in pijn door. Ten slotte werd die schaamteloze plunderaar ter
+vergelding van zijn misdadigheid in de gevangenis gegooid.
+</p>
+
+<p>
+De tweede persoon kende de koning en achtte zichzelf als zijn gast. Hij
+was ervan overtuigd dat alle activiteiten in dat paleis volgens nauwkeurige
+wetten plaatsvonden en dat alles volgens een programma uiterst soepel te
+werk ging. Alle moeiten en lasten liet hij aan de wetten van de koning over,
+terwijl hij vredig van alle genietingen in die paradijselijke tuin genoot. Hij
+vertrouwde op de genade en de regeerkunst van de koning, interpreteerde
+alles positief, en leidde een uiterst plezierig en voorspoedig leven. Voorwaar,
+doorzie het geheim achter: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَنْ اٰمَنَ بِالْقَدَرِ اَمِنَ مِنَ الْكَدَرِ</span>
+</p>
+
+<p class="text-center text-red small-title">
+<strong>Het Vierde Thema</strong>
+</p>
+
+<p class="text-italic"><strong>Stelling</strong></p>
+
+<p class="text-italic">
+In <strong>Het Eerste Thema</strong> had u bewezen dat alles van het lot mooi en heilzaam
+is. Ook het onheil dat afkomstig is van het lot is heilzaam; ook de lelijkheden die
+daaraan ontspruiten zijn mooi. Echter, de calamiteiten en rampen die zich in
+dit aardse oord voordoen, ontkrachten die stelling.
+</p>
+
+<p class="text-italic"><strong>Het antwoord</strong></p>
+
+<p>
+O mijn ego en mijn vriend die door hun bovenmatige mededogen een
+ernstige kwelling ondergaan! Het feit dat alle schoonheden en volmaaktheden
+zich tot existentie keren, terwijl de essentie van alle zonden, calamiteiten
+en gebreken uit non-existentie bestaat, bewijzen dat existentie pure heil en
+non-existentie pure onheil is.
+</p>
+
+<p>
+Aangezien non-existentie pure onheil is, bestaan alle toestanden die in
+non-existentie uitmonden of van non-existentie getuigen evenzeer uit onheil.
+Daarom ondervindt het stralendste licht van existentie bestaande uit
+het leven kracht door in verscheidene toestanden te vorderen. Hij raakt verzeild
+in verschillende situaties en wordt zuiverder, hij ervaart uiteenlopende gesteldheden en werpt de gewenste vruchten af, en hij belandt in verscheidene posities en geeft de Schoonschriften der Namen van De Schenker des levens schitterend weer.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p">
+<sup>1</sup> “Hij die in het lot gelooft, stelt zichzelf veilig van verdriet.”
+</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 145,
+                'content' => '<div class="page" id="145">
+<p class="text-end page-number">#145</p>
+
+<p>Voorwaar, op basis van deze waarheid belanden levenden in toestanden waarin ze kwellingen, calamiteiten en moeilijkheden ervaren. Want dankzij die kwellingen worden de lichten van existentie in hun leven ververst en de duisternissen van non-existentie weggedreven, waardoor hun leven zich zuivert. Immers, stilte, rust, nietsdoenerij, verveling en monotonie zijn in het kader van betekenis en waarde non-existent. Zelfs het allergrootste genot zal onder monotonie verdwijnen.</p>
+
+<p><strong>Conclusie</strong></p>
+
+<p>Aangezien het leven de geschriften van Gods Schone Namen laat zien, is alles wat het leven overkomt aangenaam.</p>
+
+<p>Bijvoorbeeld, stel dat er een zeer rijke en bekwame kunstenaar is die op allerlei gebieden kunstvaardig is. Om zijn kunstwerken en zijn kostbare rijkdommen te laten zien, laat hij een arme man tegen een vergoeding als model voor hem werken. Hij laat de man een uur lang één van zijn sierlijke gewaden vol juwelen dragen, waarna hij aanpassingen aanbrengt en dat gewaad in verschillende stijlen demonstreert. Om al zijn vaardigheden te demonstreren, knipt, verkort, verlengt en verandert hij het gewaad. Kan de man die tegen een vergoeding als model werkt zich hierover als volgt uitlaten:</p>
+
+<p><em>“U bezorgt mij veel moeite. U laat me zitten, staan en poseren. Dit gewaad dat mij zo goed staat, knipt u en verkort u, waardoor ik er minder goed uit kom te zien. U behandelt mij meedogenloos en gewetenloos.”</em></p>
+
+<p>Voorwaar, De Ontzaglijke Kunstenaar, De Onvergelijkelijke Voortbrenger heeft de levenden met een lichamelijk gewaad bekleed dat met ogen, oren, een verstand, een hart en met dergelijke juwelen gevoelens en zintuigen is versierd. Om geschriften van Zijn Schone Namen te demonstreren, laat hij levenden in vele toestanden verkeren en in verscheidene situaties verandering ondervinden. Hoedanigheden die onder kwellingen en calamiteiten vallen, laten de uitgangspunten van bepaalde Namen van Hem zien; binnen flitsen van Wijsheid schitteren bepaalde stralen van Genade, en binnen die stralen van Genade schuilen subtiele schoonheden.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 146,
+                'content' => '<div class="page" id="146">
+<p class="text-end page-number">#146</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Slot</h2>
+</div>
+
+<p><strong>[Bestaande uit Vijf Fragmenten die het opstandige, trotse, arrogante, hoogmoedige en pronkzuchtige ego van de Oude Said lieten zwijgen en zwichten.]</strong></p>
+
+<p><strong>Het Eerste Fragment</strong></p>
+
+<p>Aangezien creaturen bestaan en kunstig zijn, bestaat hun Maker evenzeer. Zoals in <strong>Het Tweeëntwintigste Woord</strong> onbetwistbaar is aangetoond, wordt de totstandkoming van elk creatuur zo problematisch en zwaar als de totstandkoming van alle creaturen wanneer alle creaturen niet aan één Creator worden toegekend. Wanneer de totstandkoming van alle creaturen aan één Creator worden toegekend, dan worden alle creaturen zo soepel en eenvoudig tot stand gebracht als de totstandkoming van één creatuur.</p>
+
+<p>Aangezien Iemand het oppervlak en de horizon samengesteld en geschapen heeft, zal Die zeer Wijze en Kunstvaardige Entiteit de vruchten, de opbrengsten en de doelen achter de schepping van het oppervlak en de horizon – bestaande uit de levenden – uiteraard niet aan anderen overlaten en alles verpesten. Hij zal nimmer al Zijn betekenisvolle creaties aan andere handen afstaan, alles ontwaarden, en tolereren dat anderen de dankbetuigingen en Godsdienstoefeningen van die creaties gaan opeisen.</p>
+
+<p><strong>Het Tweede Fragment</strong></p>
+
+<p>O mijn arrogante ego! Jij lijkt op een druivenboom. Wees niet trots! De druivenboom heeft zijn trossen druiven niet zelf opgehangen; een Ander heeft ze aan hem gehangen!</p>
+
+<p><strong>Het Derde Fragment</strong></p>
+
+<p>O mijn pronkzuchtige ego! Zorg ervoor dat jouw religieuze dienstverrichtingen jou niet met hoogmoed vervullen. Aangezien jij niet gezuiverd bent, dien jij volgens het geheim achter: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّ اللّٰهَ لَيُؤَيِّدُ هٰذَا الدّٖينَ بِالرَّجُلِ الْفَاجِرِ</span> jezelf als die zondige man te zien. Beschouw je dienst en je dienaarschap als een dankbetuiging voor verkregen gunsten, een natuurlijke opdracht, een ingeschapen plicht en een antwoord op Gods scheppingskunst, en bevrijd jezelf van hoogmoed en pronkerij.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Voorzeker, ALLAH kan deze religie ook via een zondige man laten floreren.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 147,
+                'content' => '<div class="page" id="147">
+<p class="text-end page-number">#147</p>
+
+<p><strong>Het Vierde Fragment</strong></p>
+
+<p>Als jij over waarheidskennis en ware wijsheid wil beschikken, verwerf dan kennis over de Hoogste Gerechtigde. Want alle waarheden in het bestaan zijn Stralen van De Naam: “<strong>El\'Haq</strong>” <em>(De Ware)</em>, en verschijnselen van Zijn Namen, en manifestaties van Zijn Eigenschappen. Alle materiële en immateriële oorzaken en gevolgen van alle wezens, elke waarheid achter ieder mens, zijn gefundeerd op een Licht en gebaseerd op een Waarheid van Een Goddelijke Naam. Anders zijn ze niets meer dan waardeloze gedaantes. <em>(Aan het eind van <strong>Het Twintigste Woord</strong> is er meer over dit geheim geschreven.)</em></p>
+
+<p>O ego! Indien jij een passie voor dit aardse leven hebt en van de dood vlucht, besef je dan goed dat de toestanden die jij als leven waant slechts bestaan uit de minuut waarin jij leeft. Alle momenten en aardse bezittingen voor die minuut zijn tijdens die minuut dood; ze zijn vergaan. Alle momenten na die minuut en alles wat ze omvatten, zijn tijdens die minuut non-existent en nietig. Aldus bestaat het materiële leven waar jij je op berust slechts uit een minuut; nauwlettende analisten concludeerden zelfs dat het uit een seconde, uit een voorbijvliegend ogenblik bestaat. Voorwaar, vanwege dit geheim hebben sommige heiligen de aarde vanuit een aards perspectief als non-existent bestempeld.</p>
+
+<p>Aangezien het zo is, laat het materialistische leven van het ego los; stijg naar de levensniveaus van het hart, de ziel en de mystiek, en kijk wat voor wijde levenskring zij bezitten! Het verleden en de toekomst die voor jou dood zijn, zijn voor hen levend, levendig en existent. O mijn ego! Aangezien de situatie zo is, huil zoals mijn hart, roep uit en zeg:</p>
+
+<p style="margin-bottom: 0;text-align: center;text-indent: 0;"><em>Ik ben vergankelijk, ik verlang niet naar het vergankelijke.</em></p>
+<p style="margin-bottom: 0;text-align: center;text-indent: 0;"><em>Ik ben machteloos, ik verlang niet naar het machteloze.</em></p>
+<p style="margin-bottom: 0;text-align: center;text-indent: 0;"><em>Ik heb mijn ziel aan De Barmhartige overgegeven;</em></p>
+<p style="margin-bottom: 0;text-align: center;text-indent: 0;"><em>ik verlang naar geen ander.</em></p>
+<p style="margin-bottom: 0;text-align: center;text-indent: 0;"><em>Ik koester verlangens, waar ik naar verlang is een eeuwige vriend.</em></p>
+<p style="margin-bottom: 0;text-align: center;text-indent: 0;"><em>Ik ben een atoom, maar ik verlang naar een Oneindige Zon.</em></p>
+<p style="margin-bottom: 0;text-align: center;text-indent: 0;"><em>Ik ben nietig, maar ik verlang naar heel dit bestaan, met alles erop en eraan.</em></p>
+
+</div>'
+            ],
+            [
+                'page_number' => 148,
+                'content' => '<div class="page" id="148">
+<p class="text-end page-number">#148</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Het Dertigste Woord</h2>
+</div>
+
+<p class="text-center text-red small-title"><strong>Het Eerste Doel</strong></p>
+
+<p class="text-center"><strong>[Hier wordt het mysterie van het universum ontrafeld en<br>een belangrijk raadsel van De Qur’an opgelost]</strong></p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+    <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+    <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+    <button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+ “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+&lt;/p&gt;"><sup>1</sup></button>
+</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اِنَّا عَرَضْنَا الْاَمَانَةَ عَلَى السَّمٰوَاتِ وَالْاَرْضِ وَالْجِبَالِ فَاَبَيْنَ اَنْ يَحْمِلْنَهَا وَاَشْفَقْنَ مِنْهَا وَحَمَلَهَا الْاِنْسَانُ اِنَّهُ كَانَ ظَلُومًا جَهُولًا <sup>2</sup></p>
+
+<p><em>Uit de grote schat van Deze Aya zullen wij alleen op één juweel duiden.</em></p>
+
+<p>Eén factor, één van de verscheidene aspecten die ertoe leidden dat de hemel, de aarde en de bergen voor het door God aangeboden rentmeesterschap terugdeinsden, bestaat uit het ego. Waarlijk, het ego is het zaad van een stralende Toebâ-boom en een gruwelijke Zaqqoem-boom waarvan de takken en twijgen zich vanaf de tijd van Adam tot aan het heden alom de wereld van de mensheid hebben uitgespreid. Voordat wij in deze opzienbarende waarheid gaan duiken, zullen wij eerst een voorwoord schrijven om die waarheid begrijpelijker te maken.</p>
+
+<p>Het ego is de sleutel tot de verborgen schatten der Goddelijke Namen. Daarnaast is het een lastige puzzel, een verbazingwekkend mysterie dat als de sleutel tot het mysterie van het universum dient. Door het wezen van het ego te doorgronden, kan die eigenaardige puzzel, dat buitengewone mysterie alias het ego zich ontvouwen, waarna hij het mysterie van het universum en de schatten uit de Onmisbare Wereld kan ontrafelen.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+<p class="footnote-p"><sup>2</sup> “Voorzeker, Wij hadden de hemelen, de aarde en de bergen een rentmeesterschap aangeboden, maar zij waren te bang om die last te dragen en deinsden ervoor terug. De mens daarentegen heeft die last op zich genomen; voorzeker, de mens is onrechtvaardig en onwetend.” - <em>De Heilige Qur’an</em>, 33:72</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 149,
+                'content' => '<div class="page" id="149">
+<p class="text-end page-number">#149</p>
+
+<p style="text-indent: 0">In een Arabisch traktaat van mij genaamd <strong><em>“Sjemme”</em></strong> hadden wij hierover het volgende verteld:</p>
+
+<p>De sleutel van de wereld bevindt zich in de hand van de mens; hij is in zijn ego gevestigd. Alhoewel de poorten in het universum open ogen, zijn ze in feite gesloten. De Hoogste Gerechtigde heeft de mens een dusdanige sleutel genaamd “<strong>ego</strong>” toevertrouwd, dat alle poorten in de wereld daarmee kunnen worden geopend. En Hij heeft hem een dusdanig mysterieuze identiteit gegeven, dat de mens de verborgen schatten van de Schepper der kosmos daarmee kan ontdekken. Echter, het ego zelf is ook een uiterst complexe puzzel en een moeilijk oplosbaar mysterie. Als zijn ware wezen en het geheim achter zijn schepping worden doorgrond, dan zal zowel hijzelf als het universum zich ontvouwen. Dit gebeurt als volgt:</p>
+
+<p>De Alwijze Kunstenaar heeft de mens een ego in bewaring gegeven waarin tekenen en voorbeelden schuilen die de waarheden achter Zijn Heerschappij, Zijn Eigenschappen en Zijn Gezindheden tonen en kenbaar maken, opdat dat ego als meeteenheid kan dienen om de Hoedanigheden in Gods Heerschappij en de Gezindheden der Goddelijkheid te doorgronden. Echter, een meeteenheid hoeft geen daadwerkelijk bestaan te hebben. Zoals de hypothetische lijnen van geometrie kan er hypothetisch en denkbeeldig een meeteenheid worden gevormd; er is geen behoefte aan een daadwerkelijke bestaansvorm die wetenschappelijk en concreet zou moeten worden vastgesteld.</p>
+
+<p><strong><em>Vraag</em></strong></p>
+
+<p>Waarom is de kennis over de Eigenschappen en de Namen van de Hoogste Gerechtigde aan het ego gebonden?</p>
+
+<p><strong><em>Het antwoord</em></strong></p>
+
+<p>Omdat iets dat absoluut en alomvattend is geen grenzen en limiet heeft, kan er geen vorm aan worden gegeven, noch kan het via een gedaante en een specificatie worden beoordeeld, noch kan het wezen ervan worden doorgrond. Bijvoorbeeld, een absolute lichternis zonder donkerte kan niet onderkend noch aangevoeld worden. Pas wanneer er met een werkelijke of denkbeeldige donkerte een lijn wordt getrokken, kan ze worden onderkend.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 150,
+                'content' => '<div class="page" id="150">
+<p class="text-end page-number">#150</p>
+
+<p>Voorwaar, omdat de Eigenschappen van de Hoogste Gerechtigde zoals Kennis en Macht, evenals Zijn Namen zoals De Alwijze en De Genadige Alomvattend, Onbegrensd en Onverdeeld zijn, kunnen Ze niet worden beoordeeld, noch kunnen Ze worden onderkend, noch kunnen Ze worden aangevoeld. Omdat Ze geen ware limiet en geen grenzen hebben, dient er een hypothetische en denkbeeldige grens te worden getrokken. Deze taak vervult het ego. Het ego beeldt zich in dat hij over een heerschappij, een eigenaarschap, een macht en een kennis beschikt, waarna hij een grens trekt en zich daarmee een onderscheidende grens voor Gods Alomvattende Eigenschappen inbeeldt, zeggende: <em>“Tot hiertoe behoort mij toe, wat erna komt behoort Hem toe.”</em> Zodoende doet hij via zijn kleine metingen geleidelijk kennis over het wezen van die Eigenschappen op.</p>
+
+<p>Bijvoorbeeld, met een ingebeelde heerschappij binnen de kring van zijn domein bemerkt hij binnen de kring der mogelijkheden de Heerschappij van zijn Schepper. En met zijn ogenschijnlijke eigenaarschap doorziet hij het ware Eigenaarschap van zijn Schepper en zegt: <em>“Zoals ik eigenaar van dit huis ben, is De Schepper De Eigenaar van dit universum.”</em> En met zijn beperkte kennis doorziet hij Zijn Kennis. En met zijn geconstrueerde kunstwerken onderkent hij de onvergelijkelijke kunstwerken van De Ontzaglijke Kunstenaar. Hij zegt bijvoorbeeld: <em>“Zoals ik dit huis gebouwd en geordend heb, heeft Iemand ook deze aarde als huis gebouwd en geordend.”</em> Enzovoort… zo zijn er duizenden geheime hoedanigheden, eigenschappen en gevoelens in het ego gevestigd waarmee alle Goddelijke Eigenschappen en Gezindheden onderkend en waargenomen kunnen worden.</p>
+
+<p>Aldus fungeert het ego als een spiegel, als een meeteenheid en als een middel tot ontwikkeling met een extrinsieke waarde dat uit zichzelf geen betekenis heeft en de betekenis van Een Ander weergeeft; hij is een bewuste draad uit het dikke koord van het mensenbestaan, hij is een fijne draad uit het paradijselijke gewaad van de menselijke aard en hij is een Elif<sup>1</sup> uit het boek van de Adamitische identiteit. Die Elif heeft twee gezichten.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> Noot van de vertalers: Elif (Alef in het Hebreeuws, geschreven als: ا ) is de eerste letter van het Qur\'anische alfabet. Ze heeft een getalwaarde van 1. Daarnaast is ze de bron van alle andere letters. Volgens de kalligrafische leer van Ibn Moeqla dienen alle overige letters naar de vorm van <em>“Elif”</em> te worden geschreven. Volgens dit systeem komen alle overige letters tot stand door een bepaalde kronkeling in de Elif aan te brengen. Aldus ontspruiten alle letters aan de letter Elif. Zo zijn er nog vele geheimen die betrekking hebben op de letter Elif.</p>
+</div>
+
+</div>'
+            ],[
+                'page_number' => 151,
+                'content' => '<div class="page" id="151">
+<p class="text-end page-number">#151</p>
+
+<p>Zijn ene gezicht is op heil en existentie gericht. Dat gezicht is alleen in staat om zegeningen in ontvangst te nemen. Datgene wat hem wordt aangereikt, kan hij aannemen; zelf kan hij niet creëren. Bij dit gezicht is hij niet de uitvoerder; hij is niet in staat om te scheppen.</p>
+
+<p>Het andere gezicht is op onheil gericht en mondt in non-existentie uit. Bij dit gezicht is hij de uitvoerder en de dader.</p>
+
+<p>Bovendien is zijn aard extrinsiek; hij weergeeft de betekenis van Een Ander. Zijn heerschappij is fictief. Zijn bestaan is zo zwak en fragiel, dat hij op zichzelf niets kan dulden en dragen. Zoals thermometers en luchtmeters die de waarde en de hoeveelheid van bepaalde zaken aanduiden, is hij een soort meter die de Absolute, Alomvattende en Onbegrensde Eigenschappen van de Onmisbare Existentie aanduidt.</p>
+
+<p>Voorwaar, hij die zijn aard als zodanig erkent en aanvaardt, en dienovereenkomstig handelt, zal behoren tot degenen die beduidt worden in de Aya: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">قَدْ اَفْلَحَ مَنْ زَكّٰيهَا</span>. Hij zal zijn rentmeesterschap waardig betrachten. Door de verrekijker van dat ego zal hij zien wat het universum inhoudt en wat voor taak het vervult. En wanneer informatie vanuit de buitenwereld de ziel bereikt, dan zal ze in het ego een bevestiger ontmoeten; wetenschappen zullen als licht en wijsheid voort blijven bestaan, en niet in duisternis en nietigheid eindigen.</p>
+
+<p>Nadat het ego zijn taak op deze wijze vervult, zal hij zijn taak als meeteenheid afronden en afstand van zijn ingebeelde heerschappij en zijn hypothetische hoedanigheid nemen. Hij zal: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ وَ لَهُ الْحُكْمُ وَ اِلَيْهِ تُرْجَعُونَ</span> zeggen, ware Godsdienstigheid betrachten en tot het niveau van de allermooiste compositie stijgen.</p>
+
+<p>Als dat ego de wijsheid achter zijn schepping negeert, zijn natuurlijke taak achterwege laat, zijn eigenheid naar zijn intrinsieke waarde waardeert en zichzelf eigenaar acht, dan zal hij ontrouw ten aanzien van zijn rentmeesterschap zijn. Zodoende zal hij behoren tot degenen die beschreven worden in de Aya: <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ قَدْ خَابَ مَنْ دَسّٰيهَا</span>.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Verlost zij hij die haar (de ziel) zuivert.”- <em>De Heilige Qur’an, 91:9</em></p>
+<p class="footnote-p"><sup>2</sup> “Tot Hem behoort het rijk, tot Hem behoort de lof, tot Hem behoort het oordeel en tot Hem is de wederkeer.”</p>
+<p class="footnote-p"><sup>3</sup> “Verdoemd zij hij die haar (de ziel) bederft.”- <em>De Heilige Qur’an, 91:10</em></p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 152,
+                'content' => '<div class="page" id="152">
+<p class="text-end page-number">#152</p>
+
+<p>Voorwaar, dit gezicht van het ego waaraan alle afgoderijen, onheilen en dwalingen ontspruiten, heeft de hemelen, de aarde en de bergen doen terugdeinzen; zij vreesden voor een afgodische aanname van deelgenootschap.</p>
+
+<p>Waarlijk, het ego is een dunne Elif, een draad, een symbolische grens. Echter, als zijn wezen niet wordt doorzien, dan zal hij onder de grond van verborgenheid ontkiemen en mettertijd opzwellen. Hij zal zich over het hele lichaam van de mens uitspreiden en als een enorme draak de hele existentie van de mens opslokken. Die mens zal dan met al zijn zintuigen vrijwel geheel en al een ego worden.</p>
+
+<p>Vervolgens zal ook het ego van soortgenoten middels een raciale en nationalistische ondersteuning dat ego kracht geven, waarna dat ego zich op het ego van zijn soortgenoten steunt en zich als satan tegen de geboden van De Ontzaglijke Kunstenaar verzet.</p>
+
+<p>Vervolgens zal hij zichzelf als maatstaf nemen, alles en iedereen met zichzelf vergelijken en Het Rijk van de Hoogste Gerechtigde over hen en over oorzaken onderverdelen. Zodoende zal hij in een immense afgoderij belanden en de volgende Aya vertolken: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّ الشِّرْكَ لَظُلْمٌ عَظٖيمٌ</span>.</p>
+
+<p>Waarlijk, een man die van het staatsbezit steelt, kan zijn daad pas verteren nadat hij ermee akkoord gaat dat al zijn aanwezige vrienden er ook een deel van voor henzelf innemen. Evenzo is degene die: “Ik ben eigenaar van mezelf” zegt, genoodzaakt om te zeggen en te geloven dat alles eigenaar van zichzelf is.</p>
+
+<p>Voorwaar, zolang het ego in deze verraderlijke staat verkeert, ligt hij bedolven in volstrekte onwetendheid. Ook al is hij in duizenden wetenschappen doorkneed, alsnog belichaamt hij pure onwetendheid. Immers, wanneer zijn gevoelens en gedachtes hem lichten van Godskennis uit het universum brengen, vindt hij niets in zijn ego om ze te bevestigen, te verhelderen en te bestendigen, waardoor ze uitdoven. Alles wat komt, wordt met de kleuren van zijn ego beschilderd. Wanneer pure wijsheid hem bereikt, dan zal ze in zijn ego een geheel onzinnige gestalte krijgen. Want in deze staat bestaan de kleuren van het ego uit afgoderij, uit ontbinding en uit het verloochenen van ALLAH. Al zou het hele universum overladen worden met stralende Aya’s, alsnog zou de ene donkere stip in dat ego Ze uit het zicht halen en niet laten zien.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Voorzeker, veelgodendom is een immens onrecht.”- <em>De Heilige Qur’an, 31:13</em></p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 153,
+                'content' => '<div class="page" id="153">
+<p class="text-end page-number">#153</p>
+
+<p>In <strong>Het Elfde Woord</strong> is er op een uiterst heldere wijze gedetailleerd verteld over hoezeer de menselijke aard en het ego binnen de menselijke aard – gezien hun extrinsieke waarde – als een nauwkeurige balans, een accuraat vergelijkingsinstrument, een bondige samenvatting, een voortreffelijke schets, een omvattende spiegel, en een mooie compositie en dagboek van het universum fungeren. Dat Woord behoort geraadpleegd te worden. Wij achten de details in dat Woord genoegzaam en ronden het voorwoord hier af. Als jij het voorwoord hebt begrepen, gaan wij nu over naar de werkelijkheid.</p>
+
+<p>Voorwaar, observeer: vanaf Adam tot aan het heden bestaan er in de mensenwereld twee grote stromingen en twee gedachtegangen die als twee gigantische bomen overal en in alle menselijke klassen hun takken en twijgen hebben uitgespreid. De ene bestaat uit de keten der profeetschap en religie, de andere uit de keten der filosofie en wijsbegeerte. Telkens wanneer die twee ketenen eendrachtig samenkwamen, oftewel, telkens wanneer de keten van filosofie zich bij de keten van religie aansloot, gehoorzaam was en dienst leverde, had de mensenwereld een stralende welvarendheid in de samenleving ervaren. Steeds wanneer ze afzonderlijk voortgingen, kwamen alle heil en licht bij de keten van profeetschap bijeen, terwijl alle onheil en dwaling zich rondom de keten van filosofie verzamelden. Wij behoren nu de bron en essentie van deze twee ketenen te achterhalen.</p>
+
+<p>Voorwaar, de keten van filosofie die de keten van religie niet gehoorzaamt, krijgt de gedaante van een Zaqqoem-boom en verspreidt in zijn omgeving duisternissen van afgoderij en dwaling. Immers, via zijn tak van het denkvermogen heeft hij het mensenverstand de vruchten van atheïsme, materialisme en naturalisme aangereikt. Via zijn tak van de agressieve aandrift heeft hij Nimrods, farao’s en Sjeddad’s<sup>1</sup> op het hoofd van de mensheid gestort. Aan zijn tak van het dierlijk vermogen heeft hij idolen, afgodsbeelden en mensen die goden beweren te zijn als vrucht afgeworpen en opgevoed.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> Waarlijk, de oude filosofieën van het Oude Egypte en Babylon, die als een zoogmoeder Nimrods en farao’s hebben grootgebracht, werden als magie toegepast, of ze werden in die streken als magie opgevat omdat ze buitengewoon overkwamen. Daarnaast heeft het moeras van de materialistische filosofie afgoden in de hoofden van de Oude Grieken gevestigd en afgodsbeelden gebaard. Waarlijk, een mens die door de sluier der natuur Het Licht van ALLAH niet ziet, kent aan alles een Goddelijkheid toe en compliceert alles voor zichzelf.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 154,
+                'content' => '<div class="page" id="154">
+<p class="text-end page-number">#154</p>
+
+<p>Tegenover deze Zaqqoem-boom heeft de keten van profeetschap als een Toebâ-boom van dienaarschap zijn gezegende takken binnen de tuinen van de aardbol uitgespreid. Aan zijn tak van het denkvermogen heeft hij Godsgezanten, profeten, heiligen en vromen als vruchten grootgebracht. Aan zijn tak van het afweervermogen heeft hij rechtvaardige gezaghebbers en engelachtige koningen als vrucht gegeven. Aan zijn tak van het aantrekkingsvermogen heeft hij mensen die bekend stonden om hun voorbeeldige karakter, hun onschuldige aard, hun schone verschijning, hun weldadigheid en hun vrijgevigheid als vruchten grootgebracht. Zodoende heeft hij aangetoond in welk opzicht de mens de voortreffelijkste vrucht van het universum is. De wortel van de Zaqqoem-boom en de wortel van deze boom bevinden zich aan de twee zijden van het ego. Wij zullen nu verder ingaan op de twee zijden van het ego als zijnde een fundamenteel zaad waaraan de kiem en de wortel van de twee bomen zijn ontsproten.</p>
+
+<p><em><strong>De ene zijde</strong></em> heeft het gezantschap vastgegrepen en is voortgegaan, <em><strong>de andere zijde</strong></em> heeft de filosofie gegrepen en is nader gekomen.</p>
+
+<p><strong>De eerste zijde</strong> alias de zijde van gezantschap is de wortel van pure dienaarschap. Dit houdt in dat het ego zichzelf als dienaar ziet, een ander dient en hiervan bewust is. Zijn wezen is extrinsiek. Dit wil zeggen dat hij de betekenis van Een Ander draagt en dat inziet. Zijn bestaan is onzelfstandig. Met andere woorden, dankzij het Bestaan van Een Ander bestaat hij en dankzij Diens Samenstelling is hij stabiel; hij erkent dit. Zijn eigenaarschap is fictief. Oftewel, dankzij de verleende toestemming van zijn Eigenaar bekleedt hij tijdelijk een ogenschijnlijk eigenaarschap; hij beseft dit. Zijn werkelijkheid is schaduwachtig. Met andere woorden, hij is een misbare en zielige schaduw die een reflectie van Een Wezenlijke en Onmisbare Waarheid draagt. Zijn taak bestaat uit een bewuste dienst waarbij hij de Eigenschappen en de Gezindheden van zijn Schepper waardeert en afweegt.</p>
+
+<p>Voorwaar, de Godsgezanten evenals de zuivere vromen en heiligen uit de keten van gezantschap hebben het ego vanuit deze zijde bekeken en gewaardeerd, waarna ze de waarheid hebben onderkend. Ze hebben het hele rijk aan De Eigenaar des rijks afgestaan en ze hebben geconcludeerd dat Die Ontzaglijke Eigenaar noch in Zijn Eigenaarschap, noch in Zijn Heerschappij, noch in Zijn Goddelijkheid een deelgenoot of gelijke heeft; noch heeft Hij behoefte aan hulp en bijstand.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 155,
+                'content' => '<div class="page" id="155">
+<p class="text-end page-number">#155</p>
+
+<p style="text-indent: 0">De sleutel tot alles bevindt zich in Zijn Hand, Hij bezit volstrekte Macht over alles. Oorzaken zijn visuele sluiers, de natuur is een natuurlijke Sharia, een verzameling van Zijn Wetten en een sjabloon voor Zijn Machtsvertoon.</p>
+
+<p>Voorwaar, dit stralende, lumineuze en schitterende gezicht heeft als een levend en betekenisvol zaad gediend; daaruit heeft De Ontzaglijke Schepper een Toebâ-boom van dienaarschap geschapen, waarvan de takken de gehele mensenwereld met verlichte vruchten volledig hebben versierd. Hij heeft alle duisternissen uit het verleden weggedreven en aangetoond dat het verreikende verleden geen gigantische grafakker en een oord van nietigheid is – zoals de filosofie het ziet – maar voor vertrokken zielen een bron van licht is vanwaaruit ze naar de toekomst en de eeuwige gelukzaligheid overstappen en via verscheidene treden een stralende hemelvaart beleven; voor de zielen die hun zware lasten hebben achtergelaten, vrij zijn gelaten en de aarde hebben verlaten, is het een stralend land en een tuin van lichternis.</p>
+
+<p><strong>De tweede zijde</strong> heeft de filosofie gegrepen. Zij heeft het ego naar zijn intrinsieke waarde beoordeeld. Met andere woorden, zij beweert dat het ego zelfstandig is. Zij veronderstelt dat hij op zichzelf een betekenis draagt en namens zichzelf werkt. Zij meent dat zijn bestaan ongebonden en opzichzelfstaand is. Met andere woorden, zij beweert dat hij van zichzelf wezenlijk een bestaan heeft. Zij waant dat hij over een zelfbestaansrecht beschikt en dat hij zijn actieradius daadwerkelijk meester is. Zij gelooft dat hij een stabiele waarheid belichaamt. Zij denkt dat zijn taak bestaat uit zelfontplooiing uit zelfliefde, enzovoort. Op deze wijze hebben zij hun weg op vele verderfelijke fundamenten gebaseerd.</p>
+
+<p>In andere Traktaten, met name in <strong>De Woorden</strong> en vooral in <strong>Het Twaalfde</strong> en <strong>Het Vijfentwintigste Woord</strong>, hebben wij deugdelijk bewezen hoe ongefundeerd en verrot die fundamenten zijn.</p>
+
+<p>Bovendien hebben zelfs de voortreffelijkste individuen en de grootste genieën uit de keten der filosofie, zoals Plato, Aristoteles, Ibn Sinâ en Farabî, een faraonisch standpunt ingenomen door het volgende te concluderen:</p>
+
+<p><em>“Een onmisbare existentie nabootsen, oftewel, lijken op De Onmisbare Existentie, is het allerhoogste doel van de mensheid.”</em></p>
+
+</div>'
+            ],
+            [
+                'page_number' => 156,
+                'content' => '<div class="page" id="156">
+<p class="text-end page-number">#156</p>
+
+<p>Door het ego van de mens op te zwepen en door de valleien der dwaling vrij te laten rennen, hebben zij de aanbidders van oorzaken, de beeldendienaren, de naturalisten, de vereerders van sterren en vele soortgelijke afgodendienaren in de gelegenheid gesteld om te groeien. De poorten tot de hoedanigheden die in het wezen van de mens zijn gevestigd, zoals onmacht en zwakte, behoeftigheid en armoedigheid, gebrekkigheid en feilbaarheid, hebben ze afgesloten. Zodoende hebben zij de weg naar dienaarschap versperd. Zij hebben zich aan de natuur vastgeklemd, waardoor zij zich niet volledig van veelgodendom hebben weten te bevrijden en de wijde poort van dankbetuiging niet hebben kunnen vinden.</p>
+
+<p>Gezantschap daarentegen heeft het doel en de taak van de mens op Gods scheppingskarakter en op deugdelijke normen en waarden afgestemd, waarbij hij zijn onmacht erkent en toevlucht tot Gods Macht neemt, zijn zwakte doorziet en zich op Gods Kracht steunt, zijn behoeftigheid doorziet en zich op Gods Genade berust, zijn armoedigheid doorziet en zich op Gods Weelde verlaat, zijn fouten doorziet en berouwvol naar Gods Vergeving verlangt, zijn gebrekkigheid doorziet en Gods Volmaaktheid verheerlijkt. Zodoende heeft hij een Godsdienstig standpunt ingenomen.</p>
+
+<p>Voorwaar, omdat de areligieuze filosofie van deze weg is afgeweken, heeft het ego de teugels in handen genomen en is hij elke vorm van dwaling in gaan rennen. Voorwaar, uit deze zijde van het ego is er een Zaqqoem-boom ontkiemd die meer dan de helft van de mensheid heeft bevangen.</p>
+
+<p>Voorwaar, die boom heeft aan zijn tak van het dierlijk vermogen idolen en afgoden als vruchten voor de ogen van de mensen gepresenteerd. Want volgens de kerngedachte van filosofie is kracht begerenswaardig. Bovendien maakt de stelling: <em>“Het oordeel behoort de overweldiger toe”</em> deel uit van haar grondbeginselen. Ze zegt: <em>“De overweldiger bezit kracht en in kracht schuilt de waarheid.</em><sup>1</sup><em>”</em> Zodoende heeft ze indirect onrecht toegejuicht, onrechtplegers aangemoedigd en tirannen gemotiveerd om zich als goden voor te doen.</p>
+
+<p>Bovendien heeft ze de pracht bij kunstwerken en de schoonheid bij schoonschriften aan de kunstwerken en de schoonschriften toegedicht, zonder ze aan de reflectie van de Soevereine en Heilige Schoonheid der Kunstenaar en Schoonschrijver te relateren.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> Het grondbeginsel van gezantschap luidt: <em>“Kracht schuilt in de waarheid; de waarheid schuilt niet in kracht.”</em> Zodoende wordt onrecht verhinderd en rechtvaardigheid verschaft.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 157,
+                'content' => '<div class="page" id="157">
+<p class="text-end page-number">#157</p>
+
+<p style="text-indent: 0">In plaats van <em>“Wat zijn ze mooi geschapen”</em> zegt ze: <em>“Wat zijn ze mooi.”</em> Zodoende maakt zij aanbiddelijke afgoden van ze.</p>
+
+<p>Omdat zij daarenboven een gemaakt, opschepperig, pralend en pronkerig vertoon waardeert, heeft ze pralers toegejuicht en idolen slaven van hun eigen aanbidders gemaakt<sup>1</sup>.</p>
+
+<p>Die boom heeft aan zijn tak van de agressieve aandrang kleine en grote Nimrods, farao’s en Sjeddad’s als vruchten boven het hoofd van de arme mensheid opgevoed. Aan zijn tak van het denkvermogen heeft hij vruchten als atheïsme, materialisme en naturalisme afgeworpen en het mensenbrein in duizend stukken gereten.</p>
+
+<p>Om licht op deze waarheid te werpen, zullen wij uit de duizenden afwegingen tussen de voortbrengselen die de verderfelijke fundamenten van filosofie opleveren en de voortbrengselen die de waarachtige fundamenten van gezantschap baren een aantal voorbeelden behandelen.</p>
+
+<p><strong>Bijvoorbeeld</strong>, in verband met de principiële voortbrengselen van gezantschap die betrekking hebben op het persoonlijke leven, is er volgens de norm: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">تَخَلَّقُوا بِاَخْلَاقِ اللّٰهِ</span> het volgende principe tot stand gebracht:</p>
+
+<p><em>“Stem jullie karakter af op het Goddelijke scheppingskarakter, wend jullie nederig tot de Hoogste Gerechtigde, onderken jullie onmacht, behoeftigheid en gebrekkigheid, en wees een dienaar in Zijn Hof.”</em></p>
+
+<p>Daartegenover oordeelt de filosofie volgens de norm: <em>“De Onmisbare Goddelijkheid nabootsen, impliceert het ultieme mensheidsideaal.”</em> Dientengevolge heeft ze het volgende principe tot stand gebracht: <em>“IJver om op De Onmisbare Existentie te lijken.”</em><sup>3</sup></p>
+
+<p>Waarlijk, hoe kan het menselijk wezen, dat uit eindeloze onmacht, zwakte, behoeftigheid en armoedigheid is gekneed, vergeleken worden met het Wezen van De Onmisbare Existentie Die Grenzeloos Machtig, Krachtig, Vermogend en Zelfgenoegzaam is?</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> Oftewel, doordat idolen voor hun aanbidders leuk willen overkomen en hun aandacht willen trekken, nemen ze met hun schone schijn een slaafse houding aan.</p>
+<p class="footnote-p"><sup>2</sup> “Zij hebben hun karakter op het scheppingskarakter van ALLAH afgestemd.”</p>
+<p class="footnote-p"><sup>3</sup> <strong>Noot van de vertalers:</strong> ze streeft naar Godgelijkheid.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 158,
+                'content' => '<div class="page" id="158">
+<p class="text-end page-number">#158</p>
+
+<p><strong>Het tweede voorbeeld</strong></p>
+
+<p>Onder de principiële voortbrengselen van gezantschap met betrekking tot het sociale leven is er een samenwerkingsprincipe, een weldadige wet, een begunstigend proces waarvan de invloed zich voordoet vanaf de zon en de maan tot aan de planten die de dieren tegemoetkomen, de dieren die de mensen dienen, en de voedseldeeltjes die de lichaamscellen te hulp schieten en bijstaan.</p>
+
+<p>Daartegenover is het sociale leven volgens de filosofie afhankelijk van het strijdprincipe, dat alleen geldig is voor enkele tirannieke en bloeddorstige mensen en woeste beesten die hun geaardheid misbruiken. Waarlijk, dat strijdprincipe heeft ze dusdanig fundamenteel en universeel geacht, dat ze op een krankzinnige wijze heeft geconcludeerd dat het leven een strijd is.</p>
+
+<p><strong>Het derde voorbeeld</strong></p>
+
+<p style="margin-bottom: 0">Eén van de verheven voortbrengselen en waardevolle principes van gezantschap met betrekking tot De Goddelijke Tauhied luidt:</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَلْوَاحِدُ لَا يَصْدُرُ اِلَّا عَنِ الْوَاحِدِ</p>
+
+<p><em>Oftewel, “Als er eenheid bij iets heerst, dan is dat uit één bron voortgekomen. Aangezien er bij alles eenheid heerst, is alles de creatie van Eén Entiteit.”</em></p>
+
+<p style="margin-bottom: 0">Tegenover dit monotheïstische principe staat het volgende geloofsprincipe van de oude filosofie:</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَلْوَاحِدُ لَا يَصْدُرُ عَنْهُ اِلَّا الْوَاحِدُ</p>
+
+<p><em>“Uit één komt één voort.” Oftewel, “Uit één entiteit kan slechts één wezen voortkomen. Daarna komt al het andere middels intermedia tot stand.”</em></p>
+
+<p>Door zodoende het idee te geven dat de Absoluut Zelfgenoegzame en Almachtige behoeftig is aan machteloze middelen, heeft ze aan alle oorzaken en intermedia in Zijn Heerschappij een vorm van deelgenootschap toegedicht. Aan de Ontzaglijke Schepper kent ze een schepsel genaamd <em>“Het Eerste Intellect”</em> toe, waarna ze nagenoeg Zijn overige eigendommen over oorzaken en intermedia onderverdeelt. Op basis van dit afgodische en ontspoorde principe der filosofie is er een weg naar een immense afgoderij geopend. Als de filosofen uit de hogere lagen genaamd de illuminaten al zo bazelen, kun je wel nagaan wat voor onzin de filosofen uit de lagere lagen zoals de materialisten en naturalisten kunnen uitkramen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 159,
+                'content' => '<div class="page" id="159">
+<p class="text-end page-number">#159</p>
+
+<p><strong>Het vierde voorbeeld</strong></p>
+
+<p>Op basis van het geheim achter: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ</span> onderwijst een diepzinnig principe van gezantschap het volgende:</p>
+
+<p><em>“Voor elk voortbrengsel en elke wijsheid die op een creatuur en een levend wezen zijn gericht, zijn er duizenden voortbrengselen op hun Kunstenaar en duizenden wijsheden op hun Voortbrenger gericht. Elke vrucht omvat zelfs zoveel wijsheden en voortbrengselen als het aantal vruchten van haar boom.”</em></p>
+
+<p>Tegenover dit diepzinnige principe dat pure waarheid uitdrukt, zegt de filosofie het volgende:</p>
+
+<p><em>“Het voortbrengsel van elk levend wezen is ofwel voor zichzelf ofwel voor de bevordering van de mens bedoeld.”</em></p>
+
+<p>Zodoende heeft ze als het ware aan een reusachtige boom een vrucht of een voortbrengsel ter grootte van een mosterdzaadje gehangen door onder het mom van wijsheid uiterst betekenisloze onzinnigheden via haar zogenaamd diepzinnige principes uit te kramen. Omdat deze werkelijkheid in <strong>De Tiende Waarheid van Het Tiende Woord</strong> enigszins is aangetoond, ronden wij dit onderwerp hier af.</p>
+
+<p>Voorwaar, met deze vier voorbeelden kun je wel duizenden voorbeelden vergelijken. In een Traktaat genaamd <strong><em>“Lemeât”</em></strong> hebben wij er een aantal van beduid.</p>
+
+<p>Voorwaar, ondanks deze verderfelijke fundamenten en vreselijke voortbrengselen van de filosofie, hebben Ibn Sinâ, Farabî en dergelijke geniën onder de Islamitische filosofen zich door haar schone schijn laten meeslepen en misleiden, waarna ze die weg zijn ingeslagen. Bijgevolg hebben ze slechts de rang van een simplistische gelovige kunnen behalen. Bovendien heeft El\'Hoeddjetoe-l\'Islâm imam Ghazalî ze zelfs die rang niet gegeven.</p>
+
+<p>Ook raakten de grote geleerde dialectici onder de imams van de Moetazila gefascineerd door haar verlokkelijke voorkomen, waardoor ze zich innig in die weg hebben verdiept en het intellect als de maatstaf hebben aangesteld. Bijgevolg zijn ze slechts tot de rang van een onderontwikkelde en ontspoorde gelovige kunnen stijgen.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “En er is niets of het verheerlijkt Hem met lof.”- <em>De Heilige Qur’an</em>, 17:44</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 160,
+                'content' => '<div class="page" id="160">
+<p class="text-end page-number">#160</p>
+
+<p>Ook Aboe-l\'Ala El\'Ma\'arri – die bekend staat om zijn pessimisme – Omar Khayyám – die berucht is om zijn huilerige weeklachten – en dergelijke beroemde Islamitische literatoren hebben hun kwaadgezinde ego door de egostrelende geneugten van die weg laten strelen, waardoor ze van waarheidsbewuste en hoogontwikkelde gelovigen een klap van vernedering en berisping hebben gekregen, zeggende: <em>“Jullie overschrijden de fatsoensgrenzen! Jullie worden afvallig en voeden afvalligen op!”</em> Zodoende hebben ze verstotende en corrigerende klappen ontvangen.</p>
+
+<p>Bovendien brengen de verderfelijke fundamenten van de filosofie de volgende gevolgen tot stand: ondanks dat het wezen van het ego zelf zo zwak als lucht is, zal het ego zichzelf door de heilloze optiek der filosofie naar zijn intrinsieke waarde beoordelen, waardoor dat ego bij wijze van spreken evenals mist een vloeistoffase ondergaat en mettertijd middels materiële bezigheden naar een vaste fase overgaat. Vervolgens zal dat ego via onachtzaamheid en ontkenning bevriezen. Daarna zal hij op basis van opstandigheid dof worden en zijn transparantie verliezen. Gaandeweg zal hij uitzetten en zijn eigenaar opslokken. Menselijke theorieën zullen hem laten opzwellen. Uiteindelijk zal hij andere mensen en zelfs oorzaken met zichzelf vergelijken, waarna hij aan ze allemaal – ondanks dat zij hem tegenspreken en verwerpen – een faraonisch gezag zal toekennen. Voorwaar, op dat moment neemt hij jegens de verordeningen van De Ontzaglijke Schepper een opstandige houding aan. Hij zal uitspraken doen als: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَنْ يُحْيِى الْعِظَامَ وَ هِىَ رَمٖيمٌ</span> en op een nagenoeg uitdagende wijze de Absolute Almacht van onmacht betichten. Hij zal zich zelfs in de Eigenschappen van De Ontzaglijke Schepper mengen; de Eigenschappen Die hem niet bevoordelen en de faraonische gezindheid van zijn ego niet aanstaan, zal hij ofwel afwijzen ofwel verloochenen ofwel misinterpreteren.</p>
+
+<p><strong>Tot slot</strong></p>
+
+<p>Een bepaalde groep filosofen heeft over de Hoogste Gerechtigde: <em>“Zijn Wezen is onwillekeurig”</em> gezegd en zodoende Zijn Wil ontkend; de eindeloze getuigenissen van Zijn Wil in het hele universum heeft zij verloochend. <span class="text-arabic-inline" dir="rtl" lang="ar">فَيَا سُبْحَانَ اللّٰهِ</span>, alle wezens in dit universum – vanaf atomen tot aan de zon – laten via hun indelingen, hun structureringen, hun wijsheden en hun verhoudingen de Wil van De Kunstenaar zien. Desondanks kan het blinde oog van de vervloekte filosofie dit niet zien!</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Wie gaat de ontbonden botten verwekken?”- <em>De Heilige Qur’an</em>, 36:78</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 161,
+                'content' => '<div class="page" id="161">
+<p class="text-end page-number">#161</p>
+
+<p>Daarnaast heeft een bepaalde groep filosofen het volgende beweerd: <em>“De Goddelijke Kennis houdt Zich niet bezig met kleine zaken.”</em> Zodoende heeft ze de opzienbarende omvattendheid van Gods Kennis ontkent en alle bevestigende getuigenissen van alle wezens genegeerd.</p>
+
+<p>Daarnaast heeft de filosofie invloed aan oorzaken en scheppingskracht aan de natuur toegedicht. Zoals in <strong>Het Tweeëntwintigste Woord</strong> deugdelijk is bewezen, heeft ze de specifieke en stralende Signatuur van De Alschepper niet kunnen zien, waardoor ze de machteloze, levenloze, onbewuste en blinde natuur met haar twee blinde handen genaamd toeval en kracht als de oerbron van alles heeft geprofileerd. Zodoende heeft ze bepaalde wezens, die duizenden verheven wijsheden uitdrukken en respectievelijk als brieven van De Onafhankelijke fungeren, als producten van de natuur geportretteerd.</p>
+
+<p>Daarnaast is er in <strong>Het Tiende Woord</strong> het volgende bewezen: ondanks dat Alle Namen van de Hoogste Gerechtigde, alle waarheden in het universum, alle waarheidsvindingen uit de keten van gezantschap en alle Aya’s uit De Hemelse Boeken de poort tot de wederopstanding en het hiernamaals laten zien, heeft ze die niet kunnen vinden. Bijgevolg heeft ze de wederopstanding ontkent en aan zielen een onbegonnenheid toegedicht.</p>
+
+<p style="margin-bottom: 0">Voorwaar, hun overige kwesties kun je met deze verzinsels vergelijken. Waarlijk, duivels hebben als het ware met de snavel en de klauwen van het ego het verstand van ongelovige filosofen tot de hemel geheven en in de valleien der dwaling gestort en geruïneerd. Het ego in de microwereld is als een afgod zoals de natuur is in de macrowereld.</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">فَمَنْ يَكْفُرْ بِالطَّاغُوتِ وَيُؤْمِنْ <br> بِاللّٰهِ فَقَدِ اسْتَمْسَكَ بِالْعُرْوَةِ الْوُثْقٰى لَا انْفِصَامَ لَهَا وَاللّٰهُ سَمٖيعٌ عَلٖيمٌ <sup>1</sup></p>
+
+<p>Om licht op de voornoemde waarheid te werpen, zal ik hier een verklaring geven van een parabel die ik eerder in een semi-poëtische stijl als een denkbeeldige reis in <strong><em>“Lemeât”</em></strong> had geschreven.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Waarlijk, hij die de afgoden verwerpt en in ALLAH gelooft, heeft zich aan een stevig en onwrikbaar houvast vastgeklampt; en ALLAH is Alhorend en Alwijs.”- <em>De Heilige Qur’an</em>, 2:256</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 162,
+                'content' => '<div class="page" id="162">
+<p class="text-end page-number">#162</p>
+
+<p style="margin-bottom: 0">Acht jaar voordat dit traktaat was geschreven, tijdens de Ramadan in Istanbul, toen de filosofisch beïnvloede Oude Said op het punt stond om in de Nieuwe Said te veranderen, dacht ik aan de drie wegen die in de volgende Aya aan het eind van De Edele Soera Fatiha worden benoemd:</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">صِرَاطَ الَّذٖينَ اَنْعَمْتَ عَلَيْهِمْ  غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ <br> وَ لَا الضَّٓالّٖينَ <sup>1</sup></p>
+
+<p>Op dat moment zag ik een visioen, een illustratieve gebeurtenis die op een droom leek. Ik zag mezelf in een geweldige woestijn. Een donkere, benauwende en verstikkende wolk had het hele aardoppervlak bedekt. Er was geen bries, noch licht, noch levenswater. Ik verbeeldde mij dat er overal gevaarlijke monsters en woeste schepselen rondwaarden. Mijn hart werd het volgende ingegeven: <em>“Aan de andere kant van deze vlakte is er licht, lucht en levenswater; daar moet je heengaan.”</em> Ik zag dat ik onvrijwillig naar een ondergrondse, tunnellachtige grot werd geleid. Onder de grond reisde ik voort. Ik bemerkte dat velen voor mij die ondergrondse weg waren ingegaan. Op allerlei locaties zag ik dat ze gestikt waren en niet verder waren kunnen komen. Ik zag hun voetsporen. Soms vernam ik bepaalde stemmen, waarna die stemmen op den duur ook verdwenen.</p>
+
+<p>O vriend die via zijn verbeelding mij in mijn denkbeeldige reis vergezelt! Die vlakte symboliseert de natuur en de naturalistische filosofie. Die tunnel symboliseert de weg die filosofen met hun theorieën hebben gebaand om de waarheid te bereiken. De voetsporen die ik zag waren van beroemde filosofen zoals Plato en Aristoteles<sup>2</sup>. De stemmen die ik vernam waren van genieën zoals Ibn Sinâ en Farabî. Waarlijk, op bepaalde locaties vernam ik de uitspraken en standpunten van Ibn Sinâ, waarna die naarmate ik vorderde ook op den duur volledig uitdoofden.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “De weg van degenen op wie Uw Gunsten neerdaalden; niet die van hen op wie Uw Toorn neerdaalt, noch die van hen die zijn afgedwaald.” – <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>2</sup> <strong>Mocht jij het volgende opmerken:</strong> <em>“Wie denk jij dat jij bent, dat jij zulke beroemde denkers tegenspreekt? Jij bent net een mug die opmerkingen over de vleugten van adelaars maakt.”</em><br><strong>Dan zeg ik:</strong> zolang ik een Onbegonnen Leermeester zoals De Qur’an heb, ben ik op het pad van de waarheid en Godskennis niet verplicht om die adelaars, oftewel de studenten van een buitensporige filosofie en een fantasierijk intellect, ook maar de waarde van een vliegenvleugje te geven. Hoe inferieur ik ook aan ze ben, hun leermeester blijft eindeloos inferieur aan mijn Leermeester. Dankzij de hulp van mijn Leermeester hebben de zaken waarin zij zijn verdronken mij hiel en niet eens nat kunnen maken. Waarlijk, een simpele soldaat onder het gezag en bevel van een grote koning kan meer dan de grote maarschalk van een kleine heerser voor elkaar krijgen.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 163,
+                'content' => '<div class="page" id="163">
+<p class="text-end page-number">#163</p>
+
+<p>Hij was niet verder kunnen komen, aldus was hij verdronken. Maar goed, om je nieuwsgierigheid te stillen heb ik de waarheid achter het visioen gedeeltelijk getoond. Nu keer ik terug naar mijn reis.</p>
+
+<p>Terwijl ik voortging, werden mij op een gegeven moment twee dingen aangereikt. De ene was een elektrische lamp die de duisternissen van die ondergrondse natuur verdreef. De andere was een apparaat dat grote stenen en bergachtige rotsen verpulverde en uit de weg ruimde. Mij werd het volgende ingefluisterd:</p>
+
+<p><em>“Deze elektrische lamp en dat apparaat zijn u vanuit de Qur\'anische schatten aangereikt.”</em></p>
+
+<p>Ik bleef een geruime poos voortgaan, totdat ik merkte dat ik de overkant had bereikt. Op een prachtige lentedag met geen wolk in zicht, aanschouwde ik de zon aan de hemel, voelde ik een zielstrelende bries, dronk ik van een zalig levenswater en bezichtigde ik een levendige wereld waar overal vreugde heerste. Ik zei: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span></p>
+
+<p>Vervolgens voelde ik dat ik niet mijn eigen eigenaar was. Iemand was mij aan het beproeven. Ik zag mezelf terug in mijn oude staat … in de geweldige woestijn … onder de verstikkende wolk. Daar werd ik door een stuwkracht naar een andere weg geleid. Deze keer werd ik niet ondergronds vervoerd, maar moest ik via een reis boven het oppervlak de plaats van bestemming bereiken. Tijdens die reis kwam ik met zulke vreemde en verbijsterende omstandigheden in aanraking, dat ze niet te beschrijven zijn. Zeeën waren woest op mij, stormen bedreigden mij en alles leverde mij moeilijkheden op. Echter, weer kon ik dankzij een vervoermiddel van De Qur’an verder reizen en alles te boven komen. Terwijl ik vorderde, zag ik dat er overal lijken van reizigers lagen. Slechts één op de duizend reizigers had de reis kunnen afronden. Nadat ik enige tijd voortging, werd ik uiteindelijk van die wolk verlost en had ik de andere kant van het oppervlak bereikt. Daar kwam ik oog in oog met de schitterende zon te staan. Ik ademde een zielstrelende lucht in; ik zei: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> en begon die paradijselijk mooie wereld te bewonderen.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “De lof zij ALLAH.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 164,
+                'content' => '<div class="page" id="164">
+<p class="text-end page-number">#164</p>
+
+<p>Vervolgens zag ik dat iemand mij niet toestond om daar langer te blijven. Hij bracht mij opeens weer terug naar die geweldige woestijn om mij een andere weg te laten zien. Daar zag ik vervoermiddelen die als liften van boven naar beneden kwamen. Daarvan leken sommige op vliegtuigen, sommige op auto’s en sommige op passagiersmanden. Naargelang van iemands kracht en potentie konden ze betreden worden, waarna ze omhoog werden gehesen. Ik stapte in één van die vervoermiddelen. Binnen een minuut had het mij boven de wolken gebracht. Ik eleveerde naar prachtige, sierlijke en groene bergtoppen. De verstikkende wolk kon niet eens tot de helft van die gebergten reiken. Het was daar met de zoetste lucht, het lekkerste levenswater en het schitterendste licht omringd.</p>
+
+<p>Ik keek om mij heen en merkte op dat die liftachtige vervoermiddelen overal aanwezig waren. Ik had ze tijdens mijn vorige twee reizen en aan de overkant van het oppervlak al opgemerkt, maar ik kon er toen geen betekenis aan geven. Nu begrijp ik dat ze manifestaties van Aya’s uit De Leerrijke Qur’an zijn.</p>
+
+<p>Voorwaar, de eerste weg waarop gewezen wordt in: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَلَا الضَّٓالّٖينَ</span> is de weg van degenen die in de natuur zijn blijven haken en de naturalistische denkwijze aanhouden. Jullie hebben wel gemerkt hoe problematisch het is om via die weg de waarheid en het licht te bereiken.</p>
+
+<p>De tweede weg waarop gewezen wordt in: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">غَيْرِ الْمَغْضُوبِ</span> is de weg van de vereerders van oorzaken en degenen die aan intermedia scheppingskracht en invloed toekennen. Met andere woorden, dit zijn degenen die zoals de aristotelianen slechts met het verstand en het intellect een weg naar de ultieme waarheid en naar kennis over De Onmisbare Existentie banen.</p>
+
+<p>De derde weg waarop gewezen wordt in: <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلَّذٖينَ اَنْعَمْتَ عَلَيْهِمْ</span> is de stralende laan van hen die de rechte weg aanhouden, alias de studenten van De Qur’an. Deze hemelse en stralende weg van Barmhartigheid is de kortste, kalmste en vredigste weg die voor iedereen toegankelijk is.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “En niet van degenen die dwalen.” - <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>2</sup> “Niet van zij op wie Uw Toorn rust.” - <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>3</sup> “Degenen op wie Uw Gunsten neerdalen.” - <em>De Heilige Qur’an</em>, 1:7</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 165,
+                'content' => '<div class="page" id="165">
+<p class="text-end page-number">#165</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Uit Het Tweeëndertigste Woord</h2>
+</div>
+
+<p class="text-center"><strong>[Het Tweede Thema van Het Tweede Punt]</strong></p>
+
+<p>Op het moment dat de vertegenwoordiger van het dwaalvolk geen enkele houvast meer had waarop hij zijn dwaling kon baseren en monddood was gemaakt, zei hij:</p>
+
+<p><em>“Persoonlijk zie ik dat er pas sprake kan zijn van aards geluk, levensvreugde, maatschappelijke vooruitgang en artistieke ontplooiing wanneer de mens niet aan het hiernamaals denkt, ALLAH niet kent, liefde voor de aarde koestert, vrijheid nastreeft en op zichzelf vertrouwt. Daarom heb ik de meeste mensen met behulp van satan naar deze weg geleid en dat zal ik ook blijven doen.”</em></p>
+
+<p><strong>Het antwoord</strong></p>
+
+<p>Namens de Qur’an zeggen wij: o mens, kom tot inkeer! Luister niet naar de vertegenwoordiger van het dwaalvolk! Als jij naar hem luistert, dan zal jouw verlies zo immens zijn, dat de ziel, het verstand en het hart bij de gedachte eraan al huiveren. Voor jou zijn er twee wegen.</p>
+
+<p>De ene is de ellendige weg die de vertegenwoordiger van het dwaalvolk laat zien. <strong>De andere</strong> is de voorspoedige weg die De Leerrijke Qur’an beschrijft.</p>
+
+<p>Voorwaar, vele afwegingen van die twee wegen heb je in veel Woorden en vooral in <strong>De Kleine Woorden</strong> ontwaard en doorgrond. Omdat ze betrekking hebben op dit thema zal jij hier weer één van de duizenden afwegingen ontwaren en doorgronden.</p>
+
+<p><strong>De weg van veelgodendom en dwaling, zondigheid en onzedelijkheid</strong> doet de mens mateloos diep zinken. Binnen talloze kwellingen belast hij de zwakke en machteloze rug van de mens met een gigantisch zware last. Want wanneer de mens de Hoogste Gerechtigde niet kent en zich niet op Hem verlaat, dan verwordt de mens tot een uiterst machteloos, zwak, behoeftig, armzalig, akelig en ellendig dier dat blootstaat aan grenzeloze calamiteiten.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 166,
+                'content' => '<div class="page" id="166">
+<p class="text-end page-number">#166</p>
+
+<p>Doordat hij alles waar hij liefde voor koestert en betrokken bij is geleidelijk verliest, ondergaat hij continu kwelling, waarna hij uiteindelijk al zijn overgebleven geliefden met een pijnlijke scheiding achterlaat en eenzaam het graf ingaat. En met een uiterst beperkte wil, een nietig gezag, een kortstondig leven, een vluchtige levensgang en een bekrompen denkvermogen is hij zijn hele leven met eindeloze tegenslagen en ambities vergeefs en vruchteloos aan het zwoegen en strijden om zijn eindeloze verlangens en doelen te realiseren. En ondanks dat hij zijn eigen lichaam niet eens kan dragen, heeft hij zijn arme rug en hoofd met de lasten van de enorme wereld belast. Voordat hij in de hel belandt, ondergaat hij al de bestraffing van de hel.</p>
+
+<p>Waarlijk, om te ontkomen aan deze schrijnende ellende en vreselijke geestelijke kwelling, verdooft het dwaalvolk zichzelf met een tijdelijke dronkenschap van onachtzaamheid. Echter, wanneer de verdoving uitwerkt, oftewel, wanneer het graf nadert, zal hij eensklaps alles vernemen. Immers, als hij zichzelf niet als een ware dienaar van de Hoogste Gerechtigde acht, dan zal hij veronderstellen dat hij eigenaar van zichzelf is. Desondanks kan hij met zijn beperkte wil en zijn minieme gezag in deze stormachtige wereld zijn eigen lichaam niet eens beheren. Vanaf een levensbedreigende bacterie tot aan aardbevingen zijn er vanuit zijn optiek duizenden soorten vijanden die het allemaal op zijn leven hebben gemunt. Hij verkeert in hevige angst, terwijl zijn blik voortdurend is gericht op de poort van het graf dat vreselijk voor hem oogt.</p>
+
+<p>Daarnaast is hij in deze toestand op basis van zijn menselijkheid betrokken bij de gehele mensheid en de hele wereld, terwijl hij weigert te geloven dat de wereld en de mensheid door Een Alwijze, Alwetende, Almachtige, Genadige en Genereuze Entiteit worden beheerd. Hij laat ze aan het toeval en aan de natuur over, waardoor de wereldse angsten en de menselijke toestanden hem continu kwellen. Naast zijn eigen leed draagt hij ook het leed van de mensheid. Alle aardbevingen, plagen, tsunami’s en dergelijke rampen die zich in de tijdelijke en vergankelijke wereld voordoen, zullen hem stuk voor stuk op een uiterst ellendige en duistere wijze kwellen.</p>
+
+<p>Daarnaast verdient een mens in een dusdanige staat geen genade en mededogen. Want hij brengt zichzelf in die vreselijke positie. Zoals in <strong>Het Achtste Woord</strong> is verteld bij de afweging van de situaties waarin de twee broers in de put verkeerden, zullen wij hier weer het volgende aankaarten:</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 167,
+                'content' => '<div class="page" id="167">
+<p class="text-end page-number">#167</p>
+
+<p style="text-indent: 0">wanneer iemand geen genoegen neemt met een zuiver, zoet, zedig, prettig en geoorloofd genot en plezier dat hij tijdens een gezellig feestmaal in een mooie tuin onder vrome vrienden beleeft, en vervolgens omwille van een ongeoorloofde en misselijke genieting een nare en onreine drank drinkt, dronken wordt en waant dat hij zich midwinter in een vieze locatie tussen woeste monsters bevindt, en daardoor begint te trillen, schreeuwen en gillen, dan verdient diegene geen genade. Hij ziet zijn zedige en gezegende vrienden immers als monsters en beledigt ze. Daarnaast ziet hij de lekkere gerechten en de schone kommen bij dat feestmaal als besmette en oneetbare objecten, waarna hij ze begint rond te slingeren. Daarnaast ziet hij de waardevolle boeken en de betekenisvolle brieven bij die bijeenkomst als samenstellingen van een betekenisloze en simpele woordenbrij, waarna hij ze verscheurt en onder zijn voeten vertrapt, enzovoort… een dergelijk individu verdient geen genade maar een klap.</p>
+
+<p>Evenzo, wanneer iemand met zijn kwade wil de dronkenschap van ongeloof en de dwaasheid van dwaling aanvaardt, en daardoor dit aardse gastenverblijf van De Alwijze Kunstenaar als een speeltje van toeval en de natuur beschouwt, de creaties – die de manifestaties van Goddelijke Namen verversen en na hun taakvervulling naar de verborgen wereld vertrekken – als gedoemde slachtoffers van non-existentie ziet, de Godverheerlijkende uitingen als gehuil om eeuwige teloorgang en scheiding waant, de brieven van De Onafhankelijke die geschreven zijn op de pagina\'s der wezens betekenisloos en warrig acht, de poort van het graf – die naar de wereld van Genade leidt – als de monding van een duistere vernietiging beschouwt, het doodsuur – dat een uitnodiging tot een reünie met ware geliefden is – als een beurtelingse oproep tot een eeuwige scheiding van alle geliefden ziet, dan roept hij een angstaanjagende foltering over zichzelf af, waarnaast hij alle wezens, de Namen van de Hoogste Gerechtigde en de Goddelijke Brieven verloochent, onderwaardeert en beledigt. Daarom verdient zo iemand geen genade en mededogen. Sterker nog, zonder enige vorm van genade verdient hij een felle bestraffing.</p>
+
+<p>Voorwaar, o ellendige dwaalgeesten en zedeloze zondaars! Met welke ontwikkeling, wetenschap, vaardigheid, moderniteit of progressie van jullie kunnen jullie dit vreselijke verval en deze verpletterende ontmoediging tegengaan? Waar kunnen jullie de ware troost waar de mensenziel zo behoeftig aan is vinden?</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 168,
+                'content' => '<div class="page" id="168">
+<p class="text-end page-number">#168</p>
+
+<p>En welke natuur, welke oorzaak, welke afgod, welke uitvinding, welke nationaliteit, welke valse aanbedene van jullie waar jullie zo op vertrouwen, waar jullie je op berusten en waar jullie de Goddelijke kunstwerken en de gunsten des Heren aan toedichten, kan jullie van de door jullie als eeuwige verdoemenis gewaande duisternissen des doods redden, en jullie de grenzen van het graf, de grenzen van de tussenwereld, de grenzen van de wederopstanding en de brug van Sirât gezagsmatig laten passeren, en jullie eeuwige gelukzaligheid verschaffen? Jullie hebben de poort van het graf niet kunnen sluiten, waardoor jullie hoe dan ook reizigers op deze weg zijn. Een dergelijke reiziger dient zich te steunen op Iemand Die heel deze opzienbarende kring en deze ruime grenzen onder Zijn Gezag beheert.</p>
+
+<p>Overigens, o ellendige dwaalgeesten en onachtzame zielen! Het vermogen tot liefhebben en kennis verschaffen, evenals de zintuigen voor dankbetuiging en Godsdienstoefeningen, zijn voor het Wezen, de Eigenschappen en de Namen van de Hoogste Gerechtigde bedoeld. Desondanks hebben jullie ze op een ongeoorloofde wijze voor jullie ego en voor de aarde gehanteerd, waardoor jullie volgens het geheim achter het principe: <em>“Het gevolg van een ongeoorloofde liefde is een genadeloze kwelling”</em> terecht de straf ervan ondergaan. Want de liefde die de Hoogste Gerechtigde toekomt, hebben jullie aan jullie ego gegeven. Nu ervaren jullie de eindeloze vloek van jullie geliefde ego. Immers, die geliefde van jullie schenkt jullie geen ware rust. Daarnaast leveren jullie hem niet gelaten over aan de Ware Geliefde alias de Absolute Almacht, waardoor jullie voortdurend leed verduren.</p>
+
+<p>Daarnaast hebben jullie de liefde die bedoeld is voor de Namen en de Eigenschappen van de Hoogste Gerechtigde aan de aarde gegeven, en Zijn kunstwerken hebben jullie over aardse oorzaken onderverdeeld; nu ervaren jullie de vloek daarvan. Want een deel van jullie talloze geliefden keert jullie zonder afscheid te nemen de rug toe en verdwijnt. Een ander deel kent jullie niet, als het jullie kent, dan houdt het niet van jullie, en als het van jullie houdt, dan levert het alsnog niets op. Ontelbare scheidingen en ontmoedigende, onomkeerbare verdwijningen bezorgen jullie constant kwelling.</p>
+
+<p>Voorwaar, dit is het ware gezicht en de aard van datgene wat het dwaalvolk levensgeluk, menselijke vooruitgang, positieve modernisme en zoete vrijheid noemt. Onzedelijkheden en dronkenschap fungeren als een sluier, waardoor ze tijdelijk niets vernemen. Zeg: <em>“Wee hun verstand!”</em></p>
+
+</div>'
+            ],
+            [
+                'page_number' => 169,
+                'content' => '<div class="page" id="169">
+<p class="text-end page-number">#169</p>
+
+<p>De stralende laan van De Qur’an daarentegen heelt aan de hand van geloofswaarheden alle wonden waaraan het dwaalvolk lijdt. Hij verdrijft alle duisternissen van de voornoemde weg. Hij sluit alle poorten tot dwaling en verdoemenis. Dit doet Hij als volgt:</p>
+
+<p>De zwakte, de onmacht, de behoeftigheid en de armoedigheid van de mens heelt Hij door middel van overgave aan De Genadige Almachtige. De lasten van het leven en het lichaam levert Hij over aan Gods Macht en Genade, zonder de mens daarmee te belasten, waardoor de mens een geruststellende positie inneemt waarbij hijzelf bij wijze van spreken zijn leven en zijn ego bestijgt. Hij laat de mens weten dat hij geen sprekend dier, maar een waar mens en een gewaardeerde gast van De Barmhartige is. Door de aarde als een gastenverblijf van De Barmhartige weer te geven, de wezens op aarde als spiegels van Goddelijke Namen te definiëren, en de creaties als voortdurend verversende brieven van De Onafhankelijke te beschrijven, heelt Hij de wonden die de mens door de vergankelijkheid van de aarde, de teloorgang van creaturen en de liefde voor vergankelijke schepselen oploopt; Hij bevrijdt de mens van de duisternissen der argwaan.</p>
+
+<p>Daarnaast schetst Hij de dood en het doodsuur als de beginfase van een samenkomst en een reünie met geliefden die naar de tussenwereld zijn vertrokken en zich in de eeuwige wereld begeven. Zodoende heelt Hij de wonden van de dood die voor het dwaalvolk als een eeuwige scheiding van geliefden oogt. En Hij bewijst dat scheiding in feite de basis van een reünie is.</p>
+
+<p>Daarnaast bewijst Hij dat het graf een poort tot de wereld van Genade, het oord van gelukzaligheid, de paradijselijke tuinen en het schitterende land van De Barmhartige is. Zodoende verdrijft Hij de grootste angst van de sterveling en toont Hij aan dat de uiterst ellendige, deprimerende en benauwende reis naar de tussenwereld eigenlijk een meest plezierige, vertrouwde en verademende reis is. Hij sluit het graf en de muil van de draak, en opent de deur naar een prachtige tuin. Met andere woorden, Hij laat zien dat het graf geen muil van een draak, maar een poort tot de tuinen van Genade is.</p>
+
+<p>Daarnaast zegt Hij tegen een gelovige: als je wil beperkt is, laat je taak dan over aan de Universele Wil van jouw Eigenaar. Als je vermogen ontoereikend is, berust je dan op de Macht van de Absolute Almacht. Als je leven onbevredigend is, denk dan aan het eeuwige leven.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 170,
+                'content' => '<div class="page" id="170">
+<p class="text-end page-number">#170</p>
+
+<p style="text-indent: 0">Als je levenstijd kort is, maak je dan geen zorgen; er staat jou een oneindig leven te wachten. Als je inzicht wazig is, verplaats jezelf dan onder De Zon van De Qur’an en kijk met het licht des geloofs, opdat elke Aya jou ter vervanging van je vuurvliegachtige inzicht licht als eens ster verschaft. Als jij met grenzeloze doelen en tegenslagen worstelt, weet dan dat jou een oneindige zegen en een grenzeloze genade staan te wachten. Als jij eindeloze wensen en ambities hebt, blijf dan niet om ze piekeren en stressen. Zij zijn immers te groot voor deze wereld; hun bestemming is elders en Degene Die ze waarmaakt is niet werelds.</p>
+
+<p>Daarnaast zegt Hij: o mens, jij bezit jezelf niet! Jij bent de onderdaan van Een Ontzaglijke Entiteit Die een Oneindige Macht en een Grenzeloze Genade bezit. Maak het jezelf dus niet moeilijk door je levenslasten op je te nemen. Want Hij is Degene Die het leven schenkt, Hij is ook Degene Die het beheert. Tevens is de aarde geen wereld zonder eigenaar. Zadel de lasten van de wereld dus niet op je hoofd, hou je niet bezig met haar beangstigende toestanden en maak je niet druk. Haar Eigenaar is immers Alwijs en Alwetend. En jij bent een gast, dus hou je gedeisd; wees geen bemoeial en geen oproermaker.</p>
+
+<p>Daarnaast zijn mensen, dieren en dergelijke wezens niet bandeloos; ze zijn dienstdoende ambtenaren onder Toezicht van Een Alwijze Genadige. Berokken je ziel dus geen leed door hun doorleefde moeilijkheden en moeiten in gedachte te brengen; plaats jouw mededogen niet verder dan de Genade van De Genadige Schepper. En de teugels van alles wat zich vijandig tegen jou opstelt, vanaf een bacterie tot aan plagen, tsunami’s, schaarstes en aardbevingen, bevinden zich in De Hand van De Genadige Alwijze. Hij is Alwijs; niets wat Hij doet is zinloos. Hij is Genadig; Zijn Genade is verreikend. Ieder werk van Hem bevat een vorm van weldadigheid.</p>
+
+<p>Daarnaast zegt Hij: alhoewel deze wereld vergankelijk is, kweekt ze de benodigdheden voor een eeuwige wereld. Hoewel ze tijdelijk en voorbijgaand is, werpt ze eeuwige vruchten af en laat ze De Eeuwige Namen van Een Eeuwige Entiteit zien. En hoewel haar geneugten gering en haar smarten talrijk zijn, baren de Belangstellingen van De Barmhartige Genadige ware en onvergankelijke genietingen. En uit het oogpunt van zegeningen leveren zelfs kwellingen genietingen op.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 171,
+                'content' => '<div class="page" id="171">
+<p class="text-end page-number">#171</p>
+
+<p style="text-indent: 0">Aangezien de geoorloofde kring voor alle genietingen, geneugten en voldoeningen van de ziel, het hart en het ego toereikend is, behoor je de ongeoorloofde kring te mijden. Want één genieting binnen die kring bevat soms duizend kwellingen. Tevens kan het ertoe leiden dat jij het ware en aanhoudende genot achter de Aandacht van De Barmhartige verliest.</p>
+
+<p>Daarnaast doet de dwaalweg – zoals voorheen beschreven – de mens zo diep richting de allerlaagste laagtes zinken, dat geen enkele beschaving en geen enkele filosofie daar een oplossing voor kan vinden, en geen enkele menselijke ontwikkeling en geen enkele wetenschapstheorie hem uit die diepe put der duisternissen kan bevrijden, terwijl De Leerrijke Qur’an de mens middels geloof en vrome daden vanaf de allerlaagste laagtes naar de allerhoogste hoogtes eleveert, waarnaast Hij die elevatie ook met onbetwistbare bewijzen aantoont. En die diepe put vult Hij met treden voor een spirituele verheffing en met middelen voor de ontwikkeling van de ziel.</p>
+
+<p>Daarnaast maakt Hij de lange, stormachtige en lastige reis der mensheid richting de eeuwigheid heel wat lichter en begaanbaarder. Hij toont vervoermiddelen waarmee een afstand van duizend en misschien zelfs vijftigduizend jaar in één dag kan worden afgelegd.</p>
+
+<p>Daarnaast verschaft Hij kennis over De Ontzaglijke Entiteit en geeft Hij de mens ten aanzien van Die Onbegonnen en Oneindige Sultan de positie van een toegewezen dienaar en een taak-georiënteerde gast. Daarnaast zorgt Hij ervoor dat de mens zijn reis in volle vrede door dit aardse gastenverblijf, langs de stopplaatsen in de tussenwereld en in het hiernamaals kan afleggen. Zoals een rechtzinnige functionaris van een koning vrij in het koninkrijk kan bewegen en de grenzen van alle streken moeiteloos met een vliegtuig, een boot, een trein of dergelijke vervoermiddelen snel kan passeren, kan een mens die zich geloofsmatig met De Onbegonnen Sultan bindt en Hem met vrome daden gehoorzaamt, de tussenstations in dit aardse gastenverblijf, de kringen van de tussenwereld, de wereld van de wederopstanding en de wijde grenzen van alle werelden na het graf bliksemsnel als Burâq passeren en eeuwige gelukzaligheid ontmoeten. Naast dat Hij deze waarheid op een onbetwistbare wijze bewijst, maakt Hij haar voor zuivere vromen en heiligen zichtbaar.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 172,
+                'content' => '<div class="page" id="172">
+<p class="text-end page-number">#172</p>
+
+<p>Daarnaast zegt De Waarheid van De Qur’an: o gelovige! Wijd jouw onbegrensde liefdesvermogen niet aan je lelijke, gebrekkige, onheilzame en kwaadaardige ego dat giftig voor jou is. Beschouw hem niet als jouw geliefde, noch zijn lusten als jouw aanbedene. Wijd jouw onbeperkte liefdesvermogen aan Degene Die onbeperkte liefde waard is, Die jou grenzeloze gunsten kan schenken, Die jou in de toekomst voor altijd gelukkig kan maken, Die alle individuen waar jij een band mee hebt en wier voorspoed jou gelukkig maakt met Zijn gunsten gelukzaligheid kan verschaffen, Die Eindeloze Volmaaktheden bezit, Die alzijdig een oneindig Heilige, Verheven, Zuivere, Feilloze, Onberispelijke en Onvergankelijke Schoonheid bezit, Wiens Namen eindeloos prachtig zijn en talloze Lichten van Pracht en Schoonheid herbergen, Wiens Schone Genade en Genadige Schoonheid via alle schoonheden en gunsten in het paradijs worden gedemonstreerd, Wiens Schoonheid en Volmaaktheid door alle beminnelijke en beminde bekoorlijkheden, schoonheden, aantrekkelijkheden en volmaaktheden in het universum worden beduid, bevestigd en bewezen; maak Hem jouw Geliefde en jouw Aanbedene.</p>
+
+<p>Bovendien zegt Hij: o mens! Wijd je liefdesvermogen dat voor Zijn Namen en Eigenschappen zijn bedoeld, niet aan andere voorbijgaande wezens; verkwist het niet zinloos aan hulpeloze schepselen. Creaties en schepselen zijn immers vergankelijk. Echter, De Schone Namen waarvan de schoonschriften en manifestaties op die creaties en kunstwerken verschijnen, zijn daarentegen Eeuwig en Onveranderlijk. En al Zijn Namen en Eigenschappen omvatten respectievelijk duizenden niveaus van gunsten en schoonheden, evenals duizenden graden van volmaaktheden en liefdevormen. Observeer alleen De Naam “Barmhartige”, waar het paradijs één manifestatie, de eeuwige gelukzaligheid één flits en alle onderhoud en gunsten op aarde één druppel van zijn.</p>
+
+<p>Voorwaar, kijk naar de Aya Die de hoedanigheid van de leef- en taakomstandigheden van dwaalgeesten en gelovigen beduidt:</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">لَقَدْ خَلَقْنَا الْاِنْسَانَ فٖٓى اَحْسَنِ تَقْوٖيمٍ ۞ <br> ثُمَّ رَدَدْنَاهُ اَسْفَلَ سَافِلٖينَ ۞ <br> اِلَّا الَّذٖينَ اٰمَنُوا وَ عَمِلُوا الصَّالِحَاتِ <sup>1</sup></p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Voorzeker, Wij hebben de mens volgens de allermooiste compositie geschapen. Vervolgens hebben Wij hem tot de allerlaagste laagtes laten dalen. Behalve degenen die geloven en vrome daden verrichten.” - <em>De Heilige Qur’an</em>, 95:4-5-6</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 173,
+                'content' => '<div class="page" id="173">
+<p class="text-end page-number">#173</p>
+
+<p>En kijk naar de Aya Die hun afloop en eindbestemming beduidt:</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">فَمَا بَكَتْ عَلَيْهِمُ السَّمَٓاءُ وَ الْاَرْضُ<sup>1</sup></p>
+
+<p>Kijk hoe verheven en miraculeus Deze Aya\'s onze voornoemde afweging verwoorden.</p>
+
+<p><strong>De eerste Aya</strong> drukt op een miraculeuze en eloquente wijze een waarheid uit die in <strong>Het Elfde Woord</strong> gedetailleerd is behandeld. Daarom verwijzen wij door naar dat Woord.</p>
+
+<p><strong>De tweede Aya</strong> zullen wij met een kleine aanwijzing in behandeling nemen om te laten zien wat voor verheven waarheid Hij uitdrukt.</p>
+
+<p>Op een expliciete wijze verkondigt Deze Aya het volgende:</p>
+
+<p><em>“Wanneer dwalers sterven, huilen de hemelen en de aarde niet om hen.”</em></p>
+
+<p>Aldus verkondigt Hij op een impliciete wijze het volgende:</p>
+
+<p><em>“Wanneer gelovigen sterven, huilen de hemelen en de aarde om hen.”</em></p>
+
+<p>Kortom, aangezien de dwaalgeesten de taken van de hemelen en de aarde verloochenen, hun betekenissen niet begrijpen, hun waarde nullificeren en hun Kunstenaar niet erkennen, nemen zij een denigrerende en vijandige houding jegens hen aan. Daarop zullen de hemelen en de aarde uiteraard geen traan om ze laten, maar een afkeer van ze krijgen en opgetogen over hun afsterving raken.</p>
+
+<p>En het tegenstellend verband van de Aya zegt: <em>“De hemelen en de aarde huilen wanneer gelovigen sterven.”</em> Immers, gelovigen erkennen de taken van de hemelen en de aarde. Zij bevestigen de wezenlijke waarheid die zij dragen. En dankzij het geloof begrijpen zij de betekenissen die zij uitdrukken. Zij zeggen: <em>“Wat zijn zij schitterend samengesteld, wat vervullen zij voortreffelijke diensten.”</em> Zij waarderen hen naar de waarde die zij verdienen en stellen zich respectvol op. Namens de Hoogste Gerechtigde hebben zij die creaties evenals de Namen die zij weerspiegelen lief.</p>
+
+<p>Voorwaar, vanwege dit geheim treuren de hemelen en de aarde zozeer, dat ze nagenoeg moeten huilen om het vertrek van de gelovigen.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “De hemelen en de aarde huilen niet om hen.” - <em>De Heilige Qur’an</em>, 44:29</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 174,
+                'content' => '<div class="page" id="174">
+<p class="text-end page-number">#174</p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+ “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+&lt;/p&gt;"><sup>1</sup></button>
+</p>
+
+<p style="margin: 0 auto;margin-bottom: 0.5em" class="text-center text-arabic delima-font" dir="rtl" lang="ar">فَنَادٰى فِى الظُّلُمَاتِ اَنْ لَٓا اِلٰهَ اِلَّٓا اَنْتَ سُبْحَانَكَ اِنّٖى كُنْتُ مِنَ الظَّالِمٖينَ <sup>2</sup> ۞ اِذْ نَادٰى رَبَّهُٓ اَنّٖى مَسَّنِىَ الضُّرُّ وَاَنْتَ اَرْحَمُ الرَّاحِمٖينَ <sup>3</sup> ۞ فَاِنْ تَوَلَّوْا فَقُلْ حَسْبِىَ اللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظٖيمِ <sup>4</sup> ۞ حَسْبُنَا اللّٰهُ وَنِعْمَ الْوَكٖيلُ <sup>5</sup> ۞ لَا حَوْلَ وَلَا قُوَّةَ اِلَّا بِاللّٰهِ الْعَلِىِّ الْعَظٖيمِ <sup>6</sup> ۞ يَا بَاقٖى اَنْتَ الْبَاقٖى <sup>7</sup> ۞ يَا بَاقٖى اَنْتَ الْبَاقٖى <sup>7</sup> ۞ لِلَّذٖينَ اٰمَنُوا هُدًى وَ شِفَٓاءٌ <sup>8</sup></p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>De Eerste Flits</h2>
+</div>
+
+<p>De smeekbede van Younus ibn Mettâ – mogen vrede en zegeningen neerdalen op onze profeet en op hem – is een ultieme smeekbede en een uiterst effectief middel ter verhoring van een bede.</p>
+
+<p>Het bekende verhaal van Younus <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> in het kort:</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+<p class="footnote-p"><sup>2</sup> “In de duisternissen riep hij uit: \'Er is geen God behalve U, U bent Feilloos; voorzeker, ik behoor tot de onrechtplegers.\'” - <em>De Heilige Qur’an</em>, 21:87</p>
+<p class="footnote-p"><sup>3</sup> “Hij riep zijn Heer aan, zeggende: \'Waarlijk, ellende heeft mij terneergeslagen en U bent de Genadigste der genadigen.\'” - <em>De Heilige Qur’an</em>, 21:83</p>
+<p class="footnote-p"><sup>4</sup> “Indien zij zich alsnog afwenden, zeg dan: ALLAH is mij voldoende; ik vertrouw op Hem en Hij is de Heer van de Geweldige Troon.” - <em>De Heilige Qur’an</em>, 9:129</p>
+<p class="footnote-p"><sup>5</sup> “ALLAH is ons voldoende en Hij is de Beste Beschermheer.” - <em>De Heilige Qur’an</em>, 3:173</p>
+<p class="footnote-p"><sup>6</sup> “Er is geen vermogen en er is geen kracht, behalve bij ALLAH, de Verhevene, de Majestueuze.”</p>
+<p class="footnote-p"><sup>7</sup> “O Eeuwige, U bent de Eeuwige; O Eeuwige, U bent de Eeuwige.”</p>
+<p class="footnote-p"><sup>8</sup> “Een Leiding en Genezing voor gelovigen.” - <em>De Heilige Qur’an</em>, 41:44</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 175,
+                'content' => '<div class="page" id="175">
+<p class="text-end page-number">#175</p>
+
+<p>Hij werd de zee ingegooid en door een grote vis opgeslokt. De zee was woelig, de nacht was stormachtig en duister, en in een toestand waarin alle hoop vanuit alle kanten vervlogen was, werd opeens de smeekbede: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّٓا اَنْتَ سُبْحَانَكَ اِنّٖى كُنْتُ مِنَ الظَّالِمٖينَ</span> zijn reddingsmiddel.</p>
+
+<p>Het opzienbarende geheim achter deze smeekbede is het volgende:</p>
+
+<p>In die toestand waren alle oorzaken machteloos. Want in die staat is er behoefte aan Een Entiteit Wiens Gezag zowel de vis als de zee als de nacht als het hemelruim moet omvatten. Immers, de nacht, de zee en de vis hadden zich unaniem tegen hem gekeerd. Alleen Een Entiteit Die ze alle drie gelijktijdig aan Zijn Bevel kon onderwerpen, zou hem naar de vredige kust kunnen voeren. Al zou het hele volk zijn dienaar en zijn helper zijn geweest, dan had het alsnog niets voor hem kunnen betekenen. Aldus oefenen oorzaken geen invloed uit. Omdat hij met een visuele zekerheid inzag dat niets buiten De Veroorzaker van oorzaken om een toeverlaat kon zijn, en omdat het geheim van Enigheid zich binnen het Licht van Tauhied openbaarde, had deze smeekbede opeens de nacht, de zee en de walvis tot bedaren gebracht. Dankzij dat Licht van Tauhied liet ze de maag van de walvis als een onderzeeër dienen. De woelige zee met haar onstuime en reusachtige golven veranderde ze via dat Licht van Tauhied in een stille Sahara, een ontspanningsoord en een bezienswaardigheid. En aan de hand van dat Licht had ze de wolken aan het hemelgewelf weggeveegd en de maan als een nachtlamp boven zijn hoofd laten schijnen. De schepselen die hem van alle kanten dreigden en tergden, lieten in alle opzichten hun vriendelijke kant aan hem zien. Uiteindelijk bereikte hij de vredige kust en aanschouwde hij die gunst des Heren onder een bladplant.</p>
+
+<p>Voorwaar, de toestand waarin wij verkeren is duizendmaal ernstiger dan de eerste toestand van Younus <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span>. Onze nacht is de toekomst. Onze onachtzame blik maakt onze toekomst honderdmaal duisterder en enger dan zijn nacht. Onze zee is ons instabiele aardoppervlak. Op elke golf van deze zee drijven duizenden lijken; ze is duizendmaal angstaanjagender dan zijn zee. Ons genotzuchtige ego is onze walvis; hij beklemt ons eeuwige leven en probeert het te verwoesten. Deze walvis is duizendmaal kwaadaardiger dan zijn walvis.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Er is geen God behalve U, U bent Feilloos; voorzeker, ik behoor tot de onrechtplegers.” - <em>De Heilige Qur’an</em>, 21:87</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 176,
+                'content' => '<div class="page" id="176">
+<p class="text-end page-number">#176</p>
+
+<p style="text-indent: 0">Immers, zijn walvis kan hoogstens een leven van honderd jaar verwoesten. Onze walvis daarentegen zet zich in om een leven van honderden miljoenen jaren te verwoesten.</p>
+
+<p>Aangezien dit onze ware toestand is, dienen wij in het voetspoor van Younus <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> ons gezicht van alle oorzaken af te wenden en rechtstreeks beroep op De Veroorzaker van oorzaken alias onze Heer te doen. Wij behoren: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَا اِلٰهَ اِلَّا اَنْتَ سُبْحَانَكَ اِنّٖى كُنْتُ مِنَ الظَّالِمٖينَ</span> te zeggen en met een visuele overtuiging in te zien dat de toekomst, de aarde en het genotzuchtige ego zich door onze onachtzaamheid en onze dwaling unaniem tegen ons hebben gekeerd, en dat hun verderf alleen verdreven kan worden door Een Entiteit Die de toekomst onder Zijn Bevel, de aarde onder Zijn Gezag en ons ego onder Zijn Bewind beheert. Welke oorzaak buiten De Schepper der hemelen en aarde om zou op de hoogte van onze diepste hartsgeheimen kunnen zijn, de toekomst voor ons middels de creatie van het hiernamaals kunnen verlichten en ons van de honderdduizend verstikkende golven op aarde kunnen redden? Godverhoede! Buiten De Onmisbare Existentie om kan niets zonder Zijn Toestemming en Wil op geen enkele wijze hulp bieden en als redder dienen.</p>
+
+<p>Aangezien de ware toestand zo is, en aangezien die smeekbede voor Younus <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> ertoe leidde dat de walvis als vervoermiddel, als onderzeeër diende, de zee als een oogstrelende Sahara oogde en de nacht met de maanschittering een beeldschone verschijning kreeg, dienen wij op basis van het geheim achter die smeekbede ook: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَا اِلٰهَ اِلَّا اَنْتَ سُبْحَانَكَ اِنّٖى كُنْتُ مِنَ الظَّالِمٖينَ</span> uit te spreken.</p>
+
+<p>Wij behoren Zijn Genadige Blik met de zin: <sup>2</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَا اِلٰهَ اِلَّا اَنْتَ</span> tot onze toekomst, met het woord: <sup>3</sup><span class="text-arabic-inline" dir="rtl" lang="ar">سُبْحَانَكَ</span> tot onze wereld en met de formulering: <sup>4</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِنّٖى كُنْتُ مِنَ الظَّالِمٖينَ</span> tot ons ego aan te trekken, opdat onze toekomst met het geloofslicht en de Qur’anische Schittering wordt verlicht, en onze angstaanjagende en woeste nacht gemoedelijk en vriendelijk wordt.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Er is geen God behalve U, U bent Feilloos; voorzeker, ik behoor tot de onrechtplegers.” - <em>De Heilige Qur’an</em>, 21:87</p>
+<p class="footnote-p"><sup>2</sup> “Er is geen God behalve U”</p>
+<p class="footnote-p"><sup>3</sup> “U bent Feilloos”</p>
+<p class="footnote-p"><sup>4</sup> “Waarlijk, ik behoor tot de onrechtplegers.” - <em>De Heilige Qur’an</em>, 21:87</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 177,
+                'content' => '<div class="page" id="177">
+<p class="text-end page-number">#177</p>
+
+<p>En in onze wereld en op ons aardoppervlak, waar talloze lijken met de cyclus van leven en dood de golven van jaren en eeuwen bestijgen en in het niets worden gesmeten, dienen wij plaats te nemen op een spiritueel schip dat uit de waarheden der Islam in het bouwdok van De Leerrijke Qur’an is samengesteld, opdat wij die zee vreedzaam kunnen bevaren en de veilige kust kunnen bereiken wanneer onze levenstaak is volbracht. De stormen en onstuimigheden op die zee zullen als beelden op een bioscoopdoek het uitzicht tijdens de levenstocht verversen en in plaats van paniek en angst aan te jagen, zullen ze de leergierige en bezinnende blik plezierend strelen en verlichten. En dat Qur’anische geheim, Die Furqânische opvoeding, zal ervoor zorgen dat ons ego niet ons bestijgt, maar dat wij hem als voertuig bestijgen opdat hij als een sterk middel kan dienen om ons in het hiernamaals te laten zegevieren.</p>
+
+<p><strong>Tot slot</strong></p>
+
+<p>De omvattende aard van de mens leidt ertoe dat lichamelijke rillingen hem aangrijpen, evenals aardse bevingen en trillingen, en de ultieme schokken in het universum tijdens de oordeelsdag hem aangrijpen. En zoals hij bang is voor een microscopische bacterie, is hij evenzeer bang voor een meteoor die aan de sterrenhemel verschijnt. En zoals hij houdt van zijn huis, houdt hij evenzeer van de enorme aarde. En zoals hij liefde koestert voor zijn kleine tuin, koestert hij evenzeer een smachtende liefde voor het eindeloze paradijs.</p>
+
+<p>Uiteraard kan De Aanbedene, De Heer, De Toeverlaat, De Bevrijder en Het Streven van een dergelijk mens slechts Een Entiteit zijn Die het hele universum onder Zijn Gezag beheert; zowel de atomen als de sterren zijn onderhevig aan Zijn Bevel.</p>
+
+<p>Uiteraard heeft een dergelijk mens altijd de behoefte om in het voetspoor van Younus <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَا اِلٰهَ اِلَّا اَنْتَ سُبْحَانَكَ اِنّٖى كُنْتُ مِنَ الظَّالِمٖينَ</span> uit te spreken.</p>
+
+<p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">سُبْحَانَكَ لَا عِلْمَ لَنَٓا اِلَّا مَا عَلَّمْتَنَٓا اِنَّكَ اَنْتَ الْعَلٖيمُ الْحَكٖيمُ <sup>2</sup></p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “Er is geen God behalve U, U bent Feilloos; voorzeker, ik behoor tot de onrechtplegers.” - <em>De Heilige Qur’an</em>, 21:87</p>
+<p class="footnote-p"><sup>2</sup> “U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - <em>De Heilige Qur’an</em>, 2:32</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 178,
+                'content' => '<div class="page" id="178">
+<p class="text-end page-number">#178</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>De Vijfde Nota</h2>
+</div>
+
+<p class="text-center"><strong>[Uit De Zeventiende Flits]</strong></p>
+
+<p>Omdat de Europese wetenschappen en ideologieën de gedachtegang van De Oude Said enigszins hadden beïnvloed, hadden ze tijdens een gedachtestroom van De Nieuwe Said veel problemen veroorzaakt en tijdens een spirituele reis in mijn hart ziektes teweeggebracht. Toen de Nieuwe Said de misleidende filosofieën en de zedeloze ideologieën van zijn bevattingsvermogen wilde afschudden, en de egoïstische en pro-Europese gevoelens in zijn ziel het zwijgen wilde opleggen, werd hij gedwongen om de aankomende enerzijds lange en anderzijds korte dialoog met de geestelijke persoonlijkheid van Europa aan te gaan.</p>
+
+<p>Laat dit niet verkeerd begrepen worden. Er zijn twee Europa’s. Het Eerste Europa, dat op basis van de inspiratie uit het ware Christendom het menselijke gemeenschapsleven met gunstige vindingen bevordert en de wetenschappen ten dienste van rechtvaardigheid en de waarheid volgt, spreek ik hier niet aan. Ik spreek het tweede, verdorven Europa aan, dat in de duisternissen van naturalistische filosofieën de zonden van moderne ideologieën welkom heet, en de mensheid naar zedeloosheid en dwaling dirigeert.</p>
+
+<p>De geestelijke persoonlijkheid van het Tweede Europa, dat zich in plaats van moderne nuttigheden en gunstige wetenschappen aan zinloze en giftige filosofieën evenals kwaadaardige en zedeloze moderniteiten vastklampt, heb ik destijds tijdens mijn spirituele reis als volgt aangesproken:</p>
+
+<p>Weet, o tweede Europa! Met een verdorven en ontspoorde filosofie in je rechterhand, en een zedeloze en kwaadaardige modernisering in je linkerhand, beweer jij het volgende: <em>“Het geluk van de mensheid schuilt in mijn twee handen.”</em> Mogen je beide handen breken en mogen je twee walgelijke geschenken je hoofd verslinden, wat vroeg of laat ook zal gebeuren.</p>
+
+<p>O verdorven ziel die ongeloof en godverloochening propageert en verspreidt! Kan een gefolterde man, wiens ziel, geweten, verstand en hart slachtoffers van angstaanjagende calamiteiten zijn, ooit geluk ondervinden door zich fysiek op schone schijn en weelde te werpen? Kan zo iemand gelukkig worden genoemd?</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 179,
+                'content' => '<div class="page" id="179">
+<p class="text-end page-number">#179</p>
+
+<p>Zie je dan niet dat een mens door een simpele beleving van streek kan raken, door een onvervulbare wens zijn hoop kan verliezen en door een onbeduidende zaak bitter teleurgesteld kan worden, waardoor zijn zoete dromen verzuren, mooie toestanden hem kwellen, en de wereld voor hem te krap wordt en in een gevangenis verandert? Wat voor geluk heb jij te bieden aan een arme mens die door jouw onheil in de grond van zijn hart en in de kern van zijn ziel de klap van dwaling heeft opgelopen, en vanwege die dwaling al zijn verlangens vergeefs ziet bezwijken en al zijn leed aan die dwaling heeft te danken? Kan een mens, die fysiek in een vals en vergankelijk paradijs leeft, terwijl zijn hart en zijn ziel in een hel verkeren, gelukkig worden genoemd? Voorwaar, jij hebt de arme mensheid op deze wijze misleid; in een vals paradijs laat je haar een helse kwelling ondergaan.</p>
+
+<p>O kwaadgezinde ego van de mens! Kijk naar het aankomende voorbeeld en zie in waar jij de mensheid naartoe drijft. Voor ons bevinden zich twee wegen. Wij slaan één van die wegen in en treffen onderweg bij elke stap die wij zetten een arme, machteloze man aan. Kwaaddoeners vallen hem aan, nemen zijn bezittingen in beslag en verwoesten zijn woning. Soms verwonden ze hem zodanig dat zelfs de hemel om zijn hartverscheurende toestand moet huilen. Overal waar wij kijken zien wij dit soort scenario\'s. Geluiden die op die weg vernomen worden, ontstaan door ofwel de oproer van de kwaaddoeners, ofwel het gehuil van de slachtoffers. Aldus is dat hele land in rouw gedompeld. Omdat een mens vanwege zijn menselijkheid gekweld wordt door andermans leed, ondergaat hij een grenzeloze kwelling. Het geweten kan een dergelijke kwelling echter niet verdragen, waardoor de volger van die weg gedwongen is om een keuze uit twee opties te maken. Of hij moet afstand van zijn menselijkheid nemen, grenzeloze gruweldaden nodig achten en een hart dragen dat – zolang hijzelf in veiligheid verkeert – de ondergang van de rest hem niet deert. Of hij moet de invloeden van het hart en het verstand uitschakelen.</p>
+
+<p>O Europa dat zich door onzedelijkheden en dwaling heeft laten bederven en afstand van het Christendom heeft genomen! Met je blinde sluwheid heb je zoals de eenogige Dedjâl de mensenziel deze helse hoedanigheid cadeau gegeven. Vervolgens is het tot je doorgedrongen dat dit een dusdanig ongeneeslijke kwaal is, dat ze de mens van de allerhoogste hoogtes in de allerlaagste laagtes stort, en hem met de rang van de allerlaagste diersoort bekleedt.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 180,
+                'content' => '<div class="page" id="180">
+<p class="text-end page-number">#180</p>
+
+<p style="text-indent: 0">Het medicijn dat je tegen deze kwaal hebt gevonden, bestaat uit verleidelijke speeltjes, bedwelmende pleziertjes en fantasieën die als tijdelijke verdovingsmiddelen dienen. Moge dit medicijn van jou je hoofd verslinden; en hij zal het verslinden!</p>
+
+<p>De tweede weg heeft De Leerrijke Qur’an met Zijn Leiding aan de mensheid geschonken. Wanneer wij deze weg inslaan, zien wij dat bij elke halte, elke locatie en elke stad die wij passeren rechtzinnige soldaten van een rechtvaardige sultan overal aanwezig zijn en patrouilleren. Zo nu en dan stellen ze op bevel van de koning bepaalde soldaten van hun dienst vrij. Ze nemen dan hun wapens, hun paarden en al het rijksbezit in beslag. Vervolgens reiken ze hen een vrijstellingsdocument aan. De soldaten die van hun dienst worden vrijgesteld, raken ogenschijnlijk bedroefd wanneer hen de paarden en de wapens waaraan ze gehecht zijn ontnomen worden. Echter, in feite lucht hun vrijstelling ze op, waarnaast het bezoek aan de koning en de terugkeer naar het centrum van het koninkrijk hen vervuld van genoegen. Soms stuiten de vrijstellingsambtenaren op een rekruut die ze niet herkent. Wanneer ze hem bevelen om zijn wapens af te staan, zegt de rekruut:</p>
+
+<p><em>“Ik ben de soldaat van de koning; ik dien hem! Vroeg of laat zal ik naar hem terugkeren. Wie zijn jullie? Als jullie op basis van zijn toestemming en zijn wil zijn gekomen, dan zijn jullie van harte welkom. Toon mij zijn bevelschrift. Zo niet, versper mij de weg dan niet en blijf uit mijn buurt. Al zou ik tegenover duizenden van jullie op mijzelf zijn aangewezen, dan zal ik jullie alsnog bestrijden! Dit doe ik niet namens mijn ego, want mijn ego behoort niet mij maar mijn koning toe. Het ego en het wapen in mijn bezit zijn mij door mijn eigenaar toevertrouwd. Om mijn rentmeesterschap te handhaven, de eer van mijn koning te verdedigen en zijn trots te beschermen, zal ik het hoofd nimmer voor jullie neerbuigen!”</em></p>
+
+<p>Voorwaar, deze toestand is slechts één voorbeeld van de duizenden toestanden op de tweede weg die voorspoed en gelukzaligheid genereren. De overige hoedanigheden kun je zelf wel nagaan. Tijdens de hele reis op die tweede weg konden er vrolijke en feestelijke aanmeldingen en dienstnemingen onder de naam <strong><em>“geboortes”</em></strong>, evenals vreugdevolle en bevallige melodieën gedurende voorspoedige dienstontheffingen onder de naam <strong><em>“sterftes”</em></strong> worden waargenomen.</p>
+
+</div>'
+            ],
         ];
     }
 }
