@@ -59,7 +59,7 @@
 /* â”€â”€ Basis â”€â”€ */
 .book-reader-scope {
     font-family: 'DelimaProRegular', Georgia, serif;
-    font-size: var(--reader-font-size, 18px);
+    font-size: var(--reader-font-size, 19px);
     line-height: 1.85;
     color: #2a1a0a;
     background-color: transparent; /* achtergrond op body gezet */
@@ -347,6 +347,8 @@
     .tab-desk {
         display: none;
     }
+
+    .book-reader-scope { font-size: var(--reader-font-size, 18px); }
 }
 
 
@@ -850,26 +852,26 @@ body.dark-mode .reader-tooltip::before { border-bottom-color: #160e05; }
 .reader-topbar {
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 54px;
-    background: rgba(251, 240, 203, 0.96);
-    border-bottom: 1px solid rgba(180, 140, 60, 0.3);
+    height: 44px;
+    background: rgba(251, 240, 203, 0.97);
+    border-bottom: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 14px;
     z-index: 200;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    transition: background 0.3s ease, border-color 0.3s ease;
+    transition: background 0.3s ease;
 }
-body.dark-mode .reader-topbar { background: rgba(28,18,9,0.96); border-bottom-color: rgba(232,168,124,0.15); }
+body.dark-mode .reader-topbar { background: rgba(28,18,9,0.97); }
 
-.reader-topbar-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.reader-topbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
 
 .reader-back-btn {
-    display: inline-flex; align-items: center; gap: 6px;
+    display: inline-flex; align-items: center; gap: 5px;
     color: #790000; text-decoration: none;
-    font-size: 14px; font-weight: 600;
+    font-size: 12px; font-weight: 600;
     font-family: 'DelimaProRegular', serif;
     letter-spacing: 0.02em;
     transition: opacity .2s;
@@ -879,24 +881,25 @@ body.dark-mode .reader-topbar { background: rgba(28,18,9,0.96); border-bottom-co
 .reader-back-btn i { color: inherit; font-size: inherit; }
 body.dark-mode .reader-back-btn { color: #e8a87c; }
 
-.reader-topbar-divider { width: 1px; height: 18px; background: rgba(0,0,0,0.15); flex-shrink: 0; }
+.reader-topbar-divider { width: 1px; height: 14px; background: rgba(0,0,0,0.15); flex-shrink: 0; }
 body.dark-mode .reader-topbar-divider { background: rgba(255,255,255,0.12); }
 
 .reader-book-title {
-    font-size: 13px; color: #999; font-style: italic;
+    font-size: 11px; color: #999; font-style: italic;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     font-family: 'DelimaProRegular', serif; min-width: 0;
 }
 body.dark-mode .reader-book-title { color: #666; }
 
-.reader-topbar-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.reader-topbar-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
 
 /* ── Topbalk knoppen ── */
 .reader-btn {
     display: inline-flex; align-items: center; justify-content: center;
+    height: 26px;
     background: none; border: 1px solid rgba(180,140,60,0.35);
-    border-radius: 6px; color: #790000; cursor: pointer;
-    font-size: 13px; padding: 5px 10px; line-height: 1;
+    border-radius: 5px; color: #790000; cursor: pointer;
+    font-size: 11px; padding: 0 8px; line-height: 1;
     transition: background .15s, border-color .15s;
     font-family: 'DelimaProRegular', serif; user-select: none;
 }
@@ -907,17 +910,118 @@ body.dark-mode .reader-btn { color: #e8a87c; border-color: rgba(232,168,124,0.25
 body.dark-mode .reader-btn:hover { background: rgba(232,168,124,0.1); }
 
 .reader-btn-icon {
-    font-size: 15px; line-height: 1; min-width: 34px; min-height: 34px; padding: 5px 9px;
+    font-size: 12px; line-height: 1;
+    width: 26px; height: 26px; padding: 0;
     background: rgba(0,0,0,0.07) !important; color: #333 !important; border-color: rgba(0,0,0,0.2) !important;
 }
 .reader-btn-icon:hover { background: rgba(0,0,0,0.14) !important; }
 body.dark-mode .reader-btn-icon { background: rgba(255,255,255,0.1) !important; color: #fff !important; border-color: rgba(255,255,255,0.2) !important; }
-.reader-btn-icon i { font-size: 14px; display: inline-block; }
+.reader-btn-icon i { font-size: 11px; display: inline-block; }
 
-/* ── Voortgangsbalk ── */
+/* ── Font-size indicator (shows current px value) ── */
+.reader-font-indicator {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 26px; min-width: 46px; padding: 0 6px;
+    font-size: 11px; font-family: 'DelimaProRegular', serif;
+    color: #790000; border: 1px solid rgba(180,140,60,0.25);
+    border-radius: 5px; background: rgba(180,140,60,0.06);
+    user-select: none; letter-spacing: 0.02em; white-space: nowrap;
+    cursor: default; pointer-events: none;
+}
+body.dark-mode .reader-font-indicator { color: #e8a87c; border-color: rgba(232,168,124,0.2); background: rgba(232,168,124,0.06); }
+
+/* ── Reset font-size button ── */
+.reader-btn-reset-font {
+    font-size: 9.5px !important; padding: 0 5px !important;
+    opacity: 0.7; letter-spacing: 0.01em;
+}
+.reader-btn-reset-font:hover { opacity: 1; }
+
+/* ── Settings popup ── */
+.reader-settings-popup {
+    position: fixed;
+    top: 46px; right: 14px;
+    background: #fffdf5;
+    border: 1px solid rgba(180,140,60,0.3);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    width: 252px;
+    z-index: 300;
+    overflow: hidden;
+    font-family: 'DelimaProRegular', serif;
+}
+.reader-settings-popup[hidden] { display: none; }
+
+.reader-settings-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 14px 8px;
+    border-bottom: 1px solid rgba(180,140,60,0.15);
+    background: rgba(251,240,203,0.8);
+}
+.reader-settings-title {
+    font-size: 10px; font-weight: 700; color: #5a3a00;
+    letter-spacing: 0.07em; text-transform: uppercase;
+}
+.reader-settings-close {
+    background: none; border: none; cursor: pointer;
+    font-size: 12px; color: #999; padding: 2px 5px;
+    border-radius: 4px; line-height: 1; height: auto;
+    display: inline-flex; align-items: center; transition: color .15s;
+}
+.reader-settings-close i { color: inherit; }
+.reader-settings-close:hover { color: #790000; }
+
+.reader-settings-section {
+    padding: 11px 14px 13px;
+    border-bottom: 1px solid rgba(180,140,60,0.1);
+}
+.reader-settings-section:last-child { border-bottom: none; }
+
+.reader-settings-label {
+    font-size: 9.5px; font-weight: 700; color: #aaa;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;
+}
+
+.reader-settings-font-row {
+    display: flex; align-items: center; gap: 4px;
+}
+
+.reader-settings-theme-row {
+    display: flex; flex-direction: column; gap: 4px;
+}
+
+.reader-theme-btn {
+    display: flex; align-items: center; justify-content: flex-start; gap: 8px;
+    height: 30px; width: 100%;
+    background: none; border: 1px solid rgba(180,140,60,0.3); border-radius: 6px;
+    color: #5a3a00; font-size: 10.5px; font-family: 'DelimaProRegular', serif;
+    cursor: pointer; white-space: nowrap;
+    transition: background .15s, border-color .15s, color .15s;
+}
+.reader-theme-btn:hover { background: rgba(180,140,60,0.12); }
+.reader-theme-btn.active { background: #790000; border-color: #790000; color: #fff; font-weight: 700; }
+.reader-theme-btn i { font-size: 9px; }
+
+/* dark mode — settings popup */
+body.dark-mode .reader-settings-popup { background: #1e130a; border-color: rgba(232,168,124,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.55); }
+body.dark-mode .reader-settings-header { background: rgba(28,18,9,0.8); border-bottom-color: rgba(232,168,124,0.12); }
+body.dark-mode .reader-settings-title { color: #e8a87c; }
+body.dark-mode .reader-settings-close { color: #555; }
+body.dark-mode .reader-settings-close:hover { color: #e8a87c; }
+body.dark-mode .reader-settings-label { color: #444; }
+body.dark-mode .reader-settings-section { border-bottom-color: rgba(232,168,124,0.08); }
+body.dark-mode .reader-theme-btn { color: #e8a87c; border-color: rgba(232,168,124,0.25); }
+body.dark-mode .reader-theme-btn:hover { background: rgba(232,168,124,0.1); }
+body.dark-mode .reader-theme-btn.active { background: #b06030; border-color: #b06030; color: #fff; }
+
+@media (max-width: 600px) {
+    .reader-settings-popup { right: 8px; width: calc(100vw - 16px); max-width: 310px; }
+}
+
+/* ── Voortgangsbalk — inside the nav bar, flush at its top edge ── */
 .reader-progress {
-    position: fixed; top: 54px; left: 0; right: 0;
-    height: 2px; background: rgba(180,140,60,0.2); z-index: 199;
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: rgba(180,140,60,0.25); z-index: 1;
 }
 .reader-progress-fill {
     height: 100%;
@@ -928,7 +1032,7 @@ body.dark-mode .reader-progress-fill { background: linear-gradient(90deg, #e8a87
 
 /* ── Lees-wrapper ── */
 .reader-wrap {
-    max-width: 820px; margin: 0 auto; padding: 80px 32px 120px;
+    max-width: 820px; margin: 0 auto; padding: 88px 32px 80px;
 }
 
 /* ── Einde van het boek â”€â”€ */
@@ -952,38 +1056,38 @@ body.dark-mode .reader-end { border-top-color: rgba(255,255,255,0.07); }
 body.dark-mode .reader-end .btn-terug { background: #b06030; }
 body.dark-mode .reader-end .btn-terug:hover { background: #904020; }
 
-/* ── Bottom bar ── */
+/* ── Page nav bar (flush directly below topbar) ── */
 .reader-bottombar {
     position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: 44px;
+    top: 44px; left: 0; right: 0;
+    height: 30px;
     background: rgba(251,240,203,0.97);
-    border-top: 1px solid rgba(180,140,60,0.25);
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    z-index: 200;
+    border-bottom: 1px solid rgba(180,140,60,0.2);
+    display: flex; align-items: center; justify-content: flex-end; gap: 5px;
+    z-index: 199;
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     transition: background .3s, border-color .3s;
     font-family: 'DelimaProRegular', serif;
-    padding: 10px 0;
+    padding: 2px 14px 0;
 }
-body.dark-mode .reader-bottombar { background: rgba(28,18,9,0.97); border-top-color: rgba(232,168,124,0.15); }
+body.dark-mode .reader-bottombar { background: rgba(28,18,9,0.97); border-bottom-color: rgba(232,168,124,0.12); }
 
-.reader-page-label { font-size: 12px; color: #999; letter-spacing: 0.05em; user-select: none; white-space: nowrap; }
+.reader-page-label { font-size: 11px; color: #999; letter-spacing: 0.05em; user-select: none; white-space: nowrap; }
 body.dark-mode .reader-page-label { color: #666; }
 
 .reader-page-current {
-    font-size: 13px; font-weight: 700; color: #5a3a00;
-    letter-spacing: 0.04em; min-width: 20px; text-align: center;
+    font-size: 11px; font-weight: 700; color: #5a3a00;
+    letter-spacing: 0.04em; min-width: 16px; text-align: center;
 }
 body.dark-mode .reader-page-current { color: #e8a87c; }
 
-/* ── Prev / Next arrow buttons ── */
+/* ── Prev/Next arrow buttons — same height as page-btn ── */
 .reader-nav-arrow {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 30px; height: 30px;
+    width: 22px; height: 22px;
     background: none; border: 1px solid rgba(180,140,60,0.3);
-    border-radius: 6px; color: #5a3a00; cursor: pointer;
-    font-size: 12px; flex-shrink: 0;
+    border-radius: 5px; color: #5a3a00; cursor: pointer;
+    font-size: 10px; flex-shrink: 0;
     transition: background .15s;
 }
 .reader-nav-arrow:hover { background: rgba(180,140,60,0.15); }
@@ -994,12 +1098,13 @@ body.dark-mode .reader-nav-arrow:hover { background: rgba(232,168,124,0.1); }
 /* ── Page jump wrapper ── */
 .reader-page-jump { position: relative; display: flex; align-items: center; }
 
-/* ── Page button — shows book icon + "14 / 32" + chevron ── */
+/* ── Page button — same height 22px as arrows ── */
 .reader-page-btn {
-    display: inline-flex; align-items: center; gap: 6px;
+    display: inline-flex; align-items: center; gap: 4px;
+    height: 22px;
     background: none; border: 1px solid rgba(180,140,60,0.35);
-    border-radius: 6px; color: #5a3a00; cursor: pointer;
-    font-size: 13px; padding: 5px 12px;
+    border-radius: 5px; color: #5a3a00; cursor: pointer;
+    font-size: 11px; padding: 0 8px;
     font-family: 'DelimaProRegular', serif;
     transition: background .15s; white-space: nowrap;
     font-weight: 600;
@@ -1010,58 +1115,113 @@ body.dark-mode .reader-page-btn:hover { background: rgba(232,168,124,0.1); }
 
 .reader-page-btn-label { display: inline-flex; align-items: center; gap: 3px; }
 .reader-page-sep { opacity: 0.35; font-weight: 400; }
-.reader-page-total { opacity: 0.5; font-weight: 400; font-size: 12px; }
-.reader-page-chevron { font-size: 10px !important; transition: transform .2s ease; opacity: 0.6; }
+.reader-page-total { opacity: 0.5; font-weight: 400; font-size: 10px; }
+.reader-page-chevron { font-size: 8px !important; transition: transform .2s ease; opacity: 0.6; }
 [aria-expanded="true"] .reader-page-chevron { transform: rotate(180deg); }
 
-/* ── Dropdown â”€â”€ */
-.reader-page-dropdown {
+/* ── Old dropdown (hidden – replaced by popup) ── */
+.reader-page-dropdown { display: none !important; }
+.reader-page-dropdown-item { display: none !important; }
+
+/* ── Page-jump popup (anchored to right edge of button) ── */
+.reader-page-popup {
     position: absolute;
-    bottom: calc(100% + 8px);
-    left: 50%; transform: translateX(-50%);
+    top: calc(100% + 5px);
+    right: 0;
+    left: auto;
+    transform: none;
     background: #fffdf5;
     border: 1px solid rgba(180,140,60,0.3);
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    min-width: 200px; max-height: 280px;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    display: none;
-    z-index: 300;
-    padding: 6px 0;
+    width: 272px;
+    z-index: 400;
+    overflow: hidden;
 }
-body.dark-mode .reader-page-dropdown { background: #1e130a; border-color: rgba(232,168,124,0.2); }
-.reader-page-dropdown.open { display: block; }
+.reader-page-popup[hidden] { display: none; }
 
-.reader-page-dropdown-item {
-    display: block; width: 100%;
-    padding: 8px 18px 8px 22px;
-    background: none; border: none;
-    text-align: left; font-size: 13px;
+.reader-page-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px 8px;
+    border-bottom: 1px solid rgba(180,140,60,0.15);
+    background: rgba(251,240,203,0.7);
+}
+.reader-page-popup-title {
     font-family: 'DelimaProRegular', serif;
-    color: #2a1a0a; cursor: pointer;
-    transition: background .1s; white-space: nowrap;
-    position: relative;
+    font-size: 11px;
+    font-weight: 700;
+    color: #5a3a00;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
-.reader-page-dropdown-item:hover { background: rgba(180,140,60,0.12); }
-.reader-page-dropdown-item.active {
-    background: rgba(121,0,0,0.08);
-    font-weight: 700; color: #5a0000;
+.reader-page-popup-close {
+    background: none; border: none; cursor: pointer;
+    font-size: 13px; color: #888;
+    padding: 2px 6px; border-radius: 4px; line-height: 1;
+    transition: color .15s, background .15s;
+    display: inline-flex; align-items: center; justify-content: center;
+    height: auto;
 }
-.reader-page-dropdown-item.active::before {
-    content: '';
-    position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
-    width: 5px; height: 5px; border-radius: 50%;
-    background: #790000;
+.reader-page-popup-close:hover { color: #790000; background: rgba(121,0,0,0.07); }
+.reader-page-popup-close i { color: inherit; }
+
+.reader-page-slider-section { padding: 14px 16px 6px; }
+.reader-page-slider {
+    width: 100%; accent-color: #790000;
+    cursor: pointer; display: block;
 }
-body.dark-mode .reader-page-dropdown-item { color: #e8d8b0; }
-body.dark-mode .reader-page-dropdown-item:hover { background: rgba(232,168,124,0.1); }
-body.dark-mode .reader-page-dropdown-item.active { background: rgba(232,168,124,0.15); color: #f0c090; }
-body.dark-mode .reader-page-dropdown-item.active::before { background: #e8a87c; }
+.reader-page-slider-labels {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 5px; font-size: 11px; color: #aaa;
+    font-family: 'DelimaProRegular', serif;
+}
+.reader-slider-current {
+    font-weight: 700; color: #5a3a00; font-size: 13px;
+    background: rgba(121,0,0,0.07); border-radius: 4px;
+    padding: 1px 7px; min-width: 28px; text-align: center;
+}
+
+.reader-page-input-section {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px 14px;
+}
+.reader-page-input {
+    flex: 1; border: 1px solid rgba(180,140,60,0.35);
+    border-radius: 6px; padding: 6px 10px; font-size: 13px;
+    font-family: 'DelimaProRegular', serif; color: #2a1a0a;
+    background: #fffdf5; outline: none; transition: border-color .15s;
+    -moz-appearance: textfield; height: auto;
+}
+.reader-page-input::-webkit-inner-spin-button,
+.reader-page-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.reader-page-input:focus { border-color: rgba(121,0,0,0.45); }
+.reader-page-go-btn {
+    background: #790000; color: #fff; border: none; border-radius: 6px;
+    padding: 6px 14px; height: auto; font-size: 13px;
+    font-family: 'DelimaProRegular', serif; cursor: pointer; white-space: nowrap;
+    transition: background .15s; display: inline-flex; align-items: center;
+}
+.reader-page-go-btn:hover { background: #5a0000; }
+
+/* dark mode – popup */
+body.dark-mode .reader-page-popup { background: #1e130a; border-color: rgba(232,168,124,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.55); }
+body.dark-mode .reader-page-popup-header { background: rgba(28,18,9,0.8); border-bottom-color: rgba(232,168,124,0.12); }
+body.dark-mode .reader-page-popup-title { color: #e8a87c; }
+body.dark-mode .reader-page-popup-close { color: #666; }
+body.dark-mode .reader-page-popup-close:hover { color: #e8a87c; background: rgba(232,168,124,0.1); }
+body.dark-mode .reader-page-slider { accent-color: #e8a87c; }
+body.dark-mode .reader-slider-current { color: #e8a87c; background: rgba(232,168,124,0.12); }
+body.dark-mode .reader-page-slider-labels { color: #555; }
+body.dark-mode .reader-page-input { background: #160e05; color: #e8d8b0; border-color: rgba(232,168,124,0.25); }
+body.dark-mode .reader-page-input:focus { border-color: rgba(232,168,124,0.5); }
+body.dark-mode .reader-page-go-btn { background: #b06030; }
+body.dark-mode .reader-page-go-btn:hover { background: #904020; }
 
 /* ── Scroll-to-top button ── */
 .reader-to-top {
-    position: fixed; right: 18px; bottom: 72px;
+    position: fixed; right: 18px; bottom: 28px;
     width: 35px; height: 35px; border-radius: 8px;
     display: inline-flex; align-items: center; justify-content: center;
     background: #790000; color: #fff; border: none;
@@ -1075,10 +1235,10 @@ body.dark-mode .reader-page-dropdown-item.active::before { background: #e8a87c; 
 .reader-to-top:active { transform: translateY(1px); }
 body.dark-mode .reader-to-top { background: #b06030; }
 
-/* ── Responsive â”€â”€ */
+/* ── Responsive ── */
 @media (max-width: 600px) {
     .reader-book-title, .reader-topbar-divider { display: none; }
-    .reader-wrap { padding: 76px 16px 100px; }
+    .reader-wrap { padding: 84px 16px 60px; }
 
     .fn-popover {
         width: calc(100vw - 32px);
@@ -1086,9 +1246,19 @@ body.dark-mode .reader-to-top { background: #b06030; }
         max-height: 70vh;
     }
 
-
     .book-reader-scope .page-title-chapter h2 {
         font-size: 1.4em;
+    }
+
+    /* On narrow screens keep popup within viewport */
+    .reader-page-popup {
+        right: 0;
+        left: auto;
+        width: min(272px, calc(100vw - 28px));
+    }
+
+    .book-reader-scope {
+        font-size: var(--reader-font-size, 18px);
     }
 }
 

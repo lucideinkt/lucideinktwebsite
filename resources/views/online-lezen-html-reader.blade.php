@@ -88,49 +88,113 @@
                 <i class="fa-solid fa-list" aria-hidden="true"></i>
             </button>
             @endif
-            <button class="reader-btn" id="font-smaller" title="Kleinere tekst" aria-label="Kleinere tekst">A&minus;</button>
-            <button class="reader-btn" id="font-larger"  title="Grotere tekst"  aria-label="Grotere tekst">A+</button>
-            <button class="reader-btn reader-btn-icon" id="dark-mode-toggle" title="Donkere modus" aria-label="Donkere modus aan/uit">
-                <i class="fa-solid fa-moon" id="dark-mode-icon" aria-hidden="true"></i>
+            <button class="reader-btn reader-btn-icon" id="settings-toggle-btn" title="Instellingen" aria-label="Instellingen openen" aria-expanded="false" aria-haspopup="dialog">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
             </button>
         </div>
     </header>
 
-    {{-- Leesvoortgang --}}
-    <div class="reader-progress" role="progressbar" aria-label="Leesvoortgang" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-        <div class="reader-progress-fill" id="progress-fill"></div>
+    {{-- Settings popup (fixed below topbar) --}}
+    <div class="reader-settings-popup" id="settings-popup" hidden role="dialog" aria-label="Lezerinstellingen">
+        <div class="reader-settings-header">
+            <span class="reader-settings-title"><i class="fa-solid fa-gear" style="margin-right:5px;font-size:9px;opacity:0.65;" aria-hidden="true"></i>Instellingen</span>
+            <button class="reader-settings-close" id="settings-close-btn" type="button" aria-label="Instellingen sluiten">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        {{-- Font size --}}
+        <div class="reader-settings-section">
+            <div class="reader-settings-label">Lettergrootte</div>
+            <div class="reader-settings-font-row">
+                <button class="reader-btn" id="font-smaller" title="Kleinere tekst" aria-label="Kleinere tekst">A&minus;</button>
+                <span class="reader-font-indicator" id="font-size-display" aria-live="polite" aria-label="Huidige lettergrootte">19.0px</span>
+                <button class="reader-btn" id="font-larger" title="Grotere tekst" aria-label="Grotere tekst">A+</button>
+                <button class="reader-btn reader-btn-reset-font" id="font-reset" title="Standaard lettergrootte" aria-label="Lettergrootte resetten">Reset</button>
+            </div>
+        </div>
+
+        {{-- Theme --}}
+        <div class="reader-settings-section">
+            <div class="reader-settings-label">Weergave</div>
+            <div class="reader-settings-theme-row">
+                <button class="reader-theme-btn" id="theme-system" type="button" data-theme="system" aria-label="Systeemthema">
+                    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Systeem
+                </button>
+                <button class="reader-theme-btn" id="theme-light" type="button" data-theme="light" aria-label="Licht thema">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i> Licht
+                </button>
+                <button class="reader-theme-btn" id="theme-dark" type="button" data-theme="dark" aria-label="Donker thema">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i> Donker
+                </button>
+            </div>
+        </div>
     </div>
 
-    {{-- Bottom bar --}}
+    {{-- Page nav bar (flush directly below topbar; progress bar is inside) --}}
     <nav class="reader-bottombar" aria-label="Paginanavigatie">
+        {{-- Leesvoortgang — inside the nav bar so there is no gap --}}
+        <div class="reader-progress" role="progressbar" aria-label="Leesvoortgang" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="reader-progress-fill" id="progress-fill"></div>
+        </div>
+        {{-- Prev & Next — both to the left of the page count --}}
         <button class="reader-nav-arrow" id="page-prev-btn" aria-label="Vorige pagina" title="Vorige pagina">
             <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
         </button>
+        <button class="reader-nav-arrow" id="page-next-btn" aria-label="Volgende pagina" title="Volgende pagina">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
 
+        {{-- Page count button — click to open popup --}}
         <div class="reader-page-jump">
-            <button class="reader-page-btn" id="page-jump-btn" aria-haspopup="listbox" aria-expanded="false" title="Ga naar pagina">
+            <button class="reader-page-btn" id="page-jump-btn" aria-haspopup="dialog" aria-expanded="false" title="Ga naar pagina">
                 <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                 <span class="reader-page-btn-label">
                     <span id="page-current">&mdash;</span>
                     <span class="reader-page-sep">/</span>
                     <span class="reader-page-total">{{ $allPageMeta->max('page_number') }}</span>
                 </span>
-                <i class="fa-solid fa-chevron-up reader-page-chevron" aria-hidden="true"></i>
+                <i class="fa-solid fa-chevron-down reader-page-chevron" aria-hidden="true"></i>
             </button>
-            <div class="reader-page-dropdown" id="page-dropdown" role="listbox" aria-label="Kies pagina">
-                @foreach($allPageMeta as $meta)
-                    <button
-                        class="reader-page-dropdown-item"
-                        data-page="{{ $meta->page_number }}"
-                        role="option"
-                    >Pagina {{ $meta->page_number }}</button>
-                @endforeach
+
+            {{-- Page-jump popup (slider + number input) --}}
+            <div class="reader-page-popup" id="page-popup" hidden role="dialog" aria-label="Ga naar pagina">
+                <div class="reader-page-popup-header">
+                    <span class="reader-page-popup-title">Ga naar pagina</span>
+                    <button class="reader-page-popup-close" id="page-popup-close" type="button" aria-label="Sluiten" title="Sluiten">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                {{-- Slider (above the input) --}}
+                <div class="reader-page-slider-section">
+                    <input type="range"
+                           class="reader-page-slider"
+                           id="page-slider"
+                           min="{{ $allPageMeta->min('page_number') }}"
+                           max="{{ $allPageMeta->max('page_number') }}"
+                           value="{{ $allPageMeta->min('page_number') }}"
+                           aria-label="Schuif naar pagina">
+                    <div class="reader-page-slider-labels">
+                        <span>{{ $allPageMeta->min('page_number') }}</span>
+                        <span class="reader-slider-current" id="slider-preview">{{ $allPageMeta->min('page_number') }}</span>
+                        <span>{{ $allPageMeta->max('page_number') }}</span>
+                    </div>
+                </div>
+
+                {{-- Number input + Ga button --}}
+                <div class="reader-page-input-section">
+                    <input type="number"
+                           class="reader-page-input"
+                           id="page-number-input"
+                           min="{{ $allPageMeta->min('page_number') }}"
+                           max="{{ $allPageMeta->max('page_number') }}"
+                           placeholder="Paginanummer"
+                           aria-label="Paginanummer invoeren">
+                    <button class="reader-page-go-btn" id="page-go-btn" type="button">Ga</button>
+                </div>
             </div>
         </div>
-
-        <button class="reader-nav-arrow" id="page-next-btn" aria-label="Volgende pagina" title="Volgende pagina">
-            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
     </nav>
 
     {{-- Boekinhoud --}}
@@ -194,15 +258,21 @@
 
     <script>
     (function () {
-        const TOPBAR_H    = 72;
+        const TOPBAR_H    = 74;  // topbar(44) + nav-bar(30)
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
+        const DEFAULT_FONT = window.innerWidth <= 600 ? 18 : 19;
 
         const readerEl     = document.getElementById('reader-content');
         const progressFill = document.getElementById('progress-fill');
         const pageCurrent  = document.getElementById('page-current');
-        const dropdown     = document.getElementById('page-dropdown');
+        const popup        = document.getElementById('page-popup');
+        const popupClose   = document.getElementById('page-popup-close');
         const jumpBtn      = document.getElementById('page-jump-btn');
+        const pageSlider   = document.getElementById('page-slider');
+        const sliderPreview= document.getElementById('slider-preview');
+        const pageInput    = document.getElementById('page-number-input');
+        const pageGoBtn    = document.getElementById('page-go-btn');
         const prevBtn      = document.getElementById('page-prev-btn');
         const nextBtn      = document.getElementById('page-next-btn');
         const toTopBtn     = document.getElementById('to-top-btn');
@@ -288,12 +358,13 @@
         function load()        { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
         function saveFont(sz)  { try { localStorage.setItem(FONT_KEY, String(sz)); }       catch (_) {} }
         function loadFont()    { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; }     catch (_) { return null; } }
-        function applyFont(sz) { readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; }); }
+        function applyFont(sz) {
+            readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; });
+            const display = document.getElementById('font-size-display');
+            if (display) display.textContent = sz.toFixed(1) + 'px';
+        }
 
-        // Dark mode localStorage functions
-        const DARK_MODE_KEY = 'reader-dark-mode';
-        function saveDarkMode(isDark) { try { localStorage.setItem(DARK_MODE_KEY, isDark ? '1' : '0'); } catch (_) {} }
-        function loadDarkMode() { try { return localStorage.getItem(DARK_MODE_KEY) === '1'; } catch (_) { return false; } }
+        // Dark mode helpers removed — theme now handled by applyTheme() below
 
         function visiblePage() {
             let closest = null, best = Infinity;
@@ -377,48 +448,66 @@
             saveTimer = setTimeout(() => save(visiblePage()), 300);
         }, { passive: true });
 
-        // --- Dropdown ---
-        function openDropdown() {
-            dropdown.classList.add('open');
-            jumpBtn.setAttribute('aria-expanded', 'true');
-            // Mark current page as active and scroll it into view
+        // --- Popup (page navigator) ---
+        const MIN_PAGE = parseInt(pageSlider?.min || '1', 10);
+        const MAX_PAGE = parseInt(pageSlider?.max || '1', 10);
+
+        function openPopup() {
+            if (!popup) return;
             const cur = visiblePage();
-            dropdown.querySelectorAll('.reader-page-dropdown-item').forEach(btn => {
-                const isActive = parseInt(btn.dataset.page, 10) === cur;
-                btn.classList.toggle('active', isActive);
-                btn.setAttribute('aria-selected', String(isActive));
-                if (isActive) {
-                    // Small delay so dropdown is visible first
-                    requestAnimationFrame(() => btn.scrollIntoView({ block: 'center' }));
-                }
-            });
+            if (pageSlider) { pageSlider.value = cur; }
+            if (sliderPreview) { sliderPreview.textContent = cur; }
+            if (pageInput) { pageInput.value = ''; pageInput.placeholder = 'Paginanummer'; }
+            popup.removeAttribute('hidden');
+            jumpBtn?.setAttribute('aria-expanded', 'true');
         }
-        function closeDropdown() {
-            dropdown.classList.remove('open');
-            jumpBtn.setAttribute('aria-expanded', 'false');
+        function closePopup() {
+            if (!popup) return;
+            popup.setAttribute('hidden', '');
+            jumpBtn?.setAttribute('aria-expanded', 'false');
         }
 
-        if (dropdown && jumpBtn) {
-            dropdown.querySelectorAll('.reader-page-dropdown-item').forEach(btn => {
-                btn.addEventListener('click', e => {
-                    e.stopPropagation();
-                    jumpTo(parseInt(btn.dataset.page, 10), true);
-                    closeDropdown();
-                });
-            });
+        // Slider: update preview while dragging, navigate on release
+        pageSlider?.addEventListener('input', () => {
+            if (sliderPreview) sliderPreview.textContent = pageSlider.value;
+        });
+        pageSlider?.addEventListener('change', () => {
+            const p = parseInt(pageSlider.value, 10);
+            if (p) { jumpTo(p, true); closePopup(); }
+        });
+
+        // "Ga" button + Enter key
+        pageGoBtn?.addEventListener('click', () => {
+            const val = parseInt(pageInput?.value, 10);
+            if (val && val >= MIN_PAGE && val <= MAX_PAGE) {
+                jumpTo(val, true); closePopup();
+            }
+        });
+        pageInput?.addEventListener('keydown', e => {
+            if (e.key === 'Enter') pageGoBtn?.click();
+        });
+
+        // Toggle popup on page-count button click
+        if (jumpBtn) {
             jumpBtn.addEventListener('click', e => {
                 e.stopPropagation();
-                dropdown.classList.contains('open') ? closeDropdown() : openDropdown();
-            });
-            document.addEventListener('click', ev => {
-                if (!dropdown.contains(ev.target) && !jumpBtn.contains(ev.target) && dropdown.classList.contains('open')) {
-                    closeDropdown();
-                }
-            });
-            document.addEventListener('keydown', ev => {
-                if (ev.key === 'Escape' && dropdown.classList.contains('open')) closeDropdown();
+                popup?.hasAttribute('hidden') ? openPopup() : closePopup();
             });
         }
+
+        // Close popup on outside click
+        document.addEventListener('click', ev => {
+            if (popup && !popup.hasAttribute('hidden') &&
+                !popup.contains(ev.target) && !jumpBtn?.contains(ev.target)) {
+                closePopup();
+            }
+        });
+
+        // Close popup on Escape
+        popupClose?.addEventListener('click', closePopup);
+        document.addEventListener('keydown', ev => {
+            if (ev.key === 'Escape' && popup && !popup.hasAttribute('hidden')) closePopup();
+        });
 
         // --- Prev / Next page buttons ---
         if (prevBtn) {
@@ -438,14 +527,18 @@
 
         // --- Font size ---
         document.getElementById('font-smaller')?.addEventListener('click', () => {
-            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || 18;
-            const next = Math.max(12, cur - 0.5); // Smaller 0.5px steps for smoother transitions
+            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || DEFAULT_FONT;
+            const next = Math.max(12, Math.round((cur - 0.1) * 10) / 10);
             applyFont(next); saveFont(next);
         });
         document.getElementById('font-larger')?.addEventListener('click', () => {
-            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || 18;
-            const next = Math.min(36, cur + 0.5); // Smaller 0.5px steps for smoother transitions
+            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || DEFAULT_FONT;
+            const next = Math.min(36, Math.round((cur + 0.1) * 10) / 10);
             applyFont(next); saveFont(next);
+        });
+        document.getElementById('font-reset')?.addEventListener('click', () => {
+            applyFont(DEFAULT_FONT);
+            saveFont(DEFAULT_FONT);
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
@@ -505,39 +598,75 @@
             pinchStartFontSize = null;
         });
 
-        // --- Dark mode ---
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const darkModeIcon = document.getElementById('dark-mode-icon');
+        // --- Settings popup ---
+        const settingsToggleBtn = document.getElementById('settings-toggle-btn');
+        const settingsPopup     = document.getElementById('settings-popup');
+        const settingsCloseBtn  = document.getElementById('settings-close-btn');
 
-        // Function to update icon based on dark mode state
-        function updateDarkModeIcon(isDark) {
-            if (isDark) {
-                // In dark mode, show sun icon (to switch back to light)
-                darkModeIcon?.classList.remove('fa-moon');
-                darkModeIcon?.classList.add('fa-sun');
-                darkModeToggle?.setAttribute('title', 'Lichte modus');
-                darkModeToggle?.setAttribute('aria-label', 'Lichte modus aan/uit');
-            } else {
-                // In light mode, show moon icon (to switch to dark)
-                darkModeIcon?.classList.remove('fa-sun');
-                darkModeIcon?.classList.add('fa-moon');
-                darkModeToggle?.setAttribute('title', 'Donkere modus');
-                darkModeToggle?.setAttribute('aria-label', 'Donkere modus aan/uit');
-            }
+        function openSettings() {
+            settingsPopup?.removeAttribute('hidden');
+            settingsToggleBtn?.setAttribute('aria-expanded', 'true');
         }
-
-        // Initialize dark mode from localStorage
-        if (loadDarkMode()) {
-            document.body.classList.add('dark-mode');
-            updateDarkModeIcon(true);
+        function closeSettings() {
+            settingsPopup?.setAttribute('hidden', '');
+            settingsToggleBtn?.setAttribute('aria-expanded', 'false');
         }
-
-        // Toggle dark mode on click
-        darkModeToggle?.addEventListener('click', () => {
-            const isDark = document.body.classList.toggle('dark-mode');
-            saveDarkMode(isDark);
-            updateDarkModeIcon(isDark);
+        settingsToggleBtn?.addEventListener('click', e => {
+            e.stopPropagation();
+            settingsPopup?.hasAttribute('hidden') ? openSettings() : closeSettings();
         });
+        settingsCloseBtn?.addEventListener('click', closeSettings);
+        document.addEventListener('click', ev => {
+            if (settingsPopup && !settingsPopup.hasAttribute('hidden') &&
+                !settingsPopup.contains(ev.target) && !settingsToggleBtn?.contains(ev.target)) {
+                closeSettings();
+            }
+        });
+        document.addEventListener('keydown', ev => {
+            if (ev.key === 'Escape' && settingsPopup && !settingsPopup.hasAttribute('hidden')) closeSettings();
+        });
+
+        // --- Theme (System / Light / Dark) — default: Dark ---
+        const THEME_KEY = 'reader-theme';
+
+        function loadTheme() {
+            try {
+                const stored = localStorage.getItem(THEME_KEY);
+                if (stored) return stored;
+                // Migrate: if user explicitly had light mode before, respect that
+                const old = localStorage.getItem('reader-dark-mode');
+                if (old === '0') return 'light';
+                return 'dark'; // default
+            } catch (_) { return 'dark'; }
+        }
+        function saveTheme(mode) { try { localStorage.setItem(THEME_KEY, mode); } catch (_) {} }
+
+        function applyTheme(mode) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = mode === 'dark' || (mode === 'system' && prefersDark);
+            document.body.classList.toggle('dark-mode', isDark);
+            // Update active button state
+            document.querySelectorAll('.reader-theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === mode);
+            });
+        }
+
+        // Listen for OS theme changes when in system mode
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (loadTheme() === 'system') applyTheme('system');
+        });
+
+        // Theme buttons
+        document.querySelectorAll('.reader-theme-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const mode = btn.dataset.theme;
+                saveTheme(mode);
+                applyTheme(mode);
+            });
+        });
+
+        // Apply saved (or default) theme immediately
+        applyTheme(loadTheme());
 
         // --- To-top ---
         toTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -653,7 +782,13 @@
         // --- Restore reading progress on load ---
         function restoreProgress() {
             const savedFont = loadFont();
-            if (savedFont) applyFont(savedFont);
+            if (savedFont) {
+                applyFont(savedFont);
+            } else {
+                // Show default font size in the indicator
+                const display = document.getElementById('font-size-display');
+                if (display) display.textContent = DEFAULT_FONT.toFixed(1) + 'px';
+            }
 
             const saved     = load();
             const startPage = (saved && sorted.includes(saved)) ? saved : null;
