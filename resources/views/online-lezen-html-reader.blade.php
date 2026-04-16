@@ -152,6 +152,9 @@
             <div class="reader-sheet-progress-fill" id="sheet-progress-fill"></div>
         </div>
 
+        {{-- Book title (visible on mobile where topbar title is hidden) --}}
+        <div class="reader-sheet-book-title" aria-hidden="true">{{ $product->title }}</div>
+
         {{-- Tabs --}}
         <div class="reader-sheet-tabs" role="tablist">
             <button class="reader-sheet-tab active" id="sheet-tab-controls" data-tab="controls" role="tab" aria-selected="true">
@@ -570,6 +573,10 @@
             if (e.target.closest('.fn-ref, .fn-popover, [data-toc-page], a, button, input, select, textarea, mark')) return;
             const sel = window.getSelection();
             if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) return;
+            // Don't open sheet if a footnote popover is visible
+            if (document.querySelector('.fn-popover.fn-popover--show')) return;
+            // Don't open sheet if hl-popup is visible OR was just dismissed (selectionchange hides it before click fires)
+            if (!hlPopup?.hidden || (Date.now() - _hlHideTime < 350)) return;
             toggleSheet();
         });
 
@@ -984,6 +991,8 @@
         function hlLoad() { try { return JSON.parse(localStorage.getItem(HL_KEY) || '[]'); } catch { return []; } }
         function hlSave(a) { try { localStorage.setItem(HL_KEY, JSON.stringify(a)); } catch {} }
 
+        let hlBackdrop = null;
+        let _hlHideTime = 0;  // timestamp of last hlHide(), used to suppress sheet toggle
         function hlShowPopup(rect, existing) {
             if (!hlPopup) return;
             const removeBtn = document.getElementById('hl-remove-btn');
@@ -998,7 +1007,12 @@
             hlPopup.style.left = x + 'px';
             hlPopup.style.top  = y + 'px';
         }
-        function hlHide() { hlPopup?.setAttribute('hidden', ''); hlPending = null; hlMark = null; }
+
+        function hlHide() {
+            if (hlPopup && !hlPopup.hidden) _hlHideTime = Date.now();
+            hlPopup?.setAttribute('hidden', '');
+            hlPending = null; hlMark = null;
+        }
 
         function hlPageEl(node) {
             let n = node;
@@ -1262,10 +1276,17 @@
             hlHide();
         });
 
-        document.addEventListener('click', e => {
-            if (hlPopup && !hlPopup.hidden && !hlPopup.contains(e.target) && !e.target.closest('mark.hl')) hlHide();
-        });
+        // Escape key closes the highlight popup
         document.addEventListener('keydown', e => { if (e.key === 'Escape' && hlPopup && !hlPopup.hidden) hlHide(); });
+
+        // Click outside the popup (but not on a mark) closes it without triggering anything else
+        document.addEventListener('click', e => {
+            if (hlPopup && !hlPopup.hidden && !hlPopup.contains(e.target) && !e.target.closest('mark.hl')) {
+                clearTimeout(_hlTimer);          // cancel any pending re-open from mouseup
+                window.getSelection()?.removeAllRanges(); // clear selection so hlCheckSel won't reopen
+                hlHide();
+            }
+        });
 
         // ══════════════════════════════════════════
 

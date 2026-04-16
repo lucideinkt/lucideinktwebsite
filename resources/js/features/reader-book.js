@@ -206,16 +206,14 @@
     observer.observe(readerEl, { childList: true, subtree: true });
 
     // ── Popover ────────────────────────────────────────────────────────────
-    let popover = null;
+    let popover   = null;
     let activeBtn = null;
-
 
     function showPopover(btn) {
         hidePopover();
         activeBtn = btn;
         btn.classList.add('fn-ref--active');
 
-        const num  = btn.dataset.fn;
         const html = btn.dataset.html;
 
         popover = document.createElement('div');
@@ -229,7 +227,6 @@
             `</div>`;
 
         document.body.appendChild(popover);
-        // First position with real DOM dimensions
         positionPopover(btn);
 
         popover.querySelector('.fn-popover__close').addEventListener('click', e => {
@@ -239,9 +236,18 @@
 
         requestAnimationFrame(() => requestAnimationFrame(() => {
             popover?.classList.add('fn-popover--show');
-            // Reposition after transition so final painted size is clamped correctly
             if (popover && btn) positionPopover(btn);
         }));
+    }
+
+    function hidePopover() {
+        if (!popover) return;
+        popover.classList.remove('fn-popover--show');
+        activeBtn?.classList.remove('fn-ref--active');
+        const el = popover;
+        setTimeout(() => el.remove(), 200);
+        popover   = null;
+        activeBtn = null;
     }
 
     function positionPopover(btn) {
@@ -290,20 +296,18 @@
         if (btn) {
             e.preventDefault();
             e.stopPropagation();
-            if (btn === activeBtn) {
-                hidePopover();
-                return;
-            }
+            if (btn === activeBtn) { hidePopover(); return; }
             showPopover(btn);
             return;
         }
-        // Click anywhere else in the reader closes popover
+        // Click anywhere in reader while popover is open → close it only, don't trigger other actions
         if (popover && !popover.contains(e.target)) {
             hidePopover();
+            e.stopImmediatePropagation();
         }
     });
 
-    // Close on outside-reader click (anywhere on the page)
+    // Click outside the reader while popover is open → also close it
     document.addEventListener('click', e => {
         if (popover && !readerEl.contains(e.target) && !popover.contains(e.target)) {
             hidePopover();
