@@ -2348,7 +2348,7 @@ geen vernietiging is, maar een vrijstelling na de voltooiing van hun taken.<sup>
 <div class="page-footnote">
 <hr class="hr-footnote" />
 <p class="footnote-p">
-<sup>3</sup> Waarlijk, wanneer vruchten, bloesems en bladeren verschijnen aan de toppen en takken van een boom, &rarr;
+<sup>3</sup> Waarlijk, wanneer vruchten, bloesems en bladeren verschijnen aan de toppen en takken van een boom, die zich manifesteert als een voedingsschat van Genade, dan verwelken ze geleidelijk. &rarr;
 </p>
 </div>
 
@@ -2384,7 +2384,7 @@ is wat wij geloven...
 <div class="page-footnote">
 <hr class="hr-footnote" />
 <p class="footnote-p">
-die zich manifesteert als een voedingsschat van Genade, dan verwelken ze geleidelijk. Nadat ze hun taak voltooien,
+Nadat ze hun taak voltooien,
 behoren ze te vertrekken, opdat de poort voor hun navolgende plaatsvervangers niet wordt gesloten. Anders zal de
 omvang van Genade ingeperkt en de diensten van hun gebroeders verhinderd worden. Tevens zullen ze zelf door de
 teloorgang van hun jeugd in een ellendige en erbarmelijke staat vervallen. Voorwaar, in dit kader is ook de lente een
