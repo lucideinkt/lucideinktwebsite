@@ -792,6 +792,8 @@ body {
     background-color: #fbf0cb;
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
+    /* Prevent pull-to-refresh on mobile browsers (Chrome Android, Safari iOS) */
+    overscroll-behavior-y: none;
 }
 
 /* ── Dark mode ── */
