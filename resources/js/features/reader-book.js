@@ -121,12 +121,31 @@
                 btn.setAttribute('data-html', footnoteMap[num]);
 
                 if (arrowNums.has(num)) {
-                    // Mark as needing continuation from the next page
                     btn.setAttribute('data-needs-continuation', 'true');
                 }
 
                 btn.innerHTML = sup.outerHTML;
-                sup.replaceWith(btn);
+
+                // Wrap last word before this sup + the badge in a no-break span
+                // so the badge never wraps onto its own line, and the word is also tappable
+                const wrapper = document.createElement('span');
+                wrapper.className = 'fn-ref-wrap';
+
+                const prevNode = sup.previousSibling;
+                if (prevNode && prevNode.nodeType === Node.TEXT_NODE) {
+                    const text = prevNode.textContent;
+                    const lastSpace = text.search(/\s\S*$/);
+                    if (lastSpace >= 0) {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.className = 'fn-ref-word';
+                        wordSpan.textContent = text.slice(lastSpace + 1);
+                        prevNode.textContent = text.slice(0, lastSpace + 1);
+                        wrapper.appendChild(wordSpan);
+                    }
+                }
+
+                wrapper.appendChild(btn);
+                sup.replaceWith(wrapper);
             });
         });
 
@@ -292,7 +311,9 @@
 
     // ── Event delegation ──────────────────────────────────────────────────
     readerEl.addEventListener('click', e => {
-        const btn = e.target.closest('.fn-ref');
+        // Clicking the badge OR the last word before it both open the footnote
+        const btn = e.target.closest('.fn-ref')
+            ?? e.target.closest('.fn-ref-word')?.closest('.fn-ref-wrap')?.querySelector('.fn-ref');
         if (btn) {
             e.preventDefault();
             e.stopPropagation();

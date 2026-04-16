@@ -570,7 +570,7 @@
 
         // Tap reading area to toggle sheet (excluding footnotes / links / buttons / marks)
         readerEl?.addEventListener('click', e => {
-            if (e.target.closest('.fn-ref, .fn-popover, [data-toc-page], a, button, input, select, textarea, mark')) return;
+            if (e.target.closest('.fn-ref, .fn-ref-word, .fn-popover, [data-toc-page], a, button, input, select, textarea, mark')) return;
             const sel = window.getSelection();
             if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) return;
             // Don't open sheet if a footnote popover is visible

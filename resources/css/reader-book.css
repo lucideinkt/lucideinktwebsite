@@ -444,6 +444,17 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     outline: none;
 }
 
+/* Wrapper keeps the last word + badge on the same line */
+.fn-ref-wrap {
+    display: inline;
+    white-space: nowrap;
+}
+/* The last word before the badge — looks like normal text but is tappable */
+.fn-ref-word {
+    display: inline;
+    cursor: pointer;
+}
+
 /* ── Klikbare voetnootreferenties (.fn-ref) ── */
 .book-reader-scope .fn-ref {
     display: inline-flex;
@@ -472,16 +483,8 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     flex-shrink: 0;
 }
 
-/* Extended tap zone: reaches ~44px back into the preceding text
-   so the user can tap the end of the sentence, not just the badge */
-.book-reader-scope .fn-ref::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -44px;
-    right: -6px;
-    bottom: -10px;
-}
+/* Tap target via the fn-ref-word span — no ::before needed */
+.book-reader-scope .fn-ref::before { content: none; }
 
 .book-reader-scope .fn-ref sup:before,
 .book-reader-scope .fn-ref sup:after { content: none; }
