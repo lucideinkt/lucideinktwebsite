@@ -60,6 +60,7 @@
 .book-reader-scope {
     font-family: 'DelimaProRegular', Georgia, serif;
     font-size: var(--reader-font-size, 19px);
+    --arabic-font-size: 29px;
     line-height: 1.85;
     color: #2a1a0a;
     background-color: transparent; /* achtergrond op body gezet */
@@ -289,7 +290,7 @@
 /* â”€â”€ Arabische tekst â”€â”€ */
 .book-reader-scope .text-arabic {
     font-family: 'OmarNaskhRegular', serif;
-    font-size: 1.65em;
+    font-size: var(--reader-arabic-font-size, 29px);
     line-height: 2;
     direction: rtl;
     text-align: center;
@@ -348,7 +349,7 @@
         display: none;
     }
 
-    .book-reader-scope { font-size: var(--reader-font-size, 18px); }
+    .book-reader-scope { font-size: var(--reader-font-size, 19px); }
 }
 
 
@@ -371,7 +372,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 /* Footnote superscript within bismillah */
 .book-reader-scope .text-arabic-inline {
     font-family: 'OmarNaskhRegular', serif;
-    font-size: 1.2em;
+    font-size: var(--reader-arabic-font-size, 29px);
     line-height: inherit;
     direction: rtl;
     display: inline;
@@ -634,7 +635,7 @@ body.dark-mode .book-reader-scope .fn-ref {
 
 /* dark mode */
 body.dark-mode .fn-popover {
-    background: #1e1510;
+    background: #1e130a;
     border-color: rgba(255, 120, 120, 0.25);
     box-shadow:
         0 4px 6px rgba(0, 0, 0, 0.6),
@@ -715,12 +716,11 @@ body.dark-mode .fn-popover__text .text-underline {
    ========================================================= */
 @media (max-width: 768px) {
     .book-reader-scope {
-        font-size: calc(var(--reader-font-size, 18px) - 1px);
+        font-size: var(--reader-font-size, 19px);
         max-width: 100%;
     }
 
     .book-reader-scope .text-arabic {
-        font-size: 1.45em;
         margin: 0.2em 0 0.2em;
     }
 
@@ -748,7 +748,6 @@ body.dark-mode .fn-popover__text .text-underline {
     }
 
     .book-reader-scope .text-arabic {
-        font-size: 1.3em;
         margin: 0.2em 0 0.2em;
     }
 }
@@ -945,7 +944,7 @@ body.dark-mode .reader-font-indicator { color: #e8a87c; border-color: rgba(232,1
     border: 1px solid rgba(180,140,60,0.3);
     border-radius: 10px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    width: 252px;
+    width: 300px;
     z-index: 300;
     overflow: hidden;
     font-family: 'DelimaProRegular', serif;
@@ -983,8 +982,28 @@ body.dark-mode .reader-font-indicator { color: #e8a87c; border-color: rgba(232,1
 }
 
 .reader-settings-font-row {
-    display: flex; align-items: center; gap: 4px;
+    display: flex; align-items: center; gap: 6px;
 }
+
+/* Font size slider row */
+.reader-settings-font-slider-row {
+    display: flex; align-items: center; gap: 8px;
+}
+.reader-font-slider {
+    flex: 1;
+    accent-color: #790000;
+    cursor: pointer;
+    height: 4px;
+    min-width: 0;
+}
+body.dark-mode .reader-font-slider { accent-color: #e8a87c; }
+
+.reader-font-size-val {
+    font-size: 10px; font-family: 'DelimaProRegular', serif;
+    color: #5a3a00; min-width: 38px; text-align: right;
+    letter-spacing: 0.02em; flex-shrink: 0;
+}
+body.dark-mode .reader-font-size-val { color: #e8a87c; }
 
 .reader-settings-theme-row {
     display: flex; flex-direction: column; gap: 4px;
@@ -1015,7 +1034,7 @@ body.dark-mode .reader-theme-btn:hover { background: rgba(232,168,124,0.1); }
 body.dark-mode .reader-theme-btn.active { background: #b06030; border-color: #b06030; color: #fff; }
 
 @media (max-width: 600px) {
-    .reader-settings-popup { right: 8px; width: calc(100vw - 16px); max-width: 310px; }
+    .reader-settings-popup { right: 8px; width: calc(100vw - 16px); max-width: 340px; }
 }
 
 /* ── Voortgangsbalk — inside the nav bar, flush at its top edge ── */
@@ -1238,7 +1257,7 @@ body.dark-mode .reader-to-top { background: #b06030; }
 /* ── Responsive ── */
 @media (max-width: 600px) {
     .reader-book-title, .reader-topbar-divider { display: none; }
-    .reader-wrap { padding: 84px 16px 60px; }
+    .reader-wrap { padding: 84px 10px 60px; }
 
     .fn-popover {
         width: calc(100vw - 32px);
@@ -1258,7 +1277,7 @@ body.dark-mode .reader-to-top { background: #b06030; }
     }
 
     .book-reader-scope {
-        font-size: var(--reader-font-size, 18px);
+        font-size: var(--reader-font-size, 19px);
     }
 }
 

@@ -103,14 +103,31 @@
             </button>
         </div>
 
-        {{-- Font size --}}
+        {{-- Font size — Normal text --}}
         <div class="reader-settings-section">
-            <div class="reader-settings-label">Lettergrootte</div>
-            <div class="reader-settings-font-row">
-                <button class="reader-btn" id="font-smaller" title="Kleinere tekst" aria-label="Kleinere tekst">A&minus;</button>
-                <span class="reader-font-indicator" id="font-size-display" aria-live="polite" aria-label="Huidige lettergrootte">19.0px</span>
-                <button class="reader-btn" id="font-larger" title="Grotere tekst" aria-label="Grotere tekst">A+</button>
+            <div class="reader-settings-label">Lettergrootte tekst</div>
+            <div class="reader-settings-font-slider-row">
+                <input type="range" class="reader-font-slider" id="font-slider"
+                       min="12" max="36" step="0.1" value="19"
+                       aria-label="Lettergrootte tekst">
+                <span class="reader-font-size-val" id="font-size-display" aria-live="polite">19.0px</span>
+            </div>
+            <div style="display:flex;justify-content:flex-end;margin-top:6px;">
                 <button class="reader-btn reader-btn-reset-font" id="font-reset" title="Standaard lettergrootte" aria-label="Lettergrootte resetten">Reset</button>
+            </div>
+        </div>
+
+        {{-- Font size — Arabic text --}}
+        <div class="reader-settings-section">
+            <div class="reader-settings-label">Lettergrootte Arabisch</div>
+            <div class="reader-settings-font-slider-row">
+                <input type="range" class="reader-font-slider" id="arabic-font-slider"
+                       min="16" max="52" step="0.1" value="29"
+                       aria-label="Lettergrootte Arabisch">
+                <span class="reader-font-size-val" id="arabic-font-size-display" aria-live="polite">29.0px</span>
+            </div>
+            <div style="display:flex;justify-content:flex-end;margin-top:6px;">
+                <button class="reader-btn reader-btn-reset-font" id="arabic-font-reset" title="Standaard Arabische lettergrootte" aria-label="Arabische lettergrootte resetten">Reset</button>
             </div>
         </div>
 
@@ -261,7 +278,9 @@
         const TOPBAR_H    = 74;  // topbar(44) + nav-bar(30)
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
-        const DEFAULT_FONT = window.innerWidth <= 600 ? 18 : 19;
+        const ARABIC_FONT_KEY = 'reading_arabicfontsize_{{ $product->id }}';
+        const DEFAULT_FONT = 19;
+        const DEFAULT_ARABIC_FONT = 29;
 
         const readerEl     = document.getElementById('reader-content');
         const progressFill = document.getElementById('progress-fill');
@@ -362,6 +381,18 @@
             readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; });
             const display = document.getElementById('font-size-display');
             if (display) display.textContent = sz.toFixed(1) + 'px';
+            const slider = document.getElementById('font-slider');
+            if (slider) slider.value = sz;
+        }
+
+        function saveArabicFont(sz)  { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
+        function loadArabicFont()    { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
+        function applyArabicFont(sz) {
+            readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
+            const display = document.getElementById('arabic-font-size-display');
+            if (display) display.textContent = sz.toFixed(1) + 'px';
+            const slider = document.getElementById('arabic-font-slider');
+            if (slider) slider.value = sz;
         }
 
         // Dark mode helpers removed — theme now handled by applyTheme() below
@@ -408,6 +439,8 @@
                     }
                     registerPageEls();
                     if (savedFont) applyFont(savedFont);
+                    const savedArabicFont = loadArabicFont();
+                    if (savedArabicFont) applyArabicFont(savedArabicFont);
 
                     allLoaded = !data.has_more;
                     if (allLoaded && sentinel && sentinel.parentNode) sentinel.remove();
@@ -525,20 +558,33 @@
             });
         }
 
-        // --- Font size ---
-        document.getElementById('font-smaller')?.addEventListener('click', () => {
-            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || DEFAULT_FONT;
-            const next = Math.max(12, Math.round((cur - 0.1) * 10) / 10);
-            applyFont(next); saveFont(next);
+        // --- Font size sliders ---
+        const fontSlider = document.getElementById('font-slider');
+        fontSlider?.addEventListener('input', () => {
+            const sz = Math.round(parseFloat(fontSlider.value) * 10) / 10;
+            applyFont(sz);
         });
-        document.getElementById('font-larger')?.addEventListener('click', () => {
-            const cur  = parseFloat(getComputedStyle(readerEl.querySelector('.page')).fontSize) || DEFAULT_FONT;
-            const next = Math.min(36, Math.round((cur + 0.1) * 10) / 10);
-            applyFont(next); saveFont(next);
+        fontSlider?.addEventListener('change', () => {
+            const sz = Math.round(parseFloat(fontSlider.value) * 10) / 10;
+            applyFont(sz); saveFont(sz);
         });
         document.getElementById('font-reset')?.addEventListener('click', () => {
             applyFont(DEFAULT_FONT);
             saveFont(DEFAULT_FONT);
+        });
+
+        const arabicFontSlider = document.getElementById('arabic-font-slider');
+        arabicFontSlider?.addEventListener('input', () => {
+            const sz = Math.round(parseFloat(arabicFontSlider.value) * 10) / 10;
+            applyArabicFont(sz);
+        });
+        arabicFontSlider?.addEventListener('change', () => {
+            const sz = Math.round(parseFloat(arabicFontSlider.value) * 10) / 10;
+            applyArabicFont(sz); saveArabicFont(sz);
+        });
+        document.getElementById('arabic-font-reset')?.addEventListener('click', () => {
+            applyArabicFont(DEFAULT_ARABIC_FONT);
+            saveArabicFont(DEFAULT_ARABIC_FONT);
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
@@ -555,7 +601,7 @@
                     touch2.pageY - touch1.pageY
                 );
                 const currentPage = readerEl.querySelector('.page');
-                pinchStartFontSize = currentPage ? parseFloat(getComputedStyle(currentPage).fontSize) || 18 : 18;
+                pinchStartFontSize = currentPage ? parseFloat(getComputedStyle(currentPage).fontSize) || 19 : 19;
             }
         }, { passive: false });
 
@@ -585,7 +631,7 @@
                 // Save final font size
                 const currentPage = readerEl.querySelector('.page');
                 if (currentPage) {
-                    const finalSize = parseFloat(getComputedStyle(currentPage).fontSize) || 18;
+                    const finalSize = parseFloat(getComputedStyle(currentPage).fontSize) || 19;
                     saveFont(finalSize);
                 }
                 pinchStartDist = null;
@@ -785,9 +831,14 @@
             if (savedFont) {
                 applyFont(savedFont);
             } else {
-                // Show default font size in the indicator
-                const display = document.getElementById('font-size-display');
-                if (display) display.textContent = DEFAULT_FONT.toFixed(1) + 'px';
+                applyFont(DEFAULT_FONT);
+            }
+
+            const savedArabicFont = loadArabicFont();
+            if (savedArabicFont) {
+                applyArabicFont(savedArabicFont);
+            } else {
+                applyArabicFont(DEFAULT_ARABIC_FONT);
             }
 
             const saved     = load();
