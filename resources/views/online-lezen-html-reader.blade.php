@@ -2,18 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
 
-    {{-- PWA / Standalone mode (hides browser chrome when installed to home screen) --}}
-    <link rel="manifest" href="/reader-manifest.json">
-    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Bibliotheek">
-    <link rel="apple-touch-icon" href="/images/pwa-icon-192.png">
 
     @php
         $seoTitle       = $SEOData->title       ?? ($product->title . ' | Online Lezen | Lucide Inkt');
@@ -93,12 +84,6 @@
         </div>
 
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
-            {{-- Install PWA button (hidden by default; shown by JS when installable) --}}
-            <button class="reader-btn reader-btn-icon reader-install-btn" id="pwa-install-btn"
-                    title="Voeg toe aan beginscherm" aria-label="Installeer als app"
-                    hidden style="display:none;">
-                <i class="fa-solid fa-download" aria-hidden="true"></i>
-            </button>
             @if(!empty($tocEntries))
             <button class="reader-btn reader-btn-icon" id="toc-toggle-btn" title="Inhoudsopgave" aria-label="Inhoudsopgave tonen/verbergen" aria-expanded="false">
                 <i class="fa-solid fa-list" aria-hidden="true"></i>
@@ -879,58 +864,6 @@
             restoreProgress();
         } else {
             window.addEventListener('load', restoreProgress);
-        }
-
-        // ── PWA: Register Service Worker ──────────────────────────────────────────
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/reader-sw.js', { scope: '/bibliotheek' })
-                    .catch(err => console.warn('SW registration failed:', err));
-            });
-        }
-
-        // ── PWA: Install prompt (Android / Chrome) ────────────────────────────────
-        const installBtn = document.getElementById('pwa-install-btn');
-        let deferredPrompt = null;
-
-        window.addEventListener('beforeinstallprompt', e => {
-            e.preventDefault();
-            deferredPrompt = e;
-            // Show install button
-            if (installBtn) {
-                installBtn.removeAttribute('hidden');
-                installBtn.style.display = '';
-            }
-        });
-
-        installBtn?.addEventListener('click', async () => {
-            if (!deferredPrompt) return;
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            if (outcome === 'accepted') {
-                if (installBtn) { installBtn.setAttribute('hidden', ''); installBtn.style.display = 'none'; }
-            }
-            deferredPrompt = null;
-        });
-
-        // Hide install button if already installed (standalone mode)
-        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
-            if (installBtn) { installBtn.setAttribute('hidden', ''); installBtn.style.display = 'none'; }
-        }
-
-        // ── iOS: Show install hint once if not in standalone mode ─────────────────
-        const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
-        const isInStandalone = window.navigator.standalone === true;
-        const IOS_HINT_KEY = 'ios-install-hint-shown';
-        if (isIos && !isInStandalone && !localStorage.getItem(IOS_HINT_KEY)) {
-            localStorage.setItem(IOS_HINT_KEY, '1');
-            // Show a small toast pointing to Safari share button
-            const toast = document.createElement('div');
-            toast.setAttribute('role', 'status');
-            toast.style.cssText = 'position:fixed;bottom:70px;left:50%;transform:translateX(-50%);background:rgba(30,30,30,.92);color:#fff;padding:10px 16px;border-radius:12px;font-size:13px;z-index:99999;max-width:280px;text-align:center;line-height:1.4;box-shadow:0 4px 16px rgba(0,0,0,.4);';
-            toast.innerHTML = '<i class="fa-solid fa-arrow-up-from-bracket" style="margin-right:6px;"></i>Tik op <strong>Deel</strong> → <strong>"Zet op beginscherm"</strong> voor de app-ervaring.';
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 7000);
         }
     })();
     </script>
