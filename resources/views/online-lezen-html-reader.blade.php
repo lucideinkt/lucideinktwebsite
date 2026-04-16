@@ -83,141 +83,19 @@
             <span class="reader-book-title">{{ $product->title }}</span>
         </div>
 
-        <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
-            @if(!empty($tocEntries))
-            <button class="reader-btn reader-btn-icon" id="toc-toggle-btn" title="Inhoudsopgave" aria-label="Inhoudsopgave tonen/verbergen" aria-expanded="false">
-                <i class="fa-solid fa-list" aria-hidden="true"></i>
-            </button>
-            @endif
-            <button class="reader-btn reader-btn-icon" id="settings-toggle-btn" title="Instellingen" aria-label="Instellingen openen" aria-expanded="false" aria-haspopup="dialog">
-                <i class="fa-solid fa-gear" aria-hidden="true"></i>
-            </button>
+            <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
+            <span class="reader-topbar-page-badge" id="topbar-page-badge" aria-live="polite"></span>
         </div>
     </header>
 
-    {{-- Settings popup (fixed below topbar) --}}
-    <div class="reader-settings-popup" id="settings-popup" hidden role="dialog" aria-label="Lezerinstellingen">
-        <div class="reader-settings-header">
-            <span class="reader-settings-title"><i class="fa-solid fa-gear" style="margin-right:5px;font-size:9px;opacity:0.65;" aria-hidden="true"></i>Instellingen</span>
-            <button class="reader-settings-close" id="settings-close-btn" type="button" aria-label="Instellingen sluiten">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-        </div>
-
-        {{-- Font size — Normal text --}}
-        <div class="reader-settings-section">
-            <div class="reader-settings-label">Lettergrootte tekst</div>
-            <div class="reader-settings-font-slider-row">
-                <input type="range" class="reader-font-slider" id="font-slider"
-                       min="12" max="36" step="0.1" value="19"
-                       aria-label="Lettergrootte tekst">
-                <span class="reader-font-size-val" id="font-size-display" aria-live="polite">19.0px</span>
-            </div>
-            <div style="display:flex;justify-content:flex-end;margin-top:6px;">
-                <button class="reader-btn reader-btn-reset-font" id="font-reset" title="Standaard lettergrootte" aria-label="Lettergrootte resetten">Reset</button>
-            </div>
-        </div>
-
-        {{-- Font size — Arabic text --}}
-        <div class="reader-settings-section">
-            <div class="reader-settings-label">Lettergrootte Arabisch</div>
-            <div class="reader-settings-font-slider-row">
-                <input type="range" class="reader-font-slider" id="arabic-font-slider"
-                       min="16" max="52" step="0.1" value="29"
-                       aria-label="Lettergrootte Arabisch">
-                <span class="reader-font-size-val" id="arabic-font-size-display" aria-live="polite">29.0px</span>
-            </div>
-            <div style="display:flex;justify-content:flex-end;margin-top:6px;">
-                <button class="reader-btn reader-btn-reset-font" id="arabic-font-reset" title="Standaard Arabische lettergrootte" aria-label="Arabische lettergrootte resetten">Reset</button>
-            </div>
-        </div>
-
-        {{-- Theme --}}
-        <div class="reader-settings-section">
-            <div class="reader-settings-label">Weergave</div>
-            <div class="reader-settings-theme-row">
-                <button class="reader-theme-btn" id="theme-system" type="button" data-theme="system" aria-label="Systeemthema">
-                    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Systeem
-                </button>
-                <button class="reader-theme-btn" id="theme-light" type="button" data-theme="light" aria-label="Licht thema">
-                    <i class="fa-solid fa-sun" aria-hidden="true"></i> Licht
-                </button>
-                <button class="reader-theme-btn" id="theme-dark" type="button" data-theme="dark" aria-label="Donker thema">
-                    <i class="fa-solid fa-moon" aria-hidden="true"></i> Donker
-                </button>
-            </div>
-        </div>
+    {{-- Progress bar — slim, just below topbar --}}
+    <div class="reader-progress-bar-wrap" role="progressbar" aria-label="Leesvoortgang" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="reader-progress-bar-fill" id="progress-fill"></div>
     </div>
-
-    {{-- Page nav bar (flush directly below topbar; progress bar is inside) --}}
-    <nav class="reader-bottombar" aria-label="Paginanavigatie">
-        {{-- Leesvoortgang — inside the nav bar so there is no gap --}}
-        <div class="reader-progress" role="progressbar" aria-label="Leesvoortgang" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-            <div class="reader-progress-fill" id="progress-fill"></div>
-        </div>
-        {{-- Prev & Next — both to the left of the page count --}}
-        <button class="reader-nav-arrow" id="page-prev-btn" aria-label="Vorige pagina" title="Vorige pagina">
-            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <button class="reader-nav-arrow" id="page-next-btn" aria-label="Volgende pagina" title="Volgende pagina">
-            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
-
-        {{-- Page count button — click to open popup --}}
-        <div class="reader-page-jump">
-            <button class="reader-page-btn" id="page-jump-btn" aria-haspopup="dialog" aria-expanded="false" title="Ga naar pagina">
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-                <span class="reader-page-btn-label">
-                    <span id="page-current">&mdash;</span>
-                    <span class="reader-page-sep">/</span>
-                    <span class="reader-page-total">{{ $allPageMeta->max('page_number') }}</span>
-                </span>
-                <i class="fa-solid fa-chevron-down reader-page-chevron" aria-hidden="true"></i>
-            </button>
-
-            {{-- Page-jump popup (slider + number input) --}}
-            <div class="reader-page-popup" id="page-popup" hidden role="dialog" aria-label="Ga naar pagina">
-                <div class="reader-page-popup-header">
-                    <span class="reader-page-popup-title">Ga naar pagina</span>
-                    <button class="reader-page-popup-close" id="page-popup-close" type="button" aria-label="Sluiten" title="Sluiten">
-                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                    </button>
-                </div>
-
-                {{-- Slider (above the input) --}}
-                <div class="reader-page-slider-section">
-                    <input type="range"
-                           class="reader-page-slider"
-                           id="page-slider"
-                           min="{{ $allPageMeta->min('page_number') }}"
-                           max="{{ $allPageMeta->max('page_number') }}"
-                           value="{{ $allPageMeta->min('page_number') }}"
-                           aria-label="Schuif naar pagina">
-                    <div class="reader-page-slider-labels">
-                        <span>{{ $allPageMeta->min('page_number') }}</span>
-                        <span class="reader-slider-current" id="slider-preview">{{ $allPageMeta->min('page_number') }}</span>
-                        <span>{{ $allPageMeta->max('page_number') }}</span>
-                    </div>
-                </div>
-
-                {{-- Number input + Ga button --}}
-                <div class="reader-page-input-section">
-                    <input type="number"
-                           class="reader-page-input"
-                           id="page-number-input"
-                           min="{{ $allPageMeta->min('page_number') }}"
-                           max="{{ $allPageMeta->max('page_number') }}"
-                           placeholder="Paginanummer"
-                           aria-label="Paginanummer invoeren">
-                    <button class="reader-page-go-btn" id="page-go-btn" type="button">Ga</button>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     {{-- Boekinhoud --}}
     <main class="reader-wrap">
-        <article class="book-reader-scope" id="reader-content" lang="nl"
+        <article class="book-reader-scope" id="reader-content" lang="nl" role="main"
             data-product-id="{{ $product->id }}"
             data-api-url="{{ route('onlineLezenPagesApi', $product->slug) }}"
             data-last-page="{{ $pages->last()->page_number }}"
@@ -249,9 +127,158 @@
         </div>
     </main>
 
-    <button class="reader-to-top" id="to-top-btn" aria-label="Terug naar boven">
-        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+    {{-- FAB — floating action button (bottom-right, thumb-reachable) --}}
+    <button class="reader-fab" id="reader-fab" aria-label="Lezeropties" aria-expanded="false" aria-haspopup="dialog">
+        <span class="reader-fab-icon-wrap" aria-hidden="true">
+            <i class="fa-solid fa-sliders reader-fab-icon"></i>
+        </span>
+        <span class="reader-fab-page-wrap">
+            <span class="reader-fab-page" id="fab-page-current">&mdash;</span>
+            <span class="reader-fab-page-sub">
+                <span class="reader-fab-sep">/</span>
+                <span class="reader-fab-total">{{ $allPageMeta->max('page_number') }}</span>
+            </span>
+        </span>
     </button>
+
+
+    {{-- ────── Control Sheet ────── --}}
+    <div class="reader-control-sheet" id="reader-control-sheet" role="dialog" aria-label="Lezeropties" aria-hidden="true">
+        {{-- Drag handle --}}
+        <div class="reader-sheet-drag-handle" aria-hidden="true"></div>
+
+        {{-- Progress bar --}}
+        <div class="reader-sheet-progress-wrap" aria-hidden="true">
+            <div class="reader-sheet-progress-fill" id="sheet-progress-fill"></div>
+        </div>
+
+        {{-- Tabs --}}
+        <div class="reader-sheet-tabs" role="tablist">
+            <button class="reader-sheet-tab active" id="sheet-tab-controls" data-tab="controls" role="tab" aria-selected="true">
+                <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Instellingen</span>
+            </button>
+            <button class="reader-sheet-tab" id="sheet-tab-library" data-tab="library" role="tab" aria-selected="false">
+                <i class="fa-solid fa-bookmark" aria-hidden="true"></i><span>Bibliotheek</span>
+            </button>
+        </div>
+
+        {{-- Controls panel --}}
+        <div id="sheet-panel-controls">
+
+        {{-- Page navigation --}}
+        <div class="reader-sheet-section reader-sheet-nav-section">
+            <button class="reader-sheet-arrow" id="sheet-prev-btn" aria-label="Vorige pagina" title="Vorige pagina">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <div class="reader-sheet-page-display">
+                <span class="reader-sheet-page-num" id="sheet-page-current">&mdash;</span>
+                <span class="reader-sheet-page-sep">/</span>
+                <span class="reader-sheet-page-total">{{ $allPageMeta->max('page_number') }}</span>
+            </div>
+            <button class="reader-sheet-arrow" id="sheet-next-btn" aria-label="Volgende pagina" title="Volgende pagina">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        {{-- Page slider --}}
+        <div class="reader-sheet-section reader-sheet-slider-row">
+            <div class="reader-sheet-slider-meta">
+                <span class="reader-sheet-slider-label"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Pagina</span>
+                <span class="reader-sheet-slider-preview" id="sheet-page-preview">{{ $allPageMeta->min('page_number') }}</span>
+            </div>
+            <input type="range" class="reader-sheet-slider" id="sheet-page-slider"
+                   min="{{ $allPageMeta->min('page_number') }}"
+                   max="{{ $allPageMeta->max('page_number') }}"
+                   value="{{ $allPageMeta->min('page_number') }}"
+                   aria-label="Ga naar pagina">
+            <div class="reader-sheet-slider-ends">
+                <span>{{ $allPageMeta->min('page_number') }}</span>
+                <span>{{ $allPageMeta->max('page_number') }}</span>
+            </div>
+        </div>
+
+        <div class="reader-sheet-divider"></div>
+
+        {{-- Text font size --}}
+        <div class="reader-sheet-section reader-sheet-slider-row">
+            <div class="reader-sheet-slider-meta">
+                <span class="reader-sheet-slider-label"><i class="fa-solid fa-font" aria-hidden="true"></i> Tekst</span>
+                <div class="reader-sheet-slider-right">
+                    <span class="reader-sheet-slider-val" id="sheet-font-val" aria-live="polite">18.0px</span>
+                    <button class="reader-sheet-reset-btn" id="sheet-font-reset" type="button" aria-label="Lettergrootte resetten">↺</button>
+                </div>
+            </div>
+            <input type="range" class="reader-sheet-slider" id="font-slider"
+                   min="12" max="36" step="0.1" value="18"
+                   aria-label="Lettergrootte tekst">
+        </div>
+
+        {{-- Arabic font size --}}
+        <div class="reader-sheet-section reader-sheet-slider-row">
+            <div class="reader-sheet-slider-meta">
+                <span class="reader-sheet-slider-label"><i class="fa-solid fa-language" aria-hidden="true"></i> Arabisch</span>
+                <div class="reader-sheet-slider-right">
+                    <span class="reader-sheet-slider-val" id="arabic-font-size-display" aria-live="polite">28.0px</span>
+                    <button class="reader-sheet-reset-btn" id="arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
+                </div>
+            </div>
+            <input type="range" class="reader-sheet-slider" id="arabic-font-slider"
+                   min="16" max="52" step="0.1" value="28"
+                   aria-label="Lettergrootte Arabisch">
+        </div>
+
+        <div class="reader-sheet-divider"></div>
+
+        {{-- Theme --}}
+        <div class="reader-sheet-section reader-sheet-theme-section">
+            <span class="reader-sheet-section-label">Weergave</span>
+            <div class="reader-sheet-theme-row">
+                <button class="reader-sheet-theme-btn" data-theme="system" type="button" aria-label="Systeemthema">
+                    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i><span>Systeem</span>
+                </button>
+                <button class="reader-sheet-theme-btn" data-theme="light" type="button" aria-label="Licht thema">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i><span>Licht</span>
+                </button>
+                <button class="reader-sheet-theme-btn" data-theme="dark" type="button" aria-label="Donker thema">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i><span>Donker</span>
+                </button>
+            </div>
+        </div>
+
+        @if(!empty($tocEntries))
+        <div class="reader-sheet-divider"></div>
+        <div class="reader-sheet-section reader-sheet-toc-section">
+            <button class="reader-sheet-toc-btn" id="sheet-toc-btn" type="button">
+                <i class="fa-solid fa-list" aria-hidden="true"></i> Inhoudsopgave
+            </button>
+        </div>
+        @endif
+
+        <div class="reader-sheet-bottom-safe"></div>
+        </div>{{-- /sheet-panel-controls --}}
+
+        {{-- Library panel: bookmarks + highlights across all books --}}
+        <div id="sheet-panel-library" hidden>
+            <div class="reader-lib-block">
+                <div class="reader-lib-block-header">
+                    <span><i class="fa-solid fa-bookmark" aria-hidden="true"></i> Bladwijzers</span>
+                    <button class="reader-lib-clear-all" id="lib-clear-bookmarks" type="button">Wis alles</button>
+                </div>
+                <div class="reader-lib-list" id="lib-bookmarks-list"></div>
+            </div>
+            <div class="reader-lib-separator"></div>
+            <div class="reader-lib-block">
+                <div class="reader-lib-block-header">
+                    <span><i class="fa-solid fa-highlighter" aria-hidden="true"></i> Markeringen</span>
+                    <button class="reader-lib-clear-all" id="lib-clear-highlights" type="button">Wis alles</button>
+                </div>
+                <div class="reader-lib-list" id="lib-highlights-list"></div>
+            </div>
+            <div class="reader-sheet-bottom-safe"></div>
+        </div>
+
+    </div>
+    <div class="reader-sheet-backdrop" id="reader-sheet-backdrop" aria-hidden="true"></div>
 
     {{-- Inhoudsopgave panel (sidebar drawer) — only rendered when the book has TOC entries --}}
     @if(!empty($tocEntries))
@@ -269,6 +296,25 @@
     <div id="toc-backdrop" class="toc-backdrop" aria-hidden="true"></div>
     @endif
 
+    {{-- Highlight / selection popup --}}
+    <div class="hl-popup" id="hl-popup" hidden role="toolbar" aria-label="Tekst opties">
+        <button class="hl-color-btn" data-color="yellow" title="Geel"   aria-label="Geel markeren"></button>
+        <button class="hl-color-btn" data-color="green"  title="Groen"  aria-label="Groen markeren"></button>
+        <button class="hl-color-btn" data-color="blue"   title="Blauw"  aria-label="Blauw markeren"></button>
+        <button class="hl-color-btn" data-color="pink"   title="Roze"   aria-label="Roze markeren"></button>
+        <button class="hl-color-btn" data-color="orange" title="Oranje" aria-label="Oranje markeren"></button>
+        <div class="hl-popup-sep" aria-hidden="true"></div>
+        <button class="hl-action-btn" id="hl-copy-btn" title="Kopiëren" aria-label="Tekst kopiëren">
+            <i class="fa-solid fa-copy" aria-hidden="true"></i>
+        </button>
+        <button class="hl-action-btn" id="hl-bookmark-btn" title="Bladwijzer" aria-label="Bladwijzer toevoegen">
+            <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+        </button>
+        <button class="hl-action-btn" id="hl-remove-btn" title="Verwijder markering" aria-label="Markering verwijderen" hidden>
+            <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+        </button>
+    </div>
+
     {{-- Loading overlay shown while pages load --}}
     <div id="reader-loader" aria-hidden="true">
         <div class="spinner" role="status" aria-label="Pagina wordt geladen"></div>
@@ -276,37 +322,44 @@
 
     <script>
     (function () {
-        const TOPBAR_H    = 74;  // topbar(44) + nav-bar(30)
+        const TOPBAR_H    = 46;
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
         const ARABIC_FONT_KEY = 'reading_arabicfontsize_{{ $product->id }}';
-        const DEFAULT_FONT = 19;
-        const DEFAULT_ARABIC_FONT = 29;
+        const DEFAULT_FONT = 18;
+        const DEFAULT_ARABIC_FONT = 28;
+        // Cross-book meta
+        const PRODUCT_ID    = {{ $product->id }};
+        const PRODUCT_TITLE = @json($product->title);
+        const PRODUCT_SLUG  = @json($product->slug);
+        const READER_URL    = window.location.pathname;
 
-        const readerEl     = document.getElementById('reader-content');
-        const progressFill = document.getElementById('progress-fill');
-        const pageCurrent  = document.getElementById('page-current');
-        const popup        = document.getElementById('page-popup');
-        const popupClose   = document.getElementById('page-popup-close');
-        const jumpBtn      = document.getElementById('page-jump-btn');
-        const pageSlider   = document.getElementById('page-slider');
-        const sliderPreview= document.getElementById('slider-preview');
-        const pageInput    = document.getElementById('page-number-input');
-        const pageGoBtn    = document.getElementById('page-go-btn');
-        const prevBtn      = document.getElementById('page-prev-btn');
-        const nextBtn      = document.getElementById('page-next-btn');
-        const toTopBtn     = document.getElementById('to-top-btn');
-        const sentinel     = document.getElementById('lazy-sentinel');
-        const loaderEl     = document.getElementById('reader-loader');
-
+        const readerEl          = document.getElementById('reader-content');
+        const progressFill      = document.getElementById('progress-fill');
+        const sheetProgressFill = document.getElementById('sheet-progress-fill');
+        const fabPageCurrent    = document.getElementById('fab-page-current');
+        const topbarBadge       = document.getElementById('topbar-page-badge');
+        const controlSheet      = document.getElementById('reader-control-sheet');
+        const sheetBackdrop     = document.getElementById('reader-sheet-backdrop');
+        const sheetPageCurrent  = document.getElementById('sheet-page-current');
+        const sheetPrevBtn      = document.getElementById('sheet-prev-btn');
+        const sheetNextBtn      = document.getElementById('sheet-next-btn');
+        const sheetPageSlider   = document.getElementById('sheet-page-slider');
+        const sheetPagePreview  = document.getElementById('sheet-page-preview');
+        const fontSlider        = document.getElementById('font-slider');
+        const fontValEl         = document.getElementById('sheet-font-val');
+        const arabicFontSlider  = document.getElementById('arabic-font-slider');
+        const arabicFontValEl   = document.getElementById('arabic-font-size-display');
+        const sheetTocBtn       = document.getElementById('sheet-toc-btn');
+        const sentinel          = document.getElementById('lazy-sentinel');
+        const loaderEl          = document.getElementById('reader-loader');
+        const fab               = document.getElementById('reader-fab');
         function showLoader() { if (loaderEl) { loaderEl.classList.add('visible'); loaderEl.setAttribute('aria-hidden','false'); } }
         function hideLoader() { if (loaderEl) { loaderEl.classList.remove('visible'); loaderEl.setAttribute('aria-hidden','true'); } }
 
         if (!readerEl) return;
 
         const API_URL_VAL = readerEl.dataset.apiUrl;
-
-        // All page numbers known upfront (lightweight - no content loaded)
         const allPageNumbers = @json($allPageMeta->pluck('page_number')->toArray());
         const sorted    = allPageNumbers.slice().sort((a, b) => a - b);
         const firstPage = sorted[0];
@@ -367,36 +420,32 @@
 
         // --- Helpers ---
         function updateUI(page) {
-            if (pageCurrent) pageCurrent.textContent = page;
-            if (progressFill) {
-                const idx = sorted.indexOf(page);
-                const pct = idx >= 0 ? Math.round(((idx + 1) / sorted.length) * 100) : 0;
-                progressFill.style.width = pct + '%';
-            }
+            if (sheetPageCurrent) sheetPageCurrent.textContent = page;
+            if (fabPageCurrent)   fabPageCurrent.textContent  = page;
+            if (topbarBadge)      topbarBadge.textContent     = page + ' / ' + sorted[sorted.length - 1];
+            const idx = sorted.indexOf(page);
+            const pct = idx >= 0 ? Math.round(((idx + 1) / sorted.length) * 100) : 0;
+            if (progressFill)      progressFill.style.width      = pct + '%';
+            if (sheetProgressFill) sheetProgressFill.style.width = pct + '%';
+            if (sheetPageSlider && document.activeElement !== sheetPageSlider) sheetPageSlider.value = page;
+            if (sheetPagePreview) sheetPagePreview.textContent = page;
         }
-        function save(page)    { try { localStorage.setItem(STORAGE_KEY, String(page)); }  catch (_) {} }
-        function load()        { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
-        function saveFont(sz)  { try { localStorage.setItem(FONT_KEY, String(sz)); }       catch (_) {} }
-        function loadFont()    { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; }     catch (_) { return null; } }
+        function save(page)   { try { localStorage.setItem(STORAGE_KEY, String(page)); } catch (_) {} }
+        function load()       { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
+        function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (_) {} }
+        function loadFont()   { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         function applyFont(sz) {
             readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; });
-            const display = document.getElementById('font-size-display');
-            if (display) display.textContent = sz.toFixed(1) + 'px';
-            const slider = document.getElementById('font-slider');
-            if (slider) slider.value = sz;
+            if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
+            if (fontSlider && document.activeElement !== fontSlider) fontSlider.value = sz;
         }
-
-        function saveArabicFont(sz)  { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
-        function loadArabicFont()    { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
+        function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
+        function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         function applyArabicFont(sz) {
             readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
-            const display = document.getElementById('arabic-font-size-display');
-            if (display) display.textContent = sz.toFixed(1) + 'px';
-            const slider = document.getElementById('arabic-font-slider');
-            if (slider) slider.value = sz;
+            if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
+            if (arabicFontSlider && document.activeElement !== arabicFontSlider) arabicFontSlider.value = sz;
         }
-
-        // Dark mode helpers removed — theme now handled by applyTheme() below
 
         function visiblePage() {
             let closest = null, best = Infinity;
@@ -442,6 +491,13 @@
                     if (savedFont) applyFont(savedFont);
                     const savedArabicFont = loadArabicFont();
                     if (savedArabicFont) applyArabicFont(savedArabicFont);
+                    // Restore highlights for newly loaded pages
+                    data.pages.forEach(p => {
+                        if (pageMap[p.page_number]) {
+                            hlRestorePage(pageMap[p.page_number], p.page_number);
+                            bmRenderMarkers(pageMap[p.page_number], p.page_number);
+                        }
+                    });
 
                     allLoaded = !data.has_more;
                     if (allLoaded && sentinel && sentinel.parentNode) sentinel.remove();
@@ -472,120 +528,92 @@
             save(page);
         }
 
-        // --- Scroll listener ---
+        // --- Scroll ---
         let saveTimer = null;
         window.addEventListener('scroll', function () {
-            if (toTopBtn) toTopBtn.classList.toggle('show', window.scrollY > 300);
             const cur = visiblePage();
             updateUI(cur);
             clearTimeout(saveTimer);
             saveTimer = setTimeout(() => save(visiblePage()), 300);
         }, { passive: true });
 
-        // --- Popup (page navigator) ---
-        const MIN_PAGE = parseInt(pageSlider?.min || '1', 10);
-        const MAX_PAGE = parseInt(pageSlider?.max || '1', 10);
-
-        function openPopup() {
-            if (!popup) return;
+        // ── Control Sheet ──
+        function openSheet() {
+            if (!controlSheet) return;
+            controlSheet.classList.add('open');
+            controlSheet.setAttribute('aria-hidden', 'false');
+            sheetBackdrop?.classList.add('open');
+            sheetBackdrop?.setAttribute('aria-hidden', 'false');
+            fab?.setAttribute('aria-expanded', 'true');
             const cur = visiblePage();
-            if (pageSlider) { pageSlider.value = cur; }
-            if (sliderPreview) { sliderPreview.textContent = cur; }
-            if (pageInput) { pageInput.value = ''; pageInput.placeholder = 'Paginanummer'; }
-            popup.removeAttribute('hidden');
-            jumpBtn?.setAttribute('aria-expanded', 'true');
+            if (sheetPageSlider) sheetPageSlider.value = cur;
+            if (sheetPagePreview) sheetPagePreview.textContent = cur;
         }
-        function closePopup() {
-            if (!popup) return;
-            popup.setAttribute('hidden', '');
-            jumpBtn?.setAttribute('aria-expanded', 'false');
+        function closeSheet() {
+            if (!controlSheet) return;
+            controlSheet.classList.remove('open');
+            controlSheet.setAttribute('aria-hidden', 'true');
+            sheetBackdrop?.classList.remove('open');
+            sheetBackdrop?.setAttribute('aria-hidden', 'true');
+            fab?.setAttribute('aria-expanded', 'false');
         }
+        function toggleSheet() { controlSheet?.classList.contains('open') ? closeSheet() : openSheet(); }
 
-        // Slider: update preview while dragging, navigate on release
-        pageSlider?.addEventListener('input', () => {
-            if (sliderPreview) sliderPreview.textContent = pageSlider.value;
-        });
-        pageSlider?.addEventListener('change', () => {
-            const p = parseInt(pageSlider.value, 10);
-            if (p) { jumpTo(p, true); closePopup(); }
-        });
-
-        // "Ga" button + Enter key
-        pageGoBtn?.addEventListener('click', () => {
-            const val = parseInt(pageInput?.value, 10);
-            if (val && val >= MIN_PAGE && val <= MAX_PAGE) {
-                jumpTo(val, true); closePopup();
-            }
-        });
-        pageInput?.addEventListener('keydown', e => {
-            if (e.key === 'Enter') pageGoBtn?.click();
-        });
-
-        // Toggle popup on page-count button click
-        if (jumpBtn) {
-            jumpBtn.addEventListener('click', e => {
-                e.stopPropagation();
-                popup?.hasAttribute('hidden') ? openPopup() : closePopup();
-            });
-        }
-
-        // Close popup on outside click
-        document.addEventListener('click', ev => {
-            if (popup && !popup.hasAttribute('hidden') &&
-                !popup.contains(ev.target) && !jumpBtn?.contains(ev.target)) {
-                closePopup();
-            }
-        });
-
-        // Close popup on Escape
-        popupClose?.addEventListener('click', closePopup);
+        fab?.addEventListener('click', e => { e.stopPropagation(); toggleSheet(); });
+        sheetBackdrop?.addEventListener('click', closeSheet);
         document.addEventListener('keydown', ev => {
-            if (ev.key === 'Escape' && popup && !popup.hasAttribute('hidden')) closePopup();
+            if (ev.key === 'Escape' && controlSheet?.classList.contains('open')) closeSheet();
         });
 
-        // --- Prev / Next page buttons ---
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                const cur = visiblePage();
-                const idx = sorted.indexOf(cur);
-                if (idx > 0) jumpTo(sorted[idx - 1], true);
-            });
-        }
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                const cur = visiblePage();
-                const idx = sorted.indexOf(cur);
-                if (idx < sorted.length - 1) jumpTo(sorted[idx + 1], true);
-            });
-        }
+        // Tap reading area to toggle sheet (excluding footnotes / links / buttons / marks)
+        readerEl?.addEventListener('click', e => {
+            if (e.target.closest('.fn-ref, .fn-popover, [data-toc-page], a, button, input, select, textarea, mark')) return;
+            const sel = window.getSelection();
+            if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) return;
+            toggleSheet();
+        });
 
-        // --- Font size sliders ---
-        const fontSlider = document.getElementById('font-slider');
+        // Sheet: page slider
+        sheetPageSlider?.addEventListener('input', () => {
+            if (sheetPagePreview) sheetPagePreview.textContent = sheetPageSlider.value;
+        });
+        sheetPageSlider?.addEventListener('change', () => {
+            const p = parseInt(sheetPageSlider.value, 10);
+            if (p) { jumpTo(p, true); closeSheet(); }
+        });
+
+        // Sheet: prev / next
+        sheetPrevBtn?.addEventListener('click', () => {
+            const cur = visiblePage();
+            const idx = sorted.indexOf(cur);
+            if (idx > 0) { jumpTo(sorted[idx - 1], true); closeSheet(); }
+        });
+        sheetNextBtn?.addEventListener('click', () => {
+            const cur = visiblePage();
+            const idx = sorted.indexOf(cur);
+            if (idx < sorted.length - 1) { jumpTo(sorted[idx + 1], true); closeSheet(); }
+        });
+
+        // Sheet: font sliders
         fontSlider?.addEventListener('input', () => {
-            const sz = Math.round(parseFloat(fontSlider.value) * 10) / 10;
-            applyFont(sz);
+            applyFont(Math.round(parseFloat(fontSlider.value) * 10) / 10);
         });
         fontSlider?.addEventListener('change', () => {
             const sz = Math.round(parseFloat(fontSlider.value) * 10) / 10;
             applyFont(sz); saveFont(sz);
         });
-        document.getElementById('font-reset')?.addEventListener('click', () => {
-            applyFont(DEFAULT_FONT);
-            saveFont(DEFAULT_FONT);
+        document.getElementById('sheet-font-reset')?.addEventListener('click', () => {
+            applyFont(DEFAULT_FONT); saveFont(DEFAULT_FONT);
         });
-
-        const arabicFontSlider = document.getElementById('arabic-font-slider');
         arabicFontSlider?.addEventListener('input', () => {
-            const sz = Math.round(parseFloat(arabicFontSlider.value) * 10) / 10;
-            applyArabicFont(sz);
+            applyArabicFont(Math.round(parseFloat(arabicFontSlider.value) * 10) / 10);
         });
         arabicFontSlider?.addEventListener('change', () => {
             const sz = Math.round(parseFloat(arabicFontSlider.value) * 10) / 10;
             applyArabicFont(sz); saveArabicFont(sz);
         });
         document.getElementById('arabic-font-reset')?.addEventListener('click', () => {
-            applyArabicFont(DEFAULT_ARABIC_FONT);
-            saveArabicFont(DEFAULT_ARABIC_FONT);
+            applyArabicFont(DEFAULT_ARABIC_FONT); saveArabicFont(DEFAULT_ARABIC_FONT);
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
@@ -645,85 +673,38 @@
             pinchStartFontSize = null;
         });
 
-        // --- Settings popup ---
-        const settingsToggleBtn = document.getElementById('settings-toggle-btn');
-        const settingsPopup     = document.getElementById('settings-popup');
-        const settingsCloseBtn  = document.getElementById('settings-close-btn');
-
-        function openSettings() {
-            settingsPopup?.removeAttribute('hidden');
-            settingsToggleBtn?.setAttribute('aria-expanded', 'true');
-        }
-        function closeSettings() {
-            settingsPopup?.setAttribute('hidden', '');
-            settingsToggleBtn?.setAttribute('aria-expanded', 'false');
-        }
-        settingsToggleBtn?.addEventListener('click', e => {
-            e.stopPropagation();
-            settingsPopup?.hasAttribute('hidden') ? openSettings() : closeSettings();
-        });
-        settingsCloseBtn?.addEventListener('click', closeSettings);
-        document.addEventListener('click', ev => {
-            if (settingsPopup && !settingsPopup.hasAttribute('hidden') &&
-                !settingsPopup.contains(ev.target) && !settingsToggleBtn?.contains(ev.target)) {
-                closeSettings();
-            }
-        });
-        document.addEventListener('keydown', ev => {
-            if (ev.key === 'Escape' && settingsPopup && !settingsPopup.hasAttribute('hidden')) closeSettings();
-        });
-
-        // --- Theme (System / Light / Dark) — default: Dark ---
+        // --- Theme ---
         const THEME_KEY = 'reader-theme';
-
         function loadTheme() {
             try {
                 const stored = localStorage.getItem(THEME_KEY);
                 if (stored) return stored;
-                // Migrate: if user explicitly had light mode before, respect that
                 const old = localStorage.getItem('reader-dark-mode');
                 if (old === '0') return 'light';
-                return 'dark'; // default
+                return 'dark';
             } catch (_) { return 'dark'; }
         }
         function saveTheme(mode) { try { localStorage.setItem(THEME_KEY, mode); } catch (_) {} }
-
         function applyTheme(mode) {
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = mode === 'dark' || (mode === 'system' && prefersDark);
-            document.body.classList.toggle('dark-mode', isDark);
-            // Update active button state
-            document.querySelectorAll('.reader-theme-btn').forEach(btn => {
+            document.body.classList.toggle('dark-mode', mode === 'dark' || (mode === 'system' && prefersDark));
+            document.querySelectorAll('.reader-sheet-theme-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.theme === mode);
             });
         }
-
-        // Listen for OS theme changes when in system mode
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
             if (loadTheme() === 'system') applyTheme('system');
         });
-
-        // Theme buttons
-        document.querySelectorAll('.reader-theme-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const mode = btn.dataset.theme;
-                saveTheme(mode);
-                applyTheme(mode);
-            });
+        document.querySelectorAll('.reader-sheet-theme-btn').forEach(btn => {
+            btn.addEventListener('click', () => { saveTheme(btn.dataset.theme); applyTheme(btn.dataset.theme); });
         });
-
-        // Apply saved (or default) theme immediately
         applyTheme(loadTheme());
 
-        // --- To-top ---
-        toTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // --- TOC Panel ---
         const TOC_DATA = @json($tocEntries ?? []);
-
         const tocPanel      = document.getElementById('toc-panel');
         const tocPanelBody  = document.getElementById('toc-panel-body');
-        const tocToggleBtn  = document.getElementById('toc-toggle-btn');
         const tocCloseBtn   = document.getElementById('toc-close-btn');
         const tocBackdrop   = document.getElementById('toc-backdrop');
 
@@ -786,9 +767,9 @@
 
         function openToc() {
             if (!tocPanel) return;
+            closeSheet();
             tocPanel.classList.add('open');
             tocPanel.setAttribute('aria-hidden', 'false');
-            tocToggleBtn?.setAttribute('aria-expanded', 'true');
             if (tocBackdrop) { tocBackdrop.classList.add('open'); tocBackdrop.setAttribute('aria-hidden', 'false'); }
             markActiveTocItem();
             // Scroll active item into view
@@ -802,21 +783,18 @@
             if (!tocPanel) return;
             tocPanel.classList.remove('open');
             tocPanel.setAttribute('aria-hidden', 'true');
-            tocToggleBtn?.setAttribute('aria-expanded', 'false');
             if (tocBackdrop) { tocBackdrop.classList.remove('open'); tocBackdrop.setAttribute('aria-hidden', 'true'); }
         }
 
         buildTocPanel();
-        tocToggleBtn?.addEventListener('click', () => {
-            tocPanel?.classList.contains('open') ? closeToc() : openToc();
-        });
+        sheetTocBtn?.addEventListener('click', () => openToc());
         tocCloseBtn?.addEventListener('click', closeToc);
         tocBackdrop?.addEventListener('click', closeToc);
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && tocPanel?.classList.contains('open')) closeToc();
         });
 
-        // Handle data-toc-page clicks in the book content (seeder page inhoudsopgave)
+        // data-toc-page clicks in the book content
         readerEl.addEventListener('click', e => {
             const btn = e.target.closest('[data-toc-page]');
             if (btn) {
@@ -829,18 +807,11 @@
         // --- Restore reading progress on load ---
         function restoreProgress() {
             const savedFont = loadFont();
-            if (savedFont) {
-                applyFont(savedFont);
-            } else {
-                applyFont(DEFAULT_FONT);
-            }
-
+            if (savedFont) { applyFont(savedFont); } else { applyFont(DEFAULT_FONT); }
             const savedArabicFont = loadArabicFont();
-            if (savedArabicFont) {
-                applyArabicFont(savedArabicFont);
-            } else {
-                applyArabicFont(DEFAULT_ARABIC_FONT);
-            }
+            if (savedArabicFont) { applyArabicFont(savedArabicFont); } else { applyArabicFont(DEFAULT_ARABIC_FONT); }
+            hlRestoreAll(); // restore saved highlights for server-rendered pages
+            bmRenderAllMarkers(); // restore bookmark paragraph markers
 
             const saved     = load();
             const startPage = (saved && sorted.includes(saved)) ? saved : null;
@@ -860,11 +831,446 @@
             }
         }
 
-        if (document.readyState === 'complete') {
-            restoreProgress();
-        } else {
-            window.addEventListener('load', restoreProgress);
+        // ══════════════════════════════════════════
+        //  SHEET TABS
+        // ══════════════════════════════════════════
+        const tabControls = document.getElementById('sheet-tab-controls');
+        const tabLibrary  = document.getElementById('sheet-tab-library');
+        const panelControls = document.getElementById('sheet-panel-controls');
+        const panelLibrary  = document.getElementById('sheet-panel-library');
+
+        function switchTab(tab) {
+            if (tab === 'library') {
+                tabControls?.classList.remove('active');
+                tabLibrary?.classList.add('active');
+                tabControls?.setAttribute('aria-selected', 'false');
+                tabLibrary?.setAttribute('aria-selected', 'true');
+                if (panelControls) panelControls.hidden = true;
+                if (panelLibrary)  panelLibrary.removeAttribute('hidden');
+                libRender();
+            } else {
+                tabLibrary?.classList.remove('active');
+                tabControls?.classList.add('active');
+                tabLibrary?.setAttribute('aria-selected', 'false');
+                tabControls?.setAttribute('aria-selected', 'true');
+                if (panelLibrary)  panelLibrary.hidden = true;
+                if (panelControls) panelControls.removeAttribute('hidden');
+            }
         }
+        tabControls?.addEventListener('click', () => switchTab('controls'));
+        tabLibrary?.addEventListener('click',  () => switchTab('library'));
+
+        // ══════════════════════════════════════════
+        //  HIGHLIGHTING SYSTEM
+        // ══════════════════════════════════════════
+        const HL_KEY  = 'hl_{{ $product->id }}';
+        const BM_KEY  = 'reader_bookmarks_global'; // shared across ALL books
+        const hlPopup = document.getElementById('hl-popup');
+        let hlPending = null;   // { range, pageEl, pageNum }
+        let hlMark    = null;   // active existing <mark>
+
+        function bmLoad() { try { return JSON.parse(localStorage.getItem(BM_KEY) || '[]'); } catch { return []; } }
+        function bmSave(a) { try { localStorage.setItem(BM_KEY, JSON.stringify(a)); } catch {} }
+
+        // ── Library panel rendering ──────────────
+        function libRender() {
+            const bmList = document.getElementById('lib-bookmarks-list');
+            const hlList = document.getElementById('lib-highlights-list');
+            if (!bmList || !hlList) return;
+
+            // Bookmarks — ALL books, sorted by book title then page
+            const allBms = bmLoad();
+            bmList.innerHTML = '';
+            if (!allBms.length) {
+                bmList.innerHTML = '<div class="reader-lib-empty">Geen bladwijzers opgeslagen</div>';
+            } else {
+                allBms
+                    .slice()
+                    .sort((a, b) => (a.productTitle || '').localeCompare(b.productTitle || '') || a.pageNum - b.pageNum)
+                    .forEach(bm => {
+                        const isCurrent = bm.productId === PRODUCT_ID;
+                        const item = document.createElement('div');
+                        item.className = 'reader-lib-item';
+                        item.innerHTML = `
+                            <div class="reader-lib-item-icon"><i class="fa-solid fa-bookmark"></i></div>
+                            <div class="reader-lib-item-body">
+                                <div class="reader-lib-item-book">${bm.productTitle || 'Onbekend boek'}</div>
+                                <div class="reader-lib-item-page">Pagina ${bm.pageNum}</div>
+                                <div class="reader-lib-item-text">${bm.text || ''}</div>
+                            </div>
+                            <button class="reader-lib-item-del" title="Verwijder" aria-label="Verwijder bladwijzer"><i class="fa-solid fa-xmark"></i></button>
+                        `;
+                        item.querySelector('.reader-lib-item-del').addEventListener('click', e => {
+                            e.stopPropagation();
+                            bmSave(bmLoad().filter(x => x.id !== bm.id));
+                            document.querySelector(`.bm-marker[data-bm-id="${bm.id}"]`)?.remove();
+                            libRender();
+                        });
+                        item.addEventListener('click', e => {
+                            if (e.target.closest('.reader-lib-item-del')) return;
+                            if (isCurrent) {
+                                jumpTo(bm.pageNum, true); closeSheet();
+                            } else {
+                                // Set reading progress for target book so it opens on the right page
+                                try { localStorage.setItem('reading_progress_' + bm.productId, String(bm.pageNum)); } catch (_) {}
+                                window.location.href = bm.readerUrl;
+                            }
+                        });
+                        bmList.appendChild(item);
+                    });
+            }
+
+            // Highlights
+            const hls = hlLoad();
+            hlList.innerHTML = '';
+            if (!hls.length) {
+                hlList.innerHTML = '<div class="reader-lib-empty">Geen markeringen opgeslagen</div>';
+            } else {
+                hls.slice().sort((a,b) => a.pageNum - b.pageNum).forEach(hl => {
+                    const item = document.createElement('div');
+                    item.className = 'reader-lib-item';
+                    const text = hl.text || ('Pagina ' + hl.pageNum);
+                    item.innerHTML = `
+                        <div class="reader-lib-item-icon hl-icon-${hl.color}"><i class="fa-solid fa-highlighter"></i></div>
+                        <div class="reader-lib-item-body">
+                            <div class="reader-lib-item-page">Pagina ${hl.pageNum}</div>
+                            <div class="reader-lib-item-text">${text}</div>
+                        </div>
+                        <button class="reader-lib-item-del" title="Verwijder" aria-label="Verwijder markering"><i class="fa-solid fa-xmark"></i></button>
+                    `;
+                    item.querySelector('.reader-lib-item-del').addEventListener('click', e => {
+                        e.stopPropagation();
+                        // Remove mark from DOM
+                        const markEl = document.querySelector(`[data-hl-id="${hl.id}"]`);
+                        if (markEl) {
+                            const p = markEl.parentNode;
+                            while (markEl.firstChild) p.insertBefore(markEl.firstChild, markEl);
+                            p.removeChild(markEl); p.normalize();
+                        }
+                        hlSave(hlLoad().filter(x => x.id !== hl.id));
+                        libRender();
+                    });
+                    item.addEventListener('click', e => {
+                        if (e.target.closest('.reader-lib-item-del')) return;
+                        jumpTo(hl.pageNum, true); closeSheet();
+                    });
+                    hlList.appendChild(item);
+                });
+            }
+        }
+
+        // Clear all buttons
+        document.getElementById('lib-clear-bookmarks')?.addEventListener('click', () => {
+            if (confirm('Alle bladwijzers verwijderen?')) {
+                bmSave([]);
+                document.querySelectorAll('.bm-marker').forEach(m => m.remove());
+                libRender();
+            }
+        });
+        document.getElementById('lib-clear-highlights')?.addEventListener('click', () => {
+            if (confirm('Alle markeringen verwijderen?')) {
+                // Remove all marks from DOM
+                document.querySelectorAll('mark.hl').forEach(m => {
+                    const p = m.parentNode;
+                    while (m.firstChild) p.insertBefore(m.firstChild, m);
+                    p.removeChild(m); p.normalize();
+                });
+                hlSave([]); libRender();
+            }
+        });
+
+        // Refresh library when sheet opens to 'library' tab
+
+        function hlLoad() { try { return JSON.parse(localStorage.getItem(HL_KEY) || '[]'); } catch { return []; } }
+        function hlSave(a) { try { localStorage.setItem(HL_KEY, JSON.stringify(a)); } catch {} }
+
+        function hlShowPopup(rect, existing) {
+            if (!hlPopup) return;
+            const removeBtn = document.getElementById('hl-remove-btn');
+            if (removeBtn) removeBtn.toggleAttribute('hidden', !existing);
+            hlPopup.removeAttribute('hidden');
+            const pw = hlPopup.offsetWidth || 220;
+            const ph = hlPopup.offsetHeight || 44;
+            let x = rect.left + rect.width / 2;
+            let y = rect.top - ph - 10;
+            if (y < 8) y = rect.bottom + 10;
+            x = Math.max(pw / 2 + 8, Math.min(window.innerWidth - pw / 2 - 8, x));
+            hlPopup.style.left = x + 'px';
+            hlPopup.style.top  = y + 'px';
+        }
+        function hlHide() { hlPopup?.setAttribute('hidden', ''); hlPending = null; hlMark = null; }
+
+        function hlPageEl(node) {
+            let n = node;
+            while (n && n !== readerEl) {
+                if (n.nodeType === 1 && n.classList?.contains('page')) return n;
+                n = n.parentNode;
+            }
+            return null;
+        }
+        function hlPageNum(el) { return parseInt(Object.keys(pageMap).find(k => pageMap[k] === el), 10) || null; }
+
+        function hlSerialize(range, pageEl, pageNum) {
+            const pre = document.createRange();
+            pre.selectNodeContents(pageEl);
+            pre.setEnd(range.startContainer, range.startOffset);
+            const s = pre.toString().length;
+            return { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), pageNum, color: null, text: range.toString().trim().slice(0, 80), startOffset: s, endOffset: s + range.toString().length };
+        }
+
+        function hlDeserialize(pageEl, s, e) {
+            let c = 0, sn = null, so = 0, en = null, eo = 0;
+            function walk(n) {
+                if (sn && en) return;
+                if (n.nodeType === Node.TEXT_NODE) {
+                    const l = n.textContent.length;
+                    if (!sn && c + l > s)  { sn = n; so = s - c; }
+                    if (!en && c + l >= e) { en = n; eo = e - c; }
+                    c += l;
+                } else { for (const ch of n.childNodes) { walk(ch); if (sn && en) break; } }
+            }
+            walk(pageEl);
+            if (!sn || !en) return null;
+            try { const r = document.createRange(); r.setStart(sn, so); r.setEnd(en, eo); return r.collapsed ? null : r; } catch { return null; }
+        }
+
+        function hlApply(range, color, id) {
+            const mark = document.createElement('mark');
+            mark.className = `hl hl-${color}`;
+            mark.dataset.hlId = id;
+            try { range.surroundContents(mark); }
+            catch { const f = range.extractContents(); mark.appendChild(f); range.insertNode(mark); }
+            hlBindMark(mark);
+        }
+
+        function hlBindMark(mark) {
+            mark.addEventListener('click', e => {
+                e.stopPropagation();
+                hlMark = mark; hlPending = null;
+                window.getSelection()?.removeAllRanges();
+                hlShowPopup(mark.getBoundingClientRect(), true);
+            });
+        }
+
+        function hlRestorePage(pageEl, pageNum) {
+            hlLoad().filter(h => h.pageNum === pageNum).forEach(hl => {
+                if (pageEl.querySelector(`[data-hl-id="${hl.id}"]`)) return;
+                const r = hlDeserialize(pageEl, hl.startOffset, hl.endOffset);
+                if (r) hlApply(r, hl.color, hl.id);
+            });
+        }
+
+        function hlRestoreAll() {
+            Object.entries(pageMap).forEach(([n, el]) => hlRestorePage(el, parseInt(n)));
+        }
+
+        // ── Bookmark paragraph markers ────────────
+        const BM_BLOCK_SEL = 'p, h1, h2, h3, h4, h5, h6, li, blockquote';
+
+        function bmGetPara(node, pageEl) {
+            let n = node;
+            while (n && n !== pageEl) {
+                if (n.nodeType === 1 && n.matches && n.matches(BM_BLOCK_SEL)) return n;
+                n = n.parentNode;
+            }
+            return null;
+        }
+        function bmParaIndex(paraEl, pageEl) {
+            return Array.from(pageEl.querySelectorAll(BM_BLOCK_SEL)).indexOf(paraEl);
+        }
+        function bmGetParaByIndex(pageEl, idx) {
+            return pageEl.querySelectorAll(BM_BLOCK_SEL)[idx] || null;
+        }
+
+        function bmCreateMarker(bm) {
+            const marker = document.createElement('span');
+            marker.className = 'bm-marker';
+            marker.dataset.bmId = bm.id;
+            marker.title = 'Bladwijzer verwijderen';
+            marker.setAttribute('aria-label', 'Bladwijzer verwijderen');
+            marker.innerHTML = '<i class="fa-solid fa-bookmark" aria-hidden="true"></i>';
+            marker.addEventListener('click', e => {
+                e.stopPropagation();
+                bmSave(bmLoad().filter(x => x.id !== bm.id));
+                marker.remove();
+                if (panelLibrary && !panelLibrary.hidden) libRender();
+                let t = document.getElementById('hl-toast');
+                if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
+                t.textContent = '✓ Bladwijzer verwijderd';
+                t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
+            });
+            return marker;
+        }
+
+        function bmInsertMarker(bm, paraEl) {
+            // Make paragraph the positioning context for the absolute marker
+            if (!paraEl.style.position) paraEl.style.position = 'relative';
+            paraEl.insertBefore(bmCreateMarker(bm), paraEl.firstChild);
+        }
+
+        function bmRenderMarkers(pageEl, pageNum) {
+            // Remove stale markers for bookmarks no longer in storage
+            const storedIds = new Set(bmLoad().filter(b => b.productId === PRODUCT_ID && b.pageNum === pageNum).map(b => b.id));
+            pageEl.querySelectorAll('.bm-marker').forEach(m => {
+                if (!storedIds.has(m.dataset.bmId)) m.remove();
+            });
+            // Add markers for stored bookmarks that have no marker yet
+            bmLoad()
+                .filter(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.paraIndex >= 0)
+                .forEach(bm => {
+                    if (pageEl.querySelector(`.bm-marker[data-bm-id="${bm.id}"]`)) return;
+                    const paraEl = bmGetParaByIndex(pageEl, bm.paraIndex);
+                    if (!paraEl) return;
+                    bmInsertMarker(bm, paraEl);
+                });
+        }
+
+        function bmRenderAllMarkers() {
+            Object.entries(pageMap).forEach(([n, el]) => bmRenderMarkers(el, parseInt(n)));
+        }
+
+        // Show popup after mouse/touch selection
+        let _hlTimer = null;
+        function hlCheckSel() {
+            const sel = window.getSelection();
+            if (!sel || sel.isCollapsed || !sel.rangeCount) return;
+            const text = sel.toString().trim();
+            if (!text) return;
+            const range = sel.getRangeAt(0);
+            const pageEl = hlPageEl(range.commonAncestorContainer);
+            if (!pageEl) return;
+            const pageNum = hlPageNum(pageEl);
+            if (!pageNum) return;
+            hlPending = { range: range.cloneRange(), pageEl, pageNum };
+            hlMark = null;
+            document.getElementById('hl-remove-btn')?.setAttribute('hidden', '');
+            hlShowPopup(range.getBoundingClientRect(), false);
+        }
+
+        document.addEventListener('mouseup', () => {
+            clearTimeout(_hlTimer);
+            _hlTimer = setTimeout(hlCheckSel, 80);
+        });
+        readerEl?.addEventListener('touchend', () => {
+            clearTimeout(_hlTimer);
+            _hlTimer = setTimeout(hlCheckSel, 320);
+        }, { passive: true });
+
+        document.addEventListener('selectionchange', () => {
+            const sel = window.getSelection();
+            if (hlPopup && !hlPopup.hidden && !hlMark && (!sel || sel.isCollapsed)) hlHide();
+        });
+
+        // Prevent losing selection on color button mousedown
+        hlPopup?.querySelectorAll('.hl-color-btn').forEach(btn => {
+            btn.addEventListener('mousedown', e => e.preventDefault());
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const color = btn.dataset.color;
+                if (hlMark) {
+                    const id = hlMark.dataset.hlId;
+                    hlMark.className = `hl hl-${color}`;
+                    const arr = hlLoad(); const i = arr.findIndex(h => h.id === id);
+                    if (i >= 0) { arr[i].color = color; hlSave(arr); }
+                } else if (hlPending) {
+                    const { range, pageEl, pageNum } = hlPending;
+                    const hl = hlSerialize(range, pageEl, pageNum);
+                    hl.color = color;
+                    hlApply(range, color, hl.id);
+                    const arr = hlLoad(); arr.push(hl); hlSave(arr);
+                }
+                window.getSelection()?.removeAllRanges();
+                hlHide();
+            });
+        });
+
+        document.getElementById('hl-bookmark-btn')?.addEventListener('click', e => {
+            e.stopPropagation();
+            const anchorNode = hlMark ? hlMark : (hlPending?.range?.startContainer);
+            const pageNum = hlMark
+                ? (hlPageNum(hlPageEl(hlMark)) || 0)
+                : (hlPending?.pageNum || 0);
+            const text = hlMark
+                ? (hlMark.textContent.trim().slice(0, 80))
+                : (hlPending?.range.toString().trim().slice(0, 80) || '');
+            if (!pageNum) { hlHide(); return; }
+
+            // Find the paragraph that contains the selection
+            const pageEl = anchorNode ? hlPageEl(anchorNode) : null;
+            const paraEl = (pageEl && anchorNode) ? bmGetPara(anchorNode, pageEl) : null;
+            const paraIndex = (paraEl && pageEl) ? bmParaIndex(paraEl, pageEl) : -1;
+
+            const existing = bmLoad();
+            const dupe = existing.some(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.text === text);
+            if (!dupe) {
+                const newBm = {
+                    id: Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+                    productId: PRODUCT_ID,
+                    productTitle: PRODUCT_TITLE,
+                    productSlug: PRODUCT_SLUG,
+                    readerUrl: READER_URL,
+                    pageNum,
+                    paraIndex,
+                    text,
+                    date: new Date().toISOString()
+                };
+                existing.push(newBm);
+                bmSave(existing);
+                // Immediately render the marker in the paragraph
+                if (paraEl && paraIndex >= 0) {
+                    if (!paraEl.querySelector(`.bm-marker[data-bm-id="${newBm.id}"]`)) {
+                        bmInsertMarker(newBm, paraEl);
+                    }
+                }
+            }
+            // Visual feedback
+            const btn = document.getElementById('hl-bookmark-btn');
+            if (btn) { btn.classList.add('active'); setTimeout(() => btn.classList.remove('active'), 600); }
+            // Toast
+            let t = document.getElementById('hl-toast');
+            if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
+            t.textContent = dupe ? '✓ Al opgeslagen' : '✓ Bladwijzer toegevoegd';
+            t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1800);
+            window.getSelection()?.removeAllRanges();
+            hlHide();
+        });
+
+        document.getElementById('hl-copy-btn')?.addEventListener('click', e => {
+            e.stopPropagation();
+            const text = hlMark ? hlMark.textContent : (hlPending?.range.toString() || '');
+            if (text) navigator.clipboard?.writeText(text).catch(() => {
+                const ta = Object.assign(document.createElement('textarea'), { value: text });
+                Object.assign(ta.style, { position: 'fixed', opacity: '0' });
+                document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+            });
+            window.getSelection()?.removeAllRanges();
+            hlHide();
+            // toast
+            let t = document.getElementById('hl-toast');
+            if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast', textContent: '✓ Gekopieerd' }); document.body.appendChild(t); }
+            t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
+        });
+
+        document.getElementById('hl-remove-btn')?.addEventListener('click', e => {
+            e.stopPropagation();
+            if (!hlMark) return;
+            const id = hlMark.dataset.hlId;
+            const p = hlMark.parentNode;
+            while (hlMark.firstChild) p.insertBefore(hlMark.firstChild, hlMark);
+            p.removeChild(hlMark); p.normalize();
+            hlSave(hlLoad().filter(h => h.id !== id));
+            hlHide();
+        });
+
+        document.addEventListener('click', e => {
+            if (hlPopup && !hlPopup.hidden && !hlPopup.contains(e.target) && !e.target.closest('mark.hl')) hlHide();
+        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && hlPopup && !hlPopup.hidden) hlHide(); });
+
+        // ══════════════════════════════════════════
+
+        if (document.readyState === 'complete') { restoreProgress(); }
+        else { window.addEventListener('load', restoreProgress); }
     })();
     </script>
 </div>
