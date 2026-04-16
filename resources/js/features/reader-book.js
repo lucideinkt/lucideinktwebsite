@@ -209,24 +209,6 @@
     let popover = null;
     let activeBtn = null;
 
-    // ── Body scroll-lock helpers ──────────────────────────────────────────
-    let _scrollLockY = 0;
-
-    function lockBodyScroll() {
-        _scrollLockY = window.scrollY;
-        document.body.style.top      = `-${_scrollLockY}px`;
-        document.body.style.position = 'fixed';
-        document.body.style.width    = '100%';
-        document.body.style.overflowY = 'scroll'; // keep scrollbar gutter
-    }
-
-    function unlockBodyScroll() {
-        document.body.style.position  = '';
-        document.body.style.top       = '';
-        document.body.style.width     = '';
-        document.body.style.overflowY = '';
-        window.scrollTo({ top: _scrollLockY, behavior: 'instant' });
-    }
 
     function showPopover(btn) {
         hidePopover();
@@ -247,7 +229,6 @@
             `</div>`;
 
         document.body.appendChild(popover);
-        lockBodyScroll();
         // First position with real DOM dimensions
         positionPopover(btn);
 
@@ -297,7 +278,6 @@
         if (!popover) return;
         popover.classList.remove('fn-popover--show');
         activeBtn?.classList.remove('fn-ref--active');
-        unlockBodyScroll();
         const el = popover;
         setTimeout(() => el.remove(), 200);
         popover    = null;
