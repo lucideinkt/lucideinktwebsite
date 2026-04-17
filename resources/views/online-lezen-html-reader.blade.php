@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
     <meta name="robots" content="noindex, nofollow">
 
 
@@ -44,6 +44,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     @vite(['resources/js/main.js', 'resources/css/front-end-style.css'])
     <style>
+        /* Prevent page from scrolling horizontally when keyboard opens on mobile (iOS Safari) */
+        html, body {
+            overflow-x: hidden;
+            overscroll-behavior-x: none;
+            max-width: 100vw;
+        }
         /* Reader loading overlay */
         #reader-loader {
             position: fixed;
@@ -1460,7 +1466,7 @@
                 panel.hidden = false;
                 backdrop.classList.add('open');
                 requestAnimationFrame(() => panel.classList.add('open'));
-                setTimeout(() => input.focus(), 50);
+                setTimeout(() => input.focus({ preventScroll: true }), 50);
             }
             function closeSearch() {
                 panel.classList.remove('open');
