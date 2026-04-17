@@ -1471,13 +1471,46 @@
 
             let currentMark = null;
 
+            // ── Pin panel to visual viewport so keyboard open/close never moves it ──
+            function pinPanelToViewport() {
+                if (!window.visualViewport || panel.hidden) return;
+                const vv = window.visualViewport;
+                // Disable CSS transition while we reposition to avoid sliding animation
+                panel.style.transition = 'none';
+                panel.style.top    = vv.offsetTop + 'px';
+                panel.style.left   = vv.offsetLeft + 'px';
+                panel.style.width  = vv.width + 'px';
+                panel.style.height = vv.height + 'px';
+                // Re-enable transition after repositioning (next frame)
+                requestAnimationFrame(() => {
+                    panel.style.transition = '';
+                });
+            }
+            function startPinning() {
+                if (!window.visualViewport) return;
+                window.visualViewport.addEventListener('resize', pinPanelToViewport);
+                window.visualViewport.addEventListener('scroll', pinPanelToViewport);
+                pinPanelToViewport();
+            }
+            function stopPinning() {
+                if (!window.visualViewport) return;
+                window.visualViewport.removeEventListener('resize', pinPanelToViewport);
+                window.visualViewport.removeEventListener('scroll', pinPanelToViewport);
+                // Reset inline styles so CSS takes over again
+                panel.style.top = panel.style.left = panel.style.width = panel.style.height = panel.style.transition = '';
+            }
+
             function openSearch() {
                 panel.hidden = false;
                 backdrop.classList.add('open');
-                requestAnimationFrame(() => panel.classList.add('open'));
+                requestAnimationFrame(() => {
+                    panel.classList.add('open');
+                    startPinning();
+                });
                 setTimeout(() => input.focus({ preventScroll: true }), 50);
             }
             function closeSearch() {
+                stopPinning();
                 panel.classList.remove('open');
                 backdrop.classList.remove('open');
                 setTimeout(() => { panel.hidden = true; }, 220);
@@ -1516,6 +1549,7 @@
                 input.value = ''; clearBtn.hidden = true;
                 metaEl.textContent = ''; resultsEl.innerHTML = '';
                 clearHighlight();
+                pinPanelToViewport(); // re-pin before focus to prevent shift
                 const savedY = window.scrollY;
                 input.focus({ preventScroll: true });
                 setTimeout(() => window.scrollTo(0, savedY), 50);
