@@ -2695,13 +2695,27 @@ body.dark-mode .reader-search-result-snippet mark { background: rgba(255,224,51,
 body.dark-mode mark.reader-search-highlight { background: rgba(255,224,51,0.6); outline-color: rgba(255,224,51,0.8); }
 
 @media (max-width: 600px) {
+    /* On mobile: slide DOWN from the top instead of from the right side.
+       This eliminates any horizontal transform so iOS can never shift the page sideways. */
     .reader-search-panel {
-        width: 100vw;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: auto;
+        max-height: 60dvh;
+        max-height: 60vh;
         border-left: none;
-        /* Use dynamic viewport height so panel shrinks with the keyboard on mobile */
-        height: 100dvh;
-        height: -webkit-fill-available;
-        /* Prevent iOS from scrolling the page behind the panel when keyboard opens */
+        border-bottom: 1px solid rgba(180,140,60,0.2);
+        box-shadow: 0 8px 40px rgba(0,0,0,0.18);
         overscroll-behavior: contain;
+        /* Override the horizontal slide with a vertical slide */
+        transform: translateY(-110%) !important;
+        transition: transform 0.24s cubic-bezier(0.4,0,0.2,1), visibility 0.24s !important;
     }
+    .reader-search-panel.open {
+        transform: translateY(0) !important;
+    }
+    /* Backdrop still covers the screen below the panel */
+    .reader-search-backdrop { top: 0; }
 }

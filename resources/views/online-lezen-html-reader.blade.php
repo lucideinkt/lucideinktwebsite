@@ -1619,6 +1619,28 @@
         if (document.readyState === 'complete') { restoreProgress(); }
         else { window.addEventListener('load', restoreProgress); }
     })();
+
+    // ── iOS Safari horizontal-scroll lock ──────────────────────────────────
+    // When the virtual keyboard opens, iOS sometimes shifts the page horizontally.
+    // Snap back to x=0 whenever a stray horizontal scroll is detected.
+    (function () {
+        function lockHorizontalScroll() {
+            if (window.scrollX !== 0) {
+                window.scrollTo(0, window.scrollY);
+            }
+        }
+        window.addEventListener('scroll', lockHorizontalScroll, { passive: true });
+
+        // Also restore scroll position when any input is focused (keyboard open)
+        document.addEventListener('focusin', function (e) {
+            if (e.target.matches('input, textarea, select')) {
+                const y = window.scrollY;
+                // Give the browser a moment to do its adjustment, then snap back
+                setTimeout(() => window.scrollTo(0, y), 80);
+                setTimeout(() => window.scrollTo(0, y), 300);
+            }
+        }, { passive: true });
+    })();
     </script>
 </div>
 </body>
