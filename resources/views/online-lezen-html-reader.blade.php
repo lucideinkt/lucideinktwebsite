@@ -414,47 +414,10 @@
         }
         registerPageEls();
 
-        // Compute lastLoadedPage based on pages already rendered server-side
-        // so we only fetch pages that are missing. If none present, start at 0.
-        let lastLoadedPage = (function(){
-            try {
-                const nums = Object.keys(pageMap).map(n => parseInt(n, 10)).filter(Boolean);
-                return nums.length ? Math.max.apply(null, nums) : 0;
-            } catch (_) { return 0; }
-        })();
-         let isLoading      = false;
-         let allLoaded      = sorted.every(n => pageMap[n]);
+        // All pages are server-side rendered — no lazy/eager loading needed
+        const allLoaded = true;
+        hideLoader();
 
-        // initial loader state: show while we still need to fetch pages
-        if (allLoaded) {
-            hideLoader();
-        } else {
-            showLoader();
-        }
-
-        // --- Eager load: fetch all remaining pages from the API (disable lazy IntersectionObserver) ---
-        // This will repeatedly call the existing loadMorePages(upToPage) until the API reports no more pages.
-        async function eagerLoadAllPages() {
-            try {
-                if (allLoaded) { hideLoader(); return; }
-                const maxPage = sorted[sorted.length - 1];
-                // Keep requesting batches until server indicates there are no more pages
-                while (!allLoaded) {
-                    // request up to `maxPage` — loadMorePages will cap the batch size
-                    await loadMorePages(maxPage);
-                    // brief pause to allow DOM updates and avoid tight-looping
-                    await new Promise(r => setTimeout(r, 50));
-                }
-                hideLoader();
-            } catch (err) {
-                console.error('Eager load error:', err);
-                // hide loader so user can see partial content and any errors
-                hideLoader();
-            }
-        }
-
-        // Start eager loading in the background (non-blocking)
-        eagerLoadAllPages();
 
         // --- Helpers ---
         function updateUI(page) {
@@ -495,71 +458,15 @@
 
         // --- Lazy load: fetch next batch from the API ---
         function loadMorePages(upToPage) {
-            if (isLoading || allLoaded) return Promise.resolve();
-            isLoading = true;
-
-            const limit = upToPage ? Math.max(upToPage - lastLoadedPage, 10) : 10;
-            if (limit <= 0) { isLoading = false; return Promise.resolve(); }
-
-            return fetch(`${API_URL_VAL}?after=${lastLoadedPage}&limit=${limit}`)
-                .then(r => r.json())
-                .then(data => {
-                    if (!data.pages || !data.pages.length) { allLoaded = true; return; }
-
-                    const savedFont = loadFont();
-                    const fragment  = document.createDocumentFragment();
-
-                    data.pages.forEach(p => {
-                        if (pageMap[p.page_number]) return; // already in DOM
-                        const wrapper = document.createElement('div');
-                        wrapper.innerHTML = p.content;
-                        Array.from(wrapper.childNodes).forEach(node => fragment.appendChild(node));
-                        // Add divider after each page
-                        const hr = document.createElement('div');
-                        hr.className = 'end-of-page-hr';
-                        fragment.appendChild(hr);
-                        lastLoadedPage = Math.max(lastLoadedPage, p.page_number);
-                    });
-
-                    if (sentinel && sentinel.parentNode) {
-                        sentinel.parentNode.insertBefore(fragment, sentinel);
-                    }
-                    registerPageEls();
-                    if (savedFont) applyFont(savedFont);
-                    const savedArabicFont = loadArabicFont();
-                    if (savedArabicFont) applyArabicFont(savedArabicFont);
-                    // Restore highlights for newly loaded pages
-                    data.pages.forEach(p => {
-                        if (pageMap[p.page_number]) {
-                            hlRestorePage(pageMap[p.page_number], p.page_number);
-                            bmRenderMarkers(pageMap[p.page_number], p.page_number);
-                        }
-                    });
-
-                    allLoaded = !data.has_more;
-                    if (allLoaded && sentinel && sentinel.parentNode) sentinel.remove();
-                })
-                .catch(e => console.error('Lazy load error:', e))
-                .finally(() => { isLoading = false; if (allLoaded) hideLoader(); });
+            return Promise.resolve(); // no-op: all pages are server-side rendered
         }
+
 
         // jumpTo: loads the page via API first if not yet in DOM, then scrolls
         function jumpTo(page, smooth) {
             if (pageMap[page]) {
                 _scrollTo(page, smooth);
-                return;
             }
-            // Page not in DOM yet — wait for background loading to make it available
-            const poll = setInterval(() => {
-                if (pageMap[page]) {
-                    clearInterval(poll);
-                    _scrollTo(page, smooth);
-                } else if (allLoaded) {
-                    clearInterval(poll); // page simply doesn't exist
-                }
-            }, 80);
-            // Also trigger a load in case eager loading has stalled
-            if (!isLoading && !allLoaded) loadMorePages(page);
         }
 
         function _scrollTo(page, smooth) {
