@@ -1515,7 +1515,11 @@
             clearBtn.addEventListener('click', () => {
                 input.value = ''; clearBtn.hidden = true;
                 metaEl.textContent = ''; resultsEl.innerHTML = '';
-                clearHighlight(); input.focus();
+                clearHighlight();
+                const savedY = window.scrollY;
+                input.focus({ preventScroll: true });
+                setTimeout(() => window.scrollTo(0, savedY), 50);
+                setTimeout(() => window.scrollTo(0, savedY), 200);
             });
 
             let searchTimer = null;
