@@ -118,6 +118,9 @@
 
             <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             <span class="reader-topbar-page-badge" id="topbar-page-badge" aria-live="polite"></span>
+            <button class="reader-btn reader-search-open-btn" id="reader-search-open-btn" aria-label="Zoeken in boek" title="Zoeken">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
@@ -359,6 +362,29 @@
     <div id="reader-loader" aria-hidden="true">
         <div class="spinner" role="status" aria-label="Pagina wordt geladen"></div>
     </div>
+
+    {{-- Search panel --}}
+    <div id="reader-search-panel" class="reader-search-panel" hidden role="dialog" aria-label="Zoeken in boek" aria-modal="true">
+        <div class="reader-search-header">
+            <span class="reader-search-title"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Zoeken</span>
+            <button class="reader-search-close" id="reader-search-close" aria-label="Sluiten">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="reader-search-body">
+            <div class="reader-search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass reader-search-icon" aria-hidden="true"></i>
+                <input type="search" id="reader-search-input" class="reader-search-input"
+                       placeholder="Zoekterm…" autocomplete="off" spellcheck="false">
+                <button class="reader-search-clear" id="reader-search-clear" aria-label="Wissen" hidden>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+        <div class="reader-search-meta" id="reader-search-meta" aria-live="polite"></div>
+        <div class="reader-search-results" id="reader-search-results" role="list"></div>
+    </div>
+    <div class="reader-search-backdrop" id="reader-search-backdrop"></div>
 
     <script>
     (function () {
@@ -1412,6 +1438,175 @@
                 hlHide();
             }
         });
+
+        // ══════════════════════════════════════════
+        // ZOEKFUNCTIE (server-side via database API)
+        // ══════════════════════════════════════════
+        (function () {
+            const SEARCH_URL = '{{ route('onlineLezenSearchApi', $product->slug) }}';
+            const panel     = document.getElementById('reader-search-panel');
+            const backdrop  = document.getElementById('reader-search-backdrop');
+            const openBtn   = document.getElementById('reader-search-open-btn');
+            const closeBtn  = document.getElementById('reader-search-close');
+            const input     = document.getElementById('reader-search-input');
+            const clearBtn  = document.getElementById('reader-search-clear');
+            const metaEl    = document.getElementById('reader-search-meta');
+            const resultsEl = document.getElementById('reader-search-results');
+            if (!panel || !input) return;
+
+            let currentMark = null;
+
+            function openSearch() {
+                panel.hidden = false;
+                backdrop.classList.add('open');
+                requestAnimationFrame(() => panel.classList.add('open'));
+                setTimeout(() => input.focus(), 50);
+            }
+            function closeSearch() {
+                panel.classList.remove('open');
+                backdrop.classList.remove('open');
+                setTimeout(() => { panel.hidden = true; }, 220);
+                clearAllHighlights();
+            }
+            function clearHighlight() {
+                if (currentMark && currentMark.parentNode) {
+                    const parent = currentMark.parentNode;
+                    parent.replaceChild(document.createTextNode(currentMark.textContent), currentMark);
+                    parent.normalize();
+                }
+                currentMark = null;
+            }
+            function clearAllHighlights() {
+                // Remove all search highlights from the entire document
+                document.querySelectorAll('mark.reader-search-highlight').forEach(mark => {
+                    const parent = mark.parentNode;
+                    if (parent) {
+                        parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                        parent.normalize();
+                    }
+                });
+                currentMark = null;
+            }
+
+            openBtn?.addEventListener('click', openSearch);
+            closeBtn.addEventListener('click', closeSearch);
+            backdrop.addEventListener('click', closeSearch);
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeSearch(); });
+
+            input.addEventListener('input', () => {
+                clearBtn.hidden = !input.value;
+                debounceSearch();
+            });
+            clearBtn.addEventListener('click', () => {
+                input.value = ''; clearBtn.hidden = true;
+                metaEl.textContent = ''; resultsEl.innerHTML = '';
+                clearHighlight(); input.focus();
+            });
+
+            let searchTimer = null;
+            function debounceSearch() {
+                clearTimeout(searchTimer);
+                if (input.value.trim().length < 2) { metaEl.textContent = ''; resultsEl.innerHTML = ''; return; }
+                metaEl.textContent = 'Zoeken…';
+                searchTimer = setTimeout(runSearch, 350);
+            }
+
+            async function runSearch() {
+                const query = input.value.trim();
+                if (query.length < 2) return;
+                try {
+                    const res  = await fetch(SEARCH_URL + '?q=' + encodeURIComponent(query));
+                    const data = await res.json();
+                    renderResults(data.results, data.total, query);
+                } catch (e) {
+                    metaEl.textContent = 'Zoekfout. Probeer opnieuw.';
+                }
+            }
+
+            function renderResults(results, total, query) {
+                resultsEl.innerHTML = '';
+                if (!results.length) { metaEl.textContent = 'Geen resultaten voor "' + query + '".'; return; }
+                metaEl.textContent = total + ' resultaat' + (total !== 1 ? 'en' : '');
+
+                results.forEach(r => {
+                    // Build snippet — escape HTML first, then restore [[HIT]] marks
+                    const snippetHtml = r.snippet
+                        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+                        .replace(/\[\[HIT\]\]([\s\S]*?)\[\[\/HIT\]\]/g, '<mark>$1</mark>');
+
+                    // Use <div> not <button> so flex-direction:column works reliably
+                    const item = document.createElement('div');
+                    item.className = 'reader-search-result-item';
+                    item.setAttribute('role', 'button');
+                    item.setAttribute('tabindex', '0');
+
+                    const pageBadge = document.createElement('span');
+                    pageBadge.className = 'reader-search-result-page';
+                    pageBadge.textContent = 'Pagina ' + r.page;
+
+                    const snippet = document.createElement('span');
+                    snippet.className = 'reader-search-result-snippet';
+                    snippet.innerHTML = snippetHtml;
+
+                    item.appendChild(pageBadge);
+                    item.appendChild(snippet);
+
+                    item.addEventListener('click', () => {
+                        clearAllHighlights();
+                        const pageEl = pageMap[r.page];
+                        if (!pageEl) { closeSearch(); return; }
+
+                        // First scroll to page, then find & highlight the match
+                        pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                        // Helper: remove diacritics for accent-insensitive DOM matching
+                        function normStr(s) {
+                            return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                        }
+                        const queryNorm = normStr(query);
+
+                        const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
+                            acceptNode(node) {
+                                const p = node.parentElement;
+                                if (!p) return NodeFilter.FILTER_REJECT;
+                                if (['script','style','button'].includes(p.tagName.toLowerCase())) return NodeFilter.FILTER_REJECT;
+                                if (p.classList.contains('page-number')) return NodeFilter.FILTER_REJECT;
+                                return NodeFilter.FILTER_ACCEPT;
+                            }
+                        });
+                        let found = false;
+                        let node;
+                        while ((node = walker.nextNode())) {
+                            const idx = normStr(node.textContent).indexOf(queryNorm);
+                            if (idx === -1) continue;
+                            const before = document.createTextNode(node.textContent.slice(0, idx));
+                            const mark   = document.createElement('mark');
+                            mark.className = 'reader-search-highlight';
+                            mark.textContent = node.textContent.slice(idx, idx + query.length);
+                            const after  = document.createTextNode(node.textContent.slice(idx + query.length));
+                            node.parentNode.insertBefore(before, node);
+                            node.parentNode.insertBefore(mark, node);
+                            node.parentNode.insertBefore(after, node);
+                            node.parentNode.removeChild(node);
+                            currentMark = mark;
+                            found = true;
+                            break;
+                        }
+
+                        // Close panel, then scroll precisely to the highlight
+                        panel.classList.remove('open');
+                        backdrop.classList.remove('open');
+                        setTimeout(() => {
+                            panel.hidden = true;
+                            const target = found ? currentMark : pageEl;
+                            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 230);
+                    });
+                    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') item.click(); });
+                    resultsEl.appendChild(item);
+                });
+            }
+        })();
 
         // ══════════════════════════════════════════
 

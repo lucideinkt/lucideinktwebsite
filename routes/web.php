@@ -213,6 +213,7 @@ Route::get('/verzending-levering', function () {
 Route::get('/bibliotheek', [OnlineLezenController::class, 'index'])->name('onlineLezen');
 Route::get('/bibliotheek/{slug}/lees', [OnlineLezenController::class, 'readHtml'])->name('onlineLezenReadHtml');
 Route::get('/bibliotheek/{slug}/paginas', [OnlineLezenController::class, 'pagesApi'])->name('onlineLezenPagesApi');
+Route::get('/bibliotheek/{slug}/zoeken', [OnlineLezenController::class, 'searchApi'])->name('onlineLezenSearchApi');
 Route::get('/bibliotheek/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
 
 // Audioboeken (Audiobooks)
