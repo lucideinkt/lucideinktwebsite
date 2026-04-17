@@ -2699,10 +2699,11 @@ body.dark-mode mark.reader-search-highlight { background: rgba(255,224,51,0.6); 
         width: 100%;
         left: 0;
         right: 0;
-        /* Use top+bottom instead of height so keyboard opening doesn't resize the panel */
         top: 0;
-        bottom: 0;
-        height: auto;
+        /* Do NOT use bottom:0 or dvh — they track the visual viewport and cause
+           the panel to shrink/slide when the keyboard opens.
+           100vh uses the layout viewport which does NOT change when keyboard appears. */
+        height: 100vh;
         border-left: none;
         overscroll-behavior: contain;
         overflow: hidden;
