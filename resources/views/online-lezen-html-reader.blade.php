@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="robots" content="noindex, nofollow">
 
 
@@ -1620,24 +1620,36 @@
         else { window.addEventListener('load', restoreProgress); }
     })();
 
-    // ── iOS Safari horizontal-scroll lock ──────────────────────────────────
-    // When the virtual keyboard opens, iOS sometimes shifts the page horizontally.
-    // Snap back to x=0 whenever a stray horizontal scroll is detected.
+    // ── iOS Safari keyboard-shift lock ────────────────────────────────────
+    // iOS Safari shifts the page horizontally/vertically when the virtual
+    // keyboard opens. The visualViewport API lets us detect and cancel this.
     (function () {
-        function lockHorizontalScroll() {
-            if (window.scrollX !== 0) {
-                window.scrollTo(0, window.scrollY);
-            }
+        // Hard-lock: any horizontal document scroll → snap back immediately
+        function resetHorizontalScroll() {
+            if (window.scrollX !== 0) window.scrollTo(0, window.scrollY);
         }
-        window.addEventListener('scroll', lockHorizontalScroll, { passive: true });
+        window.addEventListener('scroll', resetHorizontalScroll, { passive: true });
 
-        // Also restore scroll position when any input is focused (keyboard open)
+        // visualViewport fires when iOS shifts the viewport offset (keyboard open).
+        // We pin it back to offset 0,0 every time.
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('scroll', function () {
+                if (window.visualViewport.offsetLeft !== 0 || window.visualViewport.offsetTop !== 0) {
+                    window.scrollTo(
+                        window.scrollX + window.visualViewport.offsetLeft,
+                        window.scrollY + window.visualViewport.offsetTop
+                    );
+                }
+            });
+        }
+
+        // When search input is focused (keyboard about to open), snapshot Y and restore it
         document.addEventListener('focusin', function (e) {
             if (e.target.matches('input, textarea, select')) {
-                const y = window.scrollY;
-                // Give the browser a moment to do its adjustment, then snap back
-                setTimeout(() => window.scrollTo(0, y), 80);
-                setTimeout(() => window.scrollTo(0, y), 300);
+                const savedY = window.scrollY;
+                setTimeout(() => window.scrollTo(0, savedY), 50);
+                setTimeout(() => window.scrollTo(0, savedY), 200);
+                setTimeout(() => window.scrollTo(0, savedY), 500);
             }
         }, { passive: true });
     })();
