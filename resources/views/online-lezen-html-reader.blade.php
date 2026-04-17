@@ -68,6 +68,39 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
         @keyframes reader-spin { to { transform: rotate(360deg); } }
+
+        /* Prevent iOS Safari auto-zoom on input focus (font-size must be >= 16px) */
+        .online-reader-html input[type="range"],
+        .online-reader-html input,
+        .online-reader-html select,
+        .online-reader-html textarea,
+        .online-reader-html button {
+            font-size: 16px;
+        }
+        /* Override visual sizes back for specific elements */
+        .reader-sheet-reset-btn                          { font-size: 13px !important; }
+        .reader-sheet-slider-label                       { font-size: 10px !important; }
+        .reader-sheet-slider-val                         { font-size: 10px !important; }
+        .reader-sheet-toc-btn                            { font-size: 11px !important; }
+        .reader-sheet-tab                                { font-size: 11px !important; }
+        .reader-sheet-tab span                           { font-size: 11px !important; }
+        .reader-sheet-tab i                              { font-size: 12px !important; }
+        .reader-sheet-section-label                      { font-size: 10px !important; }
+        .font-step-az--small                             { font-size: 12px !important; }
+        .font-step-az--large                             { font-size: 18px !important; }
+        .font-step-az--small.font-step-az--arabic        { font-size: 14px !important; }
+        .font-step-az--large.font-step-az--arabic        { font-size: 22px !important; }
+        .reader-lib-clear-all                            { font-size: 11px !important; }
+        .reader-sheet-arrow                              { font-size: 12px !important; }
+        .reader-sheet-theme-btn span                     { font-size: 9px !important; }
+        .reader-sheet-theme-btn i                        { font-size: 16px !important; }
+        .reader-back-btn                                 { font-size: 12px !important; }
+        .reader-topbar-page-badge                        { font-size: 11px !important; }
+        .toc-panel-close                                 { font-size: 15px !important; }
+        .reader-sheet-bm-nav-btn                         { font-size: 11px !important; }
+        /* Bookmark page marker — sits at top of page, padding-top makes room */
+        .book-reader-scope .page                         { position: relative; }
+        .bm-page-marker                                  { position: absolute !important; top: 0px !important; left: 8px !important; margin: 0 !important; padding: 0 !important; }
     </style>
 </head>
 <body>
@@ -186,48 +219,54 @@
         {{-- Page slider --}}
         <div class="reader-sheet-section reader-sheet-slider-row">
             <div class="reader-sheet-slider-meta">
-                <span class="reader-sheet-slider-label"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Pagina</span>
-                <span class="reader-sheet-slider-preview" id="sheet-page-preview">{{ $allPageMeta->min('page_number') }}</span>
+                <span class="reader-sheet-slider-label"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Ga naar pagina</span>
+                <button class="reader-sheet-bm-nav-btn" id="sheet-bm-page-btn" type="button" title="Bladwijzer op deze pagina" aria-label="Bladwijzer op deze pagina">
+                    <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+                </button>
             </div>
             <input type="range" class="reader-sheet-slider" id="sheet-page-slider"
                    min="{{ $allPageMeta->min('page_number') }}"
                    max="{{ $allPageMeta->max('page_number') }}"
                    value="{{ $allPageMeta->min('page_number') }}"
                    aria-label="Ga naar pagina">
-            <div class="reader-sheet-slider-ends">
-                <span>{{ $allPageMeta->min('page_number') }}</span>
-                <span>{{ $allPageMeta->max('page_number') }}</span>
-            </div>
         </div>
 
         <div class="reader-sheet-divider"></div>
 
         {{-- Text font size --}}
-        <div class="reader-sheet-section reader-sheet-slider-row">
+        <div class="reader-sheet-section reader-sheet-fontpicker-row">
             <div class="reader-sheet-slider-meta">
                 <span class="reader-sheet-slider-label"><i class="fa-solid fa-font" aria-hidden="true"></i> Tekst</span>
                 <div class="reader-sheet-slider-right">
-                    <span class="reader-sheet-slider-val" id="sheet-font-val" aria-live="polite">18.0px</span>
+                    <span class="reader-sheet-slider-val" id="sheet-font-val" aria-live="polite">19.0px</span>
                     <button class="reader-sheet-reset-btn" id="sheet-font-reset" type="button" aria-label="Lettergrootte resetten">↺</button>
                 </div>
             </div>
-            <input type="range" class="reader-sheet-slider" id="font-slider"
-                   min="12" max="36" step="0.1" value="18"
-                   aria-label="Lettergrootte tekst">
+            <div class="font-step-control" id="font-step-control">
+                <button class="font-step-az font-step-az--small" id="font-dec-btn" type="button" aria-label="Kleiner lettertype">a</button>
+                <div class="font-step-dots" id="font-step-dots">
+                    <!-- dots rendered by JS -->
+                </div>
+                <button class="font-step-az font-step-az--large" id="font-inc-btn" type="button" aria-label="Groter lettertype">A</button>
+            </div>
         </div>
 
         {{-- Arabic font size --}}
-        <div class="reader-sheet-section reader-sheet-slider-row">
+        <div class="reader-sheet-section reader-sheet-fontpicker-row">
             <div class="reader-sheet-slider-meta">
                 <span class="reader-sheet-slider-label"><i class="fa-solid fa-language" aria-hidden="true"></i> Arabisch</span>
                 <div class="reader-sheet-slider-right">
-                    <span class="reader-sheet-slider-val" id="arabic-font-size-display" aria-live="polite">28.0px</span>
+                    <span class="reader-sheet-slider-val" id="arabic-font-size-display" aria-live="polite">29.0px</span>
                     <button class="reader-sheet-reset-btn" id="arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
                 </div>
             </div>
-            <input type="range" class="reader-sheet-slider" id="arabic-font-slider"
-                   min="16" max="52" step="0.1" value="28"
-                   aria-label="Lettergrootte Arabisch">
+            <div class="font-step-control" id="arabic-font-step-control">
+                <button class="font-step-az font-step-az--small font-step-az--arabic" id="arabic-font-dec-btn" type="button" aria-label="Kleiner Arabisch lettertype">ا</button>
+                <div class="font-step-dots" id="arabic-font-step-dots">
+                    <!-- dots rendered by JS -->
+                </div>
+                <button class="font-step-az font-step-az--large font-step-az--arabic" id="arabic-font-inc-btn" type="button" aria-label="Groter Arabisch lettertype">ا</button>
+            </div>
         </div>
 
         <div class="reader-sheet-divider"></div>
@@ -256,6 +295,7 @@
             </button>
         </div>
         @endif
+
 
         <div class="reader-sheet-bottom-safe"></div>
         </div>{{-- /sheet-panel-controls --}}
@@ -310,9 +350,6 @@
         <button class="hl-action-btn" id="hl-copy-btn" title="Kopiëren" aria-label="Tekst kopiëren">
             <i class="fa-solid fa-copy" aria-hidden="true"></i>
         </button>
-        <button class="hl-action-btn" id="hl-bookmark-btn" title="Bladwijzer" aria-label="Bladwijzer toevoegen">
-            <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
-        </button>
         <button class="hl-action-btn" id="hl-remove-btn" title="Verwijder markering" aria-label="Markering verwijderen" hidden>
             <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
         </button>
@@ -329,8 +366,8 @@
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
         const ARABIC_FONT_KEY = 'reading_arabicfontsize_{{ $product->id }}';
-        const DEFAULT_FONT = 18;
-        const DEFAULT_ARABIC_FONT = 28;
+        const DEFAULT_FONT = 19;
+        const DEFAULT_ARABIC_FONT = 29;
         // Cross-book meta
         const PRODUCT_ID    = {{ $product->id }};
         const PRODUCT_TITLE = @json($product->title);
@@ -349,9 +386,7 @@
         const sheetNextBtn      = document.getElementById('sheet-next-btn');
         const sheetPageSlider   = document.getElementById('sheet-page-slider');
         const sheetPagePreview  = document.getElementById('sheet-page-preview');
-        const fontSlider        = document.getElementById('font-slider');
         const fontValEl         = document.getElementById('sheet-font-val');
-        const arabicFontSlider  = document.getElementById('arabic-font-slider');
         const arabicFontValEl   = document.getElementById('arabic-font-size-display');
         const sheetTocBtn       = document.getElementById('sheet-toc-btn');
         const sentinel          = document.getElementById('lazy-sentinel');
@@ -440,14 +475,12 @@
         function applyFont(sz) {
             readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; });
             if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
-            if (fontSlider && document.activeElement !== fontSlider) fontSlider.value = sz;
         }
         function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
         function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         function applyArabicFont(sz) {
             readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
             if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
-            if (arabicFontSlider && document.activeElement !== arabicFontSlider) arabicFontSlider.value = sz;
         }
 
         function visiblePage() {
@@ -551,6 +584,7 @@
             const cur = visiblePage();
             if (sheetPageSlider) sheetPageSlider.value = cur;
             if (sheetPagePreview) sheetPagePreview.textContent = cur;
+            bmPageLabel();
         }
         function closeSheet() {
             if (!controlSheet) return;
@@ -582,7 +616,8 @@
 
         // Sheet: page slider
         sheetPageSlider?.addEventListener('input', () => {
-            if (sheetPagePreview) sheetPagePreview.textContent = sheetPageSlider.value;
+            // update the large page display while dragging
+            if (sheetPageCurrent) sheetPageCurrent.textContent = sheetPageSlider.value;
         });
         sheetPageSlider?.addEventListener('change', () => {
             const p = parseInt(sheetPageSlider.value, 10);
@@ -593,34 +628,79 @@
         sheetPrevBtn?.addEventListener('click', () => {
             const cur = visiblePage();
             const idx = sorted.indexOf(cur);
-            if (idx > 0) { jumpTo(sorted[idx - 1], true); closeSheet(); }
+            if (idx > 0) { jumpTo(sorted[idx - 1], true); }
         });
         sheetNextBtn?.addEventListener('click', () => {
             const cur = visiblePage();
             const idx = sorted.indexOf(cur);
-            if (idx < sorted.length - 1) { jumpTo(sorted[idx + 1], true); closeSheet(); }
+            if (idx < sorted.length - 1) { jumpTo(sorted[idx + 1], true); }
         });
 
-        // Sheet: font sliders
-        fontSlider?.addEventListener('input', () => {
-            applyFont(Math.round(parseFloat(fontSlider.value) * 10) / 10);
-        });
-        fontSlider?.addEventListener('change', () => {
-            const sz = Math.round(parseFloat(fontSlider.value) * 10) / 10;
+        // Sheet: font step controls
+        const FONT_STEPS    = [12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28, 30, 32, 36];
+        const ARABIC_STEPS  = [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 40, 44, 48, 52];
+
+        function nearestStepIdx(steps, val) {
+            let best = 0, bestD = Infinity;
+            steps.forEach((s, i) => { const d = Math.abs(s - val); if (d < bestD) { bestD = d; best = i; } });
+            return best;
+        }
+
+        function buildDots(containerId, steps, getCurrentIdx, onSelect) {
+            const wrap = document.getElementById(containerId);
+            if (!wrap) return;
+            wrap.innerHTML = '';
+            steps.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'font-step-dot' + (i === getCurrentIdx() ? ' active' : '');
+                dot.setAttribute('aria-label', 'Stap ' + (i + 1));
+                dot.addEventListener('click', () => onSelect(i));
+                wrap.appendChild(dot);
+            });
+        }
+
+        function refreshDots(containerId, steps, activeIdx) {
+            const wrap = document.getElementById(containerId);
+            if (!wrap) return;
+            wrap.querySelectorAll('.font-step-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === activeIdx);
+            });
+        }
+
+        let fontStepIdx   = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
+        let arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
+
+        function setFontStep(idx) {
+            fontStepIdx = Math.max(0, Math.min(FONT_STEPS.length - 1, idx));
+            const sz = FONT_STEPS[fontStepIdx];
             applyFont(sz); saveFont(sz);
-        });
-        document.getElementById('sheet-font-reset')?.addEventListener('click', () => {
-            applyFont(DEFAULT_FONT); saveFont(DEFAULT_FONT);
-        });
-        arabicFontSlider?.addEventListener('input', () => {
-            applyArabicFont(Math.round(parseFloat(arabicFontSlider.value) * 10) / 10);
-        });
-        arabicFontSlider?.addEventListener('change', () => {
-            const sz = Math.round(parseFloat(arabicFontSlider.value) * 10) / 10;
+            refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
+        }
+        function setArabicStep(idx) {
+            arabicStepIdx = Math.max(0, Math.min(ARABIC_STEPS.length - 1, idx));
+            const sz = ARABIC_STEPS[arabicStepIdx];
             applyArabicFont(sz); saveArabicFont(sz);
+            refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
+        }
+
+        buildDots('font-step-dots',        FONT_STEPS,   () => fontStepIdx,   i => setFontStep(i));
+        buildDots('arabic-font-step-dots',  ARABIC_STEPS, () => arabicStepIdx, i => setArabicStep(i));
+
+        document.getElementById('font-dec-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx - 1));
+        document.getElementById('font-inc-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx + 1));
+        document.getElementById('arabic-font-dec-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx - 1));
+        document.getElementById('arabic-font-inc-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx + 1));
+
+        document.getElementById('sheet-font-reset')?.addEventListener('click', () => {
+            fontStepIdx = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
+            applyFont(DEFAULT_FONT); saveFont(DEFAULT_FONT);
+            refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
         });
         document.getElementById('arabic-font-reset')?.addEventListener('click', () => {
+            arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
             applyArabicFont(DEFAULT_ARABIC_FONT); saveArabicFont(DEFAULT_ARABIC_FONT);
+            refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
@@ -650,26 +730,17 @@
                     touch2.pageX - touch1.pageX,
                     touch2.pageY - touch1.pageY
                 );
-
-                // Apply dampening for smaller, more sensitive steps
-                const rawScale = currentDist / pinchStartDist;
-                const dampening = 0.15; // Lower = smaller steps, more sensitive, smoother
-                const scale = 1 + (rawScale - 1) * dampening;
-                const newSize = pinchStartFontSize * scale;
-                const clampedSize = Math.max(12, Math.min(36, newSize));
-
-                applyFont(clampedSize);
+                const ratio = currentDist / pinchStartDist;
+                // Snap to nearest step: spread fingers = step up, pinch = step down
+                let targetIdx = fontStepIdx;
+                if (ratio > 1.15) targetIdx = Math.min(FONT_STEPS.length - 1, nearestStepIdx(FONT_STEPS, pinchStartFontSize) + Math.floor((ratio - 1) / 0.15));
+                if (ratio < 0.87) targetIdx = Math.max(0, nearestStepIdx(FONT_STEPS, pinchStartFontSize) - Math.floor((1 - ratio) / 0.13));
+                if (targetIdx !== fontStepIdx) setFontStep(targetIdx);
             }
         }, { passive: false });
 
         readerEl.addEventListener('touchend', e => {
             if (e.touches.length < 2 && pinchStartDist !== null) {
-                // Save final font size
-                const currentPage = readerEl.querySelector('.page');
-                if (currentPage) {
-                    const finalSize = parseFloat(getComputedStyle(currentPage).fontSize) || 19;
-                    saveFont(finalSize);
-                }
                 pinchStartDist = null;
                 pinchStartFontSize = null;
             }
@@ -774,7 +845,6 @@
 
         function openToc() {
             if (!tocPanel) return;
-            closeSheet();
             tocPanel.classList.add('open');
             tocPanel.setAttribute('aria-hidden', 'false');
             if (tocBackdrop) { tocBackdrop.classList.add('open'); tocBackdrop.setAttribute('aria-hidden', 'false'); }
@@ -794,7 +864,7 @@
         }
 
         buildTocPanel();
-        sheetTocBtn?.addEventListener('click', () => openToc());
+        sheetTocBtn?.addEventListener('click', () => tocPanel?.classList.contains('open') ? closeToc() : openToc());
         tocCloseBtn?.addEventListener('click', closeToc);
         tocBackdrop?.addEventListener('click', closeToc);
         document.addEventListener('keydown', ev => {
@@ -814,9 +884,16 @@
         // --- Restore reading progress on load ---
         function restoreProgress() {
             const savedFont = loadFont();
-            if (savedFont) { applyFont(savedFont); } else { applyFont(DEFAULT_FONT); }
+            const initFont = savedFont || DEFAULT_FONT;
+            applyFont(initFont);
+            fontStepIdx = nearestStepIdx(FONT_STEPS, initFont);
+            refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
+
             const savedArabicFont = loadArabicFont();
-            if (savedArabicFont) { applyArabicFont(savedArabicFont); } else { applyArabicFont(DEFAULT_ARABIC_FONT); }
+            const initArabic = savedArabicFont || DEFAULT_ARABIC_FONT;
+            applyArabicFont(initArabic);
+            arabicStepIdx = nearestStepIdx(ARABIC_STEPS, initArabic);
+            refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
             hlRestoreAll(); // restore saved highlights for server-rendered pages
             bmRenderAllMarkers(); // restore bookmark paragraph markers
 
@@ -911,6 +988,8 @@
                             e.stopPropagation();
                             bmSave(bmLoad().filter(x => x.id !== bm.id));
                             document.querySelector(`.bm-marker[data-bm-id="${bm.id}"]`)?.remove();
+                            document.querySelector(`.bm-page-marker[data-bm-id="${bm.id}"]`)?.remove();
+                            bmPageLabel();
                             libRender();
                         });
                         item.addEventListener('click', e => {
@@ -927,19 +1006,23 @@
                     });
             }
 
-            // Highlights
-            const hls = hlLoad();
+            // Highlights — ALL books
+            const hls = hlLoadAll()
+                .slice()
+                .sort((a, b) => (a.productTitle || '').localeCompare(b.productTitle || '') || a.pageNum - b.pageNum);
             hlList.innerHTML = '';
             if (!hls.length) {
                 hlList.innerHTML = '<div class="reader-lib-empty">Geen markeringen opgeslagen</div>';
             } else {
-                hls.slice().sort((a,b) => a.pageNum - b.pageNum).forEach(hl => {
+                hls.forEach(hl => {
+                    const isCurrent = hl.productId === PRODUCT_ID || !hl.productId;
                     const item = document.createElement('div');
                     item.className = 'reader-lib-item';
                     const text = hl.text || ('Pagina ' + hl.pageNum);
                     item.innerHTML = `
                         <div class="reader-lib-item-icon hl-icon-${hl.color}"><i class="fa-solid fa-highlighter"></i></div>
                         <div class="reader-lib-item-body">
+                            <div class="reader-lib-item-book">${hl.productTitle || 'Onbekend boek'}</div>
                             <div class="reader-lib-item-page">Pagina ${hl.pageNum}</div>
                             <div class="reader-lib-item-text">${text}</div>
                         </div>
@@ -947,19 +1030,31 @@
                     `;
                     item.querySelector('.reader-lib-item-del').addEventListener('click', e => {
                         e.stopPropagation();
-                        // Remove mark from DOM
-                        const markEl = document.querySelector(`[data-hl-id="${hl.id}"]`);
-                        if (markEl) {
-                            const p = markEl.parentNode;
-                            while (markEl.firstChild) p.insertBefore(markEl.firstChild, markEl);
-                            p.removeChild(markEl); p.normalize();
+                        // Remove mark from DOM (only if current book)
+                        if (isCurrent) {
+                            const markEl = document.querySelector(`[data-hl-id="${hl.id}"]`);
+                            if (markEl) {
+                                const p = markEl.parentNode;
+                                while (markEl.firstChild) p.insertBefore(markEl.firstChild, markEl);
+                                p.removeChild(markEl); p.normalize();
+                            }
                         }
-                        hlSave(hlLoad().filter(x => x.id !== hl.id));
+                        // Remove from its own storage key
+                        const storageKey = hl._storageKey || HL_KEY;
+                        try {
+                            const arr = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                            localStorage.setItem(storageKey, JSON.stringify(arr.filter(x => x.id !== hl.id)));
+                        } catch (_) {}
                         libRender();
                     });
                     item.addEventListener('click', e => {
                         if (e.target.closest('.reader-lib-item-del')) return;
-                        jumpTo(hl.pageNum, true); closeSheet();
+                        if (isCurrent) {
+                            jumpTo(hl.pageNum, true); closeSheet();
+                        } else {
+                            try { localStorage.setItem('reading_progress_' + hl.productId, String(hl.pageNum)); } catch (_) {}
+                            window.location.href = hl.readerUrl;
+                        }
                     });
                     hlList.appendChild(item);
                 });
@@ -976,13 +1071,20 @@
         });
         document.getElementById('lib-clear-highlights')?.addEventListener('click', () => {
             if (confirm('Alle markeringen verwijderen?')) {
-                // Remove all marks from DOM
+                // Remove all marks from DOM (current book)
                 document.querySelectorAll('mark.hl').forEach(m => {
                     const p = m.parentNode;
                     while (m.firstChild) p.insertBefore(m.firstChild, m);
                     p.removeChild(m); p.normalize();
                 });
-                hlSave([]); libRender();
+                // Clear highlights from ALL books in localStorage
+                try {
+                    for (let i = localStorage.length - 1; i >= 0; i--) {
+                        const k = localStorage.key(i);
+                        if (k && k.startsWith('hl_')) localStorage.removeItem(k);
+                    }
+                } catch (_) {}
+                libRender();
             }
         });
 
@@ -990,6 +1092,27 @@
 
         function hlLoad() { try { return JSON.parse(localStorage.getItem(HL_KEY) || '[]'); } catch { return []; } }
         function hlSave(a) { try { localStorage.setItem(HL_KEY, JSON.stringify(a)); } catch {} }
+        function hlLoadAll() {
+            // Scan all localStorage keys matching hl_* and aggregate across all books
+            const all = [];
+            try {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const k = localStorage.key(i);
+                    if (!k || !k.startsWith('hl_')) continue;
+                    const arr = JSON.parse(localStorage.getItem(k) || '[]');
+                    arr.forEach(h => {
+                        // Backfill missing product info for highlights saved before this update
+                        if (!h.productId && k === HL_KEY) {
+                            h.productId = PRODUCT_ID;
+                            h.productTitle = PRODUCT_TITLE;
+                            h.readerUrl = READER_URL;
+                        }
+                        all.push({ _storageKey: k, ...h });
+                    });
+                }
+            } catch (_) {}
+            return all;
+        }
 
         let hlBackdrop = null;
         let _hlHideTime = 0;  // timestamp of last hlHide(), used to suppress sheet toggle
@@ -1029,7 +1152,7 @@
             pre.selectNodeContents(pageEl);
             pre.setEnd(range.startContainer, range.startOffset);
             const s = pre.toString().length;
-            return { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), pageNum, color: null, text: range.toString().trim().slice(0, 80), startOffset: s, endOffset: s + range.toString().length };
+            return { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), pageNum, color: null, text: range.toString().trim().slice(0, 80), startOffset: s, endOffset: s + range.toString().length, productId: PRODUCT_ID, productTitle: PRODUCT_TITLE, readerUrl: READER_URL };
         }
 
         function hlDeserialize(pageEl, s, e) {
@@ -1140,8 +1263,88 @@
         }
 
         function bmRenderAllMarkers() {
-            Object.entries(pageMap).forEach(([n, el]) => bmRenderMarkers(el, parseInt(n)));
+            Object.entries(pageMap).forEach(([n, el]) => {
+                bmRenderMarkers(el, parseInt(n));
+                bmRenderPageMarkers(el, parseInt(n));
+            });
         }
+
+        // ── Page-level bookmark (via control panel button) ──────────
+        function bmPageLabel() {
+            const pageNum = visiblePage();
+            const btn = document.getElementById('sheet-bm-page-btn');
+            if (!btn) return;
+            const has = bmLoad().some(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.paraIndex === -1);
+            btn.classList.toggle('active', has);
+        }
+
+        function bmPageToggle() {
+            const pageNum = visiblePage();
+            const pageEl  = pageMap[pageNum];
+            const existing = bmLoad();
+            const idx = existing.findIndex(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.paraIndex === -1);
+            if (idx >= 0) {
+                // Remove
+                const id = existing[idx].id;
+                bmSave(existing.filter((_, i) => i !== idx));
+                pageEl?.querySelector(`.bm-page-marker[data-bm-id="${id}"]`)?.remove();
+
+                let t = document.getElementById('hl-toast');
+                if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
+                t.textContent = '✓ Bladwijzer verwijderd';
+                t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
+            } else {
+                // Add
+                const newBm = { id: Date.now().toString(36) + Math.random().toString(36).slice(2,6), productId: PRODUCT_ID, productTitle: PRODUCT_TITLE, productSlug: PRODUCT_SLUG, readerUrl: READER_URL, pageNum, paraIndex: -1, text: '', date: new Date().toISOString() };
+                existing.push(newBm);
+                bmSave(existing);
+                if (pageEl) bmInsertPageMarker(newBm, pageEl);
+                let t = document.getElementById('hl-toast');
+                if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
+                t.textContent = '✓ Bladwijzer toegevoegd';
+                t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
+            }
+            bmPageLabel();
+            if (panelLibrary && !panelLibrary.hidden) libRender();
+        }
+
+        function bmInsertPageMarker(bm, pageEl) {
+            if (pageEl.querySelector(`.bm-page-marker[data-bm-id="${bm.id}"]`)) return;
+            pageEl.style.position = 'relative';
+            const marker = document.createElement('div');
+            marker.className = 'bm-page-marker';
+            marker.dataset.bmId = bm.id;
+            marker.title = 'Bladwijzer verwijderen';
+            marker.setAttribute('aria-label', 'Bladwijzer verwijderen');
+            marker.innerHTML = '<svg viewBox="0 0 18 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 18,0 18,28 9,20 0,28"/></svg>';
+            marker.addEventListener('click', e => {
+                e.stopPropagation();
+                bmSave(bmLoad().filter(x => x.id !== bm.id));
+                marker.remove();
+                bmPageLabel();
+                if (panelLibrary && !panelLibrary.hidden) libRender();
+                let t = document.getElementById('hl-toast');
+                if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
+                t.textContent = '✓ Bladwijzer verwijderd';
+                t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
+            });
+            pageEl.appendChild(marker);
+        }
+
+        function bmRenderPageMarkers(pageEl, pageNum) {
+            // Remove stale
+            const storedIds = new Set(bmLoad().filter(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.paraIndex === -1).map(b => b.id));
+            pageEl.querySelectorAll('.bm-page-marker').forEach(m => { if (!storedIds.has(m.dataset.bmId)) m.remove(); });
+            // Remove padding if no markers left
+
+            // Add missing
+            bmLoad().filter(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.paraIndex === -1)
+                .forEach(bm => bmInsertPageMarker(bm, pageEl));
+        }
+
+        document.getElementById('sheet-bm-page-btn')?.addEventListener('click', () => {
+            bmPageToggle();
+        });
 
         // Show popup after mouse/touch selection
         let _hlTimer = null;
