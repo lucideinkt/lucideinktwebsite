@@ -2699,11 +2699,12 @@ body.dark-mode mark.reader-search-highlight { background: rgba(255,224,51,0.6); 
         width: 100%;
         left: 0;
         right: 0;
+        /* Use top+bottom instead of height so keyboard opening doesn't resize the panel */
+        top: 0;
+        bottom: 0;
+        height: auto;
         border-left: none;
-        height: 100%;
-        height: 100dvh;
         overscroll-behavior: contain;
-        /* Keep the horizontal slide but ensure no paint outside viewport */
         overflow: hidden;
     }
 }

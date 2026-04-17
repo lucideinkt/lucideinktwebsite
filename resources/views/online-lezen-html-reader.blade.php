@@ -46,7 +46,7 @@
     <style>
         /* Prevent page from scrolling horizontally when keyboard opens on mobile (iOS Safari) */
         html, body {
-            overflow-x: hidden;
+            overflow-x: clip; /* clip instead of hidden — prevents horizontal overflow painting without breaking mouse-wheel scroll */
             overscroll-behavior-x: none;
             max-width: 100vw;
         }
@@ -796,6 +796,15 @@
 
         function openToc() {
             if (!tocPanel) return;
+            // Close settings sheet and search panel if open
+            closeSheet();
+            const searchPanel = document.getElementById('reader-search-panel');
+            const searchBackdrop = document.getElementById('reader-search-backdrop');
+            if (searchPanel && !searchPanel.hidden) {
+                searchPanel.classList.remove('open');
+                searchBackdrop?.classList.remove('open');
+                setTimeout(() => { searchPanel.hidden = true; }, 220);
+            }
             tocPanel.classList.add('open');
             tocPanel.setAttribute('aria-hidden', 'false');
             if (tocBackdrop) { tocBackdrop.classList.add('open'); tocBackdrop.setAttribute('aria-hidden', 'false'); }
