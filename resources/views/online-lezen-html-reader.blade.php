@@ -220,7 +220,7 @@
         <div class="reader-sheet-section reader-sheet-slider-row">
             <div class="reader-sheet-slider-meta">
                 <span class="reader-sheet-slider-label"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Ga naar pagina</span>
-                <button class="reader-sheet-bm-nav-btn" id="sheet-bm-page-btn" type="button" title="Bladwijzer op deze pagina" aria-label="Bladwijzer op deze pagina">
+                <button class="reader-sheet-bm-nav-btn" id="sheet-bm-page-btn" type="button" title="Voeg bladwijzer toe" aria-label="Voeg bladwijzer toe">
                     <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
                 </button>
             </div>
@@ -467,6 +467,7 @@
             if (sheetProgressFill) sheetProgressFill.style.width = pct + '%';
             if (sheetPageSlider && document.activeElement !== sheetPageSlider) sheetPageSlider.value = page;
             if (sheetPagePreview) sheetPagePreview.textContent = page;
+            bmPageLabel();
         }
         function save(page)   { try { localStorage.setItem(STORAGE_KEY, String(page)); } catch (_) {} }
         function load()       { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
@@ -1276,6 +1277,9 @@
             if (!btn) return;
             const has = bmLoad().some(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.paraIndex === -1);
             btn.classList.toggle('active', has);
+            const label = has ? 'Bladwijzer verwijderen' : 'Voeg bladwijzer toe';
+            btn.title = label;
+            btn.setAttribute('aria-label', label);
         }
 
         function bmPageToggle() {
