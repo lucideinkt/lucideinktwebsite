@@ -532,12 +532,15 @@
 
         // Sheet: page slider
         sheetPageSlider?.addEventListener('input', () => {
-            // update the large page display while dragging
-            if (sheetPageCurrent) sheetPageCurrent.textContent = sheetPageSlider.value;
+            // Snap to nearest real page while dragging
+            const raw = parseInt(sheetPageSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            if (sheetPageCurrent) sheetPageCurrent.textContent = nearest;
         });
         sheetPageSlider?.addEventListener('change', () => {
-            const p = parseInt(sheetPageSlider.value, 10);
-            if (p) { jumpTo(p, true); closeSheet(); }
+            const raw = parseInt(sheetPageSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            if (nearest) { jumpTo(nearest, false); closeSheet(); }
         });
 
         // Sheet: prev / next
