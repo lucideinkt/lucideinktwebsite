@@ -498,7 +498,7 @@
             if (isLoading || allLoaded) return Promise.resolve();
             isLoading = true;
 
-            const limit = upToPage ? Math.min(upToPage - lastLoadedPage, 20) : 10;
+            const limit = upToPage ? Math.max(upToPage - lastLoadedPage, 10) : 10;
             if (limit <= 0) { isLoading = false; return Promise.resolve(); }
 
             return fetch(`${API_URL_VAL}?after=${lastLoadedPage}&limit=${limit}`)
@@ -547,11 +547,19 @@
         function jumpTo(page, smooth) {
             if (pageMap[page]) {
                 _scrollTo(page, smooth);
-            } else {
-                loadMorePages(page).then(() => {
-                    if (pageMap[page]) _scrollTo(page, smooth);
-                });
+                return;
             }
+            // Page not in DOM yet — wait for background loading to make it available
+            const poll = setInterval(() => {
+                if (pageMap[page]) {
+                    clearInterval(poll);
+                    _scrollTo(page, smooth);
+                } else if (allLoaded) {
+                    clearInterval(poll); // page simply doesn't exist
+                }
+            }, 80);
+            // Also trigger a load in case eager loading has stalled
+            if (!isLoading && !allLoaded) loadMorePages(page);
         }
 
         function _scrollTo(page, smooth) {
