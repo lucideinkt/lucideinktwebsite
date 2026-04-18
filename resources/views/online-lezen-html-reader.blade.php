@@ -48,12 +48,13 @@
         (function(){
             try {
                 var stored = localStorage.getItem('reader-theme');
-                // Default to dark when nothing is saved yet
-                var mode = stored || 'dark';
-                if (mode === 'dark') document.documentElement.classList.add('reader-preload-dark');
-            } catch(_) {
-                document.documentElement.classList.add('reader-preload-dark');
-            }
+                // Default to system theme when nothing is saved yet
+                var mode = stored || 'system';
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (mode === 'dark' || (mode === 'system' && prefersDark)) {
+                    document.documentElement.classList.add('reader-preload-dark');
+                }
+            } catch(_) {}
         })();
     </script>
     <style>
@@ -756,8 +757,8 @@
                 if (stored) return stored;
                 const old = localStorage.getItem('reader-dark-mode');
                 if (old === '0') return 'light';
-                return 'dark';
-            } catch (_) { return 'dark'; }
+                return 'system'; // default: follow OS preference
+            } catch (_) { return 'system'; }
         }
         function saveTheme(mode) { try { localStorage.setItem(THEME_KEY, mode); } catch (_) {} }
         function applyTheme(mode) {
