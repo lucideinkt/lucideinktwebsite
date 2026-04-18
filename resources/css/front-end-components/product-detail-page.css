@@ -5,12 +5,10 @@
 .product-detail {
     width: 100%;
     margin-bottom: 0px;
-
     background: var(--surface-2);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: var(--shadow-1);
-    transition: all 0.3s ease;
     position: relative;
     background-color: #fff3cc;
     background-image: url("../../images/little-pluses.png");
@@ -40,7 +38,7 @@
     padding: 0;
     box-shadow: none;
     border: none;
-    filter: drop-shadow(0 8px 24px rgba(139, 90, 10, 0.18));
+    /* filter removed — CSS filter creates a compositing layer that blurs child images */
 }
 
 .product-detail-image-wrapper {
@@ -55,57 +53,47 @@
 .pd-gallery__stage {
     position: relative;
     width: 100%;
-    /* height driven by the active image — min keeps it from collapsing */
     min-height: 200px;
     background: transparent;
     outline: none;
+    /* Grid stacks all images into one cell; active image sets the height */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
 
-/* All images stacked; only .is-active is visible */
-.pd-gallery__img {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    user-select: none;
-}
-
-/* The active image fills natural height via the spacer trick */
-.pd-gallery__img.is-active {
-    opacity: 1;
-    pointer-events: auto;
-    cursor: zoom-in;
-}
-
-/* Invisible spacer that gives the stage its height based on active image.
-   We rely on a padding-top trick via JS, OR we simply use the first image
-   as a flow element. Override with relative + auto for active: */
-.pd-gallery__stage {
-    display: grid; /* grid collapses all children into one cell */
-}
+/* All images occupy the same grid cell */
 .pd-gallery__img {
     grid-area: 1 / 1;
-    position: relative;     /* override absolute above inside grid */
+    display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
     max-height: 560px;
     object-fit: contain;
     margin: 0 auto;
+    /* No opacity transition — avoids the blurry fade-in on first load */
+    transition: none;
+    user-select: none;
 }
-/* inactive images take up zero visual space but keep grid height via is-active */
+
+/* Inactive: taken out of flow so they don't inflate the stage height */
 .pd-gallery__img:not(.is-active) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     visibility: hidden;
     pointer-events: none;
 }
+
+/* Active: in-flow, sets stage height, fully visible immediately */
 .pd-gallery__img.is-active {
+    position: relative;
     visibility: visible;
+    pointer-events: auto;
+    cursor: zoom-in;
 }
 
 /* ── Arrow buttons ───────────────────────────────────────────── */

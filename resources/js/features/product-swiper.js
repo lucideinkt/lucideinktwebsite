@@ -152,4 +152,34 @@ export function initProductSwiper() {
     imgs.forEach((img, i) => img.addEventListener('click', () => { if (!isMobile()) lbOpen(i); }));
     btnZoom?.addEventListener('click', () => { if (!isMobile()) lbOpen(current); });
     stage.style.cursor = 'zoom-in';
+
+    // ── Force sharp repaint on load ───────────────────────────────────────────
+    // Mimics what clicking the slider does: remove is-active, let browser flush,
+    // then restore it. This breaks the blurry-compositing-layer on first paint.
+    const forceRepaint = () => {
+        const activeImg = imgs[current >= 0 ? current : 0];
+        if (!activeImg) return;
+        activeImg.classList.remove('is-active');
+        void activeImg.offsetWidth; // force synchronous reflow
+        activeImg.classList.add('is-active');
+    };
+
+    current = -1;
+    const firstImg = imgs[0];
+    const activate = () => {
+        goTo(0, false);
+        // Wait for image decode, then force repaint
+        const repaint = () => requestAnimationFrame(() => requestAnimationFrame(forceRepaint));
+        if (firstImg && typeof firstImg.decode === 'function') {
+            firstImg.decode().then(repaint).catch(repaint);
+        } else {
+            repaint();
+        }
+    };
+    // Use window.load to ensure all resources (including the image) are ready
+    if (document.readyState === 'complete') {
+        activate();
+    } else {
+        window.addEventListener('load', activate, { once: true });
+    }
 }
