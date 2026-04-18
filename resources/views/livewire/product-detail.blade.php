@@ -18,16 +18,13 @@
 
                     @if (count($productImages) > 1)
                         <button class="pd-gallery__arrow pd-gallery__arrow--prev" aria-label="Vorige">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                            <i class="fa-solid fa-chevron-left"></i>
                         </button>
                         <button class="pd-gallery__arrow pd-gallery__arrow--next" aria-label="Volgende">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 6 15 12 9 18"/></svg>
+                            <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     @endif
 
-                    <button class="pd-gallery__zoom" aria-label="Vergroot">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                    </button>
                 </div>
 
                 {{-- Thumbnails --}}
@@ -71,9 +68,9 @@
                 @endif
             </h1>
 
-        @if (isset($product->category) && !empty($product->category->name))
-                <span class="product-detail-category">{{ $product->category->name }}</span>
-            @endif
+{{--        @if (isset($product->category) && !empty($product->category->name))--}}
+{{--                <span class="product-detail-category">{{ $product->category->name }}</span>--}}
+{{--            @endif--}}
         </div>
 
         <div class="product-detail-price-wrapper">
@@ -127,20 +124,20 @@
                             <span class="product-detail-info-value">{{ $product->pages }}</span>
                         </div>
                     @endif
-                    @if ($product->binding_type)
-                        <div class="product-detail-info-item">
-                            <span class="product-detail-info-label">Uitvoering</span>
-                            <span class="product-detail-info-value">
-                                @if ($product->binding_type === 'hardcover')
-                                    Hardcover
-                                @elseif($product->binding_type === 'softcover')
-                                    Softcover
-                                @else
-                                    {{ $product->binding_type }}
-                                @endif
-                            </span>
-                        </div>
-                    @endif
+{{--                    @if ($product->binding_type)--}}
+{{--                        <div class="product-detail-info-item">--}}
+{{--                            <span class="product-detail-info-label">Uitvoering</span>--}}
+{{--                            <span class="product-detail-info-value">--}}
+{{--                                @if ($product->binding_type === 'hardcover')--}}
+{{--                                    Hardcover--}}
+{{--                                @elseif($product->binding_type === 'softcover')--}}
+{{--                                    Softcover--}}
+{{--                                @else--}}
+{{--                                    {{ $product->binding_type }}--}}
+{{--                                @endif--}}
+{{--                            </span>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
                     @if ($product->ean_code)
                         <div class="product-detail-info-item">
                             <span class="product-detail-info-label">EAN Code</span>

@@ -22,6 +22,10 @@
     </a>
 
     <div class="product-card-content">
+{{--        @if ($product->category)--}}
+{{--            <p class="product-card-category">{{ $product->category->name }}</p>--}}
+{{--        @endif--}}
+
         <a href="{{ route('productShow', $product->slug) }}" class="product-card-title-link">
             @php
                 [$mainTitle, $subTitle] = array_pad(
@@ -33,16 +37,12 @@
 
             <h3 class="product-card-title">
                 {{ $mainTitle }}
-                @if($subTitle)
-                    <br>
-                    <span class="product-card-subtitle">{{ $subTitle }}</span>
-                @endif
             </h3>
+            @if($subTitle)
+                <p class="product-card-subtitle">{{ $subTitle }}</p>
+            @endif
         </a>
 
-        @if ($product->category)
-            <p class="product-card-category">{{ $product->category->name }}</p>
-        @endif
 
         <div class="product-card-footer">
             <div class="product-card-price">

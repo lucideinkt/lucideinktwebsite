@@ -69,13 +69,13 @@ export function initProductSwiper() {
         lb.innerHTML = `
             <div class="pd-lightbox__backdrop"></div>
             <button class="pd-lightbox__close" aria-label="Sluiten">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <i class="fa-solid fa-xmark"></i>
             </button>
             <button class="pd-lightbox__nav pd-lightbox__nav--prev" aria-label="Vorige">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                <i class="fa-solid fa-chevron-left"></i>
             </button>
             <button class="pd-lightbox__nav pd-lightbox__nav--next" aria-label="Volgende">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 6 15 12 9 18"/></svg>
+                <i class="fa-solid fa-chevron-right"></i>
             </button>
             <div class="pd-lightbox__stage">
                 <img class="pd-lightbox__img" src="" alt="">
@@ -147,8 +147,9 @@ export function initProductSwiper() {
         if (Math.abs(dx) > 40) lbGo(dx < 0 ? lbIndex + 1 : lbIndex - 1);
     });
 
-    // Open lightbox on main image click OR zoom button
-    imgs.forEach((img, i) => img.addEventListener('click', () => lbOpen(i)));
-    btnZoom?.addEventListener('click', () => lbOpen(current));
+    // Open lightbox on main image click OR zoom button — desktop only
+    const isMobile = () => window.innerWidth <= 768;
+    imgs.forEach((img, i) => img.addEventListener('click', () => { if (!isMobile()) lbOpen(i); }));
+    btnZoom?.addEventListener('click', () => { if (!isMobile()) lbOpen(current); });
     stage.style.cursor = 'zoom-in';
 }

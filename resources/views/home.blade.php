@@ -234,10 +234,10 @@
 
         <section class="colored-section quotes-section">
             <div class="container quote-section">
-                <div id="quotes-slider" class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
+                <div id="quotes-slider">
+                    <div class="qs-track">
+                        <div class="qs-list">
+                            <div class="qs-slide">
                                 <div class="quote-card">
                                     <div class="quote-icon">
                                         <i class="fa-solid fa-quote-left"></i>
@@ -249,8 +249,8 @@
                                     </p>
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
-                            </li>
-                            <li class="splide__slide">
+                            </div>
+                            <div class="qs-slide">
                                 <div class="quote-card">
                                     <div class="quote-icon">
                                         <i class="fa-solid fa-quote-left"></i>
@@ -262,8 +262,8 @@
                                     </p>
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
-                            </li>
-                            <li class="splide__slide">
+                            </div>
+                            <div class="qs-slide">
                                 <div class="quote-card">
                                     <div class="quote-icon">
                                         <i class="fa-solid fa-quote-left"></i>
@@ -276,9 +276,17 @@
                                     </p>
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
+
+                    {{-- Arrows --}}
+                    <button class="qs-arrow qs-arrow-prev" aria-label="Vorige quote">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="qs-arrow qs-arrow-next" aria-label="Volgende quote">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 5l7 7-7 7"/></svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -407,27 +415,52 @@
             }
 
             document.addEventListener('DOMContentLoaded', function() {
-                // Quotes Slider
-                const quotesSlider = document.getElementById('quotes-slider');
-                if (quotesSlider && typeof Splide !== 'undefined') {
-                    new Splide('#quotes-slider', {
-                        type: 'loop',
-                        autoplay: true,
-                        interval: 12000,
-                        speed: 800,
-                        pauseOnHover: true,
-                        pauseOnFocus: true,
-                        arrows: true,
-                        pagination: false,
-                        perPage: 1,
-                        gap: '2rem',
-                        breakpoints: {
-                            768: {
-                                arrows: false,
-                            }
-                        }
-                    }).mount();
-                }
+                // Custom Quotes Slider
+                (function() {
+                    const slider = document.getElementById('quotes-slider');
+                    if (!slider) return;
+
+                    const slides = slider.querySelectorAll('.qs-slide');
+                    const prevBtn = slider.querySelector('.qs-arrow-prev');
+                    const nextBtn = slider.querySelector('.qs-arrow-next');
+                    let current = 0;
+                    let autoplayTimer;
+                    const INTERVAL = 12000;
+                    const SPEED = 800;
+
+                    function goTo(index) {
+                        slides[current].classList.remove('qs-active');
+                        current = index;
+                        slides[current].classList.add('qs-active');
+                    }
+
+                    function next() { goTo((current + 1) % slides.length); }
+                    function prev() { goTo((current - 1 + slides.length) % slides.length); }
+
+                    // Init
+                    slides.forEach(s => s.classList.remove('qs-active'));
+                    slides[0].classList.add('qs-active');
+
+                    function startAutoplay() { autoplayTimer = setInterval(next, INTERVAL); }
+                    function stopAutoplay()  { clearInterval(autoplayTimer); }
+
+                    startAutoplay();
+                    slider.addEventListener('mouseenter', stopAutoplay);
+                    slider.addEventListener('mouseleave', startAutoplay);
+                    slider.addEventListener('focusin',    stopAutoplay);
+                    slider.addEventListener('focusout',   startAutoplay);
+
+                    if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoplay(); next(); startAutoplay(); });
+                    if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoplay(); prev(); startAutoplay(); });
+
+                    // Touch/swipe support
+                    let touchStartX = 0;
+                    slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+                    slider.addEventListener('touchend', e => {
+                        const diff = touchStartX - e.changedTouches[0].clientX;
+                        if (Math.abs(diff) > 40) { stopAutoplay(); diff > 0 ? next() : prev(); startAutoplay(); }
+                    }, { passive: true });
+                })();
 
                 // Add event listeners for close button and overlay
                 const closeBtn = document.getElementById('closeIntroModalBtn');
