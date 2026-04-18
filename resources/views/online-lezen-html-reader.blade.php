@@ -700,20 +700,13 @@
                 let targetIdx = fontStepIdx;
                 if (ratio > 1.15) targetIdx = Math.min(FONT_STEPS.length - 1, nearestStepIdx(FONT_STEPS, pinchStartFontSize) + Math.floor((ratio - 1) / 0.15));
                 if (ratio < 0.87) targetIdx = Math.max(0, nearestStepIdx(FONT_STEPS, pinchStartFontSize) - Math.floor((1 - ratio) / 0.13));
-                if (targetIdx !== fontStepIdx) setFontStep(targetIdx, false); // false = no anchor during gesture
+                if (targetIdx !== fontStepIdx) setFontStep(targetIdx, true); // anchor = true: same sync correction as buttons
             }
         }, { passive: false });
 
         readerEl.addEventListener('touchend', e => {
             if (e.touches.length < 2 && pinchStartDist !== null) {
-                // Pinch gesture ended — restore scroll to the anchor page synchronously
-                if (pinchAnchorPage != null) {
-                    const ap = pinchAnchorPage;
-                    requestAnimationFrame(() => requestAnimationFrame(() => {
-                        const el = pageMap[ap];
-                        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - TOPBAR_H, behavior: 'auto' });
-                    }));
-                }
+                // Pinch gesture ended — sync anchor in applyFont already kept position correct
                 pinchStartDist = null;
                 pinchStartFontSize = null;
                 pinchAnchorPage = null;
