@@ -1472,15 +1472,18 @@
             let currentMark = null;
 
             // ── Pin panel to visual viewport so keyboard open/close never moves it ──
+            // Only active on mobile (≤600px) — desktop uses CSS positioning
+            function isMobile() { return window.innerWidth <= 600; }
             function pinPanelToViewport() {
-                if (!window.visualViewport || panel.hidden) return;
+                if (!window.visualViewport || panel.hidden || !isMobile()) return;
                 const vv = window.visualViewport;
                 // Disable CSS transition while we reposition to avoid sliding animation
                 panel.style.transition = 'none';
                 panel.style.top    = vv.offsetTop + 'px';
                 panel.style.left   = vv.offsetLeft + 'px';
                 panel.style.width  = vv.width + 'px';
-                panel.style.height = vv.height + 'px';
+                // Use layout viewport height (window.innerHeight) — does NOT change when keyboard opens
+                panel.style.height = window.innerHeight + 'px';
                 // Re-enable transition after repositioning (next frame)
                 requestAnimationFrame(() => {
                     panel.style.transition = '';
@@ -1496,8 +1499,10 @@
                 if (!window.visualViewport) return;
                 window.visualViewport.removeEventListener('resize', pinPanelToViewport);
                 window.visualViewport.removeEventListener('scroll', pinPanelToViewport);
-                // Reset inline styles so CSS takes over again
-                panel.style.top = panel.style.left = panel.style.width = panel.style.height = panel.style.transition = '';
+                // Only clear inline styles if we're on mobile (desktop was never touched)
+                if (isMobile()) {
+                    panel.style.top = panel.style.left = panel.style.width = panel.style.height = panel.style.transition = '';
+                }
             }
 
             function openSearch() {
