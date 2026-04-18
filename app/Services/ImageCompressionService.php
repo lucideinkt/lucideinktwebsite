@@ -115,4 +115,3 @@ class ImageCompressionService
         return $filename;
     }
 }
-

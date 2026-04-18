@@ -17,7 +17,7 @@
 .single-product .image img {
     width: 100%;
     max-width: 800px;
-    object-fit: cover;
+    object-fit: contain; /* was: cover — contain prevents crop-blurring */
 }
 
 .product-detail-image-section {
@@ -33,66 +33,266 @@
     border: none;
 }
 
-.product-detail-image-wrapper .splide {
-    min-height: 400px;
+.product-detail-image-wrapper {
+    position: relative;
 }
 
-.product-detail-image-wrapper .splide__track {
-    min-height: 400px;
-}
+/* ═══════════════════════════════════════════════════════════════
+   Custom pd-gallery — no external slider/lightbox library
+   ═══════════════════════════════════════════════════════════════ */
 
-.product-detail-image-wrapper .splide__list {
-    min-height: 400px;
-}
-
-.product-detail-image-wrapper .splide__slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 400px;
-}
-
-.product-detail-image-wrapper .splide__slide img {
+/* ── Main stage ──────────────────────────────────────────────── */
+.pd-gallery__stage {
+    position: relative;
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: contain;
-    border-radius: 0;
+    /* height driven by the active image — min keeps it from collapsing */
+    min-height: 200px;
+    background: transparent;
+    outline: none;
 }
 
-.product-detail-thumbnails {
+/* All images stacked; only .is-active is visible */
+.pd-gallery__img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* The active image fills natural height via the spacer trick */
+.pd-gallery__img.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: zoom-in;
+}
+
+/* Invisible spacer that gives the stage its height based on active image.
+   We rely on a padding-top trick via JS, OR we simply use the first image
+   as a flow element. Override with relative + auto for active: */
+.pd-gallery__stage {
+    display: grid; /* grid collapses all children into one cell */
+}
+.pd-gallery__img {
+    grid-area: 1 / 1;
+    position: relative;     /* override absolute above inside grid */
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 560px;
+    margin: 0 auto;
+}
+/* inactive images take up zero visual space but keep grid height via is-active */
+.pd-gallery__img:not(.is-active) {
+    visibility: hidden;
+    pointer-events: none;
+}
+.pd-gallery__img.is-active {
+    visibility: visible;
+}
+
+/* ── Arrow buttons ───────────────────────────────────────────── */
+.pd-gallery__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid #c9a84c;
+    background: rgba(245, 223, 172, 0.55);
+    color: #6b3a10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 6px rgba(139, 90, 10, 0.18), inset 0 1px 0 rgba(255,240,180,0.4);
+    padding: 0;
+    transition: none;
+}
+.pd-gallery__arrow--prev { left: 8px; }
+.pd-gallery__arrow--next { right: 8px; }
+.pd-gallery__arrow svg   { width: 18px; height: 18px; display: block; }
+.pd-gallery__arrow:focus-visible {
+    outline: 2px solid #c9a84c;
+    outline-offset: 2px;
+}
+
+/* ── Zoom button ─────────────────────────────────────────────── */
+.pd-gallery__zoom {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: rgba(255,255,255,.82);
+    color: #3a2010;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,.14);
+    transition: background .15s;
+    padding: 0;
+    opacity: 0.7;
+}
+.pd-gallery__zoom:hover { opacity: 1; background: #fff; }
+.pd-gallery__zoom svg   { width: 16px; height: 16px; }
+
+/* ── Thumbnails ──────────────────────────────────────────────── */
+.pd-gallery__thumbs {
     display: flex;
     gap: 8px;
     margin-top: 12px;
-    padding: 0;
+    padding: 0 0 6px;
     list-style: none;
     overflow-x: auto;
-    padding-bottom: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
 }
-
-.product-detail-thumbnail {
+.pd-gallery__thumb {
     flex-shrink: 0;
-    width: 80px;
-    height: 80px;
+    width: 72px;
+    height: 72px;
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
     border: 2px solid transparent;
     background: transparent;
-    padding: 0;
+    transition: border-color .2s, box-shadow .2s;
 }
-
-.product-detail-thumbnail.active,
-.product-detail-thumbnail:hover {
-    border-color: #2c582f;
-}
-
-.product-detail-thumbnail img {
+.pd-gallery__thumb img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 4px;
+    display: block;
+}
+.pd-gallery__thumb.is-active,
+.pd-gallery__thumb:hover {
+    border-color: #620505;
+    box-shadow: 0 0 0 1px rgba(98,5,5,.15);
+}
+.pd-gallery__thumb:focus-visible {
+    outline: 2px solid #620505;
+    outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Custom lightbox
+   ═══════════════════════════════════════════════════════════════ */
+.pd-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.pd-lightbox.is-open {
+    display: flex;
+}
+.pd-lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.88);
+    cursor: zoom-out;
+}
+/* Image stage */
+.pd-lightbox__stage {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: calc(100vw - 120px);
+    max-height: calc(100vh - 80px);
+    animation: lbFadeIn .22s ease;
+}
+@keyframes lbFadeIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+
+.pd-lightbox__img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 80px);
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 8px 40px rgba(0,0,0,.6);
+    transition: opacity .15s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.pd-lightbox__img.is-switching {
+    opacity: 0;
+}
+
+/* Close button */
+.pd-lightbox__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s;
+}
+.pd-lightbox__close:hover { background: rgba(255,255,255,.25); }
+.pd-lightbox__close svg   { width: 18px; height: 18px; }
+
+/* Prev / Next */
+.pd-lightbox__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s;
+}
+.pd-lightbox__nav--prev { left: 16px; }
+.pd-lightbox__nav--next { right: 16px; }
+.pd-lightbox__nav:hover { background: rgba(255,255,255,.25); }
+.pd-lightbox__nav svg   { width: 22px; height: 22px; }
+
+/* Counter */
+.pd-lightbox__counter {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255,255,255,.75);
+    font-size: 0.82rem;
+    letter-spacing: .05em;
+    background: rgba(0,0,0,.35);
+    padding: 3px 10px;
+    border-radius: 20px;
+    pointer-events: none;
 }
 
 .product-detail-image-placeholder {
@@ -552,21 +752,6 @@
         top: 0;
     }
 
-    .product-detail-image-wrapper .splide {
-        min-height: 300px;
-    }
-
-    .product-detail-image-wrapper .splide__track {
-        min-height: 300px;
-    }
-
-    .product-detail-image-wrapper .splide__list {
-        min-height: 300px;
-    }
-
-    .product-detail-image-wrapper .splide__slide {
-        min-height: 300px;
-    }
 
     .product-detail-image-wrapper .splide__slide img {
         max-height: 400px;
@@ -653,21 +838,6 @@
         padding: 0;
     }
 
-    .product-detail-image-wrapper .splide {
-        min-height: 250px;
-    }
-
-    .product-detail-image-wrapper .splide__track {
-        min-height: 250px;
-    }
-
-    .product-detail-image-wrapper .splide__list {
-        min-height: 250px;
-    }
-
-    .product-detail-image-wrapper .splide__slide {
-        min-height: 250px;
-    }
 
     .product-detail-image-wrapper .splide__slide img {
         max-height: 300px;

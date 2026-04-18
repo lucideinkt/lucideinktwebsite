@@ -1075,6 +1075,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------------
 
     initLivewireCart();
+    initProductSwiper();
 
     // ----------------------------------------------------------
     // HOME PAGE "READ MORE" MODAL

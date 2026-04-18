@@ -527,6 +527,7 @@ class DatabaseSeeder extends Seeder
         foreach ($books as $book) {
             $book['slug'] = $book['slug'] ?? Str::slug($book['title']);
             $book['category_id'] = $category->id;
+
             Product::create($book);
         }
 

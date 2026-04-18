@@ -36,6 +36,7 @@ import { initHeaderScrollEffect } from './features/header-scroll.js';
 import { initLivewireCart } from './features/live-wire-cart.js';
 import { initContactForm } from './features/contact-form.js';
 import { readerBook } from './features/reader-book.js';
+import { initProductSwiper } from './features/product-swiper.js';
 
 // Import observers
 import { initMutationObserver } from './observers/mutation-observer.js';
@@ -82,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     setupSidebarDropdowns();
     readerBook();
+    initProductSwiper();
 
     // Initialize observer (must be last)
     initMutationObserver();

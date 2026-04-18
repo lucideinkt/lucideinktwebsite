@@ -1,29 +1,43 @@
 <div class="product-detail-grid">
     @if (count($productImages) > 0)
         <div class="product-detail-image-section" wire:ignore>
-            <div class="product-detail-image-wrapper">
-                <div id="main-slider" class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            @foreach ($productImages as $idx => $img)
-                                <li class="splide__slide">
-                                    <a data-lightbox="books" href="{{ $img }}"
-                                       data-title="{{ $product->title }}">
-                                        <img data-lightbox="books" src="{{ $img }}"
-                                             alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy">
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
+            {{-- Custom gallery: no external libraries --}}
+            <div class="pd-gallery"
+                 data-title="{{ $product->title }}"
+                 data-images="{{ json_encode($productImages) }}">
+
+                {{-- Main stage --}}
+                <div class="pd-gallery__stage">
+                    @foreach ($productImages as $idx => $img)
+                        <img class="pd-gallery__img {{ $idx === 0 ? 'is-active' : '' }}"
+                             src="{{ $img }}"
+                             alt="{{ $product->title }} {{ $idx + 1 }}"
+                             loading="{{ $idx === 0 ? 'eager' : 'lazy' }}"
+                             data-index="{{ $idx }}">
+                    @endforeach
+
+                    @if (count($productImages) > 1)
+                        <button class="pd-gallery__arrow pd-gallery__arrow--prev" aria-label="Vorige">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button class="pd-gallery__arrow pd-gallery__arrow--next" aria-label="Volgende">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 6 15 12 9 18"/></svg>
+                        </button>
+                    @endif
+
+                    <button class="pd-gallery__zoom" aria-label="Vergroot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </button>
                 </div>
 
+                {{-- Thumbnails --}}
                 @if (count($productImages) > 1)
-                    <ul id="thumbnails" class="product-detail-thumbnails">
+                    <ul class="pd-gallery__thumbs">
                         @foreach ($productImages as $idx => $img)
-                            <li class="product-detail-thumbnail">
-                                <img src="{{ $img }}" alt="{{ $product->title }} {{ $idx + 1 }}"
-                                     loading="lazy">
+                            <li class="pd-gallery__thumb {{ $idx === 0 ? 'is-active' : '' }}"
+                                data-index="{{ $idx }}" role="button" tabindex="0"
+                                aria-label="Afbeelding {{ $idx + 1 }}">
+                                <img src="{{ $img }}" alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy">
                             </li>
                         @endforeach
                     </ul>
@@ -145,114 +159,4 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('livewire:init', () => {
-        Livewire.hook('morph.added', ({
-                                          el
-                                      }) => {
-            if (el.id === 'main-slider') {
-                setTimeout(() => {
-                    const mainSlider = document.getElementById('main-slider');
-                    if (!mainSlider) return;
-
-                    const track = mainSlider.querySelector('.splide__track');
-                    const list = mainSlider.querySelector('.splide__list');
-
-                    if (!track || !list) return;
-                    if (typeof Splide === 'undefined') return;
-
-                    try {
-                        if (mainSlider.splide) {
-                            mainSlider.splide.destroy();
-                            mainSlider.splide = null;
-                        }
-
-                        const splide = new Splide('#main-slider', {
-                            pagination: false,
-                            type: 'fade',
-                            rewind: true,
-                            speed: 400,
-                        });
-
-                        const thumbnails = document.querySelectorAll(
-                            '.product-detail-thumbnail');
-                        let current;
-
-                        thumbnails.forEach((thumbnail, index) => {
-                            thumbnail.addEventListener('click', function() {
-                                splide.go(index);
-                            });
-                        });
-
-                        splide.on('mounted move', function() {
-                            const thumbnail = thumbnails[splide.index];
-
-                            if (thumbnail) {
-                                if (current) {
-                                    current.classList.remove('is-active', 'active');
-                                }
-                                thumbnail.classList.add('is-active', 'active');
-                                current = thumbnail;
-                            }
-                        });
-
-                        splide.mount();
-                        mainSlider.splide = splide;
-                    } catch (error) {
-                        console.error('Failed to initialize Splide:', error);
-                    }
-                }, 100);
-            }
-        });
-    });
-
-    // Also initialize immediately if slider already exists
-    (function() {
-        setTimeout(() => {
-            const mainSlider = document.getElementById('main-slider');
-            if (!mainSlider) return;
-            if (mainSlider.splide) return; // Already initialized
-
-            const track = mainSlider.querySelector('.splide__track');
-            const list = mainSlider.querySelector('.splide__list');
-
-            if (!track || !list) return;
-            if (typeof Splide === 'undefined') return;
-
-            try {
-                const splide = new Splide('#main-slider', {
-                    pagination: false,
-                    type: 'fade',
-                    rewind: true,
-                    speed: 400,
-                });
-
-                const thumbnails = document.querySelectorAll('.product-detail-thumbnail');
-                let current;
-
-                thumbnails.forEach((thumbnail, index) => {
-                    thumbnail.addEventListener('click', function() {
-                        splide.go(index);
-                    });
-                });
-
-                splide.on('mounted move', function() {
-                    const thumbnail = thumbnails[splide.index];
-
-                    if (thumbnail) {
-                        if (current) {
-                            current.classList.remove('is-active', 'active');
-                        }
-                        thumbnail.classList.add('is-active', 'active');
-                        current = thumbnail;
-                    }
-                });
-
-                splide.mount();
-                mainSlider.splide = splide;
-            } catch (error) {
-                console.error('Failed to initialize Splide:', error);
-            }
-        }, 150);
-    })();
-</script>
+{{-- Gallery initialised via resources/js/features/product-swiper.js --}}
