@@ -84,7 +84,7 @@ class SEOService
                 'type' => 'website',
             ],
             'online-lezen' => [
-                'title' => 'Online Bibliotheek | Lucide Inkt',
+                'title' => 'Lucide Inkt | Online Bibliotheek',
                 'description' => 'Lees onze boeken direct online. Ontdek de Risale-i Nur vertalingen digitaal, waar en wanneer je maar wilt.',
                 'url' => route('onlineLezen'),
                 'image' => secure_url('images/books_standing_new.webp'),
