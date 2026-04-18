@@ -43,6 +43,19 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     @vite(['resources/js/main.js', 'resources/css/front-end-style.css'])
+    {{-- Apply theme before first paint to avoid flash of wrong theme --}}
+    <script>
+        (function(){
+            try {
+                var stored = localStorage.getItem('reader-theme');
+                // Default to dark when nothing is saved yet
+                var mode = stored || 'dark';
+                if (mode === 'dark') document.documentElement.classList.add('reader-preload-dark');
+            } catch(_) {
+                document.documentElement.classList.add('reader-preload-dark');
+            }
+        })();
+    </script>
     <style>
         /* Prevent page from scrolling horizontally when keyboard opens on mobile (iOS Safari) */
         html, body {
@@ -761,6 +774,7 @@
             btn.addEventListener('click', () => { saveTheme(btn.dataset.theme); applyTheme(btn.dataset.theme); });
         });
         applyTheme(loadTheme());
+        document.documentElement.classList.remove('reader-preload-dark');
 
 
         // --- TOC Panel ---
@@ -1667,9 +1681,34 @@
                         });
                         let found = false;
                         let node;
+                        let matchInFootnote = false;
+                        let fnRefBtn = null;
+
                         while ((node = walker.nextNode())) {
                             const idx = normStr(node.textContent).indexOf(queryNorm);
                             if (idx === -1) continue;
+
+                            // Check if this match lives inside a hidden .page-footnote
+                            const footnoteSection = node.parentElement?.closest('.page-footnote');
+                            if (footnoteSection) {
+                                matchInFootnote = true;
+                                // Determine which numbered footnote owns this text node
+                                const allFps = footnoteSection.querySelectorAll('.footnote-p');
+                                let currentFnNum = null;
+                                for (const fp of allFps) {
+                                    const supEl = fp.querySelector('sup');
+                                    if (supEl) currentFnNum = supEl.textContent.trim();
+                                    if (fp.contains(node)) break;
+                                }
+                                if (currentFnNum) {
+                                    fnRefBtn = pageEl.querySelector(`.fn-ref[data-fn="${currentFnNum}"]`);
+                                }
+                                // Don't insert a mark in the hidden section — we'll highlight inside the popover instead
+                                found = true;
+                                break;
+                            }
+
+                            // Normal (visible) match — wrap in <mark>
                             const before = document.createTextNode(node.textContent.slice(0, idx));
                             const mark   = document.createElement('mark');
                             mark.className = 'reader-search-highlight';
@@ -1684,13 +1723,43 @@
                             break;
                         }
 
-                        // Close panel, then scroll precisely to the highlight
+                        // Close panel, then open footnote popover (if needed) and scroll to highlight
                         panel.classList.remove('open');
                         backdrop.classList.remove('open');
                         setTimeout(() => {
                             panel.hidden = true;
-                            const target = found ? currentMark : pageEl;
-                            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                            if (matchInFootnote && fnRefBtn) {
+                                // Open the footnote popover by simulating a click on the fn-ref button
+                                fnRefBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                fnRefBtn.click();
+
+                                // After the popover is rendered, find the query text inside it and highlight it
+                                setTimeout(() => {
+                                    const popoverText = document.querySelector('.fn-popover__text');
+                                    if (!popoverText) return;
+                                    const pWalker = document.createTreeWalker(popoverText, NodeFilter.SHOW_TEXT);
+                                    let pNode;
+                                    while ((pNode = pWalker.nextNode())) {
+                                        const pIdx = normStr(pNode.textContent).indexOf(queryNorm);
+                                        if (pIdx === -1) continue;
+                                        const pBefore = document.createTextNode(pNode.textContent.slice(0, pIdx));
+                                        const pMark   = document.createElement('mark');
+                                        pMark.className = 'reader-search-highlight';
+                                        pMark.textContent = pNode.textContent.slice(pIdx, pIdx + query.length);
+                                        const pAfter  = document.createTextNode(pNode.textContent.slice(pIdx + query.length));
+                                        pNode.parentNode.insertBefore(pBefore, pNode);
+                                        pNode.parentNode.insertBefore(pMark, pNode);
+                                        pNode.parentNode.insertBefore(pAfter, pNode);
+                                        pNode.parentNode.removeChild(pNode);
+                                        currentMark = pMark;
+                                        break;
+                                    }
+                                }, 120); // wait for popover animation to start
+                            } else {
+                                const target = found ? currentMark : pageEl;
+                                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
                         }, 230);
                     });
                     item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') item.click(); });

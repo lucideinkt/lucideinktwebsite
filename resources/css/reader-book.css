@@ -568,6 +568,18 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     text-align: center;
     display: none !important;
 }
+.fn-popover__num {
+    position: absolute;
+    top: 7px;
+    right: 14px;
+    font-size: 13px;
+    font-family: Georgia, serif;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(120, 80, 20, 0.55);
+    pointer-events: none;
+    user-select: none;
+}
 .fn-popover__body {
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -799,6 +811,8 @@ body {
 
 /* ── Dark mode ── */
 body.dark-mode { background-color: #1c1209; color: #e8d8b0; }
+/* Pre-paint dark background to prevent flash before JS runs */
+html.reader-preload-dark body { background-color: #1c1209; color: #e8d8b0; }
 
 /* Scope base */
 body.dark-mode .book-reader-scope { color: #e8d8b0; }
@@ -1490,10 +1504,7 @@ body.dark-mode .reader-progress-bar-fill { background: linear-gradient(90deg, #e
     overflow: hidden;
     padding: 0;
 }
-.reader-fab:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 28px rgba(107,0,0,0.50), 0 2px 6px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.14);
-}
+.reader-fab:hover {}
 .reader-fab:active { transform: scale(0.96); }
 .reader-fab[aria-expanded="true"] {
     background: linear-gradient(135deg, #3e0000 0%, #7a3010 100%);
@@ -1503,7 +1514,7 @@ body.dark-mode .reader-fab {
     background: linear-gradient(135deg, #9a4a18 0%, #7a2808 100%);
     box-shadow: 0 4px 20px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
 }
-body.dark-mode .reader-fab:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.12); }
+body.dark-mode .reader-fab:hover {}
 
 /* Icon section (left pill) */
 .reader-fab-icon-wrap {

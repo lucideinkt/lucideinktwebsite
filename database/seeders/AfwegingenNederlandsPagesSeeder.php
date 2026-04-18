@@ -3196,12 +3196,12 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="90">
     <p class="text-end page-number">#90</p>
 
-    <p style="margin-bottom: 0">
+    <p>
     Circa vijfentwintig jaar geleden, toen ik op de heuvel van Yûshâ aan de zeestraat van Istanbul had besloten om afstand van de wereld te nemen, waren er een aantal aanzienlijke vrienden van mij langsgekomen om mij terug naar de wereld te roepen met het verzoek om mijn oude positie weer te bekleden. Ik zei: <em>“Geef mij tot morgen bedenktijd, opdat ik istikhara kan doen.”</em> In de ochtend werden mijn hart de aankomende twee tableaus ingegeven. Ze lijken op gedichten, maar dat zijn ze niet. De herinnering aan die gezegende tijd heeft mij verhinderd om ze aan te passen; ze zijn opgeslagen zoals ze zijn ingegeven. Ze waren aan het eind van Het Drieëntwintigste Woord toegevoegd, maar zijn vanwege hun betrekking op dit thema hier geplaatst.
     </p>
 
     <div class="text-center page-title-chapter delima-font">
-        <h2 style="color: #ca2a2a;">Het Eerste Tableau</h2>
+        <h2>Het Eerste Tableau</h2>
         <p><em>[Een Tableau dat de realiteit van het aardsgezinde volk afbeeldt]</em></p>
     </div>
 
@@ -3329,7 +3329,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     <p class="text-end page-number">#91</p>
 
     <div class="text-center page-title-chapter delima-font">
-        <h2 style="color: #ca2a2a;">Het Tweede Tableau</h2>
+        <h2>Het Tweede Tableau</h2>
         <p><em>[Een tableau dat de wereld van de geleide mensen en de bezitters van Godsbesef afbeeldt]</em></p>
     </div>
 

@@ -239,8 +239,10 @@
         popover.className = 'fn-popover';
         popover.setAttribute('role', 'tooltip');
         popover.setAttribute('aria-live', 'polite');
+        const fnNum = btn.dataset.fn || '';
         popover.innerHTML =
             `<button class="fn-popover__close" aria-label="Sluiten" type="button">&#215;</button>` +
+            (fnNum ? `<span class="fn-popover__num" aria-hidden="true">${fnNum}</span>` : '') +
             `<div class="fn-popover__body">` +
                 `<div class="fn-popover__text">${html}</div>` +
             `</div>`;
