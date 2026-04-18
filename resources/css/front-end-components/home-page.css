@@ -34,9 +34,9 @@
     position: absolute;
     inset: 0;
     background-image: url("../../images/new_warm_leather.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left top;
+    background-repeat: repeat-y;
     pointer-events: none;
     z-index: -1;
 }
@@ -47,12 +47,14 @@
     position: absolute;
     inset: 0;
     background-image: url("../../images/new_warm_leather.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left top;
+    background-repeat: repeat-y;
     pointer-events: none;
     z-index: -1;
 }
+
+/* On mobile: use cover so there are no tiling seams on narrow viewports */
 
 .colored-section::after {
     content: "";
@@ -365,9 +367,9 @@ h2 {
     position: absolute;
     inset: 0;
     background-image: url("../../images/new_warm_leather.webp");
-    background-size: 150% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left top;
+    background-repeat: repeat-y;
     pointer-events: none;
     z-index: -1;
 }
@@ -910,15 +912,9 @@ h2 {
     }
 
     .colored-section.books-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("../../images/new_warm_leather.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        pointer-events: none;
-        z-index: -1;
+        background-size: 100% auto;
+        background-position: left top;
+        background-repeat: repeat-y;
     }
 }
 
@@ -995,15 +991,24 @@ h2 {
     }
 
     .colored-section.books-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("../../images/new_warm_leather.webp");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        pointer-events: none;
-        z-index: -1;
+    }
+
+    /* Fix tiling seams on mobile for all leather sections */
+    .colored-section.quotes-section::before,
+    .colored-section.newsletter-section::before {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* new-translation is taller on mobile so zoom in more to match other sections */
+    .new-translation::before {
+        background-size: 150% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
     }
 
     .new-translation .rose-decoration {
@@ -1207,15 +1212,9 @@ h2 {
     }
 
     .colored-section.books-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("../../images/new_warm_leather.webp");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        pointer-events: none;
-        z-index: -1;
     }
 }
 

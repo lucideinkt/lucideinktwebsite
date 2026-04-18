@@ -43,6 +43,18 @@ a {
     color: var(--main-font-color);
 }
 
+/* Remove 300ms tap delay on all interactive elements on touch devices */
+a,
+button,
+input,
+select,
+textarea,
+label,
+[role="button"],
+[tabindex] {
+    touch-action: manipulation;
+}
+
 i {
     color: var(--ink-1);
 }
