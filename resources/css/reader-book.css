@@ -817,6 +817,7 @@ body.dark-mode .book-reader-scope .small-title { color: #e8a87c; }
 body.dark-mode .book-reader-scope .page-title-series { border-bottom-color: rgba(232,168,124,0.2); }
 body.dark-mode .book-reader-scope .page-title-series p { color: #888; }
 body.dark-mode .book-reader-scope .page-title-chapter p { color: #888; }
+body.dark-mode .book-reader-scope .page { border-top-color: rgba(232,168,124,0.35); }
 
 /* Page separators */
 body.dark-mode .book-reader-scope .page { border-bottom-color: rgba(255,255,255,0.07); }
