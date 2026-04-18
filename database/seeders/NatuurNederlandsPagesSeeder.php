@@ -455,7 +455,7 @@ weg.
 <p class="text-red small-title"><strong>De derde onmogelijkheid</strong></p>
 
 <p>
-<span class="text-arabic-inline delima-font" dir="rtl" lang="ar">اَلوَْاحِدُ لَا يَصْدُرُ اِلَّا عَنِ الْوَاحِدِ</span>, oftewel zoals de vastgestelde,
+<span class="text-arabic-inline delima-font" dir="rtl" lang="ar">اَلْوَاحِدُ لَا يَصْدُرُ اِلَّا عَنِ الْوَاحِدِ</span>, oftewel zoals de vastgestelde,
 norm luidt: “Als er eenheid is in een wezen,
 kan die uiteraard uitsluitend door één eenheid, uit één
 hand ontstaan.” Met name wanneer dat wezen in een
