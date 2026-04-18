@@ -71,9 +71,29 @@
                 <a href="{{ $href }}" class="shelf-book" title="{{ $product->title }}">
                     <div class="shelf-book-cover">
                         <div class="shelf-book-spine"></div>
-                        <span class="shelf-book-ornament">✦</span>
+                        {{-- Top divider ornament --}}
+                        <svg class="shelf-book-ornament" viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="10" x2="44" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                            <line x1="76" y1="10" x2="120" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                            <path d="M44,10 Q50,3 60,10 Q70,17 76,10" fill="none" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="60" cy="10" r="2.5" fill="currentColor"/>
+                            <circle cx="44" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
+                            <circle cx="76" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
+                            <path d="M38,10 Q41,6 44,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                            <path d="M76,10 Q79,14 82,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                        </svg>
                         <span class="shelf-book-title">{{ $product->title }}</span>
-                        <span class="shelf-book-ornament-bottom">— ✦ —</span>
+                        {{-- Bottom divider ornament --}}
+                        <svg class="shelf-book-ornament-bottom" viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="10" x2="44" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                            <line x1="76" y1="10" x2="120" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                            <path d="M44,10 Q50,3 60,10 Q70,17 76,10" fill="none" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="60" cy="10" r="2.5" fill="currentColor"/>
+                            <circle cx="44" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
+                            <circle cx="76" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
+                            <path d="M38,10 Q41,14 44,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                            <path d="M76,10 Q79,6 82,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                        </svg>
                     </div>
                     <span class="shelf-book-tooltip">{{ $product->title }}</span>
                 </a>
