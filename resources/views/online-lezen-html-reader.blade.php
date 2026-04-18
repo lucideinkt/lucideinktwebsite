@@ -468,15 +468,27 @@
         function load()       { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
         function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (_) {} }
         function loadFont()   { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
-        function applyFont(sz) {
+        function applyFont(sz, anchor) {
+            const anchorEl = (anchor && pageMap) ? pageMap[visiblePage()] : null;
+            const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
             readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; });
             if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
+            if (anchorEl && offsetBefore !== null) {
+                // getBoundingClientRect() after style change forces synchronous reflow,
+                // then scrollBy corrects the position in the same frame — no visible glitch
+                window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
+            }
         }
         function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
         function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
-        function applyArabicFont(sz) {
+        function applyArabicFont(sz, anchor) {
+            const anchorEl = (anchor && pageMap) ? pageMap[visiblePage()] : null;
+            const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
             readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
             if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
+            if (anchorEl && offsetBefore !== null) {
+                window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
+            }
         }
 
         function visiblePage() {
@@ -622,16 +634,16 @@
         let fontStepIdx   = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
         let arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
 
-        function setFontStep(idx) {
+        function setFontStep(idx, anchor = true) {
             fontStepIdx = Math.max(0, Math.min(FONT_STEPS.length - 1, idx));
             const sz = FONT_STEPS[fontStepIdx];
-            applyFont(sz); saveFont(sz);
+            applyFont(sz, anchor); saveFont(sz);
             refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
         }
-        function setArabicStep(idx) {
+        function setArabicStep(idx, anchor = true) {
             arabicStepIdx = Math.max(0, Math.min(ARABIC_STEPS.length - 1, idx));
             const sz = ARABIC_STEPS[arabicStepIdx];
-            applyArabicFont(sz); saveArabicFont(sz);
+            applyArabicFont(sz, anchor); saveArabicFont(sz);
             refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
         }
 
@@ -645,16 +657,17 @@
 
         document.getElementById('sheet-font-reset')?.addEventListener('click', () => {
             fontStepIdx = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
-            applyFont(DEFAULT_FONT); saveFont(DEFAULT_FONT);
+            applyFont(DEFAULT_FONT, true); saveFont(DEFAULT_FONT);
             refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
         });
         document.getElementById('arabic-font-reset')?.addEventListener('click', () => {
             arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
-            applyArabicFont(DEFAULT_ARABIC_FONT); saveArabicFont(DEFAULT_ARABIC_FONT);
+            applyArabicFont(DEFAULT_ARABIC_FONT, true); saveArabicFont(DEFAULT_ARABIC_FONT);
             refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
+        let pinchAnchorPage = null; // page to restore after pinch ends
         let pinchStartDist = null;
         let pinchStartFontSize = null;
 
@@ -669,6 +682,7 @@
                 );
                 const currentPage = readerEl.querySelector('.page');
                 pinchStartFontSize = currentPage ? parseFloat(getComputedStyle(currentPage).fontSize) || 19 : 19;
+                pinchAnchorPage = visiblePage(); // snapshot page before gesture
             }
         }, { passive: false });
 
@@ -682,18 +696,27 @@
                     touch2.pageY - touch1.pageY
                 );
                 const ratio = currentDist / pinchStartDist;
-                // Snap to nearest step: spread fingers = step up, pinch = step down
+                // Snap to nearest step — no anchor during move (anchor on touchend)
                 let targetIdx = fontStepIdx;
                 if (ratio > 1.15) targetIdx = Math.min(FONT_STEPS.length - 1, nearestStepIdx(FONT_STEPS, pinchStartFontSize) + Math.floor((ratio - 1) / 0.15));
                 if (ratio < 0.87) targetIdx = Math.max(0, nearestStepIdx(FONT_STEPS, pinchStartFontSize) - Math.floor((1 - ratio) / 0.13));
-                if (targetIdx !== fontStepIdx) setFontStep(targetIdx);
+                if (targetIdx !== fontStepIdx) setFontStep(targetIdx, false); // false = no anchor during gesture
             }
         }, { passive: false });
 
         readerEl.addEventListener('touchend', e => {
             if (e.touches.length < 2 && pinchStartDist !== null) {
+                // Pinch gesture ended — restore scroll to the anchor page synchronously
+                if (pinchAnchorPage != null) {
+                    const ap = pinchAnchorPage;
+                    requestAnimationFrame(() => requestAnimationFrame(() => {
+                        const el = pageMap[ap];
+                        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - TOPBAR_H, behavior: 'auto' });
+                    }));
+                }
                 pinchStartDist = null;
                 pinchStartFontSize = null;
+                pinchAnchorPage = null;
             }
         });
 
