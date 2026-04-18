@@ -1848,7 +1848,7 @@ body.dark-mode .reader-sheet-reset-btn:hover { background: rgba(232,168,124,0.1)
 
 .font-step-dots {
     flex: 1;
-    min-width: 0; /* allow shrinking inside flex parent */
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1856,6 +1856,44 @@ body.dark-mode .reader-sheet-reset-btn:hover { background: rgba(232,168,124,0.1)
     padding: 0 2px;
     overflow: hidden;
 }
+/* Range slider replaces the dots */
+.font-step-range {
+    flex: 1;
+    min-width: 0;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(180,140,60,0.2);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    border: none !important;
+    padding: 0 !important;
+    width: auto !important;
+    font-size: inherit !important;
+}
+.font-step-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #8b4513;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    transition: transform 0.12s;
+}
+.font-step-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #8b4513;
+    border: none;
+    cursor: pointer;
+}
+.font-step-range:active::-webkit-slider-thumb { transform: scale(1.2); }
+body.dark-mode .font-step-range { background: rgba(232,168,124,0.18); }
+body.dark-mode .font-step-range::-webkit-slider-thumb { background: #e8a87c; }
+body.dark-mode .font-step-range::-moz-range-thumb    { background: #e8a87c; }
 .font-step-dot {
     flex: 1;
     min-width: 0;

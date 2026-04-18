@@ -253,9 +253,8 @@
             </div>
             <div class="font-step-control" id="font-step-control">
                 <button class="font-step-az font-step-az--small" id="font-dec-btn" type="button" aria-label="Kleiner lettertype">a</button>
-                <div class="font-step-dots" id="font-step-dots">
-                    <!-- dots rendered by JS -->
-                </div>
+                <input type="range" class="font-step-range" id="font-step-range"
+                       min="0" step="1" aria-label="Lettergrootte">
                 <button class="font-step-az font-step-az--large" id="font-inc-btn" type="button" aria-label="Groter lettertype">A</button>
             </div>
         </div>
@@ -271,9 +270,8 @@
             </div>
             <div class="font-step-control" id="arabic-font-step-control">
                 <button class="font-step-az font-step-az--small font-step-az--arabic" id="arabic-font-dec-btn" type="button" aria-label="Kleiner Arabisch lettertype">ا</button>
-                <div class="font-step-dots" id="arabic-font-step-dots">
-                    <!-- dots rendered by JS -->
-                </div>
+                <input type="range" class="font-step-range" id="arabic-font-step-range"
+                       min="0" step="1" aria-label="Arabische lettergrootte">
                 <button class="font-step-az font-step-az--large font-step-az--arabic" id="arabic-font-inc-btn" type="button" aria-label="Groter Arabisch lettertype">ا</button>
             </div>
         </div>
@@ -600,8 +598,9 @@
         });
 
         // Sheet: font step controls
-        const FONT_STEPS    = [12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19, 19.5, 20, 20.5, 21, 21.5, 22, 23, 24, 25, 26, 27, 28, 30, 32, 36];
-        const ARABIC_STEPS  = [16, 16.5, 17, 17.5, 18, 18.5, 19, 19.5, 20, 20.5, 21, 21.5, 22, 23, 24, 25, 26, 27, 28, 30, 32, 34, 36, 40, 44, 48, 52];
+        // Generate steps at 0.1px resolution
+        const FONT_STEPS   = Array.from({length: Math.round((36 - 12) / 0.1) + 1}, (_, i) => Math.round((12 + i * 0.1) * 10) / 10);
+        const ARABIC_STEPS = Array.from({length: Math.round((52 - 16) / 0.1) + 1}, (_, i) => Math.round((16 + i * 0.1) * 10) / 10);
 
         function nearestStepIdx(steps, val) {
             let best = 0, bestD = Infinity;
@@ -638,17 +637,35 @@
             fontStepIdx = Math.max(0, Math.min(FONT_STEPS.length - 1, idx));
             const sz = FONT_STEPS[fontStepIdx];
             applyFont(sz, anchor); saveFont(sz);
-            refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
+            syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
         }
         function setArabicStep(idx, anchor = true) {
             arabicStepIdx = Math.max(0, Math.min(ARABIC_STEPS.length - 1, idx));
             const sz = ARABIC_STEPS[arabicStepIdx];
             applyArabicFont(sz, anchor); saveArabicFont(sz);
-            refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
+            syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
         }
 
-        buildDots('font-step-dots',        FONT_STEPS,   () => fontStepIdx,   i => setFontStep(i));
-        buildDots('arabic-font-step-dots',  ARABIC_STEPS, () => arabicStepIdx, i => setArabicStep(i));
+        // ── Range slider helpers ──────────────────────────────────────────
+        const fontRange   = document.getElementById('font-step-range');
+        const arabicRange = document.getElementById('arabic-font-step-range');
+
+        function initRangeSlider(el, steps) {
+            if (!el) return;
+            el.min = 0;
+            el.max = steps.length - 1;
+            el.step = 1;
+        }
+        function syncRangeSlider(id, steps, idx) {
+            const el = document.getElementById(id);
+            if (el) el.value = idx;
+        }
+
+        initRangeSlider(fontRange,   FONT_STEPS);
+        initRangeSlider(arabicRange, ARABIC_STEPS);
+
+        fontRange?.addEventListener('input', () => setFontStep(parseInt(fontRange.value), true));
+        arabicRange?.addEventListener('input', () => setArabicStep(parseInt(arabicRange.value), true));
 
         document.getElementById('font-dec-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx - 1));
         document.getElementById('font-inc-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx + 1));
@@ -658,12 +675,12 @@
         document.getElementById('sheet-font-reset')?.addEventListener('click', () => {
             fontStepIdx = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
             applyFont(DEFAULT_FONT, true); saveFont(DEFAULT_FONT);
-            refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
+            syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
         });
         document.getElementById('arabic-font-reset')?.addEventListener('click', () => {
             arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
             applyArabicFont(DEFAULT_ARABIC_FONT, true); saveArabicFont(DEFAULT_ARABIC_FONT);
-            refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
+            syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
@@ -863,13 +880,13 @@
             const initFont = savedFont || DEFAULT_FONT;
             applyFont(initFont);
             fontStepIdx = nearestStepIdx(FONT_STEPS, initFont);
-            refreshDots('font-step-dots', FONT_STEPS, fontStepIdx);
+            syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
 
             const savedArabicFont = loadArabicFont();
             const initArabic = savedArabicFont || DEFAULT_ARABIC_FONT;
             applyArabicFont(initArabic);
             arabicStepIdx = nearestStepIdx(ARABIC_STEPS, initArabic);
-            refreshDots('arabic-font-step-dots', ARABIC_STEPS, arabicStepIdx);
+            syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
             hlRestoreAll(); // restore saved highlights for server-rendered pages
             bmRenderAllMarkers(); // restore bookmark paragraph markers
 
