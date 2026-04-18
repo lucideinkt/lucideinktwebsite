@@ -7,6 +7,12 @@ use RalphJSmit\Laravel\SEO\Support\SEOData;
 class SEOService
 {
     /**
+     * The default OG share image — solid background, no transparency, good aspect ratio.
+     * Used as fallback whenever a page/product image may have a transparent background.
+     */
+    const DEFAULT_OG_IMAGE = 'images/books_standing_new.webp';
+
+    /**
      * Get SEO data for a specific page
      *
      * @param string $page
@@ -41,61 +47,65 @@ class SEOService
     private static function getPageConfig(string $page): array
     {
         $pages = [
+            // ── Homepage: brand first ────────────────────────────────────────
             'home' => [
-                'title' => 'Lucide Inkt | Nederlandse en Engelse vertalingen van de Risale-i Nur',
+                'title'       => 'Lucide Inkt | Nederlandse en Engelse vertalingen van de Risale-i Nur',
                 'description' => 'Lucide Inkt is een non-profit organisatie die zich richt op de verspreiding van geloofswaarheden die omschreven zijn in de boekenreeks van de Risale-i Nur.',
-                'url' => route('home'),
-                'image' => secure_url('images/books_standing_new.webp'),
-                'type' => 'website',
+                'url'         => route('home'),
+                'image'       => secure_url('images/books_standing_new.webp'),
+                'type'        => 'website',
             ],
+
+            // ── Inner pages: topic first ─────────────────────────────────────
             'saidnursi' => [
-                'title' => 'Lucide Inkt | Bediüzzaman Said Nursi',
+                'title'       => 'Bediüzzaman Said Nursi | Lucide Inkt',
                 'description' => 'Ik zal de wereld bewijzen dat de Qur\'an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!',
-                'url' => route('saidnursi'),
-                'image' => secure_url('images/said_nursi_sharp.jpg'),
-                'type' => 'article',
+                'url'         => route('saidnursi'),
+                'image'       => secure_url('images/said_nursi_sharp.jpg'), // JPEG — no transparency
+                'type'        => 'article',
             ],
             'risale' => [
-                'title' => 'Lucide Inkt | Wat is de Risale-i Nur?',
+                'title'       => 'Wat is de Risale-i Nur? | Lucide Inkt',
                 'description' => 'Als een ware spirituele tafsir van de Qur\'an voldoet de Risale-i Nur aan alle behoeften van deze tijd. Het enige wat van de lezer gevraagd wordt, is lezen met een aandachtige blik en een onbevooroordeeld hart.',
-                'url' => route('risale'),
-                'image' => secure_url('images/books-stapel.webp'),
-                'type' => 'article',
+                'url'         => route('risale'),
+                'image'       => secure_url('images/books-stapel.webp'),
+                'type'        => 'article',
             ],
             'herzameling' => [
-                'title' => 'Lucide Inkt | Het Traktaat over de Herzameling',
+                'title'       => 'Het Traktaat over de Herzameling | Lucide Inkt',
                 'description' => 'Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.',
-                'url' => route('herzameling'),
-                'image' => secure_url('images/books/herzameling/NederlandsHerzameling.webp'),
-                'type' => 'article',
+                'url'         => route('herzameling'),
+                // Book cover WebP may have transparency — use solid-bg fallback for sharing
+                'image'       => secure_url('images/books_standing_new.webp'),
+                'type'        => 'article',
             ],
             'contact' => [
-                'title' => 'Lucide Inkt | Contact',
+                'title'       => 'Contact | Lucide Inkt',
                 'description' => 'Neem contact op met Lucide Inkt voor vragen over de Risale-i Nur vertalingen of onze diensten.',
-                'url' => route('contact'),
-                'image' => secure_url('images/books_standing_new.webp'),
-                'type' => 'website',
+                'url'         => route('contact'),
+                'image'       => secure_url('images/books_standing_new.webp'),
+                'type'        => 'website',
             ],
             'shop' => [
-                'title' => 'Winkel | Lucide Inkt',
+                'title'       => 'Winkel | Lucide Inkt',
                 'description' => 'Ontdek onze collectie van Nederlandse en Engelse vertalingen van de Risale-i Nur. Bestel eenvoudig en veilig online.',
-                'url' => route('shop'),
-                'image' => secure_url('images/books_standing_new.webp'),
-                'type' => 'website',
+                'url'         => route('shop'),
+                'image'       => secure_url('images/books_standing_new.webp'),
+                'type'        => 'website',
             ],
             'online-lezen' => [
-                'title' => 'Lucide Inkt | Online Bibliotheek',
+                'title'       => 'Online Bibliotheek | Lucide Inkt',
                 'description' => 'Lees onze boeken direct online. Ontdek de Risale-i Nur vertalingen digitaal, waar en wanneer je maar wilt.',
-                'url' => route('onlineLezen'),
-                'image' => secure_url('images/books_standing_new.webp'),
-                'type' => 'website',
+                'url'         => route('onlineLezen'),
+                'image'       => secure_url('images/books_standing_new.webp'),
+                'type'        => 'website',
             ],
             'audiobooks' => [
-                'title' => 'Audio Bibliotheek | Lucide Inkt',
+                'title'       => 'Audio Bibliotheek | Lucide Inkt',
                 'description' => 'Beluister onze audioboeken. Ontdek de Risale-i Nur vertalingen in audioformaat, waar en wanneer je maar wilt.',
-                'url' => route('audiobooks'),
-                'image' => secure_url('images/books_standing_new.webp'),
-                'type' => 'website',
+                'url'         => route('audiobooks'),
+                'image'       => secure_url('images/books_standing_new.webp'),
+                'type'        => 'website',
             ],
         ];
 
@@ -103,11 +113,12 @@ class SEOService
     }
 
     /**
-     * Generate SEO data for a product
+     * Generate SEO data for a product.
      *
-     * @param \App\Models\Product $product
-     * @param string $context 'shop'|'online-lezen'|'online-lezen-html'|'audiobooks'
-     * @return SEOData
+     * OG image strategy: WebP book covers often have transparent backgrounds which
+     * look bad on social platforms (shows as white/grey). We prefer the product image
+     * only when it is a JPEG (guaranteed solid background). For WebP we fall back to
+     * the site-wide solid-background banner.
      */
     public static function getProductSEO($product, string $context = 'shop'): SEOData
     {
@@ -124,11 +135,15 @@ class SEOService
             default             => route('productShow', $product->slug),
         };
 
+        // Use product image for OG only when it is a JPEG (solid background).
+        // WebP book covers may be transparent — fall back to the solid site banner.
+        $ogImage = self::resolveOgImage($product->image_1);
+
         return new SEOData(
             title: $product->title . $titleSuffix,
             description: $product->seo_description ?: $product->short_description ?: 'Ontdek ' . $product->title . ' bij Lucide Inkt.',
             url: $url,
-            image: $product->image_1 ? secure_url($product->image_1) : secure_url('images/books_standing_new.webp'),
+            image: $ogImage,
             author: 'Lucide Inkt',
             locale: 'nl_NL',
             site_name: 'Lucide Inkt',
@@ -137,5 +152,32 @@ class SEOService
             modified_time: $product->updated_at ?? null,
         );
     }
-}
 
+    /**
+     * Resolve the best OG image path.
+     *
+     * Rules:
+     *  - JPEG/JPG  → always safe (no transparency), use as-is.
+     *  - WebP/PNG  → may be transparent; fall back to the solid default.
+     *  - null/empty → use solid default.
+     *
+     * To use a WebP product image for OG, save a flat JPEG version alongside it
+     * (e.g. image_1_og) or convert the image before upload.
+     */
+    public static function resolveOgImage(?string $imagePath): string
+    {
+        if (!$imagePath) {
+            return secure_url(self::DEFAULT_OG_IMAGE);
+        }
+
+        $ext = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
+
+        // JPEG has no alpha channel — safe for social sharing
+        if (in_array($ext, ['jpg', 'jpeg'])) {
+            return secure_url($imagePath);
+        }
+
+        // WebP and PNG may be transparent — use solid fallback
+        return secure_url(self::DEFAULT_OG_IMAGE);
+    }
+}
