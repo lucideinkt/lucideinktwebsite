@@ -68,11 +68,13 @@
     font-weight: 700;
 }
 
-.sidebar .navbar ul li a:hover {
-    background: rgba(98, 5, 5, 0.05) !important;
-    transform: none;
-    text-shadow: none;
-    padding-left: 30px;
+@media (hover: hover) and (pointer: fine) {
+    .sidebar .navbar ul li a:hover {
+        background: rgba(98, 5, 5, 0.05) !important;
+        transform: none;
+        text-shadow: none;
+        padding-left: 30px;
+    }
 }
 
 .sidebar .navbar ul li a.active {
@@ -106,10 +108,12 @@
     justify-content: center;
 }
 
-.sidebar .close-toggle .fa-xmark:hover {
-    background: rgba(98, 5, 5, 0.08);
-    transform: none;
-    box-shadow: none;
+@media (hover: hover) and (pointer: fine) {
+    .sidebar .close-toggle .fa-xmark:hover {
+        background: rgba(98, 5, 5, 0.08);
+        transform: none;
+        box-shadow: none;
+    }
 }
 
 /* Dropdown styles in sidebar - Override desktop navbar dropdown styles */
@@ -228,9 +232,11 @@
     background: rgba(98, 5, 5, 0.02) !important;
 }
 
-.sidebar .dropdown-menu li a:hover {
-    background: rgba(98, 5, 5, 0.06) !important;
-    padding-left: 45px !important;
+@media (hover: hover) and (pointer: fine) {
+    .sidebar .dropdown-menu li a:hover {
+        background: rgba(98, 5, 5, 0.06) !important;
+        padding-left: 45px !important;
+    }
 }
 
 /* Cart icon styling in sidebar */

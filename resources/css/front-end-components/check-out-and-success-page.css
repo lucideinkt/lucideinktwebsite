@@ -371,8 +371,10 @@
     color: white !important;
 }
 
-#remove_discount_code.btn.small:hover {
-    background: #c82333 !important;
+@media (hover: hover) and (pointer: fine) {
+    #remove_discount_code.btn.small:hover {
+        background: #c82333 !important;
+    }
 }
 
 .container.page.checkout.success {
@@ -840,10 +842,12 @@
     text-decoration: none;
 }
 
-.checkout-message .link-back.btn:hover {
-    background: var(--green-1);
-    opacity: 0.9;
-    color: var(--ink-inverse);
+@media (hover: hover) and (pointer: fine) {
+    .checkout-message .link-back.btn:hover {
+        background: var(--green-1);
+        opacity: 0.9;
+        color: var(--ink-inverse);
+    }
 }
 
 /* Responsive Design */

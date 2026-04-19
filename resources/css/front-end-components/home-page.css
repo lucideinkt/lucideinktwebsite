@@ -303,13 +303,15 @@ h2 {
     pointer-events: none;
 }
 
-.read-more-btn:hover::before {
-    left: 100%;
-}
+@media (hover: hover) and (pointer: fine) {
+    .read-more-btn:hover::before {
+        left: 100%;
+    }
 
-.read-more-btn:hover {
-    background: linear-gradient(135deg, #224039 0%, #2e7d32 100%);
-    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    .read-more-btn:hover {
+        background: linear-gradient(135deg, #224039 0%, #2e7d32 100%);
+        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    }
 }
 
 .read-more-btn:active {
@@ -582,25 +584,27 @@ h2 {
     transition: left 0.5s ease;
 }
 
-.risale-section .read-more-link:hover::before {
-    left: 100%;
-}
-
-.risale-section .read-more-link:hover {
-    background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
-    border-color: rgba(153, 109, 63, 0.5);
-    color: #620505;
-    box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
-}
-
 .risale-section .read-more-link i {
     font-size: 14px;
     transition: transform 0.3s ease;
     color: #620505;
 }
 
-.risale-section .read-more-link:hover i {
-    transform: translateX(4px);
+@media (hover: hover) and (pointer: fine) {
+    .risale-section .read-more-link:hover::before {
+        left: 100%;
+    }
+
+    .risale-section .read-more-link:hover {
+        background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
+        border-color: rgba(153, 109, 63, 0.5);
+        color: #620505;
+        box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
+    }
+
+    .risale-section .read-more-link:hover i {
+        transform: translateX(4px);
+    }
 }
 
 /* Said Nursi Read More Link */
@@ -637,25 +641,27 @@ h2 {
     transition: left 0.5s ease;
 }
 
-.said-nursi-section .read-more-link:hover::before {
-    left: 100%;
-}
-
-.said-nursi-section .read-more-link:hover {
-    background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
-    border-color: rgba(153, 109, 63, 0.5);
-    color: #620505;
-    box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
-}
-
 .said-nursi-section .read-more-link i {
     font-size: 14px;
     transition: transform 0.3s ease;
     color: #620505;
 }
 
-.said-nursi-section .read-more-link:hover i {
-    transform: translateX(4px);
+@media (hover: hover) and (pointer: fine) {
+    .said-nursi-section .read-more-link:hover::before {
+        left: 100%;
+    }
+
+    .said-nursi-section .read-more-link:hover {
+        background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
+        border-color: rgba(153, 109, 63, 0.5);
+        color: #620505;
+        box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
+    }
+
+    .said-nursi-section .read-more-link:hover i {
+        transform: translateX(4px);
+    }
 }
 
 /* Herzameling Button in Colored Section */
@@ -692,27 +698,29 @@ h2 {
     transition: left 0.5s ease;
 }
 
-.colored-section .herzameling-btn:hover::before {
-    left: 100%;
-}
-
-.colored-section .herzameling-btn:hover {
-    background: linear-gradient(135deg, rgba(218, 165, 32, 0.35) 0%, rgba(245, 223, 172, 0.30) 100%);
-    border-color: rgba(245, 223, 172, 0.8);
-    color: rgb(255, 250, 235);
-    text-shadow: 0 0 8px rgba(245, 223, 172, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
-    /*transform: translateY(-2px);*/
-    box-shadow: 0 4px 20px rgba(245, 223, 172, 0.3), 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
 .colored-section .herzameling-btn i {
     font-size: 14px;
     transition: transform 0.3s ease;
     color: rgb(245, 223, 172);
 }
 
-.colored-section .herzameling-btn:hover i {
-    transform: translateX(4px);
+@media (hover: hover) and (pointer: fine) {
+    .colored-section .herzameling-btn:hover::before {
+        left: 100%;
+    }
+
+    .colored-section .herzameling-btn:hover {
+        background: linear-gradient(135deg, rgba(218, 165, 32, 0.35) 0%, rgba(245, 223, 172, 0.30) 100%);
+        border-color: rgba(245, 223, 172, 0.8);
+        color: rgb(255, 250, 235);
+        text-shadow: 0 0 8px rgba(245, 223, 172, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+        /*transform: translateY(-2px);*/
+        box-shadow: 0 4px 20px rgba(245, 223, 172, 0.3), 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .colored-section .herzameling-btn:hover i {
+        transform: translateX(4px);
+    }
 }
 
 @media (max-width: 768px) {

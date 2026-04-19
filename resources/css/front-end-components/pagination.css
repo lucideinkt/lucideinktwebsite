@@ -33,11 +33,18 @@
     transition: background .15s, color .15s, border .15s;
 }
 
-.pagination li.active span,
-.pagination li a:hover {
+.pagination li.active span {
     background: var(--green-2);
     color: var(--ink-inverse);
     border-color: var(--green-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .pagination li a:hover {
+        background: var(--green-2);
+        color: var(--ink-inverse);
+        border-color: var(--green-2);
+    }
 }
 
 .pagination li a {

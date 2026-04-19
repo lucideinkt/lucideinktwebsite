@@ -164,12 +164,14 @@ body.modal-open {
     outline-offset: 2px;
 }
 
-.custom-modal-close:hover {
-    background: #9d7d52;
-    color: #fff;
-    transform: scale(1.08);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12),
-                0 1px 3px rgba(0, 0, 0, 0.08);
+@media (hover: hover) and (pointer: fine) {
+    .custom-modal-close:hover {
+        background: #9d7d52;
+        color: #fff;
+        transform: scale(1.08);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12),
+                    0 1px 3px rgba(0, 0, 0, 0.08);
+    }
 }
 
 .custom-modal-close:active {
@@ -211,7 +213,6 @@ body.modal-open {
         background: #8b6f47;
     }
 
-    .custom-modal-close:hover,
     .custom-modal-close:active {
         background: #9d7d52;
     }
