@@ -136,8 +136,8 @@
                         <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 
                     <p style="margin-top: 20px;">
-                        <a href="{{ route('herzameling') }}" class="">
-                            <img width="200px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="" loading="lazy" decoding="async">
+                        <a href="{{ route('herzameling') }}" class="herzameling-lees-meer-btn">
+                            Lees meer <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </p>
 
@@ -153,8 +153,8 @@
                     </p>
 
                     <p style="margin-top: 20px;">
-                        <a href="{{ route('herzameling') }}" class="">
-                            <img width="175px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="" loading="lazy" decoding="async">
+                        <a href="{{ route('herzameling') }}" class="herzameling-lees-meer-btn">
+                            Lees meer <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </p>
 
