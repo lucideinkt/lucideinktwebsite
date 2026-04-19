@@ -242,6 +242,7 @@ h2 {
     margin: 0 auto;
     text-align: center;
     padding: 10px 0;
+    padding-bottom: 15px;
 }
 
 .home.intro-section .text-container {
@@ -492,20 +493,32 @@ h2 {
 /* Book Grid Button */
 .home-book-grid .book .btn {
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 5px 20px;
     cursor: pointer;
-    border-radius: 4px;
-    border: 2px solid #f5e6ca;
-    background: #f5e6ca;
-    color: var(--main-font-color);
-    height: 35px;
-    display: flex;
+    border-radius: 50px;
+    border: 1px solid rgba(245, 223, 172, 0.5);
+    background: transparent;
+    color: rgba(245, 223, 172);
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    transition: filter 0.1s ease-in-out;
-    font-size: 16px;
+    gap: 6px;
+    font-size: 12px;
     font-family: var(--font-bold);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: none;
+    transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    width: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .home-book-grid .book .btn:hover {
+        background: rgba(218, 165, 32, 0.12);
+        border-color: rgba(245, 223, 172, 0.85);
+        box-shadow: 0 0 12px rgba(218, 165, 32, 0.15);
+    }
 }
 
 
@@ -720,6 +733,56 @@ h2 {
 
     .colored-section .herzameling-btn:hover i {
         transform: translateX(4px);
+    }
+}
+
+/* ---------------------------------------------------------
+   HERZAMELING "LEES MEER" BUTTON (replaces image button)
+   --------------------------------------------------------- */
+.herzameling-lees-meer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 22px;
+    background: transparent;
+    border: 1px solid rgba(245, 223, 172, 0.55);
+    border-radius: 50px;
+    color: rgb(245, 223, 172);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-bold);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.08), inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.herzameling-lees-meer-btn i {
+    font-size: 11px;
+    color: rgba(245, 223, 172, 0.85);
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .herzameling-lees-meer-btn:hover {
+        background: rgba(218, 165, 32, 0.15);
+        border-color: rgba(245, 223, 172, 0.85);
+        box-shadow: 0 0 16px rgba(218, 165, 32, 0.2);
+    }
+
+    .herzameling-lees-meer-btn:hover i {
+        transform: translateX(4px);
+    }
+}
+
+@media (max-width: 600px) {
+    .herzameling-lees-meer-btn {
+        padding: 5px 18px;
+        font-size: 13px;
     }
 }
 
@@ -1090,8 +1153,7 @@ h2 {
     }
 
     .home-book-grid .book .btn {
-        padding-top: 1px;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .colored-section .risale .second img {
