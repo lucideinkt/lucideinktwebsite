@@ -49,7 +49,7 @@ class SEOService
         $pages = [
             // ── Homepage: brand first ────────────────────────────────────────
             'home' => [
-                'title'       => 'Lucide Inkt | Nederlandse en Engelse vertalingen van de Risale-i Nur',
+                'title'       => 'Risale-i Nur Vertalingen Nederlands & Engels | Lucide Inkt',
                 'description' => 'Lucide Inkt is een non-profit organisatie die zich richt op de verspreiding van geloofswaarheden die omschreven zijn in de boekenreeks van de Risale-i Nur.',
                 'url'         => route('home'),
                 'image'       => secure_url('images/books_standing_new.webp'),
