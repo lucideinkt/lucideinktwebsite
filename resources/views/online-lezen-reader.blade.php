@@ -71,7 +71,7 @@
 
         <div class="reader-footer">
             <div class="reader-cta">
-                <h3>Wilt u dit boek ook in uw collectie?</h3>
+                <h3>Wil je dit boek ook in je collectie?</h3>
                 <p>Bestel {{ $product->title }} direct in onze webshop</p>
                 <div class="reader-cta-actions">
                     <a href="{{ route('productShow', $product->slug) }}" class="btn btn-primary view-product">

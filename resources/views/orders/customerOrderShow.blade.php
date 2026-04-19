@@ -1,6 +1,7 @@
 @if(auth()->user()->role === 'user')
     <x-layout>
         @push('head')<meta name="robots" content="noindex, nofollow">@endpush
+        <div class="page-normal-background">
         <main class="container page user-dashboard">
             <x-breadcrumbs :items="[
                 ['label' => 'Home', 'url' => route('home')],
@@ -165,94 +166,109 @@
                         @endif
                     </div>
 
+                    @php
+                        $shippingAmount = is_numeric($order->shipping_cost_amount) ? $order->shipping_cost_amount : (is_object($order->shipping_cost_amount) ? ($order->shipping_cost_amount->amount ?? 0) : 0);
+                    @endphp
+
                     <div class="order-summary-card">
-                        <h3 class="order-summary-title">Producten</h3>
-                        <div class="order-items-list">
-                            <div class="order-items-header">
-                                <span class="order-item-col product">Product</span>
-                                <span class="order-item-col quantity">Aantal</span>
-                                <span class="order-item-col price">Stukprijs</span>
-                                <span class="order-item-col subtotal">Subtotaal</span>
-                            </div>
-                            @forelse ($order->items as $item)
-                                <div class="order-item-row">
-                                    <div class="order-item-product">
-                                        <span class="product-name">{{ $item->product_name }}</span>
+                        <div class="order-summary-inner">
+
+                            {{-- Products side --}}
+                            <div class="order-products-section">
+                                <h3 class="order-summary-title">
+                                    <i class="fa-solid fa-box-open"></i> Producten
+                                </h3>
+
+                                <div class="order-items-list">
+                                    <div class="order-items-header">
+                                        <span class="order-item-col product">Product</span>
+                                        <span class="order-item-col quantity">Aantal</span>
+                                        <span class="order-item-col price">Stukprijs</span>
+                                        <span class="order-item-col subtotal">Subtotaal</span>
                                     </div>
-                                    <div class="order-item-quantity">
-                                        <span class="mobile-label">Aantal:</span>
-                                        <span>{{ $item->quantity }}</span>
-                                    </div>
-                                    <div class="order-item-price">
-                                        <span class="mobile-label">Stukprijs:</span>
-                                        <span>€ {{ number_format($item->unit_price, 2, ',', '.') }}</span>
-                                    </div>
-                                    <div class="order-item-subtotal">
-                                        <span class="mobile-label">Subtotaal:</span>
-                                        <span>€ {{ number_format($item->subtotal, 2, ',', '.') }}</span>
-                                    </div>
+                                    @forelse ($order->items as $item)
+                                        <div class="order-item-row">
+                                            <div class="order-item-product">
+                                                <i class="fa-solid fa-book order-item-icon"></i>
+                                                <span class="product-name">{{ $item->product_name }}</span>
+                                            </div>
+                                            <div class="order-item-quantity">
+                                                <span class="mobile-label">Aantal:</span>
+                                                <span class="qty-badge">{{ $item->quantity }}</span>
+                                            </div>
+                                            <div class="order-item-price">
+                                                <span class="mobile-label">Stukprijs:</span>
+                                                <span>€ {{ number_format($item->unit_price, 2, ',', '.') }}</span>
+                                            </div>
+                                            <div class="order-item-subtotal">
+                                                <span class="mobile-label">Subtotaal:</span>
+                                                <span>€ {{ number_format($item->subtotal, 2, ',', '.') }}</span>
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="order-item-row empty-state">
+                                            <span>Geen items gevonden in deze bestelling.</span>
+                                        </div>
+                                    @endforelse
                                 </div>
-                            @empty
-                                <div class="order-item-row empty-state">
-                                    <span>Geen items gevonden in deze bestelling.</span>
-                                </div>
-                            @endforelse
-                        </div>
-
-                        <div class="order-totals">
-                            <div class="order-total-divider"></div>
-
-                            <div class="order-total-row">
-                                <span class="order-total-label">Subtotaal</span>
-                                <span class="order-total-value">€ {{ number_format($order->total_before ?? ($order->total - (is_numeric($order->shipping_cost_amount) ? $order->shipping_cost_amount : 0)), 2, ',', '.') }}</span>
                             </div>
 
-                            @if ($order->discount_value > 0)
-                                <div class="order-total-row discount">
-                                    <span class="order-total-label">Korting
-                                        @if($order->discount_code)
-                                            <span class="discount-code-tag">{{ $order->discount_code }}</span>
-                                        @endif
-                                    </span>
-                                    <span class="order-total-value">
+                            {{-- Totals sidebar --}}
+                            <div class="order-totals-sidebar">
+                                <h3 class="order-summary-title">
+                                    <i class="fa-solid fa-receipt"></i> Overzicht
+                                </h3>
+
+                                <div class="order-totals">
+                                    <div class="order-total-row">
+                                        <span class="order-total-label">Subtotaal</span>
+                                        <span class="order-total-value">€ {{ number_format($order->total_before ?? ($order->total - $shippingAmount), 2, ',', '.') }}</span>
+                                    </div>
+
+                                    @if ($order->discount_value > 0)
+                                        <div class="order-total-row discount">
+                                            <span class="order-total-label">
+                                                Korting
+                                                @if($order->discount_code)
+                                                    <span class="discount-code-tag">{{ $order->discount_code }}</span>
+                                                @endif
+                                            </span>
+                                            <span class="order-total-value">
+                                                @if($order->discount_type == 'percent')
+                                                    -{{ (int)$order->discount_value }}%
+                                                @elseif($order->discount_type == 'amount')
+                                                    -€ {{ number_format($order->discount_value, 2, ',', '.') }}
+                                                @endif
+                                            </span>
+                                        </div>
+
                                         @if($order->discount_type == 'percent')
-                                            -{{ (int)$order->discount_value }}%
-                                        @elseif($order->discount_type == 'amount')
-                                            -€ {{ number_format($order->discount_value, 2, ',', '.') }}
+                                            <div class="order-total-row discount-amount">
+                                                <span class="order-total-label">Kortingsbedrag</span>
+                                                <span class="order-total-value">-€ {{ number_format($order->discount_price_total, 2, ',', '.') }}</span>
+                                            </div>
                                         @endif
-                                    </span>
-                                </div>
 
-                                @if($order->discount_type == 'percent')
-                                    <div class="order-total-row discount-amount">
-                                        <span class="order-total-label">Kortingsbedrag</span>
-                                        <span class="order-total-value">-€ {{ number_format($order->discount_price_total, 2, ',', '.') }}</span>
+                                        <div class="order-total-row after-discount">
+                                            <span class="order-total-label">Na korting</span>
+                                            <span class="order-total-value">€ {{ number_format($order->total_after_discount, 2, ',', '.') }}</span>
+                                        </div>
+                                    @endif
+
+                                    @if($shippingAmount > 0)
+                                        <div class="order-total-row shipping">
+                                            <span class="order-total-label">Verzendkosten</span>
+                                            <span class="order-total-value">€ {{ number_format($shippingAmount, 2, ',', '.') }}</span>
+                                        </div>
+                                    @endif
+
+                                    <div class="order-total-row final-total">
+                                        <span class="order-total-label">Totaal (incl. BTW)</span>
+                                        <span class="order-total-value">€ {{ number_format($order->total, 2, ',', '.') }}</span>
                                     </div>
-                                @endif
-
-                                <div class="order-total-row after-discount">
-                                    <span class="order-total-label">Totaal na korting</span>
-                                    <span class="order-total-value">€ {{ number_format($order->total_after_discount, 2, ',', '.') }}</span>
                                 </div>
-                            @endif
-
-                            @php
-                                $shippingAmount = is_numeric($order->shipping_cost_amount) ? $order->shipping_cost_amount : (is_object($order->shipping_cost_amount) ? ($order->shipping_cost_amount->amount ?? 0) : 0);
-                            @endphp
-
-                            @if($shippingAmount > 0)
-                                <div class="order-total-row shipping">
-                                    <span class="order-total-label">Verzendkosten</span>
-                                    <span class="order-total-value">€ {{ number_format($shippingAmount, 2, ',', '.') }}</span>
-                                </div>
-                            @endif
-
-                            <div class="order-total-divider"></div>
-
-                            <div class="order-total-row final-total">
-                                <span class="order-total-label">Totaal (incl. BTW)</span>
-                                <span class="order-total-value">€ {{ number_format($order->total, 2, ',', '.') }}</span>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -260,6 +276,7 @@
         </main>
         <div class="gradient-border"></div>
         <x-footer></x-footer>
+        </div>
     </x-layout>
 @else
     <x-dashboard-layout>

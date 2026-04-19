@@ -144,16 +144,16 @@
         }
         .summary {
             margin-top: 12px;
-            padding: 11px 14px;
-            background: #e8f5e9;
-            border-left: 4px solid #2c582f;
-            border-radius: 4px;
+            padding: 6px 0;
+            background: none;
+            border: none;
+            border-radius: 0;
             font-size: 13px;
-            color: #1e4620;
+            color: #222;
             line-height: 1.65;
         }
         .summary strong {
-            color: #1e4620;
+            color: #222;
             font-weight: 700;
         }
         .summary.unpaid {
@@ -313,17 +313,17 @@
         <div class="summary unpaid">
             @if($order->discount_value > 0)
                 <strong>Te betalen:</strong> € {{ number_format($order->total_after_discount, 2, ',', '.') }}<br>
-                <span>Gelieve het bedrag over te maken naar rekening NL44 RABO 0142 3642 23 t.n.v. Stichting Lucide Inkt o.v.v. uw ordernummer.</span>
+                <span>Gelieve het bedrag over te maken naar rekening NL44 RABO 0142 3642 23 t.n.v. Stichting Lucide Inkt o.v.v. je ordernummer.</span>
             @else
                 <strong>Te betalen:</strong> € {{ number_format($order->total, 2, ',', '.') }}<br>
-                <span>Gelieve het bedrag over te maken naar rekening NL44 RABO 0142 3642 23 t.n.v. Stichting Lucide Inkt o.v.v. uw ordernummer.</span>
+                <span>Gelieve het bedrag over te maken naar rekening NL44 RABO 0142 3642 23 t.n.v. Stichting Lucide Inkt o.v.v. je ordernummer.</span>
             @endif
         </div>
     @endif
 
     <div class="payment-info">
-        Heeft u vragen over deze factuur? Neem gerust contact op via info@lucideinkt.nl.<br>
-        Dank voor uw bestelling!
+        Heb je vragen over deze factuur? Neem gerust contact op via info@lucideinkt.nl.<br>
+        Dank voor je bestelling!
     </div>
 
     <div class="footer-border"></div>

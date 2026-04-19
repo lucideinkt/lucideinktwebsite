@@ -749,7 +749,6 @@
 
 .order-confirmation-note {
     background: var(--surface-2);
-    border-left: 4px solid var(--main-color);
     border-radius: 8px;
     padding: 24px;
     display: flex;

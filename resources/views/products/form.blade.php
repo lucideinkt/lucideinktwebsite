@@ -419,7 +419,7 @@
 
                 if (removePdfBtn && deletePdfCheckbox) {
                     removePdfBtn.addEventListener('click', function() {
-                        if (confirm('Weet u zeker dat u dit PDF bestand wilt verwijderen?')) {
+                        if (confirm('Weet je zeker dat je dit PDF bestand wilt verwijderen?')) {
                             deletePdfCheckbox.checked = true;
                             removePdfBtn.style.display = 'none';
                             if (pdfLabel) {
@@ -459,7 +459,7 @@
 
                 if (removeOnlineLezenImageBtn && deleteOnlineLezenImageCheckbox) {
                     removeOnlineLezenImageBtn.addEventListener('click', function() {
-                        if (confirm('Weet u zeker dat u deze afbeelding wilt verwijderen?')) {
+                        if (confirm('Weet je zeker dat je deze afbeelding wilt verwijderen?')) {
                             deleteOnlineLezenImageCheckbox.checked = true;
                             removeOnlineLezenImageBtn.style.display = 'none';
                             if (onlineLezenImagePreview) {
@@ -491,7 +491,7 @@
 
                 if (removeAudioBtn && deleteAudioCheckbox) {
                     removeAudioBtn.addEventListener('click', function() {
-                        if (confirm('Weet u zeker dat u dit audiobestand wilt verwijderen?')) {
+                        if (confirm('Weet je zeker dat je dit audiobestand wilt verwijderen?')) {
                             deleteAudioCheckbox.checked = true;
                             removeAudioBtn.style.display = 'none';
                             if (audioLabel) {

@@ -8,8 +8,8 @@
             <h1 class="title">{{ $message }}</h1>
 
             <p class="unsubscribe-message">
-                Je ontvangt geen e-mails meer van onze nieuwsbrief. Mocht u van gedachten veranderen, dan bent u altijd welkom
-                om zich opnieuw in te schrijven.
+                Je ontvangt geen e-mails meer van onze nieuwsbrief. Mocht je van gedachten veranderen, dan ben je altijd welkom
+                om je opnieuw in te schrijven.
             </p>
 
             <div class="unsubscribe-actions">

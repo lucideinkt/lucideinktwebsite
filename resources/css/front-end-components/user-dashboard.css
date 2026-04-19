@@ -7,7 +7,7 @@
     margin: 0 auto;
 }
 
-/* Dashboard Header - matching shop/online lezen */
+/* Dashboard Header */
 .dashboard-header {
     text-align: center;
     margin-bottom: 40px;
@@ -37,18 +37,18 @@
     height: 3px;
     background: linear-gradient(
         to right,
-        rgba(218, 165, 32, 0.5) 0%,
-        rgba(197, 160, 89, 0.8) 50%,
-        rgba(218, 165, 32, 0.5) 100%
+        rgba(180, 140, 60, 0.4) 0%,
+        rgba(180, 140, 60, 0.75) 50%,
+        rgba(180, 140, 60, 0.4) 100%
     );
 }
 
 .dashboard-subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--main-font-color);
-    opacity: 0.75;
+    opacity: 0.65;
     max-width: 600px;
-    margin: 20px auto 0;
+    margin: 5px auto 0;
     line-height: 1.7;
 }
 
@@ -59,16 +59,15 @@
     gap: 32px;
 }
 
-/* Dashboard Navigation - Tabs style with parchment background */
+/* Dashboard Navigation */
 .user-dashboard-nav {
-    background-color: #f5ecce;
+    background-color: #fbf0cb;
     background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
     padding: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-1);
     width: fit-content;
     margin: 0 auto;
-    border: 2px solid var(--border-1);
 }
 
 .user-dashboard-nav ul {
@@ -89,7 +88,6 @@
     border-radius: 6px;
     font-size: 16px;
     font-weight: 500;
-    transition: all 0.3s ease;
     background-color: transparent;
 }
 
@@ -97,16 +95,10 @@
     color: var(--main-font-color);
 }
 
-.user-dashboard-nav .nav-item:hover {
-    background: rgba(171, 15, 20, 0.1);
-    color: var(--main-color);
-    transform: translateY(-2px);
-}
-
 .user-dashboard-nav .nav-item.active {
-    background: var(--main-color);
+    background: #790000;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(171, 15, 20, 0.3);
+    box-shadow: 0 1px 6px rgba(121, 0, 0, 0.25);
 }
 
 .user-dashboard-nav .nav-item.active .fa-solid {
@@ -122,45 +114,42 @@
     width: 100%;
 }
 
-/* Overview Cards - Parchment style */
+/* Overview Cards */
 .overview-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
 .overview-card {
-    background-color: #f5ecce;
+    background-color: #fbf0cb;
     background-image: url("../../images/little-pluses.png");
     border-radius: 12px;
     padding: 32px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid var(--border-1);
-}
-
-.overview-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-color: var(--main-color);
+    border: 1px solid rgba(180, 140, 60, 0.35);
 }
 
 .card-icon {
     width: 64px;
     height: 64px;
-    background: rgba(171, 15, 20, 0.1);
-    color: var(--main-color);
+    background: rgba(121, 0, 0, 0.08);
+    color: #790000;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    border: 2px solid rgba(171, 15, 20, 0.2);
+    border: 1px solid rgba(180, 140, 60, 0.35);
+}
+
+.card-icon .fa-solid {
+    color: #790000;
 }
 
 .card-info h3 {
@@ -173,8 +162,8 @@
 
 .card-info p {
     font-size: 15px;
-    color: var(--main-font-color);
-    opacity: 0.75;
+    color: #2a1a0a;
+    opacity: 0.70;
     margin: 0 0 20px 0;
     line-height: 1.6;
 }
@@ -184,33 +173,25 @@
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    background: var(--main-color);
-    color: white;
+    background: #790000;
+    color: #fff;
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
-    transition: all 0.2s ease;
     width: 100%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
-.btn-dashboard:hover {
-    background: var(--red-2);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Profile Form Styles - Parchment background */
+/* Profile Form Styles — matching checkout styling */
 .profile-card {
-    background-color: #f5ecce;
+    background-color: #fff3cc;
     background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: 24px;
+    box-shadow: var(--shadow-1);
     max-width: 800px;
     margin: 0 auto;
-    border: 2px solid var(--border-1);
 }
 
 .profile-form {
@@ -224,7 +205,7 @@
     flex-direction: column;
     gap: 1.25rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-1);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.25);
 }
 
 .form-section:last-of-type {
@@ -258,27 +239,28 @@
 }
 
 .profile-form .form-input label {
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     color: var(--main-font-color);
 }
 
 .profile-form .form-input input {
-    padding: 0.875rem 1rem;
+    padding: 1rem;
     border: 2px solid rgba(197, 160, 89, 0.25);
     border-radius: 10px;
     font-size: 1rem;
     color: var(--main-font-color);
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255 255 255 / 55%);
+    font-family: inherit;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .profile-form .form-input input:focus {
     outline: none;
     border-color: rgba(197, 160, 89, 0.6);
     box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
-    background: rgba(255, 255, 255, 0.95);
-    transform: translateY(-1px);
+    background: rgb(255 255 255 / 55%);
 }
 
 .profile-form .error {
@@ -297,16 +279,14 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
-    background: var(--green-2);
-    color: white;
+    padding: 10px 24px;
+    background: #2c582f;
+    color: var(--ink-inverse);
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 18px;
 }
 
 @media (max-width: 768px) {
@@ -384,31 +364,103 @@
 
 .orders-card-title,
 .order-summary-title {
-    font-size: 24px;
+    font-size: 20px;
     color: var(--main-font-color);
-    margin: 0 0 20px;
+    margin: 0 0 16px;
     font-weight: 600;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--border-1);
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+/* Products + totals card wrapper */
+.order-summary-card {
+    background: #fff3cc;
+    background-image: url("../../images/little-pluses.png");
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: var(--shadow-1);
+}
+
+.order-summary-inner {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+    align-items: start;
+}
+
+.order-products-section {
+    min-width: 0;
+}
+
+.order-summary-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: var(--main-font-color);
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.order-summary-title i {
+    color: #790000;
+    font-size: 16px;
+}
+
+.order-totals-sidebar {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(180, 140, 60, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.order-totals-sidebar .order-summary-title {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(180, 140, 60, 0.25);
+    margin-bottom: 12px;
+}
+
+.order-totals-sidebar .order-totals {
+    margin-top: 0;
+    padding: 0;
+    max-width: 100%;
+    margin-left: 0;
+    border-top: none;
+}
+
+@media (max-width: 900px) {
+    .order-summary-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .order-totals-sidebar {
+        position: static;
+    }
 }
 
 .orders-list {
     display: flex;
     flex-direction: column;
-    background: var(--surface-2);
+    background: #fff3cc;
+    background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
     overflow: hidden;
+    border: none;
+    box-shadow: var(--shadow-1);
 }
 
 .orders-list-header {
     display: grid;
-    grid-template-columns: 100px 120px 120px 150px 1fr;
+    grid-template-columns: 100px 140px 120px 150px 1fr;
     gap: 20px;
-    padding: 12px 24px;
-    background: #333;
+    padding: 10px 24px;
+    background: #790000;
     color: white;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .orders-list-header .header-col {
@@ -429,31 +481,51 @@
 
 .order-row {
     display: grid;
-    grid-template-columns: 100px 120px 120px 150px 1fr;
+    grid-template-columns: 100px 140px 120px 150px 1fr;
     gap: 20px;
-    padding: 16px 24px;
-    border-bottom: 1px solid var(--border-1);
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(180, 140, 60, 0.25);
     align-items: center;
-    background: var(--surface-2);
-    transition: background 0.2s ease;
+    background: rgba(250, 249, 247, 0.51);
+    font-size: 14px;
 }
 
 .order-row:last-child {
     border-bottom: none;
 }
 
-.order-row:hover {
-    background: rgba(171, 15, 20, 0.05);
-}
-
 .order-id {
     font-weight: 600;
     color: var(--main-font-color);
+    font-size: 14px;
+}
+
+.order-date {
+    color: var(--main-font-color);
+    font-size: 14px;
+}
+
+.order-id-col,
+.order-date-col,
+.order-price-col,
+.order-status-col,
+.order-actions-col {
+    display: flex;
+    align-items: center;
+}
+
+.order-price-col {
+    justify-content: flex-end;
+}
+
+.order-actions-col {
+    justify-content: flex-end;
 }
 
 .order-price {
     font-weight: 600;
     color: var(--main-font-color);
+    font-size: 14px;
     text-align: right;
     display: block;
 }
@@ -495,7 +567,6 @@
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -504,18 +575,17 @@
 }
 
 .btn-view-details {
-    background: var(--surface-1);
+    background: rgba(255, 253, 245, 0.9);
     color: var(--main-font-color);
-    border: 1px solid var(--border-1);
+    border: 1px solid rgba(180, 140, 60, 0.4);
 }
 
 .btn-order-again {
-    background: var(--green-2);
+    background: #790000;
     color: white;
 }
 
-.user-dashboard-container
-.fa-solid.fa-eye {
+.user-dashboard-container .fa-solid.fa-eye {
     color: var(--main-font-color);
 }
 
@@ -526,11 +596,12 @@
 }
 
 .order-address-card {
-    background: var(--surface-2);
+    background: #fff3cc;
+    background-image: url("../../images/little-pluses.png");
     border-radius: 12px;
     padding: 24px;
     box-shadow: var(--shadow-1);
-    border: 1px solid var(--border-1);
+    border: none;
 }
 
 .address-card-title {
@@ -542,11 +613,11 @@
     align-items: center;
     gap: 10px;
     padding-bottom: 15px;
-    border-bottom: 2px solid var(--border-1);
+    border-bottom: 1px solid rgba(180, 140, 60, 0.3);
 }
 
 .address-card-title i {
-    color: var(--main-color);
+    color: #790000;
 }
 
 .address-card-content {
@@ -572,11 +643,11 @@
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: var(--ink-muted);
+    color: #6b5a42;
 }
 
 .address-email i, .address-phone i {
-    color: var(--main-color);
+    color: #790000;
     width: 14px;
 }
 
@@ -589,7 +660,7 @@
 }
 
 .info-label {
-    color: var(--ink-muted);
+    color: #6b5a42;
 }
 
 .info-value {
@@ -597,8 +668,11 @@
     font-weight: 600;
 }
 
+.info-value.order-status-badge {
+    color: #333;
+}
 .order-link {
-    color: var(--main-color);
+    color: #790000;
     text-decoration: underline;
     font-weight: 600;
 }
@@ -606,10 +680,11 @@
 .order-items-list {
     display: flex;
     flex-direction: column;
-    background: var(--surface-3);
+    background: transparent;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--border-1);
+    border: none;
+    margin-bottom: 0;
 }
 
 .order-items-header {
@@ -617,10 +692,11 @@
     grid-template-columns: 2fr 100px 120px 120px;
     gap: 20px;
     padding: 12px 20px;
-    background: #333;
+    background: #790000;
     color: white;
     font-weight: 600;
     font-size: 14px;
+    margin-bottom: 0;
 }
 
 .order-item-col.product {
@@ -638,9 +714,16 @@
     display: grid;
     grid-template-columns: 2fr 100px 120px 120px;
     gap: 20px;
-    padding: 12px 20px;
-    border-bottom: 1px solid var(--border-2);
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(180, 140, 60, 0.2);
     align-items: center;
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 15px;
+    transition: background 0.15s ease;
+}
+
+.order-item-row:hover {
+    background: rgba(255, 255, 255, 0.72);
 }
 
 .order-item-row:last-child {
@@ -660,14 +743,44 @@
     color: var(--main-font-color);
 }
 
+.order-item-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-item-icon {
+    color: #790000;
+    font-size: 13px;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.qty-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    background: rgba(121, 0, 0, 0.08);
+    border: 1px solid rgba(121, 0, 0, 0.18);
+    color: #790000;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 6px;
+    padding: 0 6px;
+}
+
 .order-totals {
-    margin-top: 20px;
-    padding: 0 20px 20px;
+    margin-top: 0;
+    padding: 0;
+    max-width: 100%;
+    margin-left: 0;
 }
 
 .order-total-divider {
     height: 1px;
-    background: var(--border-1);
+    background: rgba(180, 140, 60, 0.3);
     margin: 15px 0;
 }
 
@@ -694,13 +807,13 @@
 }
 
 .discount-code-tag {
-    background: var(--cream-1);
-    color: var(--gold-2);
+    background: rgba(180, 140, 60, 0.12);
+    color: #6b4c1e;
     padding: 2px 8px;
     border-radius: 4px;
     font-size: 12px;
     margin-left: 8px;
-    border: 1px solid var(--border-1);
+    border: 1px solid rgba(180, 140, 60, 0.35);
 }
 
 .order-total-row.after-discount {
@@ -708,7 +821,7 @@
 }
 
 .order-total-row.final-total {
-    border-top: 2px solid var(--main-font-color);
+    border-top: 1px solid rgba(180, 140, 60, 0.5);
     padding-top: 15px;
     margin-top: 10px;
 }
@@ -724,10 +837,11 @@
 }
 
 .orders-empty-state {
-    background: var(--surface-2);
+    background: #fbf0cb;
     border-radius: 10px;
     padding: 3.5rem;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(180, 140, 60, 0.35);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -765,7 +879,7 @@
     .mobile-label {
         display: block;
         font-weight: 600;
-        color: var(--ink-muted);
+        color: #6b5a42;
         font-size: 14px;
     }
 
@@ -827,7 +941,7 @@
 
     .user-dashboard-nav {
         border-radius: 0;
-     }
+    }
 
     .user-dashboard-nav ul {
         padding: 0 15px;
