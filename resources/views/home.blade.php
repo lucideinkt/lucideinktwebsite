@@ -26,10 +26,10 @@
                         <!-- Middenlaag: text inside clock -->
                         <div class="text-clock">
                             <div class="text-lucideinkt">
-                                <img src="{{ asset('images/bismillah_2.webp') }}" alt="Bismillah — Arabische kalligrafie" decoding="async">
+                                <img src="{{ asset('images/bismillah_2.webp') }}" alt="" decoding="async">
                             </div>
                             <div class="text-life-minutes">
-                                <img src="{{ asset('images/life-minutes.webp') }}" alt="De vluchtige minuten des levens — gedicht uit de Risale-i Nur" decoding="async">
+                                <img src="{{ asset('images/life-minutes.webp') }}" alt="" decoding="async">
                             </div>
                             <button class="clock-button" id="openModalBtn">Lees meer</button>
                         </div>
@@ -137,7 +137,7 @@
 
                     <p style="margin-top: 20px;">
                         <a href="{{ route('herzameling') }}" class="">
-                            <img width="200px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="Lees meer" loading="lazy" decoding="async">
+                            <img width="200px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                     </p>
 
@@ -154,7 +154,7 @@
 
                     <p style="margin-top: 20px;">
                         <a href="{{ route('herzameling') }}" class="">
-                            <img width="175px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="Lees meer" loading="lazy" decoding="async">
+                            <img width="175px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                     </p>
 
@@ -169,7 +169,7 @@
                 <div class="home-book-grid">
                     <div class="book one">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
-                            <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="Het Traktaat over de Herzameling — Nederlandse editie" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Nederlands -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands') }}">
@@ -179,7 +179,7 @@
                     <div class="book two">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
                         <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}"
-                            alt="Het Traktaat over de Herzameling — Nederlands &amp; Turks editie" loading="lazy" decoding="async">
+                            alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Nederlands & Turks -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
@@ -191,7 +191,7 @@
 
                     <div class="book three">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
-                            <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="The Treatise on the Resurrection — English edition" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
@@ -200,7 +200,7 @@
                     </div>
                     <div class="book four">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
-                            <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="The Treatise on the Resurrection — English &amp; Turkish edition" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels & Turks -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">

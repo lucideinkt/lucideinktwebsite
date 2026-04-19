@@ -82,7 +82,7 @@ return [
          * so you'll need to add the suffix manually if you want that. If set to null, we'll determine the title
          * just like the other pages.
          */
-        'homepage_title' => 'Lucide Inkt | Risale-i Nur Vertalingen',
+        'homepage_title' => 'Risale-i Nur Vertalingen Nederlands & Engels | Lucide Inkt',
     ],
 
     'description' => [

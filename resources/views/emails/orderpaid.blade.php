@@ -186,9 +186,9 @@
                             </table>
 
                             <!-- Summary message -->
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f0f9f4; border-left: 3px solid #22c55e; border-radius: 4px; margin-bottom: 20px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
                                 <tr>
-                                    <td style="padding: 16px; font-size: 14px; line-height: 1.6; color: #166534; font-weight: 500;">
+                                    <td style="padding-bottom: 16px;font-size: 14px; line-height: 1.6; color:#620505; font-weight: 500;">
                                         {{ __('Je bestelling wordt zo snel mogelijk verzonden. Je ontvangt een e-mail zodra je pakket onderweg is.') }}
                                     </td>
                                 </tr>

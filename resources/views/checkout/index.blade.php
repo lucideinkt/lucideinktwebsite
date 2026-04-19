@@ -169,7 +169,7 @@
 
                         <div class="form-input">
                             <label for="order_note">Bestelnotitie (optioneel)</label>
-                            <textarea name="order_note" id="order_note" rows="4" placeholder="Eventuele opmerkingen bij uw bestelling...">{{ old('order_note') }}</textarea>
+                            <textarea name="order_note" id="order_note" rows="4" placeholder="Eventuele opmerkingen bij je bestelling...">{{ old('order_note') }}</textarea>
                             @error('order_note')
                                 <div class="error">{{ $message }}</div>
                             @enderror

@@ -26,7 +26,7 @@
 
 <p>Persoonsgegevens worden bewaard zolang dit noodzakelijk is voor administratie en wettelijke verplichtingen (maximaal 7 jaar).</p>
 
-<p>U heeft recht op inzage, correctie of verwijdering van uw gegevens. Verzoeken kunnen worden gericht aan <a href="mailto:info@lucideinkt.nl">info@lucideinkt.nl</a>.</p>
+<p>Je hebt recht op inzage, correctie of verwijdering van je gegevens. Verzoeken kunnen worden gericht aan <a href="mailto:info@lucideinkt.nl">info@lucideinkt.nl</a>.</p>
 
 <p>De website maakt uitsluitend gebruik van functionele cookies die noodzakelijk zijn voor de werking van de webshop.</p>
 

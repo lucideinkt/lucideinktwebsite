@@ -19,7 +19,7 @@
             <p class="newsletter-error" style="color: #dc3545; margin-top: 0.5rem; font-size: 0.875rem;">{{ $message }}</p>
         @enderror
         <p class="newsletter-privacy">
-            We respecteren uw privacy. U kunt zich op elk moment afmelden.
+            We respecteren je privacy. Je kunt je op elk moment afmelden.
         </p>
     </form>
 </div>
