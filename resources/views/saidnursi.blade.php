@@ -9,7 +9,7 @@
             <h1 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h1>
 
             <div class="top-images">
-            <img src="{{ asset('images/ustadh_passport.webp') }}" alt="" fetchpriority="high" decoding="async">
+            <img src="{{ asset('images/ustadh_passport.webp') }}" alt="Said Nursî — historische paspoortfoto" fetchpriority="high" decoding="async">
             </div>
 
             <h2 class="sub-title"><em>1878 – 1960</em></h2>
@@ -28,7 +28,7 @@
 
             <p>In een afgelegen dorp in Oost-Anatolië genaamd Nurs was hij ter wereld gekomen. Zijn vader Mirza was een Godvrezende veehouder; zijn moeder Nuriye een vrome dorpsvrouw. Terwijl zijn vader hun dieren altijd muilkorfde wanneer hij ze naar hun graasweide bracht – <em>zodat ze onderweg geen hap van andermans gewas namen</em> – gaf zijn moeder hem altijd alleen borstvoeding nadat zij de rituele wassing had verricht. Zo genoot Said Nursî een uiterst zuivere opvoeding die bijdroeg aan de gezegende ontplooiing van zijn buitengewone gaven.</p>
 
-            <img src="{{ asset('images/ustadh_country.webp') }}" alt="" loading="lazy" decoding="async">
+            <img src="{{ asset('images/ustadh_country.webp') }}" alt="Said Nursî in Oost-Anatolië" loading="lazy" decoding="async">
 
             <p>Van kinds af aan dorstte hij naar kennis. Dit dreef hem ertoe om op negenjarige leeftijd zijn ouderhuis te verlaten. In de studiejaren die volgden, verbleef hij in verscheidene medresses. Een studie die normaliter vijftien jaar duurt, rondde hij in drie maanden af. Voordat hij de pubertijd bereikte, ontving hij op veertienjarige leeftijd zijn “<strong>idjazah</strong>” <em>(onderwijsbevoegdheid)</em>. Geleerden die getuigen waren van zijn onmiskenbare begaafdheid gaven hem de eretitel “<strong>Bediüzzaman</strong>” <em>(de onvergelijkelijke des tijds)</em>.</p>
 
@@ -42,7 +42,7 @@
 
             <p><strong>Ter afsluiting volgt nu een tekst van Said Nursî zelf uit zijn biografie:</strong></p>
 
-            <img src="{{ asset('images/ustadh_court.webp') }}" alt="" loading="lazy" decoding="async">
+            <img src="{{ asset('images/ustadh_court.webp') }}" alt="Said Nursî voor de rechtbank" loading="lazy" decoding="async">
 
             <p>Denken zij daadwerkelijk dat ik een zelfzuchtig persoon ben die er slechts op uit is om zijn eigen nefs te redden? Om het geloof van de gemeenschap te redden, heb ik zowel mijn wereld als mijn hiernamaals opgeofferd. Gedurende heel mijn ruim tachtigjarige leven heb ik geen aards genot gekend. Mijn hele leven heb ik op slagvelden, in krijgsgevangenschap of in staatsgevangenissen doorgebracht. Er is geen pijn die ik niet heb geproefd, geen kwelling die ik niet heb ondergaan. Voor krijgsraden ben ik als een woeste misdadiger behandeld; als een verstotene ben ik van oord naar oord verbannen. In staatsgevangenissen werd mij maandenlang elke vorm van contact ontzegd. Ik ben herhaaldelijk vergiftigd en heb velerlei vernederingen moeten verduren. Er zijn tijden geweest waarin ik de dood duizendmaal boven het leven verkoos. Als mijn religie mij niet van zelfmoord had weerhouden, zou Said vandaag waarschijnlijk onder de grond vergaan zijn.</p>
 

@@ -360,6 +360,29 @@ Route::get('/audio-proxy/{path}', function ($path) {
     }
 })->where('path', '.*')->name('audio.proxy');
 
+// Dynamic robots.txt — blocks all crawlers outside production
+Route::get('/robots.txt', function () {
+    $isProduction = app()->environment('production');
+
+    $content = $isProduction
+        ? implode("\n", [
+            'User-agent: *',
+            'Disallow: /dashboard',
+            'Disallow: /dashboard/',
+            'Allow: /',
+            '',
+            'Sitemap: ' . url('/sitemap.xml'),
+        ])
+        : implode("\n", [
+            '# Non-production environment — block all crawlers',
+            'User-agent: *',
+            'Disallow: /',
+        ]);
+
+    return response($content, 200)
+        ->header('Content-Type', 'text/plain');
+})->name('robots');
+
 // Mollie payments
 Route::get('/payment/success/', [CheckoutController::class, 'paymentSuccess'])->name('payment.success');
 Route::post('/webhooks/mollie', [CheckoutController::class, 'paymentWebhook'])->name('webhooks.mollie');
