@@ -53,7 +53,10 @@ class ImageCompressionService
         $finalEncoded = null;
         $usedEncoder = 'jpg';
 
-        // If PNG, try to preserve transparency: prefer WebP (if supported) or PNG indexed encoding
+        // Prefer WebP for ALL image types when the encoder is available:
+        // - ~25–35 % smaller than JPEG at equal perceived quality
+        // - supports transparency, so PNGs with alpha are handled correctly
+        // Fall back to PNG (for transparency) or JPEG (for photos) if WebP is unavailable.
         $isPng = in_array($mime, ['image/png'], true);
         $canUseWebp = extension_loaded('imagick') || function_exists('imagewebp');
 
@@ -68,18 +71,16 @@ class ImageCompressionService
                 $constraint->upsize();
             });
 
-            if ($isPng) {
-                // Prefer WebP for smaller size when available (WebP supports alpha)
-                if ($canUseWebp) {
-                    $encoded = (string) $tmp->encode(new WebpEncoder($quality));
-                    $usedEncoder = 'webp';
-                } else {
-                    // Use indexed PNG to try to reduce size while preserving alpha
-                    $encoded = (string) $tmp->encode(new PngEncoder(true, true));
-                    $usedEncoder = 'png';
-                }
+            if ($canUseWebp) {
+                // Always use WebP when available — best compression for photos & transparency
+                $encoded = (string) $tmp->encode(new WebpEncoder($quality));
+                $usedEncoder = 'webp';
+            } elseif ($isPng) {
+                // No WebP support and source is PNG — keep indexed PNG to preserve alpha
+                $encoded = (string) $tmp->encode(new PngEncoder(true, true));
+                $usedEncoder = 'png';
             } else {
-                // Encode as JPEG for strong compression (most uploads are photos)
+                // Fallback: JPEG for photos
                 $encoded = (string) $tmp->encode(new JpegEncoder($quality));
                 $usedEncoder = 'jpg';
             }
