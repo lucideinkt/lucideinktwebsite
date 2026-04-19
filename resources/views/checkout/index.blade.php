@@ -1,4 +1,5 @@
 <x-layout>
+    @push('head')<meta name="robots" content="noindex, nofollow">@endpush
     <div class="page-normal-background">
     <main class="container page checkout">
         <x-breadcrumbs :items="[

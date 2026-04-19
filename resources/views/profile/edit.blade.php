@@ -1,5 +1,6 @@
 @if(auth()->user()->role === 'user')
   <x-layout>
+      @push('head')<meta name="robots" content="noindex, nofollow">@endpush
       <div class="page-normal-background">
     <main class="container page user-dashboard">
         <x-breadcrumbs :items="[

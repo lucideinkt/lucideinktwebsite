@@ -6,6 +6,7 @@
           ['label' => 'Contact', 'url' => route('contact')],
         ]" />
 
+        <h1 class="sr-only">Contact — Lucide Inkt</h1>
         @livewire('contact-form')
     </main>
     <div class="gradient-border"></div>
