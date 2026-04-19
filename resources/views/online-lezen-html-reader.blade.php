@@ -119,8 +119,11 @@
         .toc-panel-close                                 { font-size: 15px !important; }
         .reader-sheet-bm-nav-btn                         { font-size: 11px !important; }
         /* Bookmark page marker — sits at top of page, padding-top makes room */
-        .book-reader-scope .page                         { position: relative; }
+        .book-reader-scope .page                         { position: relative; font-size: var(--reader-font-size, 19px); }
         .bm-page-marker                                  { position: absolute !important; top: 0px !important; left: 8px !important; margin: 0 !important; padding: 0 !important; }
+        /* GPU layer for overlay panels — prevents theme/popover repaints thrashing book content */
+        .reader-control-sheet, .toc-panel, .hl-popup, .reader-search-panel { will-change: transform; }
+        .book-reader-scope { contain: style; }
     </style>
 </head>
 <body>
@@ -481,26 +484,39 @@
         function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (_) {} }
         function loadFont()   { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         function applyFont(sz, anchor) {
-            const anchorEl = (anchor && pageMap) ? pageMap[visiblePage()] : null;
-            const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
-            readerEl.querySelectorAll('.page').forEach(p => { p.style.fontSize = sz + 'px'; });
-            if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
-            if (anchorEl && offsetBefore !== null) {
-                // getBoundingClientRect() after style change forces synchronous reflow,
-                // then scrollBy corrects the position in the same frame — no visible glitch
-                window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
+            if (anchor) {
+                // Snapshot anchor position BEFORE the style change (one layout read)
+                const anchorEl = pageMap ? pageMap[visiblePage()] : null;
+                const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
+                readerEl.style.setProperty('--reader-font-size', sz + 'px');
+                if (anchorEl && offsetBefore !== null) {
+                    // Correct scroll AFTER the browser has reflowed the new font size (next frame)
+                    // — avoids forced synchronous reflow entirely
+                    requestAnimationFrame(() => {
+                        window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
+                    });
+                }
+            } else {
+                readerEl.style.setProperty('--reader-font-size', sz + 'px');
             }
+            if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
         }
         function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
         function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         function applyArabicFont(sz, anchor) {
-            const anchorEl = (anchor && pageMap) ? pageMap[visiblePage()] : null;
-            const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
-            readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
-            if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
-            if (anchorEl && offsetBefore !== null) {
-                window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
+            if (anchor) {
+                const anchorEl = pageMap ? pageMap[visiblePage()] : null;
+                const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
+                readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
+                if (anchorEl && offsetBefore !== null) {
+                    requestAnimationFrame(() => {
+                        window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
+                    });
+                }
+            } else {
+                readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
             }
+            if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
         }
 
         function visiblePage() {
@@ -678,8 +694,24 @@
         initRangeSlider(fontRange,   FONT_STEPS);
         initRangeSlider(arabicRange, ARABIC_STEPS);
 
-        fontRange?.addEventListener('input', () => setFontStep(parseInt(fontRange.value), true));
-        arabicRange?.addEventListener('input', () => setArabicStep(parseInt(arabicRange.value), true));
+        fontRange?.addEventListener('input', () => {
+            // Throttle with rAF — no anchor during continuous drag (prevents layout thrashing)
+            if (fontRange._raf) return;
+            fontRange._raf = requestAnimationFrame(() => {
+                fontRange._raf = null;
+                setFontStep(parseInt(fontRange.value), false);
+            });
+        });
+        arabicRange?.addEventListener('input', () => {
+            if (arabicRange._raf) return;
+            arabicRange._raf = requestAnimationFrame(() => {
+                arabicRange._raf = null;
+                setArabicStep(parseInt(arabicRange.value), false);
+            });
+        });
+        // On slider release — do a final apply WITH anchor correction so position snaps correctly
+        fontRange?.addEventListener('change', () => setFontStep(parseInt(fontRange.value), true));
+        arabicRange?.addEventListener('change', () => setArabicStep(parseInt(arabicRange.value), true));
 
         document.getElementById('font-dec-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx - 1));
         document.getElementById('font-inc-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx + 1));
@@ -698,55 +730,66 @@
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
-        let pinchAnchorPage = null; // page to restore after pinch ends
-        let pinchStartDist = null;
-        let pinchStartFontSize = null;
+        let pinchStartDist    = null;
+        let pinchStartFontIdx = null;  // step index at gesture start (not raw px)
+        let _pinchRaf         = false;
+        let _pinchTargetIdx   = null;
 
         readerEl.addEventListener('touchstart', e => {
             if (e.touches.length === 2) {
                 e.preventDefault();
-                const touch1 = e.touches[0];
-                const touch2 = e.touches[1];
-                pinchStartDist = Math.hypot(
-                    touch2.pageX - touch1.pageX,
-                    touch2.pageY - touch1.pageY
+                pinchStartDist    = Math.hypot(
+                    e.touches[1].pageX - e.touches[0].pageX,
+                    e.touches[1].pageY - e.touches[0].pageY
                 );
-                const currentPage = readerEl.querySelector('.page');
-                pinchStartFontSize = currentPage ? parseFloat(getComputedStyle(currentPage).fontSize) || 19 : 19;
-                pinchAnchorPage = visiblePage(); // snapshot page before gesture
+                pinchStartFontIdx = fontStepIdx; // snapshot index, no layout read needed
             }
         }, { passive: false });
 
         readerEl.addEventListener('touchmove', e => {
             if (e.touches.length === 2 && pinchStartDist !== null) {
                 e.preventDefault();
-                const touch1 = e.touches[0];
-                const touch2 = e.touches[1];
                 const currentDist = Math.hypot(
-                    touch2.pageX - touch1.pageX,
-                    touch2.pageY - touch1.pageY
+                    e.touches[1].pageX - e.touches[0].pageX,
+                    e.touches[1].pageY - e.touches[0].pageY
                 );
                 const ratio = currentDist / pinchStartDist;
-                // Snap to nearest step — no anchor during move (anchor on touchend)
-                let targetIdx = fontStepIdx;
-                if (ratio > 1.15) targetIdx = Math.min(FONT_STEPS.length - 1, nearestStepIdx(FONT_STEPS, pinchStartFontSize) + Math.floor((ratio - 1) / 0.15));
-                if (ratio < 0.87) targetIdx = Math.max(0, nearestStepIdx(FONT_STEPS, pinchStartFontSize) - Math.floor((1 - ratio) / 0.13));
-                if (targetIdx !== fontStepIdx) setFontStep(targetIdx, true); // anchor = true: same sync correction as buttons
+                let targetIdx = pinchStartFontIdx;
+                if (ratio > 1.15) targetIdx = Math.min(FONT_STEPS.length - 1, pinchStartFontIdx + Math.floor((ratio - 1) / 0.15));
+                if (ratio < 0.87) targetIdx = Math.max(0, pinchStartFontIdx - Math.floor((1 - ratio) / 0.13));
+
+                if (targetIdx !== fontStepIdx) {
+                    _pinchTargetIdx = targetIdx;
+                    // Throttle: only apply once per animation frame, no anchor during move
+                    if (!_pinchRaf) {
+                        _pinchRaf = true;
+                        requestAnimationFrame(() => {
+                            _pinchRaf = false;
+                            if (_pinchTargetIdx !== null) {
+                                setFontStep(_pinchTargetIdx, false); // no anchor — zero layout reads
+                                _pinchTargetIdx = null;
+                            }
+                        });
+                    }
+                }
             }
         }, { passive: false });
 
         readerEl.addEventListener('touchend', e => {
             if (e.touches.length < 2 && pinchStartDist !== null) {
-                // Pinch gesture ended — sync anchor in applyFont already kept position correct
-                pinchStartDist = null;
-                pinchStartFontSize = null;
-                pinchAnchorPage = null;
+                // Pinch ended — do one final apply WITH anchor so scroll position snaps back
+                if (_pinchTargetIdx !== null) setFontStep(_pinchTargetIdx, true);
+                else setFontStep(fontStepIdx, true);
+                pinchStartDist    = null;
+                pinchStartFontIdx = null;
+                _pinchTargetIdx   = null;
             }
         });
 
         readerEl.addEventListener('touchcancel', () => {
-            pinchStartDist = null;
-            pinchStartFontSize = null;
+            pinchStartDist    = null;
+            pinchStartFontIdx = null;
+            _pinchTargetIdx   = null;
         });
 
         // --- Theme ---
