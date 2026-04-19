@@ -533,5 +533,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(NatuurNederlandsPagesSeeder::class);
         $this->call(HerzamelingNederlandsPagesSeeder::class);
+        $this->call(AfwegingenNederlandsPagesSeeder::class);
     }
 }

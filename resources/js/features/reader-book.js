@@ -207,8 +207,11 @@
     wireFootnotes();
 
     // ── Watch for dynamically loaded pages ────────────────────────────────
-    // When new pages are added to the DOM (lazy loading), wire their footnotes
-    // and try to resolve any pending continuations
+    // When new .page elements are added as direct children of readerEl (lazy loading),
+    // wire their footnotes and resolve continuations.
+    // We only need childList on the direct container (not subtree) because new pages
+    // are always direct children of readerEl. Avoiding subtree:true prevents this
+    // observer from firing for every highlight/bookmark mutation inside page content.
     const observer = new MutationObserver(mutations => {
         let hasNewPages = false;
         mutations.forEach(mutation => {
@@ -222,7 +225,7 @@
             wireFootnotes();
         }
     });
-    observer.observe(readerEl, { childList: true, subtree: true });
+    observer.observe(readerEl, { childList: true });
 
     // ── Popover ────────────────────────────────────────────────────────────
     let popover   = null;
@@ -237,6 +240,8 @@
 
         popover = document.createElement('div');
         popover.className = 'fn-popover';
+        // Keep invisible until positioned so there's no visible jump
+        popover.style.visibility = 'hidden';
         popover.setAttribute('role', 'tooltip');
         popover.setAttribute('aria-live', 'polite');
         const fnNum = btn.dataset.fn || '';
@@ -248,17 +253,21 @@
             `</div>`;
 
         document.body.appendChild(popover);
-        positionPopover(btn);
+        // NOTE: do NOT call positionPopover() here — that forces a synchronous layout
+        // on the entire document which is very slow on mobile with large books.
+        // We position + show in a single RAF instead.
 
         popover.querySelector('.fn-popover__close').addEventListener('click', e => {
             e.stopPropagation();
             hidePopover();
         });
 
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-            popover?.classList.add('fn-popover--show');
-            if (popover && btn) positionPopover(btn);
-        }));
+        requestAnimationFrame(() => {
+            if (!popover) return;
+            positionPopover(btn);                  // one layout read, batched in the RAF
+            popover.style.visibility = '';         // un-hide before the paint
+            popover.classList.add('fn-popover--show');
+        });
     }
 
     function hidePopover() {
@@ -301,15 +310,6 @@
         popover.style.left = left + 'px';
     }
 
-    function hidePopover() {
-        if (!popover) return;
-        popover.classList.remove('fn-popover--show');
-        activeBtn?.classList.remove('fn-ref--active');
-        const el = popover;
-        setTimeout(() => el.remove(), 200);
-        popover    = null;
-        activeBtn  = null;
-    }
 
     // ── Event delegation ──────────────────────────────────────────────────
     readerEl.addEventListener('click', e => {

@@ -155,6 +155,13 @@
     border: none;
     border-top: 1px solid rgba(var(--main-font-color-rgb, 90, 0, 0), 0.15);
     margin-top: 10px;
+    /* Skip rendering of off-screen pages — dramatically reduces the cost of
+       class toggles (dark mode, font changes) on large books by only recalculating
+       styles for the pages near the viewport.
+       contain-intrinsic-size: auto means the browser remembers each page's
+       actual rendered height so the scrollbar stays accurate. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
 }
 
 .book-reader-scope .page p:last-of-type {
@@ -361,11 +368,13 @@
 }
 
 /* Dark mode: hide light SVG and show dark SVG */
-body.dark-mode .book-reader-scope .bismillah-svg-light {
+body.dark-mode .book-reader-scope .bismillah-svg-light,
+.online-reader-html.dark-mode .book-reader-scope .bismillah-svg-light {
     display: none;
 }
 
-body.dark-mode .book-reader-scope .bismillah-svg-dark {
+body.dark-mode .book-reader-scope .bismillah-svg-dark,
+.online-reader-html.dark-mode .book-reader-scope .bismillah-svg-dark {
     display: inline-block;
 }
 
@@ -500,7 +509,8 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     padding: 0;
 }
 
-body.dark-mode .book-reader-scope .fn-ref {
+body.dark-mode .book-reader-scope .fn-ref,
+.online-reader-html.dark-mode .book-reader-scope .fn-ref {
     color: #e8b48a !important;
     background: rgba(232, 160, 100, 0.12);
     border-color: rgba(232, 160, 100, 0.42);
@@ -513,7 +523,8 @@ body.dark-mode .book-reader-scope .fn-ref {
     border-color: rgba(140, 30, 30, 0.5) !important;
     color: #5a1010 !important;
 }
-body.dark-mode .book-reader-scope .fn-ref--active {
+body.dark-mode .book-reader-scope .fn-ref--active,
+.online-reader-html.dark-mode .book-reader-scope .fn-ref--active {
     background: rgba(232, 160, 100, 0.22) !important;
     border-color: rgba(232, 160, 100, 0.55) !important;
     color: #ffd4a8 !important;
@@ -539,6 +550,8 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     transition: opacity 0.18s ease, transform 0.18s ease;
     pointer-events: none;
     overflow: visible;
+    will-change: transform, opacity;
+    contain: layout style paint;
 }
 .fn-popover.fn-popover--show {
     opacity: 1;
@@ -651,150 +664,112 @@ body.dark-mode .book-reader-scope .fn-ref--active {
 }
 
 /* dark mode */
-body.dark-mode .fn-popover {
+body.dark-mode .fn-popover,
+.online-reader-html.dark-mode .fn-popover {
     background: #1e130a;
     border-color: rgba(232, 168, 124, 0.2);
     box-shadow:
         0 4px 6px rgba(0, 0, 0, 0.6),
         0 10px 28px rgba(0, 0, 0, 0.8);
 }
-body.dark-mode .fn-popover__close {
+body.dark-mode .fn-popover__close,
+.online-reader-html.dark-mode .fn-popover__close {
     background-color: #e8a87c;
     color: #1c1209;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 }
-
-body.dark-mode .fn-popover__text {
+body.dark-mode .fn-popover__text,
+.online-reader-html.dark-mode .fn-popover__text {
     color: #ecdcc0;
 }
-body.dark-mode .fn-popover__text .text-red { color: #ff9a9a; }
+body.dark-mode .fn-popover__text .text-red,
+.online-reader-html.dark-mode .fn-popover__text .text-red { color: #ff9a9a; }
 body.dark-mode .fn-popover__text .text-arabic,
 body.dark-mode .fn-popover__text .text-arabic-inline,
 body.dark-mode .fn-popover__text .delima-font .text-arabic,
 body.dark-mode .fn-popover__text .delima-font .text-arabic-inline,
 body.dark-mode .fn-popover__text span[dir="rtl"],
-body.dark-mode .fn-popover__text span[lang="ar"] {
+body.dark-mode .fn-popover__text span[lang="ar"],
+.online-reader-html.dark-mode .fn-popover__text .text-arabic,
+.online-reader-html.dark-mode .fn-popover__text .text-arabic-inline,
+.online-reader-html.dark-mode .fn-popover__text .delima-font .text-arabic,
+.online-reader-html.dark-mode .fn-popover__text .delima-font .text-arabic-inline,
+.online-reader-html.dark-mode .fn-popover__text span[dir="rtl"],
+.online-reader-html.dark-mode .fn-popover__text span[lang="ar"] {
     color: #e8a87c;
     font-family: 'OmarNaskhRegular', serif !important;
 }
-body.dark-mode .fn-popover__text .text-underline {
+body.dark-mode .fn-popover__text .text-underline,
+.online-reader-html.dark-mode .fn-popover__text .text-underline {
     text-decoration-color: rgba(255, 154, 154, 0.6);
 }
 
-/* =========================================================
-   TOOLTIP (buiten scope â€” wordt aan <body> toegevoegd)
-   ========================================================= */
-.reader-tooltip {
-    position: fixed;
-    background: #2a1a0a;
-    color: #fdf6e3;
-    padding: 10px 14px;
-    border-radius: 8px;
-    max-width: min(320px, 90vw);
-    line-height: 1.55;
-    font-size: 14px;
-    font-family: 'DelimaProRegular', Georgia, serif;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.18s ease, transform 0.18s ease;
-    transform: translateY(6px);
-    z-index: 9999;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+body.dark-mode { background-color: #1c1209; color: #e8d8b0; }
+.online-reader-html.dark-mode { background-color: #1c1209; color: #e8d8b0; }
+html.reader-preload-dark body, html.reader-preload-dark .online-reader-html { background-color: #1c1209; color: #e8d8b0; }
+
+body.dark-mode .book-reader-scope,
+.online-reader-html.dark-mode .book-reader-scope { color: #e8d8b0; }
+body.dark-mode .book-reader-scope p,
+.online-reader-html.dark-mode .book-reader-scope p { color: #e8d8b0; }
+body.dark-mode .book-reader-scope h1,
+body.dark-mode .book-reader-scope h2,
+body.dark-mode .book-reader-scope h3,
+body.dark-mode .book-reader-scope h4,
+.online-reader-html.dark-mode .book-reader-scope h1,
+.online-reader-html.dark-mode .book-reader-scope h2,
+.online-reader-html.dark-mode .book-reader-scope h3,
+.online-reader-html.dark-mode .book-reader-scope h4 { color: #e8a87c; }
+body.dark-mode .book-reader-scope .book-title,
+.online-reader-html.dark-mode .book-reader-scope .book-title { color: #e8a87c; }
+body.dark-mode .book-reader-scope .text-red,
+.online-reader-html.dark-mode .book-reader-scope .text-red { color: #e8a87c!important; }
+body.dark-mode .book-reader-scope .small-title,
+.online-reader-html.dark-mode .book-reader-scope .small-title { color: #e8a87c; }
+body.dark-mode .book-reader-scope .page-title-series,
+.online-reader-html.dark-mode .book-reader-scope .page-title-series { border-bottom-color: rgba(232,168,124,0.2); }
+body.dark-mode .book-reader-scope .page-title-series p,
+.online-reader-html.dark-mode .book-reader-scope .page-title-series p { color: #888; }
+body.dark-mode .book-reader-scope .page-title-chapter p,
+.online-reader-html.dark-mode .book-reader-scope .page-title-chapter p { color: #888; }
+body.dark-mode .book-reader-scope .page,
+.online-reader-html.dark-mode .book-reader-scope .page { border-top-color: rgba(232,168,124,0.35); }
+body.dark-mode .book-reader-scope .page,
+.online-reader-html.dark-mode .book-reader-scope .page { border-bottom-color: rgba(255,255,255,0.07); }
+body.dark-mode .book-reader-scope .end-of-page-hr,
+.online-reader-html.dark-mode .book-reader-scope .end-of-page-hr { border-bottom-color: rgba(232,168,124,0.15); }
+body.dark-mode .book-reader-scope .hr-footnote,
+.online-reader-html.dark-mode .book-reader-scope .hr-footnote { border-top-color: rgba(232,168,124,0.2); }
+body.dark-mode .book-reader-scope .page-number,
+.online-reader-html.dark-mode .book-reader-scope .page-number { color: #4a4030; }
+body.dark-mode .book-reader-scope .footnote-p,
+.online-reader-html.dark-mode .book-reader-scope .footnote-p { color: #b0a080; }
+body.dark-mode .book-reader-scope .footnote-p sup,
+.online-reader-html.dark-mode .book-reader-scope .footnote-p sup { color: #b0a080; }
+body.dark-mode .book-reader-scope .text-arabic,
+.online-reader-html.dark-mode .book-reader-scope .text-arabic { color: #e8a87c; }
+body.dark-mode .book-reader-scope .text-arabic-inline,
+.online-reader-html.dark-mode .book-reader-scope .text-arabic-inline { color: #e8a87c; }
+body.dark-mode .book-reader-scope .honorific,
+.online-reader-html.dark-mode .book-reader-scope .honorific { color: #e8a87c; }
+body.dark-mode .book-reader-scope .sup-pointer,
+.online-reader-html.dark-mode .book-reader-scope .sup-pointer { color: #e8a87c; }
+body.dark-mode .book-reader-scope .sup-pointer:hover,
+.online-reader-html.dark-mode .book-reader-scope .sup-pointer:hover { background: rgba(232,168,124,0.15); }
+body.dark-mode .book-reader-scope .text-underline,
+.online-reader-html.dark-mode .book-reader-scope .text-underline { text-decoration-color: rgba(232,168,124,0.6); }
+body.dark-mode .reader-end p,
+.online-reader-html.dark-mode .reader-end p { color: #555; }
+body.dark-mode .reader-tooltip,
+.online-reader-html.dark-mode .reader-tooltip {
+    background: #160e05;
+    border-color: rgba(232, 168, 124, 0.2);
+    color: #e8d8b0;
 }
-
-.reader-tooltip.text-arabic {
-    direction: rtl;
-    text-align: right;
-    font-family: 'OmarNaskhRegular', serif;
-    font-size: 1.3em;
-    line-height: 1.9;
-}
-
-.reader-tooltip.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* â”€â”€ Pijltje op tooltip â”€â”€ */
-.reader-tooltip::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: var(--arrow-left, 50%);
-    transform: translateX(-50%);
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #2a1a0a;
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (max-width: 768px) {
-    .book-reader-scope {
-        font-size: var(--reader-font-size, 19px);
-        max-width: 100%;
-    }
-
-    .book-reader-scope .text-arabic {
-        margin: 0.2em 0 0.2em;
-    }
-
-    .book-reader-scope .book-title {
-        font-family: 'BarlaLivaNur', 'DelimaProRegular', Georgia, serif;
-        font-size: 80px;
-        line-height: 1.2;
-        color: var(--main-font-color);
-        margin: 0.4em 0 0.6em;
-        letter-spacing: 0;
-        font-weight: 400;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .book-reader-scope p {
-        text-align: left;
-        hyphens: none;
-    }
-
-    .book-reader-scope .book-title {
-        font-size: 60px;
-        line-height: 1.1;
-    }
-
-    .book-reader-scope .text-arabic {
-        margin: 0.2em 0 0.2em;
-    }
-}
-
-/* =========================================================
-   PRINT
-   ========================================================= */
-@media print {
-    .book-reader-scope {
-        font-size: 11pt;
-        color: #000;
-        max-width: 100%;
-    }
-
-    .book-reader-scope .page-footnote {
-        display: block;
-    }
-
-    .book-reader-scope .sup-pointer {
-        color: #000;
-    }
-
-    .reader-tooltip {
-        display: none;
-    }
-}
-
-/* =========================================================
-   READER UI — topbar, progress, bottombar, dropdown, to-top
-   ========================================================= */
+body.dark-mode .reader-tooltip::before,
+.online-reader-html.dark-mode .reader-tooltip::before { border-bottom-color: #160e05; }
+body.dark-mode .reader-topbar,
+.online-reader-html.dark-mode .reader-topbar { background: rgba(28,18,9,0.97); }
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -811,12 +786,15 @@ body {
 
 /* ── Dark mode ── */
 body.dark-mode { background-color: #1c1209; color: #e8d8b0; }
+.online-reader-html.dark-mode { background-color: #1c1209; color: #e8d8b0; }
 /* Pre-paint dark background to prevent flash before JS runs */
-html.reader-preload-dark body { background-color: #1c1209; color: #e8d8b0; }
+html.reader-preload-dark body, html.reader-preload-dark .online-reader-html { background-color: #1c1209; color: #e8d8b0; }
 
 /* Scope base */
 body.dark-mode .book-reader-scope { color: #e8d8b0; }
 body.dark-mode .book-reader-scope p { color: #e8d8b0; }
+.online-reader-html.dark-mode .book-reader-scope { color: #e8d8b0; }
+.online-reader-html.dark-mode .book-reader-scope p { color: #e8d8b0; }
 
 /* Headings & titles */
 body.dark-mode .book-reader-scope h1,
@@ -1579,7 +1557,7 @@ body.dark-mode .reader-fab:hover {}
     opacity: 0;
     pointer-events: none;
 }
-.reader-to-top i { color: #fff !important; fill: #fff !important; }
+.reader-to-top i, .reader-to-top svg { color: #fff !important; fill: #fff !important; }
 .reader-to-top.show { opacity: 1; pointer-events: auto; }
 .reader-to-top:active { transform: scale(0.94); }
 body.dark-mode .reader-to-top { background: rgba(176,96,48,0.9); }
@@ -2263,7 +2241,7 @@ body.dark-mode .reader-sheet-tab.active i { color: #e8a87c; }
 .hl-action-btn[hidden] { display: none; }
 
 /* Dark mode popup */
-body.dark-mode .hl-popup { background: #1e140a; border-color: rgba(232,168,124,0.22); box-shadow: 0 6px 24px rgba(0,0,0,0.55); }
+body.dark-mode .hl-popup { background: #1e140a; border-color: rgba(232, 168, 124, 0.22); box-shadow: 0 6px 24px rgba(0,0,0,0.55); }
 body.dark-mode .hl-action-btn { border-color: rgba(232,168,124,0.25); background: rgba(232,168,124,0.07); }
 /* Dark mode icon colors */
 body.dark-mode #hl-copy-btn i   { color: #d4905a; }
@@ -2309,6 +2287,7 @@ body.dark-mode mark.hl-orange { background: rgba(255,160,64,0.28); }
     z-index: 5;
     transition: color 0.15s, transform 0.15s;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 .bm-marker:hover { color: #a05010; transform: translateY(-50%) scaleX(-1) scale(1.15); }
 body.dark-mode .bm-marker { color: #e8a050; }
