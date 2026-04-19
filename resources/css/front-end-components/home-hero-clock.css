@@ -260,13 +260,15 @@
     pointer-events: none;
 }
 
-.clock-button:hover::before {
-    left: 100%;
-}
+@media (hover: hover) and (pointer: fine) {
+    .clock-button:hover::before {
+        left: 100%;
+    }
 
-.clock-button:hover {
-    background: linear-gradient(135deg, #224039 0%, #2e7d32 100%);
-    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    .clock-button:hover {
+        background: linear-gradient(135deg, #224039 0%, #2e7d32 100%);
+        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    }
 }
 
 .clock-button:active {

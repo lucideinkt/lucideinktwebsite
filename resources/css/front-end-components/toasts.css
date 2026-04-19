@@ -93,10 +93,12 @@
     padding: 0;
 }
 
-.copy-toast .toast-close:hover {
-    background: rgba(0, 0, 0, 0.1);
-    color: #1a1a1a;
-    transform: translateY(-50%) rotate(90deg);
+@media (hover: hover) and (pointer: fine) {
+    .copy-toast .toast-close:hover {
+        background: rgba(0, 0, 0, 0.1);
+        color: #1a1a1a;
+        transform: translateY(-50%) rotate(90deg);
+    }
 }
 
 .copy-toast .toast-close:active {

@@ -66,9 +66,11 @@
     padding: 0;
 }
 
-.qs-arrow:hover {
-    background: rgba(236, 229, 194, 0.3);
-    border-color: rgba(236, 229, 194, 0.6);
+@media (hover: hover) and (pointer: fine) {
+    .qs-arrow:hover {
+        background: rgba(236, 229, 194, 0.3);
+        border-color: rgba(236, 229, 194, 0.6);
+    }
 }
 
 .qs-arrow svg {
