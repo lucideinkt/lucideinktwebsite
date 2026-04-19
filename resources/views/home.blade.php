@@ -1,6 +1,11 @@
 <x-layout :seo-data="$SEOData">
     <main class="page home">
 
+        @push('head')
+            {{-- Preload the CSS hero background so the browser discovers it early --}}
+            <link rel="preload" as="image" href="{{ asset('images/new_banner_hero_7.webp') }}" type="image/webp">
+        @endpush
+
         <div class="hero-bg-wrapper" style="background-image: url('{{ asset('images/new_banner_hero_7.webp') }}');">
 
             <section class="home-hero">
@@ -8,20 +13,21 @@
 
                     <div class="hero-section" style="position: relative; overflow: visible;">
                         <img class="hero-bg-img" src="{{ asset('images/001_sun_clock_background.webp') }}" alt=""
+                            fetchpriority="high" decoding="async"
                             style="position: absolute; left: 49%; top: 51.5%; transform: translate(-50%, -50%); width: 150%; height: auto; pointer-events: none; z-index: -1;">
 
                         <!-- Achterste laag: draaiende rotor -->
                         <div class="layer layer-rotor">
-                            <img class="rotating-image" src="{{ asset('images/sun-ring-2.png') }}" alt="">
+                            <img class="rotating-image" src="{{ asset('images/sun-ring-2.webp') }}" alt="" decoding="async">
                         </div>
 
                         <!-- Middenlaag: text inside clock -->
                         <div class="text-clock">
                             <div class="text-lucideinkt">
-                                <img src="{{ asset('images/bismillah_2.png') }}" alt="">
+                                <img src="{{ asset('images/bismillah_2.webp') }}" alt="" decoding="async">
                             </div>
                             <div class="text-life-minutes">
-                                <img src="{{ asset('images/life-minutes.png') }}" alt="">
+                                <img src="{{ asset('images/life-minutes.webp') }}" alt="" decoding="async">
                             </div>
                             <button class="clock-button" id="openModalBtn">Lees meer</button>
                         </div>
@@ -70,8 +76,8 @@
         <div class="gradient-border"></div>
 
         <section class="home white-section intro-section">
-            <img class="moon-left" src="{{ asset('images/half_moon.webp') }}" alt="">
-            <img class="moon-right" src="{{ asset('images/half_moon.webp') }}" alt="">
+            <img class="moon-left" src="{{ asset('images/half_moon.webp') }}" alt="" loading="lazy" decoding="async">
+            <img class="moon-right" src="{{ asset('images/half_moon.webp') }}" alt="" loading="lazy" decoding="async">
 
 {{--            <img style="width: 100%;height: 50%" class="letters-stars" src="{{ asset('images/letters_stars.webp') }}" alt="">--}}
 
@@ -113,7 +119,7 @@
         <section class="colored-section books-section">
             <div class="new-translation">
                 <div class="title-wrapper">
-                    <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="">
+                    <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="" loading="lazy" decoding="async">
                     <h2 class="title trans">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
                             class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
                         ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
@@ -129,8 +135,7 @@
 
                     <p style="margin-top: 20px;">
                         <a href="{{ route('herzameling') }}" class="">
-{{--                            Lees meer <i class="fa-solid fa-arrow-right"></i>--}}
-                            <img width="200px" src="{{ asset('images/knop_lees_meer2.png') }}" alt="">
+                            <img width="200px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                     </p>
 
@@ -147,8 +152,7 @@
 
                     <p style="margin-top: 20px;">
                         <a href="{{ route('herzameling') }}" class="">
-{{--                            Lees meer <i class="fa-solid fa-arrow-right"></i>--}}
-                            <img width="175px" src="{{ asset('images/knop_lees_meer2.png') }}" alt="">
+                            <img width="175px" src="{{ asset('images/knop_lees_meer2.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                     </p>
 
@@ -163,7 +167,7 @@
                 <div class="home-book-grid">
                     <div class="book one">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
-                            <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="">
+                            <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Nederlands -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands') }}">
@@ -173,7 +177,7 @@
                     <div class="book two">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
                         <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}"
-                            alt="">
+                            alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Nederlands & Turks -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
@@ -185,7 +189,7 @@
 
                     <div class="book three">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
-                            <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="">
+                            <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
@@ -194,7 +198,7 @@
                     </div>
                     <div class="book four">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
-                            <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="">
+                            <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels & Turks -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
@@ -225,7 +229,7 @@
                     </div>
                 </div>
                 <div class="risale-image">
-                    <img src="{{ asset('images/books_standing_new.webp') }}" alt="Risale-i Nur">
+                    <img src="{{ asset('images/books_standing_new.webp') }}" alt="Risale-i Nur" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
@@ -298,7 +302,7 @@
                 <div class="risale-content">
                     <h2 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h2>
                     <div class="risale-image said-nursi-image mobile-only">
-                        <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
+                        <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi" loading="lazy" decoding="async">
                     </div>
                     <div class="sub-text">
                         <p>
@@ -310,7 +314,7 @@
                     </div>
                 </div>
                 <div class="risale-image said-nursi-image desktop-only">
-                    <img src="{{ asset('images/said_nursi_sharp.jpg') }}" alt="Said Nursi">
+                    <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>

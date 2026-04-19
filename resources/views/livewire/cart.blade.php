@@ -53,7 +53,7 @@
                     <div class="cart-item-row">
                         <div class="cart-item-image">
                             <a href="{{ $productUrl }}">
-                                <img src="{{ $src }}" alt="{{ $item['name'] }}">
+                                <img src="{{ $src }}" alt="{{ $item['name'] }}" loading="lazy" decoding="async">
                             </a>
                         </div>
 

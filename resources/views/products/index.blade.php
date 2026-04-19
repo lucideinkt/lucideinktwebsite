@@ -40,7 +40,7 @@
                                         : asset('storage/' . $product->image_1)
                                     )
                                 )
-                        ) }}" alt="">
+                        ) }}" alt="" loading="lazy" decoding="async">
                     </td>
                     <td style="min-width:180px;">
                         {{ $product->title }}
@@ -69,7 +69,7 @@
                     </td>
                 </tr>
             @empty
-                
+
             @endforelse
 
         </tbody>
