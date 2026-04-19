@@ -1,3 +1,12 @@
+// ============================================================
+// iOS SAFARI DOUBLE-TAP FIX
+// A single empty touchstart listener on the document tells
+// iOS Safari this page handles touch, so it stops intercepting
+// the first tap as a :hover state — making every link, button
+// and clickable element respond on the FIRST tap.
+// ============================================================
+document.addEventListener('touchstart', function () {}, { passive: true });
+
 // Import Axios first (needed globally)
 import axios from 'axios';
 
