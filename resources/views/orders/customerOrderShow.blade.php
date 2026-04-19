@@ -263,7 +263,7 @@
                                     @endif
 
                                     <div class="order-total-row final-total">
-                                        <span class="order-total-label">Totaal (incl. BTW)</span>
+                                        <span class="order-total-label">Totaal (incl. verzendkosten)</span>
                                         <span class="order-total-value">€ {{ number_format($order->total, 2, ',', '.') }}</span>
                                     </div>
                                 </div>

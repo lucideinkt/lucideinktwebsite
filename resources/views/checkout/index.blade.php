@@ -1,5 +1,10 @@
 <x-layout>
-    @push('head')<meta name="robots" content="noindex, nofollow">@endpush
+    @push('head')
+        <meta name="robots" content="noindex, nofollow">
+        @if(config('services.google.maps_api_key'))
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.maps_api_key') }}&libraries=places&callback=initAddressAutocomplete&loading=async" async defer></script>
+        @endif
+    @endpush
     <div class="page-normal-background">
     <main class="container page checkout">
         <x-breadcrumbs :items="[
@@ -88,11 +93,28 @@
                             </div>
                         </div>
 
+                        {{-- Google Places address search --}}
+                        <div class="form-input address-autocomplete-wrap" id="billing-autocomplete-wrap">
+                            <label for="billing_address_search">
+                                <i class="fa-solid fa-magnifying-glass" style="margin-right:4px;"></i>
+                                Adres zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ om automatisch in te vullen)</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="billing_address_search"
+                                placeholder="bijv. Keizersgracht 1, Amsterdam"
+                                autocomplete="off"
+                                class="address-search-input"
+                            >
+                            <p class="address-autocomplete-hint">Of vul het adres hieronder handmatig in.</p>
+                        </div>
+
                         <div class="street-box">
                             <div class="form-input street">
                                 <label for="billing_street">Straatnaam <span class="required">*</span></label>
                                 <input type="text" name="billing_street" autocomplete="address-line1"
-                                    value="{{ old('billing_street') }}">
+                                    value="{{ old('billing_street') }}"
+                                    @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
                                 @error('billing_street')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
@@ -101,7 +123,8 @@
                                 <div class="form-input">
                                     <label for="billing_house_number">Huisnummer <span class="required">*</span></label>
                                     <input type="number" name="billing_house_number" autocomplete="address-line2"
-                                        value="{{ old('billing_house_number') }}">
+                                        value="{{ old('billing_house_number') }}"
+                                        @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="-" @endif>
                                     @error('billing_house_number')
                                         <div class="error">{{ $message }}</div>
                                     @enderror
@@ -120,7 +143,8 @@
                         <div class="form-input">
                             <label for="billing_postal_code">Postcode <span class="required">*</span></label>
                             <input type="text" name="billing_postal_code" autocomplete="postal-code"
-                                value="{{ old('billing_postal_code') }}">
+                                value="{{ old('billing_postal_code') }}"
+                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
                             @error('billing_postal_code')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -129,7 +153,8 @@
                         <div class="form-input">
                             <label for="billing_city">Plaats <span class="required">*</span></label>
                             <input type="text" name="billing_city" autocomplete="address-level2"
-                                value="{{ old('billing_city') }}">
+                                value="{{ old('billing_city') }}"
+                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
                             @error('billing_city')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -155,13 +180,23 @@
 
                         <div class="form-input">
                             <label for="billing_country">Land <span class="required">*</span></label>
-                            <select name="billing_country" autocomplete="country">
-                                <option value="NL" {{ old('billing_country') == 'nl' ? 'selected' : '' }}>
-                                    Nederland
-                                </option>
-                                <option value="BE" {{ old('billing_country') == 'be' ? 'selected' : '' }}>België
-                                </option>
-                            </select>
+                            @if(config('services.google.maps_api_key'))
+                                {{-- Autocomplete mode: filled automatically by Google Places --}}
+                                <input type="hidden" name="billing_country" id="billing_country"
+                                    value="{{ old('billing_country', '') }}">
+                                <input type="text" id="billing_country_display" readonly
+                                    value="{{ old('billing_country') ? ($countryNames[old('billing_country')] ?? old('billing_country')) : '' }}"
+                                    style="background-color:#f5f5f5; cursor:default;"
+                                    placeholder="Wordt ingevuld via adres zoeken">
+                            @else
+                                {{-- Fallback: select with only countries that have shipping configured --}}
+                                <select name="billing_country" id="billing_country" autocomplete="country">
+                                    <option value="" disabled {{ old('billing_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
+                                    @foreach($shippingCountries as $code => $name)
+                                        <option value="{{ $code }}" {{ old('billing_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
+                                    @endforeach
+                                </select>
+                            @endif
                             @error('billing_country')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -212,11 +247,28 @@
                             </div>
                         </div>
 
+                        {{-- Google Places address search --}}
+                        <div class="form-input address-autocomplete-wrap" id="shipping-autocomplete-wrap">
+                            <label for="shipping_address_search">
+                                <i class="fa-solid fa-magnifying-glass" style="margin-right:4px;"></i>
+                                Adres zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ om automatisch in te vullen)</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="shipping_address_search"
+                                placeholder="bijv. Keizersgracht 1, Amsterdam"
+                                autocomplete="off"
+                                class="address-search-input"
+                            >
+                            <p class="address-autocomplete-hint">Of vul het adres hieronder handmatig in.</p>
+                        </div>
+
                         <div class="street-box">
                             <div class="form-input street">
                                 <label for="shipping_street">Straatnaam</label>
                                 <input type="text" name="shipping_street" autocomplete="shipping address-line1"
-                                    value="{{ old('shipping_street') }}">
+                                    value="{{ old('shipping_street') }}"
+                                    @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
                                 @error('shipping_street')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
@@ -226,7 +278,8 @@
                                     <label for="shipping_house_number">Huisnummer</label>
                                     <input type="number" name="shipping_house_number"
                                         autocomplete="shipping address-line2"
-                                        value="{{ old('shipping_house_number') }}">
+                                        value="{{ old('shipping_house_number') }}"
+                                        @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="-" @endif>
                                     @error('shipping_house_number')
                                         <div class="error">{{ $message }}</div>
                                     @enderror
@@ -245,7 +298,8 @@
                         <div class="form-input">
                             <label for="shipping_postal_code">Postcode</label>
                             <input type="text" name="shipping_postal_code" autocomplete="shipping postal-code"
-                                value="{{ old('shipping_postal_code') }}">
+                                value="{{ old('shipping_postal_code') }}"
+                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
                             @error('shipping_postal_code')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -254,7 +308,8 @@
                         <div class="form-input">
                             <label for="shipping_city">Plaats</label>
                             <input type="text" name="shipping_city" autocomplete="shipping address-level2"
-                                value="{{ old('shipping_city') }}">
+                                value="{{ old('shipping_city') }}"
+                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
                             @error('shipping_city')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -280,10 +335,23 @@
 
                         <div class="form-input">
                             <label for="shipping_country">Land</label>
-                            <select name="shipping_country" autocomplete="shipping country">
-                                <option value="NL">Nederland</option>
-                                <option value="BE">België</option>
-                            </select>
+                            @if(config('services.google.maps_api_key'))
+                                {{-- Autocomplete mode: filled automatically by Google Places --}}
+                                <input type="hidden" name="shipping_country" id="shipping_country"
+                                    value="{{ old('shipping_country', '') }}">
+                                <input type="text" id="shipping_country_display" readonly
+                                    value="{{ old('shipping_country') ? ($countryNames[old('shipping_country')] ?? old('shipping_country')) : '' }}"
+                                    style="background-color:#f5f5f5; cursor:default;"
+                                    placeholder="Wordt ingevuld via adres zoeken">
+                            @else
+                                {{-- Fallback: select with only countries that have shipping configured --}}
+                                <select name="shipping_country" id="shipping_country" autocomplete="shipping country">
+                                    <option value="" disabled {{ old('shipping_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
+                                    @foreach($shippingCountries as $code => $name)
+                                        <option value="{{ $code }}" {{ old('shipping_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
+                                    @endforeach
+                                </select>
+                            @endif
                             @error('shipping_country')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -405,7 +473,7 @@
     <div class="gradient-border"></div>
     <x-footer></x-footer>
     <script>
-        // Toggle alternate shipping address
+        // ─── Toggle alternate shipping address ───────────────────────────────
         document.addEventListener('DOMContentLoaded', function() {
             const altShippingCheckbox = document.getElementById('alt-shipping');
             const shippingFields = document.getElementById('shipping-fields');
@@ -419,12 +487,199 @@
                     }
                 });
 
-                // Check on page load if checkbox is checked
                 if (altShippingCheckbox.checked) {
                     shippingFields.classList.add('show');
                 }
             }
         });
+
+        // ─── Google Places Autocomplete ──────────────────────────────────────
+        @if(config('services.google.maps_api_key'))
+
+        // Dutch country names (from backend)
+        const countryNames = @json($countryNames);
+
+        // Countries with shipping configured (lowercase for Google Places API)
+        const shippingCountryCodes = @json(array_map('strtolower', array_keys($shippingCountries)));
+
+        function initAddressAutocomplete() {
+            setupAutocomplete('billing_address_search', {
+                street:         '[name="billing_street"]',
+                houseNumber:    '[name="billing_house_number"]',
+                postalCode:     '[name="billing_postal_code"]',
+                city:           '[name="billing_city"]',
+                countryHidden:  'billing_country',
+                countryDisplay: 'billing_country_display',
+            });
+
+            setupAutocomplete('shipping_address_search', {
+                street:         '[name="shipping_street"]',
+                houseNumber:    '[name="shipping_house_number"]',
+                postalCode:     '[name="shipping_postal_code"]',
+                city:           '[name="shipping_city"]',
+                countryHidden:  'shipping_country',
+                countryDisplay: 'shipping_country_display',
+            });
+        }
+
+        function setupAutocomplete(inputId, fields) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+
+            const autocomplete = new google.maps.places.Autocomplete(input, {
+                types: ['address'],
+                componentRestrictions: { country: shippingCountryCodes },
+                fields: ['address_components'],
+            });
+
+            autocomplete.addListener('place_changed', function () {
+                const place = autocomplete.getPlace();
+                if (!place.address_components) return;
+
+                // Reset all target fields first
+                [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
+                    const el = document.querySelector(sel);
+                    if (el) el.value = '';
+                });
+
+                let streetName = '';
+                let houseNumber = '';
+
+                place.address_components.forEach(component => {
+                    const types = component.types;
+
+                    if (types.includes('route')) {
+                        streetName = component.long_name;
+                    }
+                    if (types.includes('street_number')) {
+                        houseNumber = component.long_name;
+                    }
+                    if (types.includes('postal_code')) {
+                        const el = document.querySelector(fields.postalCode);
+                        if (el) el.value = component.long_name;
+                    }
+                    if (types.includes('locality') || types.includes('postal_town')) {
+                        const el = document.querySelector(fields.city);
+                        if (el && !el.value) el.value = component.long_name;
+                    }
+                    if (types.includes('country')) {
+                        const countryCode = component.short_name.toUpperCase();
+                        const countryName = countryNames[countryCode] || component.long_name;
+
+                        // Set hidden input value
+                        const hiddenEl = document.getElementById(fields.countryHidden);
+                        if (hiddenEl) hiddenEl.value = countryCode;
+
+                        // Set readonly display
+                        const displayEl = document.getElementById(fields.countryDisplay);
+                        if (displayEl) displayEl.value = countryName;
+
+                        // Check shipping availability, passing the name for the popup
+                        checkShippingAvailability(countryCode, countryName);
+                    }
+                });
+
+                const streetEl = document.querySelector(fields.street);
+                if (streetEl) streetEl.value = streetName;
+
+                const houseEl = document.querySelector(fields.houseNumber);
+                if (houseEl) houseEl.value = houseNumber;
+
+                // Clear the search box
+                input.value = '';
+
+                // Highlight filled fields briefly
+                [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
+                    const el = document.querySelector(sel);
+                    if (el && el.value) {
+                        el.classList.add('address-autofilled');
+                        setTimeout(() => el.classList.remove('address-autofilled'), 2500);
+                    }
+                });
+
+                // Fire input + change events on all filled fields so MyParcel widget
+                // and other listeners (shipping cost etc.) react to the new values
+                [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
+                    const el = document.querySelector(sel);
+                    if (el && el.value) {
+                        el.dispatchEvent(new Event('input',  { bubbles: true }));
+                        el.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                });
+                // Also fire on the hidden country input so shipping cost + MyParcel update
+                const countryHiddenEl = document.getElementById(fields.countryHidden);
+                if (countryHiddenEl && countryHiddenEl.value) {
+                    countryHiddenEl.dispatchEvent(new Event('input',  { bubbles: true }));
+                    countryHiddenEl.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+
+                // Signal MyParcel to reload pickup locations for the new address
+                document.dispatchEvent(new CustomEvent('addressAutofilled'));
+            });
+        }
+
+        // Expose callback for the async Google Maps loader
+        window.initAddressAutocomplete = initAddressAutocomplete;
+
+        // Also try immediately in case the script already loaded
+        if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+            initAddressAutocomplete();
+        }
+
+        // ─── Shipping availability popup ─────────────────────────────────────
+        function checkShippingAvailability(countryCode, countryName) {
+            fetch(`/api/shipping-cost?country=${countryCode}`)
+                .then(r => r.json())
+                .then(data => {
+                    // Dispatch event so app.js shipping calculator updates too
+                    document.dispatchEvent(new CustomEvent('countryChanged'));
+
+                    if (!data.found) {
+                        showNoShippingPopup(countryName);
+                    }
+                });
+        }
+
+        function showNoShippingPopup(countryName) {
+            // Remove existing popup if any
+            const existing = document.getElementById('no-shipping-popup');
+            if (existing) existing.remove();
+
+            const overlay = document.createElement('div');
+            overlay.id = 'no-shipping-popup';
+            overlay.innerHTML = `
+                <div class="no-shipping-overlay">
+                    <div class="no-shipping-modal">
+                        <div class="no-shipping-icon">🚫</div>
+                        <h3>Bezorging niet beschikbaar</h3>
+                        <p>
+                            Helaas bieden wij momenteel nog geen bezorging aan naar
+                            <strong>${countryName}</strong>.
+                        </p>
+                        <p style="font-size:14px; color:#666; margin-top:8px;">
+                            Wij bezorgen momenteel naar Nederland en België.<br>
+                            Kies een ander afleveradres of neem contact met ons op.
+                        </p>
+                        <div style="display:flex; gap:12px; justify-content:center; margin-top:20px; flex-wrap:wrap;">
+                            <button class="btn no-shipping-close-btn" onclick="document.getElementById('no-shipping-popup').remove();">
+                                Ander adres kiezen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(overlay);
+
+            // Close on overlay click
+            overlay.querySelector('.no-shipping-overlay').addEventListener('click', function(e) {
+                if (e.target === this) overlay.remove();
+            });
+        }
+        @else
+        // Google Maps API key not configured – autocomplete disabled.
+        document.querySelectorAll('.address-autocomplete-wrap').forEach(el => el.style.display = 'none');
+        @endif
     </script>
 </div>
 </x-layout>

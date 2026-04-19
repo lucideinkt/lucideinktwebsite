@@ -10,42 +10,55 @@ export function initShippingCostCalculator() {
     const shippingCostEl = document.getElementById('shipping-cost');
     const orderTotalEl = document.getElementById('order-total');
     const altShippingCheckbox = document.getElementById('alt-shipping');
+    // Support both select (no Google Maps) and hidden input (Google Maps mode)
     const billingCountrySelect = document.querySelector('select[name="billing_country"]');
+    const billingCountryInput = document.getElementById('billing_country');
     const shippingCountrySelect = document.querySelector('select[name="shipping_country"]');
+    const shippingCountryInput = document.getElementById('shipping_country');
 
     function getSelectedCountry() {
-        if (altShippingCheckbox?.checked && shippingCountrySelect) {
-            return shippingCountrySelect.value;
+        if (altShippingCheckbox?.checked) {
+            const val = shippingCountrySelect?.value || shippingCountryInput?.value;
+            if (val) return val;
         }
-        return billingCountrySelect?.value || 'NL';
+        return billingCountrySelect?.value || billingCountryInput?.value || '';
     }
 
     function updateShippingCost() {
         if (!shippingCostEl || !orderTotalEl) return;
 
         const country = getSelectedCountry();
-        if (!country) return;
+        const subtotal = parseFloat(orderTotalEl.dataset.subtotal) || 0;
+
+        if (!country) {
+            shippingCostEl.textContent = '';
+            orderTotalEl.textContent = '€ ' + subtotal.toFixed(2).replace('.', ',');
+            return;
+        }
 
         fetch(`/api/shipping-cost?country=${country}`)
             .then(response => response.json())
             .then(data => {
                 const cost = parseFloat(data.cost) || 0;
-                shippingCostEl.textContent = 'Verzendkosten: ' + formatEuro(cost);
-
-                let subtotal = 0;
-                if (orderTotalEl.dataset.subtotal) {
-                    subtotal = parseFloat(orderTotalEl.dataset.subtotal);
+                if (data.found) {
+                    shippingCostEl.textContent = cost === 0
+                        ? 'Verzendkosten: gratis'
+                        : 'Verzendkosten: ' + formatEuro(cost);
                 } else {
-                    const match = orderTotalEl.textContent.replace(',', '.').match(/([\d\.]+)/);
-                    subtotal = match ? parseFloat(match[1]) : 0;
+                    shippingCostEl.textContent = '';
                 }
-
-                orderTotalEl.textContent = 'Totaal: ' + formatEuro(subtotal + cost);
+                orderTotalEl.textContent = 'Totaal: ' + formatEuro(subtotal + (data.found ? cost : 0));
             });
     }
 
+    // Listen for Google Places autocomplete country change (hidden input mode)
+    document.addEventListener('countryChanged', updateShippingCost);
+    // Listen for select changes (fallback mode)
     billingCountrySelect?.addEventListener('change', updateShippingCost);
     shippingCountrySelect?.addEventListener('change', updateShippingCost);
+    // Listen for hidden input changes (dispatched by autocomplete)
+    billingCountryInput?.addEventListener('change', updateShippingCost);
+    shippingCountryInput?.addEventListener('change', updateShippingCost);
     altShippingCheckbox?.addEventListener('change', updateShippingCost);
 
     updateShippingCost();

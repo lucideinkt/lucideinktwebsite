@@ -3518,7 +3518,7 @@ thead {
 }
 
 .order-total-row.final-total {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     padding: 12px 0 0;
     border-top: 2px solid var(--main-font-color);
@@ -3527,7 +3527,7 @@ thead {
 
 .order-total-row.final-total .order-total-label,
 .order-total-row.final-total .order-total-value {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--main-font-color);
 }

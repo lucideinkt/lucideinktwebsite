@@ -34,7 +34,32 @@ class CheckoutController extends Controller
             return redirect('/winkel')->with('error', 'Je winkelwagen is leeg.');
         }
         $totaalZonderVerzendkosten = collect($cart)->sum(fn($item) => $item['price'] * $item['quantity']);
-        return view('checkout.index', compact('cart', 'totaalZonderVerzendkosten'));
+
+        // Countries that have at least one published shipping cost (for fallback select)
+        $shippingCountryCodes = \App\Models\ShippingCost::where('is_published', 1)
+            ->distinct()
+            ->pluck('country')
+            ->toArray();
+
+        // Dutch country name map
+        $countryNames = [
+            'NL' => 'Nederland',   'BE' => 'België',         'DE' => 'Duitsland',
+            'FR' => 'Frankrijk',   'LU' => 'Luxemburg',      'GB' => 'Verenigd Koninkrijk',
+            'AT' => 'Oostenrijk',  'CH' => 'Zwitserland',    'ES' => 'Spanje',
+            'IT' => 'Italië',      'PL' => 'Polen',          'SE' => 'Zweden',
+            'DK' => 'Denemarken', 'NO' => 'Noorwegen',       'FI' => 'Finland',
+            'US' => 'Verenigde Staten', 'CA' => 'Canada',    'AU' => 'Australië',
+            'TR' => 'Turkije',     'MA' => 'Marokko',
+        ];
+
+        // Build [code => name] for fallback select (only published countries)
+        $shippingCountries = [];
+        foreach ($shippingCountryCodes as $code) {
+            $shippingCountries[$code] = $countryNames[$code] ?? $code;
+        }
+        asort($shippingCountries); // alphabetical
+
+        return view('checkout.index', compact('cart', 'totaalZonderVerzendkosten', 'shippingCountries', 'countryNames'));
     }
 
     public function store(Request $request)
@@ -420,8 +445,8 @@ class CheckoutController extends Controller
     private function getShippingCountry(Request $request): string
     {
         return $request->boolean('alt-shipping')
-            ? $request->input('shipping_country', 'NL')
-            : $request->input('billing_country', 'NL');
+            ? $request->input('shipping_country', '')
+            : $request->input('billing_country', '');
     }
 
     private function findShippingCost(string $country)
