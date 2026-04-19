@@ -1129,14 +1129,23 @@
             const removeBtn = document.getElementById('hl-remove-btn');
             if (removeBtn) removeBtn.toggleAttribute('hidden', !existing);
             hlPopup.removeAttribute('hidden');
-            const pw = hlPopup.offsetWidth || 220;
+            const MARGIN = 8;
+            const VW = window.innerWidth;
+            const VH = window.innerHeight;
+            // Read real dimensions now that the element is visible
+            const pw = hlPopup.offsetWidth  || 220;
             const ph = hlPopup.offsetHeight || 44;
-            let x = rect.left + rect.width / 2;
-            let y = rect.top - ph - 10;
-            if (y < 8) y = rect.bottom + 10;
-            x = Math.max(pw / 2 + 8, Math.min(window.innerWidth - pw / 2 - 8, x));
-            hlPopup.style.left = x + 'px';
-            hlPopup.style.top  = y + 'px';
+            // Desired position: horizontally centred on the selection
+            let left = rect.left + rect.width / 2 - pw / 2;
+            // Clamp left edge so popup never overflows left or right
+            left = Math.max(MARGIN, Math.min(VW - pw - MARGIN, left));
+            // Prefer above the selection; fall back to below
+            let top = rect.top - ph - 10;
+            if (top < MARGIN) top = rect.bottom + 10;
+            // Final vertical clamp — never overflow bottom of viewport
+            top = Math.max(MARGIN, Math.min(VH - ph - MARGIN, top));
+            hlPopup.style.left = left + 'px';
+            hlPopup.style.top  = top  + 'px';
         }
 
         function hlHide() {
