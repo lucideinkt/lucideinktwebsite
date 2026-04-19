@@ -24,7 +24,7 @@
                 <strong>Bij de tweede</strong>, spirituele Tafsirs worden Qur’anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
                 </p>
 
-            <img class="stapel-one" src="{{ asset('images/boeken-stapel.webp') }}" alt="Risale-i Nur">
+            <img class="stapel-one" src="{{ asset('images/boeken-stapel.webp') }}" alt="Risale-i Nur" loading="lazy" decoding="async">
 
                 <p>
                 <strong>In de Risale-i Nur daarentegen</strong> wordt deze tweede benadering niet ter aanvulling, maar direct als grondslag gehanteerd. De verankering van fundamentele geloofswaarheden is het primaire doel van deze spirituele Tafsir. Immers, tegenover de hedendaagse spirituele ziektes en antireligieuze indoctrinaties kan een geloofsovertuiging die op navolging berust moeilijk standhouden.
@@ -33,7 +33,7 @@
 
                     Om een onwrikbare overtuiging en een bewust geloof te verschaffen,
 
-                    <img class="stapel-two" src="{{ asset('images/boeken-stapel.webp') }}" alt="Risale-i Nur">
+                    <img class="stapel-two" src="{{ asset('images/boeken-stapel.webp') }}" alt="Risale-i Nur" loading="lazy" decoding="async">
 
                     heeft de Risale-i Nur derhalve elke vorm van subjectiviteit vermeden; met uiterst objectieve, rationele en doorslaggevende argumenten worden in deze gezegende boekenreeks zelfs de lastigste geloofswaarheden volwaardig uiteengezet.
 
@@ -41,7 +41,7 @@
                     <strong>Als een ware spirituele tafsir van de Qur’an voldoet de Risale-i Nur aan alle behoeften van deze tijd. Het enige wat van de lezer gevraagd wordt, is lezen met een aandachtige blik en een onbevooroordeeld hart</strong>.
                 </p>
 
-            <img src="{{ asset('images/oval_ornament.webp') }}" alt="">
+            <img src="{{ asset('images/oval_ornament.webp') }}" alt="" loading="lazy" decoding="async">
 
         </div>
     </main>

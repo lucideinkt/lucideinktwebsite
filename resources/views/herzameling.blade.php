@@ -27,7 +27,7 @@
                     <p>Aan de hand van een symbolisch verhaal worden waarheden over de herzameling en het hiernamaals verhelderd. Tevens worden verscheidene voorbeelden aangevoerd, zoals een ontbonden militaire eenheid waarvan de gedemobiliseerde soldaten met één bevel opnieuw tot een eenheid kunnen worden samengebracht, om zodoende te illustreren hoe de verspreide Goddelijke <strong>'soldaten'</strong>, oftewel de <strong>"atomen"</strong> van een ontbonden mensenlichaam, op bevel van de Schepper tot een lichaam kunnen worden herzameld.</p>
                 </div>
                 <div class="content-image">
-                    <img src="{{ asset('images/bookinflower.webp') }}" alt="">
+                    <img src="{{ asset('images/bookinflower.webp') }}" alt="" loading="lazy" decoding="async">
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
             <div style="text-align: center;max-width: 700px; margin: 0 auto"><strong>Om deze waarheden ook voor een breder publiek toegankelijk te maken, hebben wij onze eerste Engelse vertaling van dit traktaat uitgebracht:</strong></div>
 
             <div class="bottom-books-box">
-                <img src="{{ asset('images/booksinbox.webp') }}" alt="">
+                <img src="{{ asset('images/booksinbox.webp') }}" alt="" loading="lazy" decoding="async">
             </div>
 
             <p class="bottom-links">
