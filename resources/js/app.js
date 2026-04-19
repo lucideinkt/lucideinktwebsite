@@ -318,6 +318,34 @@ document.addEventListener('DOMContentLoaded', () => {
     initAlternateShipping();
 
     // ----------------------------------------------------------
+    // CLEAR BILLING FIELDS BUTTON
+    // ----------------------------------------------------------
+
+    (function initClearBillingFields() {
+        const btn = document.getElementById('clear-billing-fields');
+        if (!btn) return;
+
+        btn.addEventListener('click', () => {
+            const card = document.querySelector('.customer-details.checkout-card:not(.alternate)');
+            if (!card) return;
+
+            // Clear all visible text/email/number/textarea fields
+            card.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), textarea').forEach(el => {
+                el.value = '';
+            });
+
+            // Clear hidden country input and its display field
+            const hiddenCountry = document.getElementById('billing_country');
+            if (hiddenCountry) hiddenCountry.value = '';
+            const displayCountry = document.getElementById('billing_country_display');
+            if (displayCountry) displayCountry.value = '';
+
+            // Re-trigger shipping cost update (country is now empty)
+            document.dispatchEvent(new CustomEvent('countryChanged'));
+        });
+    })();
+
+    // ----------------------------------------------------------
     // ORDER CALCULATION (instant price updates)
     // ----------------------------------------------------------
 

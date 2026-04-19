@@ -52,7 +52,15 @@
 
                 <div>
                     <div class="item customer-details checkout-card">
-                        <h3 class="checkout-section-title">Factuurgegevens</h3>
+                        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px;">
+                            <h3 class="checkout-section-title" style="margin-bottom:0;">Factuurgegevens</h3>
+                            <button type="button" id="clear-billing-fields"
+                                style="flex-shrink:0; background:none; border:1px solid #ccc; border-radius:6px; padding:5px 12px; font-size:13px; color:#888; cursor:pointer; line-height:1.4;"
+                                onmouseover="this.style.background='#f5f5f5';this.style.color='#333';"
+                                onmouseout="this.style.background='none';this.style.color='#888';">
+                                <i class="fa fa-rotate-left" style="margin-right:4px;"></i>Wissen
+                            </button>
+                        </div>
 
                         @auth
                             <div>
@@ -105,8 +113,8 @@
                                 placeholder="bijv. Keizersgracht 1, Amsterdam"
                                 autocomplete="off"
                                 class="address-search-input"
+                                onkeydown="if(event.key==='Enter'){event.preventDefault();}"
                             >
-                            <p class="address-autocomplete-hint">Of vul het adres hieronder handmatig in.</p>
                         </div>
 
                         <div class="street-box">
@@ -226,7 +234,15 @@
                     </div>
 
                     <div class="item customer-details alternate checkout-card" id="shipping-fields">
-                        <h3 class="checkout-section-title">Alternatief verzendadres</h3>
+                        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px;">
+                            <h3 class="checkout-section-title" style="margin-bottom:0;">Alternatief verzendadres</h3>
+                            <button type="button" id="clear-shipping-fields"
+                                style="flex-shrink:0; background:none; border:1px solid #ccc; border-radius:6px; padding:5px 12px; font-size:13px; color:#888; cursor:pointer; line-height:1.4;"
+                                onmouseover="this.style.background='#f5f5f5';this.style.color='#333';"
+                                onmouseout="this.style.background='none';this.style.color='#888';">
+                                <i class="fa fa-rotate-left" style="margin-right:4px;"></i>Wissen
+                            </button>
+                        </div>
 
                         <div class="name-box">
                             <div class="form-input">
@@ -259,8 +275,8 @@
                                 placeholder="bijv. Keizersgracht 1, Amsterdam"
                                 autocomplete="off"
                                 class="address-search-input"
+                                onkeydown="if(event.key==='Enter'){event.preventDefault();}"
                             >
-                            <p class="address-autocomplete-hint">Of vul het adres hieronder handmatig in.</p>
                         </div>
 
                         <div class="street-box">
@@ -369,7 +385,7 @@
                             <input style="width: fit-content; margin-bottom: 10px" type="text"
                                 name="discount_code" id="discount_code" value="{{ old('discount_code') }}"
                                 placeholder="Vul kortingscode in">
-                            <button id="add_discount_code" style="height: 32px" class="btn small"><span
+                            <button type="button" id="add_discount_code" style="height: 32px" class="btn small"><span
                                     class="loader" style="display:none"></span>Kortingscode toepassen</button>
                         </div>
                         @error('discount_code')
@@ -473,6 +489,55 @@
     <div class="gradient-border"></div>
     <x-footer></x-footer>
     <script>
+        // ─── Clear billing fields button ─────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            var clearBtn = document.getElementById('clear-billing-fields');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function () {
+                    var fields = [
+                        'billing_email', 'billing_first_name', 'billing_last_name',
+                        'billing_street', 'billing_house_number', 'billing_house_number-add',
+                        'billing_postal_code', 'billing_city', 'billing_phone', 'billing_company',
+                        'order_note'
+                    ];
+                    fields.forEach(function (name) {
+                        var el = document.querySelector('[name="' + name + '"]');
+                        if (el) el.value = '';
+                    });
+                    var search = document.getElementById('billing_address_search');
+                    if (search) search.value = '';
+                    var hiddenCountry = document.getElementById('billing_country');
+                    if (hiddenCountry) hiddenCountry.value = '';
+                    var displayCountry = document.getElementById('billing_country_display');
+                    if (displayCountry) displayCountry.value = '';
+                    document.dispatchEvent(new CustomEvent('countryChanged'));
+                });
+            }
+
+            // ─── Clear shipping fields button ─────────────────────────────────
+            var clearShippingBtn = document.getElementById('clear-shipping-fields');
+            if (clearShippingBtn) {
+                clearShippingBtn.addEventListener('click', function () {
+                    var fields = [
+                        'shipping_first_name', 'shipping_last_name',
+                        'shipping_street', 'shipping_house_number', 'shipping_house_number-add',
+                        'shipping_postal_code', 'shipping_city', 'shipping_phone', 'shipping_company'
+                    ];
+                    fields.forEach(function (name) {
+                        var el = document.querySelector('[name="' + name + '"]');
+                        if (el) el.value = '';
+                    });
+                    var search = document.getElementById('shipping_address_search');
+                    if (search) search.value = '';
+                    var hiddenCountry = document.getElementById('shipping_country');
+                    if (hiddenCountry) hiddenCountry.value = '';
+                    var displayCountry = document.getElementById('shipping_country_display');
+                    if (displayCountry) displayCountry.value = '';
+                    document.dispatchEvent(new CustomEvent('countryChanged'));
+                });
+            }
+        });
+
         // ─── Toggle alternate shipping address ───────────────────────────────
         document.addEventListener('DOMContentLoaded', function() {
             const altShippingCheckbox = document.getElementById('alt-shipping');
