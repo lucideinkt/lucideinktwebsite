@@ -56,17 +56,17 @@ function initShippingCostCalculator() {
     const shippingCostEl = document.getElementById('shipping-cost');
     const orderTotalEl = document.getElementById('order-total');
     const altShippingCheckbox = document.getElementById('alt-shipping');
-    const billingCountrySelect = document.querySelector('select[name="billing_country"]');
-    const shippingCountrySelect = document.querySelector('select[name="shipping_country"]');
+    // Country is now filled by Google Places autocomplete via hidden inputs
+    const billingCountryInput = document.getElementById('billing_country');
+    const shippingCountryInput = document.getElementById('shipping_country');
 
     // Get the country to calculate shipping for
     function getSelectedCountry() {
         // If alternate shipping is checked, use shipping country
-        if (altShippingCheckbox?.checked && shippingCountrySelect) {
-            return shippingCountrySelect.value;
+        if (altShippingCheckbox?.checked && shippingCountryInput?.value) {
+            return shippingCountryInput.value;
         }
-        // Otherwise use billing country (default to NL)
-        return billingCountrySelect?.value || 'NL';
+        return billingCountryInput?.value || '';
     }
 
     // Update shipping cost when country changes
@@ -74,40 +74,47 @@ function initShippingCostCalculator() {
         if (!shippingCostEl || !orderTotalEl) return;
 
         const country = getSelectedCountry();
-        if (!country) return;
+        const subtotal = parseFloat(orderTotalEl.dataset.subtotal) || 0;
+
+        if (!country) {
+            // No country yet — hide shipping line, show only subtotal
+            shippingCostEl.textContent = '';
+            orderTotalEl.textContent = '€ ' + subtotal.toFixed(2).replace('.', ',');
+            return;
+        }
 
         // Fetch shipping cost from API
         fetch(`/api/shipping-cost?country=${country}`)
             .then(response => response.json())
             .then(data => {
                 const cost = parseFloat(data.cost) || 0;
-                shippingCostEl.textContent = 'Verzendkosten: ' + formatEuro(cost);
-
-                // Calculate new total (subtotal + shipping)
-                let subtotal = 0;
-                if (orderTotalEl.dataset.subtotal) {
-                    subtotal = parseFloat(orderTotalEl.dataset.subtotal);
+                if (data.found) {
+                    shippingCostEl.textContent = cost === 0
+                        ? 'Verzendkosten: gratis'
+                        : 'Verzendkosten: ' + formatEuro(cost);
                 } else {
-                    // Fallback: extract from text
-                    const match = orderTotalEl.textContent.replace(',', '.').match(/([\d\.]+)/);
-                    subtotal = match ? parseFloat(match[1]) : 0;
+                    shippingCostEl.textContent = '';
                 }
 
-                orderTotalEl.textContent = 'Totaal: ' + formatEuro(subtotal + cost);
+                orderTotalEl.textContent = 'Totaal: ' + formatEuro(subtotal + (data.found ? cost : 0));
             });
     }
 
-    // Listen for changes
-    billingCountrySelect?.addEventListener('change', updateShippingCost);
-    shippingCountrySelect?.addEventListener('change', updateShippingCost);
+    // Listen for the custom event fired by Google Places autocomplete
+    document.addEventListener('countryChanged', updateShippingCost);
+    // Also listen for manual select changes
+    document.getElementById('billing_country')?.addEventListener('change', updateShippingCost);
+    document.getElementById('shipping_country')?.addEventListener('change', updateShippingCost);
     altShippingCheckbox?.addEventListener('change', updateShippingCost);
 
-    // Calculate on page load
+    // Calculate on page load (skips if country is empty)
     updateShippingCost();
 }
 
-// Run shipping calculator when page loads
-initShippingCostCalculator();
+// Run shipping calculator when DOM is ready (not before)
+document.addEventListener('DOMContentLoaded', () => {
+    initShippingCostCalculator();
+});
 
 // ============================================================
 // MAIN INITIALIZATION (runs when DOM is ready)

@@ -99,8 +99,6 @@
                             <span class="order-total-value">€ {{ number_format($shippingAmount, 2, ',', '.') }}</span>
                         </div>
 
-                        <div class="order-total-divider"></div>
-
                         <div class="order-total-row final-total">
                             <span class="order-total-label">Totaal (incl. verzendkosten)</span>
                             <span class="order-total-value">€ {{ number_format($totalInclShipping, 2, ',', '.') }}</span>

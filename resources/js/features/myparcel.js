@@ -201,6 +201,13 @@ export function initMyParcelWidget() {
             );
         }
 
+        // Listen for Google Places address autofill.
+        // Wait 300ms so all fields are fully set, then force a fresh widget update
+        // so pickup locations reload for the new address.
+        document.addEventListener('addressAutofilled', () => {
+            setTimeout(() => updateWidget(), 300);
+        });
+
         // Listen for widget updates
         document.addEventListener('myparcel_updated_delivery_options', (event) => {
             if (!myparcelEnabled) return;

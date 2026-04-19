@@ -102,7 +102,10 @@ class ShippingCostController extends Controller
             ->first();
 
         $cost = $shippingCost ? $shippingCost->amount : 0;
-        return response()->json(['cost' => $cost]);
+        return response()->json([
+            'cost'  => $cost,
+            'found' => (bool) $shippingCost,
+        ]);
     }
 
     public function get()
