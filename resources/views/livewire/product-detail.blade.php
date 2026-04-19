@@ -13,6 +13,8 @@
                              src="{{ $img }}"
                              alt="{{ $product->title }} {{ $idx + 1 }}"
                              loading="{{ $idx === 0 ? 'eager' : 'lazy' }}"
+                             decoding="{{ $idx === 0 ? 'sync' : 'async' }}"
+                             fetchpriority="{{ $idx === 0 ? 'high' : 'auto' }}"
                              data-index="{{ $idx }}">
                     @endforeach
 
@@ -34,7 +36,7 @@
                             <li class="pd-gallery__thumb {{ $idx === 0 ? 'is-active' : '' }}"
                                 data-index="{{ $idx }}" role="button" tabindex="0"
                                 aria-label="Afbeelding {{ $idx + 1 }}">
-                                <img src="{{ $img }}" alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy">
+                                <img src="{{ $img }}" alt="{{ $product->title }} {{ $idx + 1 }}" loading="lazy" decoding="async">
                             </li>
                         @endforeach
                     </ul>

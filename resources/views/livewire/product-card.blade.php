@@ -2,7 +2,7 @@
     <a href="{{ route('productShow', $product->slug) }}" class="product-card-link">
         <div class="product-card-image-wrapper">
             @if ($this->imageUrl)
-                <img src="{{ $this->imageUrl }}" alt="{{ $product->title }}" class="product-card-image" loading="lazy">
+                <img src="{{ $this->imageUrl }}" alt="{{ $product->title }}" class="product-card-image" loading="lazy" decoding="async">
             @else
                 <div class="product-card-image-placeholder">
                     <i class="fa-solid fa-book"></i>
