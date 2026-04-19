@@ -124,6 +124,10 @@
         /* GPU layer for overlay panels — prevents theme/popover repaints thrashing book content */
         .reader-control-sheet, .toc-panel, .hl-popup, .reader-search-panel { will-change: transform; }
         .book-reader-scope { contain: style; }
+        /* Suppress native browser text-selection callout (iOS long-press copy/search popup) */
+        #reader-content {
+            -webkit-touch-callout: none; /* iOS Safari */
+        }
     </style>
 </head>
 <body>
@@ -1435,6 +1439,9 @@
             clearTimeout(_hlTimer);
             _hlTimer = setTimeout(hlCheckSel, 320);
         }, { passive: true });
+
+        // Suppress native browser context menu (right-click & long-press) so only our popup shows
+        readerEl?.addEventListener('contextmenu', e => e.preventDefault());
 
         document.addEventListener('selectionchange', () => {
             const sel = window.getSelection();
