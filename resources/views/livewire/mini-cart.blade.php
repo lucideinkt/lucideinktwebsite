@@ -22,12 +22,21 @@
                             @endif
                         </p>
                         <div class="mini-cart-item-meta">
-                            <span class="mini-cart-item-qty">{{ $item['quantity'] }} ×</span>
+                            <div class="mini-cart-qty-controls">
+                                <button type="button" class="mini-cart-qty-btn" wire:click="updateQuantity({{ $item['product_id'] }}, {{ $item['quantity'] - 1 }})" aria-label="Minder">−</button>
+                                <span class="mini-cart-item-qty">{{ $item['quantity'] }}</span>
+                                <button type="button" class="mini-cart-qty-btn" wire:click="updateQuantity({{ $item['product_id'] }}, {{ $item['quantity'] + 1 }})" aria-label="Meer">+</button>
+                            </div>
                             <span class="mini-cart-item-price">€ {{ number_format($item['price'], 2, ',', '.') }}</span>
                         </div>
                     </div>
-                    <div class="mini-cart-item-subtotal">
-                        € {{ number_format($item['subtotal'], 2, ',', '.') }}
+                    <div class="mini-cart-item-right">
+                        <div class="mini-cart-item-subtotal">
+                            € {{ number_format($item['subtotal'], 2, ',', '.') }}
+                        </div>
+                        <button type="button" class="mini-cart-remove-btn" wire:click="removeItem({{ $item['product_id'] }})" aria-label="Verwijderen">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
                     </div>
                 </div>
             @endforeach
@@ -47,6 +56,9 @@
                 <i class="fa-solid fa-circle-info"></i>
                 Verzendkosten worden berekend bij het afrekenen
             </p>
+            <button type="button" class="mini-cart-clear-btn" wire:click="clearCart" wire:confirm="Weet je zeker dat je de winkelwagen wilt leegmaken?">
+                <i class="fa-solid fa-trash"></i> Winkelwagen leegmaken
+            </button>
         </div>
 
     @else
@@ -56,4 +68,3 @@
         </div>
     @endif
 </div>
-
