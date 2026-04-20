@@ -2,7 +2,9 @@
     <main class="container page">
         <div class="newsletter-unsubscribe-page__text-box">
             <div class="unsubscribe-icon-wrapper">
-                <i class="fa-solid fa-envelope-open-text"></i>
+                <div class="confirm-icon-circle confirm-icon-circle--unsubscribe">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
             </div>
 
             <h1 class="title">{{ $message }}</h1>
@@ -13,11 +15,10 @@
             </p>
 
             <div class="unsubscribe-actions">
-                <a href="{{ route('home') }}" class="btn btn-primary">
-                    <i class="fa-solid fa-home"></i> Terug naar homepage
+                <a href="{{ route('home') }}" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-home"></i> Terug naar homepagina
                 </a>
             </div>
-
         </div>
     </main>
     <div class="gradient-border"></div>

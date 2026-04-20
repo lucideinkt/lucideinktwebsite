@@ -3,7 +3,7 @@
    ========================================================= */
 
 .newsletter-unsubscribe-page__text-box {
-    background-color: #f5ecce;
+    background-color: #fff3cc;
     background-image: url("../../images/little-pluses.png");
     border-radius: 10px;
     padding: 60px 60px;
@@ -22,7 +22,7 @@
     font-size: 42px;
     font-weight: 400;
     margin-bottom: 30px;
-    margin-top: 20px;
+    margin-top: 8px;
     text-align: center;
     color: var(--main-font-color);
     line-height: 1.3;
@@ -32,13 +32,62 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .unsubscribe-icon-wrapper .fa-envelope-open-text {
     font-size: 60px;
+    opacity: 1;
+}
+
+/* Confirm icon circle – no border, just the icon */
+.confirm-icon-circle {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-icon-circle--success {
+    background: none;
+    border: none;
+}
+
+.confirm-icon-circle--success .fa-circle-check {
+    font-size: 58px;
+    color: #2c582f;
+}
+
+.confirm-icon-circle--info {
+    background: none;
+    border: none;
+}
+
+.confirm-icon-circle--info .fa-envelope-open-text {
+    font-size: 58px;
     color: var(--main-color);
     opacity: 1;
+}
+
+.confirm-icon-circle--unsubscribe {
+    background: none;
+    border: none;
+}
+
+.confirm-icon-circle--unsubscribe .fa-envelope-open-text {
+    font-size: 58px;
+    color: #7a6a55;
+    opacity: 0.85;
+}
+
+/* Smaller button variant for confirm/unsubscribe pages */
+.unsubscribe-actions .btn.btn-sm {
+    padding: 10px 22px;
+    font-size: 15px;
 }
 
 .unsubscribe-message {
@@ -102,10 +151,21 @@
         font-size: 32px;
         letter-spacing: 1px;
         margin-bottom: 20px;
+        margin-top: 6px;
     }
 
     .unsubscribe-icon-wrapper .fa-envelope-open-text {
         font-size: 60px;
+    }
+
+    .confirm-icon-circle {
+        width: 84px;
+        height: 84px;
+    }
+
+    .confirm-icon-circle--success .fa-circle-check,
+    .confirm-icon-circle--info .fa-envelope-open-text {
+        font-size: 48px;
     }
 
     .unsubscribe-message {
@@ -120,10 +180,10 @@
     }
 
     .unsubscribe-actions .btn {
-        width: 100%;
+        width: auto;
         justify-content: center;
-        padding: 12px 24px;
-        font-size: 16px;
+        padding: 3px 20px;
+        font-size: 0.95rem;
     }
 
     .ornament-divider {
@@ -141,6 +201,7 @@
     .newsletter-unsubscribe-page__text-box .title {
         font-size: 26px;
         margin-bottom: 15px;
+        margin-top: 4px;
     }
 
     .unsubscribe-icon-wrapper .fa-envelope-open-text {
@@ -152,8 +213,8 @@
     }
 
     .unsubscribe-actions .btn {
-        font-size: 15px;
-        padding: 10px 20px;
+        font-size: 0.9rem;
+        padding: 3px 18px;
     }
 }
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewsletterConfirmationMail;
 use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class NewsletterController extends Controller
@@ -26,23 +28,54 @@ class NewsletterController extends Controller
         if ($existing) {
             if ($existing->isSubscribed()) {
                 return back()->with('info', 'Dit e-mailadres is al ingeschreven voor onze nieuwsbrief.');
+            } elseif ($existing->isPending()) {
+                // Resend confirmation email
+                Mail::to($existing->email)->send(new NewsletterConfirmationMail($existing));
+                return back()->with('info', 'We hebben opnieuw een bevestigingsmail gestuurd. Controleer je inbox.');
             } else {
-                // Resubscribe
-                $existing->subscribe();
-                return back()->with('success', 'Welkom terug! U bent opnieuw ingeschreven voor onze nieuwsbrief.');
+                // Resubscribe (was unsubscribed) - send confirmation again
+                $confirmationToken = NewsletterSubscriber::generateConfirmationToken();
+                $existing->update([
+                    'status' => 'pending',
+                    'confirmation_token' => $confirmationToken,
+                ]);
+                Mail::to($existing->email)->send(new NewsletterConfirmationMail($existing->fresh()));
+                return back()->with('success', 'Welkom terug! Controleer je inbox om je inschrijving te bevestigen.');
             }
         }
 
-        // Create new subscriber
-        NewsletterSubscriber::create([
+        // Create new subscriber (pending confirmation)
+        $confirmationToken = NewsletterSubscriber::generateConfirmationToken();
+
+        $subscriber = NewsletterSubscriber::create([
             'email' => $email,
-            'status' => 'subscribed',
-            'subscribed_at' => now(),
+            'status' => 'pending',
+            'confirmation_token' => $confirmationToken,
             'ip_address' => $request->ip(),
             'user_agent' => $request->userAgent(),
         ]);
 
-        return back()->with('success', 'Bedankt voor uw inschrijving! U ontvangt binnenkort updates van ons.');
+        // Send confirmation email
+        Mail::to($subscriber->email)->send(new NewsletterConfirmationMail($subscriber));
+
+        return back()->with('success', 'Bedankt! Controleer je inbox en bevestig je inschrijving via de link in de e-mail.');
+    }
+
+    public function confirm($token)
+    {
+        $subscriber = NewsletterSubscriber::where('confirmation_token', $token)->firstOrFail();
+
+        $confirmed = false;
+
+        if ($subscriber->isPending()) {
+            $subscriber->confirm();
+            $confirmed = true;
+        } elseif ($subscriber->isSubscribed()) {
+            // Already confirmed
+            $confirmed = false;
+        }
+
+        return view('newsletter.confirm', compact('confirmed'));
     }
 
     public function unsubscribe($token)
@@ -51,9 +84,9 @@ class NewsletterController extends Controller
 
         if ($subscriber->isSubscribed()) {
             $subscriber->unsubscribe();
-            $message = 'U bent succesvol uitgeschreven van onze nieuwsbrief.';
+            $message = 'Je bent succesvol uitgeschreven van onze nieuwsbrief.';
         } else {
-            $message = 'U was al uitgeschreven van onze nieuwsbrief.';
+            $message = 'Je bent al uitgeschreven van onze nieuwsbrief.';
         }
 
         return view('newsletter.unsubscribe', compact('message'));

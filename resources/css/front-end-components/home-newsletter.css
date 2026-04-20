@@ -102,6 +102,54 @@
     font-style: italic;
 }
 
+/* Status messages */
+.newsletter-status-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: var(--font-regular);
+    animation: fadeInUp 0.25s ease;
+    background: rgba(255, 246, 224, 0.06);
+    color: rgba(255, 246, 224, 0.9);
+}
+
+.newsletter-status-message--success {
+}
+
+.newsletter-status-message--success i {
+    color: #7dbb81;
+}
+
+.newsletter-status-message--info {
+}
+
+.newsletter-status-message--info i {
+    color: #d4ae78;
+}
+
+.newsletter-status-message--error {
+}
+
+.newsletter-status-message--error i {
+    color: #d47a77;
+}
+
+.newsletter-status-message i {
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     .newsletter-section {

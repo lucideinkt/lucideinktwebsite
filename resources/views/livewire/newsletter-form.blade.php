@@ -15,9 +15,26 @@
                 <i class="fa-solid fa-paper-plane" wire:loading.remove wire:target="submit"></i>
             </button>
         </div>
+
         @error('email')
-            <p class="newsletter-error" style="color: #dc3545; margin-top: 0.5rem; font-size: 0.875rem;">{{ $message }}</p>
+            <p class="newsletter-error" style="color: #dc3545; margin-top: 0.5rem; font-size: 0.875rem;">
+                <i class="fa-solid fa-circle-exclamation"></i> {{ $message }}
+            </p>
         @enderror
+
+        @if($statusMessage)
+            <p class="newsletter-status-message newsletter-status-message--{{ $statusType }}">
+                @if($statusType === 'success')
+                    <i class="fa-solid fa-circle-check"></i>
+                @elseif($statusType === 'info')
+                    <i class="fa-solid fa-circle-info"></i>
+                @else
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                @endif
+                {{ $statusMessage }}
+            </p>
+        @endif
+
         <p class="newsletter-privacy">
             We respecteren je privacy. Je kunt je op elk moment afmelden.
         </p>
