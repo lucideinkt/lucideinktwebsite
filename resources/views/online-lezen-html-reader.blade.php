@@ -489,39 +489,34 @@
         function load()       { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
         function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (_) {} }
         function loadFont()   { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
+        // Capture a scroll anchor (current page el + its viewport top) — call BEFORE layout changes
+        function captureAnchor() {
+            const el = pageMap ? pageMap[visiblePage()] : null;
+            return el ? { el, top: el.getBoundingClientRect().top } : null;
+        }
+        // Restore scroll so that `anchor.el` stays at `anchor.top` — call in rAF AFTER layout changes
+        function restoreAnchor(anchor) {
+            if (!anchor) return;
+            requestAnimationFrame(() => {
+                window.scrollBy(0, anchor.el.getBoundingClientRect().top - anchor.top);
+            });
+        }
+
         function applyFont(sz, anchor) {
-            if (anchor) {
-                // Snapshot anchor position BEFORE the style change (one layout read)
-                const anchorEl = pageMap ? pageMap[visiblePage()] : null;
-                const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
-                readerEl.style.setProperty('--reader-font-size', sz + 'px');
-                if (anchorEl && offsetBefore !== null) {
-                    // Correct scroll AFTER the browser has reflowed the new font size (next frame)
-                    // — avoids forced synchronous reflow entirely
-                    requestAnimationFrame(() => {
-                        window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
-                    });
-                }
-            } else {
-                readerEl.style.setProperty('--reader-font-size', sz + 'px');
-            }
+            // anchor can be: true (auto-capture), false/null (no correction), or {el,top} object (frozen anchor)
+            const frozenAnchor = (anchor && typeof anchor === 'object') ? anchor
+                : (anchor === true ? captureAnchor() : null);
+            readerEl.style.setProperty('--reader-font-size', sz + 'px');
+            if (frozenAnchor) restoreAnchor(frozenAnchor);
             if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
         }
         function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
         function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         function applyArabicFont(sz, anchor) {
-            if (anchor) {
-                const anchorEl = pageMap ? pageMap[visiblePage()] : null;
-                const offsetBefore = anchorEl ? anchorEl.getBoundingClientRect().top : null;
-                readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
-                if (anchorEl && offsetBefore !== null) {
-                    requestAnimationFrame(() => {
-                        window.scrollBy(0, anchorEl.getBoundingClientRect().top - offsetBefore);
-                    });
-                }
-            } else {
-                readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
-            }
+            const frozenAnchor = (anchor && typeof anchor === 'object') ? anchor
+                : (anchor === true ? captureAnchor() : null);
+            readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
+            if (frozenAnchor) restoreAnchor(frozenAnchor);
             if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
         }
 
@@ -701,23 +696,31 @@
         initRangeSlider(arabicRange, ARABIC_STEPS);
 
         fontRange?.addEventListener('input', () => {
-            // Throttle with rAF — no anchor during continuous drag (prevents layout thrashing)
+            // Capture anchor once at the start of a drag gesture
+            if (!fontRange._dragAnchor) fontRange._dragAnchor = captureAnchor();
             if (fontRange._raf) return;
             fontRange._raf = requestAnimationFrame(() => {
                 fontRange._raf = null;
-                setFontStep(parseInt(fontRange.value), false);
+                setFontStep(parseInt(fontRange.value), fontRange._dragAnchor || false);
             });
         });
         arabicRange?.addEventListener('input', () => {
+            if (!arabicRange._dragAnchor) arabicRange._dragAnchor = captureAnchor();
             if (arabicRange._raf) return;
             arabicRange._raf = requestAnimationFrame(() => {
                 arabicRange._raf = null;
-                setArabicStep(parseInt(arabicRange.value), false);
+                setArabicStep(parseInt(arabicRange.value), arabicRange._dragAnchor || false);
             });
         });
-        // On slider release — do a final apply WITH anchor correction so position snaps correctly
-        fontRange?.addEventListener('change', () => setFontStep(parseInt(fontRange.value), true));
-        arabicRange?.addEventListener('change', () => setArabicStep(parseInt(arabicRange.value), true));
+        // On slider release — clear the frozen drag anchor
+        fontRange?.addEventListener('change', () => {
+            setFontStep(parseInt(fontRange.value), fontRange._dragAnchor || true);
+            fontRange._dragAnchor = null;
+        });
+        arabicRange?.addEventListener('change', () => {
+            setArabicStep(parseInt(arabicRange.value), arabicRange._dragAnchor || true);
+            arabicRange._dragAnchor = null;
+        });
 
         document.getElementById('font-dec-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx - 1));
         document.getElementById('font-inc-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx + 1));
@@ -738,6 +741,7 @@
         // --- Pinch-to-zoom for font size (touch gestures) ---
         let pinchStartDist    = null;
         let pinchStartFontIdx = null;  // step index at gesture start (not raw px)
+        let pinchAnchor       = null;  // frozen scroll anchor captured at pinch start
         let _pinchRaf         = false;
         let _pinchTargetIdx   = null;
 
@@ -749,6 +753,7 @@
                     e.touches[1].pageY - e.touches[0].pageY
                 );
                 pinchStartFontIdx = fontStepIdx; // snapshot index, no layout read needed
+                pinchAnchor       = captureAnchor(); // freeze scroll anchor once at gesture start
             }
         }, { passive: false });
 
@@ -766,13 +771,13 @@
 
                 if (targetIdx !== fontStepIdx) {
                     _pinchTargetIdx = targetIdx;
-                    // Throttle: only apply once per animation frame, no anchor during move
+                    // Throttle: only apply once per animation frame, with frozen anchor
                     if (!_pinchRaf) {
                         _pinchRaf = true;
                         requestAnimationFrame(() => {
                             _pinchRaf = false;
                             if (_pinchTargetIdx !== null) {
-                                setFontStep(_pinchTargetIdx, false); // no anchor — zero layout reads
+                                setFontStep(_pinchTargetIdx, pinchAnchor || false);
                                 _pinchTargetIdx = null;
                             }
                         });
@@ -783,11 +788,12 @@
 
         readerEl.addEventListener('touchend', e => {
             if (e.touches.length < 2 && pinchStartDist !== null) {
-                // Pinch ended — do one final apply WITH anchor so scroll position snaps back
-                if (_pinchTargetIdx !== null) setFontStep(_pinchTargetIdx, true);
-                else setFontStep(fontStepIdx, true);
+                // Pinch ended — final apply with frozen anchor, then clear
+                if (_pinchTargetIdx !== null) setFontStep(_pinchTargetIdx, pinchAnchor || true);
+                else setFontStep(fontStepIdx, pinchAnchor || true);
                 pinchStartDist    = null;
                 pinchStartFontIdx = null;
+                pinchAnchor       = null;
                 _pinchTargetIdx   = null;
             }
         });
@@ -795,6 +801,7 @@
         readerEl.addEventListener('touchcancel', () => {
             pinchStartDist    = null;
             pinchStartFontIdx = null;
+            pinchAnchor       = null;
             _pinchTargetIdx   = null;
         });
 
