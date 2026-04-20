@@ -57,6 +57,43 @@ class MiniCart extends Component
         }
     }
 
+    public function removeItem(int $productId): void
+    {
+        $cart = session()->get('cart', []);
+        $cartKey = (string) $productId;
+        if (isset($cart[$cartKey])) {
+            unset($cart[$cartKey]);
+            session(['cart' => $cart]);
+        }
+        $totalQuantity = collect($cart)->sum('quantity');
+        $this->dispatch('cart-updated', totalQuantity: $totalQuantity);
+        $this->refreshCart();
+    }
+
+    public function updateQuantity(int $productId, int $quantity): void
+    {
+        if ($quantity < 1) {
+            $this->removeItem($productId);
+            return;
+        }
+        $cart = session()->get('cart', []);
+        $cartKey = (string) $productId;
+        if (isset($cart[$cartKey])) {
+            $cart[$cartKey]['quantity'] = min($quantity, 10);
+            session(['cart' => $cart]);
+        }
+        $totalQuantity = collect($cart)->sum('quantity');
+        $this->dispatch('cart-updated', totalQuantity: $totalQuantity);
+        $this->refreshCart();
+    }
+
+    public function clearCart(): void
+    {
+        session()->forget('cart');
+        $this->dispatch('cart-updated', totalQuantity: 0);
+        $this->refreshCart();
+    }
+
     public function render()
     {
         return view('livewire.mini-cart');
