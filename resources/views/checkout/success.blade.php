@@ -1,5 +1,4 @@
-<x-layout>
-    @push('head')<meta name="robots" content="noindex, nofollow">@endpush
+<x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
     <main class="container page checkout success">
         @if(isset($error) && $error)

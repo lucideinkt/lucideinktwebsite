@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\SEOService;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -47,7 +48,9 @@ class CartController extends Controller
             // If we normalized keys, make sure session contains normalized cart
             session(['cart' => $cart]);
         }
-        return view('cart.index');
+        return view('cart.index', [
+            'SEOData' => SEOService::getPageSEO('cart'),
+        ]);
     }
 
     public function addToCart(Request $request)

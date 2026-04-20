@@ -41,4 +41,32 @@ class PageController extends Controller
             'SEOData' => SEOService::getPageSEO('contact'),
         ]);
     }
+
+    public function algemeneVoorwaarden(): View
+    {
+        return view('algemene-voorwaarden', [
+            'SEOData' => SEOService::getPageSEO('algemene-voorwaarden'),
+        ]);
+    }
+
+    public function privacybeleid(): View
+    {
+        return view('privacybeleid', [
+            'SEOData' => SEOService::getPageSEO('privacybeleid'),
+        ]);
+    }
+
+    public function retourbeleid(): View
+    {
+        return view('retourbeleid', [
+            'SEOData' => SEOService::getPageSEO('retourbeleid'),
+        ]);
+    }
+
+    public function verzendingLevering(): View
+    {
+        return view('verzending-levering', [
+            'SEOData' => SEOService::getPageSEO('verzending-levering'),
+        ]);
+    }
 }

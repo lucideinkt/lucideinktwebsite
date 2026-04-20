@@ -197,18 +197,10 @@ Route::get('/risale-i-nur', [PageController::class, 'risale'])->name('risale');
 Route::get('/herzameling', [PageController::class, 'herzameling'])->name('herzameling');
 Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('/algemene-voorwaarden', function () {
-    return view('algemene-voorwaarden');
-})->name('algemeneVoorwaarden');
-Route::get('/privacybeleid', function () {
-    return view('privacybeleid');
-})->name('privacybeleid');
-Route::get('/retourbeleid', function () {
-    return view('retourbeleid');
-})->name('retourbeleid');
-Route::get('/verzending-levering', function () {
-    return view('verzending-levering');
-})->name('verzendingLevering');
+Route::get('/algemene-voorwaarden', [PageController::class, 'algemeneVoorwaarden'])->name('algemeneVoorwaarden');
+Route::get('/privacybeleid', [PageController::class, 'privacybeleid'])->name('privacybeleid');
+Route::get('/retourbeleid', [PageController::class, 'retourbeleid'])->name('retourbeleid');
+Route::get('/verzending-levering', [PageController::class, 'verzendingLevering'])->name('verzendingLevering');
 
 // Online Reading
 Route::get('/bibliotheek', [OnlineLezenController::class, 'index'])->name('onlineLezen');
