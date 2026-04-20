@@ -28,8 +28,7 @@
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e8e8e8;">
                                 <tr>
                                     <td>
-                                        <h1 style="color: #620505; font-size: 24px; margin: 0 0 8px 0; font-weight: 600;">Nieuwsbrief Lucide Inkt</h1>
-                                        <p style="font-size: 16px; color: #666; margin: 0; font-weight: 500;">{{ $newsletter->subject }}</p>
+                                        <h1 style="color: #620505; font-size: 28px; margin: 0; font-weight: 600;">{{ $newsletter->subject }}</h1>
                                     </td>
                                 </tr>
                             </table>

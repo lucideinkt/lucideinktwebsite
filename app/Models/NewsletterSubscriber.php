@@ -10,6 +10,7 @@ class NewsletterSubscriber extends Model
     protected $fillable = [
         'email',
         'token',
+        'confirmation_token',
         'status',
         'subscribed_at',
         'unsubscribed_at',
@@ -33,10 +34,29 @@ class NewsletterSubscriber extends Model
         return $query->where('status', 'unsubscribed');
     }
 
+    public function scopePending($query)
+    {
+        return $query->where('status', 'pending');
+    }
+
     // Methods
     public function isSubscribed(): bool
     {
         return $this->status === 'subscribed';
+    }
+
+    public function isPending(): bool
+    {
+        return $this->status === 'pending';
+    }
+
+    public function confirm(): void
+    {
+        $this->update([
+            'status' => 'subscribed',
+            'subscribed_at' => now(),
+            'confirmation_token' => null,
+        ]);
     }
 
     public function subscribe(): void
@@ -62,6 +82,16 @@ class NewsletterSubscriber extends Model
         do {
             $token = Str::random(32);
         } while (self::where('token', $token)->exists());
+
+        return $token;
+    }
+
+    // Generate unique confirmation token
+    public static function generateConfirmationToken(): string
+    {
+        do {
+            $token = Str::random(64);
+        } while (self::where('confirmation_token', $token)->exists());
 
         return $token;
     }
