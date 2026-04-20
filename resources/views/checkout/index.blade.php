@@ -461,25 +461,59 @@
     <div class="gradient-border"></div>
     <x-footer></x-footer>
     <script>
+        // ─── Helpers ──────────────────────────────────────────────────────────
+        function resetMyParcelWidget() {
+            // Clear only the hidden input value — do NOT touch innerHTML so the
+            // MyParcel library can re-render when a new complete address is entered.
+            var myparcelOptions = document.getElementById('myparcel_delivery_options');
+            if (myparcelOptions) myparcelOptions.value = '';
+
+            // Ensure the radio is back to the default choice so the widget stays enabled
+            var defaultChoice = document.getElementById('with_myparcel');
+            if (defaultChoice && !defaultChoice.checked) {
+                defaultChoice.checked = true;
+                defaultChoice.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        }
+
+        function fireAddressEvents(prefix) {
+            // Fire input + change on every address field so the MyParcel widget
+            // detects the address is now empty and resets itself
+            ['street', 'house_number', 'postal_code', 'city', 'country'].forEach(function (field) {
+                var el = document.querySelector('[name="' + prefix + field + '"]');
+                if (el) {
+                    el.dispatchEvent(new Event('input',  { bubbles: true }));
+                    el.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+        }
+
         // ─── Clear billing fields button ─────────────────────────────────────
         document.addEventListener('DOMContentLoaded', function () {
             var clearBtn = document.getElementById('clear-billing-fields');
             if (clearBtn) {
                 clearBtn.addEventListener('click', function () {
-                    var fields = [
-                        'billing_email', 'billing_first_name', 'billing_last_name',
-                        'billing_street', 'billing_house_number', 'billing_house_number-add',
-                        'billing_postal_code', 'billing_city', 'billing_phone', 'billing_company',
-                        'order_note'
-                    ];
-                    fields.forEach(function (name) {
-                        var el = document.querySelector('[name="' + name + '"]');
-                        if (el) el.value = '';
-                    });
+                    // Clear all visible text/email/tel/textarea inputs in the billing card
+                    var billingCard = clearBtn.closest('.item.customer-details');
+                    if (billingCard) {
+                        billingCard.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]):not([name="_token"]), textarea').forEach(function (el) {
+                            el.value = '';
+                        });
+                        billingCard.querySelectorAll('select').forEach(function (el) {
+                            el.selectedIndex = 0;
+                        });
+                    }
+
+                    // Also clear the autocomplete search box
                     var search = document.getElementById('billing_address_search');
                     if (search) search.value = '';
-                    var countrySelect = document.getElementById('billing_country');
-                    if (countrySelect) countrySelect.selectedIndex = 0;
+
+                    // Reset the MyParcel widget (clears stale delivery options)
+                    resetMyParcelWidget();
+
+                    // Fire events so the widget's own listeners detect empty address
+                    fireAddressEvents('billing_');
+
                     document.dispatchEvent(new CustomEvent('countryChanged'));
                 });
             }
@@ -488,19 +522,27 @@
             var clearShippingBtn = document.getElementById('clear-shipping-fields');
             if (clearShippingBtn) {
                 clearShippingBtn.addEventListener('click', function () {
-                    var fields = [
-                        'shipping_first_name', 'shipping_last_name',
-                        'shipping_street', 'shipping_house_number', 'shipping_house_number-add',
-                        'shipping_postal_code', 'shipping_city', 'shipping_phone', 'shipping_company'
-                    ];
-                    fields.forEach(function (name) {
-                        var el = document.querySelector('[name="' + name + '"]');
-                        if (el) el.value = '';
-                    });
+                    // Clear all visible text inputs in the shipping card
+                    var shippingCard = document.getElementById('shipping-fields');
+                    if (shippingCard) {
+                        shippingCard.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]):not([name="_token"]), textarea').forEach(function (el) {
+                            el.value = '';
+                        });
+                        shippingCard.querySelectorAll('select').forEach(function (el) {
+                            el.selectedIndex = 0;
+                        });
+                    }
+
+                    // Also clear the autocomplete search box
                     var search = document.getElementById('shipping_address_search');
                     if (search) search.value = '';
-                    var countrySelect = document.getElementById('shipping_country');
-                    if (countrySelect) countrySelect.selectedIndex = 0;
+
+                    // If alternate shipping is active, also reset the widget
+                    if (document.getElementById('alt-shipping')?.checked) {
+                        resetMyParcelWidget();
+                        fireAddressEvents('shipping_');
+                    }
+
                     document.dispatchEvent(new CustomEvent('countryChanged'));
                 });
             }
