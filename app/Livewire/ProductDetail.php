@@ -78,12 +78,22 @@ class ProductDetail extends Component
         session(['cart' => $cart]);
 
         $totalQuantity = collect($cart)->sum('quantity');
+        $subtotal = collect($cart)->sum(fn($item) => ($item['price'] ?? 0) * ($item['quantity'] ?? 0));
 
         // Dispatch events
         $this->dispatch('cart-updated', totalQuantity: $totalQuantity);
 
+        $imageUrl = $this->productImages[0] ?? null;
         $quantityText = $this->quantity == 1 ? '1 product' : $this->quantity . ' producten';
-        $this->dispatch('cart-success', message: $quantityText . ' toegevoegd aan winkelwagen!');
+        $this->dispatch('cart-success',
+            message: $quantityText . ' toegevoegd aan winkelwagen!',
+            productName: $this->product->title,
+            productImage: $imageUrl,
+            productPrice: number_format($this->product->price, 2, ',', '.'),
+            productSlug: $this->product->slug ?? '',
+            cartCount: $totalQuantity,
+            cartSubtotal: number_format($subtotal, 2, ',', '.'),
+        );
 
         // Reset quantity to 1 after adding
         $this->quantity = 1;

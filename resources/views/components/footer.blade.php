@@ -30,6 +30,7 @@
                     <li><a href="{{ route('verzendingLevering') }}">Verzending & Levering</a></li>
                     <li><a href="{{ route('retourbeleid') }}">Retourbeleid</a></li>
                     <li><a href="{{ route('privacybeleid') }}">Privacybeleid</a></li>
+                    <li><a href="#" id="footer-cookie-settings">Cookie-instellingen</a></li>
                 </ul>
             </div>
 

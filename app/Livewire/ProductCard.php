@@ -53,18 +53,27 @@ class ProductCard extends Component
         }
 
         session(['cart' => $cart]);
-        
+
         $totalQuantity = collect($cart)->sum('quantity');
-        
+        $subtotal = collect($cart)->sum(fn($item) => ($item['price'] ?? 0) * ($item['quantity'] ?? 0));
+
         // Dispatch browser events - Livewire v3 automatically creates browser events
         $this->dispatch('cart-updated', totalQuantity: $totalQuantity);
-        $this->dispatch('cart-success', message: 'Product toegevoegd aan winkelwagen!');
+        $this->dispatch('cart-success',
+            message: 'Product toegevoegd aan winkelwagen!',
+            productName: $this->product->title,
+            productImage: $this->imageUrl,
+            productPrice: number_format($this->product->price, 2, ',', '.'),
+            productSlug: $this->product->slug ?? '',
+            cartCount: $totalQuantity,
+            cartSubtotal: number_format($subtotal, 2, ',', '.'),
+        );
     }
 
     public function getImageUrlProperty()
     {
         $image = $this->product->image_1;
-        
+
         if (empty($image)) {
             return null;
         }

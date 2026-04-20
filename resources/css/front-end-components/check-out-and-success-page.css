@@ -496,8 +496,38 @@
 
 .page.checkout .place-order {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
     margin-top: 10px;
+}
+
+.page.checkout .place-order .terms-agreement {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.page.checkout .place-order .terms-agreement input[type="checkbox"] {
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: #2d6a2d;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.page.checkout .place-order .terms-agreement label {
+    font-size: 14px;
+    color: #3a2a1a;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.page.checkout .place-order .terms-agreement a {
+    color: #7a1a1a;
+    text-decoration: underline;
 }
 
 .page.checkout .place-order .btn {

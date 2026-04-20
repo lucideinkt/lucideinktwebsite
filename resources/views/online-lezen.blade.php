@@ -528,5 +528,14 @@
 })();
 </script>
 
+{{-- Cookie Consent Banner (GDPR/AVG) --}}
+<x-cookie-consent />
+
+<div style="text-align:center;padding:12px 0 18px;font-size:12px;">
+    <a href="#" id="footer-cookie-settings" style="color:rgba(98,5,5,0.5);text-decoration:underline;text-underline-offset:2px;">
+        <i class="fa-solid fa-cookie-bite" style="font-size:11px;margin-right:3px;"></i> Cookie-instellingen
+    </a>
+</div>
+
 </body>
 </html>
