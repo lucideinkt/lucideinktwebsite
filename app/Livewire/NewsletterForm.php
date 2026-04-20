@@ -10,17 +10,20 @@ use Livewire\Component;
 class NewsletterForm extends Component
 {
     public $email = '';
+    public $consent = false;
     public $statusMessage = '';
     public $statusType = ''; // 'success', 'info', 'error'
 
     protected $rules = [
-        'email' => 'required|email|max:255',
+        'email'   => 'required|email|max:255',
+        'consent' => 'accepted',
     ];
 
     protected $messages = [
-        'email.required' => 'E-mailadres is verplicht.',
-        'email.email' => 'Voer een geldig e-mailadres in.',
-        'email.max' => 'E-mailadres mag maximaal 255 tekens zijn.',
+        'email.required'   => 'E-mailadres is verplicht.',
+        'email.email'      => 'Voer een geldig e-mailadres in.',
+        'email.max'        => 'E-mailadres mag maximaal 255 tekens zijn.',
+        'consent.accepted' => 'Je moet akkoord gaan om je in te schrijven.',
     ];
 
     public function submit()

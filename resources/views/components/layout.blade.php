@@ -80,12 +80,12 @@
         <div class="header-box">
                 <div class="navbar-cart-sidebar-toggle">
                     <li class="nav-item">
-                        <a href="{{ route('cartPage') }}"><i
-                                class="fa-solid fa-bag-shopping"></i>
+                        <button type="button" class="mini-cart-trigger" aria-label="Winkelwagen openen">
+                            <i class="fa-solid fa-bag-shopping"></i>
                             <span class="cart-quantity" style="display: {{ session('cart') && count(session('cart')) ? 'flex' : 'none' }};" id="cart-quantity-mobile">
                                 {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
                             </span>
-                        </a>
+                        </button>
                     </li>
                 </div>
 
@@ -162,10 +162,13 @@
 
             // Listen for cart success message
             Livewire.on('cart-success', (event) => {
-                const message = event.message || event[0]?.message || 'Product toegevoegd aan winkelwagen!';
-                if (window.showToast) {
-                    window.showToast(message, false);
-                }
+                if (window.showMiniCart) window.showMiniCart();
+            });
+
+            // Refresh mini cart when cart is updated
+            Livewire.on('cart-updated', (event) => {
+                // Dispatch refresh to the MiniCart Livewire component
+                Livewire.dispatch('cart-updated');
             });
 
             // Listen for cart error message
@@ -209,6 +212,74 @@
             });
         });
     </script>
+
+    <script>
+        // Mini Cart Slide-in Panel
+        (function () {
+            function showMiniCart() {
+                const panel    = document.getElementById('mini-cart-panel');
+                const backdrop = document.getElementById('mini-cart-backdrop');
+                if (panel)    panel.classList.add('show');
+                if (backdrop) backdrop.classList.add('show');
+            }
+
+            function hideMiniCart() {
+                const panel    = document.getElementById('mini-cart-panel');
+                const backdrop = document.getElementById('mini-cart-backdrop');
+                if (panel)    panel.classList.remove('show');
+                if (backdrop) backdrop.classList.remove('show');
+            }
+
+            window.showMiniCart = showMiniCart;
+            window.hideMiniCart = hideMiniCart;
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const closeBtn = document.getElementById('miniCartClose');
+                const backdrop = document.getElementById('mini-cart-backdrop');
+                if (closeBtn) closeBtn.addEventListener('click', hideMiniCart);
+                if (backdrop) backdrop.addEventListener('click', hideMiniCart);
+
+                // Open mini cart when cart icon is clicked
+                document.querySelectorAll('.mini-cart-trigger').forEach(btn => {
+                    btn.addEventListener('click', showMiniCart);
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') hideMiniCart();
+                });
+            });
+        })();
+    </script>
+
+    <!-- Mini Cart Slide-in Panel -->
+    <div id="mini-cart-panel" class="mini-cart-panel" role="dialog" aria-label="Winkelwagen">
+        <div class="mini-cart-header">
+            <span class="mini-cart-title">
+                <i class="fa-solid fa-bag-shopping mini-cart-header-icon"></i>
+                Winkelwagen
+            </span>
+            <button class="mini-cart-close" id="miniCartClose" aria-label="Sluiten">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="mini-cart-body">
+            <livewire:mini-cart />
+        </div>
+
+        <div class="mini-cart-footer">
+            <a href="{{ route('cartPage') }}" class="mini-cart-btn-cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Bekijk winkelwagen
+            </a>
+            <a href="{{ route('checkoutPage') }}" class="mini-cart-btn-checkout">
+                <i class="fa-solid fa-credit-card"></i>
+                Afrekenen
+            </a>
+        </div>
+    </div>
+    <div id="mini-cart-backdrop" class="mini-cart-backdrop"></div>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Terug naar boven">
@@ -287,6 +358,9 @@
             }
         }
     </style>
+
+    {{-- Cookie Consent Banner (GDPR/AVG) --}}
+    <x-cookie-consent />
 
     <script>
         // Back to Top functionality

@@ -1871,6 +1871,10 @@
     })();
     </script>
 </div>
+
+{{-- Cookie Consent Banner (GDPR/AVG) --}}
+<x-cookie-consent />
+
 </body>
 </html>
 

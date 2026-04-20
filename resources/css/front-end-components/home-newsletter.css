@@ -102,6 +102,35 @@
     font-style: italic;
 }
 
+/* Consent checkbox */
+.newsletter-consent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-consent__checkbox {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: #f5dfa0;
+}
+
+
+.newsletter-consent__label {
+    font-size: 14px;
+    color: rgba(245, 223, 172, 0.85);
+    line-height: 1.5;
+    user-select: none;
+}
+
 /* Status messages */
 .newsletter-status-message {
     display: flex;

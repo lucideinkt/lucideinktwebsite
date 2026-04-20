@@ -38,13 +38,13 @@
 
 
     <li class="nav-item cart">
-        <a href="{{ route('cartPage') }}">
+        <button type="button" class="mini-cart-trigger" id="miniCartTrigger" aria-label="Winkelwagen openen">
             <i class="fa-solid fa-bag-shopping"></i>
             <span class="cart-quantity" id="cart-quantity-desktop"
                 style="display: {{ session('cart') && count(session('cart')) ? 'flex' : 'none' }};">
                 {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
             </span>
-        </a>
+        </button>
     </li>
 
     @auth

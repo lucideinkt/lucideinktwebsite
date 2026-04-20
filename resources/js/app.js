@@ -1042,8 +1042,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     Livewire.on('cart-success', (event) => {
-      const message = event[0]?.message || event?.message || 'Product toegevoegd aan winkelwagen!';
-      showToast(message, false);
+      const data = event[0] || event;
+      if (window.showMiniCart) {
+        window.showMiniCart(data.productName || '', data.productImage || '', data.productPrice || '', data.cartCount || '', data.cartSubtotal || '');
+      } else {
+        showToast(data.message || 'Product toegevoegd aan winkelwagen!', false);
+      }
     });
 
     Livewire.on('cart-error', (event) => {
@@ -1059,8 +1063,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('cart-success', (event) => {
-    const message = event.detail?.message || 'Product toegevoegd aan winkelwagen!';
-    showToast(message, false);
+    const data = event.detail || {};
+    if (window.showMiniCart) {
+      window.showMiniCart(data.productName || '', data.productImage || '', data.productPrice || '', data.cartCount || '', data.cartSubtotal || '');
+    } else {
+      showToast(data.message || 'Product toegevoegd aan winkelwagen!', false);
+    }
   });
 
   window.addEventListener('cart-error', (event) => {

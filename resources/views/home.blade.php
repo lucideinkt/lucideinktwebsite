@@ -122,10 +122,13 @@
             <div class="new-translation">
                 <div class="title-wrapper">
                     <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="" loading="lazy" decoding="async">
-                    <h2 class="title trans">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
+                    <h2 class="title trans" aria-label="Onze Nieuwste Vertaling: Het Traktaat over de Herzameling">
+                        <span class="sr-only">Onze Nieuwste Vertaling: Het Traktaat over de Herzameling</span>
+                        <span aria-hidden="true">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
                             class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
                         ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
-                            class="title-in"></span>g</h2>
+                            class="title-in"></span>g</span>
+                    </h2>
                 </div>
                 <div class="divider"></div>
                 <div class="sub-text one">
@@ -216,7 +219,10 @@
         <section class="white-section risale-section bg-new">
             <div class="text-container risale-grid">
                 <div class="risale-content">
-                    <h2 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h2>
+                    <h2 class="title" aria-label="Wat is de Risale-i Nur?">
+                        <span class="sr-only">Wat is de Risale-i Nur?</span>
+                        <span aria-hidden="true"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</span>
+                    </h2>
                     <div class="sub-text">
                         <p>
                             Tafsirs zijn Qur’anexegeses die in twee categorieën worden onderscheiden: de letterlijke en de spirituele.
@@ -302,7 +308,10 @@
         <section class="white-section risale-section said-nursi-section">
             <div class="text-container risale-grid">
                 <div class="risale-content">
-                    <h2 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h2>
+                    <h2 class="title" aria-label="Wie is Said Nursî?">
+                        <span class="sr-only">Wie is Said Nursî?</span>
+                        <span aria-hidden="true"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</span>
+                    </h2>
                     <div class="risale-image said-nursi-image mobile-only">
                         <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi" loading="lazy" decoding="async">
                     </div>

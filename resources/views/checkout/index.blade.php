@@ -450,6 +450,13 @@
                         @error('myparcel_delivery_options')
                             <div class="error" style="color:#b30000; margin-bottom:10px;">{{ $message }}</div>
                         @enderror
+                        <div class="terms-agreement">
+                            <input type="checkbox" id="agree_terms" name="agree_terms" required>
+                            <label for="agree_terms">
+                                Ik ga akkoord met de <a href="{{ route('algemeneVoorwaarden') }}" target="_blank">algemene voorwaarden</a>
+                                en heb het <a href="{{ route('privacybeleid') }}" target="_blank">privacybeleid</a> gelezen.
+                            </label>
+                        </div>
                         <button type="submit" class="btn"><span class="loader"></span>Plaats bestelling</button>
                     </div>
                 </div>
