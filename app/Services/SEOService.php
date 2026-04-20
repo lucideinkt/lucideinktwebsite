@@ -35,6 +35,7 @@ class SEOService
             locale: $config['locale'] ?? 'nl_NL',
             site_name: $config['site_name'] ?? 'Lucide Inkt',
             type: $config['type'] ?? 'website',
+            robots: $config['robots'] ?? null,
         );
     }
 
@@ -105,6 +106,76 @@ class SEOService
                 'description' => 'Beluister onze audioboeken. Ontdek de Risale-i Nur vertalingen in audioformaat, waar en wanneer je maar wilt.',
                 'url'         => route('audiobooks'),
                 'image'       => secure_url('images/books_standing_new.webp'),
+                'type'        => 'website',
+            ],
+
+            // ── Legal / info pages ───────────────────────────────────────────
+            'algemene-voorwaarden' => [
+                'title'       => 'Algemene Voorwaarden | Lucide Inkt',
+                'description' => 'Lees de algemene voorwaarden van Lucide Inkt voor het bestellen van boeken en andere producten.',
+                'url'         => route('algemeneVoorwaarden'),
+                'type'        => 'website',
+            ],
+            'privacybeleid' => [
+                'title'       => 'Privacybeleid | Lucide Inkt',
+                'description' => 'Lees ons privacybeleid en ontdek hoe Lucide Inkt omgaat met uw persoonsgegevens.',
+                'url'         => route('privacybeleid'),
+                'type'        => 'website',
+            ],
+            'retourbeleid' => [
+                'title'       => 'Retourbeleid | Lucide Inkt',
+                'description' => 'Lees ons retourbeleid. Ontdek hoe u producten kunt retourneren bij Lucide Inkt.',
+                'url'         => route('retourbeleid'),
+                'type'        => 'website',
+            ],
+            'verzending-levering' => [
+                'title'       => 'Verzending & Levering | Lucide Inkt',
+                'description' => 'Informatie over verzending en levering van bestellingen bij Lucide Inkt.',
+                'url'         => route('verzendingLevering'),
+                'type'        => 'website',
+            ],
+
+            // ── Transactional / auth pages (noindex) ────────────────────────
+            'login' => [
+                'title'       => 'Inloggen | Lucide Inkt',
+                'description' => 'Log in op je Lucide Inkt account om je bestellingen te beheren.',
+                'robots'      => 'noindex, nofollow',
+                'type'        => 'website',
+            ],
+            'register' => [
+                'title'       => 'Registreren | Lucide Inkt',
+                'description' => 'Maak een account aan bij Lucide Inkt.',
+                'robots'      => 'noindex, nofollow',
+                'type'        => 'website',
+            ],
+            'forgot-password' => [
+                'title'       => 'Wachtwoord vergeten | Lucide Inkt',
+                'description' => 'Reset je wachtwoord voor je Lucide Inkt account.',
+                'robots'      => 'noindex, nofollow',
+                'type'        => 'website',
+            ],
+            'reset-password' => [
+                'title'       => 'Wachtwoord instellen | Lucide Inkt',
+                'description' => 'Stel een nieuw wachtwoord in voor je Lucide Inkt account.',
+                'robots'      => 'noindex, nofollow',
+                'type'        => 'website',
+            ],
+            'cart' => [
+                'title'       => 'Winkelwagen | Lucide Inkt',
+                'description' => 'Bekijk de producten in je winkelwagen bij Lucide Inkt.',
+                'robots'      => 'noindex, nofollow',
+                'type'        => 'website',
+            ],
+            'checkout' => [
+                'title'       => 'Bestelling plaatsen | Lucide Inkt',
+                'description' => 'Rond je bestelling af bij Lucide Inkt.',
+                'robots'      => 'noindex, nofollow',
+                'type'        => 'website',
+            ],
+            'checkout-success' => [
+                'title'       => 'Bestelling ontvangen | Lucide Inkt',
+                'description' => 'Bedankt voor je bestelling bij Lucide Inkt.',
+                'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
         ];

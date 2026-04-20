@@ -1,6 +1,5 @@
-<x-layout>
+<x-layout :seo-data="$SEOData">
     @push('head')
-        <meta name="robots" content="noindex, nofollow">
         @if(config('services.google.maps_api_key'))
         <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.maps_api_key') }}&libraries=places&callback=initAddressAutocomplete&loading=async" async defer></script>
         @endif

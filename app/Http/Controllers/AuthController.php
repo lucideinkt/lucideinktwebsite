@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Services\SEOService;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -14,12 +15,16 @@ class AuthController extends Controller
 {
     public function registerPage()
     {
-        return view('auth.register');
+        return view('auth.register', [
+            'SEOData' => SEOService::getPageSEO('register'),
+        ]);
     }
 
     public function loginPage()
     {
-        return view('auth.login');
+        return view('auth.login', [
+            'SEOData' => SEOService::getPageSEO('login'),
+        ]);
     }
 
 
@@ -66,7 +71,9 @@ class AuthController extends Controller
 
     public function forgotPassword()
     {
-        return view('auth.forgot-password');
+        return view('auth.forgot-password', [
+            'SEOData' => SEOService::getPageSEO('forgot-password'),
+        ]);
     }
 
     public function sendPasswordResetLink(Request $request)
@@ -98,7 +105,11 @@ class AuthController extends Controller
         }
         // Don't check if email exists to prevent email enumeration
         // The token validation will happen in resetPasswordHandler
-        return view('auth.reset-password', ['token' => $token, 'email' => $email]);
+        return view('auth.reset-password', [
+            'token' => $token,
+            'email' => $email,
+            'SEOData' => SEOService::getPageSEO('reset-password'),
+        ]);
     }
 
     public function resetPasswordHandler(Request $request)

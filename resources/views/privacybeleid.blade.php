@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
     <main class="container page">
         <x-breadcrumbs :items="[

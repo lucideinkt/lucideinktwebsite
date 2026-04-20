@@ -8,6 +8,7 @@ use App\Mail\WelcomeMail;
 use Carbon\Carbon;
 use App\Models\{Customer, DiscountCode, Order, Product, User};
 use App\Services\MyParcelService;
+use App\Services\SEOService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -59,7 +60,10 @@ class CheckoutController extends Controller
         }
         asort($shippingCountries); // alphabetical
 
-        return view('checkout.index', compact('cart', 'totaalZonderVerzendkosten', 'shippingCountries', 'countryNames'));
+        return view('checkout.index', array_merge(
+            compact('cart', 'totaalZonderVerzendkosten', 'shippingCountries', 'countryNames'),
+            ['SEOData' => SEOService::getPageSEO('checkout')]
+        ));
     }
 
     public function store(Request $request)
@@ -151,7 +155,8 @@ class CheckoutController extends Controller
                 'success' => true,
                 'order' => $order,
                 'pickupLocation' => $pickupLocation,
-                'delivery' => $delivery
+                'delivery' => $delivery,
+                'SEOData' => SEOService::getPageSEO('checkout-success'),
             ]);
     }
 
@@ -728,12 +733,12 @@ class CheckoutController extends Controller
 
     private function checkoutError(string $msg)
     {
-        return view('checkout.success', ['error' => $msg, 'success' => null, 'info' => null]);
+        return view('checkout.success', ['error' => $msg, 'success' => null, 'info' => null, 'SEOData' => SEOService::getPageSEO('checkout-success')]);
     }
 
     private function checkoutInfo(string $msg)
     {
-        return view('checkout.success', ['info' => $msg, 'success' => null, 'error' => null]);
+        return view('checkout.success', ['info' => $msg, 'success' => null, 'error' => null, 'SEOData' => SEOService::getPageSEO('checkout-success')]);
     }
 
     private function mapPackageTypeId(?string $name): int
