@@ -3,6 +3,25 @@
         @if(config('services.google.maps_api_key'))
         <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.maps_api_key') }}&libraries=places&callback=initAddressAutocomplete&loading=async" async defer></script>
         @endif
+        <style>
+            /* Suppress browser autofill blue/yellow background on all checkout inputs */
+            .checkout input:-webkit-autofill,
+            .checkout input:-webkit-autofill:hover,
+            .checkout input:-webkit-autofill:focus,
+            .checkout input:-webkit-autofill:active {
+                -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+                box-shadow: 0 0 0px 1000px #ffffff inset !important;
+                -webkit-text-fill-color: inherit !important;
+                transition: background-color 9999s ease-in-out 0s !important;
+            }
+            /* 1Password, Dashlane, LastPass and other extension autofill overrides */
+            .checkout input[data-com-onepassword-filled],
+            .checkout select[data-com-onepassword-filled],
+            .checkout input[data-com-onepassword-filled="light"],
+            .checkout input[data-com-onepassword-filled="dark"] {
+                background-color: #ffffff !important;
+            }
+        </style>
     @endpush
     <div class="page-normal-background">
     <main class="container page checkout">
@@ -81,7 +100,7 @@
                         <div class="name-box">
                             <div class="form-input">
                                 <label for="billing_first_name">Voornaam <span class="required">*</span></label>
-                                <input type="text" name="billing_first_name" autocomplete="given-name"
+                                <input type="text" name="billing_first_name" autocomplete="given-name" data-1p-ignore
                                     value="{{ old('billing_first_name') }}">
                                 @error('billing_first_name')
                                     <div class="error">{{ $message }}</div>
@@ -89,7 +108,7 @@
                             </div>
                             <div class="form-input">
                                 <label for="billing_last_name">Achternaam <span class="required">*</span></label>
-                                <input type="text" name="billing_last_name" autocomplete="family-name"
+                                <input type="text" name="billing_last_name" autocomplete="family-name" data-1p-ignore
                                     value="{{ old('billing_last_name') }}">
                                 @error('billing_last_name')
                                     <div class="error">{{ $message }}</div>
@@ -107,7 +126,6 @@
                                 type="text"
                                 id="billing_address_search"
                                 placeholder="bijv. Keizersgracht 1, Amsterdam"
-                                autocomplete="off"
                                 class="address-search-input"
                                 onkeydown="if(event.key==='Enter'){event.preventDefault();}"
                             >
@@ -116,7 +134,7 @@
                         <div class="street-box">
                             <div class="form-input street">
                                 <label for="billing_street">Straatnaam <span class="required">*</span></label>
-                                <input type="text" name="billing_street" autocomplete="address-line1"
+                                <input type="text" name="billing_street" autocomplete="address-line1" data-1p-ignore
                                     value="{{ old('billing_street') }}"
                                     placeholder="Straatnaam">
                                 @error('billing_street')
@@ -126,7 +144,7 @@
                             <div class="housnumber-box">
                                 <div class="form-input">
                                     <label for="billing_house_number">Huisnummer <span class="required">*</span></label>
-                                    <input type="number" name="billing_house_number" autocomplete="address-line2"
+                                    <input type="number" name="billing_house_number" autocomplete="address-line2" data-1p-ignore
                                         value="{{ old('billing_house_number') }}"
                                         placeholder="Nr.">
                                     @error('billing_house_number')
@@ -135,7 +153,7 @@
                                 </div>
                                 <div class="form-input">
                                     <label for="billing_house_number-add">Toevoeging</label>
-                                    <input type="text" name="billing_house_number-add" autocomplete="address-line2"
+                                    <input type="text" name="billing_house_number-add" autocomplete="address-line2" data-1p-ignore
                                         value="{{ old('billing_house_number-add') }}">
                                     @error('billing_house_number-add')
                                         <div class="error">{{ $message }}</div>
@@ -146,7 +164,7 @@
 
                         <div class="form-input">
                             <label for="billing_postal_code">Postcode <span class="required">*</span></label>
-                            <input type="text" name="billing_postal_code" autocomplete="postal-code"
+                            <input type="text" name="billing_postal_code" autocomplete="postal-code" data-1p-ignore
                                 value="{{ old('billing_postal_code') }}"
                                 placeholder="Postcode">
                             @error('billing_postal_code')
@@ -156,7 +174,7 @@
 
                         <div class="form-input">
                             <label for="billing_city">Plaats <span class="required">*</span></label>
-                            <input type="text" name="billing_city" autocomplete="address-level2"
+                            <input type="text" name="billing_city" autocomplete="address-level2" data-1p-ignore
                                 value="{{ old('billing_city') }}"
                                 placeholder="Plaats">
                             @error('billing_city')
@@ -166,7 +184,7 @@
 
                         <div class="form-input">
                             <label for="billing_phone">Telefoonnummer</label>
-                            <input type="text" name="billing_phone" autocomplete="tel"
+                            <input type="text" name="billing_phone" autocomplete="tel" data-1p-ignore
                                 value="{{ old('billing_phone') }}">
                             @error('billing_phone')
                                 <div class="error">{{ $message }}</div>
@@ -175,7 +193,7 @@
 
                         <div class="form-input">
                             <label for="billing_company">Bedrijfsnaam</label>
-                            <input type="text" name="billing_company" autocomplete="organization"
+                            <input type="text" name="billing_company" autocomplete="organization" data-1p-ignore
                                 value="{{ old('billing_company') }}">
                             @error('billing_company')
                                 <div class="error">{{ $message }}</div>
@@ -184,7 +202,7 @@
 
                         <div class="form-input">
                             <label for="billing_country">Land <span class="required">*</span></label>
-                            <select name="billing_country" id="billing_country" autocomplete="country">
+                            <select name="billing_country" id="billing_country" autocomplete="off" data-1p-ignore>
                                 <option value="" disabled {{ old('billing_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
                                 @foreach($shippingCountries as $code => $name)
                                     <option value="{{ $code }}" {{ old('billing_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
@@ -229,7 +247,7 @@
                         <div class="name-box">
                             <div class="form-input">
                                 <label for="shipping_first_name">Voornaam</label>
-                                <input type="text" name="shipping_first_name" autocomplete="shipping given-name"
+                                <input type="text" name="shipping_first_name" autocomplete="shipping given-name" data-1p-ignore
                                     value="{{ old('shipping_first_name') }}">
                                 @error('shipping_first_name')
                                     <div class="error">{{ $message }}</div>
@@ -237,7 +255,7 @@
                             </div>
                             <div class="form-input">
                                 <label for="shipping_last_name">Achternaam</label>
-                                <input type="text" name="shipping_last_name" autocomplete="shipping family-name"
+                                <input type="text" name="shipping_last_name" autocomplete="shipping family-name" data-1p-ignore
                                     value="{{ old('shipping_last_name') }}">
                                 @error('shipping_last_name')
                                     <div class="error">{{ $message }}</div>
@@ -264,7 +282,7 @@
                         <div class="street-box">
                             <div class="form-input street">
                                 <label for="shipping_street">Straatnaam</label>
-                                <input type="text" name="shipping_street" autocomplete="shipping address-line1"
+                                <input type="text" name="shipping_street" autocomplete="shipping address-line1" data-1p-ignore
                                     value="{{ old('shipping_street') }}"
                                     placeholder="Straatnaam">
                                 @error('shipping_street')
@@ -275,7 +293,7 @@
                                 <div class="form-input">
                                     <label for="shipping_house_number">Huisnummer</label>
                                     <input type="number" name="shipping_house_number"
-                                        autocomplete="shipping address-line2"
+                                        autocomplete="shipping address-line2" data-1p-ignore
                                         value="{{ old('shipping_house_number') }}"
                                         placeholder="Nr.">
                                     @error('shipping_house_number')
@@ -284,7 +302,7 @@
                                 </div>
                                 <div class="form-input">
                                     <label for="shipping_house_number-add">Toevoeging</label>
-                                    <input type="text" name="shipping_house_number-add"
+                                    <input type="text" name="shipping_house_number-add" data-1p-ignore
                                         value="{{ old('shipping_house_number-add') }}">
                                     @error('shipping_house_number-add')
                                         <div class="error">{{ $message }}</div>
@@ -295,7 +313,7 @@
 
                         <div class="form-input">
                             <label for="shipping_postal_code">Postcode</label>
-                            <input type="text" name="shipping_postal_code" autocomplete="shipping postal-code"
+                            <input type="text" name="shipping_postal_code" autocomplete="shipping postal-code" data-1p-ignore
                                 value="{{ old('shipping_postal_code') }}"
                                 placeholder="Postcode">
                             @error('shipping_postal_code')
@@ -305,7 +323,7 @@
 
                         <div class="form-input">
                             <label for="shipping_city">Plaats</label>
-                            <input type="text" name="shipping_city" autocomplete="shipping address-level2"
+                            <input type="text" name="shipping_city" autocomplete="shipping address-level2" data-1p-ignore
                                 value="{{ old('shipping_city') }}"
                                 placeholder="Plaats">
                             @error('shipping_city')
@@ -315,7 +333,7 @@
 
                         <div class="form-input">
                             <label for="shipping_phone">Telefoonnummer</label>
-                            <input type="text" name="shipping_phone" autocomplete="shipping tel"
+                            <input type="text" name="shipping_phone" autocomplete="shipping tel" data-1p-ignore
                                 value="{{ old('shipping_phone') }}">
                             @error('shipping_phone')
                                 <div class="error">{{ $message }}</div>
@@ -324,7 +342,7 @@
 
                         <div class="form-input">
                             <label for="shipping_company">Bedrijfsnaam</label>
-                            <input type="text" name="shipping_company" autocomplete="shipping organization"
+                            <input type="text" name="shipping_company" autocomplete="shipping organization" data-1p-ignore
                                 value="{{ old('shipping_company') }}">
                             @error('shipping_company')
                                 <div class="error">{{ $message }}</div>
@@ -333,7 +351,7 @@
 
                         <div class="form-input">
                             <label for="shipping_country">Land</label>
-                            <select name="shipping_country" id="shipping_country" autocomplete="shipping country">
+                            <select name="shipping_country" id="shipping_country" autocomplete="off" data-1p-ignore>
                                 <option value="" disabled {{ old('shipping_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
                                 @foreach($shippingCountries as $code => $name)
                                     <option value="{{ $code }}" {{ old('shipping_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
@@ -433,14 +451,14 @@
                             <div class="create-account-box">
                                 <div class="form-input">
                                     <label for="password">Wachtwoord</label>
-                                    <input type="password" name="password">
+                                    <input type="password" name="password" data-1p-ignore>
                                     @error('password')
                                         <div class="error">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-input">
                                     <label for="password_confirmation">Bevestig wachtwoord</label>
-                                    <input type="password" name="password_confirmation">
+                                    <input type="password" name="password_confirmation" data-1p-ignore>
                                 </div>
                             </div>
                         </div>
@@ -468,6 +486,9 @@
     <x-footer></x-footer>
     <script>
         // ─── Helpers ──────────────────────────────────────────────────────────
+        // Flag: set to true only when Google Places is actively filling the country
+        var _googlePlacesFillingCountry = false;
+
         function resetMyParcelWidget() {
             // Clear only the hidden input value — do NOT touch innerHTML so the
             // MyParcel library can re-render when a new complete address is entered.
@@ -514,6 +535,11 @@
                     var search = document.getElementById('billing_address_search');
                     if (search) search.value = '';
 
+                    // Also clear password fields
+                    document.querySelectorAll('[name="password"], [name="password_confirmation"]').forEach(function (el) {
+                        el.value = '';
+                    });
+
                     // Reset the MyParcel widget (clears stale delivery options)
                     resetMyParcelWidget();
 
@@ -552,6 +578,74 @@
                     document.dispatchEvent(new CustomEvent('countryChanged'));
                 });
             }
+        });
+
+        // ─── Reset country when user types in address fields (prevent browser/plugin autofill) ──
+        document.addEventListener('DOMContentLoaded', function () {
+            // ── MutationObserver: remove blue background injected by 1Password / extensions ──
+            var checkoutForm = document.querySelector('.form.checkout');
+            if (checkoutForm) {
+                var bgObserver = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
+                        if (mutation.type === 'attributes') {
+                            var el = mutation.target;
+                            // Force white background via inline style (overrides extension !important via specificity+inline)
+                            el.style.setProperty('background-color', '#ffffff', 'important');
+                        }
+                    });
+                });
+                checkoutForm.querySelectorAll('input, select').forEach(function (el) {
+                    bgObserver.observe(el, { attributes: true, attributeFilter: ['data-com-onepassword-filled', 'data-dashlane-rid', 'data-lpignore', 'style'] });
+                });
+            }
+
+            // ── Reset country selects: only Google Places is allowed to set these ──
+            // Use multiple timeouts to catch slow-loading extensions (1Password fills at ~500-800ms)
+            function resetCountryIfNotGoogle() {
+                var billing = document.getElementById('billing_country');
+                @if(!old('billing_country'))
+                if (billing && billing.value !== '' && !_googlePlacesFillingCountry) {
+                    billing.value = '';
+                }
+                @endif
+                var shipping = document.getElementById('shipping_country');
+                @if(!old('shipping_country'))
+                if (shipping && shipping.value !== '' && !_googlePlacesFillingCountry) {
+                    shipping.value = '';
+                }
+                @endif
+            }
+            setTimeout(resetCountryIfNotGoogle, 300);
+            setTimeout(resetCountryIfNotGoogle, 800);
+            setTimeout(resetCountryIfNotGoogle, 1500);
+
+            var billingAddressFields = ['billing_street', 'billing_house_number', 'billing_postal_code', 'billing_city'];
+            billingAddressFields.forEach(function (name) {
+                var el = document.querySelector('[name="' + name + '"]');
+                if (el) {
+                    el.addEventListener('keydown', function () {
+                        var country = document.getElementById('billing_country');
+                        if (country && country.value !== '') {
+                            country.value = '';
+                            country.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                    });
+                }
+            });
+
+            var shippingAddressFields = ['shipping_street', 'shipping_house_number', 'shipping_postal_code', 'shipping_city'];
+            shippingAddressFields.forEach(function (name) {
+                var el = document.querySelector('[name="' + name + '"]');
+                if (el) {
+                    el.addEventListener('keydown', function () {
+                        var country = document.getElementById('shipping_country');
+                        if (country && country.value !== '') {
+                            country.value = '';
+                            country.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                    });
+                }
+            });
         });
 
         // ─── Toggle alternate shipping address ───────────────────────────────
@@ -645,13 +739,15 @@
                         const countryCode = component.short_name.toUpperCase();
                         const countryName = countryNames[countryCode] || component.long_name;
 
-                        // Set select value
+                        // Set select value — flag so our country-reset logic knows this is intentional
+                        _googlePlacesFillingCountry = true;
                         const selectEl = document.getElementById(fields.countrySelect);
                         if (selectEl) {
                             selectEl.value = countryCode;
                             // Trigger change event for any listeners
                             selectEl.dispatchEvent(new Event('change', { bubbles: true }));
                         }
+                        setTimeout(function () { _googlePlacesFillingCountry = false; }, 100);
 
                         // Check shipping availability, passing the name for the popup
                         checkShippingAvailability(countryCode, countryName);
@@ -736,7 +832,7 @@
                             <strong>${countryName}</strong>.
                         </p>
                         <p style="font-size:14px; color:#666; margin-top:8px;">
-                            Wij bezorgen momenteel naar Nederland en België.<br>
+                            Wij bezorgen momenteel niet naar het gekozen land.<br>
                             Kies een ander afleveradres of neem contact met ons op.
                         </p>
                         <div style="display:flex; gap:12px; justify-content:center; margin-top:20px; flex-wrap:wrap;">

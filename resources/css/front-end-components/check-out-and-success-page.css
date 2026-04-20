@@ -44,6 +44,17 @@
     margin: 5px 0 0;
 }
 
+/* Override browser autofill blue background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+    box-shadow: 0 0 0px 1000px #fff inset !important;
+    -webkit-text-fill-color: var(--main-font-color) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
 /* Flash gold when a field is auto-filled */
 @keyframes autofillFlash {
     0%   { background-color: rgba(197, 160, 89, 0.18); }
