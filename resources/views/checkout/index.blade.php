@@ -52,13 +52,10 @@
 
                 <div>
                     <div class="item customer-details checkout-card">
-                        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px;">
-                            <h3 class="checkout-section-title" style="margin-bottom:0;">Factuurgegevens</h3>
-                            <button type="button" id="clear-billing-fields"
-                                style="flex-shrink:0; background:none; border:1px solid #ccc; border-radius:6px; padding:5px 12px; font-size:13px; color:#888; cursor:pointer; line-height:1.4;"
-                                onmouseover="this.style.background='#f5f5f5';this.style.color='#333';"
-                                onmouseout="this.style.background='none';this.style.color='#888';">
-                                <i class="fa fa-rotate-left" style="margin-right:4px;"></i>Wissen
+                        <div class="checkout-section-header">
+                            <h3 class="checkout-section-title">Factuurgegevens</h3>
+                            <button type="button" id="clear-billing-fields" class="btn-clear-fields">
+                                <i class="fa fa-rotate-left"></i>Wissen
                             </button>
                         </div>
 
@@ -122,7 +119,7 @@
                                 <label for="billing_street">Straatnaam <span class="required">*</span></label>
                                 <input type="text" name="billing_street" autocomplete="address-line1"
                                     value="{{ old('billing_street') }}"
-                                    @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
+                                    placeholder="Straatnaam">
                                 @error('billing_street')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
@@ -132,7 +129,7 @@
                                     <label for="billing_house_number">Huisnummer <span class="required">*</span></label>
                                     <input type="number" name="billing_house_number" autocomplete="address-line2"
                                         value="{{ old('billing_house_number') }}"
-                                        @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="-" @endif>
+                                        placeholder="Nr.">
                                     @error('billing_house_number')
                                         <div class="error">{{ $message }}</div>
                                     @enderror
@@ -152,7 +149,7 @@
                             <label for="billing_postal_code">Postcode <span class="required">*</span></label>
                             <input type="text" name="billing_postal_code" autocomplete="postal-code"
                                 value="{{ old('billing_postal_code') }}"
-                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
+                                placeholder="Postcode">
                             @error('billing_postal_code')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -162,7 +159,7 @@
                             <label for="billing_city">Plaats <span class="required">*</span></label>
                             <input type="text" name="billing_city" autocomplete="address-level2"
                                 value="{{ old('billing_city') }}"
-                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
+                                placeholder="Plaats">
                             @error('billing_city')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -188,23 +185,12 @@
 
                         <div class="form-input">
                             <label for="billing_country">Land <span class="required">*</span></label>
-                            @if(config('services.google.maps_api_key'))
-                                {{-- Autocomplete mode: filled automatically by Google Places --}}
-                                <input type="hidden" name="billing_country" id="billing_country"
-                                    value="{{ old('billing_country', '') }}">
-                                <input type="text" id="billing_country_display" readonly
-                                    value="{{ old('billing_country') ? ($countryNames[old('billing_country')] ?? old('billing_country')) : '' }}"
-                                    style="background-color:#f5f5f5; cursor:default;"
-                                    placeholder="Wordt ingevuld via adres zoeken">
-                            @else
-                                {{-- Fallback: select with only countries that have shipping configured --}}
-                                <select name="billing_country" id="billing_country" autocomplete="country">
-                                    <option value="" disabled {{ old('billing_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
-                                    @foreach($shippingCountries as $code => $name)
-                                        <option value="{{ $code }}" {{ old('billing_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
-                                    @endforeach
-                                </select>
-                            @endif
+                            <select name="billing_country" id="billing_country" autocomplete="country">
+                                <option value="" disabled {{ old('billing_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
+                                @foreach($shippingCountries as $code => $name)
+                                    <option value="{{ $code }}" {{ old('billing_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
+                                @endforeach
+                            </select>
                             @error('billing_country')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -234,13 +220,10 @@
                     </div>
 
                     <div class="item customer-details alternate checkout-card" id="shipping-fields">
-                        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px;">
-                            <h3 class="checkout-section-title" style="margin-bottom:0;">Alternatief verzendadres</h3>
-                            <button type="button" id="clear-shipping-fields"
-                                style="flex-shrink:0; background:none; border:1px solid #ccc; border-radius:6px; padding:5px 12px; font-size:13px; color:#888; cursor:pointer; line-height:1.4;"
-                                onmouseover="this.style.background='#f5f5f5';this.style.color='#333';"
-                                onmouseout="this.style.background='none';this.style.color='#888';">
-                                <i class="fa fa-rotate-left" style="margin-right:4px;"></i>Wissen
+                        <div class="checkout-section-header">
+                            <h3 class="checkout-section-title">Alternatief verzendadres</h3>
+                            <button type="button" id="clear-shipping-fields" class="btn-clear-fields">
+                                <i class="fa fa-rotate-left"></i>Wissen
                             </button>
                         </div>
 
@@ -284,7 +267,7 @@
                                 <label for="shipping_street">Straatnaam</label>
                                 <input type="text" name="shipping_street" autocomplete="shipping address-line1"
                                     value="{{ old('shipping_street') }}"
-                                    @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
+                                    placeholder="Straatnaam">
                                 @error('shipping_street')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
@@ -295,7 +278,7 @@
                                     <input type="number" name="shipping_house_number"
                                         autocomplete="shipping address-line2"
                                         value="{{ old('shipping_house_number') }}"
-                                        @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="-" @endif>
+                                        placeholder="Nr.">
                                     @error('shipping_house_number')
                                         <div class="error">{{ $message }}</div>
                                     @enderror
@@ -315,7 +298,7 @@
                             <label for="shipping_postal_code">Postcode</label>
                             <input type="text" name="shipping_postal_code" autocomplete="shipping postal-code"
                                 value="{{ old('shipping_postal_code') }}"
-                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
+                                placeholder="Postcode">
                             @error('shipping_postal_code')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -325,7 +308,7 @@
                             <label for="shipping_city">Plaats</label>
                             <input type="text" name="shipping_city" autocomplete="shipping address-level2"
                                 value="{{ old('shipping_city') }}"
-                                @if(config('services.google.maps_api_key')) readonly style="background-color:#f5f5f5; cursor:default;" placeholder="Wordt ingevuld via adres zoeken" @endif>
+                                placeholder="Plaats">
                             @error('shipping_city')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -351,23 +334,12 @@
 
                         <div class="form-input">
                             <label for="shipping_country">Land</label>
-                            @if(config('services.google.maps_api_key'))
-                                {{-- Autocomplete mode: filled automatically by Google Places --}}
-                                <input type="hidden" name="shipping_country" id="shipping_country"
-                                    value="{{ old('shipping_country', '') }}">
-                                <input type="text" id="shipping_country_display" readonly
-                                    value="{{ old('shipping_country') ? ($countryNames[old('shipping_country')] ?? old('shipping_country')) : '' }}"
-                                    style="background-color:#f5f5f5; cursor:default;"
-                                    placeholder="Wordt ingevuld via adres zoeken">
-                            @else
-                                {{-- Fallback: select with only countries that have shipping configured --}}
-                                <select name="shipping_country" id="shipping_country" autocomplete="shipping country">
-                                    <option value="" disabled {{ old('shipping_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
-                                    @foreach($shippingCountries as $code => $name)
-                                        <option value="{{ $code }}" {{ old('shipping_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
-                                    @endforeach
-                                </select>
-                            @endif
+                            <select name="shipping_country" id="shipping_country" autocomplete="shipping country">
+                                <option value="" disabled {{ old('shipping_country', '') === '' ? 'selected' : '' }}>— Kies een land —</option>
+                                @foreach($shippingCountries as $code => $name)
+                                    <option value="{{ $code }}" {{ old('shipping_country') === $code ? 'selected' : '' }}>{{ $name }}</option>
+                                @endforeach
+                            </select>
                             @error('shipping_country')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -506,10 +478,8 @@
                     });
                     var search = document.getElementById('billing_address_search');
                     if (search) search.value = '';
-                    var hiddenCountry = document.getElementById('billing_country');
-                    if (hiddenCountry) hiddenCountry.value = '';
-                    var displayCountry = document.getElementById('billing_country_display');
-                    if (displayCountry) displayCountry.value = '';
+                    var countrySelect = document.getElementById('billing_country');
+                    if (countrySelect) countrySelect.selectedIndex = 0;
                     document.dispatchEvent(new CustomEvent('countryChanged'));
                 });
             }
@@ -529,10 +499,8 @@
                     });
                     var search = document.getElementById('shipping_address_search');
                     if (search) search.value = '';
-                    var hiddenCountry = document.getElementById('shipping_country');
-                    if (hiddenCountry) hiddenCountry.value = '';
-                    var displayCountry = document.getElementById('shipping_country_display');
-                    if (displayCountry) displayCountry.value = '';
+                    var countrySelect = document.getElementById('shipping_country');
+                    if (countrySelect) countrySelect.selectedIndex = 0;
                     document.dispatchEvent(new CustomEvent('countryChanged'));
                 });
             }
@@ -573,8 +541,7 @@
                 houseNumber:    '[name="billing_house_number"]',
                 postalCode:     '[name="billing_postal_code"]',
                 city:           '[name="billing_city"]',
-                countryHidden:  'billing_country',
-                countryDisplay: 'billing_country_display',
+                countrySelect:  'billing_country',
             });
 
             setupAutocomplete('shipping_address_search', {
@@ -582,8 +549,7 @@
                 houseNumber:    '[name="shipping_house_number"]',
                 postalCode:     '[name="shipping_postal_code"]',
                 city:           '[name="shipping_city"]',
-                countryHidden:  'shipping_country',
-                countryDisplay: 'shipping_country_display',
+                countrySelect:  'shipping_country',
             });
         }
 
@@ -631,13 +597,13 @@
                         const countryCode = component.short_name.toUpperCase();
                         const countryName = countryNames[countryCode] || component.long_name;
 
-                        // Set hidden input value
-                        const hiddenEl = document.getElementById(fields.countryHidden);
-                        if (hiddenEl) hiddenEl.value = countryCode;
-
-                        // Set readonly display
-                        const displayEl = document.getElementById(fields.countryDisplay);
-                        if (displayEl) displayEl.value = countryName;
+                        // Set select value
+                        const selectEl = document.getElementById(fields.countrySelect);
+                        if (selectEl) {
+                            selectEl.value = countryCode;
+                            // Trigger change event for any listeners
+                            selectEl.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
 
                         // Check shipping availability, passing the name for the popup
                         checkShippingAvailability(countryCode, countryName);
@@ -671,11 +637,11 @@
                         el.dispatchEvent(new Event('change', { bubbles: true }));
                     }
                 });
-                // Also fire on the hidden country input so shipping cost + MyParcel update
-                const countryHiddenEl = document.getElementById(fields.countryHidden);
-                if (countryHiddenEl && countryHiddenEl.value) {
-                    countryHiddenEl.dispatchEvent(new Event('input',  { bubbles: true }));
-                    countryHiddenEl.dispatchEvent(new Event('change', { bubbles: true }));
+                // Also fire on the select country field so shipping cost + MyParcel update
+                const countrySelectEl = document.getElementById(fields.countrySelect);
+                if (countrySelectEl && countrySelectEl.value) {
+                    countrySelectEl.dispatchEvent(new Event('input',  { bubbles: true }));
+                    countrySelectEl.dispatchEvent(new Event('change', { bubbles: true }));
                 }
 
                 // Signal MyParcel to reload pickup locations for the new address
