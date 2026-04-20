@@ -23,9 +23,10 @@ export function initMyParcelWidget() {
 
             const street = document.querySelector(`[name="${prefix}street"]`)?.value || '';
             const number = document.querySelector(`[name="${prefix}house_number"]`)?.value || '';
+            const cc     = document.querySelector(`[name="${prefix}country"]`)?.value || '';
 
             return {
-                cc: document.querySelector(`[name="${prefix}country"]`)?.value || 'NL',
+                cc: cc,
                 postalCode: (document.querySelector(`[name="${prefix}postal_code"]`)?.value || '')
                     .replace(/\s+/g, '')
                     .toUpperCase(),
@@ -35,10 +36,12 @@ export function initMyParcelWidget() {
             };
         }
 
-        // Check if address is complete
+        // Check if address is complete (country must be explicitly chosen)
         function isAddressComplete(address) {
-            return address && address.cc && address.postalCode &&
-                address.number && address.street && address.city;
+            return address &&
+                address.cc && address.cc.trim() !== '' &&
+                address.postalCode && address.number &&
+                address.street && address.city;
         }
 
         // Ensure hidden input exists
@@ -144,21 +147,47 @@ export function initMyParcelWidget() {
             return strings[locale] || strings['en'];
         }
 
-        // Update MyParcel widget
+        // Debounce timer for widget updates
+        let updateWidgetTimer = null;
+        let lastDispatchedCountry = null;
+
         function updateWidget() {
             if (!myparcelEnabled) return;
 
             const address = getCurrentAddress();
             const container = document.querySelector(WIDGET_SELECTOR);
-
             if (!container) return;
 
-            // Hide if address incomplete
+            // Hide immediately when address is incomplete
             if (!isAddressComplete(address)) {
+                clearTimeout(updateWidgetTimer);
                 container.style.display = 'none';
                 ensureHiddenInput().value = '';
+                lastDispatchedCountry = null;
                 return;
             }
+
+            // When country changes hide immediately so stale locations aren't visible
+            if (address.cc !== lastDispatchedCountry) {
+                clearTimeout(updateWidgetTimer);
+                container.style.display = 'none';
+                ensureHiddenInput().value = '';
+            }
+
+            // Debounce so we don't fire on every keystroke
+            clearTimeout(updateWidgetTimer);
+            updateWidgetTimer = setTimeout(function () {
+                dispatchWidgetUpdate(address, container);
+            }, 600);
+        }
+
+        // Actually dispatch the update to the MyParcel library
+        function dispatchWidgetUpdate(address, container) {
+            if (!myparcelEnabled) return;
+
+            // Record the country we are about to load, so the next updateWidget()
+            // call can detect a country change and clear stale pickup locations.
+            lastDispatchedCountry = address.cc;
 
             container.style.display = '';
 
@@ -193,9 +222,13 @@ export function initMyParcelWidget() {
                 strings: getLocaleStrings(locale)
             };
 
-            // Dispatch to widget
+            // Always use myparcel_render_delivery_options — this event re-initialises
+            // the Vue app from scratch every time, re-registers itself as a listener,
+            // and fully replaces any previously rendered pickup locations.
+            // (myparcel_update_delivery_options removes itself after the first render,
+            //  so it cannot be used for subsequent updates.)
             document.dispatchEvent(
-                new CustomEvent('myparcel_update_delivery_options', {
+                new CustomEvent('myparcel_render_delivery_options', {
                     detail: configuration
                 })
             );
@@ -232,7 +265,7 @@ export function initMyParcelWidget() {
                 'billing_country', 'billing_postal_code', 'billing_street',
                 'billing_house_number', 'billing_city',
                 'shipping_country', 'shipping_postal_code', 'shipping_street',
-                'shipping_house_number', 'shipping_city', 'alt-shipping'
+                'shipping_house_number', 'shipping_city',
             ];
 
             fields.forEach(fieldName => {
@@ -242,11 +275,23 @@ export function initMyParcelWidget() {
                     element.addEventListener('change', updateWidget);
                 }
             });
+
+            // When the alt-shipping checkbox changes, always re-evaluate the widget
+            // so it immediately shows/hides based on whichever address is now active
+            const altShipping = document.querySelector('[name="alt-shipping"]') ||
+                                 document.getElementById('alt-shipping');
+            if (altShipping) {
+                altShipping.addEventListener('change', updateWidget);
+            }
         }
 
         // Enable MyParcel widget
         function enableWidget() {
-            if (myparcelEnabled) return;
+            if (myparcelEnabled) {
+                // Already enabled — still re-evaluate in case the active address changed
+                updateWidget();
+                return;
+            }
 
             myparcelEnabled = true;
             const container = document.querySelector(WIDGET_SELECTOR);
@@ -261,6 +306,7 @@ export function initMyParcelWidget() {
             if (!myparcelEnabled) return;
 
             myparcelEnabled = false;
+            lastDispatchedCountry = null;
             const container = document.querySelector(WIDGET_SELECTOR);
 
             if (container) {

@@ -810,9 +810,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 strings: getLocaleStrings(locale)
             };
 
-            // Dispatch to widget
+            // Always use myparcel_render_delivery_options.
+            // The library's myparcel_update_delivery_options listener removes itself
+            // after the first render, so it silently fails on all subsequent calls.
+            // myparcel_render_delivery_options re-initialises the Vue app from scratch
+            // every time and re-registers itself — so it works reliably on every call.
             document.dispatchEvent(
-                new CustomEvent('myparcel_update_delivery_options', {
+                new CustomEvent('myparcel_render_delivery_options', {
                     detail: configuration
                 })
             );
