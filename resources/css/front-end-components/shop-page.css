@@ -324,7 +324,7 @@
     display: inline-block;
     position: relative;
     top: -1px;
-    font-size: 12px !important;
+    font-size: 12px;
 }
 
 .product-card-button:hover:not(:disabled) {
@@ -473,7 +473,7 @@
     }
 
     .product-card-link {
-        padding: 14% 14% 0;
+        padding: 14% 19% 0;
     }
 
     .product-card-content {
@@ -549,6 +549,15 @@
     .product-card-button {
         padding: 5px 9px;
         font-size: 0.75rem;
+        height: 30px;
+    }
+
+    .product-card-button .fa-bag-shopping {
+        font-size: 0.6rem;
+    }
+
+    .product-card-button i {
+        font-size: 0.3rem;
     }
 
     .page.shop .book-box {
@@ -557,6 +566,10 @@
 
     .shop-header-image {
         width: 300px;
+    }
+
+    .product-card-image-wrapper {
+        margin-top: 10px;
     }
 }
 
@@ -583,13 +596,18 @@
     }
 
     .product-card-price-amount {
-        font-size: 0.88rem;
+        font-size: 0.8rem;
+        position: relative;
+        top: -3px;
     }
 
     .product-card-button {
-        padding: 5px 9px;
+        padding: 10px 9px;
         font-size: 0.72rem;
-        height: 30px;
+        margin-bottom: 12px;
+        margin-top: 10px;
+        position: relative;
+        top: -4px;
     }
 
     .product-card-image {
