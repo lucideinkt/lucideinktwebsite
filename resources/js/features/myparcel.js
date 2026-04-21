@@ -151,6 +151,19 @@ export function initMyParcelWidget() {
         let updateWidgetTimer = null;
         let lastDispatchedCountry = null;
 
+        // Address signature — used to skip redundant widget reloads
+        let lastAddressSignature = '';
+
+        function buildAddressSignature(address) {
+            return [
+                address.cc,
+                address.postalCode,
+                address.number,
+                address.street,
+                address.city
+            ].join('|').toLowerCase();
+        }
+
         function updateWidget() {
             if (!myparcelEnabled) return;
 
@@ -164,6 +177,7 @@ export function initMyParcelWidget() {
                 container.style.display = 'none';
                 ensureHiddenInput().value = '';
                 lastDispatchedCountry = null;
+                lastAddressSignature = '';
                 return;
             }
 
@@ -172,12 +186,23 @@ export function initMyParcelWidget() {
                 clearTimeout(updateWidgetTimer);
                 container.style.display = 'none';
                 ensureHiddenInput().value = '';
+                lastAddressSignature = '';
             }
+
+            // Skip if the address hasn't actually changed
+            const sig = buildAddressSignature(address);
+            if (sig === lastAddressSignature) return;
 
             // Debounce so we don't fire on every keystroke
             clearTimeout(updateWidgetTimer);
             updateWidgetTimer = setTimeout(function () {
-                dispatchWidgetUpdate(address, container);
+                // Re-check signature inside the timeout in case several fields
+                // changed together (autofill) and the last one just arrived
+                const freshAddress = getCurrentAddress();
+                const freshSig = buildAddressSignature(freshAddress);
+                if (freshSig === lastAddressSignature) return;
+                lastAddressSignature = freshSig;
+                dispatchWidgetUpdate(freshAddress, container);
             }, 600);
         }
 
@@ -257,22 +282,31 @@ export function initMyParcelWidget() {
 
         // Attach address field listeners (only once)
         let listenersAttached = false;
+
+        // Selector list used for both event delegation and polling
+        const ADDRESS_FIELD_NAMES = [
+            'billing_country', 'billing_postal_code', 'billing_street',
+            'billing_house_number', 'billing_city',
+            'shipping_country', 'shipping_postal_code', 'shipping_street',
+            'shipping_house_number', 'shipping_city',
+        ];
+        const ADDRESS_FIELD_SELECTOR = ADDRESS_FIELD_NAMES.map(n => `[name="${n}"]`).join(',');
+
+        function scheduleUpdate() {
+            setTimeout(updateWidget, 100);
+        }
+
         function attachAddressListeners() {
             if (listenersAttached) return;
             listenersAttached = true;
 
-            const fields = [
-                'billing_country', 'billing_postal_code', 'billing_street',
-                'billing_house_number', 'billing_city',
-                'shipping_country', 'shipping_postal_code', 'shipping_street',
-                'shipping_house_number', 'shipping_city',
-            ];
-
-            fields.forEach(fieldName => {
+            ADDRESS_FIELD_NAMES.forEach(fieldName => {
                 const element = document.querySelector(`[name="${fieldName}"]`);
                 if (element) {
-                    element.addEventListener('input', updateWidget);
-                    element.addEventListener('change', updateWidget);
+                    // input + change for manual typing/selecting; blur catches autofill on tab
+                    element.addEventListener('input',  scheduleUpdate);
+                    element.addEventListener('change', scheduleUpdate);
+                    element.addEventListener('blur',   scheduleUpdate);
                 }
             });
 
@@ -283,6 +317,32 @@ export function initMyParcelWidget() {
             if (altShipping) {
                 altShipping.addEventListener('change', updateWidget);
             }
+
+            // ── Autofill-safe detection ──────────────────────────────────────
+            // Browser autofill can bypass input/change/blur — so we add extra fallbacks.
+
+            // 1. focusin: re-check whenever the user enters an address field
+            document.addEventListener('focusin', (e) => {
+                if (e.target.matches(ADDRESS_FIELD_SELECTOR)) {
+                    scheduleUpdate();
+                }
+            });
+
+            // 2. Delayed checks after page load (catches autocomplete that fires on render)
+            window.addEventListener('load', () => {
+                setTimeout(updateWidget, 300);
+                setTimeout(updateWidget, 1000);
+                setTimeout(updateWidget, 2500);
+            });
+
+            // 3. Short-lived polling fallback — checks for 10 s after listeners are first attached.
+            //    This catches browser autofill that fires asynchronously (e.g. iOS, Chrome on Android).
+            let pollCount = 0;
+            const autofillWatcher = setInterval(() => {
+                updateWidget();
+                pollCount++;
+                if (pollCount >= 20) clearInterval(autofillWatcher);
+            }, 500);
         }
 
         // Enable MyParcel widget
@@ -307,6 +367,7 @@ export function initMyParcelWidget() {
 
             myparcelEnabled = false;
             lastDispatchedCountry = null;
+            lastAddressSignature = '';
             const container = document.querySelector(WIDGET_SELECTOR);
 
             if (container) {
