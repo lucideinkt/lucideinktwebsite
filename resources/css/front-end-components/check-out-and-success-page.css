@@ -465,6 +465,431 @@ input:-webkit-autofill:active {
     margin-top: -20px;
 }
 
+/* ---------------------------------------------------------
+   CHECKOUT CART TABLE  (Livewire component)
+   --------------------------------------------------------- */
+
+/* Error banner */
+.co-cart-error {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #8b1a1a;
+    background: #fff5f5;
+    border-left: 3px solid #c0392b;
+    padding: 9px 13px;
+    border-radius: 5px;
+    margin-bottom: 14px;
+    font-size: 0.875rem;
+}
+
+/* Table shell */
+.co-cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+/* Header */
+.co-cart-table thead tr {
+    background: var(--ink-1, #2a1e0e);
+    color: var(--ink-inverse, #fff);
+}
+
+.co-cart-table thead th {
+    padding: 9px 12px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.co-cart-th-product { text-align: left; }
+.co-cart-th-qty     { text-align: center; width: 130px; }
+.co-cart-th-sub     { text-align: right; white-space: nowrap; }
+.co-cart-th-del     { width: 40px; }
+
+/* Body rows */
+.co-cart-row {
+    border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+    transition: background 0.15s;
+}
+
+.co-cart-row:last-child {
+    border-bottom: none;
+}
+
+.co-cart-row:hover {
+    background: rgba(197, 160, 89, 0.07);
+}
+
+.co-cart-row td {
+    padding: 12px 12px;
+    vertical-align: middle;
+}
+
+/* Product name cell */
+.co-cart-product-link {
+    display: block;
+    font-weight: 600;
+    color: var(--main-font-color);
+    text-decoration: none;
+    line-height: 1.35;
+    margin-bottom: 3px;
+}
+
+a.co-cart-product-link:hover {
+    text-decoration: underline;
+}
+
+.co-cart-unit-price {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ink-muted, #888);
+}
+
+/* Qty cell */
+.co-cart-td-qty {
+    text-align: center;
+}
+
+/* Subtotal cell */
+.co-cart-td-sub {
+    text-align: right;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--main-font-color);
+}
+
+/* Delete cell */
+.co-cart-td-del {
+    text-align: right;
+    padding-right: 6px !important;
+}
+
+/* Qty controls pill */
+.checkout-qty-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(197, 160, 89, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.checkout-qty-btn {
+    background: transparent;
+    border: none;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-font-color);
+    transition: background 0.15s;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.checkout-qty-btn:hover {
+    background: rgba(197, 160, 89, 0.2);
+}
+
+.checkout-qty-value {
+    min-width: 26px;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--main-font-color);
+    padding: 0 2px;
+    border-left: 1px solid rgba(197, 160, 89, 0.3);
+    border-right: 1px solid rgba(197, 160, 89, 0.3);
+    line-height: 28px;
+}
+
+/* Remove button */
+.checkout-remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #b03030;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: color 0.15s, background 0.15s;
+    line-height: 1;
+}
+
+.checkout-remove-btn:hover {
+    color: #7a1a1a;
+    background: rgba(176, 48, 48, 0.08);
+}
+
+/* Foot rows */
+.co-cart-shipping-row td {
+    padding: 5px 12px;
+    border: none;
+    font-size: 0.8rem;
+    color: var(--ink-muted, #888);
+    text-align: right;
+}
+
+.co-cart-total-row {
+    border-top: 2px solid rgba(197, 160, 89, 0.35);
+    background: rgba(197, 160, 89, 0.07);
+}
+
+.co-cart-total-row td {
+    padding: 10px 12px;
+    font-size: 0.925rem;
+    color: var(--main-font-color);
+}
+
+.co-cart-discount-row td {
+    padding: 7px 12px;
+    font-size: 0.875rem;
+}
+
+.co-cart-grand-row {
+    border-top: 2px solid rgba(197, 160, 89, 0.45);
+    background: rgba(197, 160, 89, 0.12);
+}
+
+.co-cart-grand-row td {
+    padding: 11px 12px;
+    font-size: 1rem;
+}
+
+.co-cart-total-amount {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.co-cart-discount-label {
+    font-size: 0.72rem;
+    color: #888;
+    margin-left: 3px;
+}
+
+/* Empty state */
+.co-cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 20px 28px;
+    gap: 8px;
+    padding-top: 0;
+}
+
+.co-cart-empty-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(197, 160, 89, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.co-cart-empty-icon-wrap i {
+    font-size: 1.3rem;
+    color: rgba(197, 160, 89, 0.55);
+}
+
+.co-cart-empty-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--main-font-color);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.co-cart-empty-text {
+    font-size: 0.8rem;
+    color: var(--ink-muted, #999);
+    margin: 0;
+    max-width: 240px;
+    line-height: 1.5;
+}
+
+.co-cart-empty-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 7px 16px;
+    background: transparent;
+    color: #2c582f;
+    border: 1px solid rgba(44, 88, 47, 0.4);
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.co-cart-empty-btn:hover {
+    background: rgba(44, 88, 47, 0.07);
+    border-color: rgba(44, 88, 47, 0.7);
+    color: #2c582f;
+}
+
+@media (max-width: 600px) {
+    .co-cart-empty {
+        padding: 24px 14px 20px;
+        padding-top: 0px;
+    }
+}
+
+/* ---------------------------------------------------------
+   MOBILE  — tabel omzetten naar cards (≤ 600px)
+   --------------------------------------------------------- */
+@media (max-width: 600px) {
+
+    /* Verberg de thead */
+    .co-cart-table thead {
+        display: none;
+    }
+
+    /* Elke tbody-rij wordt een card */
+    .co-cart-table,
+    .co-cart-table tbody,
+    .co-cart-row {
+        display: block;
+        width: 100%;
+    }
+
+    .co-cart-row {
+        border: 1px solid rgba(197, 160, 89, 0.3);
+        border-radius: 10px;
+        margin-bottom: 10px;
+        padding: 12px 12px 10px;
+        background: rgba(255, 255, 255, 0.55);
+        box-shadow: 0 1px 4px rgba(139, 90, 43, 0.07);
+    }
+
+    .co-cart-row:last-child {
+        border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+        margin-bottom: 0;
+    }
+
+    /* Verberg losse cellen, we bouwen de layout zelf */
+    .co-cart-row td {
+        display: none;
+        padding: 0;
+    }
+
+    /* --- Naam + stukprijs bovenaan --- */
+    .co-cart-td-name {
+        display: block !important;
+        margin-bottom: 10px;
+    }
+
+    .co-cart-product-link {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+    }
+
+    .co-cart-unit-price {
+        font-size: 0.72rem;
+    }
+
+    /* --- Qty en prijs + delete in één rij --- */
+    .co-cart-td-qty,
+    .co-cart-td-sub,
+    .co-cart-td-del {
+        display: inline-flex !important;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    /* Qty links */
+    .co-cart-td-qty {
+        text-align: left;
+    }
+
+    /* Subtotaal groeit om ruimte te vullen */
+    .co-cart-td-sub {
+        flex: 1;
+        justify-content: flex-end;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-left: auto;
+        padding: 0 6px 0 10px !important;
+    }
+
+    /* Delete rechts */
+    .co-cart-td-del {
+        padding: 0 0 0 4px !important;
+    }
+
+    /* Wrapper-row simuleren via display-flex op de td's tezamen */
+    .co-cart-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .co-cart-td-name {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .co-cart-td-qty {
+        flex: 0 0 auto;
+    }
+
+    .co-cart-td-sub {
+        flex: 1 1 auto;
+    }
+
+    .co-cart-td-del {
+        flex: 0 0 auto;
+    }
+
+    /* Qty pill iets kleiner */
+    .checkout-qty-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 17px;
+    }
+
+    .checkout-qty-value {
+        min-width: 28px;
+        font-size: 0.9rem;
+        line-height: 30px;
+    }
+
+    /* Tfoot: tabel zelf terug naar table voor de totaalrijen */
+    .co-cart-table tfoot {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .co-cart-table tfoot tr,
+    .co-cart-table tfoot td {
+        display: table-row;
+        display: revert;
+    }
+
+    .co-cart-total-row td,
+    .co-cart-grand-row td,
+    .co-cart-discount-row td,
+    .co-cart-shipping-row td {
+        display: table-cell !important;
+        padding: 8px 10px !important;
+    }
+}
+
+/* Legacy selectors kept for backwards compat */
 .page.checkout .order-table {
     border-collapse: collapse;
     min-width: 100%;

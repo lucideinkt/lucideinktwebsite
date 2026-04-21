@@ -382,49 +382,7 @@
                         @enderror
                     </div>
 
-                    <table class="order-table" style="width:100%;">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th style="text-align:right">Subtotaal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($cart as $item)
-                                <tr>
-                                    <td>{{ $item['quantity'] }} &times; {{ $item['name'] }}</td>
-                                    <td style="text-align:right">&euro;
-                                        {{ number_format($item['subtotal'] ?? $item['price'] * $item['quantity'], 2, ',', '.') }}
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2" style="text-align:right; border:none;">
-                                    <span id="shipping-cost" style="font-weight:normal;"></span>
-                                </td>
-                            </tr>
-                            <tr class="total-price" id="total-row">
-                                <td><strong>Totaal</strong></td>
-                                <td style="text-align:right">
-                                    <strong id="order-total"
-                                        data-subtotal="{{ collect($cart)->sum(fn($i) => $i['price'] * $i['quantity']) }}">&euro;
-                                        {{ number_format(collect($cart)->sum(fn($i) => $i['price'] * $i['quantity']), 2, ',', '.') }}</strong>
-                                </td>
-                            </tr>
-                            <tr id="discount-row" style="display:none">
-                                <td><span>Korting</span> <span id="discount-code-label"
-                                        style="font-size:12px;color:#666;"></span></td>
-                                <td style="text-align:right;color:#b30000;">-<span id="discount-amount">0,00</span>
-                                </td>
-                            </tr>
-                            <tr id="new-total-row" style="display:none">
-                                <td><strong>Totaal na korting</strong></td>
-                                <td style="text-align:right"><strong id="order-new-total">&euro; 0,00</strong></td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    @livewire('checkout-cart')
                     <div id="remove-discount-container" style="display:none;margin-bottom:10px;">
                         <button type="button" id="remove_discount_code" class="btn small"
                             style="background:#eee;color:#b30000;">Verwijder kortingscode</button>
