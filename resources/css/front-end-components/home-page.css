@@ -34,9 +34,9 @@
     position: absolute;
     inset: 0;
     background-image: url("../../images/new_warm_leather.webp");
-    background-size: 100% auto;
-    background-position: left top;
-    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     pointer-events: none;
     z-index: -1;
 }
@@ -47,9 +47,9 @@
     position: absolute;
     inset: 0;
     background-image: url("../../images/new_warm_leather.webp");
-    background-size: 100% auto;
-    background-position: left top;
-    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     pointer-events: none;
     z-index: -1;
 }
@@ -370,9 +370,9 @@ h2 {
     position: absolute;
     inset: 0;
     background-image: url("../../images/new_warm_leather.webp");
-    background-size: 100% auto;
-    background-position: left top;
-    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     pointer-events: none;
     z-index: -1;
 }

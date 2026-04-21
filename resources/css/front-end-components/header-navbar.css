@@ -10,6 +10,23 @@
     width: 100%;
     transform: translateY(0);
     will-change: transform;
+    pointer-events: none;
+    height: 100px;
+}
+.header-box {
+    height: 100px;
+}
+
+/* Re-enable pointer events on all interactive children */
+.header .header-box,
+.header .navbar,
+.header .navbar *,
+.header .desktop-hamburger-toggle,
+.header .navbar-cart-sidebar-toggle,
+.header .navbar-cart-sidebar-toggle *,
+.header .logo-container,
+.header .logo-container * {
+    pointer-events: auto;
 }
 
 /* Only allow hiding header on desktop, not mobile */
@@ -150,7 +167,7 @@
     justify-content: center;
     /*gap:40px;*/
     flex-direction: column;
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 .desktop-navbar-container .navbar-glow img {
@@ -638,8 +655,8 @@ li.nav-item.cart .mini-cart-trigger {
         /*background-image: url("../../images/001_leather_background.webp");*/
         background-size: cover;
         background-position: center;
-        border-bottom: 3px solid #f5e6ca;
-        background-color: #f5e6ca !important;
+        /*background-color: #f5e6ca !important;*/
+        background-color: #fff9ef !important;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px !important;
         height: 60px !important;
         position: fixed !important;

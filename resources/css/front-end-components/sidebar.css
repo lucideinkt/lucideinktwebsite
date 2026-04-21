@@ -22,13 +22,12 @@
     width: 300px;
     height: 100vh;
     padding: 0;
-    background: #f5e6ca;
+    background: #fff9ef;
     box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
     transition: right .3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 110;
     overflow-y: auto;
     overflow-x: hidden;
-    border-left: 1px solid #f5e6ca;
 }
 
 .sidebar.open {
@@ -60,7 +59,7 @@
     padding: 18px 25px;
     border-radius: 0;
     position: relative;
-    border-bottom: 1px solid rgba(98, 5, 5, 0.08);
+    border-bottom: 1px solid #e8dcc8;
 }
 
 .sidebar .navbar ul li a .first-letter {
@@ -90,8 +89,8 @@
     justify-content: flex-end;
     padding: 20px 25px;
     margin-bottom: 0;
-    border-bottom: 1px solid rgba(98, 5, 5, 0.08);
-    background: #f5e6ca;
+    border-bottom: 1px solid #e8dcc8;
+    background: #fff9ef;
 }
 
 .sidebar .close-toggle .fa-xmark {

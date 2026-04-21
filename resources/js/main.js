@@ -46,6 +46,7 @@ import { initLivewireCart } from './features/live-wire-cart.js';
 import { initContactForm } from './features/contact-form.js';
 import { readerBook } from './features/reader-book.js';
 import { initProductSwiper } from './features/product-swiper.js';
+import { initAlerts } from './features/alerts.js';
 
 // Import observers
 import { initMutationObserver } from './observers/mutation-observer.js';
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSidebarDropdowns();
     readerBook();
     initProductSwiper();
+    initAlerts();
 
     // Initialize observer (must be last)
     initMutationObserver();

@@ -146,33 +146,32 @@
     gap: .3em;
 }
 
-/* Modern Product Card Styles */
 .product-card {
     display: flex;
     flex-direction: column;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     position: relative;
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    background-image: url("../../images/bg_product_card.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
-
 
 .product-card-link {
     text-decoration: none;
     display: block;
-    padding: 20px 0;
+    padding: 20% 16% 0;
 }
 
 .product-card-image-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 130%;
     overflow: hidden;
-    border-radius: 0;
+    border-radius: 2px;
 }
 
 .product-card-image {
@@ -182,6 +181,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     padding: 0;
 }
 
@@ -222,15 +222,15 @@
 .product-card-content {
     display: flex;
     flex-direction: column;
-    padding: 14px 18px 16px;
+    align-items: center;
+    text-align: center;
+    padding: 10px 16% 18%;
     flex-grow: 1;
     gap: 0;
-    border-top: 1px solid rgba(197, 160, 89, 0.25);
 }
 
 .product-card-category {
     display: inline-block;
-    align-self: flex-start;
     font-size: 0.62rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -246,6 +246,7 @@
 .product-card-title-link {
     text-decoration: none;
     color: inherit;
+    width: 100%;
 }
 
 .product-card-title {
@@ -254,6 +255,7 @@
     color: var(--main-font-color);
     margin: 0 0 2px;
     line-height: 1.35;
+    text-align: center;
 }
 
 .product-card-subtitle {
@@ -261,53 +263,73 @@
     font-size: 0.8rem;
     font-weight: 400;
     color: var(--ink-muted);
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     line-height: 1.4;
     font-style: italic;
+    text-align: center;
 }
 
-/* Divider before footer */
+/* Footer: price left, button right */
 .product-card-footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px solid rgba(197, 160, 89, 0.3);
-    gap: 10px;
+    padding-top: 6px;
+    gap: 8px;
+    width: 100%;
 }
 
 .product-card-price {
     display: flex;
     align-items: baseline;
+    justify-content: flex-start;
     gap: 4px;
 }
 
 .product-card-price-amount {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 800;
     letter-spacing: 0.01em;
+    color: var(--main-font-color);
 }
 
 .product-card-button {
     display: flex;
     align-items: center;
-    gap: 7px;
-    padding: 9px 16px;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 12px;
     background: #2c582f;
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 0.88rem;
+    font-size: 0.78rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    transition: background 0.2s ease;
     white-space: nowrap;
-    flex-shrink: 0;
-    flex-wrap: nowrap;
+    width: auto;
     box-shadow: 0 2px 6px rgba(44, 88, 47, 0.25);
 }
 
+/* Hide button text, show only icon on all screen sizes */
+.product-card-button .in-cart,
+.product-card-button .adding {
+    display: none;
+}
+
+.product-card-button .small-plus {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    font-size: 12px !important;
+}
+
+.product-card-button:hover:not(:disabled) {
+    background: #224625;
+}
 
 .product-card-button > span {
     display: flex;
@@ -317,7 +339,7 @@
 }
 
 .product-card-button:active:not(:disabled) {
-    transform: translateY(0);
+    background: #1a3a1c;
     box-shadow: none;
 }
 
@@ -415,19 +437,16 @@
     }
 
     .product-card-content {
-        padding: 10px 12px 12px;
+        padding: 8px 14% 14%;
     }
 
     .product-card-footer {
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
+        gap: 6px;
     }
 
     .product-card-button {
         padding: 8px 12px;
         font-size: 0.82rem;
-        min-width: fit-content;
     }
 
     .product-card-title {
@@ -453,16 +472,40 @@
         gap: 12px;
     }
 
+    .product-card-link {
+        padding: 14% 14% 0;
+    }
+
     .product-card-content {
-        padding: 12px;
+        padding: 4px 10% 14%;
     }
 
     .product-card-title {
-        font-size: 17px;
+        font-size: 13px;
+        margin-bottom: 1px;
+    }
+
+    .product-card-subtitle {
+        font-size: 0.7rem;
+        margin-bottom: 6px;
+    }
+
+    .product-card-category {
+        margin-bottom: 4px;
     }
 
     .product-card-price-amount {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    .product-card-button {
+        padding: 5px 9px;
+        font-size: 0.72rem;
+    }
+
+    .product-card-footer {
+        padding-top: 3px;
+        gap: 5px;
     }
 }
 
@@ -500,17 +543,12 @@
     }
 
     .product-card-content {
-        padding: 8px 10px 10px;
-    }
-
-    .product-card-footer {
-        padding-top: 8px;
-        gap: 8px;
+        padding: 4px 10% 14%;
     }
 
     .product-card-button {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+        padding: 5px 9px;
+        font-size: 0.75rem;
     }
 
     .page.shop .book-box {
@@ -529,32 +567,34 @@
     }
 
     .product-card-content {
-        padding: 8px;
+        padding: 4px 15% 6%;
     }
 
     .product-card-title {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .product-card-subtitle {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
     }
 
     .product-card-category {
-        font-size: 0.58rem;
+        font-size: 0.56rem;
     }
 
     .product-card-price-amount {
-        font-size: 0.95rem;
+        font-size: 0.88rem;
     }
 
     .product-card-button {
-        padding: 7px 10px;
-        font-size: 0.78rem;
+        padding: 5px 9px;
+        font-size: 0.72rem;
+        height: 30px;
     }
 
     .product-card-image {
         padding: 0;
+        top: 0;
     }
 
     .product-cards-grid {
@@ -563,6 +603,11 @@
 
     .shop-header-image {
         width: 275px;
+    }
+
+    .product-card-footer {
+        position: relative;
+        top: -10px;
     }
 }
 
