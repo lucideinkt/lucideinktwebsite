@@ -66,10 +66,8 @@ class ImageCompressionService
             $newWidth = (int) max(1, $originalWidth * $scale);
             $newHeight = (int) max(1, $originalHeight * $scale);
 
-            $tmp->resize($newWidth, $newHeight, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
+            // Intervention Image v3: scaleDown() preserves aspect ratio and never upscales
+            $tmp->scaleDown($newWidth, $newHeight);
 
             if ($canUseWebp) {
                 // Always use WebP when available — best compression for photos & transparency
