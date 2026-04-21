@@ -5,6 +5,90 @@
  */
 export function initMyParcelWidget() {
 
+        // ─── MyParcel loader helpers ─────────────────────────────────────────
+        const LOADER_ID = 'myparcel-loading-spinner';
+        const LOADER_MIN_MS = 1500; // minimum time the loader stays visible
+        let _loaderShownAt = 0;
+        let _loaderHideTimer = null;
+
+        function showMyParcelLoader(container) {
+            if (!container) return;
+            clearTimeout(_loaderHideTimer);
+
+            // Collapse the widget with no visible space while loading
+            container.classList.remove('myparcel-revealed');
+            container.classList.add('myparcel-hidden');
+
+            // Inject transition styles once
+            if (!document.getElementById('myparcel-spin-style')) {
+                const style = document.createElement('style');
+                style.id = 'myparcel-spin-style';
+                style.textContent = `
+                    @keyframes myparcel-spin{to{transform:rotate(360deg)}}
+                    .myparcel-hidden{max-height:0!important;overflow:hidden!important;opacity:0!important;margin:0!important;padding:0!important;}
+                    .myparcel-revealed{max-height:600px;overflow:visible;opacity:1;transition:max-height 0.45s ease,opacity 0.35s ease 0.1s;}
+                `;
+                document.head.appendChild(style);
+            }
+
+            // Use a sibling wrapper so the Vue mount doesn't destroy the loader
+            let wrap = document.getElementById('myparcel-loader-wrap');
+            if (!wrap) {
+                wrap = document.createElement('div');
+                wrap.id = 'myparcel-loader-wrap';
+                container.parentNode.insertBefore(wrap, container);
+            }
+
+            wrap.innerHTML = `
+                <div id="${LOADER_ID}" style="
+                    display:flex;align-items:center;gap:10px;
+                    padding:14px 0 6px;
+                    color:#888;font-size:14px;
+                ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                         style="animation:myparcel-spin 0.8s linear infinite;flex-shrink:0;">
+                        <circle cx="12" cy="12" r="10" stroke="#d0d0d0" stroke-width="3"/>
+                        <path d="M12 2a10 10 0 0 1 10 10" stroke="#6c8ebf" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span>Bezorgopties worden geladen…</span>
+                </div>
+            `;
+            _loaderShownAt = Date.now();
+        }
+
+        function hideMyParcelLoader() {
+            clearTimeout(_loaderHideTimer);
+            const elapsed = Date.now() - _loaderShownAt;
+            const remaining = LOADER_MIN_MS - elapsed;
+            if (remaining > 0) {
+                _loaderHideTimer = setTimeout(() => _doHideLoader(true), remaining);
+            } else {
+                _doHideLoader(true);
+            }
+        }
+
+        // Cancel the loader without revealing the widget (used when address becomes incomplete)
+        function cancelMyParcelLoader() {
+            clearTimeout(_loaderHideTimer);
+            _doHideLoader(false);
+        }
+
+        function _doHideLoader(reveal) {
+            // Clear the loader UI
+            const wrap = document.getElementById('myparcel-loader-wrap');
+            if (wrap) wrap.innerHTML = '';
+
+            if (reveal) {
+                // Smoothly reveal the widget
+                const container = document.querySelector(WIDGET_SELECTOR);
+                if (container) {
+                    container.classList.remove('myparcel-hidden');
+                    container.classList.add('myparcel-revealed');
+                }
+            }
+        }
+
+        // ─── MyParcel widget events ──────────────────────────────────────────
         const WIDGET_SELECTOR = '#myparcel-delivery-options';
         const myparcelRadios = document.querySelectorAll('input[name="myparcel_choice"]');
 
@@ -174,7 +258,9 @@ export function initMyParcelWidget() {
             // Hide immediately when address is incomplete
             if (!isAddressComplete(address)) {
                 clearTimeout(updateWidgetTimer);
-                container.style.display = 'none';
+                container.classList.remove('myparcel-revealed');
+                container.classList.add('myparcel-hidden');
+                cancelMyParcelLoader();
                 ensureHiddenInput().value = '';
                 lastDispatchedCountry = null;
                 lastAddressSignature = '';
@@ -184,7 +270,8 @@ export function initMyParcelWidget() {
             // When country changes hide immediately so stale locations aren't visible
             if (address.cc !== lastDispatchedCountry) {
                 clearTimeout(updateWidgetTimer);
-                container.style.display = 'none';
+                container.classList.remove('myparcel-revealed');
+                container.classList.add('myparcel-hidden');
                 ensureHiddenInput().value = '';
                 lastAddressSignature = '';
             }
@@ -214,7 +301,7 @@ export function initMyParcelWidget() {
             // call can detect a country change and clear stale pickup locations.
             lastDispatchedCountry = address.cc;
 
-            container.style.display = '';
+            showMyParcelLoader(container);
 
             // Get locale
             let locale = document.documentElement.lang ||
@@ -269,7 +356,7 @@ export function initMyParcelWidget() {
         // Listen for widget updates
         document.addEventListener('myparcel_updated_delivery_options', (event) => {
             if (!myparcelEnabled) return;
-
+            hideMyParcelLoader();
             console.log('[MyParcel] Updated:', event.detail);
             const input = ensureHiddenInput();
             input.value = event.detail ? JSON.stringify(event.detail) : '';
@@ -277,6 +364,7 @@ export function initMyParcelWidget() {
 
         // Listen for errors
         document.addEventListener('myparcel_error_delivery_options', (event) => {
+            hideMyParcelLoader();
             console.error('[MyParcel] Error:', event.detail);
         });
 

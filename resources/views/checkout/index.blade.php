@@ -273,7 +273,6 @@
                                 type="text"
                                 id="shipping_address_search"
                                 placeholder="bijv. Keizersgracht 1, Amsterdam"
-                                autocomplete="off"
                                 class="address-search-input"
                                 onkeydown="if(event.key==='Enter'){event.preventDefault();}"
                             >
@@ -388,6 +387,7 @@
                             style="background:#eee;color:#b30000;">Verwijder kortingscode</button>
                     </div>
 
+                    <div id="myparcel-loader-wrap"></div>
                     <div id="myparcel-delivery-options"></div>
 
                     <div id="opening-hours" class="pickup-opening-hours"></div>
