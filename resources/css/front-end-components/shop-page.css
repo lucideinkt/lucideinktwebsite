@@ -150,12 +150,12 @@
     display: flex;
     flex-direction: column;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     padding-top: 0;
     padding-bottom: 0;
-    background-image: url("../../images/bg_product_card.png");
-    background-size: cover;
+    background-image: url("../../images/product_bg_card.png");
+    background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -163,7 +163,7 @@
 .product-card-link {
     text-decoration: none;
     display: block;
-    padding: 20% 16% 0;
+    padding: 13% 10% 0;
 }
 
 .product-card-image-wrapper {
@@ -473,7 +473,7 @@
     }
 
     .product-card-link {
-        padding: 14% 19% 0;
+        padding: 7% 10% 0;
     }
 
     .product-card-content {
