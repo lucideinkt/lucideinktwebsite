@@ -1306,7 +1306,7 @@
                 if (panelLibrary && !panelLibrary.hidden) libRender();
                 let t = document.getElementById('hl-toast');
                 if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
-                t.textContent = '✓ Bladwijzer verwijderd';
+                t.textContent = '✓ Bladwijzer verwijderd – pagina ' + bm.pageNum;
                 t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
             });
             return marker;
@@ -1367,7 +1367,7 @@
 
                 let t = document.getElementById('hl-toast');
                 if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
-                t.textContent = '✓ Bladwijzer verwijderd';
+                t.textContent = '✓ Bladwijzer verwijderd – pagina ' + pageNum;
                 t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
             } else {
                 // Add
@@ -1377,7 +1377,7 @@
                 if (pageEl) bmInsertPageMarker(newBm, pageEl);
                 let t = document.getElementById('hl-toast');
                 if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
-                t.textContent = '✓ Bladwijzer toegevoegd';
+                t.textContent = '✓ Bladwijzer toegevoegd – pagina ' + pageNum;
                 t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
             }
             bmPageLabel();
@@ -1401,7 +1401,7 @@
                 if (panelLibrary && !panelLibrary.hidden) libRender();
                 let t = document.getElementById('hl-toast');
                 if (!t) { t = Object.assign(document.createElement('div'), { id: 'hl-toast', className: 'hl-toast' }); document.body.appendChild(t); }
-                t.textContent = '✓ Bladwijzer verwijderd';
+                t.textContent = '✓ Bladwijzer verwijderd – pagina ' + bm.pageNum;
                 t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1600);
             });
             pageEl.appendChild(marker);

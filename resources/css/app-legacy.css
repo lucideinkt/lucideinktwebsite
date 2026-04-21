@@ -3322,6 +3322,59 @@ thead {
     margin-bottom: 10px;
 }
 
+/* ── Checkout cart qty controls ─────────────────────────────────────── */
+.checkout-qty-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.checkout-qty-btn {
+    background: #f0e8d8;
+    border: 1px solid #d8c8a8;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3a2a1a;
+    transition: background 0.15s;
+    padding: 0;
+}
+
+.checkout-qty-btn:hover {
+    background: #e0d0b0;
+}
+
+.checkout-qty-value {
+    min-width: 22px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.checkout-remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c0392b;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: color 0.15s, background 0.15s;
+    line-height: 1;
+}
+
+.checkout-remove-btn:hover {
+    color: #922b21;
+    background: #fff0f0;
+}
+
 .page.checkout .order-details {
     overflow-x: auto;
     max-width: 100%;
