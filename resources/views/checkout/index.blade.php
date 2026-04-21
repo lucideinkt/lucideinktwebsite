@@ -619,33 +619,6 @@
             setTimeout(resetCountryIfNotGoogle, 800);
             setTimeout(resetCountryIfNotGoogle, 1500);
 
-            var billingAddressFields = ['billing_street', 'billing_house_number', 'billing_postal_code', 'billing_city'];
-            billingAddressFields.forEach(function (name) {
-                var el = document.querySelector('[name="' + name + '"]');
-                if (el) {
-                    el.addEventListener('keydown', function () {
-                        var country = document.getElementById('billing_country');
-                        if (country && country.value !== '') {
-                            country.value = '';
-                            country.dispatchEvent(new Event('change', { bubbles: true }));
-                        }
-                    });
-                }
-            });
-
-            var shippingAddressFields = ['shipping_street', 'shipping_house_number', 'shipping_postal_code', 'shipping_city'];
-            shippingAddressFields.forEach(function (name) {
-                var el = document.querySelector('[name="' + name + '"]');
-                if (el) {
-                    el.addEventListener('keydown', function () {
-                        var country = document.getElementById('shipping_country');
-                        if (country && country.value !== '') {
-                            country.value = '';
-                            country.dispatchEvent(new Event('change', { bubbles: true }));
-                        }
-                    });
-                }
-            });
         });
 
         // ─── Toggle alternate shipping address ───────────────────────────────
