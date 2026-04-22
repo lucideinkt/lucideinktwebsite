@@ -1,3 +1,4 @@
+import './delivery-options.js';
 
 // ============================================================
 // UTILITY FUNCTIONS
@@ -304,13 +305,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                // Reset MyParcel state if available
-                try {
-                    if (typeof hardResetMyParcelState === 'function') {
-                        hardResetMyParcelState();
-                    }
-                } catch (error) {
-                    // Ignore if function doesn't exist
+                // Reset delivery options if available
+                if (typeof window.resetDeliveryOptions === 'function') {
+                    window.resetDeliveryOptions();
                 }
             });
         }
@@ -683,239 +680,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initDiscountCode();
 
     // ----------------------------------------------------------
-    // MYPARCEL DELIVERY OPTIONS WIDGET
+    // MYPARCEL DELIVERY OPTIONS — handled by delivery-options.js
     // ----------------------------------------------------------
 
-    function initMyParcelWidget() {
-        const WIDGET_SELECTOR = '#myparcel-delivery-options';
-        const myparcelRadios = document.querySelectorAll('input[name="myparcel_choice"]');
-
-        let myparcelEnabled = false;
-
-        // Get currently selected MyParcel choice
-        function getCurrentChoice() {
-            const checked = document.querySelector('input[name="myparcel_choice"]:checked');
-            return checked ? checked.value : undefined;
-        }
-
-        // Get current address details
-        function getCurrentAddress() {
-            const useAlternate = document.getElementById('alt-shipping')?.checked;
-            const prefix = useAlternate ? 'shipping_' : 'billing_';
-
-            const street = document.querySelector(`[name="${prefix}street"]`)?.value || '';
-            const number = document.querySelector(`[name="${prefix}house_number"]`)?.value || '';
-
-            return {
-                cc: document.querySelector(`[name="${prefix}country"]`)?.value || 'NL',
-                postalCode: (document.querySelector(`[name="${prefix}postal_code"]`)?.value || '')
-                    .replace(/\s+/g, '')
-                    .toUpperCase(),
-                number: number,
-                street: street && number ? `${street} ${number}` : street,
-                city: document.querySelector(`[name="${prefix}city"]`)?.value || '',
-            };
-        }
-
-        // Check if address is complete
-        function isAddressComplete(address) {
-            return address && address.cc && address.postalCode &&
-                address.number && address.street && address.city;
-        }
-
-        // Ensure hidden input exists
-        function ensureHiddenInput() {
-            let input = document.getElementById('myparcel_delivery_options');
-
-            if (!input) {
-                input = document.createElement('input');
-                input.type = 'hidden';
-                input.id = 'myparcel_delivery_options';
-                input.name = 'myparcel_delivery_options';
-                document.querySelector('form')?.appendChild(input);
-            }
-
-            return input;
-        }
-
-        // Get locale strings for widget
-        function getLocaleStrings(locale) {
-            const strings = {
-                nl: {
-                    deliveryTitle: 'Levering thuis of op het werk',
-                    pickupTitle: 'Ophalen bij een afleverpunt',
-                    deliveryStandard: 'Thuisbezorging',
-                    free: 'Gratis',
-                    close: 'Sluiten',
-                    loading: 'Opties laden...',
-                    // ... (include all other strings)
-                },
-                en: {
-                    deliveryTitle: 'Home or work delivery',
-                    pickupTitle: 'Pick up at a service point',
-                    deliveryStandard: 'Home delivery',
-                    free: 'Free',
-                    close: 'Close',
-                    loading: 'Loading options...',
-                    // ... (include all other strings)
-                }
-            };
-
-            return strings[locale] || strings['en'];
-        }
-
-        // Update MyParcel widget
-        function updateWidget() {
-            if (!myparcelEnabled) return;
-
-            const address = getCurrentAddress();
-            const container = document.querySelector(WIDGET_SELECTOR);
-
-            if (!container) return;
-
-            // Hide if address incomplete
-            if (!isAddressComplete(address)) {
-                container.style.display = 'none';
-                ensureHiddenInput().value = '';
-                return;
-            }
-
-            container.style.display = '';
-
-            // Get locale
-            let locale = document.documentElement.lang ||
-                document.querySelector('meta[name="app-locale"]')?.content;
-            if (!locale || locale.length < 2) locale = 'en';
-
-            // Configure widget
-            const configuration = {
-                selector: WIDGET_SELECTOR,
-                address: address,
-                config: {
-                    platform: 'myparcel',
-                    locale: locale,
-                    packageType: 'package',
-                    dropOffDelay: 1,
-                    deliveryDaysWindow: 0,
-                    allowPickupLocationsViewSelection: true,
-                    pickupLocationsDefaultView: 'list',
-                    showPriceZeroAsFree: false,
-                    carrierSettings: {
-                        postnl: {
-                            allowDeliveryOptions: true,
-                            allowStandardDelivery: true,
-                            allowPickupLocations: true,
-                        }
-                    }
-                },
-                strings: getLocaleStrings(locale)
-            };
-
-            // Always use myparcel_render_delivery_options.
-            // The library's myparcel_update_delivery_options listener removes itself
-            // after the first render, so it silently fails on all subsequent calls.
-            // myparcel_render_delivery_options re-initialises the Vue app from scratch
-            // every time and re-registers itself — so it works reliably on every call.
-            document.dispatchEvent(
-                new CustomEvent('myparcel_render_delivery_options', {
-                    detail: configuration
-                })
-            );
-        }
-
-        // Listen for widget updates
-        document.addEventListener('myparcel_updated_delivery_options', (event) => {
-            if (!myparcelEnabled) return;
-
-            console.log('[MyParcel] Updated:', event.detail);
-            const input = ensureHiddenInput();
-            input.value = event.detail ? JSON.stringify(event.detail) : '';
-        });
-
-        // Listen for errors
-        document.addEventListener('myparcel_error_delivery_options', (event) => {
-            console.error('[MyParcel] Error:', event.detail);
-        });
-
-        // Attach address field listeners (only once)
-        let listenersAttached = false;
-        function attachAddressListeners() {
-            if (listenersAttached) return;
-            listenersAttached = true;
-
-            const fields = [
-                'billing_country', 'billing_postal_code', 'billing_street',
-                'billing_house_number', 'billing_city',
-                'shipping_country', 'shipping_postal_code', 'shipping_street',
-                'shipping_house_number', 'shipping_city', 'alt-shipping'
-            ];
-
-            fields.forEach(fieldName => {
-                const element = document.querySelector(`[name="${fieldName}"]`);
-                if (element) {
-                    element.addEventListener('input', updateWidget);
-                    element.addEventListener('change', updateWidget);
-                }
-            });
-        }
-
-        // Enable MyParcel widget
-        function enableWidget() {
-            if (myparcelEnabled) return;
-
-            myparcelEnabled = true;
-            const container = document.querySelector(WIDGET_SELECTOR);
-            if (container) container.style.display = '';
-
-            attachAddressListeners();
-            updateWidget();
-        }
-
-        // Disable MyParcel widget
-        function disableWidget() {
-            if (!myparcelEnabled) return;
-
-            myparcelEnabled = false;
-            const container = document.querySelector(WIDGET_SELECTOR);
-
-            if (container) {
-                container.style.display = 'none';
-                container.innerHTML = '';
-            }
-
-            const input = document.getElementById('myparcel_delivery_options');
-            if (input) {
-                input.value = '';
-                input.remove();
-            }
-        }
-
-        // Listen for radio changes
-        myparcelRadios.forEach(radio => {
-            radio.addEventListener('change', (event) => {
-                if (!event.target.checked) return;
-
-                const choice = event.target.value;
-                console.log('MyParcel choice:', choice);
-
-                if (choice === 'with_myparcel') {
-                    enableWidget();
-                } else {
-                    disableWidget();
-                }
-            });
-        });
-
-        // Initialize based on current selection
-        const currentChoice = getCurrentChoice();
-        if (currentChoice === 'with_myparcel') {
-            enableWidget();
-        } else {
-            disableWidget();
-        }
-    }
-
-    initMyParcelWidget();
 
     // ----------------------------------------------------------
     // UNIVERSAL CONFIRMATION MODALS
@@ -941,6 +708,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!button) return;
 
                 button.addEventListener('click', function(event) {
+                    // Only respond to genuine user clicks
+                    if (!event.isTrusted) return;
+
                     event.preventDefault();
 
                     const message = form.getAttribute('data-confirm') || 'Weet je het zeker?';
