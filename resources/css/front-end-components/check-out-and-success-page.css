@@ -213,6 +213,20 @@ input:-webkit-autofill:active {
     position: relative;
 }
 
+/* ── Responsive checkout grid ──────────────────────────────────── */
+@media (max-width: 860px) {
+    .page.checkout .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+    /* Form (left col) stays on top, order summary goes below on mobile */
+    .page.checkout .checkout-grid > div:last-child {
+        order: 1;
+    }
+}
+
 .page.checkout .item {
     background: var(--surface-2);
     padding: 24px;
