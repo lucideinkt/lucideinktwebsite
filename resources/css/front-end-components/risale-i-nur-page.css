@@ -1,0 +1,141 @@
+.risale-i-nur-page__text-box .title {
+    margin-top: 10px;
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 52px;
+    line-height: 1.2;
+}
+
+.risale-w::before {
+    content: "\E02D";
+}
+
+.risale-is::before {
+    content: "\E050";
+}
+
+.risale-nu::before {
+    content: "\E05D";
+}
+
+.risale-i-nur-page__text-box {
+    background-color: #fff3cc;
+    background-image: url("../../images/little-pluses.png");
+    border-radius: 10px;
+    padding: 40px 60px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    box-shadow: var(--shadow-1);
+    max-width: 1075px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.risale-i-nur-page__text-box .sub-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.risale-i-nur-page__text-box p {
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-indent: 50px;
+}
+
+.risale-i-nur-page__text-box > img {
+    display: block;
+    margin: 5px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Desktop: hide stapel-one, show stapel-two floating right */
+.risale-i-nur-page__text-box img.stapel-one {
+    display: none;
+}
+
+.risale-i-nur-page__text-box img.stapel-two {
+    width: 385px;
+    float: right;
+    margin: 0 0 20px 30px;
+    shape-margin: 20px;
+    position: relative;
+    top: 15px;
+}
+
+    .risale-i-nur-page__text-box > img[src*="oval_ornament"] {
+        width: 125px;
+        margin-top: 30px;
+        clear: both;
+        opacity: 0.3;
+    }
+
+    /* Show desktop version, hide mobile version by default */
+    .risale-i-nur-page__text-box .let-mobile {
+        display: none;
+    }
+
+    .risale-i-nur-page__text-box .let-desk {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .risale-i-nur-page__text-box .title {
+            font-size: 38px;
+        }
+
+        .risale-i-nur-page__text-box {
+            padding: 35px 30px;
+        }
+    }
+
+    @media (max-width: 600px) {
+    .risale-i-nur-page__text-box .title {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .risale-i-nur-page__text-box .sub-title {
+        font-size: 16px;
+    }
+
+    .risale-i-nur-page__text-box {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .risale-i-nur-page__text-box p {
+        text-indent: 25px;
+        text-align: left;
+    }
+
+    /* Hide desktop version, show mobile version */
+    .risale-i-nur-page__text-box .let-desk {
+        display: none;
+    }
+
+    .risale-i-nur-page__text-box .let-mobile {
+        display: block;
+    }
+
+    /* Mobile: show stapel-one centered, hide stapel-two */
+    .risale-i-nur-page__text-box img.stapel-one {
+        display: block;
+        width: 300px;
+        float: none;
+        margin: 25px auto;
+        position: static;
+    }
+
+    .risale-i-nur-page__text-box img.stapel-two {
+        display: none;
+    }
+}

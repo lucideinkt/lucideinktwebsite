@@ -6,10 +6,11 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Mail\Traits\HasMailtrapForwarding;
 
 class NewUserMail extends Mailable
 {
-  use Queueable, SerializesModels;
+  use Queueable, SerializesModels, HasMailtrapForwarding;
 
   public $user;
 
@@ -23,8 +24,11 @@ class NewUserMail extends Mailable
 
   public function build()
   {
-    return $this->subject('Welkom bij Lucide Inkt')
+    $mail = $this->subject('Welkom bij Lucide Inkt')
       ->view('emails.new-user', ['user' => $this->user]);
+
+    // Add Mailtrap forwarding using trait (tries config, env, and fallback)
+    return $this->addMailtrapForwarding($mail);
   }
 
 }

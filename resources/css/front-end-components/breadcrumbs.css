@@ -1,0 +1,81 @@
+/* =========================================================
+   Breadcrumbs
+   ========================================================= */
+.bc {
+    --bc-text: var(--main-font-color);
+    --bc-dim: var(--main-font-color);
+    --bc-sep: var(--main-font-color);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.bc-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .25rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bc-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Links and current item */
+.bc-link {
+    font-weight: 600;
+    color: var(--bc-text);
+    text-decoration: none;
+}
+
+.bc-link:hover {
+    text-decoration: none;
+}
+
+.bc-current {
+    color: var(--bc-dim);
+}
+
+/* Icons */
+.bc-home {
+    width: 16px;
+    height: 16px;
+    opacity: .8;
+    margin-right: .25rem;
+    display: inline-block;
+}
+
+.bc-sep {
+    margin: 0 .2rem;
+    color: var(--bc-sep);
+    user-select: none;
+    display: inline-flex;
+}
+
+.bc-chevron {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+}
+
+.bc-chev {
+    font-size: 12px;
+    color: var(--main-font-color);
+}
+
+/* Optional: tighter spacing on small screens */
+@media (max-width: 480px) {
+    .bc-list {
+        gap: .15rem;
+    }
+
+    .bc-sep {
+        margin: 0 .2rem;
+    }
+}

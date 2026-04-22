@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use App\Http\Requests\StoreProductCategoryRequest;
+use App\Http\Requests\UpdateProductCategoryRequest;
 use Illuminate\Validation\Rule;
 
 class ProductCategoryController extends Controller
@@ -37,24 +39,9 @@ class ProductCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductCategoryRequest $request)
     {
-        $this->authorize('create', ProductCategory::class);
-        $validated = $request->validate([
-            'name' => [
-                'required',
-                'string',
-                'max:255',
-                Rule::unique('product_categories', 'name')->whereNull('deleted_at'),
-            ],
-            'is_published' => 'required|boolean',
-        ], [
-            'name.required' => 'Naam is verplicht.',
-            'name.unique' => 'Deze naam is al in gebruik.',
-            'name.max' => 'De lengte mag niet meer dan 255 karakters zijn',
-            'is_published.required' => 'Publicatie status is verplicht.',
-            'is_published.boolean' => 'Publicatie status moet een geldige waarde zijn.',
-        ]);
+        $validated = $request->validated();
 
         $name = $validated['name'];
         $slug = Str::slug($name);
@@ -90,24 +77,10 @@ class ProductCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProductCategoryRequest $request, string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $this->authorize('update', $category);
-        $validated = $request->validate([
-            'name' => [
-                'required',
-                'string',
-                'max:255',
-                Rule::unique('product_categories', 'name')->whereNull('deleted_at')->ignore($category->id),
-            ],
-            'is_published' => 'required|boolean',
-        ], [
-            'name.required' => 'Naam is verplicht.',
-            'name.max' => 'De lengte mag niet meer dan 255 karakters zijn',
-            'is_published.required' => 'Publicatie status is verplicht.',
-            'is_published.boolean' => 'Publicatie status moet een geldige waarde zijn.',
-        ]);
+        $validated = $request->validated();
 
         $name = $validated['name'];
         $slug = Str::slug($name);

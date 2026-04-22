@@ -19,10 +19,13 @@ class Order extends Model
         'status',
         'payment_status',
         'paid_at',
+        'customer_email_sent_at',
+        'admin_email_sent_at',
         'invoice_pdf_path',
         'shipping_cost_id',
         'shipping_cost_amount',
         'total_before',
+        'order_note',
 
         // Shipping fields
         'shipping_first_name',

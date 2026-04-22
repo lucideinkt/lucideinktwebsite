@@ -10,10 +10,11 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Mail\Traits\HasMailtrapForwarding;
 
 class OrderPaidMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable, SerializesModels, HasMailtrapForwarding;
 
     public $order;
 
@@ -33,15 +34,18 @@ class OrderPaidMail extends Mailable
             $pickupLocation = $delivery['pickup'] ?? $delivery['pickupLocation'] ?? null;
         }
 
-        return $this->subject('Uw bestelling bij Lucide Inkt')
-            ->view('emails.orderpaid', 
-            ['order' => $this->order, 
-            'delivery' =>  $delivery, 
+        $mail = $this->subject('Jouw bestelling bij Lucide Inkt')
+            ->view('emails.orderpaid',
+            ['order' => $this->order,
+            'delivery' =>  $delivery,
             'pickupLocation' => $pickupLocation
             ])
             ->attach($pathOnDisk, [
                 'as' => 'factuur.pdf',
                 'mime' => 'application/pdf',
             ]);
+
+        // Add Mailtrap forwarding using trait (tries config, env, and fallback)
+        return $this->addMailtrapForwarding($mail);
     }
 }

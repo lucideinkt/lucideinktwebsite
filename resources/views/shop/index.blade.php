@@ -1,19 +1,22 @@
-<x-layout>
+<x-layout :seo-data="$SEOData">
+    <div class="page-normal-background">
     <main class="container page shop">
         {{-- <h2>Winkel</h2> --}}
         @if (session('success'))
-            <div class="alert alert-success" style="position: relative;">
-                {{ session('success') }}
+            <div class="alert alert-success">
+                <span class="alert-icon"><i class="fa-solid fa-circle-check"></i></span>
+                <span class="alert-text">{{ session('success') }}</span>
                 <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+                    onclick="this.parentElement.style.display='none';">×</button>
             </div>
         @endif
 
         @if (session('error'))
-            <div class="alert alert-error" style="position: relative;">
-                {{ session('error') }}
+            <div class="alert alert-error">
+                <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                <span class="alert-text">{{ session('error') }}</span>
                 <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+                    onclick="this.parentElement.style.display='none';">×</button>
             </div>
         @endif
 
@@ -22,54 +25,20 @@
           ['label' => 'Winkel', 'url' => route('shop')],
         ]" />
 
-        <div class="book-box">
+        <div class="shop-header">
+{{--            <img class="shop-header-image" src="{{ asset('images/our-store-second.webp') }}" alt="Onze Winkel">--}}
+            <h1 class="shop-title">Winkel</h1>
+{{--            <p class="shop-subtitle">Ontdek onze collectie boeken en bestel direct online</p>--}}
+        </div>
+
+        <div class="book-box product-cards-grid">
             @foreach ($products as $product)
-                <a href="{{ route('productShow', $product->slug) }}">
-                    <div class="card">
-                        <div class="product-stock">
-                            @if ($product->stock > 0 && $product->stock <= 3)
-                                <p class="low-stock">Lage voorraad</p>
-                            @elseif ($product->stock == 0)
-                                <p class="no-stock">Geen voorraad</p>
-                            @endif
-                        </div>
-
-                        <div class="image-container" style="background: #fbf3e4; border-radius: 4px; box-shadow: var(--shadow-1)">
-                            <img src="{{ e(
-                                Str::startsWith($product->image_1, 'https://')
-                                    ? $product->image_1
-                                    : (Str::startsWith($product->image_1, 'image/books/')
-                                        ? asset($product->image_1)
-                                        : (Str::startsWith($product->image_1, 'images/books/')
-                                            ? asset($product->image_1)
-                                            : asset('storage/' . $product->image_1)))
-                            ) }}"
-                                alt="">
-
-                            <div class="title-price" style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: -25px;margin-bottom: 10px">
-                                <h6 class="title" style="max-width: 250px; line-height: 1.5rem">{{ $product->title }}</h6>
-
-                                @php
-                                    //$baseTitleProducts = \App\Models\Product::where('base_title', //$product->base_title)->get();
-                                @endphp
-                                @if (isset($product->price))
-                                    <p class="price" style="display: block">
-                                        @if(isset($baseTitleProducts) && $baseTitleProducts->count() > 1)
-                                            €{{ number_format($baseTitleProducts->min('price'), 2) }} - €{{ number_format($baseTitleProducts->max('price'), 2) }}
-                                        @else
-                                            €{{ number_format($product->price, 2) }}
-                                        @endif
-                                    </p>
-                                @endif
-
-                                <button style="margin-top: 10px" class="btn small"><i style="color: #fff;" class="fa-solid fa-cart-plus"></i> Koop nu</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </a>
+                @livewire('product-card', ['product' => $product], key('product-' . $product->id))
             @endforeach
         </div>
 
     </main>
+    <div class="gradient-border"></div>
+    <x-footer></x-footer>
+    </div>
 </x-layout>

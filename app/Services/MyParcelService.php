@@ -178,12 +178,23 @@ class MyParcelService
                 ->setPickupLocationName($pickupData['locationName'] ?? $pickupData['name'] ?? '')
                 ->setPickupStreet($pickupData['street'] ?? '')
                 ->setPickupNumber((string)($pickupData['number'] ?? ''))
-                ->setPickupPostalCode(preg_replace('/\s+/', '', (string)($pickupData['postalCode'] ?? '')))
+                ->setPickupPostalCode(preg_replace('/\s+/', '', (string)($pickupData['postalCode'] ?? $pickupData['postal_code'] ?? '')))
                 ->setPickupCity($pickupData['city'] ?? '')
                 ->setPickupCountry($pickupData['cc'] ?? $pickupData['country'] ?? 'NL')
                 ->setRetailNetworkId($pickupData['retail_network_id'] ?? $pickupData['retailNetworkId'] ?? 'PNPNL-01')
-                ->setPickupLocationCode($pickupData['location_code'] ?? $pickupData['locationCode'] ?? '')
+                ->setPickupLocationCode((string)($pickupData['location_code'] ?? $pickupData['locationCode'] ?? ''))
                 ->setDeliveryType(self::DELIVERY_TYPE_IDS['pickup']);
+
+            Log::debug('MyParcel pickup debug', [
+                'locationName'     => $pickupData['locationName'] ?? '',
+                'street'           => $pickupData['street'] ?? '',
+                'number'           => $pickupData['number'] ?? '',
+                'postalCode'       => $pickupData['postalCode'] ?? $pickupData['postal_code'] ?? '',
+                'city'             => $pickupData['city'] ?? '',
+                'cc'               => $pickupData['cc'] ?? 'NL',
+                'retail_network_id'=> $pickupData['retail_network_id'] ?? 'PNPNL-01',
+                'location_code'    => $pickupData['location_code'] ?? '',
+            ]);
         }
 
         $collection = (new MyParcelCollection())

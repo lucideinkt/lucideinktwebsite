@@ -5,6 +5,24 @@
 
     RewriteEngine On
 
+    # Add MIME type for JavaScript modules
+    <IfModule mod_mime.c>
+        AddType text/javascript .mjs
+    </IfModule>
+
+    # CORS headers for PDF files
+    <FilesMatch "\.(pdf)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, OPTIONS"
+        Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+    </FilesMatch>
+
+    # CORS headers for PDF.js viewer files
+    <FilesMatch "\.(mjs|css|html|map)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    </FilesMatch>
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

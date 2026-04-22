@@ -1,0 +1,147 @@
+/* =========================================================
+   Alerts — Toast Notifications
+   Always fixed top-right, slide in/out from the right.
+   No close button — auto-dismiss only.
+   ========================================================= */
+
+.alert {
+    position: fixed !important;
+    top: 88px;
+    right: 20px;
+    z-index: 99999;
+    width: 320px;
+    max-width: calc(100vw - 32px);
+
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding: 12px 14px !important;
+    border-radius: 10px;
+    border: none !important;
+    border-left: 4px solid transparent !important;
+
+    /* Warm parchment tone matching the site palette */
+    background: rgba(255, 248, 224, 0.88) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(98, 5, 5, 0.10), 0 1px 4px rgba(44, 20, 10, 0.08) !important;
+
+    font-family: var(--font-regular);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--main-font-color, #620505);
+
+    margin: 0 !important;
+    overflow: hidden;
+
+    animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes toastSlideIn {
+    from { opacity: 0; transform: translateX(calc(100% + 24px)); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toastSlideOut {
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(calc(100% + 24px)); }
+}
+
+.alert.toast-hide {
+    animation: toastSlideOut 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+/* ── Icon ──────────────────────────────────────────────── */
+.alert-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    line-height: 1;
+    color: inherit;
+}
+
+.alert-icon i {
+    color: inherit;
+}
+
+/* ── Text ──────────────────────────────────────────────── */
+.alert-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.alert-content {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+}
+
+/* ── Close button — always hidden, auto-dismiss only ───── */
+.alert-close {
+    display: none !important;
+}
+
+/* ── Links ─────────────────────────────────────────────── */
+.alert a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* ── Variants ──────────────────────────────────────────── */
+/* Border accent + text stays in the site's warm dark-brown,
+   only the left border carries the semantic colour. */
+.alert-success {
+    border-left-color: #2e7d32 !important;   /* forest green */
+    color: #1e3d20;                           /* deep green-tinted brown */
+}
+
+.alert-error {
+    border-left-color: #9b1c1c !important;   /* site-matching deep red */
+    color: var(--main-font-color, #620505);  /* site's main burgundy */
+}
+
+.alert-info {
+    border-left-color: #44605b !important;   /* site's --teal-1 */
+    color: #1e3535;
+}
+
+.alert-warning {
+    border-left-color: #996d3f !important;   /* site's --gold-2 */
+    color: #4a2e0a;
+}
+
+/* ── Auto-dismiss progress bar ─────────────────────────── */
+.alert::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    opacity: 0.15;
+    transform-origin: left;
+    animation: toastProgress 6s linear forwards;
+}
+
+@keyframes toastProgress {
+    from { transform: scaleX(1); }
+    to   { transform: scaleX(0); }
+}
+
+/* ── Mobile: smaller, right-aligned, not full-width ───── */
+@media (max-width: 600px) {
+    .alert {
+        top: 72px !important;
+        right: 12px !important;
+        left: auto !important;
+        width: 280px !important;
+        max-width: calc(100vw - 24px) !important;
+        font-size: 13px !important;
+        padding: 10px 12px !important;
+    }
+}

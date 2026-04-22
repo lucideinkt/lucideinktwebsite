@@ -45,6 +45,12 @@
                     <form action="{{ route('orderUpdate', $order->id) }}" method="POST">
                         @csrf
                         @method('PUT')
+
+                        @if($order->order_note)
+                            <p><strong>Bestelnotitie:</strong><br>
+                            <span style="background: #ffdfbf; padding: 10px; border-radius: 4px; display: block; margin-top: 5px;">{{ $order->order_note }}</span></p>
+                        @endif
+
                         <p>
                             <strong>Order Status:</strong>
                             @php
@@ -111,14 +117,12 @@
                             <strong>Betaallink:</strong>
                             <div class="payment-link-box">
 
-                                <button class="btn small" id="payment-link">
-                                    <a style="color: #fff;" href="{{ $order->payment_link }}" target="_blank">Ga naar
-                                        betaallink</a>
-                                </button>
-                                <button class="btn small" id="copy-payment-link"
+                                 <a class="btn small" id="payment-link" style="color: #fff;" href="{{ $order->payment_link }}" target="_blank">Ga naar
+                                    betaallink</a>
+                                <span class="btn small" id="copy-payment-link"
                                         data-payment-link="{{ $order->payment_link }}">
                                     Kopieer betaallink
-                                </button>
+                                </span>
                             </div>
                             </p>
                         @endif
@@ -225,8 +229,8 @@
 
 
                 <div class="order-info-item">
-                    <div style="display: flex; gap: 35px;">
-                        <div style="border: 1px solid var(--border-1);border-radius: 4px;padding: 15px;">
+                    <div class="order-addresses-container">
+                        <div class="order-address-box">
                             <h3>Factuuradres</h3>
                             <p><strong>Straatnaam:</strong> {{ $order->customer->billing_street }}</p>
                             <p><strong>Huisnummer:</strong> {{ $order->customer->billing_house_number }}</p>
@@ -236,7 +240,7 @@
                             <p><strong>Plaats:</strong> {{ $order->customer->billing_city }}</p>
                             <p><strong>Land:</strong> {{ $order->customer->billing_country }}</p>
                         </div>
-                        <div style="border: 1px solid var(--border-1);border-radius: 4px;padding: 15px;">
+                        <div class="order-address-box">
                             <h3>Verzendadres</h3>
                             @if (!empty($order->shipping_street))
                                 <p><strong>Straatnaam:</strong> {{ $order->shipping_street }}</p>

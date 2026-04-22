@@ -1,0 +1,1349 @@
+/* =========================================================
+   HOME PAGE STYLES
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   SECTION BACKGROUNDS
+   --------------------------------------------------------- */
+
+/* White/Cream Section with Subtle Leather Texture */
+.white-section {
+    position: relative;
+    z-index: 0;
+    background-image: url("../../images/04-white-papers.jpg");
+    background-size: 25%;
+    background-position: center;
+    background-repeat: repeat;
+    background-color: rgba(255, 223, 133, 0.53);
+    background-blend-mode: multiply;
+}
+
+.intro-section .sub-text {
+    color: var(--main-font-color);
+}
+
+/* Colored Section with Full Leather Texture */
+.colored-section {
+    position: relative;
+    z-index: 0;
+    color: #fff6e0;
+}
+
+.colored-section.books-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/new_warm_leather.webp");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.colored-section.quotes-section::before,
+.colored-section.newsletter-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/new_warm_leather.webp");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* On mobile: use cover so there are no tiling seams on narrow viewports */
+
+.colored-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.02) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.colored-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ---------------------------------------------------------
+   TYPOGRAPHY - TITLES & DECORATIVE ELEMENTS
+   --------------------------------------------------------- */
+h2 {
+    margin-top: 0!important;
+}
+
+/* Herina Font Utility Class */
+.font-herina {
+    font-family: var(--font-herina);
+}
+
+/* Main Page Titles */
+.home .title {
+    line-height: 3.4rem;
+}
+
+.home .title,
+.home.intro-section .title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.new-translation .title.trans {
+    color: rgb(245, 223, 172);
+    text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);
+    filter: brightness(1.1);
+    margin-bottom: 0px;
+}
+
+.new-translation .title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.colored-section .risale .title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Decorative Divider */
+.home .divider {
+    border: none;
+    /*border-bottom: 3px solid #ece5c2;*/
+    width: 50px;
+    margin: 0 auto;
+    position: relative;
+    height: 3px;
+    z-index: 1;
+    background-color: rgb(245, 223, 172);
+    text-shadow: 0 0 10px rgba(245, 223, 172, 0.6), 0 0 20px rgba(245, 223, 172, 0.4), 0 0 30px rgba(245, 223, 172, 0.2);
+    filter: brightness(1.1);
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   HERINA FONT SPECIAL CHARACTER REPLACEMENTS
+   --------------------------------------------------------- */
+
+.home.intro-section .title .title-u::before,
+.herina-u::before {
+    content: var(--herina-u);
+}
+
+.home.intro-section .title .title-k::before,
+.herina-k::before {
+    content: var(--herina-k);
+}
+
+.new-translation .title-h::before,
+.herina-h::before {
+    content: var(--herina-h);
+}
+
+.new-translation .title-t::before,
+.herina-t::before {
+    content: var(--herina-t);
+}
+
+.new-translation .title-in::before,
+.herina-in::before {
+    content: "\E04E";
+}
+
+.new-translation .title-r::before,
+.herina-r::before {
+    content: var(--herina-r);
+}
+
+.new-translation .title-a-one::before,
+.herina-a-one::before {
+    content: var(--herina-a-one);
+}
+
+.new-translation .title-e-r::before,
+.herina-e-r::before {
+    content: var(--herina-e-r);
+}
+
+.new-translation .title-me::before,
+.herina-me::before {
+    content: var(--herina-me);
+}
+
+
+/* ---------------------------------------------------------
+   LAYOUT - SECTION WRAPPERS & CONTAINERS
+   --------------------------------------------------------- */
+.hero-bg-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1125px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 22;
+    margin-bottom: 0px;
+}
+
+.gradient-border {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(
+        to right,
+        rgba(197, 160, 89, 0) 0%,
+        rgba(212, 175, 55, 0.12) 15%,
+        rgba(218, 165, 32, 0.35) 35%,
+        rgba(197, 160, 89, 0.5) 50%,
+        rgba(218, 165, 32, 0.35) 65%,
+        rgba(212, 175, 55, 0.12) 85%,
+        rgba(197, 160, 89, 0) 100%
+    );
+    opacity: 1;
+    position: relative;
+    z-index: 23;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* Home Section Wrappers */
+.home.section-wrapper {
+    padding: 0 15px !important;
+}
+
+.home.below-books {
+    padding: 100px 0;
+    margin-top: -100px;
+    display: none;
+}
+
+/* Intro Section */
+.home.intro-section {
+    width: 100%;
+    position: relative;
+    z-index: 23;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+    padding-bottom: 15px;
+}
+
+.home.intro-section .text-container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.intro-section .sub-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    flex-direction: column;
+}
+
+.intro-section .sub-text p {
+    /*font-family: griffon, serif;*/
+    font-weight: 400;
+    margin-bottom: 0;
+    /*transform: scaleX(1.10);*/
+    margin-bottom: 0px;
+    word-break: none;
+}
+
+.sub-text.two {
+    display: none;
+}
+
+/* Read More Button Styling */
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #205923 0%, #224039 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-bold);
+}
+
+.read-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+    pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .read-more-btn:hover::before {
+        left: 100%;
+    }
+
+    .read-more-btn:hover {
+        background: linear-gradient(135deg, #224039 0%, #2e7d32 100%);
+        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    }
+}
+
+.read-more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.read-more-icon {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 14px;
+    color: #fff;
+}
+
+.home-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column-reverse;
+    margin-bottom: -190px;
+}
+
+.home-hero .book-shot {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.home-hero .book-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 900px;
+    top: 300px;
+    z-index: 10;
+}
+
+
+/* ---------------------------------------------------------
+   NEW TRANSLATION SECTION
+   --------------------------------------------------------- */
+
+.new-translation {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: #ece5c2;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.new-translation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/new_warm_leather.webp");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.new-translation::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.02) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.new-translation > * {
+    position: relative;
+    z-index: 1;
+}
+
+.new-translation .title-wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.new-translation .rose-decoration {
+    position: absolute;
+    right: -5%;
+    top: 50%;
+    transform: translateY(-40%) scaleX(1);
+    width: 200px;
+    height: auto;
+    z-index: -1;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.new-translation .sub-text.one {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.new-translation .sub-text.two {
+    display: none;
+}
+
+.new-translation .sub-text p {
+    margin-bottom: 0px;
+}
+
+.new-translation .rose-patels {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    z-index: 0;
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   BOOK GRID DISPLAY
+   --------------------------------------------------------- */
+
+.home-book-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.home-book-grid .book {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.home-book-grid .book img {
+    width: 100%;
+}
+
+/* Individual Book Sizes */
+.home-book-grid .one {
+    max-width: 287px;
+}
+
+.home-book-grid .two {
+    max-width: 302px;
+}
+
+.home-book-grid .three {
+    max-width: 297px;
+}
+
+.home-book-grid .four {
+    max-width: 303px;
+}
+
+.home-book-grid .book .under-text {
+    font-size: 0.8em;
+    text-align: center;
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
+}
+
+/* Book Grid Button */
+.home-book-grid .book .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 22px;
+    background: transparent;
+    border: 1px solid rgba(245, 223, 172, 0.55);
+    border-radius: 50px;
+    color: rgb(245, 223, 172);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-bold);
+    letter-spacing: 0.8px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .home-book-grid .book .btn:hover {
+        background: rgba(218, 165, 32, 0.12);
+        border-color: rgba(245, 223, 172, 0.85);
+        box-shadow: 0 0 12px rgba(218, 165, 32, 0.15);
+    }
+}
+
+
+
+/* ---------------------------------------------------------
+   RISALE-I NUR SECTION (What is the Risale-i Nur)
+   --------------------------------------------------------- */
+
+.risale-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.risale-section .text-container.risale-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.risale-section .risale-content {
+    text-align: left;
+}
+
+.risale-section .risale-content .title {
+    text-align: left;
+}
+
+.risale-section .risale-content .title {
+
+}
+
+.risale-section .risale-content .sub-text {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.new-translation .sub-text {
+    color: rgb(245, 223, 172);
+}
+
+/* Read More Link */
+.risale-section .read-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 30px;
+    background: linear-gradient(135deg, rgba(153, 109, 63, 0.12) 0%, rgba(197, 160, 89, 0.08) 100%);
+    border: 2px solid rgba(153, 109, 63, 0.3);
+    border-radius: 20px;
+    color: #620505;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 8px rgba(153, 109, 63, 0.15);
+    margin-top: 0px;
+    font-family: var(--font-bold);
+}
+
+.risale-section .read-more-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(153, 109, 63, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.risale-section .read-more-link i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    color: #620505;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .risale-section .read-more-link:hover::before {
+        left: 100%;
+    }
+
+    .risale-section .read-more-link:hover {
+        background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
+        border-color: rgba(153, 109, 63, 0.5);
+        color: #620505;
+        box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
+    }
+
+    .risale-section .read-more-link:hover i {
+        transform: translateX(4px);
+    }
+}
+
+/* Said Nursi Read More Link */
+.said-nursi-section .read-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 30px;
+    background: linear-gradient(135deg, rgba(153, 109, 63, 0.12) 0%, rgba(197, 160, 89, 0.08) 100%);
+    border: 2px solid rgba(153, 109, 63, 0.3);
+    border-radius: 20px;
+    color: #620505;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 8px rgba(153, 109, 63, 0.15);
+    margin-top: 15px;
+    font-family: var(--font-bold);
+}
+
+.said-nursi-section .read-more-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(153, 109, 63, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.said-nursi-section .read-more-link i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    color: #620505;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .said-nursi-section .read-more-link:hover::before {
+        left: 100%;
+    }
+
+    .said-nursi-section .read-more-link:hover {
+        background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
+        border-color: rgba(153, 109, 63, 0.5);
+        color: #620505;
+        box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
+    }
+
+    .said-nursi-section .read-more-link:hover i {
+        transform: translateX(4px);
+    }
+}
+
+/* Herzameling Button in Colored Section */
+.colored-section .herzameling-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 30px;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.25) 0%, rgba(245, 223, 172, 0.20) 100%);
+    border: 2px solid rgba(245, 223, 172, 0.6);
+    border-radius: 20px;
+    color: rgb(255, 245, 220);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: var(--font-bold);
+}
+
+.colored-section .herzameling-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 223, 172, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.colored-section .herzameling-btn i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    color: rgb(245, 223, 172);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .colored-section .herzameling-btn:hover::before {
+        left: 100%;
+    }
+
+    .colored-section .herzameling-btn:hover {
+        background: linear-gradient(135deg, rgba(218, 165, 32, 0.35) 0%, rgba(245, 223, 172, 0.30) 100%);
+        border-color: rgba(245, 223, 172, 0.8);
+        color: rgb(255, 250, 235);
+        text-shadow: 0 0 8px rgba(245, 223, 172, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+        /*transform: translateY(-2px);*/
+        box-shadow: 0 4px 20px rgba(245, 223, 172, 0.3), 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .colored-section .herzameling-btn:hover i {
+        transform: translateX(4px);
+    }
+}
+
+/* ---------------------------------------------------------
+   HERZAMELING "LEES MEER" BUTTON (replaces image button)
+   --------------------------------------------------------- */
+.herzameling-lees-meer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 28px;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.28) 0%, rgba(197, 140, 30, 0.22) 100%);
+    border: 2px solid rgba(245, 223, 172, 0.65);
+    border-radius: 20px;
+    color: rgb(250, 235, 185);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-bold);
+    letter-spacing: 1.2px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.herzameling-lees-meer-btn i {
+    font-size: 13px;
+    color: rgba(245, 223, 172, 0.9);
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .herzameling-lees-meer-btn:hover {
+        background: linear-gradient(135deg, rgba(218, 165, 32, 0.42) 0%, rgba(197, 140, 30, 0.36) 100%);
+        border-color: rgba(245, 223, 172, 0.95);
+        color: #fff8e8;
+        box-shadow: 0 6px 22px rgba(218, 165, 32, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .herzameling-lees-meer-btn:hover i {
+        transform: translateX(5px);
+    }
+}
+
+@media (max-width: 600px) {
+    .herzameling-lees-meer-btn {
+        padding: 4px 22px;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 768px) {
+    .colored-section .herzameling-btn {
+        padding: 4px 24px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .colored-section .herzameling-btn {
+        padding: 4px 20px;
+        font-size: 14px;
+    }
+}
+
+
+/* Risale Image */
+.risale-section .risale-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.risale-section .risale-image img {
+    max-width: 500px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   SAID NURSI SECTION (Who is Said Nursi)
+   --------------------------------------------------------- */
+
+.said-nursi-section .text-container.risale-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+/* Desktop: Title, Image, then Quote */
+.said-nursi-section .risale-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.said-nursi-section .risale-content .title {
+    order: 1;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.said-nursi-section .said-nursi-image.mobile-only {
+    order: 2;
+}
+
+.said-nursi-section .risale-content .sub-text {
+    order: 3;
+    text-align: center;
+    max-width: 695px;
+    margin: 10px auto 0;
+}
+
+.said-nursi-section .risale-content .sub-text p {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #871719;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.3px;
+    margin-bottom: 30px;
+}
+
+.said-nursi-section .risale-content .sub-text a {
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.said-nursi-section .said-nursi-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 4px solid rgba(98, 5, 5, 0.1);
+}
+
+/* Show mobile version on both mobile and desktop, hide desktop version */
+.said-nursi-section .mobile-only {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.said-nursi-section .desktop-only {
+    display: none;
+}
+
+.said-nursi-section .mobile-only img {
+    max-width: 600px;
+}
+
+/* Said Nursi Read More Link */
+.said-nursi-section .read-more-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+/* ---------------------------------------------------------
+   COLORED BOOKS SECTION
+   --------------------------------------------------------- */
+
+.colored-section.books {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.colored-section .risale {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #F6F1E3;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--main-font-color);
+    box-shadow: var(--shadow-1);
+    flex-wrap: wrap;
+}
+
+.colored-section .risale::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/bg-art.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.colored-section .risale .first {
+    width: 100%;
+    max-width: 700px;
+}
+
+.colored-section .risale .second {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.colored-section .risale .second img {
+    max-width: 445px;
+}
+
+.colored-section .risale .btn {
+    padding: 0 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid var(--main-font-color);
+    background: var(--main-font-color);
+    color: var(--surface-2);
+    height: 40px;
+    display: flex;
+    gap: 5px;
+    transition: filter 0.1s ease-in-out;
+    font-size: 16px;
+    font-family: var(--font-bold);
+    margin-bottom: 50px;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE DESIGN - MOBILE
+   --------------------------------------------------------- */
+
+/* Adjust rose petals for screens 1270px and smaller */
+@media screen and (max-width: 1270px) {
+    .new-translation .rose-patels {
+        left: 50%;
+        top: 50%;
+        max-width: 900px;
+    }
+
+    .colored-section.books-section::before {
+        background-size: 100% auto;
+        background-position: left top;
+        background-repeat: repeat-y;
+    }
+}
+
+/* Mobile: Stack vertically for screens 992px and smaller */
+@media screen and (max-width: 992px) {
+    .page.home {
+        overflow: auto;
+    }
+
+    .below-books {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .hero-bg-wrapper {
+        padding-bottom: 625px;
+        margin-bottom: 0px;
+    }
+
+    .said-nursi-section .text-container.risale-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .said-nursi-section .mobile-only {
+        margin: 20px 0;
+    }
+
+
+    .said-nursi-section .said-nursi-image img {
+        max-height: 450px;
+    }
+
+    .risale-section .text-container.risale-grid {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .risale-section .risale-content {
+        text-align: center;
+    }
+
+    .risale-section .risale-content .title {
+        text-align: center;
+    }
+
+    .risale-section .risale-content .sub-text {
+        text-align: center;
+    }
+
+    .risale-section .risale-image {
+        order: -1; /* Show image first on mobile */
+    }
+
+    .risale-section .risale-image img {
+        max-height: 300px;
+    }
+
+    .home .title {
+        line-height: 3.4rem;
+    }
+
+
+    .new-translation .sub-text.one {
+        display: none;
+    }
+
+    .new-translation .sub-text.two {
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .colored-section.books-section::before {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* Fix tiling seams on mobile for all leather sections */
+    .colored-section.quotes-section::before,
+    .colored-section.newsletter-section::before {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* new-translation is taller on mobile so zoom in more to match other sections */
+    .new-translation::before {
+        background-size: 150% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .new-translation .rose-decoration {
+        width: 150px;
+        right: 2%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .home.intro-section .text-container {
+        padding: 0 2px;
+    }
+
+    .home .title {
+        line-height: 2.5rem;
+    }
+
+    .intro-section .bismillah {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0 30px;
+    }
+
+    .sub-text.one {
+        display: none;
+    }
+
+    .sub-text.two {
+        display: block;
+        padding: 0 15px;
+        padding-bottom: 10px;
+    }
+
+    .sub-text.two p {
+        margin-bottom: 0px;
+    }
+
+    .home.intro-section {
+        width: 100%;
+        max-width: 1200px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+
+    .home.intro-section .sub-text {
+        margin-bottom: 0;
+    }
+
+    .home.intro-section .title,
+    .title {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .intro-section .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .intro-section .sub-text {
+        width: 100%;
+        margin: 10px auto 20px;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .home-book-grid .book img {
+        width: 100%;
+        /*max-width: 175px;*/
+    }
+
+    .home-book-grid .book .btn {
+        font-size: 13px;
+        padding: 0px 20px;
+        height: 31.39px;
+    }
+
+    .colored-section .risale .second img {
+        max-width: 300px;
+    }
+
+    .colored-section .risale .title {
+        font-size: 32px;
+    }
+
+    .hero-bg-wrapper {
+        padding-bottom: 550px;
+        margin-bottom: 0px;
+    }
+
+    .home-book-grid .one {
+        max-width: 167px;
+    }
+
+    .home-book-grid .two {
+        max-width: 175px;
+    }
+
+    .home-book-grid .three {
+        max-width: 172px;
+    }
+
+    .home-book-grid .four {
+        max-width: 175px;
+    }
+
+    .new-translation .title {
+        font-size: 32px;
+    }
+
+    .new-translation .rose-decoration {
+        width: 150px;
+        right: 0%;
+    }
+
+    .new-translation .rose-patels {
+        width: 600px;
+        opacity: 1;
+        left: 50%;
+        top: 50%;
+        z-index: 0;
+    }
+
+    .home-book-grid {
+        z-index: 2;
+    }
+
+    .home .title {
+        font-size: 32px;
+    }
+
+    .risale-section {
+       padding-top: 40px;
+       padding-bottom: 40px;
+    }
+
+    .new-translation {
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .quotes-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .newsletter-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .read-more-btn {
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .said-nursi-section .risale-content .sub-text p {
+        font-size: 18px;
+    }
+
+    .said-nursi-section .risale-content .sub-text a {
+        font-size: 14px;
+    }
+
+    .risale-section .read-more-link {
+        font-size: 14px;
+    }
+
+    .new-translation .rose-decoration {
+        width: 150px;
+        right: 0%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .below-books {
+        padding-top: 40px;
+        padding-bottom: 100px;
+    }
+
+    .hero-bg-wrapper {
+        padding-bottom: 510px;
+        margin-bottom: 0px;
+    }
+
+    .home-hero {
+        margin-top: -15px;
+    }
+
+    .new-translation .rose-decoration {
+        width: 150px;
+        right: 0%;
+    }
+
+    .new-translation .rose-patels {
+        width: 500px;
+        opacity: 1;
+        left: 50%;
+        top: 50%;
+    }
+
+    .colored-section.books-section::before {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 360px) {
+    .below-books {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+}
+
+/* Moons for Intro Section */
+.intro-section .moon-left,
+.intro-section .moon-right {
+    display: none;
+    position: absolute;
+    margin: 0px 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 225px; /* Adjust as needed */
+    height: auto;
+    opacity: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.intro-section .moon-left {
+    left: 0;
+}
+
+.intro-section .moon-right {
+    right: 0;
+    transform: translateY(-50%) scaleX(-1); /* Flip horizontally */
+}
+
+@media (max-width: 1400px) {
+    .intro-section .moon-left,
+    .intro-section .moon-right {
+        margin: 0px 0%;
+    }
+}
+
+@media (max-width: 900px) {
+    .intro-section .moon-left,
+    .intro-section .moon-right {
+        width: 225px;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-section .moon-left {
+        display: none;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+    }
+    .intro-section .moon-right {
+        display: none;
+    }
+}

@@ -1,0 +1,350 @@
+/* =========================================================
+   HERZAMELING PAGE STYLING
+   ========================================================= */
+
+.herzameling-page__text-box .title {
+    margin-top: 10px;
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--main-font-color);
+    line-height: 1.3;
+}
+
+/* Herina Decorative Letters for Title */
+.herzameling-page__text-box .title-h::before {
+    content: var(--herina-h);
+}
+
+.herzameling-page__text-box .title-t::before {
+    content: var(--herina-t);
+}
+
+.herzameling-page__text-box .title-r::before {
+    content: var(--herina-r);
+}
+
+.herzameling-page__text-box .title-a-one::before {
+    content: var(--herina-a-one);
+}
+
+.herzameling-page__text-box .title-e-r::before {
+    content: var(--herina-e-r);
+}
+
+.herzameling-page__text-box .title-me::before {
+    content: var(--herina-me);
+}
+
+.herzameling-page__text-box .title-in::before {
+    content: "\E04E";
+}
+
+.herzameling-page__text-box {
+    background-color: #fff3cc;
+    background-image: url("../../images/little-pluses.png");
+    border-radius: 10px;
+    padding: 40px 60px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    box-shadow: var(--shadow-1);
+    max-width: 1075px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.herzameling-page__text-box .sub-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--main-font-color);
+    font-family: var(--font-bold);
+}
+
+.herzameling-page__text-box blockquote {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.herzameling-page__text-box blockquote p {
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+    text-indent: 50px;
+}
+
+.herzameling-page__text-box p {
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-indent: 50px;
+    color: var(--main-font-color);
+}
+
+.herzameling-page__text-box > img {
+    display: block;
+    margin: 25px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.herzameling-page__text-box strong {
+    font-weight: 700;
+    color: var(--main-font-color);
+}
+
+.herzameling-page__text-box em {
+    font-style: italic;
+}
+
+/* Two-column layout for text with image */
+.herzameling-page__text-box .content-with-image {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 525px;
+    align-items: start;
+    margin-bottom: 15px;
+}
+
+.herzameling-page__text-box .content-text {
+    min-width: 0;
+}
+
+.herzameling-page__text-box .content-image {
+    max-width: 525px;
+}
+
+.herzameling-page__text-box .content-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Bottom links styling */
+.herzameling-page__text-box .bottom-links {
+    text-align: center;
+    text-indent: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.herzameling-page__text-box .link-with-capital {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--main-font-color);
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1;
+}
+
+.herzameling-page__text-box .link-with-capital::first-letter {
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.bottom-books-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.bottom-books-box img {
+    max-width: 650px;
+    margin-left: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    /* Adjust grid for smaller desktop/tablet */
+    .herzameling-page__text-box .content-with-image {
+        grid-template-columns: 1fr 400px;
+        gap: 25px;
+    }
+
+    .herzameling-page__text-box .content-image {
+        max-width: 400px;
+    }
+
+    .bottom-books-box img {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Stack on smaller tablets */
+    .herzameling-page__text-box .content-with-image {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .herzameling-page__text-box .content-image {
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .herzameling-page__text-box .title {
+        font-size: 38px;
+        margin-bottom: 25px;
+        letter-spacing: 1.5px;
+    }
+
+    .herzameling-page__text-box .sub-title {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .herzameling-page__text-box {
+        padding: 30px 25px;
+    }
+
+    .herzameling-page__text-box p {
+        text-indent: 30px;
+        text-align: left;
+    }
+
+    .herzameling-page__text-box blockquote p {
+        text-indent: 30px;
+    }
+
+    /* Stack content on mobile */
+    .herzameling-page__text-box .content-with-image {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .herzameling-page__text-box .content-image {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: -20px;
+        margin-bottom: 10px;
+    }
+
+    /* Bottom books responsive */
+    .bottom-books-box img {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .herzameling-page__text-box .link-with-capital {
+        font-size: 18px;
+    }
+
+    .herzameling-page__text-box .link-with-capital::first-letter {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 600px) {
+    .herzameling-page__text-box .title {
+        font-size: 28px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+        margin-left: 0px;
+
+    }
+
+    /* Force line break before 'herzameling' word on mobile */
+    .herzameling-page__text-box .title .word-break-mobile {
+        display: block;
+    }
+
+    .herzameling-page__text-box .sub-title {
+        font-size: 20px;
+    }
+
+    .herzameling-page__text-box {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .herzameling-page__text-box p {
+        text-indent: 25px;
+        text-align: left;
+    }
+
+    .herzameling-page__text-box blockquote p {
+        text-indent: 25px;
+    }
+
+    .herzameling-page__text-box .link-with-capital {
+        font-size: 16px;
+    }
+
+    .herzameling-page__text-box .link-with-capital::first-letter {
+        font-size: 21px;
+    }
+
+    .bottom-books-box {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .herzameling-page__text-box .title {
+        font-size: 30px;
+        line-height: 1.4;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .herzameling-page__text-box .title {
+        font-size: 30px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .herzameling-page__text-box .sub-title {
+        font-size: 18px;
+    }
+
+    .herzameling-page__text-box {
+        padding: 25px 15px;
+    }
+
+    .herzameling-page__text-box p {
+        text-indent: 20px;
+        text-align: left;
+    }
+
+    .herzameling-page__text-box blockquote p {
+        text-indent: 20px;
+    }
+
+    .herzameling-page__text-box .link-with-capital {
+        font-size: 16px;
+    }
+
+    .herzameling-page__text-box .link-with-capital::first-letter {
+        font-size: 21px;
+    }
+}
+

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Services\SEOService;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 
@@ -15,12 +15,16 @@ class AuthController extends Controller
 {
     public function registerPage()
     {
-        return view('auth.register');
+        return view('auth.register', [
+            'SEOData' => SEOService::getPageSEO('register'),
+        ]);
     }
 
     public function loginPage()
     {
-        return view('auth.login');
+        return view('auth.login', [
+            'SEOData' => SEOService::getPageSEO('login'),
+        ]);
     }
 
 
@@ -37,7 +41,7 @@ class AuthController extends Controller
 
         if (auth()->attempt($validated, $request->filled('remember'))) {
             $request->session()->regenerate();
-            return redirect()->route('dashboard')->with('success', 'Je bent ingelogd!');
+            return redirect()->route('dashboard');
         }
 
         return back()->with('error', 'De inloggegevens kloppen niet.');
@@ -67,7 +71,9 @@ class AuthController extends Controller
 
     public function forgotPassword()
     {
-        return view('auth.forgot-password');
+        return view('auth.forgot-password', [
+            'SEOData' => SEOService::getPageSEO('forgot-password'),
+        ]);
     }
 
     public function sendPasswordResetLink(Request $request)
@@ -83,7 +89,10 @@ class AuthController extends Controller
         } elseif ($status === Password::RESET_THROTTLED) {
             return back()->withErrors(['email' => __('Je hebt te vaak geprobeerd een resetlink aan te vragen. Probeer het later opnieuw.')]);
         } else {
-            return back()->withErrors(['email' => __('We konden geen gebruiker vinden met dat e-mailadres.')]);
+            // Always return the same message to prevent email enumeration
+            // Don't reveal whether the email exists in the system
+            return back()->with('success',
+                __('Als dit e-mailadres in ons systeem staat, hebben we een resetlink verstuurd.'));
         }
     }
 
@@ -94,11 +103,13 @@ class AuthController extends Controller
         if (empty($token) || empty($email)) {
             return redirect()->route('login')->with('no_right_link', __('Ongeldige of verlopen reset link.'));
         }
-        // Optionally, check if the email exists in the database
-        if (!User::where('email', $email)->exists()) {
-            return redirect()->route('login')->with('no_right_link', __('Ongeldige of verlopen reset link.'));
-        }
-        return view('auth.reset-password', ['token' => $token, 'email' => $email]);
+        // Don't check if email exists to prevent email enumeration
+        // The token validation will happen in resetPasswordHandler
+        return view('auth.reset-password', [
+            'token' => $token,
+            'email' => $email,
+            'SEOData' => SEOService::getPageSEO('reset-password'),
+        ]);
     }
 
     public function resetPasswordHandler(Request $request)
@@ -129,7 +140,7 @@ class AuthController extends Controller
             }
         );
 
-        return $status === Password::PasswordReset
+        return $status === Password::PASSWORD_RESET
             ? redirect()->route('login')->with(['status' => __('Het wachtwoord van je account is gewijzigd.')])
             : back()->withErrors(['email' => [__($status)]]);
     }

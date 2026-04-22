@@ -1,0 +1,63 @@
+/* =========================================================
+   Front-End Variables
+   ========================================================= */
+:root {
+    --main-color: #ab0f14;
+    --secondary-color: #fffcf4;
+    --font-light: 'DelimaMTProLight';
+    --font-regular: 'DelimaMTProRegular', sans-serif;
+    --font-bold: 'DelimaMTProBold', sans-serif;
+    --font-herina: 'Herina', serif;
+    --font-regular-weight: 500;
+    --main-font-color: #620505;
+    --header-height: 80px;
+    --mobile-header-height: 70px;
+    --text-font-size: 18px;
+
+    /* Herina special characters - for easier maintenance */
+    --herina-u: "\E026";
+    --herina-k: "\E012";
+    --herina-h: "\E007";
+    --herina-t: "\E024";
+    --herina-in: "\E04E";
+    --herina-r: "\E022";
+    --herina-a-one: "\E000";
+    --herina-e-r: "\E049";
+    --herina-me: "\E057";
+    --herina-w: "\E02D";
+    --text-font-size-page: 19px;
+    @media only screen and (max-width: 600px) {
+            --text-font-size-page: 18px;
+    }
+    --text-font-size-menu-item: 23px;
+    --bg-parchment: #f7d99e;
+    --surface-1: #F6F1E3;
+    --surface-2: #F6F1E3;
+    --surface-3: #faf9f7;
+    --surface-4: #fff;
+    --border-1: #D8C7A6;
+    --border-2: #d8d8d8;
+    --border-3: #e5e5e5;
+    --border-4: #f0f0f0;
+    --ink-1: #333;
+    --ink-muted: #737373;
+    --ink-inverse: #fff;
+    --green-2: #2c582f;
+    --green-1: #2e7d32;
+    --red-1: #dc3545;
+    --red-2: #b30000;
+    --blue-1: #0d6efd;
+    --yellow-1: #ffc107;
+    --teal-1: #44605b;
+    --gold-2: #996d3f;
+    --cream-1: #faefc1;
+    --success-bg: #d1e7dd;
+    --success-border: #a3cfbb;
+    --success-text: #0a3622;
+    --error-bg: #f8d7da;
+    --error-border: #f1aeb5;
+    --error-text: #58151c;
+    --info-border: #0dcaf0;
+    --shadow-1: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    --shadow-3: 0 8px 32px rgba(98, 5, 5, .18);
+}

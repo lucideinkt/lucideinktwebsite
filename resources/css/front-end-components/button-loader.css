@@ -1,0 +1,24 @@
+/* =========================================================
+   LOADER
+   ========================================================= */
+.loader {
+    width: 1em;
+    height: 1em;
+    border: 2px solid var(--ink-inverse);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+    vertical-align: middle;
+    margin-top: -2px;
+    display: none;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}

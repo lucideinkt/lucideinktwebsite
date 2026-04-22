@@ -1,0 +1,298 @@
+/* =========================================================
+   SIDEBARS (MOBILE + ADMIN)
+   ========================================================= */
+.sidebar-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-toggle .fa-bars {
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--main-font-color);
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    padding: 0;
+    background: #fff9ef;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+    transition: right .3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 110;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.sidebar .navbar ul li {
+    list-style: none;
+}
+
+.sidebar .navbar ul li a {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all .2s ease;
+    color: var(--main-font-color) !important;
+    background: transparent !important;
+    text-decoration: none;
+    display: block;
+    padding: 18px 25px;
+    border-radius: 0;
+    position: relative;
+    border-bottom: 1px solid #e8dcc8;
+}
+
+.sidebar .navbar ul li a .first-letter {
+    font-size: 110%;
+    font-weight: 700;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .sidebar .navbar ul li a:hover {
+        background: rgba(98, 5, 5, 0.05) !important;
+        transform: none;
+        text-shadow: none;
+        padding-left: 30px;
+    }
+}
+
+.sidebar .navbar ul li a.active {
+    background: rgba(98, 5, 5, 0.08) !important;
+    text-shadow: none;
+    font-weight: 700;
+    border-left: 4px solid var(--main-font-color);
+    padding-left: 21px;
+}
+
+.sidebar .close-toggle {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 25px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e8dcc8;
+    background: #fff9ef;
+}
+
+.sidebar .close-toggle .fa-xmark {
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--main-font-color);
+    padding: 6px;
+    border-radius: 4px;
+    transition: all .2s ease;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .sidebar .close-toggle .fa-xmark:hover {
+        background: rgba(98, 5, 5, 0.08);
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Dropdown styles in sidebar - Override desktop navbar dropdown styles */
+.sidebar .nav-item.dropdown > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .nav-item.dropdown > a .fa-chevron-down {
+    font-size: 9px;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+    color: var(--main-font-color);
+    opacity: 0.7;
+}
+
+/* Prevent hover effects on sidebar dropdown chevron */
+.sidebar .nav-item.dropdown:hover > a .fa-chevron-down {
+    transform: none;
+}
+
+/* Only rotate chevron when dropdown has .open class */
+.sidebar .nav-item.dropdown.open > a .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Sidebar dropdown menu - completely override desktop navbar styles */
+.sidebar .dropdown-menu {
+    /* Reset desktop navbar positioning */
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+
+    /* Remove desktop navbar styling */
+    background-image: none !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-width: auto !important;
+
+    /* Sidebar specific styles */
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    display: block !important;
+    flex-direction: column;
+    transition: max-height 0.3s ease,
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                padding 0.3s ease,
+                margin 0.3s ease;
+    will-change: max-height, opacity;
+}
+
+.sidebar .nav-item.dropdown.open .dropdown-menu {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.sidebar .dropdown-menu li {
+    list-style: none;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar .nav-item.dropdown.open .dropdown-menu li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger the animation for each item */
+.sidebar .nav-item.dropdown.open .dropdown-menu li:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.sidebar .nav-item.dropdown.open .dropdown-menu li:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.sidebar .nav-item.dropdown.open .dropdown-menu li:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.sidebar .nav-item.dropdown.open .dropdown-menu li:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.sidebar .dropdown-menu li a {
+    font-size: 14px !important;
+    text-transform: none !important;
+    letter-spacing: 0.3px;
+    padding: 14px 20px 14px 40px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(98, 5, 5, 0.05) !important;
+    display: block;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    background: rgba(98, 5, 5, 0.02) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .sidebar .dropdown-menu li a:hover {
+        background: rgba(98, 5, 5, 0.06) !important;
+        padding-left: 45px !important;
+    }
+}
+
+/* Cart icon styling in sidebar */
+.sidebar .nav-item.cart a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar .nav-item.cart .fa-bag-shopping {
+    font-size: 18px;
+    color: var(--main-font-color);
+}
+
+.sidebar .nav-item.cart .cart-quantity {
+    background: #dc2626;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 50%;
+    min-width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User account styling in sidebar */
+.sidebar .nav-item a .fa-user {
+    font-size: 16px;
+    margin-left: 6px;
+    color: var(--main-font-color) !important;
+    opacity: 0.9;
+}
+
+/* Show account text in sidebar only */
+.sidebar .account-text {
+    display: inline !important;
+}
+
+
+/* Scrollbar styling for sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(98, 5, 5, 0.2);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(98, 5, 5, 0.3);
+}
+

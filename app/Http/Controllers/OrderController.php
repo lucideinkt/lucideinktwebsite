@@ -204,7 +204,7 @@ class OrderController extends Controller
     public function sendOrderEmailWithInvoice(string $id)
     {
         $order = Order::findOrFail($id);
-        Mail::to($order->customer->billing_email)->send(new OrderPaidMail($order->fresh()));
+        Mail::to($order->customer->billing_email)->queue(new OrderPaidMail($order->fresh()));
 
         return back()->with('success', 'E-mail met factuur is verstuurd');
     }
@@ -313,7 +313,7 @@ class OrderController extends Controller
             'billing_company' => $request->billing_company,
             'billing_street' => $request->billing_street,
             'billing_house_number' => $request->billing_house_number,
-            'billing_house_number_addition' => $request->input('billing_house_number-add'),
+            'billing_house_number-add' => $request->input('billing_house_number-add'),
             'billing_postal_code' => $request->billing_postal_code,
             'billing_city' => $request->billing_city,
             'billing_country' => $request->billing_country,
@@ -419,20 +419,7 @@ class OrderController extends Controller
             'discount_value' => $discountValue,
             'discount_price_total' => $discountAmount,
 
-            // Billing snapshot
-            'billing_first_name' => $request->billing_first_name,
-            'billing_last_name' => $request->billing_last_name,
-            'billing_email' => $request->billing_email,
-            'billing_company' => $request->billing_company,
-            'billing_street' => $request->billing_street,
-            'billing_house_number' => $request->billing_house_number,
-            'billing_house_number_addition' => $request->input('billing_house_number-add'),
-            'billing_postal_code' => $request->billing_postal_code,
-            'billing_city' => $request->billing_city,
-            'billing_country' => $request->billing_country,
-            'billing_phone' => $request->billing_phone,
-
-            // Shipping snapshot
+            // Shipping snapshot - billing data is in customer table
             'shipping_first_name' => $request->boolean('alt-shipping') ? $request->shipping_first_name : $request->billing_first_name,
             'shipping_last_name' => $request->boolean('alt-shipping') ? $request->shipping_last_name : $request->billing_last_name,
             'shipping_company' => $request->boolean('alt-shipping') ? $request->shipping_company : $request->billing_company,

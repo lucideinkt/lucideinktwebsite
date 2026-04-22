@@ -1,0 +1,699 @@
+/* =========================================================
+   ONLINE LEZEN (ONLINE READING) PAGES
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   LIBRARY PAGE - Book Grid
+   --------------------------------------------------------- */
+
+.online-lezen {
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 60vh;
+    padding-bottom: 30px;
+}
+
+.online-lezen-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0px 20px 0;
+}
+
+.online-lezen-title {
+    font-family: var(--font-herina);
+    font-size: 52px;
+    font-weight: 400;
+    color: var(--main-font-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+    margin-top: 0px !important;
+}
+
+.online-lezen-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        rgba(218, 165, 32, 0.5) 0%,
+        rgba(197, 160, 89, 0.8) 50%,
+        rgba(218, 165, 32, 0.5) 100%
+    );
+}
+
+.online-lezen-subtitle {
+    font-size: 17px;
+    color: var(--main-font-color);
+    opacity: 0.75;
+    max-width: 600px;
+    margin: 0px auto 0;
+    line-height: 1.7;
+}
+
+.online-lezen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 32px;
+    align-items: stretch;
+    padding: 0;
+    background: transparent;
+}
+
+.online-book-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-1);
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.online-book-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: transparent !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.online-book-link img {
+    background: transparent !important;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: normal;
+}
+
+.online-book-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.online-book-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+}
+
+.online-book-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.online-book-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 12px;
+    z-index: 5;
+}
+
+.online-book-overlay i {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.online-book-overlay span {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.online-book-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    flex-grow: 1;
+    gap: 8px;
+}
+
+.online-book-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--main-font-color);
+    margin: 0;
+    line-height: 1.4;
+    min-height: auto;
+    transition: color 0.2s ease;
+}
+
+.online-book-category {
+    font-size: 16px;
+    color: var(--ink-muted);
+    margin: 0;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    display: block;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+}
+
+.online-book-language {
+    font-size: 0.85rem;
+    color: var(--ink-2);
+    margin: 0;
+    font-style: italic;
+    display: block;
+}
+
+.online-book-language::before {
+    content: '';
+    display: none;
+}
+
+.online-lezen-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 100px 20px;
+    color: var(--ink-2);
+}
+
+.online-lezen-empty i {
+    font-size: 6rem;
+    margin-bottom: 24px;
+    opacity: 0.2;
+    background: linear-gradient(135deg, var(--green-2), var(--green-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.online-lezen-empty p {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--ink-3);
+}
+
+
+/* ---------------------------------------------------------
+   READER PAGE - PDF Viewer
+   --------------------------------------------------------- */
+
+.online-reader {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.reader-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--surface-1);
+    border-radius: 12px;
+    box-shadow: var(--shadow-1);
+}
+
+.reader-info {
+    flex: 1;
+}
+
+.reader-title {
+    font-family: var(--font-herina);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--main-font-color);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.reader-category {
+    font-size: 1rem;
+    color: var(--green-2);
+    margin: 0;
+    font-weight: 500;
+}
+
+.reader-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.pdf-reader-container {
+    margin-bottom: 40px;
+}
+
+.pdf-viewer-wrapper {
+    position: relative;
+    width: 100%;
+    background: #525659;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-1);
+    margin-bottom: 40px;
+    min-height: 600px;
+}
+
+/* PDF.js iframe styling */
+.pdf-iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    display: block;
+    background: #525659;
+}
+
+/* Fullscreen mode for PDF viewer */
+.pdf-viewer-wrapper:fullscreen,
+.pdf-viewer-wrapper:-webkit-full-screen,
+.pdf-viewer-wrapper:-moz-full-screen,
+.pdf-viewer-wrapper:-ms-fullscreen {
+    border-radius: 0;
+    margin: 0;
+}
+
+.pdf-viewer-wrapper:fullscreen .pdf-iframe,
+.pdf-viewer-wrapper:-webkit-full-screen .pdf-iframe,
+.pdf-viewer-wrapper:-moz-full-screen .pdf-iframe,
+.pdf-viewer-wrapper:-ms-fullscreen .pdf-iframe {
+    height: 100vh;
+}
+
+.pdf-no-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 500px;
+}
+
+.pdf-no-file i {
+    font-size: 5rem;
+    color: var(--ink-muted);
+    margin-bottom: 24px;
+    opacity: 0.3;
+}
+
+.pdf-no-file p {
+    font-size: 1.2rem;
+    color: var(--ink-2);
+    margin: 0 0 24px 0;
+}
+
+.reader-description {
+    background: var(--surface-2);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-1);
+    background-color: #f5ecce;
+    background-image: url("../../images/little-pluses.png");
+}
+
+.reader-description h2 {
+    font-family: var(--font-herina);
+    font-size: 1.8rem;
+    color: var(--main-font-color);
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+}
+
+.description-short {
+    font-weight: 500;
+    color: var(--main-font-color);
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+}
+
+.description-long {
+    font-size: 1rem;
+    color: var(--ink-2);
+    margin: 0;
+    line-height: 1.8;
+}
+
+.reader-footer {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.reader-cta {
+    position: relative;
+    padding: 60px 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-1);
+    border: 1px solid #C5A059;
+    overflow: hidden;
+    z-index: 0;
+    color: #fff6e0;
+}
+
+.reader-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/001_leather_background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.reader-cta h3 {
+    font-family: var(--font-herina);
+    font-size: 2.2rem;
+    margin: 0 0 15px 0;
+    letter-spacing: 1.5px;
+    color: #fff6e0;
+}
+
+.reader-cta p {
+    margin: 0 0 35px 0;
+    color: #fff6e0;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.reader-cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reader-cta-actions .btn {
+    min-width: 200px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.reader-cta-actions .btn-primary {
+    background: #f5e6ca;
+    color: var(--main-font-color);
+    border: 2px solid #f5e6ca;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.reader-cta-actions .btn-primary .fa-solid {
+    color: var(--main-font-color);
+}
+
+.reader-cta-actions .btn-secondary {
+    background: transparent;
+    color: #fff6e0;
+    border: 2px solid rgba(236, 229, 194, 0.5);
+}
+
+.reader-cta-actions .btn-secondary .fa-solid {
+    color: #fff6e0;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE DESIGN
+   --------------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .online-lezen-title {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .online-lezen-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 32px;
+    }
+
+    .reader-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .reader-actions {
+        width: 100%;
+    }
+
+    .reader-actions .btn {
+        width: 100%;
+    }
+
+    .pdf-iframe {
+        height: 600px;
+    }
+
+    .reader-title {
+        font-size: 1.8rem;
+    }
+
+    .reader-cta {
+        padding: 45px 30px;
+    }
+
+    .reader-cta h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .online-lezen-header {
+        margin-bottom: 20px;
+        padding: 0px 20px 0;
+    }
+
+    .online-lezen-title {
+        font-size: 38px;
+        letter-spacing: 1.5px;
+    }
+
+    .online-lezen-subtitle {
+        font-size: 16px;
+    }
+
+    .online-lezen-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 15px;
+    }
+
+    .online-book-card {
+        border-radius: 12px;
+    }
+
+    .online-book-content {
+        padding: 12px;
+    }
+
+    .online-book-title {
+        font-size: 17px;
+    }
+
+    .online-book-overlay i {
+        font-size: 3rem;
+    }
+
+    .online-book-overlay span {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .online-lezen-header {
+        margin-bottom: 20px;
+        padding: 0px 15px 0;
+    }
+
+    .online-lezen-title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    .online-lezen-title::after {
+        width: 60px;
+        height: 2px;
+        bottom: -2px;
+    }
+
+    .online-lezen-subtitle {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-top: 0px;
+    }
+
+    .online-lezen-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .online-book-card {
+        max-width: none;
+        margin: 0;
+    }
+
+    .online-book-content {
+        padding: 10px;
+    }
+
+    .online-book-title {
+        font-size: 1rem;
+    }
+
+    .online-book-category {
+        font-size: 0.85rem;
+    }
+
+    .online-book-language {
+        font-size: 0.85rem;
+    }
+
+    .online-book-overlay i {
+        font-size: 2.5rem;
+    }
+
+    .online-book-overlay span {
+        font-size: 0.95rem;
+        padding: 6px 14px;
+        letter-spacing: 1px;
+    }
+
+    .online-lezen-empty {
+        padding: 60px 15px;
+    }
+
+    .online-lezen-empty i {
+        font-size: 4rem;
+    }
+
+    .online-lezen-empty p {
+        font-size: 1.1rem;
+    }
+
+    .pdf-iframe {
+        height: 500px;
+    }
+
+    .pdf-controls {
+        top: 5px;
+        right: 5px;
+    }
+
+    .pdf-control-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .pdf-control-btn .btn-text {
+        display: none;
+    }
+
+    .pdf-control-btn i {
+        font-size: 1.1rem;
+    }
+
+    .reader-description {
+        padding: 20px;
+    }
+
+    .reader-description h2 {
+        font-size: 1.5rem;
+    }
+
+    .reader-cta {
+        padding: 30px 20px;
+    }
+
+    .reader-cta h3 {
+        font-size: 1.4rem;
+    }
+
+
+
+    .reader-cta-actions {
+        flex-direction: column;
+    }
+
+    .reader-cta-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .online-lezen-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .online-lezen-grid a {
+        max-width: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .online-lezen-title {
+        font-size: 1.6rem;
+    }
+
+    .pdf-iframe {
+        height: 400px;
+    }
+
+    .reader-title {
+        font-size: 1.4rem;
+    }
+
+    .online-lezen-title::after {
+        margin-top: -10px;
+    }
+
+    .online-book-content {
+        padding: 8px;
+    }
+
+    .online-book-title {
+        font-size: 15px;
+    }
+
+    .online-book-category {
+        font-size: 14px;
+    }
+}

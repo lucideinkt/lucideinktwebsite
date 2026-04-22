@@ -1,0 +1,109 @@
+/* =========================================================
+   TABLES
+   ========================================================= */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface-2);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-1);
+    border-radius: 4px;
+    overflow: hidden;
+    border: none;
+}
+
+.table img {
+    width: 40px;
+    height: auto;
+}
+
+thead {
+    border-left: 1px solid var(--ink-1);
+    border-right: 1px solid var(--ink-1);
+}
+
+.table tr {
+    background-color: var(--surface-2);
+}
+
+.table th,
+.table td {
+    padding: 4px 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-4);
+    font-size: 15px;
+}
+
+.table th {
+    background: var(--ink-1);
+    color: var(--ink-inverse);
+    font-weight: 400;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: #fff7d6a6;
+    transition: background .2s;
+}
+
+.table .table-action {
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.table .table-action a,
+.table .table-action form {
+    display: inline;
+}
+
+.table .table-action .action-btn {
+    font-size: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.table .edit {
+    color: var(--yellow-1);
+}
+
+.table .delete {
+    color: var(--red-1);
+}
+
+.table .show {
+    color: var(--blue-1);
+}
+
+.td-img img {
+    vertical-align: middle;
+}
+
+.table-action .fa-eye {
+    color: var(--main-font-color);
+}
+
+.table-action .fa-eye:after {
+    content: "Bekijken";
+    font-family: var(--font-regular), sans-serif;
+    margin-left: 10px;
+}
+
+.table-empty-state {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}

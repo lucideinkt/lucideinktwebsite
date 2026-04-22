@@ -1,0 +1,184 @@
+/* =========================================================
+   Homepage quotes slider (custom — no Splide dependency)
+   ========================================================= */
+
+.quotes-section {
+    padding: 60px 15px;
+}
+
+.quotes-section .quote-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Slider wrapper */
+#quotes-slider {
+    position: relative;
+    padding: 0 50px;
+}
+
+/* Track clips slides */
+.qs-track {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slide list — CSS grid stack so all slides share the same cell → no height jump */
+.qs-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.qs-slide {
+    grid-area: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+    visibility: hidden;
+}
+
+.qs-slide.qs-active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+/* Arrow buttons */
+.qs-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(236, 229, 194, 0.2);
+    border: 2px solid rgba(236, 229, 194, 0.4);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    z-index: 10;
+    padding: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .qs-arrow:hover {
+        background: rgba(236, 229, 194, 0.3);
+        border-color: rgba(236, 229, 194, 0.6);
+    }
+}
+
+.qs-arrow svg {
+    width: 22px;
+    height: 22px;
+    stroke: #ece5c2;
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.qs-arrow-prev { left: 0; }
+.qs-arrow-next { right: 0; }
+
+/* Quote card */
+.quote-card {
+    background: rgba(255, 246, 224, 0.08);
+    border: 2px solid rgba(236, 229, 194, 0.3);
+    border-radius: 16px;
+    padding: 50px 40px;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.quote-icon {
+    font-size: 48px;
+    opacity: 1;
+    margin-bottom: 25px;
+    line-height: 1;
+    text-align: center;
+}
+
+.quote-icon i {
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
+}
+
+.quote-text {
+    font-size: 20px;
+    line-height: 1.9;
+    color: rgb(245, 223, 172);
+    font-style: italic;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.quote-source {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    font-family: var(--font-bold);
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .quotes-section {
+        padding: 50px 15px;
+    }
+
+    #quotes-slider {
+        padding: 0 20px;
+    }
+
+    .qs-arrow {
+        display: none;
+    }
+
+    .quote-card {
+        padding: 35px 25px;
+    }
+
+    .quote-icon {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .quote-text {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .quote-source {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #quotes-slider {
+        padding: 0 10px;
+    }
+
+    .quote-card {
+        padding: 30px 20px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+    }
+}
+
+/* Keep product detail splide arrows unaffected */
+.product-detail-image-wrapper .splide__arrow {
+    background: #fff5d6;
+}

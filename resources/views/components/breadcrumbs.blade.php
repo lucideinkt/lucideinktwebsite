@@ -12,9 +12,9 @@
 
             <li class="bc-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 @if($i === 0)
-                    <svg aria-hidden="true" class="bc-home" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10.707 1.293a1 1 0 0 0-1.414 0L2 8.586V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V8.586l-7.293-7.293z"/>
-                    </svg>
+{{--                    <svg aria-hidden="true" class="bc-home" viewBox="0 0 20 20" fill="currentColor">--}}
+{{--                        <path d="M10.707 1.293a1 1 0 0 0-1.414 0L2 8.586V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V8.586l-7.293-7.293z"/>--}}
+{{--                    </svg>--}}
                 @endif
 
                 @if(!empty($item['url']) && !$isLast)
@@ -29,9 +29,7 @@
             </li>
 
             @if(!$isLast)
-                <span class="bc-sep" aria-hidden="true">
-          <i class="fa-solid fa-chevron-right bc-chev"></i>
-        </span>
+                <span class="bc-sep" aria-hidden="true">&#8250;</span>
             @endif
         @endforeach
     </ol>
