@@ -172,6 +172,8 @@ Route::post('/winkel/checkout/apply-discount-code', [CheckoutController::class, 
 Route::delete('/winkel/checkout/remove-discount-code', [CheckoutController::class, 'removeDiscountCode'])->name('removeDiscountCode');
 
 Route::get('/api/shipping-cost', [ShippingCostController::class, 'getCost']);
+Route::get('/api/myparcel/delivery-options', [\App\Http\Controllers\MyParcelApiController::class, 'deliveryOptions']);
+Route::get('/api/myparcel/pickup-locations',  [\App\Http\Controllers\MyParcelApiController::class, 'pickupLocations']);
 
 // Auth pages
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login')->middleware('guest');

@@ -37,7 +37,7 @@ import { initOrderCalculation } from './features/order-calc.js';
 import { initCopyPaymentLink } from './features/payment-link.js';
 import { setupConfirmationModals, setupLivewireConfirmations } from './features/confirm-modal.js';
 import { initDiscountCode } from './features/discount-code.js';
-import { initMyParcelWidget } from './features/myparcel.js';
+import './delivery-options.js';
 import { setupPasswordToggles } from './features/password-toggle.js';
 import { initAnimatedClock } from './features/clock.js';
 import { initReadMoreModal } from './features/read-more-modal.js';
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupConfirmationModals();
     setupLivewireConfirmations();
     initDiscountCode();
-    initMyParcelWidget();
+    // initMyParcelWidget() — replaced by delivery-options.js (custom CDO widget)
     setupPasswordToggles();
     initAnimatedClock();
     initLivewireCart();

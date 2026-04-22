@@ -227,13 +227,6 @@
                                 {{ old('alt-shipping') ? 'checked' : '' }}>
                         </div>
 
-
-                        <div style="height: 0px; margin-bottom: 0" class="form-input myparcel_choice"
-                            style="visibility: hidden">
-                            <input hidden style="height: 0px" type="radio" checked name="myparcel_choice"
-                                value="with_myparcel" id="with_myparcel">
-                        </div>
-
                     </div>
 
                     <div class="item customer-details alternate checkout-card" id="shipping-fields">
@@ -388,7 +381,41 @@
                     </div>
 
                     <div id="myparcel-loader-wrap"></div>
-                    <div id="myparcel-delivery-options"></div>
+
+                    <div id="custom-delivery-options" class="custom-delivery-options" style="display:none;">
+
+                        <div class="cdo-tabs">
+                            <button type="button" class="cdo-tab active" data-tab="home">
+                                <i class="fa-solid fa-house"></i> Thuisbezorging
+                            </button>
+                            <button type="button" class="cdo-tab" data-tab="pickup">
+                                <i class="fa-solid fa-store"></i> Afhaalpunt
+                            </button>
+                        </div>
+
+                        <div class="cdo-panel" id="cdo-panel-home">
+                            <div class="cdo-list" id="cdo-home-list"></div>
+                        </div>
+
+                        <div class="cdo-panel" id="cdo-panel-pickup" style="display:none;">
+                            <div class="cdo-list" id="cdo-pickup-list"></div>
+                        </div>
+
+                        <div id="cdo-loader" class="cdo-loader" style="display:none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                 style="animation:cdo-spin 0.8s linear infinite;">
+                                <circle cx="12" cy="12" r="10" stroke="#d0d0d0" stroke-width="3"/>
+                                <path d="M12 2a10 10 0 0 1 10 10" stroke="#6c8ebf" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                            <span>Bezorgopties worden geladen…</span>
+                        </div>
+
+                        <div id="cdo-error" class="cdo-error" style="display:none;">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span id="cdo-error-msg">Bezorgopties konden niet worden geladen.</span>
+                        </div>
+
+                    </div>
 
                     <div id="opening-hours" class="pickup-opening-hours"></div>
 
@@ -448,16 +475,8 @@
         var _googlePlacesFillingCountry = false;
 
         function resetMyParcelWidget() {
-            // Clear only the hidden input value — do NOT touch innerHTML so the
-            // MyParcel library can re-render when a new complete address is entered.
-            var myparcelOptions = document.getElementById('myparcel_delivery_options');
-            if (myparcelOptions) myparcelOptions.value = '';
-
-            // Ensure the radio is back to the default choice so the widget stays enabled
-            var defaultChoice = document.getElementById('with_myparcel');
-            if (defaultChoice && !defaultChoice.checked) {
-                defaultChoice.checked = true;
-                defaultChoice.dispatchEvent(new Event('change', { bubbles: true }));
+            if (typeof window.resetDeliveryOptions === 'function') {
+                window.resetDeliveryOptions();
             }
         }
 

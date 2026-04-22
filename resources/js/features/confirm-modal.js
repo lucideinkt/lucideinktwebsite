@@ -149,9 +149,20 @@ function handleLivewireConfirmElements() {
 
         // Add click handler with highest priority
         element.addEventListener('click', function(event) {
+            // Always consume the event so Livewire's native wire:confirm dialog never fires.
             event.preventDefault();
             event.stopPropagation();
             event.stopImmediatePropagation();
+
+            // Only open the modal for genuine user clicks.
+            // Synthetic events from password managers (1Password, Dashlane, etc.),
+            // autofill or any script have isTrusted === false – block those silently.
+            if (!event.isTrusted) return;
+
+            // Also block if an input/textarea/select currently has focus
+            // (side-effect of autofill moving focus around).
+            const focused = document.activeElement;
+            if (focused && ['INPUT', 'TEXTAREA', 'SELECT'].includes(focused.tagName)) return;
 
             showConfirmModal(confirmMessage || 'Weet je het zeker?', function() {
                 // Find the closest Livewire component
