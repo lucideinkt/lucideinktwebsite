@@ -960,8 +960,18 @@ a.co-cart-product-link:hover {
     margin-top: 3px;
     flex-shrink: 0;
     accent-color: #2d6a2d;
-    width: 16px;
-    height: 16px;
+    /* Fixed size – prevents iOS from rendering oversized native checkbox */
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
+    min-height: 18px !important;
+    max-height: 18px !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 3px !important;
+    appearance: auto;
+    -webkit-appearance: checkbox;
     cursor: pointer;
 }
 
