@@ -193,6 +193,48 @@ input:-webkit-autofill:active {
     );
 }
 
+/* Responsive checkout title */
+@media (max-width: 992px) {
+    .checkout-page-title {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-header {
+        padding: 0px 15px;
+        margin-bottom: 20px;
+    }
+
+    .checkout-page-title {
+        font-size: 38px;
+        letter-spacing: 1.5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .checkout-page-title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    .checkout-page-title::after {
+        width: 60px;
+        height: 2px;
+        bottom: -2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-page-title {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+}
+
 .checkout-subtitle {
     font-size: 1.125rem;
     color: var(--main-font-color);
@@ -366,40 +408,23 @@ input:-webkit-autofill:active {
 
 .page.checkout .alt-shipping input[type="checkbox"],
 .page.checkout .customer-account input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    max-width: 15px !important;
+    min-height: 15px !important;
+    max-height: 15px !important;
     margin: 0;
+    padding: 0 !important;
     cursor: pointer;
     flex-shrink: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 2px solid rgba(197, 160, 89, 0.5);
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.8);
-    position: relative;
-    transition: all 0.2s ease;
-    padding: 0;
+    appearance: auto;
+    -webkit-appearance: checkbox;
+    accent-color: #2d6a2d;
+    border: none !important;
+    border-radius: 3px !important;
+    background: none;
 }
-
-.page.checkout .alt-shipping input[type="checkbox"]:checked,
-.page.checkout .customer-account input[type="checkbox"]:checked {
-    background: var(--main-font-color);
-    border-color: var(--main-font-color);
-}
-
-/*.page.checkout .alt-shipping input[type="checkbox"]:checked::after,*/
-/*.page.checkout .customer-account input[type="checkbox"]:checked::after {*/
-/*    content: '✓';*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    transform: translate(-50%, -50%);*/
-/*    color: white;*/
-/*    font-size: 11px;*/
-/*    font-weight: bold;*/
-/*    line-height: 1;*/
-/*}*/
 
 .page.checkout .alt-shipping label,
 .page.checkout .customer-account label {
@@ -960,13 +985,12 @@ a.co-cart-product-link:hover {
     margin-top: 3px;
     flex-shrink: 0;
     accent-color: #2d6a2d;
-    /* Fixed size – prevents iOS from rendering oversized native checkbox */
-    width: 18px !important;
-    height: 18px !important;
-    min-width: 18px !important;
-    max-width: 18px !important;
-    min-height: 18px !important;
-    max-height: 18px !important;
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    max-width: 15px !important;
+    min-height: 15px !important;
+    max-height: 15px !important;
     padding: 0 !important;
     border: none !important;
     border-radius: 3px !important;
@@ -1387,10 +1411,10 @@ a.co-cart-product-link:hover {
     border-radius: 12px;
     padding: 24px;
     box-shadow: var(--shadow-1);
-    background-color: #f5ecce !important;
     background-image: url("../../images/little-pluses.png") !important;
     border: none !important;
     grid-column: 1 / -1;
+    background-color: #fff3cc;
 }
 
 .order-note-title {
@@ -1578,12 +1602,15 @@ a.co-cart-product-link:hover {
     border: 1px solid #e5e5e5;
     border-radius: 6px;
     cursor: pointer;
-    transition: border-color 0.15s, background 0.15s;
+    transition: none;
 }
 
-.cdo-option:hover {
-    border-color: #620505;
-    background: #fdf8f8;
+/* Hover only on real pointer devices — prevents touch/scroll triggering it on mobile */
+@media (hover: hover) and (pointer: fine) {
+    .cdo-option:hover {
+        border-color: rgba(98, 5, 5, 0.35);
+        background: rgba(253, 248, 248, 0.6);
+    }
 }
 
 .cdo-option input[type="radio"] {
@@ -1707,49 +1734,118 @@ a.co-cart-product-link:hover {
     color: #f60;
 }
 
-/* Scrollable pickup list */
-.cdo-pickup-scroll {
-    max-height: 260px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #d0c4b0 #f5f0e8;
+.checkout.success
+.order-item-row:hover {
+    background: none;
 }
 
-.cdo-pickup-scroll::-webkit-scrollbar {
-    width: 6px;
+/* =========================================================
+   SUCCESS PAGE – RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+    .success-title {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
 }
 
-.cdo-pickup-scroll::-webkit-scrollbar-track {
-    background: #f5f0e8;
-    border-radius: 3px;
+@media (max-width: 768px) {
+    .success-icon {
+        font-size: 48px;
+    }
+
+    .success-title {
+        font-size: 38px;
+        letter-spacing: 1.5px;
+    }
+
+    .order-summary-card {
+        padding: 16px;
+    }
+
+    .order-summary-title {
+        font-size: 22px;
+    }
+
+    .order-addresses-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .order-address-card,
+    .order-note-card {
+        padding: 16px;
+    }
+
+    .order-total-row {
+        font-size: 14px;
+    }
+
+    .order-confirmation-note {
+        padding: 16px;
+    }
 }
 
-.cdo-pickup-scroll::-webkit-scrollbar-thumb {
-    background: #d0c4b0;
-    border-radius: 3px;
+@media (max-width: 576px) {
+    .success-icon {
+        font-size: 40px;
+    }
+
+    .success-title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .success-title::after {
+        width: 60px;
+        height: 2px;
+        bottom: -2px;
+    }
+
+    .checkout-success-header {
+        padding: 0 12px 10px;
+    }
+
+    .order-summary-card {
+        padding: 12px;
+    }
+
+    .order-address-card,
+    .order-note-card {
+        padding: 14px;
+    }
+
+    .address-card-title {
+        font-size: 17px;
+    }
+
+    .order-addresses-grid {
+        gap: 12px;
+    }
+
+    .order-total-row {
+        font-size: 13px;
+    }
+
+    .order-total-row.final-total .order-total-label,
+    .order-total-row.final-total .order-total-value {
+        font-size: 14px;
+    }
 }
 
-/* "Toon meer" button */
-.cdo-more-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    width: 100%;
-    margin-top: 8px;
-    padding: 9px 12px;
-    background: #f9f6f1;
-    border: 1px dashed #c8b89a;
-    border-radius: 6px;
-    color: #620505;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.15s, border-color 0.15s;
-}
+@media (max-width: 480px) {
+    .success-title {
+        font-size: 28px;
+    }
 
-.cdo-more-btn:hover {
-    background: #f3ede4;
-    border-color: #620505;
-}
+    .checkout-success-container {
+        gap: 16px;
+    }
 
+    .container.page.checkout.success .fa-circle-check {
+        font-size: 45px;
+    }
+}
