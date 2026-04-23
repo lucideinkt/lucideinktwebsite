@@ -6,8 +6,7 @@
             <div class="alert alert-success">
                 <span class="alert-icon"><i class="fa-solid fa-circle-check"></i></span>
                 <span class="alert-text">{{ session('success') }}</span>
-                <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">×</button>
+                <button type="button" class="alert-close" aria-label="Sluiten">&times;</button>
             </div>
         @endif
 
@@ -15,8 +14,7 @@
             <div class="alert alert-error">
                 <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
                 <span class="alert-text">{{ session('error') }}</span>
-                <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">×</button>
+                <button type="button" class="alert-close" aria-label="Sluiten">&times;</button>
             </div>
         @endif
 

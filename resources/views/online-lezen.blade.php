@@ -330,6 +330,13 @@
 </style>
 
 <script>
+// iOS Safari double-tap fix: a single empty touchstart listener tells
+// iOS Safari this page handles touch, so it stops intercepting the
+// first tap as a :hover state — making every link respond on first tap.
+document.addEventListener('touchstart', function () {}, { passive: true });
+</script>
+
+<script>
 (function () {
     const BM_KEY   = 'reader_bookmarks_global';
     const fab      = document.getElementById('bm-fab');

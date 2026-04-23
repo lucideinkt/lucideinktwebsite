@@ -73,7 +73,7 @@ class ContactForm extends Component
             $this->success = true;
             $this->reset(['name', 'email', 'country', 'subject', 'message']);
 
-            $this->dispatch('contact-success', message: 'Bedankt! Uw bericht is verzonden. We nemen zo spoedig mogelijk contact met u op.');
+            $this->dispatch('contact-success', message: 'Bedankt! Jouw bericht is verzonden. We nemen zo spoedig mogelijk contact met je op.');
         } catch (\Exception $e) {
             Log::error('Contact form error: ' . $e->getMessage(), [
                 'exception' => $e,

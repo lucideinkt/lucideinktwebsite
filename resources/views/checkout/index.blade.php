@@ -37,30 +37,28 @@
 
         @if (session('success'))
             <div class="alert alert-success">
-                {{ session('success') }}
-                <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+                <span class="alert-icon"><i class="fa-solid fa-circle-check"></i></span>
+                <span class="alert-text">{{ session('success') }}</span>
+                <button type="button" class="alert-close" aria-label="Sluiten">&times;</button>
             </div>
         @endif
 
         @if (session('error'))
             <div class="alert alert-error">
-                {{ session('error') }}
-                <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+                <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                <span class="alert-text">{{ session('error') }}</span>
+                <button type="button" class="alert-close" aria-label="Sluiten">&times;</button>
             </div>
         @endif
 
         @if ($errors->has('stock'))
             <div class="alert alert-error">
-                <div>
-                    <div>
-                        <a style="text-decoration: none" href="{{ route('cartPage') }}">← Terug naar winkelmand</a>
-                    </div>
+                <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                <span class="alert-text">
+                    <a style="text-decoration: none; display: block; margin-bottom: 4px;" href="{{ route('cartPage') }}">← Terug naar winkelmand</a>
                     {!! $errors->first('stock') !!}
-                </div>
-                <button type="button" class="alert-close"
-                    onclick="this.parentElement.style.display='none';">&times;</button>
+                </span>
+                <button type="button" class="alert-close" aria-label="Sluiten">&times;</button>
             </div>
         @endif
 
@@ -419,7 +417,8 @@
 
                     <div id="opening-hours" class="pickup-opening-hours"></div>
 
-                    <input type="hidden" name="myparcel_delivery_options" id="myparcel_delivery_options" />
+                    <input type="hidden" name="myparcel_delivery_options" id="myparcel_delivery_options"
+                        value="{{ old('myparcel_delivery_options') }}" />
 
                     @guest
                         <div class="checkout-create-account">
@@ -805,6 +804,169 @@
         // Google Maps API key not configured – autocomplete disabled.
         document.querySelectorAll('.address-autocomplete-wrap').forEach(el => el.style.display = 'none');
         @endif
+
+        // ─── Client-side form validation ────────────────────────────────────
+        (function () {
+            const form = document.querySelector('form.checkout');
+            if (!form) return;
+
+            // Fields that are always required
+            const alwaysRequired = [
+                { name: 'billing_email',        label: 'E-mailadres' },
+                { name: 'billing_first_name',   label: 'Voornaam' },
+                { name: 'billing_last_name',    label: 'Achternaam' },
+                { name: 'billing_street',       label: 'Straatnaam' },
+                { name: 'billing_house_number', label: 'Huisnummer' },
+                { name: 'billing_postal_code',  label: 'Postcode' },
+                { name: 'billing_city',         label: 'Plaats' },
+                { name: 'billing_country',      label: 'Land' },
+            ];
+
+            // Fields required only when alt-shipping is checked
+            const shippingRequired = [
+                { name: 'shipping_first_name',   label: 'Voornaam (verzendadres)' },
+                { name: 'shipping_last_name',    label: 'Achternaam (verzendadres)' },
+                { name: 'shipping_street',       label: 'Straatnaam (verzendadres)' },
+                { name: 'shipping_house_number', label: 'Huisnummer (verzendadres)' },
+                { name: 'shipping_postal_code',  label: 'Postcode (verzendadres)' },
+                { name: 'shipping_city',         label: 'Plaats (verzendadres)' },
+                { name: 'shipping_country',      label: 'Land (verzendadres)' },
+            ];
+
+            function clearErrors() {
+                form.querySelectorAll('.js-error').forEach(el => el.remove());
+            }
+
+            function showError(input, message) {
+                // Don't duplicate
+                const existing = input.parentElement.querySelector('.js-error');
+                if (existing) existing.remove();
+
+                const div = document.createElement('div');
+                div.className = 'error js-error';
+                div.textContent = message;
+                input.insertAdjacentElement('afterend', div);
+            }
+
+            function validate() {
+                clearErrors();
+                let firstError = null;
+                let hasErrors = false;
+
+                function checkField(name, label) {
+                    const el = form.querySelector(`[name="${name}"]`);
+                    if (!el) return;
+                    const val = el.tagName === 'SELECT' ? el.value : el.value.trim();
+                    if (!val) {
+                        showError(el, `${label} is verplicht.`);
+                        if (!firstError) firstError = el;
+                        hasErrors = true;
+                    }
+                }
+
+                alwaysRequired.forEach(f => checkField(f.name, f.label));
+
+                const altShipping = document.getElementById('alt-shipping');
+                if (altShipping && altShipping.checked) {
+                    shippingRequired.forEach(f => checkField(f.name, f.label));
+                }
+
+                // agree_terms checkbox
+                const terms = document.getElementById('agree_terms');
+                if (terms && !terms.checked) {
+                    showError(terms, 'Je moet akkoord gaan met de algemene voorwaarden.');
+                    if (!firstError) firstError = terms;
+                    hasErrors = true;
+                }
+
+                // delivery option
+                const delivery = document.getElementById('myparcel_delivery_options');
+                if (delivery && !delivery.value) {
+                    const container = document.getElementById('custom-delivery-options');
+                    if (container && container.style.display !== 'none') {
+                        const errTarget = container;
+                        const existing = errTarget.parentElement.querySelector('.js-error-delivery');
+                        if (!existing) {
+                            const div = document.createElement('div');
+                            div.className = 'error js-error js-error-delivery';
+                            div.style.marginTop = '6px';
+                            div.textContent = 'Kies een bezorgoptie.';
+                            errTarget.insertAdjacentElement('afterend', div);
+                        }
+                        if (!firstError) firstError = container;
+                        hasErrors = true;
+                    }
+                }
+
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                return !hasErrors;
+            }
+
+            form.addEventListener('submit', function (e) {
+                if (!validate()) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                }
+            });
+
+            // Clear js-errors on input
+            form.addEventListener('input',  () => clearErrors(), { passive: true });
+            form.addEventListener('change', () => clearErrors(), { passive: true });
+        })();
+
+        // ─── Restore CDO state after server-side redirect ────────────────────
+        (function () {
+            const oldValue = @json(old('myparcel_delivery_options', ''));
+            if (!oldValue) return;
+
+            let parsed;
+            try { parsed = JSON.parse(oldValue); } catch(e) { return; }
+
+            // Called by delivery-options.js after rendering is complete
+            window._cdoRestoreValue = oldValue;
+
+            function tryRestore() {
+                const h = document.getElementById('myparcel_delivery_options');
+                if (h && !h.value) h.value = oldValue;
+
+                // Switch to correct tab
+                if (parsed.deliveryType === 'pickup') {
+                    const pickupTab = document.querySelector('.cdo-tab[data-tab="pickup"]');
+                    if (pickupTab) pickupTab.click();
+                }
+
+                // Try to find matching radio and check it
+                const radios = document.querySelectorAll('input[name="cdo_choice"]');
+                let matched = false;
+                radios.forEach(radio => {
+                    try {
+                        const rv = JSON.parse(radio.value);
+                        if (parsed.deliveryType === 'pickup' && rv.deliveryType === 'pickup'
+                            && rv.pickup && parsed.pickup
+                            && rv.pickup.location_code === parsed.pickup.location_code) {
+                            radio.checked = true;
+                            if (h) h.value = radio.value;
+                            matched = true;
+                        } else if (parsed.deliveryType !== 'pickup' && rv.deliveryType !== 'pickup') {
+                            radio.checked = true;
+                            if (h) h.value = radio.value;
+                            matched = true;
+                        }
+                    } catch(e) {}
+                });
+
+                return matched;
+            }
+
+            // Retry until the delivery options have rendered (up to 8s)
+            let attempts = 0;
+            const interval = setInterval(() => {
+                if (tryRestore() || ++attempts > 16) clearInterval(interval);
+            }, 500);
+        })();
     </script>
 </div>
 </x-layout>

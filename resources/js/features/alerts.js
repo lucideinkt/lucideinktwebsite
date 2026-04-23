@@ -1,18 +1,26 @@
 // ============================================================
 // ALERT AUTO-DISMISS
 // All alerts are toasts — slide in from right, slide out after delay.
-// No close button interaction needed.
 // ============================================================
 
 export function initAlerts() {
     document.querySelectorAll('.alert').forEach(function (el) {
-        var timer = setTimeout(function () { dismiss(el); }, 6000);
+        var timer = setTimeout(function () { dismiss(el); }, 10000);
 
-        // Pause on hover, give 2 s extra on mouse leave
+        // Pause on hover, give 3 s extra on mouse leave
         el.addEventListener('mouseenter', function () { clearTimeout(timer); });
         el.addEventListener('mouseleave', function () {
-            timer = setTimeout(function () { dismiss(el); }, 2000);
+            timer = setTimeout(function () { dismiss(el); }, 3000);
         });
+
+        // Wire up close button with animation
+        var closeBtn = el.querySelector('.alert-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                clearTimeout(timer);
+                dismiss(el);
+            });
+        }
     });
 }
 

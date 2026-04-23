@@ -192,40 +192,7 @@ input[type="password"]::-ms-clear {
     margin-top: 0.5rem;
 }
 
-/* Alerts */
-.auth-form .alert {
-    border-radius: 6px;
-    padding: 12px 16px;
-    margin-bottom: 1rem !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-}
-
-.auth-form .alert-success {
-    background: var(--success-bg);
-    color: var(--success-text);
-    border: 1px solid var(--success-border);
-}
-
-.auth-form .alert-error {
-    background: #fee;
-    color: var(--red-1);
-    border: 1px solid #fcc;
-}
-
-.alert-close {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: inherit;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-    padding: 0;
-    margin-left: 12px;
-}
+/* Alerts — handled globally by alerts.css */
 
 .alert-close:hover {
     opacity: 1;

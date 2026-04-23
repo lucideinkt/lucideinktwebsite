@@ -1,34 +1,32 @@
 /* =========================================================
    Alerts — Toast Notifications
-   Always fixed top-right, slide in/out from the right.
-   No close button — auto-dismiss only.
+   Appears below the fixed navbar, slides in from the right.
    ========================================================= */
 
 .alert {
     position: fixed !important;
-    top: 88px;
+    top: 116px;        /* 100px navbar + 16px gap */
     right: 20px;
-    z-index: 99999;
-    width: 320px;
-    max-width: calc(100vw - 32px);
+    z-index: 1000;     /* above page content, below modals/overlays */
+    width: 360px;
+    max-width: calc(100vw - 40px);
 
     display: flex !important;
     align-items: flex-start;
     gap: 10px;
 
-    padding: 12px 14px !important;
+    padding: 14px 16px !important;
     border-radius: 10px;
     border: none !important;
     border-left: 4px solid transparent !important;
 
-    /* Warm parchment tone matching the site palette */
-    background: rgba(255, 248, 224, 0.88) !important;
+    background: rgba(255, 248, 224, 0.97) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(98, 5, 5, 0.10), 0 1px 4px rgba(44, 20, 10, 0.08) !important;
+    box-shadow: 0 4px 24px rgba(44, 20, 10, 0.14), 0 1px 4px rgba(44, 20, 10, 0.08) !important;
 
     font-family: var(--font-regular);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5;
     color: var(--main-font-color, #620505);
 
@@ -79,9 +77,26 @@
     min-width: 0;
 }
 
-/* ── Close button — always hidden, auto-dismiss only ───── */
+/* ── Close button ──────────────────────────────────────── */
 .alert-close {
-    display: none !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: auto;
+    padding: 0 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    color: inherit;
+    opacity: 0.5;
+    transition: opacity 0.15s;
+}
+
+.alert-close:hover {
+    opacity: 1;
 }
 
 /* ── Links ─────────────────────────────────────────────── */
@@ -125,7 +140,7 @@
     background: currentColor;
     opacity: 0.15;
     transform-origin: left;
-    animation: toastProgress 6s linear forwards;
+    animation: toastProgress 10s linear forwards;
 }
 
 @keyframes toastProgress {
@@ -133,15 +148,15 @@
     to   { transform: scaleX(0); }
 }
 
-/* ── Mobile: smaller, right-aligned, not full-width ───── */
+/* ── Mobile: below navbar, full-width with padding ──────── */
 @media (max-width: 600px) {
     .alert {
-        top: 72px !important;
+        top: 88px !important;   /* 80px mobile navbar + 8px gap */
         right: 12px !important;
-        left: auto !important;
-        width: 280px !important;
-        max-width: calc(100vw - 24px) !important;
-        font-size: 13px !important;
-        padding: 10px 12px !important;
+        left: 12px !important;
+        width: auto !important;
+        max-width: none !important;
+        font-size: 14px !important;
+        padding: 12px 14px !important;
     }
 }
