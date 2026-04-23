@@ -7,57 +7,62 @@
  * @param {boolean} showCartLink - Whether to show a link to the cart
  */
 export function showToast(message, isError = false, showCartLink = false) {
-    let toast = document.getElementById('copy-toast');
-
-    if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'copy-toast';
-        toast.className = 'copy-toast';
-        document.body.appendChild(toast);
+    // Remove any existing JS-created toast
+    const existing = document.getElementById('js-toast');
+    if (existing) {
+        existing.remove();
     }
 
-    // Clear previous content
-    toast.innerHTML = '';
+    const toast = document.createElement('div');
+    toast.id = 'js-toast';
+    toast.className = isError ? 'alert alert-error' : 'alert alert-success';
 
-    // Add icon and message wrapper
-    const messageSpan = document.createElement('span');
+    // Icon
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'alert-icon';
+    const iconEl = document.createElement('i');
+    iconEl.className = isError ? 'fa-solid fa-circle-exclamation' : 'fa-solid fa-circle-check';
+    iconSpan.appendChild(iconEl);
+    toast.appendChild(iconSpan);
 
-    // Add icon
-    const icon = document.createElement('i');
-    icon.className = isError ? 'fas fa-exclamation-circle toast-icon' : 'fas fa-check-circle toast-icon';
-    messageSpan.appendChild(icon);
+    // Text
+    const textSpan = document.createElement('span');
+    textSpan.className = 'alert-text';
+    textSpan.textContent = message;
+    toast.appendChild(textSpan);
 
-    // Add message text
-    const messageText = document.createTextNode(message);
-    messageSpan.appendChild(messageText);
-
-    toast.appendChild(messageSpan);
-
-    // Add cart link if requested
+    // Cart link
     if (showCartLink && !isError) {
         const cartLink = document.createElement('a');
         cartLink.href = '/winkel/cart';
         cartLink.textContent = 'Bekijk winkelwagen';
-        cartLink.className = 'toast-cart-link';
         toast.appendChild(cartLink);
     }
 
-    // Add close button
+    // Close button
     const closeBtn = document.createElement('button');
-    closeBtn.className = 'toast-close';
-    closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+    closeBtn.type = 'button';
+    closeBtn.className = 'alert-close';
     closeBtn.setAttribute('aria-label', 'Sluiten');
-    closeBtn.onclick = () => {
-        toast.classList.remove('show');
-    };
+    closeBtn.innerHTML = '&times;';
     toast.appendChild(closeBtn);
 
-    toast.classList.remove('show', 'error');
-    if (isError) toast.classList.add('error');
+    document.body.appendChild(toast);
 
-    void toast.offsetWidth; // Force reflow
-    toast.classList.add('show');
+    // Auto-dismiss after 6 seconds (pause on hover like static alerts)
+    function dismiss() {
+        toast.classList.add('toast-hide');
+        toast.addEventListener('animationend', () => toast.remove(), { once: true });
+    }
 
-    // Verwijder automatische verwijdering - gebruiker moet nu zelf sluiten
-    // setTimeout(() => toast.classList.remove('show'), 4000);
+    let autoDismiss = setTimeout(dismiss, 10000);
+
+    toast.addEventListener('mouseenter', () => clearTimeout(autoDismiss));
+    toast.addEventListener('mouseleave', () => { autoDismiss = setTimeout(dismiss, 3000); });
+
+    // Close button cancels auto-dismiss and removes immediately
+    closeBtn.onclick = () => {
+        clearTimeout(autoDismiss);
+        dismiss();
+    };
 }
