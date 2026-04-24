@@ -601,10 +601,15 @@ body:has(.page.shop) .page-normal-background {
         line-height: 1.6;
     }
 
+    .shop-title::before {
+        bottom: -18px;
+        font-size: 8px;
+    }
+
     .shop-title::after {
-        width: 60px;
+        width: 160px;
         height: 2px;
-        bottom: -2px;
+        bottom: -14px;
     }
 
     .shop-subtitle {
@@ -664,6 +669,16 @@ body:has(.page.shop) .page-normal-background {
 }
 
 @media (max-width: 480px) {
+    .shop-title::before {
+        bottom: -16px;
+        font-size: 7px;
+    }
+
+    .shop-title::after {
+        width: 130px;
+        bottom: -12px;
+    }
+
     .product-cards-grid,
     .page.shop .book-box {
         gap: 8px;
@@ -717,6 +732,16 @@ body:has(.page.shop) .page-normal-background {
 }
 
 @media (max-width: 360px) {
+    .shop-title::before {
+        bottom: -16px;
+        font-size: 7px;
+    }
+
+    .shop-title::after {
+        width: 120px;
+        bottom: -12px;
+    }
+
     .page.shop .book-box,
     .product-cards-grid {
         grid-template-columns: 1fr;
