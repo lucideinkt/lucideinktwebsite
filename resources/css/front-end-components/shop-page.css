@@ -5,24 +5,51 @@
 .page.shop {
     max-width: 1100px;
     margin: 0 auto;
-
+    padding-bottom: 0;
 }
 
-.page.shop .bc-list a {
-    color: #f4f5bf;
-}
+/*body:has(.page.shop) {*/
+/*    background-color: #680a0b !important;*/
+/*}*/
 
-.page.shop .bc-list span {
-    color: #f4f5bf;
+body:has(.page.shop) .page-normal-background {
+
 }
 
 body:has(.page.shop) {
-    background-color: #680a0b !important;
+    overflow-x: hidden;
 }
 
-body:has(.page.shop) .page-normal-background {
-    background-color: rgba(104, 10, 11, 0.85) !important;
-    background-image: none;
+/* Full-bleed gradient border inside the shop page */
+.page.shop .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+.background-of-the-shop-grid {
+    background-color: #690d0d;
+    background-color: #7c0101;
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+    /* full-bleed: break out of the max-width container */
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 20px 20px 32px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Re-constrain the grid to max-width inside the full-bleed background */
+.background-of-the-shop-grid > .book-box,
+.background-of-the-shop-grid > .product-cards-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -49,57 +76,25 @@ body:has(.page.shop) .page-normal-background {
     -webkit-transform: translateZ(0);
 }
 
+/* Herina ligature glyphs inside the shop title */
+.shop-title-in::before {
+    content: "\E04E";
+}
+
+.shop-title-ke::before {
+    content: "\E052";
+}
+
 .shop-title {
     font-family: var(--font-herina);
     font-size: 52px;
     font-weight: 400;
-    color: #f4f5bf;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     letter-spacing: 2px;
     position: relative;
     display: inline-block;
     line-height: 1.2;
     margin-top: 0px !important;
-}
-
-.shop-title::before {
-    content: '◆';
-    position: absolute;
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 9px;
-    color: #ffd700;
-    text-shadow:
-        0 0 6px rgba(255, 210, 30, 0.9),
-        0 0 14px rgba(218, 165, 32, 0.5);
-    z-index: 2;
-    line-height: 1;
-}
-
-.shop-title::after {
-    content: '';
-    position: absolute;
-    bottom: -17px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    height: 2px;
-    background: linear-gradient(
-        to right,
-        transparent 0%,
-        rgba(218, 165, 32, 0.35) 8%,
-        #daa520 30%,
-        #ffd700 46%,
-        transparent 50%,
-        #ffd700 54%,
-        #daa520 70%,
-        rgba(218, 165, 32, 0.35) 92%,
-        transparent 100%
-    );
-    box-shadow: 0 0 8px rgba(255, 210, 30, 0.5), 0 0 18px rgba(218, 165, 32, 0.25);
-    border-radius: 1px;
-    z-index: 1;
 }
 
 .shop-subtitle {
@@ -328,15 +323,21 @@ body:has(.page.shop) .page-normal-background {
 .product-card-title {
     color: var(--main-font-color);
     margin: 0 0 2px;
-    line-height: 1.3;
+    line-height: 1;
     text-align: center;
     font-family: "gioviale", sans-serif !important;
     font-weight: 700;
     font-style: normal;
-    font-size: 28px;
+    font-size: 40px;
     position: relative;
+    padding-right: 40px;
+    padding-left: 40px;
     border: none;
     padding-top: 14px;
+    text-shadow:
+        0 1px 0 rgba(255, 245, 180, 0.7),
+        0 2px 4px rgba(120, 70, 0, 0.25),
+        0 4px 10px rgba(100, 50, 0, 0.12);
 }
 
 /* Gradient divider line above the title */
@@ -512,10 +513,13 @@ body:has(.page.shop) .page-normal-background {
 
     .product-card-content {
         padding-top: 24px;
+
     }
 
     .product-card-title {
-        font-size: 32px;
+        font-size: 40px;
+        padding-left: 70px;
+        padding-right: 70px;
     }
 }
 
@@ -526,7 +530,7 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .shop-title {
-        font-size: 38px;
+        font-size: 40px;
         letter-spacing: 1.5px;
     }
 
@@ -560,8 +564,10 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .product-card-title {
-        font-size: 28px;
+        font-size: 35px;
         padding-top: 10px;
+        padding-right: 50px;
+        padding-left: 50px;
     }
 
     .product-card-subtitle {
@@ -595,9 +601,9 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .shop-title {
-        font-size: 30px;
+        font-size: 40px;
         letter-spacing: 1px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         line-height: 1.6;
     }
 
@@ -612,6 +618,10 @@ body:has(.page.shop) .page-normal-background {
         bottom: -14px;
     }
 
+    .shop-title {
+        margin-bottom: -10px;
+    }
+
     .shop-subtitle {
         font-size: 1rem;
         line-height: 1.6;
@@ -624,8 +634,8 @@ body:has(.page.shop) .page-normal-background {
 
     .product-card-link {
         padding-top: 10px;
-        padding-left: 8px;
-        padding-right: 8px;
+        padding-left: 1px;
+        padding-right: 1px;
     }
 
     .product-card-content {
@@ -634,9 +644,11 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .product-card-title {
-        font-size: 22px;
+        font-size: 30px;
         padding-top: 8px;
-        line-height: 25px;
+        line-height: 1;
+        padding-right: 30px;
+        padding-left: 30px;
     }
 
     .product-card-subtitle {
@@ -679,10 +691,21 @@ body:has(.page.shop) .page-normal-background {
         bottom: -12px;
     }
 
+    .shop-title {
+        margin-bottom: -10px;
+    }
+
+    .background-of-the-shop-grid {
+        padding: 15px 10px 24px;
+    }
+
     .product-cards-grid,
     .page.shop .book-box {
-        gap: 8px;
-        grid-template-columns: 1fr;
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
     }
 
     .product-card-image-wrapper {
@@ -690,51 +713,52 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .product-card-link {
-        padding-top: 20px;
-        padding-left: 7px;
-        padding-right: 7px;
-        padding-bottom: 25px;
+        padding-top: 14px;
+        padding-bottom: 10px;
     }
 
     .product-card-content {
         margin-top: -12px;
-        padding-top: 5px;
+        padding-top: 14px;
     }
 
     .product-card-title {
-        font-size: 32px;
-        padding-top: 15px;
-        margin-bottom: 10px;
+        font-size: 28px;
+        padding-top: 10px;
+        margin-bottom: 4px;
+        line-height: 1;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .product-card-subtitle {
-        font-size: 15px;
+        font-size: 11px;
         margin-bottom: 2px;
-        margin-top: -4px;
+        margin-top: 0;
     }
 
     .product-card-footer {
-        padding: 3px 20px 15px;
-        gap: 3px;
+        padding: 4px 10px 10px;
+        gap: 4px;
     }
 
     .product-card-price-amount {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .product-card-button {
-        padding: 0px 20px;
-        font-size: 0.62rem;
+        padding: 6px 10px;
+        font-size: 0.68rem;
         border-radius: 20px;
-        height: 35px;
+        height: auto;
     }
 
     .product-card-button i {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .product-card-button .small-plus {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 

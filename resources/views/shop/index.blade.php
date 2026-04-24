@@ -25,14 +25,21 @@
 
         <div class="shop-header">
 {{--            <img class="shop-header-image" src="{{ asset('images/our-store-second.webp') }}" alt="Onze Winkel">--}}
-            <h1 class="shop-title">Winkel</h1>
+
+
+
+            <h1 class="shop-title">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</h1>
 {{--            <p class="shop-subtitle">Ontdek onze collectie boeken en bestel direct online</p>--}}
         </div>
 
-        <div class="book-box product-cards-grid">
-            @foreach ($products as $product)
-                @livewire('product-card', ['product' => $product], key('product-' . $product->id))
-            @endforeach
+
+        <div class="gradient-border"></div>
+        <div class="background-of-the-shop-grid">
+            <div class="book-box product-cards-grid">
+                @foreach ($products as $product)
+                    @livewire('product-card', ['product' => $product], key('product-' . $product->id))
+                @endforeach
+            </div>
         </div>
 
     </main>
