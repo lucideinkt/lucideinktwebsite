@@ -30,9 +30,13 @@ body:has(.page.shop) {
 }
 
 .background-of-the-shop-grid {
-    background-color: #690d0d;
-    background-color: #7c0101;
-    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+    /* warm rich brown — blends with the bookshelf wood tones */
+    background: linear-gradient(180deg,
+        #2e1a08 0%,
+        #4a2810 20%,
+        #3d2209 55%,
+        #2e1a08 80%,
+        #1e1005 100%);
     /* full-bleed: break out of the max-width container */
     width: 100vw;
     max-width: 100vw;
@@ -42,6 +46,47 @@ body:has(.page.shop) {
     padding: 20px 20px 32px;
     box-sizing: border-box;
     overflow-x: hidden;
+}
+
+/* Low-opacity texture overlay — mirrors .bookshelf-page::before */
+.background-of-the-shop-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/90_leather_DIFF.jpg");
+    background-size: 600px;
+    background-position: center center;
+    background-repeat: repeat;
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Warm centre glow + top blend-in + edge vignette */
+.background-of-the-shop-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        /* top fade — softens the hard edge between header and grid */
+        linear-gradient(180deg, rgba(80, 40, 10, 0.55) 0%, transparent 12%),
+        /* warm amber glow in the centre where cards sit */
+        radial-gradient(ellipse 85% 50% at 50% 35%,
+            rgba(160, 85, 15, 0.18) 0%,
+            rgba(120, 60, 8, 0.09) 50%,
+            transparent 72%),
+        /* edge vignette */
+        radial-gradient(ellipse 130% 100% at 50% 50%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.40) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep grid content above the texture overlay */
+.background-of-the-shop-grid > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Re-constrain the grid to max-width inside the full-bleed background */
