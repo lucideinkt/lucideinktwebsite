@@ -53,8 +53,8 @@ body:has(.page.shop) {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("../../images/90_leather_DIFF.jpg");
-    background-size: 600px;
+    background-image: url("../../images/78_vinylic tartan wallpapers texture-seamless_hr.jpg");
+    background-size: 900px;
     background-position: center center;
     background-repeat: repeat;
     opacity: 0.28;
@@ -240,35 +240,19 @@ body:has(.page.shop) {
     padding-bottom: 0;
     /* Cream parchment card — corner radial glows + linen weave, light cream base */
     background-color: #fbd795;
-    /*background-image:*/
-    /*    radial-gradient(ellipse at 30% 20%, rgba(255, 230, 140, 0.40) 0%, transparent 55%),*/
-    /*    radial-gradient(ellipse at 70% 80%, rgba(220, 170, 70, 0.22) 0%, transparent 50%),*/
-    /*    repeating-linear-gradient(*/
-    /*        92deg,*/
-    /*        transparent 0px, transparent 3px,*/
-    /*        rgba(0,0,0,0.018) 3px, rgba(0,0,0,0.018) 4px*/
-    /*    ),*/
-    /*    repeating-linear-gradient(*/
-    /*        2deg,*/
-    /*        transparent 0px, transparent 5px,*/
-    /*        rgba(0,0,0,0.013) 5px, rgba(0,0,0,0.013) 6px*/
-    /*    );*/
-
-    /* Thick uniform 3D raised border — lighter top/left, darker bottom/right */
-    /*border-top:    5px solid #d4aa18;*/
-    /*border-left:   5px solid #c49810;*/
-    /*border-right:  5px solid #7a5204;*/
-    /*border-bottom: 5px solid #6a4402;*/
-
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
     outline: none;
     box-shadow:
-        /* outer bright edge — lifts the card off the background */
-        0 0 0 1px rgba(200, 155, 20, 0.55),
-        /* card drop shadow */
-        0 10px 32px rgba(0, 0, 0, 0.55),
-        /* inset shadow tight against the border — depth inside the frame only */
-        inset 0 0 0 2px rgba(0, 0, 0, 0.12);
+        /*!* outer bright edge — lifts the card off the background *!*/
+        /*0 0 0 1px rgba(200, 155, 20, 0.55),*/
+        /*!* card drop shadow *!*/
+        /*0 10px 32px rgba(0, 0, 0, 0.55),*/
+        /*!* inset shadow tight against the border — depth inside the frame only *!*/
+        /*inset 0 0 0 2px rgba(0, 0, 0, 0.12);*/
+        0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
 }
 
 .product-card-link {

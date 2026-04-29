@@ -5,14 +5,16 @@
 .product-detail {
     width: 100%;
     margin-bottom: 0px;
-    background: var(--surface-2);
-    border-radius: 10px;
+    border-radius: 40px;
     padding: 2rem;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
     position: relative;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
-
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+    overflow: visible;
 }
 
 .product-detail-grid {
