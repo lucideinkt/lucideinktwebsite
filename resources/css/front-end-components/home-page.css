@@ -42,17 +42,14 @@
     z-index: -1;
 }
 
-.colored-section.quotes-section {
+.colored-section.quotes-section,
+.colored-section.newsletter-section{
     background: linear-gradient(180deg,
         #090501 0%,
         #1c1205 25%,
         #241605 50%,
         #1c1205 75%,
         #090501 100%);
-}
-
-.colored-section.newsletter-section {
-    background: #0e0801;
 }
 
 .colored-section.quotes-section::before,
