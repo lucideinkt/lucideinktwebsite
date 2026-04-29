@@ -3,13 +3,21 @@
    ========================================================= */
 
 .newsletter-unsubscribe-page__text-box {
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    overflow: visible;
+    position: relative;
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+    outline: none;
     padding: 60px 60px;
     margin-top: 20px;
     margin-bottom: 0;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;

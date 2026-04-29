@@ -272,10 +272,13 @@ input:-webkit-autofill:active {
 .page.checkout .item {
     background: var(--surface-2);
     padding: 24px;
-    box-shadow: var(--shadow-1);
-    border-radius: 10px;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
+    border-radius: 40px;
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .item input,
@@ -389,8 +392,11 @@ input:-webkit-autofill:active {
 .page.checkout .customer-details.alternate {
     margin-top: 20px;
     display: none;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .page.checkout .customer-details.alternate.open {
@@ -1147,13 +1153,15 @@ a.co-cart-product-link:hover {
 }
 
 .order-summary-card {
-    background: var(--surface-2);
-    border-radius: 12px;
+    border-radius: 40px;
     padding: 24px;
-    box-shadow: var(--shadow-1);
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
     margin-top: -20px;
-    background-color: #f5ecce;
-    background-image: url("../../images/little-pluses.png");
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .order-summary-title {
@@ -1317,7 +1325,11 @@ a.co-cart-product-link:hover {
     border-radius: 12px;
     padding: 24px;
     box-shadow: var(--shadow-1);
-    background-image: url("../../images/little-pluses.png") !important;
+    background-color: #fbd795 !important;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg") !important;
+    background-size: 300px !important;
+    background-position: center !important;
+    background-repeat: repeat !important;
     border: none !important;
 }
 
@@ -1411,10 +1423,13 @@ a.co-cart-product-link:hover {
     border-radius: 12px;
     padding: 24px;
     box-shadow: var(--shadow-1);
-    background-image: url("../../images/little-pluses.png") !important;
+    background-color: #fbd795 !important;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg") !important;
+    background-size: 300px !important;
+    background-position: center !important;
+    background-repeat: repeat !important;
     border: none !important;
     grid-column: 1 / -1;
-    background-color: #fff3cc;
 }
 
 .order-note-title {
@@ -1448,15 +1463,17 @@ a.co-cart-product-link:hover {
 }
 
 .order-confirmation-note {
-    background: var(--surface-2);
     border-radius: 8px;
     padding: 24px;
     display: flex;
     align-items: flex-start;
     gap: 15px;
     box-shadow: var(--shadow-1);
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .order-confirmation-note i {

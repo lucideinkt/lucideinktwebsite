@@ -75,8 +75,11 @@
     position: relative;
     padding-top: 20px;
     padding-bottom: 5px;
-    background-color: #f5ecce;
-    background-image: url("../../images/little-pluses.png");
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .audio-book-link {
@@ -299,8 +302,11 @@
 }
 
 .audio-player-container {
-    background-color: #f5ecce;
-    background-image: url("../../images/little-pluses.png");
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
     border-radius: 16px;
     padding: 40px;
     box-shadow: var(--shadow-2);
