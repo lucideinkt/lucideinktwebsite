@@ -364,29 +364,43 @@ h2 {
     text-align: center;
     position: relative;
     z-index: 0;
+    /* dark brown gradient */
+    background: linear-gradient(180deg,
+        #1a0e04 0%,
+        #2e1808 20%,
+        #251405 55%,
+        #1a0e04 80%,
+        #100803 100%);
 }
 
+/* Texture overlay — same as shop grid ::before */
 .new-translation::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: #2e1408;
-    background-image:
-        linear-gradient(#3d1a06, #3d1a06),
-        url("../../images/109_leather_DIFF.jpg");
-    background-size: auto, 440px;
+    background-image: url("../../images/90_leather_DIFF.jpg");
+    background-size: 600px;
     background-position: center center;
     background-repeat: repeat;
-    background-blend-mode: color, normal;
+    opacity: 0.28;
     pointer-events: none;
     z-index: -1;
 }
 
+/* Warm centre glow + edge vignette — same as shop grid ::after */
 .new-translation::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.02) 100%);
+    background:
+        linear-gradient(180deg, rgba(80, 40, 10, 0.45) 0%, transparent 10%),
+        radial-gradient(ellipse 85% 50% at 50% 35%,
+            rgba(160, 85, 15, 0.18) 0%,
+            rgba(120, 60, 8, 0.09) 50%,
+            transparent 72%),
+        radial-gradient(ellipse 130% 100% at 50% 50%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.38) 100%);
     pointer-events: none;
     z-index: 0;
 }
@@ -1083,9 +1097,8 @@ h2 {
 
     /* new-translation is taller on mobile so zoom in more to match other sections */
     .new-translation::before {
-        background-size: auto, 150% 100%;
-        background-position: center center;
-        background-repeat: no-repeat;
+        background-size: 300px;
+        background-repeat: repeat;
     }
 
     .new-translation .rose-decoration {
