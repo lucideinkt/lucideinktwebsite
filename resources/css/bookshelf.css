@@ -219,9 +219,20 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     letter-spacing: 6px;
     text-transform: uppercase;
     margin: 0 0 6px;
-    color: var(--gold-bright);
-    text-shadow: 0 0 20px rgba(240,192,64,0.5), 0 2px 4px rgba(0,0,0,0.8), 2px 2px 0 rgba(80,40,0,0.6);
+    color: rgb(240, 201, 106);
+    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(220,160,40,0.5) 0px 0px 10px, rgba(200,130,20,0.25) 0px 0px 22px;
     line-height: 1.1;
+}
+
+.bookshelf-title .herina-t {
+    font-size: 0;
+}
+.bookshelf-title .herina-t::before {
+    content: "\E024";
+    font-size: clamp(28px, 5vw, 52px);
+    font-family: 'Herina', serif;
+    color: inherit;
+    text-shadow: inherit;
 }
 
 .bookshelf-title-ornament {
@@ -237,9 +248,9 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     flex: 1;
     max-width: 120px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+    background: linear-gradient(90deg, transparent, rgb(240, 201, 106), transparent);
 }
-.bookshelf-title-ornament span { color: var(--gold-mid); font-size: 14px; opacity: 0.8; }
+.bookshelf-title-ornament span { color: rgb(240, 201, 106); text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(220,160,40,0.5) 0px 0px 10px, rgba(200,130,20,0.25) 0px 0px 22px; font-size: 14px; opacity: 0.8; }
 
 .bookshelf-subtitle {
     font-family: 'DelimaMTProRegular', serif;
