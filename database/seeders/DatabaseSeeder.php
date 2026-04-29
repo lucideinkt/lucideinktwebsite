@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
 
   $books = [
           [
-            'title' => 'Afwegingen van Geloof & Ongeloof - Nederlands',
+            'title' => 'Afwegingen van|Geloof & Ongeloof - Nederlands',
             'slug' => Str::slug('Afwegingen van Geloof & Ongeloof - Nederlands'),
             'short_description' => 'In dit boek wordt het verschil tussen de waarnemingen en vruchten van een gelovige visie en een ongelovige visie behandeld. Zodoende wordt de lezer in staat gesteld om af te wegen welke weg beter voor hem is. De logische, rationele en feitelijke bevindingen in dit boek maken duidelijk dat de ene visie op aarde al helse folteringen veroorzaakt, terwijl de andere visie op aarde al paradijselijke geneugten oplevert. Een objectieve lezer zal ervaren dat dit boek zal bijdragen aan het scherpstellen van zijn levensbeschouwing.',
             'long_description' => '',
@@ -168,7 +168,7 @@ class DatabaseSeeder extends Seeder
             'updated_by' => 1,
           ],
           [
-              'title' => 'Afwegingen van Geloof & Ongeloof - Nederlands-Turks',
+              'title' => 'Afwegingen van|Geloof & Ongeloof - Nederlands-Turks',
               'slug' => Str::slug('Afwegingen van Geloof & Ongeloof - Nederlands-Turks'),
               'short_description' => 'In dit boek wordt het verschil tussen de waarnemingen en vruchten van een gelovige visie en een ongelovige visie behandeld. Zodoende wordt de lezer in staat gesteld om af te wegen welke weg beter voor hem is. De logische, rationele en feitelijke bevindingen in dit boek maken duidelijk dat de ene visie op aarde al helse folteringen veroorzaakt, terwijl de andere visie op aarde al paradijselijke geneugten oplevert. Een objectieve lezer zal ervaren dat dit boek zal bijdragen aan het scherpstellen van zijn levensbeschouwing.',
               'long_description' => '',
@@ -195,7 +195,7 @@ class DatabaseSeeder extends Seeder
               'updated_by' => 1,
           ],
           [
-              'title' => 'Broederschap en Oprechtheid - Nederlands',
+              'title' => 'Broederschap & Oprechtheid - Nederlands',
               'slug' => Str::slug('Broederschap en Oprechtheid - Nederlands'),
               'short_description' => 'Dit boek beschrijft hoe Islamitische broederschap en oprechtheid in de huidige tijden kunnen worden betracht. Oorzaken die broederschap en oprechtheid ondermijnen worden uiteengezet, waarnaast Qur’anische principes worden omschreven die resulteren in de totstandbrenging en handhaving van ware Islamitische broederschap en oprechtheid.',
               'long_description' => '',
@@ -223,7 +223,7 @@ class DatabaseSeeder extends Seeder
               'updated_by' => 1,
           ],
           [
-              'title' => 'Broederschap en Oprechtheid - Nederlands-Turks',
+              'title' => 'Broederschap & Oprechtheid - Nederlands-Turks',
               'slug' => Str::slug('Broederschap en Oprechtheid - Nederlands-Turks'),
               'short_description' => 'Dit boek beschrijft hoe Islamitische broederschap en oprechtheid in de huidige tijden kunnen worden betracht. Oorzaken die broederschap en oprechtheid ondermijnen worden uiteengezet, waarnaast Qur’anische principes worden omschreven die resulteren in de totstandbrenging en handhaving van ware Islamitische broederschap en oprechtheid.',
               'long_description' => '',
@@ -383,7 +383,7 @@ class DatabaseSeeder extends Seeder
               'updated_by' => 1,
           ],
           [
-              'title' => 'De Mirakelen van Ahmed',
+              'title' => 'De Mirakelen| Van Ahmed',
               'slug' => Str::slug('De Mirakelen van Ahmed'),
               'short_description' => 'In dit boek worden er in eerste instantie de wijsheden achter de mirakelen van de profeet Mohammed verklaard. Daarna worden de verschillende varianten van zijn mirakelen beschreven. Vervolgens worden er van elke variant een aantal voorbeelden genoemd die volgens de authentiekste overleveringen absoluut hebben plaatsgevonden. Bovendien beschrijft dit boek de geestelijke persoonlijkheid van Mohammed. Iemand die dit boek begrijpend uitleest, zal niet meer in staat zijn om het profeetschap van Mohammed te verloochenen.',
               'long_description' => '',

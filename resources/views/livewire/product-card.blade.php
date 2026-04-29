@@ -36,7 +36,7 @@
             @endphp
 
             <h3 class="product-card-title">
-                {{ $mainTitle }}
+                {!! str_replace('|', '<br>', e($mainTitle)) !!}
             </h3>
             @if($subTitle)
                 <p class="product-card-subtitle">{{ $subTitle }}</p>

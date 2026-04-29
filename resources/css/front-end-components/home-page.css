@@ -33,7 +33,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/new_warm_leather.webp");
+    /*background-image: url("../../images/new_warm_leather.webp");*/
+    /*background-image: url("../../images/124_leather texture-seamless.jpg");*/
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -46,7 +47,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/new_warm_leather.webp");
+    background-image: url("../../images/124_leather texture-seamless.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -369,7 +370,7 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/new_warm_leather.webp");
+    background-image: url("../../images/10_linoleum floor Welsh moor_DIFF.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
