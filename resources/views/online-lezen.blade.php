@@ -81,7 +81,7 @@
 
         {{-- Header sign --}}
         <div class="bookshelf-header-sign">
-            <h1 class="bookshelf-title">Bibliotheek</h1>
+            <h1 class="bookshelf-title">Biblio<span class="herina-t"></span>heek</h1>
             <div class="bookshelf-title-ornament">
                 <span>❧ Klik op een boek om te lezen ❧</span>
             </div>

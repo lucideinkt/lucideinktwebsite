@@ -42,15 +42,29 @@
     z-index: -1;
 }
 
+.colored-section.quotes-section {
+    background: linear-gradient(180deg,
+        #090501 0%,
+        #1c1205 25%,
+        #241605 50%,
+        #1c1205 75%,
+        #090501 100%);
+}
+
+.colored-section.newsletter-section {
+    background: #0e0801;
+}
+
 .colored-section.quotes-section::before,
 .colored-section.newsletter-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/124_leather texture-seamless.jpg");
-    background-size: cover;
+    background-image: url("../../images/90_leather_DIFF.jpg");
+    background-size: 600px;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    opacity: 0.28;
     pointer-events: none;
     z-index: -1;
 }
@@ -364,13 +378,13 @@ h2 {
     text-align: center;
     position: relative;
     z-index: 0;
-    /* dark brown gradient */
+    /* dark brown gradient — darker, less red */
     background: linear-gradient(180deg,
-        #1a0e04 0%,
-        #2e1808 20%,
-        #251405 55%,
-        #1a0e04 80%,
-        #100803 100%);
+        #0e0801 0%,
+        #1c1205 20%,
+        #150e03 55%,
+        #0e0801 80%,
+        #090501 100%);
 }
 
 /* Texture overlay — same as shop grid ::before */
@@ -393,14 +407,14 @@ h2 {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, rgba(80, 40, 10, 0.45) 0%, transparent 10%),
+        linear-gradient(180deg, rgba(55, 35, 8, 0.50) 0%, transparent 10%),
         radial-gradient(ellipse 85% 50% at 50% 35%,
-            rgba(160, 85, 15, 0.18) 0%,
-            rgba(120, 60, 8, 0.09) 50%,
+            rgba(110, 75, 12, 0.18) 0%,
+            rgba(85, 58, 8, 0.09) 50%,
             transparent 72%),
         radial-gradient(ellipse 130% 100% at 50% 50%,
             transparent 50%,
-            rgba(0, 0, 0, 0.38) 100%);
+            rgba(0, 0, 0, 0.42) 100%);
     pointer-events: none;
     z-index: 0;
 }
@@ -1090,9 +1104,8 @@ h2 {
     /* Fix tiling seams on mobile for all leather sections */
     .colored-section.quotes-section::before,
     .colored-section.newsletter-section::before {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-size: 300px;
+        background-repeat: repeat;
     }
 
     /* new-translation is taller on mobile so zoom in more to match other sections */
