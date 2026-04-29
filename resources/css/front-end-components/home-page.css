@@ -370,10 +370,14 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/10_linoleum floor Welsh moor_DIFF.jpg");
-    background-size: cover;
+    background-color: #2e1408;
+    background-image:
+        linear-gradient(#3d1a06, #3d1a06),
+        url("../../images/109_leather_DIFF.jpg");
+    background-size: auto, 440px;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-blend-mode: color, normal;
     pointer-events: none;
     z-index: -1;
 }
@@ -1079,7 +1083,7 @@ h2 {
 
     /* new-translation is taller on mobile so zoom in more to match other sections */
     .new-translation::before {
-        background-size: 150% 100%;
+        background-size: auto, 150% 100%;
         background-position: center center;
         background-repeat: no-repeat;
     }

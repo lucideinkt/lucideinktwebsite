@@ -83,6 +83,7 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     position: relative;
     overflow-x: hidden;
 }
+
 .bookshelf-page::before {
     content: '';
     position: fixed;
@@ -643,21 +644,22 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     border-radius: 3px 6px 6px 3px;
     overflow: hidden;
     padding: 20px 14px 20px 18px;
-    /* Leather texture only — shadow overlays, no colour tints */
-    background-color: #1a1008;
+    /* Deep crimson red leather — colour layer forces uniform hue, shadow layers add depth */
+    background-color: #3d0a08;
     background-image:
-        radial-gradient(ellipse at 30% 20%, rgba(0,0,0,0.45) 0%, transparent 55%),
-        radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.35) 0%, transparent 50%),
-        url("../images/25_leather_DIFF.jpg");
-    background-size: auto, auto, cover;
-    background-blend-mode: multiply, multiply, normal;
+        radial-gradient(ellipse at 25% 15%, rgba(0,0,0,0.38) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 85%, rgba(0,0,0,0.30) 0%, transparent 50%),
+        linear-gradient(#7c1208, #7c1208),
+        url("../images/123_leather texture-seamless.jpg");
+    background-size: auto, auto, auto, cover;
+    background-blend-mode: multiply, multiply, color, normal;
     box-shadow:
-        inset 4px 0 12px rgba(180,80,20,0.15),
-        inset -3px 0 8px rgba(0,0,0,0.6),
-        inset 0 3px 6px rgba(200,120,30,0.1),
-        inset 0 -3px 6px rgba(0,0,0,0.4),
-        -4px 6px 16px rgba(0,0,0,0.75),
-        2px 0 0 rgba(255,200,100,0.06);
+        inset 4px 0 12px rgba(120,10,20,0.2),
+        inset -3px 0 8px rgba(0,0,0,0.65),
+        inset 0 3px 6px rgba(160,30,40,0.12),
+        inset 0 -3px 6px rgba(0,0,0,0.45),
+        -4px 6px 16px rgba(0,0,0,0.8),
+        2px 0 0 rgba(200,80,80,0.06);
 }
 
 /* Outer gold border frame */
@@ -745,16 +747,16 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     left: 0; top: 0; bottom: 0;
     width: 10px;
     background: linear-gradient(180deg,
-        #c8801a 0%,
-        #8a4e0e 15%,
-        #5c2e06 40%,
-        #7a4210 60%,
-        #8a4e0e 80%,
-        #c8801a 100%
+        #7a1a10 0%,
+        #4e0e0a 15%,
+        #2e0808 40%,
+        #4a100a 60%,
+        #4e0e0a 80%,
+        #7a1a10 100%
     );
     box-shadow:
-        inset -3px 0 5px rgba(0,0,0,0.5),
-        inset 1px 0 3px rgba(255,180,60,0.2);
+        inset -3px 0 5px rgba(0,0,0,0.55),
+        inset 1px 0 3px rgba(180,40,20,0.15);
 }
 
 /* Tooltip */
