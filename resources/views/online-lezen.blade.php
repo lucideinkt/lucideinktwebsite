@@ -223,14 +223,17 @@
     max-height: 70vh;
     background: linear-gradient(180deg, #2e1a0a 0%, #1a0e05 100%);
     border-radius: 14px 14px 0 0;
-    box-shadow: 0 -6px 40px rgba(0,0,0,0.9), 0 0 0 1px rgba(120,67,24,0.5);
+    box-shadow: none;
     z-index: 400;
     display: flex; flex-direction: column;
     overflow: hidden;
     transform: translateY(100%);
-    transition: transform 0.28s cubic-bezier(0.32,0.72,0,1);
+    transition: transform 0.28s cubic-bezier(0.32,0.72,0,1), box-shadow 0.28s ease;
 }
-.bm-panel.open { transform: translateY(0); }
+.bm-panel.open {
+    transform: translateY(0);
+    box-shadow: 0 -6px 40px rgba(0,0,0,0.9), 0 0 0 1px rgba(120,67,24,0.5);
+}
 
 .bm-panel-header {
     display: flex; align-items: center; justify-content: space-between;

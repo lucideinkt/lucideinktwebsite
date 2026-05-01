@@ -1,13 +1,4 @@
-.risale-i-nur-page__text-box .title {
-    margin-top: 10px;
-    font-family: var(--font-herina);
-    letter-spacing: 2px;
-    font-weight: 400;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 52px;
-    line-height: 1.2;
-}
+
 
 .risale-w::before {
     content: "\E02D";
@@ -21,7 +12,39 @@
     content: "\E05D";
 }
 
+/* ── Page background override ── replaces the default geometric wallpaper */
+body:has(.risale-i-nur-page__text-box) .page-normal-background {
+    background-image: url("../../images/49_anthea silver uni wallpaper by Parato texture-seamless_hr.jpg");
+    background-size: 500px;
+}
+
+/* ── Remove the colour overlay that sits on top of the background ── */
+body:has(.risale-i-nur-page__text-box) .page-normal-background::after {
+    display: none;
+}
+
+/* ── Single-colour page background overlay ── adjust to taste */
+body:has(.risale-i-nur-page__text-box) .page-normal-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(194 0 0 / 18%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Breadcrumb cream tint for this page ── */
+body:has(.risale-i-nur-page__text-box) .bc {
+    --bc-text: #f5e6c0;
+    --bc-dim:  #e8d4a0;
+    --bc-sep:  #e8d4a0;
+}
+
 .risale-i-nur-page__text-box {
+    /* ── Overlay controls ── tweak these two variables to adjust the top colour wash */
+    --said-box-overlay-color:   #c8860a;
+    --said-box-overlay-opacity: 0.08;
+
     display: flex;
     flex-direction: column;
     border-radius: 40px;
@@ -31,18 +54,38 @@
     margin-top: 20px;
     margin-bottom: 0px;
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/BillyPaper.png");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
     outline: none;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07),
-    0px  4px 6px rgba(0, 0, 0, 0.07);
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
     max-width: 1075px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* ── Top colour overlay ── sits above the texture, below all content */
+.risale-i-nur-page__text-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--said-box-overlay-color);
+    opacity: var(--said-box-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep all direct children above the overlay */
+.risale-i-nur-page__text-box > * {
+    position: relative;
+    z-index: 1;
+}
 
 .risale-i-nur-page__text-box .sub-title {
     text-align: center;

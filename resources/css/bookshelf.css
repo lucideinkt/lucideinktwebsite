@@ -65,34 +65,40 @@
 html {
     margin: 0; padding: 0;
     width: 100%;
-    background: #1a0e05;
-    /* Reserve an equal gutter on BOTH sides so the scrollbar does not
-       shift the content area to the left — keeps margin:0 auto truly centred */
-    scrollbar-gutter: stable both-edges;
 }
-body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
+body { margin: 0; padding: 0; width: 100%; }
 
 /* ---------------------------------------------------------
    PAGE BACKGROUND
    --------------------------------------------------------- */
 .bookshelf-page {
     min-height: 100vh;
-    background: linear-gradient(180deg, #2a1a08 0%, #3d2209 30%, #2e1a08 70%, #1a0e05 100%);
+    width: 100%;
     padding: 40px 24px 80px;
     font-family: 'DelimaMTProRegular', serif;
     position: relative;
     overflow-x: hidden;
+    /* Concrete texture blended over the dark-wood gradient — same technique as the contact page */
+    background-image:
+        url("../images/16_concrete bare rough_DIFF.jpg"),
+        linear-gradient(180deg, #24160d 0%, #332015 30%, #2a1a11 60%, #0f0704 100%);
+    background-size: 300px, cover;
+    background-position: center center, center center;
+    background-repeat: repeat, no-repeat;
+    background-blend-mode: soft-light, normal;
+    background-attachment: fixed, fixed;
 }
 
+/* Red carpet texture overlay — separate pseudo-element so we can control its opacity independently */
 .bookshelf-page::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("../images/13_red carpeting texture-seamless_hr.jpg");
-    background-size: contain;
-    background-position: center center;
+    background-image: url("../images/77_floral wallpaper texture-seamless_hr.jpg");
+    background-size: 1100px;
     background-repeat: repeat;
-    opacity: 0.32;
+    background-position: center center;
+    opacity: 30%;
     pointer-events: none;
     z-index: 0;
 }
@@ -219,8 +225,8 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     letter-spacing: 6px;
     text-transform: uppercase;
     margin: 0 0 6px;
-    color: rgb(240, 201, 106);
-    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(220,160,40,0.5) 0px 0px 10px, rgba(200,130,20,0.25) 0px 0px 22px;
+    color: rgb(255, 232, 155);
+    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(240,180,60,0.5) 0px 0px 10px, rgba(220,150,30,0.25) 0px 0px 22px;
     line-height: 1.1;
 }
 
@@ -248,9 +254,9 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     flex: 1;
     max-width: 120px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgb(240, 201, 106), transparent);
+    background: linear-gradient(90deg, transparent, rgb(255, 232, 155), transparent);
 }
-.bookshelf-title-ornament span { color: rgb(240, 201, 106); text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(220,160,40,0.5) 0px 0px 10px, rgba(200,130,20,0.25) 0px 0px 22px; font-size: 14px; opacity: 0.8; }
+.bookshelf-title-ornament span { color: rgb(255, 232, 155); text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(240,180,60,0.5) 0px 0px 10px, rgba(220,150,30,0.25) 0px 0px 22px; font-size: 14px; opacity: 0.8; }
 
 .bookshelf-subtitle {
     font-family: 'DelimaMTProRegular', serif;
@@ -338,6 +344,7 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     align-items: center;
     pointer-events: none;
     z-index: 6;
+    overflow: visible;
 }
 
 .bookshelf-candle--left  { left: 20px;  transform: translateX(-50%); }
@@ -358,7 +365,8 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
 .candle-flame-wrap {
     position: relative;
     width: 28px;
-    height: 52px;
+    height: 68px;          /* extra headroom so blur + scale animations never clip the tip */
+    overflow: visible;
     animation: flame-sway 2.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
     transform-origin: bottom center;
     margin-bottom: 0;
@@ -375,13 +383,13 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
 
 /* ── Layer 1 — outer glow (large blurry halo) ── */
 .candle-flame--glow {
-    width: 46px;
-    height: 60px;
+    width: 34px;
+    height: 48px;
     background: radial-gradient(ellipse at 50% 75%,
-        rgba(255, 100, 0, 0.55) 0%,
-        rgba(255, 60, 0, 0.25) 45%,
+        rgba(255, 100, 0, 0.28) 0%,
+        rgba(255, 60, 0, 0.10) 50%,
         transparent 70%);
-    filter: blur(10px);
+    filter: blur(6px);
     border-radius: 50%;
     animation: flame-glow 2.1s ease-in-out infinite;
     z-index: 1;
@@ -399,8 +407,8 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
         rgba(255, 190, 60, 1)  100%);
     filter: blur(2px);
     box-shadow:
-        0 0 12px 6px  rgba(255, 120, 20, 0.55),
-        0 0 28px 12px rgba(255, 80,  0,  0.25);
+        0 0 8px 3px  rgba(255, 120, 20, 0.35),
+        0 0 18px 6px rgba(255, 80,  0,  0.12);
     animation: flame-outer 1.4s ease-in-out infinite;
     z-index: 2;
 }
@@ -457,7 +465,7 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     box-shadow:
         inset -2px 0 4px rgba(0,0,0,0.15),
         inset  1px 0 3px rgba(255,220,160,0.25),
-        0 0 10px 3px rgba(255,160,30,0.22);
+        0 0 6px 2px rgba(255,160,30,0.12);
     position: relative;
     z-index: 5;
 }
@@ -517,11 +525,11 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     content: '';
     position: absolute;
     top: -10px;
-    width: 60px;
-    height: 100px;
+    width: 50px;
+    height: 80px;
     background: radial-gradient(ellipse at 50% 15%,
-        rgba(255, 150, 30, 0.18) 0%,
-        rgba(255, 100, 10, 0.08) 50%,
+        rgba(255, 150, 30, 0.08) 0%,
+        rgba(255, 100, 10, 0.03) 50%,
         transparent 75%);
     pointer-events: none;
     animation: flame-glow 3.2s ease-in-out infinite;
@@ -532,47 +540,47 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
 /* whole-flame sway */
 @keyframes flame-sway {
     0%   { transform: rotate(0deg)   skewX(0deg); }
-    20%  { transform: rotate(4deg)   skewX(2deg); }
-    40%  { transform: rotate(-3deg)  skewX(-1deg); }
-    60%  { transform: rotate(5deg)   skewX(3deg); }
-    80%  { transform: rotate(-2deg)  skewX(-1deg); }
+    20%  { transform: rotate(1.5deg) skewX(0.8deg); }
+    40%  { transform: rotate(-1deg)  skewX(-0.5deg); }
+    60%  { transform: rotate(2deg)   skewX(1deg); }
+    80%  { transform: rotate(-0.8deg) skewX(-0.4deg); }
     100% { transform: rotate(0deg)   skewX(0deg); }
 }
 
 /* outer halo pulse */
 @keyframes flame-glow {
-    0%,100% { opacity: 1;    transform: translateX(-50%) scaleX(1)   scaleY(1); }
-    25%      { opacity: 0.75; transform: translateX(-50%) scaleX(1.1) scaleY(0.95); }
-    50%      { opacity: 0.9;  transform: translateX(-50%) scaleX(0.9) scaleY(1.08); }
-    75%      { opacity: 0.65; transform: translateX(-50%) scaleX(1.05) scaleY(0.98); }
+    0%,100% { opacity: 1;    transform: translateX(-50%) scaleX(1)    scaleY(1); }
+    25%      { opacity: 0.88; transform: translateX(-50%) scaleX(1.04) scaleY(0.98); }
+    50%      { opacity: 0.94; transform: translateX(-50%) scaleX(0.97) scaleY(1.03); }
+    75%      { opacity: 0.82; transform: translateX(-50%) scaleX(1.02) scaleY(0.99); }
 }
 
 /* outer orange flame */
 @keyframes flame-outer {
     0%,100% { transform: translateX(-50%) scaleX(1)    scaleY(1);    opacity: 1; }
-    15%      { transform: translateX(-50%) scaleX(0.85) scaleY(1.08); opacity: 0.9; }
-    30%      { transform: translateX(-50%) scaleX(1.12) scaleY(0.94); opacity: 1; }
-    50%      { transform: translateX(-50%) scaleX(0.88) scaleY(1.1);  opacity: 0.85; }
-    65%      { transform: translateX(-50%) scaleX(1.06) scaleY(0.96); opacity: 0.95; }
-    80%      { transform: translateX(-50%) scaleX(0.92) scaleY(1.05); opacity: 1; }
+    15%      { transform: translateX(-50%) scaleX(0.95) scaleY(1.03); opacity: 0.95; }
+    30%      { transform: translateX(-50%) scaleX(1.04) scaleY(0.98); opacity: 1; }
+    50%      { transform: translateX(-50%) scaleX(0.96) scaleY(1.04); opacity: 0.92; }
+    65%      { transform: translateX(-50%) scaleX(1.02) scaleY(0.98); opacity: 0.97; }
+    80%      { transform: translateX(-50%) scaleX(0.97) scaleY(1.02); opacity: 1; }
 }
 
 /* inner yellow flame — faster, offset phase */
 @keyframes flame-inner {
     0%,100% { transform: translateX(-50%) scaleX(1)    scaleY(1);    opacity: 1; }
-    20%      { transform: translateX(-50%) scaleX(1.1)  scaleY(0.92); opacity: 0.9; }
-    40%      { transform: translateX(-50%) scaleX(0.88) scaleY(1.1);  opacity: 1; }
-    60%      { transform: translateX(-50%) scaleX(1.05) scaleY(0.95); opacity: 0.88; }
-    80%      { transform: translateX(-50%) scaleX(0.9)  scaleY(1.06); opacity: 1; }
+    20%      { transform: translateX(-50%) scaleX(1.04) scaleY(0.97); opacity: 0.95; }
+    40%      { transform: translateX(-50%) scaleX(0.96) scaleY(1.04); opacity: 1; }
+    60%      { transform: translateX(-50%) scaleX(1.02) scaleY(0.98); opacity: 0.93; }
+    80%      { transform: translateX(-50%) scaleX(0.97) scaleY(1.02); opacity: 1; }
 }
 
 /* white core — fastest, most erratic */
 @keyframes flame-core {
-    0%,100% { transform: translateX(-50%) scaleX(1)   scaleY(1);   opacity: 1; }
-    18%      { transform: translateX(-50%) scaleX(0.8) scaleY(1.15); opacity: 0.85; }
-    36%      { transform: translateX(-50%) scaleX(1.2) scaleY(0.88); opacity: 1; }
-    54%      { transform: translateX(-50%) scaleX(0.75) scaleY(1.2); opacity: 0.8; }
-    72%      { transform: translateX(-50%) scaleX(1.1) scaleY(0.92); opacity: 0.95; }
+    0%,100% { transform: translateX(-50%) scaleX(1)    scaleY(1);    opacity: 1; }
+    18%      { transform: translateX(-50%) scaleX(0.92) scaleY(1.06); opacity: 0.92; }
+    36%      { transform: translateX(-50%) scaleX(1.06) scaleY(0.95); opacity: 1; }
+    54%      { transform: translateX(-50%) scaleX(0.9)  scaleY(1.07); opacity: 0.88; }
+    72%      { transform: translateX(-50%) scaleX(1.04) scaleY(0.96); opacity: 0.97; }
 }
 
 /* ---------------------------------------------------------
@@ -703,7 +711,7 @@ body { margin: 0; padding: 0; width: 100%; background: #1a0e05; }
     font-family: gioviale,sans-serif;
     font-size: 25px;
     font-weight: 400;
-    color: #f0c96a;
+    color: rgb(255, 232, 155);
     text-align: center;
     line-height: 1.45;
     letter-spacing: 0.5px;

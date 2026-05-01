@@ -1,19 +1,27 @@
 <x-layout :seo-data="$SEOData">
+
     <div class="page-normal-background">
-    <main class="container page">
-        <x-breadcrumbs :items="[
-            ['label' => 'Home', 'url' => route('home')],
-            ['label' => 'Said Nursî', 'url' => route('saidnursi')],
-        ]" />
-        <div class="said-nursi-page__text-box">
+    <main class="container page said-nursi">
+        <div class="said-nursi-hero">
+            <div class="container">
+            <x-breadcrumbs :items="[
+                ['label' => 'Home', 'url' => route('home')],
+                ['label' => 'Said Nursî', 'url' => route('saidnursi')],
+            ]" />
+            </div>
             <h1 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h1>
+        </div>
+
+        <div class="gradient-border"></div>
+        <div class="text-box-background">
 
             <div class="top-images">
-            <img src="{{ asset('images/ustadh_passport.webp') }}" alt="" fetchpriority="high" decoding="async">
+                <img src="{{ asset('images/ustadh_passport.webp') }}" alt="" fetchpriority="high" decoding="async">
             </div>
 
             <h2 class="sub-title"><em>1878 – 1960</em></h2>
 
+            <div class="said-nursi-page__text-box">
             <blockquote>
                 <p><strong>"Ik zal de wereld bewijzen dat de Qur’an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"</strong></p>
             </blockquote>
@@ -54,6 +62,7 @@
             <p>Om het geloof van de gemeenschap in veiligheid te brengen, heb ik op dat pad ook mijn hiernamaals opgeofferd. In mijn ogen bestaat er noch liefde voor het paradijs, noch vrees voor de hel. Namens het geloof van niet alleen de Turkse gemeenschap van 25 miljoen, maar van de gehele Islamitische gemeenschap van honderden miljoenen mensen, mogen niet één, maar duizend Saids opgeofferd worden. Als onze Qur’an op aarde zonder volgers achterblijft, dan verlang ik ook niet naar het paradijs; ook daar zal het dan een gevangenis voor mij zijn. Als ik zou zien dat het geloof van mijn volk is veiliggesteld, dan ben ik bereid om in de vlammen van de hel te branden. Want terwijl mijn lichaam dan knettert in het vuur, zal in mijn hart een rozentuin van gelukzaligheid ontbloeien.</p>
 
             <img src="{{ asset('images/rose-frame.webp') }}" alt="" loading="lazy" decoding="async">
+        </div>
         </div>
     </main>
     <div class="gradient-border"></div>
