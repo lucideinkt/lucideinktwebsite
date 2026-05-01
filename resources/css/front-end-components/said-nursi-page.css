@@ -1,14 +1,138 @@
-.said-nursi-page__text-box .title {
+.said-nursi-page__text-box .title,
+body:has(.said-nursi-page__text-box) .page > .title {
+    font-family: var(--font-herina);
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+    margin-left: 0;
+}
+
+.said-nursi-hero .title {
     margin-top: 10px;
     font-family: var(--font-herina);
     letter-spacing: 2px;
-    font-size: 52px;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     text-align: center;
-    margin-left: 20px;
+    font-size: 52px;
     line-height: 1.2;
 }
+
+.said-nursi-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 20px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    /* ── Background texture ── same as .white-section (footer) ── */
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+/* ── Gradient colour-wash overlay ── same as .white-section::after ── */
+.said-nursi-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep all direct children above the overlay */
+.said-nursi-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .said-nursi-hero .title {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 768px) {
+    .said-nursi-hero {
+        padding-top: 80px;
+        padding-bottom: 16px;
+    }
+
+    .said-nursi-hero .title {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .said-nursi-hero {
+        padding-top: 70px;
+        padding-bottom: 12px;
+    }
+
+    .said-nursi-hero .title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .said-nursi-hero .title {
+        font-size: 26px;
+    }
+}
+
+/* ── Page background override ── same as shop page ── */
+body:has(.said-nursi-page__text-box) .page-normal-background {
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.page.said-nursi {
+    padding-bottom: 0px;
+}
+
+.page.said-nursi .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+
+    /* ── Radial centre-light overlay ── same as shop page ── */
+body:has(.said-nursi-page__text-box) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30) 0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+
+/* ── Remove the red colour overlay ── */
+body:has(.said-nursi-page__text-box) .page-normal-background::before {
+    display: none;
+}
+
+
 
 .said-title-w::before {
     content: "\E02D";
@@ -22,14 +146,61 @@
     content: "\E06A";
 }
 
+/* ── Full-width background band that wraps the text box ── */
+.text-box-background {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: #fbd795;
+    background-image: url("../../images/49_anthea silver uni wallpaper by Parato texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+    padding: 50px 20px 60px;
+    position: relative;
+}
+
+/* ── Floral texture overlay on the full-width band ── */
+.text-box-background::after {
+    /*content: '';*/
+    /*position: absolute;*/
+    /*inset: 0;*/
+    /*background-image: url("../../images/77_floral wallpaper texture-seamless_hr.jpg");*/
+    /*background-size: 800px;*/
+    /*background-position: center;*/
+    /*background-repeat: repeat;*/
+    /*opacity: 30%;*/
+    /*pointer-events: none;*/
+    /*z-index: 0;*/
+}
+
+/* ── Colour wash overlay on the full-width band ── */
+.text-box-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(167 0 0 / 46%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.text-box-background > * {
+    position: relative;
+    z-index: 2;
+}
+
 .said-nursi-page__text-box {
+    /* ── Overlay controls ── tweak these two variables to adjust the top colour wash */
+    --said-box-overlay-color:   #c8860a;
+    --said-box-overlay-opacity: 0.08;
+
     display: flex;
     flex-direction: column;
     border-radius: 40px;
     overflow: visible;
     position: relative;
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/BillyPaper.png");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -37,13 +208,37 @@
     padding: 40px 60px;
     margin-top: 20px;
     margin-bottom: 0px;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px 4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
     max-width: 1075px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.said-nursi-page__text-box .top-images {
+/* ── Top colour overlay ── sits above the texture, below all content */
+.said-nursi-page__text-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--said-box-overlay-color);
+    opacity: var(--said-box-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep all direct children above the overlay */
+.said-nursi-page__text-box > * {
+    position: relative;
+    z-index: 1;
+}
+
+.said-nursi-page__text-box .top-images,
+body:has(.said-nursi-page__text-box) .page > .top-images,
+.text-box-background > .top-images {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -51,32 +246,41 @@
     gap: 30px;
 }
 
-.said-nursi-page__text-box .top-images img:nth-child(1) {
+.said-nursi-page__text-box .top-images img:nth-child(1),
+body:has(.said-nursi-page__text-box) .page > .top-images img:nth-child(1),
+.text-box-background > .top-images img:nth-child(1) {
     width: 400px;
     height: auto;
     object-fit: contain;
     margin-top: -10px;
 }
 
-.said-nursi-page__text-box .top-images img:nth-child(2) {
+.said-nursi-page__text-box .top-images img:nth-child(2),
+body:has(.said-nursi-page__text-box) .page > .top-images img:nth-child(2),
+.text-box-background > .top-images img:nth-child(2) {
     width: 225px;
     height: auto;
     object-fit: contain;
 }
 
-.said-nursi-page__text-box .top-images img:nth-child(3) {
+.said-nursi-page__text-box .top-images img:nth-child(3),
+body:has(.said-nursi-page__text-box) .page > .top-images img:nth-child(3),
+.text-box-background > .top-images img:nth-child(3) {
     width: 150px;
     height: auto;
     object-fit: contain;
     opacity: 0.7;
 }
 
-.said-nursi-page__text-box .sub-title {
+.said-nursi-page__text-box .sub-title,
+body:has(.said-nursi-page__text-box) .page > .sub-title,
+.text-box-background > .sub-title {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 22px;
     font-weight: 600;
+    color: #f5dfac;
 }
 
 .said-nursi-page__text-box blockquote {
@@ -134,40 +338,51 @@
 
 
 @media (max-width: 768px) {
-    .said-nursi-page__text-box .title {
+    .said-nursi-page__text-box .title,
+    body:has(.said-nursi-page__text-box) .page > .title {
         font-size: 38px;
-        margin-left: 10px;
     }
 
     .said-nursi-page__text-box {
         padding: 35px 30px;
     }
 
-    .said-nursi-page__text-box .top-images {
+    .said-nursi-page__text-box .top-images,
+    body:has(.said-nursi-page__text-box) .page > .top-images,
+    .text-box-background > .top-images {
         gap: 20px;
     }
 
-    .said-nursi-page__text-box .top-images img:nth-child(1) {
+    .said-nursi-page__text-box .top-images img:nth-child(1),
+    body:has(.said-nursi-page__text-box) .page > .top-images img:nth-child(1),
+    .text-box-background > .top-images img:nth-child(1) {
         width: 280px;
     }
 
-    .said-nursi-page__text-box .top-images img:nth-child(2) {
+    .said-nursi-page__text-box .top-images img:nth-child(2),
+    body:has(.said-nursi-page__text-box) .page > .top-images img:nth-child(2),
+    .text-box-background > .top-images img:nth-child(2) {
         width: 160px;
     }
 
-    .said-nursi-page__text-box .top-images img:nth-child(3) {
+    .said-nursi-page__text-box .top-images img:nth-child(3),
+    body:has(.said-nursi-page__text-box) .page > .top-images img:nth-child(3),
+    .text-box-background > .top-images img:nth-child(3) {
         width: 90px;
     }
 }
 
 @media (max-width: 600px) {
-    .said-nursi-page__text-box .title {
+    .said-nursi-page__text-box .title,
+    body:has(.said-nursi-page__text-box) .page > .title {
         font-size: 30px;
-        margin-bottom: 10px;
-        margin-left: 0px;
+        margin-bottom: 20px;
+        margin-left: 0;
     }
 
-    .said-nursi-page__text-box .sub-title {
+    .said-nursi-page__text-box .sub-title,
+    body:has(.said-nursi-page__text-box) .page > .sub-title,
+    .text-box-background > .sub-title {
         font-size: 16px;
     }
 
