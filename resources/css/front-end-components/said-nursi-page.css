@@ -164,11 +164,17 @@ body:has(.said-nursi-page__text-box) .page-normal-background::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("../../images/68_floral wallpaper texture-seamless_hr.jpg");
-    background-size: 1200px;
+    /*background-image: url("../../images/21_faux fake fur animal texture-seamless_hr_DIFFUSE.jpg");*/
+
+
+    /*background-image: url("../../images/18_red carpeting texture-seamless_hr.jpg");*/
+
+    background-image: url("../../images/33_brown carpeting texture-seamless_hr.jpg");
+
+    background-size: 300px;
     background-position: center;
     background-repeat: repeat;
-    opacity: 8%;
+    opacity: 40%;
     pointer-events: none;
     z-index: 0;
 }
