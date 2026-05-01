@@ -159,19 +159,18 @@ body:has(.said-nursi-page__text-box) .page-normal-background::before {
     padding: 50px 20px 60px;
     position: relative;
 }
-
-/* ── Floral texture overlay on the full-width band ── */
+/* ── Red carpeting texture overlay on the full-width band ── */
 .text-box-background::after {
-    /*content: '';*/
-    /*position: absolute;*/
-    /*inset: 0;*/
-    /*background-image: url("../../images/77_floral wallpaper texture-seamless_hr.jpg");*/
-    /*background-size: 800px;*/
-    /*background-position: center;*/
-    /*background-repeat: repeat;*/
-    /*opacity: 30%;*/
-    /*pointer-events: none;*/
-    /*z-index: 0;*/
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/68_floral wallpaper texture-seamless_hr.jpg");
+    background-size: 1200px;
+    background-position: center;
+    background-repeat: repeat;
+    opacity: 8%;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* ── Colour wash overlay on the full-width band ── */
