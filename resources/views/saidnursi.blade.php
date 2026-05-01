@@ -15,13 +15,16 @@
         <div class="gradient-border"></div>
         <div class="text-box-background">
 
-            <div class="top-images">
-                <img src="{{ asset('images/ustadh_passport.webp') }}" alt="" fetchpriority="high" decoding="async">
-            </div>
 
-            <h2 class="sub-title"><em>1878 – 1960</em></h2>
 
             <div class="said-nursi-page__text-box">
+
+                <div class="top-images">
+                    <img src="{{ asset('images/ustadh_passport.webp') }}" alt="" fetchpriority="high" decoding="async">
+                </div>
+
+                <h2 class="sub-title"><em>1878 – 1960</em></h2>
+
             <blockquote>
                 <p><strong>"Ik zal de wereld bewijzen dat de Qur’an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"</strong></p>
             </blockquote>

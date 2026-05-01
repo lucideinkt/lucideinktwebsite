@@ -18,18 +18,16 @@
             </div>
         @endif
 
-        <x-breadcrumbs :items="[
-          ['label' => 'Home', 'url' => route('home')],
-          ['label' => 'Winkel', 'url' => route('shop')],
-        ]" />
-
-        <div class="shop-header">
-{{--            <img class="shop-header-image" src="{{ asset('images/our-store-second.webp') }}" alt="Onze Winkel">--}}
-
-
-
-            <h1 class="shop-title">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</h1>
-{{--            <p class="shop-subtitle">Ontdek onze collectie boeken en bestel direct online</p>--}}
+        <div class="shop-hero">
+            <div class="container">
+            <x-breadcrumbs :items="[
+              ['label' => 'Home', 'url' => route('home')],
+              ['label' => 'Winkel', 'url' => route('shop')],
+            ]" />
+            </div>
+            <div class="shop-header">
+                <h1 class="shop-title">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</h1>
+            </div>
         </div>
 
 

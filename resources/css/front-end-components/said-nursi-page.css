@@ -159,19 +159,24 @@ body:has(.said-nursi-page__text-box) .page-normal-background::before {
     padding: 50px 20px 60px;
     position: relative;
 }
-
-/* ── Floral texture overlay on the full-width band ── */
+/* ── Red carpeting texture overlay on the full-width band ── */
 .text-box-background::after {
-    /*content: '';*/
-    /*position: absolute;*/
-    /*inset: 0;*/
-    /*background-image: url("../../images/77_floral wallpaper texture-seamless_hr.jpg");*/
-    /*background-size: 800px;*/
-    /*background-position: center;*/
-    /*background-repeat: repeat;*/
-    /*opacity: 30%;*/
-    /*pointer-events: none;*/
-    /*z-index: 0;*/
+    content: '';
+    position: absolute;
+    inset: 0;
+    /*background-image: url("../../images/21_faux fake fur animal texture-seamless_hr_DIFFUSE.jpg");*/
+
+
+    /*background-image: url("../../images/18_red carpeting texture-seamless_hr.jpg");*/
+
+    background-image: url("../../images/33_brown carpeting texture-seamless_hr.jpg");
+
+    background-size: 300px;
+    background-position: center;
+    background-repeat: repeat;
+    opacity: 40%;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* ── Colour wash overlay on the full-width band ── */
@@ -194,8 +199,7 @@ body:has(.said-nursi-page__text-box) .page-normal-background::before {
     --said-box-overlay-color:   #c8860a;
     --said-box-overlay-opacity: 0.08;
 
-    display: flex;
-    flex-direction: column;
+    display: block;
     border-radius: 40px;
     overflow: visible;
     position: relative;
@@ -280,7 +284,7 @@ body:has(.said-nursi-page__text-box) .page > .sub-title,
     margin-bottom: 20px;
     font-size: 22px;
     font-weight: 600;
-    color: #f5dfac;
+    color: var(--main-font-color);
 }
 
 .said-nursi-page__text-box blockquote {
@@ -334,6 +338,21 @@ body:has(.said-nursi-page__text-box) .page > .sub-title,
     margin-top: 30px;
     clear: both;
     margin-bottom: 5px;
+}
+
+/* ── Passport image – multiply-blend into wall texture + warm glow ── */
+.said-nursi-page__text-box img[src*="ustadh_passport"],
+.text-box-background img[src*="ustadh_passport"] {
+    opacity: 1;
+    mix-blend-mode: multiply;
+    filter:
+        sepia(0.45)
+        brightness(1.12)
+        contrast(0.95)
+        drop-shadow(0 0 18px rgb(196 152 90 / 0.9))
+        drop-shadow(0 0 45px rgb(196 152 90 / 0.7))
+        drop-shadow(0 0 80px rgb(196 152 90 / 0.5))
+        drop-shadow(0 0 120px rgb(196 152 90 / 0.30));
 }
 
 
