@@ -1,5 +1,3 @@
-
-
 .risale-w::before {
     content: "\E02D";
 }
@@ -12,41 +10,93 @@
     content: "\E05D";
 }
 
-/* ── Page background override ── replaces the default geometric wallpaper */
-body:has(.risale-i-nur-page__text-box) .page-normal-background {
-    background-image: url("../../images/49_anthea silver uni wallpaper by Parato texture-seamless_hr.jpg");
+/* ── Hero title ── */
+.risale-hero .title {
+    margin-top: 10px;
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 52px;
+    line-height: 1.2;
+}
+
+/* ── Full-width hero band ── matches .said-nursi-hero ── */
+.risale-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 20px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
     background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
 }
 
-/* ── Remove the colour overlay that sits on top of the background ── */
-body:has(.risale-i-nur-page__text-box) .page-normal-background::after {
-    display: none;
-}
-
-/* ── Single-colour page background overlay ── adjust to taste */
-body:has(.risale-i-nur-page__text-box) .page-normal-background::before {
-    content: '';
+.risale-hero::after {
+    content: "";
     position: absolute;
     inset: 0;
-    background-color: rgb(194 0 0 / 18%);
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
     pointer-events: none;
     z-index: 0;
 }
 
-/* ── Breadcrumb cream tint for this page ── */
-body:has(.risale-i-nur-page__text-box) .bc {
-    --bc-text: #f5e6c0;
-    --bc-dim:  #e8d4a0;
-    --bc-sep:  #e8d4a0;
+.risale-hero > * {
+    position: relative;
+    z-index: 1;
 }
 
+/* ── Page layout ── */
+.page.risale {
+    padding-bottom: 0px;
+}
+
+.page.risale .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+/* ── Page background override ── matches said-nursi page ── */
+body:has(.risale-i-nur-page__text-box) .page-normal-background {
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* ── Radial centre-light overlay ── */
+body:has(.risale-i-nur-page__text-box) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30) 0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+
+/* ── Remove the red colour overlay ── */
+body:has(.risale-i-nur-page__text-box) .page-normal-background::before {
+    display: none;
+}
+
+
+/* ── Text box card ── */
 .risale-i-nur-page__text-box {
-    /* ── Overlay controls ── tweak these two variables to adjust the top colour wash */
     --said-box-overlay-color:   #c8860a;
     --said-box-overlay-opacity: 0.08;
 
-    display: flex;
-    flex-direction: column;
+    display: block;
     border-radius: 40px;
     overflow: visible;
     position: relative;
@@ -69,7 +119,7 @@ body:has(.risale-i-nur-page__text-box) .bc {
     margin-right: auto;
 }
 
-/* ── Top colour overlay ── sits above the texture, below all content */
+/* ── Top colour overlay ── */
 .risale-i-nur-page__text-box::after {
     content: '';
     position: absolute;
@@ -81,7 +131,6 @@ body:has(.risale-i-nur-page__text-box) .bc {
     z-index: 0;
 }
 
-/* Keep all direct children above the overlay */
 .risale-i-nur-page__text-box > * {
     position: relative;
     z-index: 1;
@@ -123,36 +172,54 @@ body:has(.risale-i-nur-page__text-box) .bc {
     top: 15px;
 }
 
-    .risale-i-nur-page__text-box > img[src*="oval_ornament"] {
-        width: 125px;
-        margin-top: 30px;
-        clear: both;
-        opacity: 0.3;
+.risale-i-nur-page__text-box > img[src*="oval_ornament"] {
+    width: 125px;
+    margin-top: 30px;
+    clear: both;
+    opacity: 0.3;
+}
+
+/* Show desktop version, hide mobile version by default */
+.risale-i-nur-page__text-box .let-mobile {
+    display: none;
+}
+
+.risale-i-nur-page__text-box .let-desk {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .risale-hero .title {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 768px) {
+    .risale-hero {
+        padding-top: 80px;
+        padding-bottom: 16px;
     }
 
-    /* Show desktop version, hide mobile version by default */
-    .risale-i-nur-page__text-box .let-mobile {
-        display: none;
+    .risale-hero .title {
+        font-size: 38px;
+        margin-bottom: 20px;
     }
 
-    .risale-i-nur-page__text-box .let-desk {
-        display: block;
+    .risale-i-nur-page__text-box {
+        padding: 35px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .risale-hero {
+        padding-top: 70px;
+        padding-bottom: 12px;
     }
 
-    @media (max-width: 768px) {
-        .risale-i-nur-page__text-box .title {
-            font-size: 38px;
-        }
-
-        .risale-i-nur-page__text-box {
-            padding: 35px 30px;
-        }
-    }
-
-    @media (max-width: 600px) {
-    .risale-i-nur-page__text-box .title {
+    .risale-hero .title {
         font-size: 30px;
-        margin-bottom: 25px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
     }
 
     .risale-i-nur-page__text-box .sub-title {
@@ -189,5 +256,11 @@ body:has(.risale-i-nur-page__text-box) .bc {
 
     .risale-i-nur-page__text-box img.stapel-two {
         display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .risale-hero .title {
+        font-size: 26px;
     }
 }

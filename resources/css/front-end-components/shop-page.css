@@ -52,8 +52,9 @@ body:has(.page.shop) {
    --------------------------------------------------------- */
 
 .background-of-the-shop-grid {
-    background-image: url("../../images/63_concrete bare rough_DIFF.jpg");
-    background-size: 400px;
+    background-color: #fbd795;
+    background-image: url("../../images/49_anthea silver uni wallpaper by Parato texture-seamless_hr.jpg");
+    background-size: 800px;
     background-repeat: repeat;
     background-position: center;
 
@@ -67,12 +68,12 @@ body:has(.page.shop) {
     overflow-x: hidden;
 }
 
-/* ── Single-colour overlay ── adjust colour and opacity to taste */
+/* ── Red colour wash overlay ── same as .text-box-background::before ── */
 .background-of-the-shop-grid::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgb(80 5 5 / 63%);
+    background-color: rgb(167 0 0 / 46%);
     pointer-events: none;
     z-index: 0;
 }
@@ -93,10 +94,43 @@ body:has(.page.shop) {
 
 
 
-/* Shop Header */
+/* ── Full-width hero band ── matches .said-nursi-hero ── */
+.shop-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 20px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.shop-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shop-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
 .shop-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .shop-header-image {
@@ -128,12 +162,11 @@ body:has(.page.shop) {
     font-family: var(--font-herina);
     font-size: 52px;
     font-weight: 400;
-    margin-bottom: 0px;
     letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
     line-height: 1.2;
-    margin-top: 0px !important;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 .shop-subtitle {
@@ -516,12 +549,13 @@ body:has(.page.shop) {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .shop-title {
-        font-size: 2.8rem;
-        letter-spacing: 2px;
+        font-size: 44px;
     }
+}
 
+@media (max-width: 992px) {
     .page.shop .book-box {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -546,6 +580,17 @@ body:has(.page.shop) {
 }
 
 @media (max-width: 768px) {
+    .shop-hero {
+        padding-top: 80px;
+        padding-bottom: 16px;
+    }
+
+    .shop-title {
+        font-size: 38px;
+        margin-bottom: 20px;
+        letter-spacing: 1.5px;
+    }
+
     .shop-header {
         margin-bottom: 20px;
         padding: 0 20px;
@@ -617,31 +662,20 @@ body:has(.page.shop) {
 }
 
 @media (max-width: 576px) {
+    .shop-hero {
+        padding-top: 70px;
+        padding-bottom: 12px;
+    }
+
+    .shop-title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+
     .shop-header {
         padding: 0 15px;
         margin-bottom: 20px;
-    }
-
-    .shop-title {
-        font-size: 40px;
-        letter-spacing: 1px;
-        margin-bottom: 0px;
-        line-height: 1.6;
-    }
-
-    .shop-title::before {
-        bottom: -18px;
-        font-size: 8px;
-    }
-
-    .shop-title::after {
-        width: 160px;
-        height: 2px;
-        bottom: -14px;
-    }
-
-    .shop-title {
-        margin-bottom: -10px;
     }
 
     .shop-subtitle {
@@ -703,18 +737,8 @@ body:has(.page.shop) {
 }
 
 @media (max-width: 480px) {
-    .shop-title::before {
-        bottom: -16px;
-        font-size: 7px;
-    }
-
-    .shop-title::after {
-        width: 130px;
-        bottom: -12px;
-    }
-
     .shop-title {
-        margin-bottom: -10px;
+        font-size: 26px;
     }
 
     .background-of-the-shop-grid {
@@ -785,14 +809,5 @@ body:has(.page.shop) {
 }
 
 @media (max-width: 360px) {
-    .shop-title::before {
-        bottom: -16px;
-        font-size: 7px;
-    }
-
-    .shop-title::after {
-        width: 120px;
-        bottom: -12px;
-    }
-
 }
+

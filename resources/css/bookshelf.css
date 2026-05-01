@@ -94,11 +94,11 @@ body { margin: 0; padding: 0; width: 100%; }
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("../images/77_floral wallpaper texture-seamless_hr.jpg");
-    background-size: 1100px;
+    background-image: url("../images/68_floral wallpaper texture-seamless_hr.jpg");
+    background-size: 800px;
     background-repeat: repeat;
     background-position: center center;
-    opacity: 30%;
+    opacity: 10%;
     pointer-events: none;
     z-index: 0;
 }
