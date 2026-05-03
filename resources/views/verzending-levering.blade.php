@@ -1,12 +1,19 @@
 <x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
-    <main class="container page">
-        <x-breadcrumbs :items="[
-            ['label' => 'Home', 'url' => route('home')],
-            ['label' => 'Verzending & Levering', 'url' => route('verzendingLevering')],
-        ]" />
+    <main class="container page info-page">
+        <div class="info-page-hero">
+            <div class="container">
+            <x-breadcrumbs :items="[
+                ['label' => 'Home', 'url' => route('home')],
+                ['label' => 'Verzending & Levering', 'url' => route('verzendingLevering')],
+            ]" />
+            </div>
+            <h1 class="title">Verzending & Levering</h1>
+        </div>
+
+        <div class="gradient-border"></div>
+        <div class="text-box-background">
         <div class="info-page__text-box">
-<h1 class="title">Verzending & Levering</h1>
 
 <p><em>Laatst bijgewerkt: februari 2026</em></p>
 
@@ -21,9 +28,10 @@
 <p>Bij onjuiste adresgegevens die door de klant zijn verstrekt, zijn extra verzendkosten voor rekening van de klant.</p>
 
         </div>
+        </div><!-- /.text-box-background -->
     </main>
+
     <div class="gradient-border"></div>
     <x-footer></x-footer>
     </div>
 </x-layout>
-

@@ -1,12 +1,19 @@
 <x-layout :seo-data="$SEOData">
 <div class="page-normal-background">
-    <main class="container page">
-        <x-breadcrumbs :items="[
-            ['label' => 'Home', 'url' => route('home')],
-            ['label' => 'Algemene Voorwaarden', 'url' => route('algemeneVoorwaarden')],
-        ]" />
+    <main class="container page info-page">
+        <div class="info-page-hero">
+            <div class="container">
+                <x-breadcrumbs :items="[
+                    ['label' => 'Home', 'url' => route('home')],
+                    ['label' => 'Algemene Voorwaarden', 'url' => route('algemeneVoorwaarden')],
+                ]" />
+            </div>
+            <h1 class="title">Algemene Voorwaarden</h1>
+        </div>
+
+        <div class="gradient-border"></div>
+        <div class="text-box-background">
         <div class="info-page__text-box">
-<h1 class="title">Algemene Voorwaarden</h1>
 
 <p><em>Laatst bijgewerkt: februari 2026</em></p>
 
@@ -37,17 +44,14 @@ Kvk: 54486890</p>
 <h3>Artikel 6 – Aansprakelijkheid</h3>
 <p>De aangeboden boeken zijn religieuze en spirituele werken.</p>
 
+<ul>
 <li>Stichting Lucide Inkt is niet aansprakelijk voor:</li>
-
 <li>indirecte schade</li>
-
 <li>gevolgschade</li>
-
 <li>gederfde winst</li>
-
 <li>schade voortvloeiend uit interpretatie of gebruik van de inhoud</li>
-
 <li style="margin-bottom: 15px">technische storingen van de website</li>
+</ul>
 
 <p>De maximale aansprakelijkheid is beperkt tot het bedrag dat voor het betreffende product is betaald.</p>
 
@@ -58,6 +62,7 @@ Kvk: 54486890</p>
 <p>Op alle overeenkomsten is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement waar Stichting Lucide Inkt gevestigd is.</p>
 
         </div>
+        </div><!-- /.text-box-background -->
     </main>
 
     <div class="gradient-border"></div>

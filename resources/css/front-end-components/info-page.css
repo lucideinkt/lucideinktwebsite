@@ -1,3 +1,80 @@
+/* ── Hero band (same pattern as .risale-hero / .said-nursi-hero) ── */
+.info-page-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 20px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.info-page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.info-page-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.info-page-hero .title {
+    margin-top: 10px;
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 52px;
+    line-height: 1.2;
+}
+
+/* ── Page layout ── */
+.page.info-page {
+    padding-bottom: 0px;
+}
+
+.page.info-page .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+/* ── Page background override ── same palette as risale / said-nursi ── */
+body:has(.info-page__text-box) .page-normal-background {
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+body:has(.info-page__text-box) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30) 0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+
+body:has(.info-page__text-box) .page-normal-background::before {
+    display: none;
+}
+
 .info-page__text-box .title {
     margin-top: 10px;
     font-family: var(--font-herina);
@@ -11,24 +88,63 @@
 }
 
 .info-page__text-box {
+    --info-box-overlay-color:   #c8860a;
+    --info-box-overlay-opacity: 0.08;
+
     display: flex;
     flex-direction: column;
     border-radius: 40px;
     overflow: visible;
     position: relative;
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
+    background-size: 800px, 100%, auto;
+    background-position: center, center, center;
+    background-repeat: repeat, no-repeat, no-repeat;
     outline: none;
     padding: 40px 60px;
     margin-top: 20px;
     margin-bottom: 0px;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
     max-width: 1075px;
     margin-left: auto;
     margin-right: auto;
+
+    /* ── Gradient border – same palette as .gradient-border, 4px thick ── */
+    border: 4px solid transparent;
+    background-image:
+        url("../../images/BillyPaper.png"),
+        linear-gradient(#fbd795, #fbd795),
+        linear-gradient(90deg,
+            #c9a85c 0%,
+            #f4e4a6 20%,
+            #fdf3d0 38%,
+            #ffe99e 50%,
+            #fdf3d0 62%,
+            #f4e4a6 80%,
+            #c9a85c 100%);
+    background-origin: padding-box, padding-box, border-box;
+    background-clip:  padding-box, padding-box, border-box;
+
+    box-shadow:
+        0 -4px 6px rgba(0, 0, 0, 0.07),
+        0  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Amber colour wash overlay ── */
+.info-page__text-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--info-box-overlay-color);
+    opacity: var(--info-box-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep all direct children above the overlay */
+.info-page__text-box > * {
+    position: relative;
+    z-index: 1;
 }
 
 .info-page__text-box .sub-title {
@@ -64,7 +180,23 @@
     color: #1d4ed8;
 }
 
+@media (max-width: 1024px) {
+    .info-page-hero .title {
+        font-size: 44px;
+    }
+}
+
 @media (max-width: 768px) {
+    .info-page-hero {
+        padding-top: 80px;
+        padding-bottom: 16px;
+    }
+
+    .info-page-hero .title {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+
     .info-page__text-box .title {
         font-size: 38px;
         margin-left: 10px;
@@ -76,6 +208,17 @@
 }
 
 @media (max-width: 600px) {
+    .info-page-hero {
+        padding-top: 70px;
+        padding-bottom: 12px;
+    }
+
+    .info-page-hero .title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+
     .info-page__text-box .title {
         font-size: 30px;
         margin-bottom: 20px;
@@ -97,6 +240,12 @@
 
     .info-page__text-box p {
         text-align: left;
+    }
+}
+
+@media (max-width: 400px) {
+    .info-page-hero .title {
+        font-size: 26px;
     }
 }
 

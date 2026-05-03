@@ -1,6 +1,45 @@
 /* =========================================================
    CART PAGE
    ========================================================= */
+
+/* ── Page background override – floral texture (same as contact page) ── */
+body:has(.page.cart-page) .page-normal-background {
+    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.jpg");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* ── Remove the colour overlay on the cart page background ── */
+body:has(.page.cart-page) .page-normal-background::after,
+body:has(.page.cart-page) .page-normal-background::before {
+    display: none;
+}
+
+/* ── Gradient-border shadow (same as contact page) ── */
+body:has(.page.cart-page) .gradient-border {
+    box-shadow: 0 -10px 60px 10px rgb(0 0 0 / 0.49);
+    position: relative;
+    z-index: 1;
+    background-color: #e9dba9;
+    background-image: linear-gradient(
+        90deg,
+        #c9a85c 0%,
+        #e9dba9 20%,
+        #f5eacc 38%,
+        #ffe9a0 50%,
+        #f5eacc 62%,
+        #e9dba9 80%,
+        #c9a85c 100%
+    );
+}
+
+/* Keep the cart page content above the gradient-border shadow */
+body:has(.page.cart-page) .page.cart-page {
+    position: relative;
+    z-index: 2;
+}
+
 .page.cart-page {
     max-width: 1100px;
     margin: 0 auto;
@@ -94,15 +133,40 @@
 }
 
 .cart-items-card {
+    --cart-card-overlay-color:   #c8860a;
+    --cart-card-overlay-opacity: 0.08;
+
     border-radius: 40px;
     padding: 24px;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
     margin-bottom: 2rem;
+    position: relative;
+    overflow: visible;
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/BillyPaper.png");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-items-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--cart-card-overlay-color);
+    opacity: var(--cart-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cart-items-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .cart-items-title {
@@ -369,19 +433,44 @@
 }
 
 .cart-empty-state {
+    --cart-card-overlay-color:   #c8860a;
+    --cart-card-overlay-opacity: 0.08;
+
     border-radius: 40px;
     padding: 3.5rem;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    position: relative;
+    overflow: visible;
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/BillyPaper.png");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-empty-state::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--cart-card-overlay-color);
+    opacity: var(--cart-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cart-empty-state > * {
+    position: relative;
+    z-index: 1;
 }
 
 .empty-state-icon {
