@@ -1,12 +1,19 @@
 <x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
-    <main class="container page">
-        <x-breadcrumbs :items="[
-            ['label' => 'Home', 'url' => route('home')],
-            ['label' => 'Retourbeleid', 'url' => route('retourbeleid')],
-        ]" />
+    <main class="container page info-page">
+        <div class="info-page-hero">
+            <div class="container">
+            <x-breadcrumbs :items="[
+                ['label' => 'Home', 'url' => route('home')],
+                ['label' => 'Retourbeleid', 'url' => route('retourbeleid')],
+            ]" />
+            </div>
+            <h1 class="title">Retourbeleid</h1>
+        </div>
+
+        <div class="gradient-border"></div>
+        <div class="text-box-background">
         <div class="info-page__text-box">
-<h1 class="title">Retourbeleid</h1>
 
 <p><em>Laatst bijgewerkt: februari 2026</em></p>
 
@@ -49,11 +56,10 @@
 <p>Het herroepingsrecht geldt niet voor gepersonaliseerde producten of digitale downloads (indien van toepassing).</p>
 
         </div>
+        </div><!-- /.text-box-background -->
     </main>
+
     <div class="gradient-border"></div>
     <x-footer></x-footer>
     </div>
 </x-layout>
-
-
-

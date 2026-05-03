@@ -1,17 +1,25 @@
 <x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
-    <main class="container page">
-        <x-breadcrumbs :items="[
-            ['label' => 'Home', 'url' => route('home')],
-            ['label' => 'Privacybeleid', 'url' => route('privacybeleid')],
-        ]" />
+    <main class="container page info-page">
+        <div class="info-page-hero">
+            <div class="container">
+            <x-breadcrumbs :items="[
+                ['label' => 'Home', 'url' => route('home')],
+                ['label' => 'Privacybeleid', 'url' => route('privacybeleid')],
+            ]" />
+            </div>
+            <h1 class="title">Privacybeleid</h1>
+        </div>
+
+        <div class="gradient-border"></div>
+        <div class="text-box-background">
         <div class="info-page__text-box">
-<h1 class="title">Privacybeleid</h1>
 
 <p><em>Laatst bijgewerkt: februari 2026</em></p>
 
 <p>Stichting Lucide Inkt verwerkt persoonsgegevens zoals naam, adres, e-mailadres en bestelgegevens uitsluitend voor:</p>
 
+<ul>
 <li>het verwerken en verzenden van bestellingen</li>
 
 <li>het versturen van orderbevestigingen</li>
@@ -19,6 +27,7 @@
 <li>het verstrekken van klantenservice</li>
 
 <li style="margin-bottom: 15px">het verzenden van nieuwsbrieven (alleen na toestemming)</li>
+</ul>
 
 <p>Grondslag voor verwerking is uitvoering van de overeenkomst en/of toestemming.</p>
 
@@ -31,7 +40,9 @@
 <p>De website maakt uitsluitend gebruik van functionele cookies die noodzakelijk zijn voor de werking van de webshop.</p>
 
         </div>
+        </div><!-- /.text-box-background -->
     </main>
+
     <div class="gradient-border"></div>
     <x-footer></x-footer>
     </div>
