@@ -85,7 +85,7 @@ body { margin: 0; padding: 0; width: 100%; }
     /* Concrete texture blended over the dark-wood gradient — same technique as the contact page */
     background-image:
         url("../images/16_concrete bare rough_DIFF.webp"),
-        linear-gradient(180deg, #3a2010 0%, #4a2e16 30%, #3a2412 60%, #1e0f06 100%);
+        linear-gradient(180deg, #4a0b08 0%, #580f07 30%, #2e0705 60%, #160302 100%);
     background-size: 300px, cover;
     background-position: center center, center center;
     background-repeat: repeat, no-repeat;
