@@ -20,7 +20,7 @@
             <div class="said-nursi-page__text-box">
 
                 <div class="top-images">
-                    <img src="{{ asset('images/ustadh_passport.webp') }}" alt="" fetchpriority="high" decoding="async">
+                    <img src="{{ asset('images/PortretJongeUstad9_new.png') }}" alt="" fetchpriority="high" decoding="async">
                 </div>
 
                 <h2 class="sub-title"><em>1878 – 1960</em></h2>
