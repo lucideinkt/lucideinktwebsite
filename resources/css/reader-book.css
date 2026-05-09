@@ -464,8 +464,8 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(140, 30, 30, 0.10);
-    border: 1.5px solid rgba(140, 30, 30, 0.38);
+    background: linear-gradient(135deg, #4caf85 0%, #1e7a55 55%, #0f5238 100%);
+    border: 1.5px solid rgba(10, 70, 45, 0.60);
     min-width: 20px;
     height: 18px;
     padding: 0 4px;
@@ -476,11 +476,11 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     line-height: 1;
     vertical-align: super;
     font-family: inherit;
-    color: #7a1a1a !important;
+    color: #ffffff !important;
     position: relative;
     text-decoration: none;
     border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(140,30,30,0.13);
+    box-shadow: 0 1px 4px rgba(10, 70, 45, 0.40);
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     white-space: nowrap;
@@ -505,22 +505,24 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 }
 
 body.dark-mode .book-reader-scope .fn-ref {
-    color: #e8b48a !important;
-    background: rgba(232, 160, 100, 0.12);
-    border-color: rgba(232, 160, 100, 0.42);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    color: #fff8f0 !important;
+    background: linear-gradient(135deg, #a86828 0%, #7a4015 55%, #4e2508 100%);
+    border-color: rgba(232, 160, 100, 0.50);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.40);
 }
 
 /* Active state when popover is open */
 .book-reader-scope .fn-ref--active {
-    background: rgba(140, 30, 30, 0.18) !important;
-    border-color: rgba(140, 30, 30, 0.5) !important;
-    color: #5a1010 !important;
+    background: linear-gradient(135deg, #2e8f63 0%, #0f5c3a 55%, #083d26 100%) !important;
+    border-color: rgba(5, 50, 30, 0.75) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(5, 50, 30, 0.50) !important;
 }
 body.dark-mode .book-reader-scope .fn-ref--active {
-    background: rgba(232, 160, 100, 0.22) !important;
-    border-color: rgba(232, 160, 100, 0.55) !important;
-    color: #ffd4a8 !important;
+    background: linear-gradient(135deg, #b8733a 0%, #7f4410 55%, #502a08 100%) !important;
+    border-color: rgba(232, 160, 100, 0.65) !important;
+    color: #fff8f0 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.50) !important;
 }
 
 
