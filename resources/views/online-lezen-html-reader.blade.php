@@ -147,6 +147,26 @@
 
             <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             <span class="reader-topbar-page-badge" id="topbar-page-badge" aria-live="polite"></span>
+
+            {{-- Compact font controls — desktop only --}}
+            <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
+                <div class="reader-topbar-font-group">
+                    <button class="reader-topbar-font-btn reader-topbar-font-btn--small" id="topbar-font-dec-btn" type="button" aria-label="Kleinere tekst">a</button>
+                    <input type="range" class="reader-topbar-font-range" id="topbar-font-range" aria-label="Tekstgrootte">
+                    <button class="reader-topbar-font-btn reader-topbar-font-btn--large" id="topbar-font-inc-btn" type="button" aria-label="Grotere tekst">A</button>
+                    <span class="reader-topbar-font-val" id="topbar-font-val" aria-live="polite">19px</span>
+                    <button class="reader-topbar-font-reset" id="topbar-font-reset" type="button" aria-label="Tekst lettergrootte resetten">↺</button>
+                </div>
+                <div class="reader-topbar-font-divider" aria-hidden="true"></div>
+                <div class="reader-topbar-font-group">
+                    <button class="reader-topbar-font-btn reader-topbar-font-btn--arabic reader-topbar-font-btn--small" id="topbar-arabic-font-dec-btn" type="button" aria-label="Kleiner Arabisch">ا</button>
+                    <input type="range" class="reader-topbar-font-range" id="topbar-arabic-font-range" aria-label="Arabische tekstgrootte">
+                    <button class="reader-topbar-font-btn reader-topbar-font-btn--arabic reader-topbar-font-btn--large" id="topbar-arabic-font-inc-btn" type="button" aria-label="Groter Arabisch">ا</button>
+                    <span class="reader-topbar-font-val reader-topbar-font-val--arabic" id="topbar-arabic-font-val" aria-live="polite">29px</span>
+                    <button class="reader-topbar-font-reset" id="topbar-arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
+                </div>
+            </div>
+
             <button class="reader-btn reader-search-open-btn" id="reader-search-open-btn" aria-label="Zoeken in boek" title="Zoeken">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
             </button>
@@ -509,6 +529,8 @@
             readerEl.style.setProperty('--reader-font-size', sz + 'px');
             if (frozenAnchor) restoreAnchor(frozenAnchor);
             if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
+            const tbFontVal = document.getElementById('topbar-font-val');
+            if (tbFontVal) tbFontVal.textContent = Math.round(sz) + 'px';
         }
         function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
         function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
@@ -518,6 +540,8 @@
             readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
             if (frozenAnchor) restoreAnchor(frozenAnchor);
             if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
+            const tbArabicVal = document.getElementById('topbar-arabic-font-val');
+            if (tbArabicVal) tbArabicVal.textContent = Math.round(sz) + 'px';
         }
 
         function visiblePage() {
@@ -669,12 +693,16 @@
             const sz = FONT_STEPS[fontStepIdx];
             applyFont(sz, anchor); saveFont(sz);
             syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
+            const tbr = document.getElementById('topbar-font-range');
+            if (tbr) tbr.value = fontStepIdx;
         }
         function setArabicStep(idx, anchor = true) {
             arabicStepIdx = Math.max(0, Math.min(ARABIC_STEPS.length - 1, idx));
             const sz = ARABIC_STEPS[arabicStepIdx];
             applyArabicFont(sz, anchor); saveArabicFont(sz);
             syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
+            const tbr = document.getElementById('topbar-arabic-font-range');
+            if (tbr) tbr.value = arabicStepIdx;
         }
 
         // ── Range slider helpers ──────────────────────────────────────────
@@ -726,6 +754,45 @@
         document.getElementById('font-inc-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx + 1));
         document.getElementById('arabic-font-dec-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx - 1));
         document.getElementById('arabic-font-inc-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx + 1));
+
+        // Topbar compact font controls (desktop only)
+        document.getElementById('topbar-font-dec-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx - 1));
+        document.getElementById('topbar-font-inc-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx + 1));
+        document.getElementById('topbar-arabic-font-dec-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx - 1));
+        document.getElementById('topbar-arabic-font-inc-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx + 1));
+
+        document.getElementById('topbar-font-reset')?.addEventListener('click', () => {
+            fontStepIdx = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
+            applyFont(DEFAULT_FONT, true); saveFont(DEFAULT_FONT);
+            syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
+        });
+        document.getElementById('topbar-arabic-font-reset')?.addEventListener('click', () => {
+            arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
+            applyArabicFont(DEFAULT_ARABIC_FONT, true); saveArabicFont(DEFAULT_ARABIC_FONT);
+            syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
+        });
+
+        // Topbar sliders — init range and wire input events
+        const topbarFontRange   = document.getElementById('topbar-font-range');
+        const topbarArabicRange = document.getElementById('topbar-arabic-font-range');
+        if (topbarFontRange) {
+            topbarFontRange.min  = 0;
+            topbarFontRange.max  = FONT_STEPS.length - 1;
+            topbarFontRange.step = 1;
+            topbarFontRange.value = fontStepIdx;
+            topbarFontRange.addEventListener('input', () => {
+                setFontStep(parseInt(topbarFontRange.value));
+            });
+        }
+        if (topbarArabicRange) {
+            topbarArabicRange.min  = 0;
+            topbarArabicRange.max  = ARABIC_STEPS.length - 1;
+            topbarArabicRange.step = 1;
+            topbarArabicRange.value = arabicStepIdx;
+            topbarArabicRange.addEventListener('input', () => {
+                setArabicStep(parseInt(topbarArabicRange.value));
+            });
+        }
 
         document.getElementById('sheet-font-reset')?.addEventListener('click', () => {
             fontStepIdx = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
@@ -952,12 +1019,16 @@
             applyFont(initFont);
             fontStepIdx = nearestStepIdx(FONT_STEPS, initFont);
             syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
+            const tbr = document.getElementById('topbar-font-range');
+            if (tbr) tbr.value = fontStepIdx;
 
             const savedArabicFont = loadArabicFont();
             const initArabic = savedArabicFont || DEFAULT_ARABIC_FONT;
             applyArabicFont(initArabic);
             arabicStepIdx = nearestStepIdx(ARABIC_STEPS, initArabic);
             syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
+            const tbar = document.getElementById('topbar-arabic-font-range');
+            if (tbar) tbar.value = arabicStepIdx;
             hlRestoreAll(); // restore saved highlights for server-rendered pages
             bmRenderAllMarkers(); // restore bookmark paragraph markers
 
