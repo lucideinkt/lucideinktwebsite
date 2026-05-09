@@ -54,7 +54,7 @@ body:has(.page.shop) {
 .background-of-the-shop-grid {
     background-color: #fbd795;
     background-image: url("../../images/56_wood flooring colored texture-seamless_hr.webp");
-    background-size: 800px;
+    background-size: 650px;
     background-repeat: repeat;
     background-position: center;
 
@@ -68,12 +68,39 @@ body:has(.page.shop) {
     overflow-x: hidden;
 }
 
-/* ── Red colour wash overlay ── same as .text-box-background::before ── */
+/* ── Ottoman-green rich layered overlay ── */
 .background-of-the-shop-grid::after {
     content: '';
     position: absolute;
     inset: 0;
-    /*background-color: rgb(167 0 0 / 46%);*/
+    background:
+        /* corner vignette — deep shadows at edges */
+        radial-gradient(ellipse 110% 70% at 50% 50%,
+            transparent 35%, rgba(4, 20, 12, 0.65) 100%),
+        /* centre warm golden shimmer — candlelight through leaves */
+        radial-gradient(ellipse 60% 40% at 50% 30%,
+            rgba(42, 90, 55, 0.30) 0%, transparent 70%),
+        /* base Ottoman-green wash */
+        linear-gradient(160deg,
+            rgba(22, 72, 46, 0.78) 0%,
+            rgba(12, 52, 34, 0.88) 35%,
+            rgba(7,  38, 24, 0.92) 60%,
+            rgba(18, 62, 40, 0.82) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Ottoman-green concrete texture underlay ── */
+.background-of-the-shop-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/16_concrete bare rough_DIFF.webp");
+    background-size: 300px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.06;
+    mix-blend-mode: soft-light;
     pointer-events: none;
     z-index: 0;
 }
