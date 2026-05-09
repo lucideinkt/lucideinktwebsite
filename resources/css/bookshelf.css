@@ -82,15 +82,12 @@ body { margin: 0; padding: 0; width: 100%; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Concrete texture blended over the dark-wood gradient — same technique as the contact page */
     background-image:
-        url("../images/16_concrete bare rough_DIFF.webp"),
         linear-gradient(180deg, #3e0907 0%, #4c0d06 30%, #260604 60%, #110202 100%);
-    background-size: 300px, cover;
-    background-position: center center, center center;
-    background-repeat: repeat, no-repeat;
-    background-blend-mode: soft-light, normal;
-    background-attachment: fixed, fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Red carpet texture overlay — separate pseudo-element so we can control its opacity independently */
