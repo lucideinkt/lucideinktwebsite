@@ -84,7 +84,7 @@ body { margin: 0; padding: 0; width: 100%; }
     justify-content: center;
     /* Concrete texture blended over the dark-wood gradient — same technique as the contact page */
     background-image:
-        url("../images/16_concrete bare rough_DIFF.jpg"),
+        url("../images/16_concrete bare rough_DIFF.webp"),
         linear-gradient(180deg, #3a2010 0%, #4a2e16 30%, #3a2412 60%, #1e0f06 100%);
     background-size: 300px, cover;
     background-position: center center, center center;
@@ -98,7 +98,7 @@ body { margin: 0; padding: 0; width: 100%; }
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("../images/86_damask wallpaper texture-seamless_hr.jpg");
+    background-image: url("../images/86_damask wallpaper texture-seamless_hr.webp");
     background-size: 1100px;
     background-repeat: repeat;
     background-position: center center;
@@ -140,7 +140,7 @@ body { margin: 0; padding: 0; width: 100%; }
     /* 29_dark fine wood: rich dark grain that reads as a
        heavy carved frame, just like the old box-shadow rings */
     background:
-        url("../images/29_dark fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/29_dark fine wood_DIFF.webp") center center / cover no-repeat,
         linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
     background-blend-mode: soft-light, normal;
     border-radius: 8px 8px 8px 8px;
@@ -162,9 +162,9 @@ body { margin: 0; padding: 0; width: 100%; }
         radial-gradient(ellipse 110% 60% at 50% 20%,
             transparent 45%, rgba(4,1,0,0.72) 100%),
         /* dark fine wood: the "shadow" layer */
-        url("../images/29_dark fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/29_dark fine wood_DIFF.webp") center center / cover no-repeat,
         /* rosewood: the main cabinet fill */
-        url("../images/107_rosewood fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
         linear-gradient(160deg, #6b3e18 0%, #4e2a0e 40%, #6b3e18 100%);
     background-blend-mode:
         normal,
@@ -185,7 +185,7 @@ body { margin: 0; padding: 0; width: 100%; }
     width: 40px;
     z-index: 1;          /* behind header-sign (z-index:2) */
     background:
-        url("../images/107_rosewood fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
         linear-gradient(180deg, #7a4020 0%, #522810 50%, #7a4020 100%);
     background-blend-mode: soft-light, normal;
     /* edge depth only — no full-face inset shadow that was darkening the pole */
@@ -208,7 +208,7 @@ body { margin: 0; padding: 0; width: 100%; }
     margin: 0 -40px 8px;
     z-index: 2;
     background:
-        url("../images/107_rosewood fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
         linear-gradient(180deg, #7a4020 0%, #522810 50%, #7a4020 100%);
     background-blend-mode: soft-light, normal;
     border-bottom: 3px solid #1a0a02;
@@ -491,7 +491,7 @@ body { margin: 0; padding: 0; width: 100%; }
     width: 28px;
     height: 14px;
     background:
-        url("../images/107_rosewood fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
         linear-gradient(180deg,
             #c8901e 0%,
             #a06018 25%,
@@ -613,7 +613,7 @@ body { margin: 0; padding: 0; width: 100%; }
     left: 0; right: 1px;
     height: 18px;
     background:
-        url("../images/107_rosewood fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
         linear-gradient(180deg, #7a4020 0%, #522810 40%, #6a3418 70%, #7a4020 100%);
     background-blend-mode: soft-light, normal;
     box-shadow: 0 6px 18px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5), inset 0 2px 0 rgba(220,160,60,0.35), inset 0 -1px 0 rgba(0,0,0,0.4);
@@ -673,7 +673,7 @@ body { margin: 0; padding: 0; width: 100%; }
         radial-gradient(ellipse at 25% 15%, rgba(0,0,0,0.38) 0%, transparent 55%),
         radial-gradient(ellipse at 75% 85%, rgba(0,0,0,0.30) 0%, transparent 50%),
         linear-gradient(#7c1208, #7c1208),
-        url("../images/123_leather texture-seamless.jpg");
+        url("../images/123_leather texture-seamless.webp");
     background-size: auto, auto, auto, cover;
     background-blend-mode: multiply, multiply, color, normal;
     box-shadow:
@@ -797,7 +797,7 @@ body { margin: 0; padding: 0; width: 100%; }
     margin: 16px -40px -28px;        /* stretch past 40px side padding, consume 28px cabinet bottom padding */
     height: 28px;                    /* matches cabinet bottom padding — frame gap shows below */
     background:
-        url("../images/107_rosewood fine wood_DIFF.jpg") center center / cover no-repeat,
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
         linear-gradient(180deg, #7a4020 0%, #522810 50%, #7a4020 100%);
     background-blend-mode: soft-light, normal;
     border-top: 3px solid #1a0a02;

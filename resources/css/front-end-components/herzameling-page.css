@@ -48,7 +48,7 @@
     left: 50%;
     margin-left: -50vw;
     box-sizing: border-box;
-    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
     background-size: 500px;
     background-position: center;
     background-repeat: repeat;
@@ -87,7 +87,7 @@
 
 /* ── Page background override ── matches said-nursi page ── */
 body:has(.herzameling-page__text-box) .page-normal-background {
-    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.jpg");
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
     background-size: 500px;
     background-position: center;
     background-repeat: repeat;
@@ -130,7 +130,7 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
     /* ── Gradient border – same palette as .gradient-border, 4px thick ── */
     border: 4px solid transparent;
     background-image:
-        url("../../images/BillyPaper.png"),
+        url("../../images/BillyPaper.webp"),
         linear-gradient(#fbd795, #fbd795),
         linear-gradient(90deg,
             #c9a85c 0%,

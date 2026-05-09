@@ -4,7 +4,7 @@
 
 /* ── Page background override – floral texture (same as contact page) ── */
 body:has(.page.checkout) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.jpg");
+    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -316,7 +316,7 @@ input:-webkit-autofill:active {
     position: relative;
     overflow: visible;
     background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.png");
+    background-image: url("../../images/BillyPaper.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -455,7 +455,7 @@ input:-webkit-autofill:active {
     margin-top: 20px;
     display: none;
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -1224,7 +1224,7 @@ a.co-cart-product-link:hover {
     position: relative;
     overflow: visible;
     background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.png") !important;
+    background-image: url("../../images/BillyPaper.webp") !important;
     background-size: 800px !important;
     background-position: center !important;
     background-repeat: repeat !important;
@@ -1417,7 +1417,7 @@ a.co-cart-product-link:hover {
     position: relative;
     overflow: visible;
     background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.png") !important;
+    background-image: url("../../images/BillyPaper.webp") !important;
     background-size: 800px !important;
     background-position: center !important;
     background-repeat: repeat !important;
@@ -1536,7 +1536,7 @@ a.co-cart-product-link:hover {
     padding: 24px;
     box-shadow: var(--shadow-1);
     background-color: #fbd795 !important;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg") !important;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp") !important;
     background-size: 300px !important;
     background-position: center !important;
     background-repeat: repeat !important;
@@ -1586,7 +1586,7 @@ a.co-cart-product-link:hover {
     position: relative;
     overflow: visible;
     background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.png");
+    background-image: url("../../images/BillyPaper.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -1644,7 +1644,7 @@ a.co-cart-product-link:hover {
     max-width: 600px;
     margin: 40px auto;
     background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.png");
+    background-image: url("../../images/BillyPaper.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;

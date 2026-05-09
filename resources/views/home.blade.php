@@ -37,7 +37,7 @@
                         <!-- Bovenlaag: sier-ring -->
                         <!--
                             <div class="layer layer-ring">
-                                <img src="{{ asset('images/clockeffect_2.png') }}" alt="">
+                                <img src="{{ asset('images/clockeffect_2.webp') }}" alt="">
                             </div>
                             -->
 
