@@ -1950,7 +1950,7 @@ thead {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../images/bg-art.jpg");
+    background-image: url("../images/bg-art.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -4,7 +4,7 @@
 
 /* ── Page background override – floral texture ── */
 body:has(.page.contact-page) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.jpg");
+    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -74,7 +74,7 @@ body:has(.page.contact-page) .page.contact-page {
     position: relative;
     overflow: visible;
     background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.png");
+    background-image: url("../../images/BillyPaper.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;

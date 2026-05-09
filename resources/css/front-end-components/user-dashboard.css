@@ -62,7 +62,7 @@
 /* Dashboard Navigation */
 .user-dashboard-nav {
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -126,7 +126,7 @@
 
 .overview-card {
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -192,7 +192,7 @@
 /* Profile Form Styles — matching checkout styling */
 .profile-card {
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -384,7 +384,7 @@
 /* Products + totals card wrapper */
 .order-summary-card {
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -457,7 +457,7 @@
     display: flex;
     flex-direction: column;
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
@@ -612,7 +612,7 @@
 
 .order-address-card {
     background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.jpg");
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
