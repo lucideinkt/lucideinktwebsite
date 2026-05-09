@@ -46,7 +46,7 @@
 
         <div class="product-card-footer">
             <div class="product-card-price">
-                <span class="product-card-price-amount">€{{ number_format($product->price, 2) }}</span>
+                <span class="product-card-price-amount">€{{ number_format($product->price, 0, ',', '.') }},-</span>
             </div>
 
             <button type="button" class="product-card-button" wire:click="addToCart" wire:loading.attr="disabled"
