@@ -53,7 +53,7 @@ body:has(.page.shop) {
 
 .background-of-the-shop-grid {
     background-color: #fbd795;
-    background-image: url("../../images/49_anthea silver uni wallpaper by Parato texture-seamless_hr.webp");
+    background-image: url("../../images/56_wood flooring colored texture-seamless_hr.webp");
     background-size: 800px;
     background-repeat: repeat;
     background-position: center;
@@ -73,7 +73,7 @@ body:has(.page.shop) {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgb(167 0 0 / 46%);
+    /*background-color: rgb(167 0 0 / 46%);*/
     pointer-events: none;
     z-index: 0;
 }
