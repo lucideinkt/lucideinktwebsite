@@ -53,8 +53,8 @@ body:has(.page.shop) {
 
 .background-of-the-shop-grid {
     background-color: #fbd795;
-    background-image: url("../../images/42_slab marble Venice red texture_hr.webp");
-    background-size: 650px;
+    background-image: url("../../images/138_leather_DIFF.webp");
+    background-size: 400px;
     background-repeat: repeat;
     background-position: center;
 
@@ -68,20 +68,20 @@ body:has(.page.shop) {
     overflow-x: hidden;
 }
 
-/* ── Deep red overlay ── */
+/* ── Brownish gradient overlay ── */
 .background-of-the-shop-grid::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        /* edge vignette — dark crimson at corners */
+        /* edge vignette — deep dark brown at corners */
         radial-gradient(ellipse 110% 90% at 50% 50%,
-            transparent 30%, rgba(17, 2, 2, 0.55) 100%),
-        /* centre glow — warmer/lighter red in the middle */
+            transparent 30%, rgba(30, 12, 4, 0.60) 100%),
+        /* centre glow — warmer/lighter brown in the middle */
         radial-gradient(ellipse 70% 55% at 50% 45%,
-            rgba(90, 14, 10, 0.45) 0%, transparent 70%),
-        /* base flat wash */
-        rgba(62, 9, 7, 0.60);
+            rgba(120, 72, 20, 0.30) 0%, transparent 70%),
+        /* base flat warm-brown wash */
+        rgba(60, 30, 8, 0.35);
     pointer-events: none;
     z-index: 0;
 }
@@ -274,19 +274,19 @@ body:has(.page.shop) {
     padding-top: 0;
     padding-bottom: 0;
     /* Cream parchment card — corner radial glows + linen weave, light cream base */
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
+    /*background-color: #fbd795;*/
+    /*background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");*/
     background-size: 800px;
     background-position: center;
     background-repeat: repeat;
     outline: none;
-    border: 4px solid rgba(140, 95, 8, 0.75);
-    box-shadow:
-        /* outer shadows */
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px 4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+    /*border: 4px solid rgba(140, 95, 8, 0.75);*/
+    /*box-shadow:*/
+    /*    !* outer shadows *!*/
+    /*    0px -4px 6px rgba(0, 0, 0, 0.07),*/
+    /*    0px 4px 6px rgba(0, 0, 0, 0.07),*/
+    /*    0 12px 40px rgba(0, 0, 0, 0.12),*/
+    /*    0 2px 8px rgba(0, 0, 0, 0.08);*/
 }
 
 .product-card-link {
@@ -398,11 +398,14 @@ body:has(.page.shop) {
     padding-right: 16px;
     padding-left: 16px;
     border: none;
-    padding-top: 18px;
+    padding-top: 5px;
     text-shadow:
         0 1px 0 rgba(255, 245, 180, 0.7),
         0 2px 4px rgba(120, 70, 0, 0.25),
         0 4px 10px rgba(100, 50, 0, 0.12);
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
 }
 
 /* Double solid divider lines above the title */
@@ -414,11 +417,11 @@ body:has(.page.shop) {
     left: 0;
     right: 0;
     height: 7px;
-    background:
-        /* top line */
-        linear-gradient(to right, rgba(218, 165, 32, 1), rgba(218, 165, 32, 1)) top / 100% 2px no-repeat,
-        /* bottom line */
-        linear-gradient(to right, rgba(218, 165, 32, 1), rgba(218, 165, 32, 1)) bottom / 100% 2px no-repeat;
+    /*background:*/
+    /*    !* top line *!*/
+    /*    linear-gradient(to right, rgba(218, 165, 32, 1), rgba(218, 165, 32, 1)) top / 100% 2px no-repeat,*/
+    /*    !* bottom line *!*/
+    /*    linear-gradient(to right, rgba(218, 165, 32, 1), rgba(218, 165, 32, 1)) bottom / 100% 2px no-repeat;*/
 }
 
 .product-card-subtitle {
@@ -461,8 +464,11 @@ body:has(.page.shop) {
     font-weight: 700;
     letter-spacing: 0.01em;
     color: var(--main-font-color);
-    -webkit-text-stroke: 0.2px var(--main-font-color);
+    /*-webkit-text-stroke: 0.2px var(--main-font-color);*/
     paint-order: stroke fill;
+    color: rgb(245, 223, 172);
+    text-shadow: rgba(245, 223, 172, 0.6) 0px 0px 10px, rgba(245, 223, 172, 0.4) 0px 0px 20px, rgba(245, 223, 172, 0.2) 0px 0px 30px;
+    filter: brightness(1.1);
 }
 
 .product-card-button {
