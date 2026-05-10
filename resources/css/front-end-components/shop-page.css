@@ -74,14 +74,15 @@ body:has(.page.shop) {
     position: absolute;
     inset: 0;
     background:
-        /* edge vignette — very deep brown at corners */
-        radial-gradient(ellipse 115% 90% at 50% 50%,
-            transparent 25%, rgba(22, 10, 3, 0.65) 100%),
-        /* centre warmth — slightly lighter amber-brown in the middle */
-        radial-gradient(ellipse 65% 50% at 50% 40%,
-            rgba(90, 50, 15, 0.25) 0%, transparent 70%),
-        /* base flat warm-brown wash */
-        rgba(42, 20, 6, 0.38);
+        /* edge vignette — natural dark leather shadow at corners */
+        radial-gradient(ellipse 120% 95% at 50% 50%,
+            transparent 30%, rgb(45 22 8 / 0.50) 100%),
+        /* top-to-bottom depth — slightly darker toward bottom like natural lighting */
+        linear-gradient(180deg,
+            rgb(90 50 18 / 0.08) 0%,
+            rgb(30 14 4 / 0.28) 100%),
+        /* base tint — warm raw sienna blending with the leather grain */
+        rgb(95 52 18 / 0.18);
     pointer-events: none;
     z-index: 0;
 }
