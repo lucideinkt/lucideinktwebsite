@@ -319,7 +319,7 @@ body:has(.page.shop) {
 }
 
 .product-card-image {
-    max-width: 100%;
+    max-width: 115%;
     max-height: 100%;
     width: auto;
     height: auto;
