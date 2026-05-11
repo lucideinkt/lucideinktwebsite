@@ -73,10 +73,10 @@ body:has(.page.shop) {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        /* subtle corner darkening only — lets the leather colour breathe */
-        radial-gradient(ellipse 120% 95% at 50% 50%,
-            transparent 40%, rgba(0, 0, 0, 0.18) 100%);
+    /*background:*/
+    /*    !* subtle corner darkening only — lets the leather colour breathe *!*/
+    /*    radial-gradient(ellipse 120% 95% at 50% 50%,*/
+    /*        transparent 40%, rgba(0, 0, 0, 0.18) 100%);*/
     pointer-events: none;
     z-index: 0;
 }
