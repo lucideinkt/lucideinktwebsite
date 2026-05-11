@@ -284,14 +284,7 @@ body:has(.page.shop) {
     transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(218, 175, 60, 0.95);
-    box-shadow:
-        0 4px 12px rgba(30, 10, 0, 0.18),
-        0 20px 48px rgba(30, 10, 0, 0.30),
-        inset 0 0 0 1px rgba(255, 240, 170, 0.38);
-}
+.product-card:hover {}
 
 .product-card-link {
     text-decoration: none;
@@ -425,15 +418,15 @@ body:has(.page.shop) {
     position: relative;
 }
 
-/* Footer: price bottom-left, button bottom-right */
+/* Footer: price left, button right */
 .product-card-footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin-top: auto;
-    padding: 8px 16px 14px;
-    gap: 8px;
+    padding: 12px 20px 12px;
+    gap: 16px;
     width: 100%;
     box-sizing: border-box;
     border-top: 1px solid rgba(197, 155, 50, 0.30);
@@ -441,7 +434,7 @@ body:has(.page.shop) {
 
 .product-card-price {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: flex-start;
     gap: 4px;
 }
@@ -492,13 +485,7 @@ body:has(.page.shop) {
     font-size: 11px;
 }
 
-.product-card-button:hover:not(:disabled) {
-    background: linear-gradient(180deg, #3a8040 0%, #245528 100%);
-    transform: translateY(-2px);
-    box-shadow:
-        0 4px 14px rgba(0, 0, 0, 0.38),
-        inset 0 1px 0 rgba(255, 255, 255, 0.20);
-}
+.product-card-button:hover:not(:disabled) {}
 
 .product-card-button > span {
     display: flex;
@@ -696,7 +683,11 @@ body:has(.page.shop) {
     }
 
     .product-card-footer {
-        padding: 6px 10px 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 10px 10px 8px;
     }
 
     .product-card-price-amount {
@@ -720,7 +711,7 @@ body:has(.page.shop) {
 
 @media (max-width: 480px) {
     .shop-title {
-        font-size: 26px;
+        font-size: 40px;
     }
 
     .background-of-the-shop-grid {
@@ -760,8 +751,11 @@ body:has(.page.shop) {
     }
 
     .product-card-footer {
-        padding: 4px 10px 10px;
-        gap: 4px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        padding: 10px 10px 8px;
     }
 
     .product-card-price-amount {

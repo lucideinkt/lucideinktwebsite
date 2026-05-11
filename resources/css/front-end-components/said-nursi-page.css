@@ -152,41 +152,26 @@ body:has(.said-nursi-page__text-box) .page-normal-background::before {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     background-color: #fbd795;
-    background-image: url("../../images/49_anthea silver uni wallpaper by Parato texture-seamless_hr.webp");
-    background-size: 800px;
+    background-image: url("../../images/138_leather_DIFF.webp");
+    background-size: 300px;
     background-position: center;
     background-repeat: repeat;
     padding: 50px 20px 60px;
     position: relative;
 }
-/* ── Red carpeting texture overlay on the full-width band ── */
+
+/* ── Subtle edge vignette — no carpeting texture ── */
 .text-box-background::after {
     content: '';
     position: absolute;
     inset: 0;
-    /*background-image: url("../../images/21_faux fake fur animal texture-seamless_hr_DIFFUSE.jpg");*/
-
-
-    /*background-image: url("../../images/18_red carpeting texture-seamless_hr.jpg");*/
-
-    background-image: url("../../images/33_brown carpeting texture-seamless_hr.webp");
-
-    background-size: 300px;
-    background-position: center;
-    background-repeat: repeat;
-    opacity: 40%;
     pointer-events: none;
     z-index: 0;
 }
 
-/* ── Colour wash overlay on the full-width band ── */
+/* ── No colour wash ── */
 .text-box-background::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgb(167 0 0 / 46%);
-    pointer-events: none;
-    z-index: 1;
+    display: none;
 }
 
 .text-box-background > * {
