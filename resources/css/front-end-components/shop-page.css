@@ -445,7 +445,7 @@ body:has(.page.shop) {
     align-items: center;
     justify-content: space-between;
     margin-top: auto;
-    padding: 12px 20px 12px;
+    padding: 12px 40px 12px;
     gap: 16px;
     width: 100%;
     box-sizing: border-box;
