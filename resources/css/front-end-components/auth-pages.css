@@ -16,9 +16,9 @@ body:has(.page.auth-page) .page-normal-background::before {
     display: none;
 }
 
-/* ── Gradient-border shadow (same as contact page) ── */
+/* gradient-border on auth page — no shadow */
 body:has(.page.auth-page) .gradient-border {
-    box-shadow: 0 -10px 60px 10px rgb(0 0 0 / 0.49);
+    box-shadow: none;
     position: relative;
     z-index: 1;
     background-color: #e9dba9;
@@ -34,24 +34,143 @@ body:has(.page.auth-page) .gradient-border {
     );
 }
 
+/* The inner gradient-border that separates the hero from the form */
+body:has(.page.auth-page) .auth-hero-border {
+    box-shadow: none;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
 /* Keep the auth page content above the gradient-border shadow */
 body:has(.page.auth-page) .page.auth-page {
     position: relative;
     z-index: 2;
+    overflow: visible;
 }
 
 .page.auth-page {
-    padding-bottom: 50px;
+    padding-bottom: 0;
 }
 
-/* Breadcrumb alignment with auth form */
-.page.auth-page .bc {
+/* Full-width gradient-border inside the auth container */
+.page.auth-page .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   AUTH HERO
+   ========================================================= */
+
+/* ── Full-width hero band — geometric wallpaper (same as contact page) ── */
+.auth-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 8px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+/* ── Warm cream overlay so text stays readable ── */
+.auth-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep all hero children above the overlay */
+.auth-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Hero title ── */
+.auth-hero__title {
+    margin-top: 22px;
+    font-family: var(--font-herina);
+    letter-spacing: 1.5px;
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 18px;
+    text-align: center;
+    color: var(--main-font-color);
+    line-height: 1.2;
+}
+
+/* ── Breadcrumb inside hero ── */
+.auth-hero .bc {
     max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Auth Card – matches contact-form-box */
+/* ── Content section below hero — full-width with gradient vignette ── */
+.auth-content-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    padding-top: 28px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ── Gradient overlay: golden vignette fading in from top & bottom edges ── */
+.auth-content-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 100, 0.30) 0%,
+            rgba(220, 185, 110, 0.10) 18%,
+            transparent               40%,
+            transparent               60%,
+            rgba(220, 185, 110, 0.10) 82%,
+            rgba(210, 175, 100, 0.30) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(180, 140, 60, 0.22)  0%,
+            transparent               18%,
+            transparent               82%,
+            rgba(180, 140, 60, 0.22)  100%
+        );
+}
+
+/* Keep card above the gradient */
+.auth-content-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================================
+   AUTH CARD  (mirrors .contact-form-box)
+   ========================================================= */
 .auth-card {
     --auth-card-overlay-color:   #c8860a;
     --auth-card-overlay-opacity: 0.08;
@@ -60,29 +179,57 @@ body:has(.page.auth-page) .page.auth-page {
     max-width: 550px;
     margin: 0 auto;
     border-radius: 40px;
-    padding: 2.5rem;
+    overflow: hidden;
     position: relative;
-    overflow: visible;
-    background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
+
+    /* ── Stacked background: warm gradient on top of parchment texture ── */
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    padding: 40px;
+    margin-top: 10px;
+
+    /* ── Gold border ── */
+    border: 2px solid rgba(197, 155, 50, 0.72);
+
+    /* ── Softer layered shadow ── */
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0    rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
-/* ── Colour wash overlay – same as contact-form-box ── */
+/* ── Internal warm vignette ── */
 .auth-card::after {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--auth-card-overlay-color);
-    opacity: var(--auth-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent              30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13)  100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -93,7 +240,9 @@ body:has(.page.auth-page) .page.auth-page {
     z-index: 1;
 }
 
-/* Auth Form */
+/* =========================================================
+   AUTH FORM
+   ========================================================= */
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -122,6 +271,11 @@ body:has(.page.auth-page) .page.auth-page {
     margin-bottom: 0.5rem;
 }
 
+.auth-form .required {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
 .auth-form .form-control {
     width: 100%;
     padding: 1rem;
@@ -141,6 +295,11 @@ body:has(.page.auth-page) .page.auth-page {
     box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
     transform: translateY(-1px);
     background: rgba(255, 255, 255, 0.95);
+}
+
+.auth-form .form-control::placeholder {
+    color: var(--main-font-color);
+    opacity: 0.45;
 }
 
 /* Hide all browser password reveal buttons */
@@ -181,7 +340,7 @@ input[type="password"]::-ms-clear {
     margin: 0;
 }
 
-/* Auth Button - matching shop page style */
+/* Auth Button */
 .btn-auth {
     width: 100%;
     display: flex;
@@ -221,13 +380,15 @@ input[type="password"]::-ms-clear {
     color: var(--main-font-color);
 }
 
-.forgot-password a {
+.forgot-password a,
+.back-link a {
     color: var(--main-font-color);
     text-decoration: underline;
     transition: color 0.2s;
 }
 
-.forgot-password a:hover {
+.forgot-password a:hover,
+.back-link a:hover {
     color: var(--main-color);
 }
 
@@ -243,16 +404,6 @@ input[type="password"]::-ms-clear {
     color: var(--main-font-color);
 }
 
-.back-link a {
-    color: var(--main-font-color);
-    text-decoration: underline;
-    transition: color 0.2s;
-}
-
-.back-link a:hover {
-    color: var(--main-color);
-}
-
 /* Error Messages */
 .auth-form .error {
     font-size: 13px;
@@ -260,37 +411,79 @@ input[type="password"]::-ms-clear {
     margin-top: 0.5rem;
 }
 
-/* Alerts — handled globally by alerts.css */
-
+/* Alerts */
 .alert-close:hover {
     opacity: 1;
 }
 
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1024px) {
+    .auth-hero__title {
+        font-size: 44px;
+    }
+}
 
-/* Responsive Design */
 @media (max-width: 768px) {
+    .auth-hero {
+        padding-top: 80px;
+        padding-bottom: 6px;
+    }
+
+    .auth-hero__title {
+        font-size: 38px;
+        margin-bottom: 16px;
+    }
+
     .auth-card {
-        padding: 2rem 1.5rem;
-        padding-top: 1.5rem;
+        padding: 35px 30px;
     }
 
-    .auth-title {
-        font-size: 24px;
-        margin-bottom: 0.5rem;
+    .auth-content-section {
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
 
-    .page.auth-page .bc {
+    .page.auth-page .auth-hero .bc {
         max-width: 100%;
     }
 }
 
-@media (max-width: 480px) {
-    .auth-card {
-        padding: 2rem 1rem;
-        padding-top: 1.5rem;
+@media (max-width: 600px) {
+    .auth-hero {
+        padding-top: 70px;
+        padding-bottom: 4px;
     }
 
-    .auth-title {
-        font-size: 22px;
+    .auth-hero__title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+    }
+
+    .auth-card {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .auth-content-section {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 400px) {
+    .auth-hero__title {
+        font-size: 26px;
+    }
+
+    .auth-card {
+        padding: 25px 16px;
+    }
+
+    .auth-form .form-control {
+        padding: 0.875rem;
+        font-size: 0.95rem;
     }
 }
