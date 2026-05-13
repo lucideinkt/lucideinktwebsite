@@ -105,18 +105,18 @@
                     <span class="cart-total-value">€ {{ number_format($total, 2, ',', '.') }}</span>
                 </div>
             </div>
-        </div>
 
-        <div class="cart-actions">
-            <a href="{{ route('checkoutPage') }}" class="btn-checkout btn">
-                <i class="fa-solid fa-credit-card"></i>
-                Afrekenen
-            </a>
-            <button type="button" class="btn-clear" wire:click="clearCart"
-                wire:confirm="Weet je zeker dat je de hele winkelmand wilt legen?">
-                <i class="fa-solid fa-trash-can"></i>
-                Winkelmand legen
-            </button>
+            <div class="cart-actions">
+                <a href="{{ route('checkoutPage') }}" class="btn-checkout btn">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Afrekenen
+                </a>
+                <button type="button" class="btn-clear" wire:click="clearCart"
+                    wire:confirm="Weet je zeker dat je de hele winkelmand wilt legen?">
+                    <i class="fa-solid fa-trash-can"></i>
+                    Winkelmand legen
+                </button>
+            </div>
         </div>
     @else
         <div class="cart-empty-state-wrapper">
