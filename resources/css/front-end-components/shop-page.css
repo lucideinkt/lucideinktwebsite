@@ -248,13 +248,10 @@ body:has(.page.shop) {
     width: 100%;
     box-sizing: border-box;
     z-index: 2; /* above glow (0) and image (1) */
-    text-shadow:
-        0 1px 0 rgba(255, 240, 170, 0.60),
-        0 0px 1px rgba(80, 20, 0, 0.55),
-        1px 1px 0 rgba(80, 20, 0, 0.18),
-        0 3px 10px rgba(80, 20, 0, 0.18);
-    -webkit-text-stroke: 0.6px currentColor;
     pointer-events: none;
+    text-shadow:
+        0 1px 3px rgba(80, 20, 0, 0.20),
+        0 2px 8px rgba(60, 10, 0, 0.12);
 }
 
 .shop-subtitle {
