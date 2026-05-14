@@ -157,6 +157,56 @@ body:has(.page.shop) {
     margin-bottom: 0px;
 }
 
+/* ── Frame wrapper: frame image + title layered on top ── */
+.shop-frame-wrapper {
+    position: relative;
+    display: block;
+    max-width: 285px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Warm ambient glow radiating from behind the frame —
+   mirrors the soft parchment warmth on the Said Nursi portrait.
+   Gradient goes warm-at-centre → fully transparent at the outer
+   edge, so no hard border or box shape ever appears. */
+.shop-frame-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 170%;
+    height: 175%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        ellipse at 50% 52%,
+        rgba(220, 165,  55, 0.28)  0%,   /* warm golden centre */
+        rgba(195, 135,  38, 0.20) 25%,
+        rgba(160, 100,  22, 0.12) 50%,
+        rgba(110,  60,  10, 0.05) 70%,
+        transparent                90%    /* completely invisible at edge */
+    );
+    pointer-events: none;
+    z-index: 0; /* sits behind the image */
+}
+
+.shop-frame-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+    /* Same style of drop-shadow as the Said Nursi portrait */
+    filter:
+        drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55))
+        drop-shadow(0 2px  4px rgba(0, 0, 0, 0.35));
+    /* keep the image pixel-sharp */
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
 .shop-header-image {
     max-width: 500px;
     width: 100%;
@@ -184,13 +234,27 @@ body:has(.page.shop) {
 
 .shop-title {
     font-family: var(--font-herina);
-    font-size: 52px;
+    font-size: 62px;
     font-weight: 400;
     letter-spacing: 2px;
     line-height: 1.2;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0 12%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2; /* above glow (0) and image (1) */
+    text-shadow:
+        0 1px 0 rgba(255, 240, 170, 0.60),
+        0 0px 1px rgba(80, 20, 0, 0.55),
+        1px 1px 0 rgba(80, 20, 0, 0.18),
+        0 3px 10px rgba(80, 20, 0, 0.18);
+    -webkit-text-stroke: 0.6px currentColor;
+    pointer-events: none;
 }
 
 .shop-subtitle {
@@ -560,11 +624,6 @@ body:has(.page.shop) {
     }
 }
 
-@media (max-width: 1024px) {
-    .shop-title {
-        font-size: 44px;
-    }
-}
 
 @media (max-width: 992px) {
     .page.shop .book-box {
@@ -594,9 +653,13 @@ body:has(.page.shop) {
     }
 
     .shop-title {
-        font-size: 38px;
-        margin-bottom: 20px;
+        font-size: 48px;
         letter-spacing: 1.5px;
+        top: 49%;
+    }
+
+    .shop-frame-wrapper {
+        max-width: 236px;
     }
 
     .shop-header {
@@ -604,10 +667,6 @@ body:has(.page.shop) {
         padding: 0 20px;
     }
 
-    .shop-title {
-        font-size: 40px;
-        letter-spacing: 1.5px;
-    }
 
     .shop-subtitle {
         font-size: 1.05rem;
@@ -665,9 +724,14 @@ body:has(.page.shop) {
     }
 
     .shop-title {
-        font-size: 30px;
+        font-size: 40px;
         letter-spacing: 1px;
-        margin-bottom: 16px;
+        top: 46%;
+    }
+
+    .shop-frame-wrapper {
+        max-width: 198px;
+        margin-bottom: -5px;
     }
 
     .shop-header {
@@ -731,9 +795,13 @@ body:has(.page.shop) {
 }
 
 @media (max-width: 480px) {
-    .shop-title {
-        font-size: 40px;
-    }
+    /*.shop-title {*/
+    /*    font-size: 22px;*/
+    /*}*/
+
+    /*.shop-frame-wrapper {*/
+    /*    max-width: 174px;*/
+    /*}*/
 
     .background-of-the-shop-grid {
         padding: 15px 10px 24px;
