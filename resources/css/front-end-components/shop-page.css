@@ -77,29 +77,29 @@ body:has(.page.shop) {
     pointer-events: none;
     z-index: 0;
 
-    background:
-        radial-gradient(
-            ellipse 70% 70% at 50% 50%,
-            rgba(255, 220, 145, 0.18) 0%,
-            rgba(255, 220, 145, 0.08) 38%,
-            transparent 68%
-        ),
-        linear-gradient(
-            90deg,
-            rgba(25, 10, 5, 0.34) 0%,
-            rgba(45, 20, 8, 0.16) 18%,
-            transparent 42%,
-            transparent 58%,
-            rgba(45, 20, 8, 0.16) 82%,
-            rgba(25, 10, 5, 0.34) 100%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(35, 14, 6, 0.18) 0%,
-            transparent 28%,
-            transparent 72%,
-            rgba(35, 14, 6, 0.18) 100%
-        );
+    /*background:*/
+    /*    radial-gradient(*/
+    /*        ellipse 70% 70% at 50% 50%,*/
+    /*        rgba(255, 220, 145, 0.18) 0%,*/
+    /*        rgba(255, 220, 145, 0.08) 38%,*/
+    /*        transparent 68%*/
+    /*    ),*/
+    /*    linear-gradient(*/
+    /*        90deg,*/
+    /*        rgba(25, 10, 5, 0.34) 0%,*/
+    /*        rgba(45, 20, 8, 0.16) 18%,*/
+    /*        transparent 42%,*/
+    /*        transparent 58%,*/
+    /*        rgba(45, 20, 8, 0.16) 82%,*/
+    /*        rgba(25, 10, 5, 0.34) 100%*/
+    /*    ),*/
+    /*    linear-gradient(*/
+    /*        180deg,*/
+    /*        rgba(35, 14, 6, 0.18) 0%,*/
+    /*        transparent 28%,*/
+    /*        transparent 72%,*/
+    /*        rgba(35, 14, 6, 0.18) 100%*/
+    /*    );*/
 }
 
 /* Keep grid content above the texture overlay */
