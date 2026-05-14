@@ -52,8 +52,9 @@ body:has(.page.shop) {
    --------------------------------------------------------- */
 
 .background-of-the-shop-grid {
-    background-color: #fbd795;
-    background-image: url("../../images/138_leather_DIFF.webp");
+    /*background-color: #fbd795;*/
+    /*background-image: url("../../images/138_leather_DIFF.webp");*/
+    background-image: url("../../images/138_Leather_new.webp");
     background-size: 360px;
     background-repeat: repeat;
     background-position: center;
