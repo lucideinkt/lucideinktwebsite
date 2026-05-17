@@ -54,7 +54,7 @@ body:has(.page.shop) {
 .background-of-the-shop-grid {
     /*background-color: #fbd795;*/
     /*background-image: url("../../images/138_leather_DIFF.webp");*/
-    /*background-image: url("../../images/138_Leather_new.webp");*/
+    background-image: url("../../images/57_crumpled mulberry paper texture-seamless_hr.webp");
     background-size: 360px;
     background-repeat: repeat;
     background-position: center;
@@ -69,19 +69,24 @@ body:has(.page.shop) {
     overflow-x: hidden;
 }
 
-/* ── Warm-white veil — blends grid into the parchment header tone ── */
+/* ── Warm cream light layer + vignette overlay ── */
 .background-of-the-shop-grid::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    background: radial-gradient(
-        ellipse 75% 75% at 50% 50%,
-        rgba(205, 164, 110, 0.14) 0%,
-        rgba(205, 164, 110, 0.22) 55%,
-        rgba(205, 164, 110, 0.30) 100%
-    );
+    background:
+        radial-gradient(
+            ellipse 75% 75% at 50% 50%,
+            rgba(205, 164, 110, 0.14) 0%,
+            rgba(205, 164, 110, 0.22) 55%,
+            rgba(205, 164, 110, 0.30) 100%
+        ),
+        linear-gradient(
+            rgba(251, 244, 218, 0.62),
+            rgba(251, 244, 218, 0.62)
+        );
 }
 
 /* Keep grid content above the texture overlay */
