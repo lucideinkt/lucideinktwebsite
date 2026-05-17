@@ -26,17 +26,17 @@
             ]" />
             </div>
             <div class="shop-header">
-
+                <div class="shop-frame-wrapper">
+                    <img src="{{ asset('images/shop_frame.webp') }}" alt="" class="shop-frame-img" aria-hidden="true">
+                    <h1 class="shop-title">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</h1>
+                </div>
             </div>
         </div>
 
 
         <div class="gradient-border"></div>
         <div class="background-of-the-shop-grid">
-            <div class="shop-frame-wrapper">
-                <img src="{{ asset('images/shop_frame.webp') }}" alt="" class="shop-frame-img" aria-hidden="true">
-                <h1 class="shop-title">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</h1>
-            </div>
+
 
             <div class="book-box product-cards-grid">
                 @foreach ($products as $product)
