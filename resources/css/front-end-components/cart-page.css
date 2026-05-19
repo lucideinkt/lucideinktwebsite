@@ -238,7 +238,7 @@ body:has(.page.cart-page) .page.cart-page {
     background-repeat: no-repeat, repeat;
 
     /* ── Gold border ── */
-    border: 2px solid rgba(197, 155, 50, 0.72);
+    /*border: 2px solid rgba(197, 155, 50, 0.72);*/
     outline: 1px solid rgba(197, 155, 50, 0.28);
     outline-offset: 5px;
 
@@ -574,7 +574,7 @@ body:has(.page.cart-page) .page.cart-page {
     margin-top: 0px;
 
     /* ── Gold border ── */
-    border: 2px solid rgba(197, 155, 50, 0.72);
+    /*border: 2px solid rgba(197, 155, 50, 0.72);*/
 
     /* ── Softer layered shadow (same as contact-form-box) ── */
     box-shadow:

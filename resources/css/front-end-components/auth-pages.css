@@ -205,7 +205,7 @@ body:has(.page.auth-page) .page.auth-page {
     margin-top: 10px;
 
     /* ── Gold border ── */
-    border: 2px solid rgba(197, 155, 50, 0.72);
+    /*border: 2px solid rgba(197, 155, 50, 0.72);*/
 
     /* ── Softer layered shadow ── */
     box-shadow:
