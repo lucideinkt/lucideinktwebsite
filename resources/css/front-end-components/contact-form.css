@@ -216,7 +216,7 @@ body:has(.page.contact-page) .page.contact-page {
     margin-right: auto;
 
     /* ── Gold border ── */
-    border: 2px solid rgba(197, 155, 50, 0.72);
+    /*border: 2px solid rgba(197, 155, 50, 0.72);*/
 
     /* ── Softer layered shadow ── */
     box-shadow:
