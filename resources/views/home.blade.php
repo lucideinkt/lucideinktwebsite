@@ -15,8 +15,8 @@
 
                     <div class="hero-section" style="position: relative; overflow: visible;">
                         <img class="hero-bg-img" src="{{ asset('images/001_sun_clock_background.webp') }}" alt=""
-                            fetchpriority="high" decoding="async"
-                            style="position: absolute; left: 49%; top: 51.5%; transform: translate(-50%, -50%); width: 150%; height: auto; pointer-events: none; z-index: -1;">
+                             fetchpriority="high" decoding="async"
+                             style="position: absolute; left: 49%; top: 51.5%; transform: translate(-50%, -50%); width: 150%; height: auto; pointer-events: none; z-index: -1;">
 
                         <!-- Achterste laag: draaiende rotor -->
                         <div class="layer layer-rotor">
@@ -36,10 +36,10 @@
 
                         <!-- Bovenlaag: sier-ring -->
                         <!--
-                            <div class="layer layer-ring">
-                                <img src="{{ asset('images/clockeffect_2.webp') }}" alt="">
-                            </div>
-                            -->
+                        <div class="layer layer-ring">
+                            <img src="{{ asset('images/clockeffect_2.webp') }}" alt="">
+                        </div>
+                        -->
 
                         <!-- Voorste laag: CSS klok -->
                         <div class="layer layer-clock">
@@ -55,41 +55,50 @@
 
                     </div>
 
+                    <!-- Decorative orbit arc between clock and CTA buttons -->
+                    <div class="hero-orbit-decoration" aria-hidden="true">
+                        <span class="orbit-dot orbit-dot-1"></span>
+                        <span class="orbit-dot orbit-dot-2"></span>
+                        <span class="orbit-dot orbit-dot-3"></span>
+                        <span class="orbit-dot orbit-dot-4"></span>
+                        <span class="orbit-dot orbit-dot-5"></span>
+                    </div>
+
                     <!-- CTA Buttons on the right side -->
                     <div class="hero-cta-buttons">
-                        <a href="{{ route('onlineLezen') }}" class="hero-cta-btn">
-                            <span class="cta-icon-box"><i class="fa-solid fa-book-open-reader"></i></span>
-                            <span class="cta-span">Lees Online</span>
-                        </a>
-                        <a href="{{ route('shop') }}" class="hero-cta-btn">
-                            <span class="cta-icon-box"><i class="fa-solid fa-book"></i></span>
-                            <span class="cta-span">Koop Boeken</span>
-                        </a>
-                        <a href="{{ route('audiobooks') }}" class="hero-cta-btn">
-                            <span class="cta-icon-box"><i class="fa-solid fa-headphones"></i></span>
-                            <span class="cta-span">Luister Audio</span>
-                        </a>
+                        <div class="button-box">
+                            <a href="{{ route('onlineLezen') }}" class="hero-cta-btn">
+                                <span class="cta-icon-box"><i class="fa-solid fa-book-open-reader"></i></span>
+                                <span class="cta-span">Lees Online</span>
+                            </a>
+                            <a href="{{ route('shop') }}" class="hero-cta-btn">
+                                <span class="cta-icon-box"><i class="fa-solid fa-book"></i></span>
+                                <span class="cta-span">Koop Boeken</span>
+                            </a>
+                            <a href="{{ route('audiobooks') }}" class="hero-cta-btn">
+                                <span class="cta-icon-box"><i class="fa-solid fa-headphones"></i></span>
+                                <span class="cta-span">Luister Audio</span>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
-
             </section>
 
-
-
-
         </div>
+
         <div class="gradient-border"></div>
 
         <section class="home white-section intro-section">
             <img class="moon-left" src="{{ asset('images/half_moon.webp') }}" alt="" loading="lazy" decoding="async">
             <img class="moon-right" src="{{ asset('images/half_moon.webp') }}" alt="" loading="lazy" decoding="async">
 
-{{--            <img style="width: 100%;height: 50%" class="letters-stars" src="{{ asset('images/letters_stars.webp') }}" alt="">--}}
+            {{-- <img style="width: 100%;height: 50%" class="letters-stars" src="{{ asset('images/letters_stars.webp') }}" alt=""> --}}
 
             <div class="text-container">
-{{--                <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2>--}}
-                {{--                <h2 class="title">Welkom op Lucide Inkt</h2> --}}
+                {{-- <h2 class="title">Welkom op L<span class="title-u"></span>cide In<span class="title-k"></span>t</h2> --}}
+                {{-- <h2 class="title">Welkom op Lucide Inkt</h2> --}}
+
                 <div class="sub-text one">
                     <p>Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van</p>
                     <p>diensten volgens de Qur'anische richtlijnen van de Risale-i Nur.</p>
@@ -98,29 +107,27 @@
                     <p>op de belangrijkste bestaansvragen van de mens.</p>
                     <button class="read-more-btn" onclick="openIntroModal()">
                         <span class="read-more-text">Meer informatie</span>
-{{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+                        {{-- <i class="fa-solid fa-arrow-right read-more-icon"></i> --}}
                     </button>
                 </div>
 
                 <div class="sub-text two">
                     <p>
-                    Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van diensten
-                    volgens de Qur'anische richtlijnen van de <br>Risale-i Nur.
-                    Met Nederlandse en Engelse vertalingen van deze boekenreeks
-                    streven wij ernaar zoekers te voorzien van antwoorden
-                    op de belangrijkste bestaansvragen van de mens.
+                        Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van diensten
+                        volgens de Qur'anische richtlijnen van de <br>Risale-i Nur.
+                        Met Nederlandse en Engelse vertalingen van deze boekenreeks
+                        streven wij ernaar zoekers te voorzien van antwoorden
+                        op de belangrijkste bestaansvragen van de mens.
                     </p>
                     <button class="read-more-btn" onclick="openIntroModal()">
                         <span class="read-more-text">Meer informatie</span>
-                        {{--                        <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
+                        {{-- <i class="fa-solid fa-arrow-right read-more-icon"></i> --}}
                     </button>
                 </div>
             </div>
         </section>
 
-
         <div class="gradient-border"></div>
-
 
         <section class="colored-section books-section">
             <div class="new-translation">
@@ -129,18 +136,20 @@
                     <h2 class="title trans" aria-label="Onze Nieuwste Vertaling: Het Traktaat over de Herzameling">
                         <span class="sr-only">Onze Nieuwste Vertaling: Het Traktaat over de Herzameling</span>
                         <span aria-hidden="true">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
-                            class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
+                                class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
                         ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
-                            class="title-in"></span>g</span>
+                                class="title-in"></span>g</span>
                     </h2>
                 </div>
+
                 <div class="divider"></div>
+
                 <div class="sub-text one">
-                        <p>Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk</p>
-                        <p>een ellendig leven te leiden en vervolgens voorgoed te verdwijnen?</p>
-                        <p>Of schuilt er meer achter zijn bestaan dan alleen het aardse,</p>
-                        <p>waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?</p>
-                        <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
+                    <p>Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk</p>
+                    <p>een ellendig leven te leiden en vervolgens voorgoed te verdwijnen?</p>
+                    <p>Of schuilt er meer achter zijn bestaan dan alleen het aardse,</p>
+                    <p>waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen?</p>
+                    <p>Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 
                     <p style="margin-top: 20px;">
                         <a href="{{ route('herzameling') }}" class="herzameling-lees-meer-btn">
@@ -148,15 +157,17 @@
                         </a>
                     </p>
 
-{{--                    <button class="read-more-btn" onclick="openHerzamelingModal()">--}}
-{{--                        <span class="read-more-text">Lees Meer</span>--}}
-{{--                                                <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
-{{--                    </button>--}}
+                    {{--
+                    <button class="read-more-btn" onclick="openHerzamelingModal()">
+                        <span class="read-more-text">Lees Meer</span>
+                        <i class="fa-solid fa-arrow-right read-more-icon"></i>
+                    </button>
+                    --}}
                 </div>
 
                 <div class="sub-text two">
                     <p>
-                    Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.
+                        Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.
                     </p>
 
                     <p style="margin-top: 20px;">
@@ -165,13 +176,13 @@
                         </a>
                     </p>
 
-{{--                    <button class="read-more-btn" onclick="openHerzamelingModal()">--}}
-{{--                        <span class="read-more-text">Lees Meer</span>--}}
-{{--                                                <i class="fa-solid fa-arrow-right read-more-icon"></i>--}}
-{{--                    </button>--}}
+                    {{--
+                    <button class="read-more-btn" onclick="openHerzamelingModal()">
+                        <span class="read-more-text">Lees Meer</span>
+                        <i class="fa-solid fa-arrow-right read-more-icon"></i>
+                    </button>
+                    --}}
                 </div>
-
-
 
                 <div class="home-book-grid">
                     <div class="book one">
@@ -183,10 +194,10 @@
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
+
                     <div class="book two">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
-                        <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}"
-                            alt="" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Nederlands & Turks -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
@@ -194,7 +205,7 @@
                         </a>
                     </div>
 
-{{--                    <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt="">--}}
+                    {{-- <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt=""> --}}
 
                     <div class="book three">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
@@ -205,6 +216,7 @@
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
+
                     <div class="book four">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
                             <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
@@ -240,6 +252,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="risale-image">
                     <img src="{{ asset('images/books_standing_new.webp') }}" alt="Risale-i Nur" loading="lazy" decoding="async">
                 </div>
@@ -266,6 +279,7 @@
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
                             </div>
+
                             <div class="qs-slide">
                                 <div class="quote-card">
                                     <div class="quote-icon">
@@ -279,6 +293,7 @@
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
                             </div>
+
                             <div class="qs-slide">
                                 <div class="quote-card">
                                     <div class="quote-icon">
@@ -316,9 +331,11 @@
                         <span class="sr-only">Wie is Said Nursî?</span>
                         <span aria-hidden="true"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</span>
                     </h2>
+
                     <div class="risale-image said-nursi-image mobile-only">
                         <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi" loading="lazy" decoding="async">
                     </div>
+
                     <div class="sub-text">
                         <p>
                             "Ik zal de wereld bewijzen dat de Qur'an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"
@@ -328,6 +345,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="risale-image said-nursi-image desktop-only">
                     <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi" loading="lazy" decoding="async">
                 </div>
@@ -352,7 +370,6 @@
         <div class="gradient-border"></div>
 
         <x-footer></x-footer>
-
 
         <script>
             // Intro Modal Functions - MUST be global for onclick to work
@@ -453,31 +470,61 @@
                         slides[current].classList.add('qs-active');
                     }
 
-                    function next() { goTo((current + 1) % slides.length); }
-                    function prev() { goTo((current - 1 + slides.length) % slides.length); }
+                    function next() {
+                        goTo((current + 1) % slides.length);
+                    }
+
+                    function prev() {
+                        goTo((current - 1 + slides.length) % slides.length);
+                    }
 
                     // Init
                     slides.forEach(s => s.classList.remove('qs-active'));
                     slides[0].classList.add('qs-active');
 
-                    function startAutoplay() { autoplayTimer = setInterval(next, INTERVAL); }
-                    function stopAutoplay()  { clearInterval(autoplayTimer); }
+                    function startAutoplay() {
+                        autoplayTimer = setInterval(next, INTERVAL);
+                    }
+
+                    function stopAutoplay() {
+                        clearInterval(autoplayTimer);
+                    }
 
                     startAutoplay();
                     slider.addEventListener('mouseenter', stopAutoplay);
                     slider.addEventListener('mouseleave', startAutoplay);
-                    slider.addEventListener('focusin',    stopAutoplay);
-                    slider.addEventListener('focusout',   startAutoplay);
+                    slider.addEventListener('focusin', stopAutoplay);
+                    slider.addEventListener('focusout', startAutoplay);
 
-                    if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoplay(); next(); startAutoplay(); });
-                    if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoplay(); prev(); startAutoplay(); });
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            stopAutoplay();
+                            next();
+                            startAutoplay();
+                        });
+                    }
+
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            stopAutoplay();
+                            prev();
+                            startAutoplay();
+                        });
+                    }
 
                     // Touch/swipe support
                     let touchStartX = 0;
-                    slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+                    slider.addEventListener('touchstart', e => {
+                        touchStartX = e.touches[0].clientX;
+                    }, { passive: true });
+
                     slider.addEventListener('touchend', e => {
                         const diff = touchStartX - e.changedTouches[0].clientX;
-                        if (Math.abs(diff) > 40) { stopAutoplay(); diff > 0 ? next() : prev(); startAutoplay(); }
+                        if (Math.abs(diff) > 40) {
+                            stopAutoplay();
+                            diff > 0 ? next() : prev();
+                            startAutoplay();
+                        }
                     }, { passive: true });
                 })();
 
