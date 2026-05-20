@@ -76,7 +76,7 @@
     @livewireStyles
 </head>
 
-<body style="position: relative;">
+<body style="position: relative;" class="{{ request()->routeIs('home') ? 'page-home' : 'page-other' }}">
     <header class="header">
         <div class="header-box">
                 <div class="navbar-cart-sidebar-toggle">
@@ -107,6 +107,7 @@
                 <nav class="navbar">
                     <x-navbar></x-navbar>
                 </nav>
+                <div class="navbar-shine-dot" aria-hidden="true"></div>
                 <div class="navbar-glow">
                     <img src="{{ url('/images/glow-5.png') }}" alt="">
                 </div>
