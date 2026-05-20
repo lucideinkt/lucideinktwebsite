@@ -530,7 +530,9 @@
     .clock-button {
         top: 84%;
         padding: 0.6rem .5rem;
-        font-size: clamp(10px, 1.3vw, 10px);
+        padding-top: 0.67rem;
+        font-size: clamp(12px, 1.3vw, 12px);
+        /*border: none;*/
     }
 }
 
@@ -557,11 +559,11 @@
     }
 
     .clock-button {
-        top: 83%;
-        font-weight: 400;
-        padding: 0.5rem .5rem;
-        padding-bottom: 7px;
-        font-size: clamp(9px, 1.3vw, 9px);
+        /*top: 83%;*/
+        /*font-weight: 400;*/
+        /*padding: 0.5rem .5rem;*/
+        /*padding-bottom: 7px;*/
+        /*font-size: clamp(9px, 1.3vw, 9px);*/
     }
 
     .text-life-minutes {
