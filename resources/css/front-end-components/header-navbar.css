@@ -204,6 +204,68 @@
     color: #f5dfac;
 }
 
+/* Outer wide ambient glow */
+.desktop-navbar-container .navbar::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28%;
+    height: 18px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 240, 180, 1.00)  0%,
+        rgba(245, 223, 172, 0.80) 20%,
+        rgba(218, 165,  32, 0.45) 50%,
+        rgba(195, 158,  75, 0.15) 75%,
+        transparent 100%
+    );
+    border-radius: 50%;
+    filter: blur(5px);
+    pointer-events: none;
+    z-index: 31;
+    animation: navbarGlowPulse 3s ease-in-out infinite;
+}
+
+/* Tight bright hot-white core on top */
+.desktop-navbar-container .navbar .navbar-bottom-shine {
+    display: none; /* pure CSS approach below */
+}
+
+@keyframes navbarGlowPulse {
+    0%, 100% {
+        opacity: 1;
+        filter: blur(5px) brightness(1);
+    }
+    50% {
+        opacity: 0.75;
+        filter: blur(7px) brightness(1.3);
+    }
+}
+
+/* Second pseudo-layer: sharp bright needle at dead centre */
+.desktop-navbar-container .navbar-shine-dot {
+    pointer-events: none;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 5px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 230, 1.00)  0%,
+        rgba(255, 240, 160, 0.85) 30%,
+        rgba(245, 223, 172, 0.40) 65%,
+        transparent 100%
+    );
+    border-radius: 50%;
+    filter: blur(1px);
+    z-index: 32;
+    animation: navbarGlowPulse 3s ease-in-out infinite reverse;
+}
+
 .desktop-navbar-container .navbar::before {
     content: "";
     position: absolute;
@@ -706,4 +768,64 @@ li.nav-item.cart .mini-cart-trigger {
         color: var(--main-font-color);
     }
 }
+
+/* =========================================================
+   NON-HOME PAGES: softer, whitish, static navbar
+   ========================================================= */
+.page-other .desktop-navbar-container .navbar {
+    background: rgba(10, 20, 12, 0.8);   /* more transparent */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border: 2px rgb(195 158 75 / 0.8) solid;
+}
+
+/* Whitish static ambient glow */
+.page-other .desktop-navbar-container .navbar::after {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 245, 0.70)  0%,
+        rgba(240, 235, 210, 0.45) 30%,
+        rgba(220, 210, 180, 0.18) 65%,
+        transparent 100%
+    );
+    filter: blur(5px);
+    animation: none;   /* static — no pulse */
+    opacity: 0.6;
+}
+
+/* Whitish static needle core */
+.page-other .desktop-navbar-container .navbar-shine-dot {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.75)  0%,
+        rgba(240, 235, 215, 0.50) 40%,
+        transparent 100%
+    );
+    animation: none;   /* static */
+    opacity: 0.55;
+}
+
+/* Dropdown — HOMEPAGE */
+.page-home .desktop-navbar-container .dropdown-menu {
+    background-image: none;
+    background: rgba(26, 49, 48, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(195, 158, 75, 0.35);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    opacity: 0.2;
+}
+.page-home .desktop-navbar-container .dropdown-menu li a { color: #f5dfac; }
+.page-home .desktop-navbar-container .dropdown-menu li a:hover { background: rgba(195, 158, 75, 0.12); }
+
+/* Dropdown — ALL OTHER PAGES (tune freely) */
+.page-other .desktop-navbar-container .dropdown-menu {
+    background-image: none;
+    background: rgba(10, 20, 12, 0.8);    /* ← change color here */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(195, 158, 75, 0.5);  /* ← border color/opacity */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.page-other .desktop-navbar-container .dropdown-menu li a { color: #f5dfac; }  /* ← text color */
+.page-other .desktop-navbar-container .dropdown-menu li a:hover { background: rgba(195, 158, 75, 0.12); }  /* ← hover tint */
 
