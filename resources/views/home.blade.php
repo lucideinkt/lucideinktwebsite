@@ -72,8 +72,8 @@
                                 <span class="cta-span">Lees Online</span>
                             </a>
                             <a href="{{ route('shop') }}" class="hero-cta-btn">
-                                <span class="cta-icon-box"><i class="fa-solid fa-book"></i></span>
-                                <span class="cta-span">Koop Boeken</span>
+                                <span class="cta-icon-box"><i class="fa-solid fa-cart-shopping"></i></span>
+                                <span class="cta-span">Bestel Boeken</span>
                             </a>
                             <a href="{{ route('audiobooks') }}" class="hero-cta-btn">
                                 <span class="cta-icon-box"><i class="fa-solid fa-headphones"></i></span>
