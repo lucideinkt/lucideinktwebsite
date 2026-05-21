@@ -56,7 +56,7 @@
 .hero-orbit-decoration {
     position: absolute;
     left: 30%;
-    top: 52%;
+    top: 50%;
     width: 300px;
     height: 390px;
     transform: translateY(-50%);
@@ -79,67 +79,78 @@
 
 .hero-orbit-decoration .orbit-dot {
     position: absolute;
-    width: 7px;
-    height: 7px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
 
-    background:
-        radial-gradient(circle,
-        #fff8cf 0%,
-        #f7dd8a 35%,
-        #d9b94f 70%,
-        rgba(217, 185, 79, 0.2) 100%
-        );
+    /* Sphere gradient — bright highlight top-left, warm gold base */
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fff8cf 45%, #f7dd8a 100%);
 
     box-shadow:
-        0 0 4px rgba(255, 248, 207, 1),
-        0 0 8px rgba(247, 221, 138, 1),
-        0 0 16px rgba(247, 221, 138, 0.85),
-        0 0 30px rgba(247, 221, 138, 0.55),
-        0 0 45px rgba(247, 221, 138, 0.35);
+        0 0 4px 1px rgba(255, 255, 255, 0.9),
+        0 0 8px 3px rgba(255, 248, 207, 0.7),
+        0 0 16px 5px rgba(247, 221, 138, 0.4);
 
     z-index: 2;
     transform: translateY(-50%);
-
     animation: orbitDotGlow 2.4s ease-in-out infinite;
 }
 
-.hero-orbit-decoration .orbit-dot::after {
+
+.hero-orbit-decoration::before {
     content: "";
     position: absolute;
-    left: 1.5px;
-    top: 1.5px;
-    width: 2px;
-    height: 2px;
+    inset: 0;
+    border-right: 2px solid rgba(226, 205, 112, 0.55);
     border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0 0 6px rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0 0 4px rgba(226, 205, 112, 0.35)) drop-shadow(0 0 10px rgba(226, 205, 112, 0.18));
+    /* Fade out top 20% and bottom 20% */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 20%,
+        black 30%,
+        black 30%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 80%,
+        transparent 100%
+    );
+}
+
+
+/* No rays — pure sphere */
+.hero-orbit-decoration .orbit-dot::before,
+.hero-orbit-decoration .orbit-dot::after {
+    display: none;
 }
 
 @keyframes orbitDotGlow {
     0%, 100% {
-        opacity: 0.85;
+        opacity: 0.75;
         box-shadow:
-            0 0 4px rgba(255, 248, 207, 1),
-            0 0 8px rgba(247, 221, 138, 0.9),
-            0 0 16px rgba(247, 221, 138, 0.7),
-            0 0 28px rgba(247, 221, 138, 0.45);
+            0 0 4px 1px rgba(255, 255, 255, 0.9),
+            0 0 8px 3px rgba(255, 248, 207, 0.6),
+            0 0 16px 5px rgba(247, 221, 138, 0.3);
     }
 
     50% {
         opacity: 1;
         box-shadow:
-            0 0 6px rgba(255, 248, 207, 1),
-            0 0 12px rgba(247, 221, 138, 1),
-            0 0 24px rgba(247, 221, 138, 0.9),
-            0 0 42px rgba(247, 221, 138, 0.65),
-            0 0 60px rgba(247, 221, 138, 0.4);
+            0 0 5px 2px rgba(255, 255, 255, 1),
+            0 0 12px 4px rgba(255, 248, 207, 0.85),
+            0 0 24px 7px rgba(247, 221, 138, 0.5),
+            0 0 38px 10px rgba(247, 221, 138, 0.2);
     }
 }
 
 .hero-orbit-decoration .orbit-dot-1 {
     top: 12%;
     right: 50px;
+    display: none;
 }
 
 .hero-orbit-decoration .orbit-dot-2 {
@@ -160,6 +171,7 @@
 .hero-orbit-decoration .orbit-dot-5 {
     top: 84%;
     right: 38px;
+    display: none;
 }
 
     /* Z order */
@@ -585,7 +597,7 @@
 .hero-cta-buttons {
     position: absolute;
     left: 100%; /* Position relative to right edge of clock-image */
-    top: 50%;
+    top: 48%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: row;
@@ -871,11 +883,40 @@
         position: absolute;
         left: -5%;
         top: 62%;
-        width: 296px;
-        height: 263px;
+        width: 298px;
+        height: 270px;
         transform: translateY(-50%);
         pointer-events: none;
         z-index: 1;
+    }
+
+    .hero-orbit-decoration::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-right: 2px solid rgba(226, 205, 112, 0.55);
+        border-radius: 50%;
+        filter: drop-shadow(0 0 4px rgba(226, 205, 112, 0.35)) drop-shadow(0 0 10px rgba(226, 205, 112, 0.18));
+        /* Fade out top 20% and bottom 20% */
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 20%,
+            black 20%,
+            black 80%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 40%,
+            black 60%,
+            transparent 100%
+        );
+    }
+
+    .orbit-dot-1,
+    .orbit-dot-5 {
+        display: none;
     }
 
     .hero-cta-buttons {
@@ -891,6 +932,24 @@
         pointer-events: auto;
         width: max-content;
     }
+
+
+    .hero-orbit-decoration .orbit-dot-2 {
+        top: 28%;
+        right: 13px;
+    }
+
+    .hero-orbit-decoration .orbit-dot-3 {
+        top: 48%;
+        right: -2px;
+    }
+
+    .hero-orbit-decoration .orbit-dot-4 {
+        top: 68%;
+        right: 9px;
+    }
+
+
 }
 
 @media (max-width: 480px) {
