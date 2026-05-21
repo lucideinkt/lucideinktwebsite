@@ -2,6 +2,44 @@
    CHECKOUT & CHECKOUT SUCCESS Page
    ========================================================= */
 
+/* ── Page background override – floral texture (same as contact page) ── */
+body:has(.page.checkout) .page-normal-background {
+    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* ── Remove the colour overlay on the checkout page background ── */
+body:has(.page.checkout) .page-normal-background::after,
+body:has(.page.checkout) .page-normal-background::before {
+    display: none;
+}
+
+/* ── Gradient-border shadow (same as contact page) ── */
+body:has(.page.checkout) .gradient-border {
+    box-shadow: 0 -10px 60px 10px rgb(0 0 0 / 0.49);
+    position: relative;
+    z-index: 1;
+    background-color: #e9dba9;
+    background-image: linear-gradient(
+        90deg,
+        #c9a85c 0%,
+        #e9dba9 20%,
+        #f5eacc 38%,
+        #ffe9a0 50%,
+        #f5eacc 62%,
+        #e9dba9 80%,
+        #c9a85c 100%
+    );
+}
+
+/* Keep the checkout page content above the gradient-border shadow */
+body:has(.page.checkout) .page.checkout {
+    position: relative;
+    z-index: 2;
+}
+
 /* ---------------------------------------------------------
    ADDRESS AUTOCOMPLETE SEARCH BOX
    --------------------------------------------------------- */
@@ -270,12 +308,39 @@ input:-webkit-autofill:active {
 }
 
 .page.checkout .item {
-    background: var(--surface-2);
+    --checkout-card-overlay-color:   #c8860a;
+    --checkout-card-overlay-opacity: 0.08;
+
     padding: 24px;
-    box-shadow: var(--shadow-1);
-    border-radius: 10px;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    border-radius: 40px;
+    position: relative;
+    overflow: visible;
+    background-color: #fbd795;
+    background-image: url("../../images/BillyPaper.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.page.checkout .item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--checkout-card-overlay-color);
+    opacity: var(--checkout-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page.checkout .item > * {
+    position: relative;
+    z-index: 1;
 }
 
 .item input,
@@ -389,8 +454,11 @@ input:-webkit-autofill:active {
 .page.checkout .customer-details.alternate {
     margin-top: 20px;
     display: none;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .page.checkout .customer-details.alternate.open {
@@ -1146,14 +1214,41 @@ a.co-cart-product-link:hover {
     line-height: 1.7;
 }
 
-.order-summary-card {
-    background: var(--surface-2);
-    border-radius: 12px;
+.page.checkout.success .order-summary-card {
+    --checkout-card-overlay-color:   #c8860a;
+    --checkout-card-overlay-opacity: 0.08;
+
+    border-radius: 40px;
     padding: 24px;
-    box-shadow: var(--shadow-1);
     margin-top: -20px;
-    background-color: #f5ecce;
-    background-image: url("../../images/little-pluses.png");
+    position: relative;
+    overflow: visible;
+    background-color: #fbd795 !important;
+    background-image: url("../../images/BillyPaper.webp") !important;
+    background-size: 800px !important;
+    background-position: center !important;
+    background-repeat: repeat !important;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.page.checkout.success .order-summary-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--checkout-card-overlay-color);
+    opacity: var(--checkout-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page.checkout.success .order-summary-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .order-summary-title {
@@ -1313,12 +1408,41 @@ a.co-cart-product-link:hover {
     margin-top: 10px;
 }
 
-.order-address-card {
-    border-radius: 12px;
+.page.checkout.success .order-address-card {
+    --checkout-card-overlay-color:   #c8860a;
+    --checkout-card-overlay-opacity: 0.08;
+
+    border-radius: 40px;
     padding: 24px;
-    box-shadow: var(--shadow-1);
-    background-image: url("../../images/little-pluses.png") !important;
+    position: relative;
+    overflow: visible;
+    background-color: #fbd795 !important;
+    background-image: url("../../images/BillyPaper.webp") !important;
+    background-size: 800px !important;
+    background-position: center !important;
+    background-repeat: repeat !important;
     border: none !important;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.page.checkout.success .order-address-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--checkout-card-overlay-color);
+    opacity: var(--checkout-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page.checkout.success .order-address-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Make delivery card span full width */
@@ -1411,10 +1535,13 @@ a.co-cart-product-link:hover {
     border-radius: 12px;
     padding: 24px;
     box-shadow: var(--shadow-1);
-    background-image: url("../../images/little-pluses.png") !important;
+    background-color: #fbd795 !important;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp") !important;
+    background-size: 300px !important;
+    background-position: center !important;
+    background-repeat: repeat !important;
     border: none !important;
     grid-column: 1 / -1;
-    background-color: #fff3cc;
 }
 
 .order-note-title {
@@ -1448,15 +1575,42 @@ a.co-cart-product-link:hover {
 }
 
 .order-confirmation-note {
-    background: var(--surface-2);
-    border-radius: 8px;
+    --checkout-card-overlay-color:   #c8860a;
+    --checkout-card-overlay-opacity: 0.08;
+
+    border-radius: 40px;
     padding: 24px;
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    box-shadow: var(--shadow-1);
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    position: relative;
+    overflow: visible;
+    background-color: #fbd795;
+    background-image: url("../../images/BillyPaper.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.order-confirmation-note::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--checkout-card-overlay-color);
+    opacity: var(--checkout-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.order-confirmation-note > * {
+    position: relative;
+    z-index: 1;
 }
 
 .order-confirmation-note i {
@@ -1475,10 +1629,13 @@ a.co-cart-product-link:hover {
 
 /* Checkout Messages (Error/Info) */
 .checkout-message {
-    background: var(--surface-2);
-    border-radius: 12px;
+    --checkout-card-overlay-color:   #c8860a;
+    --checkout-card-overlay-opacity: 0.08;
+
+    border-radius: 40px;
     padding: 40px;
-    box-shadow: var(--shadow-1);
+    position: relative;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1486,6 +1643,32 @@ a.co-cart-product-link:hover {
     gap: 20px;
     max-width: 600px;
     margin: 40px auto;
+    background-color: #fbd795;
+    background-image: url("../../images/BillyPaper.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-message::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--checkout-card-overlay-color);
+    opacity: var(--checkout-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.checkout-message > * {
+    position: relative;
+    z-index: 1;
 }
 
 .checkout-message.error {
@@ -1760,7 +1943,7 @@ a.co-cart-product-link:hover {
         letter-spacing: 1.5px;
     }
 
-    .order-summary-card {
+    .page.checkout.success .order-summary-card {
         padding: 16px;
     }
 
@@ -1773,7 +1956,7 @@ a.co-cart-product-link:hover {
         gap: 16px;
     }
 
-    .order-address-card,
+    .page.checkout.success .order-address-card,
     .order-note-card {
         padding: 16px;
     }
@@ -1809,11 +1992,11 @@ a.co-cart-product-link:hover {
         padding: 0 12px 10px;
     }
 
-    .order-summary-card {
+    .page.checkout.success .order-summary-card {
         padding: 12px;
     }
 
-    .order-address-card,
+    .page.checkout.success .order-address-card,
     .order-note-card {
         padding: 14px;
     }

@@ -1,60 +1,182 @@
 /* =========================================================
    CART PAGE
    ========================================================= */
+
+/* ── Page background override – floral texture (same as contact page) ── */
+body:has(.page.cart-page) .page-normal-background {
+    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* ── Remove the colour overlay on the cart page background ── */
+body:has(.page.cart-page) .page-normal-background::after,
+body:has(.page.cart-page) .page-normal-background::before {
+    display: none;
+}
+
+/* gradient-border on cart page — no shadow (same as contact page) */
+body:has(.page.cart-page) .gradient-border {
+    box-shadow: none;
+    position: relative;
+    z-index: 1;
+    background-color: #e9dba9;
+    background-image: linear-gradient(
+        90deg,
+        #c9a85c 0%,
+        #e9dba9 20%,
+        #f5eacc 38%,
+        #ffe9a0 50%,
+        #f5eacc 62%,
+        #e9dba9 80%,
+        #c9a85c 100%
+    );
+}
+
+/* The inner gradient-border that separates the hero from the cart content */
+body:has(.page.cart-page) .cart-hero-border {
+    box-shadow: none;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+/* Keep the cart page content above the gradient-border shadow */
+body:has(.page.cart-page) .page.cart-page {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+}
+
 .page.cart-page {
+    padding-bottom: 0;
+}
+
+/* Full-width gradient-border inside the cart container */
+.page.cart-page .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   CART HERO
+   ========================================================= */
+
+/* ── Full-width hero band — geometric wallpaper (same as contact page) ── */
+.cart-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 8px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+/* ── Warm cream overlay so text stays readable ── */
+.cart-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep all hero children above the overlay */
+.cart-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Hero title — matches contact-hero__title ── */
+.cart-hero__title {
+    margin-top: 22px;
+    font-family: var(--font-herina);
+    letter-spacing: 1.5px;
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 18px;
+    text-align: center;
+    color: var(--main-font-color);
+    line-height: 1.2;
+}
+
+/* ── Breadcrumb inside hero ── */
+.cart-hero .bc {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── Content section below hero — full-width with gradient vignette ── */
+.cart-content-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    padding-top: 35px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ── Gradient overlay: golden vignette fading in from top & bottom edges ── */
+.cart-content-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 100, 0.30) 0%,
+            rgba(220, 185, 110, 0.10) 18%,
+            transparent               40%,
+            transparent               60%,
+            rgba(220, 185, 110, 0.10) 82%,
+            rgba(210, 175, 100, 0.30) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(180, 140, 60, 0.22)  0%,
+            transparent               18%,
+            transparent               82%,
+            rgba(180, 140, 60, 0.22)  100%
+        );
+}
+
+/* Keep cart content above the gradient */
+.cart-content-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Inner wrapper to constrain cart content to a readable width */
+.cart-content-section .cart-content {
     max-width: 1100px;
     margin: 0 auto;
-    padding-bottom: 50px;
 }
 
 .page.contact {
     max-width: 1100px;
     margin: 0 auto;
-}
-
-/* Cart Header - matching shop/online lezen */
-.cart-header {
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 0px 20px 0;
-}
-
-.cart-title {
-    font-family: var(--font-herina);
-    font-size: 52px;
-    font-weight: 400;
-    color: var(--main-font-color);
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    line-height: 1.2;
-    margin-top: 0px !important;
-}
-
-.cart-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(
-        to right,
-        rgba(218, 165, 32, 0.5) 0%,
-        rgba(197, 160, 89, 0.8) 50%,
-        rgba(218, 165, 32, 0.5) 100%
-    );
-}
-
-.cart-subtitle {
-    font-size: 1.125rem;
-    color: var(--main-font-color);
-    opacity: 0.75;
-    max-width: 600px;
-    margin: 20px auto 0;
-    line-height: 1.7;
 }
 
 .nav-item.cart .active {
@@ -94,13 +216,62 @@
 }
 
 .cart-items-card {
-    background: var(--surface-2);
-    border-radius: 10px;
-    padding: 24px;
-    box-shadow: var(--shadow-1);
-    margin-bottom: 2rem;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    padding: 30px 36px;
+    margin-bottom: 0rem;
+
+    /* ── Same stacked background as contact-form-box ── */
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+
+    /* ── Gold border ── */
+    /*border: 2px solid rgba(197, 155, 50, 0.72);*/
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+
+    /* ── Same layered shadow as contact-form-box ── */
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
+}
+
+/* ── Internal warm vignette (same as contact-form-box::after) ── */
+.cart-items-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent                    30%,
+            rgba(140, 70, 10, 0.07)       75%,
+            rgba(100, 45,  5, 0.13)      100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cart-items-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .cart-items-title {
@@ -109,7 +280,7 @@
     margin: 0 0 24px;
     font-weight: 600;
     padding-bottom: 16px;
-    border-bottom: 2px solid #333;
+    border-bottom: 1px solid rgba(197, 155, 50, 0.35);
 }
 
 .cart-items-list {
@@ -278,13 +449,12 @@
 }
 
 .cart-totals {
-    margin-top: 20px;
+    margin-top: -10px;
     padding-top: 20px;
 }
 
 .cart-total-divider {
     height: 1px;
-    background: var(--border-1);
     margin-bottom: 15px;
 }
 
@@ -308,17 +478,20 @@
 }
 
 .cart-total-row.final-total {
-    border-top: 2px solid #333;
+    border-top: 1px solid rgba(197, 155, 50, 0.35);
     padding-top: 15px;
     margin-top: 10px;
 }
 
-/* Cart Actions - Match shop button style */
+/* Cart Actions — inside the card */
 .cart-actions {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-top: 5px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(197, 155, 50, 0.35);
 }
 
 .cart-actions .fa-solid {
@@ -360,31 +533,99 @@
     background: #90000e;
 }
 
-/* Empty State - matching contact form box style */
+/* Empty State - matching contact-form-box style */
 .cart-empty-state-wrapper {
     width: 100%;
-
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .cart-empty-state {
-    background: var(--surface-2);
-    border-radius: 10px;
-    padding: 3.5rem;
-    box-shadow: var(--shadow-1);
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 1.5rem;
-    background-color: #fff3cc;
-    background-image: url("../../images/little-pluses.png");
+
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+
+    /* ── Same stacked background as contact-form-box ── */
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    padding: 3.5rem 60px;
+    margin-top: 0px;
+
+    /* ── Gold border ── */
+    /*border: 2px solid rgba(197, 155, 50, 0.72);*/
+
+    /* ── Softer layered shadow (same as contact-form-box) ── */
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
+}
+
+/* ── Internal warm vignette (same as contact-form-box::after) ── */
+.cart-empty-state::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent                    30%,
+            rgba(140, 70, 10, 0.07)       75%,
+            rgba(100, 45,  5, 0.13)      100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cart-empty-state > * {
+    position: relative;
+    z-index: 1;
 }
 
 .empty-state-icon {
-    font-size: 4rem;
-    color: var(--main-color);
-    opacity: 0.8;
-    margin-bottom: 0.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    color: #c9a85c;
+    background:
+        radial-gradient(ellipse at 40% 35%, rgba(255, 248, 210, 0.80) 0%, rgba(240, 210, 130, 0.45) 60%, transparent 100%),
+        rgba(247, 233, 196, 0.55);
+    border: 2px solid rgba(197, 155, 50, 0.55);
+    box-shadow:
+        0 2px 8px rgba(180, 130, 40, 0.18),
+        inset 0 1px 0 rgba(255, 252, 210, 0.60);
+    margin-bottom: 0;
 }
 
 .cart-empty-state h3 {
@@ -414,7 +655,7 @@
 
 @media (max-width: 768px) {
     .cart-empty-state {
-        padding: 2.5rem 1.75rem;
+        padding: 2.5rem 30px;
     }
 
     .cart-empty-state h3 {
@@ -424,7 +665,8 @@
 
 @media (max-width: 480px) {
     .cart-empty-state {
-        padding: 2rem 1.25rem;
+        padding: 2rem 20px;
+        max-width: 100%;
     }
 
     .cart-empty-state h3 {
@@ -518,19 +760,26 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .cart-hero__title {
+        font-size: 44px;
+    }
+}
+
 @media (max-width: 768px) {
-    .cart-header {
-        margin-bottom: 20px;
-        padding: 0px 20px 0;
+    .cart-hero {
+        padding-top: 80px;
+        padding-bottom: 6px;
     }
 
-    .cart-title {
+    .cart-hero__title {
         font-size: 38px;
-        letter-spacing: 1.5px;
+        margin-bottom: 16px;
     }
 
-    .cart-subtitle {
-        font-size: 1.05rem;
+    .cart-content-section {
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
 
     .cart-item-row {
@@ -592,7 +841,7 @@
     }
 
     .cart-items-card {
-        padding: 16px;
+        padding: 20px 20px;
     }
 
     .cart-items-title {
@@ -612,38 +861,44 @@
     }
 }
 
+@media (max-width: 500px) {
+    .cart-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-checkout,
+    .btn-clear {
+        width: 100%;
+        justify-content: center;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 600px) {
-    .cart-header {
-        margin-bottom: 20px;
-        padding: 0px 15px 0;
+    .cart-hero {
+        padding-top: 70px;
+        padding-bottom: 4px;
     }
 
-    .cart-title {
-        font-size: 28px;
+    .cart-hero__title {
+        font-size: 30px;
         letter-spacing: 1px;
-        margin-bottom: 10px;
-        line-height: 1.6;
+        margin-bottom: 14px;
     }
 
-    .cart-title::after {
-        width: 60px;
-        height: 2px;
-        bottom: -2px;
-    }
-
-    .cart-subtitle {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-top: 0px;
+    .cart-content-section {
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
 }
 
 @media (max-width: 480px) {
-    .cart-title {
+    .cart-hero__title {
         font-size: 30px;
     }
 
     .cart-items-card {
-        padding: 12px;
+        padding: 16px 14px;
     }
 }

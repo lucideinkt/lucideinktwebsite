@@ -10,12 +10,35 @@
 .white-section {
     position: relative;
     z-index: 0;
-    background-image: url("../../images/04-white-papers.jpg");
-    background-size: 25%;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
     background-position: center;
     background-repeat: repeat;
-    background-color: rgba(255, 223, 133, 0.53);
-    background-blend-mode: multiply;
+}
+
+.white-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Radial centre-light effect only for the Said Nursi / Risale combined section */
+.white-section.risale-section.said-nursi-section::after {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%,
+        rgba(251, 245, 217, 0.80) 0%,
+        rgba(251, 245, 217, 0.55) 50%,
+        rgba(251, 245, 217, 0.30) 100%);
+}
+
+.white-section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .intro-section .sub-text {
@@ -33,7 +56,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/new_warm_leather.webp");
+    /*background-image: url("../../images/new_warm_leather.webp");*/
+    /*background-image: url("../../images/124_leather texture-seamless.jpg");*/
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -41,15 +65,26 @@
     z-index: -1;
 }
 
+.colored-section.quotes-section,
+.colored-section.newsletter-section{
+    background: linear-gradient(180deg,
+        #090501 0%,
+        #1c1205 25%,
+        #241605 50%,
+        #1c1205 75%,
+        #090501 100%);
+}
+
 .colored-section.quotes-section::before,
 .colored-section.newsletter-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/new_warm_leather.webp");
-    background-size: cover;
+    background-image: url("../../images/90_leather_DIFF.webp");
+    background-size: 800px;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    opacity: 0.28;
     pointer-events: none;
     z-index: -1;
 }
@@ -207,20 +242,25 @@ h2 {
 .gradient-border {
     width: 100%;
     height: 10px;
-    background: linear-gradient(
-        to right,
-        rgba(197, 160, 89, 0) 0%,
-        rgba(212, 175, 55, 0.12) 15%,
-        rgba(218, 165, 32, 0.35) 35%,
-        rgba(197, 160, 89, 0.5) 50%,
-        rgba(218, 165, 32, 0.35) 65%,
-        rgba(212, 175, 55, 0.12) 85%,
-        rgba(197, 160, 89, 0) 100%
+    background-color: #f4e4a6;
+    background-image: linear-gradient(
+        90deg,
+        #c9a85c 0%,
+        #f4e4a6 20%,
+        #fdf3d0 38%,
+        #ffe99e 50%,
+        #fdf3d0 62%,
+        #f4e4a6 80%,
+        #c9a85c 100%
     );
     opacity: 1;
     position: relative;
     z-index: 23;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07);
+    border-top: 1px solid #d1c38e;
+    border-bottom: 1px solid #d1c38e;
 }
 
 /* Home Section Wrappers */
@@ -238,11 +278,29 @@ h2 {
 .home.intro-section {
     width: 100%;
     position: relative;
-    z-index: 23;
+    /*z-index: 23;*/
     margin: 0 auto;
     text-align: center;
     padding: 10px 0;
     padding-bottom: 15px;
+    background-image: url("../../images/45_slab marble yellow medium texture-seamless_hr.webp");
+    background-size: 650px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.home.intro-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f7ebb9b8; /* ← change color & opacity here */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home.intro-section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .home.intro-section .text-container {
@@ -260,11 +318,11 @@ h2 {
 
 .intro-section .sub-text p {
     /*font-family: griffon, serif;*/
-    font-weight: 400;
     margin-bottom: 0;
     /*transform: scaleX(1.10);*/
     margin-bottom: 0px;
     word-break: none;
+    font-weight: 400;
 }
 
 .sub-text.two {
@@ -276,17 +334,22 @@ h2 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, #205923 0%, #224039 100%);
-    color: white;
-    border: none;
-    padding: 14px 28px;
+    background-image: url("../../images/BillyGreen.webp");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #F5DFAC;
+    border: 2px solid rgba(245, 223, 172, 0.65);
+    padding: 4px 28px;
     border-radius: 20px;
     font-size: 16px;
     font-weight: 600;
+    letter-spacing: 1.2px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
     margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
     font-family: var(--font-bold);
@@ -299,7 +362,7 @@ h2 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transition: left 0.5s;
     pointer-events: none;
 }
@@ -310,20 +373,21 @@ h2 {
     }
 
     .read-more-btn:hover {
-        background: linear-gradient(135deg, #224039 0%, #2e7d32 100%);
-        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+        border-color: rgba(245, 223, 172, 0.95);
+        box-shadow: 0 6px 22px rgba(218, 165, 32, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        filter: brightness(1.08);
     }
 }
 
 .read-more-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    filter: brightness(0.96);
 }
 
 .read-more-icon {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 14px;
-    color: #fff;
+    color: #F5DFAC;
 }
 
 .home-hero {
@@ -363,25 +427,43 @@ h2 {
     text-align: center;
     position: relative;
     z-index: 0;
+    /* dark brown gradient — darker, less red */
+    background: linear-gradient(180deg,
+        #0e0801 0%,
+        #1c1205 20%,
+        #150e03 55%,
+        #0e0801 80%,
+        #090501 100%);
 }
 
+/* Texture overlay — same as shop grid ::before */
 .new-translation::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/new_warm_leather.webp");
-    background-size: cover;
+    background-image: url("../../images/90_leather_DIFF.webp");
+    background-size: 800px;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    opacity: 0.28;
     pointer-events: none;
     z-index: -1;
 }
 
+/* Warm centre glow + edge vignette — same as shop grid ::after */
 .new-translation::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.02) 100%);
+    background:
+        linear-gradient(180deg, rgba(55, 35, 8, 0.50) 0%, transparent 10%),
+        radial-gradient(ellipse 85% 50% at 50% 35%,
+            rgba(110, 75, 12, 0.18) 0%,
+            rgba(85, 58, 8, 0.09) 50%,
+            transparent 72%),
+        radial-gradient(ellipse 130% 100% at 50% 50%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.42) 100%);
     pointer-events: none;
     z-index: 0;
 }
@@ -496,27 +578,46 @@ h2 {
     align-items: center;
     gap: 8px;
     padding: 4px 22px;
-    background: transparent;
-    border: 1px solid rgba(245, 223, 172, 0.55);
-    border-radius: 50px;
-    color: rgb(245, 223, 172);
+    background-color: rgba(180, 120, 0, 0.22);
+    background-image: url("../../images/BillyYellow.webp");
+    background-size: 300px;
+    background-position: center;
+    border: 2px solid rgba(218, 165, 32, 0.70);
+    border-radius: 20px;
+    color: #3d1000;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     font-family: var(--font-bold);
     letter-spacing: 0.8px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 10px rgba(218, 165, 32, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+    text-shadow: 0 1px 0 rgba(255, 220, 100, 0.4);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 200, 0.3);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease, filter 0.15s ease;
     position: relative;
     overflow: hidden;
 }
 
+.home-book-grid .book .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
+    .home-book-grid .book .btn:hover::before {
+        left: 100%;
+    }
+
     .home-book-grid .book .btn:hover {
-        background: rgba(218, 165, 32, 0.12);
-        border-color: rgba(245, 223, 172, 0.85);
-        box-shadow: 0 0 12px rgba(218, 165, 32, 0.15);
+        border-color: rgba(245, 223, 172, 0.95);
+        box-shadow: 0 6px 22px rgba(218, 165, 32, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        filter: brightness(1.08);
     }
 }
 
@@ -556,6 +657,7 @@ h2 {
 .risale-section .risale-content .sub-text {
     text-align: left;
     margin-bottom: 0;
+    overflow: visible;
 }
 
 .new-translation .sub-text {
@@ -567,51 +669,42 @@ h2 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 4px 30px;
-    background: linear-gradient(135deg, rgba(153, 109, 63, 0.12) 0%, rgba(197, 160, 89, 0.08) 100%);
-    border: 2px solid rgba(153, 109, 63, 0.3);
+    padding: 4px 28px;
+    background-image:
+        linear-gradient(rgba(90, 10, 10, 0.55), rgba(90, 10, 10, 0.55)),
+        url("../../images/billyred.webp");
+
+    /*background-image: url("../../images/billyred.webp");*/
+    background-size: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(97 20 20);
     border-radius: 20px;
-    color: #620505;
+    color: #F5DFAC;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 0px;
-    transition: all 0.3s ease;
+    letter-spacing: 1.2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 200, 200, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(2px);
-    box-shadow: 0 2px 8px rgba(153, 109, 63, 0.15);
     margin-top: 0px;
     font-family: var(--font-bold);
-}
-
-.risale-section .read-more-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(153, 109, 63, 0.1), transparent);
-    transition: left 0.5s ease;
 }
 
 .risale-section .read-more-link i {
     font-size: 14px;
     transition: transform 0.3s ease;
-    color: #620505;
+    color: #F5DFAC;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .risale-section .read-more-link:hover::before {
-        left: 100%;
-    }
-
     .risale-section .read-more-link:hover {
-        background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
-        border-color: rgba(153, 109, 63, 0.5);
-        color: #620505;
-        box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
+        border-color: rgba(200, 100, 100, 0.8);
+        box-shadow: 0 6px 22px rgba(120, 20, 20, 0.5), inset 0 1px 0 rgba(255, 200, 200, 0.15);
+        filter: brightness(1.12);
     }
 
     .risale-section .read-more-link:hover i {
@@ -624,51 +717,41 @@ h2 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 4px 30px;
-    background: linear-gradient(135deg, rgba(153, 109, 63, 0.12) 0%, rgba(197, 160, 89, 0.08) 100%);
-    border: 2px solid rgba(153, 109, 63, 0.3);
+    padding: 4px 28px;
+    background-image:
+        linear-gradient(rgba(90, 10, 10, 0.55), rgba(90, 10, 10, 0.55)),
+        url("../../images/billyred.webp");
+    background-size: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(97 20 20);
+    border: 2px solid rgb(97 20 20);
     border-radius: 20px;
-    color: #620505;
+    color: #F5DFAC;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0px;
-    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 200, 200, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(2px);
-    box-shadow: 0 2px 8px rgba(153, 109, 63, 0.15);
     margin-top: 15px;
     font-family: var(--font-bold);
-}
-
-.said-nursi-section .read-more-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(153, 109, 63, 0.1), transparent);
-    transition: left 0.5s ease;
 }
 
 .said-nursi-section .read-more-link i {
     font-size: 14px;
     transition: transform 0.3s ease;
-    color: #620505;
+    color: #F5DFAC;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .said-nursi-section .read-more-link:hover::before {
-        left: 100%;
-    }
-
     .said-nursi-section .read-more-link:hover {
-        background: linear-gradient(135deg, rgba(153, 109, 63, 0.18) 0%, rgba(197, 160, 89, 0.12) 100%);
-        border-color: rgba(153, 109, 63, 0.5);
-        color: #620505;
-        box-shadow: 0 4px 15px rgba(153, 109, 63, 0.25);
+        border-color: rgba(200, 100, 100, 0.8);
+        box-shadow: 0 6px 22px rgba(120, 20, 20, 0.5), inset 0 1px 0 rgba(255, 200, 200, 0.15);
+        filter: brightness(1.12);
     }
 
     .said-nursi-section .read-more-link:hover i {
@@ -743,35 +826,36 @@ h2 {
     align-items: center;
     gap: 10px;
     padding: 4px 28px;
-    background: linear-gradient(135deg, rgba(218, 165, 32, 0.28) 0%, rgba(197, 140, 30, 0.22) 100%);
+    background-image: url("../../images/BillyGreen.webp");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     border: 2px solid rgba(245, 223, 172, 0.65);
     border-radius: 20px;
-    color: rgb(250, 235, 185);
+    color: #F5DFAC;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     font-family: var(--font-bold);
     letter-spacing: 1.2px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(4px);
-    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease, filter 0.15s ease;
     position: relative;
     overflow: hidden;
 }
 
 .herzameling-lees-meer-btn i {
     font-size: 13px;
-    color: rgba(245, 223, 172, 0.9);
+    color: #F5DFAC;
     transition: transform 0.3s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
     .herzameling-lees-meer-btn:hover {
-        background: linear-gradient(135deg, rgba(218, 165, 32, 0.42) 0%, rgba(197, 140, 30, 0.36) 100%);
         border-color: rgba(245, 223, 172, 0.95);
-        color: #fff8e8;
-        box-shadow: 0 6px 22px rgba(218, 165, 32, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        box-shadow: 0 6px 22px rgba(218, 165, 32, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        filter: brightness(1.08);
     }
 
     .herzameling-lees-meer-btn:hover i {
@@ -847,6 +931,7 @@ h2 {
     text-align: center;
     max-width: 695px;
     margin: 10px auto 0;
+    overflow: visible;
 }
 
 .said-nursi-section .risale-content .sub-text p {
@@ -890,13 +975,7 @@ h2 {
     max-width: 600px;
 }
 
-/* Said Nursi Read More Link */
-.said-nursi-section .read-more-link {
-    display: inline-block;
-    margin-top: 15px;
-    font-weight: 600;
-    font-size: 17px;
-}
+/* Said Nursi Read More Link — see full definition above */
 
 /* ---------------------------------------------------------
    COLORED BOOKS SECTION
@@ -929,7 +1008,7 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("../../images/bg-art.jpg");
+    background-image: url("../../images/bg-art.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1071,16 +1150,14 @@ h2 {
     /* Fix tiling seams on mobile for all leather sections */
     .colored-section.quotes-section::before,
     .colored-section.newsletter-section::before {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-size: 800px;
+        background-repeat: repeat;
     }
 
     /* new-translation is taller on mobile so zoom in more to match other sections */
     .new-translation::before {
-        background-size: 150% 100%;
-        background-position: center center;
-        background-repeat: no-repeat;
+        background-size: 800px;
+        background-repeat: repeat;
     }
 
     .new-translation .rose-decoration {
@@ -1234,8 +1311,9 @@ h2 {
     }
 
     .read-more-btn {
-        font-size: 14px;
-        height: 35px;
+        font-size: 13px;
+        padding: 4px 22px;
+        letter-spacing: 1px;
     }
 
     .said-nursi-section .risale-content .sub-text p {

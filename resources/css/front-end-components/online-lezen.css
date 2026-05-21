@@ -75,8 +75,11 @@
     position: relative;
     padding-top: 20px;
     padding-bottom: 5px;
-    background-color: #f5ecce;
-    background-image: url("../../images/little-pluses.png");
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -332,13 +335,15 @@
 }
 
 .reader-description {
-    background: var(--surface-2);
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 40px;
     margin-bottom: 40px;
-    box-shadow: var(--shadow-1);
-    background-color: #f5ecce;
-    background-image: url("../../images/little-pluses.png");
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
+    background-color: #fbd795;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .reader-description h2 {

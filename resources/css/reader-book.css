@@ -464,8 +464,8 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(140, 30, 30, 0.10);
-    border: 1.5px solid rgba(140, 30, 30, 0.38);
+    background: linear-gradient(135deg, #4caf85 0%, #1e7a55 55%, #0f5238 100%);
+    border: none;
     min-width: 20px;
     height: 18px;
     padding: 0 4px;
@@ -476,11 +476,11 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     line-height: 1;
     vertical-align: super;
     font-family: inherit;
-    color: #7a1a1a !important;
+    color: #ffffff !important;
     position: relative;
     text-decoration: none;
     border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(140,30,30,0.13);
+    box-shadow: 0 1px 4px rgba(10, 70, 45, 0.40);
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     white-space: nowrap;
@@ -505,22 +505,24 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 }
 
 body.dark-mode .book-reader-scope .fn-ref {
-    color: #e8b48a !important;
-    background: rgba(232, 160, 100, 0.12);
-    border-color: rgba(232, 160, 100, 0.42);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    color: #fff8f0 !important;
+    background: linear-gradient(135deg, #a86828 0%, #7a4015 55%, #4e2508 100%);
+    border-color: transparent;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.40);
 }
 
 /* Active state when popover is open */
 .book-reader-scope .fn-ref--active {
-    background: rgba(140, 30, 30, 0.18) !important;
-    border-color: rgba(140, 30, 30, 0.5) !important;
-    color: #5a1010 !important;
+    background: linear-gradient(135deg, #2e8f63 0%, #0f5c3a 55%, #083d26 100%) !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(5, 50, 30, 0.50) !important;
 }
 body.dark-mode .book-reader-scope .fn-ref--active {
-    background: rgba(232, 160, 100, 0.22) !important;
-    border-color: rgba(232, 160, 100, 0.55) !important;
-    color: #ffd4a8 !important;
+    background: linear-gradient(135deg, #b8733a 0%, #7f4410 55%, #502a08 100%) !important;
+    border-color: transparent !important;
+    color: #fff8f0 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.50) !important;
 }
 
 
@@ -921,6 +923,131 @@ body.dark-mode .reader-topbar-divider { background: rgba(255,255,255,0.12); }
 body.dark-mode .reader-book-title { color: #666; }
 
 .reader-topbar-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+
+/* ── Compact topbar font controls (desktop only) ── */
+.reader-topbar-font-controls {
+    display: none; /* hidden on mobile */
+    align-items: center;
+    gap: 6px;
+    margin-right: 4px;
+}
+@media (min-width: 769px) {
+    .reader-topbar-font-controls { display: flex; }
+}
+.reader-topbar-font-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background: rgba(180, 140, 60, 0.08);
+    border: 1px solid rgba(180, 140, 60, 0.25);
+    border-radius: 6px;
+    padding: 0 6px;
+    height: 26px;
+}
+body.dark-mode .reader-topbar-font-group {
+    background: rgba(232, 168, 100, 0.08);
+    border-color: rgba(232, 168, 100, 0.22);
+}
+/* Compact range slider inside topbar */
+.reader-topbar-font-range {
+    width: 72px;
+    height: 3px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(180, 140, 60, 0.25);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 16px !important; /* prevent iOS zoom */
+    flex-shrink: 0;
+}
+.reader-topbar-font-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #790000;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+body.dark-mode .reader-topbar-font-range::-webkit-slider-thumb { background: #e8a87c; }
+.reader-topbar-font-range::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #790000;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+body.dark-mode .reader-topbar-font-range::-moz-range-thumb { background: #e8a87c; }
+.reader-topbar-font-divider {
+    width: 1px;
+    height: 14px;
+    background: rgba(0, 0, 0, 0.13);
+    flex-shrink: 0;
+}
+body.dark-mode .reader-topbar-font-divider { background: rgba(255,255,255,0.1); }
+.reader-topbar-font-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #790000;
+    padding: 0 3px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    border-radius: 4px;
+    transition: background 0.13s, opacity 0.13s;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'DelimaProRegular', serif;
+}
+.reader-topbar-font-btn--small { font-size: 11px !important; }
+.reader-topbar-font-btn--large { font-size: 15px !important; font-weight: 700; }
+.reader-topbar-font-btn--arabic { font-family: 'NotoNaskhArabic', 'Scheherazade New', serif; direction: rtl; }
+.reader-topbar-font-btn--arabic.reader-topbar-font-btn--small { font-size: 13px !important; }
+.reader-topbar-font-btn--arabic.reader-topbar-font-btn--large { font-size: 17px !important; }
+body.dark-mode .reader-topbar-font-btn { color: #e8a87c; }
+.reader-topbar-font-btn:hover { background: rgba(180, 140, 60, 0.15); }
+body.dark-mode .reader-topbar-font-btn:hover { background: rgba(232, 168, 100, 0.15); }
+.reader-topbar-font-btn:active { opacity: 0.6; }
+.reader-topbar-font-val {
+    font-size: 10px !important;
+    color: #999;
+    min-width: 26px;
+    text-align: center;
+    font-family: 'DelimaProRegular', serif;
+    user-select: none;
+    letter-spacing: 0.01em;
+}
+.reader-topbar-font-val--arabic { min-width: 26px; }
+body.dark-mode .reader-topbar-font-val { color: #666; }
+.reader-topbar-font-reset {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 11px !important;
+    padding: 0 2px;
+    line-height: 1;
+    border-radius: 3px;
+    transition: color 0.13s, background 0.13s;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    width: 18px;
+    flex-shrink: 0;
+}
+.reader-topbar-font-reset:hover { color: #790000; background: rgba(180,140,60,0.12); }
+body.dark-mode .reader-topbar-font-reset { color: #555; }
+body.dark-mode .reader-topbar-font-reset:hover { color: #e8a87c; background: rgba(232,168,100,0.12); }
 
 /* ── Topbalk knoppen ── */
 .reader-btn {

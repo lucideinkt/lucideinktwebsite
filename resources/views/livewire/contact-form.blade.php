@@ -1,9 +1,6 @@
 <div class="contact-form-wrapper">
     <div class="contact-form-box">
-        <div class="contact-form-header">
-            <h2 class="contact-form-title">Neem Contact Op</h2>
-            <p class="contact-form-subtitle">Vul het formulier in en we nemen zo snel mogelijk contact met je op</p>
-        </div>
+        <p class="contact-form-subtitle">Vul het formulier in en we nemen zo snel mogelijk contact met je op</p>
 
         <form wire:submit.prevent="submit" class="contact-form">
             <div class="form-row">

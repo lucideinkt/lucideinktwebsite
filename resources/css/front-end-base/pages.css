@@ -2,15 +2,50 @@
    Front-End pages
    ========================================================= */
 .page-normal-background {
+    /*position: relative;*/
+    /*z-index: 0;*/
+    /*background-image: url("../../images/04-white-papers.jpg");*/
+    /*background-size: 25%;*/
+    /*background-position: center;*/
+    /*background-repeat: repeat;*/
+    /*background-color: rgba(255, 223, 133, 0.53);*/
+    /*background-blend-mode: multiply;*/
     position: relative;
     z-index: 0;
-    background-image: url("../../images/04-white-papers.jpg");
-    background-size: 25%;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
     background-position: center;
     background-repeat: repeat;
-    background-color: rgba(255, 223, 133, 0.53);
-    background-blend-mode: multiply;
 }
+
+.page-normal-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 70% at 50% 50%,
+            transparent 30%,
+            rgba(180, 140, 60, 0.18) 70%,
+            rgba(120, 90, 20, 0.28) 100%),
+        rgb(239 228 168 / 44%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-normal-background > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure gradient-border and footer sit above the page background overlay */
+.page-normal-background .gradient-border,
+.gradient-border {
+    position: relative;
+    z-index: 3;
+    isolation: isolate;
+    background-color: #fff1bb; /* solid base so transparent gradient ends don't show page texture */
+}
+
 
 .online-reader-html {
     position: relative;

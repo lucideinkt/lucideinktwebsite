@@ -5,8 +5,8 @@
     --bc-text: var(--main-font-color);
     --bc-dim: var(--main-font-color);
     --bc-sep: var(--main-font-color);
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 7px;
     position: relative;
     z-index: 5;
 }

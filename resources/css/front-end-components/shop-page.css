@@ -5,24 +5,194 @@
 .page.shop {
     max-width: 1100px;
     margin: 0 auto;
+    padding-bottom: 0;
+}
 
+/*body:has(.page.shop) {*/
+/*    background-color: #680a0b !important;*/
+/*}*/
+
+body:has(.page.shop) .page-normal-background {
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* ── Radial centre-light overlay — same as .white-section.risale-section.said-nursi-section ── */
+body:has(.page.shop) .page-normal-background::after {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%,
+        rgba(251, 245, 217, 0.80) 0%,
+        rgba(251, 245, 217, 0.55) 50%,
+        rgba(251, 245, 217, 0.30) 100%);
 }
 
 body:has(.page.shop) {
-    background-color: #680a0b !important;
+    overflow-x: hidden;
 }
 
-body:has(.page.shop) .page-normal-background {
-    background-color: rgba(104, 10, 11, 0.85) !important;
-    background-image: none;
+/* Full-bleed gradient border inside the shop page */
+.page.shop .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   SHOP GRID BACKGROUND
+   Layer order (top → bottom):
+     ::after  — [1] top fade-in  [2] centre warm glow  [3] edge vignette
+     ::before — [4] concrete texture
+     element  — [5] base wood gradient
+   To add a new layer: either add another gradient to ::after's
+   background shorthand, or introduce a third pseudo-element via
+   a wrapper child with position:absolute + inset:0.
+   --------------------------------------------------------- */
+
+.background-of-the-shop-grid {
+    /*background-color: #fbd795;*/
+    /*background-image: url("../../images/138_leather_DIFF.webp");*/
+    background-image: url("../../images/57_crumpled mulberry paper texture-seamless_hr.webp");
+    background-size: 360px;
+    background-repeat: repeat;
+    background-position: center;
+
+    /* Full-bleed breakout */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 20px 20px 32px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* ── Warm cream light layer + vignette overlay ── */
+.background-of-the-shop-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(
+            ellipse 75% 75% at 50% 50%,
+            rgba(205, 164, 110, 0.14) 0%,
+            rgba(205, 164, 110, 0.22) 55%,
+            rgba(205, 164, 110, 0.30) 100%
+        ),
+        linear-gradient(
+            rgba(251, 244, 218, 0.62),
+            rgba(251, 244, 218, 0.62)
+        );
+}
+
+/* Keep grid content above the texture overlay */
+.background-of-the-shop-grid > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Re-constrain the grid to max-width inside the full-bleed background */
+.background-of-the-shop-grid > .book-box,
+.background-of-the-shop-grid > .product-cards-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 
-/* Shop Header */
+/* ── Full-width hero band ── matches .said-nursi-hero ── */
+.shop-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 20px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.shop-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shop-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
 .shop-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+}
+
+/* ── Frame wrapper: frame image + title layered on top ── */
+.shop-frame-wrapper {
+    position: relative;
+    display: block;
+    max-width: 285px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+/* Warm ambient glow radiating from behind the frame —
+   mirrors the soft parchment warmth on the Said Nursi portrait.
+   Gradient goes warm-at-centre → fully transparent at the outer
+   edge, so no hard border or box shape ever appears. */
+.shop-frame-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 170%;
+    height: 175%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*background: radial-gradient(*/
+    /*    ellipse at 50% 52%,*/
+    /*    rgba(220, 165,  55, 0.28)  0%,   !* warm golden centre *!*/
+    /*    rgba(195, 135,  38, 0.20) 25%,*/
+    /*    rgba(160, 100,  22, 0.12) 50%,*/
+    /*    rgba(110,  60,  10, 0.05) 70%,*/
+    /*    transparent                90%    !* completely invisible at edge *!*/
+    /*);*/
+    pointer-events: none;
+    z-index: 0; /* sits behind the image */
+}
+
+.shop-frame-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+    /* Same style of drop-shadow as the Said Nursi portrait */
+    filter:
+        drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55))
+        drop-shadow(0 2px  4px rgba(0, 0, 0, 0.35));
+    /* keep the image pixel-sharp */
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .shop-header-image {
@@ -41,33 +211,35 @@ body:has(.page.shop) .page-normal-background {
     -webkit-transform: translateZ(0);
 }
 
-.shop-title {
-    font-family: var(--font-herina);
-    font-size: 52px;
-    font-weight: 400;
-    color: #f4f5bf;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    line-height: 1.2;
-    margin-top: 0px !important;
+/* Herina ligature glyphs inside the shop title */
+.shop-title-in::before {
+    content: "\E04E";
 }
 
-.shop-title::after {
-    content: '';
+.shop-title-ke::before {
+    content: "\E052";
+}
+
+.shop-title {
+    font-family: var(--font-herina);
+    font-size: 62px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-align: center;
     position: absolute;
-    bottom: -10px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(
-        to right,
-        rgba(218, 165, 32, 0.5) 0%,
-        rgba(197, 160, 89, 0.8) 50%,
-        rgba(218, 165, 32, 0.5) 100%
-    );
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0 12%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2; /* above glow (0) and image (1) */
+    pointer-events: none;
+    text-shadow:
+        0 1px 3px rgba(80, 20, 0, 0.20),
+        0 2px 8px rgba(60, 10, 0, 0.12);
 }
 
 .shop-subtitle {
@@ -158,54 +330,66 @@ body:has(.page.shop) .page-normal-background {
     gap: .3em;
 }
 
+/* =========================================================
+   PRODUCT CARD — Premium Ottoman / Risale-i Nur style
+   ========================================================= */
+
 .product-card {
     display: flex;
     flex-direction: column;
-    border-radius: 12px;
-    overflow: visible;
+    border-radius: 10px;
+    overflow: hidden;
     position: relative;
-    padding-top: 0;
-    padding-bottom: 0;
-    background-image: url("../../images/product_bg_card_new_small.png");
-    background-size: 100% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
+    /* Warm parchment base */
+    background-color: #f7e9c4;
+    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
+    background-size: 600px;
+    background-position: center;
+    background-repeat: repeat;
+    border: 2px solid rgba(197, 155, 50, 0.72);
+    box-shadow:
+        0 2px 6px rgba(30, 10, 0, 0.12),
+        0 10px 32px rgba(30, 10, 0, 0.20),
+        inset 0 0 0 1px rgba(255, 240, 170, 0.22);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
+
+.product-card:hover {}
 
 .product-card-link {
     text-decoration: none;
     display: block;
-    padding-top: 22px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 6px 0;
 }
 
 .product-card-image-wrapper {
-    position: relative;
     width: 100%;
-    padding-top: 130%;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at 50% 35%, #fdf5e0 0%, #f2ddb0 55%, #e8cc90 100%);
+    border-radius: 6px;
     overflow: hidden;
-    border-radius: 2px;
+    border: 1px solid rgba(197, 155, 50, 0.32);
+    position: relative;
+    flex-shrink: 0;
 }
 
 .product-card-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    padding: 0;
+    max-width: 140%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    filter: drop-shadow(0 4px 12px rgba(30, 10, 0, 0.35));
 }
 
 .product-card-image-placeholder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 3rem;
-    color: rgba(0, 0, 0, 0.2);
+    color: rgba(100, 60, 10, 0.25);
 }
 
 .product-card-badge {
@@ -219,7 +403,7 @@ body:has(.page.shop) .page-normal-background {
     text-transform: uppercase;
     letter-spacing: 0.6px;
     z-index: 10;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.20);
 }
 
 .product-card-badge-warning {
@@ -238,11 +422,21 @@ body:has(.page.shop) .page-normal-background {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 0px;
     flex-grow: 1;
-    gap: 0;
-    margin-top: -25px;
+    position: relative;
+    padding: 0;
+}
 
+.product-card-title-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    display: block;
+    padding: 14px 18px 8px;
+    /* antique-gold divider at top of content */
+    border-top: 1px solid rgba(197, 155, 50, 0.50);
+    margin-top: 12px;
+    box-sizing: border-box;
 }
 
 .product-card-category {
@@ -251,7 +445,7 @@ body:has(.page.shop) .page-normal-background {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.1px;
-    margin: 0 0 8px 0;
+    margin: 0 0 8px;
     background: rgba(197, 160, 89, 0.18);
     color: #7a4e1a;
     border: 1px solid rgba(197, 160, 89, 0.45);
@@ -259,35 +453,34 @@ body:has(.page.shop) .page-normal-background {
     padding: 3px 10px;
 }
 
-.product-card-title-link {
-    text-decoration: none;
-    color: inherit;
-    width: 100%;
-}
-
 .product-card-title {
-    color: var(--main-font-color);
-    margin: 0 0 2px;
-    line-height: 1.35;
-    text-align: center;
-    font-family: "gioviale", sans-serif !important;
+    font-family: "gioviale", Georgia, "Times New Roman", serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 28px;
-    top: 65px;
+    font-size: 30px;
+    line-height: 1.25;
+    text-align: center;
+    margin: 0 0 4px;
+    color: #6e1515; /* deep burgundy red */
+    text-shadow:
+        0 1px 0 rgba(255, 230, 150, 0.55),
+        0 2px 6px rgba(80, 20, 0, 0.18);
+}
 
+.product-card-title::before {
+    display: none;
 }
 
 .product-card-subtitle {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.68rem;
     font-weight: 400;
-    color: var(--ink-muted);
+    color: #7a5a3a; /* muted warm brown */
     line-height: 1.4;
     font-style: italic;
     text-align: center;
-    top: 55px;
-    margin-bottom: 30px;
+    margin: 2px 0 0;
+    opacity: 0.88;
 }
 
 .product-card-title,
@@ -302,51 +495,54 @@ body:has(.page.shop) .page-normal-background {
     align-items: center;
     justify-content: space-between;
     margin-top: auto;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    gap: 8px;
+    padding: 12px 40px 12px;
+    gap: 16px;
     width: 100%;
-    padding-left: 25px;
-    padding-right: 25px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(197, 155, 50, 0.30);
 }
 
 .product-card-price {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: flex-start;
     gap: 4px;
 }
 
 .product-card-price-amount {
-    font-size: 16x;
-    font-weight: 800;
+    font-size: 21px;
+    font-weight: 700;
     letter-spacing: 0.01em;
-    color: var(--main-font-color);
+    color: #6e1515; /* deep burgundy red */
+    text-shadow: 0 1px 4px rgba(80, 15, 0, 0.18);
+    paint-order: stroke fill;
 }
 
 .product-card-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 7px 10px;
-    background: linear-gradient(180deg, #3a7a3e 0%, #245528 100%);
-    color: #fff;
-    border: 1px double #818181;
-    border-radius: 15px;
-    font-size: 0.78rem;
+    gap: 5px;
+    padding: 5px 12px;
+    line-height: 1;
+    height: 32px;
+    background: linear-gradient(180deg, #2e6b32 0%, #1a4520 100%);
+    color: #f5eed8; /* warm ivory */
+    border: 1px solid rgba(197, 155, 50, 0.65);
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
     white-space: nowrap;
     width: auto;
     box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
-    outline: 1px solid rgba(0, 0, 0, 0.25);
+        0 2px 8px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    outline: none;
 }
 
-/* Hide button text, show only icon on all screen sizes */
+/* Hide button text — icon-only on all sizes */
 .product-card-button .in-cart,
 .product-card-button .adding {
     display: none;
@@ -356,37 +552,36 @@ body:has(.page.shop) .page-normal-background {
     display: inline-block;
     position: relative;
     top: -1px;
-    font-size: 12px;
+    font-size: 11px;
 }
 
-.product-card-button:hover:not(:disabled) {
-    /*background: linear-gradient(180deg, #4a9a4f 0%, #2c6830 100%);*/
-    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);*/
-}
+.product-card-button:hover:not(:disabled) {}
 
 .product-card-button > span {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     flex-wrap: nowrap;
 }
 
 .product-card-button:active:not(:disabled) {
-    background: #1a3a1c;
+    background: #122e14;
+    transform: translateY(0);
     box-shadow: none;
 }
 
 .product-card-button:disabled {
-    opacity: 0.5;
+    opacity: 0.45;
     cursor: not-allowed;
-    background: var(--ink-muted);
+    background: #5a5050;
     box-shadow: none;
+    transform: none;
 }
 
 .product-card-button-loading {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .small-plus {
@@ -395,7 +590,7 @@ body:has(.page.shop) .page-normal-background {
 }
 
 .product-card-button i {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: inherit;
 }
 
@@ -404,6 +599,7 @@ body:has(.page.shop) .page-normal-background {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 32px;
+    margin-top: 30px !important;
 }
 
 @media (max-width: 1200px) {
@@ -413,12 +609,8 @@ body:has(.page.shop) .page-normal-background {
     }
 }
 
-@media (max-width: 992px) {
-    .shop-title {
-        font-size: 2.8rem;
-        letter-spacing: 2px;
-    }
 
+@media (max-width: 992px) {
     .page.shop .book-box {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -430,27 +622,36 @@ body:has(.page.shop) .page-normal-background {
         gap: 24px;
     }
 
-    .product-card-title {
-        font-size: 22px;
-        top: 42px;
+    .product-card-image-wrapper {
+        height: 310px;
     }
 
-    .product-card-subtitle {
-        top: 34px;
-        margin-bottom: 18px;
+    .product-card-title {
+        font-size: 28px;
     }
 }
 
 @media (max-width: 768px) {
+    .shop-hero {
+        padding-top: 80px;
+        padding-bottom: 16px;
+    }
+
+    .shop-title {
+        font-size: 48px;
+        letter-spacing: 1.5px;
+        top: 49%;
+    }
+
+    .shop-frame-wrapper {
+        max-width: 236px;
+    }
+
     .shop-header {
         margin-bottom: 20px;
         padding: 0 20px;
     }
 
-    .shop-title {
-        font-size: 38px;
-        letter-spacing: 1.5px;
-    }
 
     .shop-subtitle {
         font-size: 1.05rem;
@@ -466,71 +667,61 @@ body:has(.page.shop) .page-normal-background {
         gap: 10px;
     }
 
-    /* Shorter image so the card bottom area isn't too empty */
     .product-card-image-wrapper {
-        padding-top: 115%;
+        height: 270px;
     }
 
     .product-card-link {
-        padding-top: 12px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 8px 4px 0;
     }
 
-    .product-card-content {
-        margin-top: -12px;
+    .product-card-title-link {
+        padding: 12px 14px 6px;
     }
 
     .product-card-title {
-        font-size: 16px;
-        top: 18px;
+        font-size: 24px;
     }
 
     .product-card-subtitle {
-        font-size: 0.68rem;
-        top: 12px;
-        margin-bottom: 10px;
+        font-size: 0.65rem;
+        margin-bottom: 6px;
     }
 
     .product-card-footer {
-        padding-top: 8px;
-        padding-bottom: 10px;
-        padding-left: 12px;
-        padding-right: 12px;
-        gap: 5px;
+        padding: 6px 12px 12px;
     }
 
     .product-card-price-amount {
-        font-size: 0.9rem;
+        font-size: 18px;
     }
 
     .product-card-button {
-        padding: 6px 9px;
-        font-size: 0.72rem;
-    }
-
-    .product-card-button i {
-        font-size: 0.75rem;
+        padding: 5px 10px;
+        height: 30px;
     }
 }
 
 @media (max-width: 576px) {
-    .shop-header {
-        padding: 0 15px;
-        margin-bottom: 20px;
+    .shop-hero {
+        padding-top: 70px;
+        padding-bottom: 12px;
     }
 
     .shop-title {
-        font-size: 30px;
+        font-size: 40px;
         letter-spacing: 1px;
-        margin-bottom: 10px;
-        line-height: 1.6;
+        top: 46%;
     }
 
-    .shop-title::after {
-        width: 60px;
-        height: 2px;
-        bottom: -2px;
+    .shop-frame-wrapper {
+        max-width: 198px;
+        margin-bottom: -5px;
+    }
+
+    .shop-header {
+        padding: 0 15px;
+        margin-bottom: 20px;
     }
 
     .shop-subtitle {
@@ -540,50 +731,47 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .product-card-image-wrapper {
-        padding-top: 110%;
+        height: 240px;
     }
 
     .product-card-link {
-        padding-top: 10px;
-        padding-left: 8px;
-        padding-right: 8px;
+        padding: 8px 4px 0;
     }
 
-    .product-card-content {
-        margin-top: -10px;
+    .product-card-title-link {
+        padding: 10px 12px 4px;
     }
 
     .product-card-title {
-        font-size: 14px;
-        top: 14px;
+        font-size: 22px;
+        line-height: 1.2;
     }
 
     .product-card-subtitle {
-        font-size: 0.62rem;
-        top: 8px;
-        margin-bottom: 6px;
+        font-size: 0.60rem;
+        margin-bottom: 4px;
     }
 
     .product-card-footer {
-        padding-top: 6px;
-        padding-bottom: 8px;
-        padding-left: 10px;
-        padding-right: 10px;
-        gap: 4px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 10px 10px 8px;
     }
 
     .product-card-price-amount {
-        font-size: 0.82rem;
+        font-size: 16px;
     }
 
     .product-card-button {
-        padding: 5px 8px;
-        font-size: 0.68rem;
-        border-radius: 10px;
+        padding: 5px 9px;
+        font-size: 0.70rem;
+        height: 28px;
     }
 
     .product-card-button i {
-        font-size: 0.68rem;
+        font-size: 0.75rem;
     }
 
     .product-card-button .small-plus {
@@ -592,91 +780,76 @@ body:has(.page.shop) .page-normal-background {
 }
 
 @media (max-width: 480px) {
+    /*.shop-title {*/
+    /*    font-size: 22px;*/
+    /*}*/
+
+    /*.shop-frame-wrapper {*/
+    /*    max-width: 174px;*/
+    /*}*/
+
+    .background-of-the-shop-grid {
+        padding: 0px 10px 24px;
+    }
+
     .product-cards-grid,
     .page.shop .book-box {
-        gap: 8px;
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
     }
 
     .product-card-image-wrapper {
-        padding-top: 105%;
+        height: 210px;
     }
 
     .product-card-link {
-        padding-top: 8px;
-        padding-left: 7px;
-        padding-right: 7px;
+        padding: 8px 2px 0;
     }
 
-    .product-card-content {
-        margin-top: -8px;
+    .product-card-title-link {
+        padding: 8px 10px 4px;
+        margin-top: 8px;
     }
 
     .product-card-title {
-        font-size: 12px;
-        top: 10px;
+        font-size: 20px;
+        margin-bottom: 2px;
     }
 
     .product-card-subtitle {
-        font-size: 0.58rem;
-        top: 5px;
-        margin-bottom: 4px;
+        font-size: 10px;
+        margin-bottom: 2px;
     }
 
     .product-card-footer {
-        padding-top: 4px;
-        padding-bottom: 6px;
-        padding-left: 8px;
-        padding-right: 8px;
-        gap: 3px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        padding: 10px 10px 8px;
     }
 
     .product-card-price-amount {
-        font-size: 0.75rem;
+        font-size: 14px;
     }
 
     .product-card-button {
-        padding: 5px 7px;
-        font-size: 0.62rem;
-        border-radius: 8px;
+        padding: 5px 9px;
+        height: 28px;
     }
 
     .product-card-button i {
-        font-size: 0.6rem;
+        font-size: 12px;
+    }
+
+    .product-card-button .small-plus {
+        font-size: 10px;
     }
 }
 
 @media (max-width: 360px) {
-    .page.shop .book-box,
-    .product-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    /* Single column — restore fuller proportions */
-    .product-card-image-wrapper {
-        padding-top: 130%;
-    }
-
-    .product-card-content {
-        margin-top: -20px;
-    }
-
-    .product-card-title {
-        font-size: 22px;
-        top: 42px;
-    }
-
-    .product-card-subtitle {
-        font-size: 0.78rem;
-        top: 32px;
-        margin-bottom: 16px;
-    }
-
-    .product-card-footer {
-        padding: 10px 20px 14px;
-    }
-
-    .product-card-price-amount {
-        font-size: 1rem;
-    }
 }
+

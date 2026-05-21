@@ -1,13 +1,23 @@
 <x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
     <main class="container page contact-page">
-        <x-breadcrumbs :items="[
-          ['label' => 'Home', 'url' => route('home')],
-          ['label' => 'Contact', 'url' => route('contact')],
-        ]" />
 
-        <h1 class="sr-only">Contact — Lucide Inkt</h1>
-        @livewire('contact-form')
+        <div class="contact-hero">
+            <div class="container">
+                <x-breadcrumbs :items="[
+                  ['label' => 'Home', 'url' => route('home')],
+                  ['label' => 'Contact', 'url' => route('contact')],
+                ]" />
+            </div>
+            <h1 class="contact-hero__title">Neem Contact Op</h1>
+        </div>
+
+        <div class="gradient-border contact-hero-border"></div>
+
+        <div class="contact-content-section">
+            @livewire('contact-form')
+        </div>
+
     </main>
     <div class="gradient-border"></div>
     <x-footer></x-footer>

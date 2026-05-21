@@ -25,6 +25,10 @@
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://use.typekit.net/ixm0jkz.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
+
     @vite(['resources/css/bookshelf.css'])
 </head>
 <body>
@@ -35,6 +39,9 @@
     <a href="{{ route('home') }}" class="bookshelf-back-link">
         <i class="fa-solid fa-chevron-left"></i> Terug naar de website
     </a>
+
+    {{-- Dark wood textured frame that wraps the cabinet --}}
+    <div class="bookshelf-cabinet-frame">
 
     {{-- The wooden cabinet --}}
     <div class="bookshelf-cabinet">
@@ -48,21 +55,33 @@
 
         {{-- Left candle --}}
         <div class="bookshelf-candle bookshelf-candle--left">
-            <div class="candle-flame-wrap"><div class="candle-flame"></div></div>
+            <div class="candle-flame-wrap">
+                <div class="candle-flame candle-flame--glow"></div>
+                <div class="candle-flame candle-flame--outer"></div>
+                <div class="candle-flame candle-flame--inner"></div>
+                <div class="candle-flame candle-flame--core"></div>
+            </div>
+            <div class="candle-wick"></div>
             <div class="candle-body"></div>
             <div class="candle-base"></div>
         </div>
 
         {{-- Right candle --}}
         <div class="bookshelf-candle bookshelf-candle--right">
-            <div class="candle-flame-wrap"><div class="candle-flame"></div></div>
+            <div class="candle-flame-wrap">
+                <div class="candle-flame candle-flame--glow"></div>
+                <div class="candle-flame candle-flame--outer"></div>
+                <div class="candle-flame candle-flame--inner"></div>
+                <div class="candle-flame candle-flame--core"></div>
+            </div>
+            <div class="candle-wick"></div>
             <div class="candle-body"></div>
             <div class="candle-base"></div>
         </div>
 
         {{-- Header sign --}}
         <div class="bookshelf-header-sign">
-            <h1 class="bookshelf-title">Bibliotheek</h1>
+            <h1 class="bookshelf-title">Biblio<span class="herina-t"></span>heek</h1>
             <div class="bookshelf-title-ornament">
                 <span>❧ Klik op een boek om te lezen ❧</span>
             </div>
@@ -117,8 +136,11 @@
         {{-- Shelf rows injected here by JS --}}
         <div class="bookshelf-shelves" id="bookshelf-shelves"></div>
 
+        {{-- Bottom floor bar — same z-index trick as header-sign, so poles tuck behind it --}}
+        <div class="bookshelf-footer-bar"></div>
 
     </div>{{-- /.bookshelf-cabinet --}}
+    </div>{{-- /.bookshelf-cabinet-frame --}}
 
 
     {{-- Floating bookmark/marker button --}}
@@ -201,14 +223,17 @@
     max-height: 70vh;
     background: linear-gradient(180deg, #2e1a0a 0%, #1a0e05 100%);
     border-radius: 14px 14px 0 0;
-    box-shadow: 0 -6px 40px rgba(0,0,0,0.9), 0 0 0 1px rgba(120,67,24,0.5);
+    box-shadow: none;
     z-index: 400;
     display: flex; flex-direction: column;
     overflow: hidden;
     transform: translateY(100%);
-    transition: transform 0.28s cubic-bezier(0.32,0.72,0,1);
+    transition: transform 0.28s cubic-bezier(0.32,0.72,0,1), box-shadow 0.28s ease;
 }
-.bm-panel.open { transform: translateY(0); }
+.bm-panel.open {
+    transform: translateY(0);
+    box-shadow: 0 -6px 40px rgba(0,0,0,0.9), 0 0 0 1px rgba(120,67,24,0.5);
+}
 
 .bm-panel-header {
     display: flex; align-items: center; justify-content: space-between;
