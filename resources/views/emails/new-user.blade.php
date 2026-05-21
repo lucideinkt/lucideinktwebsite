@@ -31,7 +31,7 @@
 
                             <p style="font-size: 15px; line-height: 1.6; color: #333; margin: 0 0 20px 0;">
                                 {{ __('Je bent succesvol als nieuwe gebruiker geregistreerd bij Lucide Inkt.') }}<br>
-                                {{ __('Je account is aangemaakt en je kunt nu eenvoudig je bestellingen volgen en beheren.') }}
+                                {{ __('Klik op de knop hieronder om je wachtwoord in te stellen en in te loggen.') }}
                             </p>
 
                             <!-- Account details box -->
@@ -59,7 +59,7 @@
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
                                 <tr>
                                     <td align="center" style="padding: 10px 0;">
-                                        <a href="https://lucideinkt.nl/login" style="display: inline-block; padding: 14px 32px; background: #2c582f; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 600; box-shadow: 0 2px 8px rgba(34, 64, 57, 0.3);">{{ __('Inloggen bij Lucide Inkt') }}</a>
+                                        <a href="{{ $resetUrl }}" style="display: inline-block; padding: 14px 32px; background: #2c582f; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 600; box-shadow: 0 2px 8px rgba(34, 64, 57, 0.3);">{{ __('Stel je wachtwoord in') }}</a>
                                     </td>
                                 </tr>
                             </table>

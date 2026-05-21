@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Mail;
 
@@ -52,14 +54,15 @@ class UserController extends Controller
             'last_name' => $validated['last_name'],
             'role' => $validated['user_role'],
             'email' => $validated['email'],
-            'password' => Hash::make($validated['password']),
+            'password' => Hash::make(Str::random(32)),
         ]);
 
-        // Fire the Registered event
         event(new Registered($user));
 
-        // Send registration email
-        Mail::to($user->email)->queue(new NewUserMail($user));
+        $token = Password::createToken($user);
+        $resetUrl = route('password.reset', ['token' => $token, 'email' => $user->email]);
+
+        Mail::to($user->email)->queue(new NewUserMail($user, $resetUrl));
 
         // Optionally log the user in
         // auth()->login($user);
@@ -81,5 +84,19 @@ class UserController extends Controller
         } else {
             return back()->with('success', 'Gebruiker is bijgewerkt.');
         }
+    }
+
+    public function destroy(string $id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('delete', $user);
+
+        if ($user->id === auth()->id()) {
+            return back()->with('error', 'Je kunt je eigen account niet verwijderen.');
+        }
+
+        $user->delete();
+
+        return redirect()->route('userIndex')->with('success', 'Gebruiker is verwijderd.');
     }
 }

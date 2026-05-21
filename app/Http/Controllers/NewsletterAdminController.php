@@ -11,21 +11,19 @@ class NewsletterAdminController extends Controller
     {
         $query = NewsletterSubscriber::query();
 
-        // Filter by status
         if ($request->has('status') && in_array($request->status, ['subscribed', 'unsubscribed'])) {
             $query->where('status', $request->status);
         }
 
-        // Search by email
         if ($request->has('search') && $request->search) {
             $query->where('email', 'like', '%' . $request->search . '%');
         }
 
-        $subscribers = $query->latest()->paginate(20);
+        $subscribers = $query->latest()->paginate(20)->withQueryString();
 
         $stats = [
-            'total' => NewsletterSubscriber::count(),
-            'subscribed' => NewsletterSubscriber::subscribed()->count(),
+            'total'        => NewsletterSubscriber::count(),
+            'subscribed'   => NewsletterSubscriber::subscribed()->count(),
             'unsubscribed' => NewsletterSubscriber::unsubscribed()->count(),
         ];
 
@@ -43,15 +41,15 @@ class NewsletterAdminController extends Controller
             'email' => 'required|email|unique:newsletter_subscribers,email',
         ], [
             'email.required' => 'E-mailadres is verplicht.',
-            'email.email' => 'Voer een geldig e-mailadres in.',
-            'email.unique' => 'Dit e-mailadres is al ingeschreven.',
+            'email.email'    => 'Voer een geldig e-mailadres in.',
+            'email.unique'   => 'Dit e-mailadres is al ingeschreven.',
         ]);
 
         NewsletterSubscriber::create([
-            'email' => $validated['email'],
-            'status' => 'subscribed',
+            'email'         => $validated['email'],
+            'status'        => 'subscribed',
             'subscribed_at' => now(),
-            'ip_address' => $request->ip(),
+            'ip_address'    => $request->ip(),
         ]);
 
         return redirect()
@@ -70,16 +68,16 @@ class NewsletterAdminController extends Controller
         $subscriber = NewsletterSubscriber::findOrFail($id);
 
         $validated = $request->validate([
-            'email' => 'required|email|unique:newsletter_subscribers,email,' . $id,
+            'email'  => 'required|email|unique:newsletter_subscribers,email,' . $id,
             'status' => 'required|in:subscribed,unsubscribed',
         ], [
             'email.required' => 'E-mailadres is verplicht.',
-            'email.email' => 'Voer een geldig e-mailadres in.',
-            'email.unique' => 'Dit e-mailadres is al in gebruik.',
+            'email.email'    => 'Voer een geldig e-mailadres in.',
+            'email.unique'   => 'Dit e-mailadres is al in gebruik.',
         ]);
 
         $subscriber->update([
-            'email' => $validated['email'],
+            'email'  => $validated['email'],
             'status' => $validated['status'],
         ]);
 
@@ -114,7 +112,7 @@ class NewsletterAdminController extends Controller
     public function bulkDelete(Request $request)
     {
         $validated = $request->validate([
-            'ids' => 'required|array',
+            'ids'   => 'required|array',
             'ids.*' => 'exists:newsletter_subscribers,id',
         ]);
 
@@ -132,27 +130,20 @@ class NewsletterAdminController extends Controller
         $filename = 'newsletter_subscribers_' . date('Y-m-d') . '.csv';
 
         $headers = [
-            'Content-Type' => 'text/csv',
+            'Content-Type'        => 'text/csv',
             'Content-Disposition' => 'attachment; filename="' . $filename . '"',
         ];
 
         $callback = function() use ($subscribers) {
             $file = fopen('php://output', 'w');
-
-            // Add BOM for UTF-8
             fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
-
-            // Add headers
             fputcsv($file, ['Email', 'Ingeschreven op']);
-
-            // Add data
             foreach ($subscribers as $subscriber) {
                 fputcsv($file, [
                     $subscriber->email,
                     $subscriber->subscribed_at->format('d-m-Y H:i'),
                 ]);
             }
-
             fclose($file);
         };
 

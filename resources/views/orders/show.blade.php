@@ -1,4 +1,9 @@
 <x-dashboard-layout>
+@push('head')
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/myparcel.lib.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/style.css" />
+@endpush
     <main class="container page dashboard">
         <h2>Bestelling #{{ $order->id }}</h2>
         @if (session('success'))

@@ -21,7 +21,7 @@ class ShippingCostController extends Controller
     public function index()
     {
         $this->authorize('viewAny', ShippingCost::class);
-        $shippingCosts = ShippingCost::orderBy('created_at', 'desc')->paginate(10);
+        $shippingCosts = ShippingCost::orderBy('country', 'asc')->paginate(25)->withQueryString();
         return view('shippingcosts.index', ['shippingCosts' => $shippingCosts]);
     }
 

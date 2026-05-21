@@ -1,77 +1,177 @@
 <x-dashboard-layout>
-  <main class="container page dashboard">
-    <h2>Kortingscodes</h2>
-    @if(session('success'))
-      <div class="alert alert-success" style="position: relative;">
-        {{ session('success') }}
-        <button type="button" class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
+
+@if(session('success'))
+<div id="alert-success" class="flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400">
+  <svg class="shrink-0 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/></svg>
+  <span class="ms-2 text-sm font-medium">{{ session('success') }}</span>
+  <button type="button" onclick="document.getElementById('alert-success').remove()" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg p-1.5 hover:bg-green-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700">
+    <svg class="w-3 h-3" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+  </button>
+</div>
+@endif
+
+<section class="bg-gray-50 dark:bg-gray-900">
+  <div>
+    <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+        <div class="w-full md:w-1/2">
+          <form id="search-form" method="GET" action="{{ route('discountIndex') }}" class="flex items-center">
+            <label for="simple-search" class="sr-only">Zoeken</label>
+            <div class="relative w-full">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <input type="text" name="search" id="simple-search" value="{{ request('search') }}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Zoek op code of beschrijving...">
+            </div>
+          </form>
+        </div>
+        <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+          <a href="{{ route('discountCreate') }}"
+            class="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+            <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
+            </svg>
+            Nieuwe kortingscode
+          </a>
+        </div>
       </div>
-    @endif
-    <a href="{{ route('discountCreate') }}"><button class="btn">Nieuwe toevoegen</button></a>
 
-    <div class="table-wrapper">
-      <table class="table">
-        <thead>
-        <tr>
-          <th>ID</th>
-          <th>Code</th>
-          <th>Type</th>
-          <th>Korting</th>
-          <th>Gebruikslimit</th>
-          <th>Gebruikslimit per klant</th>
-          <th>Gepubliceerd</th>
-          <th>Aangemaakt</th>
-          <th>Vervaldatum</th>
-          <th>Actie</th>
-        </tr>
-        </thead>
-        <tbody>
-        @forelse ($discountCodes as $discountCode)
-          <tr>
-            <td>{{ $discountCode->id }}</td>
-            <td style="min-width:140px;">{{ $discountCode->code }}</td>
-            <td style="min-width:100px;">{{ $discountCode->discount_type == 'percent' ? 'Procent' : 'Bedrag' }}</td>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-4 py-2">Code</th>
+              <th scope="col" class="px-4 py-2">Beschrijving</th>
+              <th scope="col" class="px-4 py-2">Korting</th>
+              <th scope="col" class="px-4 py-2">Limiet</th>
+              <th scope="col" class="px-4 py-2">Per klant</th>
+              <th scope="col" class="px-4 py-2">Status</th>
+              <th scope="col" class="px-4 py-2">Vervaldatum</th>
+              <th scope="col" class="px-4 py-2">Aangemaakt</th>
+              <th scope="col" class="px-4 py-2"><span class="sr-only">Acties</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            @forelse ($discountCodes as $discountCode)
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <th scope="row" class="px-4 py-2 font-mono font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                {{ $discountCode->code }}
+              </th>
+              <td class="px-4 py-2 text-gray-500 dark:text-gray-400">
+                {{ $discountCode->description ?: '–' }}
+              </td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                @if($discountCode->discount_type === 'percent')
+                  <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+                    {{ (int)$discountCode->discount }}%
+                  </span>
+                @else
+                  <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">
+                    € {{ number_format($discountCode->discount, 2, ',', '.') }}
+                  </span>
+                @endif
+              </td>
+              <td class="px-4 py-2">{{ $discountCode->usage_limit ?? '∞' }}</td>
+              <td class="px-4 py-2">{{ $discountCode->usage_limit_per_customer ?? '∞' }}</td>
+              <td class="px-4 py-2">
+                @if($discountCode->is_published)
+                  <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Actief</span>
+                @else
+                  <span class="bg-gray-100 text-gray-600 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400">Inactief</span>
+                @endif
+              </td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                @if($discountCode->expiration_date)
+                  @php $expired = \Carbon\Carbon::parse($discountCode->expiration_date)->isPast(); @endphp
+                  <span class="{{ $expired ? 'text-red-500 dark:text-red-400' : 'text-gray-700 dark:text-gray-300' }}">
+                    {{ \Carbon\Carbon::parse($discountCode->expiration_date)->format('d-m-Y') }}
+                  </span>
+                @else
+                  <span class="text-gray-400">–</span>
+                @endif
+              </td>
+              <td class="px-4 py-2 whitespace-nowrap text-xs">{{ $discountCode->created_at ? $discountCode->created_at->format('d-m-Y') : '–' }}</td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                <div class="flex items-center gap-2">
+                  <a href="{{ route('discountEdit', $discountCode->id) }}"
+                    class="text-xs font-medium text-primary-700 hover:underline dark:text-primary-400">Bewerken</a>
+                  <form action="{{ route('discountDelete', $discountCode->id) }}" method="POST"
+                    onsubmit="return confirm('Weet je zeker dat je code \'{{ addslashes($discountCode->code) }}\' wilt verwijderen?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-xs font-medium text-red-600 hover:underline dark:text-red-500">Verwijderen</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            @empty
+            <tr>
+              <td colspan="9" class="px-4 py-8 text-center text-gray-500 dark:text-gray-400">Geen kortingscodes gevonden.</td>
+            </tr>
+            @endforelse
+          </tbody>
+        </table>
+      </div>
 
-            <td style="min-width:100px;">
-              @if($discountCode->discount_type == 'percent')
-                {{ (int)$discountCode->discount }}%
+      <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+          @if($discountCodes->total() > 0)
+            Toont <span class="font-semibold text-gray-900 dark:text-white">{{ $discountCodes->firstItem() }}-{{ $discountCodes->lastItem() }}</span>
+            van <span class="font-semibold text-gray-900 dark:text-white">{{ $discountCodes->total() }}</span>
+          @else
+            <span class="font-semibold text-gray-900 dark:text-white">0</span> resultaten
+          @endif
+        </span>
+        @if($discountCodes->hasPages())
+        <ul class="inline-flex items-stretch -space-x-px">
+          <li>
+            @if($discountCodes->onFirstPage())
+              <span class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-400 bg-white rounded-l-lg border border-gray-300 cursor-not-allowed dark:bg-gray-800 dark:border-gray-700 dark:text-gray-600">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </span>
+            @else
+              <a href="{{ $discountCodes->previousPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </a>
+            @endif
+          </li>
+          @foreach($discountCodes->getUrlRange(1, $discountCodes->lastPage()) as $page => $url)
+            <li>
+              @if($page == $discountCodes->currentPage())
+                <span class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ $page }}</span>
               @else
-                € {{ number_format($discountCode->discount, 2, ',', '.') }}
+                <a href="{{ $url }}" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ $page }}</a>
               @endif
-            </td>
+            </li>
+          @endforeach
+          <li>
+            @if($discountCodes->hasMorePages())
+              <a href="{{ $discountCodes->nextPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </a>
+            @else
+              <span class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-400 bg-white rounded-r-lg border border-gray-300 cursor-not-allowed dark:bg-gray-800 dark:border-gray-700 dark:text-gray-600">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </span>
+            @endif
+          </li>
+        </ul>
+        @endif
+      </nav>
 
-            <td style="min-width:100px;">{{ $discountCode->usage_limit }}</td>
-            <td style="min-width:100px;">{{ $discountCode->usage_limit_per_customer }}</td>
-
-            <td style="min-width:90px;">
-              @if ($discountCode->is_published == 1)
-                ja
-              @else
-                nee
-              @endif
-            </td>
-            <td style="min-width:110px;">{{ $discountCode->created_at ? $discountCode->created_at->format('d-m-Y H:i') : '-' }}</td>
-            <td style="min-width:110px;">{{ $discountCode->expiration_date ? \Carbon\Carbon::parse($discountCode->expiration_date)->format('d-m-Y') : '-' }}</td>
-            <td class="table-action" style="min-width:80px;">
-              <a href="{{ route('discountEdit', $discountCode->id) }}"><i
-                  class="fa-regular fa-pen-to-square edit action-btn"></i></a>
-              <form action="{{ route('discountDelete', $discountCode->id) }}" method="POST" class="needs-confirm" data-confirm="Weet je zeker dat je deze kortingscode wilt verwijderen?" data-confirm-title="Kortingscode verwijderen">
-                @csrf
-                @method('DELETE')
-                <button style="background-color: transparent; border: none;padding: 0;" type="submit"><i
-                    class="fa-regular fa-trash-can delete action-btn"></i></button>
-              </form>
-            </td>
-          </tr>
-        @empty
-          <tr>
-            <td colspan="8" class="table-empty-state">Geen kortingscodes gevonden.</td>
-          </tr>
-        @endforelse
-        </tbody>
-      </table>
-      {{ $discountCodes->links('vendor.pagination.custom') }}
     </div>
+  </div>
+</section>
 
-  </main>
+<script>
+document.getElementById('simple-search').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); document.getElementById('search-form').submit(); }
+});
+</script>
+
 </x-dashboard-layout>

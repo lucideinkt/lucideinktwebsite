@@ -1,49 +1,75 @@
 <x-dashboard-layout>
-<main class="container page dashboard">
 
-    {{-- Breadcrumb --}}
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:14px;color:var(--ink-muted);">
-        <a href="{{ route('bookContent.index') }}" style="color:var(--ink-muted);text-decoration:none;">
-            <i class="fa-solid fa-book-open"></i> Book Content
+{{-- Breadcrumb --}}
+<nav class="flex mb-4" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+        <li class="inline-flex items-center">
+            <a href="{{ route('bookContent.index') }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-3 h-3 me-2.5" fill="currentColor" viewBox="0 0 20 20"><path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/></svg>
+                Book Content
+            </a>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+                <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">{{ $product->title }}</span>
+            </div>
+        </li>
+    </ol>
+</nav>
+
+{{-- Page header --}}
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+    <div>
+        <h1 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $product->title }}</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">HTML-pagina's bewerken</p>
+    </div>
+    <div class="flex items-center gap-2 flex-shrink-0">
+        <a href="{{ route('onlineLezenReadHtml', $product->slug) }}" target="_blank"
+            class="inline-flex items-center gap-1.5 text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+            Bekijk lezer
         </a>
-        <span>/</span>
-        <span style="color:var(--main-font-color);">{{ $product->title }}</span>
+        <a href="{{ route('bookContent.index') }}"
+            class="inline-flex items-center gap-1.5 text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0 7-7m-7 7h18"/></svg>
+            Terug
+        </a>
     </div>
+</div>
 
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <h2 style="margin:0;">{{ $product->title }}</h2>
-        <div style="display:flex;gap:10px;align-items:center;">
-            <a href="{{ route('onlineLezenReadHtml', $product->slug) }}" target="_blank" class="btn" style="font-size:13px;display:inline-flex;align-items:center;gap:6px;">
-                <i class="fa-solid fa-eye"></i> Bekijk lezer
-            </a>
-            <a href="{{ route('bookContent.index') }}" class="btn" style="font-size:13px;background:var(--surface-2);color:var(--main-font-color);border:1px solid var(--border-1);">
-                <i class="fa-solid fa-arrow-left"></i> Terug
-            </a>
+@if(session('success'))
+<div id="alert-success" class="flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400">
+    <svg class="shrink-0 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/></svg>
+    <span class="ms-2 text-sm font-medium">{{ session('success') }}</span>
+    <button type="button" onclick="document.getElementById('alert-success').remove()" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg p-1.5 hover:bg-green-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700">
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+    </button>
+</div>
+@endif
+
+{{-- Info banner --}}
+<div class="flex items-start gap-3 p-4 mb-5 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 border border-green-200 dark:border-green-800">
+    <svg class="w-4 h-4 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd"/></svg>
+    <span>
+        Het paginanummer wordt automatisch uitgelezen uit <code class="px-1 py-0.5 rounded text-xs font-mono bg-green-100 dark:bg-gray-700">&lt;div class="page" id="<strong>8</strong>"&gt;</code> in je HTML.
+        Sleep de header van een kaart om de volgorde te wijzigen. <kbd class="px-1 py-0.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">Ctrl+S</kbd> = opslaan.
+    </span>
+</div>
+
+<form method="POST" action="{{ route('bookContent.update', $product->id) }}" id="pages-form">
+    @csrf
+    @method('PUT')
+
+    {{-- Boektitel card --}}
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 mb-5">
+        <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 0 0 5.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 0 1 5.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0 1 14.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0 0 14.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 1 1-2 0V4.804Z"/></svg>
+                Boektitel
+            </h2>
         </div>
-    </div>
-
-    @if(session('success'))
-        <div class="alert alert-success" style="position:relative;margin-bottom:16px;">
-            {{ session('success') }}
-            <button type="button" class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
-        </div>
-    @endif
-
-    <div style="background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:11px 16px;margin-bottom:22px;font-size:13px;color:#2e7d32;display:flex;align-items:center;gap:10px;">
-        <i class="fa-solid fa-circle-info" style="flex-shrink:0;"></i>
-        Het paginanummer wordt automatisch uitgelezen uit <code style="background:rgba(0,0,0,.07);padding:1px 5px;border-radius:3px;">&lt;div class="page" id="<strong>8</strong>"&gt;</code> in je HTML.
-        Sleep de header van een kaart om de volgorde te wijzigen. <kbd>Ctrl+S</kbd> = opslaan.
-    </div>
-
-    <form method="POST" action="{{ route('bookContent.update', $product->id) }}" id="pages-form">
-        @csrf
-        @method('PUT')
-
-        {{-- Boektitel invoer --}}
-        <div style="background:#2d2d2d;border-radius:10px;padding:16px 18px;margin-bottom:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-            <label for="book_title_input" style="color:#aaa;font-size:12px;font-family:monospace;white-space:nowrap;flex-shrink:0;">
-                <i class="fa-solid fa-book" style="color:#4a90d9;margin-right:5px;"></i> Boektitel
-            </label>
+        <div style="background:#2d2d2d;border-radius:0 0 8px 8px;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
             <input
                 type="text"
                 id="book_title_input"
@@ -54,55 +80,59 @@
                 onfocus="this.style.borderColor='#4a90d9'"
                 onblur="this.style.borderColor='#444'"
             >
-            <span style="font-size:11px;color:#666;font-family:monospace;">
-                Reeks: <em style="color:#888;">Uit de Reeks van de Risale-i Nur</em> &nbsp;·&nbsp;
-                Auteur: <em style="color:#888;">Bedîüzzaman Said Nursî</em>
+            <span style="font-size:11px;color:#888;font-family:monospace;white-space:nowrap;">
+                Reeks: <em style="color:#aaa;">Uit de Reeks van de Risale-i Nur</em> &nbsp;·&nbsp;
+                Auteur: <em style="color:#aaa;">Bedîüzzaman Said Nursî</em>
             </span>
         </div>
+    </div>
 
-        <div id="pages-list">
-            @forelse($pages as $page)
-                <div class="page-card" data-id="{{ $page->id }}">
-                    @include('book-content._page-card', ['page' => $page, 'loop' => $loop])
-                </div>
-            @empty
-                <p id="no-pages-msg" style="color:var(--ink-muted);font-style:italic;padding:20px 0;">
-                    Nog geen pagina's. Klik op "+ Pagina toevoegen" om te beginnen.
-                </p>
-            @endforelse
-        </div>
+    {{-- Pages list --}}
+    <div id="pages-list">
+        @forelse($pages as $page)
+            <div class="page-card" data-id="{{ $page->id }}">
+                @include('book-content._page-card', ['page' => $page, 'loop' => $loop])
+            </div>
+        @empty
+            <p id="no-pages-msg" class="text-sm text-gray-500 dark:text-gray-400 italic py-5">
+                Nog geen pagina's. Klik op "+ Pagina toevoegen" om te beginnen.
+            </p>
+        @endforelse
+    </div>
 
-        <div style="display:flex;gap:12px;align-items:center;margin-top:20px;flex-wrap:wrap;padding:16px;background:var(--surface-1);border-radius:8px;border:1px solid var(--border-1);">
-            <button type="button" id="btn-add-page" class="btn" style="display:inline-flex;align-items:center;gap:7px;background:#1565c0;color:#fff;border:none;">
-                <i class="fa-solid fa-plus"></i> Pagina toevoegen
-            </button>
-            <button type="submit" class="btn" style="background:var(--green-2);color:#fff;display:inline-flex;align-items:center;gap:7px;">
-                <i class="fa-solid fa-floppy-disk"></i> Alles opslaan
-            </button>
-            <span style="font-size:12px;color:var(--ink-muted);margin-left:4px;">
-                <i class="fa-solid fa-circle-info"></i> Paginanummers worden automatisch opgeslagen vanuit je HTML
-            </span>
-        </div>
-    </form>
-</main>
+    {{-- Bottom action bar --}}
+    <div class="flex items-center gap-3 flex-wrap mt-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <button type="button" id="btn-add-page"
+            class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/></svg>
+            Pagina toevoegen
+        </button>
+        <button type="submit"
+            class="inline-flex items-center gap-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3m-1 4-3 3m0 0-3-3m3 3V4"/></svg>
+            Alles opslaan
+        </button>
+        <span class="text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd"/></svg>
+            Paginanummers worden automatisch opgeslagen vanuit je HTML
+        </span>
+    </div>
+</form>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
 
 <style>
-/* ── Kaart ── */
 .page-card {
-    border: 1px solid var(--border-1);
+    border: 1px solid #3a3a3a;
     border-radius: 10px;
     margin-bottom: 14px;
-    background: var(--surface-2);
-    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    background: #252525;
+    box-shadow: 0 1px 4px rgba(0,0,0,.18);
     transition: box-shadow .2s;
-    /* geen overflow:hidden — anders knipt CodeMirror af */
 }
-.page-card.dragging { opacity: .4; box-shadow: 0 8px 28px rgba(0,0,0,.22); }
+.page-card.dragging { opacity: .4; box-shadow: 0 8px 28px rgba(0,0,0,.32); }
 
-/* ── Header ── */
 .page-card-header {
     display: flex;
     align-items: center;
@@ -120,7 +150,6 @@
 .drag-handle { color: #888; font-size: 14px; padding: 2px 4px; cursor: grab; }
 .drag-handle:active { cursor: grabbing; }
 
-/* ── Accordion toggle ── */
 .accordion-toggle {
     margin-left: auto;
     color: #888;
@@ -128,12 +157,9 @@
     transition: transform .2s;
     pointer-events: none;
 }
-.page-card.open .accordion-icon {
-    transform: rotate(180deg);
-}
 .accordion-icon { display: inline-block; transition: transform .2s; }
+.page-card.open .accordion-icon { transform: rotate(180deg); }
 
-/* ── Badge ── */
 .page-badge {
     display: inline-flex;
     align-items: center;
@@ -154,7 +180,6 @@
     font-size: 13px;
 }
 
-/* ── Toolbar ── */
 .page-toolbar {
     display: flex;
     align-items: center;
@@ -179,7 +204,6 @@
 .tag-btn:hover { background: #4a90d9; color: #fff; border-color: #4a90d9; }
 .toolbar-sep { width: 1px; height: 18px; background: #444; margin: 0 4px; flex-shrink: 0; }
 
-/* ── CodeMirror ── */
 .CodeMirror {
     height: auto !important;
     min-height: 280px;
@@ -196,7 +220,6 @@
 }
 .CodeMirror-sizer { min-height: 260px !important; }
 
-/* ── Footer ── */
 .page-card-footer {
     display: flex;
     align-items: center;
@@ -222,12 +245,6 @@
     transition: all .15s;
 }
 .btn-delete-page:hover { background: #3a0000; color: #ff6b6b; border-color: #ff6b6b; }
-
-kbd {
-    background: #eee; border: 1px solid #ccc;
-    border-radius: 3px; padding: 1px 5px;
-    font-size: 11px; font-family: monospace;
-}
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
@@ -242,22 +259,18 @@ kbd {
     const list      = document.getElementById('pages-list');
     const noMsg     = document.getElementById('no-pages-msg');
 
-    /* ── Lees boekpaginanummer simpel uit content ── */
     function getPageNr(content) {
-        // Zoekt <div class="page" id="8"> of <div id="8" class="page">
         const m = content.match(/class="[^"]*\bpage\b[^"]*"[^>]*id="(\d+)"/i)
                || content.match(/id="(\d+)"[^>]*class="[^"]*\bpage\b[^"]*"/i);
         return m ? parseInt(m[1], 10) : null;
     }
 
-    /* ── Badge updaten ── */
     function updateBadge(card) {
         const badge   = card.querySelector('.page-badge');
         const cm      = card._cm;
         const content = cm ? cm.getValue() : (card.querySelector('textarea')?.value ?? '');
         const nr      = getPageNr(content);
         const pos     = [...list.querySelectorAll('.page-card')].indexOf(card) + 1;
-
         if (!badge) return;
         if (nr) {
             badge.innerHTML = `Pagina <span class="badge-nr">#${nr}</span>`;
@@ -266,7 +279,6 @@ kbd {
         }
     }
 
-    /* ── Woordteller ── */
     function updateCount(card) {
         const cm      = card._cm;
         const content = cm ? cm.getValue() : (card.querySelector('textarea')?.value ?? '');
@@ -277,11 +289,9 @@ kbd {
         updateBadge(card);
     }
 
-    /* ── CodeMirror initialiseren op een card ── */
     function initEditor(card) {
         const ta = card.querySelector('.page-textarea');
         if (!ta || card._cm) return;
-
         const cm = CodeMirror.fromTextArea(ta, {
             mode          : 'htmlmixed',
             theme         : 'dracula',
@@ -295,36 +305,23 @@ kbd {
                 'Shift-Tab': cm => cm.execCommand('indentLess'),
             },
         });
-
         card._cm = cm;
         cm.on('change', () => updateCount(card));
-
-        requestAnimationFrame(() => {
-            cm.refresh();
-            updateCount(card);
-        });
+        requestAnimationFrame(() => { cm.refresh(); updateCount(card); });
     }
 
-    /* ── Tag toolbar ── */
     function bindToolbar(card) {
         card.querySelectorAll('.tag-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const cm          = card._cm;
                 const tag         = btn.dataset.tag;
                 const selfClosing = btn.dataset.selfClosing === '1';
-
                 if (!cm) return;
-
                 const sel = cm.getSelection();
                 const ins = selfClosing
                     ? `<${tag}>`
-                    : sel
-                        ? `<${tag}>${sel}</${tag}>`
-                        : `<${tag}></${tag}>`;
-
+                    : sel ? `<${tag}>${sel}</${tag}>` : `<${tag}></${tag}>`;
                 cm.replaceSelection(ins);
-
-                // Cursor tussen tags plaatsen als er geen selectie was
                 if (!selfClosing && !sel) {
                     const cur = cm.getCursor();
                     cm.setCursor({ line: cur.line, ch: cur.ch - tag.length - 3 });
@@ -334,7 +331,6 @@ kbd {
         });
     }
 
-    /* ── Verwijder knop ── */
     function bindDelete(card) {
         card.querySelector('.btn-delete-page')?.addEventListener('click', async () => {
             const pageId = card.dataset.id;
@@ -351,33 +347,24 @@ kbd {
         });
     }
 
-    /* ── Accordion open/dicht ── */
     function bindAccordion(card) {
         card.querySelector('.page-card-header').addEventListener('click', function (e) {
-            // Drag-handle klik niet laten togglen
             if (e.target.closest('.drag-handle')) return;
             toggleCard(card);
         });
     }
 
     function toggleCard(card, forceOpen) {
-        const isOpen   = forceOpen !== undefined ? !forceOpen : card.classList.contains('open');
-        const show     = !isOpen;
+        const isOpen = forceOpen !== undefined ? !forceOpen : card.classList.contains('open');
+        const show   = !isOpen;
         card.classList.toggle('open', show);
         card.querySelectorAll('.page-card-collapsible').forEach(el => {
             el.style.display = show ? '' : 'none';
         });
-        // Als CodeMirror al bestaat, refresh na animatie
-        if (show && card._cm) {
-            setTimeout(() => card._cm.refresh(), 10);
-        }
-        // Als CodeMirror nog niet bestaat maar we gaan open: initialiseer dan nu
-        if (show && !card._cm) {
-            initEditor(card);
-        }
+        if (show && card._cm) { setTimeout(() => card._cm.refresh(), 10); }
+        if (show && !card._cm) { initEditor(card); }
     }
 
-    /* ── Renumber alle badges ── */
     function renumber() {
         list.querySelectorAll('.page-card').forEach(c => updateBadge(c));
     }
@@ -386,7 +373,6 @@ kbd {
         if (noMsg) noMsg.style.display = list.querySelectorAll('.page-card').length ? 'none' : 'block';
     }
 
-    /* ── Drag & drop — alleen via drag-handle ── */
     let dragSrc = null;
     function bindDrag(card) {
         const handle = card.querySelector('.drag-handle');
@@ -397,8 +383,7 @@ kbd {
             e.stopPropagation();
         });
         handle.addEventListener('dragend', () => {
-            card.classList.remove('dragging'); dragSrc = null;
-            renumber();
+            card.classList.remove('dragging'); dragSrc = null; renumber();
         });
         card.addEventListener('dragover', e => {
             e.preventDefault();
@@ -408,7 +393,6 @@ kbd {
         });
     }
 
-    /* ── Nieuwe pagina toevoegen ── */
     document.getElementById('btn-add-page').addEventListener('click', async () => {
         const res  = await fetch(`/dashboard/book-content/${productId}/pages`, {
             method: 'POST',
@@ -417,13 +401,12 @@ kbd {
         const data = await res.json();
         const card = buildCard(data.id, '', list.querySelectorAll('.page-card').length + 1);
         list.appendChild(card);
-        // Eerst in DOM, dan pas initialiseren
         requestAnimationFrame(() => {
             bindAccordion(card);
             bindToolbar(card);
             bindDelete(card);
             bindDrag(card);
-            toggleCard(card, false); // open
+            toggleCard(card, false);
             renumber();
             toggleNoMsg();
             setTimeout(() => card._cm?.focus(), 60);
@@ -431,7 +414,6 @@ kbd {
         });
     });
 
-    /* ── Card HTML bouwen ── */
     function buildCard(id, content, pos) {
         const div = document.createElement('div');
         div.className = 'page-card';
@@ -468,14 +450,12 @@ kbd {
         return div;
     }
 
-    /* ── Bestaande cards initialiseren na DOM ready ── */
     function initAll() {
         list.querySelectorAll('.page-card').forEach(card => {
             bindAccordion(card);
             bindToolbar(card);
             bindDelete(card);
             bindDrag(card);
-            // Bestaande kaarten: NIET initEditor — wacht tot gebruiker openklapt (lazy)
         });
         toggleNoMsg();
     }
@@ -486,12 +466,9 @@ kbd {
         initAll();
     }
 
-    /* ── Bij opslaan: sync CodeMirror → textarea, dan controller doet de rest ── */
     function syncAll() {
         list.querySelectorAll('.page-card').forEach((card, i) => {
-            // CodeMirror sync naar textarea (voor form submit)
             card._cm?.save();
-            // Paginanummer invullen op basis van content
             const content = card._cm ? card._cm.getValue() : (card.querySelector('.page-textarea')?.value ?? '');
             const nr      = getPageNr(content);
             const input   = card.querySelector('.page-number-input');
@@ -510,5 +487,5 @@ kbd {
     });
 })();
 </script>
-</x-dashboard-layout>
 
+</x-dashboard-layout>

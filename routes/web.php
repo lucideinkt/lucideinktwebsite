@@ -92,6 +92,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/dashboard/users/create', [UserController::class, 'store'])->name('userStore');
     Route::get('/dashboard/users/{id}', [UserController::class, 'show'])->name('userShow');
     Route::put('/dashboard/users/{id}', [UserController::class, 'update'])->name('userEdit');
+    Route::delete('/dashboard/users/{id}', [UserController::class, 'destroy'])->name('userDelete');
 
     // Discount codes
     Route::get('/dashboard/discount-codes', [DiscountCodeController::class, 'index'])->name('discountIndex');
