@@ -12,22 +12,25 @@ function updateDiscountUI(data, code) {
     const discountRow = document.getElementById('discount-row');
     const newTotalRow = document.getElementById('new-total-row');
     const discountAmount = document.getElementById('discount-amount');
-    const orderTotal = document.getElementById('order-total');
     const orderNewTotal = document.getElementById('order-new-total');
     const discountCodeLabel = document.getElementById('discount-code-label');
     const removeDiscountContainer = document.getElementById('remove-discount-container');
+    const shippingEl = document.getElementById('shipping-cost');
+    const shippingCost = parseFloat(shippingEl?.dataset.cost || '0');
 
     if (data && data.discount_amount > 0) {
+        // HTML already has −€ prefix on the discount cell, so use plain number
         const isPercent = data.discount?.discount_type === 'percent';
         const displayDiscount = isPercent
             ? `${Number(data.discount.discount)}%`
-            : formatEuro(data.discount_amount);
+            : data.discount_amount.toFixed(2).replace('.', ',');
 
         if (discountRow) discountRow.style.display = '';
         if (newTotalRow) newTotalRow.style.display = '';
         if (discountAmount) discountAmount.textContent = displayDiscount;
-        if (orderNewTotal) orderNewTotal.textContent = formatEuro(data.new_total);
-        if (orderTotal) orderTotal.textContent = formatEuro(data.total);
+        // New total = (cart - discount) + shipping
+        if (orderNewTotal) orderNewTotal.textContent = formatEuro(data.new_total + shippingCost);
+        // Don't overwrite #order-total — shipping.js owns it
         if (discountCodeLabel && code) discountCodeLabel.textContent = '(' + code + ')';
         if (removeDiscountContainer) removeDiscountContainer.style.display = '';
     } else {
@@ -35,7 +38,7 @@ function updateDiscountUI(data, code) {
         if (newTotalRow) newTotalRow.style.display = 'none';
         if (discountAmount) discountAmount.textContent = '0,00';
         if (orderNewTotal) orderNewTotal.textContent = '€ 0,00';
-        if (orderTotal && data) orderTotal.textContent = formatEuro(data.total);
+        // Don't overwrite #order-total — shipping.js owns it
         if (discountCodeLabel) discountCodeLabel.textContent = '';
         if (removeDiscountContainer) removeDiscountContainer.style.display = 'none';
     }

@@ -32,6 +32,7 @@ export function initShippingCostCalculator() {
 
         if (!country) {
             shippingCostEl.textContent = '';
+            shippingCostEl.dataset.cost = '0';
             orderTotalEl.textContent = '€ ' + subtotal.toFixed(2).replace('.', ',');
             return;
         }
@@ -40,6 +41,7 @@ export function initShippingCostCalculator() {
             .then(response => response.json())
             .then(data => {
                 const cost = parseFloat(data.cost) || 0;
+                shippingCostEl.dataset.cost = data.found ? cost.toString() : '0';
                 if (data.found) {
                     shippingCostEl.textContent = cost === 0
                         ? 'Verzendkosten: gratis'
