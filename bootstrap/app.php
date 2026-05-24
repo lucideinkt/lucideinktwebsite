@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Middleware\CheckRole;
+use App\Http\Middleware\SecurityHeadersMiddleware;
+use App\Http\Middleware\TwoFactorMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -12,10 +14,16 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Register middleware aliases (Laravel 12 style)
-        $middleware->alias(['role' => CheckRole::class]);
-        // If you want to apply to specific groups instead:
-        // $middleware->appendToGroup('web', CheckRole::class);
+        $middleware->append(SecurityHeadersMiddleware::class);
+
+        $middleware->alias([
+            'role'      => CheckRole::class,
+            'twofactor' => TwoFactorMiddleware::class,
+        ]);
+
+        $middleware->validateCsrfTokens(except: [
+            'webhooks/mollie',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

@@ -13,19 +13,18 @@ class NewUserMail extends Mailable
   use Queueable, SerializesModels, HasMailtrapForwarding;
 
   public $user;
+  public $resetUrl;
 
-  /**
-   * Create a new message instance.
-   */
-  public function __construct($user)
+  public function __construct($user, $resetUrl)
   {
     $this->user = $user;
+    $this->resetUrl = $resetUrl;
   }
 
   public function build()
   {
     $mail = $this->subject('Welkom bij Lucide Inkt')
-      ->view('emails.new-user', ['user' => $this->user]);
+      ->view('emails.new-user', ['user' => $this->user, 'resetUrl' => $this->resetUrl]);
 
     // Add Mailtrap forwarding using trait (tries config, env, and fallback)
     return $this->addMailtrapForwarding($mail);

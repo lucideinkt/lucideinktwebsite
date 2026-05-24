@@ -52,7 +52,7 @@ class ContactForm extends Component
         try {
             // Use LUCIDE_INKT_MAIL for contact form (same as admin email for orders)
             // Fallback to MAIL_FROM_ADDRESS, then to info@lucideinkt.nl
-            $recipientEmail = env('LUCIDE_INKT_MAIL')
+            $recipientEmail = config('services.lucideinkt.admin_email')
                 ?: config('mail.from.address')
                 ?: 'info@lucideinkt.nl';
 

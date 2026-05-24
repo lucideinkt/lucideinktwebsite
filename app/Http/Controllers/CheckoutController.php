@@ -126,10 +126,9 @@ class CheckoutController extends Controller
         return $this->checkoutError('Je betaling is mislukt of geannuleerd.');
     }
 
-    public function checkoutSuccess($id = null)
+    public function checkoutSuccess()
     {
-        // Try to get order ID from URL parameter first, then fallback to session
-        $orderId = $id ?: session('checkout_success_order_id');
+        $orderId = session('checkout_success_order_id');
 
         if (!$orderId) {
             return redirect()->route('home');
@@ -138,17 +137,17 @@ class CheckoutController extends Controller
         $order = Order::with('items')->find($orderId);
 
         if (!$order) {
+            session()->forget('checkout_success_order_id');
             return redirect()->route('home')->with('error', 'Order niet gevonden.');
         }
+
+        session()->forget('checkout_success_order_id');
 
         $delivery = json_decode($order->myparcel_delivery_json, true);
         $pickupLocation = '';
         if (!empty($delivery['deliveryType']) && strtolower($delivery['deliveryType']) === 'pickup') {
             $pickupLocation = $delivery['pickup'] ?? $delivery['pickupLocation'] ?? null;
         }
-
-        // Clear session data if it exists (for backward compatibility)
-        session()->forget('checkout_success_order_id');
 
         return view('checkout.success',
             [
@@ -170,7 +169,7 @@ class CheckoutController extends Controller
         $payment = $this->mollie->payments->get($paymentId);
         $order = Order::find($payment->metadata->order_id ?? null);
 
-        if ($order) {
+        if ($order && $order->mollie_payment_id === $payment->id) {
             $this->updateOrderPaymentStatus($order, $payment);
         }
 
@@ -479,7 +478,7 @@ class CheckoutController extends Controller
 
             if (!$product || $product->stock < $item['quantity']) {
                 throw ValidationException::withMessages([
-                    'stock' => "Niet voldoende voorraad voor {$item['name']}"
+                    'stock' => 'Niet voldoende voorraad voor ' . e($item['name'])
                 ]);
             }
 
@@ -617,7 +616,8 @@ class CheckoutController extends Controller
                 'paid_at' => now()
             ]);
             session()->forget(['cart', 'discount_code']);
-            return redirect()->route('checkoutSuccessPage', ['id' => $order->id]);
+            session()->put('checkout_success_order_id', $order->id);
+            return redirect()->route('checkoutSuccessPage');
         }
 
         try {
@@ -662,8 +662,9 @@ class CheckoutController extends Controller
         }
 
         session()->forget('cart');
+        session()->put('checkout_success_order_id', $order->id);
 
-        return redirect()->route('checkoutSuccessPage', ['id' => $order->id]);
+        return redirect()->route('checkoutSuccessPage');
     }
 
     private function generateInvoiceAndSendEmails(Order $order): void
@@ -698,7 +699,7 @@ class CheckoutController extends Controller
 
     private function sendAdminEmail(Order $order): void
     {
-        $adminEmail = env('LUCIDE_INKT_MAIL');
+        $adminEmail = config('services.lucideinkt.admin_email');
 
         if (!$adminEmail) {
             Log::warning('Admin email not configured (LUCIDE_INKT_MAIL missing)', [

@@ -23,10 +23,9 @@ class ImageCompressionService
             return null;
         }
 
-        // Preserve SVGs as-is (Intervention rasterizes vector images)
         $mime = $file->getMimeType();
         if ($mime === 'image/svg+xml') {
-            return $file->store('product_images', 'public');
+            abort(422, 'SVG uploads are not allowed.');
         }
 
         try {
