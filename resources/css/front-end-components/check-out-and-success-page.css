@@ -18,7 +18,6 @@ body:has(.page.checkout) .page-normal-background::before {
 
 /* ── Gradient-border shadow (same as contact page) ── */
 body:has(.page.checkout) .gradient-border {
-    box-shadow: 0 -10px 60px 10px rgb(0 0 0 / 0.49);
     position: relative;
     z-index: 1;
     background-color: #e9dba9;
@@ -38,6 +37,33 @@ body:has(.page.checkout) .gradient-border {
 body:has(.page.checkout) .page.checkout {
     position: relative;
     z-index: 2;
+    overflow: visible;
+}
+
+/* The inner gradient-border that separates the hero from the checkout content */
+body:has(.page.checkout) .cart-hero-border {
+    box-shadow: none;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+.page.checkout {
+    padding-bottom: 0;
+}
+
+/* Full-width gradient-border inside the checkout container */
+.page.checkout .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+/* Constrain checkout form content width, centred inside the content section */
+.checkout-content {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* ---------------------------------------------------------
@@ -468,14 +494,10 @@ input:-webkit-autofill:active {
 .page.checkout .customer-details.alternate {
     margin-top: 20px;
     display: none;
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
 }
 
-.page.checkout .customer-details.alternate.open {
+.page.checkout .customer-details.alternate.open,
+.page.checkout .customer-details.alternate.show {
     display: block;
 }
 
@@ -1144,12 +1166,25 @@ a.co-cart-product-link:hover {
     }
 }
 
+/* ── Success page: hero title spacing (no breadcrumbs above) ── */
+body:has(.page.checkout.success) .cart-hero {
+    padding-bottom: 8px;
+}
+
+body:has(.page.checkout.success) .cart-hero__title {
+    margin-top: 45px !important;
+    margin-bottom: 10px;
+}
+
+body:has(.page.checkout.success) .cart-content-section {
+    padding-top: 50px;
+}
+
 .container.page.checkout.success {
     max-width: 1100px;
     margin: 0 auto;
     margin-bottom: 0px;
-    padding-top: 120px;
-    padding-bottom: 60px;
+    padding-bottom: 0;
 }
 
 .container.page.checkout.success .fa-circle-check {
@@ -1166,9 +1201,9 @@ a.co-cart-product-link:hover {
 
 .checkout-success-header {
     text-align: center;
-    padding: 0px 20px 40px;
+    padding: 0px 20px 10px;
     padding-top: 0px !important;
-    padding-bottom: 10px!important;
+    padding-bottom: 0px !important;
 }
 
 .success-icon {
@@ -1546,16 +1581,41 @@ a.co-cart-product-link:hover {
 }
 
 .order-note-card {
-    border-radius: 12px;
+    --checkout-card-overlay-color:   #c8860a;
+    --checkout-card-overlay-opacity: 0.08;
+
+    border-radius: 40px;
     padding: 24px;
-    box-shadow: var(--shadow-1);
+    position: relative;
+    overflow: visible;
     background-color: #fbd795 !important;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp") !important;
-    background-size: 300px !important;
+    background-image: url("../../images/BillyPaper.webp") !important;
+    background-size: 800px !important;
     background-position: center !important;
     background-repeat: repeat !important;
     border: none !important;
     grid-column: 1 / -1;
+    box-shadow:
+        0px -4px 6px rgba(0, 0, 0, 0.07),
+        0px  4px 6px rgba(0, 0, 0, 0.07),
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.order-note-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--checkout-card-overlay-color);
+    opacity: var(--checkout-card-overlay-opacity);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.order-note-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .order-note-title {
@@ -1753,41 +1813,56 @@ a.co-cart-product-link:hover {
 
 /* ── Custom Delivery Options ───────────────────────────────── */
 .custom-delivery-options {
-    margin: 16px 0;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
+    margin: 16px 0 8px;
+    border: 1px solid rgba(197, 160, 89, 0.45);
+    border-radius: 14px;
     overflow: hidden;
+    background-color: rgba(251, 215, 149, 0.18);
+}
+
+.cdo-more-btn .fa-chevron-down {
+    color: #fff;
 }
 
 .cdo-tabs {
     display: flex;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.4);
 }
 
 .cdo-tab {
     flex: 1;
-    padding: 12px;
-    background: #f9f9f9;
+    padding: 12px 10px;
+    background: rgba(197, 160, 89, 0.08);
     border: none;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
-    color: #555;
+    font-weight: 600;
+    color: var(--main-font-color);
+    font-family: inherit;
     transition: background 0.2s, color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
+    opacity: 0.7;
 }
 
 .cdo-tab.active {
-    background: #fff;
-    color: #620505;
-    border-bottom: 2px solid #620505;
+    background: rgba(251, 215, 149, 0.40);
+    color: var(--main-font-color);
+    opacity: 1;
+    border-bottom: 2px solid rgba(197, 160, 89, 0.8);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cdo-tab:not(.active):hover {
+        background: rgba(197, 160, 89, 0.15);
+        opacity: 0.9;
+    }
 }
 
 .cdo-panel {
-    padding: 8px;
+    padding: 10px;
 }
 
 .cdo-option {
@@ -1795,23 +1870,24 @@ a.co-cart-product-link:hover {
     align-items: center;
     gap: 12px;
     padding: 10px 12px;
-    margin-bottom: 6px;
-    border: 1px solid #e5e5e5;
-    border-radius: 6px;
+    margin-bottom: 7px;
+    border: 1.5px solid rgba(197, 160, 89, 0.35);
+    border-radius: 10px;
     cursor: pointer;
-    transition: none;
+    transition: border-color 0.15s, background 0.15s;
+    background: rgb(255 255 255 / 45%);
 }
 
-/* Hover only on real pointer devices — prevents touch/scroll triggering it on mobile */
+/* Hover only on real pointer devices */
 @media (hover: hover) and (pointer: fine) {
     .cdo-option:hover {
-        border-color: rgba(98, 5, 5, 0.35);
-        background: rgba(253, 248, 248, 0.6);
+        border-color: rgba(197, 160, 89, 0.6);
+        background: rgb(255 255 255 / 65%);
     }
 }
 
 .cdo-option input[type="radio"] {
-    accent-color: #620505;
+    accent-color: #7a5c1e;
     flex-shrink: 0;
     /* Override .item input styles that break radio buttons inside cdo-option */
     width: 18px !important;
@@ -1827,8 +1903,9 @@ a.co-cart-product-link:hover {
 }
 
 .cdo-option:has(input:checked) {
-    border-color: #620505;
-    background: #fdf8f8;
+    border-color: rgba(197, 160, 89, 0.7);
+    border-width: 2px;
+    background: rgb(255 248 230 / 70%);
 }
 
 .cdo-option-inner {
@@ -1839,30 +1916,36 @@ a.co-cart-product-link:hover {
 }
 
 .cdo-option-date {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
     text-transform: capitalize;
+    color: var(--main-font-color);
 }
 
 .cdo-option-name {
-    font-size: 13px;
-    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--main-font-color);
 }
 
 .cdo-option-address {
     font-size: 13px;
-    color: #555;
+    color: var(--main-font-color);
+    opacity: 0.75;
 }
 
 .cdo-option-price {
     font-size: 13px;
-    color: #888;
+    color: var(--main-font-color);
+    opacity: 0.65;
     margin-top: 2px;
 }
 
 .cdo-option-distance {
     font-size: 12px;
-    color: #aaa;
+    color: var(--main-font-color);
+    opacity: 0.5;
+    margin-top: 1px;
 }
 
 .cdo-free {
@@ -1875,7 +1958,8 @@ a.co-cart-product-link:hover {
     align-items: center;
     gap: 10px;
     padding: 16px;
-    color: #888;
+    color: var(--main-font-color);
+    opacity: 0.6;
     font-size: 14px;
 }
 
@@ -1897,8 +1981,9 @@ a.co-cart-product-link:hover {
 }
 
 .cdo-empty {
-    padding: 12px;
-    color: #888;
+    padding: 14px;
+    color: var(--main-font-color);
+    opacity: 0.55;
     font-size: 14px;
     text-align: center;
 }
@@ -1911,17 +1996,17 @@ a.co-cart-product-link:hover {
 .cdo-home-carrier-row {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
 }
 
 .cdo-carrier-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #fff4ec;
-    border: 1px solid #f6d3b8;
-    border-radius: 5px;
-    padding: 3px 8px;
+    background: rgba(255, 244, 236, 0.85);
+    border: 1px solid rgba(246, 180, 100, 0.6);
+    border-radius: 6px;
+    padding: 3px 10px;
     width: fit-content;
 }
 
@@ -1929,6 +2014,53 @@ a.co-cart-product-link:hover {
     font-size: 13px;
     font-weight: 700;
     color: #f60;
+}
+
+/* Pickup scroll area */
+.cdo-pickup-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+
+.cdo-pickup-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cdo-pickup-scroll::-webkit-scrollbar-track {
+    background: rgba(197, 160, 89, 0.1);
+    border-radius: 4px;
+}
+
+.cdo-pickup-scroll::-webkit-scrollbar-thumb {
+    background: rgba(197, 160, 89, 0.45);
+    border-radius: 4px;
+}
+
+/* "Show more" button */
+.cdo-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 16px;
+    background: #2c582f;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cdo-more-btn:hover {
+        background: #244a26;
+    }
 }
 
 .checkout.success

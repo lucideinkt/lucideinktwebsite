@@ -9,7 +9,6 @@
                 <x-breadcrumbs :items="[
                     ['label' => 'Home', 'url' => route('home')],
                     ['label' => 'Winkel', 'url' => route('shop')],
-                    ['label' => $product->title, 'url' => ''],
                 ]" />
             </div>
         </div>

@@ -8,12 +8,12 @@
                 ['label' => 'Risale-i Nur', 'url' => route('risale')],
             ]" />
             </div>
-            <h1 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h1>
         </div>
 
         <div class="gradient-border"></div>
         <div class="text-box-background">
             <div class="risale-i-nur-page__text-box">
+                <h1 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h1>
                 <p class="let-desk">
                     Tafsirs zijn Qur'anexegeses die in <strong>twee categorieën</strong> worden onderscheiden: <strong>de letterlijke en
                         <br>de spirituele</strong>

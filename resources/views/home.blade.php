@@ -71,13 +71,13 @@
                                 <span class="cta-icon-box"><i class="fa-solid fa-book-open-reader"></i></span>
                                 <span class="cta-span">Lees Online</span>
                             </a>
-                            <a href="{{ route('shop') }}" class="hero-cta-btn">
-                                <span class="cta-icon-box"><i class="fa-solid fa-cart-shopping"></i></span>
-                                <span class="cta-span">Bestel Boeken</span>
-                            </a>
                             <a href="{{ route('audiobooks') }}" class="hero-cta-btn">
                                 <span class="cta-icon-box"><i class="fa-solid fa-headphones"></i></span>
                                 <span class="cta-span">Luister Audio</span>
+                            </a>
+                            <a href="{{ route('shop') }}" class="hero-cta-btn">
+                                <span class="cta-icon-box"><i class="fa-solid fa-cart-shopping"></i></span>
+                                <span class="cta-span">Bestel Boeken</span>
                             </a>
                         </div>
                     </div>
