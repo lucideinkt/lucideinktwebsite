@@ -27,7 +27,7 @@
             </div>
             <div class="shop-header">
                 <div class="shop-frame-wrapper">
-                    <img src="{{ asset('images/WinkelFrameAf.webp') }}" alt="" class="shop-frame-img" aria-hidden="true">
+                    <img src="{{ asset('images/kader-frame-winkel-af.png') }}" alt="" class="shop-frame-img" aria-hidden="true">
                     <h1 class="shop-title">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</h1>
                 </div>
             </div>
