@@ -145,7 +145,7 @@
         // Listen for Livewire cart-updated event
         document.addEventListener('livewire:init', () => {
             Livewire.on('cart-updated', (event) => {
-                const totalQuantity = event.totalQuantity || event[0]?.totalQuantity || 0;
+                const totalQuantity = event?.totalQuantity ?? event?.[0]?.totalQuantity ?? 0;
 
                 // Update mobile cart counter
                 const mobileCounter = document.getElementById('cart-quantity-mobile');
@@ -167,15 +167,10 @@
                 if (window.showMiniCart) window.showMiniCart();
             });
 
-            // Refresh mini cart when cart is updated
-            Livewire.on('cart-updated', (event) => {
-                // Dispatch refresh to the MiniCart Livewire component
-                Livewire.dispatch('cart-updated');
-            });
 
             // Listen for cart error message
             Livewire.on('cart-error', (event) => {
-                const message = event.message || event[0]?.message || 'Er is een fout opgetreden.';
+                const message = event?.message ?? event?.[0]?.message ?? 'Er is een fout opgetreden.';
                 if (window.showToast) {
                     window.showToast(message, true);
                 }

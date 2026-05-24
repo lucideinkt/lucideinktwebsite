@@ -1,13 +1,28 @@
 <x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
     <main class="container page checkout success">
+
+        <div class="cart-hero">
+            @if(isset($error) && $error)
+                <h1 class="cart-hero__title font-herina">Er is iets misgegaan</h1>
+            @elseif(isset($info) && $info)
+                <h1 class="cart-hero__title font-herina">Betaling in behandeling</h1>
+            @else
+                <h1 class="cart-hero__title font-herina">Bestelling geplaatst!</h1>
+            @endif
+        </div>
+
+        <div class="gradient-border cart-hero-border"></div>
+
+        <div class="cart-content-section">
+        <div class="cart-content checkout-content">
+
         @if(isset($error) && $error)
             <div class="checkout-message error">
                 <div class="checkout-message-icon">
                     <i class="fa-solid fa-circle-exclamation"></i>
                 </div>
                 <div class="checkout-message-content">
-                    <h2>Er is iets misgegaan</h2>
                     <p>{{ $error }}</p>
                     <a class="link-back btn" href="{{ route('shop') }}">Terug naar de shop</a>
                 </div>
@@ -18,19 +33,12 @@
                     <i class="fa-solid fa-clock"></i>
                 </div>
                 <div class="checkout-message-content">
-                    <h2>Betaling in behandeling</h2>
                     <p>{{ $info }}</p>
                     <a class="link-back btn" href="{{ route('shop') }}">Terug naar de shop</a>
                 </div>
             </div>
         @elseif(isset($success) && $success && isset($order) && $order)
             <div class="checkout-success-container">
-                <div class="checkout-success-header">
-                    <div class="success-icon">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-                    <h1 class="success-title font-herina">Bestelling geplaatst!</h1>
-                </div>
 
                 <div class="order-summary-card">
                     <h2 class="order-summary-title">Jouw bestelling</h2>
@@ -254,6 +262,10 @@
                 </div>
             </div>
         @endif
+
+        </div>
+        </div>
+
     </main>
 
     <div class="gradient-border"></div>

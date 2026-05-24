@@ -17,8 +17,7 @@
 
     @if (count($cart) > 0)
         <div class="cart-items-card">
-            <h2 class="cart-items-title">Producten</h2>
-
+            <h1 class="cart-hero__title">Winkelmand</h1>
             <div class="cart-items-list">
                 @foreach ($cart as $item)
                     @php
@@ -139,34 +138,18 @@
     <script>
         document.addEventListener('livewire:init', () => {
             Livewire.on('cart-updated', (event) => {
-                const totalQuantity = event.totalQuantity || 0;
+                const totalQuantity = event?.totalQuantity ?? event?.[0]?.totalQuantity ?? 0;
 
-                // Find all cart icon links by looking for links with cart icons inside
-                const allLinks = document.querySelectorAll('a');
-                const cartLinks = Array.from(allLinks).filter(link => {
-                    const icon = link.querySelector('.fa-cart-shopping');
-                    return icon !== null || link.href.includes('cart');
-                });
-
-                cartLinks.forEach(link => {
-                    let cartQuantityElement = link.querySelector('.cart-quantity');
-
+                // Only update the two known navbar badge elements
+                ['cart-quantity-mobile', 'cart-quantity-desktop'].forEach(id => {
+                    const badge = document.getElementById(id);
+                    if (!badge) return;
                     if (totalQuantity > 0) {
-                        // Cart has items - show or create the badge
-                        if (cartQuantityElement) {
-                            cartQuantityElement.textContent = totalQuantity;
-                        } else {
-                            // Create the badge if it doesn't exist
-                            cartQuantityElement = document.createElement('span');
-                            cartQuantityElement.className = 'cart-quantity';
-                            cartQuantityElement.textContent = totalQuantity;
-                            link.appendChild(cartQuantityElement);
-                        }
+                        badge.textContent = totalQuantity;
+                        badge.style.display = 'inline-block';
                     } else {
-                        // Cart is empty - remove the badge if it exists
-                        if (cartQuantityElement) {
-                            cartQuantityElement.remove();
-                        }
+                        badge.textContent = '0';
+                        badge.style.display = 'none';
                     }
                 });
             });

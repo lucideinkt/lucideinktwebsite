@@ -9,7 +9,6 @@
                     ['label' => 'Winkelmand', 'url' => route('cartPage')]
                 ]" />
             </div>
-            <h1 class="cart-hero__title">Winkelmand</h1>
         </div>
 
         <div class="gradient-border cart-hero-border"></div>

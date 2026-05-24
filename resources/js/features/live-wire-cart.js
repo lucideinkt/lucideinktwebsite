@@ -24,12 +24,12 @@ export function initLivewireCart() {
     // Listen for Livewire events (Livewire v3)
     if (window.Livewire) {
         Livewire.on('cart-updated', (event) => {
-            const totalQuantity = event[0]?.totalQuantity || event?.totalQuantity || 0;
+            const totalQuantity = event?.[0]?.totalQuantity ?? event?.totalQuantity ?? 0;
             updateCartBadge(totalQuantity);
         });
 
         Livewire.on('cart-success', (event) => {
-            const data = event[0] || event;
+            const data = event?.[0] ?? event ?? {};
             if (window.showMiniCart) {
                 window.showMiniCart(data.productName || '', data.productImage || '', data.productPrice || '', data.cartCount || '', data.cartSubtotal || '');
             } else {
@@ -38,7 +38,7 @@ export function initLivewireCart() {
         });
 
         Livewire.on('cart-error', (event) => {
-            const message = event[0]?.message || event?.message || 'Er is een fout opgetreden.';
+            const message = event?.[0]?.message ?? event?.message ?? 'Er is een fout opgetreden.';
             window.showToast(message, true);
         });
     }

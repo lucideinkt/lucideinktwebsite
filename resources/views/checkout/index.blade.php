@@ -25,15 +25,22 @@
     @endpush
     <div class="page-normal-background">
     <main class="container page checkout">
-        <x-breadcrumbs :items="[
-            ['label' => 'Home', 'url' => route('home')],
-            ['label' => 'Winkelmand', 'url' => route('cartPage')],
-            ['label' => 'Afrekenen', 'url' => route('checkoutPage')]
-        ]" />
 
-        <div class="checkout-header">
-            <h1 class="checkout-page-title font-herina">Afrekenen</h1>
+        <div class="cart-hero">
+            <div class="container">
+                <x-breadcrumbs :items="[
+                    ['label' => 'Home', 'url' => route('home')],
+                    ['label' => 'Winkelmand', 'url' => route('cartPage')],
+                    ['label' => 'Afrekenen', 'url' => route('checkoutPage')]
+                ]" />
+            </div>
+            <h1 class="cart-hero__title font-herina">Afrekenen</h1>
         </div>
+
+        <div class="gradient-border cart-hero-border"></div>
+
+        <div class="cart-content-section">
+        <div class="cart-content checkout-content">
 
         @if (session('success'))
             <div class="alert alert-success">
@@ -464,6 +471,8 @@
                 </div>
             </div>
         </form>
+        </div>{{-- /.checkout-content --}}
+        </div>{{-- /.cart-content-section --}}
     </main>
 
     <div class="gradient-border"></div>
