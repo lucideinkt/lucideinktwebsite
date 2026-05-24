@@ -1,5 +1,8 @@
 <x-layout :seo-data="$SEOData">
     @push('head')
+        @if(config('services.google.maps_api_key'))
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.maps_api_key') }}&libraries=places&callback=initAddressAutocomplete&loading=async" async defer></script>
+        @endif
         <style>
             /* Suppress browser autofill blue/yellow background on all checkout inputs */
             .checkout input:-webkit-autofill,
@@ -22,22 +25,15 @@
     @endpush
     <div class="page-normal-background">
     <main class="container page checkout">
+        <x-breadcrumbs :items="[
+            ['label' => 'Home', 'url' => route('home')],
+            ['label' => 'Winkelmand', 'url' => route('cartPage')],
+            ['label' => 'Afrekenen', 'url' => route('checkoutPage')]
+        ]" />
 
-        <div class="cart-hero">
-            <div class="container">
-                <x-breadcrumbs :items="[
-                    ['label' => 'Home', 'url' => route('home')],
-                    ['label' => 'Winkelmand', 'url' => route('cartPage')],
-                    ['label' => 'Afrekenen', 'url' => route('checkoutPage')]
-                ]" />
-            </div>
-            <h1 class="cart-hero__title font-herina">Afrekenen</h1>
+        <div class="checkout-header">
+            <h1 class="checkout-page-title font-herina">Afrekenen</h1>
         </div>
-
-        <div class="gradient-border cart-hero-border"></div>
-
-        <div class="cart-content-section">
-        <div class="cart-content checkout-content">
 
         @if (session('success'))
             <div class="alert alert-success">
@@ -118,41 +114,58 @@
                             </div>
                         </div>
 
-                        <div class="postcode-row">
-                            <div class="form-input">
-                                <label for="billing_postal_code">Postcode <span class="required">*</span></label>
-                                <input type="text" name="billing_postal_code" autocomplete="postal-code" data-1p-ignore
-                                    value="{{ old('billing_postal_code') }}"
-                                    placeholder="1234 AB">
-                                @error('billing_postal_code')
+                        {{-- Google Places address search --}}
+                        <div class="form-input address-autocomplete-wrap" id="billing-autocomplete-wrap">
+                            <label for="billing_address_search">
+                                <i class="fa-solid fa-magnifying-glass" style="margin-right:4px;"></i>
+                                Adres zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ om automatisch in te vullen)</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="billing_address_search"
+                                placeholder="bijv. Keizersgracht 1, Amsterdam"
+                                class="address-search-input"
+                                onkeydown="if(event.key==='Enter'){event.preventDefault();}"
+                            >
+                        </div>
+
+                        <div class="street-box">
+                            <div class="form-input street">
+                                <label for="billing_street">Straatnaam <span class="required">*</span></label>
+                                <input type="text" name="billing_street" autocomplete="address-line1" data-1p-ignore
+                                    value="{{ old('billing_street') }}"
+                                    placeholder="Straatnaam">
+                                @error('billing_street')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-input">
-                                <label for="billing_house_number">Huisnummer <span class="required">*</span></label>
-                                <input type="number" name="billing_house_number" autocomplete="address-line2" data-1p-ignore
-                                    value="{{ old('billing_house_number') }}"
-                                    placeholder="Nr.">
-                                @error('billing_house_number')
-                                    <div class="error">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-input">
-                                <label for="billing_house_number-add">Toevoeging</label>
-                                <input type="text" name="billing_house_number-add" autocomplete="address-line2" data-1p-ignore
-                                    value="{{ old('billing_house_number-add') }}">
-                                @error('billing_house_number-add')
-                                    <div class="error">{{ $message }}</div>
-                                @enderror
+                            <div class="housnumber-box">
+                                <div class="form-input">
+                                    <label for="billing_house_number">Huisnummer <span class="required">*</span></label>
+                                    <input type="number" name="billing_house_number" autocomplete="address-line2" data-1p-ignore
+                                        value="{{ old('billing_house_number') }}"
+                                        placeholder="Nr.">
+                                    @error('billing_house_number')
+                                        <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-input">
+                                    <label for="billing_house_number-add">Toevoeging</label>
+                                    <input type="text" name="billing_house_number-add" autocomplete="address-line2" data-1p-ignore
+                                        value="{{ old('billing_house_number-add') }}">
+                                    @error('billing_house_number-add')
+                                        <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-input">
-                            <label for="billing_street">Straatnaam <span class="required">*</span></label>
-                            <input type="text" id="billing_street" name="billing_street" autocomplete="address-line1" data-1p-ignore
-                                value="{{ old('billing_street') }}"
-                                placeholder="Straatnaam">
-                            @error('billing_street')
+                            <label for="billing_postal_code">Postcode <span class="required">*</span></label>
+                            <input type="text" name="billing_postal_code" autocomplete="postal-code" data-1p-ignore
+                                value="{{ old('billing_postal_code') }}"
+                                placeholder="Postcode">
+                            @error('billing_postal_code')
                                 <div class="error">{{ $message }}</div>
                             @enderror
                         </div>
@@ -241,42 +254,59 @@
                             </div>
                         </div>
 
-                        <div class="postcode-row">
-                            <div class="form-input">
-                                <label for="shipping_postal_code">Postcode</label>
-                                <input type="text" name="shipping_postal_code" autocomplete="shipping postal-code" data-1p-ignore
-                                    value="{{ old('shipping_postal_code') }}"
-                                    placeholder="1234 AB">
-                                @error('shipping_postal_code')
+                        {{-- Google Places address search --}}
+                        <div class="form-input address-autocomplete-wrap" id="shipping-autocomplete-wrap">
+                            <label for="shipping_address_search">
+                                <i class="fa-solid fa-magnifying-glass" style="margin-right:4px;"></i>
+                                Adres zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ om automatisch in te vullen)</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="shipping_address_search"
+                                placeholder="bijv. Keizersgracht 1, Amsterdam"
+                                class="address-search-input"
+                                onkeydown="if(event.key==='Enter'){event.preventDefault();}"
+                            >
+                        </div>
+
+                        <div class="street-box">
+                            <div class="form-input street">
+                                <label for="shipping_street">Straatnaam</label>
+                                <input type="text" name="shipping_street" autocomplete="shipping address-line1" data-1p-ignore
+                                    value="{{ old('shipping_street') }}"
+                                    placeholder="Straatnaam">
+                                @error('shipping_street')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-input">
-                                <label for="shipping_house_number">Huisnummer</label>
-                                <input type="number" name="shipping_house_number"
-                                    autocomplete="shipping address-line2" data-1p-ignore
-                                    value="{{ old('shipping_house_number') }}"
-                                    placeholder="Nr.">
-                                @error('shipping_house_number')
-                                    <div class="error">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-input">
-                                <label for="shipping_house_number-add">Toevoeging</label>
-                                <input type="text" name="shipping_house_number-add" data-1p-ignore
-                                    value="{{ old('shipping_house_number-add') }}">
-                                @error('shipping_house_number-add')
-                                    <div class="error">{{ $message }}</div>
-                                @enderror
+                            <div class="housnumber-box">
+                                <div class="form-input">
+                                    <label for="shipping_house_number">Huisnummer</label>
+                                    <input type="number" name="shipping_house_number"
+                                        autocomplete="shipping address-line2" data-1p-ignore
+                                        value="{{ old('shipping_house_number') }}"
+                                        placeholder="Nr.">
+                                    @error('shipping_house_number')
+                                        <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-input">
+                                    <label for="shipping_house_number-add">Toevoeging</label>
+                                    <input type="text" name="shipping_house_number-add" data-1p-ignore
+                                        value="{{ old('shipping_house_number-add') }}">
+                                    @error('shipping_house_number-add')
+                                        <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-input">
-                            <label for="shipping_street">Straatnaam</label>
-                            <input type="text" id="shipping_street" name="shipping_street" autocomplete="shipping address-line1" data-1p-ignore
-                                value="{{ old('shipping_street') }}"
-                                placeholder="Straatnaam">
-                            @error('shipping_street')
+                            <label for="shipping_postal_code">Postcode</label>
+                            <input type="text" name="shipping_postal_code" autocomplete="shipping postal-code" data-1p-ignore
+                                value="{{ old('shipping_postal_code') }}"
+                                placeholder="Postcode">
+                            @error('shipping_postal_code')
                                 <div class="error">{{ $message }}</div>
                             @enderror
                         </div>
@@ -434,16 +464,14 @@
                 </div>
             </div>
         </form>
-        </div>{{-- /.checkout-content --}}
-        </div>{{-- /.cart-content-section --}}
     </main>
 
     <div class="gradient-border"></div>
     <x-footer></x-footer>
     <script>
         // ─── Helpers ──────────────────────────────────────────────────────────
-        // Flag: set to true only when autocomplete is actively filling the country
-        var _autocompleteFillingCountry = false;
+        // Flag: set to true only when Google Places is actively filling the country
+        var _googlePlacesFillingCountry = false;
 
         function resetMyParcelWidget() {
             if (typeof window.resetDeliveryOptions === 'function') {
@@ -479,6 +507,9 @@
                         });
                     }
 
+                    // Also clear the autocomplete search box
+                    var search = document.getElementById('billing_address_search');
+                    if (search) search.value = '';
 
                     // Also clear password fields
                     document.querySelectorAll('[name="password"], [name="password_confirmation"]').forEach(function (el) {
@@ -510,6 +541,9 @@
                         });
                     }
 
+                    // Also clear the autocomplete search box
+                    var search = document.getElementById('shipping_address_search');
+                    if (search) search.value = '';
 
                     // If alternate shipping is active, also reset the widget
                     if (document.getElementById('alt-shipping')?.checked) {
@@ -546,13 +580,13 @@
             function resetCountryIfNotGoogle() {
                 var billing = document.getElementById('billing_country');
                 @if(!old('billing_country'))
-                if (billing && billing.value !== '' && !_autocompleteFillingCountry) {
+                if (billing && billing.value !== '' && !_googlePlacesFillingCountry) {
                     billing.value = '';
                 }
                 @endif
                 var shipping = document.getElementById('shipping_country');
                 @if(!old('shipping_country'))
-                if (shipping && shipping.value !== '' && !_autocompleteFillingCountry) {
+                if (shipping && shipping.value !== '' && !_googlePlacesFillingCountry) {
                     shipping.value = '';
                 }
                 @endif
@@ -583,84 +617,155 @@
             }
         });
 
-        // ─── Address autocomplete ─────────────────────────────────────────────
+        // ─── Google Places Autocomplete ──────────────────────────────────────
+        @if(config('services.google.maps_api_key'))
+
+        // Dutch country names (from backend)
         const countryNames = @json($countryNames);
 
-        function setupPostcodeLookup(postcodeInputSelector, fields) {
-            var postcodeEl = document.querySelector(postcodeInputSelector);
-            if (!postcodeEl) return;
+        // Countries with shipping configured (lowercase for Google Places API)
+        const shippingCountryCodes = @json(array_map('strtolower', array_keys($shippingCountries)));
 
-            var timer = null;
+        function initAddressAutocomplete() {
+            setupAutocomplete('billing_address_search', {
+                street:         '[name="billing_street"]',
+                houseNumber:    '[name="billing_house_number"]',
+                postalCode:     '[name="billing_postal_code"]',
+                city:           '[name="billing_city"]',
+                countrySelect:  'billing_country',
+            });
 
-            function trySearch() {
-                var pc = postcodeEl.value.trim().replace(/\s/g, '');
-                var hn = fields.houseNumberEl ? fields.houseNumberEl.value.trim() : '';
-                if (!pc || !hn) return;
-
-                fetch('https://gratis-postcodedata.nl/api/postcode/' + encodeURIComponent(pc) + '/' + encodeURIComponent(hn))
-                    .then(function (r) { return r.json(); })
-                    .then(function (data) {
-                        var result = Array.isArray(data) ? data[0] : data;
-                        if (!result || !result.straat) return;
-                        var streetEl = fields.streetEl;
-                        var cityEl   = document.querySelector(fields.city);
-                        if (streetEl) streetEl.value = result.straat;
-                        if (cityEl)   cityEl.value   = result.plaats || result.gemeente || '';
-
-                        var countryCode = (result.country || 'nl').toUpperCase();
-                        _autocompleteFillingCountry = true;
-                        var sel = document.getElementById(fields.countrySelect);
-                        if (sel) { sel.value = countryCode; sel.dispatchEvent(new Event('change', { bubbles: true })); }
-                        setTimeout(function () { _autocompleteFillingCountry = false; }, 100);
-
-                        [streetEl, cityEl].forEach(function (el) {
-                            if (el && el.value) {
-                                el.classList.add('address-autofilled');
-                                setTimeout(function () { el.classList.remove('address-autofilled'); }, 2500);
-                            }
-                        });
-                    })
-                    .catch(function () {});
-            }
-
-            postcodeEl.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(trySearch, 600); });
-            if (fields.houseNumberEl) {
-                fields.houseNumberEl.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(trySearch, 600); });
-                fields.houseNumberEl.addEventListener('blur', function () { clearTimeout(timer); trySearch(); });
-            }
-            if (fields.additionEl) {
-                fields.additionEl.addEventListener('blur', function () { clearTimeout(timer); trySearch(); });
-            }
+            setupAutocomplete('shipping_address_search', {
+                street:         '[name="shipping_street"]',
+                houseNumber:    '[name="shipping_house_number"]',
+                postalCode:     '[name="shipping_postal_code"]',
+                city:           '[name="shipping_city"]',
+                countrySelect:  'shipping_country',
+            });
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            setupPostcodeLookup('[name="billing_postal_code"]', {
-                houseNumberEl: document.querySelector('[name="billing_house_number"]'),
-                additionEl:    document.querySelector('[name="billing_house_number-add"]'),
-                streetEl:      document.getElementById('billing_street'),
-                city:          '[name="billing_city"]',
-                countrySelect: 'billing_country',
+        function setupAutocomplete(inputId, fields) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+
+            const autocomplete = new google.maps.places.Autocomplete(input, {
+                types: ['address'],
+                componentRestrictions: { country: shippingCountryCodes },
+                fields: ['address_components'],
             });
-            setupPostcodeLookup('[name="shipping_postal_code"]', {
-                houseNumberEl: document.querySelector('[name="shipping_house_number"]'),
-                additionEl:    document.querySelector('[name="shipping_house_number-add"]'),
-                streetEl:      document.getElementById('shipping_street'),
-                city:          '[name="shipping_city"]',
-                countrySelect: 'shipping_country',
+
+            autocomplete.addListener('place_changed', function () {
+                const place = autocomplete.getPlace();
+                if (!place.address_components) return;
+
+                // Reset all target fields first
+                [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
+                    const el = document.querySelector(sel);
+                    if (el) el.value = '';
+                });
+
+                let streetName = '';
+                let houseNumber = '';
+
+                place.address_components.forEach(component => {
+                    const types = component.types;
+
+                    if (types.includes('route')) {
+                        streetName = component.long_name;
+                    }
+                    if (types.includes('street_number')) {
+                        houseNumber = component.long_name;
+                    }
+                    if (types.includes('postal_code')) {
+                        const el = document.querySelector(fields.postalCode);
+                        if (el) el.value = component.long_name;
+                    }
+                    if (types.includes('locality') || types.includes('postal_town')) {
+                        const el = document.querySelector(fields.city);
+                        if (el && !el.value) el.value = component.long_name;
+                    }
+                    if (types.includes('country')) {
+                        const countryCode = component.short_name.toUpperCase();
+                        const countryName = countryNames[countryCode] || component.long_name;
+
+                        // Set select value — flag so our country-reset logic knows this is intentional
+                        _googlePlacesFillingCountry = true;
+                        const selectEl = document.getElementById(fields.countrySelect);
+                        if (selectEl) {
+                            selectEl.value = countryCode;
+                            // Trigger change event for any listeners
+                            selectEl.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                        setTimeout(function () { _googlePlacesFillingCountry = false; }, 100);
+
+                        // Check shipping availability, passing the name for the popup
+                        checkShippingAvailability(countryCode, countryName);
+                    }
+                });
+
+                const streetEl = document.querySelector(fields.street);
+                if (streetEl) streetEl.value = streetName;
+
+                const houseEl = document.querySelector(fields.houseNumber);
+                if (houseEl) houseEl.value = houseNumber;
+
+                // Clear the search box
+                input.value = '';
+
+                // Highlight filled fields briefly
+                [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
+                    const el = document.querySelector(sel);
+                    if (el && el.value) {
+                        el.classList.add('address-autofilled');
+                        setTimeout(() => el.classList.remove('address-autofilled'), 2500);
+                    }
+                });
+
+                // Fire input + change events on all filled fields so MyParcel widget
+                // and other listeners (shipping cost etc.) react to the new values
+                [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
+                    const el = document.querySelector(sel);
+                    if (el && el.value) {
+                        el.dispatchEvent(new Event('input',  { bubbles: true }));
+                        el.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                });
+                // Also fire on the select country field so shipping cost + MyParcel update
+                const countrySelectEl = document.getElementById(fields.countrySelect);
+                if (countrySelectEl && countrySelectEl.value) {
+                    countrySelectEl.dispatchEvent(new Event('input',  { bubbles: true }));
+                    countrySelectEl.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+
+                // Signal MyParcel to reload pickup locations for the new address
+                document.dispatchEvent(new CustomEvent('addressAutofilled'));
             });
-        });
+        }
+
+        // Expose callback for the async Google Maps loader
+        window.initAddressAutocomplete = initAddressAutocomplete;
+
+        // Also try immediately in case the script already loaded
+        if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+            initAddressAutocomplete();
+        }
 
         // ─── Shipping availability popup ─────────────────────────────────────
         function checkShippingAvailability(countryCode, countryName) {
             fetch(`/api/shipping-cost?country=${countryCode}`)
                 .then(r => r.json())
                 .then(data => {
+                    // Dispatch event so app.js shipping calculator updates too
                     document.dispatchEvent(new CustomEvent('countryChanged'));
-                    if (!data.found) showNoShippingPopup(countryName);
+
+                    if (!data.found) {
+                        showNoShippingPopup(countryName);
+                    }
                 });
         }
 
         function showNoShippingPopup(countryName) {
+            // Remove existing popup if any
             const existing = document.getElementById('no-shipping-popup');
             if (existing) existing.remove();
 
@@ -689,10 +794,16 @@
             `;
 
             document.body.appendChild(overlay);
+
+            // Close on overlay click
             overlay.querySelector('.no-shipping-overlay').addEventListener('click', function(e) {
                 if (e.target === this) overlay.remove();
             });
         }
+        @else
+        // Google Maps API key not configured – autocomplete disabled.
+        document.querySelectorAll('.address-autocomplete-wrap').forEach(el => el.style.display = 'none');
+        @endif
 
         // ─── Client-side form validation ────────────────────────────────────
         (function () {
