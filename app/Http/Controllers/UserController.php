@@ -51,11 +51,11 @@ class UserController extends Controller
 
         $user = User::create([
             'first_name' => $validated['first_name'],
-            'last_name' => $validated['last_name'],
-            'role' => $validated['user_role'],
-            'email' => $validated['email'],
-            'password' => Hash::make(Str::random(32)),
+            'last_name'  => $validated['last_name'],
+            'email'      => $validated['email'],
+            'password'   => Hash::make(Str::random(32)),
         ]);
+        $user->forceFill(['role' => $validated['user_role']])->save();
 
         event(new Registered($user));
 
@@ -76,7 +76,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $validated = $request->validated();
 
-        $user->update(['role' => $validated['user_role']]);
+        $user->forceFill(['role' => $validated['user_role']])->save();
 
         if ($user->role == 'user') {
             return redirect()->route('dashboard')->with('success',

@@ -462,7 +462,7 @@
                     // Clear all visible text/email/tel/textarea inputs in the billing card
                     var billingCard = clearBtn.closest('.item.customer-details');
                     if (billingCard) {
-                        billingCard.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]):not([name="_token"]), textarea').forEach(function (el) {
+                        billingCard.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]):not([name="_token"]):not([readonly]), textarea').forEach(function (el) {
                             el.value = '';
                         });
                         billingCard.querySelectorAll('select').forEach(function (el) {
