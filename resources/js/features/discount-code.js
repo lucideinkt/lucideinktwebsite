@@ -28,6 +28,8 @@ function updateDiscountUI(data, code) {
         if (discountRow) discountRow.style.display = '';
         if (newTotalRow) newTotalRow.style.display = '';
         if (discountAmount) discountAmount.textContent = displayDiscount;
+        // Store cart-minus-discount so shippingCostLoaded can recalculate later
+        if (orderNewTotal) orderNewTotal.dataset.cartNewTotal = data.new_total.toString();
         // New total = (cart - discount) + shipping
         if (orderNewTotal) orderNewTotal.textContent = formatEuro(data.new_total + shippingCost);
         // Don't overwrite #order-total — shipping.js owns it
@@ -149,4 +151,18 @@ export function initDiscountCode() {
                 });
         });
     }
+
+    // When shipping cost loads after discount was already applied, recalculate new total
+    document.addEventListener('shippingCostLoaded', () => {
+        const newTotalRow = document.getElementById('new-total-row');
+        const orderNewTotal = document.getElementById('order-new-total');
+        const shippingEl = document.getElementById('shipping-cost');
+
+        if (!newTotalRow || newTotalRow.style.display === 'none') return;
+        if (!orderNewTotal?.dataset.cartNewTotal) return;
+
+        const cartNewTotal = parseFloat(orderNewTotal.dataset.cartNewTotal);
+        const shippingCost = parseFloat(shippingEl?.dataset.cost || '0');
+        orderNewTotal.textContent = formatEuro(cartNewTotal + shippingCost);
+    });
 }
