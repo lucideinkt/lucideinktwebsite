@@ -105,12 +105,12 @@ body:has(.page.cart-page) .page.cart-page {
 
 /* ── Hero title — matches contact-hero__title ── */
 .cart-hero__title {
-    margin-top: 22px;
+    margin-top: 10px !important;
     font-family: var(--font-herina);
     letter-spacing: 1.5px;
     font-size: 52px;
     font-weight: 400;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     text-align: center;
     color: var(--main-font-color);
     line-height: 1.2;
@@ -774,7 +774,8 @@ body:has(.page.cart-page) .page.cart-page {
 
     .cart-hero__title {
         font-size: 38px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
+        margin-top: 15px!important;
     }
 
     .cart-content-section {
@@ -884,7 +885,7 @@ body:has(.page.cart-page) .page.cart-page {
     .cart-hero__title {
         font-size: 30px;
         letter-spacing: 1px;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
     }
 
     .cart-content-section {
@@ -900,5 +901,6 @@ body:has(.page.cart-page) .page.cart-page {
 
     .cart-items-card {
         padding: 16px 14px;
+        padding-bottom: 30px;
     }
 }

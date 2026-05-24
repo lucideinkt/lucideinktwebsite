@@ -240,6 +240,12 @@ body:has(.page.auth-page) .page.auth-page {
     z-index: 1;
 }
 
+/* ── Auth title inside card ── */
+.auth-card .auth-hero__title {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
 /* =========================================================
    AUTH FORM
    ========================================================= */
@@ -396,7 +402,7 @@ input[type="password"]::-ms-clear {
 .back-link {
     text-align: center;
     margin-top: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0!important;
 }
 
 .back-link span {
@@ -436,13 +442,18 @@ input[type="password"]::-ms-clear {
         margin-bottom: 16px;
     }
 
+    .auth-card .auth-hero__title {
+        font-size: 38px;
+        margin-bottom: 16px;
+    }
+
     .auth-card {
         padding: 35px 30px;
     }
 
     .auth-content-section {
         padding-top: 32px;
-        padding-bottom: 32px;
+        padding-bottom: 42px;
     }
 
     .page.auth-page .auth-hero .bc {
@@ -462,6 +473,11 @@ input[type="password"]::-ms-clear {
         margin-bottom: 14px;
     }
 
+    .auth-card .auth-hero__title {
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
+
     .auth-card {
         padding: 30px 20px;
         max-width: 100%;
@@ -469,13 +485,18 @@ input[type="password"]::-ms-clear {
 
     .auth-content-section {
         padding-top: 24px;
-        padding-bottom: 24px;
+        padding-bottom: 38px;
     }
 }
 
 @media (max-width: 400px) {
     .auth-hero__title {
         font-size: 26px;
+    }
+
+    .auth-card .auth-hero__title {
+        font-size: 26px;
+        margin-bottom: 14px;
     }
 
     .auth-card {

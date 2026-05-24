@@ -9,7 +9,6 @@
                 ['label' => 'Said Nursî', 'url' => route('saidnursi')],
             ]" />
             </div>
-            <h1 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h1>
         </div>
 
         <div class="gradient-border"></div>
@@ -18,6 +17,8 @@
 
 
             <div class="said-nursi-page__text-box">
+
+                <h1 class="title"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</h1>
 
                 <div class="top-images">
                     <img src="{{ asset('images/PortretJongeUstad9_new.png') }}" alt="" fetchpriority="high" decoding="async">

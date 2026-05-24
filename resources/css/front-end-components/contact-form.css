@@ -273,6 +273,12 @@ body:has(.page.contact-page) .page.contact-page {
     text-align: center;
 }
 
+/* ── Contact title inside form box ── */
+.contact-form-box .contact-hero__title {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
 /* Form Layout */
 .contact-form {
     display: flex;
@@ -429,6 +435,11 @@ body:has(.page.contact-page) .page.contact-page {
         margin-bottom: 16px;
     }
 
+    .contact-form-box .contact-hero__title {
+        font-size: 38px;
+        margin-bottom: 16px;
+    }
+
     .contact-form-box {
         padding: 35px 30px;
     }
@@ -453,6 +464,11 @@ body:has(.page.contact-page) .page.contact-page {
     .contact-hero__title {
         font-size: 30px;
         letter-spacing: 1px;
+        margin-bottom: 14px;
+    }
+
+    .contact-form-box .contact-hero__title {
+        font-size: 30px;
         margin-bottom: 14px;
     }
 
@@ -496,6 +512,11 @@ body:has(.page.contact-page) .page.contact-page {
 @media (max-width: 400px) {
     .contact-hero__title {
         font-size: 26px;
+    }
+
+    .contact-form-box .contact-hero__title {
+        font-size: 26px;
+        margin-bottom: 14px;
     }
 
     .contact-form-box {

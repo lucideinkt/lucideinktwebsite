@@ -9,13 +9,13 @@
                   ['label' => 'Inloggen', 'url' => route('login')],
                 ]" />
             </div>
-            <h1 class="auth-hero__title">Inloggen</h1>
         </div>
 
         <div class="gradient-border auth-hero-border"></div>
 
         <div class="auth-content-section">
             <div class="auth-card">
+                <h1 class="auth-hero__title">Inloggen</h1>
                 <form action="{{ route('loginUser') }}" method="POST" class="auth-form">
                     @csrf
                     @if (session('success'))
@@ -49,8 +49,6 @@
                                 onclick="this.parentElement.style.display='none';">&times;</button>
                         </div>
                     @endif
-
-                    <h2 class="auth-title">Welkom Terug</h2>
 
                     <div class="form-input">
                         <label for="email">E-mail <span class="required">*</span></label>

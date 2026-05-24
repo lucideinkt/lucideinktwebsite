@@ -194,6 +194,51 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
     z-index: 1;
 }
 
+/* ── Title inside text box ── */
+.herzameling-page__text-box .title {
+    font-family: var(--font-herina);
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--main-font-color);
+    margin-top: 0;
+    margin-bottom: 30px;
+    display: block;
+    width: 100%;
+}
+
+/* ── Herina Decorative Letters for Title (also inside text box) ── */
+.herzameling-page__text-box .title-h::before,
+.herzameling-hero .title-h::before {
+    content: var(--herina-h);
+}
+.herzameling-page__text-box .title-t::before,
+.herzameling-hero .title-t::before {
+    content: var(--herina-t);
+}
+.herzameling-page__text-box .title-r::before,
+.herzameling-hero .title-r::before {
+    content: var(--herina-r);
+}
+.herzameling-page__text-box .title-a-one::before,
+.herzameling-hero .title-a-one::before {
+    content: var(--herina-a-one);
+}
+.herzameling-page__text-box .title-e-r::before,
+.herzameling-hero .title-e-r::before {
+    content: var(--herina-e-r);
+}
+.herzameling-page__text-box .title-me::before,
+.herzameling-hero .title-me::before {
+    content: var(--herina-me);
+}
+.herzameling-page__text-box .title-in::before,
+.herzameling-hero .title-in::before {
+    content: "\E04E";
+}
+
 .herzameling-page__text-box .sub-title {
     text-align: center;
     margin-top: 45px;
@@ -338,6 +383,10 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
     .herzameling-hero .title {
         font-size: 44px;
     }
+
+    .herzameling-page__text-box .title {
+        font-size: 44px;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -379,6 +428,11 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
         font-size: 38px;
         margin-bottom: 16px;
         letter-spacing: 1.5px;
+    }
+
+    .herzameling-page__text-box .title {
+        font-size: 38px;
+        margin-bottom: 24px;
     }
 
     body:has(.herzameling-page__text-box) .text-box-background {
@@ -442,6 +496,11 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
         letter-spacing: 1px;
         margin-bottom: 14px;
         line-height: 1.4;
+    }
+
+    .herzameling-page__text-box .title {
+        font-size: 30px;
+        margin-bottom: 20px;
     }
 
     body:has(.herzameling-page__text-box) .text-box-background {
