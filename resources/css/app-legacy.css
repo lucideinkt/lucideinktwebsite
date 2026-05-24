@@ -2280,6 +2280,7 @@ thead {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: .25rem;
     line-height: 1.5;
     margin: 0;

@@ -9,7 +9,6 @@
                   ['label' => 'Contact', 'url' => route('contact')],
                 ]" />
             </div>
-            <h1 class="contact-hero__title">Neem Contact Op</h1>
         </div>
 
         <div class="gradient-border contact-hero-border"></div>

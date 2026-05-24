@@ -17,7 +17,7 @@
 {{--                    </svg>--}}
                 @endif
 
-                @if(!empty($item['url']) && !$isLast)
+                @if(!empty($item['url']))
                     <a href="{{ $item['url'] }}" class="bc-link" itemprop="item">
                         <span itemprop="name">{{ $item['label'] }}</span>
                     </a>

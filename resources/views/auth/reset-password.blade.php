@@ -9,18 +9,17 @@
                   ['label' => 'Wachtwoord resetten', 'url' => '#'],
                 ]" />
             </div>
-            <h1 class="auth-hero__title">Wachtwoord resetten</h1>
         </div>
 
         <div class="gradient-border auth-hero-border"></div>
 
         <div class="auth-content-section">
             <div class="auth-card">
+                <h1 class="auth-hero__title">Wachtwoord resetten</h1>
                 <form action="{{ route('password.update') }}" method="POST" class="auth-form">
                     @csrf
                     <input type="hidden" name="token" value="{{ $token }}">
 
-                    <h2 class="auth-title">Wachtwoord resetten</h2>
 
                     <div class="form-input">
                         <label for="email">E-mail <span class="required">*</span></label>

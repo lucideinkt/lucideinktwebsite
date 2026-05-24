@@ -8,12 +8,13 @@
                 ['label' => 'Retourbeleid', 'url' => route('retourbeleid')],
             ]" />
             </div>
-            <h1 class="title">Retourbeleid</h1>
         </div>
 
         <div class="gradient-border"></div>
         <div class="text-box-background">
         <div class="info-page__text-box">
+
+<h1 class="title">Retourbeleid</h1>
 
 <p><em>Laatst bijgewerkt: februari 2026</em></p>
 

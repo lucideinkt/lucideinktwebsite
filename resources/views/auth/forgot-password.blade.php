@@ -9,13 +9,13 @@
                   ['label' => 'Wachtwoord vergeten', 'url' => route('password.request')],
                 ]" />
             </div>
-            <h1 class="auth-hero__title">Wachtwoord vergeten</h1>
         </div>
 
         <div class="gradient-border auth-hero-border"></div>
 
         <div class="auth-content-section">
             <div class="auth-card">
+                <h1 class="auth-hero__title">Wachtwoord vergeten?</h1>
                 <form action="{{ route('password.email') }}" method="POST" class="auth-form">
                     @csrf
                     @if (session('success'))
