@@ -1,62 +1,133 @@
 <x-dashboard-layout>
-    <main class="container page dashboard">
-        <h2>Verzendkosten</h2>
-        @if(session('success'))
-        <div class="alert alert-success" style="position: relative;">
-            {{ session('success') }}
-            <button type="button" class="alert-close"
-                onclick="this.parentElement.style.display='none';">&times;</button>
-        </div>
-        @endif
-        <a href="{{ route('shippingCostCreatePage') }}"><button class="btn">Nieuwe toevoegen</button></a>
-        <div class="table-wrapper">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Bedrag</th>
-                        <th>Land</th>
-                        <th>Gepubliceerd</th>
-                        <th>Datum</th>
-                        <th>Actie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($shippingCosts as $shippingCost)
-                    <tr>
-                        <td>{{ $shippingCost->id }}</td>
-                        <td style="min-width:120px;">&euro; {{ number_format($shippingCost->amount, 2, ',', '.') }}</td>
-                        <td style="min-width:120px;">{{ $shippingCost->country }}</td>
-                        <td style="min-width:90px;">
-                            @if ($shippingCost->is_published == 1)
-                            ja
-                            @else
-                            nee
-                            @endif
-                        </td>
-                        <td style="min-width:110px;">{{ $shippingCost->created_at->format('d-m-Y') }}</td>
-                        <td class="table-action" style="min-width:80px;">
-                            <a href="{{ route('shippingCostEditPage', $shippingCost->id) }}"><i
-                                    class="fa-regular fa-pen-to-square edit action-btn"></i></a>
-                            <form action="{{ route('shippingCostDelete', $shippingCost->id) }}" method="POST" class="needs-confirm" data-confirm="Weet je zeker dat je deze verzendkosten wilt verwijderen?" data-confirm-title="Verzendkosten verwijderen">
-                                @csrf
-                                @method('DELETE')
-                                <button style="background-color: transparent; border: none;padding: 0;" type="submit"><i
-                                        class="fa-regular fa-trash-can delete action-btn"></i></button>
-                            </form>
-                        </td>
-                    </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6" style="text-align: center; padding: 20px;">
-                                Geen verzendkosten gevonden.
-                            </td>
-                        </tr>
-                    @endforelse
 
-                </tbody>
-            </table>
-            {{ $shippingCosts->links('vendor.pagination.custom') }}
+@if(session('success'))
+<div id="alert-success" class="flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400">
+  <svg class="shrink-0 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/></svg>
+  <span class="ms-2 text-sm font-medium">{{ session('success') }}</span>
+  <button type="button" onclick="document.getElementById('alert-success').remove()" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg p-1.5 hover:bg-green-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700">
+    <svg class="w-3 h-3" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+  </button>
+</div>
+@endif
+
+<section class="bg-gray-50 dark:bg-gray-900">
+  <div>
+    <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+        <div class="w-full md:w-auto">
+          <h2 class="text-base font-semibold text-gray-900 dark:text-white">Verzendkosten</h2>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{{ $shippingCosts->total() }} {{ $shippingCosts->total() === 1 ? 'regel' : 'regels' }}</p>
         </div>
-    </main>
+        <div class="w-full md:w-auto flex items-center justify-end">
+          <a href="{{ route('shippingCostCreatePage') }}"
+            class="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+            <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
+            </svg>
+            Nieuwe verzendkost
+          </a>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-4 py-2">Land</th>
+              <th scope="col" class="px-4 py-2">Bedrag</th>
+              <th scope="col" class="px-4 py-2">Status</th>
+              <th scope="col" class="px-4 py-2">Aangemaakt</th>
+              <th scope="col" class="px-4 py-2"><span class="sr-only">Acties</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            @forelse ($shippingCosts as $shippingCost)
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <th scope="row" class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{ $shippingCost->country }}
+              </th>
+              <td class="px-4 py-2 font-semibold text-gray-900 dark:text-white">
+                € {{ number_format($shippingCost->amount, 2, ',', '.') }}
+              </td>
+              <td class="px-4 py-2">
+                @if($shippingCost->is_published)
+                  <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Actief</span>
+                @else
+                  <span class="bg-gray-100 text-gray-600 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400">Inactief</span>
+                @endif
+              </td>
+              <td class="px-4 py-2 text-xs">{{ $shippingCost->created_at->format('d-m-Y') }}</td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                <div class="flex items-center gap-2">
+                  <a href="{{ route('shippingCostEditPage', $shippingCost->id) }}"
+                    class="text-xs font-medium text-primary-700 hover:underline dark:text-primary-400">Bewerken</a>
+                  <form action="{{ route('shippingCostDelete', $shippingCost->id) }}" method="POST"
+                    onsubmit="return confirm('Weet je zeker dat je de verzendkost voor {{ addslashes($shippingCost->country) }} wilt verwijderen?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-xs font-medium text-red-600 hover:underline dark:text-red-500">Verwijderen</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            @empty
+            <tr>
+              <td colspan="5" class="px-4 py-8 text-center text-gray-500 dark:text-gray-400">Geen verzendkosten gevonden.</td>
+            </tr>
+            @endforelse
+          </tbody>
+        </table>
+      </div>
+
+      <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+          @if($shippingCosts->total() > 0)
+            Toont <span class="font-semibold text-gray-900 dark:text-white">{{ $shippingCosts->firstItem() }}-{{ $shippingCosts->lastItem() }}</span>
+            van <span class="font-semibold text-gray-900 dark:text-white">{{ $shippingCosts->total() }}</span>
+          @else
+            <span class="font-semibold text-gray-900 dark:text-white">0</span> resultaten
+          @endif
+        </span>
+        @if($shippingCosts->hasPages())
+        <ul class="inline-flex items-stretch -space-x-px">
+          <li>
+            @if($shippingCosts->onFirstPage())
+              <span class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-400 bg-white rounded-l-lg border border-gray-300 cursor-not-allowed dark:bg-gray-800 dark:border-gray-700 dark:text-gray-600">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </span>
+            @else
+              <a href="{{ $shippingCosts->previousPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </a>
+            @endif
+          </li>
+          @foreach($shippingCosts->getUrlRange(1, $shippingCosts->lastPage()) as $page => $url)
+            <li>
+              @if($page == $shippingCosts->currentPage())
+                <span class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ $page }}</span>
+              @else
+                <a href="{{ $url }}" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ $page }}</a>
+              @endif
+            </li>
+          @endforeach
+          <li>
+            @if($shippingCosts->hasMorePages())
+              <a href="{{ $shippingCosts->nextPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </a>
+            @else
+              <span class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-400 bg-white rounded-r-lg border border-gray-300 cursor-not-allowed dark:bg-gray-800 dark:border-gray-700 dark:text-gray-600">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </span>
+            @endif
+          </li>
+        </ul>
+        @endif
+      </nav>
+
+    </div>
+  </div>
+</section>
+
 </x-dashboard-layout>

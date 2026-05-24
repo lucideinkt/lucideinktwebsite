@@ -21,8 +21,14 @@ class DiscountCodeController extends Controller
     {
         $this->authorize('viewAny', DiscountCode::class);
 
-        $discountCodes = DiscountCode::orderBy('created_at', 'desc')
-            ->paginate(10);
+        $query = DiscountCode::orderBy('created_at', 'desc');
+
+        if ($search = request('search')) {
+            $query->where('code', 'like', '%' . $search . '%')
+                  ->orWhere('description', 'like', '%' . $search . '%');
+        }
+
+        $discountCodes = $query->paginate(15)->withQueryString();
 
         return view('discountcodes.index', ['discountCodes' => $discountCodes]);
     }

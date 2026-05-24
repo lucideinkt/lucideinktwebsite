@@ -36,8 +36,8 @@ trait HasMailtrapForwarding
             return $email;
         }
 
-        // Method 2: Try env directly (fallback for cache issues)
-        $email = env('MAILTRAP_FORWARD_EMAIL');
+        // Method 2: Try services config
+        $email = config('services.lucideinkt.mailtrap_forward');
         if ($email && $email !== '') {
             return $email;
         }
@@ -61,7 +61,7 @@ trait HasMailtrapForwarding
             'method_used' => null,
             'app_env' => app()->environment(),
             'config_value' => config('mail.mailtrap_forward_email'),
-            'env_value' => env('MAILTRAP_FORWARD_EMAIL'),
+            'env_value' => config('services.lucideinkt.mailtrap_forward'),
             'hardcoded_fallback' => app()->environment('staging', 'local', 'development') ? 'lucideinkt@gmail.com' : null,
         ];
 
