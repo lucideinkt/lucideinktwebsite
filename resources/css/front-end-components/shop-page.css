@@ -27,7 +27,8 @@ body:has(.page.shop) .page-normal-background::after {
         rgba(251, 245, 217, 0.30) 100%);
 }
 
-body:has(.page.shop) {
+body:has(.page.shop),
+html:has(.page.shop) {
     overflow-x: hidden;
 }
 
@@ -620,6 +621,21 @@ body:has(.page.shop) {
     .product-card-title {
         font-size: 28px;
     }
+
+    .shop-frame-wrapper {
+        position: relative;
+        display: block;
+        max-width: 450px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .shop-title {
+        font-size: 47px;
+        letter-spacing: 1.5px;
+        top: 47%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -629,9 +645,9 @@ body:has(.page.shop) {
     }
 
     .shop-title {
-        font-size: 48px;
+        font-size: 40px;
         letter-spacing: 1.5px;
-        top: 49%;
+        top: 44%;
     }
 
     .shop-frame-wrapper {
@@ -691,22 +707,31 @@ body:has(.page.shop) {
         padding: 5px 10px;
         height: 30px;
     }
+
+    .shop-frame-wrapper {
+        position: relative;
+        display: block;
+        max-width: 375px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .shop-hero {
         padding-top: 70px;
         padding-bottom: 12px;
     }
 
     .shop-title {
-        font-size: 40px;
+        font-size: 33px;
         letter-spacing: 1px;
-        top: 46%;
+        top: 42%;
     }
 
     .shop-frame-wrapper {
-        max-width: 198px;
+        max-width: 325px;
         margin-bottom: -5px;
     }
 
@@ -771,13 +796,10 @@ body:has(.page.shop) {
 }
 
 @media (max-width: 480px) {
-    /*.shop-title {*/
-    /*    font-size: 22px;*/
-    /*}*/
-
-    /*.shop-frame-wrapper {*/
-    /*    max-width: 174px;*/
-    /*}*/
+    .shop-title {
+        font-size: 30px;
+        top: 40%;
+    }
 
     .background-of-the-shop-grid {
         padding: 0px 10px 24px;
@@ -838,6 +860,11 @@ body:has(.page.shop) {
 
     .product-card-button .small-plus {
         font-size: 10px;
+    }
+
+    .shop-frame-wrapper {
+        max-width: 280px;
+        margin-bottom: -5px;
     }
 }
 
