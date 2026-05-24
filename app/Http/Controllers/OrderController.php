@@ -9,7 +9,7 @@ use App\Services\MyParcelService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{Log, Mail, Storage};
+use Illuminate\Support\Facades\{DB, Log, Mail, Storage};
 use Maatwebsite\Excel\Facades\Excel;
 use Mollie\Api\MollieApiClient;
 use App\Http\Controllers\Concerns\streamPdf;
@@ -392,7 +392,7 @@ class OrderController extends Controller
         foreach ($lines as $line) {
             $product = Product::find($line['product_id']);
             if ($product && $product->stock < $line['qty']) {
-                $errors[] = "{$product->title} (op voorraad: {$product->stock})";
+                $errors[] = e($product->title) . ' (op voorraad: ' . (int) $product->stock . ')';
             }
         }
 
@@ -439,20 +439,22 @@ class OrderController extends Controller
 
     private function createOrderItems(Order $order, array $lines): void
     {
-        foreach ($lines as $line) {
-            $product = Product::find($line['product_id']);
-            if ($product && $product->stock >= $line['qty']) {
-                $product->decrement('stock', $line['qty']);
-            }
+        DB::transaction(function () use ($order, $lines) {
+            foreach ($lines as $line) {
+                $product = Product::lockForUpdate()->find($line['product_id']);
+                if ($product && $product->stock >= $line['qty']) {
+                    $product->decrement('stock', $line['qty']);
+                }
 
-            $order->items()->create([
-                'product_id' => $line['product_id'],
-                'product_name' => $line['title'],
-                'quantity' => $line['qty'],
-                'unit_price' => $line['unit_price'],
-                'subtotal' => $line['subtotal'],
-            ]);
-        }
+                $order->items()->create([
+                    'product_id' => $line['product_id'],
+                    'product_name' => $line['title'],
+                    'quantity' => $line['qty'],
+                    'unit_price' => $line['unit_price'],
+                    'subtotal' => $line['subtotal'],
+                ]);
+            }
+        });
     }
 
     /* ------------------ MyParcel ------------------ */
@@ -521,11 +523,7 @@ class OrderController extends Controller
 
     private function createMolliePayment(Order $order, float $amount): void
     {
-        $webhookUrl = match (config('app.env')) {
-            'production' => env('WEBHOOK_URL_PRODUCTION'),
-            'staging' => env('WEBHOOK_URL_STAGING'),
-            default => env('WEBHOOK_URL_LOCAL')
-        };
+        $webhookUrl = config('services.lucideinkt.webhook_url');
 
         try {
             $payment = $this->mollie->payments->create([

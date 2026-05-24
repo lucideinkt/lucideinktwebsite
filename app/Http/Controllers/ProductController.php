@@ -29,11 +29,21 @@ class ProductController extends Controller
     {
         $this->authorize('viewAny', Product::class);
 
-        $products = Product::with(['category', 'productCopy'])
-            ->orderBy('title', 'desc')
-            ->paginate(10);
+        $query = Product::with(['category', 'productCopy'])
+            ->orderBy('title', 'asc');
 
-        return view('products.index', ['products' => $products]);
+        if ($search = request('search')) {
+            $query->where('title', 'like', '%' . $search . '%');
+        }
+
+        if ($categoryIds = request('categories')) {
+            $query->whereIn('category_id', $categoryIds);
+        }
+
+        $products = $query->paginate(10)->withQueryString();
+        $categories = ProductCategory::orderBy('name', 'asc')->get();
+
+        return view('products.index', compact('products', 'categories'));
     }
 
     /**

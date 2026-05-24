@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\SendNewsletterJob;
 use App\Models\Newsletter;
 use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 
 class NewsletterCampaignController extends Controller
@@ -15,9 +13,16 @@ class NewsletterCampaignController extends Controller
     {
         $newsletters = Newsletter::with('creator')
             ->latest()
-            ->paginate(20);
+            ->paginate(20)
+            ->withQueryString();
 
-        return view('newsletter.campaigns.index', compact('newsletters'));
+        $stats = [
+            'total'  => Newsletter::count(),
+            'drafts' => Newsletter::where('status', 'draft')->count(),
+            'sent'   => Newsletter::where('status', 'sent')->count(),
+        ];
+
+        return view('newsletter.campaigns.index', compact('newsletters', 'stats'));
     }
 
     public function create()
@@ -33,10 +38,10 @@ class NewsletterCampaignController extends Controller
         ]);
 
         $newsletter = Newsletter::create([
-            'subject' => $validated['subject'],
-            'content' => $validated['content'],
+            'subject'    => $validated['subject'],
+            'content'    => $validated['content'],
             'created_by' => auth()->id(),
-            'status' => 'draft',
+            'status'     => 'draft',
         ]);
 
         return redirect()
@@ -81,7 +86,6 @@ class NewsletterCampaignController extends Controller
 
     public function destroy(Newsletter $newsletter)
     {
-        // Allow deleting drafts always, and sent/failed campaigns optionally
         if ($newsletter->isDraft() || in_array($newsletter->status, ['sent', 'failed'])) {
             $newsletter->delete();
             return redirect()
@@ -95,10 +99,10 @@ class NewsletterCampaignController extends Controller
     public function duplicate(Newsletter $newsletter)
     {
         $newNewsletter = Newsletter::create([
-            'subject' => $newsletter->subject . ' (kopie)',
-            'content' => $newsletter->content,
+            'subject'    => $newsletter->subject . ' (kopie)',
+            'content'    => $newsletter->content,
             'created_by' => auth()->id(),
-            'status' => 'draft',
+            'status'     => 'draft',
         ]);
 
         return redirect()
@@ -112,12 +116,11 @@ class NewsletterCampaignController extends Controller
             return back()->with('error', 'Alleen mislukte nieuwsbrieven kunnen opnieuw worden verzonden.');
         }
 
-        // Reset to draft status
         $newsletter->update([
-            'status' => 'draft',
-            'sent_count' => 0,
+            'status'       => 'draft',
+            'sent_count'   => 0,
             'failed_count' => 0,
-            'sent_at' => null,
+            'sent_at'      => null,
         ]);
 
         return redirect()
@@ -131,7 +134,7 @@ class NewsletterCampaignController extends Controller
             return back()->with('error', 'Deze nieuwsbrief is al verstuurd of wordt momenteel verstuurd.');
         }
 
-        $subscribers = \App\Models\NewsletterSubscriber::subscribed()->get();
+        $subscribers = NewsletterSubscriber::subscribed()->get();
 
         if ($subscribers->isEmpty()) {
             return back()->with('error', 'Er zijn geen actieve abonnees om naar te verzenden.');
@@ -139,13 +142,13 @@ class NewsletterCampaignController extends Controller
 
         $newsletter->update([
             'recipients_count' => $subscribers->count(),
-            'sent_count' => 0,
-            'failed_count' => 0,
+            'sent_count'       => 0,
+            'failed_count'     => 0,
         ]);
 
         $newsletter->markAsSending();
 
-        $sent = 0;
+        $sent   = 0;
         $failed = 0;
 
         foreach ($subscribers as $subscriber) {
@@ -154,12 +157,11 @@ class NewsletterCampaignController extends Controller
                 $sent++;
             } catch (\Exception $e) {
                 $failed++;
-                // \Log::error($e);
             }
         }
 
         $newsletter->update([
-            'sent_count' => $sent,
+            'sent_count'   => $sent,
             'failed_count' => $failed,
         ]);
         $newsletter->markAsSent();

@@ -43,4 +43,14 @@ return [
         'api_key' => env('MYPARCEL_API_KEY'),
     ],
 
+    'lucideinkt' => [
+        'admin_email'     => env('LUCIDE_INKT_MAIL'),
+        'mailtrap_forward' => env('MAILTRAP_FORWARD_EMAIL'),
+        'webhook_url'     => match (env('APP_ENV', 'local')) {
+            'production' => env('WEBHOOK_URL_PRODUCTION'),
+            'staging'    => env('WEBHOOK_URL_STAGING'),
+            default      => env('WEBHOOK_URL_LOCAL'),
+        },
+    ],
+
 ];
