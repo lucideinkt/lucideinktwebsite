@@ -24,7 +24,28 @@ class OnlineLezenController extends Controller
                   ->orWhereHas('bookPages');
             })
             ->orderBy('title', 'asc')
-            ->get();
+            ->get()
+            ->sort(function ($a, $b) {
+                $aHtml = $a->book_pages_count > 0;
+                $bHtml = $b->book_pages_count > 0;
+
+                // HTML books always before "Binnenkort Online" books
+                if ($aHtml !== $bHtml) {
+                    return $aHtml ? -1 : 1;
+                }
+
+                // Within the HTML group: "Het Traktaat over de Herzameling" comes first
+                if ($aHtml) {
+                    $aFirst = str_contains(strtolower($a->title), 'herzameling');
+                    $bFirst = str_contains(strtolower($b->title), 'herzameling');
+                    if ($aFirst !== $bFirst) {
+                        return $aFirst ? -1 : 1;
+                    }
+                }
+
+                return strcmp($a->title, $b->title);
+            })
+            ->values();
 
         return view('online-lezen', [
             'products'   => $products,

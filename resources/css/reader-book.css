@@ -895,7 +895,7 @@ body.dark-mode .reader-tooltip::before { border-bottom-color: #160e05; }
 }
 body.dark-mode .reader-topbar { background: rgba(28,18,9,0.97); }
 
-.reader-topbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.reader-topbar-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; overflow: hidden; }
 
 .reader-back-btn {
     display: inline-flex; align-items: center; gap: 5px;
@@ -923,6 +923,18 @@ body.dark-mode .reader-topbar-divider { background: rgba(255,255,255,0.12); }
 body.dark-mode .reader-book-title { color: #666; }
 
 .reader-topbar-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+
+/* ── Topbar bookmark button ── */
+.reader-topbar-bm-btn {
+    color: rgba(100,40,10,0.45);
+    transition: color 0.15s, transform 0.15s;
+}
+.reader-topbar-bm-btn:hover { color: #790000; }
+.reader-topbar-bm-btn.active { color: #790000; }
+.reader-topbar-bm-btn.active i { font-weight: 900; }
+body.dark-mode .reader-topbar-bm-btn { color: rgba(200,150,80,0.4); }
+body.dark-mode .reader-topbar-bm-btn:hover,
+body.dark-mode .reader-topbar-bm-btn.active { color: #e8a87c; }
 
 /* ── Compact topbar font controls (desktop only) ── */
 .reader-topbar-font-controls {
@@ -1650,16 +1662,17 @@ body.dark-mode .reader-progress-bar-fill { background: linear-gradient(90deg, #e
 /* ─── Floating Action Button ─── */
 .reader-fab {
     position: fixed;
-    bottom: 22px;
+    bottom: calc(52px + 16px); /* sit above the bottom scrubber bar */
     right: 18px;
     z-index: 500;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 0;
-    width: auto;
-    height: 40px;
-    border-radius: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     border: none;
     cursor: pointer;
     background: linear-gradient(135deg, #6b0000 0%, #a04828 100%);
@@ -2229,18 +2242,15 @@ body.dark-mode .reader-sheet-toc-btn:hover i { color: #e8c890; }
 .reader-sheet-backdrop.open { opacity: 1; pointer-events: auto; }
 
 /* ─── Responsive adjustments ─── */
-.reader-wrap { padding-top: 56px; }
+.reader-wrap { padding-top: 72px; }
 /* Book title in sheet: hidden by default (topbar shows it on desktop) */
 .reader-sheet-book-title { display: none; }
 
 @media (max-width: 600px) {
-    .reader-wrap { padding: 56px 10px 90px; }
+    .reader-wrap { padding: 72px 10px 90px; }
     /* Narrower sheet, right-anchored — right thumb reaches all controls */
     .reader-control-sheet { width: 272px; right: 12px; bottom: 82px; }
-    .reader-fab { bottom: 18px; right: 14px; height: 38px; border-radius: 19px; }
-    .reader-fab-icon-wrap { width: 38px; height: 38px; }
-    .reader-fab-page { font-size: 13px; }
-    .reader-fab-page-wrap { padding: 0 10px 0 9px; }
+    .reader-fab { bottom: calc(52px + 12px); right: 14px; width: 40px; height: 40px; border-radius: 50%; }
     /* Show book title inside sheet on mobile (topbar hides it there) */
     .reader-sheet-book-title { display: block; }
 }
@@ -2933,3 +2943,156 @@ body.dark-mode mark.reader-search-highlight { background: rgba(255,224,51,0.6); 
         overflow: hidden;
     }
 }
+
+/* =========================================================
+   BOTTOM PAGE SCRUBBER
+   ========================================================= */
+.reader-page-scrubber {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    z-index: 490;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(252, 246, 234, 0.97);
+    border-top: 1px solid rgba(180, 130, 60, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    font-family: 'DelimaProRegular', serif;
+}
+body.dark-mode .reader-page-scrubber {
+    background: rgba(22, 13, 6, 0.97);
+    border-top: 1px solid rgba(120, 75, 25, 0.35);
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.45);
+}
+
+/* Constrain content width to match the reader column on wide screens */
+.rps-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 720px;
+    padding: 0 20px;
+}
+
+/* Page number labels */
+.rps-current,
+.rps-total {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(100, 55, 15, 0.65);
+    white-space: nowrap;
+    min-width: 28px;
+    text-align: center;
+    user-select: none;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+}
+.rps-current {
+    color: rgba(140, 60, 10, 0.95);
+    font-weight: 700;
+    min-width: 32px;
+}
+body.dark-mode .rps-current { color: rgba(240, 190, 100, 0.95); }
+body.dark-mode .rps-total   { color: rgba(180, 140, 80, 0.55); }
+
+/* Slider track & thumb */
+.rps-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(180, 120, 40, 0.18);
+    outline: none;
+    cursor: pointer;
+}
+body.dark-mode .rps-slider {
+    background: rgba(160, 100, 30, 0.28);
+}
+
+/* Filled track — driven by --rps-pct CSS variable */
+.rps-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(
+        to right,
+        rgba(160, 70, 10, 0.80) 0%,
+        rgba(160, 70, 10, 0.80) var(--rps-pct, 0%),
+        rgba(180, 120, 40, 0.18) var(--rps-pct, 0%),
+        rgba(180, 120, 40, 0.18) 100%
+    );
+}
+body.dark-mode .rps-slider::-webkit-slider-runnable-track {
+    background: linear-gradient(
+        to right,
+        rgba(220, 140, 50, 0.75) 0%,
+        rgba(220, 140, 50, 0.75) var(--rps-pct, 0%),
+        rgba(160, 100, 30, 0.28) var(--rps-pct, 0%),
+        rgba(160, 100, 30, 0.28) 100%
+    );
+}
+.rps-slider::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(180, 120, 40, 0.18);
+}
+.rps-slider::-moz-range-progress {
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(160, 70, 10, 0.80);
+}
+body.dark-mode .rps-slider::-moz-range-progress {
+    background: rgba(220, 140, 50, 0.75);
+}
+
+/* Thumb */
+.rps-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9a3a08;
+    border: 2px solid rgba(255,255,255,0.9);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    margin-top: -7px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.rps-slider:active::-webkit-slider-thumb,
+.rps-slider:hover::-webkit-slider-thumb {
+    transform: scale(1.25);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+body.dark-mode .rps-slider::-webkit-slider-thumb {
+    background: #c87830;
+    border-color: rgba(20,10,3,0.75);
+}
+.rps-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9a3a08;
+    border: 2px solid rgba(255,255,255,0.9);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+body.dark-mode .rps-slider::-moz-range-thumb {
+    background: #c87830;
+    border-color: rgba(20,10,3,0.75);
+}
+
+/* Safe-area padding (iPhone home bar) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .reader-page-scrubber {
+        padding-bottom: env(safe-area-inset-bottom);
+        height: calc(52px + env(safe-area-inset-bottom));
+    }
+}
+
