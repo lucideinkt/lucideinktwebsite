@@ -105,7 +105,7 @@ body:has(.page.cart-page) .page.cart-page {
 
 /* ── Hero title — matches contact-hero__title ── */
 .cart-hero__title {
-    margin-top: 10px !important;
+    margin-top: 10px;
     font-family: var(--font-herina);
     letter-spacing: 1.5px;
     font-size: 52px;
@@ -758,6 +758,7 @@ body:has(.page.cart-page) .page.cart-page {
         max-width: 60px;
         max-height: 60px;
     }
+
 }
 
 @media (max-width: 1024px) {
@@ -775,7 +776,7 @@ body:has(.page.cart-page) .page.cart-page {
     .cart-hero__title {
         font-size: 38px;
         margin-bottom: 20px;
-        margin-top: 15px!important;
+        margin-top: 15px;
     }
 
     .cart-content-section {

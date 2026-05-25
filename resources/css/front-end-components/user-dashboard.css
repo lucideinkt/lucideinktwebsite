@@ -2,45 +2,152 @@
    USER DASHBOARD
    ========================================================= */
 
+/* ── Page background override – floral texture (same as checkout page) ── */
+body:has(.page.user-dashboard) .page-normal-background {
+    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size: 800px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* ── Remove the colour overlay on user dashboard pages ── */
+body:has(.page.user-dashboard) .page-normal-background::after,
+body:has(.page.user-dashboard) .page-normal-background::before {
+    display: none;
+}
+
+/* ── Gradient-border shadow (same as checkout page) ── */
+body:has(.page.user-dashboard) .gradient-border {
+    position: relative;
+    z-index: 1;
+    background-color: #e9dba9;
+    background-image: linear-gradient(
+        90deg,
+        #c9a85c 0%,
+        #e9dba9 20%,
+        #f5eacc 38%,
+        #ffe9a0 50%,
+        #f5eacc 62%,
+        #e9dba9 80%,
+        #c9a85c 100%
+    );
+}
+
+/* Keep the user dashboard page content above the gradient-border shadow */
+body:has(.page.user-dashboard) .page.user-dashboard {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    padding-bottom: 0;
+}
+
 .page.user-dashboard {
-    max-width: 1280px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    padding-top: 0;
 }
 
-/* Dashboard Header */
-.dashboard-header {
+/* =========================================================
+   DASHBOARD HERO
+   ========================================================= */
+
+.dashboard-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 24px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
     text-align: center;
-    margin-bottom: 40px;
-    padding: 0px 20px 0;
 }
 
+.dashboard-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dashboard-hero > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* The inner gradient-border that separates the hero from the content */
+body:has(.page.user-dashboard) .dashboard-hero-border {
+    box-shadow: none;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+/* ── Content section below hero ── */
+.dashboard-content-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dashboard-content-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 100, 0.30) 0%,
+            rgba(220, 185, 110, 0.10) 18%,
+            transparent               40%,
+            transparent               60%,
+            rgba(220, 185, 110, 0.10) 82%,
+            rgba(210, 175, 100, 0.30) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(180, 140, 60, 0.22)  0%,
+            transparent               18%,
+            transparent               82%,
+            rgba(180, 140, 60, 0.22)  100%
+        );
+}
+
+.dashboard-content-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dashboard Title & Subtitle (inside hero) */
 .dashboard-title {
     font-family: var(--font-herina);
-    font-size: 50px;
+    font-size: 52px;
     font-weight: 400;
     color: var(--main-font-color);
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    line-height: 3.4rem;
-    margin-top: 0px !important;
-}
-
-.dashboard-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(
-        to right,
-        rgba(180, 140, 60, 0.4) 0%,
-        rgba(180, 140, 60, 0.75) 50%,
-        rgba(180, 140, 60, 0.4) 100%
-    );
+    margin-bottom: 0px;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+    margin-top: 10px !important;
+    text-align: center;
 }
 
 .dashboard-subtitle {
@@ -48,8 +155,48 @@
     color: var(--main-font-color);
     opacity: 0.65;
     max-width: 600px;
-    margin: 5px auto 0;
+    margin: 8px auto 0;
     line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .dashboard-hero {
+        padding-top: 80px;
+        padding-bottom: 18px;
+    }
+
+    .dashboard-title {
+        font-size: 38px;
+        margin-top: 15px !important;
+    }
+
+    .dashboard-content-section {
+        padding-top: 28px;
+        padding-bottom: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-hero {
+        padding-top: 70px;
+        padding-bottom: 12px;
+    }
+
+    .dashboard-title {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    .dashboard-content-section {
+        padding-top: 20px;
+        padding-bottom: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-title {
+        font-size: 28px;
+    }
 }
 
 /* Dashboard Container */
@@ -319,26 +466,12 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .dashboard-title {
-        font-size: 40px;
-    }
-
     .overview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 768px) {
-    .dashboard-header {
-        margin-bottom: 20px;
-    }
-
-    .dashboard-title {
-        font-size: 32px;
-        line-height: 2.8rem;
-    }
-
-    .user-dashboard-nav {
+@media (max-width: 768px) {    .user-dashboard-nav {
         width: 100%;
         overflow-x: visible;
     }
@@ -953,16 +1086,6 @@
 }
 
 @media (max-width: 480px) {
-    .dashboard-title {
-        font-size: 28px;
-        line-height: 2.4rem;
-    }
-
-    .dashboard-subtitle {
-        font-size: 1rem;
-        margin-top: 10px;
-        margin-bottom: 25px;
-    }
 
     .user-dashboard-nav {
         border-radius: 0;

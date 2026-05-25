@@ -41,7 +41,6 @@ class AuthController extends Controller
 
         if (auth()->attempt($validated, $request->filled('remember'))) {
             $request->session()->regenerate();
-            $request->session()->forget('2fa_verified');
             return redirect()->route('dashboard');
         }
 

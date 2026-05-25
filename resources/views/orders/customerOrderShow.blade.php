@@ -3,17 +3,24 @@
         @push('head')<meta name="robots" content="noindex, nofollow">@endpush
         <div class="page-normal-background">
         <main class="container page user-dashboard">
-            <x-breadcrumbs :items="[
-                ['label' => 'Home', 'url' => route('home')],
-                ['label' => 'Dashboard', 'url' => route('dashboard')],
-                ['label' => 'Mijn Bestellingen', 'url' => route('showMyOrders')],
-                ['label' => 'Bestelling #' . $order->id, 'url' => route('showMyOrder', $order->id)]
-            ]" />
 
-            <div class="dashboard-header">
-                <h1 class="dashboard-title font-herina">Bestelling #{{ $order->id }}</h1>
-                <p class="dashboard-subtitle">Gedetailleerd overzicht van je bestelling</p>
+            <div class="dashboard-hero">
+                <div class="container">
+                    <x-breadcrumbs :items="[
+                        ['label' => 'Home', 'url' => route('home')],
+                        ['label' => 'Dashboard', 'url' => route('dashboard')],
+                        ['label' => 'Mijn Bestellingen', 'url' => route('showMyOrders')],
+                        ['label' => 'Bestelling #' . $order->id, 'url' => route('showMyOrder', $order->id)]
+                    ]" />
+                    <h1 class="dashboard-title font-herina">Bestelling #{{ $order->id }}</h1>
+                    <p class="dashboard-subtitle">Gedetailleerd overzicht van je bestelling</p>
+                </div>
             </div>
+
+            <div class="gradient-border dashboard-hero-border"></div>
+
+            <div class="dashboard-content-section">
+            <div class="container">
 
             @if(session('success'))
                 <div class="alert alert-success">
@@ -273,6 +280,10 @@
                     </div>
                 </div>
             </x-user-dashboard-layout>
+
+            </div>
+            </div>
+
         </main>
         <div class="gradient-border"></div>
         <x-footer></x-footer>

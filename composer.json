@@ -17,7 +17,6 @@
         "mollie/laravel-mollie": "^3.1",
         "myparcelnl/sdk": "^10.1",
         "nesbot/carbon": "^3.10",
-        "pragmarx/google2fa-qrcode": "^4.0",
         "ralphjsmit/laravel-seo": "^1.7"
     },
     "require-dev": {

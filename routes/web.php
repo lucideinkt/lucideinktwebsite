@@ -22,21 +22,11 @@ use App\Http\Controllers\ProductCopyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShippingCostController;
 use App\Http\Controllers\ShopController;
-use App\Http\Controllers\TwoFactorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-// 2FA routes (auth required, no 2fa middleware so users can complete setup/verify)
-Route::middleware(['auth'])->group(function () {
-    Route::get('/2fa/setup', [TwoFactorController::class, 'setup'])->name('2fa.setup');
-    Route::post('/2fa/setup', [TwoFactorController::class, 'setupStore'])->name('2fa.setup.store')->middleware('throttle:5,1');
-    Route::get('/2fa/verify', [TwoFactorController::class, 'verify'])->name('2fa.verify');
-    Route::post('/2fa/verify', [TwoFactorController::class, 'verifyStore'])->name('2fa.verify.store')->middleware('throttle:5,1');
-    Route::delete('/2fa/disable', [TwoFactorController::class, 'disable'])->name('2fa.disable')->middleware('throttle:5,1');
-});
-
 // Both admin and user can access
-Route::middleware(['auth', 'role:admin,user', 'twofactor'])->group(function () {
+Route::middleware(['auth', 'role:admin,user'])->group(function () {
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -53,7 +43,7 @@ Route::middleware(['auth', 'role:admin,user', 'twofactor'])->group(function () {
 });
 
 // Only admin can access
-Route::middleware(['auth', 'role:admin', 'twofactor'])->group(function () {
+Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // Products
     Route::get('/dashboard/products', [ProductController::class, 'index'])->name('productIndex');
