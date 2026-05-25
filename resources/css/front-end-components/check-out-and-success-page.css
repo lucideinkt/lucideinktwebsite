@@ -273,6 +273,125 @@ input:-webkit-autofill:active {
 }
 
 /* ---------------------------------------------------------
+   PDOK POSTCODE LOOKUP — inline spinner on input
+   --------------------------------------------------------- */
+
+/* Reserve a fixed height so the status line never causes a layout shift */
+.pdok-status {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px; /* always takes up space */
+    line-height: 16px;
+    margin-top: -10px;
+}
+.pdok-not-found {
+    color: #b84a3a;
+}
+
+/* Spinner anchored to the input inside .postcode-field
+   The input-wrap div sits around just the <input>, giving us a
+   reliable relative container so the spinner never jumps. */
+.postcode-field {
+    position: relative;
+}
+.postcode-field .input-wrap {
+    position: relative;
+    display: block;
+}
+@keyframes pdokSpin {
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+/* No padding change — spinner is absolutely positioned, no layout shift */
+.pdok-loading-input {
+}
+.postcode-field .input-wrap:has(.pdok-loading-input)::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(197, 160, 89, 0.3);
+    border-top-color: rgba(197, 160, 89, 0.9);
+    border-radius: 50%;
+    animation: pdokSpin 0.7s linear infinite;
+    pointer-events: none;
+}
+
+
+/* "Adres wordt opgezocht" animated dots */
+.pdok-searching {
+    color: rgba(197, 160, 89, 0.9);
+    font-style: italic;
+}
+@keyframes pdokDots {
+    0%   { content: 'Adres wordt opgezocht'; }
+    25%  { content: 'Adres wordt opgezocht.'; }
+    50%  { content: 'Adres wordt opgezocht..'; }
+    75%  { content: 'Adres wordt opgezocht...'; }
+    100% { content: 'Adres wordt opgezocht'; }
+}
+.pdok-searching-dots::after {
+    content: '';
+    animation: pdokSearchingDots 1.2s steps(1) infinite;
+}
+@keyframes pdokSearchingDots {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+}
+
+/* ---------------------------------------------------------
+   POSTCODE + HUISNUMMER ROW
+   --------------------------------------------------------- */
+.postcode-housenumber-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 0 !important;
+}
+.postcode-housenumber-row .postcode-field  { flex: 2; min-width: 0; }
+.postcode-housenumber-row .housenumber-field { flex: 1; min-width: 0; }
+.postcode-housenumber-row .suffix-field    { flex: 1; min-width: 0; }
+.postcode-housenumber-row .form-input      { margin-bottom: 14px; }
+
+@media (max-width: 480px) {
+    .postcode-housenumber-row {
+        flex-wrap: wrap;
+    }
+    .postcode-housenumber-row .postcode-field  { flex: 1 1 100%; }
+    .postcode-housenumber-row .housenumber-field,
+    .postcode-housenumber-row .suffix-field    { flex: 1 1 calc(50% - 5px); }
+}
+
+/* ---------------------------------------------------------
+   MISSING FIELD WARNING (after Google Places partial fill)
+   --------------------------------------------------------- */
+@keyframes missingPulse {
+    0%, 100% { border-color: rgba(197, 100, 50, 0.8); box-shadow: 0 0 0 0 rgba(197, 100, 50, 0.3); }
+    50%       { border-color: rgba(197, 100, 50, 1);   box-shadow: 0 0 0 4px rgba(197, 100, 50, 0.15); }
+}
+.field-missing-hint {
+    border: 1.5px solid rgba(197, 100, 50, 0.8) !important;
+    animation: missingPulse 1.4s ease-in-out 3;
+    background: rgba(255, 240, 230, 0.6) !important;
+}
+.missing-field-hint {
+    display: inline-block;
+    font-size: 11px;
+    color: #c05a20;
+    font-weight: 600;
+    margin-top: 4px;
+    background: rgba(255, 235, 215, 0.9);
+    border: 1px solid rgba(197, 100, 50, 0.4);
+    border-radius: 4px;
+    padding: 2px 7px;
+}
+
+/* ---------------------------------------------------------
    NO SHIPPING AVAILABLE POPUP
    --------------------------------------------------------- */
 .no-shipping-overlay {
@@ -2176,6 +2295,7 @@ body:has(.page.checkout.success) .cart-content-section {
     color: var(--main-font-color);
     opacity: 0.6;
     font-size: 14px;
+    margin-top: -10px;
 }
 
 .cdo-error {
@@ -2185,6 +2305,7 @@ body:has(.page.checkout.success) .cart-content-section {
     padding: 14px 16px;
     color: #b30000;
     font-size: 14px;
+    padding-top: 0;
 }
 
 .cdo-error .fa-circle-exclamation {
