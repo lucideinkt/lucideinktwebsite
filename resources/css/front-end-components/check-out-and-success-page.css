@@ -105,8 +105,12 @@ body:has(.page.checkout) .checkout-hero-border {
     box-sizing: border-box;
     padding-top: 35px;
     padding-bottom: 50px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.checkout-content-section .container {
+    max-width: 1200px;
 }
 
 .checkout-content-section::before {
