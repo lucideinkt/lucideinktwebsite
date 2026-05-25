@@ -1077,6 +1077,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
     function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+    const MOBILE_SEARCH_SS_KEY = 'bibliotheek_search'; // shared with desktop so both restore each other's results
+
     function initSearch(inputId, iconId, resultsId, clearId) {
         const input   = document.getElementById(inputId);
         const icon    = document.getElementById(iconId);
@@ -1092,11 +1094,14 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         }
         function hideResults() {
             if (results) results.setAttribute('hidden','');
+            try { sessionStorage.removeItem(MOBILE_SEARCH_SS_KEY); } catch(_) {}
         }
         function showResults(data, q) {
             if (!results) return;
             results.removeAttribute('hidden');
             results.innerHTML = '';
+            // Persist so the results survive back-navigation
+            try { sessionStorage.setItem(MOBILE_SEARCH_SS_KEY, JSON.stringify({ query: q, data: data })); } catch(_) {}
             if (!data.results || !data.results.length) {
                 results.innerHTML = '<div class="bs-sr-empty"><i class="fa-solid fa-book-open"></i> Geen resultaten voor <em>"' + escHtml(q) + '"</em></div>';
                 return;
@@ -1142,6 +1147,19 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         clear && clear.addEventListener('click', function () {
             if (input.value.trim()) { input.value=''; hideResults(); setIcon('idle'); input.focus(); }
         });
+
+        // Restore search results after back-navigation
+        (function () {
+            try {
+                const stored = sessionStorage.getItem(MOBILE_SEARCH_SS_KEY);
+                if (!stored) return;
+                const { query, data } = JSON.parse(stored);
+                if (!query || !data) return;
+                input.value = query;
+                setIcon('clear');
+                showResults(data, query);
+            } catch(_) {}
+        })();
     }
 
     initSearch('bs-mobile-search-input', 'bs-mobile-search-icon', 'bs-mobile-search-results', 'bs-mobile-search-clear');
