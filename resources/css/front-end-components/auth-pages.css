@@ -127,6 +127,7 @@ body:has(.page.auth-page) .page.auth-page {
 .auth-content-section {
     width: 100vw;
     position: relative;
+    z-index: 3; /* always above .auth-hero-border (z-index: 2) so alerts are never clipped */
     left: 50%;
     margin-left: -50vw;
     box-sizing: border-box;

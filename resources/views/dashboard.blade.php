@@ -3,15 +3,22 @@
         @push('head')<meta name="robots" content="noindex, nofollow">@endpush
         <div class="page-normal-background">
         <main class="container page user-dashboard">
-            <x-breadcrumbs :items="[
-                ['label' => 'Home', 'url' => route('home')],
-                ['label' => 'Dashboard', 'url' => route('dashboard')]
-            ]" />
 
-            <div class="dashboard-header">
-                <h1 class="dashboard-title font-herina">Mijn Dashboard</h1>
-                <p class="dashboard-subtitle">Welkom terug, {{ auth()->user()->first_name }}!</p>
+            <div class="dashboard-hero">
+                <div class="container">
+                    <x-breadcrumbs :items="[
+                        ['label' => 'Home', 'url' => route('home')],
+                        ['label' => 'Dashboard', 'url' => route('dashboard')]
+                    ]" />
+                    <h1 class="dashboard-title font-herina">Mijn Dashboard</h1>
+                    <p class="dashboard-subtitle">Welkom terug, {{ auth()->user()->first_name }}!</p>
+                </div>
             </div>
+
+            <div class="gradient-border dashboard-hero-border"></div>
+
+            <div class="dashboard-content-section">
+            <div class="container">
 
             @if(session('success'))
                 <div class="alert alert-success">
@@ -34,6 +41,10 @@
             <x-user-dashboard-layout>
                 @livewire('user-dashboard')
             </x-user-dashboard-layout>
+
+            </div>
+            </div>
+
         </main>
         <div class="gradient-border"></div>
         <x-footer></x-footer>
