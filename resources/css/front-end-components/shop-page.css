@@ -14,8 +14,10 @@
 
 /* Page background → see front-end-base/page-backgrounds.css (section 1b) */
 
-body:has(.page.shop),
-html:has(.page.shop) {
+/* Prevent horizontal overflow from full-bleed elements (100vw technique).
+   We set overflow-x: hidden on the .page-normal-background wrapper div — NOT on html/body.
+   Setting overflow on html and/or body destroys mobile (iOS) vertical scroll. */
+body:has(.page.shop) .page-normal-background {
     overflow-x: hidden;
 }
 
