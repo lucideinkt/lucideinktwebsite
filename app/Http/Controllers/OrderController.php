@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\OrdersExport;
 use App\Mail\OrderPaidMail;
-use App\Models\{Customer, Order, Product};
+use App\Models\{Customer, DiscountCode, Order, Product, ShippingCost};
 use App\Services\MyParcelService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
@@ -88,9 +88,39 @@ class OrderController extends Controller
     public function create()
     {
         $this->authorize('create', Order::class);
-        $products = Product::with('category')->orderBy('title')->get();
+        $products      = Product::with('category')->orderBy('title')->get();
+        $shippingCosts = ShippingCost::where('is_published', 1)->orderBy('country')->get();
 
-        return view('orders.create', compact('products'));
+        return view('orders.create', compact('products', 'shippingCosts'));
+    }
+
+    public function apiDiscountCodeLookup(Request $request)
+    {
+        $code = trim($request->query('code', ''));
+        if (!$code) {
+            return response()->json(['found' => false, 'message' => 'Geen code opgegeven.'], 422);
+        }
+
+        $discount = DiscountCode::where('code', $code)
+            ->where('is_published', 1)
+            ->first();
+
+        if (!$discount) {
+            return response()->json(['found' => false, 'message' => 'Kortingscode niet gevonden of niet actief.'], 404);
+        }
+
+        // Check expiration
+        if ($discount->expiration_date && now()->startOfDay()->gt($discount->expiration_date)) {
+            return response()->json(['found' => false, 'message' => 'Deze kortingscode is verlopen.'], 422);
+        }
+
+        return response()->json([
+            'found'         => true,
+            'code'          => $discount->code,
+            'discount_type' => $discount->discount_type,
+            'discount'      => (float) $discount->discount,
+            'description'   => $discount->description,
+        ]);
     }
 
     public function store(Request $request)
@@ -105,8 +135,36 @@ class OrderController extends Controller
             return back()->withErrors(['items' => 'Vul minstens één product in met een hoeveelheid > 0.'])->withInput();
         }
 
+        // Resolve discount: discount code takes priority over manual fields
+        $discountCodeCheckout = null;
+        $discountValue = (float)($data['discount_value'] ?? 0.0);
+        $discountType  = $data['discount_type'] ?? null;
+
+        $codeInput = trim($request->input('discount_code_input', ''));
+        if ($codeInput !== '') {
+            $codeModel = DiscountCode::where('code', $codeInput)->where('is_published', 1)->first();
+            if ($codeModel && (!$codeModel->expiration_date || now()->startOfDay()->lte($codeModel->expiration_date))) {
+                $discountValue        = (float) $codeModel->discount;
+                $discountType         = $codeModel->discount_type;
+                $discountCodeCheckout = $codeModel->code;
+            }
+        }
+
         [$discountValue, $discountType, $discountAmount, $totalAfter] =
-            $this->calculateDiscount($totalBefore, (float)($data['discount_value'] ?? 0.0), $data['discount_type'] ?? null);
+            $this->calculateDiscount($totalBefore, $discountValue, $discountType);
+
+        // Resolve shipping cost
+        $shippingCostId     = null;
+        $shippingCostAmount = 0.0;
+        $shippingCostIdInput = $request->input('shipping_cost_id');
+        if ($shippingCostIdInput) {
+            $shippingCostObj = ShippingCost::find($shippingCostIdInput);
+            if ($shippingCostObj) {
+                $shippingCostId     = $shippingCostObj->id;
+                $shippingCostAmount = (float) $shippingCostObj->amount;
+                $totalAfter         = round($totalAfter + $shippingCostAmount, 2);
+            }
+        }
 
         $customer = $this->upsertCustomer($request);
 
@@ -121,6 +179,9 @@ class OrderController extends Controller
             $discountValue,
             $discountAmount,
             $totalAfter,
+            $shippingCostId,
+            $shippingCostAmount,
+            $discountCodeCheckout,
             $request
         );
 
@@ -248,6 +309,8 @@ class OrderController extends Controller
             // Validate the radio choice and require the MyParcel JSON when chosen
             'myparcel_choice' => 'required|in:with_myparcel,without_myparcel',
             'myparcel_delivery_options' => 'required_if:myparcel_choice,with_myparcel|nullable|json',
+            'shipping_cost_id' => 'nullable|exists:shipping_costs,id',
+            'discount_code_input' => 'nullable|string|max:100',
         ], [
             'items.required' => 'Er moeten producten worden toegevoegd.',
             'items.array' => 'De productenlijst is ongeldig.',
@@ -408,16 +471,23 @@ class OrderController extends Controller
         float $discountValue,
         float $discountAmount,
         float $totalAfter,
+        ?int $shippingCostId,
+        float $shippingCostAmount,
+        ?string $discountCodeCheckout,
         Request $request
     ): \Illuminate\Database\Eloquent\Model {
         return $customer->orders()->create([
-            'status' => 'pending',
-            'payment_status' => 'pending',
-            'total' => $totalBefore,
+            'status'               => 'pending',
+            'payment_status'       => 'pending',
+            'total_before'         => $totalBefore,
+            'total'                => $totalAfter,
             'total_after_discount' => $totalAfter,
-            'discount_type' => $discountType,
-            'discount_value' => $discountValue,
+            'discount_type'        => $discountType,
+            'discount_value'       => $discountValue,
             'discount_price_total' => $discountAmount,
+            'discount_code_checkout' => $discountCodeCheckout,
+            'shipping_cost_id'     => $shippingCostId,
+            'shipping_cost_amount' => $shippingCostAmount > 0 ? $shippingCostAmount : null,
 
             // Shipping snapshot - billing data is in customer table
             'shipping_first_name' => $request->boolean('alt-shipping') ? $request->shipping_first_name : $request->billing_first_name,

@@ -1,14 +1,72 @@
 <x-dashboard-layout>
 @push('head')
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/myparcel.lib.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/style.css" />
+  @vite('resources/js/delivery-options.js')
 @endpush
 
 <style>
   /* Alt shipping panel: hidden until JS adds .open */
   .customer-details.alternate { display: none; }
   .customer-details.alternate.open { display: block; }
+
+  /* ── CDO widget (scoped to dashboard) ────────────────────── */
+  .custom-delivery-options {
+    margin: 12px 0 4px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9fafb;
+  }
+  .dark .custom-delivery-options { border-color: #374151; background: #1f2937; }
+  .cdo-tabs { display:flex; border-bottom:1px solid #e5e7eb; }
+  .dark .cdo-tabs { border-color:#374151; }
+  .cdo-tab {
+    flex:1; padding:10px 8px; background:#f3f4f6; border:none; cursor:pointer;
+    font-size:13px; font-weight:600; color:#374151; font-family:inherit;
+    transition:background .2s; display:flex; align-items:center; justify-content:center; gap:6px;
+  }
+  .dark .cdo-tab { background:#374151; color:#d1d5db; }
+  .cdo-tab.active { background:#fff; border-bottom:2px solid #10b981; color:#065f46; }
+  .dark .cdo-tab.active { background:#1f2937; border-bottom-color:#10b981; color:#6ee7b7; }
+  .cdo-panel { padding:8px; }
+  .cdo-option {
+    display:flex; align-items:center; gap:10px; padding:9px 10px; margin-bottom:6px;
+    border:1.5px solid #e5e7eb; border-radius:8px; cursor:pointer; background:#fff;
+    transition:border-color .15s,background .15s;
+  }
+  .dark .cdo-option { border-color:#374151; background:#111827; }
+  .cdo-option:has(input:checked) { border-color:#10b981; border-width:2px; background:#ecfdf5; }
+  .dark .cdo-option:has(input:checked) { background:#064e3b; }
+  .cdo-option input[type="radio"] {
+    accent-color:#10b981; flex-shrink:0; width:16px !important; height:16px !important;
+    min-width:16px !important; padding:0 !important; border:none !important; background:none !important;
+    cursor:pointer;
+  }
+  .cdo-option-inner { display:flex; flex-direction:column; gap:2px; flex:1; }
+  .cdo-option-name { font-size:13px; font-weight:600; color:#111827; }
+  .dark .cdo-option-name { color:#f9fafb; }
+  .cdo-option-address { font-size:12px; color:#6b7280; }
+  .cdo-option-distance { font-size:11px; color:#9ca3af; margin-top:1px; }
+  .cdo-home-carrier-row { display:flex; flex-direction:column; gap:4px; }
+  .cdo-carrier-badge {
+    display:inline-flex; align-items:center; gap:5px; background:#fff7ed;
+    border:1px solid #fed7aa; border-radius:5px; padding:2px 8px; width:fit-content;
+  }
+  .cdo-carrier-name { font-size:13px; font-weight:600; color:#374151; }
+  .cdo-loader {
+    display:flex; align-items:center; gap:8px; padding:14px 12px;
+    color:#6b7280; font-size:13px;
+  }
+  .cdo-error {
+    display:flex; align-items:center; gap:7px; padding:12px 14px;
+    color:#b91c1c; font-size:13px;
+  }
+  .cdo-empty { padding:12px; color:#9ca3af; font-size:13px; text-align:center; }
+  .cdo-more-btn {
+    width:100%; padding:8px; background:#e5e7eb; border:none; border-radius:6px;
+    cursor:pointer; font-size:12px; color:#374151; margin-top:4px;
+  }
+  .cdo-pickup-scroll { max-height:260px; overflow-y:auto; }
+  @keyframes cdo-spin { to { transform:rotate(360deg); } }
 </style>
 
 <nav class="flex mb-4" aria-label="Breadcrumb">
@@ -82,7 +140,12 @@
           <div class="product-row flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-700/40" data-name="{{ strtolower($product->title) }}">
             <div class="flex-1 min-w-0 mr-3">
               <p class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ $product->title }}</p>
-              <p class="text-xs text-gray-400 dark:text-gray-500">€ {{ number_format($product->price, 2, ',', '.') }}</p>
+              <p class="text-xs text-gray-400 dark:text-gray-500">
+                € {{ number_format($product->price, 2, ',', '.') }}
+                <span class="ml-2 {{ $product->stock > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400' }}">
+                  · voorraad: {{ (int) $product->stock }}
+                </span>
+              </p>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
               <span class="text-xs font-medium text-primary-600 dark:text-primary-400 w-16 text-right tabular-nums" id="sub-item-price-{{ $product->id }}"></span>
@@ -107,29 +170,91 @@
         <div class="p-4 border-b border-gray-200 dark:border-gray-700">
           <h2 class="text-base font-semibold text-gray-900 dark:text-white">Korting</h2>
         </div>
-        <div class="p-4">
-          @php
-            $resetDiscount = !$errors->any() && !old('discount_value') && !old('discount_type');
-            $discountValue = $resetDiscount ? 0 : old('discount_value', session('discount_value', 0));
-            $discountType  = $resetDiscount ? 'amount' : old('discount_type', session('discount_type', 'amount'));
-          @endphp
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label for="discount_value" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Kortingswaarde</label>
-              <input type="number" step="0.01" min="0" id="discount_value" name="discount_value" value="{{ $discountValue }}"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                placeholder="0.00">
+        <div class="p-4 space-y-4">
+
+          {{-- Discount code lookup --}}
+          <div>
+            <label class="block mb-1.5 text-sm font-medium text-gray-700 dark:text-gray-300">Kortingscode</label>
+            <div class="flex gap-2">
+              <input type="text" id="discount_code_field" placeholder="Bijv. ZOMER10"
+                value="{{ old('discount_code_input') }}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <button type="button" id="apply_discount_code_btn"
+                class="px-3 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-lg whitespace-nowrap focus:ring-2 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700">
+                Toepassen
+              </button>
             </div>
-            <div>
-              <label for="discount_type" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Type</label>
-              <select id="discount_type" name="discount_type"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <option value="amount"  {{ $discountType==='amount'  ? 'selected' : '' }}>Bedrag (€)</option>
-                <option value="percent" {{ $discountType==='percent' ? 'selected' : '' }}>Percentage (%)</option>
-              </select>
+            <div id="discount_code_result" class="mt-1.5 text-xs"></div>
+            {{-- Hidden: submitted code --}}
+            <input type="hidden" name="discount_code_input" id="discount_code_input_hidden" value="{{ old('discount_code_input') }}">
+          </div>
+
+          <div class="border-t border-gray-100 dark:border-gray-700 pt-3">
+            <p class="text-xs text-gray-400 dark:text-gray-500 mb-2">Of voer handmatig een korting in:</p>
+            @php
+              $resetDiscount = !$errors->any() && !old('discount_value') && !old('discount_type');
+              $discountValue = $resetDiscount ? 0 : old('discount_value', 0);
+              $discountType  = $resetDiscount ? 'amount' : old('discount_type', 'amount');
+            @endphp
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="discount_value" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Kortingswaarde</label>
+                <input type="number" step="0.01" min="0" id="discount_value" name="discount_value" value="{{ $discountValue }}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  placeholder="0.00">
+              </div>
+              <div>
+                <label for="discount_type" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Type</label>
+                <select id="discount_type" name="discount_type"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                  <option value="amount"  {{ $discountType==='amount'  ? 'selected' : '' }}>Bedrag (€)</option>
+                  <option value="percent" {{ $discountType==='percent' ? 'selected' : '' }}>Percentage (%)</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div id="discounted-total" class="mt-3 text-sm font-medium text-primary-600 dark:text-primary-400"></div>
+        </div>
+      </div>
+
+      {{-- Verzendkosten --}}
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+          <h2 class="text-base font-semibold text-gray-900 dark:text-white">Verzendkosten</h2>
+        </div>
+        <div class="p-4">
+          <label class="block mb-1.5 text-sm font-medium text-gray-700 dark:text-gray-300">Selecteer verzendoptie</label>
+          <select id="shipping_cost_id" name="shipping_cost_id"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <option value="">— Geen verzendkosten —</option>
+            @foreach($shippingCosts as $sc)
+              <option value="{{ $sc->id }}"
+                data-amount="{{ $sc->amount }}"
+                {{ old('shipping_cost_id') == $sc->id ? 'selected' : '' }}>
+                {{ $sc->country }} — € {{ number_format($sc->amount, 2, ',', '.') }}
+              </option>
+            @endforeach
+          </select>
+          <div id="shipping_cost_display" class="mt-1.5 text-xs text-gray-500 dark:text-gray-400"></div>
+        </div>
+      </div>
+
+      {{-- Order totaal samenvatting --}}
+      <div class="bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600 p-4 space-y-1.5" id="order-summary">
+        <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+          <span>Subtotaal</span>
+          <span id="summary-subtotal" class="font-medium text-gray-900 dark:text-white">€ 0,00</span>
+        </div>
+        <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400" id="summary-discount-row" style="display:none!important">
+          <span id="summary-discount-label">Korting</span>
+          <span id="summary-discount-amount" class="font-medium text-red-600 dark:text-red-400"></span>
+        </div>
+        <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400" id="summary-shipping-row" style="display:none!important">
+          <span>Verzendkosten</span>
+          <span id="summary-shipping-amount" class="font-medium text-gray-900 dark:text-white"></span>
+        </div>
+        <div class="flex justify-between text-sm font-bold text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-600 pt-2 mt-1">
+          <span>Totaal te betalen</span>
+          <span id="summary-grand-total">€ 0,00</span>
         </div>
       </div>
 
@@ -329,7 +454,39 @@
               Met MyParcel
             </label>
           </div>
-          <div id="myparcel-delivery-options"></div>
+
+          {{-- CDO widget (shown only when Met MyParcel is selected) --}}
+          <div id="myparcel-widget-wrap" style="display:none;">
+            <div id="custom-delivery-options" class="custom-delivery-options" style="display:none;">
+              <div class="cdo-tabs">
+                <button type="button" class="cdo-tab active" data-tab="home">
+                  <i class="fa-solid fa-house"></i> Thuisbezorging
+                </button>
+                <button type="button" class="cdo-tab" data-tab="pickup">
+                  <i class="fa-solid fa-store"></i> Afhaalpunt
+                </button>
+              </div>
+              <div class="cdo-panel" id="cdo-panel-home">
+                <div class="cdo-list" id="cdo-home-list"></div>
+              </div>
+              <div class="cdo-panel" id="cdo-panel-pickup" style="display:none;">
+                <div class="cdo-list" id="cdo-pickup-list"></div>
+              </div>
+              <div id="cdo-loader" class="cdo-loader" style="display:none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     style="animation:cdo-spin 0.8s linear infinite;">
+                  <circle cx="12" cy="12" r="10" stroke="#d1d5db" stroke-width="3"/>
+                  <path d="M12 2a10 10 0 0 1 10 10" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span>Bezorgopties worden geladen…</span>
+              </div>
+              <div id="cdo-error" class="cdo-error" style="display:none;">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="cdo-error-msg">Bezorgopties konden niet worden geladen.</span>
+              </div>
+            </div>
+          </div>
+
           <input type="hidden" name="myparcel_delivery_options" id="myparcel_delivery_options">
         </div>
       </div>
@@ -347,7 +504,7 @@
 </form>
 
 <script>
-// Live product search/filter
+// ─── Live product search/filter ─────────────────────────────────────────────
 const productSearch = document.getElementById('product-search');
 if (productSearch) {
     productSearch.addEventListener('input', function () {
@@ -357,6 +514,219 @@ if (productSearch) {
         });
     });
 }
+
+// ─── Price formatting ────────────────────────────────────────────────────────
+function fmt(amount) {
+    return '€\u00a0' + parseFloat(amount).toFixed(2).replace('.', ',');
+}
+
+// ─── State ───────────────────────────────────────────────────────────────────
+let appliedDiscountCode = null; // { code, discount_type, discount, source: 'code' }
+
+// ─── Main recalculate ────────────────────────────────────────────────────────
+function recalcTotal() {
+    // 1. Subtotal from products
+    let subtotal = 0;
+    document.querySelectorAll('.qty-input').forEach(function (input) {
+        const qty   = parseFloat(input.value) || 0;
+        const price = parseFloat(input.dataset.price) || 0;
+        const line  = qty * price;
+        subtotal   += line;
+        const span  = document.getElementById('sub-item-price-' + input.dataset.id);
+        if (span) span.textContent = (qty > 0) ? fmt(line) : '';
+    });
+    document.getElementById('total-price').textContent = subtotal > 0 ? 'Subtotaal: ' + fmt(subtotal) : '';
+    document.getElementById('summary-subtotal').textContent = fmt(subtotal);
+
+    // 2. Discount — code takes priority over manual fields
+    let discountAmount = 0;
+    let discountLabel  = '';
+    if (appliedDiscountCode) {
+        const v = appliedDiscountCode.discount;
+        const t = appliedDiscountCode.discount_type;
+        discountAmount = t === 'percent' ? subtotal * (v / 100) : v;
+        discountAmount = Math.min(discountAmount, subtotal);
+        discountLabel  = 'Korting (' + appliedDiscountCode.code + (t === 'percent' ? ' ' + v + '%' : '') + ')';
+    } else {
+        const manualVal  = parseFloat(document.getElementById('discount_value')?.value) || 0;
+        const manualType = document.getElementById('discount_type')?.value || 'amount';
+        if (manualVal > 0) {
+            discountAmount = manualType === 'percent' ? subtotal * (manualVal / 100) : manualVal;
+            discountAmount = Math.min(discountAmount, subtotal);
+            discountLabel  = manualType === 'percent' ? 'Korting (' + manualVal + '%)' : 'Korting (bedrag)';
+        }
+    }
+    const afterDiscount = Math.max(0, subtotal - discountAmount);
+
+    // Discount row
+    const discountRow = document.getElementById('summary-discount-row');
+    if (discountAmount > 0) {
+        document.getElementById('summary-discount-label').textContent  = discountLabel;
+        document.getElementById('summary-discount-amount').textContent = '−' + fmt(discountAmount);
+        discountRow.style.removeProperty('display');
+    } else {
+        discountRow.style.setProperty('display', 'none', 'important');
+    }
+
+    // 3. Shipping
+    const shippingSelect = document.getElementById('shipping_cost_id');
+    const selected = shippingSelect?.options[shippingSelect.selectedIndex];
+    const shippingAmount = selected ? (parseFloat(selected.dataset.amount) || 0) : 0;
+
+    const shippingRow = document.getElementById('summary-shipping-row');
+    if (shippingAmount > 0) {
+        document.getElementById('summary-shipping-amount').textContent = fmt(shippingAmount);
+        shippingRow.style.removeProperty('display');
+        const displayEl = document.getElementById('shipping_cost_display');
+        if (displayEl) displayEl.textContent = 'Geselecteerd: ' + fmt(shippingAmount);
+    } else {
+        shippingRow.style.setProperty('display', 'none', 'important');
+        const displayEl = document.getElementById('shipping_cost_display');
+        if (displayEl) displayEl.textContent = '';
+    }
+
+    // 4. Grand total
+    const grandTotal = afterDiscount + shippingAmount;
+    document.getElementById('summary-grand-total').textContent = fmt(grandTotal);
+}
+
+// ─── Discount code apply ─────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+
+    function applyDiscountCode() {
+        const codeField  = document.getElementById('discount_code_field');
+        const resultEl   = document.getElementById('discount_code_result');
+        const hiddenInput = document.getElementById('discount_code_input_hidden');
+        const code = codeField.value.trim().toUpperCase();
+
+        if (!code) {
+            resultEl.textContent = '';
+            resultEl.className   = 'mt-1.5 text-xs';
+            appliedDiscountCode  = null;
+            hiddenInput.value    = '';
+            recalcTotal();
+            return;
+        }
+
+        resultEl.textContent = 'Bezig met ophalen…';
+        resultEl.className   = 'mt-1.5 text-xs text-gray-500 dark:text-gray-400';
+
+        fetch('/dashboard/api/discount-code?code=' + encodeURIComponent(code), {
+            headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '' }
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.found) {
+                appliedDiscountCode = data;
+                hiddenInput.value   = data.code;
+                // Clear manual discount fields since code overrides
+                const dv = document.getElementById('discount_value');
+                const dt = document.getElementById('discount_type');
+                if (dv) dv.value = '0';
+
+                const typeLabel = data.discount_type === 'percent'
+                    ? data.discount + '%'
+                    : fmt(data.discount);
+                resultEl.innerHTML  = '✓ <strong>' + data.code + '</strong> — ' + typeLabel + ' korting toegepast'
+                    + (data.description ? ' (' + data.description + ')' : '');
+                resultEl.className  = 'mt-1.5 text-xs text-green-600 dark:text-green-400';
+            } else {
+                appliedDiscountCode = null;
+                hiddenInput.value   = '';
+                resultEl.textContent = '✗ ' + (data.message || 'Kortingscode niet gevonden.');
+                resultEl.className   = 'mt-1.5 text-xs text-red-600 dark:text-red-400';
+            }
+            recalcTotal();
+        })
+        .catch(() => {
+            resultEl.textContent = 'Fout bij ophalen van kortingscode.';
+            resultEl.className   = 'mt-1.5 text-xs text-red-600 dark:text-red-400';
+        });
+    }
+
+    document.getElementById('apply_discount_code_btn')?.addEventListener('click', applyDiscountCode);
+    document.getElementById('discount_code_field')?.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); applyDiscountCode(); }
+    });
+
+    // Clear code when field is emptied
+    document.getElementById('discount_code_field')?.addEventListener('input', function () {
+        if (!this.value.trim()) {
+            appliedDiscountCode = null;
+            document.getElementById('discount_code_input_hidden').value = '';
+            document.getElementById('discount_code_result').textContent = '';
+            recalcTotal();
+        }
+    });
+
+    // ─── Qty listeners ───────────────────────────────────────────────────────
+    document.querySelectorAll('.qty-input').forEach(function (input) {
+        input.addEventListener('input',  recalcTotal);
+        input.addEventListener('change', recalcTotal);
+    });
+
+    // ─── Manual discount listeners ───────────────────────────────────────────
+    var dv = document.getElementById('discount_value');
+    var dt = document.getElementById('discount_type');
+    if (dv) {
+        dv.addEventListener('input',  function () { if (!appliedDiscountCode) recalcTotal(); });
+        dv.addEventListener('change', function () { if (!appliedDiscountCode) recalcTotal(); });
+    }
+    if (dt) dt.addEventListener('change', function () { if (!appliedDiscountCode) recalcTotal(); });
+
+    // ─── Shipping cost listener ───────────────────────────────────────────────
+    document.getElementById('shipping_cost_id')?.addEventListener('change', recalcTotal);
+
+    // ─── Alt shipping toggle ──────────────────────────────────────────────────
+    var altCheckbox = document.getElementById('alt-shipping');
+    var altPanel    = document.querySelector('.customer-details.alternate');
+    if (altCheckbox && altPanel) {
+        altCheckbox.addEventListener('change', function () {
+            altPanel.classList.toggle('open', this.checked);
+            if (typeof window.resetDeliveryOptions === 'function') {
+                window.resetDeliveryOptions();
+            }
+        });
+        if (altCheckbox.checked) altPanel.classList.add('open');
+    }
+
+    // ─── MyParcel radio toggle ────────────────────────────────────────────────
+    var withoutMyparcel = document.getElementById('without_myparcel');
+    var withMyparcel    = document.getElementById('with_myparcel');
+    var widgetWrap      = document.getElementById('myparcel-widget-wrap');
+
+    function updateMyparcelVisibility() {
+        if (!widgetWrap) return;
+        if (withMyparcel && withMyparcel.checked) {
+            widgetWrap.style.display = '';
+        } else {
+            widgetWrap.style.display = 'none';
+            var h = document.getElementById('myparcel_delivery_options');
+            if (h) h.value = '';
+        }
+    }
+
+    if (withoutMyparcel) withoutMyparcel.addEventListener('change', updateMyparcelVisibility);
+    if (withMyparcel)    withMyparcel.addEventListener('change', function () {
+        updateMyparcelVisibility();
+        if (typeof window.resetDeliveryOptions === 'function') {
+            window.resetDeliveryOptions();
+        }
+    });
+    updateMyparcelVisibility();
+
+    // ─── Restore discount code on validation error ────────────────────────────
+    @if(old('discount_code_input'))
+    (function () {
+        var f = document.getElementById('discount_code_field');
+        if (f && !f.value) f.value = '{{ old("discount_code_input") }}';
+        document.getElementById('apply_discount_code_btn')?.click();
+    })();
+    @endif
+
+    // Initial calc
+    recalcTotal();
+});
 </script>
 
 </x-dashboard-layout>

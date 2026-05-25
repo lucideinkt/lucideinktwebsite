@@ -370,26 +370,36 @@ body:has(.page.shop) .page-normal-background {
 
 .product-card-badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.7rem;
+    top: 14px;
+    left: 0;
+    padding: 5px 14px 5px 11px;
+    border-radius: 0 20px 20px 0;
+    font-size: 0.62rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
     z-index: 10;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.20);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.product-card-badge i {
+    font-size: 0.6rem;
+    opacity: 0.85;
+    color: inherit;
 }
 
 .product-card-badge-warning {
-    background: var(--green-1);
-    color: var(--ink-inverse);
+    background: linear-gradient(90deg, #a05f00, #c97c0d);
+    color: #fff8ec;
+    box-shadow: 0 2px 8px rgba(160, 95, 0, 0.38);
 }
 
 .product-card-badge-error {
-    background: var(--red-2);
-    color: var(--ink-inverse);
+    background: linear-gradient(90deg, #4e1616, #772222);
+    color: #ffeeed;
+    box-shadow: 0 2px 8px rgba(78, 22, 22, 0.40);
 }
 
 /* Content area */

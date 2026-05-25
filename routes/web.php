@@ -71,6 +71,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard/myparcel/shipments/{shipmentID}', [OrderController::class, 'getSipmentDetails'])->name('getSipmentDetails');
 
     // Orders
+    Route::get('/dashboard/api/discount-code', [OrderController::class, 'apiDiscountCodeLookup'])->name('dashboard.api.discountCode');
     Route::get('/dashboard/orders/create', [OrderController::class, 'create'])->name('orderCreatePage');
     Route::get('/dashboard/orders', [OrderController::class, 'index'])->name('orderIndex');
     // Export orders

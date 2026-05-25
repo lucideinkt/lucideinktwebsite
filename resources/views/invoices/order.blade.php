@@ -289,7 +289,7 @@
             </tr>
             <tr>
                 <td colspan="3" style="text-align:right;">Totaal na korting</td>
-                <td style="text-align:right;">€ {{ number_format($order->total - $order->discount_price_total, 2, ',', '.') }}</td>
+                <td style="text-align:right;">€ {{ number_format($order->total, 2, ',', '.') }}</td>
             </tr>
         @endif
         @if(!empty($order->shipping_cost_amount) && $order->shipping_cost_amount > 0)
@@ -305,19 +305,14 @@
         </tfoot>
     </table>
 
-    @if ($order->payment_status == 'paid' && !empty($order->paid_at))
+    @if ($order->payment_status == 'paid')
         <div class="summary">
             <strong>Factuur is betaald</strong>
         </div>
     @else
         <div class="summary unpaid">
-            @if($order->discount_value > 0)
-                <strong>Te betalen:</strong> € {{ number_format($order->total_after_discount, 2, ',', '.') }}<br>
-                <span>Gelieve het bedrag over te maken naar rekening NL44 RABO 0142 3642 23 t.n.v. Stichting Lucide Inkt o.v.v. je ordernummer.</span>
-            @else
-                <strong>Te betalen:</strong> € {{ number_format($order->total, 2, ',', '.') }}<br>
-                <span>Gelieve het bedrag over te maken naar rekening NL44 RABO 0142 3642 23 t.n.v. Stichting Lucide Inkt o.v.v. je ordernummer.</span>
-            @endif
+            <strong>Te betalen:</strong> € {{ number_format($order->total, 2, ',', '.') }}<br>
+            <span>Gelieve het bedrag over te maken naar rekening NL44 RABO 0142 3642 23 t.n.v. Stichting Lucide Inkt o.v.v. je ordernummer.</span>
         </div>
     @endif
 

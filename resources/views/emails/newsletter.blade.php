@@ -25,7 +25,7 @@
                     <tr>
                         <td style="background-color: #ffffff; padding: 40px 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
                             <!-- Header section -->
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e8e8e8;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 0px; padding-bottom: 16px; border-bottom: 1px solid #e8e8e8;">
                                 <tr>
                                     <td>
                                         <h1 style="color: #620505; font-size: 18px; margin: 0; font-weight: 600;">{{ $newsletter->subject }}</h1>
