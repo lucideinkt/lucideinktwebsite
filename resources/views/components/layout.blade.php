@@ -83,7 +83,7 @@
                     <li class="nav-item">
                         <button type="button" class="mini-cart-trigger" aria-label="Winkelwagen openen">
                             <i class="fa-solid fa-bag-shopping"></i>
-                            <span class="cart-quantity" style="display: {{ session('cart') && count(session('cart')) ? 'flex' : 'none' }};" id="cart-quantity-mobile">
+                            <span class="cart-quantity {{ session('cart') && count(session('cart')) ? 'is-visible' : '' }}" id="cart-quantity-mobile">
                                 {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
                             </span>
                         </button>
@@ -151,14 +151,14 @@
                 const mobileCounter = document.getElementById('cart-quantity-mobile');
                 if (mobileCounter) {
                     mobileCounter.textContent = totalQuantity;
-                    mobileCounter.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
+                    mobileCounter.classList.toggle('is-visible', totalQuantity > 0);
                 }
 
                 // Update desktop cart counter
                 const desktopCounter = document.getElementById('cart-quantity-desktop');
                 if (desktopCounter) {
                     desktopCounter.textContent = totalQuantity;
-                    desktopCounter.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
+                    desktopCounter.classList.toggle('is-visible', totalQuantity > 0);
                 }
             });
 

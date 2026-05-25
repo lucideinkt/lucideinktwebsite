@@ -501,22 +501,35 @@ li.nav-item.cart .mini-cart-trigger {
 .cart-quantity {
     display: flex;
     position: absolute;
-    top: -8px;
-    right: -10px;
-    background: #dc2626;
-    color: white;
-    font-size: 0.6875rem;
+    top: -6px;
+    right: -8px;
+    background: #8b0000;
+    color: #f5dfac;
+    font-size: 0.6rem;
     font-weight: 700;
-    line-height: 1;
-    padding: 3px 4px;
-    border-radius: 50%;
+    line-height: 18px;
+    padding: 0 4px;
+    border-radius: 5px;
     min-width: 18px;
-    width: 18px;
     height: 18px;
+    width: auto;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
     pointer-events: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(255, 245, 180, 0.55);
+    letter-spacing: 0.3px;
+    /* Scale from center — element is always at correct position, just hidden until active */
+    transform: scale(0);
+    transform-origin: 60% 60%;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cart-quantity.is-visible {
+    transform: scale(1);
 }
 
 .user-account {
@@ -617,25 +630,26 @@ li.nav-item.cart .mini-cart-trigger {
         gap: 8px;
         padding: 10px;
         border-radius: 50%;
+        position: relative;
     }
 
-    /* Mobile: badge hangs off the top-right of the icon, not absolute to viewport */
+    /* Mobile: badge sits neatly at the top-right of the icon */
     .navbar-cart-sidebar-toggle .mini-cart-trigger .cart-quantity,
     .navbar-cart-sidebar-toggle .nav-item a .cart-quantity {
-        top: 0px;
-        right: -6px;
+        top: -4px;
+        right: -4px;
     }
 
     .cart-quantity {
-        position: absolute;
-        top: 2px;
+        top: -4px;
+        right: -4px;
         left: auto;
-        right: -8px;
         min-width: 18px;
-        width: 18px;
+        width: auto;
         height: 18px;
-        font-size: 0.65rem;
-        padding: 3px 4px;
+        line-height: 18px;
+        font-size: 0.6rem;
+        padding: 0 4px;
     }
 
     .user-account {
@@ -722,12 +736,24 @@ li.nav-item.cart .mini-cart-trigger {
     }
 
     .header.scrolled {
-        /*background-image: url("../../images/001_leather_background.webp");*/
-        background-size: cover;
-        background-position: center;
-        /*background-color: #f5e6ca !important;*/
-        background-color: #fff9ef !important;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px !important;
+        background-color: #f7e9c4 !important;
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(210, 175, 110, 0.30) 0%,
+                rgba(210, 175, 110, 0.10) 60%,
+                transparent               100%
+            ),
+            url("../../images/BillyPaper.webp") !important;
+        background-size: auto, 600px !important;
+        background-position: center, center !important;
+        background-repeat: no-repeat, repeat !important;
+        box-shadow:
+            0 1px 0   rgba(255, 248, 190, 0.60),
+            0 2px 8px rgba(30, 10, 0, 0.12),
+            0 4px 16px rgba(25, 8, 0, 0.08),
+            inset 0 -1px 0 rgba(197, 155, 50, 0.30) !important;
+        border-bottom: 1px solid rgba(197, 155, 50, 0.35) !important;
         height: 60px !important;
         position: fixed !important;
         top: 0 !important;
@@ -828,4 +854,36 @@ li.nav-item.cart .mini-cart-trigger {
 }
 .page-other .desktop-navbar-container .dropdown-menu li a { color: #f5dfac; }  /* ← text color */
 .page-other .desktop-navbar-container .dropdown-menu li a:hover { background: rgba(195, 158, 75, 0.12); }  /* ← hover tint */
+
+
+/* =========================================================
+   HOMEPAGE — mobile icon buttons (before scrolling)
+   ========================================================= */
+@media (max-width: 992px) {
+    /* Cart bag & hamburger: same style as hero CTA .cta-icon-box */
+    .page-home .header:not(.scrolled) .navbar-cart-sidebar-toggle .mini-cart-trigger,
+    .page-home .header:not(.scrolled) .navbar-cart-sidebar-toggle .sidebar-toggle {
+        background: rgba(10, 20, 12, 0.52);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1.5px solid rgba(195, 158, 75, 0.60);
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+            0 3px 12px rgba(0, 0, 0, 0.40),
+            inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    }
+
+    /* Icon colour: matches .cta-icon-box i colour */
+    .page-home .header:not(.scrolled) .navbar-cart-sidebar-toggle .mini-cart-trigger .fa-bag-shopping,
+    .page-home .header:not(.scrolled) .navbar-cart-sidebar-toggle .sidebar-toggle .fa-bars {
+        color: #f5dfac;
+        font-size: 1.1rem;
+    }
+}
 

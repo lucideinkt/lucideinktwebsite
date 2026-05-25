@@ -18,12 +18,27 @@
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px;
+    right: -320px;
     width: 300px;
     height: 100vh;
     padding: 0;
-    background: #fff9ef;
-    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.30)  0%,
+            rgba(210, 175, 110, 0.08) 20%,
+            transparent               60%,
+            rgba(210, 175, 110, 0.12) 100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    box-shadow:
+        -2px 0 0 rgba(197, 155, 50, 0.35),
+        -4px 0 20px rgba(30, 10, 0, 0.18),
+        -1px 0 40px rgba(25,  8, 0, 0.12);
     transition: right .3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 110;
     overflow-y: auto;
@@ -59,7 +74,7 @@
     padding: 18px 25px;
     border-radius: 0;
     position: relative;
-    border-bottom: 1px solid #e8dcc8;
+    border-bottom: 1px solid rgba(197, 155, 50, 0.25);
 }
 
 .sidebar .navbar ul li a .first-letter {
@@ -87,29 +102,33 @@
 .sidebar .close-toggle {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 25px;
+    align-items: center;
+    padding: 18px 25px;
     margin-bottom: 0;
-    border-bottom: 1px solid #e8dcc8;
-    background: #fff9ef;
+    border-bottom: 1px solid rgba(197, 155, 50, 0.30);
+    background: transparent;
 }
 
 .sidebar .close-toggle .fa-xmark {
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
     color: var(--main-font-color);
-    padding: 6px;
-    border-radius: 4px;
+    padding: 7px;
+    border-radius: 50%;
     transition: all .2s ease;
     width: 34px;
     height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(197, 155, 50, 0.30);
+    background: rgba(255, 248, 210, 0.45);
 }
 
 @media (hover: hover) and (pointer: fine) {
     .sidebar .close-toggle .fa-xmark:hover {
-        background: rgba(98, 5, 5, 0.08);
+        background: rgba(197, 155, 50, 0.20);
+        border-color: rgba(197, 155, 50, 0.55);
         transform: none;
         box-shadow: none;
     }
@@ -223,12 +242,12 @@
     border: none !important;
     border-left: none !important;
     border-radius: 0 !important;
-    border-bottom: 1px solid rgba(98, 5, 5, 0.05) !important;
+    border-bottom: 1px solid rgba(197, 155, 50, 0.15) !important;
     display: block;
     width: 100%;
     text-align: left;
     white-space: normal;
-    background: rgba(98, 5, 5, 0.02) !important;
+    background: rgba(180, 130, 40, 0.06) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {

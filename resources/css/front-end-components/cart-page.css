@@ -389,7 +389,10 @@ body:has(.page.cart-page) .page.cart-page {
 .qty-input {
     width: 60px;
     height: 34px;
+    padding: 4px 0 0 0;
+    line-height: 34px;
     text-align: center;
+    vertical-align: middle;
     border: 2px solid rgba(197, 160, 89, 0.25);
     border-radius: 6px;
     font-size: 16px;
@@ -397,6 +400,14 @@ body:has(.page.cart-page) .page.cart-page {
     color: var(--main-font-color);
     background: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
+    /* hide native number spinners */
+    -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .qty-input:focus {
@@ -635,6 +646,12 @@ body:has(.page.cart-page) .page.cart-page {
 
 .empty-state-actions {
     margin-top: 1rem;
+}
+
+.empty-state-actions .fa-shopping-bag {
+    color: #fff;
+    margin-right: 10px;
+    margin-bottom: 3px;
 }
 
 .empty-state-actions .btn-shop {

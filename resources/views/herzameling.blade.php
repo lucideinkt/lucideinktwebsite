@@ -46,7 +46,7 @@
                 <div style="text-align: center;max-width: 700px; margin: 0 auto"><strong>Om deze waarheden ook voor een breder publiek toegankelijk te maken, hebben wij onze eerste Engelse vertaling van dit traktaat uitgebracht:</strong></div>
 
                 <div class="bottom-books-box">
-                    <img src="{{ asset('images/booksinbox.webp') }}" alt="" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/books-in-box.png') }}" alt="" loading="lazy" decoding="async">
                 </div>
 
                 <p class="bottom-links">

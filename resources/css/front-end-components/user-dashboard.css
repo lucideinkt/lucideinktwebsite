@@ -32,7 +32,9 @@ body:has(.page.user-dashboard) .page.user-dashboard {
 .page.user-dashboard {
     max-width: 100%;
     margin: 0;
-    padding-top: 0;
+    /* padding-top inherits from .container.page (100px) so the dashboard-hero
+       margin-top: -100px trick places the hero background behind the navbar
+       while keeping title/breadcrumbs below it — same as the checkout page */
 }
 
 /* =========================================================
@@ -196,16 +198,52 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 
 /* Dashboard Navigation */
 .user-dashboard-nav {
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-    border-radius: 10px;
-    padding: 12px;
-    box-shadow: var(--shadow-1);
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                30%,
+            transparent                70%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    border-radius: 40px;
+    padding: 10px;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
     width: fit-content;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-dashboard-nav::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
+    pointer-events: none;
+    z-index: 0;
 }
 
 .user-dashboard-nav ul {
@@ -213,20 +251,27 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 8px;
+    gap: 4px;
+    position: relative;
+    z-index: 1;
 }
 
 .user-dashboard-nav .nav-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 24px;
+    gap: 9px;
+    padding: 11px 22px;
     color: var(--main-font-color);
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 30px;
+    font-size: 15px;
     font-weight: 500;
     background-color: transparent;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.user-dashboard-nav .nav-item:hover:not(.active) {
+    background: rgba(121, 0, 0, 0.07);
 }
 
 .user-dashboard-nav .fa-solid {
@@ -236,7 +281,7 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 .user-dashboard-nav .nav-item.active {
     background: #790000;
     color: #fff;
-    box-shadow: 0 1px 6px rgba(121, 0, 0, 0.25);
+    box-shadow: 0 2px 8px rgba(121, 0, 0, 0.30);
 }
 
 .user-dashboard-nav .nav-item.active .fa-solid {
@@ -244,7 +289,7 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 }
 
 .user-dashboard-nav .nav-item i {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* Dashboard Content */
@@ -260,33 +305,74 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 }
 
 .overview-card {
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    border-radius: 40px;
+    padding: 36px 32px;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
-    border: 1px solid rgba(180, 140, 60, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.overview-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .card-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba(121, 0, 0, 0.08);
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.55);
     color: #790000;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    border: 1px solid rgba(180, 140, 60, 0.35);
+    font-size: 26px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    box-shadow: 0 2px 8px rgba(121, 0, 0, 0.10);
 }
 
 .card-icon .fa-solid {
@@ -313,29 +399,76 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: #790000;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     width: 100%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 8px rgba(121, 0, 0, 0.25);
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-dashboard:hover {
+    background: #5a0000;
+    box-shadow: 0 4px 12px rgba(121, 0, 0, 0.35);
 }
 
 /* Profile Form Styles — matching checkout styling */
 .profile-card {
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
     border-radius: 40px;
-    padding: 24px;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.07), 0px 4px 6px rgba(0, 0, 0, 0.07);
+    padding: 32px;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.profile-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .profile-form {
@@ -462,6 +595,7 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 @media (max-width: 768px) {    .user-dashboard-nav {
         width: 100%;
         overflow-x: visible;
+        border-radius: 24px;
     }
 
     .user-dashboard-nav ul {
@@ -489,29 +623,154 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 .order-detail-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 0px;
+}
+
+/* ── Orders Card — unified parchment container ── */
+.orders-card {
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    border-radius: 40px;
+    overflow: hidden;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
+    position: relative;
+}
+
+/* ── Orders Card Header ── */
+.orders-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid rgba(180, 140, 60, 0.22);
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.orders-card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.orders-card-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(121, 0, 0, 0.08);
+    border: 1px solid rgba(121, 0, 0, 0.18);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.orders-card-icon .fa-solid {
+    color: #790000;
 }
 
 .orders-card-title,
 .order-summary-title {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--main-font-color);
-    margin: 0 0 16px;
-    font-weight: 600;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border-1);
+    margin: 0;
+    font-weight: 700;
+    font-family: var(--font-bold);
+    line-height: 1.2;
+}
+
+.orders-card-subtitle {
+    font-size: 13px;
+    color: #6b5a42;
+    margin: 3px 0 0;
+    opacity: 0.8;
+}
+
+.orders-count-badge {
+    background: rgba(121, 0, 0, 0.08);
+    border: 1px solid rgba(121, 0, 0, 0.18);
+    color: #790000;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
 }
 
 /* Products + totals card wrapper */
 .order-summary-card {
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-    border-radius: 10px;
-    padding: 28px;
-    box-shadow: var(--shadow-1);
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    border-radius: 40px;
+    padding: 32px;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
+    position: relative;
+    overflow: hidden;
+}
+
+.order-summary-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.order-summary-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .order-summary-inner {
@@ -577,30 +836,25 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 .orders-list {
     display: flex;
     flex-direction: column;
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-    border-radius: 10px;
-    overflow: hidden;
-    border: none;
-    box-shadow: var(--shadow-1);
+    position: relative;
+    z-index: 1;
 }
 
 .orders-list-header {
     display: grid;
-    grid-template-columns: 100px 140px 120px 150px 1fr;
+    grid-template-columns: 100px 150px 120px 160px 1fr;
     gap: 20px;
-    padding: 10px 24px;
+    padding: 12px 28px;
     background: #790000;
     color: white;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
 }
 
 .orders-list-header .header-col {
-    color: #fff;
+    color: rgba(255,255,255,0.9);
 }
 
 .btn-order-again .fa-solid {
@@ -617,13 +871,18 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 
 .order-row {
     display: grid;
-    grid-template-columns: 100px 140px 120px 150px 1fr;
+    grid-template-columns: 100px 150px 120px 160px 1fr;
     gap: 20px;
-    padding: 12px 24px;
-    border-bottom: 1px solid rgba(180, 140, 60, 0.25);
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(180, 140, 60, 0.18);
     align-items: center;
-    background: rgba(250, 249, 247, 0.51);
     font-size: 14px;
+    background: transparent;
+    transition: background 0.15s ease;
+}
+
+.order-row:hover {
+    background: rgba(255, 248, 210, 0.35);
 }
 
 .order-row:last-child {
@@ -631,14 +890,30 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 }
 
 .order-id {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--main-font-color);
-    font-size: 14px;
+    font-size: 15px;
+}
+
+.order-id-hash {
+    color: #790000;
+    font-size: 12px;
+    margin-right: 1px;
+    font-weight: 600;
 }
 
 .order-date {
-    color: var(--main-font-color);
+    color: #6b5a42;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.order-date-icon {
+    color: #790000;
+    font-size: 12px;
+    opacity: 0.7;
 }
 
 .order-id-col,
@@ -659,9 +934,9 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 }
 
 .order-price {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--main-font-color);
-    font-size: 14px;
+    font-size: 15px;
     text-align: right;
     display: block;
 }
@@ -675,19 +950,36 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 4px 12px;
+    padding: 5px 12px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     white-space: nowrap;
+    border: 1px solid transparent;
 }
 
-.status-pending { background: #e7f1ff; color: #084298; }
-.status-shipped { background: #fff3cd; color: #856404; }
-.status-completed { background: var(--success-bg); color: var(--success-text); }
-.status-cancelled { background: var(--error-bg); color: var(--error-text); }
+.status-pending {
+    background: rgba(13, 110, 253, 0.08);
+    color: #0a4a8f;
+    border-color: rgba(13, 110, 253, 0.2);
+}
+.status-shipped {
+    background: rgba(255, 193, 7, 0.12);
+    color: #7a5200;
+    border-color: rgba(255, 193, 7, 0.35);
+}
+.status-completed {
+    background: rgba(25, 135, 84, 0.10);
+    color: #0d6b3e;
+    border-color: rgba(25, 135, 84, 0.25);
+}
+.status-cancelled {
+    background: rgba(220, 53, 69, 0.10);
+    color: #a11827;
+    border-color: rgba(220, 53, 69, 0.25);
+}
 
 .order-actions {
     display: flex;
@@ -697,8 +989,8 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 
 .btn-view-details,
 .btn-order-again {
-    padding: 6px 14px;
-    border-radius: 4px;
+    padding: 7px 15px;
+    border-radius: 8px;
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
@@ -714,11 +1006,18 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     background: rgba(255, 253, 245, 0.9);
     color: var(--main-font-color);
     border: 1px solid rgba(180, 140, 60, 0.4);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 .btn-order-again {
     background: #790000;
     color: white;
+    box-shadow: 0 2px 6px rgba(121, 0, 0, 0.25);
+}
+
+.btn-order-again:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
 }
 
 .user-dashboard-container .fa-solid.fa-eye {
@@ -732,15 +1031,56 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 }
 
 .order-address-card {
-    background-color: #fbd795;
-    background-image: url("../../images/44_parchment paper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-    border-radius: 12px;
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    border-radius: 30px;
     padding: 24px;
-    box-shadow: var(--shadow-1);
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
     border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.order-address-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.order-address-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .address-card-title {
@@ -983,16 +1323,100 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 }
 
 .orders-empty-state {
-    background: #fbf0cb;
-    border-radius: 10px;
-    padding: 3.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(180, 140, 60, 0.35);
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    border-radius: 40px;
+    padding: 4rem 2.5rem;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
+    border: none;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.orders-empty-state::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.orders-empty-state > * {
+    position: relative;
+    z-index: 1;
+}
+
+.empty-state-icon {
+    width: 82px;
+    height: 82px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    box-shadow: 0 2px 8px rgba(121, 0, 0, 0.10);
+    margin-bottom: 4px;
+}
+
+.empty-state-icon .fa-solid {
+    color: #790000;
+}
+
+.orders-empty-state h3 {
+    font-size: 22px;
+    color: var(--main-font-color);
+    margin: 0;
+    font-weight: 700;
+    font-family: var(--font-bold);
+}
+
+.orders-empty-state > p {
+    color: var(--main-font-color);
+    opacity: 0.65;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.6;
+    max-width: 340px;
+}
+
+.empty-state-actions {
+    margin-top: 8px;
 }
 
 .orders-pagination {
@@ -1013,7 +1437,7 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     .order-row {
         grid-template-columns: 1fr;
         gap: 10px;
-        padding: 20px;
+        padding: 18px 20px;
     }
 
     .order-row > div {
@@ -1026,7 +1450,7 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
         display: block;
         font-weight: 600;
         color: #6b5a42;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .order-price {
@@ -1034,7 +1458,7 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     }
 
     .order-actions {
-        margin-top: 10px;
+        margin-top: 6px;
         width: 100%;
     }
 
@@ -1044,7 +1468,11 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
         justify-content: center;
     }
 
-    .order-items-header {
+    .orders-card-header {
+        padding: 20px;
+    }
+
+    .orders-item-header {
         display: none;
     }
 
@@ -1076,15 +1504,16 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 @media (max-width: 480px) {
 
     .user-dashboard-nav {
-        border-radius: 0;
+        border-radius: 20px;
     }
 
     .user-dashboard-nav ul {
-        padding: 0 15px;
+        padding: 0 5px;
     }
 
     .orders-empty-state {
-        padding: 2.5rem 1.5rem;
+        padding: 2.5rem 1.25rem;
+        border-radius: 24px;
     }
 
     .orders-card-title,
