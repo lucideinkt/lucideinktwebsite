@@ -79,16 +79,21 @@
 <body style="position: relative;" class="{{ request()->routeIs('home') ? 'page-home' : 'page-other' }}">
     <header class="header">
         <div class="header-box">
-                <div class="navbar-cart-sidebar-toggle">
-                    <li class="nav-item">
-                        <button type="button" class="mini-cart-trigger" aria-label="Winkelwagen openen">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            <span class="cart-quantity {{ session('cart') && count(session('cart')) ? 'is-visible' : '' }}" id="cart-quantity-mobile">
-                                {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
-                            </span>
-                        </button>
-                    </li>
-                </div>
+
+            {{-- Left: logo (scrolled only) + cart (not-scrolled only) --}}
+            <div class="navbar-cart-sidebar-toggle">
+                <a href="{{ route('home') }}" class="mobile-header-logo" aria-label="Naar de homepage">
+                    <img src="{{ url('/images/logo_newest.webp') }}" alt="Lucide Inkt">
+                </a>
+                <li class="nav-item mobile-cart-not-scrolled">
+                    <button type="button" class="mini-cart-trigger" aria-label="Winkelwagen openen">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-quantity cart-quantity-mobile {{ session('cart') && count(session('cart')) ? 'is-visible' : '' }}">
+                            {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
+                        </span>
+                    </button>
+                </li>
+            </div>
 
             <!-- Desktop Hamburger Toggle (visible when scrolled) -->
             <div class="desktop-hamburger-toggle">
@@ -103,7 +108,6 @@
                     </div>
                 @endif
 
-
                 <nav class="navbar">
                     <x-navbar></x-navbar>
                 </nav>
@@ -113,11 +117,21 @@
                 </div>
             </div>
 
+            {{-- Center: logo (not-scrolled only) --}}
             <div class="logo-container mobile">
                 <a href="{{ route('home') }}"><img src="{{ url('/images/logo_newest.webp') }}" alt=""></a>
             </div>
 
+            {{-- Right: cart (scrolled only) + hamburger (always) --}}
             <div class="navbar-cart-sidebar-toggle">
+                <li class="nav-item mobile-cart-scrolled">
+                    <button type="button" class="mini-cart-trigger" aria-label="Winkelwagen openen">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-quantity cart-quantity-mobile {{ session('cart') && count(session('cart')) ? 'is-visible' : '' }}" id="cart-quantity-mobile">
+                            {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
+                        </span>
+                    </button>
+                </li>
                 <div class="sidebar-toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
@@ -147,12 +161,11 @@
             Livewire.on('cart-updated', (event) => {
                 const totalQuantity = event?.totalQuantity ?? event?.[0]?.totalQuantity ?? 0;
 
-                // Update mobile cart counter
-                const mobileCounter = document.getElementById('cart-quantity-mobile');
-                if (mobileCounter) {
-                    mobileCounter.textContent = totalQuantity;
-                    mobileCounter.classList.toggle('is-visible', totalQuantity > 0);
-                }
+                // Update mobile cart counters (both left and right instances)
+                document.querySelectorAll('.cart-quantity-mobile').forEach(el => {
+                    el.textContent = totalQuantity;
+                    el.classList.toggle('is-visible', totalQuantity > 0);
+                });
 
                 // Update desktop cart counter
                 const desktopCounter = document.getElementById('cart-quantity-desktop');

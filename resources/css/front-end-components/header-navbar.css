@@ -650,6 +650,11 @@ li.nav-item.cart .mini-cart-trigger {
         right: -4px;
     }
 
+    /* Scrolled right cart: tighter padding to sit closer to hamburger */
+    .mobile-cart-scrolled .mini-cart-trigger {
+        padding: 10px 6px 10px 10px;
+    }
+
     .cart-quantity {
         top: -4px;
         right: -4px;
@@ -785,6 +790,10 @@ li.nav-item.cart .mini-cart-trigger {
         height: 60px;
     }
 
+    .header.scrolled .sidebar-toggle {
+        margin-top: 7px;
+    }
+
     /* Ensure logo stays hidden on mobile when intended */
     .logo-container.logo-hidden {
         max-height: 0 !important;
@@ -865,6 +874,50 @@ li.nav-item.cart .mini-cart-trigger {
 .page-other .desktop-navbar-container .dropdown-menu li a { color: #f5dfac; }  /* ← text color */
 .page-other .desktop-navbar-container .dropdown-menu li a:hover { background: rgba(195, 158, 75, 0.12); }  /* ← hover tint */
 
+
+/* Mobile header logo (left side, next to cart bag) — only visible when scrolled */
+.mobile-header-logo {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    /* Cart positions based on scroll state */
+    .mobile-cart-not-scrolled { display: flex; }          /* left cart: show before scroll */
+    .header.scrolled .mobile-cart-not-scrolled { display: none; } /* left cart: hide on scroll */
+
+    .mobile-cart-scrolled { display: none; }              /* right cart: hide before scroll */
+    .header.scrolled .mobile-cart-scrolled { display: flex; align-items: center; } /* right cart: show on scroll */
+
+    /* Tighten gap between cart and hamburger when scrolled */
+    .header.scrolled .navbar-cart-sidebar-toggle {
+        gap: 2px;
+    }
+
+    /* Lower the badge on the right-side (scrolled) cart */
+    .mobile-cart-scrolled .mini-cart-trigger .cart-quantity {
+        top: 2px;
+        right: -4px;
+    }
+
+    /* Center logo: hide when scrolled (logo is now on the left) */
+    .header.scrolled .logo-container.mobile {
+        display: none !important;
+    }
+
+    /* Logo on left: only when scrolled */
+    .header.scrolled .mobile-header-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-right: 4px;
+    }
+
+    .mobile-header-logo img {
+        height: 36px;
+        width: auto;
+        display: block;
+    }
+}
 
 /* =========================================================
    HOMEPAGE — mobile icon buttons (before scrolling)

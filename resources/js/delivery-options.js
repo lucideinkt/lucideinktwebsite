@@ -302,7 +302,10 @@
         ]);
 
         if (!deliveryRes.ok || !pickupRes.ok) {
-            throw new Error(`API error: delivery=${deliveryRes.status} pickup=${pickupRes.status}`);
+            const status = !deliveryRes.ok ? deliveryRes.status : pickupRes.status;
+            const err = new Error(`API error: delivery=${deliveryRes.status} pickup=${pickupRes.status}`);
+            err.isAddressError = status >= 400 && status < 500;
+            throw err;
         }
 
         const delivery = await deliveryRes.json();
@@ -338,7 +341,11 @@
                 renderPickup(locations);
             } catch (err) {
                 console.error('[CDO] Fetch failed:', err);
-                showError('Bezorgopties konden niet worden geladen. Probeer het opnieuw.');
+                if (err.isAddressError) {
+                    showError('Het ingevulde adres is niet gevonden. Controleer de postcode en het huisnummer.');
+                } else {
+                    showError('Bezorgopties konden niet worden geladen. Probeer het opnieuw.');
+                }
                 lastAddress = '';
             }
         }, 600);
