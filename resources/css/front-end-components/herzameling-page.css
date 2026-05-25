@@ -91,27 +91,7 @@ body:has(.herzameling-page__text-box) .text-box-background {
     padding-bottom: 42px;
 }
 
-/* ── Page background override ── matches said-nursi page ── */
-body:has(.herzameling-page__text-box) .page-normal-background {
-    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
-    background-size: 500px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Radial centre-light overlay ── */
-body:has(.herzameling-page__text-box) .page-normal-background::after {
-    background: linear-gradient(to bottom,
-        rgba(251, 245, 217, 0.30) 0%,
-        rgba(251, 245, 217, 0.20) 90%,
-        rgba(251, 245, 217, 0.20) 100%);
-}
-
-/* ── Remove the red colour overlay ── */
-body:has(.herzameling-page__text-box) .page-normal-background::before {
-    display: none;
-}
-
+/* Page background → see front-end-base/page-backgrounds.css (section 1d) */
 
 .herzameling-page__text-box {
     /* ── Overlay controls ── tweak these two variables to adjust the top colour wash */
@@ -152,9 +132,9 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
 
     box-shadow:
         0 1px 0   rgba(255, 248, 190, 0.70),
-        0 2px 6px  rgba(30, 10, 0, 0.13),
-        0 8px 22px rgba(25, 8,  0, 0.20),
-        0 22px 55px rgba(18, 5, 0, 0.26),
+        0 2px 5px  rgba(30, 10, 0, 0.10),
+        0 6px 16px rgba(25, 8,  0, 0.12),
+        0 14px 35px rgba(18, 5, 0, 0.16),
         inset 0 0 0 1px rgba(255, 245, 175, 0.35),
         inset 0 1px 0   rgba(255, 252, 210, 0.55);
 }
@@ -339,6 +319,7 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
     -webkit-backface-visibility: hidden;
     transform: translateZ(0);
     -webkit-font-smoothing: subpixel-antialiased;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.30)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.18));
 }
 
 /* Bottom links styling */
@@ -376,6 +357,7 @@ body:has(.herzameling-page__text-box) .page-normal-background::before {
 .bottom-books-box img {
     max-width: 650px;
     margin-left: 30px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.55)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
 /* Responsive Design */

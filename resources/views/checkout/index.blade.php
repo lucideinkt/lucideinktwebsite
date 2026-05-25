@@ -26,21 +26,21 @@
     <div class="page-normal-background">
     <main class="container page checkout">
 
-        <div class="cart-hero">
+        <div class="checkout-hero">
             <div class="container">
                 <x-breadcrumbs :items="[
                     ['label' => 'Home', 'url' => route('home')],
                     ['label' => 'Winkelmand', 'url' => route('cartPage')],
                     ['label' => 'Afrekenen', 'url' => route('checkoutPage')]
                 ]" />
+                <h1 class="checkout-hero__title font-herina">Afrekenen</h1>
             </div>
-            <h1 class="cart-hero__title font-herina">Afrekenen</h1>
         </div>
 
-        <div class="gradient-border cart-hero-border"></div>
+        <div class="gradient-border checkout-hero-border"></div>
 
-        <div class="cart-content-section">
-        <div class="cart-content checkout-content">
+        <div class="checkout-content-section">
+        <div class="container">
 
         @if (session('success'))
             <div class="alert alert-success">
@@ -125,7 +125,7 @@
                         <div class="form-input address-autocomplete-wrap" id="billing-autocomplete-wrap">
                             <label for="billing_address_search">
                                 <i class="fa-solid fa-magnifying-glass" style="margin-right:4px;"></i>
-                                Adres zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ om automatisch in te vullen)</span>
+                                Snel zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ volledig adres incl. huisnummer)</span>
                             </label>
                             <input
                                 type="text"
@@ -136,50 +136,53 @@
                             >
                         </div>
 
-                        <div class="street-box">
-                            <div class="form-input street">
-                                <label for="billing_street">Straatnaam <span class="required">*</span></label>
-                                <input type="text" name="billing_street" autocomplete="address-line1" data-1p-ignore
-                                    value="{{ old('billing_street') }}"
-                                    placeholder="Straatnaam">
-                                @error('billing_street')
+                        {{-- Postcode + Huisnummer + Toevoeging (NL: vul deze in voor automatisch straat/stad) --}}
+                        <div class="postcode-housenumber-row">
+                            <div class="form-input postcode-field">
+                                <label for="billing_postal_code">Postcode <span class="required">*</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" name="billing_postal_code" id="billing_postal_code" autocomplete="postal-code" data-1p-ignore
+                                        value="{{ old('billing_postal_code') }}"
+                                        placeholder="1234 AB">
+                                </div>
+                                @error('billing_postal_code')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="housnumber-box">
-                                <div class="form-input">
-                                    <label for="billing_house_number">Huisnummer <span class="required">*</span></label>
-                                    <input type="number" name="billing_house_number" autocomplete="address-line2" data-1p-ignore
-                                        value="{{ old('billing_house_number') }}"
-                                        placeholder="Nr.">
-                                    @error('billing_house_number')
-                                        <div class="error">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="form-input">
-                                    <label for="billing_house_number-add">Toevoeging</label>
-                                    <input type="text" name="billing_house_number-add" autocomplete="address-line2" data-1p-ignore
-                                        value="{{ old('billing_house_number-add') }}">
-                                    @error('billing_house_number-add')
-                                        <div class="error">{{ $message }}</div>
-                                    @enderror
-                                </div>
+                            <div class="form-input housenumber-field">
+                                <label for="billing_house_number">Huisnr. <span class="required">*</span></label>
+                                <input type="text" inputmode="text" name="billing_house_number" id="billing_house_number" autocomplete="address-line2" data-1p-ignore
+                                    value="{{ old('billing_house_number') }}"
+                                    placeholder="Nr.">
+                                @error('billing_house_number')
+                                    <div class="error">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-input suffix-field">
+                                <label for="billing_house_number-add">Toevoeging</label>
+                                <input type="text" name="billing_house_number-add" id="billing_house_number-add" autocomplete="address-line2" data-1p-ignore
+                                    value="{{ old('billing_house_number-add') }}"
+                                    placeholder="A, B…">
+                                @error('billing_house_number-add')
+                                    <div class="error">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
+                        <span id="billing-pdok-status" class="pdok-status"></span>
 
                         <div class="form-input">
-                            <label for="billing_postal_code">Postcode <span class="required">*</span></label>
-                            <input type="text" name="billing_postal_code" autocomplete="postal-code" data-1p-ignore
-                                value="{{ old('billing_postal_code') }}"
-                                placeholder="Postcode">
-                            @error('billing_postal_code')
+                            <label for="billing_street">Straatnaam <span class="required">*</span></label>
+                            <input type="text" name="billing_street" id="billing_street" autocomplete="address-line1" data-1p-ignore
+                                value="{{ old('billing_street') }}"
+                                placeholder="Straatnaam">
+                            @error('billing_street')
                                 <div class="error">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-input">
                             <label for="billing_city">Plaats <span class="required">*</span></label>
-                            <input type="text" name="billing_city" autocomplete="address-level2" data-1p-ignore
+                            <input type="text" name="billing_city" id="billing_city" autocomplete="address-level2" data-1p-ignore
                                 value="{{ old('billing_city') }}"
                                 placeholder="Plaats">
                             @error('billing_city')
@@ -190,7 +193,8 @@
                         <div class="form-input">
                             <label for="billing_phone">Telefoonnummer</label>
                             <input type="text" name="billing_phone" autocomplete="tel" data-1p-ignore
-                                value="{{ old('billing_phone') }}">
+                                value="{{ old('billing_phone') }}"
+                                placeholder="Telefoonnummer">
                             @error('billing_phone')
                                 <div class="error">{{ $message }}</div>
                             @enderror
@@ -265,7 +269,7 @@
                         <div class="form-input address-autocomplete-wrap" id="shipping-autocomplete-wrap">
                             <label for="shipping_address_search">
                                 <i class="fa-solid fa-magnifying-glass" style="margin-right:4px;"></i>
-                                Adres zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ om automatisch in te vullen)</span>
+                                Snel zoeken <span style="font-weight:400; color:#888; font-size:13px;">(typ volledig adres incl. huisnummer)</span>
                             </label>
                             <input
                                 type="text"
@@ -276,51 +280,54 @@
                             >
                         </div>
 
-                        <div class="street-box">
-                            <div class="form-input street">
-                                <label for="shipping_street">Straatnaam</label>
-                                <input type="text" name="shipping_street" autocomplete="shipping address-line1" data-1p-ignore
-                                    value="{{ old('shipping_street') }}"
-                                    placeholder="Straatnaam">
-                                @error('shipping_street')
+                        {{-- Postcode + Huisnummer + Toevoeging --}}
+                        <div class="postcode-housenumber-row">
+                            <div class="form-input postcode-field">
+                                <label for="shipping_postal_code">Postcode</label>
+                                <div class="input-wrap">
+                                    <input type="text" name="shipping_postal_code" id="shipping_postal_code" autocomplete="shipping postal-code" data-1p-ignore
+                                        value="{{ old('shipping_postal_code') }}"
+                                        placeholder="1234 AB">
+                                </div>
+                                @error('shipping_postal_code')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="housnumber-box">
-                                <div class="form-input">
-                                    <label for="shipping_house_number">Huisnummer</label>
-                                    <input type="number" name="shipping_house_number"
-                                        autocomplete="shipping address-line2" data-1p-ignore
-                                        value="{{ old('shipping_house_number') }}"
-                                        placeholder="Nr.">
-                                    @error('shipping_house_number')
-                                        <div class="error">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="form-input">
-                                    <label for="shipping_house_number-add">Toevoeging</label>
-                                    <input type="text" name="shipping_house_number-add" data-1p-ignore
-                                        value="{{ old('shipping_house_number-add') }}">
-                                    @error('shipping_house_number-add')
-                                        <div class="error">{{ $message }}</div>
-                                    @enderror
-                                </div>
+                            <div class="form-input housenumber-field">
+                                <label for="shipping_house_number">Huisnr.</label>
+                                <input type="text" inputmode="text" name="shipping_house_number" id="shipping_house_number"
+                                    autocomplete="shipping address-line2" data-1p-ignore
+                                    value="{{ old('shipping_house_number') }}"
+                                    placeholder="Nr.">
+                                @error('shipping_house_number')
+                                    <div class="error">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-input suffix-field">
+                                <label for="shipping_house_number-add">Toevoeging</label>
+                                <input type="text" name="shipping_house_number-add" id="shipping_house_number-add" data-1p-ignore
+                                    value="{{ old('shipping_house_number-add') }}"
+                                    placeholder="A, B…">
+                                @error('shipping_house_number-add')
+                                    <div class="error">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
+                        <span id="shipping-pdok-status" class="pdok-status"></span>
 
                         <div class="form-input">
-                            <label for="shipping_postal_code">Postcode</label>
-                            <input type="text" name="shipping_postal_code" autocomplete="shipping postal-code" data-1p-ignore
-                                value="{{ old('shipping_postal_code') }}"
-                                placeholder="Postcode">
-                            @error('shipping_postal_code')
+                            <label for="shipping_street">Straatnaam</label>
+                            <input type="text" name="shipping_street" id="shipping_street" autocomplete="shipping address-line1" data-1p-ignore
+                                value="{{ old('shipping_street') }}"
+                                placeholder="Straatnaam">
+                            @error('shipping_street')
                                 <div class="error">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-input">
                             <label for="shipping_city">Plaats</label>
-                            <input type="text" name="shipping_city" autocomplete="shipping address-level2" data-1p-ignore
+                            <input type="text" name="shipping_city" id="shipping_city" autocomplete="shipping address-level2" data-1p-ignore
                                 value="{{ old('shipping_city') }}"
                                 placeholder="Plaats">
                             @error('shipping_city')
@@ -381,8 +388,10 @@
 
                     @livewire('checkout-cart')
                     <div id="remove-discount-container" style="display:none;margin-bottom:10px;">
-                        <button type="button" id="remove_discount_code" class="btn small"
-                            style="background:#eee;color:#b30000;">Verwijder kortingscode</button>
+                        <button type="button" id="remove_discount_code" class="btn-remove-discount">
+                            <i class="fa-solid fa-xmark"></i>
+                            Kortingscode verwijderen
+                        </button>
                     </div>
 
                     <div id="myparcel-loader-wrap"></div>
@@ -471,8 +480,9 @@
                 </div>
             </div>
         </form>
-        </div>{{-- /.checkout-content --}}
-        </div>{{-- /.cart-content-section --}}
+
+        </div>{{-- /.container --}}
+        </div>{{-- /.checkout-content-section --}}
     </main>
 
     <div class="gradient-border"></div>
@@ -508,7 +518,7 @@
                     // Clear all visible text/email/tel/textarea inputs in the billing card
                     var billingCard = clearBtn.closest('.item.customer-details');
                     if (billingCard) {
-                        billingCard.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]):not([name="_token"]), textarea').forEach(function (el) {
+                        billingCard.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]):not([name="_token"]):not([readonly]), textarea').forEach(function (el) {
                             el.value = '';
                         });
                         billingCard.querySelectorAll('select').forEach(function (el) {
@@ -721,6 +731,92 @@
                 // Clear the search box
                 input.value = '';
 
+                // ── Warn about missing / incomplete fields after Google Places ──
+                const NL_PC_FULL = /^\d{4}\s?[A-Z]{2}$/i;
+
+                function markMissing(el, hintText) {
+                    if (!el) return;
+                    el.classList.add('field-missing-hint');
+                    const wrap = el.closest('.form-input') || el.parentElement;
+                    // Remove stale hint first
+                    wrap?.querySelector('.missing-field-hint')?.remove();
+                    if (wrap) {
+                        const hint = document.createElement('span');
+                        hint.className = 'missing-field-hint';
+                        hint.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size:10px;margin-right:3px;"></i>' + hintText;
+                        wrap.appendChild(hint);
+                        el.addEventListener('input', function removeMissing() {
+                            el.classList.remove('field-missing-hint');
+                            hint.remove();
+                            el.removeEventListener('input', removeMissing);
+                        });
+                    }
+                }
+
+                const pcEl = document.querySelector(fields.postalCode);
+
+                // Read the country that was just set by Google Places
+                const gpCountry = (document.getElementById(fields.countrySelect)?.value || '').toUpperCase();
+
+                // Google Places sometimes returns incomplete NL postcodes (e.g. "7827" without letters).
+                // Only clear it for NL – other countries have their own formats.
+                if (pcEl && pcEl.value && gpCountry === 'NL' && !NL_PC_FULL.test(pcEl.value)) {
+                    pcEl.value = '';
+                }
+
+                if (!houseNumber) markMissing(houseEl, 'Vul je huisnummer in');
+                // Only hint "will be filled after house number" for NL (PDOK lookup); for other countries the user fills it
+                if (pcEl && !pcEl.value && gpCountry === 'NL') markMissing(pcEl, 'Wordt ingevuld na huisnummer');
+
+                // ── Auto-fill postcode when user types housenumber after Google Places ──
+                // Uses PDOK lookup: straat + huisnummer + stad → volledige postcode
+                if (!houseNumber && houseEl) {
+                    const onceHandler = function () {
+                        const num  = houseEl.value.trim();
+                        const str  = (document.querySelector(fields.street)  || {}).value || '';
+                        const city = (document.querySelector(fields.city)    || {}).value || '';
+                        if (!num || !str) return;
+
+                        const country = (document.getElementById(fields.countrySelect) || {}).value || '';
+                        if (country && country !== 'NL') return; // Only for NL
+
+                        const q = encodeURIComponent(str + ' ' + num + (city ? ' ' + city : ''));
+                        fetch(`https://api.pdok.nl/bzk/locatieserver/search/v3_1/free?q=${q}&fq=type:adres&fl=postcode,straatnaam,woonplaatsnaam&rows=1`)
+                            .then(r => r.ok ? r.json() : null)
+                            .then(data => {
+                                const doc = data?.response?.docs?.[0];
+                                if (doc?.postcode && pcEl) {
+                                    pcEl.value = doc.postcode;
+                                    pcEl.classList.remove('field-missing-hint');
+                                    pcEl.closest('.form-input')?.querySelector('.missing-field-hint')?.remove();
+                                    pcEl.classList.add('address-autofilled');
+                                    setTimeout(() => pcEl.classList.remove('address-autofilled'), 2500);
+                                    // ── Don't dispatch input/change on pcEl — that would retrigger
+                                    // the standard PDOK lookup which would redundantly re-fill
+                                    // street/city (already done by Google Places) and reload MyParcel.
+                                    // Instead, mark the address as done and fire addressAutofilled once.
+                                    window._pdokLookup?.[fields.postalCode]?.markLookedUp(doc.postcode, num);
+                                    document.dispatchEvent(new CustomEvent('addressAutofilled'));
+                                }
+                            })
+                            .catch(() => {});
+                    };
+                    // Trigger after a short pause when the user stops typing
+                    let pcLookupTimer;
+                    houseEl.addEventListener('input', function pcLookup() {
+                        clearTimeout(pcLookupTimer);
+                        pcLookupTimer = setTimeout(() => {
+                            onceHandler();
+                            houseEl.removeEventListener('input', pcLookup);
+                        }, 600);
+                    });
+
+                    setTimeout(() => {
+                        houseEl.focus();
+                        houseEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 150);
+                }
+
                 // Highlight filled fields briefly
                 [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
                     const el = document.querySelector(sel);
@@ -730,9 +826,11 @@
                     }
                 });
 
-                // Fire input + change events on all filled fields so MyParcel widget
-                // and other listeners (shipping cost etc.) react to the new values
-                [fields.street, fields.houseNumber, fields.postalCode, fields.city].forEach(sel => {
+                // Fire input + change events on street/city so delivery-options.js reacts.
+                // DO NOT dispatch on postalCode or houseNumber — those would silently
+                // trigger the standard PDOK lookup which would redundantly re-fill
+                // street + city (and reload MyParcel) right after Google Places just did it.
+                [fields.street, fields.city].forEach(sel => {
                     const el = document.querySelector(sel);
                     if (el && el.value) {
                         el.dispatchEvent(new Event('input',  { bubbles: true }));
@@ -744,6 +842,15 @@
                 if (countrySelectEl && countrySelectEl.value) {
                     countrySelectEl.dispatchEvent(new Event('input',  { bubbles: true }));
                     countrySelectEl.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+
+                // ── Silence the standard PDOK lookup for this address ──
+                // If Google Places already filled postcode + house number, mark it as
+                // "already looked up" so the standard PDOK won't re-run and re-fill.
+                const _gpPc  = (document.querySelector(fields.postalCode)  || {}).value || '';
+                const _gpNum = (document.querySelector(fields.houseNumber) || {}).value || '';
+                if (_gpPc && _gpNum) {
+                    window._pdokLookup?.[fields.postalCode]?.markLookedUp(_gpPc, _gpNum);
                 }
 
                 // Signal MyParcel to reload pickup locations for the new address
@@ -759,7 +866,52 @@
             initAddressAutocomplete();
         }
 
-        // ─── Shipping availability popup ─────────────────────────────────────
+        @else
+        // Google Maps API key not configured – autocomplete disabled.
+        document.querySelectorAll('.address-autocomplete-wrap').forEach(el => el.style.display = 'none');
+        @endif
+
+        // ─── Country-aware: postcode placeholder + pdok-status visibility ─────
+        // Runs always (with or without Google Maps)
+        const postcodePlaceholders = {
+            'NL': '1234 AB', 'BE': '1000',  'DE': '12345',
+            'FR': '75001',   'GB': 'SW1A 2AA', 'LU': 'L-1234',
+            'AT': '1010',    'CH': '8001',     'ES': '28001',
+            'IT': '00100',   'PL': '00-001',   'SE': '111 20',
+            'DK': '1000',    'NO': '0150',     'FI': '00100',
+        };
+
+        function applyCountryUI(prefix) {
+            const countryEl = document.getElementById(prefix + 'country');
+            const pcEl      = document.querySelector('[name="' + prefix + 'postal_code"]');
+            const statusEl  = document.getElementById(prefix.replace('_', '-') + 'pdok-status');
+            if (!countryEl) return;
+
+            const cc = countryEl.value.toUpperCase();
+            const isNL = cc === '' || cc === 'NL'; // treat empty as NL (default)
+
+            // Update postcode placeholder
+            if (pcEl) {
+                pcEl.placeholder = postcodePlaceholders[cc] || 'Postcode';
+            }
+
+            // Hide PDOK status for non-NL (no auto-lookup)
+            if (statusEl) {
+                statusEl.style.display = isNL ? '' : 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Apply on page load
+            applyCountryUI('billing_');
+            applyCountryUI('shipping_');
+
+            // Re-apply whenever country select changes
+            document.getElementById('billing_country')?.addEventListener('change',  () => applyCountryUI('billing_'));
+            document.getElementById('shipping_country')?.addEventListener('change', () => applyCountryUI('shipping_'));
+        });
+
+        // ─── Shipping availability popup (used by Google Places callback) ────
         function checkShippingAvailability(countryCode, countryName) {
             fetch(`/api/shipping-cost?country=${countryCode}`)
                 .then(r => r.json())
@@ -809,10 +961,184 @@
                 if (e.target === this) overlay.remove();
             });
         }
-        @else
-        // Google Maps API key not configured – autocomplete disabled.
-        document.querySelectorAll('.address-autocomplete-wrap').forEach(el => el.style.display = 'none');
-        @endif
+
+        // ─── PDOK Postcode Lookup (Netherlands, free government API) ─────────────
+        (function () {
+            function setupPostcodeLookup(config) {
+                let lookupTimeout = null;
+                let lastLookedUpKey = ''; // cache: skip re-lookup of same postcode+housenumber
+
+                function getCountry() {
+                    const el = document.getElementById(config.countryId);
+                    return el ? el.value.toUpperCase() : '';
+                }
+
+                function shouldLookup() {
+                    const country = getCountry();
+                    // Only run for NL addresses or when no country selected yet (default for this NL shop)
+                    return country === '' || country === 'NL';
+                }
+
+                function triggerLookup() {
+                    // Always cancel any pending lookup first, even when fields are empty
+                    clearTimeout(lookupTimeout);
+                    lookupTimeout = null;
+
+                    if (!shouldLookup()) {
+                        clearLoadingState();
+                        return;
+                    }
+                    const pcEl  = document.querySelector(config.postalCode);
+                    const numEl = document.querySelector(config.houseNumber);
+                    if (!pcEl || !numEl) return;
+
+                    const pc  = pcEl.value.replace(/\s/g, '').toUpperCase();
+                    const num = numEl.value.trim();
+
+                    // Clear loading state if fields are empty or postcode is incomplete
+                    if (!pc || !num || !/^\d{4}[A-Z]{2}$/.test(pc)) {
+                        clearLoadingState();
+                        lastLookedUpKey = ''; // reset cache when fields are cleared
+                        return;
+                    }
+
+                    // ── Skip if this exact postcode+number was already looked up ──
+                    // Prevents re-triggering when focus leaves the house-number field
+                    // (e.g. clicking a delivery option causes a blur → change event)
+                    const lookupKey = pc + '|' + num;
+                    if (lookupKey === lastLookedUpKey) return;
+
+                    // ── Show loading feedback IMMEDIATELY (before the debounce timer fires) ──
+                    // This gives the user instant confirmation that a lookup is about to happen
+                    if (pcEl) pcEl.classList.add('pdok-loading-input');
+                    const statusEl = document.getElementById(config.statusId);
+                    if (statusEl) {
+                        statusEl.innerHTML = '<span class="pdok-searching-dots">Adres wordt opgezocht</span>';
+                        statusEl.className = 'pdok-status pdok-searching';
+                    }
+
+                    lookupTimeout = setTimeout(() => doLookup(pc, num), 400);
+                }
+
+                function clearLoadingState() {
+                    const pcEl  = document.querySelector(config.postalCode);
+                    const statusEl = document.getElementById(config.statusId);
+                    if (pcEl)  pcEl.classList.remove('pdok-loading-input');
+                    if (statusEl) { statusEl.textContent = ''; statusEl.className = 'pdok-status'; }
+                    // Note: do NOT reset lastLookedUpKey here — clearLoadingState is called when
+                    // fields are empty/invalid, but the key should only reset when the user
+                    // actually types a new (different) postcode/number combination.
+                }
+
+                async function doLookup(postcode, number) {
+                    const statusEl = document.getElementById(config.statusId);
+                    const pcEl = document.querySelector(config.postalCode);
+                    const numEl = document.querySelector(config.houseNumber);
+
+                    // Loading state is already shown from triggerLookup — nothing to do here
+
+                    try {
+                        const url = `https://api.pdok.nl/bzk/locatieserver/search/v3_1/free?q=${encodeURIComponent(postcode + ' ' + number)}&fq=type:adres&fl=straatnaam,woonplaatsnaam,postcode,huisnummer&rows=1`;
+                        const response = await fetch(url);
+                        const data = response.ok ? await response.json() : null;
+
+                        if (pcEl)  pcEl.classList.remove('pdok-loading-input');
+
+                        // If the fields were cleared while we were waiting for the API response, abort
+                        if (!pcEl || !pcEl.value.trim()) return;
+
+                        if (data && data.response && data.response.docs && data.response.docs.length > 0) {
+                            const doc = data.response.docs[0];
+
+                            // ── Cache this key so re-blur / delivery option clicks don't re-trigger ──
+                            lastLookedUpKey = postcode + '|' + number;
+
+                            const streetEl = document.querySelector(config.street);
+                            if (streetEl && doc.straatnaam) {
+                                streetEl.value = doc.straatnaam;
+                                streetEl.classList.add('address-autofilled');
+                                setTimeout(() => streetEl.classList.remove('address-autofilled'), 2500);
+                            }
+
+                            const cityEl = document.querySelector(config.city);
+                            if (cityEl && doc.woonplaatsnaam) {
+                                cityEl.value = doc.woonplaatsnaam;
+                                cityEl.classList.add('address-autofilled');
+                                setTimeout(() => cityEl.classList.remove('address-autofilled'), 2500);
+                            }
+
+                            // Auto-set country to NL (PDOK is NL-only) so MyParcel gets
+                            // a complete address and can render delivery options
+                            const countryEl = document.getElementById(config.countryId);
+                            if (countryEl && !countryEl.value) {
+                                countryEl.value = 'NL';
+                                countryEl.dispatchEvent(new Event('change', { bubbles: true }));
+                            }
+
+                            // Status stays empty on success — fields lighting up is feedback enough
+                            if (statusEl) { statusEl.textContent = ''; statusEl.className = 'pdok-status'; }
+
+                            // Fire addressAutofilled ONCE — delivery-options.js listens for this
+                            // to reload delivery options. Avoid dispatching individual field events
+                            // which would cause multiple redundant delivery-option re-checks.
+                            setTimeout(() => {
+                                document.dispatchEvent(new CustomEvent('addressAutofilled'));
+                            }, 50);
+
+                        } else {
+                            // Only show text when address truly not found
+                            lastLookedUpKey = ''; // allow retry after correction
+                            if (statusEl) {
+                                statusEl.textContent = 'Adres niet gevonden — vul straatnaam en plaats zelf in.';
+                                statusEl.className = 'pdok-status pdok-not-found';
+                            }
+                        }
+                    } catch (e) {
+                        lastLookedUpKey = ''; // allow retry on network error
+                        if (pcEl)  pcEl.classList.remove('pdok-loading-input');
+                        if (statusEl) { statusEl.textContent = ''; statusEl.className = 'pdok-status'; }
+                    }
+                }
+
+                const pcEl  = document.querySelector(config.postalCode);
+                const numEl = document.querySelector(config.houseNumber);
+                if (pcEl)  { pcEl.addEventListener('input',  triggerLookup); pcEl.addEventListener('change', triggerLookup); }
+                if (numEl) { numEl.addEventListener('input', triggerLookup); numEl.addEventListener('change', triggerLookup); }
+
+                // ── Expose markLookedUp so Google Places can silence a re-run ──
+                // After Google Places (or its postcode recovery) fills the address,
+                // calling markLookedUp(pc, num) updates the cache so the standard
+                // PDOK lookup skips this address rather than re-fetching street/city.
+                window._pdokLookup = window._pdokLookup || {};
+                window._pdokLookup[config.postalCode] = {
+                    markLookedUp: function (pc, num) {
+                        lastLookedUpKey = (pc || '').replace(/\s/g, '').toUpperCase()
+                                        + '|'
+                                        + (num || '').trim();
+                        clearLoadingState();
+                    }
+                };
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                setupPostcodeLookup({
+                    postalCode:  '[name="billing_postal_code"]',
+                    houseNumber: '[name="billing_house_number"]',
+                    street:      '[name="billing_street"]',
+                    city:        '[name="billing_city"]',
+                    countryId:   'billing_country',
+                    statusId:    'billing-pdok-status',
+                });
+                setupPostcodeLookup({
+                    postalCode:  '[name="shipping_postal_code"]',
+                    houseNumber: '[name="shipping_house_number"]',
+                    street:      '[name="shipping_street"]',
+                    city:        '[name="shipping_city"]',
+                    countryId:   'shipping_country',
+                    statusId:    'shipping-pdok-status',
+                });
+            });
+        })();
 
         // ─── Client-side form validation ────────────────────────────────────
         (function () {

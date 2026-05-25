@@ -146,10 +146,10 @@
                     if (!badge) return;
                     if (totalQuantity > 0) {
                         badge.textContent = totalQuantity;
-                        badge.style.display = 'inline-block';
+                        badge.classList.add('is-visible');
                     } else {
                         badge.textContent = '0';
-                        badge.style.display = 'none';
+                        badge.classList.remove('is-visible');
                     }
                 });
             });

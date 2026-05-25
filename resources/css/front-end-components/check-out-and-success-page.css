@@ -2,19 +2,7 @@
    CHECKOUT & CHECKOUT SUCCESS Page
    ========================================================= */
 
-/* ── Page background override – floral texture (same as contact page) ── */
-body:has(.page.checkout) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Remove the colour overlay on the checkout page background ── */
-body:has(.page.checkout) .page-normal-background::after,
-body:has(.page.checkout) .page-normal-background::before {
-    display: none;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1k) */
 
 /* ── Gradient-border shadow (same as contact page) ── */
 body:has(.page.checkout) .gradient-border {
@@ -41,10 +29,160 @@ body:has(.page.checkout) .page.checkout {
 }
 
 /* The inner gradient-border that separates the hero from the checkout content */
-body:has(.page.checkout) .cart-hero-border {
+body:has(.page.checkout) .checkout-hero-border {
     box-shadow: none;
     margin-bottom: 0;
     z-index: 2;
+}
+
+
+
+
+
+/* =========================================================
+   CHECKOUT HERO
+   ========================================================= */
+
+.checkout-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 8px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.checkout-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.checkout-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.checkout-hero__title {
+    margin-top: 10px !important;
+    font-family: var(--font-herina);
+    letter-spacing: 1.5px;
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    text-align: center;
+    color: var(--main-font-color);
+    line-height: 1.2;
+}
+
+.checkout-hero .bc {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── Content section below hero ── */
+.checkout-content-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.checkout-content-section .container {
+    max-width: 1200px;
+}
+
+.checkout-content-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 100, 0.30) 0%,
+            rgba(220, 185, 110, 0.10) 18%,
+            transparent               40%,
+            transparent               60%,
+            rgba(220, 185, 110, 0.10) 82%,
+            rgba(210, 175, 100, 0.30) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(180, 140, 60, 0.22)  0%,
+            transparent               18%,
+            transparent               82%,
+            rgba(180, 140, 60, 0.22)  100%
+        );
+}
+
+.checkout-content-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .checkout-hero {
+        padding-top: 80px;
+        padding-bottom: 6px;
+    }
+
+    .checkout-hero__title {
+        font-size: 38px;
+        margin-bottom: 5px;
+        margin-top: 15px !important;
+    }
+
+    .checkout-content-section {
+        padding-top: 28px;
+        padding-bottom: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .checkout-hero {
+        padding-top: 70px;
+        padding-bottom: 4px;
+    }
+
+    .checkout-hero__title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .checkout-content-section {
+        padding-top: 20px;
+        padding-bottom: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-hero__title {
+        font-size: 28px;
+    }
 }
 
 .page.checkout {
@@ -132,6 +270,125 @@ input:-webkit-autofill:active {
 /* Google Places dropdown z-index fix */
 .pac-container {
     z-index: 99999 !important;
+}
+
+/* ---------------------------------------------------------
+   PDOK POSTCODE LOOKUP — inline spinner on input
+   --------------------------------------------------------- */
+
+/* Reserve a fixed height so the status line never causes a layout shift */
+.pdok-status {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px; /* always takes up space */
+    line-height: 16px;
+    margin-top: -10px;
+}
+.pdok-not-found {
+    color: #b84a3a;
+}
+
+/* Spinner anchored to the input inside .postcode-field
+   The input-wrap div sits around just the <input>, giving us a
+   reliable relative container so the spinner never jumps. */
+.postcode-field {
+    position: relative;
+}
+.postcode-field .input-wrap {
+    position: relative;
+    display: block;
+}
+@keyframes pdokSpin {
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+/* No padding change — spinner is absolutely positioned, no layout shift */
+.pdok-loading-input {
+}
+.postcode-field .input-wrap:has(.pdok-loading-input)::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(197, 160, 89, 0.3);
+    border-top-color: rgba(197, 160, 89, 0.9);
+    border-radius: 50%;
+    animation: pdokSpin 0.7s linear infinite;
+    pointer-events: none;
+}
+
+
+/* "Adres wordt opgezocht" animated dots */
+.pdok-searching {
+    color: rgba(197, 160, 89, 0.9);
+    font-style: italic;
+}
+@keyframes pdokDots {
+    0%   { content: 'Adres wordt opgezocht'; }
+    25%  { content: 'Adres wordt opgezocht.'; }
+    50%  { content: 'Adres wordt opgezocht..'; }
+    75%  { content: 'Adres wordt opgezocht...'; }
+    100% { content: 'Adres wordt opgezocht'; }
+}
+.pdok-searching-dots::after {
+    content: '';
+    animation: pdokSearchingDots 1.2s steps(1) infinite;
+}
+@keyframes pdokSearchingDots {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+}
+
+/* ---------------------------------------------------------
+   POSTCODE + HUISNUMMER ROW
+   --------------------------------------------------------- */
+.postcode-housenumber-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 0 !important;
+}
+.postcode-housenumber-row .postcode-field  { flex: 2; min-width: 0; }
+.postcode-housenumber-row .housenumber-field { flex: 1; min-width: 0; }
+.postcode-housenumber-row .suffix-field    { flex: 1; min-width: 0; }
+.postcode-housenumber-row .form-input      { margin-bottom: 14px; }
+
+@media (max-width: 480px) {
+    .postcode-housenumber-row {
+        flex-wrap: wrap;
+    }
+    .postcode-housenumber-row .postcode-field  { flex: 1 1 100%; }
+    .postcode-housenumber-row .housenumber-field,
+    .postcode-housenumber-row .suffix-field    { flex: 1 1 calc(50% - 5px); }
+}
+
+/* ---------------------------------------------------------
+   MISSING FIELD WARNING (after Google Places partial fill)
+   --------------------------------------------------------- */
+@keyframes missingPulse {
+    0%, 100% { border-color: rgba(197, 100, 50, 0.8); box-shadow: 0 0 0 0 rgba(197, 100, 50, 0.3); }
+    50%       { border-color: rgba(197, 100, 50, 1);   box-shadow: 0 0 0 4px rgba(197, 100, 50, 0.15); }
+}
+.field-missing-hint {
+    border: 1.5px solid rgba(197, 100, 50, 0.8) !important;
+    animation: missingPulse 1.4s ease-in-out 3;
+    background: rgba(255, 240, 230, 0.6) !important;
+}
+.missing-field-hint {
+    display: inline-block;
+    font-size: 11px;
+    color: #c05a20;
+    font-weight: 600;
+    margin-top: 4px;
+    background: rgba(255, 235, 215, 0.9);
+    border: 1px solid rgba(197, 100, 50, 0.4);
+    border-radius: 4px;
+    padding: 2px 7px;
 }
 
 /* ---------------------------------------------------------
@@ -320,13 +577,13 @@ input:-webkit-autofill:active {
 }
 
 /* ── Responsive checkout grid ──────────────────────────────────── */
-@media (max-width: 860px) {
+@media (max-width: 992px) {
     .page.checkout .checkout-grid {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 992px) {
     /* Form (left col) stays on top, order summary goes below on mobile */
     .page.checkout .checkout-grid > div:last-child {
         order: 1;
@@ -334,23 +591,34 @@ input:-webkit-autofill:active {
 }
 
 .page.checkout .item {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     padding: 24px;
     border-radius: 40px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .page.checkout .item::after {
@@ -358,8 +626,13 @@ input:-webkit-autofill:active {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -440,7 +713,7 @@ input:-webkit-autofill:active {
 }
 
 .checkout-create-account input {
-    font-size: 0.9rem;
+    font-size: 16px; /* must be >= 16px to prevent mobile auto-zoom on focus */
     padding: 0.75rem;
 }
 
@@ -450,11 +723,22 @@ input:-webkit-autofill:active {
     gap: 20px;
 }
 
+@media (max-width: 600px) {
+    .page.checkout .name-box {
+        grid-template-columns: 1fr;
+    }
+
+    .page.checkout .name-box .form-input:first-of-type {
+        margin-bottom: 0px;
+    }
+}
+
 .page.checkout .street-box {
     display: grid;
     grid-template-columns: 60% auto;
     gap: 20px;
 }
+
 
 .page.checkout .housnumber-box {
     display: flex;
@@ -1152,14 +1436,45 @@ a.co-cart-product-link:hover {
     }
 }
 
+/* ── Remove discount code button ── */
+.btn-remove-discount {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #9b3030;
+    background: transparent;
+    border: 1.5px solid rgba(155, 48, 48, 0.35);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    line-height: 1.4;
+}
+.btn-remove-discount i {
+    font-size: 11px;
+    opacity: 0.8;
+}
+@media (hover: hover) and (pointer: fine) {
+    .btn-remove-discount:hover {
+        background: rgba(155, 48, 48, 0.07);
+        border-color: rgba(155, 48, 48, 0.65);
+        color: #7a2020;
+    }
+}
+.btn-remove-discount:active {
+    background: rgba(155, 48, 48, 0.13);
+}
+
 /* ── Success page: hero title spacing (no breadcrumbs above) ── */
 body:has(.page.checkout.success) .cart-hero {
     padding-bottom: 8px;
 }
 
 body:has(.page.checkout.success) .cart-hero__title {
-    margin-top: 45px !important;
-    margin-bottom: 10px;
+    margin-top: 45px;
+    margin-bottom: 5px;
 }
 
 body:has(.page.checkout.success) .cart-content-section {
@@ -1182,7 +1497,7 @@ body:has(.page.checkout.success) .cart-content-section {
 .checkout-success-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .checkout-success-header {
@@ -1250,24 +1565,35 @@ body:has(.page.checkout.success) .cart-content-section {
 }
 
 .page.checkout.success .order-summary-card {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     margin-top: -20px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.webp") !important;
-    background-size: 800px !important;
-    background-position: center !important;
-    background-repeat: repeat !important;
+    background-color: #f7e9c4 !important;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp") !important;
+    background-size: auto, 600px !important;
+    background-position: center, center !important;
+    background-repeat: no-repeat, repeat !important;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .page.checkout.success .order-summary-card::after {
@@ -1275,8 +1601,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1439,29 +1770,40 @@ body:has(.page.checkout.success) .cart-content-section {
 .order-addresses-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-top: 10px;
+    gap: 20px;
+    margin-top: 0;
 }
 
 .page.checkout.success .order-address-card {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.webp") !important;
-    background-size: 800px !important;
-    background-position: center !important;
-    background-repeat: repeat !important;
+    background-color: #f7e9c4 !important;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp") !important;
+    background-size: auto, 600px !important;
+    background-position: center, center !important;
+    background-repeat: no-repeat, repeat !important;
+    background-origin: padding-box;
+    background-clip: padding-box;
     border: none !important;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .page.checkout.success .order-address-card::after {
@@ -1469,8 +1811,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1567,25 +1914,36 @@ body:has(.page.checkout.success) .cart-content-section {
 }
 
 .order-note-card {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.webp") !important;
-    background-size: 800px !important;
-    background-position: center !important;
-    background-repeat: repeat !important;
+    background-color: #f7e9c4 !important;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp") !important;
+    background-size: auto, 600px !important;
+    background-position: center, center !important;
+    background-repeat: no-repeat, repeat !important;
+    background-origin: padding-box;
+    background-clip: padding-box;
     border: none !important;
     grid-column: 1 / -1;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .order-note-card::after {
@@ -1593,8 +1951,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1635,9 +1998,6 @@ body:has(.page.checkout.success) .cart-content-section {
 }
 
 .order-confirmation-note {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     display: flex;
@@ -1645,16 +2005,30 @@ body:has(.page.checkout.success) .cart-content-section {
     gap: 15px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .order-confirmation-note::after {
@@ -1662,8 +2036,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1947,6 +2326,7 @@ body:has(.page.checkout.success) .cart-content-section {
     color: var(--main-font-color);
     opacity: 0.6;
     font-size: 14px;
+    margin-top: -10px;
 }
 
 .cdo-error {
@@ -1956,6 +2336,7 @@ body:has(.page.checkout.success) .cart-content-section {
     padding: 14px 16px;
     color: #b30000;
     font-size: 14px;
+    padding-top: 0;
 }
 
 .cdo-error .fa-circle-exclamation {
@@ -2063,6 +2444,10 @@ body:has(.page.checkout.success) .cart-content-section {
         font-size: 2.8rem;
         letter-spacing: 2px;
     }
+
+    body:has(.page.checkout.success) .cart-hero__title {
+        margin-top: 5px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2076,7 +2461,7 @@ body:has(.page.checkout.success) .cart-content-section {
     }
 
     .page.checkout.success .order-summary-card {
-        padding: 16px;
+        padding: 30px;
     }
 
     .order-summary-title {
@@ -2085,12 +2470,12 @@ body:has(.page.checkout.success) .cart-content-section {
 
     .order-addresses-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 20px;
     }
 
     .page.checkout.success .order-address-card,
     .order-note-card {
-        padding: 16px;
+        padding: 30px;
     }
 
     .order-total-row {
@@ -2098,7 +2483,12 @@ body:has(.page.checkout.success) .cart-content-section {
     }
 
     .order-confirmation-note {
-        padding: 16px;
+        padding: 20px;
+        padding-bottom: 15px;
+    }
+
+    body:has(.page.checkout.success) .cart-hero__title {
+        margin-top: 25px;
     }
 }
 
@@ -2125,12 +2515,12 @@ body:has(.page.checkout.success) .cart-content-section {
     }
 
     .page.checkout.success .order-summary-card {
-        padding: 12px;
+        padding: 30px;
     }
 
     .page.checkout.success .order-address-card,
     .order-note-card {
-        padding: 14px;
+        padding: 30px;
     }
 
     .address-card-title {
@@ -2138,7 +2528,7 @@ body:has(.page.checkout.success) .cart-content-section {
     }
 
     .order-addresses-grid {
-        gap: 12px;
+        gap: 20px;
     }
 
     .order-total-row {
@@ -2149,6 +2539,10 @@ body:has(.page.checkout.success) .cart-content-section {
     .order-total-row.final-total .order-total-value {
         font-size: 14px;
     }
+
+    body:has(.page.checkout.success) .cart-hero__title {
+        margin-top: 30px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2157,7 +2551,7 @@ body:has(.page.checkout.success) .cart-content-section {
     }
 
     .checkout-success-container {
-        gap: 16px;
+        gap: 20px;
     }
 
     .container.page.checkout.success .fa-circle-check {

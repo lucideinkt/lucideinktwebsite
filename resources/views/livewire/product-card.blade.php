@@ -11,10 +11,12 @@
 
             @if ($product->stock > 0 && $product->stock <= 3)
                 <div class="product-card-badge product-card-badge-warning">
+                    <i class="fa-solid fa-fire-flame-simple"></i>
                     <span>Lage voorraad</span>
                 </div>
             @elseif ($product->stock == 0)
                 <div class="product-card-badge product-card-badge-error">
+                    <i class="fa-solid fa-ban"></i>
                     <span>Niet op voorraad</span>
                 </div>
             @endif
@@ -46,7 +48,7 @@
 
         <div class="product-card-footer">
             <div class="product-card-price">
-                <span class="product-card-price-amount">€{{ number_format($product->price, 0, ',', '.') }},-</span>
+                <span class="product-card-price-amount">€{{ number_format($product->price, 2, ',', '.') }}</span>
             </div>
 
             <button type="button" class="product-card-button" wire:click="addToCart" wire:loading.attr="disabled"

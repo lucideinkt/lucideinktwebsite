@@ -2,19 +2,7 @@
    AUTH PAGES
    ========================================================= */
 
-/* ── Page background override – floral texture (same as contact page) ── */
-body:has(.page.auth-page) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Remove the colour overlay on the auth page background ── */
-body:has(.page.auth-page) .page-normal-background::after,
-body:has(.page.auth-page) .page-normal-background::before {
-    display: none;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1j) */
 
 /* gradient-border on auth page — no shadow */
 body:has(.page.auth-page) .gradient-border {
@@ -127,6 +115,7 @@ body:has(.page.auth-page) .page.auth-page {
 .auth-content-section {
     width: 100vw;
     position: relative;
+    z-index: 3; /* always above .auth-hero-border (z-index: 2) so alerts are never clipped */
     left: 50%;
     margin-left: -50vw;
     box-sizing: border-box;

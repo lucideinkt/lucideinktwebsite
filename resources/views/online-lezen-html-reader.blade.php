@@ -62,9 +62,19 @@
     <style>
         /* Prevent page from scrolling horizontally when keyboard opens on mobile (iOS Safari) */
         html, body {
-            overflow-x: clip; /* clip instead of hidden — prevents horizontal overflow painting without breaking mouse-wheel scroll */
+            overflow-x: clip;
             overscroll-behavior-x: none;
             max-width: 100vw;
+        }
+
+        /* ── Search highlight inside book text ── */
+        .reader-search-highlight {
+            background: rgba(255, 210, 60, 0.38);
+            color: inherit;
+            border-radius: 3px;
+            padding: 0 2px;
+            outline: 1px solid rgba(220, 170, 40, 0.5);
+            box-shadow: 0 0 0 3px rgba(220, 170, 40, 0.12);
         }
         /* Reader loading overlay */
         #reader-loader {
@@ -145,8 +155,14 @@
             <span class="reader-book-title">{{ $product->title }}</span>
         </div>
 
-            <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
+        <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             <span class="reader-topbar-page-badge" id="topbar-page-badge" aria-live="polite"></span>
+
+            {{-- Bookmark current page --}}
+            <button class="reader-btn reader-topbar-bm-btn" id="topbar-bm-btn" type="button"
+                    aria-label="Bladwijzer toevoegen" title="Bladwijzer toevoegen">
+                <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+            </button>
 
             {{-- Compact font controls — desktop only --}}
             <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
@@ -213,16 +229,9 @@
     </main>
 
     {{-- FAB — floating action button (bottom-right, thumb-reachable) --}}
-    <button class="reader-fab" id="reader-fab" aria-label="Lezeropties" aria-expanded="false" aria-haspopup="dialog">
+    <button class="reader-fab reader-fab--icon-only" id="reader-fab" aria-label="Lezeropties" aria-expanded="false" aria-haspopup="dialog">
         <span class="reader-fab-icon-wrap" aria-hidden="true">
             <i class="fa-solid fa-sliders reader-fab-icon"></i>
-        </span>
-        <span class="reader-fab-page-wrap">
-            <span class="reader-fab-page" id="fab-page-current">&mdash;</span>
-            <span class="reader-fab-page-sub">
-                <span class="reader-fab-sep">/</span>
-                <span class="reader-fab-total">{{ $allPageMeta->max('page_number') }}</span>
-            </span>
         </span>
     </button>
 
@@ -253,37 +262,6 @@
         {{-- Controls panel --}}
         <div id="sheet-panel-controls">
 
-        {{-- Page navigation --}}
-        <div class="reader-sheet-section reader-sheet-nav-section">
-            <button class="reader-sheet-arrow" id="sheet-prev-btn" aria-label="Vorige pagina" title="Vorige pagina">
-                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-            </button>
-            <div class="reader-sheet-page-display">
-                <span class="reader-sheet-page-num" id="sheet-page-current">&mdash;</span>
-                <span class="reader-sheet-page-sep">/</span>
-                <span class="reader-sheet-page-total">{{ $allPageMeta->max('page_number') }}</span>
-            </div>
-            <button class="reader-sheet-arrow" id="sheet-next-btn" aria-label="Volgende pagina" title="Volgende pagina">
-                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
-        </div>
-
-        {{-- Page slider --}}
-        <div class="reader-sheet-section reader-sheet-slider-row">
-            <div class="reader-sheet-slider-meta">
-                <span class="reader-sheet-slider-label"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Ga naar pagina</span>
-                <button class="reader-sheet-bm-nav-btn" id="sheet-bm-page-btn" type="button" title="Voeg bladwijzer toe" aria-label="Voeg bladwijzer toe">
-                    <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
-                </button>
-            </div>
-            <input type="range" class="reader-sheet-slider" id="sheet-page-slider"
-                   min="{{ $allPageMeta->min('page_number') }}"
-                   max="{{ $allPageMeta->max('page_number') }}"
-                   value="{{ $allPageMeta->min('page_number') }}"
-                   aria-label="Ga naar pagina">
-        </div>
-
-        <div class="reader-sheet-divider"></div>
 
         {{-- Text font size --}}
         <div class="reader-sheet-section reader-sheet-fontpicker-row">
@@ -433,9 +411,22 @@
     </div>
     <div class="reader-search-backdrop" id="reader-search-backdrop"></div>
 
+    {{-- ── Bottom page scrubber — MUST be in DOM before the IIFE script below ── --}}
+    <div class="reader-page-scrubber" id="reader-page-scrubber" aria-label="Pagina navigatie">
+        <div class="rps-inner">
+            <span class="rps-current" id="rps-current">—</span>
+            <input type="range" class="rps-slider" id="rps-slider"
+                   min="{{ $allPageMeta->min('page_number') }}"
+                   max="{{ $allPageMeta->max('page_number') }}"
+                   value="{{ $allPageMeta->min('page_number') }}"
+                   aria-label="Ga naar pagina">
+            <span class="rps-total">{{ $allPageMeta->max('page_number') }}</span>
+        </div>
+    </div>
+
     <script>
     (function () {
-        const TOPBAR_H    = 46;
+        const TOPBAR_H    = (document.querySelector('.reader-topbar')?.offsetHeight ?? 62) + 2;
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
         const ARABIC_FONT_KEY = 'reading_arabicfontsize_{{ $product->id }}';
@@ -459,6 +450,8 @@
         const sheetNextBtn      = document.getElementById('sheet-next-btn');
         const sheetPageSlider   = document.getElementById('sheet-page-slider');
         const sheetPagePreview  = document.getElementById('sheet-page-preview');
+        const rpsSlider         = document.getElementById('rps-slider');
+        const rpsCurrent        = document.getElementById('rps-current');
         const fontValEl         = document.getElementById('sheet-font-val');
         const arabicFontValEl   = document.getElementById('arabic-font-size-display');
         const sheetTocBtn       = document.getElementById('sheet-toc-btn');
@@ -503,9 +496,32 @@
             if (sheetProgressFill) sheetProgressFill.style.width = pct + '%';
             if (sheetPageSlider && document.activeElement !== sheetPageSlider) sheetPageSlider.value = page;
             if (sheetPagePreview) sheetPagePreview.textContent = page;
+            if (rpsSlider  && document.activeElement !== rpsSlider)  rpsSlider.value  = page;
+            if (rpsCurrent) rpsCurrent.textContent = page;
             bmPageLabel();
         }
-        function save(page)   { try { localStorage.setItem(STORAGE_KEY, String(page)); } catch (_) {} }
+        function save(page)   {
+            try {
+                localStorage.setItem(STORAGE_KEY, String(page));
+                const meta = {
+                    productId:    PRODUCT_ID,
+                    productTitle: PRODUCT_TITLE,
+                    readerUrl:    READER_URL,
+                    page:         page,
+                    timestamp:    Date.now()
+                };
+                // Write single "last read" key
+                localStorage.setItem('bibliotheek_last_read', JSON.stringify(meta));
+                // Maintain full history array (latest-first, max 20 books)
+                try {
+                    let history = JSON.parse(localStorage.getItem('bibliotheek_reading_history') || '[]');
+                    history = history.filter(h => h.productId !== PRODUCT_ID); // update existing entry
+                    history.unshift(meta);
+                    if (history.length > 20) history = history.slice(0, 20);
+                    localStorage.setItem('bibliotheek_reading_history', JSON.stringify(history));
+                } catch(_) {}
+            } catch (_) {}
+        }
         function load()       { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
         function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (_) {} }
         function loadFont()   { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
@@ -639,6 +655,31 @@
             const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
             if (nearest) { jumpTo(nearest, false); closeSheet(); }
         });
+
+        // Bottom page scrubber
+        rpsSlider?.addEventListener('input', () => {
+            const raw = parseInt(rpsSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            if (rpsCurrent) rpsCurrent.textContent = nearest;
+            updateRpsFill();
+        });
+        rpsSlider?.addEventListener('change', () => {
+            const raw = parseInt(rpsSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            if (nearest) jumpTo(nearest, false);
+        });
+
+        // Keep the CSS filled-track gradient in sync
+        function updateRpsFill() {
+            if (!rpsSlider) return;
+            const min = parseFloat(rpsSlider.min) || 0;
+            const max = parseFloat(rpsSlider.max) || 100;
+            const val = parseFloat(rpsSlider.value) || min;
+            const pct = ((val - min) / (max - min) * 100).toFixed(2) + '%';
+            rpsSlider.style.setProperty('--rps-pct', pct);
+        }
+        window.addEventListener('scroll', updateRpsFill, { passive: true });
+        updateRpsFill();
 
         // Sheet: prev / next
         sheetPrevBtn?.addEventListener('click', () => {
@@ -1033,12 +1074,22 @@
             bmRenderAllMarkers(); // restore bookmark paragraph markers
 
             const saved     = load();
-            const startPage = (saved && sorted.includes(saved)) ? saved : null;
+            // Allow ?page=N in URL to override saved progress (e.g. from search results)
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlPage   = (function() {
+                const p = parseInt(urlParams.get('page'), 10);
+                return (!isNaN(p) && sorted.includes(p)) ? p : null;
+            })();
+            const urlQuery  = (urlParams.get('q') || '').trim(); // search term to highlight
+            const startPage = urlPage || ((saved && sorted.includes(saved)) ? saved : null);
 
             // Nothing saved or first page: scroll to top so title is visible
             if (!startPage || startPage === firstPage) {
                 window.scrollTo({ top: 0 });
                 updateUI(firstPage);
+                save(firstPage);
+                // Use urlPage if set (could equal firstPage), otherwise firstPage
+                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 500);
             } else {
                 // Page might not be in DOM yet — fetch first, then scroll
                 jumpTo(startPage, false);
@@ -1046,6 +1097,8 @@
                     const actual = visiblePage();
                     updateUI(actual);
                     save(actual);
+                    // Always use urlPage (the page from the URL) — not `actual` which can be off on mobile
+                    if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]), 500);
                 }));
             }
         }
@@ -1416,13 +1469,22 @@
         // ── Page-level bookmark (via control panel button) ──────────
         function bmPageLabel() {
             const pageNum = visiblePage();
-            const btn = document.getElementById('sheet-bm-page-btn');
-            if (!btn) return;
             const has = bmLoad().some(b => b.productId === PRODUCT_ID && b.pageNum === pageNum && b.paraIndex === -1);
-            btn.classList.toggle('active', has);
             const label = has ? 'Bladwijzer verwijderen' : 'Voeg bladwijzer toe';
-            btn.title = label;
-            btn.setAttribute('aria-label', label);
+            // Old sheet button (may have been removed, safely no-op if absent)
+            const sheetBtn = document.getElementById('sheet-bm-page-btn');
+            if (sheetBtn) {
+                sheetBtn.classList.toggle('active', has);
+                sheetBtn.title = label;
+                sheetBtn.setAttribute('aria-label', label);
+            }
+            // New topbar bookmark button
+            const topbarBtn = document.getElementById('topbar-bm-btn');
+            if (topbarBtn) {
+                topbarBtn.classList.toggle('active', has);
+                topbarBtn.title = label;
+                topbarBtn.setAttribute('aria-label', label);
+            }
         }
 
         function bmPageToggle() {
@@ -1490,6 +1552,9 @@
         }
 
         document.getElementById('sheet-bm-page-btn')?.addEventListener('click', () => {
+            bmPageToggle();
+        });
+        document.getElementById('topbar-bm-btn')?.addEventListener('click', () => {
             bmPageToggle();
         });
 
@@ -1706,7 +1771,8 @@
                 panel.classList.remove('open');
                 backdrop.classList.remove('open');
                 setTimeout(() => { panel.hidden = true; }, 220);
-                clearAllHighlights();
+                // Note: highlights are intentionally NOT cleared here —
+                // they only clear when a new search result is clicked.
             }
             function clearHighlight() {
                 if (currentMark && currentMark.parentNode) {
@@ -1732,6 +1798,56 @@
             closeBtn.addEventListener('click', closeSearch);
             backdrop.addEventListener('click', closeSearch);
             document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeSearch(); });
+
+            // Direct highlight (no panel) — used when arriving from library search (?q=)
+            window.readerHighlightDirect = function (query, pageEl) {
+                if (!query || !pageEl) return;
+                clearAllHighlights();
+
+                function normStr(s) {
+                    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                }
+                const queryNorm = normStr(query);
+
+                // Step 1: scroll page into view first (same approach as in-reader search)
+                pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Step 2: after page scroll settles, find & mark the word, then scroll to it
+                setTimeout(() => {
+                    const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
+                        acceptNode(node) {
+                            const p = node.parentElement;
+                            if (!p) return NodeFilter.FILTER_REJECT;
+                            if (['script','style','button','mark'].includes(p.tagName.toLowerCase())) return NodeFilter.FILTER_REJECT;
+                            if (p.classList.contains('page-number')) return NodeFilter.FILTER_REJECT;
+                            return NodeFilter.FILTER_ACCEPT;
+                        }
+                    });
+
+                    let node;
+                    while ((node = walker.nextNode())) {
+                        const normText = normStr(node.textContent);
+                        const idx = normText.indexOf(queryNorm);
+                        if (idx === -1) continue;
+
+                        const before = document.createTextNode(node.textContent.slice(0, idx));
+                        const mark   = document.createElement('mark');
+                        mark.className = 'reader-search-highlight';
+                        mark.textContent = node.textContent.slice(idx, idx + query.length);
+                        const after  = document.createTextNode(node.textContent.slice(idx + query.length));
+                        node.parentNode.insertBefore(before, node);
+                        node.parentNode.insertBefore(mark, node);
+                        node.parentNode.insertBefore(after, node);
+                        node.parentNode.removeChild(node);
+                        currentMark = mark;
+
+                        // Scroll to the highlighted word using window.scrollTo (consistent with jumpTo)
+                        const markTop = mark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 2);
+                        window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                        break;
+                    }
+                }, 250);
+            };
 
             input.addEventListener('input', () => {
                 clearBtn.hidden = !input.value;
@@ -1952,6 +2068,7 @@
 
 {{-- Cookie Consent Banner (GDPR/AVG) --}}
 <x-cookie-consent />
+
 
 </body>
 </html>

@@ -24,8 +24,7 @@ class StoreUserRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'email' => 'required|email:rfc,dns|unique:users,email|confirmed',
-            'password' => 'required|string|min:8|confirmed',
+            'email' => 'required|email:rfc,dns|unique:users,email',
             'user_role' => [
                 'required',
                 'in:admin,user'
@@ -46,10 +45,6 @@ class StoreUserRequest extends FormRequest
             'email.required' => 'E-mailadres is verplicht.',
             'email.email' => 'Voer een geldig e-mailadres in.',
             'email.unique' => 'Dit e-mailadres is al geregistreerd.',
-            'email.confirmed' => 'De e-mailadressen komen niet overeen.',
-            'password.required' => 'Wachtwoord is verplicht.',
-            'password.min' => 'Wachtwoord moet minimaal 8 tekens bevatten.',
-            'password.confirmed' => 'Wachtwoorden komen niet overeen.',
             'user_role.required' => 'Selecteer een geldige rol.',
             'user_role.in' => 'De gekozen rol is ongeldig.',
         ];

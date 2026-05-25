@@ -71,6 +71,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard/myparcel/shipments/{shipmentID}', [OrderController::class, 'getSipmentDetails'])->name('getSipmentDetails');
 
     // Orders
+    Route::get('/dashboard/api/discount-code', [OrderController::class, 'apiDiscountCodeLookup'])->name('dashboard.api.discountCode');
     Route::get('/dashboard/orders/create', [OrderController::class, 'create'])->name('orderCreatePage');
     Route::get('/dashboard/orders', [OrderController::class, 'index'])->name('orderIndex');
     // Export orders
@@ -92,6 +93,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/dashboard/users/create', [UserController::class, 'store'])->name('userStore');
     Route::get('/dashboard/users/{id}', [UserController::class, 'show'])->name('userShow');
     Route::put('/dashboard/users/{id}', [UserController::class, 'update'])->name('userEdit');
+    Route::delete('/dashboard/users/{id}', [UserController::class, 'destroy'])->name('userDelete');
 
     // Discount codes
     Route::get('/dashboard/discount-codes', [DiscountCodeController::class, 'index'])->name('discountIndex');
@@ -166,14 +168,16 @@ Route::delete('/winkel/cart/delete', [CartController::class, 'deleteItemFromCart
 
 // Checkout
 Route::get('/winkel/checkout', [CheckoutController::class, 'create'])->name('checkoutPage');
-Route::post('/winkel/checkout', [CheckoutController::class, 'store'])->name('storeCheckout');
-Route::get('/winkel/checkout/success/{id?}', [CheckoutController::class, 'checkoutSuccess'])->name('checkoutSuccessPage');
-Route::post('/winkel/checkout/apply-discount-code', [CheckoutController::class, 'applyDiscountCode'])->name('applyDiscountCode');
+Route::post('/winkel/checkout', [CheckoutController::class, 'store'])->name('storeCheckout')->middleware('throttle:20,1');
+Route::get('/winkel/checkout/success', [CheckoutController::class, 'checkoutSuccess'])->name('checkoutSuccessPage');
+Route::post('/winkel/checkout/apply-discount-code', [CheckoutController::class, 'applyDiscountCode'])->name('applyDiscountCode')->middleware('throttle:20,1');
 Route::delete('/winkel/checkout/remove-discount-code', [CheckoutController::class, 'removeDiscountCode'])->name('removeDiscountCode');
 
-Route::get('/api/shipping-cost', [ShippingCostController::class, 'getCost']);
-Route::get('/api/myparcel/delivery-options', [\App\Http\Controllers\MyParcelApiController::class, 'deliveryOptions']);
-Route::get('/api/myparcel/pickup-locations',  [\App\Http\Controllers\MyParcelApiController::class, 'pickupLocations']);
+Route::middleware('throttle:60,1')->group(function () {
+    Route::get('/api/shipping-cost', [ShippingCostController::class, 'getCost']);
+    Route::get('/api/myparcel/delivery-options', [\App\Http\Controllers\MyParcelApiController::class, 'deliveryOptions']);
+    Route::get('/api/myparcel/pickup-locations',  [\App\Http\Controllers\MyParcelApiController::class, 'pickupLocations']);
+});
 
 // Auth pages
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login')->middleware('guest');
@@ -189,7 +193,7 @@ Route::get('/reset-password', [AuthController::class, 'get'])->name('resetNoToke
 Route::post('/reset-password', [AuthController::class, 'resetPasswordHandler'])->name('password.update')->middleware(['guest', 'throttle:10,1']); // max 10 attempts per minute
 
 // Newsletter
-Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe')->middleware('throttle:3,1');
 Route::get('/newsletter/confirm/{token}', [NewsletterController::class, 'confirm'])->name('newsletter.confirm');
 Route::get('/newsletter/unsubscribe/{token}', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 
@@ -205,10 +209,11 @@ Route::get('/retourbeleid', [PageController::class, 'retourbeleid'])->name('reto
 Route::get('/verzending-levering', [PageController::class, 'verzendingLevering'])->name('verzendingLevering');
 
 // Online Reading
+Route::get('/bibliotheek/zoeken', [OnlineLezenController::class, 'searchAllBooks'])->name('onlineLezenSearchAll')->middleware('throttle:30,1');
 Route::get('/bibliotheek', [OnlineLezenController::class, 'index'])->name('onlineLezen');
 Route::get('/bibliotheek/{slug}/lees', [OnlineLezenController::class, 'readHtml'])->name('onlineLezenReadHtml');
-Route::get('/bibliotheek/{slug}/paginas', [OnlineLezenController::class, 'pagesApi'])->name('onlineLezenPagesApi');
-Route::get('/bibliotheek/{slug}/zoeken', [OnlineLezenController::class, 'searchApi'])->name('onlineLezenSearchApi');
+Route::get('/bibliotheek/{slug}/paginas', [OnlineLezenController::class, 'pagesApi'])->name('onlineLezenPagesApi')->middleware('throttle:30,1');
+Route::get('/bibliotheek/{slug}/zoeken', [OnlineLezenController::class, 'searchApi'])->name('onlineLezenSearchApi')->middleware('throttle:30,1');
 Route::get('/bibliotheek/{slug}', [OnlineLezenController::class, 'read'])->name('onlineLezenRead');
 
 // Audioboeken (Audiobooks)
@@ -217,8 +222,10 @@ Route::get('/audioboeken/{slug}', [AudiobooksController::class, 'listen'])->name
 
 // Audio streaming route (same method as PDF proxy - more reliable on Cloudways)
 Route::get('/stream/audio/{path}', function ($path) {
+    if (str_contains($path, '..') || str_starts_with($path, '/')) abort(400);
+
     try {
-        // Try multiple possible locations for the audio file
+        $audioRoot = realpath(storage_path('app/public/audio'));
         $possiblePaths = [
             storage_path('app/public/audio/' . $path),
             storage_path('app/public/' . $path),
@@ -226,54 +233,23 @@ Route::get('/stream/audio/{path}', function ($path) {
             public_path('audio/' . $path),
         ];
 
-        \Log::info('Audio stream request', [
-            'requested_path' => $path,
-            'trying_paths' => $possiblePaths,
-        ]);
-
         $fullPath = null;
-        $checkedPaths = [];
-
         foreach ($possiblePaths as $testPath) {
-            $exists = file_exists($testPath);
-            $isFile = $exists && is_file($testPath);
-            $checkedPaths[] = [
-                'path' => $testPath,
-                'exists' => $exists,
-                'is_file' => $isFile,
-                'readable' => $exists && is_readable($testPath),
-            ];
-
-            if ($isFile) {
-                $fullPath = $testPath;
+            $real = realpath($testPath);
+            if ($real && is_file($real) && str_starts_with($real, realpath(storage_path('app/public')))) {
+                $fullPath = $real;
                 break;
             }
         }
 
         if (!$fullPath) {
-            \Log::error('Audio file not found after checking all paths', [
-                'requested_path' => $path,
-                'checked_paths' => $checkedPaths,
-            ]);
             abort(404, 'Audio file not found');
         }
 
-        \Log::info('Audio file found', [
-            'path' => $fullPath,
-            'size' => filesize($fullPath),
-        ]);
-
-        // Detect mime type based on extension
         $extension = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-        $mimeTypes = [
-            'mp3' => 'audio/mpeg',
-            'm4a' => 'audio/mp4',
-            'ogg' => 'audio/ogg',
-            'wav' => 'audio/wav',
-        ];
+        $mimeTypes = ['mp3' => 'audio/mpeg', 'm4a' => 'audio/mp4', 'ogg' => 'audio/ogg', 'wav' => 'audio/wav'];
         $mimeType = $mimeTypes[$extension] ?? 'audio/mpeg';
 
-        // Use response()->file() like PDF proxy (more reliable than stream)
         return response()->file($fullPath, [
             'Content-Type' => $mimeType,
             'Accept-Ranges' => 'bytes',
@@ -283,20 +259,19 @@ Route::get('/stream/audio/{path}', function ($path) {
             'Access-Control-Allow-Headers' => 'Range',
         ]);
     } catch (\Exception $e) {
-        \Log::error('Audio stream exception', [
-            'path' => $path,
-            'error' => $e->getMessage(),
-            'trace' => $e->getTraceAsString(),
-        ]);
-        abort(500, 'Error streaming audio: ' . $e->getMessage());
+        \Log::error('Audio stream error', ['path' => $path, 'error' => $e->getMessage()]);
+        abort(500);
     }
 })->where('path', '.*')->name('audio.stream');
 
 // PDF Proxy for PDF.js viewer (with CORS headers)
 Route::get('/pdf-proxy/{path}', function ($path) {
-    $fullPath = storage_path('app/public/'.$path);
+    if (str_contains($path, '..') || str_starts_with($path, '/')) abort(400);
 
-    if (! file_exists($fullPath)) {
+    $fullPath = realpath(storage_path('app/public/' . $path));
+    $root     = realpath(storage_path('app/public'));
+
+    if (!$fullPath || !str_starts_with($fullPath, $root) || !is_file($fullPath)) {
         abort(404);
     }
 
@@ -310,22 +285,13 @@ Route::get('/pdf-proxy/{path}', function ($path) {
 
 // Audio Proxy (simpler route, like PDF proxy - most reliable)
 Route::get('/audio-proxy/{path}', function ($path) {
+    if (str_contains($path, '..') || str_starts_with($path, '/')) abort(400);
+
     try {
-        $fullPath = storage_path('app/public/audio/' . $path);
+        $fullPath = realpath(storage_path('app/public/audio/' . $path));
+        $root     = realpath(storage_path('app/public/audio'));
 
-        \Log::info('Audio proxy request', [
-            'requested_path' => $path,
-            'full_path' => $fullPath,
-            'exists' => file_exists($fullPath),
-            'is_file' => file_exists($fullPath) && is_file($fullPath),
-            'readable' => file_exists($fullPath) && is_readable($fullPath),
-        ]);
-
-        if (!file_exists($fullPath)) {
-            \Log::error('Audio proxy: file not found', [
-                'path' => $fullPath,
-                'storage_path_base' => storage_path('app/public/audio/'),
-            ]);
+        if (!$fullPath || !str_starts_with($fullPath, $root) || !is_file($fullPath)) {
             abort(404, 'Audio file not found');
         }
 
@@ -351,7 +317,8 @@ Route::get('/audio-proxy/{path}', function ($path) {
             'error' => $e->getMessage(),
             'trace' => $e->getTraceAsString(),
         ]);
-        abort(500, 'Error in audio proxy: ' . $e->getMessage());
+        \Log::error('Audio proxy error', ['path' => $path, 'error' => $e->getMessage()]);
+        abort(500);
     }
 })->where('path', '.*')->name('audio.proxy');
 

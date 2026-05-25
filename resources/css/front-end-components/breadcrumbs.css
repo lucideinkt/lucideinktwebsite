@@ -5,7 +5,7 @@
     --bc-text: var(--main-font-color);
     --bc-dim: var(--main-font-color);
     --bc-sep: var(--main-font-color);
-    margin-top: 50px;
+    margin-top: 32px;
     margin-bottom: 7px;
     position: relative;
     z-index: 5;
@@ -70,6 +70,24 @@
     color: var(--main-font-color);
 }
 
+@media (max-width: 992px) {
+    .bc {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bc {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .bc {
+        margin-top: 30px;
+    }
+}
+
 /* Optional: tighter spacing on small screens */
 @media (max-width: 480px) {
     .bc-list {
@@ -78,5 +96,9 @@
 
     .bc-sep {
         margin: 0 .2rem;
+    }
+
+    .bc {
+        margin-top: 30px;
     }
 }

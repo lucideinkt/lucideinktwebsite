@@ -79,17 +79,68 @@ body.modal-open {
     z-index: var(--z-modal, 9999);
     width: min(92vw, 575px);
     max-height: 80vh;
-    background: linear-gradient(135deg, #f3e5c8 0%, #ead8b7 50%, #dec9a8 100%);
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, .18);
-    border: 1px solid rgba(191, 163, 107, .9);
-    /*color: #203f21;*/
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    border-radius: 40px;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
+    border: none;
     color: var(--main-font-color);
     overflow: visible;
     transform: translateY(8px) scale(.98);
     opacity: 0;
     transition: transform .32s cubic-bezier(.2, .8, .2, 1), opacity .22s ease;
     will-change: transform, opacity;
+}
+
+.custom-modal-content.scroll-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.custom-modal-content.scroll-effect > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Close button must stay absolutely positioned — override the > * rule above */
+.custom-modal-content.scroll-effect > .custom-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    left: auto;
+    z-index: 2;
 }
 
 .custom-modal-content.two.scroll-effect {
@@ -109,6 +160,7 @@ body.modal-open {
 
 .scroll-inner {
     padding: clamp(18px, 3vw, 40px);
+    padding-top: clamp(48px, 5vw, 64px); /* extra top space for the close button */
     overflow-y: auto;
     max-height: calc(80vh - 40px);
     text-align: center;
@@ -130,8 +182,9 @@ body.modal-open {
 
 .custom-modal-close {
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: 16px;
+    right: 20px;
+    left: auto;
     width: 30px;
     height: 30px;
     font-size: 18px;
@@ -204,8 +257,9 @@ body.modal-open {
     }
 
     .custom-modal-close {
-        top: 8px;
-        right: 8px;
+        top: 14px;
+        right: 16px;
+        left: auto;
         width: 25px;
         height: 25px;
         font-size: 18px;

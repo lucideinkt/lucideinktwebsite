@@ -22,8 +22,13 @@ class ProductCategoryController extends Controller
     public function index()
     {
         $this->authorize('viewAny', ProductCategory::class);
-        $productCategories = ProductCategory::orderBy('created_at', 'desc')
-            ->paginate(10);
+        $query = ProductCategory::orderBy('name', 'asc');
+
+        if ($search = request('search')) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        $productCategories = $query->paginate(15)->withQueryString();
         return view('productcategories.index', ['productCategories' => $productCategories]);
     }
 

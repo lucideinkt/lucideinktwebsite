@@ -81,6 +81,7 @@ function initShippingCostCalculator() {
         if (!country) {
             // No country yet — hide shipping line, show only subtotal
             shippingCostEl.textContent = '';
+            shippingCostEl.dataset.cost = '0';
             orderTotalEl.textContent = '€ ' + subtotal.toFixed(2).replace('.', ',');
             return;
         }
@@ -90,6 +91,7 @@ function initShippingCostCalculator() {
             .then(response => response.json())
             .then(data => {
                 const cost = parseFloat(data.cost) || 0;
+                shippingCostEl.dataset.cost = data.found ? cost.toString() : '0';
                 if (data.found) {
                     shippingCostEl.textContent = cost === 0
                         ? 'Verzendkosten: gratis'
@@ -495,8 +497,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="custom-confirm-modal-content">
         <div class="custom-confirm-modal-message">${message}</div>
         <div class="custom-confirm-modal-actions">
-          <button class="btn confirm-btn small" type="button">Ja, bevestigen</button>
-          <button class="btn cancel-btn small" type="button">Annuleren</button>
+          <button class="btn confirm-btn" type="button">Ja, bevestigen</button>
+          <button class="btn cancel-btn" type="button">Annuleren</button>
         </div>
       </div>
     `;
@@ -558,24 +560,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const discountRow = document.getElementById('discount-row');
             const newTotalRow = document.getElementById('new-total-row');
             const discountAmount = document.getElementById('discount-amount');
-            const orderTotal = document.getElementById('order-total');
             const orderNewTotal = document.getElementById('order-new-total');
             const discountCodeLabel = document.getElementById('discount-code-label');
             const removeDiscountContainer = document.getElementById('remove-discount-container');
+            const shippingEl = document.getElementById('shipping-cost');
+            const shippingCost = parseFloat(shippingEl?.dataset.cost || '0');
 
             if (data && data.discount_amount > 0) {
-                // Format discount display
+                // Format discount display — HTML already has −€ prefix, so don't use formatEuro here
                 const isPercent = data.discount?.discount_type === 'percent';
                 const displayDiscount = isPercent
                     ? `${Number(data.discount.discount)}%`
-                    : formatEuro(data.discount_amount);
+                    : data.discount_amount.toFixed(2).replace('.', ',');
 
                 // Show discount rows
                 if (discountRow) discountRow.style.display = '';
                 if (newTotalRow) newTotalRow.style.display = '';
                 if (discountAmount) discountAmount.textContent = displayDiscount;
-                if (orderNewTotal) orderNewTotal.textContent = formatEuro(data.new_total);
-                if (orderTotal) orderTotal.textContent = formatEuro(data.total);
+                // New total = (cart + shipping) - discount
+                if (orderNewTotal) orderNewTotal.textContent = formatEuro(data.new_total + shippingCost);
+                // Don't touch #order-total — shipping.js manages it
                 if (discountCodeLabel && code) discountCodeLabel.textContent = '(' + code + ')';
                 if (removeDiscountContainer) removeDiscountContainer.style.display = '';
             } else {
@@ -584,7 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (newTotalRow) newTotalRow.style.display = 'none';
                 if (discountAmount) discountAmount.textContent = '0,00';
                 if (orderNewTotal) orderNewTotal.textContent = '€ 0,00';
-                if (orderTotal && data) orderTotal.textContent = formatEuro(data.total);
+                // Don't touch #order-total — shipping.js manages it
                 if (discountCodeLabel) discountCodeLabel.textContent = '';
                 if (removeDiscountContainer) removeDiscountContainer.style.display = 'none';
             }

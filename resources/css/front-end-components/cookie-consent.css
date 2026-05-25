@@ -1,6 +1,6 @@
 /* =========================================================
    Cookie Consent Banner – GDPR/AVG compliant
-   Colors mirror the reader control-sheet light mode
+   Colors mirror the mini-cart parchment design
    ========================================================= */
 
 /* ── Banner ──────────────────────────────────────────────── */
@@ -10,9 +10,20 @@
     left: 0;
     right: 0;
     z-index: 99999;
-    background: #fffdf5;
-    border-top: 1px solid rgba(180, 140, 60, 0.22);
-    box-shadow: 0 -6px 28px rgba(0, 0, 0, 0.14), 0 -1px 6px rgba(0, 0, 0, 0.06);
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                40%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    border-top: 1px solid rgba(197, 155, 50, 0.45);
+    box-shadow: 0 -4px 20px rgba(30, 10, 0, 0.18), 0 -1px 6px rgba(0, 0, 0, 0.06);
     padding: 20px 24px;
     display: flex;
     align-items: center;
@@ -73,28 +84,30 @@
     line-height: 1;
 }
 
-/* Accept – solid dark red (matches reader accent #790000) */
+/* Accept – matches mini-cart checkout / confirm-btn */
 .cookie-btn--accept {
-    background: #790000;
-    color: #fffdf5;
-    border-color: #790000;
+    background: #620505;
+    color: #fff;
+    border-color: #620505;
+    box-shadow: 0 2px 8px rgba(98, 5, 5, 0.22);
 }
 
 .cookie-btn--accept:hover {
-    background: #5a0000;
-    border-color: #5a0000;
+    background: #7a0707;
+    border-color: #7a0707;
 }
 
-/* Reject – warm outlined */
+/* Reject – matches mini-cart cart button / cancel-btn */
 .cookie-btn--reject {
-    background: rgba(180, 140, 60, 0.07);
-    color: #5a3a00;
-    border-color: rgba(180, 140, 60, 0.35);
+    background: rgba(255, 248, 210, 0.70);
+    color: #6a4a2a;
+    border-color: rgba(197, 155, 50, 0.50);
 }
 
 .cookie-btn--reject:hover {
-    background: rgba(180, 140, 60, 0.14);
-    border-color: rgba(180, 140, 60, 0.55);
+    background: rgba(197, 155, 50, 0.22);
+    border-color: rgba(197, 155, 50, 0.70);
+    color: #4a2a0a;
 }
 
 /* Settings – subtle link style */
@@ -119,7 +132,8 @@
     position: fixed;
     inset: 0;
     z-index: 100000;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(30, 10, 0, 0.45);
+    backdrop-filter: blur(3px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,13 +147,25 @@
 }
 
 #cookie-modal {
-    background: #fffdf5;
-    border: 1px solid rgba(180, 140, 60, 0.22);
-    border-radius: 18px;
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                25%,
+            transparent                75%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    border: 1px solid rgba(197, 155, 50, 0.50);
+    border-radius: 10px;
     max-width: 520px;
     width: 100%;
     padding: 28px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 32px rgba(30, 10, 0, 0.22);
     color: #5a3a00;
     font-size: 14px;
     line-height: 1.6;

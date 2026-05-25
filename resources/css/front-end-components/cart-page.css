@@ -2,19 +2,7 @@
    CART PAGE
    ========================================================= */
 
-/* ── Page background override – floral texture (same as contact page) ── */
-body:has(.page.cart-page) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Remove the colour overlay on the cart page background ── */
-body:has(.page.cart-page) .page-normal-background::after,
-body:has(.page.cart-page) .page-normal-background::before {
-    display: none;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1i) */
 
 /* gradient-border on cart page — no shadow (same as contact page) */
 body:has(.page.cart-page) .gradient-border {
@@ -105,7 +93,7 @@ body:has(.page.cart-page) .page.cart-page {
 
 /* ── Hero title — matches contact-hero__title ── */
 .cart-hero__title {
-    margin-top: 10px !important;
+    margin-top: 10px;
     font-family: var(--font-herina);
     letter-spacing: 1.5px;
     font-size: 52px;
@@ -401,7 +389,10 @@ body:has(.page.cart-page) .page.cart-page {
 .qty-input {
     width: 60px;
     height: 34px;
+    padding: 4px 0 0 0;
+    line-height: 34px;
     text-align: center;
+    vertical-align: middle;
     border: 2px solid rgba(197, 160, 89, 0.25);
     border-radius: 6px;
     font-size: 16px;
@@ -409,6 +400,14 @@ body:has(.page.cart-page) .page.cart-page {
     color: var(--main-font-color);
     background: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
+    /* hide native number spinners */
+    -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .qty-input:focus {
@@ -649,6 +648,12 @@ body:has(.page.cart-page) .page.cart-page {
     margin-top: 1rem;
 }
 
+.empty-state-actions .fa-shopping-bag {
+    color: #fff;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
+
 .empty-state-actions .btn-shop {
     font-size: 16px;
 }
@@ -758,6 +763,7 @@ body:has(.page.cart-page) .page.cart-page {
         max-width: 60px;
         max-height: 60px;
     }
+
 }
 
 @media (max-width: 1024px) {
@@ -775,7 +781,7 @@ body:has(.page.cart-page) .page.cart-page {
     .cart-hero__title {
         font-size: 38px;
         margin-bottom: 20px;
-        margin-top: 15px!important;
+        margin-top: 15px;
     }
 
     .cart-content-section {

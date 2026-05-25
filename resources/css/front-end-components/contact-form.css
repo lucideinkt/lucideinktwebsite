@@ -2,19 +2,10 @@
    CONTACT PAGE
    ========================================================= */
 
-/* ── Page background override – floral texture ── */
-body:has(.page.contact-page) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1h) */
 
 /* ── Remove the colour overlay on the contact page background ── */
-body:has(.page.contact-page) .page-normal-background::after,
-body:has(.page.contact-page) .page-normal-background::before {
-    display: none;
-}
+/* (also in page-backgrounds.css) */
 
 /* gradient-border on contact page — no shadow */
 body:has(.page.contact-page) .gradient-border {

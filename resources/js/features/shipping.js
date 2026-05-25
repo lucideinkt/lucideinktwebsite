@@ -32,7 +32,9 @@ export function initShippingCostCalculator() {
 
         if (!country) {
             shippingCostEl.textContent = '';
+            shippingCostEl.dataset.cost = '0';
             orderTotalEl.textContent = '€ ' + subtotal.toFixed(2).replace('.', ',');
+            document.dispatchEvent(new CustomEvent('shippingCostLoaded', { detail: { cost: 0 } }));
             return;
         }
 
@@ -40,6 +42,7 @@ export function initShippingCostCalculator() {
             .then(response => response.json())
             .then(data => {
                 const cost = parseFloat(data.cost) || 0;
+                shippingCostEl.dataset.cost = data.found ? cost.toString() : '0';
                 if (data.found) {
                     shippingCostEl.textContent = cost === 0
                         ? 'Verzendkosten: gratis'
@@ -48,6 +51,7 @@ export function initShippingCostCalculator() {
                     shippingCostEl.textContent = '';
                 }
                 orderTotalEl.textContent = 'Totaal: ' + formatEuro(subtotal + (data.found ? cost : 0));
+                document.dispatchEvent(new CustomEvent('shippingCostLoaded', { detail: { cost: data.found ? cost : 0 } }));
             });
     }
 

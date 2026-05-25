@@ -131,6 +131,33 @@
     user-select: none;
 }
 
+/* Validation error messages */
+.newsletter-error {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 6px auto 8px;
+    max-width: 600px;
+    padding: 9px 14px;
+    border-radius: 6px;
+    border-left: 3px solid rgba(210, 100, 80, 0.75);
+    background: rgba(180, 50, 30, 0.18);
+    color: #f5b8a8;
+    font-size: 13.5px;
+    font-family: var(--font-regular);
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    animation: fadeInUp 0.2s ease;
+    text-align: left;
+}
+
+.newsletter-error i {
+    font-size: 13px;
+    flex-shrink: 0;
+    color: #e07060;
+    opacity: 0.9;
+}
+
 /* Status messages */
 .newsletter-status-message {
     display: flex;
