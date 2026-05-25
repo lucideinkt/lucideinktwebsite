@@ -545,6 +545,16 @@ li.nav-item.cart .mini-cart-trigger {
   display: none;
 }
 
+/* Dashboard: icon on desktop, text label on mobile */
+.header .navbar .dashboard-label,
+.desktop-navbar-container .dashboard-label {
+    display: none;
+}
+
+.sidebar .dashboard-icon {
+    display: none;
+}
+
 /* Sidebar overlay */
 .sidebar-overlay {
     position: fixed;

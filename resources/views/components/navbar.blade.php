@@ -37,6 +37,19 @@
     @endguest
 
 
+
+
+    @auth
+        <li class="nav-item">
+            <a class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+
+                <span class="dashboard-label"><span class="first-letter">D</span>ASHBOARD</span>
+                <i class="fa-solid fa-gauge dashboard-icon"></i>
+
+            </a>
+        </li>
+    @endauth
+
     <li class="nav-item cart">
         <button type="button" class="mini-cart-trigger" id="miniCartTrigger" aria-label="Winkelwagen openen">
             <i class="fa-solid fa-bag-shopping"></i>
@@ -45,11 +58,4 @@
             </span>
         </button>
     </li>
-
-    @auth
-        <li class="nav-item" style="margin-right: 20px;">
-            <a class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}"><span
-                    class="first-letter">D</span>ASHBOARD</a>
-        </li>
-    @endauth
 </ul>
