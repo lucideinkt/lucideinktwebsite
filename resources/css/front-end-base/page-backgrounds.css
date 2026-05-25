@@ -1,0 +1,271 @@
+/* =========================================================
+   PAGE BACKGROUNDS — Single source of truth
+   =========================================================
+   Change any page background here.
+   This file is imported last (after all component files)
+   so these rules always take effect.
+
+   SECTIONS
+   ─────────────────────────────────────────────────────────
+   1. PAGE OUTER BACKGROUNDS   (.page-normal-background per page)
+      1a. Default  (all pages not listed below)
+      1b. Shop
+      1c. Said Nursî
+      1d. Herzameling
+      1e. Risale-i Nur
+      1f. Audioboeken
+      1g. Info pages  (Alg. Voorwaarden / Privacybeleid /
+                       Retourbeleid / Verzending & Levering)
+      1h. Contact
+      1i. Winkelwagen (Cart)
+      1j. Auth pages  (Login / Register / …)
+
+   2. CONTENT SECTION BACKGROUNDS
+      2a. Shop product grid          (.background-of-the-shop-grid)
+      2b. Text-box band              (.text-box-background)
+      2c. Contact content section    (.contact-content-section)
+   ========================================================= */
+
+
+/* ─────────────────────────────────────────────────────────
+   1. PAGE OUTER BACKGROUNDS
+   ───────────────────────────────────────────────────────── */
+
+/* 1a. DEFAULT – all pages unless a rule below overrides it
+   ─ Defined in front-end-base/pages.css; repeated here
+     for easy comparison. Change it there OR here (here wins). ─ */
+/*
+.page-normal-background {
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size:     500px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+.page-normal-background::after {
+    background:
+        radial-gradient(ellipse 80% 70% at 50% 50%,
+            transparent               30%,
+            rgba(180, 140, 60, 0.18)  70%,
+            rgba(120, 90,  20, 0.28) 100%),
+        rgb(239 228 168 / 44%);
+}
+*/
+
+
+/* 1b. SHOP PAGE ─────────────────────────────────────────── */
+body:has(.page.shop) .page-normal-background {
+    background-image:    url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size:     500px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.shop) .page-normal-background::after {
+    background: radial-gradient(ellipse 80% 60% at 50% 50%,
+        rgba(251, 245, 217, 0.80)  0%,
+        rgba(251, 245, 217, 0.55) 50%,
+        rgba(251, 245, 217, 0.30) 100%);
+}
+
+
+/* 1c. SAID NURSÎ PAGE ───────────────────────────────────── */
+body:has(.said-nursi-page__text-box) .page-normal-background {
+    background-image:    url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size:     500px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.said-nursi-page__text-box) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30)  0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+body:has(.said-nursi-page__text-box) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1d. HERZAMELING PAGE ──────────────────────────────────── */
+body:has(.herzameling-page__text-box) .page-normal-background {
+    background-image:    url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size:     500px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.herzameling-page__text-box) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30)  0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+body:has(.herzameling-page__text-box) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1e. RISALE-I NUR PAGE ─────────────────────────────────── */
+body:has(.risale-i-nur-page__text-box) .page-normal-background {
+    background-image:    url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size:     500px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.risale-i-nur-page__text-box) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30)  0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+body:has(.risale-i-nur-page__text-box) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1f. AUDIOBOEKEN PAGE ──────────────────────────────────── */
+body:has(.page.audiobooks) .page-normal-background {
+    background-image:    url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size:     500px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.audiobooks) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30)  0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+body:has(.page.audiobooks) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1g. INFO PAGES ─────────────────────────────────────────
+   (Algemene Voorwaarden, Privacybeleid,
+    Retourbeleid, Verzending & Levering)        */
+body:has(.info-page__text-box) .page-normal-background {
+    background-image:    url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size:     500px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.info-page__text-box) .page-normal-background::after {
+    background: linear-gradient(to bottom,
+        rgba(251, 245, 217, 0.30)  0%,
+        rgba(251, 245, 217, 0.20) 90%,
+        rgba(251, 245, 217, 0.20) 100%);
+}
+body:has(.info-page__text-box) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1h. CONTACT PAGE ──────────────────────────────────────── */
+body:has(.page.contact-page) .page-normal-background {
+    background-image:    url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size:     800px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.contact-page) .page-normal-background::after,
+body:has(.page.contact-page) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1i. WINKELWAGEN (CART) PAGE ───────────────────────────── */
+body:has(.page.cart-page) .page-normal-background {
+    background-image:    url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size:     800px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.cart-page) .page-normal-background::after,
+body:has(.page.cart-page) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1j. AUTH PAGES (Login / Register / …) ─────────────────── */
+body:has(.page.auth-page) .page-normal-background {
+    background-image:    url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size:     800px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.auth-page) .page-normal-background::after,
+body:has(.page.auth-page) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1k. CHECKOUT PAGE ─────────────────────────────────────── */
+body:has(.page.checkout) .page-normal-background {
+    background-image:    url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size:     800px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.checkout) .page-normal-background::after,
+body:has(.page.checkout) .page-normal-background::before {
+    display: none;
+}
+
+
+/* 1l. USER DASHBOARD ────────────────────────────────────── */
+body:has(.page.user-dashboard) .page-normal-background {
+    background-image:    url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size:     800px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.user-dashboard) .page-normal-background::after,
+body:has(.page.user-dashboard) .page-normal-background::before {
+    display: none;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   2. CONTENT SECTION BACKGROUNDS
+   ───────────────────────────────────────────────────────── */
+
+/* 2a. SHOP PRODUCT GRID background ──────────────────────── */
+.background-of-the-shop-grid {
+    background-color:      #393d2e;
+    background-image:      url("../../images/80_gold circular Scratched-AO.webp");
+    background-size:       360px;
+    background-repeat:     repeat;
+    background-position:   center;
+    background-blend-mode: multiply;
+}
+
+
+/* 2b. TEXT-BOX BAND background ──────────────────────────── */
+/* Used by: Said Nursî, Herzameling, Risale-i Nur, Audioboeken, Info pages */
+.text-box-background {
+    background-color:      #393d2e;
+    background-image:      url("../../images/80_gold circular Scratched-AO.webp");
+    background-size:       360px;
+    background-position:   center;
+    background-repeat:     repeat;
+    background-blend-mode: multiply;
+}
+
+
+/* 2c. CONTACT CONTENT SECTION background ────────────────── */
+/* The contact page uses .contact-content-section instead of
+   .text-box-background. Add background properties here: */
+.contact-content-section {
+    /* No texture currently — add background-color / background-image here
+       to match other pages, e.g.:
+    background-color:      #393d2e96;
+    background-image:      url("../../images/80_leather_DIFF.webp");
+    background-size:       360px;
+    background-position:   center;
+    background-repeat:     repeat;
+    background-blend-mode: multiply;
+    */
+}
+
+
+
+
