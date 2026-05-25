@@ -126,13 +126,7 @@ body:has(.said-nursi-page__text-box) .page > .title {
     }
 }
 
-/* ── Page background override ── same as shop page ── */
-body:has(.said-nursi-page__text-box) .page-normal-background {
-    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
-    background-size: 500px;
-    background-position: center;
-    background-repeat: repeat;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1c) */
 
 .page.said-nursi {
     padding-bottom: 0px;
@@ -147,24 +141,8 @@ body:has(.said-nursi-page__text-box) .page-normal-background {
 }
 
 
-    /* ── Radial centre-light overlay ── same as shop page ── */
-body:has(.said-nursi-page__text-box) .page-normal-background::after {
-    background: linear-gradient(to bottom,
-        rgba(251, 245, 217, 0.30) 0%,
-        rgba(251, 245, 217, 0.20) 90%,
-        rgba(251, 245, 217, 0.20) 100%);
-}
+/* (::after and ::before overrides also in page-backgrounds.css) */
 
-/* ── Remove the red colour overlay ── */
-body:has(.said-nursi-page__text-box) .page-normal-background::before {
-    display: none;
-}
-
-
-
-.said-title-w::before {
-    content: "\E02D";
-}
 
 .said-title-s::before {
     content: "\E023";
@@ -176,15 +154,10 @@ body:has(.said-nursi-page__text-box) .page-normal-background::before {
 
 /* ── Full-width background band that wraps the text box ── */
 .text-box-background {
+    /* Background → see front-end-base/page-backgrounds.css (section 2b) */
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    background-color: #393d2e96;
-    background-image: url("../../images/80_leather_DIFF.webp");
-    background-size: 360px;
-    background-position: center;
-    background-repeat: repeat;
-    background-blend-mode: multiply;
     padding: 28px 20px 42px;
     position: relative;
 }

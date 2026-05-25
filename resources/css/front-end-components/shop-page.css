@@ -12,20 +12,7 @@
 /*    background-color: #680a0b !important;*/
 /*}*/
 
-body:has(.page.shop) .page-normal-background {
-    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
-    background-size: 500px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Radial centre-light overlay — same as .white-section.risale-section.said-nursi-section ── */
-body:has(.page.shop) .page-normal-background::after {
-    background: radial-gradient(ellipse 80% 60% at 50% 50%,
-        rgba(251, 245, 217, 0.80) 0%,
-        rgba(251, 245, 217, 0.55) 50%,
-        rgba(251, 245, 217, 0.30) 100%);
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1b) */
 
 body:has(.page.shop),
 html:has(.page.shop) {
@@ -53,12 +40,7 @@ html:has(.page.shop) {
    --------------------------------------------------------- */
 
 .background-of-the-shop-grid {
-    background-color: #393d2e;
-    background-image: url("../../images/80_gold circular Scratched-AO.webp");
-    background-size: 360px;
-    background-repeat: repeat;
-    background-position: center;
-    background-blend-mode: multiply;
+    /* Background → see front-end-base/page-backgrounds.css (section 2a) */
 
     /* Full-bleed breakout */
     width: 100vw;

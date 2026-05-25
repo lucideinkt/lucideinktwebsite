@@ -2,19 +2,7 @@
    CART PAGE
    ========================================================= */
 
-/* ── Page background override – floral texture (same as contact page) ── */
-body:has(.page.cart-page) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Remove the colour overlay on the cart page background ── */
-body:has(.page.cart-page) .page-normal-background::after,
-body:has(.page.cart-page) .page-normal-background::before {
-    display: none;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1i) */
 
 /* gradient-border on cart page — no shadow (same as contact page) */
 body:has(.page.cart-page) .gradient-border {
