@@ -307,6 +307,12 @@ body { margin: 0; padding: 0; width: 100%; }
     font-family: 'DelimaMTProRegular', serif;
     font-size: 13px;
     letter-spacing: 0.3px;
+    /* iOS Safari zooms in when font-size < 16px on focus — prevent that */
+    touch-action: manipulation;
+}
+/* Keep font-size at ≥16px on touch devices so iOS never auto-zooms */
+@media (hover: none) and (pointer: coarse) {
+    .bs-search-input { font-size: 16px; }
 }
 .bs-search-input::placeholder { color: rgba(200,160,80,0.35); }
 .bs-search-btn {
