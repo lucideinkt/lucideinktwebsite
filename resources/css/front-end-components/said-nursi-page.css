@@ -227,9 +227,9 @@ body:has(.said-nursi-page__text-box) .page > .title {
     /* ── Richer layered shadow — heavy manuscript on leather ── */
     box-shadow:
         0 1px 0   rgba(255, 248, 190, 0.70),   /* top-edge light catch */
-        0 2px 6px  rgba(30, 10, 0, 0.13),
-        0 8px 22px rgba(25, 8,  0, 0.20),
-        0 22px 55px rgba(18, 5, 0, 0.26),       /* deep ambient */
+        0 2px 5px  rgba(30, 10, 0, 0.10),
+        0 6px 16px rgba(25, 8,  0, 0.12),
+        0 14px 35px rgba(18, 5, 0, 0.16),       /* deep ambient */
         inset 0 0 0 1px rgba(255, 245, 175, 0.35), /* inner gold ring */
         inset 0 1px 0   rgba(255, 252, 210, 0.55); /* inner top highlight */
 }
