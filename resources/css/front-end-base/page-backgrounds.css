@@ -242,18 +242,12 @@ body:has(.page.user-dashboard) .page-normal-background::before {
 /* 2b. TEXT-BOX BAND background ──────────────────────────── */
 /* Used by: Said Nursî, Herzameling, Risale-i Nur, Audioboeken, Info pages */
 .text-box-background {
-    background-color:      #393d2e;
-    background-image:
-        radial-gradient(ellipse 100% 60% at 50% 50%,
-            rgba(251, 235, 180, 0.18)  0%,
-            rgba(220, 190, 120, 0.10) 45%,
-            transparent               75%
-        ),
-        url("../../images/68_slab marble rolex green texture-seamless.webp");
-    background-size:       auto, 360px;
-    background-position:   center, center;
-    background-repeat:     no-repeat, repeat;
-    background-blend-mode: normal, multiply;
+    /*background-color:      #393d2e;*/
+    background-image:      url("../../images/17_Fabriano artistic 640 grams paper texture-seamless.webp");
+    background-size:       360px;
+    background-position:   center;
+    background-repeat:     repeat;
+    background-blend-mode: multiply;
 }
 
 
