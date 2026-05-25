@@ -144,6 +144,10 @@ body:has(.said-nursi-page__text-box) .page > .title {
 /* (::after and ::before overrides also in page-backgrounds.css) */
 
 
+.said-title-w::before {
+    content: "\E02D";
+}
+
 .said-title-s::before {
     content: "\E023";
 }

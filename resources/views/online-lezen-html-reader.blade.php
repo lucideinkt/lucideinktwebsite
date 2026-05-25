@@ -1088,7 +1088,8 @@
                 window.scrollTo({ top: 0 });
                 updateUI(firstPage);
                 save(firstPage);
-                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[firstPage]), 300);
+                // Use urlPage if set (could equal firstPage), otherwise firstPage
+                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 500);
             } else {
                 // Page might not be in DOM yet — fetch first, then scroll
                 jumpTo(startPage, false);
@@ -1096,7 +1097,8 @@
                     const actual = visiblePage();
                     updateUI(actual);
                     save(actual);
-                    if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[actual]), 300);
+                    // Always use urlPage (the page from the URL) — not `actual` which can be off on mobile
+                    if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]), 500);
                 }));
             }
         }
@@ -1807,36 +1809,44 @@
                 }
                 const queryNorm = normStr(query);
 
-                const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
-                    acceptNode(node) {
-                        const p = node.parentElement;
-                        if (!p) return NodeFilter.FILTER_REJECT;
-                        if (['script','style','button','mark'].includes(p.tagName.toLowerCase())) return NodeFilter.FILTER_REJECT;
-                        if (p.classList.contains('page-number')) return NodeFilter.FILTER_REJECT;
-                        return NodeFilter.FILTER_ACCEPT;
+                // Step 1: scroll page into view first (same approach as in-reader search)
+                pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Step 2: after page scroll settles, find & mark the word, then scroll to it
+                setTimeout(() => {
+                    const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
+                        acceptNode(node) {
+                            const p = node.parentElement;
+                            if (!p) return NodeFilter.FILTER_REJECT;
+                            if (['script','style','button','mark'].includes(p.tagName.toLowerCase())) return NodeFilter.FILTER_REJECT;
+                            if (p.classList.contains('page-number')) return NodeFilter.FILTER_REJECT;
+                            return NodeFilter.FILTER_ACCEPT;
+                        }
+                    });
+
+                    let node;
+                    while ((node = walker.nextNode())) {
+                        const normText = normStr(node.textContent);
+                        const idx = normText.indexOf(queryNorm);
+                        if (idx === -1) continue;
+
+                        const before = document.createTextNode(node.textContent.slice(0, idx));
+                        const mark   = document.createElement('mark');
+                        mark.className = 'reader-search-highlight';
+                        mark.textContent = node.textContent.slice(idx, idx + query.length);
+                        const after  = document.createTextNode(node.textContent.slice(idx + query.length));
+                        node.parentNode.insertBefore(before, node);
+                        node.parentNode.insertBefore(mark, node);
+                        node.parentNode.insertBefore(after, node);
+                        node.parentNode.removeChild(node);
+                        currentMark = mark;
+
+                        // Scroll to the highlighted word using window.scrollTo (consistent with jumpTo)
+                        const markTop = mark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 2);
+                        window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                        break;
                     }
-                });
-
-                let node;
-                while ((node = walker.nextNode())) {
-                    const idx = normStr(node.textContent).indexOf(queryNorm);
-                    if (idx === -1) continue;
-
-                    const before = document.createTextNode(node.textContent.slice(0, idx));
-                    const mark   = document.createElement('mark');
-                    mark.className = 'reader-search-highlight';
-                    mark.textContent = node.textContent.slice(idx, idx + query.length);
-                    const after  = document.createTextNode(node.textContent.slice(idx + query.length));
-                    node.parentNode.insertBefore(before, node);
-                    node.parentNode.insertBefore(mark, node);
-                    node.parentNode.insertBefore(after, node);
-                    node.parentNode.removeChild(node);
-                    currentMark = mark;
-
-                    // Scroll to the highlighted word
-                    mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    break;
-                }
+                }, 250);
             };
 
             input.addEventListener('input', () => {
