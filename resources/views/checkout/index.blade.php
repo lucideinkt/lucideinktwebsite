@@ -388,8 +388,10 @@
 
                     @livewire('checkout-cart')
                     <div id="remove-discount-container" style="display:none;margin-bottom:10px;">
-                        <button type="button" id="remove_discount_code" class="btn small"
-                            style="background:#eee;color:#b30000;">Verwijder kortingscode</button>
+                        <button type="button" id="remove_discount_code" class="btn-remove-discount">
+                            <i class="fa-solid fa-xmark"></i>
+                            Kortingscode verwijderen
+                        </button>
                     </div>
 
                     <div id="myparcel-loader-wrap"></div>
