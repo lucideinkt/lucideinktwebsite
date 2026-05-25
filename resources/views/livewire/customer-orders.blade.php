@@ -1,7 +1,18 @@
 <div class="customer-orders">
     @if($orders->count() > 0)
         <div class="orders-card">
-            <h2 class="orders-card-title">Recente bestellingen</h2>
+            <div class="orders-card-header">
+                <div class="orders-card-header-left">
+                    <div class="orders-card-icon">
+                        <i class="fa-solid fa-box-archive"></i>
+                    </div>
+                    <div>
+                        <h2 class="orders-card-title">Recente bestellingen</h2>
+                        <p class="orders-card-subtitle">Een overzicht van al jouw bestellingen</p>
+                    </div>
+                </div>
+                <span class="orders-count-badge">{{ $orders->total() }} {{ $orders->total() === 1 ? 'bestelling' : 'bestellingen' }}</span>
+            </div>
             <div class="orders-list">
                 <div class="orders-list-header">
                     <span class="header-col order-id">Bestelling</span>
@@ -13,31 +24,36 @@
                 @foreach($orders as $order)
                     <div class="order-row">
                         <div class="order-id-col">
-                            <span class="mobile-label">Bestelling:</span>
-                            <span class="order-id">#{{ $order->id }}</span>
+                            <span class="mobile-label">Bestelling</span>
+                            <span class="order-id">
+                                <span class="order-id-hash">#</span>{{ $order->id }}
+                            </span>
                         </div>
                         <div class="order-date-col">
-                            <span class="mobile-label">Datum:</span>
-                            <span class="order-date">{{ $order->created_at->format('d-m-Y') }}</span>
+                            <span class="mobile-label">Datum</span>
+                            <span class="order-date">
+                                <i class="fa-regular fa-calendar order-date-icon"></i>
+                                {{ $order->created_at->format('d-m-Y') }}
+                            </span>
                         </div>
                         <div class="order-price-col">
-                            <span class="mobile-label">Totaal:</span>
+                            <span class="mobile-label">Totaal</span>
                             <span class="order-price">€ {{ number_format($order->total, 2, ',', '.') }}</span>
                         </div>
                         <div class="order-status-col">
-                            <span class="mobile-label">Status:</span>
+                            <span class="mobile-label">Status</span>
                             <span class="order-status-badge status-{{ $order->status }}">
                                 @if($order->status === 'pending')
                                     <i class="fa-solid fa-clock"></i>
                                     <span>Pre-order</span>
                                 @elseif($order->status === 'shipped')
                                     <i class="fa-solid fa-truck"></i>
-                                    <span>In transit</span>
+                                    <span>Verzonden</span>
                                 @elseif($order->status === 'completed')
-                                    <i class="fa-solid fa-check"></i>
+                                    <i class="fa-solid fa-circle-check"></i>
                                     <span>Bevestigd</span>
                                 @elseif($order->status === 'cancelled')
-                                    <i class="fa-solid fa-times"></i>
+                                    <i class="fa-solid fa-circle-xmark"></i>
                                     <span>Geannuleerd</span>
                                 @else
                                     <span>{{ $order->status_label }}</span>
@@ -55,7 +71,7 @@
                                         <i class="fa-solid fa-rotate-left" wire:loading.remove wire:target="orderAgain({{ $order->id }})"></i>
                                         <i class="fa-solid fa-spinner fa-spin" wire:loading wire:target="orderAgain({{ $order->id }})"></i>
                                         <span wire:loading.remove wire:target="orderAgain({{ $order->id }})">Herhaal</span>
-                                        <span wire:loading wire:target="orderAgain({{ $order->id }})">Wacht...</span>
+                                        <span wire:loading wire:target="orderAgain({{ $order->id }})">Laden…</span>
                                     </button>
                                 @endif
                             </div>

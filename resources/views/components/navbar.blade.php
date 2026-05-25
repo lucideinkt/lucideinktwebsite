@@ -40,8 +40,7 @@
     <li class="nav-item cart">
         <button type="button" class="mini-cart-trigger" id="miniCartTrigger" aria-label="Winkelwagen openen">
             <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-quantity" id="cart-quantity-desktop"
-                style="display: {{ session('cart') && count(session('cart')) ? 'flex' : 'none' }};">
+            <span class="cart-quantity {{ session('cart') && count(session('cart')) ? 'is-visible' : '' }}" id="cart-quantity-desktop">
                 {{ session('cart') && count(session('cart')) ? collect(session('cart'))->sum('quantity') : '0' }}
             </span>
         </button>

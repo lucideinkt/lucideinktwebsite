@@ -472,23 +472,34 @@ input:-webkit-autofill:active {
 }
 
 .page.checkout .item {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     padding: 24px;
     border-radius: 40px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .page.checkout .item::after {
@@ -496,8 +507,13 @@ input:-webkit-autofill:active {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1399,24 +1415,35 @@ body:has(.page.checkout.success) .cart-content-section {
 }
 
 .page.checkout.success .order-summary-card {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     margin-top: -20px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.webp") !important;
-    background-size: 800px !important;
-    background-position: center !important;
-    background-repeat: repeat !important;
+    background-color: #f7e9c4 !important;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp") !important;
+    background-size: auto, 600px !important;
+    background-position: center, center !important;
+    background-repeat: no-repeat, repeat !important;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .page.checkout.success .order-summary-card::after {
@@ -1424,8 +1451,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1593,24 +1625,35 @@ body:has(.page.checkout.success) .cart-content-section {
 }
 
 .page.checkout.success .order-address-card {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.webp") !important;
-    background-size: 800px !important;
-    background-position: center !important;
-    background-repeat: repeat !important;
+    background-color: #f7e9c4 !important;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp") !important;
+    background-size: auto, 600px !important;
+    background-position: center, center !important;
+    background-repeat: no-repeat, repeat !important;
+    background-origin: padding-box;
+    background-clip: padding-box;
     border: none !important;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .page.checkout.success .order-address-card::after {
@@ -1618,8 +1661,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1716,25 +1764,36 @@ body:has(.page.checkout.success) .cart-content-section {
 }
 
 .order-note-card {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795 !important;
-    background-image: url("../../images/BillyPaper.webp") !important;
-    background-size: 800px !important;
-    background-position: center !important;
-    background-repeat: repeat !important;
+    background-color: #f7e9c4 !important;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp") !important;
+    background-size: auto, 600px !important;
+    background-position: center, center !important;
+    background-repeat: no-repeat, repeat !important;
+    background-origin: padding-box;
+    background-clip: padding-box;
     border: none !important;
     grid-column: 1 / -1;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .order-note-card::after {
@@ -1742,8 +1801,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }
@@ -1784,9 +1848,6 @@ body:has(.page.checkout.success) .cart-content-section {
 }
 
 .order-confirmation-note {
-    --checkout-card-overlay-color:   #c8860a;
-    --checkout-card-overlay-opacity: 0.08;
-
     border-radius: 40px;
     padding: 24px;
     display: flex;
@@ -1794,16 +1855,30 @@ body:has(.page.checkout.success) .cart-content-section {
     gap: 15px;
     position: relative;
     overflow: visible;
-    background-color: #fbd795;
-    background-image: url("../../images/BillyPaper.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
     box-shadow:
-        0px -4px 6px rgba(0, 0, 0, 0.07),
-        0px  4px 6px rgba(0, 0, 0, 0.07),
-        0 12px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+        0 1px 0   rgba(255, 248, 190, 0.50),
+        0 2px 4px  rgba(30, 10, 0, 0.08),
+        0 6px 14px rgba(25, 8,  0, 0.12),
+        0 14px 30px rgba(18, 5, 0, 0.14),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.25),
+        inset 0 1px 0   rgba(255, 252, 210, 0.40);
 }
 
 .order-confirmation-note::after {
@@ -1811,8 +1886,13 @@ body:has(.page.checkout.success) .cart-content-section {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--checkout-card-overlay-color);
-    opacity: var(--checkout-card-overlay-opacity);
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent               30%,
+            rgba(140, 70, 10, 0.07)  75%,
+            rgba(100, 45,  5, 0.13) 100%
+        );
     pointer-events: none;
     z-index: 0;
 }

@@ -11,7 +11,7 @@
                         ['label' => 'Dashboard', 'url' => route('dashboard')]
                     ]" />
                     <h1 class="dashboard-title font-herina">Mijn Dashboard</h1>
-                    <p class="dashboard-subtitle">Welkom terug, {{ auth()->user()->first_name }}!</p>
+                    <p class="dashboard-subtitle">Welkom, {{ auth()->user()->first_name }}!</p>
                 </div>
             </div>
 
