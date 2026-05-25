@@ -2,19 +2,7 @@
    USER DASHBOARD
    ========================================================= */
 
-/* ── Page background override – floral texture (same as checkout page) ── */
-body:has(.page.user-dashboard) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Remove the colour overlay on user dashboard pages ── */
-body:has(.page.user-dashboard) .page-normal-background::after,
-body:has(.page.user-dashboard) .page-normal-background::before {
-    display: none;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1l) */
 
 /* ── Gradient-border shadow (same as checkout page) ── */
 body:has(.page.user-dashboard) .gradient-border {

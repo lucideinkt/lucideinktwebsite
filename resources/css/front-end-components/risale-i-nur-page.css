@@ -75,27 +75,7 @@ body:has(.risale-i-nur-page__text-box) .text-box-background {
     padding-bottom: 42px;
 }
 
-/* ── Page background override ── matches said-nursi page ── */
-body:has(.risale-i-nur-page__text-box) .page-normal-background {
-    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
-    background-size: 500px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Radial centre-light overlay ── */
-body:has(.risale-i-nur-page__text-box) .page-normal-background::after {
-    background: linear-gradient(to bottom,
-        rgba(251, 245, 217, 0.30) 0%,
-        rgba(251, 245, 217, 0.20) 90%,
-        rgba(251, 245, 217, 0.20) 100%);
-}
-
-/* ── Remove the red colour overlay ── */
-body:has(.risale-i-nur-page__text-box) .page-normal-background::before {
-    display: none;
-}
-
+/* Page background → see front-end-base/page-backgrounds.css (section 1e) */
 
 /* ── Text box card ── */
 .risale-i-nur-page__text-box {

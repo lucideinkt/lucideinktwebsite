@@ -2,19 +2,7 @@
    CHECKOUT & CHECKOUT SUCCESS Page
    ========================================================= */
 
-/* ── Page background override – floral texture (same as contact page) ── */
-body:has(.page.checkout) .page-normal-background {
-    background-image: url("../../images/77_floral wallpaper texture-seamless_hr.webp");
-    background-size: 800px;
-    background-position: center;
-    background-repeat: repeat;
-}
-
-/* ── Remove the colour overlay on the checkout page background ── */
-body:has(.page.checkout) .page-normal-background::after,
-body:has(.page.checkout) .page-normal-background::before {
-    display: none;
-}
+/* Page background → see front-end-base/page-backgrounds.css (section 1k) */
 
 /* ── Gradient-border shadow (same as contact page) ── */
 body:has(.page.checkout) .gradient-border {
