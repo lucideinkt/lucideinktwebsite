@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Services\SEOService;
 use Illuminate\Http\Request;
 
@@ -26,8 +27,9 @@ class OnlineLezenController extends Controller
             ->get();
 
         return view('online-lezen', [
-            'products' => $products,
-            'SEOData'  => SEOService::getPageSEO('online-lezen'),
+            'products'   => $products,
+            'categories' => ProductCategory::orderBy('name')->get(['id', 'name']),
+            'SEOData'    => SEOService::getPageSEO('online-lezen'),
         ]);
     }
 
@@ -83,8 +85,74 @@ class OnlineLezenController extends Controller
     }
 
     /**
-     * JSON API — zoek in pagina's van een boek
+     * JSON API — zoek in alle boeken tegelijk (cross-book full-text search)
      */
+    public function searchAllBooks(Request $request)
+    {
+        $query = trim($request->query('q', ''));
+        if (mb_strlen($query) < 2) {
+            return response()->json(['results' => [], 'total' => 0]);
+        }
+
+        // Only products that have HTML book pages
+        $products = Product::withCount('bookPages')
+            ->having('book_pages_count', '>', 0)
+            ->get(['id', 'title', 'slug']);
+
+        $allResults = [];
+        $normalizedQuery = self::removeDiacritics(mb_strtolower($query));
+        $maxPerBook = 3;   // max snippets per book
+        $maxTotal   = 40;  // hard cap
+
+        foreach ($products as $product) {
+            if (count($allResults) >= $maxTotal) break;
+
+            $readerUrl = route('onlineLezenReadHtml', $product->slug);
+            $pages = $product->bookPages()
+                ->orderBy('page_number')
+                ->get(['page_number', 'content']);
+
+            $bookCount = 0;
+            foreach ($pages as $page) {
+                if ($bookCount >= $maxPerBook) break;
+                if (count($allResults) >= $maxTotal) break;
+
+                $content = preg_replace('/<[^>]*class="[^"]*page-number[^"]*"[^>]*>.*?<\/[^>]+>/is', '', $page->content);
+                $content = preg_replace('/<button[^>]*>.*?<\/button>/is', '', $content);
+                $plain   = html_entity_decode(strip_tags($content), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                $plain   = preg_replace('/\s+/', ' ', trim($plain));
+
+                $normalizedPlain = self::removeDiacritics(mb_strtolower($plain));
+                $pos = mb_strpos($normalizedPlain, $normalizedQuery);
+                if ($pos === false) continue;
+
+                $snippetStart = max(0, $pos - 70);
+                $snippetEnd   = min(mb_strlen($plain), $pos + mb_strlen($query) + 70);
+                $snippet      = ($snippetStart > 0 ? '…' : '')
+                    . mb_substr($plain, $snippetStart, $pos - $snippetStart)
+                    . '[[HIT]]'
+                    . mb_substr($plain, $pos, mb_strlen($query))
+                    . '[[/HIT]]'
+                    . mb_substr($plain, $pos + mb_strlen($query), $snippetEnd - $pos - mb_strlen($query))
+                    . ($snippetEnd < mb_strlen($plain) ? '…' : '');
+
+                $allResults[] = [
+                    'productId'    => $product->id,
+                    'productTitle' => $product->title,
+                    'readerUrl'    => $readerUrl,
+                    'page'         => $page->page_number,
+                    'snippet'      => $snippet,
+                ];
+                $bookCount++;
+            }
+        }
+
+        return response()->json([
+            'results' => $allResults,
+            'total'   => count($allResults),
+            'query'   => $query,
+        ]);
+    }
     public function searchApi($slug, Request $request)
     {
         $product = Product::where('slug', '=', $slug)->firstOrFail();

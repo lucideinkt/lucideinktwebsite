@@ -81,7 +81,7 @@ body { margin: 0; padding: 0; width: 100%; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-image:
         linear-gradient(180deg, #3e0907 0%, #4c0d06 30%, #260604 60%, #110202 100%);
     background-size: cover;
@@ -125,13 +125,434 @@ body { margin: 0; padding: 0; width: 100%; }
 .bookshelf-back-link i { font-size: 11px; }
 
 /* ---------------------------------------------------------
+   TWO-COLUMN LAYOUT: sidebar + cabinet
+   --------------------------------------------------------- */
+.bookshelf-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+.bookshelf-cabinet-wrap {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ---------------------------------------------------------
+   SIDEBAR — styled to match the wooden cabinet frame
+   --------------------------------------------------------- */
+.bookshelf-sidebar {
+    flex: 0 0 240px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: sticky;
+    top: 20px;
+    font-family: 'DelimaMTProRegular', serif;
+}
+
+/* Shared panel look — same dark rosewood layering as the frame */
+.bs-panel {
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    border-radius: 6px;
+    padding: 0;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.22),
+        inset 0 1px 0 rgba(255,210,80,0.12),
+        0 8px 28px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
+/* Gold section header bar — mirrors the bookshelf-header-sign */
+.bs-section-title {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(240,192,64,0.85);
+    margin: 0;
+    padding: 10px 14px 9px;
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(180deg, #6a3010 0%, #4a1e08 60%, #5e2c10 100%);
+    background-blend-mode: soft-light, normal;
+    border-bottom: 2px solid #1a0a02;
+    box-shadow:
+        inset 0 1px 0 rgba(220,160,60,0.35),
+        0 3px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 12px rgba(200,140,30,0.3);
+}
+
+/* Body of a panel section */
+.bs-panel-body {
+    padding: 10px 12px 12px;
+}
+
+/* Category list */
+.bs-category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bs-cat-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    color: rgba(220,180,100,0.65);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+}
+.bs-cat-btn i {
+    font-size: 11px;
+    flex-shrink: 0;
+    color: rgba(200,160,60,0.5);
+    transition: color 0.15s;
+}
+.bs-cat-btn:hover {
+    background: rgba(180,100,30,0.18);
+    color: var(--parchment);
+}
+.bs-cat-btn:hover i { color: var(--gold-mid); }
+.bs-cat-btn.active {
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(90deg, rgba(130,40,15,0.9), rgba(90,20,8,0.7));
+    background-blend-mode: soft-light, normal;
+    color: var(--parchment);
+    box-shadow:
+        inset 0 0 0 1px rgba(200,140,40,0.35),
+        inset 0 1px 0 rgba(255,200,80,0.15);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+.bs-cat-btn.active i { color: var(--gold-mid); }
+
+/* Search */
+.bs-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(0,0,0,0.40);
+    border: 1px solid rgba(200,160,60,0.18);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+.bs-search-wrap:focus-within {
+    border-color: rgba(200,160,60,0.45);
+    box-shadow: 0 0 0 2px rgba(180,130,40,0.12);
+}
+.bs-search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 9px 10px;
+    color: var(--parchment);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+.bs-search-input::placeholder { color: rgba(200,160,80,0.35); }
+.bs-search-btn {
+    background: none;
+    border: none;
+    border-left: 1px solid rgba(200,160,60,0.18);
+    padding: 9px 11px;
+    color: rgba(200,160,60,0.5);
+    cursor: pointer;
+    font-size: 12px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+.bs-search-btn:hover { color: var(--gold-mid); }
+
+/* Action buttons (Leeslijst / Laatst gelezen) */
+.bs-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 14px;
+    cursor: pointer;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.22),
+        inset 0 1px 0 rgba(255,210,80,0.12),
+        0 5px 20px rgba(0,0,0,0.65);
+    transition: box-shadow 0.2s;
+    text-align: left;
+}
+.bs-action-btn:hover {
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.40),
+        inset 0 1px 0 rgba(255,210,80,0.18),
+        0 8px 26px rgba(0,0,0,0.75);
+}
+.bs-action-btn > i {
+    font-size: 18px;
+    color: var(--gold-mid);
+    flex-shrink: 0;
+    text-shadow: 0 0 10px rgba(200,140,40,0.5);
+}
+.bs-action-btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.bs-action-btn-label {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,200,100,0.9);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+.bs-action-btn-sub {
+    font-size: 11px;
+    color: rgba(200,160,80,0.5);
+    font-family: 'DelimaMTProRegular', serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px;
+}
+
+/* ---------------------------------------------------------
+   SIDEBAR LIST PANELS (last-read, bookmarks, highlights)
+   --------------------------------------------------------- */
+.bs-panel-body--list {
+    padding: 6px 0;
+    max-height: 260px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200,150,50,0.35) transparent;
+}
+.bs-panel-body--list::-webkit-scrollbar { width: 4px; }
+.bs-panel-body--list::-webkit-scrollbar-thumb { background: rgba(200,150,50,0.3); border-radius: 2px; }
+
+.bs-list-empty {
+    padding: 14px 14px 10px;
+    font-size: 11px;
+    color: rgba(200,160,80,0.4);
+    font-family: 'DelimaMTProRegular', serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bs-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(200,160,60,0.07);
+    transition: background 0.15s;
+}
+.bs-list-item:last-child { border-bottom: none; }
+.bs-list-item:hover { background: rgba(180,100,30,0.15); }
+
+.bs-list-item > i {
+    font-size: 12px;
+    color: rgba(200,160,60,0.55);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.bs-list-item-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bs-list-item-title {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 12px;
+    color: rgba(240,200,120,0.9);
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.bs-list-item-meta {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    color: rgba(200,160,80,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bs-list-del {
+    background: none;
+    border: none;
+    color: rgba(200,80,80,0.4);
+    font-size: 11px;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+    align-self: center;
+}
+.bs-list-del:hover { color: #e05050; }
+.bs-search-results {
+    margin-top: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(200,160,60,0.18);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200,150,50,0.4) transparent;
+}
+.bs-search-results::-webkit-scrollbar { width: 5px; }
+.bs-search-results::-webkit-scrollbar-track { background: transparent; }
+.bs-search-results::-webkit-scrollbar-thumb { background: rgba(200,150,50,0.35); border-radius: 3px; }
+
+.bs-sr-meta {
+    padding: 8px 12px 6px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(200,160,60,0.55);
+    border-bottom: 1px solid rgba(200,160,60,0.1);
+}
+
+.bs-sr-empty {
+    padding: 20px 14px;
+    text-align: center;
+    color: rgba(200,160,80,0.45);
+    font-size: 12px;
+    font-family: 'DelimaMTProRegular', serif;
+    letter-spacing: 0.5px;
+}
+.bs-sr-empty i { margin-right: 6px; }
+.bs-sr-empty em { color: rgba(220,180,100,0.6); font-style: normal; }
+
+.bs-sr-book {
+    border-bottom: 1px solid rgba(200,160,60,0.1);
+}
+.bs-sr-book:last-child { border-bottom: none; }
+
+.bs-sr-book-title {
+    padding: 8px 12px 5px;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(240,192,64,0.75);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.bs-sr-book-title i { font-size: 10px; color: var(--gold-mid); }
+
+.bs-sr-item {
+    display: block;
+    padding: 7px 12px 8px 22px;
+    text-decoration: none;
+    border-top: 1px solid rgba(200,160,60,0.07);
+    transition: background 0.15s;
+    cursor: pointer;
+}
+.bs-sr-item:hover {
+    background: rgba(180,100,30,0.18);
+}
+
+.bs-sr-page {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    color: rgba(200,160,60,0.5);
+    margin-bottom: 3px;
+    font-family: 'DelimaMTProRegular', serif;
+}
+
+.bs-sr-snippet {
+    display: block;
+    font-size: 12px;
+    color: rgba(230,200,150,0.75);
+    line-height: 1.5;
+    font-family: 'DelimaMTProRegular', serif;
+    word-break: break-word;
+}
+
+.bs-sr-hit {
+    background: rgba(200,150,40,0.28);
+    color: #ffe080;
+    border-radius: 2px;
+    padding: 0 2px;
+    font-style: normal;
+}
+.shelf-book-read-btn {
+    position: relative;
+    z-index: 3;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: linear-gradient(180deg, #f5dda0 0%, #c8a050 100%);
+    color: #3a1a06;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    box-shadow:
+        0 2px 6px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,240,180,0.6);
+    transition: transform 0.15s, box-shadow 0.15s;
+    pointer-events: none; /* parent <a> handles click */
+    white-space: nowrap;
+}
+.shelf-book:hover .shelf-book-read-btn {
+    transform: translateY(-1px);
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.7),
+        inset 0 1px 0 rgba(255,240,180,0.7);
+}
+.shelf-book-read-btn i { font-size: 10px; }
+
+/* ---------------------------------------------------------
    CABINET FRAME — dark wood texture replaces the old
    plain-colour box-shadow border rings + drop shadow
    --------------------------------------------------------- */
 .bookshelf-cabinet-frame {
     position: relative;
     z-index: 1;
-    max-width: 984px;        /* 960 + 2 × 12 px frame padding */
+    width: 100%;
     margin: 0 auto;
     padding: 12px;
     /* 29_dark fine wood: rich dark grain that reads as a
@@ -821,6 +1242,22 @@ body { margin: 0; padding: 0; width: 100%; }
 /* ---------------------------------------------------------
    RESPONSIVE
    --------------------------------------------------------- */
+@media (max-width: 900px) {
+    .bookshelf-layout {
+        flex-direction: column;
+    }
+    .bookshelf-sidebar {
+        flex: none;
+        width: 100%;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .bs-section { flex: 1 1 200px; }
+    .bs-action-btn { flex: 1 1 200px; }
+}
+
 @media (max-width: 768px) {
     .bookshelf-page { padding: 20px 20px 60px; }
 
