@@ -40,16 +40,41 @@
         <i class="fa-solid fa-chevron-left"></i> Terug naar de website
     </a>
 
+    {{-- ── Mobile controls bar: only visible on screens ≤900 px ── --}}
+    <div class="bs-mobile-controls" id="bs-mobile-controls">
+        <button class="bs-drawer-toggle" id="bs-drawer-toggle" aria-label="Open bibliotheek menu">
+            <i class="fa-solid fa-bars"></i>
+            <span>Menu</span>
+        </button>
+        <div class="bs-mobile-search-outer">
+            <div class="bs-search-wrap">
+                <input type="text" id="bs-mobile-search-input" class="bs-search-input"
+                       placeholder="Zoek tekst in boeken..." autocomplete="off">
+                <button class="bs-search-btn" id="bs-mobile-search-clear" aria-label="Zoeken">
+                    <i class="fa-solid fa-magnifying-glass" id="bs-mobile-search-icon"></i>
+                </button>
+            </div>
+            <div class="bs-search-results" id="bs-mobile-search-results" hidden></div>
+        </div>
+    </div>
+
     {{-- Two-column layout: sidebar + cabinet --}}
     <div class="bookshelf-layout">
 
     {{-- ═══════════════════════════════════════
          SIDEBAR
          ═══════════════════════════════════════ --}}
-    <aside class="bookshelf-sidebar">
+    <aside class="bookshelf-sidebar" id="bs-sidebar">
 
-        {{-- Search --}}
-        <div class="bs-panel">
+        {{-- Close button — visible only on mobile drawer --}}
+        <button class="bs-drawer-close" id="bs-drawer-close" aria-label="Sluit menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="bs-sidebar-scroll">
+
+        {{-- Search — desktop sidebar only; on mobile the search lives in the top bar --}}
+        <div class="bs-panel bs-panel--search-desktop">
             <h2 class="bs-section-title">Zoeken in boeken</h2>
             <div class="bs-panel-body">
                 <div class="bs-search-wrap">
@@ -86,6 +111,7 @@
             </div>
         </div>
 
+        </div>{{-- /.bs-sidebar-scroll --}}
     </aside>
 
     {{-- ═══════════════════════════════════════
@@ -145,47 +171,49 @@
         <div class="bookshelf-books-pool" style="display:none;">
             @forelse ($products as $product)
                 @php
-                    $href = $product->book_pages_count > 0
+                    $hasHtml = $product->book_pages_count > 0;
+                    $href    = $hasHtml
                         ? route('onlineLezenReadHtml', $product->slug)
-                        : route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']);
+                        : '#';
                 @endphp
+                @if($hasHtml)
                 <a href="{{ $href }}" class="shelf-book" title="{{ $product->title }}"
                    data-category="{{ $product->category_id ?? '' }}"
                    data-title="{{ strtolower($product->title) }}"
                    data-product-id="{{ $product->id }}"
                    data-reader-url="{{ $href }}">
+                @else
+                <div class="shelf-book shelf-book--coming-soon" title="{{ $product->title }}"
+                   data-category="{{ $product->category_id ?? '' }}"
+                   data-title="{{ strtolower($product->title) }}"
+                   data-product-id="{{ $product->id }}"
+                   data-reader-url="">
+                @endif
                     <div class="shelf-book-cover">
                         <div class="shelf-book-spine"></div>
-                        {{-- Top divider ornament --}}
-                        <svg class="shelf-book-ornament" viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="0" y1="10" x2="44" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                            <line x1="76" y1="10" x2="120" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                            <path d="M44,10 Q50,3 60,10 Q70,17 76,10" fill="none" stroke="currentColor" stroke-width="1"/>
-                            <circle cx="60" cy="10" r="2.5" fill="currentColor"/>
-                            <circle cx="44" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
-                            <circle cx="76" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
-                            <path d="M38,10 Q41,6 44,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                            <path d="M76,10 Q79,14 82,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                        </svg>
-                        <span class="shelf-book-title">{{ $product->title }}</span>
-                        {{-- Bottom divider ornament --}}
-                        <svg class="shelf-book-ornament-bottom" viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="0" y1="10" x2="44" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                            <line x1="76" y1="10" x2="120" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                            <path d="M44,10 Q50,3 60,10 Q70,17 76,10" fill="none" stroke="currentColor" stroke-width="1"/>
-                            <circle cx="60" cy="10" r="2.5" fill="currentColor"/>
-                            <circle cx="44" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
-                            <circle cx="76" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
-                            <path d="M38,10 Q41,14 44,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                            <path d="M76,10 Q79,6 82,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-                        </svg>
-                        {{-- LEZEN button --}}
+                        {{-- Corner ornaments --}}
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tl" alt="">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tr" alt="">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="">
+                        <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
+                        {{-- Read / Coming-soon button --}}
+                        @if($hasHtml)
                         <div class="shelf-book-read-btn">
                             <i class="fa-solid fa-book-open"></i> Lezen
                         </div>
+                        @else
+                        <div class="shelf-book-coming-soon-text">
+                            Binnenkort<br>Online
+                        </div>
+                        @endif
                     </div>
                     <span class="shelf-book-tooltip">{{ $product->title }}</span>
+                @if($hasHtml)
                 </a>
+                @else
+                </div>
+                @endif
             @empty
                 <div class="bookshelf-empty">
                     <i class="fa-solid fa-book-open"></i>
@@ -233,6 +261,8 @@
         <div class="bm-panel-list" id="bm-panel-list"></div>
     </div>
     <div class="bm-panel-backdrop" id="bm-panel-backdrop"></div>
+    {{-- Drawer backdrop (mobile) --}}
+    <div class="bs-drawer-backdrop" id="bs-drawer-backdrop-main"></div>
 
 </div>{{-- /.bookshelf-page --}}
 
@@ -431,34 +461,57 @@ document.addEventListener('touchstart', function () {}, { passive: true });
     function lsParse(k, def) { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? def; } catch(_) { return def; } }
 
     // ── Laatst gelezen list ───────────────────────────────
-    (function renderLastRead() {
+    function renderLastRead() {
         const el = document.getElementById('bs-last-read-list');
         if (!el) return;
         const history = lsParse('bibliotheek_reading_history', []);
-        if (!history.length) return;
         el.innerHTML = '';
+        if (!history.length) {
+            el.innerHTML = '<div class="bs-list-empty"><i class="fa-regular fa-clock"></i> Nog geen boeken gelezen.</div>';
+            return;
+        }
         history.forEach(function (item) {
-            const a = document.createElement('a');
-            a.className = 'bs-list-item';
-            a.href = item.readerUrl;
-            a.innerHTML =
+            const row = document.createElement('div');
+            row.className = 'bs-list-item';
+            row.style.cursor = 'pointer';
+            row.innerHTML =
                 '<i class="fa-regular fa-clock"></i>' +
                 '<div class="bs-list-item-body">' +
                     '<span class="bs-list-item-title">' + escHtml(item.productTitle) + '</span>' +
                     '<span class="bs-list-item-meta">Pagina ' + item.page + '</span>' +
-                '</div>';
-            el.appendChild(a);
+                '</div>' +
+                '<button class="bs-list-del" title="Verwijder"><i class="fa-solid fa-xmark"></i></button>';
+            // Navigate on row click
+            row.addEventListener('click', function (e) {
+                if (e.target.closest('.bs-list-del')) return;
+                window.location.href = item.readerUrl;
+            });
+            // Delete button
+            row.querySelector('.bs-list-del').addEventListener('click', function (e) {
+                e.stopPropagation();
+                try {
+                    const updated = lsParse('bibliotheek_reading_history', [])
+                        .filter(function (h) { return h.productId !== item.productId; });
+                    localStorage.setItem('bibliotheek_reading_history', JSON.stringify(updated));
+                } catch (_) {}
+                renderLastRead();
+            });
+            el.appendChild(row);
         });
-    })();
+    }
+    renderLastRead();
 
     // ── Bladwijzers list ─────────────────────────────────
-    (function renderBookmarks() {
+    function renderBookmarks() {
         const el = document.getElementById('bs-bookmarks-list');
         if (!el) return;
         const bms = lsParse('reader_bookmarks_global', [])
             .slice().sort((a,b) => (a.productTitle||'').localeCompare(b.productTitle||'') || a.pageNum - b.pageNum);
-        if (!bms.length) return;
         el.innerHTML = '';
+        if (!bms.length) {
+            el.innerHTML = '<div class="bs-list-empty"><i class="fa-solid fa-bookmark"></i> Geen bladwijzers opgeslagen.</div>';
+            return;
+        }
         bms.forEach(function (bm) {
             const item = document.createElement('div');
             item.className = 'bs-list-item';
@@ -473,7 +526,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             item.querySelector('.bs-list-del').addEventListener('click', function(e) {
                 e.stopPropagation();
                 try { localStorage.setItem('reader_bookmarks_global', JSON.stringify(lsParse('reader_bookmarks_global',[]).filter(x=>x.id!==bm.id))); } catch(_){}
-                item.remove();
+                renderBookmarks();
             });
             item.addEventListener('click', function(e) {
                 if (e.target.closest('.bs-list-del')) return;
@@ -482,10 +535,11 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             });
             el.appendChild(item);
         });
-    })();
+    }
+    renderBookmarks();
 
     // ── Markeringen list ─────────────────────────────────
-    (function renderHighlights() {
+    function renderHighlights() {
         const el = document.getElementById('bs-highlights-list');
         if (!el) return;
         const all = [];
@@ -497,8 +551,11 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             }
         } catch(_){}
         all.sort((a,b)=>(a.productTitle||'').localeCompare(b.productTitle||'')||a.pageNum-b.pageNum);
-        if (!all.length) return;
         el.innerHTML = '';
+        if (!all.length) {
+            el.innerHTML = '<div class="bs-list-empty"><i class="fa-solid fa-highlighter"></i> Geen markeringen opgeslagen.</div>';
+            return;
+        }
         const colorMap = {yellow:'#e8c020',green:'#3aaa5a',blue:'#4090d0',pink:'#d060a0',orange:'#e07020'};
         all.forEach(function(hl) {
             const item = document.createElement('div');
@@ -514,7 +571,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             item.querySelector('.bs-list-del').addEventListener('click', function(e) {
                 e.stopPropagation();
                 try { localStorage.setItem(hl._key, JSON.stringify(lsParse(hl._key,[]).filter(x=>x.id!==hl.id))); } catch(_){}
-                item.remove();
+                renderHighlights();
             });
             item.addEventListener('click', function(e) {
                 if (e.target.closest('.bs-list-del')) return;
@@ -522,7 +579,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             });
             el.appendChild(item);
         });
-    })();
+    }
+    renderHighlights();
 
     // ── Full-text search ─────────────────────────────────
     const searchInput  = document.getElementById('bs-search-input');
@@ -927,7 +985,6 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
 <script>
 (function () {
-    const BREAKPOINT_MOBILE = 768;
 
     window.buildShelves = function buildShelves() {
         const pool   = document.querySelector('.bookshelf-books-pool');
@@ -935,7 +992,9 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         // Only non-filtered books
         const books  = Array.from(pool.querySelectorAll('.shelf-book, .bookshelf-empty'))
                            .filter(b => b.dataset.hidden !== '1');
-        const perRow = window.innerWidth <= BREAKPOINT_MOBILE ? 2 : 4;
+
+        // ≥1400 px → 3 per row   |   everything else → 2 per row
+        const perRow = window.innerWidth >= 1400 ? 3 : 2;
 
         target.innerHTML = '';
 
@@ -977,6 +1036,117 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
 {{-- Cookie Consent Banner (GDPR/AVG) --}}
 <x-cookie-consent />
+
+<script>
+/* ── Mobile drawer ─────────────────────────────────────── */
+(function () {
+    const sidebar  = document.getElementById('bs-sidebar');
+    const toggle   = document.getElementById('bs-drawer-toggle');
+    const closeBtn = document.getElementById('bs-drawer-close');
+    const backdrop = document.getElementById('bs-drawer-backdrop-main');
+    if (!sidebar || !toggle) return;
+
+    function openDrawer() {
+        sidebar.classList.add('bs-drawer-open');
+        backdrop && backdrop.classList.add('bs-open');
+        document.body.classList.add('bs-drawer-no-scroll');
+    }
+    function closeDrawer() {
+        sidebar.classList.remove('bs-drawer-open');
+        backdrop && backdrop.classList.remove('bs-open');
+        document.body.classList.remove('bs-drawer-no-scroll');
+    }
+
+    toggle.addEventListener('click', openDrawer);
+    closeBtn && closeBtn.addEventListener('click', closeDrawer);
+    backdrop && backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('bs-drawer-open')) closeDrawer();
+    });
+    // Close drawer automatically when viewport grows back to desktop size
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) closeDrawer();
+    });
+})();
+</script>
+
+<script>
+/* ── Mobile search (mirrors the sidebar search) ──────────── */
+(function () {
+    const SEARCH_URL = '{{ route("onlineLezenSearchAll") }}';
+
+    function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+    function initSearch(inputId, iconId, resultsId, clearId) {
+        const input   = document.getElementById(inputId);
+        const icon    = document.getElementById(iconId);
+        const results = document.getElementById(resultsId);
+        const clear   = document.getElementById(clearId);
+        if (!input) return;
+
+        let timer = null, xhr = null;
+
+        function setIcon(s) {
+            if (!icon) return;
+            icon.className = {idle:'fa-solid fa-magnifying-glass',loading:'fa-solid fa-spinner fa-spin',clear:'fa-solid fa-xmark'}[s] || 'fa-solid fa-magnifying-glass';
+        }
+        function hideResults() {
+            if (results) results.setAttribute('hidden','');
+        }
+        function showResults(data, q) {
+            if (!results) return;
+            results.removeAttribute('hidden');
+            results.innerHTML = '';
+            if (!data.results || !data.results.length) {
+                results.innerHTML = '<div class="bs-sr-empty"><i class="fa-solid fa-book-open"></i> Geen resultaten voor <em>"' + escHtml(q) + '"</em></div>';
+                return;
+            }
+            const meta = document.createElement('div'); meta.className='bs-sr-meta';
+            meta.textContent = data.total + ' resultaat' + (data.total!==1?'en':'') + ' voor "' + q + '"';
+            results.appendChild(meta);
+            const byBook = {};
+            data.results.forEach(r => { if (!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,hits:[]}; byBook[r.productId].hits.push(r); });
+            Object.values(byBook).forEach(function(book) {
+                const b = document.createElement('div'); b.className='bs-sr-book';
+                b.innerHTML = '<div class="bs-sr-book-title"><i class="fa-solid fa-book"></i> ' + escHtml(book.title) + '</div>';
+                book.hits.forEach(function(hit) {
+                    const a = document.createElement('a'); a.className='bs-sr-item'; a.href=hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(q);
+                    a.innerHTML = '<span class="bs-sr-page">Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
+                    b.appendChild(a);
+                });
+                results.appendChild(b);
+            });
+        }
+        function doSearch(q) {
+            if (xhr) { xhr.abort(); xhr=null; }
+            if (!q || q.length < 2) { hideResults(); setIcon('idle'); return; }
+            setIcon('loading');
+            xhr = new XMLHttpRequest();
+            xhr.open('GET', SEARCH_URL + '?q=' + encodeURIComponent(q));
+            xhr.onload = function () {
+                if (xhr.status===200) { try { showResults(JSON.parse(xhr.responseText), q); } catch(_){} }
+                setIcon('clear'); xhr = null;
+            };
+            xhr.onerror = function () { setIcon('idle'); xhr = null; };
+            xhr.send();
+        }
+        input.addEventListener('input', function () {
+            const q = input.value.trim();
+            setIcon(q.length>=2?'loading':'idle');
+            clearTimeout(timer);
+            timer = setTimeout(function(){ doSearch(q); }, 400);
+        });
+        input.addEventListener('keydown', function (e) {
+            if (e.key==='Escape') { input.value=''; hideResults(); setIcon('idle'); if(xhr){xhr.abort();xhr=null;} }
+        });
+        clear && clear.addEventListener('click', function () {
+            if (input.value.trim()) { input.value=''; hideResults(); setIcon('idle'); input.focus(); }
+        });
+    }
+
+    initSearch('bs-mobile-search-input', 'bs-mobile-search-icon', 'bs-mobile-search-results', 'bs-mobile-search-clear');
+})();
+</script>
 
 
 
