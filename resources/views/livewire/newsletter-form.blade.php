@@ -21,14 +21,14 @@
             <span class="newsletter-consent__label">Ja, ik wil de nieuwsbrief ontvangen met updates en aanbiedingen.</span>
         </label>
         @error('consent')
-            <p class="newsletter-error" style="color: #f5a0a0; margin-top: 0.4rem; font-size: 0.875rem;">
-                <i class="fa-solid fa-circle-exclamation"></i> {{ $message }}
+            <p class="newsletter-error newsletter-error--consent">
+                <i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}
             </p>
         @enderror
 
         @error('email')
-            <p class="newsletter-error" style="color: #dc3545; margin-top: 0.5rem; font-size: 0.875rem;">
-                <i class="fa-solid fa-circle-exclamation"></i> {{ $message }}
+            <p class="newsletter-error newsletter-error--email">
+                <i class="fa-solid fa-triangle-exclamation"></i> {{ $message }}
             </p>
         @enderror
 
