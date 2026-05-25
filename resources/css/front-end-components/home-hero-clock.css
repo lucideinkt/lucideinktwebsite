@@ -956,7 +956,152 @@
 
 }
 
-@media (max-width: 376px) {
+@media (max-width: 385px) {
+    .hero-orbit-decoration {
+        position: absolute;
+        left: -11%;
+        top: 63%;
+        width: 298px;
+        height: 250px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 1;
+    }
 
+    .hero-orbit-decoration::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-right: 2px solid rgba(226, 205, 112, 0.55);
+        border-radius: 50%;
+        filter: drop-shadow(0 0 4px rgba(226, 205, 112, 0.35)) drop-shadow(0 0 10px rgba(226, 205, 112, 0.18));
+        /* Fade out top 20% and bottom 20% */
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 20%,
+            black 50%,
+            black 50%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 50%,
+            black 50%,
+            transparent 100%
+        );
+    }
+
+    .orbit-dot-1,
+    .orbit-dot-5 {
+        display: none;
+    }
+
+    .hero-cta-buttons {
+        position: absolute;
+        left: 77%;
+        top: 47%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        z-index: 20;
+        margin-left: 35px;
+        pointer-events: auto;
+        width: max-content;
+    }
+
+
+    .hero-orbit-decoration .orbit-dot-2 {
+        top: 28%;
+        right: 13px;
+    }
+
+    .hero-orbit-decoration .orbit-dot-3 {
+        top: 48%;
+        right: -2px;
+    }
+
+    .hero-orbit-decoration .orbit-dot-4 {
+        top: 68%;
+        right: 9px;
+    }
+
+    .hero-section {
+        max-width: 70%;
+        margin-top: 65px;
+    }
+}
+
+@media (max-width: 350px) {
+    .hero-orbit-decoration {
+        position: absolute;
+        left: -20%;
+        top: 64%;
+        width: 298px;
+        height: 240px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero-orbit-decoration::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-right: 2px solid rgba(226, 205, 112, 0.55);
+        border-radius: 50%;
+        filter: drop-shadow(0 0 4px rgba(226, 205, 112, 0.35)) drop-shadow(0 0 10px rgba(226, 205, 112, 0.18));
+        /* Fade out top 20% and bottom 20% */
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 20%,
+            black 20%,
+            black 80%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 50%,
+            black 50%,
+            transparent 100%
+        );
+    }
+
+    .orbit-dot-1,
+    .orbit-dot-5 {
+        display: none;
+    }
+
+    .hero-cta-buttons {
+        position: absolute;
+        left: 75%;
+        top: 47%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        z-index: 20;
+        margin-left: 35px;
+        pointer-events: auto;
+        width: max-content;
+    }
+
+
+    .hero-orbit-decoration .orbit-dot-2 {
+        top: 28%;
+        right: 13px;
+    }
+
+    .hero-orbit-decoration .orbit-dot-3 {
+        top: 48%;
+        right: -2px;
+    }
+
+    .hero-orbit-decoration .orbit-dot-4 {
+        top: 68%;
+        right: 9px;
+    }
 }
 
