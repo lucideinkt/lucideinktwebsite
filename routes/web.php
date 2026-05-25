@@ -208,6 +208,7 @@ Route::get('/retourbeleid', [PageController::class, 'retourbeleid'])->name('reto
 Route::get('/verzending-levering', [PageController::class, 'verzendingLevering'])->name('verzendingLevering');
 
 // Online Reading
+Route::get('/bibliotheek/zoeken', [OnlineLezenController::class, 'searchAllBooks'])->name('onlineLezenSearchAll')->middleware('throttle:30,1');
 Route::get('/bibliotheek', [OnlineLezenController::class, 'index'])->name('onlineLezen');
 Route::get('/bibliotheek/{slug}/lees', [OnlineLezenController::class, 'readHtml'])->name('onlineLezenReadHtml');
 Route::get('/bibliotheek/{slug}/paginas', [OnlineLezenController::class, 'pagesApi'])->name('onlineLezenPagesApi')->middleware('throttle:30,1');

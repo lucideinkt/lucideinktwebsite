@@ -62,9 +62,19 @@
     <style>
         /* Prevent page from scrolling horizontally when keyboard opens on mobile (iOS Safari) */
         html, body {
-            overflow-x: clip; /* clip instead of hidden — prevents horizontal overflow painting without breaking mouse-wheel scroll */
+            overflow-x: clip;
             overscroll-behavior-x: none;
             max-width: 100vw;
+        }
+
+        /* ── Search highlight inside book text ── */
+        .reader-search-highlight {
+            background: rgba(255, 210, 60, 0.38);
+            color: inherit;
+            border-radius: 3px;
+            padding: 0 2px;
+            outline: 1px solid rgba(220, 170, 40, 0.5);
+            box-shadow: 0 0 0 3px rgba(220, 170, 40, 0.12);
         }
         /* Reader loading overlay */
         #reader-loader {
@@ -505,7 +515,28 @@
             if (sheetPagePreview) sheetPagePreview.textContent = page;
             bmPageLabel();
         }
-        function save(page)   { try { localStorage.setItem(STORAGE_KEY, String(page)); } catch (_) {} }
+        function save(page)   {
+            try {
+                localStorage.setItem(STORAGE_KEY, String(page));
+                const meta = {
+                    productId:    PRODUCT_ID,
+                    productTitle: PRODUCT_TITLE,
+                    readerUrl:    READER_URL,
+                    page:         page,
+                    timestamp:    Date.now()
+                };
+                // Write single "last read" key
+                localStorage.setItem('bibliotheek_last_read', JSON.stringify(meta));
+                // Maintain full history array (latest-first, max 20 books)
+                try {
+                    let history = JSON.parse(localStorage.getItem('bibliotheek_reading_history') || '[]');
+                    history = history.filter(h => h.productId !== PRODUCT_ID); // update existing entry
+                    history.unshift(meta);
+                    if (history.length > 20) history = history.slice(0, 20);
+                    localStorage.setItem('bibliotheek_reading_history', JSON.stringify(history));
+                } catch(_) {}
+            } catch (_) {}
+        }
         function load()       { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
         function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (_) {} }
         function loadFont()   { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
@@ -1033,12 +1064,20 @@
             bmRenderAllMarkers(); // restore bookmark paragraph markers
 
             const saved     = load();
-            const startPage = (saved && sorted.includes(saved)) ? saved : null;
+            // Allow ?page=N in URL to override saved progress (e.g. from search results)
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlPage   = (function() {
+                const p = parseInt(urlParams.get('page'), 10);
+                return (!isNaN(p) && sorted.includes(p)) ? p : null;
+            })();
+            const urlQuery  = (urlParams.get('q') || '').trim(); // search term to highlight
+            const startPage = urlPage || ((saved && sorted.includes(saved)) ? saved : null);
 
             // Nothing saved or first page: scroll to top so title is visible
             if (!startPage || startPage === firstPage) {
                 window.scrollTo({ top: 0 });
                 updateUI(firstPage);
+                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[firstPage]), 300);
             } else {
                 // Page might not be in DOM yet — fetch first, then scroll
                 jumpTo(startPage, false);
@@ -1046,6 +1085,7 @@
                     const actual = visiblePage();
                     updateUI(actual);
                     save(actual);
+                    if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[actual]), 300);
                 }));
             }
         }
@@ -1706,7 +1746,8 @@
                 panel.classList.remove('open');
                 backdrop.classList.remove('open');
                 setTimeout(() => { panel.hidden = true; }, 220);
-                clearAllHighlights();
+                // Note: highlights are intentionally NOT cleared here —
+                // they only clear when a new search result is clicked.
             }
             function clearHighlight() {
                 if (currentMark && currentMark.parentNode) {
@@ -1732,6 +1773,48 @@
             closeBtn.addEventListener('click', closeSearch);
             backdrop.addEventListener('click', closeSearch);
             document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeSearch(); });
+
+            // Direct highlight (no panel) — used when arriving from library search (?q=)
+            window.readerHighlightDirect = function (query, pageEl) {
+                if (!query || !pageEl) return;
+                clearAllHighlights();
+
+                function normStr(s) {
+                    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                }
+                const queryNorm = normStr(query);
+
+                const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
+                    acceptNode(node) {
+                        const p = node.parentElement;
+                        if (!p) return NodeFilter.FILTER_REJECT;
+                        if (['script','style','button','mark'].includes(p.tagName.toLowerCase())) return NodeFilter.FILTER_REJECT;
+                        if (p.classList.contains('page-number')) return NodeFilter.FILTER_REJECT;
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                });
+
+                let node;
+                while ((node = walker.nextNode())) {
+                    const idx = normStr(node.textContent).indexOf(queryNorm);
+                    if (idx === -1) continue;
+
+                    const before = document.createTextNode(node.textContent.slice(0, idx));
+                    const mark   = document.createElement('mark');
+                    mark.className = 'reader-search-highlight';
+                    mark.textContent = node.textContent.slice(idx, idx + query.length);
+                    const after  = document.createTextNode(node.textContent.slice(idx + query.length));
+                    node.parentNode.insertBefore(before, node);
+                    node.parentNode.insertBefore(mark, node);
+                    node.parentNode.insertBefore(after, node);
+                    node.parentNode.removeChild(node);
+                    currentMark = mark;
+
+                    // Scroll to the highlighted word
+                    mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    break;
+                }
+            };
 
             input.addEventListener('input', () => {
                 clearBtn.hidden = !input.value;

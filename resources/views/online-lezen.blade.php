@@ -40,6 +40,59 @@
         <i class="fa-solid fa-chevron-left"></i> Terug naar de website
     </a>
 
+    {{-- Two-column layout: sidebar + cabinet --}}
+    <div class="bookshelf-layout">
+
+    {{-- ═══════════════════════════════════════
+         SIDEBAR
+         ═══════════════════════════════════════ --}}
+    <aside class="bookshelf-sidebar">
+
+        {{-- Search --}}
+        <div class="bs-panel">
+            <h2 class="bs-section-title">Zoeken in boeken</h2>
+            <div class="bs-panel-body">
+                <div class="bs-search-wrap">
+                    <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in boeken..." autocomplete="off">
+                    <button class="bs-search-btn" id="bs-search-clear" aria-label="Zoeken">
+                        <i class="fa-solid fa-magnifying-glass" id="bs-search-icon"></i>
+                    </button>
+                </div>
+                <div class="bs-search-results" id="bs-search-results" hidden></div>
+            </div>
+        </div>
+
+        {{-- Laatst gelezen --}}
+        <div class="bs-panel">
+            <h2 class="bs-section-title">Laatst gelezen</h2>
+            <div class="bs-panel-body bs-panel-body--list" id="bs-last-read-list">
+                <div class="bs-list-empty"><i class="fa-regular fa-clock"></i> Nog geen boeken gelezen.</div>
+            </div>
+        </div>
+
+        {{-- Bladwijzers --}}
+        <div class="bs-panel">
+            <h2 class="bs-section-title">Bladwijzers</h2>
+            <div class="bs-panel-body bs-panel-body--list" id="bs-bookmarks-list">
+                <div class="bs-list-empty"><i class="fa-solid fa-bookmark"></i> Geen bladwijzers opgeslagen.</div>
+            </div>
+        </div>
+
+        {{-- Markeringen --}}
+        <div class="bs-panel">
+            <h2 class="bs-section-title">Markeringen</h2>
+            <div class="bs-panel-body bs-panel-body--list" id="bs-highlights-list">
+                <div class="bs-list-empty"><i class="fa-solid fa-highlighter"></i> Geen markeringen opgeslagen.</div>
+            </div>
+        </div>
+
+    </aside>
+
+    {{-- ═══════════════════════════════════════
+         CABINET (existing bookshelf)
+         ═══════════════════════════════════════ --}}
+    <div class="bookshelf-cabinet-wrap">
+
     {{-- Dark wood textured frame that wraps the cabinet --}}
     <div class="bookshelf-cabinet-frame">
 
@@ -96,7 +149,11 @@
                         ? route('onlineLezenReadHtml', $product->slug)
                         : route('onlineLezenRead', ['slug' => $product->slug, 'fullscreen' => '1']);
                 @endphp
-                <a href="{{ $href }}" class="shelf-book" title="{{ $product->title }}">
+                <a href="{{ $href }}" class="shelf-book" title="{{ $product->title }}"
+                   data-category="{{ $product->category_id ?? '' }}"
+                   data-title="{{ strtolower($product->title) }}"
+                   data-product-id="{{ $product->id }}"
+                   data-reader-url="{{ $href }}">
                     <div class="shelf-book-cover">
                         <div class="shelf-book-spine"></div>
                         {{-- Top divider ornament --}}
@@ -122,6 +179,10 @@
                             <path d="M38,10 Q41,14 44,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
                             <path d="M76,10 Q79,6 82,10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
                         </svg>
+                        {{-- LEZEN button --}}
+                        <div class="shelf-book-read-btn">
+                            <i class="fa-solid fa-book-open"></i> Lezen
+                        </div>
                     </div>
                     <span class="shelf-book-tooltip">{{ $product->title }}</span>
                 </a>
@@ -142,9 +203,12 @@
     </div>{{-- /.bookshelf-cabinet --}}
     </div>{{-- /.bookshelf-cabinet-frame --}}
 
+    </div>{{-- /.bookshelf-cabinet-wrap --}}
+    </div>{{-- /.bookshelf-layout --}}
 
-    {{-- Floating bookmark/marker button --}}
-    <button class="bm-fab" id="bm-fab" aria-label="Bladwijzers & Markeringen" title="Bladwijzers & Markeringen">
+
+    {{-- Floating bookmark button (hidden — bookmarks shown inline in sidebar) --}}
+    <button class="bm-fab" id="bm-fab" aria-label="Bladwijzers & Markeringen" title="Bladwijzers & Markeringen" style="display:none">
         <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
         <span class="bm-fab-badge" id="bm-fab-badge" aria-hidden="true" hidden></span>
     </button>
@@ -355,10 +419,345 @@
 </style>
 
 <script>
-// iOS Safari double-tap fix: a single empty touchstart listener tells
-// iOS Safari this page handles touch, so it stops intercepting the
-// first tap as a :hover state — making every link respond on first tap.
+// iOS Safari double-tap fix
 document.addEventListener('touchstart', function () {}, { passive: true });
+</script>
+
+<script>
+(function () {
+    const SEARCH_URL = '{{ route("onlineLezenSearchAll") }}';
+
+    function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function lsParse(k, def) { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? def; } catch(_) { return def; } }
+
+    // ── Laatst gelezen list ───────────────────────────────
+    (function renderLastRead() {
+        const el = document.getElementById('bs-last-read-list');
+        if (!el) return;
+        const history = lsParse('bibliotheek_reading_history', []);
+        if (!history.length) return;
+        el.innerHTML = '';
+        history.forEach(function (item) {
+            const a = document.createElement('a');
+            a.className = 'bs-list-item';
+            a.href = item.readerUrl;
+            a.innerHTML =
+                '<i class="fa-regular fa-clock"></i>' +
+                '<div class="bs-list-item-body">' +
+                    '<span class="bs-list-item-title">' + escHtml(item.productTitle) + '</span>' +
+                    '<span class="bs-list-item-meta">Pagina ' + item.page + '</span>' +
+                '</div>';
+            el.appendChild(a);
+        });
+    })();
+
+    // ── Bladwijzers list ─────────────────────────────────
+    (function renderBookmarks() {
+        const el = document.getElementById('bs-bookmarks-list');
+        if (!el) return;
+        const bms = lsParse('reader_bookmarks_global', [])
+            .slice().sort((a,b) => (a.productTitle||'').localeCompare(b.productTitle||'') || a.pageNum - b.pageNum);
+        if (!bms.length) return;
+        el.innerHTML = '';
+        bms.forEach(function (bm) {
+            const item = document.createElement('div');
+            item.className = 'bs-list-item';
+            item.style.cursor = 'pointer';
+            item.innerHTML =
+                '<i class="fa-solid fa-bookmark" style="color:var(--gold-mid)"></i>' +
+                '<div class="bs-list-item-body">' +
+                    '<span class="bs-list-item-title">' + escHtml(bm.productTitle || 'Onbekend') + '</span>' +
+                    '<span class="bs-list-item-meta">Pagina ' + bm.pageNum + (bm.text ? ' · ' + escHtml(bm.text.slice(0,35)) + '…' : '') + '</span>' +
+                '</div>' +
+                '<button class="bs-list-del" title="Verwijder"><i class="fa-solid fa-xmark"></i></button>';
+            item.querySelector('.bs-list-del').addEventListener('click', function(e) {
+                e.stopPropagation();
+                try { localStorage.setItem('reader_bookmarks_global', JSON.stringify(lsParse('reader_bookmarks_global',[]).filter(x=>x.id!==bm.id))); } catch(_){}
+                item.remove();
+            });
+            item.addEventListener('click', function(e) {
+                if (e.target.closest('.bs-list-del')) return;
+                try { localStorage.setItem('reading_progress_'+bm.productId, String(bm.pageNum)); } catch(_){}
+                window.location.href = bm.readerUrl;
+            });
+            el.appendChild(item);
+        });
+    })();
+
+    // ── Markeringen list ─────────────────────────────────
+    (function renderHighlights() {
+        const el = document.getElementById('bs-highlights-list');
+        if (!el) return;
+        const all = [];
+        try {
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (!k || !k.startsWith('hl_')) continue;
+                lsParse(k,[]).forEach(h => all.push({ _key: k, ...h }));
+            }
+        } catch(_){}
+        all.sort((a,b)=>(a.productTitle||'').localeCompare(b.productTitle||'')||a.pageNum-b.pageNum);
+        if (!all.length) return;
+        el.innerHTML = '';
+        const colorMap = {yellow:'#e8c020',green:'#3aaa5a',blue:'#4090d0',pink:'#d060a0',orange:'#e07020'};
+        all.forEach(function(hl) {
+            const item = document.createElement('div');
+            item.className = 'bs-list-item';
+            item.style.cursor = 'pointer';
+            item.innerHTML =
+                '<i class="fa-solid fa-highlighter" style="color:'+(colorMap[hl.color]||'#c8902a')+'"></i>' +
+                '<div class="bs-list-item-body">' +
+                    '<span class="bs-list-item-title">' + escHtml(hl.productTitle||'Onbekend') + '</span>' +
+                    '<span class="bs-list-item-meta">Pagina ' + hl.pageNum + (hl.text?' · '+escHtml(hl.text.slice(0,35))+'…':'') + '</span>' +
+                '</div>' +
+                '<button class="bs-list-del" title="Verwijder"><i class="fa-solid fa-xmark"></i></button>';
+            item.querySelector('.bs-list-del').addEventListener('click', function(e) {
+                e.stopPropagation();
+                try { localStorage.setItem(hl._key, JSON.stringify(lsParse(hl._key,[]).filter(x=>x.id!==hl.id))); } catch(_){}
+                item.remove();
+            });
+            item.addEventListener('click', function(e) {
+                if (e.target.closest('.bs-list-del')) return;
+                if (hl.readerUrl) { try{localStorage.setItem('reading_progress_'+hl.productId,String(hl.pageNum));}catch(_){} window.location.href=hl.readerUrl; }
+            });
+            el.appendChild(item);
+        });
+    })();
+
+    // ── Full-text search ─────────────────────────────────
+    const searchInput  = document.getElementById('bs-search-input');
+    const searchIcon   = document.getElementById('bs-search-icon');
+    const resultsPanel = document.getElementById('bs-search-results');
+    let searchTimer = null, activeXHR = null;
+
+    function setSearchIcon(s) {
+        if (searchIcon) searchIcon.className = {idle:'fa-solid fa-magnifying-glass',loading:'fa-solid fa-spinner fa-spin',clear:'fa-solid fa-xmark'}[s]||'fa-solid fa-magnifying-glass';
+    }
+    function showResults(data, query) {
+        if (!resultsPanel) return;
+        resultsPanel.removeAttribute('hidden');
+        resultsPanel.innerHTML = '';
+        try { sessionStorage.setItem('bibliotheek_search', JSON.stringify({query,data})); } catch(_){}
+        if (!data.results||!data.results.length) { resultsPanel.innerHTML='<div class="bs-sr-empty"><i class="fa-solid fa-book-open"></i> Geen resultaten voor <em>"'+escHtml(query)+'"</em></div>'; return; }
+        const m=document.createElement('div'); m.className='bs-sr-meta'; m.textContent=data.total+' resultaat'+(data.total!==1?'en':'')+' voor "'+query+'"'; resultsPanel.appendChild(m);
+        const byBook={};
+        data.results.forEach(r=>{ if(!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,hits:[]}; byBook[r.productId].hits.push(r); });
+        Object.values(byBook).forEach(function(book) {
+            const b=document.createElement('div'); b.className='bs-sr-book';
+            b.innerHTML='<div class="bs-sr-book-title"><i class="fa-solid fa-book"></i> '+escHtml(book.title)+'</div>';
+            book.hits.forEach(function(hit) {
+                const a=document.createElement('a'); a.className='bs-sr-item'; a.href=hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(query);
+                a.innerHTML='<span class="bs-sr-page">Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
+                b.appendChild(a);
+            });
+            resultsPanel.appendChild(b);
+        });
+    }
+    function hideResults() { if(resultsPanel) resultsPanel.setAttribute('hidden',''); try{sessionStorage.removeItem('bibliotheek_search');}catch(_){} }
+    function doSearch(q) {
+        if(activeXHR){activeXHR.abort();activeXHR=null;}
+        if(!q||q.length<2){hideResults();setSearchIcon('idle');return;}
+        setSearchIcon('loading');
+        activeXHR=new XMLHttpRequest(); activeXHR.open('GET',SEARCH_URL+'?q='+encodeURIComponent(q));
+        activeXHR.onload=function(){if(activeXHR.status===200){try{showResults(JSON.parse(activeXHR.responseText),q);}catch(_){}}setSearchIcon('clear');activeXHR=null;};
+        activeXHR.onerror=function(){setSearchIcon('idle');activeXHR=null;};
+        activeXHR.send();
+    }
+    if (searchInput) {
+        searchInput.addEventListener('input',function(){const q=searchInput.value.trim();setSearchIcon(q.length>=2?'loading':'idle');clearTimeout(searchTimer);searchTimer=setTimeout(()=>doSearch(q),400);});
+        searchInput.addEventListener('keydown',function(e){if(e.key==='Escape'){searchInput.value='';hideResults();setSearchIcon('idle');if(activeXHR){activeXHR.abort();activeXHR=null;}}});
+    }
+    document.getElementById('bs-search-clear')?.addEventListener('click',function(){if(searchInput?.value.trim()){searchInput.value='';hideResults();setSearchIcon('idle');searchInput.focus();}});
+    // Restore after back-navigation
+    (function(){try{const s=sessionStorage.getItem('bibliotheek_search');if(!s)return;const{query,data}=JSON.parse(s);if(!query||!data)return;if(searchInput)searchInput.value=query;setSearchIcon('clear');showResults(data,query);}catch(_){}})();
+
+})();
+</script>
+
+
+
+<script>
+(function () {
+    const BM_KEY   = 'reader_bookmarks_global';
+    const fab      = document.getElementById('bm-fab');
+    const badge    = document.getElementById('bm-fab-badge');
+    const panel    = document.getElementById('bm-panel');
+    }
+
+    function showResults(data, query) {
+        if (!resultsPanel) return;
+        resultsPanel.removeAttribute('hidden');
+        resultsPanel.innerHTML = '';
+
+        // Persist for back-navigation
+        try { sessionStorage.setItem('bibliotheek_search', JSON.stringify({ query, data })); } catch(_) {}
+
+        if (!data.results || !data.results.length) {
+            resultsPanel.innerHTML = '<div class="bs-sr-empty"><i class="fa-solid fa-book-open"></i> Geen resultaten gevonden voor <em>"' + escHtml(query) + '"</em></div>';
+            return;
+        }
+
+        const meta = document.createElement('div');
+        meta.className = 'bs-sr-meta';
+        meta.textContent = data.total + ' resultaat' + (data.total !== 1 ? 'en' : '') + ' voor "' + query + '"';
+        resultsPanel.appendChild(meta);
+
+        // Group by book
+        const byBook = {};
+        data.results.forEach(function (r) {
+            if (!byBook[r.productId]) byBook[r.productId] = { title: r.productTitle, url: r.readerUrl, hits: [] };
+            byBook[r.productId].hits.push(r);
+        });
+
+        Object.values(byBook).forEach(function (book) {
+            const bookEl = document.createElement('div');
+            bookEl.className = 'bs-sr-book';
+
+            const titleEl = document.createElement('div');
+            titleEl.className = 'bs-sr-book-title';
+            titleEl.innerHTML = '<i class="fa-solid fa-book"></i> ' + escHtml(book.title);
+            bookEl.appendChild(titleEl);
+
+            book.hits.forEach(function (hit) {
+                const item = document.createElement('a');
+                item.className = 'bs-sr-item';
+                // Pass both page AND query so reader can highlight
+                item.href = hit.readerUrl + '?page=' + hit.page + '&q=' + encodeURIComponent(query);
+                item.innerHTML =
+                    '<span class="bs-sr-page">Pagina ' + hit.page + '</span>' +
+                    '<span class="bs-sr-snippet">' + formatSnippet(hit.snippet) + '</span>';
+                bookEl.appendChild(item);
+            });
+
+            resultsPanel.appendChild(bookEl);
+        });
+    }
+
+    function hideResults() {
+        if (resultsPanel) resultsPanel.setAttribute('hidden', '');
+        try { sessionStorage.removeItem('bibliotheek_search'); } catch(_) {}
+    }
+
+    // ── Restore search after back-navigation ─────────────
+    (function restoreSearch() {
+        try {
+            const stored = sessionStorage.getItem('bibliotheek_search');
+            if (!stored) return;
+            const { query, data } = JSON.parse(stored);
+            if (!query || !data) return;
+            if (searchInput) searchInput.value = query;
+            setSearchIcon('clear');
+            showResults(data, query); // re-renders panel (also re-saves to sessionStorage — fine)
+        } catch(_) {}
+    })();
+
+    function escHtml(str) {
+        return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function formatSnippet(snippet) {
+        return escHtml(snippet)
+            .replace(/\[\[HIT\]\]/g, '<mark class="bs-sr-hit">')
+            .replace(/\[\[\/HIT\]\]/g, '</mark>');
+    }
+
+    function doSearch(q) {
+        if (activeXHR) { activeXHR.abort(); activeXHR = null; }
+        if (!q || q.length < 2) {
+            hideResults();
+            setSearchIcon('idle');
+            return;
+        }
+        setSearchIcon('loading');
+        const url = SEARCH_URL + '?q=' + encodeURIComponent(q);
+        activeXHR = new XMLHttpRequest();
+        activeXHR.open('GET', url);
+        activeXHR.onload = function () {
+            if (activeXHR.status === 200) {
+                try {
+                    const data = JSON.parse(activeXHR.responseText);
+                    showResults(data, q);
+                } catch (_) {}
+            }
+            setSearchIcon('clear');
+            activeXHR = null;
+        };
+        activeXHR.onerror = function () { setSearchIcon('idle'); activeXHR = null; };
+        activeXHR.send();
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            const q = searchInput.value.trim();
+            setSearchIcon(q.length >= 2 ? 'loading' : 'idle');
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(function () { doSearch(q); }, 400);
+        });
+
+        searchInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                searchInput.value = '';
+                hideResults();
+                setSearchIcon('idle');
+                if (activeXHR) { activeXHR.abort(); activeXHR = null; }
+            }
+        });
+    }
+
+    // Clear/search button
+    document.getElementById('bs-search-clear')?.addEventListener('click', function () {
+        if (searchInput && searchInput.value.trim()) {
+            searchInput.value = '';
+            hideResults();
+            setSearchIcon('idle');
+            searchInput.focus();
+        } else if (searchInput) {
+            const q = searchInput.value.trim();
+            if (q.length >= 2) doSearch(q);
+        }
+    });
+
+    // ── Leeslijst button ─────────────────────────────────
+    document.getElementById('bm-fab-sidebar')?.addEventListener('click', function () {
+        document.getElementById('bm-fab')?.click();
+    });
+
+    // ── Laatst gelezen ───────────────────────────────────
+    document.getElementById('bs-last-read-btn')?.addEventListener('click', function () {
+        try {
+            const raw = localStorage.getItem('bibliotheek_last_read');
+            if (raw) {
+                const meta = JSON.parse(raw);
+                if (meta && meta.readerUrl) {
+                    window.location.href = meta.readerUrl;
+                    return;
+                }
+            }
+        } catch (_) {}
+
+        const book = getPool().find(b => {
+            const id = b.dataset.productId;
+            return id && localStorage.getItem('reading_progress_' + id);
+        });
+        if (book && book.dataset.readerUrl) {
+            window.location.href = book.dataset.readerUrl;
+        } else {
+            alert('Je hebt nog geen boek gelezen.');
+        }
+    });
+
+    // Show last-read book title in sub-label
+    (function () {
+        try {
+            const raw = localStorage.getItem('bibliotheek_last_read');
+            if (!raw) return;
+            const meta = JSON.parse(raw);
+            const sub  = document.querySelector('#bs-last-read-btn .bs-action-btn-sub');
+            if (sub && meta.productTitle) sub.textContent = meta.productTitle;
+        } catch (_) {}
+    })();
+
+})();
 </script>
 
 <script>
@@ -530,13 +929,29 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 (function () {
     const BREAKPOINT_MOBILE = 768;
 
-    function buildShelves() {
+    window.buildShelves = function buildShelves() {
         const pool   = document.querySelector('.bookshelf-books-pool');
         const target = document.getElementById('bookshelf-shelves');
-        const books  = Array.from(pool.querySelectorAll('.shelf-book, .bookshelf-empty'));
+        // Only non-filtered books
+        const books  = Array.from(pool.querySelectorAll('.shelf-book, .bookshelf-empty'))
+                           .filter(b => b.dataset.hidden !== '1');
         const perRow = window.innerWidth <= BREAKPOINT_MOBILE ? 2 : 4;
 
         target.innerHTML = '';
+
+        if (!books.length) {
+            const empty = document.createElement('div');
+            empty.className = 'bookshelf-empty';
+            empty.innerHTML = '<i class="fa-solid fa-book-open"></i><p>Geen boeken gevonden.</p>';
+            const row = document.createElement('div');
+            row.className = 'bookshelf-shelf-row';
+            const plank = document.createElement('div');
+            plank.className = 'bookshelf-plank';
+            plank.appendChild(empty);
+            row.appendChild(plank);
+            target.appendChild(row);
+            return;
+        }
 
         for (let i = 0; i < books.length; i += perRow) {
             const chunk = books.slice(i, i + perRow);
