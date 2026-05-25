@@ -48,3 +48,10 @@
 @import './front-end-components/myparcel-overrides.css';
 @import './front-end-components/cookie-consent.css';
 @import './reader-book.css';
+
+/* =========================================================
+   PAGE BACKGROUNDS — single source of truth
+   Change every page background in one place.
+   Must stay last so it overrides scattered definitions.
+   ========================================================= */
+@import './front-end-base/page-backgrounds.css';
