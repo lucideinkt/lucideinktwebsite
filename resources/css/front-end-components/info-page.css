@@ -98,7 +98,7 @@
 
     outline: 1px solid rgba(197, 155, 50, 0.28);
     outline-offset: 5px;
-    padding: 40px 60px;
+    padding: 55px 60px;
     margin-top: 10px;
     margin-bottom: 0px;
     max-width: 1075px;
@@ -214,7 +214,7 @@
     }
 
     .info-page__text-box {
-        padding: 35px 30px;
+        padding: 50px 30px;
     }
 }
 
@@ -241,7 +241,7 @@
     }
 
     .info-page__text-box {
-        padding: 30px 20px;
+        padding: 45px 20px;
         max-width: 100%;
     }
 

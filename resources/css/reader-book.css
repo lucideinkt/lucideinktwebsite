@@ -844,6 +844,13 @@ body.dark-mode .book-reader-scope .page { border-bottom-color: rgba(255,255,255,
 body.dark-mode .book-reader-scope .end-of-page-hr { border-bottom-color: rgba(232,168,124,0.15); }
 body.dark-mode .book-reader-scope .hr-footnote { border-top-color: rgba(232,168,124,0.2); }
 
+.book-reader-scope .hr-section-divider {
+    border-bottom: 2px solid #ca2a2a;
+}
+body.dark-mode .book-reader-scope .hr-section-divider {
+    border-bottom-color: rgba(232, 168, 124, 0.15);
+}
+
 /* Page number */
 body.dark-mode .book-reader-scope .page-number { color: #4a4030; }
 
@@ -1694,6 +1701,70 @@ body.dark-mode .reader-progress-bar-fill { background: linear-gradient(90deg, #e
     background: linear-gradient(135deg, #3e0000 0%, #7a3010 100%);
     box-shadow: 0 2px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
 }
+
+/* Bookmark FAB — sits above the main FAB */
+.reader-bm-fab {
+    position: fixed;
+    bottom: calc(52px + 16px + 44px + 10px); /* above reader-fab */
+    right: 18px;
+    z-index: 500;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(200, 120, 48, 0.50);
+    color: #fff;
+    box-shadow:
+        0 3px 12px rgba(200,120,48,0.28),
+        0 1px 3px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: background 0.18s, color 0.18s, transform 0.15s, box-shadow 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+/* Inactive — dark warm brown on amber background */
+.reader-bm-fab i { color: rgba(60, 25, 5, 0.80) !important; }
+/* Hover */
+.reader-bm-fab:hover i { color: rgba(50, 18, 2, 0.95) !important; }
+/* Active — warm cream on deep amber gradient */
+.reader-bm-fab.active i { color: rgba(255, 240, 200, 0.97) !important; }
+/* Dark mode inactive — warm parchment on semi-transparent amber */
+body.dark-mode .reader-bm-fab i { color: rgba(255, 225, 170, 0.80) !important; }
+body.dark-mode .reader-bm-fab:hover i { color: rgba(255, 235, 185, 0.97) !important; }
+/* Dark mode active — bright warm cream on full amber gradient */
+body.dark-mode .reader-bm-fab.active i { color: rgba(255, 245, 215, 1) !important; }
+.reader-bm-fab:active { transform: scale(0.94); }
+.reader-bm-fab:hover {
+    background: rgba(200, 120, 48, 0.78);
+}
+.reader-bm-fab.active {
+    background: linear-gradient(135deg, #a86020 0%, #c87830 100%);
+    color: #fff;
+    box-shadow:
+        0 4px 18px rgba(200,120,48,0.55),
+        0 1px 4px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+}
+body.dark-mode .reader-bm-fab {
+    background: rgba(232, 160, 80, 0.30);
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+body.dark-mode .reader-bm-fab:hover {
+    background: rgba(232, 160, 80, 0.55);
+}
+body.dark-mode .reader-bm-fab.active {
+    background: linear-gradient(135deg, #c87830 0%, #e8a050 100%);
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(232,160,80,0.45), inset 0 1px 0 rgba(255,255,255,0.12);
+}
 body.dark-mode .reader-fab {
     background: linear-gradient(135deg, #9a4a18 0%, #7a2808 100%);
     box-shadow: 0 4px 20px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
@@ -2251,6 +2322,7 @@ body.dark-mode .reader-sheet-toc-btn:hover i { color: #e8c890; }
     /* Narrower sheet, right-anchored — right thumb reaches all controls */
     .reader-control-sheet { width: 272px; right: 12px; bottom: 82px; }
     .reader-fab { bottom: calc(52px + 12px); right: 14px; width: 40px; height: 40px; border-radius: 50%; }
+    .reader-bm-fab { bottom: calc(52px + 12px + 40px + 10px); right: 14px; width: 40px; height: 40px; font-size: 15px; }
     /* Show book title inside sheet on mobile (topbar hides it there) */
     .reader-sheet-book-title { display: block; }
 }
