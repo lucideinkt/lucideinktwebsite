@@ -40,6 +40,7 @@ class Product extends Model
         'audio_file',
         'online_lezen_image',
         'book_content',
+        'book_content_published',
         'seo_description',
         'seo_tags',
         'seo_author',
@@ -51,7 +52,8 @@ class Product extends Model
     ];
 
     protected $casts = [
-        'seo_tags' => 'array',
+        'seo_tags'               => 'array',
+        'book_content_published' => 'boolean',
     ];
 
     public function updater()

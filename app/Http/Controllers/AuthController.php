@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Services\SEOService;
+use App\Services\SiteSettingService;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -22,6 +23,15 @@ class AuthController extends Controller
 
     public function loginPage()
     {
+        // Already logged-in admin → send to dashboard
+        if (auth()->check() && auth()->user()->role === 'admin') {
+            return redirect()->route('dashboard');
+        }
+
+        if (SiteSettingService::isMaintenanceMode()) {
+            return response()->view('auth.maintenance-login', [], 200);
+        }
+
         return view('auth.login', [
             'SEOData' => SEOService::getPageSEO('login'),
         ]);
@@ -41,6 +51,15 @@ class AuthController extends Controller
 
         if (auth()->attempt($validated, $request->filled('remember'))) {
             $request->session()->regenerate();
+
+            // During maintenance mode, only admins are allowed in
+            if (SiteSettingService::isMaintenanceMode() && auth()->user()->role !== 'admin') {
+                auth()->logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+                return back()->with('error', 'De webshop is momenteel in onderhoudsmodus. Alleen beheerders kunnen inloggen.');
+            }
+
             return redirect()->route('dashboard');
         }
 

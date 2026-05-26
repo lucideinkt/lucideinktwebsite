@@ -1,8 +1,5 @@
-<x-layout>
+<x-layout :seo-data="$SEOData">
     <div class="page-normal-background">
-    @push('head')
-        {!! seo($product) !!}
-    @endpush
     <main class="container page product">
         <div class="product-hero">
             <div class="container">

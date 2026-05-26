@@ -23,6 +23,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShippingCostController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
 // Both admin and user can access
@@ -44,6 +45,11 @@ Route::middleware(['auth', 'role:admin,user'])->group(function () {
 
 // Only admin can access
 Route::middleware(['auth', 'role:admin'])->group(function () {
+
+    // Site Settings
+    Route::get('/dashboard/settings', [SiteSettingController::class, 'index'])->name('admin.settings');
+    Route::post('/dashboard/settings', [SiteSettingController::class, 'update'])->name('admin.settings.update');
+    Route::post('/dashboard/settings/test-mail', [SiteSettingController::class, 'testMail'])->name('admin.settings.test-mail');
 
     // Products
     Route::get('/dashboard/products', [ProductController::class, 'index'])->name('productIndex');
@@ -152,6 +158,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/dashboard/book-content/{id}/pages',              [BookContentController::class, 'storePage'])->name('bookContent.storePage');
     Route::delete('/dashboard/book-content/{id}/pages/{pageId}',   [BookContentController::class, 'destroyPage'])->name('bookContent.destroyPage');
     Route::post('/dashboard/book-content/{id}/reorder',            [BookContentController::class, 'reorder'])->name('bookContent.reorder');
+    Route::post('/dashboard/book-content/{id}/toggle-published',   [BookContentController::class, 'togglePublished'])->name('bookContent.togglePublished');
 
 });
 
@@ -322,11 +329,11 @@ Route::get('/audio-proxy/{path}', function ($path) {
     }
 })->where('path', '.*')->name('audio.proxy');
 
-// Dynamic robots.txt — blocks all crawlers outside production
+// Dynamic robots.txt — respects site setting + falls back to production env check
 Route::get('/robots.txt', function () {
-    $isProduction = app()->environment('production');
+    $allowIndexing = \App\Services\SiteSettingService::isIndexingAllowed();
 
-    $content = $isProduction
+    $content = $allowIndexing
         ? implode("\n", [
             'User-agent: *',
             'Disallow: /dashboard',
@@ -336,7 +343,7 @@ Route::get('/robots.txt', function () {
             'Sitemap: ' . url('/sitemap.xml'),
         ])
         : implode("\n", [
-            '# Non-production environment — block all crawlers',
+            '# Indexering uitgeschakeld via site-instellingen',
             'User-agent: *',
             'Disallow: /',
         ]);

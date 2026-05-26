@@ -171,13 +171,14 @@
         <div class="bookshelf-books-pool" style="display:none;">
             @forelse ($products as $product)
                 @php
-                    $hasHtml = $product->book_pages_count > 0;
+                    $contentPublished = $product->book_content_published;
+                    $hasHtml = $product->book_pages_count > 0 && ($isAdmin || $contentPublished);
                     $href    = $hasHtml
                         ? route('onlineLezenReadHtml', $product->slug)
                         : '#';
                 @endphp
                 @if($hasHtml)
-                <a href="{{ $href }}" class="shelf-book" title="{{ $product->title }}"
+                <a href="{{ $href }}" class="shelf-book{{ $isAdmin && !$contentPublished ? ' shelf-book--unpublished' : '' }}" title="{{ $product->title }}"
                    data-category="{{ $product->category_id ?? '' }}"
                    data-title="{{ strtolower($product->title) }}"
                    data-product-id="{{ $product->id }}"
@@ -197,10 +198,14 @@
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="">
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="">
                         <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
-                        {{-- Read / Coming-soon button --}}
+                        {{-- Read / Coming-soon / Concept button --}}
                         @if($hasHtml)
-                        <div class="shelf-book-read-btn">
-                            <i class="fa-solid fa-book-open"></i> Lezen
+                        <div class="shelf-book-read-btn {{ $isAdmin && !$contentPublished ? 'shelf-book-read-btn--concept' : '' }}">
+                            @if($isAdmin && !$contentPublished)
+                                <i class="fa-solid fa-eye-slash"></i> Concept
+                            @else
+                                <i class="fa-solid fa-book-open"></i> Lezen
+                            @endif
                         </div>
                         @else
                         <div class="shelf-book-coming-soon-text">
@@ -208,7 +213,7 @@
                         </div>
                         @endif
                     </div>
-                    <span class="shelf-book-tooltip">{{ $product->title }}</span>
+                    <span class="shelf-book-tooltip">{{ $product->title }}{{ $isAdmin && !$contentPublished ? ' (concept)' : '' }}</span>
                 @if($hasHtml)
                 </a>
                 @else

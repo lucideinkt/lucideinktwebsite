@@ -82,6 +82,14 @@
                         <p class="form-section-hint">Laat leeg om je huidige wachtwoord te behouden</p>
 
                         <div class="form-input">
+                            <label for="current_password">Huidig wachtwoord</label>
+                            <input type="password" name="current_password" id="current_password" placeholder="Voer je huidige wachtwoord in">
+                            @error('current_password')
+                                <div class="error">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-input">
                             <label for="password">Nieuw wachtwoord</label>
                             <input type="password" name="password" id="password" placeholder="Minimaal 8 tekens">
                             @error('password')
@@ -174,6 +182,15 @@
               <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Wachtwoord wijzigen</h3>
               <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Laat leeg om je huidige wachtwoord te behouden.</p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="sm:col-span-2">
+                  <label for="current_password" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Huidig wachtwoord</label>
+                  <input type="password" name="current_password" id="current_password"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('current_password') border-red-500 dark:border-red-500 @enderror"
+                    placeholder="Voer je huidige wachtwoord in" />
+                  @error('current_password')
+                    <p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
+                  @enderror
+                </div>
                 <div>
                   <label for="password" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Nieuw wachtwoord</label>
                   <input type="password" name="password" id="password"

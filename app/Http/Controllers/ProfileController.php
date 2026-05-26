@@ -21,6 +21,11 @@ class ProfileController extends Controller
                 'first_name' => 'required|string|max:255',
                 'last_name' => 'required|string|max:255',
                 'email' => 'required|email|unique:users,email,'.auth()->id(),
+                'current_password' => ['required', 'string', function ($attribute, $value, $fail) {
+                    if (!Hash::check($value, auth()->user()->password)) {
+                        $fail('Het huidige wachtwoord is onjuist.');
+                    }
+                }],
                 'password' => 'required|string|min:8|confirmed',
             ], [
                 'first_name.required' => 'Voornaam is verplicht.',
@@ -28,7 +33,8 @@ class ProfileController extends Controller
                 'email.required' => 'E-mailadres is verplicht.',
                 'email.email' => 'Voer een geldig e-mailadres in.',
                 'email.unique' => 'Dit e-mailadres is al in gebruik.',
-                'password.required' => 'Wachtwoord is verplicht.',
+                'current_password.required' => 'Het huidige wachtwoord is verplicht.',
+                'password.required' => 'Nieuw wachtwoord is verplicht.',
                 'password.min' => 'Wachtwoord moet minimaal 8 tekens bevatten.',
                 'password.confirmed' => 'Wachtwoorden komen niet overeen.',
             ]);

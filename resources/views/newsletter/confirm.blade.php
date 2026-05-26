@@ -1,4 +1,8 @@
 <x-layout>
+    @push('head')
+        <title>{{ $confirmed ? 'Inschrijving bevestigd' : 'Al bevestigd' }} | Lucide Inkt</title>
+        <meta name="robots" content="noindex, nofollow">
+    @endpush
     <div class="page-normal-background">
     <main class="container page cart-page">
 

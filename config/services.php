@@ -36,7 +36,8 @@ return [
     ],
 
     'google' => [
-        'maps_api_key' => env('GOOGLE_MAPS_API_KEY', ''),
+        'maps_api_key'   => env('GOOGLE_MAPS_API_KEY', ''),
+        'analytics_id'   => env('GOOGLE_ANALYTICS_ID', ''),
     ],
 
     'myparcel' => [
@@ -44,7 +45,8 @@ return [
     ],
 
     'lucideinkt' => [
-        'admin_email'     => env('LUCIDE_INKT_MAIL'),
+        'admin_email'      => env('LUCIDE_INKT_MAIL'),
+        'contact_bcc'      => env('CONTACT_BCC_EMAIL'),
         'mailtrap_forward' => env('MAILTRAP_FORWARD_EMAIL'),
         'webhook_url'     => match (env('APP_ENV', 'local')) {
             'production' => env('WEBHOOK_URL_PRODUCTION'),

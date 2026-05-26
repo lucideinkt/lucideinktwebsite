@@ -233,6 +233,16 @@
             <span class="ms-3">Nieuwsbrieven</span>
           </a>
         </li>
+        <li class="pt-2 border-t border-gray-200 dark:border-gray-700 mt-2">
+          <a href="{{ route('admin.settings') }}"
+            class="flex items-center p-2 rounded-lg group {{ request()->routeIs('admin.settings*') ? 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700' }}">
+            <i class="fa-solid fa-sliders text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-5 text-center"></i>
+            <span class="ms-3">Site-instellingen</span>
+            @if(\App\Services\SiteSettingService::isMaintenanceMode())
+              <span class="ms-auto inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">Onderhoud</span>
+            @endif
+          </a>
+        </li>
         @endrole
 
       </ul>
@@ -245,6 +255,8 @@
       {{ $slot }}
     </div>
   </div>
+
+  @stack('scripts')
 
 </body>
 </html>
