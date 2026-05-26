@@ -27,11 +27,17 @@
     {{-- Table --}}
     <div class="overflow-x-auto">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" class="px-4 py-3">Product</th>
-            <th scope="col" class="px-4 py-3">Status</th>
-            <th scope="col" class="px-4 py-3">HTML inhoud</th>
+            <th scope="col" class="px-4 py-3">
+              HTML pagina's
+              <span class="block normal-case font-normal text-gray-400 dark:text-gray-500 text-xs"># pagina's geladen</span>
+            </th>
+            <th scope="col" class="px-4 py-3">
+              Online lezer
+              <span class="block normal-case font-normal text-gray-400 dark:text-gray-500 text-xs">Zichtbaar voor bezoekers?</span>
+            </th>
             <th scope="col" class="px-4 py-3">Actie</th>
           </tr>
         </thead>
@@ -67,13 +73,6 @@
                 <span class="whitespace-nowrap">{{ $product->title }}</span>
               </th>
               <td class="px-4 py-2">
-                @if($product->is_published)
-                  <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Gepubliceerd</span>
-                @else
-                  <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Concept</span>
-                @endif
-              </td>
-              <td class="px-4 py-2">
                 @if($product->book_pages_count > 0)
                   <span class="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 dark:text-green-400">
                     <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -86,6 +85,31 @@
                   </span>
                 @endif
               </td>
+
+              {{-- Zichtbaarheid toggle (alleen relevant als er pagina's zijn) --}}
+              <td class="px-4 py-2">
+                @if($product->book_pages_count > 0)
+                  <button
+                    type="button"
+                    class="bc-toggle-btn inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded border transition-colors
+                      {{ $product->book_content_published
+                          ? 'bg-green-50 text-green-700 border-green-300 hover:bg-green-100 dark:bg-green-900/30 dark:text-green-400 dark:border-green-700'
+                          : 'bg-amber-50 text-amber-700 border-amber-300 hover:bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-700' }}"
+                    data-id="{{ $product->id }}"
+                    data-published="{{ $product->book_content_published ? '1' : '0' }}"
+                    data-toggle-url="{{ route('bookContent.togglePublished', $product->id) }}"
+                    title="{{ $product->book_content_published ? 'Klik om op concept te zetten' : 'Klik om te publiceren' }}">
+                    @if($product->book_content_published)
+                      <i class="fa-solid fa-eye w-3"></i> Gepubliceerd
+                    @else
+                      <i class="fa-solid fa-eye-slash w-3"></i> Concept
+                    @endif
+                  </button>
+                @else
+                  <span class="text-xs text-gray-400 dark:text-gray-600">—</span>
+                @endif
+              </td>
+
               <td class="px-4 py-2 whitespace-nowrap">
                 <a href="{{ route('bookContent.edit', $product->id) }}"
                   class="text-xs font-medium text-primary-700 hover:underline dark:text-primary-400">Bewerken</a>
@@ -133,5 +157,58 @@
     </nav>
 
   </div>
+
+@push('scripts')
+<script>
+(function () {
+  const BASE = 'bc-toggle-btn inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded border transition-colors';
+  const CLS_VISIBLE = BASE + ' bg-green-50 text-green-700 border-green-300 hover:bg-green-100 dark:bg-green-900/30 dark:text-green-400 dark:border-green-700';
+  const CLS_HIDDEN  = BASE + ' bg-amber-50 text-amber-700 border-amber-300 hover:bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-700';
+  const CSRF = document.querySelector('meta[name="csrf-token"]')?.content ?? '';
+
+  document.querySelectorAll('.bc-toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const url = btn.dataset.toggleUrl;
+      btn.disabled = true;
+      btn.style.opacity = '0.5';
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'X-CSRF-TOKEN': CSRF,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        const isPublished = data.published === true || data.published === 1;
+        btn.dataset.published = isPublished ? '1' : '0';
+
+        if (isPublished) {
+          btn.className = CLS_VISIBLE;
+          btn.innerHTML = '<i class="fa-solid fa-eye w-3"></i> Gepubliceerd';
+          btn.title = 'Klik om op concept te zetten';
+        } else {
+          btn.className = CLS_HIDDEN;
+          btn.innerHTML = '<i class="fa-solid fa-eye-slash w-3"></i> Concept';
+          btn.title = 'Klik om te publiceren';
+        }
+      })
+      .catch(function () {
+        alert('Er ging iets mis. Probeer opnieuw.');
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.style.opacity = '';
+      });
+    });
+  });
+})();
+</script>
+@endpush
 
 </x-dashboard-layout>

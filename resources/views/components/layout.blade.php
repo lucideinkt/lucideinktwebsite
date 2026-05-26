@@ -25,18 +25,16 @@
 
     @stack('head')
 
-    @if(!request()->routeIs('productShow'))
-        @if(isset($seoData))
-            @if(config('app.debug'))
-                <!-- SEOData Debug: Title={{ $seoData->title ?? 'NULL' }}, Description={{ $seoData->description ?? 'NULL' }} -->
-            @endif
-            {!! seo($seoData) !!}
-        @else
-            @if(config('app.debug'))
-                <!-- SEOData Debug: Using default SEO data -->
-            @endif
-            {!! seo() !!}
+    @if(isset($seoData))
+        @if(config('app.debug'))
+            <!-- SEOData Debug: Title={{ $seoData->title ?? 'NULL' }}, Description={{ $seoData->description ?? 'NULL' }} -->
         @endif
+        {!! seo($seoData) !!}
+    @else
+        @if(config('app.debug'))
+            <!-- SEOData Debug: Using default SEO data -->
+        @endif
+        {!! seo() !!}
     @endif
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -74,9 +72,50 @@
 
     @vite(['resources/js/main.js', 'resources/css/front-end-style.css'])
     @livewireStyles
+
+    {{-- Google Analytics — alleen laden in productie --}}
+    @if(app()->environment('production') && config('services.google.analytics_id'))
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analytics_id') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('set', 'linker', {'domains': ['lucideinkt.nl']});
+            gtag('config', '{{ config('services.google.analytics_id') }}');
+        </script>
+    @endif
 </head>
 
 <body style="position: relative;" class="{{ request()->routeIs('home') ? 'page-home' : 'page-other' }}">
+
+@if(auth()->check() && auth()->user()->role === 'admin' && \App\Services\SiteSettingService::isMaintenanceMode())
+<div style="
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 99999;
+    background: linear-gradient(90deg, #92400e, #b45309);
+    color: #fef3c7;
+    font-family: system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 7px 20px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.25);
+">
+    <span>🔧</span>
+    <span>ONDERHOUDSMODUS ACTIEF — bezoekers zien de "Binnenkort online" pagina</span>
+    <a href="{{ route('admin.settings') }}" style="
+        color: #fef3c7;
+        text-decoration: underline;
+        opacity: 0.8;
+        font-weight: 400;
+    ">Instellingen</a>
+</div>
+@endif
     <header class="header">
         <div class="header-box">
 

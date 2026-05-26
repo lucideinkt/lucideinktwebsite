@@ -584,19 +584,22 @@ li.nav-item.cart .mini-cart-trigger {
     justify-content: center;
     align-items: center;
     z-index: 60;
-    background-image: url("../../images/new_warm_leather.webp");
-    background-size: cover;
-    background-position: center;
-    border: 3px solid #f5dfac;
+    background: rgba(10, 20, 12, 0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 2px solid rgba(195, 158, 75, 0.8);
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     opacity: 0;
     visibility: hidden;
 }
+
 
 .desktop-hamburger-toggle.visible {
     display: flex;
@@ -613,7 +616,10 @@ li.nav-item.cart .mini-cart-trigger {
 @media (hover: hover) and (pointer: fine) {
     .desktop-hamburger-toggle:hover {
         transform: scale(1.05);
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+        border-color: rgba(195, 158, 75, 0.90);
+        box-shadow:
+            0 4px 16px rgba(0, 0, 0, 0.50),
+            inset 0 1px 0 rgba(255, 255, 255, 0.10);
     }
 }
 

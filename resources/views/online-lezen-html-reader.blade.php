@@ -158,12 +158,6 @@
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             <span class="reader-topbar-page-badge" id="topbar-page-badge" aria-live="polite"></span>
 
-            {{-- Bookmark current page --}}
-            <button class="reader-btn reader-topbar-bm-btn" id="topbar-bm-btn" type="button"
-                    aria-label="Bladwijzer toevoegen" title="Bladwijzer toevoegen">
-                <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
-            </button>
-
             {{-- Compact font controls — desktop only --}}
             <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
                 <div class="reader-topbar-font-group">
@@ -182,10 +176,6 @@
                     <button class="reader-topbar-font-reset" id="topbar-arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
                 </div>
             </div>
-
-            <button class="reader-btn reader-search-open-btn" id="reader-search-open-btn" aria-label="Zoeken in boek" title="Zoeken">
-                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            </button>
         </div>
     </header>
 
@@ -227,6 +217,16 @@
             </a>
         </div>
     </main>
+
+    {{-- Search FAB — sits above the bookmark FAB --}}
+    <button class="reader-search-fab" id="fab-search-btn" type="button" aria-label="Zoeken in boek" title="Zoeken">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    </button>
+
+    {{-- Bookmark FAB — sits above the main FAB --}}
+    <button class="reader-bm-fab" id="fab-bm-btn" type="button" aria-label="Bladwijzer toevoegen" title="Bladwijzer toevoegen">
+        <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+    </button>
 
     {{-- FAB — floating action button (bottom-right, thumb-reachable) --}}
     <button class="reader-fab reader-fab--icon-only" id="reader-fab" aria-label="Lezeropties" aria-expanded="false" aria-haspopup="dialog">
@@ -400,7 +400,7 @@
             <div class="reader-search-input-wrap">
                 <i class="fa-solid fa-magnifying-glass reader-search-icon" aria-hidden="true"></i>
                 <input type="search" id="reader-search-input" class="reader-search-input"
-                       placeholder="Zoekterm…" autocomplete="off" spellcheck="false">
+                       placeholder="Zoek tekst in boek..." autocomplete="off" spellcheck="false">
                 <button class="reader-search-clear" id="reader-search-clear" aria-label="Wissen" hidden>
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -426,6 +426,9 @@
 
     <script>
     (function () {
+        // Prevent iOS Safari from overriding JS-controlled scroll restoration
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
         const TOPBAR_H    = (document.querySelector('.reader-topbar')?.offsetHeight ?? 62) + 2;
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
@@ -626,22 +629,11 @@
         function toggleSheet() { controlSheet?.classList.contains('open') ? closeSheet() : openSheet(); }
 
         fab?.addEventListener('click', e => { e.stopPropagation(); toggleSheet(); });
-        sheetBackdrop?.addEventListener('click', closeSheet);
+        sheetBackdrop?.addEventListener('click', () => { closeSheet(); closeToc?.(); });
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && controlSheet?.classList.contains('open')) closeSheet();
         });
 
-        // Tap reading area to toggle sheet (excluding footnotes / links / buttons / marks)
-        readerEl?.addEventListener('click', e => {
-            if (e.target.closest('.fn-ref, .fn-ref-word, .fn-popover, [data-toc-page], a, button, input, select, textarea, mark')) return;
-            const sel = window.getSelection();
-            if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) return;
-            // Don't open sheet if a footnote popover is visible
-            if (document.querySelector('.fn-popover.fn-popover--show')) return;
-            // Don't open sheet if hl-popup is visible OR was just dismissed (selectionchange hides it before click fires)
-            if (!hlPopup?.hidden || (Date.now() - _hlHideTime < 350)) return;
-            toggleSheet();
-        });
 
         // Sheet: page slider
         sheetPageSlider?.addEventListener('input', () => {
@@ -1008,8 +1000,7 @@
 
         function openToc() {
             if (!tocPanel) return;
-            // Close settings sheet and search panel if open
-            closeSheet();
+            // Close search panel if open (but leave the settings sheet open)
             const searchPanel = document.getElementById('reader-search-panel');
             const searchBackdrop = document.getElementById('reader-search-backdrop');
             if (searchPanel && !searchPanel.hidden) {
@@ -1038,7 +1029,7 @@
         buildTocPanel();
         sheetTocBtn?.addEventListener('click', () => tocPanel?.classList.contains('open') ? closeToc() : openToc());
         tocCloseBtn?.addEventListener('click', closeToc);
-        tocBackdrop?.addEventListener('click', closeToc);
+        tocBackdrop?.addEventListener('click', () => { closeToc(); closeSheet(); });
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && tocPanel?.classList.contains('open')) closeToc();
         });
@@ -1089,17 +1080,31 @@
                 updateUI(firstPage);
                 save(firstPage);
                 // Use urlPage if set (could equal firstPage), otherwise firstPage
-                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 500);
+                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 50);
             } else {
-                // Page might not be in DOM yet — fetch first, then scroll
-                jumpTo(startPage, false);
-                requestAnimationFrame(() => requestAnimationFrame(() => {
-                    const actual = visiblePage();
-                    updateUI(actual);
-                    save(actual);
-                    // Always use urlPage (the page from the URL) — not `actual` which can be off on mobile
-                    if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]), 500);
-                }));
+                const doJump = () => {
+                    if (urlQuery) {
+                        // When a search highlight is requested, skip the intermediate page scroll.
+                        // readerHighlightDirect will compute the mark's absolute position and scroll
+                        // there in a single smooth motion.
+                        updateUI(urlPage);
+                        save(urlPage);
+                        window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]);
+                    } else {
+                        jumpTo(startPage, false);
+                        requestAnimationFrame(() => requestAnimationFrame(() => {
+                            const actual = visiblePage();
+                            updateUI(actual);
+                            save(actual);
+                        }));
+                    }
+                };
+                // On mobile, delay slightly so the browser has finished its own scroll restoration
+                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                    setTimeout(doJump, 120);
+                } else {
+                    doJump();
+                }
             }
         }
 
@@ -1183,11 +1188,13 @@
                         item.addEventListener('click', e => {
                             if (e.target.closest('.reader-lib-item-del')) return;
                             if (isCurrent) {
-                                jumpTo(bm.pageNum, true); closeSheet();
+                                closeSheet();
+                                setTimeout(() => jumpTo(bm.pageNum, true), 80);
                             } else {
                                 // Set reading progress for target book so it opens on the right page
                                 try { localStorage.setItem('reading_progress_' + bm.productId, String(bm.pageNum)); } catch (_) {}
-                                window.location.href = bm.readerUrl;
+                                const url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum;
+                                window.location.href = url;
                             }
                         });
                         bmList.appendChild(item);
@@ -1238,10 +1245,12 @@
                     item.addEventListener('click', e => {
                         if (e.target.closest('.reader-lib-item-del')) return;
                         if (isCurrent) {
-                            jumpTo(hl.pageNum, true); closeSheet();
+                            closeSheet();
+                            setTimeout(() => jumpTo(hl.pageNum, true), 80);
                         } else {
                             try { localStorage.setItem('reading_progress_' + hl.productId, String(hl.pageNum)); } catch (_) {}
-                            window.location.href = hl.readerUrl;
+                            const url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                            window.location.href = url;
                         }
                     });
                     hlList.appendChild(item);
@@ -1485,6 +1494,13 @@
                 topbarBtn.title = label;
                 topbarBtn.setAttribute('aria-label', label);
             }
+            // FAB bookmark button
+            const fabBmBtn = document.getElementById('fab-bm-btn');
+            if (fabBmBtn) {
+                fabBmBtn.classList.toggle('active', has);
+                fabBmBtn.title = label;
+                fabBmBtn.setAttribute('aria-label', label);
+            }
         }
 
         function bmPageToggle() {
@@ -1555,6 +1571,9 @@
             bmPageToggle();
         });
         document.getElementById('topbar-bm-btn')?.addEventListener('click', () => {
+            bmPageToggle();
+        });
+        document.getElementById('fab-bm-btn')?.addEventListener('click', () => {
             bmPageToggle();
         });
 
@@ -1795,6 +1814,7 @@
             }
 
             openBtn?.addEventListener('click', openSearch);
+            document.getElementById('fab-search-btn')?.addEventListener('click', openSearch);
             closeBtn.addEventListener('click', closeSearch);
             backdrop.addEventListener('click', closeSearch);
             document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeSearch(); });
@@ -1809,11 +1829,7 @@
                 }
                 const queryNorm = normStr(query);
 
-                // Step 1: scroll page into view first (same approach as in-reader search)
-                pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                // Step 2: after page scroll settles, find & mark the word, then scroll to it
-                setTimeout(() => {
+                function findAndScroll() {
                     const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
                         acceptNode(node) {
                             const p = node.parentElement;
@@ -1841,12 +1857,21 @@
                         node.parentNode.removeChild(node);
                         currentMark = mark;
 
-                        // Scroll to the highlighted word using window.scrollTo (consistent with jumpTo)
-                        const markTop = mark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 2);
-                        window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
-                        break;
+                        // Single smooth scroll directly to the highlighted word
+                        requestAnimationFrame(() => {
+                            const markTop = mark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                            window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                        });
+                        return;
                     }
-                }, 250);
+                    // Fallback: text not found — scroll to page top
+                    pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Wait for fonts so position measurements are accurate, then find + scroll in one shot
+                (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+                    requestAnimationFrame(findAndScroll);
+                });
             };
 
             input.addEventListener('input', () => {
@@ -1917,8 +1942,6 @@
                         const pageEl = pageMap[r.page];
                         if (!pageEl) { closeSearch(); return; }
 
-                        // First scroll to page, then find & highlight the match
-                        pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
                         // Helper: remove diacritics for accent-insensitive DOM matching
                         function normStr(s) {
@@ -2012,9 +2035,12 @@
                                         break;
                                     }
                                 }, 120); // wait for popover animation to start
-                            } else {
-                                const target = found ? currentMark : pageEl;
-                                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            } else if (found && currentMark) {
+                                // Single smooth scroll directly to the highlighted word
+                                const markTop = currentMark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                                window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                            } else if (pageEl) {
+                                pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }
                         }, 230);
                     });

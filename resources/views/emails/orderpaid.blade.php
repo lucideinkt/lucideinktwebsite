@@ -152,34 +152,34 @@
                                     <tr style="border-bottom: 1px solid #f0f0f0;">
                                         <td style="padding: 12px; font-size: 14px; color: #333;">{{ $item->product_name }}</td>
                                         <td style="padding: 12px; text-align: center; font-size: 14px; color: #333;">{{ $item->quantity }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #333;">€ {{ number_format($item->unit_price, 2, ',', '.') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #333;">€ {{ number_format($item->subtotal, 2, ',', '.') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #333; white-space: nowrap;">€ {{ number_format($item->unit_price, 2, ',', '.') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #333; white-space: nowrap;">€ {{ number_format($item->subtotal, 2, ',', '.') }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr style="background-color: #fafafa;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">{{ __('Totaal') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">€ {{ number_format($order->total_before, 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505; white-space: nowrap;">{{ __('Totaal') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505; white-space: nowrap;">€ {{ number_format($order->total_before, 2, ',', '.') }}</td>
                                     </tr>
                                     @if(isset($order->discount_type) && $order->discount_price_total > 0)
                                     <tr style="background-color: #fafafa;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 14px; color: #666;">{{ __('Korting') }} ({{ $order->discount_type === 'percent' ? intval($order->discount_value) . '%' : '€ ' . number_format($order->discount_value, 2, ',', '.') }})</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #666;">-€ {{ number_format($order->discount_price_total, 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 14px; color: #666; white-space: nowrap;">{{ __('Korting') }} ({{ $order->discount_type === 'percent' ? intval($order->discount_value) . '%' : '€ ' . number_format($order->discount_value, 2, ',', '.') }})</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #666; white-space: nowrap;">-€ {{ number_format($order->discount_price_total, 2, ',', '.') }}</td>
                                     </tr>
                                     <tr style="background-color: #fafafa;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">{{ __('Totaal na korting') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505;">€ {{ number_format($order->total - $order->discount_price_total, 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505; white-space: nowrap;">{{ __('Totaal na korting') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 15px; font-weight: 600; color: #620505; white-space: nowrap;">€ {{ number_format($order->total - $order->discount_price_total, 2, ',', '.') }}</td>
                                     </tr>
                                     @endif
                                     @if(!empty($order->shipping_cost_amount) && $order->shipping_cost_amount > 0)
                                     <tr style="background-color: #fafafa;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 14px; color: #666;">{{ __('Verzendkosten') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #666;">€ {{ is_numeric($order->shipping_cost_amount) ? number_format($order->shipping_cost_amount, 2, ',', '.') : number_format((float)($order->shipping_cost_amount->amount ?? 0), 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 14px; color: #666; white-space: nowrap;">{{ __('Verzendkosten') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 14px; color: #666; white-space: nowrap;">€ {{ is_numeric($order->shipping_cost_amount) ? number_format($order->shipping_cost_amount, 2, ',', '.') : number_format((float)($order->shipping_cost_amount->amount ?? 0), 2, ',', '.') }}</td>
                                     </tr>
                                     <tr style="background-color: #f0f0f0;">
-                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #620505;">{{ __('Totaal incl. verzendkosten') }}</td>
-                                        <td style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #620505;">€ {{ number_format($order->total, 2, ',', '.') }}</td>
+                                        <td colspan="3" style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #620505; white-space: nowrap;">{{ __('Totaal incl. verzendkosten') }}</td>
+                                        <td style="padding: 12px; text-align: right; font-size: 16px; font-weight: 700; color: #620505; white-space: nowrap;">€ {{ number_format($order->total, 2, ',', '.') }}</td>
                                     </tr>
                                     @endif
                                 </tfoot>

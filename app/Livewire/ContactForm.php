@@ -60,28 +60,36 @@ class ContactForm extends Component
                 throw new \Exception('E-mail adres is niet geconfigureerd. Controleer LUCIDE_INKT_MAIL of MAIL_FROM_ADDRESS in .env');
             }
 
-            Mail::to($recipientEmail)->send(
-                new ContactFormMail(
-                    $this->name,
-                    $this->email,
-                    $this->country,
-                    $this->subject,
-                    $this->message
+            Mail::to($recipientEmail)
+                ->when(
+                    config('services.lucideinkt.contact_bcc'),
+                    fn ($mail) => $mail->bcc(config('services.lucideinkt.contact_bcc'))
                 )
-            );
+                ->send(
+                    new ContactFormMail(
+                        $this->name,
+                        $this->email,
+                        $this->country,
+                        $this->subject,
+                        $this->message
+                    )
+                );
 
             $this->success = true;
             $this->reset(['name', 'email', 'country', 'subject', 'message']);
 
             $this->dispatch('contact-success', message: 'Bedankt! Jouw bericht is verzonden. We nemen zo spoedig mogelijk contact met je op.');
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             Log::error('Contact form error: ' . $e->getMessage(), [
                 'exception' => $e,
                 'trace' => $e->getTraceAsString(),
                 'name' => $this->name,
                 'email' => $this->email,
+                'mail_host' => config('mail.mailers.smtp.host'),
+                'mail_port' => config('mail.mailers.smtp.port'),
+                'mail_encryption' => config('mail.mailers.smtp.encryption'),
             ]);
-            $this->dispatch('contact-error', message: 'Er is een fout opgetreden bij het verzenden van uw bericht. Probeer het later opnieuw.');
+            $this->dispatch('contact-error', message: 'Verzenden mislukt: ' . $e->getMessage());
         }
     }
 

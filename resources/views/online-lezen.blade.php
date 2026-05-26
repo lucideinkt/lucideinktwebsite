@@ -49,7 +49,7 @@
         <div class="bs-mobile-search-outer">
             <div class="bs-search-wrap">
                 <input type="text" id="bs-mobile-search-input" class="bs-search-input"
-                       placeholder="Zoek tekst in boeken..." autocomplete="off">
+                       placeholder="Zoek tekst in alle boeken..." autocomplete="off">
                 <button class="bs-search-btn" id="bs-mobile-search-clear" aria-label="Zoeken">
                     <i class="fa-solid fa-magnifying-glass" id="bs-mobile-search-icon"></i>
                 </button>
@@ -78,7 +78,7 @@
             <h2 class="bs-section-title">Zoeken in boeken</h2>
             <div class="bs-panel-body">
                 <div class="bs-search-wrap">
-                    <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in boeken..." autocomplete="off">
+                    <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in alle boeken..." autocomplete="off">
                     <button class="bs-search-btn" id="bs-search-clear" aria-label="Zoeken">
                         <i class="fa-solid fa-magnifying-glass" id="bs-search-icon"></i>
                     </button>
@@ -171,13 +171,14 @@
         <div class="bookshelf-books-pool" style="display:none;">
             @forelse ($products as $product)
                 @php
-                    $hasHtml = $product->book_pages_count > 0;
+                    $contentPublished = $product->book_content_published;
+                    $hasHtml = $product->book_pages_count > 0 && ($isAdmin || $contentPublished);
                     $href    = $hasHtml
                         ? route('onlineLezenReadHtml', $product->slug)
                         : '#';
                 @endphp
                 @if($hasHtml)
-                <a href="{{ $href }}" class="shelf-book" title="{{ $product->title }}"
+                <a href="{{ $href }}" class="shelf-book{{ $isAdmin && !$contentPublished ? ' shelf-book--unpublished' : '' }}" title="{{ $product->title }}"
                    data-category="{{ $product->category_id ?? '' }}"
                    data-title="{{ strtolower($product->title) }}"
                    data-product-id="{{ $product->id }}"
@@ -197,10 +198,14 @@
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="">
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="">
                         <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
-                        {{-- Read / Coming-soon button --}}
+                        {{-- Read / Coming-soon / Concept button --}}
                         @if($hasHtml)
-                        <div class="shelf-book-read-btn">
-                            <i class="fa-solid fa-book-open"></i> Lezen
+                        <div class="shelf-book-read-btn {{ $isAdmin && !$contentPublished ? 'shelf-book-read-btn--concept' : '' }}">
+                            @if($isAdmin && !$contentPublished)
+                                <i class="fa-solid fa-eye-slash"></i> Concept
+                            @else
+                                <i class="fa-solid fa-book-open"></i> Lezen
+                            @endif
                         </div>
                         @else
                         <div class="shelf-book-coming-soon-text">
@@ -208,7 +213,7 @@
                         </div>
                         @endif
                     </div>
-                    <span class="shelf-book-tooltip">{{ $product->title }}</span>
+                    <span class="shelf-book-tooltip">{{ $product->title }}{{ $isAdmin && !$contentPublished ? ' (concept)' : '' }}</span>
                 @if($hasHtml)
                 </a>
                 @else
@@ -484,7 +489,9 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             // Navigate on row click
             row.addEventListener('click', function (e) {
                 if (e.target.closest('.bs-list-del')) return;
-                window.location.href = item.readerUrl;
+                // Append ?page=N so the reader uses the URL param (reliable on mobile)
+                var url = item.readerUrl + (item.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + item.page;
+                window.location.href = url;
             });
             // Delete button
             row.querySelector('.bs-list-del').addEventListener('click', function (e) {
@@ -531,7 +538,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             item.addEventListener('click', function(e) {
                 if (e.target.closest('.bs-list-del')) return;
                 try { localStorage.setItem('reading_progress_'+bm.productId, String(bm.pageNum)); } catch(_){}
-                window.location.href = bm.readerUrl;
+                var url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum;
+                window.location.href = url;
             });
             el.appendChild(item);
         });
@@ -575,7 +583,11 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             });
             item.addEventListener('click', function(e) {
                 if (e.target.closest('.bs-list-del')) return;
-                if (hl.readerUrl) { try{localStorage.setItem('reading_progress_'+hl.productId,String(hl.pageNum));}catch(_){} window.location.href=hl.readerUrl; }
+                if (hl.readerUrl) {
+                    try{localStorage.setItem('reading_progress_'+hl.productId,String(hl.pageNum));}catch(_){}
+                    var url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                    window.location.href = url;
+                }
             });
             el.appendChild(item);
         });
@@ -893,7 +905,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             item.addEventListener('click', e => {
                 if (e.target.closest('.bm-item-del')) return;
                 try { localStorage.setItem('reading_progress_' + bm.productId, String(bm.pageNum)); } catch {}
-                window.location.href = bm.readerUrl;
+                const url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum;
+                window.location.href = url;
             });
             item.querySelector('.bm-item-del').addEventListener('click', e => {
                 e.stopPropagation();
@@ -933,7 +946,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
                 if (e.target.closest('.bm-item-del')) return;
                 if (hl.readerUrl) {
                     try { localStorage.setItem('reading_progress_' + hl.productId, String(hl.pageNum)); } catch {}
-                    window.location.href = hl.readerUrl;
+                    const url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                    window.location.href = url;
                 }
             });
             item.querySelector('.bm-item-del').addEventListener('click', e => {

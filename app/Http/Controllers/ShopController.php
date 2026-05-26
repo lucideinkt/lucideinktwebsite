@@ -49,6 +49,7 @@ class ShopController extends Controller
 
         return view('shop.show', [
             'product' => $product,
+            'SEOData' => SEOService::getProductSEO($product),
 //            'productCopies' => $productCopies,
 //            'exemplaren' => $exemplaren,
         ]);

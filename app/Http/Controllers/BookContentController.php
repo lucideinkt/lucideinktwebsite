@@ -11,7 +11,7 @@ class BookContentController extends Controller
     /** Overzicht van alle producten */
     public function index()
     {
-        $products = Product::select('id', 'title', 'slug', 'image_1', 'is_published')
+        $products = Product::select('id', 'title', 'slug', 'image_1', 'is_published', 'book_content_published')
             ->withCount('bookPages')
             ->orderBy('title')
             ->paginate(20);
@@ -122,5 +122,18 @@ class BookContentController extends Controller
         }
 
         return response()->json(['ok' => true]);
+    }
+
+    /** Schakel book_content_published aan/uit (AJAX) */
+    public function togglePublished(int $id)
+    {
+        $product = Product::findOrFail($id);
+        $newValue = !((bool) $product->book_content_published);
+        $product->update(['book_content_published' => $newValue]);
+
+        return response()->json([
+            'ok'        => true,
+            'published' => $newValue,
+        ]);
     }
 }

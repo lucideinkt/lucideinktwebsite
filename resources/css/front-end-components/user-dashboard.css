@@ -82,6 +82,12 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     box-shadow: none;
     margin-bottom: 0;
     z-index: 2;
+    /* Break out of the container so the line spans full viewport width */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
 }
 
 /* ── Content section below hero ── */
@@ -626,6 +632,38 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
     gap: 0px;
 }
 
+/* ── Back link on order detail page ── */
+.order-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--main-font-color);
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.order-back-link span {
+    text-decoration: underline;
+}
+
+.order-back-link i {
+    color: var(--main-font-color);
+    text-decoration: none;
+}
+
+.order-back-link:hover {
+    color: var(--main-font-color);
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.order-back-link:hover span {
+    text-decoration: underline;
+}
+
 /* ── Orders Card — unified parchment container ── */
 .orders-card {
     background-color: #f7e9c4;
@@ -722,7 +760,7 @@ body:has(.page.user-dashboard) .dashboard-hero-border {
 
 /* Products + totals card wrapper */
 .order-summary-card {
-    background-color: #f7e9c4;
+    margin-top: 32px;    background-color: #f7e9c4;
     background-image:
         linear-gradient(
             180deg,

@@ -230,17 +230,44 @@ body:has(.page.user-dashboard) .page-normal-background::before {
 
 /* 2a. SHOP PRODUCT GRID background ──────────────────────── */
 .background-of-the-shop-grid {
-    background-color:      #393d2e;
-    background-image:      url("../../images/80_gold circular Scratched-AO.webp");
+    /*!*background-color:      #393d2e;*!*/
+    /*background-image:      url("../../images/80_gold circular Scratched-AO.webp");*/
+    /*background-size:       360px;*/
+    /*background-repeat:     repeat;*/
+    /*background-position:   center;*/
+    /*background-blend-mode: multiply;*/
+}
+
+.background-of-the-shop-grid {
+    /*background-color:      #393d2e;*/
+    background-image:      url("../../images/17_Fabriano artistic 640 grams paper texture-seamless.webp");
     background-size:       360px;
-    background-repeat:     repeat;
     background-position:   center;
+    background-repeat:     repeat;
     background-blend-mode: multiply;
+}
+
+.background-of-the-shop-grid {
+    /*!*background-color:      #393d2e;*!*/
+    /*background-image:      url("../../images/52_cream mulberry paper texture-seamless.jpg");*/
+    /*background-size:       360px;*/
+    /*background-position:   center;*/
+    /*background-repeat:     repeat;*/
+    /*background-blend-mode: multiply;*/
 }
 
 
 /* 2b. TEXT-BOX BAND background ──────────────────────────── */
 /* Used by: Said Nursî, Herzameling, Risale-i Nur, Audioboeken, Info pages */
+.text-box-background {
+    /*!*background-color:      #393d2e;*!*/
+    /*background-image:      url("../../images/80_gold circular Scratched-AO.webp");*/
+    /*background-size:       360px;*/
+    /*background-repeat:     repeat;*/
+    /*background-position:   center;*/
+    /*background-blend-mode: multiply;*/
+}
+
 .text-box-background {
     /*background-color:      #393d2e;*/
     background-image:      url("../../images/17_Fabriano artistic 640 grams paper texture-seamless.webp");
@@ -248,6 +275,15 @@ body:has(.page.user-dashboard) .page-normal-background::before {
     background-position:   center;
     background-repeat:     repeat;
     background-blend-mode: multiply;
+}
+
+.text-box-background {
+    /*!*background-color:      #393d2e;*!*/
+    /*background-image:      url("../../images/52_cream mulberry paper texture-seamless.jpg");*/
+    /*background-size:       360px;*/
+    /*background-position:   center;*/
+    /*background-repeat:     repeat;*/
+    /*background-blend-mode: multiply;*/
 }
 
 
@@ -266,6 +302,16 @@ body:has(.page.user-dashboard) .page-normal-background::before {
     */
 }
 
-
+/* 1n. NEWSLETTER CONFIRM / UNSUBSCRIBE PAGES ────────────── */
+body:has(.page.newsletter-confirm-page) .page-normal-background {
+    background-image:    url("../../images/77_floral wallpaper texture-seamless_hr.webp");
+    background-size:     800px;
+    background-position: center;
+    background-repeat:   repeat;
+}
+body:has(.page.newsletter-confirm-page) .page-normal-background::after,
+body:has(.page.newsletter-confirm-page) .page-normal-background::before {
+    display: none;
+}
 
 

@@ -21,6 +21,65 @@
             .checkout input[data-com-onepassword-filled="dark"] {
                 background-color: #ffffff !important;
             }
+
+            /* Create account accordion */
+            .checkout-create-account-toggle {
+                color: inherit;
+                font-size: inherit;
+                text-decoration: none;
+            }
+            .checkout-create-account-toggle:hover {
+                text-decoration: underline;
+            }
+            .checkout-create-account-toggle strong {
+                color: inherit;
+            }
+            .checkout-create-account-accordion {
+                overflow: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+                opacity: 0;
+                max-height: 0;
+            }
+            .checkout-create-account-accordion.open {
+                opacity: 1;
+                max-height: 400px;
+            }
+            .checkout-create-account-inner {
+                border: 1.5px solid rgba(197,160,89,0.4);
+                border-radius: 8px;
+                padding: 16px;
+                background: rgba(255,248,228,0.55);
+                margin-top: 8px;
+                margin-bottom: 4px;
+                width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .checkout-create-account-desc {
+                font-size: 0.875rem;
+                color: #5a4030;
+                margin-bottom: 12px;
+            }
+            .checkout-create-account-desc a {
+                color: #7a3b1e;
+                text-decoration: underline;
+            }
+            .create-account-box {
+                display: flex;
+                flex-direction: column;
+            }
+            .create-account-box .form-input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .password-input-wrap {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .password-input-wrap input[type="password"] {
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
         </style>
     @endpush
     <div class="page-normal-background">
@@ -88,7 +147,36 @@
                             </div>
                         @else
                             <div>
-                                <p>Je rekent af als gast.</p>
+                                <p>Je rekent af als gast. <br><a href="#" id="toggle-create-account" class="checkout-create-account-toggle"
+   onmouseover="this.style.textDecoration='none'"
+   onmouseout="this.style.textDecoration=''">Nog geen account? <strong style="text-decoration: underline">Klik hier</strong></a></p>
+                            </div>
+
+                            {{-- Account accordion --}}
+                            <div style="margin-top: -10px; margin-bottom: 15px" id="create-account-accordion" class="checkout-create-account-accordion" style="display:none;">
+                                <div class="checkout-create-account-inner">
+                                    <p class="checkout-create-account-desc">
+                                        Vul hieronder een wachtwoord in, dan maken we automatisch een account voor je aan wanneer je een bestelling hebt geplaatst.
+                                        Heb je al een account? <a href="{{ route('login') }}">Log dan in</a> om je eerdere bestellingen te bekijken.
+                                    </p>
+                                    <div class="create-account-box">
+                                        <div class="form-input">
+                                            <label for="password">Wachtwoord</label>
+                                            <div class="password-input-wrap">
+                                                <input type="password" name="password" id="password" data-1p-ignore>
+                                            </div>
+                                            @error('password')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-input">
+                                            <label for="password_confirmation">Bevestig wachtwoord</label>
+                                            <div class="password-input-wrap">
+                                                <input type="password" name="password_confirmation" id="password_confirmation" data-1p-ignore>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         @endauth
 
@@ -437,31 +525,6 @@
                         value="{{ old('myparcel_delivery_options') }}" />
 
                     @guest
-                        <div class="checkout-create-account">
-                            <div class="form-input customer-account">
-                                <p>
-                                    <b>Nog geen account? (optioneel)</b><br>
-                                    Vul hieronder je gegevens en een wachtwoord in, we maken dan automatisch een account
-                                    voor je aan.
-                                    Heb je al een account? <a style="text-decoration: underline"
-                                        href="{{ route('login') }}">Log dan in</a> om je eerdere bestellingen te bekijken.
-                                </p>
-                            </div>
-
-                            <div class="create-account-box">
-                                <div class="form-input">
-                                    <label for="password">Wachtwoord</label>
-                                    <input type="password" name="password" data-1p-ignore>
-                                    @error('password')
-                                        <div class="error">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="form-input">
-                                    <label for="password_confirmation">Bevestig wachtwoord</label>
-                                    <input type="password" name="password_confirmation" data-1p-ignore>
-                                </div>
-                            </div>
-                        </div>
                     @endguest
 
                     <div class="place-order">
@@ -1302,6 +1365,34 @@
                 if (tryRestore() || ++attempts > 16) clearInterval(interval);
             }, 500);
         })();
+        // ─── Create account accordion ────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('toggle-create-account');
+            const accordion = document.getElementById('create-account-accordion');
+            if (!toggle || !accordion) return;
+
+            // If password validation error exists, open accordion immediately
+            const hasPasswordError = accordion.querySelector('.error');
+            if (hasPasswordError) {
+                accordion.style.display = '';
+                accordion.classList.add('open');
+            }
+
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                const isOpen = accordion.classList.contains('open');
+                if (isOpen) {
+                    accordion.classList.remove('open');
+                    setTimeout(() => { accordion.style.display = 'none'; }, 300);
+                } else {
+                    accordion.style.display = '';
+                    // Force reflow so transition fires
+                    accordion.offsetHeight;
+                    accordion.classList.add('open');
+                }
+            });
+        });
+
     </script>
 </div>
 </x-layout>
