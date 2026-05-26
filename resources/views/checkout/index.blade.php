@@ -147,11 +147,13 @@
                             </div>
                         @else
                             <div>
-                                <p>Je rekent af als gast. <a href="#" id="toggle-create-account" class="checkout-create-account-toggle">Nog geen account? <strong>Klik hier</strong></a></p>
+                                <p>Je rekent af als gast. <br><a href="#" id="toggle-create-account" class="checkout-create-account-toggle"
+   onmouseover="this.style.textDecoration='none'"
+   onmouseout="this.style.textDecoration=''">Nog geen account? <strong style="text-decoration: underline">Klik hier</strong></a></p>
                             </div>
 
                             {{-- Account accordion --}}
-                            <div id="create-account-accordion" class="checkout-create-account-accordion" style="display:none;">
+                            <div style="margin-top: -10px; margin-bottom: 15px" id="create-account-accordion" class="checkout-create-account-accordion" style="display:none;">
                                 <div class="checkout-create-account-inner">
                                     <p class="checkout-create-account-desc">
                                         Vul hieronder een wachtwoord in, dan maken we automatisch een account voor je aan wanneer je een bestelling hebt geplaatst.

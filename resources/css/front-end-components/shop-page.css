@@ -49,7 +49,7 @@ body:has(.page.shop) .page-normal-background {
     position: relative;
     left: 50%;
     margin-left: -50vw;
-    padding: 20px 20px 32px;
+    padding: 40px 20px;
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -77,8 +77,6 @@ body:has(.page.shop) .page-normal-background {
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 /* ── Full-width hero band ── matches .said-nursi-hero ── */
 .shop-hero {
@@ -585,7 +583,7 @@ body:has(.page.shop) .page-normal-background {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 32px;
-    margin-top: 30px !important;
+    /*margin-top: 30px !important;*/
 }
 
 @media (max-width: 1200px) {
@@ -600,7 +598,6 @@ body:has(.page.shop) .page-normal-background {
     .page.shop .book-box {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        margin-top: 20px;
     }
 
     .product-cards-grid {
@@ -796,7 +793,7 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .background-of-the-shop-grid {
-        padding: 0px 10px 24px;
+        padding: 30px 15px;
     }
 
     .product-cards-grid,
@@ -805,7 +802,7 @@ body:has(.page.shop) .page-normal-background {
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
         box-sizing: border-box;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     .product-card-image-wrapper {
