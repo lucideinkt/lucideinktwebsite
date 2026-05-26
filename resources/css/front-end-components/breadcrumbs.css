@@ -82,6 +82,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    body:has(.page.product) .bc {
+        margin-top: 0px;
+    }
+}
+
 @media (max-width: 600px) {
     .bc {
         margin-top: 30px;
