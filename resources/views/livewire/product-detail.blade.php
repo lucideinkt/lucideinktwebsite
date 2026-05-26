@@ -79,9 +79,13 @@
             <div class="product-detail-price-section">
                 <span class="product-detail-price">€{{ number_format($product->price, 2) }}</span>
                 @if ($product->stock > 0 && $product->stock <= 3)
-                    <span class="product-detail-stock-badge product-detail-stock-warning">Lage voorraad</span>
+                    <span class="product-detail-stock-badge product-detail-stock-warning">
+                        <i class="fa-solid fa-fire-flame-curved"></i> Lage voorraad
+                    </span>
                 @elseif ($product->stock == 0)
-                    <span class="product-detail-stock-badge product-detail-stock-error">Niet op voorraad</span>
+                    <span class="product-detail-stock-badge product-detail-stock-error">
+                        <i class="fa-solid fa-ban"></i> Niet op voorraad
+                    </span>
                 @endif
             </div>
 
