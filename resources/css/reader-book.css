@@ -3166,5 +3166,11 @@ body.dark-mode .rps-slider::-moz-range-thumb {
         padding-bottom: env(safe-area-inset-bottom);
         height: calc(52px + env(safe-area-inset-bottom));
     }
+    .reader-fab {
+        bottom: calc(52px + env(safe-area-inset-bottom) + 16px);
+    }
+    .reader-bm-fab {
+        bottom: calc(52px + env(safe-area-inset-bottom) + 16px + 44px + 10px);
+    }
 }
 
