@@ -17,6 +17,25 @@ class SecurityHeadersMiddleware
         $response->headers->set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
         $response->headers->set('X-XSS-Protection', '1; mode=block');
 
+        // Content Security Policy — alleen in productie (Vite dev server werkt anders lokaal)
+        if (app()->environment('production')) {
+            $csp = implode('; ', [
+                "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com https://cdnjs.cloudflare.com https://use.typekit.net https://www.googletagmanager.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com https://cdnjs.cloudflare.com https://use.typekit.net https://p.typekit.net",
+            "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com https://use.typekit.net https://p.typekit.net",
+            "img-src 'self' data: blob: https: https://www.google-analytics.com https://www.googletagmanager.com",
+            "media-src 'self' blob:",
+            "frame-src 'self' https://www.mollie.com",
+            "connect-src 'self' https://p.typekit.net https://www.google-analytics.com https://region1.google-analytics.com wss: ws:",
+                "object-src 'none'",
+                "base-uri 'self'",
+                "form-action 'self'",
+                "frame-ancestors 'self'",
+            ]);
+            $response->headers->set('Content-Security-Policy', $csp);
+        }
+
         return $response;
     }
 }

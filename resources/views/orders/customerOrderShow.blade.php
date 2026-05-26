@@ -32,6 +32,12 @@
 
             <x-user-dashboard-layout>
                 <div class="order-detail-container">
+
+                    <a href="{{ route('showMyOrders') }}" class="order-back-link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Terug naar alle bestellingen</span>
+                    </a>
+
                     <div class="order-info-cards">
                         <div class="order-address-card">
                             <h3 class="address-card-title">

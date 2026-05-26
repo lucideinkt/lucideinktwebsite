@@ -14,20 +14,29 @@ class OnlineLezenController extends Controller
      */
     public function index()
     {
+        $isAdmin = auth()->check() && auth()->user()->role === 'admin';
+
         $products = Product::with(['category', 'productCopy'])
             ->withCount('bookPages')
-            ->where(function ($q) {
+            ->where(function ($q) use ($isAdmin) {
                 $q->whereNotNull('pdf_file')->where('pdf_file', '!=', '')
                   ->orWhere(function ($q2) {
                       $q2->whereNotNull('book_content')->where('book_content', '!=', '');
                   })
-                  ->orWhereHas('bookPages');
+                  ->orWhere(function ($q3) use ($isAdmin) {
+                      $q3->whereHas('bookPages');
+                      // Non-admins only see published book content
+                      if (!$isAdmin) {
+                          $q3->where('book_content_published', true);
+                      }
+                  });
             })
             ->orderBy('title', 'asc')
             ->get()
-            ->sort(function ($a, $b) {
-                $aHtml = $a->book_pages_count > 0;
-                $bHtml = $b->book_pages_count > 0;
+            ->sort(function ($a, $b) use ($isAdmin) {
+                // For sorting, unpublished pages count as 0 for non-admins
+                $aHtml = $a->book_pages_count > 0 && ($isAdmin || $a->book_content_published);
+                $bHtml = $b->book_pages_count > 0 && ($isAdmin || $b->book_content_published);
 
                 // HTML books always before "Binnenkort Online" books
                 if ($aHtml !== $bHtml) {
@@ -51,6 +60,7 @@ class OnlineLezenController extends Controller
             'products'   => $products,
             'categories' => ProductCategory::orderBy('name')->get(['id', 'name']),
             'SEOData'    => SEOService::getPageSEO('online-lezen'),
+            'isAdmin'    => $isAdmin,
         ]);
     }
 
@@ -63,7 +73,9 @@ class OnlineLezenController extends Controller
             ->firstOrFail();
 
         // Als product HTML pagina's heeft → stuur door naar schone HTML lezer
-        if ($product->bookPages()->exists()) {
+        // Maar alleen als het content gepubliceerd is of de gebruiker admin is
+        $isAdminRead = auth()->check() && auth()->user()->role === 'admin';
+        if ($product->bookPages()->exists() && ($isAdminRead || $product->book_content_published)) {
             return redirect()->route('onlineLezenReadHtml', $slug);
         }
 
@@ -85,6 +97,12 @@ class OnlineLezenController extends Controller
     public function readHtml($slug)
     {
         $product = Product::where('slug', '=', $slug)->firstOrFail();
+
+        // Block non-admins when book content is unpublished
+        $isAdmin = auth()->check() && auth()->user()->role === 'admin';
+        if (!$isAdmin && !$product->book_content_published) {
+            abort(404);
+        }
 
         // Render all pages server-side for immediate availability in the reader
         $initialPages = $product->bookPages()->orderBy('page_number')->get();

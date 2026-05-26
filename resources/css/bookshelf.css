@@ -594,6 +594,38 @@ body { margin: 0; padding: 0; width: 100%; }
 }
 .shelf-book-read-btn i { font-size: 10px; }
 
+/* Draft badge — admin-only indicator for unpublished book content */
+.shelf-book-draft-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 10;
+    background: rgba(220, 60, 60, 0.88);
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.7);
+    pointer-events: none;
+}
+
+/* Concept button variant — amber/warning style for admin on unpublished books */
+.shelf-book-read-btn--concept {
+    background: linear-gradient(180deg, rgba(180,90,10,0.92) 0%, rgba(120,55,5,0.97) 100%) !important;
+    border-color: rgba(220,130,40,0.6) !important;
+    color: #ffd080 !important;
+    letter-spacing: 1.5px;
+}
+.shelf-book:hover .shelf-book-read-btn--concept {
+    background: linear-gradient(180deg, rgba(200,100,15,0.97) 0%, rgba(140,65,8,1) 100%) !important;
+}
+
+/* Unpublished book — no cover change, concept label on button is the indicator */
+
 /* Coming-soon text — plain centred label, no button chrome */
 .shelf-book-coming-soon-text {
     position: relative;

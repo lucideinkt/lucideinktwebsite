@@ -1,7 +1,9 @@
 <div class="contact-form-wrapper">
+
     <div class="contact-form-box">
         <h1 class="contact-hero__title">Neem Contact Op</h1>
         <p class="contact-form-subtitle">Vul het formulier in en we nemen zo snel mogelijk contact met je op</p>
+
 
         <form wire:submit.prevent="submit" class="contact-form">
             <div class="form-row">
