@@ -49,7 +49,7 @@
         <div class="bs-mobile-search-outer">
             <div class="bs-search-wrap">
                 <input type="text" id="bs-mobile-search-input" class="bs-search-input"
-                       placeholder="Zoek tekst in boeken..." autocomplete="off">
+                       placeholder="Zoek tekst in alle boeken..." autocomplete="off">
                 <button class="bs-search-btn" id="bs-mobile-search-clear" aria-label="Zoeken">
                     <i class="fa-solid fa-magnifying-glass" id="bs-mobile-search-icon"></i>
                 </button>
