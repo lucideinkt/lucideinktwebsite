@@ -230,7 +230,7 @@ body:has(.page.user-dashboard) .page-normal-background::before {
 
 /* 2a. SHOP PRODUCT GRID background ──────────────────────── */
 .background-of-the-shop-grid {
-    /*background-color:      #393d2e;*/
+    /*!*background-color:      #393d2e;*!*/
     /*background-image:      url("../../images/80_gold circular Scratched-AO.webp");*/
     /*background-size:       360px;*/
     /*background-repeat:     repeat;*/
@@ -239,8 +239,17 @@ body:has(.page.user-dashboard) .page-normal-background::before {
 }
 
 .background-of-the-shop-grid {
+    /*!*background-color:      #393d2e;*!*/
+    /*background-image:      url("../../images/17_Fabriano artistic 640 grams paper texture-seamless.webp");*/
+    /*background-size:       360px;*/
+    /*background-position:   center;*/
+    /*background-repeat:     repeat;*/
+    /*background-blend-mode: multiply;*/
+}
+
+.background-of-the-shop-grid {
     /*background-color:      #393d2e;*/
-    background-image:      url("../../images/17_Fabriano artistic 640 grams paper texture-seamless.webp");
+    background-image:      url("../../images/52_cream mulberry paper texture-seamless.jpg");
     background-size:       360px;
     background-position:   center;
     background-repeat:     repeat;
@@ -251,8 +260,26 @@ body:has(.page.user-dashboard) .page-normal-background::before {
 /* 2b. TEXT-BOX BAND background ──────────────────────────── */
 /* Used by: Said Nursî, Herzameling, Risale-i Nur, Audioboeken, Info pages */
 .text-box-background {
+    /*!*background-color:      #393d2e;*!*/
+    /*background-image:      url("../../images/80_gold circular Scratched-AO.webp");*/
+    /*background-size:       360px;*/
+    /*background-repeat:     repeat;*/
+    /*background-position:   center;*/
+    /*background-blend-mode: multiply;*/
+}
+
+.text-box-background {
+    /*!*background-color:      #393d2e;*!*/
+    /*background-image:      url("../../images/17_Fabriano artistic 640 grams paper texture-seamless.webp");*/
+    /*background-size:       360px;*/
+    /*background-position:   center;*/
+    /*background-repeat:     repeat;*/
+    /*background-blend-mode: multiply;*/
+}
+
+.text-box-background {
     /*background-color:      #393d2e;*/
-    background-image:      url("../../images/17_Fabriano artistic 640 grams paper texture-seamless.webp");
+    background-image:      url("../../images/52_cream mulberry paper texture-seamless.jpg");
     background-size:       360px;
     background-position:   center;
     background-repeat:     repeat;
