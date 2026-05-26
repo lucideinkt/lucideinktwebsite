@@ -78,7 +78,7 @@
             <h2 class="bs-section-title">Zoeken in boeken</h2>
             <div class="bs-panel-body">
                 <div class="bs-search-wrap">
-                    <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in boeken..." autocomplete="off">
+                    <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in alle boeken..." autocomplete="off">
                     <button class="bs-search-btn" id="bs-search-clear" aria-label="Zoeken">
                         <i class="fa-solid fa-magnifying-glass" id="bs-search-icon"></i>
                     </button>
