@@ -426,6 +426,9 @@
 
     <script>
     (function () {
+        // Prevent iOS Safari from overriding JS-controlled scroll restoration
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
         const TOPBAR_H    = (document.querySelector('.reader-topbar')?.offsetHeight ?? 62) + 2;
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
@@ -1089,17 +1092,31 @@
                 updateUI(firstPage);
                 save(firstPage);
                 // Use urlPage if set (could equal firstPage), otherwise firstPage
-                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 500);
+                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 50);
             } else {
-                // Page might not be in DOM yet — fetch first, then scroll
-                jumpTo(startPage, false);
-                requestAnimationFrame(() => requestAnimationFrame(() => {
-                    const actual = visiblePage();
-                    updateUI(actual);
-                    save(actual);
-                    // Always use urlPage (the page from the URL) — not `actual` which can be off on mobile
-                    if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]), 500);
-                }));
+                const doJump = () => {
+                    if (urlQuery) {
+                        // When a search highlight is requested, skip the intermediate page scroll.
+                        // readerHighlightDirect will compute the mark's absolute position and scroll
+                        // there in a single smooth motion.
+                        updateUI(urlPage);
+                        save(urlPage);
+                        window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]);
+                    } else {
+                        jumpTo(startPage, false);
+                        requestAnimationFrame(() => requestAnimationFrame(() => {
+                            const actual = visiblePage();
+                            updateUI(actual);
+                            save(actual);
+                        }));
+                    }
+                };
+                // On mobile, delay slightly so the browser has finished its own scroll restoration
+                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                    setTimeout(doJump, 120);
+                } else {
+                    doJump();
+                }
             }
         }
 
@@ -1183,11 +1200,13 @@
                         item.addEventListener('click', e => {
                             if (e.target.closest('.reader-lib-item-del')) return;
                             if (isCurrent) {
-                                jumpTo(bm.pageNum, true); closeSheet();
+                                closeSheet();
+                                setTimeout(() => jumpTo(bm.pageNum, true), 80);
                             } else {
                                 // Set reading progress for target book so it opens on the right page
                                 try { localStorage.setItem('reading_progress_' + bm.productId, String(bm.pageNum)); } catch (_) {}
-                                window.location.href = bm.readerUrl;
+                                const url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum;
+                                window.location.href = url;
                             }
                         });
                         bmList.appendChild(item);
@@ -1238,10 +1257,12 @@
                     item.addEventListener('click', e => {
                         if (e.target.closest('.reader-lib-item-del')) return;
                         if (isCurrent) {
-                            jumpTo(hl.pageNum, true); closeSheet();
+                            closeSheet();
+                            setTimeout(() => jumpTo(hl.pageNum, true), 80);
                         } else {
                             try { localStorage.setItem('reading_progress_' + hl.productId, String(hl.pageNum)); } catch (_) {}
-                            window.location.href = hl.readerUrl;
+                            const url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                            window.location.href = url;
                         }
                     });
                     hlList.appendChild(item);
@@ -1809,11 +1830,7 @@
                 }
                 const queryNorm = normStr(query);
 
-                // Step 1: scroll page into view first (same approach as in-reader search)
-                pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                // Step 2: after page scroll settles, find & mark the word, then scroll to it
-                setTimeout(() => {
+                function findAndScroll() {
                     const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
                         acceptNode(node) {
                             const p = node.parentElement;
@@ -1841,12 +1858,21 @@
                         node.parentNode.removeChild(node);
                         currentMark = mark;
 
-                        // Scroll to the highlighted word using window.scrollTo (consistent with jumpTo)
-                        const markTop = mark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 2);
-                        window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
-                        break;
+                        // Single smooth scroll directly to the highlighted word
+                        requestAnimationFrame(() => {
+                            const markTop = mark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                            window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                        });
+                        return;
                     }
-                }, 250);
+                    // Fallback: text not found — scroll to page top
+                    pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Wait for fonts so position measurements are accurate, then find + scroll in one shot
+                (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+                    requestAnimationFrame(findAndScroll);
+                });
             };
 
             input.addEventListener('input', () => {
@@ -1917,8 +1943,6 @@
                         const pageEl = pageMap[r.page];
                         if (!pageEl) { closeSearch(); return; }
 
-                        // First scroll to page, then find & highlight the match
-                        pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
                         // Helper: remove diacritics for accent-insensitive DOM matching
                         function normStr(s) {
@@ -2012,9 +2036,12 @@
                                         break;
                                     }
                                 }, 120); // wait for popover animation to start
-                            } else {
-                                const target = found ? currentMark : pageEl;
-                                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            } else if (found && currentMark) {
+                                // Single smooth scroll directly to the highlighted word
+                                const markTop = currentMark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                                window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                            } else if (pageEl) {
+                                pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }
                         }, 230);
                     });

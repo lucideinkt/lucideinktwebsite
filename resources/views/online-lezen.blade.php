@@ -484,7 +484,9 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             // Navigate on row click
             row.addEventListener('click', function (e) {
                 if (e.target.closest('.bs-list-del')) return;
-                window.location.href = item.readerUrl;
+                // Append ?page=N so the reader uses the URL param (reliable on mobile)
+                var url = item.readerUrl + (item.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + item.page;
+                window.location.href = url;
             });
             // Delete button
             row.querySelector('.bs-list-del').addEventListener('click', function (e) {
@@ -531,7 +533,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             item.addEventListener('click', function(e) {
                 if (e.target.closest('.bs-list-del')) return;
                 try { localStorage.setItem('reading_progress_'+bm.productId, String(bm.pageNum)); } catch(_){}
-                window.location.href = bm.readerUrl;
+                var url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum;
+                window.location.href = url;
             });
             el.appendChild(item);
         });
@@ -575,7 +578,11 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             });
             item.addEventListener('click', function(e) {
                 if (e.target.closest('.bs-list-del')) return;
-                if (hl.readerUrl) { try{localStorage.setItem('reading_progress_'+hl.productId,String(hl.pageNum));}catch(_){} window.location.href=hl.readerUrl; }
+                if (hl.readerUrl) {
+                    try{localStorage.setItem('reading_progress_'+hl.productId,String(hl.pageNum));}catch(_){}
+                    var url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                    window.location.href = url;
+                }
             });
             el.appendChild(item);
         });
@@ -893,7 +900,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             item.addEventListener('click', e => {
                 if (e.target.closest('.bm-item-del')) return;
                 try { localStorage.setItem('reading_progress_' + bm.productId, String(bm.pageNum)); } catch {}
-                window.location.href = bm.readerUrl;
+                const url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum;
+                window.location.href = url;
             });
             item.querySelector('.bm-item-del').addEventListener('click', e => {
                 e.stopPropagation();
@@ -933,7 +941,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
                 if (e.target.closest('.bm-item-del')) return;
                 if (hl.readerUrl) {
                     try { localStorage.setItem('reading_progress_' + hl.productId, String(hl.pageNum)); } catch {}
-                    window.location.href = hl.readerUrl;
+                    const url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                    window.location.href = url;
                 }
             });
             item.querySelector('.bm-item-del').addEventListener('click', e => {
