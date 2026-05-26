@@ -176,10 +176,6 @@
                     <button class="reader-topbar-font-reset" id="topbar-arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
                 </div>
             </div>
-
-            <button class="reader-btn reader-search-open-btn" id="reader-search-open-btn" aria-label="Zoeken in boek" title="Zoeken">
-                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            </button>
         </div>
     </header>
 
@@ -221,6 +217,11 @@
             </a>
         </div>
     </main>
+
+    {{-- Search FAB — sits above the bookmark FAB --}}
+    <button class="reader-search-fab" id="fab-search-btn" type="button" aria-label="Zoeken in boek" title="Zoeken">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    </button>
 
     {{-- Bookmark FAB — sits above the main FAB --}}
     <button class="reader-bm-fab" id="fab-bm-btn" type="button" aria-label="Bladwijzer toevoegen" title="Bladwijzer toevoegen">
@@ -399,7 +400,7 @@
             <div class="reader-search-input-wrap">
                 <i class="fa-solid fa-magnifying-glass reader-search-icon" aria-hidden="true"></i>
                 <input type="search" id="reader-search-input" class="reader-search-input"
-                       placeholder="Zoekterm…" autocomplete="off" spellcheck="false">
+                       placeholder="Zoek tekst in boek..." autocomplete="off" spellcheck="false">
                 <button class="reader-search-clear" id="reader-search-clear" aria-label="Wissen" hidden>
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -1824,6 +1825,7 @@
             }
 
             openBtn?.addEventListener('click', openSearch);
+            document.getElementById('fab-search-btn')?.addEventListener('click', openSearch);
             closeBtn.addEventListener('click', closeSearch);
             backdrop.addEventListener('click', closeSearch);
             document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeSearch(); });
