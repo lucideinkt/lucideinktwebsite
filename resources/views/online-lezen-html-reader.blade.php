@@ -158,12 +158,6 @@
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             <span class="reader-topbar-page-badge" id="topbar-page-badge" aria-live="polite"></span>
 
-            {{-- Bookmark current page --}}
-            <button class="reader-btn reader-topbar-bm-btn" id="topbar-bm-btn" type="button"
-                    aria-label="Bladwijzer toevoegen" title="Bladwijzer toevoegen">
-                <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
-            </button>
-
             {{-- Compact font controls — desktop only --}}
             <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
                 <div class="reader-topbar-font-group">
@@ -227,6 +221,11 @@
             </a>
         </div>
     </main>
+
+    {{-- Bookmark FAB — sits above the main FAB --}}
+    <button class="reader-bm-fab" id="fab-bm-btn" type="button" aria-label="Bladwijzer toevoegen" title="Bladwijzer toevoegen">
+        <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+    </button>
 
     {{-- FAB — floating action button (bottom-right, thumb-reachable) --}}
     <button class="reader-fab reader-fab--icon-only" id="reader-fab" aria-label="Lezeropties" aria-expanded="false" aria-haspopup="dialog">
@@ -629,7 +628,7 @@
         function toggleSheet() { controlSheet?.classList.contains('open') ? closeSheet() : openSheet(); }
 
         fab?.addEventListener('click', e => { e.stopPropagation(); toggleSheet(); });
-        sheetBackdrop?.addEventListener('click', closeSheet);
+        sheetBackdrop?.addEventListener('click', () => { closeSheet(); closeToc?.(); });
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && controlSheet?.classList.contains('open')) closeSheet();
         });
@@ -1011,8 +1010,7 @@
 
         function openToc() {
             if (!tocPanel) return;
-            // Close settings sheet and search panel if open
-            closeSheet();
+            // Close search panel if open (but leave the settings sheet open)
             const searchPanel = document.getElementById('reader-search-panel');
             const searchBackdrop = document.getElementById('reader-search-backdrop');
             if (searchPanel && !searchPanel.hidden) {
@@ -1041,7 +1039,7 @@
         buildTocPanel();
         sheetTocBtn?.addEventListener('click', () => tocPanel?.classList.contains('open') ? closeToc() : openToc());
         tocCloseBtn?.addEventListener('click', closeToc);
-        tocBackdrop?.addEventListener('click', closeToc);
+        tocBackdrop?.addEventListener('click', () => { closeToc(); closeSheet(); });
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && tocPanel?.classList.contains('open')) closeToc();
         });
@@ -1506,6 +1504,13 @@
                 topbarBtn.title = label;
                 topbarBtn.setAttribute('aria-label', label);
             }
+            // FAB bookmark button
+            const fabBmBtn = document.getElementById('fab-bm-btn');
+            if (fabBmBtn) {
+                fabBmBtn.classList.toggle('active', has);
+                fabBmBtn.title = label;
+                fabBmBtn.setAttribute('aria-label', label);
+            }
         }
 
         function bmPageToggle() {
@@ -1576,6 +1581,9 @@
             bmPageToggle();
         });
         document.getElementById('topbar-bm-btn')?.addEventListener('click', () => {
+            bmPageToggle();
+        });
+        document.getElementById('fab-bm-btn')?.addEventListener('click', () => {
             bmPageToggle();
         });
 

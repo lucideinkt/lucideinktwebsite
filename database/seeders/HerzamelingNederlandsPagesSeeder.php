@@ -3754,8 +3754,8 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 </p>
 
 
-<div class="text-center" style="margin-top: 40px;">
-<div style="border-bottom: 2px solid #ca2a2a;"></div>
+<div class="text-center" style="margin-top: 20px;">
+<div class="hr-section-divider"></div>
  <p class="text-red small-title"><strong>{Noot van de vertalers:</strong></p>
  <p class="text-red">
  Hierop volgen passages uit de Qur’an. De oorspronkelijke Qur’anpassages staan op de rechterpagina’s; de

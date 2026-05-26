@@ -121,7 +121,7 @@ body:has(.herzameling-page__text-box) .text-box-background {
 
     outline: 1px solid rgba(197, 155, 50, 0.28);
     outline-offset: 5px;
-    padding: 40px 60px;
+    padding: 55px 60px;
     margin-top: 10px;
     margin-bottom: 0px;
     max-width: 1075px;
@@ -331,6 +331,7 @@ body:has(.herzameling-page__text-box) .text-box-background {
     justify-content: center;
     align-items: center;
     gap: 15px;
+    margin-bottom: 0px;
 }
 
 .herzameling-page__text-box .link-with-capital {
@@ -428,7 +429,7 @@ body:has(.herzameling-page__text-box) .text-box-background {
     }
 
     .herzameling-page__text-box {
-        padding: 30px 25px;
+        padding: 50px 25px;
     }
 
     .herzameling-page__text-box p {
@@ -495,7 +496,7 @@ body:has(.herzameling-page__text-box) .text-box-background {
     }
 
     .herzameling-page__text-box {
-        padding: 30px 20px;
+        padding: 45px 20px;
         max-width: 100%;
     }
 
@@ -532,7 +533,7 @@ body:has(.herzameling-page__text-box) .text-box-background {
     }
 
     .herzameling-page__text-box {
-        padding: 25px 15px;
+        padding: 45px 15px;
     }
 
     .herzameling-page__text-box p {

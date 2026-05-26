@@ -214,7 +214,7 @@ body:has(.said-nursi-page__text-box) .page > .title {
 
     outline: 1px solid rgba(197, 155, 50, 0.28);  /* double-frame outer ring */
     outline-offset: 5px;
-    padding: 40px 60px;
+    padding: 55px 60px;
     margin-top: 10px;
     margin-bottom: 0;
     max-width: 1075px;
@@ -413,7 +413,7 @@ body:has(.said-nursi-page__text-box) .page > .sub-title::after,
     }
 
     .said-nursi-page__text-box {
-        padding: 35px 30px;
+        padding: 50px 30px;
     }
 
     .said-nursi-page__text-box .top-images,
@@ -458,7 +458,7 @@ body:has(.said-nursi-page__text-box) .page > .sub-title::after,
     }
 
     .said-nursi-page__text-box {
-        padding: 30px 20px;
+        padding: 45px 20px;
         max-width: 100%;
     }
 
