@@ -148,6 +148,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::put('/dashboard/newsletter/campaigns/{newsletter}', [NewsletterCampaignController::class, 'update'])->name('newsletter.campaigns.update');
     Route::delete('/dashboard/newsletter/campaigns/{newsletter}', [NewsletterCampaignController::class, 'destroy'])->name('newsletter.campaigns.destroy');
     Route::post('/dashboard/newsletter/campaigns/{newsletter}/send', [NewsletterCampaignController::class, 'send'])->name('newsletter.campaigns.send');
+    Route::get('/dashboard/newsletter/campaigns/{newsletter}/progress', [NewsletterCampaignController::class, 'progress'])->name('newsletter.campaigns.progress');
     Route::post('/dashboard/newsletter/campaigns/{newsletter}/duplicate', [NewsletterCampaignController::class, 'duplicate'])->name('newsletter.campaigns.duplicate');
     Route::post('/dashboard/newsletter/campaigns/{newsletter}/resend', [NewsletterCampaignController::class, 'resend'])->name('newsletter.campaigns.resend');
 
