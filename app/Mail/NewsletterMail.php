@@ -10,6 +10,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Mail\Traits\HasMailtrapForwarding;
+use App\Mail\Middleware\ApplyMailConfig;
 
 class NewsletterMail extends Mailable
 {
@@ -25,6 +26,11 @@ class NewsletterMail extends Mailable
         $this->newsletter = $newsletter;
         $this->subscriber = $subscriber;
         $this->unsubscribeUrl = route('newsletter.unsubscribe', $subscriber->token);
+    }
+
+    public function middleware(): array
+    {
+        return [new ApplyMailConfig()];
     }
 
     public function envelope(): Envelope

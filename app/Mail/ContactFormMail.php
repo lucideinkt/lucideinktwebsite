@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use App\Mail\Traits\HasMailtrapForwarding;
+use App\Mail\Middleware\ApplyMailConfig;
 
 class ContactFormMail extends Mailable
 {
@@ -24,6 +25,11 @@ class ContactFormMail extends Mailable
         $this->country = $country;
         $this->subject = $subject;
         $this->messageText = $messageText;
+    }
+
+    public function middleware(): array
+    {
+        return [new ApplyMailConfig()];
     }
 
     public function build()
