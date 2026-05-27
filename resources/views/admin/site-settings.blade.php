@@ -89,7 +89,7 @@
         </p>
       </div>
 
-      {{-- ── E-mail provider ── --}}
+      {{-- ── E-mail provider (read-only, determined by APP_ENV) ── --}}
       <div class="p-6 bg-white rounded-lg shadow dark:bg-gray-800">
         <div class="flex items-center gap-3 mb-4">
           <div class="p-2 bg-purple-100 dark:bg-purple-900 rounded-lg">
@@ -99,27 +99,15 @@
           </div>
           <div>
             <h3 class="font-semibold text-gray-900 dark:text-white">E-mail provider</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Stuur mails via eigen SMTP of via Mailtrap (test-inbox).</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Automatisch bepaald op basis van de omgeving (APP_ENV).</p>
           </div>
         </div>
-        <div class="flex gap-3">
-          <label class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg border-2 transition-all
-            {{ $settings['mail_driver'] === 'smtp' ? 'border-green-500 bg-green-50 dark:bg-green-900/30' : 'border-gray-200 dark:border-gray-700' }}">
-            <input type="radio" name="mail_driver" value="smtp" class="accent-green-500"
-              {{ $settings['mail_driver'] === 'smtp' ? 'checked' : '' }}>
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Eigen SMTP</span>
-          </label>
-          <label class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg border-2 transition-all
-            {{ $settings['mail_driver'] === 'mailtrap' ? 'border-yellow-500 bg-yellow-50 dark:bg-yellow-900/30' : 'border-gray-200 dark:border-gray-700' }}">
-            <input type="radio" name="mail_driver" value="mailtrap" class="accent-yellow-500"
-              {{ $settings['mail_driver'] === 'mailtrap' ? 'checked' : '' }}>
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Mailtrap</span>
-          </label>
-        </div>
-        <p class="mt-3 text-xs {{ $settings['mail_driver'] === 'smtp' ? 'text-green-600 dark:text-green-400 font-semibold' : 'text-yellow-600 dark:text-yellow-400' }}">
-          {{ $settings['mail_driver'] === 'smtp' ? '✓ Echte mails via info@lucideinkt.nl' : 'ℹ Mailtrap — mails gaan naar test-inbox' }}
-        </p>
-        {{-- Button links to the test-mail-form outside the main form via the form= attribute --}}
+        @if(app()->environment('production'))
+          <p class="text-sm font-semibold text-green-600 dark:text-green-400">✓ Productie — Eigen SMTP (info@lucideinkt.nl)</p>
+        @else
+          <p class="text-sm font-semibold text-yellow-600 dark:text-yellow-400">ℹ {{ ucfirst(app()->environment()) }} — Mailtrap (test-inbox)</p>
+        @endif
+        {{-- Test mail button --}}
         <button type="submit" form="test-mail-form"
           class="mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -293,32 +281,6 @@
     }
     mollieRadios.forEach(r => r.addEventListener('change', updateMollie));
 
-    // ── Mail driver radio buttons ──
-    const mailRadios    = document.querySelectorAll('input[name="mail_driver"]');
-    const mailStatus    = mailRadios[0].closest('.p-6').querySelector('p.mt-3');
-    const mailContainer = mailRadios[0].parentElement.parentElement; // input → label → div.flex
-    const mailLabels    = mailContainer.querySelectorAll('label');
-
-    function updateMail() {
-      const val = [...mailRadios].find(r => r.checked)?.value;
-      mailStatus.className = 'mt-3 text-xs ' + (val === 'smtp'
-        ? 'text-green-600 dark:text-green-400 font-semibold'
-        : 'text-yellow-600 dark:text-yellow-400');
-      mailStatus.textContent = val === 'smtp'
-        ? '✓ Echte mails via info@lucideinkt.nl'
-        : 'ℹ Mailtrap — mails gaan naar test-inbox';
-      mailLabels.forEach(lbl => {
-        const input = lbl.querySelector('input');
-        if (input.checked) {
-          lbl.className = BASE_RADIO_LABEL + (input.value === 'smtp'
-            ? 'border-green-500 bg-green-50 dark:bg-green-900/30'
-            : 'border-yellow-500 bg-yellow-50 dark:bg-yellow-900/30');
-        } else {
-          lbl.className = BASE_RADIO_LABEL + 'border-gray-200 dark:border-gray-700';
-        }
-      });
-    }
-    mailRadios.forEach(r => r.addEventListener('change', updateMail));
 
     // ── Live SEO checker ──
     const seoCheckBtn  = document.getElementById('seo-check-btn');

@@ -20,7 +20,6 @@ class SiteSettingController extends Controller
         $validated = $request->validate([
             'maintenance_mode' => 'nullable|in:0,1',
             'mollie_mode'      => 'required|in:test,live',
-            'mail_driver'      => 'required|in:smtp,mailtrap',
             'debug_info'       => 'nullable|in:0,1',
             'allow_indexing'   => 'nullable|in:0,1',
         ]);
@@ -40,10 +39,10 @@ class SiteSettingController extends Controller
 
     public function testMail(Request $request)
     {
-        $to      = auth()->user()->email;
-        $driver  = SiteSettingService::isMailtrap() ? 'Mailtrap' : 'Eigen SMTP';
-        $host    = config('mail.mailers.smtp.host');
-        $port    = config('mail.mailers.smtp.port');
+        $to     = auth()->user()->email;
+        $driver = app()->environment('production') ? 'Eigen SMTP' : 'Mailtrap';
+        $host   = config('mail.mailers.smtp.host');
+        $port   = config('mail.mailers.smtp.port');
 
         try {
             Mail::raw(
@@ -70,4 +69,3 @@ class SiteSettingController extends Controller
         }
     }
 }
-
