@@ -30,7 +30,7 @@ class NewsletterController extends Controller
                 return back()->with('info', 'Dit e-mailadres is al ingeschreven voor onze nieuwsbrief.');
             } elseif ($existing->isPending()) {
                 // Resend confirmation email
-                Mail::to($existing->email)->queue(new NewsletterConfirmationMail($existing));
+                Mail::to($existing->email)->send(new NewsletterConfirmationMail($existing));
                 return back()->with('info', 'We hebben opnieuw een bevestigingsmail gestuurd. Controleer je inbox.');
             } else {
                 // Resubscribe (was unsubscribed) - send confirmation again
@@ -39,7 +39,7 @@ class NewsletterController extends Controller
                     'status' => 'pending',
                     'confirmation_token' => $confirmationToken,
                 ]);
-                Mail::to($existing->email)->queue(new NewsletterConfirmationMail($existing->fresh()));
+                Mail::to($existing->email)->send(new NewsletterConfirmationMail($existing->fresh()));
                 return back()->with('success', 'Welkom terug! Controleer je inbox om je inschrijving te bevestigen.');
             }
         }
@@ -56,7 +56,7 @@ class NewsletterController extends Controller
         ]);
 
         // Send confirmation email
-        Mail::to($subscriber->email)->queue(new NewsletterConfirmationMail($subscriber));
+        Mail::to($subscriber->email)->send(new NewsletterConfirmationMail($subscriber));
 
         return back()->with('success', 'Bedankt! Controleer je (spam) inbox en bevestig je inschrijving via de link in de e-mail.');
     }

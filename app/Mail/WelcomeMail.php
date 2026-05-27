@@ -30,6 +30,8 @@ class WelcomeMail extends Mailable
 
     public function build()
     {
+        ApplyMailConfig::apply();
+
         $mail = $this->subject('Welkom bij Lucide Inkt')
             ->view('emails.welcome', ['user' => $this->user]);
 

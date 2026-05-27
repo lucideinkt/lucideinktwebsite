@@ -31,6 +31,8 @@ class OrderPaidMail extends Mailable
 
     public function build()
     {
+        ApplyMailConfig::apply();
+
         // Only read/attach – no DB writes here
         $pathOnDisk = Storage::disk('public')->path($this->order->invoice_pdf_path);
 

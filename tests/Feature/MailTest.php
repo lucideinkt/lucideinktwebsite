@@ -103,9 +103,9 @@ class MailTest extends TestCase
         Mail::fake();
 
         $user = $this->makeUser();
-        Mail::to($user->email)->queue(new WelcomeMail($user));
+        Mail::to($user->email)->send(new WelcomeMail($user));
 
-        Mail::assertQueued(WelcomeMail::class, function ($mail) use ($user) {
+        Mail::assertSent(WelcomeMail::class, function ($mail) use ($user) {
             return $mail->hasTo($user->email);
         });
     }
@@ -137,9 +137,9 @@ class MailTest extends TestCase
         Mail::fake();
 
         $user = $this->makeUser();
-        Mail::to($user->email)->queue(new NewUserMail($user, 'https://lucideinkt.nl/reset?token=abc'));
+        Mail::to($user->email)->send(new NewUserMail($user, 'https://lucideinkt.nl/reset?token=abc'));
 
-        Mail::assertQueued(NewUserMail::class, function ($mail) use ($user) {
+        Mail::assertSent(NewUserMail::class, function ($mail) use ($user) {
             return $mail->hasTo($user->email);
         });
     }
@@ -174,9 +174,9 @@ class MailTest extends TestCase
         // Fake the invoice PDF so the attach() call finds a file
         Storage::disk('public')->put($order->invoice_pdf_path, '%PDF-1.4 fake');
 
-        Mail::to($customer->billing_email)->queue(new OrderPaidMail($order->fresh()));
+        Mail::to($customer->billing_email)->send(new OrderPaidMail($order->fresh()));
 
-        Mail::assertQueued(OrderPaidMail::class, function ($mail) use ($customer) {
+        Mail::assertSent(OrderPaidMail::class, function ($mail) use ($customer) {
             return $mail->hasTo($customer->billing_email);
         });
     }
@@ -236,9 +236,9 @@ class MailTest extends TestCase
         $customer = $this->makeCustomer();
         $order    = $this->makeOrder($customer);
 
-        Mail::to($adminEmail)->queue(new NewOrderMail($order->fresh()));
+        Mail::to($adminEmail)->send(new NewOrderMail($order->fresh()));
 
-        Mail::assertQueued(NewOrderMail::class, function ($mail) use ($adminEmail) {
+        Mail::assertSent(NewOrderMail::class, function ($mail) use ($adminEmail) {
             return $mail->hasTo($adminEmail);
         });
     }
@@ -270,11 +270,11 @@ class MailTest extends TestCase
         Mail::fake();
 
         $adminEmail = 'lucideinkt@gmail.com';
-        Mail::to($adminEmail)->queue(
+        Mail::to($adminEmail)->send(
             new ContactFormMail('Ahmed', 'ahmed@example.com', 'NL', 'Vraag', 'Wanneer komt mijn pakket?')
         );
 
-        Mail::assertQueued(ContactFormMail::class, function ($mail) use ($adminEmail) {
+        Mail::assertSent(ContactFormMail::class, function ($mail) use ($adminEmail) {
             return $mail->hasTo($adminEmail);
         });
     }
@@ -306,9 +306,9 @@ class MailTest extends TestCase
         if ($bcc !== $adminEmail) {
             $mailer = $mailer->bcc($bcc);
         }
-        $mailer->queue(new ContactFormMail('Test', 'test@example.com', 'NL', 'Sub', 'Msg'));
+        $mailer->send(new ContactFormMail('Test', 'test@example.com', 'NL', 'Sub', 'Msg'));
 
-        Mail::assertQueued(ContactFormMail::class, function ($mail) use ($adminEmail) {
+        Mail::assertSent(ContactFormMail::class, function ($mail) use ($adminEmail) {
             // Should have exactly 1 recipient (TO only, no BCC duplicate)
             return $mail->hasTo($adminEmail) && ! $mail->hasBcc($adminEmail);
         });
@@ -329,9 +329,9 @@ class MailTest extends TestCase
         Mail::fake();
 
         $subscriber = $this->makeSubscriber();
-        Mail::to($subscriber->email)->queue(new NewsletterConfirmationMail($subscriber));
+        Mail::to($subscriber->email)->send(new NewsletterConfirmationMail($subscriber));
 
-        Mail::assertQueued(NewsletterConfirmationMail::class, function ($mail) use ($subscriber) {
+        Mail::assertSent(NewsletterConfirmationMail::class, function ($mail) use ($subscriber) {
             return $mail->hasTo($subscriber->email);
         });
     }
@@ -364,9 +364,9 @@ class MailTest extends TestCase
         $newsletter = $this->makeNewsletter();
         $subscriber = $this->makeSubscriber(['status' => 'subscribed']);
 
-        Mail::to($subscriber->email)->queue(new NewsletterMail($newsletter, $subscriber));
+        Mail::to($subscriber->email)->send(new NewsletterMail($newsletter, $subscriber));
 
-        Mail::assertQueued(NewsletterMail::class, function ($mail) use ($subscriber) {
+        Mail::assertSent(NewsletterMail::class, function ($mail) use ($subscriber) {
             return $mail->hasTo($subscriber->email);
         });
     }
@@ -400,9 +400,9 @@ class MailTest extends TestCase
         $newsletter = $this->makeNewsletter();
         $subscriber = $this->makeSubscriber(['status' => 'subscribed']);
 
-        Mail::to($subscriber->email)->queue(new NewsletterMail($newsletter, $subscriber));
+        Mail::to($subscriber->email)->send(new NewsletterMail($newsletter, $subscriber));
 
-        Mail::assertQueued(NewsletterMail::class, function ($mail) use ($subscriber) {
+        Mail::assertSent(NewsletterMail::class, function ($mail) use ($subscriber) {
             return $mail->hasTo($subscriber->email) && empty($mail->cc);
         });
     }
@@ -511,5 +511,4 @@ class MailTest extends TestCase
         $this->assertEquals('sync', config('queue.default'));
     }
 }
-
 

@@ -33,6 +33,8 @@ class NewsletterMail extends Mailable
 
     public function envelope(): Envelope
     {
+        ApplyMailConfig::apply();
+
         return new Envelope(
             subject: 'Nieuwsbrief Lucide Inkt - ' . $this->newsletter->subject,
         );

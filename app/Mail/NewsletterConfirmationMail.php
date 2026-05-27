@@ -29,6 +29,8 @@ class NewsletterConfirmationMail extends Mailable
 
     public function build()
     {
+        ApplyMailConfig::apply();
+
         $mail = $this->subject('Bevestig je nieuwsbrief inschrijving – Lucide Inkt')
             ->view('emails.newsletter-confirmation');
 
