@@ -53,7 +53,10 @@
                     <strong style="font-family: DelimaMTProBold">
                     <a class="link-with-capital" href="{{ route('shop') }}">Bestel Hier</a>
                     |
-                    <a class="link-with-capital" href="{{ url('/bibliotheek/het-traktaat-over-de-herzameling-nederlands/lees') }}">Lees Online</a>
+                    <span class="lees-online-wrapper">
+                        <a class="link-with-capital" href="#" onclick="event.preventDefault(); this.closest('.lees-online-wrapper').classList.toggle('show-tooltip')">Lees Online</a>
+                        <span class="lees-online-tooltip">Binnenkort insha'ALLAH! ✨</span>
+                    </span>
                     </strong>
                 </p>
             </div>
@@ -63,3 +66,13 @@
     <x-footer></x-footer>
     </div>
 </x-layout>
+
+<script>
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.lees-online-wrapper')) {
+            document.querySelectorAll('.lees-online-wrapper.show-tooltip')
+                .forEach(el => el.classList.remove('show-tooltip'));
+        }
+    });
+</script>
+

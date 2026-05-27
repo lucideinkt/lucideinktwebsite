@@ -349,6 +349,46 @@ body:has(.herzameling-page__text-box) .text-box-background {
     line-height: 1;
 }
 
+.lees-online-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.lees-online-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #f5ede0;
+    color: var(--main-font-color, #2c1a0e);
+    font-size: 13px;
+    font-family: DelimaMTPro, serif;
+    white-space: nowrap;
+    padding: 7px 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.lees-online-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #f5ede0;
+}
+
+.lees-online-wrapper.show-tooltip .lees-online-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 .bottom-books-box {
     display: flex;
     justify-content: center;
