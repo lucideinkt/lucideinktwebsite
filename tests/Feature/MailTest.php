@@ -230,16 +230,22 @@ class MailTest extends TestCase
     {
         Mail::fake();
 
-        $adminEmail = 'lucideinkt@gmail.com';
+        $adminEmail = 'info@lucideinkt.nl';
+        $gmailBcc   = 'lucideinkt@gmail.com';
         config(['services.lucideinkt.admin_email' => $adminEmail]);
+        config(['services.lucideinkt.contact_bcc' => $gmailBcc]);
 
         $customer = $this->makeCustomer();
         $order    = $this->makeOrder($customer);
 
-        Mail::to($adminEmail)->send(new NewOrderMail($order->fresh()));
+        $mailer = Mail::to($adminEmail);
+        if ($gmailBcc !== $adminEmail) {
+            $mailer = $mailer->bcc($gmailBcc);
+        }
+        $mailer->send(new NewOrderMail($order->fresh()));
 
-        Mail::assertSent(NewOrderMail::class, function ($mail) use ($adminEmail) {
-            return $mail->hasTo($adminEmail);
+        Mail::assertSent(NewOrderMail::class, function ($mail) use ($adminEmail, $gmailBcc) {
+            return $mail->hasTo($adminEmail) && $mail->hasBcc($gmailBcc);
         });
     }
 
