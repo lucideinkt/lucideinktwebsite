@@ -65,7 +65,7 @@ class ContactForm extends Component
                     config('services.lucideinkt.contact_bcc'),
                     fn ($mail) => $mail->bcc(config('services.lucideinkt.contact_bcc'))
                 )
-                ->send(
+                ->queue(
                     new ContactFormMail(
                         $this->name,
                         $this->email,

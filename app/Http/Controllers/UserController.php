@@ -62,7 +62,7 @@ class UserController extends Controller
         $token = Password::createToken($user);
         $resetUrl = route('password.reset', ['token' => $token, 'email' => $user->email]);
 
-        Mail::to($user->email)->send(new NewUserMail($user, $resetUrl));
+        Mail::to($user->email)->queue(new NewUserMail($user, $resetUrl));
 
         // Optionally log the user in
         // auth()->login($user);
