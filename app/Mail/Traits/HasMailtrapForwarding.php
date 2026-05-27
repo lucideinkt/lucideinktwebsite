@@ -3,14 +3,19 @@
 namespace App\Mail\Traits;
 
 /**
- * Kept for backwards compatibility — forwarding is no longer used.
- * Mail driver is determined purely by APP_ENV (production = own SMTP, other = Mailtrap).
+ * Kept for backwards-compatibility only.
+ * All mail routing is now controlled purely by MAIL_* env vars.
+ * Both methods are intentional no-ops.
  */
 trait HasMailtrapForwarding
 {
     protected function addMailtrapForwarding($mail)
     {
-        // No forwarding — kept as no-op so all Mailable build() methods still compile
         return $mail;
+    }
+
+    protected function getForwardingEmail(): ?string
+    {
+        return null;
     }
 }

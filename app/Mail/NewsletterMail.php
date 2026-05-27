@@ -9,17 +9,15 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use App\Mail\Traits\HasMailtrapForwarding;
 use App\Mail\Middleware\ApplyMailConfig;
 
 class NewsletterMail extends Mailable
 {
-    use Queueable, SerializesModels, HasMailtrapForwarding;
+    use Queueable, SerializesModels;
 
     public $newsletter;
     public $subscriber;
     public $unsubscribeUrl;
-
 
     public function __construct(Newsletter $newsletter, NewsletterSubscriber $subscriber)
     {
@@ -35,16 +33,6 @@ class NewsletterMail extends Mailable
 
     public function envelope(): Envelope
     {
-        // Get forwarding email using the trait's helper method
-        $forwardEmail = $this->getForwardingEmail();
-
-        if ($forwardEmail && filter_var($forwardEmail, FILTER_VALIDATE_EMAIL)) {
-            return new Envelope(
-                subject: 'Nieuwsbrief Lucide Inkt - ' . $this->newsletter->subject,
-                cc: [$forwardEmail]
-            );
-        }
-
         return new Envelope(
             subject: 'Nieuwsbrief Lucide Inkt - ' . $this->newsletter->subject,
         );
