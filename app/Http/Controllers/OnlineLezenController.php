@@ -34,17 +34,21 @@ class OnlineLezenController extends Controller
             ->orderBy('title', 'asc')
             ->get()
             ->sort(function ($a, $b) use ($isAdmin) {
-                // For sorting, unpublished pages count as 0 for non-admins
+                // Tier 0 = HTML, Tier 1 = PDF-enabled, Tier 2 = Binnenkort Online
                 $aHtml = $a->book_pages_count > 0 && ($isAdmin || $a->book_content_published);
                 $bHtml = $b->book_pages_count > 0 && ($isAdmin || $b->book_content_published);
+                $aPdf  = !$aHtml && !empty($a->pdf_file) && $a->pdf_reader_enabled;
+                $bPdf  = !$bHtml && !empty($b->pdf_file) && $b->pdf_reader_enabled;
 
-                // HTML books always before "Binnenkort Online" books
-                if ($aHtml !== $bHtml) {
-                    return $aHtml ? -1 : 1;
+                $aTier = $aHtml ? 0 : ($aPdf ? 1 : 2);
+                $bTier = $bHtml ? 0 : ($bPdf ? 1 : 2);
+
+                if ($aTier !== $bTier) {
+                    return $aTier <=> $bTier;
                 }
 
-                // Within the HTML group: "Het Traktaat over de Herzameling" comes first
-                if ($aHtml) {
+                // Within HTML tier: "Herzameling" comes first
+                if ($aHtml && $bHtml) {
                     $aFirst = str_contains(strtolower($a->title), 'herzameling');
                     $bFirst = str_contains(strtolower($b->title), 'herzameling');
                     if ($aFirst !== $bFirst) {
@@ -79,10 +83,10 @@ class OnlineLezenController extends Controller
             return redirect()->route('onlineLezenReadHtml', $slug);
         }
 
-        // Check if fullscreen mode is requested
-        $isFullscreen = $request->query('fullscreen') === '1';
+        // Check if fullscreen mode is requested, or default to fullscreen when opened from library (pdf_reader_enabled)
+        $isFullscreen = $request->query('fullscreen') === '1' || $product->pdf_reader_enabled;
 
-        // Use fullscreen layout if parameter is present
+        // Use fullscreen layout if parameter is present or PDF reader is enabled
         $view = $isFullscreen ? 'online-lezen-reader-fullscreen' : 'online-lezen-reader';
 
         return view($view, [

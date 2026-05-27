@@ -23,6 +23,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShippingCostController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -160,6 +161,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('/dashboard/book-content/{id}/pages/{pageId}',   [BookContentController::class, 'destroyPage'])->name('bookContent.destroyPage');
     Route::post('/dashboard/book-content/{id}/reorder',            [BookContentController::class, 'reorder'])->name('bookContent.reorder');
     Route::post('/dashboard/book-content/{id}/toggle-published',   [BookContentController::class, 'togglePublished'])->name('bookContent.togglePublished');
+    Route::post('/dashboard/book-content/{id}/toggle-pdf-reader',  [BookContentController::class, 'togglePdfReader'])->name('bookContent.togglePdfReader');
+
+    // Analytics
+    Route::get('/dashboard/analytics', [AnalyticsController::class, 'index'])->name('admin.analytics');
 
 });
 

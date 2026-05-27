@@ -11,7 +11,7 @@ class BookContentController extends Controller
     /** Overzicht van alle producten */
     public function index()
     {
-        $products = Product::select('id', 'title', 'slug', 'image_1', 'is_published', 'book_content_published')
+        $products = Product::select('id', 'title', 'slug', 'image_1', 'is_published', 'book_content_published', 'pdf_file', 'pdf_reader_enabled')
             ->withCount('bookPages')
             ->orderBy('title')
             ->paginate(20);
@@ -134,6 +134,19 @@ class BookContentController extends Controller
         return response()->json([
             'ok'        => true,
             'published' => $newValue,
+        ]);
+    }
+
+    /** Schakel pdf_reader_enabled aan/uit (AJAX) */
+    public function togglePdfReader(int $id)
+    {
+        $product = Product::findOrFail($id);
+        $newValue = !((bool) $product->pdf_reader_enabled);
+        $product->update(['pdf_reader_enabled' => $newValue]);
+
+        return response()->json([
+            'ok'      => true,
+            'enabled' => $newValue,
         ]);
     }
 }

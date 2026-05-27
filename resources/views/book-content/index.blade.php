@@ -35,6 +35,14 @@
               <span class="block normal-case font-normal text-gray-400 dark:text-gray-500 text-xs"># pagina's geladen</span>
             </th>
             <th scope="col" class="px-4 py-3">
+              PDF versie
+              <span class="block normal-case font-normal text-gray-400 dark:text-gray-500 text-xs">Product heeft PDF?</span>
+            </th>
+            <th scope="col" class="px-4 py-3">
+              PDF lezer
+              <span class="block normal-case font-normal text-gray-400 dark:text-gray-500 text-xs">Toon PDF als er geen HTML is?</span>
+            </th>
+            <th scope="col" class="px-4 py-3">
               Online lezer
               <span class="block normal-case font-normal text-gray-400 dark:text-gray-500 text-xs">Zichtbaar voor bezoekers?</span>
             </th>
@@ -86,6 +94,43 @@
                 @endif
               </td>
 
+              {{-- PDF versie kolom --}}
+              <td class="px-4 py-2">
+                @if(!empty($product->pdf_file))
+                  <span class="inline-flex items-center gap-1.5 text-xs font-medium text-blue-700 dark:text-blue-400">
+                    <i class="fa-solid fa-file-pdf"></i> PDF aanwezig
+                  </span>
+                @else
+                  <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
+                    <i class="fa-regular fa-file"></i> Geen PDF
+                  </span>
+                @endif
+              </td>
+
+              {{-- PDF lezer toggle --}}
+              <td class="px-4 py-2">
+                @if(!empty($product->pdf_file))
+                  <button
+                    type="button"
+                    class="pdf-toggle-btn inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded border transition-colors
+                      {{ $product->pdf_reader_enabled
+                          ? 'bg-blue-50 text-blue-700 border-blue-300 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700'
+                          : 'bg-gray-50 text-gray-500 border-gray-300 hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600' }}"
+                    data-id="{{ $product->id }}"
+                    data-enabled="{{ $product->pdf_reader_enabled ? '1' : '0' }}"
+                    data-toggle-url="{{ route('bookContent.togglePdfReader', $product->id) }}"
+                    title="{{ $product->pdf_reader_enabled ? 'Klik om PDF lezer uit te schakelen' : 'Klik om PDF lezer in te schakelen' }}">
+                    @if($product->pdf_reader_enabled)
+                      <i class="fa-solid fa-toggle-on w-3"></i> Ingeschakeld
+                    @else
+                      <i class="fa-solid fa-toggle-off w-3"></i> Uitgeschakeld
+                    @endif
+                  </button>
+                @else
+                  <span class="text-xs text-gray-400 dark:text-gray-600">—</span>
+                @endif
+              </td>
+
               {{-- Zichtbaarheid toggle (alleen relevant als er pagina's zijn) --}}
               <td class="px-4 py-2">
                 @if($product->book_pages_count > 0)
@@ -117,7 +162,7 @@
             </tr>
           @empty
             <tr>
-              <td colspan="4" class="px-4 py-6 text-center text-gray-500 dark:text-gray-400">Geen producten gevonden.</td>
+              <td colspan="6" class="px-4 py-6 text-center text-gray-500 dark:text-gray-400">Geen producten gevonden.</td>
             </tr>
           @endforelse
         </tbody>
@@ -164,8 +209,14 @@
   const BASE = 'bc-toggle-btn inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded border transition-colors';
   const CLS_VISIBLE = BASE + ' bg-green-50 text-green-700 border-green-300 hover:bg-green-100 dark:bg-green-900/30 dark:text-green-400 dark:border-green-700';
   const CLS_HIDDEN  = BASE + ' bg-amber-50 text-amber-700 border-amber-300 hover:bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-700';
+
+  const PDF_BASE = 'pdf-toggle-btn inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded border transition-colors';
+  const CLS_PDF_ON  = PDF_BASE + ' bg-blue-50 text-blue-700 border-blue-300 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-700';
+  const CLS_PDF_OFF = PDF_BASE + ' bg-gray-50 text-gray-500 border-gray-300 hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600';
+
   const CSRF = document.querySelector('meta[name="csrf-token"]')?.content ?? '';
 
+  // HTML toggle
   document.querySelectorAll('.bc-toggle-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       const url = btn.dataset.toggleUrl;
@@ -196,6 +247,49 @@
           btn.className = CLS_HIDDEN;
           btn.innerHTML = '<i class="fa-solid fa-eye-slash w-3"></i> Concept';
           btn.title = 'Klik om te publiceren';
+        }
+      })
+      .catch(function () {
+        alert('Er ging iets mis. Probeer opnieuw.');
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.style.opacity = '';
+      });
+    });
+  });
+
+  // PDF reader toggle
+  document.querySelectorAll('.pdf-toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const url = btn.dataset.toggleUrl;
+      btn.disabled = true;
+      btn.style.opacity = '0.5';
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'X-CSRF-TOKEN': CSRF,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        const isEnabled = data.enabled === true || data.enabled === 1;
+        btn.dataset.enabled = isEnabled ? '1' : '0';
+
+        if (isEnabled) {
+          btn.className = CLS_PDF_ON;
+          btn.innerHTML = '<i class="fa-solid fa-toggle-on w-3"></i> Ingeschakeld';
+          btn.title = 'Klik om PDF lezer uit te schakelen';
+        } else {
+          btn.className = CLS_PDF_OFF;
+          btn.innerHTML = '<i class="fa-solid fa-toggle-off w-3"></i> Uitgeschakeld';
+          btn.title = 'Klik om PDF lezer in te schakelen';
         }
       })
       .catch(function () {

@@ -54,6 +54,7 @@
                     <i class="fa-solid fa-magnifying-glass" id="bs-mobile-search-icon"></i>
                 </button>
             </div>
+            <p class="bs-search-note bs-search-note--mobile">Doorzoekt alleen de online leesversies</p>
             <div class="bs-search-results" id="bs-mobile-search-results" hidden></div>
         </div>
     </div>
@@ -76,6 +77,7 @@
         {{-- Search — desktop sidebar only; on mobile the search lives in the top bar --}}
         <div class="bs-panel bs-panel--search-desktop">
             <h2 class="bs-section-title">Zoeken in boeken</h2>
+            <p class="bs-search-note">Doorzoekt alleen de online leesversies</p>
             <div class="bs-panel-body">
                 <div class="bs-search-wrap">
                     <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in alle boeken..." autocomplete="off">
@@ -173,11 +175,13 @@
                 @php
                     $contentPublished = $product->book_content_published;
                     $hasHtml = $product->book_pages_count > 0 && ($isAdmin || $contentPublished);
-                    $href    = $hasHtml
+                    $hasPdfReader = !$hasHtml && !empty($product->pdf_file) && $product->pdf_reader_enabled;
+                    $isReadable = $hasHtml || $hasPdfReader;
+                    $href = $hasHtml
                         ? route('onlineLezenReadHtml', $product->slug)
-                        : '#';
+                        : ($hasPdfReader ? route('onlineLezenRead', $product->slug) : '#');
                 @endphp
-                @if($hasHtml)
+                @if($isReadable)
                 <a href="{{ $href }}" class="shelf-book{{ $isAdmin && !$contentPublished ? ' shelf-book--unpublished' : '' }}" title="{{ $product->title }}"
                    data-category="{{ $product->category_id ?? '' }}"
                    data-title="{{ strtolower($product->title) }}"
@@ -197,7 +201,15 @@
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tr" alt="">
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="">
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="">
-                        <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
+                        {{-- Title + optional small label below --}}
+                        <div class="shelf-book-title-group">
+                            <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
+                            @if($hasHtml)
+                                <span class="shelf-book-version-label">Online Leesversie</span>
+                            @elseif($hasPdfReader)
+                                <span class="shelf-book-version-label">PDF Versie</span>
+                            @endif
+                        </div>
                         {{-- Read / Coming-soon / Concept button --}}
                         @if($hasHtml)
                         <div class="shelf-book-read-btn {{ $isAdmin && !$contentPublished ? 'shelf-book-read-btn--concept' : '' }}">
@@ -207,6 +219,10 @@
                                 <i class="fa-solid fa-book-open"></i> Lezen
                             @endif
                         </div>
+                        @elseif($hasPdfReader)
+                        <div class="shelf-book-read-btn">
+                            <i class="fa-solid fa-file-pdf"></i> Lezen
+                        </div>
                         @else
                         <div class="shelf-book-coming-soon-text">
                             Binnenkort<br>Online
@@ -214,7 +230,7 @@
                         @endif
                     </div>
                     <span class="shelf-book-tooltip">{{ $product->title }}{{ $isAdmin && !$contentPublished ? ' (concept)' : '' }}</span>
-                @if($hasHtml)
+                @if($isReadable)
                 </a>
                 @else
                 </div>
@@ -500,6 +516,31 @@ document.addEventListener('touchstart', function () {}, { passive: true });
                     const updated = lsParse('bibliotheek_reading_history', [])
                         .filter(function (h) { return h.productId !== item.productId; });
                     localStorage.setItem('bibliotheek_reading_history', JSON.stringify(updated));
+
+                    // Also clear the saved page position so the book starts from page 1 again
+                    localStorage.removeItem('pdf_last_page_' + item.productId);
+                    localStorage.removeItem('reading_progress_' + item.productId);
+
+                    // Clear pdfjs.history entry for this book's PDF
+                    try {
+                        const pdfHistory = JSON.parse(localStorage.getItem('pdfjs.history') || '{}');
+                        if (pdfHistory.files) {
+                            pdfHistory.files = pdfHistory.files.filter(function (f) {
+                                // Match by productId embedded in the URL (/pdf-proxy/...) or by readerUrl
+                                return !String(f.url || '').includes('/' + item.productId + '/') &&
+                                       !String(f.url || '').includes('_' + item.productId + '.');
+                            });
+                            localStorage.setItem('pdfjs.history', JSON.stringify(pdfHistory));
+                        }
+                    } catch (_) {}
+
+                    // Clear bibliotheek_last_read if it refers to the same book
+                    try {
+                        const lastRead = JSON.parse(localStorage.getItem('bibliotheek_last_read') || 'null');
+                        if (lastRead && lastRead.productId === item.productId) {
+                            localStorage.removeItem('bibliotheek_last_read');
+                        }
+                    } catch (_) {}
                 } catch (_) {}
                 renderLastRead();
             });
@@ -507,6 +548,11 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         });
     }
     renderLastRead();
+
+    // Re-render when page is restored from bfcache (browser back button)
+    window.addEventListener('pageshow', function(e) {
+        if (e.persisted) renderLastRead();
+    });
 
     // ── Bladwijzers list ─────────────────────────────────
     function renderBookmarks() {

@@ -41,6 +41,7 @@ class Product extends Model
         'online_lezen_image',
         'book_content',
         'book_content_published',
+        'pdf_reader_enabled',
         'seo_description',
         'seo_tags',
         'seo_author',
@@ -54,6 +55,7 @@ class Product extends Model
     protected $casts = [
         'seo_tags'               => 'array',
         'book_content_published' => 'boolean',
+        'pdf_reader_enabled'     => 'boolean',
     ];
 
     public function updater()
