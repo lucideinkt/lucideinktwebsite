@@ -30,7 +30,7 @@ class SecurityHeadersMiddleware
                 "connect-src 'self' https://p.typekit.net https://www.google-analytics.com https://region1.google-analytics.com https://maps.googleapis.com https://api.pdok.nl https://cdn.jsdelivr.net https://unpkg.com wss: ws:",
                 "object-src 'none'",
                 "base-uri 'self'",
-                "form-action 'self'",
+                "form-action 'self' https://lucideinkt.nl https://www.lucideinkt.nl",
                 "frame-ancestors 'self'",
             ]);
             $response->headers->set('Content-Security-Policy', $csp);
