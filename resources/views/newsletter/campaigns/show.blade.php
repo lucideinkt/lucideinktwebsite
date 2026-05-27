@@ -39,12 +39,15 @@
     {{-- Action buttons --}}
     <div class="flex flex-wrap items-center gap-2">
         @if($newsletter->isDraft())
-            <form action="{{ route('newsletter.campaigns.send', $newsletter) }}"
+            <form id="newsletter-send-form"
+                  action="{{ route('newsletter.campaigns.send', $newsletter) }}"
                   method="POST"
-                  onsubmit="return confirm('Wil je deze nieuwsbrief versturen naar {{ $subscribersCount }} abonnees? Dit kan niet worden teruggedraaid.');">
+                  data-progress-url="{{ route('newsletter.campaigns.progress', $newsletter) }}"
+                  data-total="{{ $subscribersCount }}"
+                  data-no-loading="1">
                 @csrf
-                <button type="submit"
-                    class="inline-flex items-center gap-2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800">
+                <button type="submit" id="newsletter-send-btn"
+                    class="inline-flex items-center gap-2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800 cursor-pointer">
                     <i class="fa-solid fa-paper-plane"></i>
                     Verstuur naar {{ $subscribersCount }} abonnees
                 </button>
@@ -240,5 +243,155 @@
     </div>
 
 </div>
+
+{{-- ===================== NEWSLETTER SEND PROGRESS OVERLAY ===================== --}}
+<div id="newsletter-progress-overlay"
+     class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4 text-center">
+        {{-- Animated icon --}}
+        <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mx-auto mb-5">
+            <svg class="animate-spin w-8 h-8 text-green-600 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 22 6.477 22 12h-4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.854 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Nieuwsbrief versturen…</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Even geduld, dit kan even duren.</p>
+
+        {{-- Counter --}}
+        <div class="mb-3">
+            <span class="text-3xl font-bold text-green-600 dark:text-green-400" id="progress-sent">0</span>
+            <span class="text-xl text-gray-500 dark:text-gray-400"> / </span>
+            <span class="text-3xl font-bold text-gray-900 dark:text-white" id="progress-total">0</span>
+            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">e-mails verzonden</p>
+        </div>
+
+        {{-- Progress bar --}}
+        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4">
+            <div id="progress-bar"
+                 class="bg-green-500 h-3 rounded-full transition-all duration-500 ease-out"
+                 style="width: 0%"></div>
+        </div>
+
+        {{-- Failed count (hidden until there are failures) --}}
+        <p id="progress-failed-row" class="text-xs text-red-500 hidden">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span id="progress-failed">0</span> mislukt
+        </p>
+    </div>
+</div>
+
+@push('scripts')
+<script>
+(function () {
+    const sendForm      = document.getElementById('newsletter-send-form');
+    if (!sendForm) return;
+
+    const sendBtn       = document.getElementById('newsletter-send-btn');
+    const overlay       = document.getElementById('newsletter-progress-overlay');
+    const elSent        = document.getElementById('progress-sent');
+    const elTotal       = document.getElementById('progress-total');
+    const elBar         = document.getElementById('progress-bar');
+    const elFailed      = document.getElementById('progress-failed');
+    const elFailedRow   = document.getElementById('progress-failed-row');
+
+    const total         = parseInt(sendForm.dataset.total) || 0;
+    const progressUrl   = sendForm.dataset.progressUrl;
+    const sendUrl       = sendForm.action;
+    const csrfToken     = document.querySelector('meta[name="csrf-token"]').content;
+
+    let pollTimer = null;
+
+    function updateOverlay(sent, failed, t) {
+        const pct = t > 0 ? Math.round((sent / t) * 100) : 0;
+        elSent.textContent  = sent;
+        elTotal.textContent = t;
+        elBar.style.width   = pct + '%';
+        if (failed > 0) {
+            elFailed.textContent = failed;
+            elFailedRow.classList.remove('hidden');
+        }
+    }
+
+    function startPolling() {
+        pollTimer = setInterval(async () => {
+            try {
+                const res  = await fetch(progressUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+                if (!res.ok) return;
+                const data = await res.json();
+                updateOverlay(data.sent, data.failed, data.total || total);
+                if (data.status === 'sent' || data.status === 'failed') {
+                    stopPolling();
+                }
+            } catch (_) { /* network blip — keep trying */ }
+        }, 1000);
+    }
+
+    function stopPolling() {
+        if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+    }
+
+    sendForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const confirmed = confirm(
+            `Wil je deze nieuwsbrief versturen naar ${total} abonnees?\nDit kan niet worden teruggedraaid.`
+        );
+        if (!confirmed) return;
+
+        // Show overlay immediately
+        elTotal.textContent = total;
+        overlay.classList.remove('hidden');
+
+        // Disable the button to prevent double-click
+        sendBtn.disabled  = true;
+        sendBtn.innerHTML = '<svg class="animate-spin -ml-1 mr-2 h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 22 6.477 22 12h-4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.854 3 7.938l3-2.647z"></path></svg> Versturen…';
+
+        // Start polling for progress (runs in parallel with the fetch below)
+        startPolling();
+
+        try {
+            const formData = new FormData(sendForm);
+            const response = await fetch(sendUrl, {
+                method:  'POST',
+                headers: {
+                    'Accept':           'application/json',
+                    'X-CSRF-TOKEN':     csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+                body: formData,
+            });
+
+            stopPolling();
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                overlay.classList.add('hidden');
+                sendBtn.disabled  = false;
+                sendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Verstuur naar {{ $subscribersCount }} abonnees';
+                alert(data.error || 'Er is een fout opgetreden.');
+                return;
+            }
+
+            // Final update and short pause so the user sees 100 %
+            updateOverlay(data.sent, data.failed, data.total || total);
+            await new Promise(r => setTimeout(r, 800));
+
+            // Redirect to the show page so the updated stats are loaded
+            window.location.href = '{{ route('newsletter.campaigns.show', $newsletter) }}';
+
+        } catch (err) {
+            stopPolling();
+            overlay.classList.add('hidden');
+            sendBtn.disabled  = false;
+            sendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Verstuur naar {{ $subscribersCount }} abonnees';
+            alert('Netwerkfout: ' + err.message);
+        }
+    });
+})();
+</script>
+@endpush
 
 </x-dashboard-layout>

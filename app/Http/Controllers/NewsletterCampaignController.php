@@ -128,25 +128,37 @@ class NewsletterCampaignController extends Controller
             ->with('success', 'Nieuwsbrief gereset naar concept. Je kunt deze nu opnieuw versturen.');
     }
 
-    public function send(Newsletter $newsletter)
+    public function send(Newsletter $newsletter, \Illuminate\Http\Request $request)
     {
         if (!$newsletter->isDraft()) {
-            return back()->with('error', 'Deze nieuwsbrief is al verstuurd of wordt momenteel verstuurd.');
+            $msg = 'Deze nieuwsbrief is al verstuurd of wordt momenteel verstuurd.';
+            return $request->wantsJson()
+                ? response()->json(['error' => $msg], 422)
+                : back()->with('error', $msg);
         }
 
         $subscribers = NewsletterSubscriber::subscribed()->get();
 
         if ($subscribers->isEmpty()) {
-            return back()->with('error', 'Er zijn geen actieve abonnees om naar te verzenden.');
+            $msg = 'Er zijn geen actieve abonnees om naar te verzenden.';
+            return $request->wantsJson()
+                ? response()->json(['error' => $msg], 422)
+                : back()->with('error', $msg);
         }
 
+        $total = $subscribers->count();
+
         $newsletter->update([
-            'recipients_count' => $subscribers->count(),
+            'recipients_count' => $total,
             'sent_count'       => 0,
             'failed_count'     => 0,
         ]);
 
         $newsletter->markAsSending();
+
+        // Release the session lock early so the progress-polling endpoint
+        // (a separate PHP-FPM worker) can serve responses without waiting.
+        session()->save();
 
         // Allow as much time as needed — the list may be large
         set_time_limit(0);
@@ -166,12 +178,15 @@ class NewsletterCampaignController extends Controller
                     'error'         => $e->getMessage(),
                 ]);
             }
+
+            // Update progress in the database after every email so the
+            // polling endpoint always reflects the latest counts.
+            $newsletter->updateQuietly([
+                'sent_count'   => $sent,
+                'failed_count' => $failed,
+            ]);
         }
 
-        $newsletter->update([
-            'sent_count'   => $sent,
-            'failed_count' => $failed,
-        ]);
         $newsletter->markAsSent();
 
         $message = "Nieuwsbrief verstuurd naar {$sent} abonnee(s).";
@@ -179,6 +194,32 @@ class NewsletterCampaignController extends Controller
             $message .= " Mislukt bij {$failed} abonnee(s) — controleer de logs.";
         }
 
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => $message,
+                'sent'    => $sent,
+                'failed'  => $failed,
+                'total'   => $total,
+            ]);
+        }
+
         return back()->with('success', $message);
+    }
+
+    /**
+     * Return live send-progress as JSON (polled by the frontend).
+     * Reads fresh from the database — no heavy computation here.
+     */
+    public function progress(Newsletter $newsletter)
+    {
+        // Re-fetch to get the latest DB values written by the send worker.
+        $newsletter->refresh();
+
+        return response()->json([
+            'status' => $newsletter->status,
+            'sent'   => (int) ($newsletter->sent_count   ?? 0),
+            'failed' => (int) ($newsletter->failed_count ?? 0),
+            'total'  => (int) ($newsletter->recipients_count ?? 0),
+        ]);
     }
 }
