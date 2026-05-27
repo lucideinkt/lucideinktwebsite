@@ -62,7 +62,7 @@ class AppServiceProvider extends ServiceProvider
                     'mail.mailers.smtp.port'     => (int) env('SMTP_PORT', env('MAIL_PORT', 465)),
                     'mail.mailers.smtp.username' => env('SMTP_USERNAME', env('MAIL_USERNAME')),
                     'mail.mailers.smtp.password' => env('SMTP_PASSWORD', env('MAIL_PASSWORD')),
-                    'mail.mailers.smtp.scheme'   => env('SMTP_SCHEME', 'smtps'),
+                    'mail.mailers.smtp.scheme'   => env('SMTP_SCHEME', 'smtp'),
                     // Disable forwarding when sending via real SMTP
                     'mail.mailtrap_forward_email' => null,
                 ]);
