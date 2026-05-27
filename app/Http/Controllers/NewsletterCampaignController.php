@@ -148,15 +148,23 @@ class NewsletterCampaignController extends Controller
 
         $newsletter->markAsSending();
 
+        // Allow as much time as needed — the list may be large
+        set_time_limit(0);
+        ignore_user_abort(true);
+
         $sent   = 0;
         $failed = 0;
 
         foreach ($subscribers as $subscriber) {
             try {
-                Mail::to($subscriber->email)->queue(new \App\Mail\NewsletterMail($newsletter, $subscriber));
+                Mail::to($subscriber->email)->send(new \App\Mail\NewsletterMail($newsletter, $subscriber));
                 $sent++;
             } catch (\Exception $e) {
                 $failed++;
+                \Illuminate\Support\Facades\Log::error('NewsletterMail failed for ' . $subscriber->email, [
+                    'newsletter_id' => $newsletter->id,
+                    'error'         => $e->getMessage(),
+                ]);
             }
         }
 
@@ -166,6 +174,11 @@ class NewsletterCampaignController extends Controller
         ]);
         $newsletter->markAsSent();
 
-        return back()->with('success', "Nieuwsbrief is in de queue gezet voor {$sent} abonnees. Mislukt bij {$failed}.");
+        $message = "Nieuwsbrief verstuurd naar {$sent} abonnee(s).";
+        if ($failed > 0) {
+            $message .= " Mislukt bij {$failed} abonnee(s) — controleer de logs.";
+        }
+
+        return back()->with('success', $message);
     }
 }

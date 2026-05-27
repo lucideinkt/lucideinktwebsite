@@ -697,7 +697,7 @@ class CheckoutController extends Controller
 
     private function sendAdminEmail(Order $order): void
     {
-        $adminEmail = config('services.lucideinkt.admin_email'); // lucideinkt@gmail.com
+        $adminEmail = config('services.lucideinkt.admin_email'); // info@lucideinkt.nl
 
         if (!$adminEmail) {
             Log::warning('Admin email not configured (LUCIDE_INKT_MAIL missing)', [
@@ -707,9 +707,17 @@ class CheckoutController extends Controller
         }
 
         try {
-            Mail::to($adminEmail)->send(new NewOrderMail($order->fresh()));
+            $mailer = Mail::to($adminEmail);
+
+            // BCC to Gmail so the order notification also arrives in lucideinkt@gmail.com
+            $bcc = config('services.lucideinkt.contact_bcc'); // lucideinkt@gmail.com
+            if ($bcc && $bcc !== $adminEmail) {
+                $mailer = $mailer->bcc($bcc);
+            }
+
+            $mailer->send(new NewOrderMail($order->fresh()));
         } catch (\Throwable $e) {
-            Log::error('Failed to queue NewOrderMail to admin', [
+            Log::error('Failed to send NewOrderMail to admin', [
                 'order_id'   => $order->id,
                 'admin_email' => $adminEmail,
                 'error'      => $e->getMessage(),
