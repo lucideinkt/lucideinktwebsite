@@ -66,7 +66,7 @@ class ContactForm extends Component
             if ($bcc && $bcc !== $recipientEmail) {
                 $mailer = $mailer->bcc($bcc);
             }
-            $mailer->queue(
+            $mailer->send(
                 new ContactFormMail(
                     $this->name,
                     $this->email,

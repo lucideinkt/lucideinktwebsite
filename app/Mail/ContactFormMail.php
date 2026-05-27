@@ -34,6 +34,8 @@ class ContactFormMail extends Mailable
 
     public function build()
     {
+        ApplyMailConfig::apply();
+
         $mail = $this->subject('Contactformulier: ' . $this->subject)
             ->view('emails.contact-form', [
                 'name' => $this->name,
