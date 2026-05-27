@@ -47,22 +47,22 @@ class AppServiceProvider extends ServiceProvider
             // Mail: switch between real SMTP and Mailtrap
             if (SiteSettingService::isMailtrap()) {
                 config([
-                    'mail.mailers.smtp.host'     => env('MAILTRAP_HOST', 'sandbox.smtp.mailtrap.io'),
-                    'mail.mailers.smtp.port'     => (int) env('MAILTRAP_PORT', 2525),
-                    'mail.mailers.smtp.username' => env('MAILTRAP_USERNAME'),
-                    'mail.mailers.smtp.password' => env('MAILTRAP_PASSWORD'),
+                    'mail.mailers.smtp.host'     => config('smtp.mailtrap_host'),
+                    'mail.mailers.smtp.port'     => config('smtp.mailtrap_port'),
+                    'mail.mailers.smtp.username' => config('smtp.mailtrap_username'),
+                    'mail.mailers.smtp.password' => config('smtp.mailtrap_password'),
                     'mail.mailers.smtp.scheme'   => null,
                     // Enable forwarding to real inbox when using Mailtrap
-                    'mail.mailtrap_forward_email' => env('MAILTRAP_FORWARD_EMAIL'),
+                    'mail.mailtrap_forward_email' => config('smtp.mailtrap_forward'),
                 ]);
             } else {
                 // Eigen SMTP (lucideinkt.nl) — scheme MUST be 'ssl' for port 465
                 config([
-                    'mail.mailers.smtp.host'     => env('SMTP_HOST', env('MAIL_HOST')),
-                    'mail.mailers.smtp.port'     => (int) env('SMTP_PORT', env('MAIL_PORT', 465)),
-                    'mail.mailers.smtp.username' => env('SMTP_USERNAME', env('MAIL_USERNAME')),
-                    'mail.mailers.smtp.password' => env('SMTP_PASSWORD', env('MAIL_PASSWORD')),
-                    'mail.mailers.smtp.scheme'   => env('SMTP_SCHEME', 'smtps'),
+                    'mail.mailers.smtp.host'     => config('smtp.host'),
+                    'mail.mailers.smtp.port'     => config('smtp.port'),
+                    'mail.mailers.smtp.username' => config('smtp.username'),
+                    'mail.mailers.smtp.password' => config('smtp.password'),
+                    'mail.mailers.smtp.scheme'   => config('smtp.scheme'),
                     // Disable forwarding when sending via real SMTP
                     'mail.mailtrap_forward_email' => null,
                 ]);

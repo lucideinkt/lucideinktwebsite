@@ -9,6 +9,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\Traits\HasMailtrapForwarding;
+use App\Mail\Middleware\ApplyMailConfig;
 
 class NewOrderMail extends Mailable
 {
@@ -19,6 +20,11 @@ class NewOrderMail extends Mailable
     public function __construct($order)
     {
         $this->order = $order;
+    }
+
+    public function middleware(): array
+    {
+        return [new ApplyMailConfig()];
     }
 
     public function build()

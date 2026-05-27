@@ -7,6 +7,7 @@ use App\Models\NewsletterSubscriber;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Mail\Middleware\ApplyMailConfig;
 
 class NewsletterConfirmationMail extends Mailable
 {
@@ -21,6 +22,11 @@ class NewsletterConfirmationMail extends Mailable
         $this->confirmUrl = route('newsletter.confirm', $subscriber->confirmation_token);
     }
 
+    public function middleware(): array
+    {
+        return [new ApplyMailConfig()];
+    }
+
     public function build()
     {
         $mail = $this->subject('Bevestig je nieuwsbrief inschrijving – Lucide Inkt')
@@ -29,4 +35,3 @@ class NewsletterConfirmationMail extends Mailable
         return $this->addMailtrapForwarding($mail);
     }
 }
-

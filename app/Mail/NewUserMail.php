@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use App\Mail\Traits\HasMailtrapForwarding;
+use App\Mail\Middleware\ApplyMailConfig;
 
 class NewUserMail extends Mailable
 {
@@ -19,6 +20,11 @@ class NewUserMail extends Mailable
   {
     $this->user = $user;
     $this->resetUrl = $resetUrl;
+  }
+
+  public function middleware(): array
+  {
+    return [new ApplyMailConfig()];
   }
 
   public function build()
