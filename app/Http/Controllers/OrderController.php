@@ -90,8 +90,16 @@ class OrderController extends Controller
         $this->authorize('create', Order::class);
         $products      = Product::with('category')->orderBy('title')->get();
         $shippingCosts = ShippingCost::where('is_published', 1)->orderBy('country')->get();
+        $discountCodes = DiscountCode::where('is_published', 1)
+            ->whereNull('deleted_at')
+            ->where(function ($q) {
+                $q->whereNull('expiration_date')
+                  ->orWhere('expiration_date', '>=', now()->startOfDay());
+            })
+            ->orderBy('code')
+            ->get();
 
-        return view('orders.create', compact('products', 'shippingCosts'));
+        return view('orders.create', compact('products', 'shippingCosts', 'discountCodes'));
     }
 
     public function apiDiscountCodeLookup(Request $request)
