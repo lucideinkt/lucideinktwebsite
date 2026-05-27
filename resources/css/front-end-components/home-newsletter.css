@@ -172,6 +172,8 @@
     animation: fadeInUp 0.25s ease;
     background: rgba(255, 246, 224, 0.06);
     color: rgba(255, 246, 224, 0.9);
+    max-width: 500px;
+    text-align: left;
 }
 
 .newsletter-status-message--success {

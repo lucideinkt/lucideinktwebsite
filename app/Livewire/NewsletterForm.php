@@ -49,7 +49,7 @@ class NewsletterForm extends Component
                     'status' => 'pending',
                     'confirmation_token' => $confirmationToken,
                 ]);
-                Mail::to($existing->email)->send(new NewsletterConfirmationMail($existing->fresh()));
+                Mail::to($existing->email)->queue(new NewsletterConfirmationMail($existing->fresh()));
                 $this->statusMessage = 'Welkom terug! Controleer je inbox om je inschrijving te bevestigen.';
                 $this->statusType = 'success';
                 $this->reset('email');
@@ -68,7 +68,7 @@ class NewsletterForm extends Component
             'user_agent' => request()->userAgent(),
         ]);
 
-        Mail::to($subscriber->email)->send(new NewsletterConfirmationMail($subscriber));
+        Mail::to($subscriber->email)->queue(new NewsletterConfirmationMail($subscriber));
 
         $this->statusMessage = 'Bedankt! Controleer je (spam) inbox en bevestig je inschrijving via de link in de e-mail.';
         $this->statusType = 'success';
