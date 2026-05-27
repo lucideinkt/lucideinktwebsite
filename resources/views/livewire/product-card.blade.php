@@ -12,12 +12,12 @@
             @if ($product->stock > 0 && $product->stock <= 3)
                 <div class="product-card-badge product-card-badge-warning">
                     <i class="fa-solid fa-fire-flame-simple"></i>
-                    <span>Lage voorraad</span>
+                    <span>Beperkte voorraad</span>
                 </div>
             @elseif ($product->stock == 0)
                 <div class="product-card-badge product-card-badge-error">
                     <i class="fa-solid fa-ban"></i>
-                    <span>Niet op voorraad</span>
+                    <span>Uitverkocht</span>
                 </div>
             @endif
         </div>
