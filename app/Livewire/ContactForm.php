@@ -60,20 +60,21 @@ class ContactForm extends Component
                 throw new \Exception('E-mail adres is niet geconfigureerd. Controleer LUCIDE_INKT_MAIL of MAIL_FROM_ADDRESS in .env');
             }
 
-            Mail::to($recipientEmail)
-                ->when(
-                    config('services.lucideinkt.contact_bcc'),
-                    fn ($mail) => $mail->bcc(config('services.lucideinkt.contact_bcc'))
+            // Send to admin — avoid BCC to the same address as TO (causes duplicates)
+            $bcc = config('services.lucideinkt.contact_bcc');
+            $mailer = Mail::to($recipientEmail);
+            if ($bcc && $bcc !== $recipientEmail) {
+                $mailer = $mailer->bcc($bcc);
+            }
+            $mailer->queue(
+                new ContactFormMail(
+                    $this->name,
+                    $this->email,
+                    $this->country,
+                    $this->subject,
+                    $this->message
                 )
-                ->queue(
-                    new ContactFormMail(
-                        $this->name,
-                        $this->email,
-                        $this->country,
-                        $this->subject,
-                        $this->message
-                    )
-                );
+            );
 
             $this->success = true;
             $this->reset(['name', 'email', 'country', 'subject', 'message']);

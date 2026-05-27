@@ -3,12 +3,12 @@
 namespace App\Mail\Middleware;
 
 /**
- * Queue job middleware — re-applies the correct mail config before each
+ * Queue-job middleware — re-applies the correct SMTP config before each
  * queued mailable so the queue worker always uses the right driver,
- * even without restarting.
+ * even when the config is cached.
  *
- * Production  → own SMTP (shared39.cloud86-host.nl)
- * Other envs  → Mailtrap
+ * Production  → Mailtrap Sending (live.smtp.mailtrap.io) — real delivery
+ * Other envs  → Mailtrap Sandbox (sandbox.smtp.mailtrap.io) — catches all, nothing delivered
  */
 class ApplyMailConfig
 {
@@ -16,21 +16,19 @@ class ApplyMailConfig
     {
         if (app()->environment('production')) {
             config([
-                'mail.mailers.smtp.host'      => config('smtp.host'),
-                'mail.mailers.smtp.port'      => config('smtp.port'),
-                'mail.mailers.smtp.username'  => config('smtp.username'),
-                'mail.mailers.smtp.password'  => config('smtp.password'),
-                'mail.mailers.smtp.scheme'    => config('smtp.scheme'),
-                'mail.mailtrap_forward_email' => null,
+                'mail.mailers.smtp.host'     => env('SMTP_HOST', 'live.smtp.mailtrap.io'),
+                'mail.mailers.smtp.port'     => (int) env('SMTP_PORT', 587),
+                'mail.mailers.smtp.username' => env('SMTP_USERNAME', 'api'),
+                'mail.mailers.smtp.password' => env('SMTP_PASSWORD'),
+                'mail.mailers.smtp.scheme'   => env('SMTP_SCHEME', 'smtp'),
             ]);
         } else {
             config([
-                'mail.mailers.smtp.host'      => config('smtp.mailtrap_host'),
-                'mail.mailers.smtp.port'      => config('smtp.mailtrap_port'),
-                'mail.mailers.smtp.username'  => config('smtp.mailtrap_username'),
-                'mail.mailers.smtp.password'  => config('smtp.mailtrap_password'),
-                'mail.mailers.smtp.scheme'    => null,
-                'mail.mailtrap_forward_email' => null,
+                'mail.mailers.smtp.host'     => env('MAILTRAP_HOST', 'sandbox.smtp.mailtrap.io'),
+                'mail.mailers.smtp.port'     => (int) env('MAILTRAP_PORT', 2525),
+                'mail.mailers.smtp.username' => env('MAILTRAP_USERNAME', env('MAIL_USERNAME')),
+                'mail.mailers.smtp.password' => env('MAILTRAP_PASSWORD', env('MAIL_PASSWORD')),
+                'mail.mailers.smtp.scheme'   => null,
             ]);
         }
 
