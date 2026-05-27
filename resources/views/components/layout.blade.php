@@ -43,7 +43,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.4/dist/vue.global.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/myparcel.lib.js"></script>
     <link rel="stylesheet" href="{{ asset('css/myparcel.css') }}" />
 
@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ixm0jkz.css">
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
-    <link rel="preload" href="/fonts/OmarNaskh-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    {{-- OmarNaskh font is only used in the book reader — preloaded there, not here --}}
 
     {{-- Polyfill for crypto.randomUUID --}}
     <script>
