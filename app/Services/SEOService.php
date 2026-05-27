@@ -7,10 +7,16 @@ use RalphJSmit\Laravel\SEO\Support\SEOData;
 class SEOService
 {
     /**
-     * The default OG share image — solid background, no transparency, good aspect ratio.
-     * Used as fallback whenever a page/product image may have a transparent background.
+     * The default OG share image — used for non-product pages (home, contact, auth, info,
+     * cart, checkout, …) as well as any fallback case where a product image is not JPEG.
      */
-    const DEFAULT_OG_IMAGE = 'images/books_standing_new.webp';
+    const DEFAULT_OG_IMAGE = 'images/social_share_logo.jpg';
+
+    /**
+     * Product/content fallback image — used when a product has no JPEG cover.
+     * Kept as a solid-background book image so product pages still look great.
+     */
+    const PRODUCT_FALLBACK_IMAGE = 'images/books_standing_new.webp';
 
     /**
      * Get SEO data for a specific page
@@ -30,7 +36,7 @@ class SEOService
             title: $config['title'] ?? null,
             description: $config['description'] ?? null,
             url: $config['url'] ?? url()->current(),
-            image: $config['image'] ?? secure_url('images/books_standing_new.webp'),
+            image: $config['image'] ?? secure_url(self::DEFAULT_OG_IMAGE),
             author: $config['author'] ?? 'Lucide Inkt',
             locale: $config['locale'] ?? 'nl_NL',
             site_name: $config['site_name'] ?? 'Lucide Inkt',
@@ -53,7 +59,7 @@ class SEOService
                 'title'       => 'Risale-i Nur Vertalingen Nederlands & Engels | Lucide Inkt',
                 'description' => 'Lucide Inkt is een non-profit organisatie die zich richt op de verspreiding van geloofswaarheden die omschreven zijn in de boekenreeks van de Risale-i Nur.',
                 'url'         => route('home'),
-                'image'       => secure_url('images/books_standing_new.webp'),
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'type'        => 'website',
             ],
 
@@ -62,43 +68,42 @@ class SEOService
                 'title'       => 'Bediüzzaman Said Nursi | Lucide Inkt',
                 'description' => 'Ik zal de wereld bewijzen dat de Qur\'an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!',
                 'url'         => route('saidnursi'),
-                'image'       => secure_url('images/said_nursi_sharp.jpg'), // JPEG — no transparency
+                'image'       => secure_url('images/said_nursi_social.jpg'),
                 'type'        => 'article',
             ],
             'risale' => [
                 'title'       => 'Wat is de Risale-i Nur? | Lucide Inkt',
                 'description' => 'Als een ware spirituele tafsir van de Qur\'an voldoet de Risale-i Nur aan alle behoeften van deze tijd. Het enige wat van de lezer gevraagd wordt, is lezen met een aandachtige blik en een onbevooroordeeld hart.',
                 'url'         => route('risale'),
-                'image'       => secure_url('images/books-stapel.webp'),
+                'image'       => secure_url('images/stapel_new_social.jpg'),
                 'type'        => 'article',
             ],
             'herzameling' => [
                 'title'       => 'Het Traktaat over de Herzameling | Lucide Inkt',
                 'description' => 'Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.',
                 'url'         => route('herzameling'),
-                // Book cover WebP may have transparency — use solid-bg fallback for sharing
-                'image'       => secure_url('images/books_standing_new.webp'),
+                'image'       => secure_url('images/herzameling_social.jpg'),
                 'type'        => 'article',
             ],
             'contact' => [
                 'title'       => 'Contact | Lucide Inkt',
                 'description' => 'Neem contact op met Lucide Inkt voor vragen over de Risale-i Nur vertalingen of onze diensten.',
                 'url'         => route('contact'),
-                'image'       => secure_url('images/books_standing_new.webp'),
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'type'        => 'website',
             ],
             'shop' => [
                 'title'       => 'Winkel | Lucide Inkt',
                 'description' => 'Ontdek onze collectie van Nederlandse en Engelse vertalingen van de Risale-i Nur. Bestel eenvoudig en veilig online.',
                 'url'         => route('shop'),
-                'image'       => secure_url('images/books_standing_new.webp'),
+                'image'       => secure_url('images/new_books_standing.jpg'),
                 'type'        => 'website',
             ],
             'online-lezen' => [
                 'title'       => 'Online Bibliotheek | Lucide Inkt',
                 'description' => 'Lees onze boeken direct online. Ontdek de Risale-i Nur vertalingen digitaal, waar en wanneer je maar wilt.',
                 'url'         => route('onlineLezen'),
-                'image'       => secure_url('images/books_standing_new.webp'),
+                'image'       => secure_url('images/bookshelf_social.jpg'),
                 'type'        => 'website',
             ],
             'audiobooks' => [
@@ -114,24 +119,28 @@ class SEOService
                 'title'       => 'Algemene Voorwaarden | Lucide Inkt',
                 'description' => 'Lees de algemene voorwaarden van Lucide Inkt voor het bestellen van boeken en andere producten.',
                 'url'         => route('algemeneVoorwaarden'),
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'type'        => 'website',
             ],
             'privacybeleid' => [
                 'title'       => 'Privacybeleid | Lucide Inkt',
                 'description' => 'Lees ons privacybeleid en ontdek hoe Lucide Inkt omgaat met uw persoonsgegevens.',
                 'url'         => route('privacybeleid'),
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'type'        => 'website',
             ],
             'retourbeleid' => [
                 'title'       => 'Retourbeleid | Lucide Inkt',
                 'description' => 'Lees ons retourbeleid. Ontdek hoe u producten kunt retourneren bij Lucide Inkt.',
                 'url'         => route('retourbeleid'),
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'type'        => 'website',
             ],
             'verzending-levering' => [
                 'title'       => 'Verzending & Levering | Lucide Inkt',
                 'description' => 'Informatie over verzending en levering van bestellingen bij Lucide Inkt.',
                 'url'         => route('verzendingLevering'),
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'type'        => 'website',
             ],
 
@@ -139,42 +148,49 @@ class SEOService
             'login' => [
                 'title'       => 'Inloggen | Lucide Inkt',
                 'description' => 'Log in op je Lucide Inkt account om je bestellingen te beheren.',
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
             'register' => [
                 'title'       => 'Registreren | Lucide Inkt',
                 'description' => 'Maak een account aan bij Lucide Inkt.',
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
             'forgot-password' => [
                 'title'       => 'Wachtwoord vergeten | Lucide Inkt',
                 'description' => 'Reset je wachtwoord voor je Lucide Inkt account.',
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
             'reset-password' => [
                 'title'       => 'Wachtwoord instellen | Lucide Inkt',
                 'description' => 'Stel een nieuw wachtwoord in voor je Lucide Inkt account.',
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
             'cart' => [
                 'title'       => 'Winkelwagen | Lucide Inkt',
                 'description' => 'Bekijk de producten in je winkelwagen bij Lucide Inkt.',
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
             'checkout' => [
                 'title'       => 'Bestelling plaatsen | Lucide Inkt',
                 'description' => 'Rond je bestelling af bij Lucide Inkt.',
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
             'checkout-success' => [
                 'title'       => 'Bestelling ontvangen | Lucide Inkt',
                 'description' => 'Bedankt voor je bestelling bij Lucide Inkt.',
+                'image'       => secure_url('images/social_share_logo.jpg'),
                 'robots'      => 'noindex, nofollow',
                 'type'        => 'website',
             ],
@@ -238,7 +254,7 @@ class SEOService
     public static function resolveOgImage(?string $imagePath): string
     {
         if (!$imagePath) {
-            return secure_url(self::DEFAULT_OG_IMAGE);
+            return secure_url(self::PRODUCT_FALLBACK_IMAGE);
         }
 
         $ext = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
@@ -248,7 +264,7 @@ class SEOService
             return secure_url($imagePath);
         }
 
-        // WebP and PNG may be transparent — use solid fallback
-        return secure_url(self::DEFAULT_OG_IMAGE);
+        // WebP and PNG may be transparent — use solid product fallback
+        return secure_url(self::PRODUCT_FALLBACK_IMAGE);
     }
 }

@@ -175,15 +175,25 @@
           {{-- Discount code lookup --}}
           <div>
             <label class="block mb-1.5 text-sm font-medium text-gray-700 dark:text-gray-300">Kortingscode</label>
-            <div class="flex gap-2">
-              <input type="text" id="discount_code_field" placeholder="Bijv. ZOMER10"
-                value="{{ old('discount_code_input') }}"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-              <button type="button" id="apply_discount_code_btn"
-                class="px-3 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-lg whitespace-nowrap focus:ring-2 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700">
-                Toepassen
-              </button>
-            </div>
+            <select id="discount_code_field"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <option value="">— Geen kortingscode —</option>
+              @foreach($discountCodes as $dc)
+                <option value="{{ $dc->code }}"
+                  data-discount="{{ $dc->discount }}"
+                  data-discount-type="{{ $dc->discount_type }}"
+                  data-description="{{ $dc->description }}"
+                  {{ old('discount_code_input') === $dc->code ? 'selected' : '' }}>
+                  {{ $dc->code }}
+                  @if($dc->discount_type === 'percent')
+                    — {{ $dc->discount }}% korting
+                  @else
+                    — € {{ number_format($dc->discount, 2, ',', '.') }} korting
+                  @endif
+                  @if($dc->description) ({{ $dc->description }}) @endif
+                </option>
+              @endforeach
+            </select>
             <div id="discount_code_result" class="mt-1.5 text-xs"></div>
             {{-- Hidden: submitted code --}}
             <input type="hidden" name="discount_code_input" id="discount_code_input_hidden" value="{{ old('discount_code_input') }}">
@@ -590,74 +600,48 @@ function recalcTotal() {
     document.getElementById('summary-grand-total').textContent = fmt(grandTotal);
 }
 
-// ─── Discount code apply ─────────────────────────────────────────────────────
+// ─── Discount code dropdown ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
 
     function applyDiscountCode() {
-        const codeField  = document.getElementById('discount_code_field');
+        const select     = document.getElementById('discount_code_field');
         const resultEl   = document.getElementById('discount_code_result');
         const hiddenInput = document.getElementById('discount_code_input_hidden');
-        const code = codeField.value.trim().toUpperCase();
+        const selected   = select.options[select.selectedIndex];
 
-        if (!code) {
+        if (!selected || !selected.value) {
+            // No code selected — clear
+            appliedDiscountCode = null;
+            hiddenInput.value   = '';
             resultEl.textContent = '';
-            resultEl.className   = 'mt-1.5 text-xs';
-            appliedDiscountCode  = null;
-            hiddenInput.value    = '';
+            resultEl.className  = 'mt-1.5 text-xs';
             recalcTotal();
             return;
         }
 
-        resultEl.textContent = 'Bezig met ophalen…';
-        resultEl.className   = 'mt-1.5 text-xs text-gray-500 dark:text-gray-400';
+        const code         = selected.value;
+        const discount     = parseFloat(selected.dataset.discount)     || 0;
+        const discountType = selected.dataset.discountType || 'amount';
+        const description  = selected.dataset.description || '';
 
-        fetch('/dashboard/api/discount-code?code=' + encodeURIComponent(code), {
-            headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '' }
-        })
-        .then(r => r.json())
-        .then(data => {
-            if (data.found) {
-                appliedDiscountCode = data;
-                hiddenInput.value   = data.code;
-                // Clear manual discount fields since code overrides
-                const dv = document.getElementById('discount_value');
-                const dt = document.getElementById('discount_type');
-                if (dv) dv.value = '0';
+        appliedDiscountCode = { code, discount, discount_type: discountType };
+        hiddenInput.value   = code;
 
-                const typeLabel = data.discount_type === 'percent'
-                    ? data.discount + '%'
-                    : fmt(data.discount);
-                resultEl.innerHTML  = '✓ <strong>' + data.code + '</strong> — ' + typeLabel + ' korting toegepast'
-                    + (data.description ? ' (' + data.description + ')' : '');
-                resultEl.className  = 'mt-1.5 text-xs text-green-600 dark:text-green-400';
-            } else {
-                appliedDiscountCode = null;
-                hiddenInput.value   = '';
-                resultEl.textContent = '✗ ' + (data.message || 'Kortingscode niet gevonden.');
-                resultEl.className   = 'mt-1.5 text-xs text-red-600 dark:text-red-400';
-            }
-            recalcTotal();
-        })
-        .catch(() => {
-            resultEl.textContent = 'Fout bij ophalen van kortingscode.';
-            resultEl.className   = 'mt-1.5 text-xs text-red-600 dark:text-red-400';
-        });
+        // Clear manual discount fields since code overrides
+        const dv = document.getElementById('discount_value');
+        if (dv) dv.value = '0';
+
+        const typeLabel = discountType === 'percent'
+            ? discount + '%'
+            : fmt(discount);
+        resultEl.innerHTML = '✓ <strong>' + code + '</strong> — ' + typeLabel + ' korting toegepast'
+            + (description ? ' (' + description + ')' : '');
+        resultEl.className = 'mt-1.5 text-xs text-green-600 dark:text-green-400';
+
+        recalcTotal();
     }
 
-    document.getElementById('apply_discount_code_btn')?.addEventListener('click', applyDiscountCode);
-    document.getElementById('discount_code_field')?.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') { e.preventDefault(); applyDiscountCode(); }
-    });
-
-    // Clear code when field is emptied
-    document.getElementById('discount_code_field')?.addEventListener('input', function () {
-        if (!this.value.trim()) {
-            appliedDiscountCode = null;
-            document.getElementById('discount_code_input_hidden').value = '';
-            document.getElementById('discount_code_result').textContent = '';
-            recalcTotal();
-        }
-    });
+    document.getElementById('discount_code_field')?.addEventListener('change', applyDiscountCode);
 
     // ─── Qty listeners ───────────────────────────────────────────────────────
     document.querySelectorAll('.qty-input').forEach(function (input) {
@@ -718,9 +702,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // ─── Restore discount code on validation error ────────────────────────────
     @if(old('discount_code_input'))
     (function () {
-        var f = document.getElementById('discount_code_field');
-        if (f && !f.value) f.value = '{{ old("discount_code_input") }}';
-        document.getElementById('apply_discount_code_btn')?.click();
+        var sel = document.getElementById('discount_code_field');
+        if (sel) {
+            // Pre-select the matching option and trigger change
+            for (var i = 0; i < sel.options.length; i++) {
+                if (sel.options[i].value === '{{ old("discount_code_input") }}') {
+                    sel.selectedIndex = i;
+                    break;
+                }
+            }
+            sel.dispatchEvent(new Event('change'));
+        }
     })();
     @endif
 
