@@ -71,8 +71,9 @@ class NewsletterController extends Controller
             $subscriber->confirm();
             $confirmed = true;
         } elseif ($subscriber->isSubscribed()) {
-            // Already confirmed
-            $confirmed = false;
+            // Already confirmed (e.g. Outlook Safe Links pre-visited the link).
+            // Show the success page so the user isn't confused.
+            $confirmed = true;
         }
 
         return view('newsletter.confirm', compact('confirmed'));

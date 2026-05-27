@@ -55,7 +55,11 @@ class NewsletterSubscriber extends Model
         $this->update([
             'status' => 'subscribed',
             'subscribed_at' => now(),
-            'confirmation_token' => null,
+            // Intentionally keep confirmation_token so the link stays valid.
+            // Outlook/Hotmail Safe Links pre-fetches confirmation URLs before the
+            // user clicks them. If we null the token here, the user gets a 404
+            // when they actually click the button. The link is idempotent — a
+            // second visit simply shows "Al bevestigd" (already confirmed).
         ]);
     }
 

@@ -224,7 +224,31 @@ class MailTriggerTest extends TestCase
         $response->assertSuccessful();
 
         $this->assertTrue($subscriber->fresh()->isSubscribed());
-        $this->assertNull($subscriber->fresh()->confirmation_token);
+        // Token is intentionally kept so the link remains valid for Outlook Safe Links
+        // (Outlook pre-fetches confirmation URLs; nulling the token would cause a 404
+        // when the user actually clicks the button).
+        $this->assertNotNull($subscriber->fresh()->confirmation_token);
+    }
+
+    public function test_confirm_link_works_twice_for_outlook_safe_links(): void
+    {
+        // Outlook/Hotmail Safe Links pre-fetches the URL before the user clicks.
+        // The first visit confirms the subscriber. The second visit (real user click)
+        // must NOT return a 404 — it should show "already confirmed" with HTTP 200.
+        $token = str_repeat('h', 64);
+
+        NewsletterSubscriber::create([
+            'email'              => 'outlook@example.com',
+            'token'              => str_repeat('i', 32),
+            'confirmation_token' => $token,
+            'status'             => 'pending',
+        ]);
+
+        // First visit (Outlook scanner)
+        $this->get(route('newsletter.confirm', $token))->assertSuccessful();
+
+        // Second visit (real user click) — must not 404
+        $this->get(route('newsletter.confirm', $token))->assertSuccessful();
     }
 
     // ──────────────────────────────────────────────────────────────────────────
