@@ -89,7 +89,7 @@
                                     <div class="info-row">
                                         <span class="info-label">Factuur:</span>
                                         <span class="info-value">
-                                            <a href="{{ route('orders.invoice', $order->id) }}" class="order-link" target="_blank">
+                                            <a href="{{ route('my_orders.invoice', $order->id) }}" class="order-link" target="_blank">
                                                 <i class="fa-solid fa-file-pdf"></i> Download PDF
                                             </a>
                                         </span>
@@ -321,7 +321,7 @@
                         @endif
                         @if (!empty($order->invoice_pdf_path))
                             <p><strong>Factuur:</strong>
-                                <a style="text-decoration: underline" href="{{ route('orders.invoice', $order->id) }}"
+                                <a style="text-decoration: underline" href="{{ route('my_orders.invoice', $order->id) }}"
                                     target="_blank">Download factuur</a>
                             </p>
                         @endif
