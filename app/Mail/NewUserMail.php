@@ -29,6 +29,8 @@ class NewUserMail extends Mailable
 
   public function build()
   {
+    ApplyMailConfig::apply();
+
     $mail = $this->subject('Welkom bij Lucide Inkt')
       ->view('emails.new-user', ['user' => $this->user, 'resetUrl' => $this->resetUrl]);
 

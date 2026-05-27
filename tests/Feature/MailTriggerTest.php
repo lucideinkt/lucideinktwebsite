@@ -40,7 +40,7 @@ class MailTriggerTest extends TestCase
 
         $response->assertSessionHas('success');
 
-        Mail::assertQueued(NewsletterConfirmationMail::class, function ($mail) {
+        Mail::assertSent(NewsletterConfirmationMail::class, function ($mail) {
             return $mail->hasTo('nieuw@example.com');
         });
     }
@@ -63,7 +63,7 @@ class MailTriggerTest extends TestCase
 
         $response->assertSessionHas('info');
 
-        Mail::assertQueued(NewsletterConfirmationMail::class, function ($mail) {
+        Mail::assertSent(NewsletterConfirmationMail::class, function ($mail) {
             return $mail->hasTo('pending@example.com');
         });
     }
@@ -84,7 +84,7 @@ class MailTriggerTest extends TestCase
 
         $response->assertSessionHas('success');
 
-        Mail::assertQueued(NewsletterConfirmationMail::class, function ($mail) {
+        Mail::assertSent(NewsletterConfirmationMail::class, function ($mail) {
             return $mail->hasTo('terug@example.com');
         });
     }
@@ -104,7 +104,7 @@ class MailTriggerTest extends TestCase
         ]);
 
         $response->assertSessionHas('info'); // "already subscribed" message
-        Mail::assertNothingQueued();
+        Mail::assertNothingSent();
     }
 
     public function test_subscribe_with_invalid_email_sends_no_mail(): void
@@ -113,7 +113,7 @@ class MailTriggerTest extends TestCase
 
         $this->post(route('newsletter.subscribe'), ['email' => 'not-an-email']);
 
-        Mail::assertNothingQueued();
+        Mail::assertNothingSent();
     }
 
     // ──────────────────────────────────────────────────────────────────────────
@@ -134,8 +134,8 @@ class MailTriggerTest extends TestCase
             ->call('submit')
             ->assertDispatched('contact-success');
 
-        Mail::assertQueued(ContactFormMail::class, function ($mail) {
-            // hasTo() is safe here — set before queueing via PendingMail::fill().
+        Mail::assertSent(ContactFormMail::class, function ($mail) {
+            // hasTo() is safe here — set before sending via PendingMail::fill().
             // hasReplyTo() is NOT safe here — set only inside build(), which runs later.
             // replyTo correctness is already proven in MailTest::test_contact_form_mail_sets_reply_to_when_valid_email.
             return $mail->hasTo('lucideinkt@gmail.com');
@@ -154,7 +154,7 @@ class MailTriggerTest extends TestCase
             ->call('submit')
             ->assertHasErrors(['name', 'subject', 'message']);
 
-        Mail::assertNothingQueued();
+        Mail::assertNothingSent();
     }
 
     public function test_contact_form_with_invalid_email_sends_no_mail(): void
@@ -169,7 +169,7 @@ class MailTriggerTest extends TestCase
             ->call('submit')
             ->assertHasErrors(['email']);
 
-        Mail::assertNothingQueued();
+        Mail::assertNothingSent();
     }
 
     // ──────────────────────────────────────────────────────────────────────────

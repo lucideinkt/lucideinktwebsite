@@ -12,7 +12,11 @@ namespace App\Mail\Middleware;
  */
 class ApplyMailConfig
 {
-    public function handle($job, $next): void
+    /**
+     * Apply the correct SMTP configuration based on environment.
+     * Call this directly from build() methods so it also works for synchronous (non-queued) sends.
+     */
+    public static function apply(): void
     {
         if (app()->environment('production')) {
             config([
@@ -31,7 +35,12 @@ class ApplyMailConfig
                 'mail.mailers.smtp.scheme'   => null,
             ]);
         }
+    }
 
+    /** Queue job middleware — kept for backwards compatibility with any queued jobs. */
+    public function handle($job, $next): void
+    {
+        static::apply();
         $next($job);
     }
 }

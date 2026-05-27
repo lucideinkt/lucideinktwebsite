@@ -29,6 +29,8 @@ class NewOrderMail extends Mailable
 
     public function build()
     {
+        ApplyMailConfig::apply();
+
         $delivery = json_decode( $this->order->myparcel_delivery_json, true);
         $pickupLocation = '';
 
