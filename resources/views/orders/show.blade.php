@@ -1,6 +1,6 @@
 <x-dashboard-layout>
 @push('head')
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4/dist/vue.global.prod.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/myparcel.lib.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@myparcel/delivery-options@6/dist/style.css" />
 @endpush
