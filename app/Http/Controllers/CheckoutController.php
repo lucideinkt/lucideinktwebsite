@@ -697,30 +697,34 @@ class CheckoutController extends Controller
 
     private function sendAdminEmail(Order $order): void
     {
-        $adminEmail = config('services.lucideinkt.admin_email');
+        $adminEmail = config('services.lucideinkt.admin_email'); // info@lucideinkt.nl
         $bccEmail   = config('services.lucideinkt.contact_bcc'); // lucideinkt@gmail.com
 
-        if (!$adminEmail) {
-            Log::warning('Admin email not configured (LUCIDE_INKT_MAIL missing)', [
+        // Prefer Gmail as primary TO — sending FROM and TO the same domain (info@lucideinkt.nl)
+        // causes self-delivery issues on shared hosting. Gmail is a reliable external address.
+        $primaryTo = $bccEmail ?: $adminEmail;
+
+        if (!$primaryTo) {
+            Log::warning('Admin email not configured (LUCIDE_INKT_MAIL / CONTACT_BCC_EMAIL missing)', [
                 'order_id' => $order->id
             ]);
             return;
         }
 
         try {
-            $mailer = Mail::to($adminEmail);
+            $mailer = Mail::to($primaryTo);
 
-            // BCC to Gmail as well — avoids self-delivery issues when FROM = TO = info@lucideinkt.nl
-            if ($bccEmail && $bccEmail !== $adminEmail) {
-                $mailer->bcc($bccEmail);
+            // Also CC info@lucideinkt.nl if it differs from the primary recipient
+            if ($adminEmail && $adminEmail !== $primaryTo) {
+                $mailer->cc($adminEmail);
             }
 
             $mailer->queue(new NewOrderMail($order->fresh()));
         } catch (\Throwable $e) {
             Log::error('Failed to queue NewOrderMail to admin', [
-                'order_id' => $order->id,
-                'admin_email' => $adminEmail,
-                'error' => $e->getMessage(),
+                'order_id'    => $order->id,
+                'primary_to'  => $primaryTo,
+                'error'       => $e->getMessage(),
             ]);
         }
     }
