@@ -333,7 +333,7 @@ class CheckoutController extends Controller
         ]);
 
         event(new Registered($user));
-        Mail::to($user->email)->queue(new WelcomeMail($user));
+        Mail::to($user->email)->send(new WelcomeMail($user));
 
         return $user;
     }
@@ -685,9 +685,9 @@ class CheckoutController extends Controller
     private function sendCustomerEmail(Order $order): void
     {
         try {
-            Mail::to($order->customer->billing_email)->queue(new OrderPaidMail($order->fresh()));
+            Mail::to($order->customer->billing_email)->send(new OrderPaidMail($order->fresh()));
         } catch (\Throwable $e) {
-            Log::error('Failed to queue OrderPaidMail to customer', [
+            Log::error('Failed to send OrderPaidMail to customer', [
                 'order_id' => $order->id,
                 'customer_email' => $order->customer->billing_email,
                 'error' => $e->getMessage(),
@@ -707,9 +707,9 @@ class CheckoutController extends Controller
         }
 
         try {
-            Mail::to($adminEmail)->queue(new NewOrderMail($order->fresh()));
+            Mail::to($adminEmail)->send(new NewOrderMail($order->fresh()));
         } catch (\Throwable $e) {
-            Log::error('Failed to queue NewOrderMail to admin', [
+            Log::error('Failed to send NewOrderMail to admin', [
                 'order_id' => $order->id,
                 'admin_email' => $adminEmail,
                 'error' => $e->getMessage(),
