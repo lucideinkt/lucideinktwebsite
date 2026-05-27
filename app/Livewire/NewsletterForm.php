@@ -70,7 +70,7 @@ class NewsletterForm extends Component
 
         Mail::to($subscriber->email)->send(new NewsletterConfirmationMail($subscriber));
 
-        $this->statusMessage = 'Bedankt! Controleer je inbox en bevestig je inschrijving via de link in de e-mail.';
+        $this->statusMessage = 'Bedankt! Controleer je (spam) inbox en bevestig je inschrijving via de link in de e-mail.';
         $this->statusType = 'success';
         $this->reset('email');
     }

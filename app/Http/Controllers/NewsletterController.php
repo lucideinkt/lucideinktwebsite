@@ -58,7 +58,7 @@ class NewsletterController extends Controller
         // Send confirmation email
         Mail::to($subscriber->email)->send(new NewsletterConfirmationMail($subscriber));
 
-        return back()->with('success', 'Bedankt! Controleer je inbox en bevestig je inschrijving via de link in de e-mail.');
+        return back()->with('success', 'Bedankt! Controleer je (spam) inbox en bevestig je inschrijving via de link in de e-mail.');
     }
 
     public function confirm($token)
