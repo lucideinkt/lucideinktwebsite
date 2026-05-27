@@ -8,6 +8,22 @@
     --tw-border-opacity: 1;
     border-color: rgb(229 231 235 / var(--tw-border-opacity));
   }
+
+  /* All interactive buttons/inputs should show a pointer cursor. */
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  label[for],
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  /* Disabled elements should not suggest interactivity. */
+  button:disabled,
+  input:disabled {
+    cursor: not-allowed;
+  }
 }
 
 @theme {
