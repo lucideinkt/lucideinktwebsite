@@ -112,14 +112,45 @@
             const closeBtn = document.getElementById('closeFullscreenBtn');
             const pdfUrl = "{{ route('pdf.proxy', ['path' => $product->pdf_file]) }}";
             const storageKey = 'pdf_last_page_{{ $product->id }}';
+            const PRODUCT_ID    = {{ $product->id }};
+            const PRODUCT_TITLE = @json($product->title);
+            const READER_URL    = "{{ route('onlineLezenRead', $product->slug) }}";
 
-            // Ophalen laatst gelezen pagina
+            // Track current page for save-on-leave
+            let currentPage = 1;
+
+            // Helper: save page to bibliotheek_reading_history for the bookshelf sidebar
+            function saveToHistory(page) {
+                try {
+                    const meta = {
+                        productId:    PRODUCT_ID,
+                        productTitle: PRODUCT_TITLE,
+                        readerUrl:    READER_URL,
+                        page:         page,
+                        timestamp:    Date.now()
+                    };
+                    let history = JSON.parse(localStorage.getItem('bibliotheek_reading_history') || '[]');
+                    history = history.filter(function(h) { return h.productId !== PRODUCT_ID; });
+                    history.unshift(meta);
+                    if (history.length > 20) history = history.slice(0, 20);
+                    localStorage.setItem('bibliotheek_reading_history', JSON.stringify(history));
+                    localStorage.setItem('bibliotheek_last_read', JSON.stringify(meta));
+                } catch(_) {}
+            }
+
+            // Check URL ?page= param first (set by "Laatste gelezen" click), fall back to localStorage
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlPage   = urlParams.get('page') ? parseInt(urlParams.get('page')) : null;
             const savedPage = localStorage.getItem(storageKey);
-            const startPage = savedPage ? parseInt(savedPage) : 1;
+            const startPage = urlPage || (savedPage ? parseInt(savedPage) : 1);
+            currentPage = startPage;
 
             if (startPage > 1) {
                 console.log('📖 Terugkeren naar laatst gelezen pagina:', startPage);
             }
+
+            // Save immediately so book appears in "Laatste gelezen" from the first second
+            saveToHistory(startPage);
 
             // PDF.js configuratie
             const pdfConfig = {
@@ -132,7 +163,7 @@
             };
 
             // Build viewer URL
-            let viewerUrl = '/pdfjs/web/viewer.html?file=' + encodeURIComponent(pdfConfig.file);
+            let viewerUrl = '/pdfjs/web/viewer.html?v={{ filemtime(public_path("pdfjs/web/viewer.html")) }}&file=' + encodeURIComponent(pdfConfig.file);
             viewerUrl += '#page=' + pdfConfig.page;
 
             if (pdfConfig.zoom !== 'auto') {
@@ -173,27 +204,42 @@
                 }
             }, { passive: false });
 
-            // Opslaan huidige pagina elke 2 seconden
+            // Opslaan huidige pagina elke 2 seconden + update reading history
             setInterval(function() {
                 try {
                     const iframeWindow = pdfViewer.contentWindow;
                     if (iframeWindow?.PDFViewerApplication?.pdfViewer) {
-                        const currentPage = iframeWindow.PDFViewerApplication.pdfViewer.currentPageNumber;
-                        if (currentPage) {
-                            localStorage.setItem(storageKey, currentPage);
-                            console.log('💾 Pagina opgeslagen:', currentPage);
+                        const page = iframeWindow.PDFViewerApplication.pdfViewer.currentPageNumber;
+                        if (page) {
+                            currentPage = page;
+                            localStorage.setItem(storageKey, page);
+                            saveToHistory(page);
+                            console.log('💾 Pagina opgeslagen:', page);
                         }
                     }
                 } catch (e) {
                     const pageMatch = pdfViewer.src.match(/[#&]page=(\d+)/);
                     if (pageMatch?.[1]) {
-                        localStorage.setItem(storageKey, pageMatch[1]);
+                        const p = parseInt(pageMatch[1]);
+                        currentPage = p;
+                        localStorage.setItem(storageKey, p);
+                        saveToHistory(p);
                     }
                 }
             }, 2000);
 
+            // Save on page hide / navigate-away so the entry is never lost
+            function saveBeforeLeave() {
+                saveToHistory(currentPage);
+            }
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'hidden') saveBeforeLeave();
+            });
+            window.addEventListener('beforeunload', saveBeforeLeave);
+
             // Close button - terug naar overzicht
             closeBtn.addEventListener('click', function() {
+                saveBeforeLeave();
                 console.log('🔙 Terugkeren naar boeken overzicht');
                 window.location.href = '{{ route("onlineLezen") }}';
             });
@@ -201,6 +247,7 @@
             // ESC key - terug naar overzicht
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
+                    saveBeforeLeave();
                     console.log('🔙 Terugkeren naar boeken overzicht (ESC)');
                     window.location.href = '{{ route("onlineLezen") }}';
                 }
