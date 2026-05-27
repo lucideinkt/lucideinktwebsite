@@ -27,7 +27,7 @@ class SecurityHeadersMiddleware
                 "img-src 'self' data: blob: https: https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com https://maps.gstatic.com",
                 "media-src 'self' blob:",
                 "frame-src 'self' https://www.mollie.com https://www.google.com",
-                "connect-src 'self' https://p.typekit.net https://www.google-analytics.com https://region1.google-analytics.com https://maps.googleapis.com https://api.pdok.nl wss: ws:",
+                "connect-src 'self' https://p.typekit.net https://www.google-analytics.com https://region1.google-analytics.com https://maps.googleapis.com https://api.pdok.nl https://cdn.jsdelivr.net https://unpkg.com wss: ws:",
                 "object-src 'none'",
                 "base-uri 'self'",
                 "form-action 'self'",
