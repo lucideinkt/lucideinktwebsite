@@ -9,7 +9,6 @@ class SiteSettingService
     const DEFAULTS = [
         'maintenance_mode' => '0',
         'mollie_mode'      => 'test',
-        'mail_driver'      => 'smtp',
         'debug_info'       => '0',
         'allow_indexing'   => '0',
     ];
@@ -57,11 +56,6 @@ class SiteSettingService
         return self::get('mollie_mode') === 'live';
     }
 
-    public static function isMailtrap(): bool
-    {
-        return self::get('mail_driver') === 'mailtrap';
-    }
-
     public static function isDebugInfo(): bool
     {
         return self::get('debug_info') === '1';
@@ -72,4 +66,3 @@ class SiteSettingService
         return self::get('allow_indexing') === '1';
     }
 }
-
