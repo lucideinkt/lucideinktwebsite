@@ -11,6 +11,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Mail\Traits\HasMailtrapForwarding;
+use App\Mail\Middleware\ApplyMailConfig;
 
 class OrderPaidMail extends Mailable
 {
@@ -23,29 +24,33 @@ class OrderPaidMail extends Mailable
         $this->order = $order;
     }
 
+    public function middleware(): array
+    {
+        return [new ApplyMailConfig()];
+    }
+
     public function build()
     {
         // Only read/attach – no DB writes here
         $pathOnDisk = Storage::disk('public')->path($this->order->invoice_pdf_path);
 
-        $delivery = json_decode( $this->order->myparcel_delivery_json, true);
+        $delivery = json_decode($this->order->myparcel_delivery_json, true);
         $pickupLocation = '';
         if (!empty($delivery['deliveryType']) && strtolower($delivery['deliveryType']) === 'pickup') {
             $pickupLocation = $delivery['pickup'] ?? $delivery['pickupLocation'] ?? null;
         }
 
         $mail = $this->subject('Jouw bestelling bij Lucide Inkt')
-            ->view('emails.orderpaid',
-            ['order' => $this->order,
-            'delivery' =>  $delivery,
-            'pickupLocation' => $pickupLocation
+            ->view('emails.orderpaid', [
+                'order'         => $this->order,
+                'delivery'      => $delivery,
+                'pickupLocation' => $pickupLocation,
             ])
             ->attach($pathOnDisk, [
-                'as' => 'factuur.pdf',
+                'as'   => 'factuur.pdf',
                 'mime' => 'application/pdf',
             ]);
 
-        // Add Mailtrap forwarding using trait (tries config, env, and fallback)
         return $this->addMailtrapForwarding($mail);
     }
 }
