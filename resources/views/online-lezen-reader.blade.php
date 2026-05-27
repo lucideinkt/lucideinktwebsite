@@ -97,18 +97,50 @@
             const pdfViewer = document.getElementById('pdf-viewer');
             const pdfUrl = "{{ route('pdf.proxy', ['path' => $product->pdf_file]) }}";
             const storageKey = 'pdf_last_page_{{ $product->id }}';
+            const PRODUCT_ID    = {{ $product->id }};
+            const PRODUCT_TITLE = @json($product->title);
+            const READER_URL    = "{{ route('onlineLezenRead', $product->slug) }}";
 
             // Shared variable voor huidige pagina (toegankelijk voor modal script)
             window.currentPdfPage = 1;
 
-            // Ophalen laatst gelezen pagina
+            // Check URL ?page= param first (set by "Laatst gelezen" click), fall back to localStorage
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlPage   = urlParams.get('page') ? parseInt(urlParams.get('page')) : null;
             const savedPage = localStorage.getItem(storageKey);
-            const startPage = savedPage ? parseInt(savedPage) : 1;
+            const startPage = urlPage || (savedPage ? parseInt(savedPage) : 1);
             window.currentPdfPage = startPage;
 
             if (startPage > 1) {
                 console.log('📖 Terugkeren naar laatst gelezen pagina:', startPage);
             }
+
+            // Helper: save page to bibliotheek_reading_history for the sidebar
+            function saveToHistory(page) {
+                try {
+                    const meta = {
+                        productId:    PRODUCT_ID,
+                        productTitle: PRODUCT_TITLE,
+                        readerUrl:    READER_URL,
+                        page:         page,
+                        timestamp:    Date.now()
+                    };
+                    let history = JSON.parse(localStorage.getItem('bibliotheek_reading_history') || '[]');
+                    history = history.filter(h => h.productId !== PRODUCT_ID);
+                    history.unshift(meta);
+                    if (history.length > 20) history = history.slice(0, 20);
+                    localStorage.setItem('bibliotheek_reading_history', JSON.stringify(history));
+                    // Also update the single "last read" key used by the bookshelf button label
+                    localStorage.setItem('bibliotheek_last_read', JSON.stringify(meta));
+                } catch(_) {}
+            }
+
+            // Expose globally so the fullscreen-modal script (separate closure) can call it
+            window._pdfSaveToHistory = saveToHistory;
+
+            // Save immediately on page load so the book appears in "Laatste gelezen"
+            // even if the user leaves within the first 2 seconds
+            saveToHistory(startPage);
 
             // PDF.js configuratie
             const pdfConfig = {
@@ -121,7 +153,7 @@
             };
 
             // Build viewer URL
-            let viewerUrl = '/pdfjs/web/viewer.html?file=' + encodeURIComponent(pdfConfig.file);
+            let viewerUrl = '/pdfjs/web/viewer.html?v={{ filemtime(public_path("pdfjs/web/viewer.html")) }}&file=' + encodeURIComponent(pdfConfig.file);
             viewerUrl += '#page=' + pdfConfig.page;
 
             if (pdfConfig.zoom !== 'auto') {
@@ -172,16 +204,28 @@
                         if (currentPage) {
                             window.currentPdfPage = currentPage;
                             localStorage.setItem(storageKey, currentPage);
+                            saveToHistory(currentPage);
                         }
                     }
                 } catch (e) {
                     const pageMatch = pdfViewer.src.match(/[#&]page=(\d+)/);
                     if (pageMatch?.[1]) {
-                        window.currentPdfPage = parseInt(pageMatch[1]);
-                        localStorage.setItem(storageKey, pageMatch[1]);
+                        const p = parseInt(pageMatch[1]);
+                        window.currentPdfPage = p;
+                        localStorage.setItem(storageKey, p);
+                        saveToHistory(p);
                     }
                 }
             }, 2000);
+
+            // Save on page hide / navigate-away so the entry is never lost
+            function saveCurrentPageToHistory() {
+                saveToHistory(window.currentPdfPage || startPage);
+            }
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'hidden') saveCurrentPageToHistory();
+            });
+            window.addEventListener('beforeunload', saveCurrentPageToHistory);
         });
     </script>
     @endif
@@ -423,6 +467,8 @@
                             currentPageInModal = currentPage;
                             lastKnownPage = currentPageInModal;
                             localStorage.setItem(storageKey, currentPageInModal);
+                            // Also save to reading history so bookshelf sidebar is updated
+                            if (window._pdfSaveToHistory) window._pdfSaveToHistory(currentPageInModal);
                             console.log('📄 Huidige pagina in modal:', currentPageInModal);
                         }
                         return;
@@ -436,6 +482,8 @@
                             currentPageInModal = urlPage;
                             lastKnownPage = currentPageInModal;
                             localStorage.setItem(storageKey, currentPageInModal);
+                            // Also save to reading history so bookshelf sidebar is updated
+                            if (window._pdfSaveToHistory) window._pdfSaveToHistory(currentPageInModal);
                             console.log('📄 Pagina gedetecteerd via URL:', currentPageInModal);
                         }
                     }
@@ -484,6 +532,9 @@
 
                 // Update window.currentPdfPage zodat normale viewer de juiste pagina heeft
                 window.currentPdfPage = lastKnownPage;
+
+                // Ensure history is saved with the final page before closing
+                if (window._pdfSaveToHistory) window._pdfSaveToHistory(lastKnownPage);
 
                 stopPageDetection();
                 modal.classList.remove('active');

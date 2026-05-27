@@ -234,6 +234,28 @@ body { margin: 0; padding: 0; width: 100%; }
     text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 12px rgba(200,140,30,0.3);
 }
 
+/* Small note beneath the "Zoeken in boeken" section title */
+.bs-search-note {
+    margin: 0;
+    padding: 5px 14px 6px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(255, 220, 150, 0.55);
+    font-style: italic;
+    letter-spacing: 0.3px;
+    background: rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/* Mobile variant — no background strip, sits below the search bar */
+.bs-search-note--mobile {
+    padding: 4px 8px 2px;
+    background: transparent;
+    border-bottom: none;
+    font-size: 11px;
+    text-align: center;
+}
+
 /* Body of a panel section */
 .bs-panel-body {
     padding: 10px 12px 12px;
@@ -1196,7 +1218,7 @@ body { margin: 0; padding: 0; width: 100%; }
     aspect-ratio: 2 / 3;
     border-radius: 3px 6px 6px 3px;
     overflow: hidden;
-    padding: 44px 14px 32px 18px;
+    padding: 36px 14px 20px 18px;
     /* Deep crimson red leather — colour layer forces uniform hue, shadow layers add depth */
     background-color: #3d0a08;
     background-image:
@@ -1254,10 +1276,87 @@ body { margin: 0; padding: 0; width: 100%; }
         0 0 10px rgba(220,160,40,0.5),
         0 0 22px rgba(200,130,20,0.25);
     padding: 0 6px;
-    margin-top: 10px; /* push title a bit lower on the cover */
+    margin-top: 4px;
     word-break: normal;
     overflow-wrap: normal;
     hyphens: none;
+}
+
+/* Title + optional small label below */
+.shelf-book-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Small plain text label underneath the title */
+.shelf-book-version-label {
+    position: relative;
+    z-index: 4;
+    font-family: sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 220, 150, 0.6);
+    text-shadow: none;
+    text-align: center;
+}
+
+/* Version badges above book title */
+.shelf-book-version-badge {
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.shelf-book-version-badge--html {
+    background: rgba(40, 120, 60, 0.85);
+    color: #c8f5d0;
+    border: 1px solid rgba(100, 200, 120, 0.5);
+    text-shadow: none;
+}
+
+.shelf-book-version-badge--pdf {
+    background: rgba(160, 60, 30, 0.85);
+    color: #ffd4c0;
+    border: 1px solid rgba(220, 100, 60, 0.5);
+    text-shadow: none;
+}
+
+/* Invisible placeholder — keeps title vertically aligned on books without a badge */
+.shelf-book-version-badge--placeholder {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.shelf-book-version-note {
+    position: relative;
+    z-index: 4;
+    display: block;
+    font-family: sans-serif;
+    font-size: 8px;
+    color: rgba(255, 220, 150, 0.7);
+    text-align: center;
+    letter-spacing: 0.3px;
+    margin-top: 1px;
+    margin-bottom: 0;
+    padding: 0 4px;
+    text-shadow: none;
+    font-style: italic;
+    line-height: 1.3;
 }
 
 /* ornament CSS removed — SVGs removed from template */
@@ -1350,7 +1449,7 @@ body { margin: 0; padding: 0; width: 100%; }
     width: 100%;
     max-width: 1260px;
     margin: 0 0 12px;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     position: relative;
     z-index: 2;
@@ -1382,6 +1481,7 @@ body { margin: 0; padding: 0; width: 100%; }
         0 4px 12px rgba(0,0,0,0.6);
     transition: box-shadow 0.2s;
     white-space: nowrap;
+    height: 36px;
 }
 .bs-drawer-toggle:hover {
     box-shadow:
