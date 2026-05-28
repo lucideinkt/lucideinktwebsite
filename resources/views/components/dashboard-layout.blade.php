@@ -134,8 +134,9 @@
   {{-- ===================== SIDEBAR ===================== --}}
   <aside id="logo-sidebar"
     class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+    style="height: 100dvh;"
     aria-label="Sidebar">
-    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+    <div class="h-full px-3 pb-20 overflow-y-auto bg-white dark:bg-gray-800" style="-webkit-overflow-scrolling: touch;">
       <ul class="space-y-2 font-medium">
 
         @anyrole('admin', 'user')
@@ -242,6 +243,25 @@
             class="flex items-center p-2 rounded-lg group {{ request()->routeIs('admin.analytics') ? 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700' }}">
             <i class="fa-solid fa-chart-line text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-5 text-center"></i>
             <span class="ms-3">Statistieken</span>
+          </a>
+        </li>
+
+        <li class="pt-4 pb-1">
+          <span class="text-xs font-semibold text-gray-400 uppercase dark:text-gray-500 px-2">SEO</span>
+        </li>
+        <li>
+          <a href="{{ route('admin.page-seo.index') }}"
+            class="flex items-center p-2 rounded-lg group {{ request()->routeIs('admin.page-seo.*') ? 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700' }}">
+            <i class="fa-solid fa-magnifying-glass-chart text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-5 text-center"></i>
+            <span class="ms-3">Pagina SEO</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('productIndex') }}" onclick="event.preventDefault(); window.location='{{ route('productIndex') }}';"
+            class="flex items-center p-2 rounded-lg group text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            title="SEO per product vind je bij Producten → Bewerken">
+            <i class="fa-solid fa-box-open text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-5 text-center text-xs"></i>
+            <span class="ms-3 text-sm">Product SEO → Producten</span>
           </a>
         </li>
 

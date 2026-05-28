@@ -52,6 +52,7 @@ class StoreProductRequest extends FormRequest
             'seo_author' => 'nullable|string|max:255',
             'seo_robots' => 'nullable|string|max:255',
             'seo_canonical_url' => 'nullable|url|max:500',
+            'seo_title' => 'nullable|string|max:70',
         ];
     }
 
