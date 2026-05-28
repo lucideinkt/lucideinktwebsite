@@ -6,6 +6,7 @@ use App\Models\PageVisit;
 use App\Models\Product;
 use Closure;
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 use Symfony\Component\HttpFoundation\Response;
 
 class TrackPageVisit
@@ -63,6 +64,21 @@ class TrackPageVisit
                     $ua         = $request->userAgent() ?? '';
                     $deviceType = $this->detectDevice($ua);
 
+                    // GeoIP lookup — silently skipped if it fails
+                    $countryCode = null;
+                    $country     = null;
+                    $city        = null;
+                    try {
+                        $position = Location::get($request->ip());
+                        if ($position) {
+                            $countryCode = $position->countryCode ?: null;
+                            $country     = $position->countryName ?: null;
+                            $city        = $position->cityName ?: null;
+                        }
+                    } catch (\Throwable) {
+                        // GeoIP failure is non-fatal
+                    }
+
                     PageVisit::create([
                         'url'          => $request->fullUrl(),
                         'route_name'   => $routeName,
@@ -75,6 +91,9 @@ class TrackPageVisit
                         'user_agent'   => substr($ua, 0, 500),
                         'referer'      => $request->header('referer') ? substr($request->header('referer'), 0, 500) : null,
                         'device_type'  => $deviceType,
+                        'country_code' => $countryCode,
+                        'country'      => $country,
+                        'city'         => $city,
                     ]);
                 } catch (\Throwable $e) {
                     // Never break the request because of analytics
@@ -103,4 +122,3 @@ class TrackPageVisit
         return 'desktop';
     }
 }
-

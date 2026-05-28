@@ -221,10 +221,28 @@
           </div>
           <div class="p-4 space-y-4">
             <div>
-              <label for="seo_description" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">SEO beschrijving</label>
-              <textarea name="seo_description" id="seo_description" rows="3" maxlength="160"
+              <label for="seo_title" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+                SEO Titel <span class="font-normal text-gray-400">(aanbevolen: 50–65 tekens)</span>
+              </label>
+              <input type="text" name="seo_title" id="prod_seo_title" maxlength="70"
+                value="{{ old('seo_title', isset($product) ? ($product->seo_title ?? '') : '') }}"
+                placeholder="{{ isset($product) ? ($product->title ?? '') . ' | Lucide Inkt' : 'Laat leeg om producttitel te gebruiken' }}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <div class="flex justify-between mt-1">
+                <p class="text-xs text-gray-400">Laat leeg om de producttitel te gebruiken.</p>
+                <span id="prod_title_counter" class="text-xs text-gray-400">0 / 70</span>
+              </div>
+            </div>
+            <div>
+              <label for="seo_description" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+                SEO beschrijving <span class="font-normal text-gray-400">(aanbevolen: 120–165 tekens)</span>
+              </label>
+              <textarea name="seo_description" id="prod_seo_desc" rows="3" maxlength="320"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">{{ old('seo_description', $product->seo_description ?? '') }}</textarea>
-              <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Aanbevolen: 150-160 tekens. Laat leeg voor korte omschrijving.</p>
+              <div class="flex justify-between mt-1">
+                <p class="text-xs text-gray-400">Laat leeg voor korte omschrijving.</p>
+                <span id="prod_desc_counter" class="text-xs text-gray-400">0 / 320</span>
+              </div>
               @error('seo_description')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -243,7 +261,7 @@
               </div>
               <div>
                 <label for="seo_robots" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">SEO robots</label>
-                <select name="seo_robots" id="seo_robots"
+                <select name="seo_robots" id="prod_seo_robots"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                   <option value="">Standaard (index, follow)</option>
                   <option value="noindex, nofollow" {{ old('seo_robots', $product->seo_robots ?? '') == 'noindex, nofollow' ? 'selected' : '' }}>noindex, nofollow</option>
@@ -258,6 +276,40 @@
                   value="{{ old('seo_canonical_url', $product->seo_canonical_url ?? '') }}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 @error('seo_canonical_url')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
+              </div>
+            </div>
+
+            {{-- Google Preview --}}
+            <div class="mt-2 border border-gray-100 dark:border-gray-700 rounded-lg p-3 bg-gray-50 dark:bg-gray-900">
+              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2">Google zoekresultaat preview</p>
+              <p id="prod_preview_url" class="text-xs text-green-700 mb-0.5">{{ isset($product) ? url('/winkel/product/' . ($product->slug ?? '...')) : url('/winkel/product/...') }}</p>
+              <p id="prod_preview_title" class="text-base text-blue-600 font-medium leading-tight">{{ old('seo_title', isset($product) ? ($product->seo_title ?? $product->title ?? 'Producttitel…') : 'Producttitel…') }}</p>
+              <p id="prod_preview_desc" class="text-xs text-gray-600 dark:text-gray-400 mt-0.5">{{ old('seo_description', isset($product) ? ($product->seo_description ?? $product->short_description ?? 'Omschrijving…') : 'Omschrijving…') }}</p>
+            </div>
+          </div>
+        </div>
+
+        {{-- SEO Score --}}
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-base font-semibold text-gray-900 dark:text-white">SEO Score</h2>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-5 mb-4">
+              <div class="relative w-20 h-20 shrink-0">
+                <svg class="w-20 h-20 -rotate-90" viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#e5e7eb" stroke-width="3"/>
+                  <circle id="prod_score_ring" cx="18" cy="18" r="15.9155" fill="none" stroke="#10b981"
+                    stroke-width="3" stroke-dasharray="0 100" stroke-linecap="round" class="transition-all duration-700"/>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <span id="prod_score_number" class="text-xl font-bold text-gray-900 dark:text-white">–</span>
+                  <span class="text-xs text-gray-400">/ 100</span>
+                </div>
+              </div>
+              <div>
+                <div id="prod_score_label" class="text-sm font-semibold text-gray-400 mb-1">Vul de SEO-velden in…</div>
+                <div id="prod_seo_checks" class="space-y-1 text-xs"></div>
               </div>
             </div>
           </div>
@@ -351,6 +403,8 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+      // ── PDF remove ──
       const removePdfBtn = document.getElementById('remove-pdf-btn');
       const deletePdfCheckbox = document.getElementById('delete_pdf_file');
       if (removePdfBtn && deletePdfCheckbox) {
@@ -412,6 +466,151 @@
           }
         });
       });
+
+      // ── SEO Checker ──
+      const seoTitleInput = document.getElementById('prod_seo_title');
+      const seoDescInput  = document.getElementById('prod_seo_desc');
+      const seoTagsInput  = document.getElementById('seo_tags');
+      const seoRobotsSel  = document.getElementById('prod_seo_robots');
+      const titleInput    = document.getElementById('title');
+      const shortDescInput= document.getElementById('short_description');
+
+      const titleCounter  = document.getElementById('prod_title_counter');
+      const descCounter   = document.getElementById('prod_desc_counter');
+      const previewTitle  = document.getElementById('prod_preview_title');
+      const previewDesc   = document.getElementById('prod_preview_desc');
+      const scoreRing     = document.getElementById('prod_score_ring');
+      const scoreNumber   = document.getElementById('prod_score_number');
+      const scoreLabel    = document.getElementById('prod_score_label');
+      const checksDiv     = document.getElementById('prod_seo_checks');
+
+      function updateCounter(input, counter, max) {
+        counter.textContent = input.value.length + ' / ' + max;
+      }
+
+      function runSeoChecker() {
+        const seoTitle  = seoTitleInput ? seoTitleInput.value.trim() : '';
+        const prodTitle = titleInput ? titleInput.value.trim() : '';
+        const effectiveTitle = seoTitle || prodTitle || 'Producttitel…';
+
+        const seoDesc   = seoDescInput ? seoDescInput.value.trim() : '';
+        const shortDesc = shortDescInput ? shortDescInput.value.trim() : '';
+        const effectiveDesc = seoDesc || shortDesc || '';
+
+        // Update preview
+        if (previewTitle) previewTitle.textContent = effectiveTitle;
+        if (previewDesc)  previewDesc.textContent  = effectiveDesc || 'Geen omschrijving.';
+
+        // Counters
+        if (seoTitleInput && titleCounter) updateCounter(seoTitleInput, titleCounter, 70);
+        if (seoDescInput  && descCounter)  updateCounter(seoDescInput,  descCounter,  320);
+
+        // Score checks
+        const checks = [];
+        let score = 0;
+
+        // Title (0–35 pts)
+        if (effectiveTitle && effectiveTitle.length > 3) {
+          score += 15;
+          checks.push({ ok: true, msg: 'Titel aanwezig' });
+          const tlen = effectiveTitle.length;
+          if (tlen >= 50 && tlen <= 65) {
+            score += 20; checks.push({ ok: true, msg: 'Titellengte optimaal (' + tlen + ' tekens)' });
+          } else if (tlen >= 35 && tlen < 50) {
+            score += 10; checks.push({ warn: true, msg: 'Titel iets te kort (' + tlen + ' tekens, doel: 50–65)' });
+          } else if (tlen > 65 && tlen <= 80) {
+            score += 10; checks.push({ warn: true, msg: 'Titel iets te lang (' + tlen + ' tekens, doel: 50–65)' });
+          } else {
+            score += 3; checks.push({ ok: false, msg: 'Titellengte niet optimaal (' + tlen + ' tekens)' });
+          }
+        } else {
+          checks.push({ ok: false, msg: 'Geen titel ingesteld' });
+        }
+
+        // Description (0–35 pts)
+        if (effectiveDesc && effectiveDesc.length > 0) {
+          score += 15;
+          checks.push({ ok: true, msg: 'Omschrijving aanwezig' + (seoDesc ? ' (SEO-veld)' : ' (korte omschrijving)') });
+          const dlen = effectiveDesc.length;
+          if (dlen >= 120 && dlen <= 165) {
+            score += 20; checks.push({ ok: true, msg: 'Omschrijvingslengte optimaal (' + dlen + ' tekens)' });
+          } else if (dlen >= 80 && dlen < 120) {
+            score += 10; checks.push({ warn: true, msg: 'Omschrijving iets te kort (' + dlen + ' tekens, doel: 120–165)' });
+          } else if (dlen > 165 && dlen <= 220) {
+            score += 10; checks.push({ warn: true, msg: 'Omschrijving iets te lang (' + dlen + ' tekens, doel: 120–165)' });
+          } else {
+            score += 3; checks.push({ ok: false, msg: 'Omschrijvingslengte niet optimaal (' + dlen + ' tekens)' });
+          }
+        } else {
+          checks.push({ ok: false, msg: 'Geen omschrijving — vul korte omschrijving of SEO-omschrijving in' });
+        }
+
+        // Keywords (0–10 pts)
+        if (seoTagsInput && seoTagsInput.value.trim()) {
+          const tags = seoTagsInput.value.split(',').map(t => t.trim()).filter(t => t);
+          if (tags.length >= 3) {
+            score += 10; checks.push({ ok: true, msg: tags.length + ' SEO-keywords ingesteld' });
+          } else {
+            score += 5; checks.push({ warn: true, msg: tags.length + ' keyword(s) — aanbevolen: 3 of meer' });
+          }
+        } else {
+          checks.push({ warn: true, msg: 'Geen SEO-keywords ingesteld (aanbevolen voor zoekwoorden)' });
+        }
+
+        // Robots (0–10 pts)
+        const robots = seoRobotsSel ? seoRobotsSel.value : '';
+        if (!robots || robots.startsWith('index')) {
+          score += 10; checks.push({ ok: true, msg: 'Product wordt geïndexeerd door zoekmachines' });
+        } else if (robots === 'noindex, nofollow') {
+          checks.push({ ok: false, msg: 'Product geblokkeerd voor zoekmachines (noindex, nofollow)' });
+        } else {
+          score += 5; checks.push({ warn: true, msg: 'Robots: ' + robots });
+        }
+
+        // SEO Title explicitly set (0–10 pts)
+        if (seoTitle) {
+          score += 10; checks.push({ ok: true, msg: 'SEO-titel expliciet ingesteld (niet alleen producttitel)' });
+        } else {
+          checks.push({ warn: true, msg: 'Geen aparte SEO-titel — producttitel wordt gebruikt' });
+        }
+
+        score = Math.min(100, Math.max(0, score));
+        scoreNumber.textContent = score;
+        scoreRing.setAttribute('stroke-dasharray', score + ' 100');
+
+        if (score >= 75) {
+          scoreRing.setAttribute('stroke', '#10b981');
+          scoreLabel.textContent = '🟢 Uitstekend';
+          scoreLabel.className   = 'text-sm font-semibold mb-1 text-green-600 dark:text-green-400';
+        } else if (score >= 50) {
+          scoreRing.setAttribute('stroke', '#f59e0b');
+          scoreLabel.textContent = '🟡 Kan beter';
+          scoreLabel.className   = 'text-sm font-semibold mb-1 text-yellow-600 dark:text-yellow-400';
+        } else {
+          scoreRing.setAttribute('stroke', '#ef4444');
+          scoreLabel.textContent = '🔴 Verbetering nodig';
+          scoreLabel.className   = 'text-sm font-semibold mb-1 text-red-600 dark:text-red-400';
+        }
+
+        if (checksDiv) {
+          checksDiv.innerHTML = checks.map(c => {
+            const icon  = c.ok ? '✅' : (c.warn ? '⚠️' : '❌');
+            const color = c.ok ? 'text-green-700 dark:text-green-400'
+                        : c.warn ? 'text-yellow-700 dark:text-yellow-400'
+                        : 'text-red-700 dark:text-red-400';
+            return `<div class="flex items-start gap-1.5 ${color}"><span class="shrink-0 text-xs">${icon}</span><span>${c.msg}</span></div>`;
+          }).join('');
+        }
+      }
+
+      // Bind events
+      [seoTitleInput, seoDescInput, seoTagsInput, titleInput, shortDescInput].forEach(el => {
+        if (el) el.addEventListener('input', runSeoChecker);
+      });
+      if (seoRobotsSel) seoRobotsSel.addEventListener('change', runSeoChecker);
+
+      // Initial run
+      runSeoChecker();
     });
   </script>
 

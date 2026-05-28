@@ -604,23 +604,27 @@
 }
 
 .product-detail-stock-warning {
-    background: #fff7e6;
-    color: #b45309;
-    border: 1.5px solid #fbbf24;
+    background: linear-gradient(135deg, #a05f00, #c97c0d);
+    color: #fff8ec;
+    border: 1.5px solid rgba(200, 130, 20, 0.45);
+    box-shadow: 0 2px 10px rgba(160, 95, 0, 0.35), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 .product-detail-stock-warning i {
-    color: #d97706;
+    color: #ffeeed;
+    opacity: 0.9;
 }
 
 .product-detail-stock-error {
-    background: #fff1f2;
-    color: #be123c;
-    border: 1.5px solid #fda4af;
+    background: linear-gradient(135deg, #5a1a1a, #8b2c2c);
+    color: #ffeaea;
+    border: 1.5px solid rgba(180, 80, 80, 0.45);
+    box-shadow: 0 2px 10px rgba(90, 26, 26, 0.35), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 .product-detail-stock-error i {
-    color: #e11d48;
+    color: #ffeeed;
+    opacity: 0.9;
 }
 
 .product-detail-specifications {

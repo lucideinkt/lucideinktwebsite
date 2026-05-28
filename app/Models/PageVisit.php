@@ -18,6 +18,9 @@ class PageVisit extends Model
         'user_agent',
         'referer',
         'device_type',
+        'country_code',
+        'country',
+        'city',
     ];
 
     public function product()
