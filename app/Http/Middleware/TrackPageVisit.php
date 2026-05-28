@@ -6,11 +6,15 @@ use App\Models\PageVisit;
 use App\Models\Product;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Stevebauman\Location\Facades\Location;
 use Symfony\Component\HttpFoundation\Response;
 
 class TrackPageVisit
 {
+    // Internal query params that should never be stored in the URL
+    protected array $stripParams = ['_kw', '_', 'fbclid', 'gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
     // Routes to track
     protected array $trackedRoutes = [
         'home'               => 'home',
@@ -31,12 +35,14 @@ class TrackPageVisit
     {
         $response = $next($request);
 
-        // Only track GET requests that returned a successful HTML response
+        // Only track GET requests that returned a successful HTML response.
+        // Skip internal tool requests (SEO checker, dashboard fetches, etc.).
         if (
             $request->isMethod('GET') &&
             $response->getStatusCode() === 200 &&
             ! $request->ajax() &&
-            ! $request->wantsJson()
+            ! $request->wantsJson() &&
+            ! $request->hasHeader('X-SEO-Checker')
         ) {
             $routeName = $request->route()?->getName();
 
@@ -64,23 +70,14 @@ class TrackPageVisit
                     $ua         = $request->userAgent() ?? '';
                     $deviceType = $this->detectDevice($ua);
 
-                    // GeoIP lookup — silently skipped if it fails
-                    $countryCode = null;
-                    $country     = null;
-                    $city        = null;
-                    try {
-                        $position = Location::get($request->ip());
-                        if ($position) {
-                            $countryCode = $position->countryCode ?: null;
-                            $country     = $position->countryName ?: null;
-                            $city        = $position->cityName ?: null;
-                        }
-                    } catch (\Throwable) {
-                        // GeoIP failure is non-fatal
-                    }
+                    // Clean URL: strip internal/tracking params before storing
+                    $cleanUrl = $this->cleanUrl($request);
+
+                    // GeoIP lookup — cached per IP for 24 hours to avoid rate limits
+                    [$countryCode, $country, $city] = $this->resolveLocation($request->ip());
 
                     PageVisit::create([
-                        'url'          => $request->fullUrl(),
+                        'url'          => $cleanUrl,
                         'route_name'   => $routeName,
                         'page_type'    => $pageType,
                         'page_title'   => $pageTitle,
@@ -103,6 +100,71 @@ class TrackPageVisit
         }
 
         return $response;
+    }
+
+    /**
+     * Remove internal/bot query parameters from the URL before storing.
+     */
+    protected function cleanUrl(Request $request): string
+    {
+        $params = $request->query();
+        foreach ($this->stripParams as $p) {
+            unset($params[$p]);
+        }
+
+        $base = $request->url(); // URL without query string
+        return empty($params)
+            ? $base
+            : $base . '?' . http_build_query($params);
+    }
+
+    /**
+     * Look up country/city for the given IP.
+     * Results are cached per IP for 24 hours to stay within free-tier rate limits.
+     * Returns [countryCode, country, city] — all nullable.
+     */
+    protected function resolveLocation(string $ip): array
+    {
+        // In local/dev environments, private IPs are expected.
+        // Use a well-known public IP for testing so location data is visible.
+        if ($this->isPrivateIp($ip)) {
+            if (app()->isProduction()) {
+                // On production a private IP means the proxy trust is misconfigured — skip silently
+                return [null, null, null];
+            }
+            // Dev/staging: substitute with a Dutch test IP so location works locally
+            $ip = '213.127.0.1'; // KPN Netherlands
+        }
+
+        $cacheKey = 'geoip_' . md5($ip . config('app.key'));
+
+        return Cache::remember($cacheKey, now()->addHours(24), function () use ($ip) {
+            try {
+                $position = Location::get($ip);
+                if ($position) {
+                    return [
+                        $position->countryCode ?: null,
+                        $position->countryName ?: null,
+                        $position->cityName    ?: null,
+                    ];
+                }
+            } catch (\Throwable) {
+                // GeoIP failure is non-fatal
+            }
+            return [null, null, null];
+        });
+    }
+
+    /**
+     * Returns true for loopback, private, and link-local IP addresses.
+     */
+    protected function isPrivateIp(string $ip): bool
+    {
+        return ! filter_var(
+            $ip,
+            FILTER_VALIDATE_IP,
+            FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE
+        );
     }
 
     protected function detectDevice(string $ua): string

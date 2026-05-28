@@ -822,6 +822,38 @@ body { margin: 0; padding: 0; width: 100%; }
     margin: 0;
 }
 
+/* PDF replacement notice — shown when PDF-only books are present */
+.bookshelf-pdf-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(200,160,60,0.25);
+    border-radius: 5px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bookshelf-pdf-notice__icon {
+    font-size: 14px;
+    line-height: 1.4;
+    flex-shrink: 0;
+    opacity: 0.75;
+}
+.bookshelf-pdf-notice__text {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    color: rgba(245,215,130,0.75);
+    line-height: 1.55;
+    text-align: left;
+}
+.bookshelf-pdf-notice__text em {
+    font-style: italic;
+    color: rgba(245,215,130,0.55);
+}
+
 /* ---------------------------------------------------------
    CEILING SPOTLIGHTS
    --------------------------------------------------------- */
