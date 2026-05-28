@@ -381,6 +381,43 @@ class OrderController extends Controller
         return back()->with('success', 'E-mail met factuur is verstuurd');
     }
 
+    public function regeneratePaymentLink(Request $request, string $id)
+    {
+        $order = Order::with('customer')->findOrFail($id);
+        $this->authorize('update', $order);
+
+        $amount = (float) $order->total;
+        if ($amount <= 0) {
+            return back()->with('error', 'Het orderbedrag is ongeldig, kan geen betaallink aanmaken.');
+        }
+
+        $webhookUrl = config('services.lucideinkt.webhook_url');
+
+        try {
+            $payment = $this->mollie->payments->create([
+                'amount'      => ['currency' => 'EUR', 'value' => number_format($amount, 2, '.', '')],
+                'description' => 'Bestelling #' . $order->id . ' (nieuwe betaallink)',
+                'redirectUrl' => route('payment.success', ['order' => $order->id]),
+                'webhookUrl'  => $webhookUrl,
+                'metadata'    => ['order_id' => $order->id],
+            ]);
+
+            $order->forceFill([
+                'mollie_payment_id' => $payment->id,
+                'payment_link'      => $payment->getCheckoutUrl(),
+                'payment_status'    => 'pending',
+            ])->save();
+
+            Log::info('Nieuwe betaallink aangemaakt', ['order' => $order->id, 'payment_id' => $payment->id]);
+
+            return back()->with('success', 'Nieuwe betaallink is aangemaakt.');
+
+        } catch (\Throwable $e) {
+            Log::error('Betaallink genereren mislukt', ['order' => $id, 'error' => $e->getMessage()]);
+            return back()->with('error', 'Aanmaken betaallink mislukt: ' . $e->getMessage());
+        }
+    }
+
     public function exportOrders()
     {
         $now = Carbon::now()->format('d-m-Y_H-i');
