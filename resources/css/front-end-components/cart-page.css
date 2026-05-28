@@ -930,3 +930,37 @@ body:has(.page.cart-page) .page.cart-page {
         margin-top: -5px;
     }
 }
+
+/* ── 404 Error Page ── */
+.error-404-icon {
+    font-size: 2.4rem !important;
+    color: #b07a2a;
+}
+
+.error-404-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-shop-secondary {
+    background: #5a3e1b;
+}
+
+.btn-shop-secondary:hover {
+    background: #6e4d22;
+}
+
+.btn-shop-secondary .fa-bag-shopping {
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .error-404-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
