@@ -180,7 +180,7 @@
                 <span class="bookshelf-pdf-notice__icon">📜</span>
                 <span class="bookshelf-pdf-notice__text">
                     Sommige boeken zijn nog als PDF beschikbaar.<br>
-                    <em>Deze worden geleidelijk vervangen door een online leesversie.</em>
+                    <em>Deze worden geleidelijk vervangen door een online leesversie. Schrijf je in voor onze nieuwsbrief op de homepagina om updates te ontvangen.</em>
                 </span>
             </div>
             @endif
