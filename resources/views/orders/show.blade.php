@@ -543,6 +543,26 @@
                         </div>
                     </div>
                     @endif
+
+                    {{-- Nieuwe betaallink genereren --}}
+                    <div class="pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-2 flex items-center gap-1">
+                            <i class="fa-solid fa-rotate text-gray-400"></i>
+                            Nieuwe betaallink
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500 mb-2">
+                            Gebruik dit als de klant de betaling per ongeluk heeft geannuleerd of als de link is verlopen.
+                            De betaalstatus wordt teruggezet naar <em>In afwachting</em>.
+                        </p>
+                        <form action="{{ route('orderRegeneratePaymentLink', $order->id) }}" method="POST"
+                              onsubmit="return confirm('Weet je zeker dat je een nieuwe betaallink wilt genereren? De betaalstatus wordt teruggezet naar In afwachting.')">
+                            @csrf
+                            <button type="submit"
+                                class="w-full flex items-center justify-center gap-2 text-white bg-amber-600 hover:bg-amber-700 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-amber-500 dark:hover:bg-amber-600">
+                                <i class="fa-solid fa-link"></i> Nieuwe betaallink genereren
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
 

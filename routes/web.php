@@ -88,6 +88,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::put('/dashboard/orders/{id}/details', [OrderController::class, 'updateDetails'])->name('orderUpdateDetails');
     Route::post('/dashboard/orders/generate-invoice/{id}', [OrderController::class, 'generateInvoice'])->name('generateInvoice');
     Route::post('/dashboard/orders/send-email/{id}', [OrderController::class, 'sendOrderEmailWithInvoice'])->name('sendOrderEmailWithInvoice');
+    Route::post('/dashboard/orders/{id}/regenerate-payment-link', [OrderController::class, 'regeneratePaymentLink'])->name('orderRegeneratePaymentLink');
     Route::get('/dashboard/orders/invoice/{id}', [OrderController::class, 'download_invoice'])->name('orders.invoice');
     Route::get('/dashboard/orders/{id}', [OrderController::class, 'show'])->name('orderShow');
 
