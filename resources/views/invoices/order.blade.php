@@ -96,6 +96,26 @@
             font-weight: 700;
             letter-spacing: 0.01em;
         }
+        .address-company {
+            font-weight: 700;
+            font-size: 13px;
+            color: #222;
+            margin-bottom: 1px;
+        }
+        .address-contact {
+            color: #555;
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+        .address-reg-block {
+            margin: 5px 0 5px 0;
+            padding: 4px 7px;
+            background: #f0f0f0;
+            border-left: 3px solid #c0392b;
+            font-size: 11px;
+            color: #444;
+            line-height: 1.7;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -215,9 +235,11 @@
         <div class="address-column">
             <div class="address-box">
                 <strong>{{ __('Factuuradres') }}</strong>
-                {{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}<br>
                 @if(!empty($order->customer->billing_company))
-                    {{ $order->customer->billing_company }}<br>
+                    <div class="address-company">{{ $order->customer->billing_company }}</div>
+                    <div class="address-contact">t.a.v. {{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</div>
+                @else
+                    <div class="address-company">{{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</div>
                 @endif
                 {{ $order->customer->billing_street }} {{ $order->customer->billing_house_number }}{{ !empty($order->customer->billing_house_number_addition) ? ' ' . $order->customer->billing_house_number_addition : '' }}<br>
                 {{ $order->customer->billing_postal_code }} {{ $order->customer->billing_city }}<br>
@@ -226,6 +248,19 @@
                     Tel: {{ $order->customer->billing_phone }}<br>
                 @endif
                 Email: {{ $order->customer->billing_email }}
+                @if(!empty($order->customer->btw_nummer) || !empty($order->customer->kvk_nummer) || !empty($order->customer->rsin_nummer))
+                <div class="address-reg-block">
+                    @if(!empty($order->customer->btw_nummer))
+                        BTW-nr: {{ $order->customer->btw_nummer }}<br>
+                    @endif
+                    @if(!empty($order->customer->kvk_nummer))
+                        KVK: {{ $order->customer->kvk_nummer }}<br>
+                    @endif
+                    @if(!empty($order->customer->rsin_nummer))
+                        RSIN: {{ $order->customer->rsin_nummer }}<br>
+                    @endif
+                </div>
+                @endif
             </div>
         </div>
         <div class="address-column">
