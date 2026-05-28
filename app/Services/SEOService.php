@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\PageSeoSetting;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class SEOService
@@ -29,6 +30,22 @@ class SEOService
     {
         $config = self::getPageConfig($page);
 
+        // Check database for overrides (DB values take precedence over hardcoded config)
+        try {
+            $dbSetting = PageSeoSetting::where('page_key', $page)->first();
+            if ($dbSetting) {
+                if ($dbSetting->title)        $config['title']        = $dbSetting->title;
+                if ($dbSetting->description)  $config['description']  = $dbSetting->description;
+                if ($dbSetting->author)       $config['author']       = $dbSetting->author;
+                if ($dbSetting->robots)       $config['robots']       = $dbSetting->robots;
+                if ($dbSetting->canonical_url) $config['url']         = $dbSetting->canonical_url;
+                if ($dbSetting->og_image)     $config['image']        = secure_url($dbSetting->og_image);
+                if ($dbSetting->type)         $config['type']         = $dbSetting->type;
+            }
+        } catch (\Exception $e) {
+            // If DB is not available during migrations, fall back to hardcoded config
+        }
+
         // Merge with overrides
         $config = array_merge($config, $overrides);
 
@@ -51,6 +68,14 @@ class SEOService
      * @param string $page
      * @return array
      */
+    /**
+     * Public accessor for page config defaults (used by dashboard).
+     */
+    public static function getPageConfigPublic(string $page): array
+    {
+        return self::getPageConfig($page);
+    }
+
     private static function getPageConfig(string $page): array
     {
         $pages = [

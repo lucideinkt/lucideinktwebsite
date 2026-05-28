@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewsletterAdminNotificationMail;
 use App\Mail\NewsletterConfirmationMail;
 use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -71,6 +73,9 @@ Geen e-mail ontvangen? Kijk ook in je spamfolder en markeer onze e-mail als ‘G
         if ($subscriber->isPending()) {
             $subscriber->confirm();
             $confirmed = true;
+
+            // Notify Lucide Inkt admin of the new confirmed subscription
+            $this->sendAdminNotification($subscriber->fresh());
         } elseif ($subscriber->isSubscribed()) {
             // Already confirmed (e.g. Outlook Safe Links pre-visited the link).
             // Show the success page so the user isn't confused.
@@ -78,6 +83,36 @@ Geen e-mail ontvangen? Kijk ook in je spamfolder en markeer onze e-mail als ‘G
         }
 
         return view('newsletter.confirm', compact('confirmed'));
+    }
+
+    private function sendAdminNotification(NewsletterSubscriber $subscriber): void
+    {
+        $adminEmail = config('services.lucideinkt.admin_email');
+
+        if (!$adminEmail) {
+            Log::warning('Admin email not configured (LUCIDE_INKT_MAIL missing) – newsletter admin notification not sent', [
+                'subscriber_email' => $subscriber->email,
+            ]);
+            return;
+        }
+
+        try {
+            $mailer = Mail::to($adminEmail);
+
+            // BCC to Gmail so the notification also arrives in lucideinkt@gmail.com
+            $bcc = config('services.lucideinkt.contact_bcc');
+            if ($bcc && $bcc !== $adminEmail) {
+                $mailer = $mailer->bcc($bcc);
+            }
+
+            $mailer->send(new NewsletterAdminNotificationMail($subscriber));
+        } catch (\Throwable $e) {
+            Log::error('Failed to send NewsletterAdminNotificationMail', [
+                'subscriber_email' => $subscriber->email,
+                'admin_email'      => $adminEmail,
+                'error'            => $e->getMessage(),
+            ]);
+        }
     }
 
     public function unsubscribe($token)

@@ -25,7 +25,14 @@ class AnalyticsController extends Controller
         $desktopVisits   = (clone $baseQuery)->where('device_type', 'desktop')->count();
         $tabletVisits    = (clone $baseQuery)->where('device_type', 'tablet')->count();
 
-        // ── Visits per day (for sparkline / chart) ─────────────────────
+        // ── Unique sessions per day (best metric for "bezoeken per dag") ─
+        $sessionsPerDay = (clone $baseQuery)
+            ->select(DB::raw('DATE(created_at) as date'), DB::raw('COUNT(DISTINCT session_hash) as total'))
+            ->groupBy('date')
+            ->orderBy('date')
+            ->get();
+
+        // ── Page views per day (secondary dataset) ─────────────────────
         $visitsPerDay = (clone $baseQuery)
             ->select(DB::raw('DATE(created_at) as date'), DB::raw('COUNT(*) as total'))
             ->groupBy('date')
@@ -75,6 +82,24 @@ class AnalyticsController extends Controller
             ->orderByDesc('total')
             ->get();
 
+        // ── Top countries ──────────────────────────────────────────────
+        $topCountries = (clone $baseQuery)
+            ->whereNotNull('country')
+            ->select('country_code', 'country', DB::raw('COUNT(DISTINCT session_hash) as sessions'), DB::raw('COUNT(*) as visits'))
+            ->groupBy('country_code', 'country')
+            ->orderByDesc('sessions')
+            ->limit(15)
+            ->get();
+
+        // ── Top cities ─────────────────────────────────────────────────
+        $topCities = (clone $baseQuery)
+            ->whereNotNull('city')
+            ->select('city', 'country_code', DB::raw('COUNT(DISTINCT session_hash) as sessions'))
+            ->groupBy('city', 'country_code')
+            ->orderByDesc('sessions')
+            ->limit(10)
+            ->get();
+
         // ── Recent visits (live log) ───────────────────────────────────
         $recentVisits = PageVisit::latest()
             ->limit(50)
@@ -109,12 +134,15 @@ class AnalyticsController extends Controller
             'mobileVisits',
             'desktopVisits',
             'tabletVisits',
+            'sessionsPerDay',
             'visitsPerDay',
             'topProducts',
             'topOnlineLezen',
             'topAudiobooks',
             'topPages',
             'visitsByType',
+            'topCountries',
+            'topCities',
             'recentVisits',
             'topReferers',
             'hourlyData',
@@ -123,4 +151,3 @@ class AnalyticsController extends Controller
         ));
     }
 }
-

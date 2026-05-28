@@ -24,6 +24,7 @@ use App\Http\Controllers\ShippingCostController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AnalyticsController;
+use App\Http\Controllers\PageSeoController;
 use App\Http\Controllers\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -169,6 +170,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // Analytics
     Route::get('/dashboard/analytics', [AnalyticsController::class, 'index'])->name('admin.analytics');
+
+    // Page SEO
+    Route::get('/dashboard/page-seo',              [PageSeoController::class, 'index'])->name('admin.page-seo.index');
+    Route::get('/dashboard/page-seo/{pageKey}',    [PageSeoController::class, 'edit'])->name('admin.page-seo.edit');
+    Route::put('/dashboard/page-seo/{pageKey}',    [PageSeoController::class, 'update'])->name('admin.page-seo.update');
 
 });
 

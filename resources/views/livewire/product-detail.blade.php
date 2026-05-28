@@ -80,11 +80,11 @@
                 <span class="product-detail-price">€{{ number_format($product->price, 2) }}</span>
                 @if ($product->stock > 0 && $product->stock <= 3)
                     <span class="product-detail-stock-badge product-detail-stock-warning">
-                        <i class="fa-solid fa-fire-flame-curved"></i> Lage voorraad
+                        <i class="fa-solid fa-fire-flame-curved"></i> Beperkte voorraad
                     </span>
                 @elseif ($product->stock == 0)
                     <span class="product-detail-stock-badge product-detail-stock-error">
-                        <i class="fa-solid fa-ban"></i> Niet op voorraad
+                        <i class="fa-solid fa-ban"></i> Uitverkocht
                     </span>
                 @endif
             </div>

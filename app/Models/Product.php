@@ -47,6 +47,7 @@ class Product extends Model
         'seo_author',
         'seo_robots',
         'seo_canonical_url',
+        'seo_title',
         'created_by',
         'updated_by',
         'deleted_by',
@@ -178,7 +179,7 @@ class Product extends Model
             });
 
         return new SEOData(
-            title: $this->title,
+            title: $this->seo_title ?: $this->title,
             description: $this->seo_description ?: $this->short_description,
             author: $this->seo_author,
             image: $image,
