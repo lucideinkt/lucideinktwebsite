@@ -82,7 +82,20 @@ class OrderController extends Controller
         $items = $order->items()->paginate(10);
         $order->setRelation('items', $items);
 
-        return view('orders.show', compact('order', 'pickupLocation'));
+        $products = Product::orderBy('title')->get(['id', 'title', 'price', 'stock']);
+
+        $shippingCosts = ShippingCost::where('is_published', 1)->orderBy('country')->get();
+
+        $discountCodes = DiscountCode::where('is_published', 1)
+            ->whereNull('deleted_at')
+            ->where(function ($q) {
+                $q->whereNull('expiration_date')
+                  ->orWhere('expiration_date', '>=', now()->startOfDay());
+            })
+            ->orderBy('code')
+            ->get();
+
+        return view('orders.show', compact('order', 'pickupLocation', 'products', 'shippingCosts', 'discountCodes'));
     }
 
     public function create()
@@ -216,38 +229,272 @@ class OrderController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $order = Order::findOrFail($id);
+        // Legacy individual endpoint — delegates to unified
+        return $this->updateAll($request, $id);
+    }
+
+    public function updateAll(Request $request, string $id)
+    {
+        $order = Order::with(['items.product', 'customer'])->findOrFail($id);
         $this->authorize('update', $order);
 
         $request->validate([
-            'order-status' => 'required|in:pending,shipped,cancelled,paid,completed',
-            'payment-status' => 'required|in:pending,paid,failed,refunded'
-        ], [
-            'order-status.required' => 'Selecteer een geldige status.',
-            'order-status.in' => 'De gekozen status is ongeldig.',
-            'payment-status.required' => 'Selecteer een geldige status.',
-            'payment-status.in' => 'De gekozen status is ongeldig.',
+            'order-status'                   => 'nullable|in:pending,shipped,cancelled,paid,completed',
+            'payment-status'                 => 'nullable|in:pending,paid,failed,refunded',
+            'billing_first_name'             => 'nullable|string|max:255',
+            'billing_last_name'              => 'nullable|string|max:255',
+            'billing_email'                  => 'nullable|email|max:255',
+            'billing_company'                => 'nullable|string|max:255',
+            'kvk_nummer'                     => 'nullable|string|max:50',
+            'rsin_nummer'                    => 'nullable|string|max:50',
+            'btw_nummer'                     => 'nullable|string|max:50',
+            'billing_street'                 => 'nullable|string|max:255',
+            'billing_house_number'           => 'nullable|string|max:20',
+            'billing_house_number_add'       => 'nullable|string|max:20',
+            'billing_postal_code'            => 'nullable|string|max:20',
+            'billing_city'                   => 'nullable|string|max:255',
+            'billing_country'                => 'nullable|string|max:10',
+            'billing_phone'                  => 'nullable|string|max:50',
+            'shipping_first_name'            => 'nullable|string|max:255',
+            'shipping_last_name'             => 'nullable|string|max:255',
+            'shipping_company'               => 'nullable|string|max:255',
+            'shipping_street'                => 'nullable|string|max:255',
+            'shipping_house_number'          => 'nullable|string|max:20',
+            'shipping_house_number_addition' => 'nullable|string|max:20',
+            'shipping_postal_code'           => 'nullable|string|max:20',
+            'shipping_city'                  => 'nullable|string|max:255',
+            'shipping_country'               => 'nullable|string|max:10',
+            'shipping_phone'                 => 'nullable|string|max:50',
+            'order_note'                     => 'nullable|string|max:1000',
+            'items'                          => 'nullable|array',
+            'items.*.item_id'                => 'nullable|integer',
+            'items.*.product_id'             => 'nullable|integer|exists:products,id',
+            'items.*.qty'                    => 'nullable|integer|min:1',
+            'discount_type'                  => 'nullable|in:amount,percent',
+            'discount_value'                 => 'nullable|numeric|min:0',
+            'discount_code_input'            => 'nullable|string|max:100',
+            'shipping_cost_id'               => 'nullable|integer|exists:shipping_costs,id',
         ]);
 
-        $order->update([
-            'status' => $request->input('order-status'),
-            'payment_status' => $request->input('payment-status'),
-        ]);
+        try {
+            DB::transaction(function () use ($request, $order) {
 
-        // Auto-regenerate invoice PDF if it already exists
-        if (!empty($order->invoice_pdf_path)) {
-            try {
-                $order->refresh()->load('customer', 'items');
-                $pdf  = Pdf::loadView('invoices.order', ['order' => $order])->output();
-                $path = "invoices/factuur_{$order->id}.pdf";
-                Storage::disk('public')->put($path, $pdf);
-                $order->forceFill(['invoice_pdf_path' => $path])->save();
-            } catch (\Throwable $e) {
-                Log::error('Invoice regeneration failed on status update', ['order' => $id, 'error' => $e->getMessage()]);
-            }
+                // ── 1. Status + stock management ───────────────────────────────
+                $oldStatus        = $order->status;
+                $oldPaymentStatus = $order->payment_status;
+                $newStatus        = $request->filled('order-status')  ? $request->input('order-status')  : $oldStatus;
+                $newPaymentStatus = $request->filled('payment-status') ? $request->input('payment-status') : $oldPaymentStatus;
+
+                // When payment is refunded → force order status to cancelled
+                if ($newPaymentStatus === 'refunded' && $oldPaymentStatus !== 'refunded') {
+                    $newStatus = 'cancelled';
+                }
+
+                $order->fill([
+                    'status'         => $newStatus,
+                    'payment_status' => $newPaymentStatus,
+                ]);
+
+                // ── Stock adjustment based on bestelstatus change ──────────────
+                $wasCancelled = $oldStatus === 'cancelled';
+                $isCancelled  = $newStatus === 'cancelled';
+
+                if (!$wasCancelled && $isCancelled) {
+                    // Order is being cancelled → restore stock for all items
+                    $order->load('items');
+                    foreach ($order->items as $item) {
+                        if ($item->product_id) {
+                            Product::where('id', $item->product_id)
+                                ->increment('stock', $item->quantity);
+                        }
+                    }
+                    Log::info("Order #{$order->id}: cancelled → stock restored for all items.");
+
+                } elseif ($wasCancelled && !$isCancelled) {
+                    // Order is being un-cancelled → re-deduct stock
+                    $order->load('items');
+                    $stockErrors = [];
+                    foreach ($order->items as $item) {
+                        if (!$item->product_id) continue;
+                        $product = Product::lockForUpdate()->find($item->product_id);
+                        if (!$product) continue;
+                        if ($product->stock < $item->quantity) {
+                            $stockErrors[] = "\"{$product->title}\" (beschikbaar: {$product->stock}, nodig: {$item->quantity})";
+                        }
+                    }
+                    if (!empty($stockErrors)) {
+                        throw new \Exception('Niet genoeg voorraad om bestelling te heractiveren: ' . implode(', ', $stockErrors));
+                    }
+                    foreach ($order->items as $item) {
+                        if ($item->product_id) {
+                            Product::where('id', $item->product_id)
+                                ->decrement('stock', $item->quantity);
+                        }
+                    }
+                    Log::info("Order #{$order->id}: un-cancelled → stock re-deducted for all items.");
+                }
+
+                // ── 2. Shipping + note (on order) ──────────────────────────
+                $shippingFields = [];
+                foreach (['shipping_first_name','shipping_last_name','shipping_company','shipping_street',
+                          'shipping_house_number','shipping_postal_code','shipping_city','shipping_country','shipping_phone'] as $f) {
+                    if ($request->has($f)) $shippingFields[$f] = $request->input($f);
+                }
+                if ($request->has('shipping_house_number_addition')) {
+                    $shippingFields['shipping_house_number_addition'] = $request->input('shipping_house_number_addition');
+                }
+                if ($request->has('order_note')) {
+                    $shippingFields['order_note'] = $request->input('order_note');
+                }
+                if (!empty($shippingFields)) {
+                    $order->fill($shippingFields);
+                }
+                $order->save();
+
+                // ── 3. Customer / billing ──────────────────────────────────
+                if ($order->customer) {
+                    $billingFields = [];
+                    foreach (['billing_first_name','billing_last_name','billing_email','billing_company',
+                              'kvk_nummer','rsin_nummer','btw_nummer','billing_street','billing_house_number',
+                              'billing_postal_code','billing_city','billing_country','billing_phone'] as $f) {
+                        if ($request->has($f)) $billingFields[$f] = $request->input($f);
+                    }
+                    if ($request->has('billing_house_number_add')) {
+                        $billingFields['billing_house_number-add'] = $request->input('billing_house_number_add');
+                    }
+                    if (!empty($billingFields)) {
+                        $order->customer->fill($billingFields);
+                        $order->customer->save();
+                    }
+                }
+
+                // ── 4. Items ───────────────────────────────────────────────
+                if ($request->has('items')) {
+                    $submittedItems   = collect($request->input('items', []));
+                    $submittedItemIds = $submittedItems->pluck('item_id')->filter()->map(fn($v) => (int)$v)->values();
+
+                    // Restore stock + delete removed items
+                    foreach ($order->items as $existing) {
+                        if (!$submittedItemIds->contains($existing->id)) {
+                            if ($existing->product_id) {
+                                Product::where('id', $existing->product_id)->increment('stock', $existing->quantity);
+                            }
+                            $existing->forceDelete();
+                        }
+                    }
+
+                    $totalBefore = 0.0;
+                    foreach ($submittedItems as $row) {
+                        if (empty($row['product_id'])) continue;
+                        $productId = (int)$row['product_id'];
+                        $newQty    = (int)($row['qty'] ?? 1);
+                        $itemId    = isset($row['item_id']) && $row['item_id'] ? (int)$row['item_id'] : null;
+                        $product   = Product::lockForUpdate()->findOrFail($productId);
+
+                        if ($itemId) {
+                            $existing = $order->items->find($itemId);
+                            if ($existing) {
+                                $qtyDiff = $newQty - $existing->quantity;
+                                if ($qtyDiff > 0 && $product->stock < $qtyDiff) {
+                                    throw new \Exception("Niet voldoende voorraad voor \"{$product->title}\" (beschikbaar: {$product->stock}).");
+                                }
+                                if ($qtyDiff > 0) $product->decrement('stock', $qtyDiff);
+                                elseif ($qtyDiff < 0) $product->increment('stock', abs($qtyDiff));
+                                $subtotal = round((float)$existing->unit_price * $newQty, 2);
+                                $existing->update(['quantity' => $newQty, 'subtotal' => $subtotal]);
+                                $totalBefore += $subtotal;
+                            }
+                        } else {
+                            if ($product->stock < $newQty) {
+                                throw new \Exception("Niet voldoende voorraad voor \"{$product->title}\" (beschikbaar: {$product->stock}).");
+                            }
+                            $product->decrement('stock', $newQty);
+                            $subtotal = round((float)$product->price * $newQty, 2);
+                            $order->items()->create([
+                                'product_id'   => $product->id,
+                                'product_name' => $product->title,
+                                'quantity'     => $newQty,
+                                'unit_price'   => (float)$product->price,
+                                'subtotal'     => $subtotal,
+                            ]);
+                            $totalBefore += $subtotal;
+                        }
+                    }
+
+                    // Recalculate discount + totals
+                    $discountType  = $request->input('discount_type');
+                    $discountValue = (float)($request->input('discount_value') ?? 0);
+                    $discountCode  = null;
+                    $codeInput     = trim($request->input('discount_code_input', ''));
+                    if ($codeInput !== '') {
+                        $codeModel = DiscountCode::where('code', $codeInput)->where('is_published', 1)->first();
+                        if ($codeModel && (!$codeModel->expiration_date || now()->startOfDay()->lte($codeModel->expiration_date))) {
+                            $discountValue = (float)$codeModel->discount;
+                            $discountType  = $codeModel->discount_type;
+                            $discountCode  = $codeModel->code;
+                        }
+                    }
+                    $discountAmount = 0.0;
+                    if ($discountValue > 0 && $discountType) {
+                        $discountAmount = $discountType === 'percent'
+                            ? round($totalBefore * ($discountValue / 100), 2)
+                            : round($discountValue, 2);
+                        $discountAmount = min($discountAmount, $totalBefore);
+                    }
+                    $totalAfterDiscount = round($totalBefore - $discountAmount, 2);
+
+                    // Resolve shipping amount — prefer the newly selected shipping_cost_id
+                    if ($request->has('shipping_cost_id')) {
+                        $scId = $request->input('shipping_cost_id');
+                        if ($scId) {
+                            $sc = ShippingCost::find((int)$scId);
+                            $shippingAmount = $sc ? (float)$sc->amount : 0.0;
+                            $order->forceFill([
+                                'shipping_cost_id'     => (int)$scId,
+                                'shipping_cost_amount' => $shippingAmount,
+                                'shipping_cost_country'=> $sc ? $sc->country : null,
+                            ]);
+                        } else {
+                            // "Geen verzendkosten" selected
+                            $shippingAmount = 0.0;
+                            $order->forceFill([
+                                'shipping_cost_id'     => null,
+                                'shipping_cost_amount' => 0,
+                            ]);
+                        }
+                    } else {
+                        $shippingAmount = (float)($order->shipping_cost_amount ?? 0);
+                    }
+
+                    $total = round($totalAfterDiscount + $shippingAmount, 2);
+
+                    $order->forceFill([
+                        'total_before'           => $totalBefore,
+                        'total_after_discount'   => $totalAfterDiscount,
+                        'total'                  => $total,
+                        'discount_type'          => $discountValue > 0 ? $discountType : null,
+                        'discount_value'         => $discountValue,
+                        'discount_price_total'   => $discountAmount,
+                        'discount_code_checkout' => $discountCode,
+                    ])->save();
+                }
+
+                // ── 5. Regenerate invoice ──────────────────────────────────
+                if (!empty($order->invoice_pdf_path)) {
+                    $order->refresh()->load('customer', 'items');
+                    $pdf  = Pdf::loadView('invoices.order', ['order' => $order])->output();
+                    $path = "invoices/factuur_{$order->id}.pdf";
+                    Storage::disk('public')->put($path, $pdf);
+                    $order->forceFill(['invoice_pdf_path' => $path])->save();
+                }
+            });
+
+            return back()->with('success', 'Bestelling volledig opgeslagen en factuur bijgewerkt.');
+
+        } catch (\Throwable $e) {
+            Log::error('updateAll failed', ['order' => $id, 'error' => $e->getMessage()]);
+            return back()->with('error', $e->getMessage())->withInput();
         }
-
-        return back()->with('success', 'Bestelling is bijgewerkt en factuur vernieuwd.');
     }
 
     public function get()
@@ -355,7 +602,136 @@ class OrderController extends Controller
         Storage::disk('public')->put($path, $pdf);
         $order->forceFill(['invoice_pdf_path' => $path])->save();
 
-        return back()->with('success', 'Factuur is aangemaakt');
+        return back()->with('success', 'Bestelgegevens zijn bijgewerkt.');
+    }
+
+    public function updateOrderItems(Request $request, string $id)
+    {
+        $order = Order::with(['items.product', 'customer'])->findOrFail($id);
+        $this->authorize('update', $order);
+
+        $request->validate([
+            'items'                => 'nullable|array',
+            'items.*.item_id'      => 'nullable|integer',
+            'items.*.product_id'   => 'required_with:items|integer|exists:products,id',
+            'items.*.qty'          => 'required_with:items|integer|min:1',
+            'discount_type'        => 'nullable|in:amount,percent',
+            'discount_value'       => 'nullable|numeric|min:0',
+            'discount_code_input'  => 'nullable|string|max:100',
+        ]);
+
+        try {
+            DB::transaction(function () use ($request, $order) {
+                $submittedItems  = collect($request->input('items', []));
+                $submittedItemIds = $submittedItems->pluck('item_id')->filter()->map(fn($v) => (int)$v)->values();
+
+                // Restore stock + delete items that were removed
+                foreach ($order->items as $existing) {
+                    if (!$submittedItemIds->contains($existing->id)) {
+                        if ($existing->product_id) {
+                            Product::where('id', $existing->product_id)->increment('stock', $existing->quantity);
+                        }
+                        $existing->forceDelete();
+                    }
+                }
+
+                $totalBefore = 0.0;
+
+                foreach ($submittedItems as $row) {
+                    $productId = (int) $row['product_id'];
+                    $newQty    = (int) $row['qty'];
+                    $itemId    = isset($row['item_id']) && $row['item_id'] ? (int)$row['item_id'] : null;
+
+                    $product = Product::lockForUpdate()->findOrFail($productId);
+
+                    if ($itemId) {
+                        // Update existing item
+                        $existing = $order->items->find($itemId);
+                        if ($existing) {
+                            $qtyDiff = $newQty - $existing->quantity;
+                            if ($qtyDiff > 0 && $product->stock < $qtyDiff) {
+                                throw new \Exception("Niet voldoende voorraad voor \"{$product->title}\" (beschikbaar: {$product->stock}).");
+                            }
+                            if ($qtyDiff > 0) {
+                                $product->decrement('stock', $qtyDiff);
+                            } elseif ($qtyDiff < 0) {
+                                $product->increment('stock', abs($qtyDiff));
+                            }
+                            $subtotal = round((float)$existing->unit_price * $newQty, 2);
+                            $existing->update(['quantity' => $newQty, 'subtotal' => $subtotal]);
+                            $totalBefore += $subtotal;
+                        }
+                    } else {
+                        // New item
+                        if ($product->stock < $newQty) {
+                            throw new \Exception("Niet voldoende voorraad voor \"{$product->title}\" (beschikbaar: {$product->stock}).");
+                        }
+                        $product->decrement('stock', $newQty);
+                        $subtotal = round((float)$product->price * $newQty, 2);
+                        $order->items()->create([
+                            'product_id'   => $product->id,
+                            'product_name' => $product->title,
+                            'quantity'     => $newQty,
+                            'unit_price'   => (float)$product->price,
+                            'subtotal'     => $subtotal,
+                        ]);
+                        $totalBefore += $subtotal;
+                    }
+                }
+
+                // Resolve discount (code takes priority)
+                $discountType  = $request->input('discount_type');
+                $discountValue = (float)($request->input('discount_value') ?? 0);
+                $discountCode  = null;
+
+                $codeInput = trim($request->input('discount_code_input', ''));
+                if ($codeInput !== '') {
+                    $codeModel = DiscountCode::where('code', $codeInput)->where('is_published', 1)->first();
+                    if ($codeModel && (!$codeModel->expiration_date || now()->startOfDay()->lte($codeModel->expiration_date))) {
+                        $discountValue = (float)$codeModel->discount;
+                        $discountType  = $codeModel->discount_type;
+                        $discountCode  = $codeModel->code;
+                    }
+                }
+
+                // Calculate discount amount
+                $discountAmount = 0.0;
+                if ($discountValue > 0 && $discountType) {
+                    $discountAmount = $discountType === 'percent'
+                        ? round($totalBefore * ($discountValue / 100), 2)
+                        : round($discountValue, 2);
+                    $discountAmount = min($discountAmount, $totalBefore);
+                }
+
+                $totalAfterDiscount = round($totalBefore - $discountAmount, 2);
+                $shippingAmount     = (float)($order->shipping_cost_amount ?? 0);
+                $total              = round($totalAfterDiscount + $shippingAmount, 2);
+
+                $order->forceFill([
+                    'total_before'          => $totalBefore,
+                    'total_after_discount'  => $totalAfterDiscount,
+                    'total'                 => $total,
+                    'discount_type'         => $discountValue > 0 ? $discountType : null,
+                    'discount_value'        => $discountValue,
+                    'discount_price_total'  => $discountAmount,
+                    'discount_code_checkout'=> $discountCode,
+                ])->save();
+
+                // Regenerate invoice if one exists
+                if (!empty($order->invoice_pdf_path)) {
+                    $order->refresh()->load('customer', 'items');
+                    $pdf  = Pdf::loadView('invoices.order', ['order' => $order])->output();
+                    $path = "invoices/factuur_{$order->id}.pdf";
+                    Storage::disk('public')->put($path, $pdf);
+                    $order->forceFill(['invoice_pdf_path' => $path])->save();
+                }
+            });
+
+            return back()->with('success', 'Producten en kortingen zijn bijgewerkt en factuur vernieuwd.');
+        } catch (\Throwable $e) {
+            Log::error('updateOrderItems failed', ['order' => $id, 'error' => $e->getMessage()]);
+            return back()->with('error', $e->getMessage())->withInput();
+        }
     }
 
     public function download_invoice(string $id)
