@@ -137,9 +137,13 @@ class OnlineLezenController extends Controller
             return response()->json(['results' => [], 'total' => 0]);
         }
 
+        $isAdmin = auth()->check() && auth()->user()->role === 'admin';
+
         // Only products that have HTML book pages
+        // Non-admins only see published (non-concept) book content
         $products = Product::withCount('bookPages')
             ->having('book_pages_count', '>', 0)
+            ->when(!$isAdmin, fn($q) => $q->where('book_content_published', true))
             ->get(['id', 'title', 'slug']);
 
         $allResults = [];
