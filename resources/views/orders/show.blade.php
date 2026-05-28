@@ -132,12 +132,35 @@
                     <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                         <i class="fa-solid fa-file-invoice text-gray-400 w-4 text-center"></i>
                         Factuuradres
+                        @if($order->customer->billing_company)
+                            <span class="ml-auto text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <i class="fa-solid fa-building text-xs"></i> Bedrijfsklant
+                            </span>
+                        @endif
                     </h3>
                     <div class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                        <p class="font-medium text-gray-900 dark:text-white">{{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</p>
+                        @if($order->customer->billing_company)
+                            <p class="font-semibold text-gray-900 dark:text-white">{{ $order->customer->billing_company }}</p>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs">t.a.v. {{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</p>
+                        @else
+                            <p class="font-medium text-gray-900 dark:text-white">{{ $order->customer->billing_first_name }} {{ $order->customer->billing_last_name }}</p>
+                        @endif
                         <p>{{ $order->customer->billing_street }} {{ $order->customer->billing_house_number }}{{ $order->customer->billing_house_number_addition ? ' '.$order->customer->billing_house_number_addition : '' }}</p>
                         <p>{{ $order->customer->billing_postal_code }}, {{ $order->customer->billing_city }}</p>
                         <p>{{ $order->customer->billing_country }}</p>
+                        @if($order->customer->btw_nummer || $order->customer->kvk_nummer || $order->customer->rsin_nummer)
+                            <div class="mt-2 pt-2 border-t border-gray-100 dark:border-gray-700 text-xs space-y-0.5 text-gray-500 dark:text-gray-400">
+                                @if($order->customer->btw_nummer)
+                                    <p><span class="font-medium text-gray-600 dark:text-gray-300">BTW-nr:</span> {{ $order->customer->btw_nummer }}</p>
+                                @endif
+                                @if($order->customer->kvk_nummer)
+                                    <p><span class="font-medium text-gray-600 dark:text-gray-300">KVK:</span> {{ $order->customer->kvk_nummer }}</p>
+                                @endif
+                                @if($order->customer->rsin_nummer)
+                                    <p><span class="font-medium text-gray-600 dark:text-gray-300">RSIN:</span> {{ $order->customer->rsin_nummer }}</p>
+                                @endif
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
@@ -161,6 +184,241 @@
                     </div>
                 </div>
             </div>
+
+            {{-- Edit Order Details --}}
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                <button type="button" onclick="document.getElementById('edit-details-panel').classList.toggle('hidden');this.querySelector('i.fa-chevron-down').classList.toggle('rotate-180')"
+                    class="w-full flex items-center justify-between p-4 text-left">
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-gray-400"></i>
+                        Bestelgegevens bewerken
+                    </h2>
+                    <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
+                </button>
+                @php
+                    $detailsFields = ['billing_first_name','billing_last_name','billing_email','billing_company',
+                        'billing_street','billing_house_number','billing_house_number_add','billing_postal_code',
+                        'billing_city','billing_country','billing_phone','shipping_first_name','shipping_last_name',
+                        'shipping_street','shipping_house_number','shipping_postal_code','shipping_city',
+                        'shipping_country','order_note','kvk_nummer','rsin_nummer','btw_nummer'];
+                    $hasDetailsErrors = $errors->hasAny($detailsFields);
+                @endphp
+                <div id="edit-details-panel" class="{{ $hasDetailsErrors ? '' : 'hidden' }} border-t border-gray-200 dark:border-gray-700">
+                    <form action="{{ route('orderUpdateDetails', $order->id) }}" method="POST" class="p-4 space-y-5">
+                        @csrf
+                        @method('PUT')
+
+                        @if($errors->hasAny($detailsFields))
+                        <div class="p-3 rounded-lg bg-red-50 border border-red-200 dark:bg-red-900/20 dark:border-red-800">
+                            <p class="text-xs font-semibold text-red-700 dark:text-red-400 mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i>Controleer de onderstaande velden:</p>
+                            <ul class="list-disc list-inside text-xs text-red-600 dark:text-red-400 space-y-0.5">
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
+                        {{-- Factuuradres --}}
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-file-invoice text-gray-400 w-4"></i> Factuuradres
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Voornaam</label>
+                                        <input type="text" name="billing_first_name" value="{{ old('billing_first_name', $order->customer->billing_first_name) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('billing_first_name') border-red-500 @enderror">
+                                        @error('billing_first_name')<p class="mt-0.5 text-xs text-red-500">{{ $message }}</p>@enderror
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Achternaam</label>
+                                        <input type="text" name="billing_last_name" value="{{ old('billing_last_name', $order->customer->billing_last_name) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('billing_last_name') border-red-500 @enderror">
+                                        @error('billing_last_name')<p class="mt-0.5 text-xs text-red-500">{{ $message }}</p>@enderror
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">E-mailadres</label>
+                                    <input type="email" name="billing_email" value="{{ old('billing_email', $order->customer->billing_email) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('billing_email') border-red-500 @enderror">
+                                    @error('billing_email')<p class="mt-0.5 text-xs text-red-500">{{ $message }}</p>@enderror
+                                </div>
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Telefoonnummer</label>
+                                    <input type="text" name="billing_phone" value="{{ old('billing_phone', $order->customer->billing_phone) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                </div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="col-span-2">
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Straatnaam</label>
+                                        <input type="text" name="billing_street" value="{{ old('billing_street', $order->customer->billing_street) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('billing_street') border-red-500 @enderror">
+                                        @error('billing_street')<p class="mt-0.5 text-xs text-red-500">{{ $message }}</p>@enderror
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Nr.</label>
+                                        <input type="text" name="billing_house_number" value="{{ old('billing_house_number', $order->customer->billing_house_number) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('billing_house_number') border-red-500 @enderror">
+                                        @error('billing_house_number')<p class="mt-0.5 text-xs text-red-500">{{ $message }}</p>@enderror
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Toevoeging</label>
+                                        <input type="text" name="billing_house_number_add" value="{{ old('billing_house_number_add', $order->customer->billing_house_number_addition) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Postcode</label>
+                                        <input type="text" name="billing_postal_code" value="{{ old('billing_postal_code', $order->customer->billing_postal_code) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('billing_postal_code') border-red-500 @enderror">
+                                        @error('billing_postal_code')<p class="mt-0.5 text-xs text-red-500">{{ $message }}</p>@enderror
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Plaats</label>
+                                        <input type="text" name="billing_city" value="{{ old('billing_city', $order->customer->billing_city) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('billing_city') border-red-500 @enderror">
+                                        @error('billing_city')<p class="mt-0.5 text-xs text-red-500">{{ $message }}</p>@enderror
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Land</label>
+                                        <select name="billing_country"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                            <option value="NL" @selected(old('billing_country', $order->customer->billing_country) === 'NL')>Nederland</option>
+                                            <option value="BE" @selected(old('billing_country', $order->customer->billing_country) === 'BE')>België</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Bedrijfsgegevens --}}
+                        <div class="border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-building text-gray-400 w-4"></i> Bedrijfsgegevens
+                            </h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Bedrijfsnaam <span class="text-gray-400">(optioneel)</span></label>
+                                    <input type="text" name="billing_company" value="{{ old('billing_company', $order->customer->billing_company) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                </div>
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">KVK-nummer <span class="text-gray-400">(optioneel)</span></label>
+                                    <input type="text" name="kvk_nummer" value="{{ old('kvk_nummer', $order->customer->kvk_nummer) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                </div>
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">RSIN-nummer <span class="text-gray-400">(optioneel)</span></label>
+                                    <input type="text" name="rsin_nummer" value="{{ old('rsin_nummer', $order->customer->rsin_nummer) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                </div>
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">BTW-nummer <span class="text-gray-400">(optioneel)</span></label>
+                                    <input type="text" name="btw_nummer" value="{{ old('btw_nummer', $order->customer->btw_nummer) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Verzendadres --}}
+                        <div class="border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-truck text-gray-400 w-4"></i> Verzendadres
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Voornaam</label>
+                                        <input type="text" name="shipping_first_name" value="{{ old('shipping_first_name', $order->shipping_first_name) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Achternaam</label>
+                                        <input type="text" name="shipping_last_name" value="{{ old('shipping_last_name', $order->shipping_last_name) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Bedrijfsnaam <span class="text-gray-400">(optioneel)</span></label>
+                                    <input type="text" name="shipping_company" value="{{ old('shipping_company', $order->shipping_company) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                </div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="col-span-2">
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Straatnaam</label>
+                                        <input type="text" name="shipping_street" value="{{ old('shipping_street', $order->shipping_street) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Nr.</label>
+                                        <input type="text" name="shipping_house_number" value="{{ old('shipping_house_number', $order->shipping_house_number) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Toevoeging</label>
+                                        <input type="text" name="shipping_house_number_addition" value="{{ old('shipping_house_number_addition', $order->shipping_house_number_addition) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Postcode</label>
+                                        <input type="text" name="shipping_postal_code" value="{{ old('shipping_postal_code', $order->shipping_postal_code) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Plaats</label>
+                                        <input type="text" name="shipping_city" value="{{ old('shipping_city', $order->shipping_city) }}"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Land</label>
+                                        <select name="shipping_country"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                            <option value="">— Zelfde als factuuradres —</option>
+                                            <option value="NL" @selected(old('shipping_country', $order->shipping_country) === 'NL')>Nederland</option>
+                                            <option value="BE" @selected(old('shipping_country', $order->shipping_country) === 'BE')>België</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Telefoonnummer</label>
+                                    <input type="text" name="shipping_phone" value="{{ old('shipping_phone', $order->shipping_phone) }}"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Bestelnotitie --}}
+                        <div class="border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-note-sticky text-gray-400 w-4"></i> Bestelnotitie
+                            </h3>
+                            <textarea name="order_note" rows="3"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                placeholder="Optionele notitie over de bestelling…">{{ old('order_note', $order->order_note) }}</textarea>
+                        </div>
+
+                        <p class="text-xs text-gray-400 dark:text-gray-500 italic">
+                            <i class="fa-solid fa-rotate text-gray-400 mr-1"></i>
+                            Als er al een factuur is aangemaakt, wordt deze automatisch bijgewerkt na opslaan.
+                        </p>
+
+                        <button type="submit"
+                            class="w-full text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-floppy-disk"></i> Gegevens opslaan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
         </div>
 
         {{-- RIGHT sidebar --}}
@@ -215,6 +473,30 @@
                     <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                         <i class="fa-solid fa-phone w-4 text-center text-gray-400"></i>
                         <span>{{ $order->customer->billing_phone }}</span>
+                    </div>
+                    @endif
+                    @if($order->customer->billing_company)
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fa-solid fa-building w-4 text-center text-gray-400"></i>
+                        <span>{{ $order->customer->billing_company }}</span>
+                    </div>
+                    @endif
+                    @if($order->customer->kvk_nummer)
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fa-solid fa-hashtag w-4 text-center text-gray-400"></i>
+                        <span>KVK: {{ $order->customer->kvk_nummer }}</span>
+                    </div>
+                    @endif
+                    @if($order->customer->rsin_nummer)
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fa-solid fa-hashtag w-4 text-center text-gray-400"></i>
+                        <span>RSIN: {{ $order->customer->rsin_nummer }}</span>
+                    </div>
+                    @endif
+                    @if($order->customer->btw_nummer)
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fa-solid fa-hashtag w-4 text-center text-gray-400"></i>
+                        <span>BTW: {{ $order->customer->btw_nummer }}</span>
                     </div>
                     @endif
                 </div>

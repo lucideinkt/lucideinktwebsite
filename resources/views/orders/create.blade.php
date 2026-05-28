@@ -361,10 +361,26 @@
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
           </div>
 
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">KVK-nummer <span class="text-gray-400 font-normal">(optioneel)</span></label>
+            <input type="text" name="kvk_nummer" value="{{ old('kvk_nummer') }}"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          </div>
+
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">RSIN-nummer <span class="text-gray-400 font-normal">(optioneel)</span></label>
+            <input type="text" name="rsin_nummer" value="{{ old('rsin_nummer') }}"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          </div>
+
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">BTW-nummer <span class="text-gray-400 font-normal">(optioneel)</span></label>
+            <input type="text" name="btw_nummer" value="{{ old('btw_nummer') }}"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          </div>
+
         </div>
       </div>
-
-      {{-- Alternatief verzendadres --}}
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
         <div class="p-4">
           <label class="flex items-center gap-3 cursor-pointer">

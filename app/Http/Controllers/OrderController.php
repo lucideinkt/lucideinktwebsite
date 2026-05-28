@@ -234,12 +234,115 @@ class OrderController extends Controller
             'payment_status' => $request->input('payment-status'),
         ]);
 
-        return back()->with('success', 'Bestelling is bijgewerkt');
+        // Auto-regenerate invoice PDF if it already exists
+        if (!empty($order->invoice_pdf_path)) {
+            try {
+                $order->refresh()->load('customer', 'items');
+                $pdf  = Pdf::loadView('invoices.order', ['order' => $order])->output();
+                $path = "invoices/factuur_{$order->id}.pdf";
+                Storage::disk('public')->put($path, $pdf);
+                $order->forceFill(['invoice_pdf_path' => $path])->save();
+            } catch (\Throwable $e) {
+                Log::error('Invoice regeneration failed on status update', ['order' => $id, 'error' => $e->getMessage()]);
+            }
+        }
+
+        return back()->with('success', 'Bestelling is bijgewerkt en factuur vernieuwd.');
     }
 
     public function get()
     {
         return redirect()->route('dashboard');
+    }
+
+    public function updateDetails(Request $request, string $id)
+    {
+        $order = Order::with('customer')->findOrFail($id);
+        $this->authorize('update', $order);
+
+        $validated = $request->validate([
+            // Billing / customer fields
+            'billing_first_name'       => 'required|string|max:255',
+            'billing_last_name'        => 'required|string|max:255',
+            'billing_email'            => 'required|email|max:255',
+            'billing_company'          => 'nullable|string|max:255',
+            'kvk_nummer'               => 'nullable|string|max:50',
+            'rsin_nummer'              => 'nullable|string|max:50',
+            'btw_nummer'               => 'nullable|string|max:50',
+            'billing_street'           => 'required|string|max:255',
+            'billing_house_number'     => 'required|string|max:20',
+            'billing_house_number_add' => 'nullable|string|max:20',
+            'billing_postal_code'      => 'required|string|max:20',
+            'billing_city'             => 'required|string|max:255',
+            'billing_country'          => 'required|string|max:10',
+            'billing_phone'            => 'nullable|string|max:50',
+            // Shipping fields
+            'shipping_first_name'            => 'nullable|string|max:255',
+            'shipping_last_name'             => 'nullable|string|max:255',
+            'shipping_company'               => 'nullable|string|max:255',
+            'shipping_street'                => 'nullable|string|max:255',
+            'shipping_house_number'          => 'nullable|string|max:20',
+            'shipping_house_number_addition' => 'nullable|string|max:20',
+            'shipping_postal_code'           => 'nullable|string|max:20',
+            'shipping_city'                  => 'nullable|string|max:255',
+            'shipping_country'               => 'nullable|string|max:10',
+            'shipping_phone'                 => 'nullable|string|max:50',
+            // Other
+            'order_note' => 'nullable|string|max:1000',
+        ]);
+
+        try {
+            // Update customer (billing) data
+            if ($order->customer) {
+                $order->customer->fill([
+                    'billing_first_name'       => $validated['billing_first_name'],
+                    'billing_last_name'        => $validated['billing_last_name'],
+                    'billing_email'            => $validated['billing_email'],
+                    'billing_company'          => $validated['billing_company'] ?? null,
+                    'kvk_nummer'               => $validated['kvk_nummer'] ?? null,
+                    'rsin_nummer'              => $validated['rsin_nummer'] ?? null,
+                    'btw_nummer'               => $validated['btw_nummer'] ?? null,
+                    'billing_street'           => $validated['billing_street'],
+                    'billing_house_number'     => $validated['billing_house_number'],
+                    'billing_house_number-add' => $validated['billing_house_number_add'] ?? null,
+                    'billing_postal_code'      => $validated['billing_postal_code'],
+                    'billing_city'             => $validated['billing_city'],
+                    'billing_country'          => $validated['billing_country'],
+                    'billing_phone'            => $validated['billing_phone'] ?? null,
+                ]);
+                $order->customer->save();
+            }
+
+            // Update order (shipping + note)
+            $order->fill([
+                'shipping_first_name'            => $validated['shipping_first_name'] ?? null,
+                'shipping_last_name'             => $validated['shipping_last_name'] ?? null,
+                'shipping_company'               => $validated['shipping_company'] ?? null,
+                'shipping_street'                => $validated['shipping_street'] ?? null,
+                'shipping_house_number'          => $validated['shipping_house_number'] ?? null,
+                'shipping_house_number_addition' => $validated['shipping_house_number_addition'] ?? null,
+                'shipping_postal_code'           => $validated['shipping_postal_code'] ?? null,
+                'shipping_city'                  => $validated['shipping_city'] ?? null,
+                'shipping_country'               => $validated['shipping_country'] ?? null,
+                'shipping_phone'                 => $validated['shipping_phone'] ?? null,
+                'order_note'                     => $validated['order_note'] ?? null,
+            ]);
+            $order->save();
+
+            // Auto-regenerate invoice PDF if it already exists
+            if (!empty($order->invoice_pdf_path)) {
+                $order->refresh()->load('customer', 'items');
+                $pdf  = Pdf::loadView('invoices.order', ['order' => $order])->output();
+                $path = "invoices/factuur_{$order->id}.pdf";
+                Storage::disk('public')->put($path, $pdf);
+                $order->forceFill(['invoice_pdf_path' => $path])->save();
+            }
+
+            return back()->with('success', 'Bestelgegevens zijn bijgewerkt.');
+        } catch (\Throwable $e) {
+            Log::error('updateDetails failed', ['order' => $id, 'error' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+            return back()->with('error', 'Er is een fout opgetreden bij het opslaan: ' . $e->getMessage())->withInput();
+        }
     }
 
     public function generateInvoice(string $id)
@@ -306,6 +409,10 @@ class OrderController extends Controller
             'billing_postal_code' => 'required|string',
             'billing_city' => 'required|string',
             'billing_country' => 'required|string',
+            'billing_company' => 'nullable|string|max:255',
+            'kvk_nummer' => 'nullable|string|max:50',
+            'rsin_nummer' => 'nullable|string|max:50',
+            'btw_nummer' => 'nullable|string|max:50',
             'shipping_first_name' => 'required_if:alt-shipping,1|string|nullable',
             'shipping_last_name' => 'required_if:alt-shipping,1|string|nullable',
             'shipping_street' => 'required_if:alt-shipping,1|string|nullable',
@@ -382,6 +489,9 @@ class OrderController extends Controller
             'billing_last_name' => $request->billing_last_name,
             'billing_email' => $request->billing_email,
             'billing_company' => $request->billing_company,
+            'kvk_nummer' => $request->kvk_nummer,
+            'rsin_nummer' => $request->rsin_nummer,
+            'btw_nummer' => $request->btw_nummer,
             'billing_street' => $request->billing_street,
             'billing_house_number' => $request->billing_house_number,
             'billing_house_number-add' => $request->input('billing_house_number-add'),
