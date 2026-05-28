@@ -15,6 +15,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Trust all proxies — required for Cloudways (and similar hosts) so that
+        // $request->ip() returns the real visitor IP, not the load-balancer IP.
+        $middleware->trustProxies(at: '*');
+
         $middleware->append(SecurityHeadersMiddleware::class);
         $middleware->web(append: [CheckMaintenanceMode::class, TrackPageVisit::class]);
 

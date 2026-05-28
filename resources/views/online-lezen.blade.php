@@ -161,12 +161,29 @@
         </div>
 
         {{-- Header sign --}}
+        @php
+            // Check if any books are currently only available as PDF (not yet as online reading version)
+            $hasPdfOnlyBooks = $products->contains(function ($p) use ($isAdmin) {
+                $contentPublished = $p->book_content_published;
+                $hasHtml = $p->book_pages_count > 0 && ($isAdmin || $contentPublished);
+                return !$hasHtml && !empty($p->pdf_file) && $p->pdf_reader_enabled;
+            });
+        @endphp
         <div class="bookshelf-header-sign">
             <h1 class="bookshelf-title">Biblio<span class="herina-t"></span>heek</h1>
             <div class="bookshelf-title-ornament">
                 <span>❧ Klik op een boek om te lezen ❧</span>
             </div>
             <p class="bookshelf-subtitle">Lucide Inkt</p>
+            @if($hasPdfOnlyBooks)
+            <div class="bookshelf-pdf-notice">
+                <span class="bookshelf-pdf-notice__icon">📜</span>
+                <span class="bookshelf-pdf-notice__text">
+                    Sommige boeken zijn nog als PDF beschikbaar.<br>
+                    <em>Deze worden geleidelijk vervangen door een online leesversie.</em>
+                </span>
+            </div>
+            @endif
         </div>
 
         {{-- Flat book pool — JS will build shelf rows --}}
