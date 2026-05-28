@@ -617,7 +617,10 @@
         '<p class="text-gray-400 italic">Pagina ophalen…</p>';
 
       try {
-        const resp = await fetch(pageUrl + '?_kw=' + Date.now(), { cache: 'no-store' });
+        const resp = await fetch(pageUrl, {
+          cache: 'no-store',
+          headers: { 'X-SEO-Checker': '1' }
+        });
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const html = await resp.text();
 
