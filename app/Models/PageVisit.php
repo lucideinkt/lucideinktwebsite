@@ -21,6 +21,7 @@ class PageVisit extends Model
         'country_code',
         'country',
         'city',
+        'region',
     ];
 
     public function product()
