@@ -31,6 +31,7 @@ class IndexPdfContent extends Command
             return self::SUCCESS;
         }
 
+        $this->info("Memory limit: " . ini_get('memory_limit') . " | Storage public root: " . storage_path('app/public'));
         $this->info("Indexing {$products->count()} PDF(s)...");
         $bar = $this->output->createProgressBar($products->count());
         $bar->start();
@@ -39,7 +40,7 @@ class IndexPdfContent extends Command
         $fail = 0;
 
         foreach ($products as $product) {
-            $result = $service->indexProduct($product);
+            $result = $service->indexProduct($product, $this);
             $result ? $ok++ : $fail++;
             $bar->advance();
         }

@@ -48,17 +48,28 @@ class PdfIndexService
     /**
      * Index a single product: extract PDF text per page and store them.
      * Also stores the full text on the product for fallback.
+     *
+     * @param \Illuminate\Console\Command|null $output  Optional console for debug output
      */
-    public function indexProduct(Product $product): bool
+    public function indexProduct(Product $product, $output = null): bool
     {
         if (empty($product->pdf_file)) {
+            $output?->line("  <comment>SKIP</comment>  [{$product->title}] – no pdf_file set");
             return false;
         }
 
         $absolutePath = Storage::disk('public')->path($product->pdf_file);
 
         if (!file_exists($absolutePath)) {
-            return false;
+            // Fallback: try public_path
+            $fallback = public_path($product->pdf_file);
+            if (file_exists($fallback)) {
+                $absolutePath = $fallback;
+                $output?->line("  <comment>INFO</comment>  [{$product->title}] – using public_path fallback");
+            } else {
+                $output?->line("  <error>FAIL</error>  [{$product->title}] – file not found at:\n    {$absolutePath}\n    {$fallback}");
+                return false;
+            }
         }
 
         try {
@@ -68,8 +79,6 @@ class PdfIndexService
             $parser = new Parser([], $config);
             $pdf    = $parser->parseFile($absolutePath);
             $pages  = $pdf->getPages();
-
-            // Remove existing per-page index for this product
             ProductPdfPage::where('product_id', $product->id)->delete();
 
             $fullText = '';
@@ -128,6 +137,7 @@ class PdfIndexService
             return $pageCount > 0;
         } catch (\Throwable $e) {
             \Illuminate\Support\Facades\Log::warning("PdfIndexService: failed to index [{$product->pdf_file}]: " . $e->getMessage());
+            $output?->line("  <error>FAIL</error>  [{$product->title}] – " . $e->getMessage());
             return false;
         }
     }
