@@ -141,6 +141,7 @@
             // Check URL ?page= param first (set by "Laatste gelezen" click), fall back to localStorage
             const urlParams = new URLSearchParams(window.location.search);
             const urlPage   = urlParams.get('page') ? parseInt(urlParams.get('page')) : null;
+            const searchQuery = urlParams.get('q') || '';
             const savedPage = localStorage.getItem(storageKey);
             const startPage = urlPage || (savedPage ? parseInt(savedPage) : 1);
             currentPage = startPage;
@@ -171,6 +172,36 @@
             }
 
             pdfViewer.src = viewerUrl;
+
+            // ── Search highlighting ───────────────────────────────────────────
+            // When a ?q= parameter is present, trigger PDF.js find after load.
+            // Poll every 100ms so highlighting fires as soon as PDF.js is ready.
+            if (searchQuery) {
+                pdfViewer.addEventListener('load', function () {
+                    let attempts = 0;
+                    const maxAttempts = 80; // give up after ~8 seconds
+                    (function triggerFind() {
+                        try {
+                            const iWin = pdfViewer.contentWindow;
+                            if (iWin && iWin.PDFViewerApplication && iWin.PDFViewerApplication.eventBus) {
+                                iWin.PDFViewerApplication.eventBus.dispatch('find', {
+                                    type:         '',
+                                    query:        searchQuery,
+                                    phraseSearch: true,
+                                    caseSensitive: false,
+                                    entireWord:   false,
+                                    highlightAll: true,
+                                    findPrevious: false,
+                                });
+                            } else if (++attempts < maxAttempts) {
+                                setTimeout(triggerFind, 100);
+                            }
+                        } catch(e) {
+                            if (++attempts < maxAttempts) setTimeout(triggerFind, 100);
+                        }
+                    })();
+                });
+            }
 
             // Comprehensive zoom prevention
             let lastTouchEnd = 0;

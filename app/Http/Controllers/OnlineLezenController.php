@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductPdfPage;
 use App\Services\SEOService;
 use Illuminate\Http\Request;
 
@@ -129,6 +130,7 @@ class OnlineLezenController extends Controller
 
     /**
      * JSON API — zoek in alle boeken tegelijk (cross-book full-text search)
+     * Searches both HTML book pages and indexed PDF text content.
      */
     public function searchAllBooks(Request $request)
     {
@@ -139,19 +141,21 @@ class OnlineLezenController extends Controller
 
         $isAdmin = auth()->check() && auth()->user()->role === 'admin';
 
-        // Only products that have HTML book pages
-        // Non-admins only see published (non-concept) book content
-        $products = Product::withCount('bookPages')
-            ->having('book_pages_count', '>', 0)
-            ->when(!$isAdmin, fn($q) => $q->where('book_content_published', true))
-            ->get(['id', 'title', 'slug']);
-
         $allResults = [];
         $normalizedQuery = self::removeDiacritics(mb_strtolower($query));
         $maxPerBook = 3;   // max snippets per book
         $maxTotal   = 40;  // hard cap
 
-        foreach ($products as $product) {
+        // ── 1. Search HTML book pages ─────────────────────────────────────────
+        $htmlProducts = Product::withCount('bookPages')
+            ->having('book_pages_count', '>', 0)
+            ->when(!$isAdmin, fn($q) => $q->where('book_content_published', true))
+            ->get(['id', 'title', 'slug', 'book_content_published']);
+
+        // Collect product IDs that have an active HTML version — these will be excluded from PDF search
+        $htmlProductIds = $htmlProducts->pluck('id')->all();
+
+        foreach ($htmlProducts as $product) {
             if (count($allResults) >= $maxTotal) break;
 
             $readerUrl = route('onlineLezenReadHtml', $product->slug);
@@ -189,6 +193,58 @@ class OnlineLezenController extends Controller
                     'readerUrl'    => $readerUrl,
                     'page'         => $page->page_number,
                     'snippet'      => $snippet,
+                    'type'         => 'html',
+                ];
+                $bookCount++;
+            }
+        }
+
+        // ── 2. Search indexed PDF pages ───────────────────────────────────
+        // Only search PDF for products that do NOT have a published HTML version.
+        // If a book has an active HTML version, HTML takes priority and PDF is skipped.
+        $pdfProducts = Product::whereNotNull('pdf_file')
+            ->where('pdf_file', '!=', '')
+            ->where('pdf_reader_enabled', true)
+            ->whereHas('pdfPages')
+            ->whereNotIn('id', $htmlProductIds)
+            ->get(['id', 'title', 'slug']);
+
+        foreach ($pdfProducts as $product) {
+            if (count($allResults) >= $maxTotal) break;
+
+            $readerUrl = route('onlineLezenRead', $product->slug);
+
+            $pages = $product->pdfPages()
+                ->orderBy('page_number')
+                ->get(['page_number', 'content']);
+
+            $bookCount = 0;
+            foreach ($pages as $page) {
+                if ($bookCount >= $maxPerBook) break;
+                if (count($allResults) >= $maxTotal) break;
+
+                $plain           = $page->content ?? '';
+                $normalizedPlain = self::removeDiacritics(mb_strtolower($plain));
+                $pos             = mb_strpos($normalizedPlain, $normalizedQuery);
+                if ($pos === false) continue;
+
+                $snippetStart = max(0, $pos - 70);
+                $snippetEnd   = min(mb_strlen($plain), $pos + mb_strlen($query) + 70);
+                $snippet      = ($snippetStart > 0 ? '…' : '')
+                    . mb_substr($plain, $snippetStart, $pos - $snippetStart)
+                    . '[[HIT]]'
+                    . mb_substr($plain, $pos, mb_strlen($query))
+                    . '[[/HIT]]'
+                    . mb_substr($plain, $pos + mb_strlen($query), $snippetEnd - $pos - mb_strlen($query))
+                    . ($snippetEnd < mb_strlen($plain) ? '…' : '');
+
+                $allResults[] = [
+                    'productId'    => $product->id,
+                    'productTitle' => $product->title,
+                    'readerUrl'    => $readerUrl,
+                    'page'         => $page->page_number,
+                    'snippet'      => $snippet,
+                    'type'         => 'pdf',
                 ];
                 $bookCount++;
             }

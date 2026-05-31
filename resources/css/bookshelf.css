@@ -577,6 +577,14 @@ body { margin: 0; padding: 0; width: 100%; }
     font-family: 'DelimaMTProRegular', serif;
 }
 
+.bs-sr-page--pdf {
+    color: rgba(180,100,60,0.90);
+}
+
+.bs-sr-page--pdf i {
+    margin-right: 3px;
+}
+
 .bs-sr-snippet {
     display: block;
     font-size: 13px;

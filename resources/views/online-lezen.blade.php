@@ -122,7 +122,7 @@
         {{-- Search — desktop sidebar only; on mobile the search lives in the top bar --}}
         <div class="bs-panel bs-panel--search-desktop">
             <h2 class="bs-section-title">Zoeken in boeken</h2>
-            <p class="bs-search-note">Doorzoekt alleen de online leesversies</p>
+            <p class="bs-search-note">Doorzoekt online leesversies en PDF's</p>
             <div class="bs-panel-body">
                 <div class="bs-search-wrap">
                     <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in alle boeken..." autocomplete="off">
@@ -718,13 +718,16 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         if (!data.results||!data.results.length) { resultsPanel.innerHTML='<div class="bs-sr-empty"><i class="fa-solid fa-book-open"></i> Geen resultaten voor <em>"'+escHtml(query)+'"</em></div>'; return; }
         const m=document.createElement('div'); m.className='bs-sr-meta'; m.textContent=data.total+' resultaat'+(data.total!==1?'en':'')+' voor "'+query+'"'; resultsPanel.appendChild(m);
         const byBook={};
-        data.results.forEach(r=>{ if(!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,hits:[]}; byBook[r.productId].hits.push(r); });
+        data.results.forEach(r=>{ if(!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,type:r.type,hits:[]}; byBook[r.productId].hits.push(r); });
         Object.values(byBook).forEach(function(book) {
             const b=document.createElement('div'); b.className='bs-sr-book';
-            b.innerHTML='<div class="bs-sr-book-title"><i class="fa-solid fa-book"></i> '+escHtml(book.title)+'</div>';
+            const icon = book.type==='pdf' ? 'fa-solid fa-file-pdf' : 'fa-solid fa-book';
+            b.innerHTML='<div class="bs-sr-book-title"><i class="'+icon+'"></i> '+escHtml(book.title)+'</div>';
             book.hits.forEach(function(hit) {
-                const a=document.createElement('a'); a.className='bs-sr-item'; a.href=hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(query);
-                a.innerHTML='<span class="bs-sr-page">Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
+                const a=document.createElement('a'); a.className='bs-sr-item';
+                a.href = hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(query);
+                const pageIcon = hit.type==='pdf' ? '<i class="fa-solid fa-file-pdf" style="font-size:9px;margin-right:2px;opacity:.7"></i>' : '';
+                a.innerHTML='<span class="bs-sr-page'+(hit.type==='pdf'?' bs-sr-page--pdf':'')+'">'+pageIcon+'Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
                 b.appendChild(a);
             });
             resultsPanel.appendChild(b);
@@ -782,7 +785,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         // Group by book
         const byBook = {};
         data.results.forEach(function (r) {
-            if (!byBook[r.productId]) byBook[r.productId] = { title: r.productTitle, url: r.readerUrl, hits: [] };
+            if (!byBook[r.productId]) byBook[r.productId] = { title: r.productTitle, type: r.type, url: r.readerUrl, hits: [] };
             byBook[r.productId].hits.push(r);
         });
 
@@ -792,16 +795,18 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
             const titleEl = document.createElement('div');
             titleEl.className = 'bs-sr-book-title';
-            titleEl.innerHTML = '<i class="fa-solid fa-book"></i> ' + escHtml(book.title);
+            const titleIcon = book.type === 'pdf' ? 'fa-solid fa-file-pdf' : 'fa-solid fa-book';
+            titleEl.innerHTML = '<i class="' + titleIcon + '"></i> ' + escHtml(book.title);
             bookEl.appendChild(titleEl);
 
             book.hits.forEach(function (hit) {
                 const item = document.createElement('a');
                 item.className = 'bs-sr-item';
-                // Pass both page AND query so reader can highlight
+                // Both HTML and PDF results link with page + query for highlighting
                 item.href = hit.readerUrl + '?page=' + hit.page + '&q=' + encodeURIComponent(query);
+                const pageIcon = hit.type === 'pdf' ? '<i class="fa-solid fa-file-pdf" style="font-size:9px;margin-right:2px;opacity:.7"></i>' : '';
                 item.innerHTML =
-                    '<span class="bs-sr-page">Pagina ' + hit.page + '</span>' +
+                    '<span class="bs-sr-page' + (hit.type === 'pdf' ? ' bs-sr-page--pdf' : '') + '">' + pageIcon + 'Pagina ' + hit.page + '</span>' +
                     '<span class="bs-sr-snippet">' + formatSnippet(hit.snippet) + '</span>';
                 bookEl.appendChild(item);
             });
@@ -1270,13 +1275,16 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             meta.textContent = data.total + ' resultaat' + (data.total!==1?'en':'') + ' voor "' + q + '"';
             results.appendChild(meta);
             const byBook = {};
-            data.results.forEach(r => { if (!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,hits:[]}; byBook[r.productId].hits.push(r); });
+            data.results.forEach(r => { if (!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,type:r.type,hits:[]}; byBook[r.productId].hits.push(r); });
             Object.values(byBook).forEach(function(book) {
                 const b = document.createElement('div'); b.className='bs-sr-book';
-                b.innerHTML = '<div class="bs-sr-book-title"><i class="fa-solid fa-book"></i> ' + escHtml(book.title) + '</div>';
+                const icon = book.type==='pdf' ? 'fa-solid fa-file-pdf' : 'fa-solid fa-book';
+                b.innerHTML = '<div class="bs-sr-book-title"><i class="'+icon+'"></i> ' + escHtml(book.title) + '</div>';
                 book.hits.forEach(function(hit) {
-                    const a = document.createElement('a'); a.className='bs-sr-item'; a.href=hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(q);
-                    a.innerHTML = '<span class="bs-sr-page">Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
+                    const a = document.createElement('a'); a.className='bs-sr-item';
+                    a.href = hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(q);
+                    const pageIcon = hit.type==='pdf' ? '<i class="fa-solid fa-file-pdf" style="font-size:9px;margin-right:2px;opacity:.7"></i>' : '';
+                    a.innerHTML = '<span class="bs-sr-page'+(hit.type==='pdf'?' bs-sr-page--pdf':'')+'">'+pageIcon+'Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
                     b.appendChild(a);
                 });
                 results.appendChild(b);

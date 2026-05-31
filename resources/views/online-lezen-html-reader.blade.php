@@ -1080,17 +1080,20 @@
                 window.scrollTo({ top: 0 });
                 updateUI(firstPage);
                 save(firstPage);
-                // Use urlPage if set (could equal firstPage), otherwise firstPage
-                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 50);
+                // Highlight search term on first page if requested
+                if (urlQuery) setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage || firstPage]), 80);
             } else {
                 const doJump = () => {
                     if (urlQuery) {
-                        // When a search highlight is requested, skip the intermediate page scroll.
-                        // readerHighlightDirect will compute the mark's absolute position and scroll
-                        // there in a single smooth motion.
+                        // First scroll to the page, then highlight the search term.
+                        // jumpTo ensures navigation even if readerHighlightDirect can't
+                        // find the exact text match.
+                        jumpTo(urlPage, false);
                         updateUI(urlPage);
                         save(urlPage);
-                        window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]);
+                        // Slight delay so the page scroll completes before we search for
+                        // the text position and do the fine-grained scroll to the mark.
+                        setTimeout(() => window.readerHighlightDirect?.(urlQuery, pageMap[urlPage]), 80);
                     } else {
                         jumpTo(startPage, false);
                         requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1865,8 +1868,14 @@
                         });
                         return;
                     }
-                    // Fallback: text not found — scroll to page top
-                    pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Fallback: text not found — scroll to page top via jumpTo if possible,
+                    // otherwise use scrollIntoView
+                    const pageNum = parseInt(Object.keys(pageMap).find(k => pageMap[k] === pageEl) || '0', 10);
+                    if (pageNum && pageMap[pageNum]) {
+                        _scrollTo(pageNum, true);
+                    } else {
+                        pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
 
                 // Wait for fonts so position measurements are accurate, then find + scroll in one shot
