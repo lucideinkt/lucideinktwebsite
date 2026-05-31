@@ -318,6 +318,7 @@ body { margin: 0; padding: 0; width: 100%; }
     display: flex;
     align-items: center;
     gap: 0;
+    height: 38px;
     background: rgba(0,0,0,0.40);
     border: 1px solid rgba(200,160,60,0.18);
     border-radius: 5px;
@@ -330,14 +331,16 @@ body { margin: 0; padding: 0; width: 100%; }
 }
 .bs-search-input {
     flex: 1;
+    height: 100%;
     background: none;
     border: none;
     outline: none;
-    padding: 9px 10px;
+    padding: 0 10px;
     color: var(--parchment);
     font-family: 'DelimaMTProRegular', serif;
     font-size: 14px;
     letter-spacing: 0.3px;
+    line-height: 1;
     /* iOS Safari zooms in when font-size < 16px on focus — prevent that */
     touch-action: manipulation;
 }
@@ -347,13 +350,18 @@ body { margin: 0; padding: 0; width: 100%; }
 }
 .bs-search-input::placeholder { color: rgba(200,160,80,0.50); }
 .bs-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     background: none;
     border: none;
     border-left: 1px solid rgba(200,160,60,0.18);
-    padding: 9px 11px;
+    padding: 0 12px;
     color: rgba(200,160,60,0.5);
     cursor: pointer;
     font-size: 12px;
+    line-height: 1;
     transition: color 0.15s;
     flex-shrink: 0;
 }
@@ -836,6 +844,7 @@ body { margin: 0; padding: 0; width: 100%; }
     margin-left: auto;
     margin-right: auto;
 }
+
 .bookshelf-pdf-notice__icon {
     font-size: 14px;
     line-height: 1.4;
@@ -848,6 +857,7 @@ body { margin: 0; padding: 0; width: 100%; }
     color: rgba(245,215,130,0.75);
     line-height: 1.55;
     text-align: left;
+    margin-bottom: -6px;
 }
 .bookshelf-pdf-notice__text em {
     font-style: italic;
@@ -1230,7 +1240,7 @@ body { margin: 0; padding: 0; width: 100%; }
     text-decoration: none;
     flex: 1 1 0;
     min-width: 0;
-    max-width: 220px;
+    max-width: 320px;
     transform-origin: bottom center;
     align-self: flex-end;
 }
@@ -1307,7 +1317,7 @@ body { margin: 0; padding: 0; width: 100%; }
     font-weight: 400;
     color: rgb(255, 232, 155);
     text-align: center;
-    line-height: 1.3;
+    line-height: 1.25;
     letter-spacing: 0.5px;
     text-shadow:
         0 1px 2px rgba(0,0,0,0.9),
@@ -1315,9 +1325,9 @@ body { margin: 0; padding: 0; width: 100%; }
         0 0 22px rgba(200,130,20,0.25);
     padding: 0 6px;
     margin-top: 8px;
-    word-break: normal;
-    overflow-wrap: normal;
-    hyphens: none;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: none; /* no auto-hyphenation on book cover titles */
 }
 
 /* Title + optional small label below */
@@ -1473,33 +1483,115 @@ body { margin: 0; padding: 0; width: 100%; }
 .bookshelf-empty i { font-size: 3rem; display: block; margin-bottom: 16px; opacity: 0.3; }
 
 /* ---------------------------------------------------------
-   LARGE SCREENS  ≥1400 px  (3 books per row)
+   LARGE SCREENS  ≥1400 px  (3 per row, widest — books can be biggest)
    --------------------------------------------------------- */
 @media (min-width: 1400px) {
-    .shelf-book-title { font-size: 30px; }
+    .shelf-book { max-width: 320px; }
+    .shelf-book-cover { padding: 42px 16px 22px 20px; }
+    .shelf-book-corner { width: 32px; height: 32px; }
+    .shelf-book-corner--tl { top: 10px; left: 14px; }
+    .shelf-book-corner--tr { top: 10px; right: 10px; }
+    .shelf-book-corner--bl { bottom: 10px; left: 14px; }
+    .shelf-book-corner--br { bottom: 10px; right: 10px; }
+    /* 320px book → text area 284px → 30px title fits comfortably */
+    .shelf-book-title { font-size: 30px; line-height: 1.2; padding: 0 6px; margin-top: 8px; }
+    .bookshelf-plank  { gap: 28px; }
+    .shelf-book-version-label { font-size: 11px; letter-spacing: 0.7px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 6px 14px; letter-spacing: 1.2px; }
 }
 
 /* ---------------------------------------------------------
-   MOBILE CONTROLS BAR  (visible only on small screens)
+   3-PER-ROW  1025–1399 px  (sidebar visible, 3 books)
+   Books max 280px wide → text area ~252px → title scales 2vw.
+   --------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .bookshelf-plank { gap: 20px; }
+    .shelf-book { max-width: 280px; }
+    /* Corners 26px, top 9px → end at 35px; padding-top 40px clears them */
+    .shelf-book-cover { padding: 40px 14px 18px 18px; }
+    .shelf-book-corner { width: 26px; height: 26px; }
+    .shelf-book-corner--tl { top: 9px;    left: 12px; }
+    .shelf-book-corner--tr { top: 9px;    right: 9px; }
+    .shelf-book-corner--bl { bottom: 9px; left: 12px; }
+    .shelf-book-corner--br { bottom: 9px; right: 9px; }
+    /* 2vw: 1050px→21px, 1399px→27px (clamped 22); text area 252px → fits */
+    .shelf-book-title {
+        font-size: clamp(18px, 2vw, 26px);
+        margin-top: 7px;
+        line-height: 1.2;
+        padding: 0 5px;
+    }
+    .shelf-book-title-group { gap: 3px; }
+    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.5px; }
+    .shelf-book-version-badge { font-size: 9px; padding: 2px 5px; letter-spacing: 0.3px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 5px 12px; letter-spacing: 1px; gap: 5px; }
+    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1px; }
+}
+
+/* ---------------------------------------------------------
+   2-PER-ROW  481–1024 px  (sidebar hidden/drawer, 2 books)
+   Books capped at 360px. aspect-ratio 3/4.
+   At 1024px books are ~360px wide → title can be up to 36px.
+   3.6vw: 481px→17→min18, 700px→25, 1024px→36px(capped).
+   --------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .bookshelf-plank { gap: 16px; }
+    .shelf-book { max-width: 360px; }
+    /* Corners 36px, top 9px → end at 45px; padding-top 50px clears them */
+    .shelf-book-cover {
+        padding: 50px 14px 18px 18px;
+        aspect-ratio: 3 / 4;
+    }
+    .shelf-book-corner { width: 36px; height: 36px; }
+    .shelf-book-corner--tl { top: 9px;    left: 12px; }
+    .shelf-book-corner--tr { top: 9px;    right: 9px; }
+    .shelf-book-corner--bl { bottom: 9px; left: 12px; }
+    .shelf-book-corner--br { bottom: 9px; right: 9px; }
+    .shelf-book-title {
+        font-size: clamp(18px, 3.6vw, 36px);
+        margin-top: 6px;
+        line-height: 1.2;
+        padding: 0 5px;
+    }
+    .shelf-book-title-group { gap: 3px; }
+    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.5px; }
+    .shelf-book-version-badge { font-size: 9px; padding: 2px 5px; letter-spacing: 0.3px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 5px 12px; letter-spacing: 1px; gap: 4px; }
+    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1px; }
+}
+
+/* ---------------------------------------------------------
+   MOBILE CONTROLS BAR  (visible only on screens ≤1024 px)
+   3-row layout: [back | menu] / [search] / [book selector]
    --------------------------------------------------------- */
 .bs-mobile-controls {
-    display: none; /* hidden on desktop — shown via media query below */
+    display: none; /* shown via media query */
+    flex-direction: column;
     width: 100%;
     max-width: 1260px;
-    margin: 0 0 12px;
-    align-items: flex-start;
-    gap: 10px;
+    margin: 0 0 14px;
+    gap: 8px;
     position: relative;
     z-index: 2;
 }
 
-/* Hamburger / drawer-open button */
-.bs-drawer-toggle {
-    flex-shrink: 0;
+/* ── Row 1: back link (left) + menu button (right) ── */
+.bs-mc-toprow {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Back link inside mobile bar — matches .bs-drawer-toggle styling */
+.bs-back-link-mobile {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 14px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -1507,6 +1599,53 @@ body { margin: 0; padding: 0; width: 100%; }
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    line-height: normal;
+    color: rgba(240,200,100,0.9);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    text-decoration: none;
+    white-space: nowrap;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.25),
+        inset 0 1px 0 rgba(255,200,80,0.1),
+        0 4px 12px rgba(0,0,0,0.6);
+    transition: box-shadow 0.2s;
+}
+.bs-back-link-mobile:hover {
+    color: var(--gold-bright);
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.45),
+        0 6px 16px rgba(0,0,0,0.7);
+}
+.bs-back-link-mobile i {
+    font-size: 13px;
+    color: var(--gold-mid);
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    margin-top: -1px;
+}
+
+/* Hamburger / drawer-open button */
+.bs-drawer-toggle {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
     color: rgba(240,200,100,0.9);
     text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     background:
@@ -1519,7 +1658,6 @@ body { margin: 0; padding: 0; width: 100%; }
         0 4px 12px rgba(0,0,0,0.6);
     transition: box-shadow 0.2s;
     white-space: nowrap;
-    height: 36px;
 }
 .bs-drawer-toggle:hover {
     box-shadow:
@@ -1527,19 +1665,25 @@ body { margin: 0; padding: 0; width: 100%; }
         0 6px 16px rgba(0,0,0,0.7);
 }
 .bs-drawer-toggle i {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--gold-mid);
+    line-height: 0;      /* collapse line box for geometric centering */
+    display: flex;
+    align-items: center;
+    margin-top: -1px;    /* align with the uppercase serif label text */
 }
 .bs-drawer-toggle span {
-    display: none; /* label hidden on very small screens */
+    display: none;
+    line-height: normal;
+    padding-top: 2px;  /* align uppercase label with icon centre */
 }
 @media (min-width: 360px) {
     .bs-drawer-toggle span { display: inline; }
 }
 
-/* Mobile search wrapper (search input lives here on mobile) */
+/* ── Row 2: Full-width search ── */
 .bs-mobile-search-outer {
-    flex: 1;
+    width: 100%;
     position: relative;
     z-index: 3;
 }
@@ -1551,10 +1695,162 @@ body { margin: 0; padding: 0; width: 100%; }
     z-index: 50;
     margin-top: 0;
     max-height: 460px;
-    /* Fully opaque so the bookshelf doesn't bleed through */
     background: #1a0c04;
     border: 1px solid rgba(200,160,60,0.28);
     box-shadow: 0 8px 32px rgba(0,0,0,0.92), 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* ── Row 3: Custom book selector ── */
+.bs-book-selector {
+    position: relative;
+    width: 100%;
+    z-index: 4;
+}
+
+/* Trigger button */
+.bs-book-selector-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 40px;       /* slightly taller to give font descenders room */
+    padding: 0 14px;
+    border: 1px solid rgba(200,160,60,0.35);
+    border-radius: 8px;
+    cursor: pointer;
+    line-height: normal;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.12),
+        0 4px 12px rgba(0,0,0,0.5);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-align: left;
+    overflow: visible;   /* allow font descenders to render without clipping */
+}
+.bs-book-selector-trigger:hover {
+    border-color: rgba(200,160,60,0.55);
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.25),
+        0 6px 16px rgba(0,0,0,0.6);
+}
+.bs-bst-icon {
+    color: rgba(200,160,60,0.70);
+    font-size: 13px;
+    flex-shrink: 0;
+    line-height: 0;      /* zero-out line box so flex centering is purely geometric */
+    display: flex;
+    align-items: center;
+    margin-top: -1px;    /* fine-tune vertical position relative to text */
+}
+.bs-bst-label {
+    flex: 1;
+    color: rgba(240,200,100,0.75);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;  /* allow proper ascender/descender space */
+    padding-top: 2px;     /* push text down to align visually with icons */
+}
+.bs-bst-arrow {
+    color: rgba(200,160,60,0.65);
+    font-size: 11px;
+    flex-shrink: 0;
+    line-height: 0;      /* zero-out line box so flex centering is purely geometric */
+    display: flex;
+    align-items: center;
+    margin-top: -1px;    /* match icon nudge */
+}
+
+/* Dropdown panel */
+.bs-book-selector-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(180deg, #2a1006 0%, #140802 60%, #2a1006 100%);
+    background-blend-mode: soft-light, normal;
+    border: 1px solid rgba(200,160,60,0.35);
+    border-radius: 10px;
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.92),
+        inset 0 0 0 1px rgba(200,160,60,0.10);
+    overflow: hidden;
+    max-height: 320px;
+    overflow-y: auto;
+    /* Thin gold scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200,160,60,0.35) transparent;
+}
+.bs-book-selector-panel::-webkit-scrollbar { width: 4px; }
+.bs-book-selector-panel::-webkit-scrollbar-thumb {
+    background: rgba(200,160,60,0.35);
+    border-radius: 2px;
+}
+
+/* Each book item */
+.bs-bsp-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,160,60,0.08);
+    transition: background 0.15s;
+    cursor: pointer;
+}
+.bs-bsp-item:last-child { border-bottom: none; }
+.bs-bsp-item:hover {
+    background: rgba(200,140,40,0.18);
+}
+.bs-bsp-item--disabled {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+}
+.bs-bsp-title {
+    flex: 1;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 14px;
+    color: rgba(240,210,140,0.95);
+    line-height: 1.3;
+}
+
+/* Version badge */
+.bs-bsp-badge {
+    flex-shrink: 0;
+    font-family: sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+.bs-bsp-badge--html {
+    background: rgba(40,120,60,0.80);
+    color: #b8f0c8;
+    border: 1px solid rgba(100,200,120,0.45);
+}
+.bs-bsp-badge--pdf {
+    background: rgba(160,60,30,0.80);
+    color: #ffd4c0;
+    border: 1px solid rgba(220,100,60,0.45);
+}
+.bs-bsp-badge--soon {
+    background: rgba(80,60,20,0.70);
+    color: rgba(240,200,100,0.60);
+    border: 1px solid rgba(200,160,60,0.25);
 }
 
 /* Drawer backdrop */
@@ -1594,11 +1890,14 @@ body { margin: 0; padding: 0; width: 100%; }
    RESPONSIVE
    --------------------------------------------------------- */
 
-/* ── ≤900 px : sidebar becomes a left-slide flyout drawer ── */
-@media (max-width: 900px) {
+/* ── ≤1024 px : sidebar becomes a left-slide flyout drawer ── */
+@media (max-width: 1024px) {
 
     /* Show the mobile controls bar */
     .bs-mobile-controls { display: flex; }
+
+    /* Hide the standalone back-link — it lives inside the mobile bar now */
+    .bookshelf-back-link { display: none; }
 
     /* Layout: single-column, cabinet takes full width */
     .bookshelf-layout {
@@ -1677,14 +1976,6 @@ body { margin: 0; padding: 0; width: 100%; }
 
     .bookshelf-plank { gap: 14px; min-height: 170px; padding: 0 22px 14px; }
     .bookshelf-plank::after { left: 0; right: 1px; }
-
-    /* Books: smaller font and ornaments on narrower screens */
-    .shelf-book { max-width: none; }
-    .shelf-book-title {
-        font-size: clamp(18px, 6vw, 30px);
-        margin-top: 15px;
-    }
-    .shelf-book-corner { width: 32px; height: 32px; }
 }
 
 @media (max-width: 480px) {
@@ -1713,14 +2004,94 @@ body { margin: 0; padding: 0; width: 100%; }
     .bookshelf-plank { gap: 10px; padding: 0 14px 14px; }
     .bookshelf-plank::after { left: 0; right: 1px; }
 
-    /* Smaller books: reduce font, ornaments, interior padding */
-    .shelf-book-title { font-size: clamp(16px, 4.5vw, 20px); }
-    .shelf-book-corner { width: 26px; height: 26px; }
-    .shelf-book-cover { padding: 38px 12px 26px 16px; }
-    .shelf-book-read-btn { font-size: 10px; padding: 5px 12px; letter-spacing: 1px; }
-    .shelf-book-coming-soon-text { font-size: 10px; letter-spacing: 1px; }
+    /* ── 1-PER-ROW on phones ──────────────────────────────────────
+       Single book centred on the plank. 2/3 aspect ratio gives a
+       proper book shape since the book fills most of the width.
+       Corners 38px, top 10px → end at 48px; padding-top 54px clears.
+       Title: 6vw scales with viewport: 480px→28px, 375px→22px, 320px→19→min20.
+       ──────────────────────────────────────────────────────────── */
+    .bookshelf-plank {
+        gap: 0;
+        justify-content: center;
+        min-height: 220px;
+    }
+    .shelf-book {
+        max-width: 300px;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+    .shelf-book-cover {
+        padding: 54px 18px 22px 22px;
+        aspect-ratio: 2 / 3;
+    }
+    .shelf-book-corner { width: 38px; height: 38px; }
+    .shelf-book-corner--tl { top: 10px;    left: 14px; }
+    .shelf-book-corner--tr { top: 10px;    right: 11px; }
+    .shelf-book-corner--bl { bottom: 10px; left: 14px; }
+    .shelf-book-corner--br { bottom: 10px; right: 11px; }
+    .shelf-book-title {
+        font-size: clamp(22px, 7vw, 32px);
+        margin-top: 8px;
+        line-height: 1.25;
+        padding: 0 8px;
+    }
+    .shelf-book-title-group { gap: 4px; }
+    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.6px; }
+    .shelf-book-version-badge { font-size: 9px; padding: 2px 6px; letter-spacing: 0.3px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 6px 14px; letter-spacing: 1.2px; gap: 5px; }
+    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1.2px; }
 }
 
 /* Prevent body scroll when drawer is open */
 body.bs-drawer-no-scroll { overflow: hidden; }
+
+
+/* ---------------------------------------------------------
+   1-PER-ROW fine-tuning  ≤380 px
+   Book styles inherit from ≤480px. Just tighten max-width
+   so books don't feel too large on narrow phones.
+   --------------------------------------------------------- */
+@media (max-width: 380px) {
+    .shelf-book { max-width: 270px; }
+    /* Corners 34px, top 9px → end at 43px; padding-top 50px clears */
+    .shelf-book-cover { padding: 50px 16px 20px 20px; }
+    .shelf-book-corner { width: 34px; height: 34px; }
+    .shelf-book-corner--tl { top: 9px;    left: 13px; }
+    .shelf-book-corner--tr { top: 9px;    right: 10px; }
+    .shelf-book-corner--bl { bottom: 9px; left: 13px; }
+    .shelf-book-corner--br { bottom: 9px; right: 10px; }
+    .shelf-book-title {
+        font-size: clamp(20px, 6.5vw, 28px);
+        padding: 0 6px;
+    }
+}
+
+/* ---------------------------------------------------------
+   VERY SMALL SCREENS  ≤360 px
+   Structural tightening + book narrowed for the smallest phones.
+   --------------------------------------------------------- */
+@media (max-width: 360px) {
+    .bookshelf-cabinet { padding: 0 10px 12px; }
+    .bookshelf-cabinet::before,
+    .bookshelf-cabinet::after { width: 10px; }
+    .bookshelf-header-sign { margin: 0 -10px 6px; padding: 20px 12px 14px; }
+    .bookshelf-footer-bar  { margin: 12px -10px -12px; height: 12px; }
+    .bookshelf-plank { padding: 0 10px 12px; min-height: 180px; }
+
+    /* Narrower book + larger corners for the smallest viewports */
+    .shelf-book { max-width: 250px; }
+    /* Corners 30px, top 8px → end at 38px; padding-top 44px clears */
+    .shelf-book-cover { padding: 44px 14px 18px 18px; }
+    .shelf-book-corner { width: 30px; height: 30px; }
+    .shelf-book-corner--tl { top: 8px;  left: 12px; }
+    .shelf-book-corner--tr { top: 8px;  right: 9px; }
+    .shelf-book-corner--bl { bottom: 8px; left: 12px; }
+    .shelf-book-corner--br { bottom: 8px; right: 9px; }
+    .shelf-book-title {
+        font-size: clamp(19px, 6.2vw, 26px);
+        padding: 0 5px;
+    }
+    .shelf-book-read-btn { font-size: 10px; padding: 5px 12px; letter-spacing: 1px; }
+}
+
 
