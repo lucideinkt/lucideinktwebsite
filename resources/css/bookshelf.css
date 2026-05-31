@@ -1246,7 +1246,7 @@ body { margin: 0; padding: 0; width: 100%; }
     position: relative;
     display: block;
     text-decoration: none;
-    flex: 1 1 0;
+    flex: 0 0 calc((100% - 48px) / 3);
     min-width: 0;
     max-width: 320px;
     transform-origin: bottom center;
@@ -1494,7 +1494,7 @@ body { margin: 0; padding: 0; width: 100%; }
    LARGE SCREENS  ≥1400 px  (3 per row, widest — books can be biggest)
    --------------------------------------------------------- */
 @media (min-width: 1400px) {
-    .shelf-book { max-width: 320px; }
+    .shelf-book { max-width: 320px; flex: 0 0 calc((100% - 56px) / 3); }
     .shelf-book-cover { padding: 42px 16px 22px 20px; }
     .shelf-book-corner { width: 32px; height: 32px; }
     .shelf-book-corner--tl { top: 10px; left: 14px; }
@@ -1514,7 +1514,7 @@ body { margin: 0; padding: 0; width: 100%; }
    --------------------------------------------------------- */
 @media (min-width: 1025px) and (max-width: 1399px) {
     .bookshelf-plank { gap: 20px; }
-    .shelf-book { max-width: 280px; }
+    .shelf-book { max-width: 280px; flex: 0 0 calc((100% - 40px) / 3); }
     /* Corners 26px, top 9px → end at 35px; padding-top 40px clears them */
     .shelf-book-cover { padding: 40px 14px 18px 18px; }
     .shelf-book-corner { width: 26px; height: 26px; }
@@ -1544,7 +1544,7 @@ body { margin: 0; padding: 0; width: 100%; }
    --------------------------------------------------------- */
 @media (min-width: 481px) and (max-width: 1024px) {
     .bookshelf-plank { gap: 16px; }
-    .shelf-book { max-width: 360px; }
+    .shelf-book { max-width: 360px; flex: 1 1 0; }
     /* Corners 36px, top 9px → end at 45px; padding-top 50px clears them */
     .shelf-book-cover {
         padding: 50px 14px 18px 18px;
