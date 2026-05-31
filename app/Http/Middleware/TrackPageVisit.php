@@ -74,7 +74,7 @@ class TrackPageVisit
                     $cleanUrl = $this->cleanUrl($request);
 
                     // GeoIP lookup — cached per IP for 24 hours to avoid rate limits
-                    [$countryCode, $country, $city] = $this->resolveLocation($request->ip());
+                    [$countryCode, $country, $city, $region] = $this->resolveLocation($request->ip());
 
                     PageVisit::create([
                         'url'          => $cleanUrl,
@@ -91,6 +91,7 @@ class TrackPageVisit
                         'country_code' => $countryCode,
                         'country'      => $country,
                         'city'         => $city,
+                        'region'       => $region,
                     ]);
                 } catch (\Throwable $e) {
                     // Never break the request because of analytics
@@ -119,9 +120,9 @@ class TrackPageVisit
     }
 
     /**
-     * Look up country/city for the given IP.
+     * Look up country/region/city for the given IP.
      * Results are cached per IP for 24 hours to stay within free-tier rate limits.
-     * Returns [countryCode, country, city] — all nullable.
+     * Returns [countryCode, country, city, region] — all nullable.
      */
     protected function resolveLocation(string $ip): array
     {
@@ -130,7 +131,7 @@ class TrackPageVisit
         if ($this->isPrivateIp($ip)) {
             if (app()->isProduction()) {
                 // On production a private IP means the proxy trust is misconfigured — skip silently
-                return [null, null, null];
+                return [null, null, null, null];
             }
             // Dev/staging: substitute with a Dutch test IP so location works locally
             $ip = '213.127.0.1'; // KPN Netherlands
@@ -143,15 +144,16 @@ class TrackPageVisit
                 $position = Location::get($ip);
                 if ($position) {
                     return [
-                        $position->countryCode ?: null,
-                        $position->countryName ?: null,
-                        $position->cityName    ?: null,
+                        $position->countryCode  ?: null,
+                        $position->countryName  ?: null,
+                        $position->cityName     ?: null,
+                        $position->regionName   ?: null,
                     ];
                 }
             } catch (\Throwable) {
                 // GeoIP failure is non-fatal
             }
-            return [null, null, null];
+            return [null, null, null, null];
         });
     }
 
