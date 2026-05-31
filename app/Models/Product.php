@@ -42,6 +42,8 @@ class Product extends Model
         'book_content',
         'book_content_published',
         'pdf_reader_enabled',
+        'pdf_text_content',
+        'pdf_indexed_at',
         'seo_description',
         'seo_tags',
         'seo_author',
@@ -77,6 +79,11 @@ class Product extends Model
     public function bookPages()
     {
         return $this->hasMany(BookPage::class)->orderBy('page_number');
+    }
+
+    public function pdfPages()
+    {
+        return $this->hasMany(ProductPdfPage::class)->orderBy('page_number');
     }
 
     public function getDynamicSEOData(): SEOData

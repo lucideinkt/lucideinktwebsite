@@ -10,16 +10,19 @@ use App\Models\ProductCategory;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Services\ImageCompressionService;
+use App\Services\PdfIndexService;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
     protected ImageCompressionService $imageCompressionService;
+    protected PdfIndexService $pdfIndexService;
 
-    public function __construct(ImageCompressionService $imageCompressionService)
+    public function __construct(ImageCompressionService $imageCompressionService, PdfIndexService $pdfIndexService)
     {
         $this->middleware(['auth', 'role:admin']);
         $this->imageCompressionService = $imageCompressionService;
+        $this->pdfIndexService = $pdfIndexService;
     }
 
     /**
@@ -163,6 +166,11 @@ class ProductController extends Controller
             'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
             'created_by' => $user->first_name . ' ' . $user->last_name,
         ]);
+
+        // Auto-index PDF text for search (only if a PDF was just uploaded)
+        if ($request->hasFile('pdf_file') && !empty($product->pdf_file)) {
+            $this->pdfIndexService->indexProduct($product);
+        }
 
         return redirect()->route('productIndex')->with('success',
             'Product met ID: '.$product->id.' succesvol aangemaakt.');
@@ -340,6 +348,17 @@ class ProductController extends Controller
             'seo_robots' => $validated['seo_robots'] ?? null,
             'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
         ]);
+
+        // Auto-index or clear PDF text when PDF changes
+        if ($request->has('delete_pdf_file')) {
+            // PDF was deleted — clear the index
+            $product->updateQuietly(['pdf_text_content' => null, 'pdf_indexed_at' => null]);
+            \App\Models\ProductPdfPage::where('product_id', $product->id)->delete();
+        } elseif ($request->hasFile('pdf_file')) {
+            // New PDF uploaded — re-index
+            $product->refresh();
+            $this->pdfIndexService->indexProduct($product);
+        }
 
         return redirect()->back()->with('success', 'Het product is succesvol bijgewerkt.');
     }
