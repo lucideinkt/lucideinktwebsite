@@ -40,12 +40,56 @@
         <i class="fa-solid fa-chevron-left"></i> Terug naar de website
     </a>
 
-    {{-- ── Mobile controls bar: only visible on screens ≤900 px ── --}}
+    {{-- ── Mobile controls bar: only visible on screens ≤1024 px ── --}}
     <div class="bs-mobile-controls" id="bs-mobile-controls">
-        <button class="bs-drawer-toggle" id="bs-drawer-toggle" aria-label="Open bibliotheek menu">
-            <i class="fa-solid fa-bars"></i>
-            <span>Menu</span>
-        </button>
+
+        {{-- Row 1: Terug (left) + Menu toggle (right) --}}
+        <div class="bs-mc-toprow">
+            <a href="{{ route('home') }}" class="bs-back-link-mobile">
+                <i class="fa-solid fa-chevron-left"></i> Terug naar de website
+            </a>
+            <button class="bs-drawer-toggle" id="bs-drawer-toggle" aria-label="Open bibliotheek menu">
+                <i class="fa-solid fa-bars"></i>
+                <span>Menu</span>
+            </button>
+        </div>
+
+        {{-- Row 2: Custom book selector dropdown --}}
+        <div class="bs-book-selector" id="bs-book-selector">
+            <button class="bs-book-selector-trigger" id="bs-book-selector-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <i class="fa-solid fa-book-open bs-bst-icon"></i>
+                <span class="bs-bst-label">Ga direct naar een boek…</span>
+                <i class="fa-solid fa-chevron-down bs-bst-arrow"></i>
+            </button>
+            <div class="bs-book-selector-panel" id="bs-book-selector-panel" role="listbox" hidden>
+                @foreach($products as $product)
+                    @php
+                        $selPublished  = $product->book_content_published;
+                        $selHasHtml    = $product->book_pages_count > 0 && ($isAdmin || $selPublished);
+                        $selHasPdf     = !$selHasHtml && !empty($product->pdf_file) && $product->pdf_reader_enabled;
+                        $selReadable   = $selHasHtml || $selHasPdf;
+                        $selHref       = $selHasHtml
+                            ? route('onlineLezenReadHtml', $product->slug)
+                            : ($selHasPdf ? route('onlineLezenRead', $product->slug) : '');
+                        $selTypeLabel  = $selHasHtml ? 'Online Leesversie' : ($selHasPdf ? 'PDF Versie' : 'Binnenkort');
+                        $selTypeCls    = $selHasHtml ? 'html' : ($selHasPdf ? 'pdf' : 'soon');
+                    @endphp
+                    @if($selReadable)
+                    <a href="{{ $selHref }}" class="bs-bsp-item" role="option">
+                        <span class="bs-bsp-title">{{ $product->title }}</span>
+                        <span class="bs-bsp-badge bs-bsp-badge--{{ $selTypeCls }}">{{ $selTypeLabel }}</span>
+                    </a>
+                    @else
+                    <div class="bs-bsp-item bs-bsp-item--disabled" role="option" aria-disabled="true">
+                        <span class="bs-bsp-title">{{ $product->title }}</span>
+                        <span class="bs-bsp-badge bs-bsp-badge--soon">{{ $selTypeLabel }}</span>
+                    </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Row 3: Full-width search --}}
         <div class="bs-mobile-search-outer">
             <div class="bs-search-wrap">
                 <input type="text" id="bs-mobile-search-input" class="bs-search-input"
@@ -57,6 +101,7 @@
             <p class="bs-search-note bs-search-note--mobile">Doorzoekt alleen de online leesversies</p>
             <div class="bs-search-results" id="bs-mobile-search-results" hidden></div>
         </div>
+
     </div>
 
     {{-- Two-column layout: sidebar + cabinet --}}
@@ -177,7 +222,6 @@
             <p class="bookshelf-subtitle">Lucide Inkt</p>
             @if($hasPdfOnlyBooks)
             <div class="bookshelf-pdf-notice">
-                <span class="bookshelf-pdf-notice__icon">📜</span>
                 <span class="bookshelf-pdf-notice__text">
                     Sommige boeken zijn nog als PDF beschikbaar.<br>
                     <em>Deze worden geleidelijk vervangen door een online leesversie. Schrijf je in voor onze nieuwsbrief op de homepagina om updates te ontvangen.</em>
@@ -1070,8 +1114,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         const books  = Array.from(pool.querySelectorAll('.shelf-book, .bookshelf-empty'))
                            .filter(b => b.dataset.hidden !== '1');
 
-        // ≥1400 px → 3 per row   |   everything else → 2 per row
-        const perRow = window.innerWidth >= 1400 ? 3 : 2;
+        // ≥1025 px (sidebar visible) → 3 per row  |  481–1024 px → 2 per row  |  ≤480 px → 1 per row
+        const perRow = window.innerWidth >= 1025 ? 3 : window.innerWidth > 480 ? 2 : 1;
 
         target.innerHTML = '';
 
@@ -1142,7 +1186,46 @@ document.addEventListener('touchstart', function () {}, { passive: true });
     });
     // Close drawer automatically when viewport grows back to desktop size
     window.addEventListener('resize', function () {
-        if (window.innerWidth > 900) closeDrawer();
+        if (window.innerWidth > 1024) closeDrawer();
+    });
+})();
+</script>
+
+<script>
+/* ── Custom book selector dropdown (mobile) ────────── */
+(function () {
+    const wrap    = document.getElementById('bs-book-selector');
+    const trigger = document.getElementById('bs-book-selector-trigger');
+    const panel   = document.getElementById('bs-book-selector-panel');
+    if (!wrap || !trigger || !panel) return;
+
+    function openPanel() {
+        panel.hidden = false;
+        trigger.setAttribute('aria-expanded', 'true');
+        trigger.querySelector('.bs-bst-arrow').style.transform = 'rotate(180deg)';
+    }
+    function closePanel() {
+        panel.hidden = true;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.querySelector('.bs-bst-arrow').style.transform = '';
+    }
+    function togglePanel() {
+        panel.hidden ? openPanel() : closePanel();
+    }
+
+    trigger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        togglePanel();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!wrap.contains(e.target)) closePanel();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePanel();
     });
 })();
 </script>
