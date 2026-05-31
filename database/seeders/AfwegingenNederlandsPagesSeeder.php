@@ -7528,6 +7528,489 @@ in verschillende situaties en wordt zuiverder, hij ervaart uiteenlopende gesteld
 
 </div>'
             ],
+            [
+                'page_number' => 181,
+                'content' => '<div class="page" id="181">
+<p class="text-end page-number">#181</p>
+
+<p>Voorwaar, De Leerrijke Qur’an heeft de mensheid deze weg geschonken. Wie dit geschenk volledig aanvaardt, zal voortgaan op deze tweede weg die naar gelukzaligheid in beide werelden leidt. Noch zullen vroegere belevenissen hem bedroeven, noch zullen aankomende omstandigheden hem beangstigen.</p>
+
+<p>O tweede, verdorven Europa! Een aantal van je rotte en ongefundeerde uitgangspunten breng je als volgt onder woorden:</p>
+
+<p class="text-italic">“Of het nou gaat om de grootste engel of de kleinste vis, ieder levend wezen is eigenaar van zichzelf, werkt voor zijn eigenheid en ijvert voor zijn eigen voldoening. Hij heeft het recht om te leven. Zijn bereidwilligheid en zijn levensdoel zijn op zijn eigen overleving en zijn voortbestaan gericht.”</p>
+
+<p>Het samenwerkingsprincipe behoort tot De Edele Principes van De Genereuze Schepper waaraan de basiselementen van het bestaan volstrekt onderhevig zijn. Genadige en genereuze manifestaties van deze universele wet waarbij planten de dieren, en dieren de mensen te hulp schieten, acht jij als een strijd. Zodoende ben jij tot de volgende belachelijke conclusie gekomen: <em>“Het leven is een strijd.”</em></p>
+
+<p>In welk opzicht is de manifestatie van dat samenwerkingsprincipe wanneer voedingsstoffen zich met volle passie inzetten om lichaamscellen te voeden een strijd? Uit welk oogpunt is dit een gevecht? Die hulp en inspanning belichamen veeleer een samenwerking op bevel van Een Genereuze Heer.</p>
+
+<p>Daarnaast breng jij één van je rotte uitgangspunten als volgt onder woorden: <span class="text-italic">“Alles is eigenaar van zichzelf.”</span> Het volgende toont echter duidelijk aan dat in feite helemaal niets eigenaar van zichzelf is. Binnen alle oorzaken geniet de mens het hoogste aanzien en de ruimste keuzevrijheid. Echter, zelfs bij de opvallendste handelingen die deze mens via zijn wil uitvoert, zoals denken, spreken en eten, worden er uit de honderd aspecten slechts één betwijfelbaar aspect aan zijn wil en zijn vermogen overgelaten. Hoe kan er over iemand, die niet eens één honderdste aspect van zijn opvallendste handeling kan opeisen, gezegd worden dat hij eigenaar van zichzelf is? Als de handen van het schepsel met het hoogste aanzien en de ruimste wil dusdanig gebonden zijn wat betreft ware beleid en eigenaarschap, bewijst de voorstander van de uitspraak: <span class="text-italic">“Overige dieren en levenloze wezens zijn eigenaar van zichzelf”</span> slechts dat hij dierlijker dan dieren, en levenlozer en onbewuster dan levenloze wezens is.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 182,
+                'content' => '<div class="page" id="182">
+<p class="text-end page-number">#182</p>
+
+<p style="margin-bottom: 0px">Wat jou naar deze fout heeft geleid en in deze afgrond heeft gestort, is jouw eenogige sluwheid. Oftewel, jouw buitengewone en heilloze listigheid. Door je blinde sluwheid ben jij De Alschepper alias jouw Heer vergeten, jij hebt alles aan een hypothetische natuur toegedicht, jij hebt Zijn kunstwerken aan oorzaken overgelaten en jij hebt het eigendom van Die Schepper over valse aanbedenen, oftewel over afgoden onderverdeeld. Vanuit deze optiek en uit het oogpunt van jouw sluwheid dient elke levende en ieder mens op zichzelf ontelbare vijanden te bevechten en te ploeteren om zichzelf in zijn eindeloze behoeften te voorzien. Met een minuscuul vermogen, een flinterdunne wil, een voorbijflitsend besef, een snel uitdovend leven en een vluchtig bestaan is hij gedwongen om zich tegenover die talloze vijanden en behoeften staande te houden. Echter, het kapitaal van die arme levende is niet eens voldoende om ook maar één van zijn duizenden verlangens te realiseren. Wanneer een ramp hem treft, verwacht hij alleen hulp van blinde oorzaken. Zodoende ondervindt hij het geheim achter de Aya:</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+وَمَا دُعَٓاءُ الْكَافِرٖينَ اِلَّا فٖى ضَلَالٍ<sup>1</sup>
+</p>
+
+<p>Jouw donkere sluwheid heeft de dag van de mens in een nacht veranderd. Alleen om die benauwde, duistere en verduisterende nacht te verwarmen, heb jij hem met tijdelijke misleidende lichtjes verlicht. Die lichtjes lachen het gezicht van de mensheid niet hoopgevend toe. Integendeel, die lichtjes lachen de mensheid spottend uit omdat ze in haar deerniswekkende staat dwaas giechelt.</p>
+
+<p>Elke levende is in de ogen van jouw studenten een zielig slachtoffer van kwaaddoeners. De wereld is een gemeenschappelijke rouwplaats. De stemmen die op aarde worden vernomen zijn pijnlijke kreten die door sterftes en kwellingen worden geslaakt.</p>
+
+<p>Jouw student die volledig door jou is geïndoctrineerd, wordt een farao. Hij wordt echter een laaghartige farao die zich aan de nietigste zaken onderwerpt; alles wat hem baat acht hij als zijn heer.</p>
+
+<p>Bovendien is jouw student een stijfkop. Hij is echter een zielige stijfkop die voor één genieting de ogen voor eindeloze schandelijkheden sluit. Voor een nietig profijt zal hij zo laag gaan dat hij zelfs de voeten van satan zal kussen.</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “En de beden van ongelovigen zijn vergeefs.” - <span class="text-italic">De Heilige Qur’an</span>, 13:14</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 183,
+                'content' => '<div class="page" id="183">
+<p class="text-end page-number">#183</p>
+
+<p>Bovendien is hij een geweldenaar. Omdat hij echter een steunpunt in zijn hart mist, is hij in wezen een uiterst machteloze geweldenaar vol grootspraak.</p>
+
+<p>Bovendien is hij een listeling die onder het mom van toewijding en opofferingsgezindheid zijn eigen profijt beoogt; hij ijvert om zijn hebzucht en zijn roemzucht te lessen. Buiten zijn ego om heeft hij niets oprecht lief. Alles offert hij op aan zijn ego.</p>
+
+<p>Een oprechte en pure student van De Qur’an daarentegen is een dienaar. Hij is echter een eerbiedwaardige dienaar die zich zelfs niet aan de opzienbarendste schepselen onderwerpt; zelfs een ultieme aanwinst als het paradijs stelt hij niet tot doel van zijn dienaarschap.</p>
+
+<p>Bovendien is hij zachtaardig en vreedzaam. Echter, al is hij zachtaardig en bereidwillig, zonder Toestemming en Bevel zal hij zich tegenover niemand anders dan zijn Ontzaglijke Schepper ondergeschikt opstellen.</p>
+
+<p>Bovendien is hij behoeftig. Hij is echter een rijke behoeftige gezien de toekomstige beloning die zijn Genereuze Eigenaar voor hem heeft opgeslagen.</p>
+
+<p>Bovendien is hij zwak. Hij is echter een sterke zwakke die zich berust op De Kracht van zijn Meester Wiens Macht Oneindig is. De Qur’an richt het streven van Zijn ware student niet eens op het eeuwige paradijs. Zou Zijn student dan ooit zijn streven op deze vergankelijke en voorbijgaande aarde richten?</p>
+
+<p>Voorwaar, doorzie hoezeer de twee studenten qua toewijding van elkaar verschillen. Tevens kun je ook met het aankomende afwegen over wat voor toewijding en opofferingsgezindheid de studenten van de verdorven filosofie en de studenten van De Leerrijke Qur’an beschikken.</p>
+
+<p>Een student van filosofie zal omwille van zijn ego van zijn bloedeigen broeder vluchten en een proces tegen hem aanspannen. Een student van De Qur’an daarentegen ziet alle vrome dienaren in de hemelen en op de aarde als zijn broeders en hij verricht innig beden voor ze; hun voorspoed maakt hem gelukkig en in zijn ziel verneemt hij een uiterst innige band met ze. Bijgevolg zegt hij in zijn bede: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُمَّ اغْفِرْ لِلْمُؤْمِنٖينَ وَ الْمُؤْمِنَاتِ</span>. Bovendien ziet hij de opzienbarendste creaties zoals De Oppertroon en de zon als onderhevige functionarissen, en als dienaren en als schepselen zoals hijzelf.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> “O ALLAH, vergeef de gelovige mannen en de gelovige vrouwen.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 184,
+                'content' => '<div class="page" id="184">
+<p class="text-end page-number">#184</p>
+
+<p>En vergelijk het verschil tussen de verhevenheid en de zielsverheffing die de twee studenten genieten met het volgende:</p>
+
+<p>De Qur’an verschaft de ziel van Zijn studenten een dusdanige verheffing, dat Hij in plaats van een bidsnoer met negenennegentig kraaltjes, de atomen van negenennegentig werelden die negenennegentig Goddelijke Namen manifesteren als kraaltjes in de handen van Zijn studenten plaatst en: <em>“Reciteer hiermee jullie litanieën”</em> zegt. Voorwaar, kijk en luister naar sjeikh Geylânî, Rufâî, Sjazelî <span class="text-arabic-inline honorific" dir="rtl" lang="ar">رضي الله عنهما</span> en naar dergelijke studenten van De Qur’an wanneer zij hun litanieën reciteren! Impliciet houden zij in hun handen de keten van alle atomen, alle waterdruppels en alle ademhalingen van schepselen in hun bidsnoer vast, waarna ze daarmee hun litanieën reciteren, en de Hoogste Gerechtigde gedenken en verheerlijken.</p>
+
+<p>Voorwaar, aanschouw de miraculeuze opvoeding van de Miraculeuze Qur’anrevelaties! Kijk hoezeer deze miezerige mens, die door een minieme tegenslag en een minuscule teleurstelling van streek raakt, en door een microscopische bacterie overwonnen wordt, dankzij de Qur’anische discipline een verheven waarde krijgt. En doorzie hoezeer zijn zintuigen zodanig worden verheft, dat hij de opsomming van alle wezens in de enorme wereld niet voldoende acht voor de verheerlijking in zijn litanie. En ondanks dat hij het paradijs te min voor het doel van zijn verheerlijking en litanie acht, plaatst hij zijn eigen ego niet boven het laagste schepsel van de Hoogste Gerechtigde. Hij smelt een eindeloze trots samen met een eindeloze bescheidenheid. Verhoudingsgewijs kun je wel inschatten hoe minderwaardig en laag een student van filosofie is.</p>
+
+<p>Voorwaar, de waarheden die de giftige filosofie uit Europa met zijn eenogige sluwheid foutief beziet, worden helder aanschouwd door De Qur’an Die met Zijn Twee Fonkelende en Helderziende Ogen op beide werelden is gericht. De Leiding van De Qur’an, Die met Zijn Twee Handen naar de twee gelukzaligheden van de mens wijst, zegt:</p>
+
+<p>O mens! Het ego en de goederen die jou ter beschikking zijn gesteld, behoren niet tot jouw eigendom; ze zijn jou toevertrouwd. De Eigenaar van wat jou is toevertrouwd, bezit een Macht Die voor alles toereikend is; Hij is Een Genadige Genereuze Die op de hoogte van alles is. Hij wil Zijn eigendom in jouw handen van jou kopen – opdat Hij het voor jou kan bewaren en het niet verloren gaat.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 185,
+                'content' => '<div class="page" id="185">
+<p class="text-end page-number">#185</p>
+
+<p>Later zal Hij jou er een hoge prijs voor geven. Jij bent een soldaat met toegewezen plichten. Werk namens Hem en handel omwille van Hem. Hij is Degene Die jou met onderhoud in je behoeften voorziet en jou beschermt tegen alles waar jouw macht ontoereikend voor is. Het doel en de vrucht van dit leven bestaan uit de ondervinding van de Namen en de Gesteldheden van Die Eigenaar. Wanneer een calamiteit jou treft, zeg dan: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّا لِلّٰهِ وَاِنَّٓا اِلَيْهِ رَاجِعُونَ</span>. Met andere woorden, zeg:</p>
+
+<p class="text-italic">“Ik sta in dienst van mijn Eigenaar. O calamiteit! Als jij met Zijn Toestemming en Zijn Wil bent gekomen, dan ben je van harte welkom. Wij zullen immers vroeg of laat tot Hem wederkeren en ons in Zijn Tegenwoordigheid begeven. En wij verlangen naar Hem. Hij zal ons hoe dan ook van de levenslasten verlossen. Aldus, o calamiteit, die vrijstelling en die verlossing mogen via jouw handen geschieden; ik heb er vrede mee. Als Hij jou dit bevel heeft gegeven omdat Hij wil nagaan of ik mijn rentmeesterschap zal handhaven en omdat Hij mijn plichtsgetrouwheid wil beproeven, maar niet wil en niet toestaat dat ik mij aan jou overgeef, dan zal ik – zolang mijn macht toereikend is – het toevertrouwde van mijn Eigenaar niet afstaan aan iemand die niet vertrouwd is.”</p>
+
+<p>Voorwaar, ondanks de duizenden voorbeelden hieromtrent kun je alleen met dit ene voorbeeld het niveauverschil tussen het leersysteem van de sluwe filosofie en de Qur’anische Leiding wel inschatten.</p>
+
+<p>Waarlijk, het ware belevingsproces van beide partijen vindt volgens de beschreven wijze plaats. Echter, wat leiding en dwaling betreft lopen de rangen van mensen uiteen. De niveaus van dwaling zijn verschillend. Niet iedereen zal op elk niveau deze waarheid volwaardig aanvoelen. Want onachtzaamheid schakelt bepaalde gevoelens uit. En tegenwoordig worden de desbetreffende gevoelens dusdanig uitgeschakeld, dat de moderne mensen de pijn van deze vreselijke kwelling niet vernemen. Echter, door de toename van de wetenschappelijke precisie en de waarschuwingen van de dood die dagelijks dertigduizend lijken laat zien, wordt die sluier van onachtzaamheid verscheurd.</p>
+
+<p>Wee degenen die door de afgoden van westerlingen en hun naturalistische ideologieën dwaling inslaan, hen blindelings imiteren en navolgen!</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “Voorzeker, wij komen van ALLAH en voorzeker, tot Hem is de wederkeer.” - <span class="text-italic">De Heilige Qur’an</span>, 2:156</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 186,
+                'content' => '<div class="page" id="186">
+<p class="text-end page-number">#186</p>
+
+<p>O jongeren van dit land!<sup>1</sup> Probeer westerlingen niet te imiteren. Na alle grenzeloze onrecht en vijandschap wat jullie van Europa hebben ondervonden, vraag ik jullie met welke logica jullie hun zedeloze en valse ideologieën kunnen volgen en vertrouwen. Dit is onacceptabel! Zij die hen schaamteloos imiteren, volgen hen niet na, maar sluiten zich misschien onbewust bij hen aan, waardoor jullie zowel julliezelf als jullie broeders verdoemen. Wees nuchter en besef dat jullie patriottische voordoen gelogen is zolang jullie hen schaamteloos imiteren. Want met een dergelijke imitatie drijven jullie de spot met jullie nationaliteit en maken jullie je volk te schande!</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto;">
+هَدٰينَا اللّٰهُ وَ اِيَّاكُمْ اِلَى الصِّرَاطِ الْمُسْتَقٖيمِ<sup>2</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> <span class="text-bold">Noot van de vertalers:</span> de schrijver doelt hier op de jongeren van Anatolië.</p>
+<p class="footnote-p"><sup>2</sup> “Moge ALLAH ons en jullie leiden op de rechte weg.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 187,
+                'content' => '<div class="page" id="187">
+<p class="text-end page-number">#187</p>
+
+<div class="text-center page-title-chapter delima-font">
+        <h2>De Vierentwintigste Flits</h2>
+    </div>
+
+<p class="small-title text-center text-red"><strong>Aangaande De Versluiering</strong></p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+        <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+        <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+        <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+         “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+        &lt;/p&gt;"><sup>1</sup></button></span>
+    </p>
+
+<p style="margin: 0px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+يَا اَيُّهَا النَّبِىُّ قُلْ لِاَزْوَاجِكَ وَبَنَاتِكَ وَنِسَٓاءِ الْمُؤْمِنٖينَ يُدْنٖينَ عَلَيْهِنَّ مِنْ جَلَابٖيبِهِنَّ<sup>2</sup> <span style="font-size: 0.7em" class="text-arabic-inline">(اِلٰى اٰخِرِ)</span>
+</p>
+
+<p style="margin-top: 18px">Deze Aya verordent de versluiering. De zedeloze beschaving daarentegen verzet zich tegen deze verordening van De Qur’an. Zij ziet de versluiering als iets onnatuurlijks en noemt het een gevangenschap.<sup>3</sup></p>
+
+<p><strong><em>Het antwoord</em></strong></p>
+
+<p>Wij zullen slechts vier van de vele wijsheden behandelen die aantonen dat deze verordening van De Leerrijke Qur’an volkomen natuurlijk is en dat juist het tegengestelde ervan onnatuurlijk is.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+
+<p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+
+<p class="footnote-p"><sup>2</sup> “O Godsgezant, zeg tegen jouw echtgenotes, jouw dochters en de vrouwen van de gelovigen dat zij zich met hun overkleding behoren te bedekken.” - <span class="text-italic">De Heilige Qur’an</span>, 33:59</p>
+
+<p class="footnote-p"><sup>3</sup> Een gedeelte uit de verdediging in het verzoekschrift tegen de rechtszaak dat de rechtbank tot zwijgen heeft gebracht.</p>
+
+<p class="footnote-p text-italic">“En tegen de rechtbank heb ik het volgende te zeggen: het gebod in kwestie wordt inmiddels dertienhonderdvijftig jaar lang elke eeuw door driehonderdvijftig miljoen mensen als een uiterst heilige en wezenlijke Goddelijke Norm voor het gemeenschapsleven geacht. Gesteund door de bevestigingen en overeenstemmingen van driehonderdduizend exegeses en in navolging van de ruim dertienhonderdvijftig jarige overtuiging van onze voorvaderen heeft iemand een exegese geschreven. Als er op het aardoppervlak enige rechtvaardigheid heerst, dan zal het onterechte besluit dat hem hierom veroordeelt uiteraard worden ingetrokken en het vonnis zou moeten worden opgeheven.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 188,
+                'content' => '<div class="page" id="188">
+<p class="text-end page-number">#188</p>
+
+<p class="text-center text-red small-title"><strong>De Eerste Wijsheid</strong></p>
+
+<p>Versluiering voor vrouwen is natuurlijk en hun aard vereist het. Immers, omdat vrouwen zwak en teder zijn geschapen, hebben ze behoefte aan een man die hen evenals hun kinderen – die ze liever dan hun eigen leven hebben – onder zijn vleugels neemt. Hierdoor heeft de vrouw van nature een drang om haarzelf te laten believen, zonder afkeer en ergernis op te wekken.</p>
+
+<p>Daarnaast zijn zes à zeven van de tien vrouwen ofwel oud ofwel onaantrekkelijk, waardoor ze hun oudheid of onaantrekkelijkheid niet aan iedereen willen tonen. Of ze zijn jaloers, waardoor ze tegenover mooiere vrouwen niet lelijker willen uitvallen. Of ze zijn bang voor aanranding en kritiek, waardoor ze geen doelwit van verkrachters willen zijn, noch door hun echtgenoten van ontrouw willen worden beticht. Deze redenen leiden ertoe dat zij zich van nature willen versluieren. Als er oplettend wordt gekeken, dan zal het opvallen dat vooral de oudere vrouwen zichzelf willen verbergen. Bovendien zullen slechts twee à drie van de tien vrouwen zowel jong als mooi zijn, en het daarnaast niet erg vinden om bekeken te worden.</p>
+
+<p>Het is bekend dat een mens zich ergert en stoort aan de blikken van personen die hij niet liefheeft en verafschuwt. Al zou een mooie vrouw in gewaagde kledij het leuk vinden om door twee à drie van de tien niet-verwante mannen bekeken te worden, alsnog zou zij zich aan de overige zeven à acht blikken ergeren.</p>
+
+<p>Daarnaast zal een mooie vrouw die niet zedeloos en ontaard is, zich op basis van haar tederheid en gevoeligheid uiteraard ergeren aan de vieze vergiftigende blikken waarvan de kwade gevolgen in de praktijk worden ondervonden. Tevens vernemen wij dat veel vrouwen in het blote continent van Europa geërgerd raken aan wellustige blikken en zich bij de politie beklagen met uitingen als:</p>
+
+<p class="text-italic">“Deze schoften ontnemen ons de vrijheid en ze onderdrukken ons met hun vieze blikken!”</p>
+
+<p>Aldus is het sluierverbod in een beschaving onnatuurlijk. Naast dat het Qur’anische sluiergebod natuurlijk is, worden die waardevolle bronnen van genade en die potentiële eeuwige gezellinnen van afgang, vernedering, geestelijke gevangenschap en kwelling dankzij de versluiering gered.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 189,
+                'content' => '<div class="page" id="189">
+<p class="text-end page-number">#189</p>
+
+<p>Daarnaast zijn vrouwen van nature angstig en schuw voor vreemde mannen. Schuwheid vereist van nature de versluiering. Want een plezier van acht à negen minuten zal door de zware acht- à negenmaandige zwangerschapslast enorm verbitteren. Daarnaast bestaat het risico dat het kind acht à negen jaar lang als vloek van een acht à negen minuten durend verboden genot vaderloos zal moeten worden grootgebracht. Omdat dit ook regelmatig voorkomt, zijn vrouwen van nature ook wezenlijk schuw voor vreemde mannen; hun aard wil ze mijden. Hun zwakke bouw verplicht en vermaant ze tot de versluiering om te voorkomen dat ze geen lustgevoelens van niet-verwante mannen opwekken en vreemden geen gelegenheid geven om ze aan te randen. Hun bouw geeft aan dat hun burcht en hun schild hun abaja is.</p>
+
+<p>Zoals ik heb vernomen werd de vrouw van een man met een hoge wereldse status vanwege haar blote benen overdag midden in het centrum van de hoofdstad door een simpele schoenenpoetser handtastelijk vernederd. Dit incident is een klap in het schaamteloze gezicht van degenen die tegen de versluiering zijn!</p>
+
+<p class="text-center text-red small-title"><strong>De Tweede Wijsheid</strong></p>
+
+<p>De uiterst gefundeerde en intense verhouding, liefde en band tussen man en vrouw zijn niet alleen op de behoeften van het aardse leven gebaseerd. Waarlijk, een vrouw is niet slechts voor dit aardse leven de levensgezellin van haar man. Ook in het eeuwige leven zal ze zijn levensgezellin zijn. Aangezien zij ook ten opzichte van het eeuwige leven de levensgezellin van haar man is, behoort zij uiteraard niet de aandacht van anderen op haar schoonheid te trekken, haar echtgenoot te krenken en jaloers te maken.</p>
+
+<p>Aangezien de band met haar gelovige man volgens het geloofsgeheim niet alleen tot het aardse leven is beperkt, en niet alleen voor een tijdelijke dierlijke liefde gedurende de periode van schoonheid is bestemd, maar uit het oogpunt van hun eeuwige levenspartnerschap op een gefundeerde en innige liefde en eerbied is gebaseerd, en aangezien die band hun innige eerbied en liefde niet alleen tot de tijd van jeugdigheid en schoonheid beperkt, maar ook de tijd van ouderdom en onaantrekkelijkheid includeert, dient de vrouw als een menselijk vereiste uiteraard haar schoonheden alleen voor de blik van haar man te hanteren en haar liefde enkel aan hem te geven. Anders zal ze zeer weinig verwerven, maar heel veel verliezen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 190,
+                'content' => '<div class="page" id="190">
+<p class="text-end page-number">#190</p>
+
+<p>Volgens de Sharia dienen de man en de vrouw gelijkwaardig aan elkaar te zijn. Dit wil zeggen dat ze bij elkaar moeten passen. Hierbij is de gelijkwaardigheid en de harmonie op het gebied van Godsdienstigheid het allerbelangrijkst.</p>
+
+<p class="text-italic">Gelukzalig zij de man die de Godsdienstigheid van zijn vrouw opmerkt, haar navolgt en Godsdienstig wordt, opdat hij zijn gezellin in het eeuwige leven niet kwijtraakt.</p>
+
+<p class="text-italic">Gelukzalig zij de vrouw die de Godsdienstigheid van haar man opmerkt en met de gedachte: <strong>“Ik wil mijn eeuwige levensgezel niet verliezen”</strong> Godvrezend wordt.</p>
+
+<p class="text-italic">Wee de man die zijn vrome vrouw voor eeuwig verliest door in onzede te duiken. Ellendig zij de vrouw die haar Godvrezende man niet navolgt en zodoende die gezegende gezel voor eeuwig verliest.</p>
+
+<p class="text-italic">Wee de twee partners die elkaar in hun ondeugd en onzede navolgen en elkaar helpen om in het vuur te belanden.</p>
+
+<p class="text-center text-red small-title"><strong>De Derde Wijsheid</strong></p>
+
+<p>Een gelukkig gezinsleven kan via een wederzijds vertrouwen, met een innige eerbied en liefde tussen man en vrouw standhouden. Ontsluiering en blotigheid daarentegen schaden het wederzijdse vertrouwen en tasten de onderlinge eerbied en liefde aan. Want van de tien vrouwen die zich gewaagd kleden, zal er slechts één geen aantrekkelijkere man dan haar echtgenoot aantreffen en aldus niet de moeite nemen om haarzelf bij vreemden geliefd te maken. De overige negen vrouwen zullen wél knappere mannen dan hun echtgenoten tegenkomen. En van de twintig mannen zal slechts één man geen mooiere vrouw dan zijn echtgenote aantreffen. Hierdoor zullen ontsluiering en blotigheid ertoe leiden dat de innige liefde en het wederzijdse vertrouwen verloren gaan. Daarnaast kunnen ze als volgt een uiterst walgelijk en laaghartig gevoel opwekken:</p>
+
+<p>Een mens koestert van nature geen lustgevoelens voor een naaste verwante zoals zijn zus. Immers, omdat de gezichten van naaste verwanten een gevoel van mededogen en een geoorloofde liefde in het kader van verwantschap opwekken, blokkeren ze egoïstische en wellustige impulsen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 191,
+                'content' => '<div class="page" id="191">
+<p class="text-end page-number">#191</p>
+
+<p>Echter, lichaamsdelen zoals de benen die volgens de Sharia ook aan verwanten niet getoond mogen worden, kunnen bij verdorven zielen een uiterst walgelijk gevoel ontwaken wanneer ze worden ontbloot. Want het gezicht van een naaste verwante geeft een signaal van verwantschap af en lijkt niet op het gezicht van een niet-verwante. Echter, een lichaamsdeel zoals bijvoorbeeld een been lijkt op dat van een niet-verwante. Omdat er geen onderscheidingsteken is dat een signaal van verwantschap afgeeft, kan het ertoe leiden dat een aantal verdorven verwanten er met een wellustige dierenblik naar gaan kijken. Een dergelijke blik is echter een onmenselijkheid waarvan de nekharen overeind gaan staan!</p>
+
+<p class="text-center text-red small-title"><strong>De Vierde Wijsheid</strong></p>
+
+<p style="margin-bottom: 0px">Het is bekend dat een groot nageslacht door iedereen wordt gewenst. Geen volk of regering is tegen de groei van zijn volk. Zelfs de Nobelste Profeet <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> heeft hierover het volgende verkondigd:</p>
+
+<p style="margin: 0px auto 0 auto; max-width: 500px;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">تَنَاكَحُوا تَكَاثَرُوا فَاِنّٖى اُبَاهٖى بِكُمُ الْاُمَمَ <span dir="rtl" lang="ar" style="font-size: 0.8em;">(اَوْ كَمَا قَالَ)</span></p>
+
+<p><strong>Oftewel, “Trouw en vermenigvuldig jullie. Op de dag des oordeels zal jullie talrijkheid mij met trots vervullen.”</strong></p>
+
+<p>Echter, door het sluierverbod zal het aantal huwelijken niet toe- maar juist enorm afnemen. Want zelfs de losbandigste en modernste jongeman verlangt naar een kuise levensgezellin. Hij zal niet wensen dat zij zo modern, oftewel zo open en bloot is als cchijzelf, waardoor hij vrijgezel blijft en misschien zelfs in ontucht belandt.</p>
+
+<p>Een vrouw is anders; zij kan haar echtgenoot niet dermate beperken. Immers, omdat een vrouw gezien haar huishoudelijke functie binnen het gezinsleven als beheerster van alle goederen, kinderen en bezittingen van haar man fungeert, bestaan haar fundamenteelste karakteristieken uit loyaliteit en betrouwbaarheid. Open- en blotigheid daarentegen richten die loyaliteit te gronde, doen haar betrouwbaarheid in de ogen van haar man in rook opgaan en leveren haar gewetenskwelling op. Daarenboven zijn lef en vrijgevigheid twee eigenschappen die bij mannen prijzenswaardig zijn, terwijl ze bij vrouwen als zondige karakteristieken en kwade eigenschappen gelden omdat ze haar betrouwbaarheid en haar loyaliteit aantasten. De taak van haar man daarentegen bestaat niet uit penningmeesterschap en loyaliteit, maar uit bescherming, mededogen en eerbied. Daarom kan die man niet worden beperkt en mag hij met andere vrouwen huwen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 192,
+                'content' => '<div class="page" id="192">
+<p class="text-end page-number">#192</p>
+
+<p>Ons land (<span class="text-italic">Anatolië</span>) kan niet met Europa vergeleken worden. Want ondanks de heersende open- en blotigheid wordt de eer daar alsnog op bepaalde gewelddadige manieren zoals duellen enigszins opgehouden. Degene die het waagt om de vrouw van een man van eer wellustig te bekijken, zal eerst de dood voor ogen moeten zien voordat hij kijkt. Bovendien zijn de mensen in koude gebieden zoals Europa van nature koelbloedig en koud zoals die gebieden. Deze Aziatische gebieden, oftewel de streken van de Islamitische wereld, zijn verhoudingsgewijs warm. Het is bekend dat de leefomgeving invloed op het karakter van de mens uitoefent. De open- en blotigheden die plaatsvinden om dierlijke lusten op te wekken en de sensualiteit te prikkelen, zullen bij die koude mensen in die koude streken misschien geen extreme uitbuitingen en verspillingen veroorzaken.</p>
+
+<p>Echter, bij de warmbloedige en gevoelige mensen uit warme landen zullen de open- en blotigheden waarmee de egoïstische lusten continu aangewakkerd worden uiteraard leiden tot veel uitbuitingen en verspillingen. Dit zal het geslacht zwakker maken en krachtverlies veroorzaken. Ten opzichte van een natuurlijke behoefte die normaliter eens in de twintig à dertig dagen terugkeert, zal de man zich om de paar dagen gedwongen voelen tot verspilling. Omdat hij maandelijks ongeveer vijftien dagen zijn vrouw wegens verhinderingen zoals de menstruatie niet kan benaderen, zal hij in dit geval neigen tot ontucht als zijn ego hem de baas is.</p>
+
+<p>Stedelingen kunnen dorpelingen en bedoeïenen niet als maatstaf nemen om de versluiering te verbieden. Want de onschuldige werksters en forsgebouwde vrouwen in dorpen en in de streken van bedoeïenen waar bezigheden voor de kost, fysieke inspanningen en moeiten ertoe leiden dat ze soms minder bedekt zijn, en waar ze in vergelijking met stedelingen minder aandacht trekken, wekken geen egoïstische lusten op. Daarnaast zijn er in dorpen weinig vervelende en werkeloze mannen, waardoor daar geen tiende van de stedelijke onzedelijkheden plaatsvinden. Aldus kunnen zij niet met elkaar vergeleken worden.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 193,
+                'content' => '<div class="page" id="193">
+<p class="text-end page-number">#193</p>
+
+<div class="text-center page-title-chapter delima-font"><h2>De Vierde Vraag Uit De Eerste Brief</h2></div>
+
+<p>Een valse verliefdheid op geliefden kan in een ware verliefdheid veranderen. Kan de valse verliefdheid op de wereld – waaraan de meeste mensen toegeven – ook in een ware verliefdheid veranderen?</p>
+
+<p class="text-italic text-bold">Het antwoord</p>
+
+<p>Ja, dat is mogelijk. De valse verliefdheid in kwestie is op het vergankelijke gezicht van de wereld gericht. Wanneer een verliefde persoon in dit kader de lelijkheden van teloorgang en vergankelijkheid op dat gezicht ziet, zijn gezicht daarvan afwendt, een zoektocht naar een eeuwige geliefde begint en erin slaagt om te kijken naar de prachtige twee andere gezichten van de wereld die zich als een spiegel van Goddelijke Namen en als een akker voor het hiernamaals voordoen, dan zal die ongeoorloofde valse verliefdheid de gelegenheid krijgen om in een ware verliefdheid te veranderen. Er is echter één voorwaarde: de mens behoort zijn vergankelijke en instabiele binnenwereld die aan zijn leven is gebonden niet met de buitenwereld te verwarren. Als hij zoals de dwaalgeesten en de achtelozen zijn eigenheid vergeet, de buitenwereld induikt, de gemeenschappelijke wereld als zijn zelfwereld ziet en daarop verliefd wordt, dan zal hij verstrikt raken in het moeras van de natuur en daarin wegzinken – tenzij Gods Helpende Hand hem op een uitzonderlijke wijze daaruit bevrijdt. Wij zullen deze waarheid met het aankomende voorbeeld nader belichten.</p>
+
+<p>Als er aan de vier wanden van deze versierde kamer vier grote spiegels voor ons vier hangen, dan zijn er in totaal vijf kamers; de ene is de ware kamer, de andere vier zijn figuurlijk en persoonlijk. Een ieder van ons kan op zijn spiegel de vorm, de verschijning en de kleur van zijn persoonlijke kamer aanpassen. Als we de spiegel een rode kleur geven, dan zal de kamer rood worden weergegeven, als we hem groen verven, dan zal de kamer groen ogen, enzovoort. Door de spiegel te bewerken, kunnen wij de kamer in verscheidene toestanden brengen. We kunnen haar verlelijken, verfraaien en er velerlei gedaantes aan geven.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 194,
+                'content' => '<div class="page" id="194">
+<p class="text-end page-number">#194</p>
+
+<p>Echter, de externe kamer die gemeenschappelijk wordt gebruikt, kunnen wij niet zo eenvoudig bewerken en aanpassen. Ondanks dat de persoonlijke en de algemene kamer eigenlijk gelijk aan elkaar zijn, is hun beïnvloedbaarheid anders. Jij kunt je eigen kamer met een vinger verwoesten, terwijl je van de andere kamer geen steen kunt verroeren.</p>
+
+<p>Voorwaar, de wereld is een sierlijke verblijfplaats. Eenieders leven van ons is een grote spiegel. Binnen deze wereld bezitten wij allemaal een persoonlijke wereld. Echter, de steunpilaar, het centrum en de poort van die wereld is ons leven. Die zelfwereld van ons is een bladzijde en ons leven is een pen waarmee vele gegevens worden geschreven die op de pagina van onze daden zullen verschijnen.</p>
+
+<p>Stel je nu voor dat wij onze wereld liefhebben. Vervolgens realiseren wij ons dat onze wereld op ons leven is gefundeerd, waardoor wij aanvoelen en inzien dat ze zo fragiel, vergankelijk en instabiel als ons leven is. Bijgevolg wenden wij onze liefde voor haar tot de schitterende schoonschriften van Goddelijke Namen Die in onze persoonlijke wereld worden weerspiegeld en vertegenwoordigd. Zodoende zal onze liefde tot de manifestaties van Gods Namen overgaan. Als wij daarenboven inzien dat die persoonlijke wereld van ons een tijdelijke kwekerij voor het hiernamaals en het paradijs is, en vervolgens onze gretigheid, verlangens, liefde en dergelijke intense gevoelens wenden tot haar voortbrengselen, vruchten en bloemen die als verdiensten in het hiernamaals worden geoogst, dan zal die valse verliefdheid in een ware verliefdheid veranderen.</p>
+
+<p>Anders, als het geheim achter: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">نَسُوا اللّٰهَ فَاَنْسٰيهُمْ اَنْفُسَهُمْ اُولٰٓئِكَ هُمُ الْفَاسِقُونَ</span>
+de mens bevangt, als hij zijn eigenheid vergeet, de teloorgang van het leven niet gedenkt, zijn instabiele binnenwereld zo stabiel als de buitenwereld acht, zichzelf onsterfelijk waant, gehecht aan de wereld raakt en zich met vurige gevoelens aan haar vastklampt, dan zal hij in haar verdrinken en vergaan. Die liefde is voor hem dan een immense vloek en een kwelling. Want die liefde brengt een troosteloos mededogen en een hopeloos medeleven voort. Hij heeft het met alle levenden te doen; alle oogstrelende en vergankelijke schepselen wekken een medelijden en een scheidingsverdriet in hem op. Desondanks kan hij slechts machteloos toekijken, waardoor hij in absolute wanhoop kwelling ondergaat.</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “Zij vergaten ALLAH, waarna Hij ze henzelf heeft doen laten vergeten; voorzeker, zij zijn de overtreders.” - <span class="text-italic">De Heilige Qur’an, 59:19</span></p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 195,
+                'content' => '<div class="page" id="195">
+<p class="text-end page-number">#195</p>
+
+<p>Echter, de eerste persoon die zich van onachtzaamheid had bevrijd, zal tegen de pijn van dat hevige mededogen een verheven triakel vinden. Immers, bij de dood en de teloorgang van alle schepselen waar hij medelijden mee heeft, ziet hij eeuwigheid in hun spiegelende zielen die de constante reflecties van De Eeuwige Namen van Een Eeuwige Entiteit vertegenwoordigen. Zodoende zal zijn mededogen in een vreugde omslaan.</p>
+
+<p style="margin-bottom: 0px">En bij alle schone schepselen die onderhevig aan teloorgang en vergankelijkheid zijn, ziet hij een schoonschrift, een opmaak, een kunst, een versiering, een gunst en een constante lichternis waarachter een Zuivere Schoonheid en een Heilige Pracht kan worden waargenomen. Die teloorgang en die vergankelijkheid ziet hij als een verversing om meer pracht te manifesteren, nieuwe genietingen te laten proeven en andere kunsten tentoon te stellen. Dientengevolge zal zijn genot, zijn passie en zijn verwondering alleen maar toenemen.</p>
+
+<p style="margin: 0px auto 0 auto;text-align: right;text-indent: 0;" class="text-arabic delima-font" dir="rtl" lang="ar">اَلْبَاقٖى هُوَ الْبَاقٖى<sup>1</sup></p>
+
+<p style="text-align: right" class="text-red delima-font">Said Nursî</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “De Eeuwige; Hij is De Eeuwige.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 196,
+                'content' => '<div class="page" id="196">
+<p class="text-end page-number">#196</p>
+
+<div class="text-center page-title-chapter delima-font"><h2>Uit De Negende Brief</h2></div>
+
+<p><span class="text-bold">Ten derde:</span> ik zie dat het gelukkigste leven op aarde wordt ervaren door degene die de aarde als een militair gastenverblijf beschouwt, zich daaraan overgeeft en dienovereenkomstig handelt. En dankzij die beschouwing kan hij snel stijgen tot het allerhoogste niveau, wat het niveau van voldoening is. Aan breekbare stukken glas zal hij geen duurzame diamant prijsgeven; hij zal op een rechtzinnige wijze genietend leven.</p>
+
+<p>Waarlijk, wereldse zaken zijn als stukken glas die tot fragmentatie zijn gedoemd. Zaken met betrekking tot het eeuwige hiernamaals daarentegen hebben de waarde van een massieve diamant. De intense gevoelens binnen de aard van de mens, zoals innige belangstellingen, vurige liefdes, hevige begerigheden en heftige verlangens, zijn gegeven voor zaken die betrekking op het hiernamaals hebben. Die gevoelens hartstochtelijk tot vergankelijke wereldse zaken wenden, staat gelijk aan vergankelijke en breekbare stukken glas inkopen voor de prijs van eeuwige diamanten. In dit verband schiet mij een punt te binnen dat ik met jullie zal delen.</p>
+
+<p>Verliefdheid is een hevige liefdevorm. Wanneer ze tot vergankelijke geliefden wordt gewend, dan zal die verliefdheid haar drager continu in pijn en ellende doen laten verkeren, óf die valse geliefde zal een zoektocht naar een eeuwige geliefde afdwingen, omdat ze zelf die hevige liefde onwaardig is. Zodoende zal een valse verliefdheid in een ware verliefdheid veranderen.</p>
+
+<p>Voorwaar, de mens bezit duizenden gevoelens. Elk gevoel heeft evenals verliefdheid twee kanten; de ene is vals, de andere is waarachtig.</p>
+
+<p>Bijvoorbeeld, ieder mens koestert bezorgde gevoelens voor de toekomst. Wanneer zijn zorgen extreem worden, realiseert hij zich dat de toekomst waarover hij zich zoveel zorgen maakt hem niet beloofd is. Daarnaast is een kortstondige toekomst die wat onderhoud betreft in zekerheid verkeert een dusdanige bezorgdheid niet waard. Hierop wendt hij zijn gezicht daarvan af en richt hij zich op een ware en duurzame toekomst die na het graf voor onachtzame mensen onzeker is.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 197,
+                'content' => '<div class="page" id="197">
+<p class="text-end page-number">#197</p>
+
+<p>Bovendien toont de mens een extreme begeerte naar rijkdom en status. Vervolgens bemerkt hij dat die vergankelijke goederen waarover hij tijdelijk toezicht houdt, die heilloze roem en die onheilspellende status waaraan pronkerij ontspruit een dusdanig intense begeerte helemaal niet waard zijn. Vervolgens richt hij zich op: de ware status die in spirituele rangen schuilt; de niveaus die hem dichterbij ALLAH brengen; de middelen die in het hiernamaals benodigd zijn en de vrome daden die ware rijkdom verschaffen. Zodoende zal de kwaadaardige hoedanigheid van een valse begeerte in een verheven hoedanigheid van een waarachtige begeerte veranderen.</p>
+
+<p>Bovendien hanteert de mens met een standvastige volharding zijn gevoelens voor waardeloze, voorbijgaande en vergankelijke zaken. Vervolgens bemerkt hij dat hij een jaar lang volhardt in iets wat geen minuut volharding waard is. En aan iets wat kwaadaardig en giftig is, blijft hij op aandrang van zijn volharding vastkleven. Vervolgens bemerkt hij dat dit krachtige gevoel niet voor zulke zaken is bestemd. Dit gevoel voor zulke zaken hanteren, is in strijd met wijsheid en waarachtigheid. Bijgevolg zal hij die standvastige volharding niet hanteren voor waardeloze en voorbijgaande zaken, maar voor verheven geloofswaarheden, Islamitische fundamenten en diensten die betrekking hebben op het eeuwige hiernamaals. Zodoende zal die beschamende hoedanigheid van een valse volharding in een bevallige en verheven hoedanigheid van een waarachtige volharding veranderen. Die hoedanigheid impliceert: vastberadenheid in het kader van de waarheid.</p>
+
+<p>Voorwaar, indien mensen de geestelijke instrumenten die aan de mensheid gegeven zijn omwille van het ego en de wereld hanteren, en zich onachtzaam gaan gedragen alsof ze eeuwig op aarde zullen verblijven, dan zullen die instrumenten – zoals de voornoemde drie voorbeelden aangaven – beschamende karaktereigenschappen, verspillingen en onzinnigheden baren. Als ze in lichte mate voor de wereld en voornamelijk voor de taken met betrekking tot het hiernamaals en de spiritualiteit worden gehanteerd, dan zullen ze loffelijke karaktereigenschappen voortbrengen, en conform wijsheid en waarachtigheid als bron van gelukzaligheid in beide oorden fungeren.</p>
+
+<p>Voorwaar, ik ben van mening dat de adviezen van adviseurs tegenwoordig onder andere ineffectief zijn omdat ze immorele mensen als volgt aanspreken: <em>“Wees niet jaloers, noch hebzuchtig, noch vijandig, noch koppig en heb de wereld niet lief!”</em></p>
+
+</div>'
+            ],
+            [
+                'page_number' => 198,
+                'content' => '<div class="page" id="198">
+<p class="text-end page-number">#198</p>
+
+<p>Met andere woorden, door nagenoeg: <span class="text-italic">“Verander je aard”</span> te zeggen, suggereren ze iets wat voor mensen onhaalbaar oogt. Als ze het volgende zouden voorstellen: <span class="text-italic">“Richt deze eigenschappen op heilzame doelen en verander hun bestemming”</span>, dan zou hun advies effectief zijn. Daarnaast zou hun voorstel de tolerantiegrens van hun wilskracht niet overschrijden.</p>
+
+<p><span class="text-bold">Ten vierde:</span> onder de Islamgeleerden is het verschil tussen <span class="text-bold text-italic">“Islam”</span> en <span class="text-bold text-italic">“geloof”</span> vaak een discussieonderwerp geworden. Een groep onder hen zei: <span class="text-italic text-italic">“Ze zijn één.”</span> Een andere groep zei: <span class="text-italic">“Ze zijn niet één, alleen kan het één niet zonder het ander.”</span> Zodoende hebben ze in dit kader vele verscheidene meningen meegedeeld. Persoonlijk heb ik het volgende verschil opgemerkt:</p>
+
+<p class="text-center text-bold text-italic">Islam is een voorkeur, geloof is een overtuiging.</p>
+
+<p>Met andere woorden, Islam impliceert: steunbetuiging, overgave en onderwerping aan de waarheid; geloof impliceert: aanvaarding en erkenning van de waarheid.</p>
+
+<p>Vroeger zag ik weleens bepaalde ongelovigen die Qur’anische Standpunten fanatiek steunden. Aldus waren zulke ongelovigen uit het oogpunt van hun terechte steun enigszins betrokken bij de Islam, waardoor zij <span class="text-italic">“ongelovige moslims”</span> werden genoemd. Daarnaast heb ik bepaalde gelovigen gezien die noch voorvechters noch voorstanders van Qur’anische Standpunten waren, waardoor zij als <span class="text-italic">“gelovige niet-moslims”</span> werden bestempeld.</p>
+
+<p class="text-bold">Kan een niet-Islamitisch geloof wel redding bieden?</p>
+
+<p class="text-italic text-bold">Het antwoord</p>
+
+<p>Zoals Islam zonder geloof geen redding kan bieden, kan ook een geloof zonder Islam geen redding bieden. <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">فَلِلّٰهِ الْحَمْدُ وَالْمِنَّةُ</span>, dankzij de zegen uit de spirituele mirakelen van De Qur’an hebben de afwegingen in de Risale-i Nur de vruchten en de voortbrengselen van de Islamitische religie en de Qur’anische Waarheden dermate weergegeven, dat zelfs de ongelovigen zich er niet tegen zouden verzetten als zij ze zouden begrijpen. Daarnaast hebben ze de bewijzen en de evidenties van het geloof en de Islam zo krachtig gedemonstreerd, dat zelfs een niet-moslim ze zou beamen als hij ze zou begrijpen. Al zou hij een niet-moslim blijven, alsnog zou hij geloven.</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “ALLAH komen alle lof- en afhankelijkheidsbetuigingen toe.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 199,
+                'content' => '<div class="page" id="199">
+<p class="text-end page-number">#199</p>
+
+<p>Waarlijk, de vruchten van het geloof en de Islam - die zo zoet en zo bekoorlijk zijn als de vruchten van de paradijselijke Toebâ-boom - en hun voortbrengselen - die zo fraai en zo bevallig zijn als de schoonheden binnen de gelukzaligheid in beide oorden - zijn in <span class="text-bold">“De Woorden”</span> dermate gedemonstreerd, dat <strong>Die Woorden</strong> bij de waarnemers en de kenners ervan een grenzeloos gevoel van steun, waardering en overgave doen ontwaken. En de evidenties van het geloof en de Islam, die zo krachtig als de verbindende ketenen in de kosmos en zo talrijk als het aantal atomen in het bestaan zijn, hebben <strong>Die Woorden</strong> zo evident aangetoond, dat Ze een grenzeloze overtuiging en geloofskracht verschaffen.</p>
+
+<p>En wanneer ik op bepaalde momenten de getuigenis uit de litanie van Sjeikh Naqsjîbend afleg en: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “Wij leven, sterven en herrijzen met deze overtuiging.”&lt;/p&gt;"><sup>1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">عَلٰى ذٰلِكَ نَحْيٰى وَ عَلَيْهِ نَمُوتُ وَ عَلَيْهِ نُبْعَثُ غَدًا</span> reciteer, verneem ik bij mezelf een absolute instemming. Al zou de hele wereld aan mij worden gegeven, dan nog zou ik niet één geloofswaarheid kunnen opofferen. De contradictie van één waarheid ook maar een moment waarachtig achten, is enorm kwellend voor mij. Al zou de hele wereld van mij zijn, dan nog stemt zelfs mijn ego in om alles voor de verwezenlijking van één enkele geloofswaarheid zonder enige aarzeling af te staan. Ik neem een grenzeloze geloofskracht waar wanneer ik het volgende reciteer: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “En wij geloven in alle profeten die U hebt gezonden en wij geloven in alle boeken die U hebt laten neerdalen, en wij beamen ze.”&lt;/p&gt;"><sup>2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اٰمَنَّا بِمَا اَرْسَلْتَ مِنْ رَسُولٍ وَ اٰمَنَّا بِمَا اَنْزَلْتَ مِنْ كِتَابٍ وَ صَدَّقْنَا</span>. Elke contradictie van een geloofswaarheid acht ik uit een verstandelijk oogpunt onmogelijk. Het dwaalvolk komt voor mij buitengewoon dwaas en krankzinnig over.</p>
+
+<p>Ik wens jouw ouders heel veel selâm toe en ik betuig ze mijn eerbied. Vraag of ze voor mij willen bidden. Omdat ik jou als mijn broertje zie, beschouw ik hen als mijn ouders. Ook aan jullie dorpsgenoten en vooral aan degenen die “De Woorden” van jou hebben vernomen wens ik allemaal selâm toe.</p>
+
+<p class="text-end"><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “De Eeuwige; Hij is De Eeuwige.”&lt;/p&gt;"><sup>3</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْبَاقٖى هُوَ الْبَاقٖى</span></p>
+
+<p class="text-end">Said Nursî</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “Wij leven, sterven en herrijzen met deze overtuiging.”</p>
+    <p class="footnote-p"><sup>2</sup> “En wij geloven in alle profeten die U hebt gezonden en wij geloven in alle boeken die U hebt laten neerdalen, en wij beamen ze.”</p>
+    <p class="footnote-p"><sup>3</sup> “De Eeuwige; Hij is De Eeuwige.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 200,
+                'content' => '<div class="page" id="200">
+<p class="text-end page-number">#200</p>
+
+<h2 class="page-title-chapter">Het Vijfde Traktaat</h2>
+
+<p class="text-center"><strong>[Uit De Negenentwintigste Brief]</strong></p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “In de Naam van ALLAH, de Barmhartige, de Genadige.”&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p style="margin: 18px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “ALLAH is Het Licht der hemelen en de aarde.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:35&lt;/p&gt;"><sup>2</sup></button></span></p>
+
+<p>In een zielstoestand tijdens de edele maand Ramadan heb ik één van de vele geheime lichten uit deze Stralende Aya waargenomen en op een denkbeeldige wijze aanschouwd. Dit gebeurde als volgt:</p>
+
+<p style="margin: 18px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اِلٰهٖى اَنْتَ رَبّٖى وَ اْنَا الْعَبْدُ ۞ وَ اَنْتَ الْخَالِقُ وَ اَنَا الْمَخْلُوقُ ۞ وَ اَنْتَ الرَّزَّاقُ وَ اَنَا الْمَرْزُوقُ § الخ …<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “O mijn God, U bent mijn Heer en ik ben Uw onderdaan. En U bent mijn Schepper en ik ben Uw Schepsel. En U bent mijn Onderhouder en ik ben Uw onderhoudene, enzovoort...”&lt;/p&gt;"><sup>3</sup></button></span></p>
+
+<p>Een denkbeeldige belevenis die ik in mijn hart heb waargenomen, heeft mij duidelijk gemaakt dat alle levende wezens deze bekende smeekbede van Oeweys el-Qarnî aan de Hoogste Gerechtigde voordragen, en dat het licht van elke wereld uit de achttienduizend werelden in feite Een Goddelijke Naam is. Ik zag dit als volgt:</p>
+
+<p>Zoals een grote rozenknop met vele om elkaar gewikkelde bladeren, zag ik dat er in deze wereld duizenden verborgen werelden elkaar achtereenvolgens omsluierden. Telkens wanneer er een sluier openging, zag ik weer een andere wereld. De wereld die verscheen, oogde voor mij als een wereld die omgeven was door een duisternis, een woestenij en een huiveringwekkende donkerte zoals omschreven in de Aya na <em>“Ayatoe’n-Nûr”</em>:</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+<p class="footnote-p"><sup>2</sup> “ALLAH is Het Licht der hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 24:35</p>
+<p class="footnote-p"><sup>3</sup> “O mijn God, U bent mijn Heer en ik ben Uw onderdaan. En U bent mijn Schepper en ik ben Uw Schepsel. En U bent mijn Onderhouder en ik ben Uw onderhoudene, enzovoort...”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 200,
+                'content' => '<div class="page" id="200">
+<p class="text-end page-number">#200</p>
+
+<h2 class="page-title-chapter">Het Vijfde Traktaat</h2>
+
+<p class="text-center"><strong>[Uit De Negenentwintigste Brief]</strong></p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “In de Naam van ALLAH, de Barmhartige, de Genadige.”&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p style="margin: 0px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “ALLAH is Het Licht der hemelen en de aarde.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:35&lt;/p&gt;"><sup>2</sup></button></span></p>
+
+<p style="margin-bottom: 0">In een zielstoestand tijdens de edele maand Ramadan heb ik één van de vele geheime lichten uit deze Stralende Aya waargenomen en op een denkbeeldige wijze aanschouwd. Dit gebeurde als volgt:</p>
+
+<p style="margin: 0px auto 0 auto;max-width: 600px" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+اِلٰهٖى، اَنْتَ رَبّٖى وَاَنَا الْعَبْدُ ۞ وَاَنْتَ الْخَالِقُ، وَاَنَا الْمَخْلُوقُ ۞ وَاَنْتَ الرَّزَّاقُ، وَاَنَا الْمَرْزُوقُ... ۞ <span style="font-size:0.8em;">الخ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “O mijn God, U bent mijn Heer en ik ben Uw onderdaan. En U bent mijn Schepper en ik ben Uw Schepsel. En U bent mijn Onderhouder en ik ben Uw onderhoudene, enzovoort...”&lt;/p&gt;"><sup>3</sup></button></span>
+</p>
+
+<p>Een denkbeeldige belevenis die ik in mijn hart heb waargenomen, heeft mij duidelijk gemaakt dat alle levende wezens deze bekende smeekbede van Oeweys el-Qarnî aan de Hoogste Gerechtigde voordragen, en dat het licht van elke wereld uit de achttienduizend werelden in feite Een Goddelijke Naam is. Ik zag dit als volgt:</p>
+
+<p>Zoals een grote rozenknop met vele om elkaar gewikkelde bladeren, zag ik dat er in deze wereld duizenden verborgen werelden elkaar achtereenvolgens omsluierden. Telkens wanneer er een sluier openging, zag ik weer een andere wereld. De wereld die verscheen, oogde voor mij als een wereld die omgeven was door een duisternis, een woestenij en een huiveringwekkende donkerte zoals omschreven in de Aya na <span class="text-italic">“Ayatoe’n-Nûr”</span>:</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+    <p class="footnote-p"><sup>2</sup> “ALLAH is Het Licht der hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 24:35</p>
+    <p class="footnote-p"><sup>3</sup> “O mijn God, U bent mijn Heer en ik ben Uw onderdaan. En U bent mijn Schepper en ik ben Uw Schepsel. En U bent mijn Onderhouder en ik ben Uw onderhoudene, enzovoort...”</p>
+</div>
+
+</div>'
+            ],
         ];
     }
 }
