@@ -98,7 +98,6 @@
                     <i class="fa-solid fa-magnifying-glass" id="bs-mobile-search-icon"></i>
                 </button>
             </div>
-            <p class="bs-search-note bs-search-note--mobile">Doorzoekt alleen de online leesversies</p>
             <div class="bs-search-results" id="bs-mobile-search-results" hidden></div>
         </div>
 
@@ -122,7 +121,6 @@
         {{-- Search — desktop sidebar only; on mobile the search lives in the top bar --}}
         <div class="bs-panel bs-panel--search-desktop">
             <h2 class="bs-section-title">Zoeken in boeken</h2>
-            <p class="bs-search-note">Doorzoekt online leesversies en PDF's</p>
             <div class="bs-panel-body">
                 <div class="bs-search-wrap">
                     <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in alle boeken..." autocomplete="off">
