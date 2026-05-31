@@ -229,16 +229,35 @@
                             <div class="space-y-3">
                                 <div>
                                     <label class="block mb-1.5 text-xs font-medium text-gray-600 dark:text-gray-400">Kortingscode <span class="text-gray-400 font-normal">(overschrijft handmatige korting)</span></label>
-                                    <div class="flex gap-2">
-                                        <input type="text" id="discount-code-input" name="discount_code_input"
-                                            value="{{ old('discount_code_input', $order->discount_code_checkout) }}"
-                                            placeholder="bijv. WELKOM10"
-                                            class="flex-1 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg p-2.5 focus:ring-2 focus:ring-primary-500 focus:border-transparent font-mono uppercase">
-                                        <button type="button" onclick="lookupDiscountCode()"
-                                            class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg border border-gray-200 dark:border-gray-600 transition-colors shrink-0">
-                                            Controleer
-                                        </button>
-                                    </div>
+
+                                    {{-- Dropdown with all active discount codes --}}
+                                    @if($discountCodes->isEmpty())
+                                        <p class="text-xs text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                                            <i class="fa-solid fa-circle-info"></i> Geen actieve kortingscodes beschikbaar.
+                                        </p>
+                                    @else
+                                        <select id="discount-code-select"
+                                            name="discount_code_input"
+                                            class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent block w-full p-2.5"
+                                            onchange="applyDiscountFromDropdown(this)">
+                                            <option value="">— Geen kortingscode —</option>
+                                            @foreach($discountCodes as $dc)
+                                                <option value="{{ $dc->code }}"
+                                                    data-discount="{{ $dc->discount }}"
+                                                    data-discount-type="{{ $dc->discount_type }}"
+                                                    data-description="{{ $dc->description }}"
+                                                    {{ old('discount_code_input', $order->discount_code_checkout) === $dc->code ? 'selected' : '' }}>
+                                                    {{ $dc->code }}
+                                                    @if($dc->discount_type === 'percent')
+                                                        — {{ $dc->discount }}% korting
+                                                    @else
+                                                        — €{{ number_format($dc->discount, 2, ',', '.') }} korting
+                                                    @endif
+                                                    @if($dc->description) ({{ $dc->description }}) @endif
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    @endif
                                     <p id="discount-code-msg" class="mt-1 text-xs hidden"></p>
                                 </div>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -1263,46 +1282,51 @@
         });
     }
 
-    // ── discount code lookup ──────────────────────────────────────────────────
-    window.lookupDiscountCode = function () {
-        var codeEl = document.getElementById('discount-code-input');
-        var msgEl  = document.getElementById('discount-code-msg');
-        var code   = codeEl ? codeEl.value.trim().toUpperCase() : '';
-        if (!code) {
-            if (msgEl) { msgEl.className='text-xs text-gray-400'; msgEl.textContent='Vul een code in.'; msgEl.classList.remove('hidden'); }
+    // ── discount code dropdown ────────────────────────────────────────────────
+    window.applyDiscountFromDropdown = function (select) {
+        var codeInput = document.getElementById('discount-code-input');
+        var msgEl     = document.getElementById('discount-code-msg');
+        var selected  = select.options[select.selectedIndex];
+
+        if (!selected || !selected.value) {
+            // Cleared — reset input and message
+            if (codeInput) codeInput.value = '';
+            if (msgEl) { msgEl.className = 'mt-1 text-xs hidden'; msgEl.textContent = ''; }
+            var dt = document.getElementById('discount-type');
+            var dv = document.getElementById('discount-value');
+            if (dt) { dt.value = ''; }
+            if (dv) { dv.value = ''; }
+            recalcTotals();
             return;
         }
-        fetch(discountApiUrl + '?code=' + encodeURIComponent(code))
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (!msgEl) return;
-                if (data.found) {
-                    var lbl = data.discount_type === 'percent' ? (data.discount + '% korting') : ('€' + parseFloat(data.discount).toFixed(2).replace('.',',') + ' korting');
-                    msgEl.className = 'mt-1 text-xs text-green-600 dark:text-green-400';
-                    msgEl.textContent = '✓ Code gevonden: ' + lbl;
-                    var dt = document.getElementById('discount-type');
-                    var dv = document.getElementById('discount-value');
-                    if (dt) dt.value = data.discount_type || '';
-                    if (dv) dv.value = data.discount || 0;
-                } else {
-                    msgEl.className = 'mt-1 text-xs text-red-500';
-                    msgEl.textContent = data.message || 'Code niet gevonden.';
-                }
-                msgEl.classList.remove('hidden');
-                recalcTotals();
-            })
-            .catch(function() {
-                if (msgEl) { msgEl.className='text-xs text-red-500'; msgEl.textContent='Fout bij ophalen.'; msgEl.classList.remove('hidden'); }
-            });
+
+        var code         = selected.value;
+        var discount     = parseFloat(selected.dataset.discount)     || 0;
+        var discountType = selected.dataset.discountType || 'amount';
+        var description  = selected.dataset.description  || '';
+
+        if (codeInput) codeInput.value = code;
+
+        var dt = document.getElementById('discount-type');
+        var dv = document.getElementById('discount-value');
+        if (dt) dt.value = discountType;
+        if (dv) dv.value = discount;
+
+        var typeLabel = discountType === 'percent'
+            ? (discount + '% korting')
+            : ('€' + discount.toFixed(2).replace('.', ',') + ' korting');
+
+        if (msgEl) {
+            msgEl.className = 'mt-1 text-xs text-green-600 dark:text-green-400';
+            msgEl.innerHTML = '✓ <strong>' + code + '</strong> — ' + typeLabel
+                + (description ? ' (' + description + ')' : '');
+            msgEl.classList.remove('hidden');
+        }
+
+        recalcTotals();
     };
 
-    var discCodeInput = document.getElementById('discount-code-input');
-    if (discCodeInput) {
-        discCodeInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') { e.preventDefault(); window.lookupDiscountCode(); }
-        });
-    }
-
+    // ── discount code lookup ──────────────────────────────────────────────────
     // ── attach programmatic listeners ────────────────────────────────────────
     document.querySelectorAll('.item-qty').forEach(function(el) {
         el.addEventListener('input', function() { recalcTotals(); });
