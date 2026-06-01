@@ -15,21 +15,22 @@
 
                     <div class="hero-section" style="position: relative; overflow: visible;">
                         <img class="hero-bg-img" src="{{ asset('images/001_sun_clock_background.webp') }}" alt=""
+                             aria-hidden="true"
                              fetchpriority="high" decoding="async"
                              style="position: absolute; left: 49%; top: 51.5%; transform: translate(-50%, -50%); width: 150%; height: auto; pointer-events: none; z-index: -1;">
 
                         <!-- Achterste laag: draaiende rotor -->
                         <div class="layer layer-rotor">
-                            <img class="rotating-image" src="{{ asset('images/sun-ring-2.webp') }}" alt="" decoding="async">
+                            <img class="rotating-image" src="{{ asset('images/sun-ring-2.webp') }}" alt="" aria-hidden="true" decoding="async">
                         </div>
 
                         <!-- Middenlaag: text inside clock -->
                         <div class="text-clock">
                             <div class="text-lucideinkt">
-                                <img src="{{ asset('images/bismillah_2.webp') }}" alt="" decoding="async">
+                                <img src="{{ asset('images/bismillah_2.webp') }}" alt="Bismillah kalligrafie" title="Bismillahirrahmanirrahim — In de naam van Allah" decoding="async">
                             </div>
                             <div class="text-life-minutes">
-                                <img src="{{ asset('images/life-minutes.webp') }}" alt="" decoding="async">
+                                <img src="{{ asset('images/life-minutes.webp') }}" alt="Islamitische spreuk over de waarde van de tijd" title="Risale-i Nur — Lucide Inkt" decoding="async">
                             </div>
                             <button class="clock-button" id="openModalBtn">Lees meer</button>
                         </div>
@@ -90,8 +91,8 @@
         <div class="gradient-border"></div>
 
         <section class="home white-section intro-section">
-            <img class="moon-left" src="{{ asset('images/half_moon.webp') }}" alt="" loading="lazy" decoding="async">
-            <img class="moon-right" src="{{ asset('images/half_moon.webp') }}" alt="" loading="lazy" decoding="async">
+            <img class="moon-left" src="{{ asset('images/half_moon.webp') }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <img class="moon-right" src="{{ asset('images/half_moon.webp') }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
 
             {{-- <img style="width: 100%;height: 50%" class="letters-stars" src="{{ asset('images/letters_stars.webp') }}" alt=""> --}}
 
@@ -132,7 +133,7 @@
         <section class="colored-section books-section">
             <div class="new-translation">
                 <div class="title-wrapper">
-                    <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="" loading="lazy" decoding="async">
+                    <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
                     <h2 class="title trans" aria-label="Onze Nieuwste Vertaling: Het Traktaat over de Herzameling">
                         <span class="sr-only">Onze Nieuwste Vertaling: Het Traktaat over de Herzameling</span>
                         <span aria-hidden="true">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
@@ -187,7 +188,7 @@
                 <div class="home-book-grid">
                     <div class="book one">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
-                            <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/NederlandsHerzameling.webp') }}" alt="Het Traktaat over de Herzameling - Nederlandse vertaling van de Risale-i Nur" title="Risale-i Nur: Het Traktaat over de Herzameling (Nederlands)" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Nederlands -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands') }}">
@@ -197,7 +198,7 @@
 
                     <div class="book two">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
-                            <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/TurksNederlandsHerzameling.webp') }}" alt="Het Traktaat over de Herzameling - Nederlands-Turkse editie van de Risale-i Nur" title="Risale-i Nur: Het Traktaat over de Herzameling (Nederlands & Turks)" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Nederlands & Turks -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-nederlands-turks') }}">
@@ -209,7 +210,7 @@
 
                     <div class="book three">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
-                            <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="The Treatise on the Resurrection - English translation of the Risale-i Nur" title="Risale-i Nur: The Treatise on the Resurrection (English)" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
@@ -219,7 +220,7 @@
 
                     <div class="book four">
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
-                            <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="" loading="lazy" decoding="async">
+                            <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="The Treatise on the Resurrection - English-Turkish edition of the Risale-i Nur" title="Risale-i Nur: The Treatise on the Resurrection (English & Turkish)" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels & Turks -</p>
                         <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
@@ -254,7 +255,7 @@
                 </div>
 
                 <div class="risale-image">
-                    <img src="{{ asset('images/books_standing_new.webp') }}" alt="Risale-i Nur" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/books_standing_new.webp') }}" alt="Risale-i Nur boeken in het Nederlands en Engels - collectie van Lucide Inkt" title="Risale-i Nur — Nederlandse en Engelse vertalingen" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
@@ -333,7 +334,7 @@
                     </h2>
 
                     <div class="risale-image said-nursi-image mobile-only">
-                        <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi" loading="lazy" decoding="async">
+                        <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi - auteur van de Risale-i Nur" title="Said Nursî (1878–1960)" loading="lazy" decoding="async">
                     </div>
 
                     <div class="sub-text">
@@ -347,7 +348,7 @@
                 </div>
 
                 <div class="risale-image said-nursi-image desktop-only">
-                    <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/said_nursi_sharp.webp') }}" alt="Said Nursi - auteur van de Risale-i Nur" title="Said Nursî (1878–1960)" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
