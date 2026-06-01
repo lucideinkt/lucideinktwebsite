@@ -26,6 +26,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\PageSeoController;
 use App\Http\Controllers\SiteSettingController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 // Both admin and user can access
@@ -344,6 +345,9 @@ Route::get('/audio-proxy/{path}', function ($path) {
         abort(500);
     }
 })->where('path', '.*')->name('audio.proxy');
+
+// Sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // Dynamic robots.txt — respects site setting + falls back to production env check
 Route::get('/robots.txt', function () {
