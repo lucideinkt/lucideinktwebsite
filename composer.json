@@ -20,6 +20,7 @@
         "nesbot/carbon": "^3.10",
         "ralphjsmit/laravel-seo": "^1.7",
         "smalot/pdfparser": "^2.12",
+        "spatie/laravel-sitemap": "^8.1",
         "stevebauman/location": "^7.6"
     },
     "require-dev": {
