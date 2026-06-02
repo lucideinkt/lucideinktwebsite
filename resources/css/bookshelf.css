@@ -623,12 +623,14 @@ body { margin: 0; padding: 0; width: 100%; }
     transition: transform 0.15s, box-shadow 0.15s;
     pointer-events: none; /* parent <a> handles click */
     white-space: nowrap;
+    display: none;
 }
 .shelf-book:hover .shelf-book-read-btn {
     transform: translateY(-1px);
     box-shadow:
         0 4px 10px rgba(0,0,0,0.7),
         inset 0 1px 0 rgba(255,240,180,0.7);
+    display: none;
 }
 .shelf-book-read-btn i { font-size: 10px; }
 
@@ -883,14 +885,16 @@ body { margin: 0; padding: 0; width: 100%; }
    --------------------------------------------------------- */
 .bookshelf-lights {
     position: absolute;
-    /* desktop header: 28px top padding + ~57px title + 6px margin + 20px ornament + 6px margin + 13px subtitle + 22px bottom padding + 3px border ≈ 155px */
-    top: 155px;
+    /* Position so lamp caps sit just behind the header-sign bottom edge.
+       Header sign ≈158px tall; cap is 14px at top:-14px → cap bottom = lights top.
+       Setting top to ~164px shows ~6–8px of the glowing cap below the board. */
+    top: 235px;
     left: 40px; right: 40px;
     height: 0;
     display: flex;
     justify-content: space-around;
     pointer-events: none;
-    /* above cabinet background but below header-sign (z-index:2) so cap tucks behind the board */
+    /* behind header-sign (z-index:2) so caps tuck behind the board */
     z-index: 1;
 }
 
@@ -1358,6 +1362,7 @@ body { margin: 0; padding: 0; width: 100%; }
     color: rgba(255, 220, 150, 0.6);
     text-shadow: none;
     text-align: center;
+    display: none;
 }
 
 /* Version badges above book title */
@@ -1537,12 +1542,38 @@ body { margin: 0; padding: 0; width: 100%; }
 }
 
 /* ---------------------------------------------------------
-   2-PER-ROW  481–1024 px  (sidebar hidden/drawer, 2 books)
-   Books capped at 360px. aspect-ratio 3/4.
-   At 1024px books are ~360px wide → title can be up to 36px.
-   3.6vw: 481px→17→min18, 700px→25, 1024px→36px(capped).
+   3-PER-ROW  768–1024 px  (tablet landscape, 3 books)
    --------------------------------------------------------- */
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+    .bookshelf-plank { gap: 16px; }
+    .shelf-book { max-width: 280px; flex: 0 0 calc((100% - 32px) / 3); }
+    .shelf-book-cover {
+        padding: 40px 12px 16px 16px;
+        aspect-ratio: 2 / 3;
+    }
+    .shelf-book-corner { width: 28px; height: 28px; }
+    .shelf-book-corner--tl { top: 9px;    left: 12px; }
+    .shelf-book-corner--tr { top: 9px;    right: 9px; }
+    .shelf-book-corner--bl { bottom: 9px; left: 12px; }
+    .shelf-book-corner--br { bottom: 9px; right: 9px; }
+    .shelf-book-title {
+        font-size: clamp(16px, 2.4vw, 28px);
+        margin-top: 6px;
+        line-height: 1.2;
+        padding: 0 4px;
+    }
+    .shelf-book-title-group { gap: 3px; }
+    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.5px; }
+    .shelf-book-version-badge { font-size: 9px; padding: 2px 5px; letter-spacing: 0.3px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 5px 12px; letter-spacing: 1px; gap: 4px; }
+    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1px; }
+}
+
+/* ---------------------------------------------------------
+   2-PER-ROW  481–767 px  (sidebar hidden/drawer, 2 books)
+   Books capped at 360px. aspect-ratio 3/4.
+   --------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 767px) {
     .bookshelf-plank { gap: 16px; }
     .shelf-book { max-width: 360px; flex: 1 1 0; }
     /* Corners 36px, top 9px → end at 45px; padding-top 50px clears them */
@@ -1977,7 +2008,7 @@ body { margin: 0; padding: 0; width: 100%; }
 
     .bookshelf-header-sign { margin: 0 -20px 8px; padding: 28px 24px 22px; }
     .bookshelf-footer-bar  { margin: 16px -20px -20px; height: 20px; }
-    .bookshelf-lights { left: 20px; right: 20px; top: 126px; }
+    .bookshelf-lights { left: 20px; right: 20px; top: 210px; }
     .bookshelf-candle { top: 540px; }
     .bookshelf-candle--left  { left: 10px; }
     .bookshelf-candle--right { right: 10px; }
@@ -2004,7 +2035,7 @@ body { margin: 0; padding: 0; width: 100%; }
 
     .bookshelf-header-sign { margin: 0 -14px 8px; padding: 24px 18px 18px; }
     .bookshelf-footer-bar  { margin: 16px -14px -16px; height: 16px; }
-    .bookshelf-lights { left: 14px; right: 14px; top: 116px; }
+    .bookshelf-lights { left: 14px; right: 14px; top: 190px; }
     .bookshelf-candle { top: 400px; }
     .bookshelf-candle--left  { left: 7px; }
     .bookshelf-candle--right { right: 7px; }
@@ -2012,42 +2043,42 @@ body { margin: 0; padding: 0; width: 100%; }
     .bookshelf-plank { gap: 10px; padding: 0 14px 14px; }
     .bookshelf-plank::after { left: 0; right: 1px; }
 
-    /* ── 1-PER-ROW on phones ──────────────────────────────────────
-       Single book centred on the plank. 2/3 aspect ratio gives a
-       proper book shape since the book fills most of the width.
-       Corners 38px, top 10px → end at 48px; padding-top 54px clears.
-       Title: 6vw scales with viewport: 480px→28px, 375px→22px, 320px→19→min20.
+    /* ── 2-PER-ROW on phones ──────────────────────────────────────
+       Two books side by side on the plank. Smaller aspect ratio
+       so they fit without being too narrow.
+       Corners 28px, top 8px → end at 36px; padding-top 42px clears.
+       Title: 4vw scales with viewport: 480px→23px, 375px→15→min16.
        ──────────────────────────────────────────────────────────── */
     .bookshelf-plank {
-        gap: 0;
+        gap: 10px;
         justify-content: center;
-        min-height: 220px;
+        min-height: 180px;
     }
     .shelf-book {
-        max-width: 300px;
-        width: 100%;
-        flex: 0 0 auto;
+        max-width: none;
+        width: auto;
+        flex: 1 1 0;
     }
     .shelf-book-cover {
-        padding: 54px 18px 22px 22px;
+        padding: 42px 10px 16px 14px;
         aspect-ratio: 2 / 3;
     }
-    .shelf-book-corner { width: 38px; height: 38px; }
-    .shelf-book-corner--tl { top: 10px;    left: 14px; }
-    .shelf-book-corner--tr { top: 10px;    right: 11px; }
-    .shelf-book-corner--bl { bottom: 10px; left: 14px; }
-    .shelf-book-corner--br { bottom: 10px; right: 11px; }
+    .shelf-book-corner { width: 28px; height: 28px; }
+    .shelf-book-corner--tl { top: 8px;    left: 10px; }
+    .shelf-book-corner--tr { top: 8px;    right: 8px; }
+    .shelf-book-corner--bl { bottom: 8px; left: 10px; }
+    .shelf-book-corner--br { bottom: 8px; right: 8px; }
     .shelf-book-title {
-        font-size: clamp(22px, 7vw, 32px);
-        margin-top: 8px;
-        line-height: 1.25;
-        padding: 0 8px;
+        font-size: clamp(16px, 4vw, 24px);
+        margin-top: 6px;
+        line-height: 1.2;
+        padding: 0 4px;
     }
-    .shelf-book-title-group { gap: 4px; }
-    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.6px; }
-    .shelf-book-version-badge { font-size: 9px; padding: 2px 6px; letter-spacing: 0.3px; }
-    .shelf-book-read-btn { font-size: 11px; padding: 6px 14px; letter-spacing: 1.2px; gap: 5px; }
-    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1.2px; }
+    .shelf-book-title-group { gap: 3px; }
+    .shelf-book-version-label { font-size: 9px; letter-spacing: 0.4px; }
+    .shelf-book-version-badge { font-size: 8px; padding: 2px 5px; letter-spacing: 0.2px; }
+    .shelf-book-read-btn { font-size: 10px; padding: 5px 10px; letter-spacing: 1px; gap: 4px; }
+    .shelf-book-coming-soon-text { font-size: 10px; letter-spacing: 1px; }
 }
 
 /* Prevent body scroll when drawer is open */
@@ -2055,22 +2086,21 @@ body.bs-drawer-no-scroll { overflow: hidden; }
 
 
 /* ---------------------------------------------------------
-   1-PER-ROW fine-tuning  ≤380 px
-   Book styles inherit from ≤480px. Just tighten max-width
+   2-PER-ROW fine-tuning  ≤380 px
+   Book styles inherit from ≤480px. Just tighten sizes
    so books don't feel too large on narrow phones.
    --------------------------------------------------------- */
 @media (max-width: 380px) {
-    .shelf-book { max-width: 270px; }
-    /* Corners 34px, top 9px → end at 43px; padding-top 50px clears */
-    .shelf-book-cover { padding: 50px 16px 20px 20px; }
-    .shelf-book-corner { width: 34px; height: 34px; }
-    .shelf-book-corner--tl { top: 9px;    left: 13px; }
-    .shelf-book-corner--tr { top: 9px;    right: 10px; }
-    .shelf-book-corner--bl { bottom: 9px; left: 13px; }
-    .shelf-book-corner--br { bottom: 9px; right: 10px; }
+    /* Corners 26px, top 7px → end at 33px; padding-top 40px clears */
+    .shelf-book-cover { padding: 40px 8px 14px 12px; }
+    .shelf-book-corner { width: 26px; height: 26px; }
+    .shelf-book-corner--tl { top: 7px;    left: 9px; }
+    .shelf-book-corner--tr { top: 7px;    right: 7px; }
+    .shelf-book-corner--bl { bottom: 7px; left: 9px; }
+    .shelf-book-corner--br { bottom: 7px; right: 7px; }
     .shelf-book-title {
-        font-size: clamp(20px, 6.5vw, 28px);
-        padding: 0 6px;
+        font-size: clamp(14px, 4vw, 20px);
+        padding: 0 4px;
     }
 }
 
@@ -2084,6 +2114,7 @@ body.bs-drawer-no-scroll { overflow: hidden; }
     .bookshelf-cabinet::after { width: 10px; }
     .bookshelf-header-sign { margin: 0 -10px 6px; padding: 20px 12px 14px; }
     .bookshelf-footer-bar  { margin: 12px -10px -12px; height: 12px; }
+    .bookshelf-lights { left: 10px; right: 10px; top: 170px; }
     .bookshelf-plank { padding: 0 10px 12px; min-height: 180px; }
 
     /* Narrower book + larger corners for the smallest viewports */
@@ -2096,8 +2127,9 @@ body.bs-drawer-no-scroll { overflow: hidden; }
     .shelf-book-corner--bl { bottom: 8px; left: 12px; }
     .shelf-book-corner--br { bottom: 8px; right: 9px; }
     .shelf-book-title {
-        font-size: clamp(19px, 6.2vw, 26px);
-        padding: 0 5px;
+        font-size: clamp(13px, 4vw, 17px);
+        padding: 0 3px;
+        line-height: 1.15;
     }
     .shelf-book-read-btn { font-size: 10px; padding: 5px 12px; letter-spacing: 1px; }
 }

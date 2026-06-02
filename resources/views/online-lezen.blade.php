@@ -1117,8 +1117,8 @@ document.addEventListener('touchstart', function () {}, { passive: true });
         const books  = Array.from(pool.querySelectorAll('.shelf-book, .bookshelf-empty'))
                            .filter(b => b.dataset.hidden !== '1');
 
-        // ≥1025 px (sidebar visible) → 3 per row  |  481–1024 px → 2 per row  |  ≤480 px → 1 per row
-        const perRow = window.innerWidth >= 1025 ? 3 : window.innerWidth > 480 ? 2 : 1;
+        // ≥768 px → 3 per row  |  <768 px → 2 per row
+        const perRow = window.innerWidth >= 768 ? 3 : 2;
 
         target.innerHTML = '';
 
