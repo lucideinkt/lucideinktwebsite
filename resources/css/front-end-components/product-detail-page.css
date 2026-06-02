@@ -679,6 +679,16 @@
     margin: 0;
 }
 
+.product-detail-description-intro {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--main-font-color);
+    opacity: 0.55;
+    margin-bottom: 0.4rem !important;
+    text-transform: uppercase;
+}
+
 .product-detail-form {
     display: flex;
     flex-direction: row;

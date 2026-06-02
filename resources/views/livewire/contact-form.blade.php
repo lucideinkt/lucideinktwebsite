@@ -2,7 +2,7 @@
 
     <div class="contact-form-box">
         <h1 class="contact-hero__title">Neem Contact Op</h1>
-        <p class="contact-form-subtitle">Vul het formulier in en we nemen zo snel mogelijk contact met je op</p>
+        <p class="contact-form-subtitle">Neem contact op via het formulier hieronder en we reageren zo snel mogelijk.</p>
 
 
         <form wire:submit.prevent="submit" class="contact-form">
