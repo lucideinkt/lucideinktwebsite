@@ -156,8 +156,12 @@
 
         @if ($product->long_description)
             <div class="product-detail-description">
+                <p class="product-detail-description-intro">{{ $product->title }}</p>
                 <p>{{ $product->long_description }}</p>
             </div>
+        @else
+            {{-- Ensure title keywords appear in body text for SEO even without a description --}}
+            <p class="sr-only">{{ $product->title }}</p>
         @endif
     </div>
 </div>
