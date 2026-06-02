@@ -91,16 +91,17 @@ class OnlineLezenController extends Controller
             return redirect()->route('onlineLezenReadHtml', $slug);
         }
 
-        // 2. PDF reader — only when explicitly enabled
-        if (!empty($product->pdf_file) && $product->pdf_reader_enabled) {
+        // 2. PDF reader — show fullscreen reader whenever a PDF file exists.
+        //    pdf_reader_enabled only controls visibility in the library listing, not URL access.
+        if (!empty($product->pdf_file)) {
             return view('online-lezen-reader-fullscreen', [
                 'product' => $product,
                 'SEOData' => SEOService::getProductSEO($product, 'online-lezen'),
             ]);
         }
 
-        // 3. Nothing accessible → 404
-        abort(404);
+        // 3. No content available → redirect to library index (better for SEO than 404)
+        return redirect()->route('onlineLezen', [], 301);
     }
 
     /**
