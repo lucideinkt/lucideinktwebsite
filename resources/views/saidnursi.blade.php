@@ -18,8 +18,8 @@
 
             <div class="said-nursi-page__text-box">
 
-                <h1 class="title" aria-label="Wie is Said Nursi?">
-                    <span class="sr-only">Wie is Said Nursi?</span>
+                <h1 class="title" aria-label="Wie is Said Nursî?">
+                    <span class="sr-only">Wie is Said Nursî?</span>
                     <span aria-hidden="true"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</span>
                 </h1>
 
