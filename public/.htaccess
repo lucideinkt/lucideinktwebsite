@@ -9,10 +9,6 @@
     RewriteCond %{HTTP_HOST} ^www\.lucideinkt\.nl [NC]
     RewriteRule ^(.*)$ https://lucideinkt.nl/$1 [R=301,L]
 
-    # Redirect plain http (non-www) to https — in case Cloudways doesn't handle it
-    RewriteCond %{HTTPS} off
-    RewriteCond %{HTTP_HOST} ^lucideinkt\.nl [NC]
-    RewriteRule ^(.*)$ https://lucideinkt.nl/$1 [R=301,L]
 
     # Add MIME type for JavaScript modules
     <IfModule mod_mime.c>
