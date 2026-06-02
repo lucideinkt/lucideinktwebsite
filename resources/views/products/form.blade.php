@@ -215,29 +215,78 @@
         </div>
 
         {{-- SEO --}}
+        @php
+          $defaultSeoTitle = isset($product) ? (($product->title ?? '') . ' | Lucide Inkt') : '';
+          $defaultSeoDesc  = isset($product) ? ($product->short_description ?? '') : '';
+          $defaultSeoAuthor = 'Said Nursi';
+          $defaultCanonical = isset($product) && $product->slug ? route('productShow', $product->slug) : '';
+          $hasSeoTitle    = isset($product) && !empty($product->seo_title);
+          $hasSeoDesc     = isset($product) && !empty($product->seo_description);
+          $hasSeoAuthor   = isset($product) && !empty($product->seo_author);
+          $hasCanonical   = isset($product) && !empty($product->seo_canonical_url);
+        @endphp
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
           <div class="p-4 border-b border-gray-200 dark:border-gray-700">
             <h2 class="text-base font-semibold text-gray-900 dark:text-white">SEO instellingen</h2>
           </div>
           <div class="p-4 space-y-4">
+
+            {{-- SEO Titel --}}
             <div>
-              <label for="seo_title" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
-                SEO Titel <span class="font-normal text-gray-400">(aanbevolen: 50–65 tekens)</span>
-              </label>
+              <div class="flex items-center justify-between mb-1">
+                <label for="seo_title" class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  SEO Titel <span class="font-normal text-gray-400">(aanbevolen: 50–65 tekens)</span>
+                </label>
+                <div class="flex items-center gap-2">
+                  @if($hasSeoTitle)
+                    <span class="text-xs bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300 px-2 py-0.5 rounded font-medium">Aangepast</span>
+                  @else
+                    <span class="text-xs bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400 px-2 py-0.5 rounded font-medium">Standaard</span>
+                  @endif
+                  @if($defaultSeoTitle)
+                    <button type="button"
+                      data-fill-target="prod_seo_title"
+                      data-fill-value="{{ $defaultSeoTitle }}"
+                      class="prod-fill-default-btn text-xs text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap flex items-center gap-1">
+                      <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i> Gebruik standaard
+                    </button>
+                  @endif
+                </div>
+              </div>
               <input type="text" name="seo_title" id="prod_seo_title" maxlength="70"
                 value="{{ old('seo_title', isset($product) ? ($product->seo_title ?? '') : '') }}"
-                placeholder="{{ isset($product) ? ($product->title ?? '') . ' | Lucide Inkt' : 'Laat leeg om producttitel te gebruiken' }}"
+                placeholder="{{ $defaultSeoTitle ?: 'Laat leeg om producttitel te gebruiken' }}"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
               <div class="flex justify-between mt-1">
                 <p class="text-xs text-gray-400">Laat leeg om de producttitel te gebruiken.</p>
                 <span id="prod_title_counter" class="text-xs text-gray-400">0 / 70</span>
               </div>
             </div>
+
+            {{-- SEO Beschrijving --}}
             <div>
-              <label for="seo_description" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
-                SEO beschrijving <span class="font-normal text-gray-400">(aanbevolen: 120–165 tekens)</span>
-              </label>
+              <div class="flex items-center justify-between mb-1">
+                <label for="seo_description" class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  SEO beschrijving <span class="font-normal text-gray-400">(aanbevolen: 120–165 tekens)</span>
+                </label>
+                <div class="flex items-center gap-2">
+                  @if($hasSeoDesc)
+                    <span class="text-xs bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300 px-2 py-0.5 rounded font-medium">Aangepast</span>
+                  @else
+                    <span class="text-xs bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400 px-2 py-0.5 rounded font-medium">Standaard</span>
+                  @endif
+                  @if($defaultSeoDesc)
+                    <button type="button"
+                      data-fill-target="prod_seo_desc"
+                      data-fill-value="{{ $defaultSeoDesc }}"
+                      class="prod-fill-default-btn text-xs text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap flex items-center gap-1">
+                      <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i> Gebruik standaard
+                    </button>
+                  @endif
+                </div>
+              </div>
               <textarea name="seo_description" id="prod_seo_desc" rows="3" maxlength="320"
+                placeholder="{{ $defaultSeoDesc ?: 'Laat leeg voor korte omschrijving.' }}"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">{{ old('seo_description', $product->seo_description ?? '') }}</textarea>
               <div class="flex justify-between mt-1">
                 <p class="text-xs text-gray-400">Laat leeg voor korte omschrijving.</p>
@@ -245,36 +294,82 @@
               </div>
               @error('seo_description')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
             </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              {{-- SEO Tags/Keywords --}}
               <div>
                 <label for="seo_tags" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">SEO tags/keywords</label>
-                <input type="text" name="seo_tags" id="seo_tags" placeholder="tag1, tag2, tag3"
+                <input type="text" name="seo_tags" id="seo_tags" placeholder="bijv. Risale-i Nur, Islam, Geloof"
                   value="{{ old('seo_tags', isset($product) && $product->seo_tags ? implode(', ', $product->seo_tags) : '') }}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <p class="mt-1 text-xs text-gray-400">Komma-gescheiden, bijv. Risale-i Nur, Geloof, Qur'an</p>
                 @error('seo_tags')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
               </div>
+
+              {{-- SEO Auteur --}}
               <div>
-                <label for="seo_author" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">SEO auteur</label>
-                <input type="text" name="seo_author" id="seo_author" value="{{ old('seo_author', $product->seo_author ?? '') }}"
+                <div class="flex items-center justify-between mb-2">
+                  <label for="seo_author" class="text-sm font-medium text-gray-700 dark:text-gray-300">SEO auteur</label>
+                  <div class="flex items-center gap-2">
+                    @if($hasSeoAuthor)
+                      <span class="text-xs bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300 px-2 py-0.5 rounded font-medium">Aangepast</span>
+                    @else
+                      <span class="text-xs bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400 px-2 py-0.5 rounded font-medium">Standaard</span>
+                    @endif
+                    <button type="button"
+                      data-fill-target="seo_author"
+                      data-fill-value="{{ $defaultSeoAuthor }}"
+                      class="prod-fill-default-btn text-xs text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap flex items-center gap-1">
+                      <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i> Gebruik standaard
+                    </button>
+                  </div>
+                </div>
+                <input type="text" name="seo_author" id="seo_author"
+                  value="{{ old('seo_author', $product->seo_author ?? '') }}"
+                  placeholder="{{ $defaultSeoAuthor }}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                 @error('seo_author')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
               </div>
+
+              {{-- SEO Robots --}}
               <div>
                 <label for="seo_robots" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">SEO robots</label>
                 <select name="seo_robots" id="prod_seo_robots"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                   <option value="">Standaard (index, follow)</option>
                   <option value="noindex, nofollow" {{ old('seo_robots', $product->seo_robots ?? '') == 'noindex, nofollow' ? 'selected' : '' }}>noindex, nofollow</option>
-                  <option value="noindex, follow" {{ old('seo_robots', $product->seo_robots ?? '') == 'noindex, follow' ? 'selected' : '' }}>noindex, follow</option>
-                  <option value="index, nofollow" {{ old('seo_robots', $product->seo_robots ?? '') == 'index, nofollow' ? 'selected' : '' }}>index, nofollow</option>
+                  <option value="noindex, follow"   {{ old('seo_robots', $product->seo_robots ?? '') == 'noindex, follow'   ? 'selected' : '' }}>noindex, follow</option>
+                  <option value="index, nofollow"   {{ old('seo_robots', $product->seo_robots ?? '') == 'index, nofollow'   ? 'selected' : '' }}>index, nofollow</option>
                 </select>
                 @error('seo_robots')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
               </div>
+
+              {{-- Canonical URL --}}
               <div>
-                <label for="seo_canonical_url" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Canonical URL</label>
-                <input type="text" name="seo_canonical_url" id="seo_canonical_url" placeholder="https://example.com/product"
+                <div class="flex items-center justify-between mb-2">
+                  <label for="seo_canonical_url" class="text-sm font-medium text-gray-700 dark:text-gray-300">Canonical URL</label>
+                  <div class="flex items-center gap-2">
+                    @if($hasCanonical)
+                      <span class="text-xs bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300 px-2 py-0.5 rounded font-medium">Aangepast</span>
+                    @else
+                      <span class="text-xs bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400 px-2 py-0.5 rounded font-medium">Standaard</span>
+                    @endif
+                    @if($defaultCanonical)
+                      <button type="button"
+                        data-fill-target="seo_canonical_url"
+                        data-fill-value="{{ $defaultCanonical }}"
+                        class="prod-fill-default-btn text-xs text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap flex items-center gap-1">
+                        <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i> Gebruik standaard
+                      </button>
+                    @endif
+                  </div>
+                </div>
+                <input type="text" name="seo_canonical_url" id="seo_canonical_url"
+                  placeholder="{{ $defaultCanonical ?: 'https://lucideinkt.nl/winkel/product/...' }}"
                   value="{{ old('seo_canonical_url', $product->seo_canonical_url ?? '') }}"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <p class="mt-1 text-xs text-gray-400">Laat leeg om standaard-URL te gebruiken.</p>
                 @error('seo_canonical_url')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
               </div>
             </div>
@@ -484,6 +579,10 @@
       const scoreLabel    = document.getElementById('prod_score_label');
       const checksDiv     = document.getElementById('prod_seo_checks');
 
+      // Default values (server-side rendered as JS vars)
+      const defaultSeoTitle  = @json($defaultSeoTitle ?? '');
+      const defaultSeoDesc   = @json($defaultSeoDesc ?? '');
+
       function updateCounter(input, counter, max) {
         counter.textContent = input.value.length + ' / ' + max;
       }
@@ -491,11 +590,12 @@
       function runSeoChecker() {
         const seoTitle  = seoTitleInput ? seoTitleInput.value.trim() : '';
         const prodTitle = titleInput ? titleInput.value.trim() : '';
-        const effectiveTitle = seoTitle || prodTitle || 'Producttitel…';
+        // Use SEO title override, then live title input, then server default
+        const effectiveTitle = seoTitle || (prodTitle ? prodTitle + ' | Lucide Inkt' : defaultSeoTitle) || 'Producttitel…';
 
         const seoDesc   = seoDescInput ? seoDescInput.value.trim() : '';
         const shortDesc = shortDescInput ? shortDescInput.value.trim() : '';
-        const effectiveDesc = seoDesc || shortDesc || '';
+        const effectiveDesc = seoDesc || shortDesc || defaultSeoDesc || '';
 
         // Update preview
         if (previewTitle) previewTitle.textContent = effectiveTitle;
@@ -608,6 +708,22 @@
         if (el) el.addEventListener('input', runSeoChecker);
       });
       if (seoRobotsSel) seoRobotsSel.addEventListener('change', runSeoChecker);
+
+      // ── "Gebruik standaard" fill buttons ──
+      document.querySelectorAll('.prod-fill-default-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const targetId = btn.getAttribute('data-fill-target');
+          const value    = btn.getAttribute('data-fill-value');
+          const el       = document.getElementById(targetId);
+          if (!el || !value) return;
+          el.value = value;
+          el.focus();
+          // Flash highlight
+          el.classList.add('ring-2', 'ring-primary-400');
+          setTimeout(() => el.classList.remove('ring-2', 'ring-primary-400'), 1200);
+          runSeoChecker();
+        });
+      });
 
       // Initial run
       runSeoChecker();
