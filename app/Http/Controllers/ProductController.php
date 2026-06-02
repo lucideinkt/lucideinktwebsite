@@ -160,7 +160,9 @@ class ProductController extends Controller
             'pdf_file' => $validated['pdf_file'] ?? null,
             'audio_file' => $validated['audio_file'] ?? null,
             'online_lezen_image' => $validated['online_lezen_image'] ?? null,
+            'seo_title' => $validated['seo_title'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
+            'seo_tags' => $validated['seo_tags'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
             'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
@@ -343,10 +345,13 @@ class ProductController extends Controller
             'pdf_file' => $validated['pdf_file'] ?? null,
             'audio_file' => $validated['audio_file'] ?? null,
             'online_lezen_image' => $validated['online_lezen_image'] ?? null,
+            'seo_title' => $validated['seo_title'] ?? null,
             'seo_description' => $validated['seo_description'] ?? null,
+            'seo_tags' => $validated['seo_tags'] ?? null,
             'seo_author' => $validated['seo_author'] ?? null,
             'seo_robots' => $validated['seo_robots'] ?? null,
             'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
+            'updated_by' => auth()->user()->first_name . ' ' . auth()->user()->last_name,
         ]);
 
         // Auto-index or clear PDF text when PDF changes
