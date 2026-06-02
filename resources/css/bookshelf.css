@@ -2069,7 +2069,7 @@ body { margin: 0; padding: 0; width: 100%; }
     .shelf-book-corner--bl { bottom: 8px; left: 10px; }
     .shelf-book-corner--br { bottom: 8px; right: 8px; }
     .shelf-book-title {
-        font-size: clamp(16px, 4vw, 24px);
+        font-size: clamp(19px, 5vw, 28px);
         margin-top: 6px;
         line-height: 1.2;
         padding: 0 4px;
@@ -2099,7 +2099,7 @@ body.bs-drawer-no-scroll { overflow: hidden; }
     .shelf-book-corner--bl { bottom: 7px; left: 9px; }
     .shelf-book-corner--br { bottom: 7px; right: 7px; }
     .shelf-book-title {
-        font-size: clamp(14px, 4vw, 20px);
+        font-size: clamp(17px, 4.5vw, 23px);
         padding: 0 4px;
     }
 }
@@ -2127,7 +2127,7 @@ body.bs-drawer-no-scroll { overflow: hidden; }
     .shelf-book-corner--bl { bottom: 8px; left: 12px; }
     .shelf-book-corner--br { bottom: 8px; right: 9px; }
     .shelf-book-title {
-        font-size: clamp(13px, 4vw, 17px);
+        font-size: clamp(15px, 4.5vw, 20px);
         padding: 0 3px;
         line-height: 1.15;
     }

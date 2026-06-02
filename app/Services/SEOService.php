@@ -39,7 +39,15 @@ class SEOService
                 if ($dbSetting->author)       $config['author']       = $dbSetting->author;
                 if ($dbSetting->robots)       $config['robots']       = $dbSetting->robots;
                 if ($dbSetting->canonical_url) $config['url']         = $dbSetting->canonical_url;
-                if ($dbSetting->og_image)     $config['image']        = secure_url($dbSetting->og_image);
+                if ($dbSetting->og_image) {
+                    // Uploaded files are stored on the public disk under seo/og/… and
+                    // must be served via /storage/…  All other paths (e.g. images/…) are
+                    // directly under public/ and don't need the storage prefix.
+                    $ogPath = str_starts_with($dbSetting->og_image, 'seo/og/')
+                        ? 'storage/' . $dbSetting->og_image
+                        : $dbSetting->og_image;
+                    $config['image'] = secure_url($ogPath);
+                }
                 if ($dbSetting->type)         $config['type']         = $dbSetting->type;
             }
         } catch (\Exception $e) {

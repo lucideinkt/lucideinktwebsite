@@ -70,30 +70,37 @@ class OnlineLezenController extends Controller
     }
 
     /**
-     * Display the PDF reader for a specific book
+     * Display the reader for a specific book.
+     *
+     * Rules:
+     *  - If the book has published HTML pages → always redirect to the HTML reader (/lees).
+     *  - If the book has a PDF reader enabled  → always show the fullscreen PDF reader.
+     *  - Otherwise                             → 404 (nothing to show publicly).
+     *
+     * The non-fullscreen "normal page" layout (online-lezen-reader.blade.php) is intentionally
+     * never rendered here so that the plain product page cannot be reached by users or crawlers.
      */
     public function read(Request $request, $slug)
     {
-        $product = Product::where('slug', '=', $slug)
-            ->firstOrFail();
+        $product = Product::where('slug', '=', $slug)->firstOrFail();
 
-        // Als product HTML pagina's heeft → stuur door naar schone HTML lezer
-        // Maar alleen als het content gepubliceerd is of de gebruiker admin is
         $isAdminRead = auth()->check() && auth()->user()->role === 'admin';
+
+        // 1. HTML reader takes priority — redirect if content is available
         if ($product->bookPages()->exists() && ($isAdminRead || $product->book_content_published)) {
             return redirect()->route('onlineLezenReadHtml', $slug);
         }
 
-        // Check if fullscreen mode is requested, or default to fullscreen when opened from library (pdf_reader_enabled)
-        $isFullscreen = $request->query('fullscreen') === '1' || $product->pdf_reader_enabled;
+        // 2. PDF reader — only when explicitly enabled
+        if (!empty($product->pdf_file) && $product->pdf_reader_enabled) {
+            return view('online-lezen-reader-fullscreen', [
+                'product' => $product,
+                'SEOData' => SEOService::getProductSEO($product, 'online-lezen'),
+            ]);
+        }
 
-        // Use fullscreen layout if parameter is present or PDF reader is enabled
-        $view = $isFullscreen ? 'online-lezen-reader-fullscreen' : 'online-lezen-reader';
-
-        return view($view, [
-            'product' => $product,
-            'SEOData' => SEOService::getProductSEO($product, 'online-lezen'),
-        ]);
+        // 3. Nothing accessible → 404
+        abort(404);
     }
 
     /**
