@@ -174,6 +174,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // Page SEO
     Route::get('/dashboard/page-seo',              [PageSeoController::class, 'index'])->name('admin.page-seo.index');
+    Route::get('/dashboard/page-seo/export',       [PageSeoController::class, 'export'])->name('admin.page-seo.export');
+    Route::post('/dashboard/page-seo/import',      [PageSeoController::class, 'import'])->name('admin.page-seo.import');
     Route::get('/dashboard/page-seo/{pageKey}',    [PageSeoController::class, 'edit'])->name('admin.page-seo.edit');
     Route::put('/dashboard/page-seo/{pageKey}',    [PageSeoController::class, 'update'])->name('admin.page-seo.update');
 
