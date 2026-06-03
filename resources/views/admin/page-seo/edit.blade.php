@@ -152,21 +152,28 @@
               @php
                 $defaultImgPath = isset($defaults['image']) ? ltrim(parse_url($defaults['image'], PHP_URL_PATH), '/') : null;
                 $currentOgImage = old('og_image', $setting->og_image ?? null);
-                // Determine preview URL
+                // Determine preview URL — use Storage::url() for uploaded files so it
+                // works correctly on Cloudways and any other hosting environment.
                 if ($currentOgImage) {
                     $previewImgUrl = str_starts_with($currentOgImage, 'seo/og/')
-                        ? asset('storage/' . $currentOgImage)
+                        ? \Illuminate\Support\Facades\Storage::disk('public')->url($currentOgImage)
                         : asset($currentOgImage);
+                    // Check if the uploaded file physically exists
+                    $uploadedFileExists = str_starts_with($currentOgImage, 'seo/og/')
+                        ? \Illuminate\Support\Facades\Storage::disk('public')->exists($currentOgImage)
+                        : file_exists(public_path($currentOgImage));
                 } elseif ($defaultImgPath) {
                     $previewImgUrl = asset($defaultImgPath);
+                    $uploadedFileExists = true;
                 } else {
                     $previewImgUrl = null;
+                    $uploadedFileExists = false;
                 }
               @endphp
 
               {{-- Image preview --}}
               <div id="og_image_preview_wrap" class="mb-3">
-                @if($previewImgUrl)
+                @if($previewImgUrl && $uploadedFileExists)
                   <div class="relative inline-block">
                     <img id="og_image_preview" src="{{ $previewImgUrl }}" alt="OG Preview"
                       class="rounded-lg border border-gray-200 dark:border-gray-600 object-cover w-full max-w-sm"
@@ -175,6 +182,23 @@
                       <span class="absolute top-1 left-1 bg-primary-600 text-white text-xs px-1.5 py-0.5 rounded font-medium">Aangepast</span>
                     @else
                       <span class="absolute top-1 left-1 bg-gray-500 text-white text-xs px-1.5 py-0.5 rounded font-medium">Standaard</span>
+                    @endif
+                  </div>
+                @elseif($previewImgUrl && !$uploadedFileExists)
+                  {{-- File path stored but file missing — storage:link issue --}}
+                  <div class="flex flex-col gap-2 w-full max-w-sm bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-300 dark:border-yellow-700 p-3" style="aspect-ratio:unset;">
+                    <div class="flex items-center gap-2 text-yellow-700 dark:text-yellow-400">
+                      <i class="fa-solid fa-triangle-exclamation"></i>
+                      <span class="text-xs font-medium">Afbeelding niet gevonden op server</span>
+                    </div>
+                    <p class="text-xs text-yellow-600 dark:text-yellow-500">
+                      Pad opgeslagen: <code class="bg-yellow-100 dark:bg-yellow-800 px-1 rounded">{{ $currentOgImage }}</code>
+                    </p>
+                    <p class="text-xs text-yellow-600 dark:text-yellow-500">
+                      Upload een nieuwe afbeelding hieronder om dit te herstellen.
+                    </p>
+                    @if(!app()->isProduction())
+                      <p class="text-xs text-gray-400">Tip (lokaal): <code>php artisan storage:link</code></p>
                     @endif
                   </div>
                 @else
