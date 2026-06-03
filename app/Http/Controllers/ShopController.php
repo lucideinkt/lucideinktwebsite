@@ -47,9 +47,15 @@ class ShopController extends Controller
 //                ->get();
 //        }
 
+        // Use the model's getDynamicSEOData() which includes full Schema.org structured data
+        // (Book/Product + Offer + BreadcrumbList JSON-LD). Patch the OG image to prefer
+        // JPEG (no transparent backgrounds on social platforms).
+        $seoData = $product->getDynamicSEOData();
+        $seoData->image = SEOService::resolveOgImage($product->image_1);
+
         return view('shop.show', [
             'product' => $product,
-            'SEOData' => SEOService::getProductSEO($product),
+            'SEOData' => $seoData,
 //            'productCopies' => $productCopies,
 //            'exemplaren' => $exemplaren,
         ]);

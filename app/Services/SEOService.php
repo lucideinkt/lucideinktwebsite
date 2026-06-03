@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\PageSeoSetting;
+use RalphJSmit\Laravel\SEO\SchemaCollection;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class SEOService
@@ -67,7 +68,97 @@ class SEOService
             site_name: $config['site_name'] ?? 'Lucide Inkt',
             type: $config['type'] ?? 'website',
             robots: $config['robots'] ?? null,
+            schema: self::buildPageSchema($page, $config),
         );
+    }
+
+    /**
+     * Build Schema.org structured data for static pages.
+     */
+    private static function buildPageSchema(string $page, array $config): ?SchemaCollection
+    {
+        $pageUrl  = $config['url'] ?? url()->current();
+        $imageUrl = $config['image'] ?? secure_url(self::DEFAULT_OG_IMAGE);
+
+        return match ($page) {
+            'home' => SchemaCollection::make()
+                ->add(fn (SEOData $d) => [
+                    '@context' => 'https://schema.org',
+                    '@type'    => 'Organization',
+                    'name'     => 'Lucide Inkt',
+                    'url'      => route('home'),
+                    'logo'     => secure_url('images/logo_newest.webp'),
+                    'sameAs'   => [],
+                    'description' => $config['description'] ?? null,
+                ])
+                ->add(fn (SEOData $d) => [
+                    '@context'        => 'https://schema.org',
+                    '@type'           => 'WebSite',
+                    'name'            => 'Lucide Inkt',
+                    'url'             => route('home'),
+                    'potentialAction' => [
+                        '@type'       => 'SearchAction',
+                        'target'      => [
+                            '@type'       => 'EntryPoint',
+                            'urlTemplate' => route('shop') . '?search={search_term_string}',
+                        ],
+                        'query-input' => 'required name=search_term_string',
+                    ],
+                ]),
+
+            'shop' => SchemaCollection::make()
+                ->add(fn (SEOData $d) => [
+                    '@context'   => 'https://schema.org',
+                    '@type'      => 'CollectionPage',
+                    'name'       => $config['title'] ?? 'Winkel | Lucide Inkt',
+                    'description'=> $config['description'] ?? null,
+                    'url'        => $pageUrl,
+                    'image'      => $imageUrl,
+                    'isPartOf'   => [
+                        '@type' => 'WebSite',
+                        'name'  => 'Lucide Inkt',
+                        'url'   => route('home'),
+                    ],
+                ]),
+
+            'contact' => SchemaCollection::make()
+                ->add(fn (SEOData $d) => [
+                    '@context' => 'https://schema.org',
+                    '@type'    => 'ContactPage',
+                    'name'     => $config['title'] ?? 'Contact | Lucide Inkt',
+                    'url'      => $pageUrl,
+                    'isPartOf' => [
+                        '@type' => 'WebSite',
+                        'name'  => 'Lucide Inkt',
+                        'url'   => route('home'),
+                    ],
+                ]),
+
+            'saidnursi', 'risale', 'herzameling' => SchemaCollection::make()
+                ->add(fn (SEOData $d) => [
+                    '@context'         => 'https://schema.org',
+                    '@type'            => 'Article',
+                    'headline'         => $config['title'] ?? null,
+                    'description'      => $config['description'] ?? null,
+                    'url'              => $pageUrl,
+                    'image'            => $imageUrl,
+                    'publisher'        => [
+                        '@type' => 'Organization',
+                        'name'  => 'Lucide Inkt',
+                        'logo'  => [
+                            '@type' => 'ImageObject',
+                            'url'   => secure_url('images/logo_newest.webp'),
+                        ],
+                    ],
+                    'isPartOf' => [
+                        '@type' => 'WebSite',
+                        'name'  => 'Lucide Inkt',
+                        'url'   => route('home'),
+                    ],
+                ]),
+
+            default => null,
+        };
     }
 
     /**
