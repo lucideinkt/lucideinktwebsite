@@ -48,7 +48,7 @@
                         <strong>Als een ware spirituele tafsir van de Qur'an voldoet de Risale-i Nur aan alle behoeften van deze tijd. Het enige wat van de lezer gevraagd wordt, is lezen met een aandachtige blik en een onbevooroordeeld hart</strong>.
                     </p>
 
-                <img src="{{ asset('images/oval_ornament.webp') }}" alt="" loading="lazy" decoding="async">
+                <img src="{{ asset('images/oval_ornament.webp') }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
 
             </div>
         </div>

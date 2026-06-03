@@ -256,10 +256,10 @@
                     <div class="shelf-book-cover">
                         <div class="shelf-book-spine"></div>
                         {{-- Corner ornaments --}}
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tl" alt="">
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tr" alt="">
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="">
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tl" alt="" aria-hidden="true">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tr" alt="" aria-hidden="true">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="" aria-hidden="true">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="" aria-hidden="true">
                         {{-- Title + optional small label below --}}
                         <div class="shelf-book-title-group">
                             <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>

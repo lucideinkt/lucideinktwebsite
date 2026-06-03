@@ -5,7 +5,7 @@
             <div class="footer-column">
                 <h3 class="footer-title">Over Lucide Inkt</h3>
                 <p class="footer-description">
-                    Een non-profit organisatie toegewijd aan het verspreiden van de Risale-i Nur door middel van Nederlandse en Engelse vertalingen.
+                    Een non-profitorganisatie die zich toewijdt aan het verspreiden van de Risale-i Nur door middel van vertalingen in het Nederlands en Engels.
                 </p>
                 <p style="font-weight: 500;font-size: 14px;margin-bottom: 5px;">
                     <strong>In samenwerking met</strong>
@@ -19,7 +19,6 @@
 {{--                <div class="footer-social">--}}
 {{--                    <a href="mailto:info@lucideinkt.nl" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>--}}
 {{--                </div>--}}
-                <img src="" alt="">
             </div>
 
             <!-- Column 3: Informatie -->
