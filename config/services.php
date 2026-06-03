@@ -38,6 +38,7 @@ return [
     'google' => [
         'maps_api_key'        => env('GOOGLE_MAPS_API_KEY', ''),
         'analytics_id'        => env('GOOGLE_ANALYTICS_ID', ''),
+        'tag_manager_id'      => env('GOOGLE_TAG_MANAGER_ID', ''),
         'ga4_property_id'     => env('GA4_PROPERTY_ID', ''),
         'ga4_credentials_path'=> env('GA4_CREDENTIALS_PATH', 'storage/app/google-analytics-credentials.json'),
     ],
