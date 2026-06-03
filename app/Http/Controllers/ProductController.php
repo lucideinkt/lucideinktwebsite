@@ -160,12 +160,13 @@ class ProductController extends Controller
             'pdf_file' => $validated['pdf_file'] ?? null,
             'audio_file' => $validated['audio_file'] ?? null,
             'online_lezen_image' => $validated['online_lezen_image'] ?? null,
-            'seo_title' => $validated['seo_title'] ?? null,
-            'seo_description' => $validated['seo_description'] ?? null,
+            // Use ?: null so empty strings are stored as null (e.g. "Standaard" robots option)
+            'seo_title' => $validated['seo_title'] ?: null,
+            'seo_description' => $validated['seo_description'] ?: null,
             'seo_tags' => $validated['seo_tags'] ?? null,
-            'seo_author' => $validated['seo_author'] ?? null,
-            'seo_robots' => $validated['seo_robots'] ?? null,
-            'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
+            'seo_author' => $validated['seo_author'] ?: null,
+            'seo_robots' => $validated['seo_robots'] ?: null,
+            'seo_canonical_url' => $validated['seo_canonical_url'] ?: null,
             'created_by' => $user->first_name . ' ' . $user->last_name,
         ]);
 
@@ -345,12 +346,13 @@ class ProductController extends Controller
             'pdf_file' => $validated['pdf_file'] ?? null,
             'audio_file' => $validated['audio_file'] ?? null,
             'online_lezen_image' => $validated['online_lezen_image'] ?? null,
-            'seo_title' => $validated['seo_title'] ?? null,
-            'seo_description' => $validated['seo_description'] ?? null,
+            // Use ?: null so empty strings are stored as null (e.g. "Standaard" robots option)
+            'seo_title' => $validated['seo_title'] ?: null,
+            'seo_description' => $validated['seo_description'] ?: null,
             'seo_tags' => $validated['seo_tags'] ?? null,
-            'seo_author' => $validated['seo_author'] ?? null,
-            'seo_robots' => $validated['seo_robots'] ?? null,
-            'seo_canonical_url' => $validated['seo_canonical_url'] ?? null,
+            'seo_author' => $validated['seo_author'] ?: null,
+            'seo_robots' => $validated['seo_robots'] ?: null,
+            'seo_canonical_url' => $validated['seo_canonical_url'] ?: null,
             'updated_by' => auth()->user()->first_name . ' ' . auth()->user()->last_name,
         ]);
 
