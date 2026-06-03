@@ -7,12 +7,71 @@
     </div>
   @endif
 
-  <div class="mb-6 flex items-center justify-between">
+  <div class="mb-6 flex items-start justify-between gap-4 flex-wrap">
     <div>
       <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Pagina SEO</h2>
       <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Beheer de SEO-instellingen per pagina. DB-waarden overschrijven de standaardconfiguratie.</p>
     </div>
+
+    {{-- Export & Import --}}
+    <div class="flex items-center gap-3 flex-wrap">
+
+      {{-- Export button --}}
+      <a href="{{ route('admin.page-seo.export') }}"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors">
+        <i class="fa-solid fa-file-zipper text-xs"></i>
+        Exporteren (.zip)
+      </a>
+
+      {{-- Import button — toggles the form --}}
+      <button type="button" id="toggleImportBtn"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+        <i class="fa-solid fa-file-import text-xs"></i>
+        Importeren
+      </button>
+    </div>
   </div>
+
+  {{-- Import form (hidden by default) --}}
+  <div id="importForm" class="hidden mb-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+    <h3 class="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-3 flex items-center gap-2">
+      <i class="fa-solid fa-file-import"></i>
+      SEO-instellingen importeren
+    </h3>
+    <form action="{{ route('admin.page-seo.import') }}" method="POST" enctype="multipart/form-data" class="flex items-end gap-3 flex-wrap">
+      @csrf
+      <div>
+        <label class="block text-xs font-medium text-blue-700 dark:text-blue-400 mb-1">
+          Selecteer .xlsx, .xls of .csv bestand
+        </label>
+        <input type="file" name="import_file" accept=".xlsx,.xls,.csv,.zip" required
+          class="block text-sm text-gray-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200 cursor-pointer">
+        @error('import_file')
+          <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
+        @enderror
+      </div>
+      <button type="submit"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+        <i class="fa-solid fa-upload text-xs"></i>
+        Importeer
+      </button>
+    </form>
+    <p class="mt-3 text-xs text-blue-600 dark:text-blue-400">
+      <i class="fa-solid fa-circle-info mr-1"></i>
+      Upload het geëxporteerde <strong>.zip</strong> bestand (aanbevolen) — dit importeert zowel tekstvelden als afbeeldingen.
+      Je kunt ook alleen een <strong>.xlsx</strong> uploaden als je alleen tekstvelden wilt bijwerken. Lege cellen wissen de waarde (standaard wordt dan gebruikt).
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('toggleImportBtn').addEventListener('click', function () {
+      const form = document.getElementById('importForm');
+      form.classList.toggle('hidden');
+      this.innerHTML = form.classList.contains('hidden')
+        ? '<i class="fa-solid fa-file-import text-xs"></i> Importeren'
+        : '<i class="fa-solid fa-xmark text-xs"></i> Sluiten';
+    });
+  </script>
 
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
