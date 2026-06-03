@@ -122,7 +122,7 @@
             {{-- Left: logo (scrolled only) + cart (not-scrolled only) --}}
             <div class="navbar-cart-sidebar-toggle">
                 <a href="{{ route('home') }}" class="mobile-header-logo" aria-label="Naar de homepage">
-                    <img src="{{ url('/images/logo_newest.webp') }}" alt="Lucide Inkt">
+                    <img src="{{ url('/images/logo_newest.webp') }}" alt="Lucide Inkt — Risale-i Nur in het Nederlands en Engels">
                 </a>
                 <li class="nav-item mobile-cart-not-scrolled">
                     <button type="button" class="mini-cart-trigger" aria-label="Winkelwagen openen">
@@ -143,7 +143,7 @@
 
                 @if(request()->routeIs('home'))
                     <div class="logo-container desktop">
-                        <a href="{{ route('home') }}"><img src="{{ url('/images/logo_newest.webp') }}" alt=""></a>
+                        <a href="{{ route('home') }}"><img src="{{ url('/images/logo_newest.webp') }}" alt="Lucide Inkt — Risale-i Nur in het Nederlands en Engels"></a>
                     </div>
                 @endif
 
@@ -151,14 +151,14 @@
                     <x-navbar></x-navbar>
                 </nav>
                 <div class="navbar-shine-dot" aria-hidden="true"></div>
-                <div class="navbar-glow">
-                    <img src="{{ url('/images/glow-5.png') }}" alt="">
+                <div class="navbar-glow" aria-hidden="true">
+                    <img src="{{ url('/images/glow-5.png') }}" alt="" aria-hidden="true">
                 </div>
             </div>
 
             {{-- Center: logo (not-scrolled only) --}}
             <div class="logo-container mobile">
-                <a href="{{ route('home') }}"><img src="{{ url('/images/logo_newest.webp') }}" alt=""></a>
+                <a href="{{ route('home') }}"><img src="{{ url('/images/logo_newest.webp') }}" alt="Lucide Inkt — Risale-i Nur in het Nederlands en Engels"></a>
             </div>
 
             {{-- Right: cart (scrolled only) + hamburger (always) --}}
