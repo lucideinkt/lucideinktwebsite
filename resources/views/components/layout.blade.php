@@ -84,9 +84,24 @@
             gtag('config', '{{ config('services.google.analytics_id') }}');
         </script>
     @endif
+
+    {{-- Google Tag Manager — alleen laden in productie --}}
+    @if(app()->environment('production') && config('services.google.tag_manager_id'))
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','{{ config('services.google.tag_manager_id') }}');</script>
+    @endif
 </head>
 
 <body style="position: relative;" class="{{ request()->routeIs('home') ? 'page-home' : 'page-other' }}">
+
+{{-- Google Tag Manager (noscript) --}}
+@if(app()->environment('production') && config('services.google.tag_manager_id'))
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ config('services.google.tag_manager_id') }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+@endif
 
 @if(auth()->check() && auth()->user()->role === 'admin' && \App\Services\SiteSettingService::isMaintenanceMode())
 <div style="
