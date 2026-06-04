@@ -1397,6 +1397,11 @@ body { margin: 0; padding: 0; width: 100%; }
     text-shadow: none;
 }
 
+/* PDF badge as bottom flex item — replaces the read button on pdf books */
+.shelf-book-pdf-badge {
+    white-space: nowrap;
+}
+
 /* Invisible placeholder — keeps title vertically aligned on books without a badge */
 .shelf-book-version-badge--placeholder {
     visibility: hidden;
