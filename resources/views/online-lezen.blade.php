@@ -260,18 +260,11 @@
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tr" alt="" aria-hidden="true">
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="" aria-hidden="true">
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="" aria-hidden="true">
-                        {{-- Title + optional small label below --}}
+                        {{-- Title --}}
                         <div class="shelf-book-title-group">
                             <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
-                            @if($hasPdfReader)
-                                <span class="shelf-book-version-badge shelf-book-version-badge--pdf">
-                                    <i class="fa-solid fa-file-pdf" style="margin-right:3px;font-size:0.85em;"></i>PDF
-                                </span>
-                            @elseif($hasHtml)
-                                {{-- no badge for standard HTML reader --}}
-                            @endif
                         </div>
-                        {{-- Read / Coming-soon / Concept button --}}
+                        {{-- Read / Coming-soon / Concept button, or PDF badge for pdf books --}}
                         @if($hasHtml)
                         <div class="shelf-book-read-btn {{ $isAdmin && !$contentPublished ? 'shelf-book-read-btn--concept' : '' }}">
                             @if($isAdmin && !$contentPublished)
@@ -281,9 +274,9 @@
                             @endif
                         </div>
                         @elseif($hasPdfReader)
-                        <div class="shelf-book-read-btn">
-                            <i class="fa-solid fa-file-pdf"></i> Lezen
-                        </div>
+                        <span class="shelf-book-version-badge shelf-book-version-badge--pdf shelf-book-pdf-badge">
+                            <i class="fa-solid fa-file-pdf" style="margin-right:3px;font-size:0.85em;"></i>PDF
+                        </span>
                         @else
                         <div class="shelf-book-coming-soon-text">
                             Binnenkort<br>Online
