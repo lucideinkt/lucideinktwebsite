@@ -263,10 +263,12 @@
                         {{-- Title + optional small label below --}}
                         <div class="shelf-book-title-group">
                             <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
-                            @if($hasHtml)
-                                <span class="shelf-book-version-label">Online Leesversie</span>
-                            @elseif($hasPdfReader)
-                                <span class="shelf-book-version-label">PDF Versie</span>
+                            @if($hasPdfReader)
+                                <span class="shelf-book-version-badge shelf-book-version-badge--pdf">
+                                    <i class="fa-solid fa-file-pdf" style="margin-right:3px;font-size:0.85em;"></i>PDF
+                                </span>
+                            @elseif($hasHtml)
+                                {{-- no badge for standard HTML reader --}}
                             @endif
                         </div>
                         {{-- Read / Coming-soon / Concept button --}}
