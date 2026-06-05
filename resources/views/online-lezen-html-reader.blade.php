@@ -150,15 +150,25 @@
     <header class="reader-topbar" role="banner">
         <div class="reader-topbar-left">
             <a href="{{ route('onlineLezen') }}" class="reader-back-btn" aria-label="Terug naar bibliotheek">
-                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Bibliotheek
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span class="reader-back-btn-label">Bibliotheek</span>
             </a>
             <div class="reader-topbar-divider" aria-hidden="true"></div>
             <span class="reader-book-title">{{ $product->title }}</span>
         </div>
 
-        <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
-            <span class="reader-topbar-page-badge" id="topbar-page-badge" aria-live="polite"></span>
+        {{-- Center: page slider navigation (desktop only) --}}
+        <div class="reader-topbar-nav" aria-label="Paginanavigatie">
+            <span class="reader-topbar-page-cur" id="topbar-page-cur" aria-live="polite">—</span>
+            <input type="range" class="reader-topbar-page-slider" id="topbar-page-slider"
+                   min="{{ $allPageMeta->min('page_number') }}"
+                   max="{{ $allPageMeta->max('page_number') }}"
+                   value="{{ $allPageMeta->min('page_number') }}"
+                   aria-label="Ga naar pagina">
+            <span class="reader-topbar-page-total">{{ $allPageMeta->max('page_number') }}</span>
+        </div>
 
+        <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             {{-- Compact font controls — desktop only --}}
             <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
                 <div class="reader-topbar-font-group">
@@ -176,6 +186,25 @@
                     <span class="reader-topbar-font-val reader-topbar-font-val--arabic" id="topbar-arabic-font-val" aria-live="polite">29px</span>
                     <button class="reader-topbar-font-reset" id="topbar-arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
                 </div>
+            </div>
+
+            {{-- Action icon buttons (desktop only) --}}
+            <div class="reader-topbar-actions">
+                <div class="reader-topbar-actions-divider" aria-hidden="true"></div>
+                <button class="reader-topbar-icon-btn" id="topbar-search-btn" type="button" aria-label="Zoeken in boek" title="Zoeken">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </button>
+                <button class="reader-topbar-icon-btn reader-topbar-bm-icon-btn" id="topbar-bm-btn" type="button" aria-label="Bladwijzer toevoegen" title="Bladwijzer">
+                    <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                </button>
+                @if(!empty($tocEntries))
+                <button class="reader-topbar-icon-btn" id="topbar-toc-btn" type="button" aria-label="Inhoudsopgave" title="Inhoudsopgave">
+                    <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                </button>
+                @endif
+                <button class="reader-topbar-icon-btn reader-topbar-theme-btn" id="topbar-theme-btn" type="button" aria-label="Thema wisselen" title="Thema">
+                    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -247,8 +276,13 @@
             <div class="reader-sheet-progress-fill" id="sheet-progress-fill"></div>
         </div>
 
-        {{-- Book title (visible on mobile where topbar title is hidden) --}}
-        <div class="reader-sheet-book-title" aria-hidden="true">{{ $product->title }}</div>
+        {{-- Book title + close button (visible on mobile where topbar title is hidden) --}}
+        <div class="reader-sheet-book-title">
+            <span class="reader-sheet-book-title-text" aria-hidden="true">{{ $product->title }}</span>
+            <button class="reader-sheet-close-x" id="reader-sheet-close-btn" type="button" aria-label="Sluiten">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
 
         {{-- Tabs --}}
         <div class="reader-sheet-tabs" role="tablist">
@@ -260,9 +294,65 @@
             </button>
         </div>
 
-        {{-- Controls panel --}}
+        {{-- ══ Apple Books-style main menu panel (mobile default) ══ --}}
+        <div id="sheet-panel-menu" hidden>
+
+            {{-- Dark pill: page slider + progress (like Apple Books "Inhoud • 14%") --}}
+            <div class="sheet-menu-prog-pill">
+                {{-- Header: "Inhoud" label + page counter + progress % + optional TOC button --}}
+                <div class="sheet-menu-pill-header">
+                    <span class="sheet-menu-pill-label">Inhoud</span>
+                    <div class="sheet-menu-pill-right">
+                        <span class="sheet-menu-page-counter" id="sheet-menu-current">— / —</span>
+                        <span class="sheet-menu-pill-pct" id="sheet-menu-progress-pct">—%</span>
+                        @if(!empty($tocEntries))
+                        <button class="sheet-menu-toc-btn" id="sheet-menu-toc-btn" type="button" aria-label="Inhoudsopgave">
+                            <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                        </button>
+                        @endif
+                    </div>
+                </div>
+                {{-- Page slider --}}
+                <div class="sheet-menu-slider-wrap">
+                    <input type="range" class="sheet-menu-slider" id="sheet-menu-page-slider"
+                           min="{{ $allPageMeta->min('page_number') }}"
+                           max="{{ $allPageMeta->max('page_number') }}"
+                           value="{{ $allPageMeta->min('page_number') }}"
+                           aria-label="Ga naar pagina">
+                </div>
+            </div>
+
+            {{-- Action rows --}}
+            <button class="sheet-menu-row" id="sheet-menu-search-btn" type="button" aria-label="Zoeken in boek">
+                <span class="sheet-menu-row-label">Zoek in boek</span>
+                <i class="fa-solid fa-magnifying-glass sheet-menu-row-icon" aria-hidden="true"></i>
+            </button>
+
+            <button class="sheet-menu-row sheet-menu-bm-row" id="sheet-menu-bm-btn" type="button" aria-label="Bladwijzer toevoegen">
+                <span class="sheet-menu-row-label" id="sheet-menu-bm-label">Bladwijzer toevoegen</span>
+                <i class="fa-solid fa-bookmark sheet-menu-row-icon" aria-hidden="true"></i>
+            </button>
+
+
+            <button class="sheet-menu-row" id="sheet-menu-settings-btn" type="button" aria-label="Thema's en instellingen">
+                <span class="sheet-menu-row-label">Thema's en instellingen</span>
+                <span class="sheet-menu-aa-icon" aria-hidden="true">AA</span>
+            </button>
+
+            <button class="sheet-menu-row sheet-menu-row--last" id="sheet-menu-library-btn" type="button" aria-label="Bladwijzers en markeringen">
+                <span class="sheet-menu-row-label">Bladwijzers en markeringen</span>
+                <i class="fa-regular fa-bookmark sheet-menu-row-icon" aria-hidden="true"></i>
+            </button>
+
+        </div>{{-- /sheet-panel-menu --}}
+
+        {{-- Controls panel — Thema's en instellingen --}}
         <div id="sheet-panel-controls">
 
+        {{-- Back button (mobile: shown when navigated from menu) --}}
+        <button class="sheet-panel-back-btn" id="sheet-controls-back-btn" type="button" aria-label="Terug naar menu">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Terug
+        </button>
 
         {{-- Text font size --}}
         <div class="reader-sheet-section reader-sheet-fontpicker-row">
@@ -316,21 +406,14 @@
             </div>
         </div>
 
-        @if(!empty($tocEntries))
-        <div class="reader-sheet-divider"></div>
-        <div class="reader-sheet-section reader-sheet-toc-section">
-            <button class="reader-sheet-toc-btn" id="sheet-toc-btn" type="button">
-                <i class="fa-solid fa-list" aria-hidden="true"></i> Inhoudsopgave
-            </button>
-        </div>
-        @endif
-
-
         <div class="reader-sheet-bottom-safe"></div>
         </div>{{-- /sheet-panel-controls --}}
 
         {{-- Library panel: bookmarks + highlights across all books --}}
         <div id="sheet-panel-library" hidden>
+            <button class="sheet-panel-back-btn" id="sheet-library-back-btn" type="button" aria-label="Terug naar menu">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Terug
+            </button>
             <div class="reader-lib-block">
                 <div class="reader-lib-block-header">
                     <span><i class="fa-solid fa-bookmark" aria-hidden="true"></i> Bladwijzers</span>
@@ -413,17 +496,7 @@
     <div class="reader-search-backdrop" id="reader-search-backdrop"></div>
 
     {{-- ── Bottom page scrubber — MUST be in DOM before the IIFE script below ── --}}
-    <div class="reader-page-scrubber" id="reader-page-scrubber" aria-label="Pagina navigatie">
-        <div class="rps-inner">
-            <span class="rps-current" id="rps-current">—</span>
-            <input type="range" class="rps-slider" id="rps-slider"
-                   min="{{ $allPageMeta->min('page_number') }}"
-                   max="{{ $allPageMeta->max('page_number') }}"
-                   value="{{ $allPageMeta->min('page_number') }}"
-                   aria-label="Ga naar pagina">
-            <span class="rps-total">{{ $allPageMeta->max('page_number') }}</span>
-        </div>
-    </div>
+    {{-- Page scrubber removed --}}
 
     <script>
     (function () {
@@ -446,7 +519,7 @@
         const progressFill      = document.getElementById('progress-fill');
         const sheetProgressFill = document.getElementById('sheet-progress-fill');
         const fabPageCurrent    = document.getElementById('fab-page-current');
-        const topbarBadge       = document.getElementById('topbar-page-badge');
+        const topbarBadge       = document.getElementById('topbar-page-cur');
         const controlSheet      = document.getElementById('reader-control-sheet');
         const sheetBackdrop     = document.getElementById('reader-sheet-backdrop');
         const sheetPageCurrent  = document.getElementById('sheet-page-current');
@@ -493,7 +566,11 @@
         function updateUI(page) {
             if (sheetPageCurrent) sheetPageCurrent.textContent = page;
             if (fabPageCurrent)   fabPageCurrent.textContent  = page;
-            if (topbarBadge)      topbarBadge.textContent     = page + ' / ' + sorted[sorted.length - 1];
+            if (topbarBadge)      topbarBadge.textContent     = page;
+            // sync topbar page slider
+            const tbSlider = document.getElementById('topbar-page-slider');
+            if (tbSlider && document.activeElement !== tbSlider) tbSlider.value = page;
+            updateTopbarSliderFill(page);
             const idx = sorted.indexOf(page);
             const pct = idx >= 0 ? Math.round(((idx + 1) / sorted.length) * 100) : 0;
             if (progressFill)      progressFill.style.width      = pct + '%';
@@ -502,6 +579,15 @@
             if (sheetPagePreview) sheetPagePreview.textContent = page;
             if (rpsSlider  && document.activeElement !== rpsSlider)  rpsSlider.value  = page;
             if (rpsCurrent) rpsCurrent.textContent = page;
+            // Menu panel (Apple Books style)
+            const total = sorted[sorted.length - 1];
+            const menuPct = document.getElementById('sheet-menu-progress-pct');
+            if (menuPct) menuPct.textContent = pct + '%';
+            const menuCurrent = document.getElementById('sheet-menu-current');
+            if (menuCurrent) menuCurrent.textContent = page + '/' + total;
+            const menuSlider = document.getElementById('sheet-menu-page-slider');
+            if (menuSlider && document.activeElement !== menuSlider) menuSlider.value = page;
+            updateMenuSliderFill();
             bmPageLabel();
         }
         function save(page)   {
@@ -607,17 +693,33 @@
         }, { passive: true });
 
         // ── Control Sheet ──
+        function showPanel(which) {
+            // which: 'menu' | 'controls' | 'library'
+            const ids = { menu: 'sheet-panel-menu', controls: 'sheet-panel-controls', library: 'sheet-panel-library' };
+            Object.entries(ids).forEach(([key, id]) => {
+                const el = document.getElementById(id);
+                if (el) el.hidden = (key !== which);
+            });
+            // Keep tab highlight in sync for desktop
+            document.getElementById('sheet-tab-controls')?.classList.toggle('active', which === 'controls');
+            document.getElementById('sheet-tab-library')?.classList.toggle('active', which === 'library');
+            document.getElementById('sheet-tab-controls')?.setAttribute('aria-selected', which === 'controls' ? 'true' : 'false');
+            document.getElementById('sheet-tab-library')?.setAttribute('aria-selected', which === 'library' ? 'true' : 'false');
+        }
         function openSheet() {
             if (!controlSheet) return;
+            const cur = visiblePage();
+            // Mobile: show Apple Books menu panel; desktop: show controls panel
+            showPanel(window.innerWidth <= 1024 ? 'menu' : 'controls');
+            if (sheetPageSlider) sheetPageSlider.value = cur;
+            if (sheetPagePreview) sheetPagePreview.textContent = cur;
             controlSheet.classList.add('open');
             controlSheet.setAttribute('aria-hidden', 'false');
             sheetBackdrop?.classList.add('open');
             sheetBackdrop?.setAttribute('aria-hidden', 'false');
             fab?.setAttribute('aria-expanded', 'true');
-            const cur = visiblePage();
-            if (sheetPageSlider) sheetPageSlider.value = cur;
-            if (sheetPagePreview) sheetPagePreview.textContent = cur;
             bmPageLabel();
+            updateUI(cur);
         }
         function closeSheet() {
             if (!controlSheet) return;
@@ -630,9 +732,72 @@
         function toggleSheet() { controlSheet?.classList.contains('open') ? closeSheet() : openSheet(); }
 
         fab?.addEventListener('click', e => { e.stopPropagation(); toggleSheet(); });
+        document.getElementById('reader-sheet-close-btn')?.addEventListener('click', closeSheet);
         sheetBackdrop?.addEventListener('click', () => { closeSheet(); closeToc?.(); });
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && controlSheet?.classList.contains('open')) closeSheet();
+        });
+
+        // ── Menu panel button wiring (Apple Books-style) ──
+        document.getElementById('sheet-menu-settings-btn')?.addEventListener('click', () => showPanel('controls'));
+        document.getElementById('sheet-menu-library-btn')?.addEventListener('click',  () => { showPanel('library'); libRender(); });
+        document.getElementById('sheet-controls-back-btn')?.addEventListener('click', () => showPanel('menu'));
+        document.getElementById('sheet-library-back-btn')?.addEventListener('click',  () => showPanel('menu'));
+        document.getElementById('sheet-menu-bm-btn')?.addEventListener('click', () => bmPageToggle());
+        document.getElementById('sheet-menu-toc-btn')?.addEventListener('click', () => { closeSheet(); openToc?.(); });
+        // sheet-menu-search-btn is wired inside the search IIFE below (needs access to openSearch)
+        document.getElementById('sheet-menu-prev-btn')?.addEventListener('click', () => {
+            const cur = visiblePage(), idx = sorted.indexOf(cur);
+            if (idx > 0) { jumpTo(sorted[idx - 1], true); closeSheet(); }
+        });
+        document.getElementById('sheet-menu-next-btn')?.addEventListener('click', () => {
+            const cur = visiblePage(), idx = sorted.indexOf(cur);
+            if (idx < sorted.length - 1) { jumpTo(sorted[idx + 1], true); closeSheet(); }
+        });
+
+        // ── Desktop topbar button wiring ──
+        function updateTopbarSliderFill(page) {
+            const tbSlider = document.getElementById('topbar-page-slider');
+            if (!tbSlider) return;
+            const min = parseInt(tbSlider.min, 10), max = parseInt(tbSlider.max, 10);
+            const pct = max > min ? Math.round(((page - min) / (max - min)) * 100) : 0;
+            tbSlider.style.setProperty('--tb-slider-pct', pct + '%');
+        }
+        const topbarPageSlider = document.getElementById('topbar-page-slider');
+        topbarPageSlider?.addEventListener('input', () => {
+            const raw = parseInt(topbarPageSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            if (topbarBadge) topbarBadge.textContent = nearest;
+            updateTopbarSliderFill(nearest);
+        });
+        topbarPageSlider?.addEventListener('change', () => {
+            const raw = parseInt(topbarPageSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            jumpTo(nearest, false);
+        });
+        document.getElementById('topbar-prev-btn')?.addEventListener('click', () => {
+            const cur = visiblePage(), idx = sorted.indexOf(cur);
+            if (idx > 0) jumpTo(sorted[idx - 1], true);
+        });
+        document.getElementById('topbar-next-btn')?.addEventListener('click', () => {
+            const cur = visiblePage(), idx = sorted.indexOf(cur);
+            if (idx < sorted.length - 1) jumpTo(sorted[idx + 1], true);
+        });
+        document.getElementById('topbar-toc-btn')?.addEventListener('click', () => openToc?.());
+        // topbar-bm-btn wired below (line ~1774) alongside fab-bm-btn
+        // topbar-search-btn wired inside search IIFE below
+        // topbar-theme-btn: cycle system → light → dark → system
+        document.getElementById('topbar-theme-btn')?.addEventListener('click', () => {
+            const current = loadTheme();
+            const next = current === 'system' ? 'light' : current === 'light' ? 'dark' : 'system';
+            saveTheme(next); applyTheme(next);
+            const icons = { system: 'fa-circle-half-stroke', light: 'fa-sun', dark: 'fa-moon' };
+            const btn = document.getElementById('topbar-theme-btn');
+            if (btn) {
+                const i = btn.querySelector('i');
+                if (i) { i.className = 'fa-solid ' + icons[next]; }
+                btn.title = next === 'system' ? 'Systeem' : next === 'light' ? 'Licht' : 'Donker';
+            }
         });
 
 
@@ -671,8 +836,29 @@
             const pct = ((val - min) / (max - min) * 100).toFixed(2) + '%';
             rpsSlider.style.setProperty('--rps-pct', pct);
         }
+        function updateMenuSliderFill() {
+            const s = document.getElementById('sheet-menu-page-slider');
+            if (!s) return;
+            const min = parseFloat(s.min) || 0, max = parseFloat(s.max) || 100, val = parseFloat(s.value) || min;
+            s.style.setProperty('--menu-slider-pct', ((val - min) / (max - min) * 100).toFixed(2) + '%');
+        }
         window.addEventListener('scroll', updateRpsFill, { passive: true });
         updateRpsFill();
+
+        // Menu panel page slider
+        const menuPageSlider = document.getElementById('sheet-menu-page-slider');
+        menuPageSlider?.addEventListener('input', () => {
+            const raw = parseInt(menuPageSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            const menuCurrent = document.getElementById('sheet-menu-current');
+            if (menuCurrent) menuCurrent.textContent = nearest + '/' + sorted[sorted.length - 1];
+            updateMenuSliderFill();
+        });
+        menuPageSlider?.addEventListener('change', () => {
+            const raw = parseInt(menuPageSlider.value, 10);
+            const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+            if (nearest) { jumpTo(nearest, false); closeSheet(); }
+        });
 
         // Sheet: prev / next
         sheetPrevBtn?.addEventListener('click', () => {
@@ -1122,20 +1308,10 @@
 
         function switchTab(tab) {
             if (tab === 'library') {
-                tabControls?.classList.remove('active');
-                tabLibrary?.classList.add('active');
-                tabControls?.setAttribute('aria-selected', 'false');
-                tabLibrary?.setAttribute('aria-selected', 'true');
-                if (panelControls) panelControls.hidden = true;
-                if (panelLibrary)  panelLibrary.removeAttribute('hidden');
+                showPanel('library');
                 libRender();
             } else {
-                tabLibrary?.classList.remove('active');
-                tabControls?.classList.add('active');
-                tabLibrary?.setAttribute('aria-selected', 'false');
-                tabControls?.setAttribute('aria-selected', 'true');
-                if (panelLibrary)  panelLibrary.hidden = true;
-                if (panelControls) panelControls.removeAttribute('hidden');
+                showPanel('controls');
             }
         }
         tabControls?.addEventListener('click', () => switchTab('controls'));
@@ -1497,6 +1673,11 @@
                 topbarBtn.classList.toggle('active', has);
                 topbarBtn.title = label;
                 topbarBtn.setAttribute('aria-label', label);
+                // Swap icon between hollow (regular) and filled (solid)
+                const topbarIcon = topbarBtn.querySelector('i');
+                if (topbarIcon) {
+                    topbarIcon.className = has ? 'fa-solid fa-bookmark' : 'fa-regular fa-bookmark';
+                }
             }
             // FAB bookmark button
             const fabBmBtn = document.getElementById('fab-bm-btn');
@@ -1504,6 +1685,22 @@
                 fabBmBtn.classList.toggle('active', has);
                 fabBmBtn.title = label;
                 fabBmBtn.setAttribute('aria-label', label);
+            }
+            // Sheet action bookmark button (inside the popup)
+            const sheetBmBtn = document.getElementById('sheet-bm-btn');
+            if (sheetBmBtn) {
+                sheetBmBtn.classList.toggle('active', has);
+                sheetBmBtn.title = label;
+                sheetBmBtn.setAttribute('aria-label', label);
+                const sheetBmSpan = sheetBmBtn.querySelector('span');
+                if (sheetBmSpan) sheetBmSpan.textContent = has ? 'Verwijderen' : 'Bladwijzer';
+            }
+            // Menu panel bookmark row (Apple Books style)
+            const menuBmRow = document.getElementById('sheet-menu-bm-btn');
+            if (menuBmRow) {
+                menuBmRow.classList.toggle('active', has);
+                const menuBmLabel = document.getElementById('sheet-menu-bm-label');
+                if (menuBmLabel) menuBmLabel.textContent = has ? 'Bladwijzer verwijderen' : 'Bladwijzer toevoegen';
             }
         }
 
@@ -1578,6 +1775,9 @@
             bmPageToggle();
         });
         document.getElementById('fab-bm-btn')?.addEventListener('click', () => {
+            bmPageToggle();
+        });
+        document.getElementById('sheet-bm-btn')?.addEventListener('click', () => {
             bmPageToggle();
         });
 
@@ -1819,6 +2019,15 @@
 
             openBtn?.addEventListener('click', openSearch);
             document.getElementById('fab-search-btn')?.addEventListener('click', openSearch);
+            document.getElementById('topbar-search-btn')?.addEventListener('click', openSearch);
+            document.getElementById('sheet-search-btn')?.addEventListener('click', () => {
+                closeSheet();
+                openSearch();
+            });
+            document.getElementById('sheet-menu-search-btn')?.addEventListener('click', () => {
+                closeSheet();
+                openSearch();
+            });
             closeBtn.addEventListener('click', closeSearch);
             backdrop.addEventListener('click', closeSearch);
             document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeSearch(); });
