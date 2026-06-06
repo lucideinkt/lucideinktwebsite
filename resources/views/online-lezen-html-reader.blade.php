@@ -441,7 +441,7 @@
     @if(!empty($tocEntries))
     <nav id="toc-panel" class="toc-panel" role="dialog" aria-label="Inhoudsopgave" aria-hidden="true">
         <div class="toc-panel-header">
-            <span class="toc-panel-title"><i class="fa-solid fa-list" style="margin-right:7px;font-size:12px;opacity:0.6;" aria-hidden="true"></i>Inhoudsopgave</span>
+            <span class="toc-panel-title"><i class="fa-solid fa-list" aria-hidden="true"></i>Inhoudsopgave</span>
             <button class="toc-panel-close" id="toc-close-btn" aria-label="Sluit inhoudsopgave">
                 <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
