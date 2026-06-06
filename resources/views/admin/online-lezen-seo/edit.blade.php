@@ -20,20 +20,20 @@
         <p class="text-xs text-green-700 dark:text-green-400 mb-0.5 truncate" id="preview-url">
           {{ $previewUrl }}
         </p>
-        <p class="text-base font-medium text-blue-700 dark:text-blue-400 leading-snug truncate" id="preview-title">
-          {{ $previewTitle }}
+        <p class="text-base font-medium text-blue-700 dark:text-blue-400 leading-snug">
+          <span id="preview-title-base">{{ $effectiveTitle }}</span>
         </p>
         <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2" id="preview-desc">
           {{ $effectiveDescription ?? 'Geen beschrijving ingesteld.' }}
         </p>
       </div>
       <p class="text-xs text-gray-400 dark:text-gray-500 mt-2">
-        De titel in zoekresultaten krijgt automatisch de suffix <em>" | Online Lezen | Lucide Inkt"</em>.
+        De preview toont de titel precies zoals die in zoekmachines verschijnt.
       </p>
     </div>
 
     {{-- Edit Form --}}
-    <form action="{{ route('admin.online-lezen-seo.update', $product->id) }}" method="POST">
+    <form action="{{ route('admin.online-lezen-seo.update', $product->id) }}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PUT')
 
@@ -64,32 +64,31 @@
         {{-- SEO Title --}}
         <div class="p-5">
           <div class="flex items-center justify-between mb-1">
-            <label for="seo_title" class="text-sm font-medium text-gray-700 dark:text-gray-300">
-              SEO Titel
-              <span class="font-normal text-gray-400 ml-1">(aanbevolen: 50–65 tekens)</span>
+            <label for="seo_title_online" class="text-sm font-medium text-gray-700 dark:text-gray-300">
+              SEO Titel <span class="font-normal text-gray-400 ml-1">(aanbevolen: 50–65 tekens)</span>
             </label>
             <button type="button"
-              data-fill-target="seo_title"
-              data-fill-value="{{ $product->title }}"
+              data-fill-target="seo_title_online"
+              data-fill-value="{{ $product->seo_title ?: $product->title }}"
               class="fill-default-btn text-xs text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap flex items-center gap-1">
               <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i> Gebruik standaard
             </button>
           </div>
           <input
             type="text"
-            id="seo_title"
-            name="seo_title"
-            value="{{ old('seo_title', $product->seo_title) }}"
+            id="seo_title_online"
+            name="seo_title_online"
+            value="{{ old('seo_title_online', $product->seo_title_online) }}"
             maxlength="70"
-            placeholder="{{ $product->title }}"
+            placeholder="{{ $product->seo_title ?: $product->title }}"
             class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
           >
           <div class="flex justify-between items-center mt-1">
             <p class="text-xs text-gray-400 dark:text-gray-500">
-              Leeg laten = producttitel als standaard. Suffix <em>" | Online Lezen | Lucide Inkt"</em> wordt automatisch toegevoegd.
+              Leeg laten = producttitel als standaard.
             </p>
             <span class="text-xs font-medium ml-2 whitespace-nowrap" id="title-count">
-              <span id="title-len">{{ mb_strlen($product->seo_title ?? '') }}</span>/70
+              <span id="title-len">{{ mb_strlen($product->seo_title_online ?? '') }}</span>/70
             </span>
           </div>
           {{-- Character range indicator --}}
@@ -107,33 +106,34 @@
         {{-- SEO Description --}}
         <div class="p-5">
           <div class="flex items-center justify-between mb-1">
-            <label for="seo_description" class="text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label for="seo_description_online" class="text-sm font-medium text-gray-700 dark:text-gray-300">
               SEO Beschrijving
               <span class="font-normal text-gray-400 ml-1">(aanbevolen: 120–165 tekens)</span>
             </label>
-            @if($product->short_description)
+            @php $defaultDesc = $product->seo_description ?: $product->short_description; @endphp
+            @if($defaultDesc)
               <button type="button"
-                data-fill-target="seo_description"
-                data-fill-value="{{ $product->short_description }}"
+                data-fill-target="seo_description_online"
+                data-fill-value="{{ $defaultDesc }}"
                 class="fill-default-btn text-xs text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap flex items-center gap-1">
                 <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i> Gebruik standaard
               </button>
             @endif
           </div>
           <textarea
-            id="seo_description"
-            name="seo_description"
+            id="seo_description_online"
+            name="seo_description_online"
             rows="3"
             maxlength="320"
-            placeholder="{{ $product->short_description ?? 'Voeg een beschrijving toe…' }}"
+            placeholder="{{ $defaultDesc ?? 'Voeg een beschrijving toe…' }}"
             class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
-          >{{ old('seo_description', $product->seo_description) }}</textarea>
+          >{{ old('seo_description_online', $product->seo_description_online) }}</textarea>
           <div class="flex justify-between items-center mt-1">
             <p class="text-xs text-gray-400 dark:text-gray-500">
-              Leeg laten = korte productbeschrijving als standaard.
+              Leeg laten = product SEO-beschrijving of korte beschrijving als standaard.
             </p>
             <span class="text-xs font-medium ml-2 whitespace-nowrap" id="desc-count">
-              <span id="desc-len">{{ mb_strlen($product->seo_description ?? '') }}</span>/320
+              <span id="desc-len">{{ mb_strlen($product->seo_description_online ?? '') }}</span>/320
             </span>
           </div>
           <div class="mt-1.5 flex items-center gap-2">
@@ -142,7 +142,119 @@
             </div>
             <span class="text-xs text-gray-400 dark:text-gray-500" id="desc-range-label">Ideaal: 120–165 tekens</span>
           </div>
-          @error('seo_description')
+          @error('seo_description_online')
+            <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+          @enderror
+        </div>
+
+        {{-- Author + Robots + Canonical --}}
+        <div class="p-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+          {{-- Author --}}
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label for="seo_author" class="text-sm font-medium text-gray-700 dark:text-gray-300">Auteur</label>
+              <button type="button"
+                data-fill-target="seo_author"
+                data-fill-value="Lucide Inkt"
+                class="fill-default-btn text-xs text-primary-600 dark:text-primary-400 hover:underline flex items-center gap-1">
+                <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i> Gebruik standaard
+              </button>
+            </div>
+            <input type="text" id="seo_author" name="seo_author"
+              value="{{ old('seo_author', $product->seo_author) }}"
+              placeholder="Lucide Inkt"
+              maxlength="100"
+              class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400">
+          </div>
+
+          {{-- Robots --}}
+          <div>
+            <label for="seo_robots_online" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Robots</label>
+            <select id="seo_robots_online" name="seo_robots_online"
+              class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <option value=""   {{ old('seo_robots_online', $product->seo_robots_online) == ''                   ? 'selected' : '' }}>Standaard (index, follow)</option>
+              <option value="noindex, nofollow" {{ old('seo_robots_online', $product->seo_robots_online) == 'noindex, nofollow' ? 'selected' : '' }}>noindex, nofollow</option>
+              <option value="noindex, follow"   {{ old('seo_robots_online', $product->seo_robots_online) == 'noindex, follow'   ? 'selected' : '' }}>noindex, follow</option>
+              <option value="index, nofollow"   {{ old('seo_robots_online', $product->seo_robots_online) == 'index, nofollow'   ? 'selected' : '' }}>index, nofollow</option>
+            </select>
+            <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">Standaard = zoekmachines mogen indexeren.</p>
+          </div>
+
+          {{-- Canonical URL --}}
+          <div class="sm:col-span-2">
+            <label for="seo_canonical_url_online" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+              Canonical URL
+              <span class="font-normal text-gray-400 ml-1">(optioneel)</span>
+            </label>
+            <input type="url" id="seo_canonical_url_online" name="seo_canonical_url_online"
+              value="{{ old('seo_canonical_url_online', $product->seo_canonical_url_online) }}"
+              placeholder="{{ route('onlineLezenRead', $product->slug) }}"
+              class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400">
+            <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">Leeg laten = automatisch de URL van deze pagina.</p>
+            @error('seo_canonical_url_online')
+              <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+            @enderror
+          </div>
+
+        </div>
+
+        {{-- Online Lezen Afbeelding --}}
+        <div class="p-5">
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Online Lezen Afbeelding
+              <span class="font-normal text-gray-400 ml-1">Aanbevolen: 800×1200px</span>
+            </label>
+          </div>
+
+          {{-- Current / default image preview --}}
+          <div class="flex items-start gap-4 mb-3">
+            <div>
+              <p class="text-xs text-gray-400 dark:text-gray-500 mb-1">Huidige afbeelding</p>
+              @php
+                $currentImg = $product->online_lezen_image
+                  ? asset($product->online_lezen_image)
+                  : null;
+                $defaultImg = $product->image_1
+                  ? (Str::startsWith($product->image_1, 'https://')
+                      ? $product->image_1
+                      : (Str::startsWith($product->image_1, 'image/') || Str::startsWith($product->image_1, 'images/')
+                          ? asset($product->image_1)
+                          : asset('storage/' . $product->image_1)))
+                  : null;
+              @endphp
+              <div id="ol-image-preview">
+                @if($currentImg)
+                  <img src="{{ $currentImg }}" alt="Online lezen afbeelding" class="w-24 h-32 object-contain rounded border border-gray-200 dark:border-gray-600">
+                @elseif($defaultImg)
+                  <img src="{{ $defaultImg }}" alt="Product afbeelding (standaard)" class="w-24 h-32 object-contain rounded border border-dashed border-gray-300 dark:border-gray-600 opacity-60">
+                  <p class="text-[10px] text-gray-400 dark:text-gray-500 mt-1 text-center">product (standaard)</p>
+                @else
+                  <div class="w-24 h-32 flex items-center justify-center rounded border border-dashed border-gray-300 dark:border-gray-600 text-gray-400">
+                    <i class="fa-solid fa-image text-2xl"></i>
+                  </div>
+                @endif
+              </div>
+            </div>
+          </div>
+
+          <input type="file" name="online_lezen_image" id="online_lezen_image_input" accept="image/*"
+            class="block w-full text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 dark:text-gray-400 dark:file:bg-gray-700 dark:file:text-gray-300 cursor-pointer">
+
+          @if($product->online_lezen_image)
+            <div class="flex items-center gap-2 mt-2" id="ol-delete-wrapper">
+              <input type="checkbox" name="delete_online_lezen_image" id="delete_online_lezen_image" value="1" class="hidden">
+              <button type="button" id="ol-remove-btn"
+                class="text-xs text-red-600 hover:underline dark:text-red-400">
+                <i class="fa-solid fa-trash-can mr-1"></i> Huidige afbeelding verwijderen
+              </button>
+            </div>
+          @endif
+          <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">
+            Leeg laten = productafbeelding wordt als standaard gebruikt.
+          </p>
+          @error('online_lezen_image')
             <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
           @enderror
         </div>
@@ -173,11 +285,10 @@
 @push('scripts')
 <script>
 (function () {
-  const titleInput = document.getElementById('seo_title');
-  const descInput  = document.getElementById('seo_description');
-  const previewTitle = document.getElementById('preview-title');
-  const previewDesc  = document.getElementById('preview-desc');
-  const SUFFIX = ' | Online Lezen | Lucide Inkt';
+  const titleInput    = document.getElementById('seo_title_online');
+  const descInput     = document.getElementById('seo_description_online');
+  const previewBase   = document.getElementById('preview-title-base');
+  const previewDesc   = document.getElementById('preview-desc');
   const DEFAULT_TITLE = @json($product->title);
   const DEFAULT_DESC  = @json($product->short_description ?? '');
 
@@ -206,7 +317,7 @@
     const len = val.length;
     document.getElementById('title-len').textContent = len;
     updateBar('title-bar', 'title-range-label', len, 50, 65, 70);
-    previewTitle.textContent = (val || DEFAULT_TITLE) + SUFFIX;
+    if (previewBase) previewBase.textContent = val || DEFAULT_TITLE;
   }
 
   function updateDesc() {
@@ -214,11 +325,40 @@
     const len = val.length;
     document.getElementById('desc-len').textContent = len;
     updateBar('desc-bar', 'desc-range-label', len, 120, 165, 320);
-    previewDesc.textContent = val || DEFAULT_DESC || 'Geen beschrijving ingesteld.';
+    if (previewDesc) previewDesc.textContent = val || DEFAULT_DESC || 'Geen beschrijving ingesteld.';
   }
 
   titleInput.addEventListener('input', updateTitle);
   descInput.addEventListener('input', updateDesc);
+
+  // Image upload preview
+  const olImageInput   = document.getElementById('online_lezen_image_input');
+  const olImagePreview = document.getElementById('ol-image-preview');
+  if (olImageInput && olImagePreview) {
+    olImageInput.addEventListener('change', function (e) {
+      if (e.target.files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function (ev) {
+          olImagePreview.innerHTML = '<img src="' + ev.target.result + '" alt="Preview" class="w-24 h-32 object-contain rounded border border-gray-200 dark:border-gray-600">';
+        };
+        reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  }
+
+  // Delete existing image
+  const olRemoveBtn  = document.getElementById('ol-remove-btn');
+  const olDeleteChk  = document.getElementById('delete_online_lezen_image');
+  const olDeleteWrap = document.getElementById('ol-delete-wrapper');
+  if (olRemoveBtn && olDeleteChk) {
+    olRemoveBtn.addEventListener('click', function () {
+      if (confirm('Weet je zeker dat je de huidige afbeelding wilt verwijderen?')) {
+        olDeleteChk.checked = true;
+        if (olImagePreview) olImagePreview.innerHTML = '';
+        if (olDeleteWrap)   olDeleteWrap.style.display = 'none';
+      }
+    });
+  }
 
   // "Gebruik standaard" buttons
   document.querySelectorAll('.fill-default-btn').forEach(function (btn) {
