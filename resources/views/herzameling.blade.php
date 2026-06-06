@@ -58,7 +58,7 @@
                     <a class="link-with-capital" href="{{ route('shop') }}">Bestel Hier</a>
                     |
                     <span class="lees-online-wrapper">
-                        <a class="link-with-capital" href="/bibliotheek/treatise-on-the-regathering-english-engels">Lees Online</a>
+                        <a class="link-with-capital" href="/bibliotheek/treatise-on-the-regathering-english">Lees Online</a>
                         <span class="lees-online-tooltip">Binnenkort insha'ALLAH! ✨</span>
                     </span>
                     </strong>
