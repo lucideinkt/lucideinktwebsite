@@ -1138,6 +1138,18 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             const plank = document.createElement('div');
             plank.className = 'bookshelf-plank';
             chunk.forEach(book => plank.appendChild(book.cloneNode(true)));
+
+            // Fill incomplete rows with invisible ghost books so real books
+            // keep the same width as books on full rows.
+            if (chunk.length < perRow) {
+                for (let j = chunk.length; j < perRow; j++) {
+                    const ghost = document.createElement('div');
+                    ghost.className = 'shelf-book shelf-book--ghost';
+                    ghost.setAttribute('aria-hidden', 'true');
+                    plank.appendChild(ghost);
+                }
+            }
+
             row.appendChild(plank);
             target.appendChild(row);
         }
