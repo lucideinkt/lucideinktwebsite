@@ -213,8 +213,13 @@
             <div>
               <p class="text-xs text-gray-400 dark:text-gray-500 mb-1">Huidige afbeelding</p>
               @php
-                $currentImg = $product->online_lezen_image
-                  ? asset($product->online_lezen_image)
+                $olImgPath = $product->online_lezen_image;
+                $currentImg = $olImgPath
+                  ? (Str::startsWith($olImgPath, 'http')
+                      ? $olImgPath
+                      : (Str::startsWith($olImgPath, 'images/')
+                          ? asset($olImgPath)
+                          : asset('storage/' . $olImgPath)))
                   : null;
                 $defaultImg = $product->image_1
                   ? (Str::startsWith($product->image_1, 'https://')
