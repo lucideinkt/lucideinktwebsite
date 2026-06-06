@@ -476,6 +476,8 @@
 
     {{-- Search panel --}}
     <div id="reader-search-panel" class="reader-search-panel" hidden role="dialog" aria-label="Zoeken in boek" aria-modal="true">
+        {{-- Drag handle — visible only on mobile (CSS hides on desktop) --}}
+        <div class="reader-search-drag-handle" aria-hidden="true"></div>
         <div class="reader-search-header">
             <span class="reader-search-title"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Zoeken</span>
             <button class="reader-search-close" id="reader-search-close" aria-label="Sluiten">
@@ -2009,54 +2011,42 @@
 
             let currentMark = null;
 
-            // ── Pin panel to visual viewport so keyboard open/close never moves it ──
-            // Only active on mobile (≤600px) — desktop uses CSS positioning
-            function isMobile() { return window.innerWidth <= 600; }
-            function pinPanelToViewport() {
-                if (!window.visualViewport || panel.hidden || !isMobile()) return;
-                const vv = window.visualViewport;
-                // Disable CSS transition while we reposition to avoid sliding animation
-                panel.style.transition = 'none';
-                panel.style.top    = vv.offsetTop + 'px';
-                panel.style.left   = vv.offsetLeft + 'px';
-                panel.style.width  = vv.width + 'px';
-                // Use layout viewport height (window.innerHeight) — does NOT change when keyboard opens
-                panel.style.height = window.innerHeight + 'px';
-                // Re-enable transition after repositioning (next frame)
-                requestAnimationFrame(() => {
-                    panel.style.transition = '';
-                });
-            }
-            function startPinning() {
-                if (!window.visualViewport) return;
-                window.visualViewport.addEventListener('resize', pinPanelToViewport);
-                window.visualViewport.addEventListener('scroll', pinPanelToViewport);
-                pinPanelToViewport();
-            }
+            // ── Pin panel to visual viewport ──────────────────────────────────
+            // On mobile the panel is full-screen; iOS keeps fixed elements in
+            // place when the keyboard opens so no JS repositioning is needed.
+            // On desktop the panel slides in from the right — also no pinning.
+            // We keep startPinning/stopPinning as no-ops so the rest of the
+            // code doesn't need changing.
+            function isMobile() { return window.innerWidth <= 1024; }
+            function pinPanelToViewport() { /* no-op — full-screen panel needs no repositioning */ }
+            function startPinning() { /* no-op */ }
             function stopPinning() {
-                if (!window.visualViewport) return;
-                window.visualViewport.removeEventListener('resize', pinPanelToViewport);
-                window.visualViewport.removeEventListener('scroll', pinPanelToViewport);
-                // Only clear inline styles if we're on mobile (desktop was never touched)
                 if (isMobile()) {
-                    panel.style.top = panel.style.left = panel.style.width = panel.style.height = panel.style.transition = '';
+                    panel.style.bottom = panel.style.transition = '';
                 }
             }
 
             function openSearch() {
                 panel.hidden = false;
                 backdrop.classList.add('open');
+                // ── iOS Safari focus fix ──────────────────────────────────────────
+                // input.focus() MUST be called synchronously within the user-gesture
+                // call stack (here, before any setTimeout/rAF) for the software
+                // keyboard to open on real iOS devices.
+                // The panel is off-screen (via transform) but NOT display:none at
+                // this point, so focus works and the keyboard opens.
+                input.focus({ preventScroll: true });
+                // Animate the panel in on the next paint
                 requestAnimationFrame(() => {
                     panel.classList.add('open');
                     startPinning();
                 });
-                setTimeout(() => input.focus({ preventScroll: true }), 50);
             }
             function closeSearch() {
                 stopPinning();
                 panel.classList.remove('open');
                 backdrop.classList.remove('open');
-                setTimeout(() => { panel.hidden = true; }, 220);
+                setTimeout(() => { panel.hidden = true; }, 280);
                 // Note: highlights are intentionally NOT cleared here —
                 // they only clear when a new search result is clicked.
             }
@@ -2164,11 +2154,9 @@
                 input.value = ''; clearBtn.hidden = true;
                 metaEl.textContent = ''; resultsEl.innerHTML = '';
                 clearHighlight();
-                pinPanelToViewport(); // re-pin before focus to prevent shift
-                const savedY = window.scrollY;
+                // Refocus synchronously — no scroll restoration needed for the
+                // bottom-sheet design; iOS will simply keep the keyboard open.
                 input.focus({ preventScroll: true });
-                setTimeout(() => window.scrollTo(0, savedY), 50);
-                setTimeout(() => window.scrollTo(0, savedY), 200);
             });
 
             let searchTimer = null;
@@ -2360,16 +2348,9 @@
                 }
             });
         }
-
-        // When search input is focused (keyboard about to open), snapshot Y and restore it
-        document.addEventListener('focusin', function (e) {
-            if (e.target.matches('input, textarea, select')) {
-                const savedY = window.scrollY;
-                setTimeout(() => window.scrollTo(0, savedY), 50);
-                setTimeout(() => window.scrollTo(0, savedY), 200);
-                setTimeout(() => window.scrollTo(0, savedY), 500);
-            }
-        }, { passive: true });
+        // Note: we deliberately do NOT restore scrollY on focusin here anymore.
+        // The search panel is a bottom sheet — iOS keeps the reader page behind
+        // it exactly where it was; no scroll restoration is needed.
     })();
     </script>
 </div>
