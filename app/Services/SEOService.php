@@ -203,8 +203,8 @@ class SEOService
                 'type'        => 'article',
             ],
             'herzameling' => [
-                'title'       => 'Hiernamaals & Leven na de Dood — Het Traktaat over de Herzameling | Risale-i Nur | Lucide Inkt',
-                'description' => 'Wat is het hiernamaals en bestaat er leven na de dood? De Risale-i Nur beantwoordt deze cruciale vragen met onbetwistbare redenaties in het Traktaat over de Herzameling.',
+                'title'       => 'Bestaat er Leven na de Dood? — Risale-i Nur | Lucide Inkt',
+                'description' => 'Bestaat er leven na de dood? De Risale-i Nur bewijst met rationele argumenten dat het hiernamaals noodzakelijk is — ontdek het Traktaat over de Herzameling.',
                 'url'         => route('herzameling'),
                 'image'       => secure_url('images/herzameling_social.jpg'),
                 'type'        => 'article',
