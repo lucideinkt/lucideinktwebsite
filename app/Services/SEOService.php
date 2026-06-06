@@ -189,8 +189,8 @@ class SEOService
 
             // ── Inner pages: topic first ─────────────────────────────────────
             'saidnursi' => [
-                'title'       => 'Bediüzzaman Said Nursi | Lucide Inkt',
-                'description' => 'Ik zal de wereld bewijzen dat de Qur\'an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!',
+                'title'       => 'Said Nursi – Wie is Bediüzzaman Said Nursi? | Lucide Inkt',
+                'description' => 'Said Nursi (1878–1960), bekend als Bediüzzaman, wijdde zijn leven aan de dienst van de Qur\'an en schreef de Risale-i Nur. Ontdek zijn leven en erfenis.',
                 'url'         => route('saidnursi'),
                 'image'       => secure_url('images/said_nursi_social.jpg'),
                 'type'        => 'article',
