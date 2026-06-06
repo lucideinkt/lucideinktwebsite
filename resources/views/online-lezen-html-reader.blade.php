@@ -4,23 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="preload" href="/fonts/OmarNaskh-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    @php
+        $seoTitle        = $SEOData->title        ?? $product->title;
+        $seoDescription  = $SEOData->description  ?? $product->short_description ?? '';
+        $seoUrl          = $SEOData->url           ?? url()->current();
+        $seoCanonical    = $SEOData->canonical_url ?? $seoUrl;
+        $seoImage        = $SEOData->image         ?? secure_url('images/books_standing_new.webp');
+        $seoAuthor       = $SEOData->author        ?? 'Lucide Inkt';
+        $seoRobots       = $SEOData->robots        ?? null;
+        $publishedTime   = $SEOData->published_time ?? $product->created_at ?? null;
+        $modifiedTime    = $SEOData->modified_time  ?? $product->updated_at  ?? null;
+    @endphp
+
     @if(!app()->environment('production'))
     <meta name="robots" content="noindex, nofollow">
+    @elseif($seoRobots)
+    <meta name="robots" content="{{ $seoRobots }}">
     @endif
-
-
-    @php
-        $seoTitle       = $SEOData->title       ?? ($product->title . ' | Online Lezen | Lucide Inkt');
-        $seoDescription = $SEOData->description ?? ($product->short_description ?? 'Lees ' . $product->title . ' online bij Lucide Inkt.');
-        $seoUrl         = $SEOData->url         ?? url()->current();
-        $seoImage       = $SEOData->image       ?? ($product->image_1 ? secure_url($product->image_1) : secure_url('images/books_standing_new.webp'));
-        $seoAuthor      = $SEOData->author      ?? 'Lucide Inkt';
-    @endphp
 
     <title>{{ $seoTitle }}</title>
     <meta name="description" content="{{ $seoDescription }}">
-    <meta name="author" content="{{ $seoAuthor }}">
-    <link rel="canonical" href="{{ $seoUrl }}">
+    <meta name="author"      content="{{ $seoAuthor }}">
+    <link rel="canonical"    href="{{ $seoCanonical }}">
 
     {{-- Open Graph --}}
     <meta property="og:type"        content="article">
@@ -30,12 +35,12 @@
     <meta property="og:description" content="{{ $seoDescription }}">
     <meta property="og:url"         content="{{ $seoUrl }}">
     <meta property="og:image"       content="{{ $seoImage }}">
-    <meta property="og:image:alt"   content="{{ $product->title }}">
-    @if($product->created_at)
-    <meta property="article:published_time" content="{{ $product->created_at->toIso8601String() }}">
+    <meta property="og:image:alt"   content="{{ $seoTitle }}">
+    @if($publishedTime)
+    <meta property="article:published_time" content="{{ $publishedTime instanceof \Carbon\Carbon ? $publishedTime->toIso8601String() : $publishedTime }}">
     @endif
-    @if($product->updated_at)
-    <meta property="article:modified_time"  content="{{ $product->updated_at->toIso8601String() }}">
+    @if($modifiedTime)
+    <meta property="article:modified_time"  content="{{ $modifiedTime instanceof \Carbon\Carbon ? $modifiedTime->toIso8601String() : $modifiedTime }}">
     @endif
 
     {{-- Twitter Card --}}

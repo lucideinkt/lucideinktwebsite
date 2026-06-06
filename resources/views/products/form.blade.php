@@ -173,22 +173,6 @@
               <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Max 50MB. Maakt boek beschikbaar in Online Lezen bibliotheek.</p>
               @error('pdf_file')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
             </div>
-            <div>
-              <label for="online_lezen_image" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Online lezen afbeelding</label>
-              <div id="online_lezen_image_preview" class="mb-2">
-                @if(isset($product) && $product->online_lezen_image)
-                  <img src="{{ asset($product->online_lezen_image) }}" alt="Online Lezen" class="w-24 h-24 object-contain rounded border border-gray-200 dark:border-gray-600">
-                @endif
-              </div>
-              <input type="file" name="online_lezen_image" id="online_lezen_image" accept="image/*"
-                class="block w-full text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 dark:text-gray-400 dark:file:bg-gray-700 dark:file:text-gray-300 cursor-pointer">
-              @if(isset($product) && $product->online_lezen_image)
-                <button type="button" id="remove-online-lezen-image-btn" class="mt-2 text-xs text-red-600 hover:underline dark:text-red-400">Verwijder afbeelding</button>
-                <input type="checkbox" name="delete_online_lezen_image" id="delete_online_lezen_image" value="1" class="hidden">
-              @endif
-              <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Aanbevolen: 800x1200px. Max 5MB.</p>
-              @error('online_lezen_image')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
-            </div>
           </div>
         </div>
 
@@ -511,18 +495,6 @@
         });
       }
 
-      const removeOnlineLezenImageBtn = document.getElementById('remove-online-lezen-image-btn');
-      const deleteOnlineLezenImageCheckbox = document.getElementById('delete_online_lezen_image');
-      const onlineLezenImagePreview = document.getElementById('online_lezen_image_preview');
-      if (removeOnlineLezenImageBtn && deleteOnlineLezenImageCheckbox) {
-        removeOnlineLezenImageBtn.addEventListener('click', function() {
-          if (confirm('Weet je zeker dat je deze afbeelding wilt verwijderen?')) {
-            deleteOnlineLezenImageCheckbox.checked = true;
-            removeOnlineLezenImageBtn.style.display = 'none';
-            if (onlineLezenImagePreview) onlineLezenImagePreview.innerHTML = '';
-          }
-        });
-      }
 
       const onlineLezenImageInput = document.getElementById('online_lezen_image');
       if (onlineLezenImageInput && onlineLezenImagePreview) {

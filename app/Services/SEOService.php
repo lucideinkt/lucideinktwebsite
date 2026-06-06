@@ -334,7 +334,7 @@ class SEOService
     public static function getProductSEO($product, string $context = 'shop'): SEOData
     {
         $titleSuffix = match($context) {
-            'online-lezen', 'online-lezen-html' => ' | Online Lezen | Lucide Inkt',
+            'online-lezen', 'online-lezen-html' => '',
             'audiobooks'                         => ' | Audioboeken | Lucide Inkt',
             default                              => ' | Lucide Inkt',
         };
@@ -346,19 +346,47 @@ class SEOService
             default             => route('productShow', $product->slug),
         };
 
-        // Use product image for OG only when it is a JPEG (solid background).
-        // WebP book covers may be transparent — fall back to the solid site banner.
-        $ogImage = self::resolveOgImage($product->image_1);
+        // Use context-specific SEO fields when available, fall back to generic fields
+        $isOnline = in_array($context, ['online-lezen', 'online-lezen-html']);
+
+        $seoTitle = $isOnline
+            ? ($product->seo_title_online ?: ($product->seo_title ?: $product->title))
+            : ($product->seo_title ?: $product->title);
+
+        // Strip any previously baked-in suffix so it is never doubled
+        $seoTitle = preg_replace('/\s*\|.*?(Lucide Inkt|Online Lezen|Audioboeken)\s*$/i', '', trim($seoTitle));
+
+        $seoDescription = $isOnline
+            ? ($product->seo_description_online ?: ($product->seo_description ?: $product->short_description ?: 'Ontdek ' . $product->title . ' bij Lucide Inkt.'))
+            : ($product->seo_description ?: $product->short_description ?: 'Ontdek ' . $product->title . ' bij Lucide Inkt.');
+
+        $seoRobots = $isOnline
+            ? ($product->seo_robots_online ?: null)   // never inherit shop robots for online library
+            : ($product->seo_robots ?: null);
+
+        $seoCanonical = $isOnline
+            ? ($product->seo_canonical_url_online ?: null)
+            : ($product->seo_canonical_url ?: null);
+
+        $seoAuthor = $product->seo_author ?: 'Lucide Inkt';
+
+        // Resolve OG image: for online-lezen prefer the dedicated online image
+        $ogImageSource = ($isOnline && !empty($product->online_lezen_image))
+            ? $product->online_lezen_image
+            : $product->image_1;
+        $ogImage = self::resolveOgImage($ogImageSource);
 
         return new SEOData(
-            title: $product->title . $titleSuffix,
-            description: $product->seo_description ?: $product->short_description ?: 'Ontdek ' . $product->title . ' bij Lucide Inkt.',
+            title: $seoTitle . $titleSuffix,
+            description: $seoDescription,
             url: $url,
             image: $ogImage,
-            author: 'Lucide Inkt',
+            author: $seoAuthor,
             locale: 'nl_NL',
             site_name: 'Lucide Inkt',
             type: 'article',
+            robots: $seoRobots,
+            canonical_url: $seoCanonical,
             published_time: $product->created_at ?? null,
             modified_time: $product->updated_at ?? null,
         );
@@ -388,7 +416,13 @@ class SEOService
             return secure_url($imagePath);
         }
 
-        // WebP and PNG may be transparent — use solid product fallback
+        // Uploaded WebP/PNG from storage are user-controlled flat images — allow them.
+        // Only book cover WebP assets (images/ prefix) may be transparent — use fallback for those.
+        if (in_array($ext, ['webp', 'png']) && str_starts_with($imagePath, 'products/')) {
+            return secure_url('storage/' . $imagePath);
+        }
+
+        // WebP and PNG from the public images/ folder may be transparent — use solid fallback
         return secure_url(self::PRODUCT_FALLBACK_IMAGE);
     }
 }

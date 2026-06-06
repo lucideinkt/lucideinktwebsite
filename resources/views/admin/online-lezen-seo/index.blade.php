@@ -55,10 +55,14 @@
                         ? asset($product->image_1)
                         : asset('storage/' . $product->image_1)))
                 : null;
-              $effectiveTitle = $product->seo_title ?: $product->title;
-              $effectiveDesc  = $product->seo_description ?: $product->short_description;
-              $titleLen       = mb_strlen($effectiveTitle);
-              $descLen        = mb_strlen($effectiveDesc ?? '');
+              // Effective online-lezen specific SEO (does NOT fall back to shared fields for display purposes)
+              $onlineTitle = $product->seo_title_online;
+              $onlineDesc  = $product->seo_description_online;
+              // Fallback labels for display
+              $displayTitle = $onlineTitle ?: ($product->seo_title ?: $product->title);
+              $displayDesc  = $onlineDesc  ?: ($product->seo_description ?: $product->short_description);
+              $titleLen = mb_strlen($displayTitle ?? '');
+              $descLen  = mb_strlen($displayDesc  ?? '');
             @endphp
             <tr class="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700">
 
@@ -77,29 +81,37 @@
 
               {{-- SEO Titel --}}
               <td class="px-4 py-2 max-w-[220px]">
-                <p class="text-xs text-gray-800 dark:text-gray-200 truncate" title="{{ $effectiveTitle }}">
-                  {{ $effectiveTitle }}
+                <p class="text-xs text-gray-800 dark:text-gray-200 truncate" title="{{ $displayTitle }}">
+                  {{ $displayTitle }}
                 </p>
-                <p class="text-xs mt-0.5 {{ $titleLen >= 50 && $titleLen <= 65 ? 'text-green-600 dark:text-green-400' : ($titleLen > 65 ? 'text-red-500' : 'text-amber-500') }}">
-                  {{ $titleLen }} tekens
-                  @if(!$product->seo_title)
-                    <span class="text-gray-400 dark:text-gray-500">(standaard)</span>
+                <div class="flex items-center gap-1.5 mt-0.5">
+                  <span class="text-xs {{ $titleLen >= 50 && $titleLen <= 65 ? 'text-green-600 dark:text-green-400' : ($titleLen > 65 ? 'text-red-500' : 'text-amber-500') }}">
+                    {{ $titleLen }} tekens
+                  </span>
+                  @if($onlineTitle)
+                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300">online</span>
+                  @else
+                    <span class="text-[10px] text-gray-400 dark:text-gray-500">(standaard)</span>
                   @endif
-                </p>
+                </div>
               </td>
 
               {{-- SEO Beschrijving --}}
               <td class="px-4 py-2 max-w-[260px]">
-                @if($effectiveDesc)
-                  <p class="text-xs text-gray-800 dark:text-gray-200 line-clamp-2" title="{{ $effectiveDesc }}">
-                    {{ $effectiveDesc }}
+                @if($displayDesc)
+                  <p class="text-xs text-gray-800 dark:text-gray-200 line-clamp-2" title="{{ $displayDesc }}">
+                    {{ $displayDesc }}
                   </p>
-                  <p class="text-xs mt-0.5 {{ $descLen >= 120 && $descLen <= 165 ? 'text-green-600 dark:text-green-400' : ($descLen > 165 ? 'text-amber-500' : 'text-red-500') }}">
-                    {{ $descLen }} tekens
-                    @if(!$product->seo_description)
-                      <span class="text-gray-400 dark:text-gray-500">(standaard)</span>
+                  <div class="flex items-center gap-1.5 mt-0.5">
+                    <span class="text-xs {{ $descLen >= 120 && $descLen <= 165 ? 'text-green-600 dark:text-green-400' : ($descLen > 165 ? 'text-amber-500' : 'text-red-500') }}">
+                      {{ $descLen }} tekens
+                    </span>
+                    @if($onlineDesc)
+                      <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300">online</span>
+                    @else
+                      <span class="text-[10px] text-gray-400 dark:text-gray-500">(standaard)</span>
                     @endif
-                  </p>
+                  </div>
                 @else
                   <span class="text-xs text-red-500">Geen beschrijving</span>
                 @endif
