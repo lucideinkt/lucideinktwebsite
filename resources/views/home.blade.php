@@ -255,7 +255,7 @@
                 </div>
 
                 <div class="risale-image">
-                    <img src="{{ asset('images/books_standing_new.webp') }}" alt="Risale-i Nur boeken in het Nederlands en Engels - collectie van Lucide Inkt" title="Risale-i Nur — Nederlandse en Engelse vertalingen" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/risale-i-nur-boeken-collectie.webp') }}" alt="Risale-i Nur boeken in het Nederlands en Engels - collectie van Lucide Inkt" title="Risale-i Nur — Nederlandse en Engelse vertalingen" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
