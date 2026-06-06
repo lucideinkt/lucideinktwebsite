@@ -87,6 +87,18 @@
         </button>
 
         @if($product->pdf_file)
+            {{-- Loading overlay: shown until PDF.js fires its first page render --}}
+            <div id="pdf-loading-overlay" style="
+                position:fixed;inset:0;background:#1a1a1a;z-index:10000;
+                display:flex;flex-direction:column;align-items:center;justify-content:center;
+                color:#c9a84c;font-family:serif;gap:16px;transition:opacity .4s ease;">
+                <i class="fa-solid fa-book-open" style="font-size:48px;animation:pulse 1.5s infinite;"></i>
+                <div id="pdf-loading-label" style="font-size:16px;letter-spacing:.05em;">Boek wordt geladen…</div>
+                <div style="width:220px;height:4px;background:#333;border-radius:2px;overflow:hidden;">
+                    <div id="pdf-loading-bar" style="height:100%;width:0%;background:#c9a84c;border-radius:2px;transition:width .3s ease;"></div>
+                </div>
+            </div>
+            <style>@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}</style>
             <iframe
                 id="pdf-viewer-fullscreen"
                 class="pdf-iframe-fullscreen"
@@ -110,11 +122,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             const pdfViewer = document.getElementById('pdf-viewer-fullscreen');
             const closeBtn = document.getElementById('closeFullscreenBtn');
+            const loadingOverlay = document.getElementById('pdf-loading-overlay');
+            const loadingBar     = document.getElementById('pdf-loading-bar');
+            const loadingLabel   = document.getElementById('pdf-loading-label');
+
             @php
                 $pdfFullPath = storage_path('app/public/' . $product->pdf_file);
                 $pdfVersion  = file_exists($pdfFullPath) ? filemtime($pdfFullPath) : 0;
             @endphp
-            const pdfUrl = "{{ route('pdf.proxy', ['path' => $product->pdf_file]) }}?v={{ $pdfVersion }}";
+
+            {{-- Serve directly via /storage/ (Nginx, no PHP overhead) with cache-busting version --}}
+            const pdfUrl = "{{ asset('storage/' . $product->pdf_file) }}?v={{ $pdfVersion }}";
             const storageKey = 'pdf_last_page_{{ $product->id }}';
             const PRODUCT_ID    = {{ $product->id }};
             const PRODUCT_TITLE = @json($product->title);
@@ -176,6 +194,52 @@
             }
 
             pdfViewer.src = viewerUrl;
+
+            // ── Loading overlay: animate bar, dismiss when PDF.js renders page 1 ──
+            let loadProgress = 5;
+            const progressTimer = setInterval(function () {
+                // Fake progress bar that crawls to 85% while waiting
+                if (loadProgress < 85) {
+                    loadProgress += (85 - loadProgress) * 0.04;
+                    if (loadingBar) loadingBar.style.width = loadProgress.toFixed(1) + '%';
+                }
+            }, 150);
+
+            function dismissOverlay() {
+                clearInterval(progressTimer);
+                if (loadingBar)     loadingBar.style.width = '100%';
+                if (loadingLabel)   loadingLabel.textContent = 'Klaar!';
+                setTimeout(function () {
+                    if (loadingOverlay) {
+                        loadingOverlay.style.opacity = '0';
+                        setTimeout(function () {
+                            if (loadingOverlay) loadingOverlay.style.display = 'none';
+                        }, 450);
+                    }
+                }, 200);
+            }
+
+            // Poll until PDF.js fires its first pagerendered event inside the iframe
+            pdfViewer.addEventListener('load', function () {
+                let attempts = 0;
+                (function waitForPdfJs() {
+                    try {
+                        const iWin = pdfViewer.contentWindow;
+                        if (iWin && iWin.PDFViewerApplication && iWin.PDFViewerApplication.eventBus) {
+                            iWin.PDFViewerApplication.eventBus.on('pagerendered', function handler() {
+                                iWin.PDFViewerApplication.eventBus.off('pagerendered', handler);
+                                dismissOverlay();
+                            });
+                            return;
+                        }
+                    } catch (e) {}
+                    if (++attempts < 100) setTimeout(waitForPdfJs, 100);
+                    else dismissOverlay(); // fallback: give up after 10s
+                })();
+            });
+
+            // Fallback: dismiss after 12 seconds regardless
+            setTimeout(dismissOverlay, 12000);
 
             // ── Search highlighting ───────────────────────────────────────────
             // When a ?q= parameter is present, trigger PDF.js find after load.

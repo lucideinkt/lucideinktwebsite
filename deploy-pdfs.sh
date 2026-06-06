@@ -32,6 +32,11 @@ PDFS=(
     "regathering.pdf"
     "broederschap.pdf"
     "zieken.pdf"
+    "afwegingen.pdf"
+    "geloofswaarheden.pdf"
+    "mirakelen.pdf"
+    "natuur.pdf"
+    "ramadan.pdf"
 )
 # ────────────────────────────────────────────────────────────
 
@@ -69,8 +74,19 @@ echo -e "${BLUE}📡 Verbinding: ${SSH_USER}@${SSH_HOST}:${SSH_PORT}${NC}"
 echo -e "${BLUE}📁 App path:   ${APP_PATH}${NC}"
 echo ""
 
-# ── Stap 1: Upload PDF bestanden ────────────────────────────
-echo -e "${BLUE}📤 Stap 1: PDF bestanden uploaden...${NC}"
+# ── Stap 1: Lineariseer PDFs lokaal ────────────────────────
+echo -e "${BLUE}📐 Stap 1: PDFs lineariseren (Fast Web View)...${NC}"
+echo "-----------------------------------------------------------"
+if python3 -c "import pikepdf" &>/dev/null 2>&1; then
+    python3 "$(dirname "$0")/linearize_pdfs.py"
+    echo -e "${GREEN}✅ Linearisatie klaar${NC}"
+else
+    echo -e "${YELLOW}⚠️  pikepdf niet gevonden – linearisatie overgeslagen (pip3 install pikepdf)${NC}"
+fi
+echo ""
+
+# ── Stap 2: Upload PDF bestanden ────────────────────────────
+echo -e "${BLUE}📤 Stap 2: PDF bestanden uploaden...${NC}"
 echo "-----------------------------------------------------------"
 
 REMOTE_PDF_DIR="${APP_PATH}/storage/app/public/pdfs"
@@ -96,8 +112,8 @@ for PDF in "${PDFS[@]}"; do
 done
 echo ""
 
-# ── Stap 2: Draai artisan migrate ───────────────────────────
-echo -e "${BLUE}🗄️  Stap 2: Database migratie uitvoeren...${NC}"
+# ── Stap 3: Draai artisan migrate ───────────────────────────
+echo -e "${BLUE}🗄️  Stap 3: Database migratie uitvoeren...${NC}"
 echo "-----------------------------------------------------------"
 ssh -p ${SSH_PORT} ${SSH_USER}@${SSH_HOST} \
     "cd ${APP_PATH} && php artisan migrate --force 2>&1"
@@ -109,8 +125,8 @@ else
 fi
 echo ""
 
-# ── Stap 3: Indexeer PDF inhoud ─────────────────────────────
-echo -e "${BLUE}🔍 Stap 3: PDF tekst indexeren (doorzoekbaar maken)...${NC}"
+# ── Stap 4: Indexeer PDF inhoud ─────────────────────────────
+echo -e "${BLUE}🔍 Stap 4: PDF tekst indexeren (doorzoekbaar maken)...${NC}"
 echo "-----------------------------------------------------------"
 ssh -p ${SSH_PORT} ${SSH_USER}@${SSH_HOST} \
     "cd ${APP_PATH} && php -d memory_limit=512M artisan pdf:index --force 2>&1"
@@ -121,16 +137,16 @@ else
 fi
 echo ""
 
-# ── Stap 4: Bestandspermissies fixen ────────────────────────
-echo -e "${BLUE}🔐 Stap 4: Bestandspermissies instellen...${NC}"
+# ── Stap 5: Bestandspermissies fixen ────────────────────────
+echo -e "${BLUE}🔐 Stap 5: Bestandspermissies instellen...${NC}"
 echo "-----------------------------------------------------------"
 ssh -p ${SSH_PORT} ${SSH_USER}@${SSH_HOST} \
     "chmod 644 ${APP_PATH}/storage/app/public/pdfs/*.pdf 2>/dev/null; echo 'Permissies OK'"
 echo -e "${GREEN}✅ Permissies ingesteld${NC}"
 echo ""
 
-# ── Stap 5: Caches leegmaken ────────────────────────────────
-echo -e "${BLUE}🗑️  Stap 5: Caches leegmaken...${NC}"
+# ── Stap 6: Caches leegmaken ────────────────────────────────
+echo -e "${BLUE}🗑️  Stap 6: Caches leegmaken...${NC}"
 echo "-----------------------------------------------------------"
 ssh -p ${SSH_PORT} ${SSH_USER}@${SSH_HOST} \
     "cd ${APP_PATH} && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan route:clear 2>&1"
@@ -146,6 +162,7 @@ echo "============================================================"
 echo -e "${GREEN}🎉 DEPLOY COMPLEET!${NC}"
 echo "============================================================"
 echo ""
+echo -e "  ${GREEN}✅${NC} PDFs gelineariseerd (Fast Web View – pagina 1 laadt direct)"
 echo -e "  ${GREEN}✅${NC} PDF bestanden geüpload"
 echo -e "  ${GREEN}✅${NC} Database bijgewerkt (product titels & PDF links)"
 echo -e "  ${GREEN}✅${NC} PDF tekst geïndexeerd (zoekfunctie actief)"
@@ -155,4 +172,7 @@ echo -e "${YELLOW}📌 Check in het dashboard:${NC}"
 echo "   → Book Content → 'Treatise on the Regathering - English'"
 echo "      moet 'PDF aanwezig' + 'Ingeschakeld' tonen"
 echo ""
-
+echo -e "${YELLOW}💡 Cloudways tip voor nog snellere laadtijden:${NC}"
+echo "   → Cloudways Dashboard → Application → CDN → Enable Cloudflare CDN"
+echo "   → Zorgt dat PDFs worden gecached op edge servers wereldwijd"
+echo ""
