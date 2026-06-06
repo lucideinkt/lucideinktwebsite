@@ -13,7 +13,12 @@
         <div class="gradient-border"></div>
         <div class="text-box-background">
             <div class="risale-i-nur-page__text-box">
-                <h1 class="title"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</h1>
+                <h1 class="title" aria-label="Wat is de Risale-i Nur? De Spirituele Qur'an Tafsir">
+                    <span class="sr-only">Wat is de Risale-i Nur? De Spirituele Qur'an Tafsir</span>
+                    <span aria-hidden="true"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</span>
+                </h1>
+
+                <h2 class="sr-only">Qur'an Tafsir: letterlijk en spiritueel</h2>
                 <p class="let-desk">
                     Tafsirs zijn Qur'anexegeses die in <strong>twee categorieën</strong> worden onderscheiden: <strong>de letterlijke en
                         <br>de spirituele</strong>
@@ -31,8 +36,9 @@
                     <strong>Bij de tweede</strong>, spirituele Tafsirs worden Qur'anische geloofswaarheden met krachtige redeneringen aan het licht gebracht, beargumenteerd en ontvouwd. Hoewel deze tweede soort van eminent belang is, wordt ze in de letterlijke Tafsirs soms slechts ter aanvulling beknopt opgenomen.
                     </p>
 
-                <img class="stapel-one" src="{{ asset('images/boeken-stapel.webp') }}" alt="Risale-i Nur" loading="lazy" decoding="async">
+                <img class="stapel-one" src="{{ asset('images/risale-i-nur-quran-tafsir-boeken.webp') }}" alt="Risale-i Nur — spirituele Qur'an tafsir boeken collectie" title="Risale-i Nur: Spirituele Qur'an Tafsir" loading="lazy" decoding="async">
 
+                <h2 class="sr-only">Risale-i Nur als spirituele Qur'an Tafsir</h2>
                     <p>
                     <strong>In de Risale-i Nur daarentegen</strong> wordt deze tweede benadering niet ter aanvulling, maar direct als grondslag gehanteerd. De verankering van fundamentele geloofswaarheden is het primaire doel van deze spirituele Tafsir. Immers, tegenover de hedendaagse spirituele ziektes en antireligieuze indoctrinaties kan een geloofsovertuiging die op navolging berust moeilijk standhouden.
 
@@ -40,7 +46,7 @@
 
                         Om een onwrikbare overtuiging en een bewust geloof te verschaffen,
 
-                        <img class="stapel-two" src="{{ asset('images/boeken-stapel.webp') }}" alt="Risale-i Nur" loading="lazy" decoding="async">
+                        <img class="stapel-two" src="{{ asset('images/risale-i-nur-quran-tafsir-boeken.webp') }}" alt="Risale-i Nur — spirituele Qur'an tafsir boeken collectie" title="Risale-i Nur: Spirituele Qur'an Tafsir" loading="lazy" decoding="async">
 
                         heeft de Risale-i Nur derhalve elke vorm van subjectiviteit vermeden; met uiterst objectieve, rationele en doorslaggevende argumenten worden in deze gezegende boekenreeks zelfs de lastigste geloofswaarheden volwaardig uiteengezet.
 
