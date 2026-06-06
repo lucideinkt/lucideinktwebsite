@@ -18,8 +18,8 @@
 
             <div class="said-nursi-page__text-box">
 
-                <h1 class="title" aria-label="Wie is Said Nursî?">
-                    <span class="sr-only">Wie is Said Nursî?</span>
+                <h1 class="title" aria-label="Wie is Said Nursi?">
+                    <span class="sr-only">Wie is Said Nursi?</span>
                     <span aria-hidden="true"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</span>
                 </h1>
 
@@ -27,13 +27,13 @@
                     <img src="{{ asset('images/PortretJongeUstad9_new.png') }}" alt="Portret van de jonge Said Nursi" title="Said Nursi als jonge geleerde" fetchpriority="high" decoding="async">
                 </div>
 
-                <h2 class="sub-title"><em>1878 – 1960</em></h2>
+                <h2 class="sub-title"><span class="sr-only">Said Nursi </span><em>1878 – 1960</em></h2>
 
             <blockquote>
                 <p><strong>"Ik zal de wereld bewijzen dat de Qur’an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"</strong></p>
             </blockquote>
 
-            <p>Dit was de reactie van Said <span aria-label="Nursi">Nursî</span> toen hij in zijn vroege twintiger jaren de volgende tekst in een krant las:</p>
+            <p>Dit was de reactie van <strong><span aria-label="Said Nursi">Said Nursî</span></strong> toen hij in zijn vroege twintiger jaren de volgende tekst in een krant las:</p>
 
             <blockquote>
                 <p>“In het Britse Lagerhuis hield de Minister van Koloniën een toespraak. Met de Qur’an in zijn hand zei hij: ‘Zolang deze Qur’an in handen van de moslims is, zullen wij nooit over hen kunnen heersen. Wij moeten – <span style="font-weight: lighter;">koste wat kost</span> – óf deze Qur’an uit hun handen nemen óf de moslims van de Qur’an vervreemden.’”</p>
@@ -41,7 +41,7 @@
 
             <p>Dit duistere bericht ontstak een brandend vuur in de jonge Said. Met een onwankelbare vastberadenheid stippelde hij zijn levenspad uit. Zonder ooit op zijn besluit terug te komen, zou hij de rest van zijn leven volledig wijden aan de dienst van de Qur’an. De ultieme vrucht van deze onverzettelijke keuze rijpte geleidelijk uit tot de Risale-i Nur.</p>
 
-            <p>In een afgelegen dorp in Oost-Anatolië genaamd Nurs was hij ter wereld gekomen. Zijn vader Mirza was een Godvrezende veehouder; zijn moeder Nuriye een vrome dorpsvrouw. Terwijl zijn vader hun dieren altijd muilkorfde wanneer hij ze naar hun graasweide bracht – <em>zodat ze onderweg geen hap van andermans gewas namen</em> – gaf zijn moeder hem altijd alleen borstvoeding nadat zij de rituele wassing had verricht. Zo genoot Said <span aria-label="Nursi">Nursî</span> een uiterst zuivere opvoeding die bijdroeg aan de gezegende ontplooiing van zijn buitengewone gaven.</p>
+            <p>In een afgelegen dorp in Oost-Anatolië genaamd Nurs was hij ter wereld gekomen. Zijn vader Mirza was een Godvrezende veehouder; zijn moeder Nuriye een vrome dorpsvrouw. Terwijl zijn vader hun dieren altijd muilkorfde wanneer hij ze naar hun graasweide bracht – <em>zodat ze onderweg geen hap van andermans gewas namen</em> – gaf zijn moeder hem altijd alleen borstvoeding nadat zij de rituele wassing had verricht. Zo genoot Said <span aria-label="Said Nursi">Nursî</span> een uiterst zuivere opvoeding die bijdroeg aan de gezegende ontplooiing van zijn buitengewone gaven.</p>
 
             <img src="{{ asset('images/ustadh_country.webp') }}" alt="Said Nursi in het Anatolische landschap" title="Said Nursi in Oost-Anatolië" loading="lazy" decoding="async">
 
@@ -51,11 +51,11 @@
 
             <p>Zoals in een Hadith is overgeleverd, heeft de profeet Mohammed <strong class="saw-honorific">ﷺ</strong> het volgende verkondigd: "<em>Aan het begin van elke eeuw zal ALLAH een "<strong>Mudjeddid</strong>" <span style="font-family: var(--font-light);opacity: 0.85;">(vernieuwer)</span> zenden</em>." Deze "<em><strong>Mudjeddid</strong></em>" zal vertroebelde waarheden herstellen. Elke Mudjeddid is een uitverkoren geleerde die in zijn tijd de Qur'an en de Sunnah op de meest correcte wijze interpreteert en op de beste wijze verklaart. Zonder enige verandering in de Islamitische basisprincipes of kerngedachtes aan te brengen, hanteert een Mudjeddid nieuwe beschrijvingsmethodes en redeneringen om alle problemen en vraagstukken van de heersende tijdgeest te ontwarren en op te lossen.</p>
 
-            <p>Omdat de tijdgenoten van Said <span aria-label="Nursi">Nursî</span> zonneklare herkenningstekenen van een Mudjeddid bij hem zagen, noemden zij hem "<strong>de Mudjeddid van het einde der tijden</strong>". In de Risale-i Nur geeft Said <span aria-label="Nursi">Nursî</span> echter aan dat hem de titel "<strong>Mudjeddid</strong>" tijdelijk is toegekend om die uiteindelijk over te dragen aan de Risale-i Nur.</p>
+            <p>Omdat de tijdgenoten van Said <span aria-label="Said Nursi">Nursî</span> zonneklare herkenningstekenen van een Mudjeddid bij hem zagen, noemden zij hem "<strong>de Mudjeddid van het einde der tijden</strong>". In de Risale-i Nur geeft Said <span aria-label="Said Nursi">Nursî</span> echter aan dat hem de titel "<strong>Mudjeddid</strong>" tijdelijk is toegekend om die uiteindelijk over te dragen aan de Risale-i Nur.</p>
 
             <p>Zijn gehele drieëntachtigjarige bestaan op aarde had hij gewijd aan de geloofsdienst. Ongeacht waar hij zich bevond – <em>in een medresse, op het slagveld, in krijgsgevangenschap, in ballingschap of in een staatsgevangenis</em> – niets kon hem ervan weerhouden om met al zijn kracht te ijveren voor de Islam. Uiteindelijk heeft hij bij Gods Gratie zijn levenswerk kunnen vervolmaken.</p>
 
-            <p><strong>Ter afsluiting volgt nu een tekst van Said <span aria-label="Nursi">Nursî</span> zelf uit zijn biografie:</strong></p>
+            <p><strong>Ter afsluiting volgt nu een tekst van Said <span aria-label="Said Nursi">Nursî</span> zelf uit zijn biografie:</strong></p>
 
             <img src="{{ asset('images/ustadh_court.webp') }}" alt="Said Nursi voor de rechtbank" title="Said Nursi tijdens een rechtszitting" loading="lazy" decoding="async">
 
