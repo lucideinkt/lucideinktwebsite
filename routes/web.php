@@ -25,6 +25,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\PageSeoController;
+use App\Http\Controllers\OnlineLezenSeoController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
@@ -178,6 +179,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/dashboard/page-seo/import',      [PageSeoController::class, 'import'])->name('admin.page-seo.import');
     Route::get('/dashboard/page-seo/{pageKey}',    [PageSeoController::class, 'edit'])->name('admin.page-seo.edit');
     Route::put('/dashboard/page-seo/{pageKey}',    [PageSeoController::class, 'update'])->name('admin.page-seo.update');
+
+    // Online Lezen SEO
+    Route::get('/dashboard/online-lezen-seo',          [OnlineLezenSeoController::class, 'index'])->name('admin.online-lezen-seo.index');
+    Route::get('/dashboard/online-lezen-seo/{id}/edit',[OnlineLezenSeoController::class, 'edit'])->name('admin.online-lezen-seo.edit');
+    Route::put('/dashboard/online-lezen-seo/{id}',     [OnlineLezenSeoController::class, 'update'])->name('admin.online-lezen-seo.update');
 
 });
 
