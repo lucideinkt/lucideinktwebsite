@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OnlineLezenSeoController extends Controller
 {
@@ -31,33 +32,47 @@ class OnlineLezenSeoController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        // Effective SEO title and description for online-lezen context
-        $effectiveTitle       = $product->seo_title ?: $product->title;
-        $effectiveDescription = $product->seo_description ?: $product->short_description;
-
-        $previewTitle       = $effectiveTitle . ' | Online Lezen | Lucide Inkt';
-        $previewUrl         = route('onlineLezenRead', $product->slug);
+        $effectiveTitle       = $product->seo_title_online ?: ($product->seo_title ?: $product->title);
+        $effectiveDescription = $product->seo_description_online ?: ($product->seo_description ?: $product->short_description);
+        $previewTitle         = $effectiveTitle . ' | Online Lezen | Lucide Inkt';
+        $previewUrl           = route('onlineLezenRead', $product->slug);
 
         return view('admin.online-lezen-seo.edit', compact(
-            'product',
-            'effectiveTitle',
-            'effectiveDescription',
-            'previewTitle',
-            'previewUrl'
+            'product', 'effectiveTitle', 'effectiveDescription', 'previewTitle', 'previewUrl'
         ));
     }
 
-    /**
-     * Save the SEO fields for a product.
-     */
     public function update(Request $request, int $id)
     {
         $product = Product::findOrFail($id);
 
         $validated = $request->validate([
-            'seo_title'       => 'nullable|string|max:70',
-            'seo_description' => 'nullable|string|max:320',
+            'seo_title_online'          => 'nullable|string|max:70',
+            'seo_description_online'    => 'nullable|string|max:320',
+            'seo_author'                => 'nullable|string|max:100',
+            'seo_robots_online'         => 'nullable|string|max:100',
+            'seo_canonical_url_online'  => 'nullable|url|max:500',
+            'online_lezen_image'        => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+            'delete_online_lezen_image' => 'nullable|boolean',
         ]);
+
+        // Handle image deletion / upload
+        if ($request->boolean('delete_online_lezen_image')) {
+            if ($product->online_lezen_image && Storage::disk('public')->exists($product->online_lezen_image)) {
+                Storage::disk('public')->delete($product->online_lezen_image);
+            }
+            $validated['online_lezen_image'] = null;
+        } elseif ($request->hasFile('online_lezen_image') && $request->file('online_lezen_image')->isValid()) {
+            if ($product->online_lezen_image && Storage::disk('public')->exists($product->online_lezen_image)) {
+                Storage::disk('public')->delete($product->online_lezen_image);
+            }
+            $validated['online_lezen_image'] = $request->file('online_lezen_image')
+                ->store('products/online-lezen', 'public');
+        } else {
+            unset($validated['online_lezen_image']);
+        }
+
+        unset($validated['delete_online_lezen_image']);
 
         $product->update($validated);
 
@@ -65,4 +80,3 @@ class OnlineLezenSeoController extends Controller
             ->with('success', 'SEO voor "' . $product->title . '" opgeslagen.');
     }
 }
-
