@@ -1021,6 +1021,19 @@ body.dark-mode .reader-topbar-page-slider::-moz-range-thumb     { background: #e
 
 .reader-topbar-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
 
+/* Mobile page indicator — hidden on desktop, shown on ≤1024px */
+.reader-topbar-mobile-page {
+    display: none;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'DelimaProRegular', serif;
+    color: rgba(121,0,0,0.45);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    line-height: 1;
+}
+body.dark-mode .reader-topbar-mobile-page { color: rgba(232,168,124,0.5); }
+
 /* Action icon buttons group */
 .reader-topbar-actions {
     display: none;
@@ -1601,7 +1614,11 @@ body.dark-mode .reader-to-top { background: #b06030; }
     /* Keep divider hidden on mobile but show title, slightly smaller */
     .reader-topbar-divider { display: none; }
     .reader-book-title { font-size: 10px; max-width: 160px; }
-    .reader-wrap { padding: 84px 10px 60px; }
+    .reader-topbar { height: 44px; padding: 0 12px; align-items: center; }
+    .reader-topbar-left,
+    .reader-topbar-right { align-items: center; }
+    .reader-topbar-mobile-page { display: flex; align-items: center; }
+    .reader-wrap { padding: 68px 10px 60px; }
 
     .fn-popover {
         width: calc(100vw - 32px);
@@ -1783,10 +1800,13 @@ body.dark-mode .reader-topbar-page-badge { color: #666; }
 /* ─── Slim progress bar (below topbar) ─── */
 .reader-progress-bar-wrap {
     position: fixed;
-    top: 44px; left: 0; right: 0;
+    top: 56px; left: 0; right: 0;
     height: 2px;
     background: rgba(180,140,60,0.18);
     z-index: 199;
+}
+@media (max-width: 1024px) {
+    .reader-progress-bar-wrap { top: 44px; }
 }
 .reader-progress-bar-fill {
     height: 100%;
@@ -2482,7 +2502,7 @@ body.dark-mode .reader-sheet-toc-btn:hover i { color: #e8c890; }
 .sheet-menu-prog-pill {
     background: #2a1a0a;
     border-radius: 12px;
-    padding: 6px 12px 6px;
+    padding: 8px 12px 6px;
     margin-bottom: 4px;
 }
 body.dark-mode .sheet-menu-prog-pill { background: #170e04; }
@@ -2533,17 +2553,30 @@ body.dark-mode .sheet-menu-prog-pill { background: #170e04; }
 .sheet-menu-toc-btn:active { background: rgba(200,150,60,0.38); transform: scale(0.90); }
 
 /* Page slider inside dark pill */
-.sheet-menu-slider-wrap { position: relative; margin-bottom: 2px; padding: 6px 0; }
+.sheet-menu-slider-wrap {
+    position: relative;
+    margin-bottom: 2px;
+    padding: 4px 0 6px;
+    /* Expand touch area */
+    margin-left: -4px;
+    margin-right: -4px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
 .sheet-menu-slider {
     width: 100%;
     -webkit-appearance: none;
     appearance: none;
-    height: 3px;
-    border-radius: 2px;
+    height: 5px;
+    border-radius: 3px;
     outline: none;
     cursor: pointer;
     border: none !important;
-    padding: 0 !important;
+    /* Tall transparent padding = large touch target on iOS */
+    padding: 14px 0 !important;
+    box-sizing: content-box;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
     background: linear-gradient(
         to right,
         #c87830 0%,
@@ -2551,9 +2584,10 @@ body.dark-mode .sheet-menu-prog-pill { background: #170e04; }
         rgba(200,150,60,0.25) var(--menu-slider-pct, 0%),
         rgba(200,150,60,0.25) 100%
     );
+    background-clip: content-box;
 }
 .sheet-menu-slider::-webkit-slider-runnable-track {
-    height: 3px; border-radius: 2px;
+    height: 5px; border-radius: 3px;
     background: linear-gradient(
         to right,
         #c87830 0%,
@@ -2562,24 +2596,24 @@ body.dark-mode .sheet-menu-prog-pill { background: #170e04; }
         rgba(200,150,60,0.25) 100%
     );
 }
-.sheet-menu-slider::-moz-range-track   { height: 3px; border-radius: 2px; background: rgba(200,150,60,0.25); }
-.sheet-menu-slider::-moz-range-progress { height: 3px; border-radius: 2px; background: #c87830; }
+.sheet-menu-slider::-moz-range-track   { height: 5px; border-radius: 3px; background: rgba(200,150,60,0.25); }
+.sheet-menu-slider::-moz-range-progress { height: 5px; border-radius: 3px; background: #c87830; }
 .sheet-menu-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 18px; height: 18px;
+    width: 26px; height: 26px;
     border-radius: 50%;
     background: #e8c078;
-    border: 2px solid rgba(42,26,10,0.55);
-    box-shadow: 0 1px 5px rgba(0,0,0,0.50);
+    border: 2.5px solid rgba(42,26,10,0.50);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.45);
     cursor: pointer;
-    margin-top: -7px;
+    margin-top: -10px;
     transition: transform 0.12s ease;
 }
-.sheet-menu-slider:active::-webkit-slider-thumb { transform: scale(1.25); }
+.sheet-menu-slider:active::-webkit-slider-thumb { transform: scale(1.18); }
 .sheet-menu-slider::-moz-range-thumb {
-    width: 18px; height: 18px; border-radius: 50%;
-    background: #e8c078; border: 2px solid rgba(42,26,10,0.55);
-    box-shadow: 0 1px 5px rgba(0,0,0,0.50); cursor: pointer;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #e8c078; border: 2.5px solid rgba(42,26,10,0.50);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.45); cursor: pointer;
 }
 body.dark-mode .sheet-menu-slider::-webkit-slider-runnable-track {
     background: linear-gradient(
@@ -2591,7 +2625,7 @@ body.dark-mode .sheet-menu-slider::-webkit-slider-runnable-track {
     );
 }
 body.dark-mode .sheet-menu-slider::-moz-range-progress { background: #e8a050; }
-body.dark-mode .sheet-menu-slider::-webkit-slider-thumb { background: #f0c880; border-color: rgba(23,14,4,0.6); }
+body.dark-mode .sheet-menu-slider::-webkit-slider-thumb { background: #f0c880; border-color: rgba(23,14,4,0.6); box-shadow: 0 2px 8px rgba(0,0,0,0.60); }
 
 /* Pill footer: hidden — page counter is now inline in the header */
 .sheet-menu-pill-footer { display: none; }
