@@ -169,6 +169,8 @@
         </div>
 
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
+            {{-- Mobile page indicator (≤1024px only) --}}
+            <span class="reader-topbar-mobile-page" id="topbar-mobile-page" aria-live="polite">— / {{ $allPageMeta->max('page_number') }}</span>
             {{-- Compact font controls — desktop only --}}
             <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
                 <div class="reader-topbar-font-group">
@@ -503,7 +505,9 @@
         // Prevent iOS Safari from overriding JS-controlled scroll restoration
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-        const TOPBAR_H    = (document.querySelector('.reader-topbar')?.offsetHeight ?? 62) + 2;
+        const topbarEl    = document.querySelector('.reader-topbar');
+        const progressEl  = document.querySelector('.reader-progress-bar-wrap');
+        const TOPBAR_H    = (topbarEl?.offsetHeight ?? 56) + (progressEl?.offsetHeight ?? 2);
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
         const ARABIC_FONT_KEY = 'reading_arabicfontsize_{{ $product->id }}';
@@ -520,6 +524,8 @@
         const sheetProgressFill = document.getElementById('sheet-progress-fill');
         const fabPageCurrent    = document.getElementById('fab-page-current');
         const topbarBadge       = document.getElementById('topbar-page-cur');
+        const topbarMobilePage  = document.getElementById('topbar-mobile-page');
+        const totalPages        = {{ $allPageMeta->max('page_number') }};
         const controlSheet      = document.getElementById('reader-control-sheet');
         const sheetBackdrop     = document.getElementById('reader-sheet-backdrop');
         const sheetPageCurrent  = document.getElementById('sheet-page-current');
@@ -567,6 +573,7 @@
             if (sheetPageCurrent) sheetPageCurrent.textContent = page;
             if (fabPageCurrent)   fabPageCurrent.textContent  = page;
             if (topbarBadge)      topbarBadge.textContent     = page;
+            if (topbarMobilePage) topbarMobilePage.textContent = page + ' / ' + totalPages;
             // sync topbar page slider
             const tbSlider = document.getElementById('topbar-page-slider');
             if (tbSlider && document.activeElement !== tbSlider) tbSlider.value = page;
@@ -675,8 +682,14 @@
         function _scrollTo(page, smooth) {
             const el = pageMap[page];
             if (!el) return;
+            // Prefer scrolling to the page-number label so the text lands
+            // right below the topbar instead of the raw page-border edge
+            const anchor = el.querySelector('.page-number') || el;
+            const anchorTop = anchor.getBoundingClientRect().top + window.scrollY;
+            // Tighter gap on mobile (≤1024px), small buffer on desktop
+            const buffer = window.innerWidth <= 1024 ? 2 : 6;
             window.scrollTo({
-                top: el.getBoundingClientRect().top + window.scrollY - TOPBAR_H,
+                top: Math.max(0, anchorTop - TOPBAR_H - buffer),
                 behavior: smooth ? 'smooth' : 'auto'
             });
             updateUI(page);
@@ -768,6 +781,7 @@
             const raw = parseInt(topbarPageSlider.value, 10);
             const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
             if (topbarBadge) topbarBadge.textContent = nearest;
+            if (topbarMobilePage) topbarMobilePage.textContent = nearest + ' / ' + totalPages;
             updateTopbarSliderFill(nearest);
         });
         topbarPageSlider?.addEventListener('change', () => {
@@ -1259,6 +1273,8 @@
                 return (!isNaN(p) && sorted.includes(p)) ? p : null;
             })();
             const urlQuery  = (urlParams.get('q') || '').trim(); // search term to highlight
+            const urlHlId   = (urlParams.get('hlid') || '').trim(); // highlight id to scroll to
+            const urlBmId   = (urlParams.get('bmid') || '').trim(); // bookmark id to scroll to
             const startPage = urlPage || ((saved && sorted.includes(saved)) ? saved : null);
 
             // Nothing saved or first page: scroll to top so title is visible
@@ -1286,6 +1302,26 @@
                             const actual = visiblePage();
                             updateUI(actual);
                             save(actual);
+                            // Scroll to specific highlight or bookmark if requested via URL
+                            if (urlHlId || urlBmId) {
+                                setTimeout(() => {
+                                    let targetEl = null;
+                                    if (urlHlId) {
+                                        const pageEl = pageMap[startPage];
+                                        if (pageEl && !document.querySelector(`[data-hl-id="${urlHlId}"]`)) {
+                                            hlRestorePage(pageEl, startPage);
+                                        }
+                                        targetEl = document.querySelector(`[data-hl-id="${urlHlId}"]`);
+                                    } else if (urlBmId) {
+                                        targetEl = document.querySelector(`.bm-marker[data-bm-id="${urlBmId}"]`)
+                                                || (pageMap[startPage] && bmGetParaByIndex(pageMap[startPage], (bmLoad().find(b=>b.id===urlBmId)||{}).paraIndex ?? -1));
+                                    }
+                                    if (targetEl) {
+                                        const markTop = targetEl.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                                        window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                                    }
+                                }, 350);
+                            }
                         }));
                     }
                 };
@@ -1368,8 +1404,20 @@
                         item.addEventListener('click', e => {
                             if (e.target.closest('.reader-lib-item-del')) return;
                             if (isCurrent) {
+                                // Find target BEFORE closing (same pattern as working search)
+                                const pageEl = pageMap[bm.pageNum];
+                                const markerEl = document.querySelector(`.bm-marker[data-bm-id="${bm.id}"]`)
+                                              || (pageEl && bm.paraIndex >= 0 ? bmGetParaByIndex(pageEl, bm.paraIndex) : null)
+                                              || pageEl;
                                 closeSheet();
-                                setTimeout(() => jumpTo(bm.pageNum, true), 80);
+                                setTimeout(() => {
+                                    if (markerEl) {
+                                        const markTop = markerEl.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                                        window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                                        updateUI(bm.pageNum);
+                                        save(bm.pageNum);
+                                    }
+                                }, 230);
                             } else {
                                 // Set reading progress for target book so it opens on the right page
                                 try { localStorage.setItem('reading_progress_' + bm.productId, String(bm.pageNum)); } catch (_) {}
@@ -1425,8 +1473,23 @@
                     item.addEventListener('click', e => {
                         if (e.target.closest('.reader-lib-item-del')) return;
                         if (isCurrent) {
+                            // Ensure mark is in DOM, then capture element BEFORE closing sheet
+                            const pageEl = pageMap[hl.pageNum];
+                            if (pageEl && !document.querySelector(`[data-hl-id="${hl.id}"]`)) {
+                                hlRestorePage(pageEl, hl.pageNum);
+                            }
+                            const markEl = document.querySelector(`[data-hl-id="${hl.id}"]`) || pageEl;
                             closeSheet();
-                            setTimeout(() => jumpTo(hl.pageNum, true), 80);
+                            setTimeout(() => {
+                                const foundMark = document.querySelector(`[data-hl-id="${hl.id}"]`);
+                                const target = foundMark || markEl || pageEl;
+                                if (target) {
+                                    const markTop = target.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                                    window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                                    updateUI(hl.pageNum);
+                                    save(hl.pageNum);
+                                }
+                            }, 230);
                         } else {
                             try { localStorage.setItem('reading_progress_' + hl.productId, String(hl.pageNum)); } catch (_) {}
                             const url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
