@@ -638,7 +638,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
             item.addEventListener('click', function(e) {
                 if (e.target.closest('.bs-list-del')) return;
                 try { localStorage.setItem('reading_progress_'+bm.productId, String(bm.pageNum)); } catch(_){}
-                var url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum;
+                var url = bm.readerUrl + (bm.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + bm.pageNum + '&bmid=' + encodeURIComponent(bm.id);
                 window.location.href = url;
             });
             el.appendChild(item);
@@ -685,7 +685,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
                 if (e.target.closest('.bs-list-del')) return;
                 if (hl.readerUrl) {
                     try{localStorage.setItem('reading_progress_'+hl.productId,String(hl.pageNum));}catch(_){}
-                    var url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                    var url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum + '&hlid=' + encodeURIComponent(hl.id);
                     window.location.href = url;
                 }
             });
