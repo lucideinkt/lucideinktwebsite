@@ -374,7 +374,20 @@ class SEOService
         $ogImageSource = ($isOnline && !empty($product->online_lezen_image))
             ? $product->online_lezen_image
             : $product->image_1;
-        $ogImage = self::resolveOgImage($ogImageSource);
+
+        // online_lezen_image from old seeder = public asset (images/...); new uploads = storage (products/...)
+        if ($isOnline && !empty($product->online_lezen_image)) {
+            $olPath = $product->online_lezen_image;
+            if (filter_var($olPath, FILTER_VALIDATE_URL)) {
+                $ogImage = $olPath;
+            } elseif (str_starts_with($olPath, 'images/')) {
+                $ogImage = secure_url($olPath);
+            } else {
+                $ogImage = secure_url('storage/' . $olPath);
+            }
+        } else {
+            $ogImage = self::resolveOgImage($product->image_1);
+        }
 
         return new SEOData(
             title: $seoTitle . $titleSuffix,
