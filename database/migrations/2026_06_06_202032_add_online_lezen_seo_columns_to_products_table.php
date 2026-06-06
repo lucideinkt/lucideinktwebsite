@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->string('seo_title_online')->nullable()->after('seo_title');
+            $table->text('seo_description_online')->nullable()->after('seo_description');
+            $table->string('seo_robots_online', 100)->nullable()->after('seo_robots');
+            $table->string('seo_canonical_url_online', 500)->nullable()->after('seo_canonical_url');
         });
     }
 
@@ -22,7 +25,12 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropColumn([
+                'seo_title_online',
+                'seo_description_online',
+                'seo_robots_online',
+                'seo_canonical_url_online',
+            ]);
         });
     }
 };
