@@ -16,6 +16,9 @@ class IndexPdfContent extends Command
 
     public function handle(PdfIndexService $service): int
     {
+        // Ensure enough memory for large PDFs
+        ini_set('memory_limit', '512M');
+
         $query = Product::whereNotNull('pdf_file')->where('pdf_file', '!=', '');
 
         if ($id = $this->option('product')) {

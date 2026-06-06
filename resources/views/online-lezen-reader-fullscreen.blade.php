@@ -110,7 +110,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             const pdfViewer = document.getElementById('pdf-viewer-fullscreen');
             const closeBtn = document.getElementById('closeFullscreenBtn');
-            const pdfUrl = "{{ route('pdf.proxy', ['path' => $product->pdf_file]) }}";
+            @php
+                $pdfFullPath = storage_path('app/public/' . $product->pdf_file);
+                $pdfVersion  = file_exists($pdfFullPath) ? filemtime($pdfFullPath) : 0;
+            @endphp
+            const pdfUrl = "{{ route('pdf.proxy', ['path' => $product->pdf_file]) }}?v={{ $pdfVersion }}";
             const storageKey = 'pdf_last_page_{{ $product->id }}';
             const PRODUCT_ID    = {{ $product->id }};
             const PRODUCT_TITLE = @json($product->title);
