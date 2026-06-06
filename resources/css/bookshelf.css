@@ -1243,6 +1243,12 @@ body { margin: 0; padding: 0; width: 100%; }
     pointer-events: none;
 }
 
+.shelf-book--ghost {
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
 /* ---------------------------------------------------------
    BOOK ITEMS
    --------------------------------------------------------- */
