@@ -102,7 +102,7 @@
 
                 <div class="sub-text one">
                     <p>Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van</p>
-                    <p>diensten volgens de Qur'anische richtlijnen van de Risale-i Nur.</p>
+                    <p>diensten volgens de Qur'anische richtlijnen van de <strong>Risale-i Nur</strong>.</p>
                     <p>Met Nederlandse en Engelse vertalingen van deze boekenreeks</p>
                     <p>streven wij ernaar zoekers te voorzien van antwoorden</p>
                     <p>op de belangrijkste bestaansvragen van de mens.</p>
@@ -115,7 +115,7 @@
                 <div class="sub-text two">
                     <p>
                         Lucide Inkt is een non-profit organisatie, toegewijd aan het verlenen van diensten
-                        volgens de Qur'anische richtlijnen van de <br>Risale-i Nur.
+                        volgens de Qur'anische richtlijnen van de <br><strong>Risale-i Nur</strong>.
                         Met Nederlandse en Engelse vertalingen van deze boekenreeks
                         streven wij ernaar zoekers te voorzien van antwoorden
                         op de belangrijkste bestaansvragen van de mens.
