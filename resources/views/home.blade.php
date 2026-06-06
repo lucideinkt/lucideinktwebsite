@@ -209,21 +209,21 @@
                     {{-- <img class="rose-patels" src="{{ asset('images/Petals2.webp') }}" alt=""> --}}
 
                     <div class="book three">
-                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
+                        <a href="{{ url('/winkel/product/treatise-on-the-regathering-english') }}">
                             <img src="{{ asset('images/books/herzameling/EngelsHerzameling.webp') }}" alt="The Treatise on the Resurrection - English translation of the Risale-i Nur" title="Risale-i Nur: The Treatise on the Resurrection (English)" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels -</p>
-                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels') }}">
+                        <a href="{{ url('/winkel/product/treatise-on-the-regathering-english') }}">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
 
                     <div class="book four">
-                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
+                        <a href="{{ url('/winkel/product/treatise-on-the-regathering-english-turkish') }}">
                             <img src="{{ asset('images/books/herzameling/TurksEngelsHerzameling.webp') }}" alt="The Treatise on the Resurrection - English-Turkish edition of the Risale-i Nur" title="Risale-i Nur: The Treatise on the Resurrection (English & Turkish)" loading="lazy" decoding="async">
                         </a>
                         <p class="under-text">- Engels & Turks -</p>
-                        <a href="{{ url('/winkel/product/het-traktaat-over-de-herzameling-engels-turks') }}">
+                        <a href="{{ url('/winkel/product/treatise-on-the-regathering-english-turkish') }}">
                             <button class="btn">Bekijken</button>
                         </a>
                     </div>
