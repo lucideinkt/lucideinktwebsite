@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCopy;
+use App\Models\ProductPdfPage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
@@ -390,6 +391,9 @@ class ProductController extends Controller
         if (!empty($product->pdf_file) && Storage::disk('public')->exists($product->pdf_file)) {
             Storage::disk('public')->delete($product->pdf_file);
         }
+
+        // Verwijder geïndexeerde PDF tekst (zoekindex)
+        ProductPdfPage::where('product_id', $product->id)->delete();
 
         // Verwijder audio bestand
         if (!empty($product->audio_file) && Storage::disk('public')->exists($product->audio_file)) {
