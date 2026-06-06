@@ -19,7 +19,9 @@
     <FilesMatch "\.(pdf)$">
         Header set Access-Control-Allow-Origin "*"
         Header set Access-Control-Allow-Methods "GET, OPTIONS"
-        Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+        Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Range"
+        Header set Accept-Ranges "bytes"
+        Header set Cache-Control "public, max-age=2592000, immutable"
     </FilesMatch>
 
     # CORS headers for PDF.js viewer files
