@@ -24,7 +24,7 @@
                 </h1>
 
                 <div class="top-images">
-                    <img src="{{ asset('images/PortretJongeUstad9_new.png') }}" alt="Portret van de jonge Said Nursi" title="Said Nursi als jonge geleerde" fetchpriority="high" decoding="async">
+                    <img src="{{ asset('images/said-nursi-portret-jonge-geleerde.png') }}" alt="Portret van de jonge Said Nursi" title="Said Nursi als jonge geleerde" fetchpriority="high" decoding="async">
                 </div>
 
                 <h2 class="sub-title"><span class="sr-only">Said Nursi </span><em>1878 – 1960</em></h2>
@@ -33,7 +33,7 @@
                 <p><strong>"Ik zal de wereld bewijzen dat de Qur’an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"</strong></p>
             </blockquote>
 
-            <p>Dit was de reactie van <strong><span aria-label="Said Nursi">Said Nursî</span></strong> toen hij in zijn vroege twintiger jaren de volgende tekst in een krant las:</p>
+            <p>Dit was de reactie van <span aria-label="Said Nursi">Said Nursî</span> toen hij in zijn vroege twintiger jaren de volgende tekst in een krant las:</p>
 
             <blockquote>
                 <p>“In het Britse Lagerhuis hield de Minister van Koloniën een toespraak. Met de Qur’an in zijn hand zei hij: ‘Zolang deze Qur’an in handen van de moslims is, zullen wij nooit over hen kunnen heersen. Wij moeten – <span style="font-weight: lighter;">koste wat kost</span> – óf deze Qur’an uit hun handen nemen óf de moslims van de Qur’an vervreemden.’”</p>
@@ -41,9 +41,9 @@
 
             <p>Dit duistere bericht ontstak een brandend vuur in de jonge Said. Met een onwankelbare vastberadenheid stippelde hij zijn levenspad uit. Zonder ooit op zijn besluit terug te komen, zou hij de rest van zijn leven volledig wijden aan de dienst van de Qur’an. De ultieme vrucht van deze onverzettelijke keuze rijpte geleidelijk uit tot de Risale-i Nur.</p>
 
-            <p>In een afgelegen dorp in Oost-Anatolië genaamd Nurs was hij ter wereld gekomen. Zijn vader Mirza was een Godvrezende veehouder; zijn moeder Nuriye een vrome dorpsvrouw. Terwijl zijn vader hun dieren altijd muilkorfde wanneer hij ze naar hun graasweide bracht – <em>zodat ze onderweg geen hap van andermans gewas namen</em> – gaf zijn moeder hem altijd alleen borstvoeding nadat zij de rituele wassing had verricht. Zo genoot Said <span aria-label="Said Nursi">Nursî</span> een uiterst zuivere opvoeding die bijdroeg aan de gezegende ontplooiing van zijn buitengewone gaven.</p>
+            <p>In een afgelegen dorp in Oost-Anatolië genaamd Nurs was hij ter wereld gekomen. Zijn vader Mirza was een Godvrezende veehouder; zijn moeder Nuriye een vrome dorpsvrouw. Terwijl zijn vader hun dieren altijd muilkorfde wanneer hij ze naar hun graasweide bracht – <em>zodat ze onderweg geen hap van andermans gewas namen</em> – gaf zijn moeder hem altijd alleen borstvoeding nadat zij de rituele wassing had verricht. Zo genoot <strong><span aria-label="Said Nursi">Said Nursî</span></strong> een uiterst zuivere opvoeding die bijdroeg aan de gezegende ontplooiing van zijn buitengewone gaven.</p>
 
-            <img src="{{ asset('images/ustadh_country.webp') }}" alt="Said Nursi in het Anatolische landschap" title="Said Nursi in Oost-Anatolië" loading="lazy" decoding="async">
+            <img src="{{ asset('images/said-nursi-oost-anatolie.webp') }}" alt="Said Nursi in het Anatolische landschap" title="Said Nursi in Oost-Anatolië" loading="lazy" decoding="async">
 
             <p>Van kinds af aan dorstte hij naar kennis. Dit dreef hem ertoe om op negenjarige leeftijd zijn ouderhuis te verlaten. In de studiejaren die volgden, verbleef hij in verscheidene medresses. Een studie die normaliter vijftien jaar duurt, rondde hij in drie maanden af. Voordat hij de pubertijd bereikte, ontving hij op veertienjarige leeftijd zijn “<strong>idjazah</strong>” <em>(onderwijsbevoegdheid)</em>. Geleerden die getuigen waren van zijn onmiskenbare begaafdheid gaven hem de eretitel “<strong>Bediüzzaman</strong>” <em>(de onvergelijkelijke des tijds)</em>.</p>
 
@@ -57,7 +57,7 @@
 
             <p><strong>Ter afsluiting volgt nu een tekst van Said <span aria-label="Said Nursi">Nursî</span> zelf uit zijn biografie:</strong></p>
 
-            <img src="{{ asset('images/ustadh_court.webp') }}" alt="Said Nursi voor de rechtbank" title="Said Nursi tijdens een rechtszitting" loading="lazy" decoding="async">
+            <img src="{{ asset('images/said-nursi-rechtbank.webp') }}" alt="Said Nursi voor de rechtbank" title="Said Nursi tijdens een rechtszitting" loading="lazy" decoding="async">
 
             <p>Denken zij daadwerkelijk dat ik een zelfzuchtig persoon ben die er slechts op uit is om zijn eigen nefs te redden? Om het geloof van de gemeenschap te redden, heb ik zowel mijn wereld als mijn hiernamaals opgeofferd. Gedurende heel mijn ruim tachtigjarige leven heb ik geen aards genot gekend. Mijn hele leven heb ik op slagvelden, in krijgsgevangenschap of in staatsgevangenissen doorgebracht. Er is geen pijn die ik niet heb geproefd, geen kwelling die ik niet heb ondergaan. Voor krijgsraden ben ik als een woeste misdadiger behandeld; als een verstotene ben ik van oord naar oord verbannen. In staatsgevangenissen werd mij maandenlang elke vorm van contact ontzegd. Ik ben herhaaldelijk vergiftigd en heb velerlei vernederingen moeten verduren. Er zijn tijden geweest waarin ik de dood duizendmaal boven het leven verkoos. Als mijn religie mij niet van zelfmoord had weerhouden, zou Said vandaag waarschijnlijk onder de grond vergaan zijn.</p>
 

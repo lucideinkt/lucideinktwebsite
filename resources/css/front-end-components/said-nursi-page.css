@@ -373,13 +373,15 @@ body:has(.said-nursi-page__text-box) .page > .sub-title::after,
     height: auto;
 }
 
-.said-nursi-page__text-box > img[src*="ustadh_country"] {
+.said-nursi-page__text-box > img[src*="ustadh_country"],
+.said-nursi-page__text-box > img[src*="said-nursi-oost-anatolie"] {
     width: 351px;
     float: left;
     margin: 5px 30px 20px 0;
 }
 
-.said-nursi-page__text-box > img[src*="ustadh_court"] {
+.said-nursi-page__text-box > img[src*="ustadh_court"],
+.said-nursi-page__text-box > img[src*="said-nursi-rechtbank"] {
     width: 350px;
     float: right;
     margin: 11px 0 0px 30px;
@@ -398,7 +400,9 @@ body:has(.said-nursi-page__text-box) .page > .sub-title::after,
 .said-nursi-page__text-box img[src*="ustadh_passport"],
 .text-box-background img[src*="ustadh_passport"],
 .said-nursi-page__text-box img[src*="PortretJongeUstad9_new"],
-.text-box-background img[src*="PortretJongeUstad9_new"] {
+.text-box-background img[src*="PortretJongeUstad9_new"],
+.said-nursi-page__text-box img[src*="said-nursi-portret-jonge-geleerde"],
+.text-box-background img[src*="said-nursi-portret-jonge-geleerde"] {
     opacity: 1;
     filter:
         drop-shadow(0 4px 8px rgba(0, 0, 0, 0.55))
