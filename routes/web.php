@@ -290,7 +290,7 @@ Route::get('/stream/audio/{path}', function ($path) {
     }
 })->where('path', '.*')->name('audio.stream');
 
-// PDF Proxy for PDF.js viewer (with CORS headers)
+// PDF Proxy for PDF.js viewer (with CORS + caching headers)
 Route::get('/pdf-proxy/{path}', function ($path) {
     if (str_contains($path, '..') || str_starts_with($path, '/')) abort(400);
 
@@ -301,11 +301,29 @@ Route::get('/pdf-proxy/{path}', function ($path) {
         abort(404);
     }
 
+    $lastModified = filemtime($fullPath);
+    $etag         = md5($fullPath . $lastModified);
+
+    // Return 304 Not Modified if browser already has the current version
+    $ifNoneMatch      = request()->header('If-None-Match');
+    $ifModifiedSince  = request()->header('If-Modified-Since');
+    if (
+        ($ifNoneMatch && $ifNoneMatch === '"' . $etag . '"') ||
+        ($ifModifiedSince && strtotime($ifModifiedSince) >= $lastModified)
+    ) {
+        return response('', 304);
+    }
+
     return response()->file($fullPath, [
-        'Content-Type' => 'application/pdf',
-        'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Allow-Methods' => 'GET, OPTIONS',
-        'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept',
+        'Content-Type'                  => 'application/pdf',
+        'Accept-Ranges'                 => 'bytes',
+        // Cache for 30 days — PDF.js can then load from cache on repeat visits
+        'Cache-Control'                 => 'public, max-age=2592000, immutable',
+        'ETag'                          => '"' . $etag . '"',
+        'Last-Modified'                 => gmdate('D, d M Y H:i:s', $lastModified) . ' GMT',
+        'Access-Control-Allow-Origin'   => '*',
+        'Access-Control-Allow-Methods'  => 'GET, OPTIONS',
+        'Access-Control-Allow-Headers'  => 'Origin, X-Requested-With, Content-Type, Accept, Range',
     ]);
 })->where('path', '.*')->name('pdf.proxy');
 
