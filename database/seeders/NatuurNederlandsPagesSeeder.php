@@ -9,7 +9,7 @@ class NatuurNederlandsPagesSeeder extends BookPagesSeeder
     protected function productSlug(): string
     {
         // return the exact slug used when creating the product in DatabaseSeeder
-        return 'het-traktaat-over-de-natuur';
+        return 'het-traktaat-over-de-natuur-nederlands';
     }
 
     protected function bookTitle(): string
