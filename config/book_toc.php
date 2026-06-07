@@ -55,7 +55,7 @@ return [
         ['level' => 'main', 'title' => 'Slot',                    'subtitle' => null, 'page' => 96],
     ],
 
-    'het-traktaat-over-de-natuur' => [
+    'het-traktaat-over-de-natuur-nederlands' => [
         ['level' => 'main', 'title' => 'Voorwoord',                  'subtitle' => null, 'page' => 5],
 
         ['level' => 'main', 'title' => 'De Drieëntwintigste Flits',  'subtitle' => null, 'page' => 9],
