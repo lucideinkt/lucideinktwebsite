@@ -51,23 +51,49 @@ abstract class BookPagesSeeder extends Seeder
             return;
         }
 
+        $now = now();
+
+        // Build the upsert rows and collect page numbers present in this seeder.
+        $rows        = [];
+        $pageNumbers = [];
+
         foreach ($this->pages() as $page) {
             if (! isset($page['page_number']) || ! isset($page['content'])) {
                 continue;
             }
 
-            BookPage::updateOrCreate(
-                [
-                    'product_id'  => $product->id,
-                    'page_number' => $page['page_number'],
-                ],
-                [
-                    'content'    => $page['content'],
-                    'book_title' => $page['book_title'] ?? $this->bookTitle() ?? null,
-                ]
-            );
+            $pageNumbers[] = (int) $page['page_number'];
+
+            $rows[] = [
+                'product_id'  => $product->id,
+                'page_number' => (int) $page['page_number'],
+                'content'     => $page['content'],
+                'book_title'  => $page['book_title'] ?? $this->bookTitle() ?? null,
+                'updated_at'  => $now,
+                'created_at'  => $now,
+            ];
         }
 
-        $this->command->info("Seeded " . count($this->pages()) . " page(s) for product: {$product->title}");
+        if (empty($rows)) {
+            $this->command->warn("No valid pages defined in " . static::class . ". Nothing seeded.");
+            return;
+        }
+
+        // Upsert all pages in one query – always overwrites content & book_title.
+        BookPage::upsert(
+            $rows,
+            ['product_id', 'page_number'],   // unique keys (requires the unique constraint)
+            ['content', 'book_title', 'updated_at']  // columns to update on conflict
+        );
+
+        // Remove any pages that exist in the database but are no longer in this seeder.
+        $deleted = BookPage::where('product_id', $product->id)
+            ->whereNotIn('page_number', $pageNumbers)
+            ->delete();
+
+        $this->command->info(
+            "Seeded " . count($rows) . " page(s) for product: {$product->title}" .
+            ($deleted ? " | Removed {$deleted} stale page(s)." : '')
+        );
     }
 }

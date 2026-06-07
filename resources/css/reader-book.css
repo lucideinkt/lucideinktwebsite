@@ -1799,7 +1799,9 @@ body.dark-mode .reader-to-top { background: #b06030; }
     font-weight: 700;
     color: #2a1a0a;
     line-height: 1.45;
-    white-space: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .toc-panel-sub .toc-panel-item-title {
     font-weight: 400;
@@ -1812,7 +1814,9 @@ body.dark-mode .reader-to-top { background: #b06030; }
     color: #7a5c3a;
     line-height: 1.3;
     margin-top: 2px;
-    white-space: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .toc-panel-item-page {
     flex-shrink: 0;

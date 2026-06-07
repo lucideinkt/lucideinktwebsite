@@ -1370,15 +1370,16 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="40">
     <p class="text-end page-number">#40</p>
 
-    <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
-    اَللّٰهُمَّ نَوِّرْ قُلُوبَنَا بِنُورِ الْاٖيمَانِ وَالْقُرْاٰنِ اَللّٰهُمَّ اَغْنِنَا بِالْاِفْتِقَارِ اِلَيْكَ وَلَا تُفْقِرْنَا بِالْاِسْتِغْنَاءِ عَنْكَ تَبَرَّاْنَا اِلَيْكَ مِنْ حَوْلِنَا وَقُوَّتِنَا وَالْتَجَأْنَا اِلٰى حَوْلِكَ وَقُوَّتِكَ فَاجْعَلْنَا مِنَ الْمُتَوَكِّلٖينَ عَلَيْكَ وَلَا تَكِلْنَا اِلٰى اَنْفُسِنَا وَاحْفَظْنَا بِحِفْظِكَ وَارْحَمْنَا وَارْحَمِ الْمُؤْمِنٖينَ وَالْمُؤْمِنَاتِ وَصَلِّ وَسَلِّمْ عَلٰى سَيِّدِنَا مُحَمَّدٍ عَبْدِكَ وَنَبِيِّكَ وَصَفِيِّكَ وَخَلٖيلِكَ وَجَمَالِ مُلْكِكَ وَمَلٖيكِ صُنْعِكَ وَعَيْنِ عِنَايَتِكَ وَشَمْسِ هِدَايَتِكَ وَلِسَانِ حُجَّتِكَ وَمِثَالِ رَحْمَتِكَ وَنُورِ خَلْقِكَ وَشَرَفِ مَوْجُودَاتِكَ وَسِرَاجِ وَحْدَتِكَ فٖى كَثْرَةِ مَخْلُوقَاتِكَ وَكَاشِفِ طِلْسِمِ كَائِنَاتِكَ وَدَلَّالِ سَلْطَنَةِ رُبُوبِيَّتِكَ وَمُبَلِّغِ مَرْضِيَّاتِكَ وَمُعَرِّفِ كُنُوزِ اَسْمَائِكَ وَمُعَلِّمِ عِبَادِكَ وَتَرْجُمَانِ اٰيَاتِكَ وَمِرْاٰتِ جَمَالِ رُبُوبِيَّتِكَ وَمَدَارِ شُهُودِكَ وَاِشْهَادِكَ وَحَبٖيبِكَ وَرَسُولِكَ الَّذٖى اَرْسَلْتَهُ رَحْمَةً لِلْعَالَمٖينَ وَعَلٰى اٰلِهٖ وَصَحْبِهٖ اَجْمَعٖينَ وَعَلٰى اِخْوَانِهٖ مِنَ النَّبِيّٖينَ وَالْمُرْسَلٖينَ وَعَلٰى مَلٰئِكَتِكَ الْمُقَرَّبٖينَ وَعَلٰى عِبَادِكَ الصَّالِحٖينَ اٰمٖينَ
-    </p>
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
+اَللّٰهُمَّ نَوِّرْ قُلُوبَنَا بِنُورِ الْاٖيمَانِ وَالْقُرْاٰنِ<br>
+اَللّٰهُمَّ اَغْنِنَا بِالْاِفْتِقَارِ اِلَيْكَ وَلَا تَفْقُرْنَا بِالْاِسْتِغْنَاءِ عَنْكَ تَبَرَّأْنَا اِلَيْكَ مِنْ حَوْلِنَا وَقُوَّتِنَا وَالْتَجَأْنَا اِلٰى حَوْلِكَ وَقُوَّتِكَ فَاجْعَلْنَا مِنَ الْمُتَوَكِّلٖينَ عَلَيْكَ وَلَا تَكِلْنَا اِلٰى اَنْفُسِنَا وَاحْفَظْنَا بِحِفْظِكَ وَارْحَمْنَا وَارْحَمِ الْمُؤْمِنٖينَ وَالْمُؤْمِنَاتِ وَصَلِّ وَسَلِّمْ عَلٰى سَيِّدِنَا مُحَمَّدٍ عَبْدِكَ وَنَبِيِّكَ وَصَفِيِّكَ وَخَلٖيلِكَ وَجَمَالِ مُلْكِكَ وَمَلٖيكِ صُنْعِكَ وَعَيْنِ عِنَايَتِكَ وَشَمْسِ هِدَايَتِكَ وَلِسَانِ حُجَّتِكَ وَمِثَالِ رَحْمَتِكَ وَنُورِ خَلْقِكَ وَشَرَفِ مَوْجُودَاتِكَ وَسِرَاجِ وَحْدَتِكَ فٖى كَثْرَةِ مَخْلُوقَاتِكَ وَكَاشِفِ طِلْسِمِ كَائِنَاتِكَ وَدَلَّالِ سَلْطَنَةِ رُبُوبِيَّتِكَ وَمُبَلِّغِ مَرْضِيَّاتِكَ وَمُعَرِّفِ كُنُوزِ اَسْمَائِكَ وَمُعَلِّمِ عِبَادِكَ وَتَرْجُمَانِ اٰيَاتِكَ وَمِرْاٰتِ جَمَالِ رُبُوبِيَّتِكَ وَمَدَارِ شُهُودِكَ وَاِشْهَادِكَ وَحَبٖيبِكَ وَرَسُولِكَ الَّذٖى اَرْسَلْتَهُ رَحْمَةً لِلْعَالَمٖينَ وَعَلٰى اٰلِهٖ وَصَحْبِهٖ اَجْمَعٖينَ وَعَلٰى اِخْوَانِهٖ مِنَ النَّبِيّٖينَ وَالْمُرْسَلٖينَ وَعَلٰى مَلٰئِكَتِكَ الْمُقَرَّبٖينَ وَعَلٰى عِبَادِكَ الصَّالِحٖينَ اٰمٖينَ
+</p>
 
-    <p class="text-center" style="margin-top: 10px">
+    <p class="text-center" style="margin-top: 10px;margin-bottom: 0">
     “O ALLAH, verlicht onze harten met het licht des geloofs en De Qur’an.”
     </p>
 
-    <p>
+    <p style="margin-top: 0px">
     O ALLAH, verrijk ons door onze behoeftigheid aan U continu te laten vernemen, verarm ons niet door onze behoefte aan Uw Genade te laten vergeten. Wij hebben afstand van onze kracht en vermogen genomen, en toevlucht tot Uw Vermogen en Kracht genomen. Laat ons tot de Godgelaten gelovigen behoren. Laat ons niet over aan ons ego, behoud ons onder Uw Hoede. Wees ons, de gelovige mannen en de gelovige vrouwen Genadig. Laat Uw Vrede en Zegeningen neerdalen op Uw onderdaan, Uw gezant, Uw uitverkorene, Uw vriend, de parel van Uw Rijk, de sultan van Uw kunstwerken, de bron van Uw Gratie, de zon van Uw leiding, de stem van Uw Bewijsvoering, de illustratie van Uw Genade, het Licht van Uw creatie, de eer van het bestaan, de schittering van Uw Eenheid binnen multipliciteit, de oplosser van het kosmische mysterie, de heraut van Uw Sultanaat, de overdrager van Uw Wensen, de beschrijver van de schatten die aan Uw Namen ontspruiten, de onderwijzer van Uw onderdanen, de vertolker van Uw Aya’s, de spiegel van Uw Schone Heerschappij, het middel om U te zien en te laten zien, Uw geliefde, Uw profeet die U als genade voor de werelden heeft gezonden, en over al zijn familieleden en zijn metgezellen, en over zijn broeders: de profeten en de Godsgezanten, en over Uw uitverkoren engelen en Uw zuivere onderdanen; Amîn.
     </p>
 
@@ -1817,7 +1818,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     <sup>1</sup>
     </p>
 
-    <p class="text-center text-italic">
+    <p class="text-center text-italic text-bold">
     Een dialoog met een aantal jongeren die zich in een verleidelijke beproeving begeven en hun verstand nog niet hebben verloren
     </p>
 
@@ -1999,7 +2000,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     <p><strong>Tot slot</strong></p>
 
     <p>
-    De jeugd zal voorbijgaan. Als ze op de zedeloze weg is versleten, dan zal ze zowel op aarde als in het hiernamaals duizenden onheil en leed met zich meebrengen. Indien jullie willen inzien dat zulke jongeren vooral op basis van misbruik en overdaad met zorgelijke ziektes in ziekenhuizen terechtko    men, of door uitbarstingen in gevangenissen of gestichten eindigen, of door de druk van geestelijke kwellingen in bars belanden, dan kunnen jullie de ziekenhuizen, de gevangenissen en de graven raadplegen.
+    De jeugd zal voorbijgaan. Als ze op de zedeloze weg is versleten, dan zal ze zowel op aarde als in het hiernamaals duizenden onheil en leed met zich meebrengen. Indien jullie willen inzien dat zulke jongeren vooral op basis van misbruik en overdaad met zorgelijke ziektes in ziekenhuizen terechtkomen, of door uitbarstingen in gevangenissen of gestichten eindigen, of door de druk van geestelijke kwellingen in bars belanden, dan kunnen jullie de ziekenhuizen, de gevangenissen en de graven raadplegen.
     </p>
 
 </div>'
@@ -2241,7 +2242,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p>
-    Bijvoorbeeld, iemand heeft een broer of een familielid van een ander vermoord. Door binnen een minuut zijn wraaklust te bevredigen, zal hij miljoenen minuten kwelling in zijn hart en de ellende van gevangenschap ondergaan. Daarnaast zal zijn vrees voor de wraakneming door de famigeliefden van het slachtoffer en de gedachte aan de confrontatie met zijn vijanden zijn levensgeluk en zijn levensvreugde volledig wegnemen. Hij zal de kwelling van zowel vrees als woede ondervinden.
+    Bijvoorbeeld, iemand heeft een broer of een familielid van een ander vermoord. Door binnen een minuut zijn wraaklust te bevredigen, zal hij miljoenen minuten kwelling in zijn hart en de ellende van gevangenschap ondergaan. Daarnaast zal zijn vrees voor de wraakneming door de familieleden van het slachtoffer en de gedachte aan de confrontatie met zijn vijanden zijn levensgeluk en zijn levensvreugde volledig wegnemen. Hij zal de kwelling van zowel vrees als woede ondervinden.
     </p>
 
     <div class="page-footnote">
@@ -3008,16 +3009,16 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     Een streven dat tijdens zijn ondergang tot verdwijning is gedoemd, is de belangstelling van het hart en de interesse van het verstand onwaardig; zoiets kan geen bron van verlangens zijn. Het is het niet waard om met smart en verdriet te treuren om zijn vertrek. Vooral het hart mag zich niet daaraan binden en vastklampen.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
-    مَحْوْ شُدَنْ مَقْصُودْ « فَنَادَه » نَمٖى خٰواهَمْ
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto; max-width: 500px;">
+    نَمٖى خٰواهَمْ «فَنَادَه» مَحْوْ شُدَنْ مَقْصُودْ
     </p>
 
     <p style="margin-bottom: 0">
     Een streven dat vernietigd wordt wanneer het vergaat, is een streven dat onwenselijk is voor mij. Ik ben vergankelijk. Ik verlang niet naar het vergankelijke! Wat kan ik doen?
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
-    دَفْنْ شُدَنْ مَعْبُودْ « زَوالْدَه » نَمٖى خٰوانَمْ
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto; max-width: 500px;">
+    نَمٖى خٰوانَمْ «زَوالْدَه» دَفْنْ شُدَنْ مَعْبُودْ
     </p>
 
     <p style="margin-bottom: 0">
@@ -3062,15 +3063,15 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="87">
     <p class="text-end page-number">#87</p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto;">
     اَزْ اٰنْ دَرْدٖى گِرٖينِ ﴿ لا اُحِبُّ الْاٰفِلٖينَ ﴾ مٖى زَنَدْ قَلْبَمْ
     </p>
 
     <p style="margin-bottom: 0">
-    Voorwaar, die vergankelijke samenkomsten en die ellendige valse liefdes wekten zoveel zorgen en onheil in mij op, dat mijn hart in het voetspoor van Ibrahîm: <br><span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ<sup>1</sup></span> uitte en uitschreeuwde.
+    Voorwaar, die vergankelijke samenkomsten en die ellendige valse liefdes wekten zoveel zorgen en onheil in mij op, dat mijn hart in het voetspoor van Ibrahîm: <br><span class="text-arabic-inline delima-font" dir="rtl" lang="ar">لا اُحِبُّ الْاٰفِلٖينَ<sup>1</sup></span> uitte en uitschreeuwde.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto;">
     دَرْ اٖينْ فَانٖى بَقَاخَازٖى بَقَاخٖيزَدْ فَنَادَنْ
     </p>
 
@@ -3078,39 +3079,39 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     Als je in deze vergankelijke wereld eeuwigheid wenst, weet dan dat eeuwigheid aan ondergang ontspruit. Laat je kwaadgezinde ego ondergang ondergaan, opdat je eeuwigheid ondervindt.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
-    فَنَا شُدْ، هَمْ فَدَا كُنْ، هَمْ عَدَمْ بٖينْ، كِه اَزْ دُنْيا « بَقَايَه » راهْ فَنَادَنْ
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto;">
+    فَنَا شُدْ، هَمْ فَدَا كُنْ، هَمْ عَدَمْ بٖينْ، كِه اَزْ دُنْيا «بَقَايَه» رَاهْ فَنَادَنْ
     </p>
 
     <p style="margin-bottom: 0">
     Verlos jezelf van kwade zeden die de kern van aardsgezindheid vormen en verga; offer je bezittingen en je eigendom op aan de weg van de Ware Geliefde. Doorzie de eindbestemming van wezens die nietigheid uitdrukken, want de weg die van deze wereld naar eeuwigheid leidt, loopt langs vergankelijkheid.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
-    فِكْرْ فٖيزَارْ مٖى دَارَدْ، اَنٖينِ ﴿ لا اُحِبُّ الْاٰفِلٖينَ ﴾ مٖى زَنَدْ وِجْدَانْ
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto;">
+    فِكِرْ فٖيزَارْ مٖى دَارَدْ، اَنٖينِ ﴿ لا اُحِبُّ الْاٰفِلٖينَ ﴾ مٖى زَنَدْ وِجْدَانْ
     </p>
 
     <p style="margin-bottom: 0">
-    De menselijke denkwijze die de oorzaken induikt, raakt verbijsterd door deze dramatische teloorgang op aarde, waardoor ze terneergeslagen treurt. Het geweten dat naar een waar bestaan verlangt, dient in het voetspoor van Ibrahîm: <span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ<sup>1</sup></span> te reciteren, en de band met valse geliefden en vergankelijke wezens te verbreken, om een band met De Ware Existentie en De Onvergankelijke Geliefde op te bouwen.
+    De menselijke denkwijze die de oorzaken induikt, raakt verbijsterd door deze dramatische teloorgang op aarde, waardoor ze terneergeslagen treurt. Het geweten dat naar een waar bestaan verlangt, dient in het voetspoor van Ibrahîm: <span class="text-arabic-inline delima-font" dir="rtl" lang="ar">لا اُحِبُّ الْاٰفِلٖينَ<sup>1</sup></span> te reciteren, en de band met valse geliefden en vergankelijke wezens te verbreken, om een band met De Ware Existentie en De Onvergankelijke Geliefde op te bouwen.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto;">
     بِدَانْ اَىْ نَفْسِ نَدَانَمْ ! كِه: دَرْ هَرْ فَرْدْ اَزْ فَانٖى<br>
-    دُو رَاهْ هَسْتْ بَ بَٖقى، دُو سِرِّ جَانِ جَانَٖنى
+    دُو رَاهْ هَسْتْ بَا بَاقٖى، دُو سِرِّ جَانِ جَانَانٖى
     </p>
 
     <p style="margin-bottom: 0">
     O mijn onwetende ego! Ondanks dat de aarde en de wezens vergankelijk zijn, dien je te weten dat je bij elk vergankelijk wezen twee wegen kunt vinden die naar eeuwigheid leiden. Daarnaast kun je twee flitsen en twee geheimen waarnemen die aan de Adembenemende Manifestaties van de Onvergankelijke Geliefde ontspruiten; mits jij tijdelijke materie en je eigenheid kunt ontstijgen.
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto;">
     كِه دَرْ نِعْمَتْهَا اِنْعَامْ هَسْتْ وَپَسْ اٰثَارْهَا<br>
-    اَسْمَا بِگٖيرْ مَغْزٖى، وَمٖيزَنْ دَرْ فَنَا اٰنْ قِشْرِ بٖى مَعْنا
+    اَسْمَا بِگٖيرْ مَغْزٖى، وَمٖيزَنْ دَرْ فَنَا اٰنْ قِشْرِ بٖى مَعْنَا
     </p>
 
     <div class="page-footnote">
     <hr class="hr-footnote" />
-    <p class="footnote-p"><sup>1</sup>“Ik hou niet van hetgeen tenondergaat” - <em>De Heilige Qur’an, 6:76</em></p>
+    <p class="footnote-p"><sup>1</sup> “Ik hou niet van hetgeen tenondergaat” - <em>De Heilige Qur’an, 6:76</em></p>
     </div>
 
 </div>'
@@ -3140,8 +3141,8 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     Voorwaar, het aardse verstand dat een zwak heeft voor het zichtbare en gevoed is door materiële wetenschappen, zal uit verbijstering en frustraties wanhopig huiveren omdat al zijn opgedane meningen in nietigheid zullen verdwijnen. Het zoekt een weg die naar de waarheid leidt. Aangezien de ziel haar handen van al het ondergaande en voorbijgaande heeft teruggetrokken, heeft ook het hart afstand van valse geliefden genomen. Tevens heeft ook het geweten zijn gezicht van vergankelijke wezens afgewend. O mijn arme ego, bevrijd jezelf ook met behulp van de Ibrahimitische uitspraak: <span class="text-arabic-inline delima-font">لا اُحِبُّ الْاٰفِلٖينَ</span>
     </p>
 
-    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
-    چِه خُوشْ گُويَدْ اُو شَيْدَا « جَامٖى » عِشْقْ خُوىْ
+    <p class="text-center text-arabic delima-font text-italic" dir="rtl" lang="fa" style="margin: 0px auto 0 auto;">
+    چِه خُوشْ گُويَدْ اُو شَيْدَا «جَامٖى» عَشْقِ خُوىْ
     </p>
 
     <p style="margin-bottom: 0">
@@ -7946,41 +7947,9 @@ de mens bevangt, als hij zijn eigenheid vergeet, de teloorgang van het leven nie
                 'content' => '<div class="page" id="200">
 <p class="text-end page-number">#200</p>
 
-<h2 class="page-title-chapter">Het Vijfde Traktaat</h2>
-
-<p class="text-center"><strong>[Uit De Negenentwintigste Brief]</strong></p>
-
-<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
-<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
-<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “In de Naam van ALLAH, de Barmhartige, de Genadige.”&lt;/p&gt;"><sup>1</sup></button></span>
-</p>
-
-<p style="margin: 18px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “ALLAH is Het Licht der hemelen en de aarde.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:35&lt;/p&gt;"><sup>2</sup></button></span></p>
-
-<p>In een zielstoestand tijdens de edele maand Ramadan heb ik één van de vele geheime lichten uit deze Stralende Aya waargenomen en op een denkbeeldige wijze aanschouwd. Dit gebeurde als volgt:</p>
-
-<p style="margin: 18px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اِلٰهٖى اَنْتَ رَبّٖى وَ اْنَا الْعَبْدُ ۞ وَ اَنْتَ الْخَالِقُ وَ اَنَا الْمَخْلُوقُ ۞ وَ اَنْتَ الرَّزَّاقُ وَ اَنَا الْمَرْزُوقُ § الخ …<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “O mijn God, U bent mijn Heer en ik ben Uw onderdaan. En U bent mijn Schepper en ik ben Uw Schepsel. En U bent mijn Onderhouder en ik ben Uw onderhoudene, enzovoort...”&lt;/p&gt;"><sup>3</sup></button></span></p>
-
-<p>Een denkbeeldige belevenis die ik in mijn hart heb waargenomen, heeft mij duidelijk gemaakt dat alle levende wezens deze bekende smeekbede van Oeweys el-Qarnî aan de Hoogste Gerechtigde voordragen, en dat het licht van elke wereld uit de achttienduizend werelden in feite Een Goddelijke Naam is. Ik zag dit als volgt:</p>
-
-<p>Zoals een grote rozenknop met vele om elkaar gewikkelde bladeren, zag ik dat er in deze wereld duizenden verborgen werelden elkaar achtereenvolgens omsluierden. Telkens wanneer er een sluier openging, zag ik weer een andere wereld. De wereld die verscheen, oogde voor mij als een wereld die omgeven was door een duisternis, een woestenij en een huiveringwekkende donkerte zoals omschreven in de Aya na <em>“Ayatoe’n-Nûr”</em>:</p>
-
-<div class="page-footnote">
-<hr class="hr-footnote">
-<p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
-<p class="footnote-p"><sup>2</sup> “ALLAH is Het Licht der hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 24:35</p>
-<p class="footnote-p"><sup>3</sup> “O mijn God, U bent mijn Heer en ik ben Uw onderdaan. En U bent mijn Schepper en ik ben Uw Schepsel. En U bent mijn Onderhouder en ik ben Uw onderhoudene, enzovoort...”</p>
+<div class="text-center page-title-chapter delima-font">
+<h2>Het Vijfde Traktaat</h2>
 </div>
-
-</div>'
-            ],
-            [
-                'page_number' => 200,
-                'content' => '<div class="page" id="200">
-<p class="text-end page-number">#200</p>
-
-<h2 class="page-title-chapter">Het Vijfde Traktaat</h2>
 
 <p class="text-center"><strong>[Uit De Negenentwintigste Brief]</strong></p>
 
@@ -8008,6 +7977,1676 @@ de mens bevangt, als hij zijn eigenheid vergeet, de teloorgang van het leven nie
     <p class="footnote-p"><sup>2</sup> “ALLAH is Het Licht der hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 24:35</p>
     <p class="footnote-p"><sup>3</sup> “O mijn God, U bent mijn Heer en ik ben Uw onderdaan. En U bent mijn Schepper en ik ben Uw Schepsel. En U bent mijn Onderhouder en ik ben Uw onderhoudene, enzovoort...”</p>
 </div>
+
+</div>'
+            ],
+            [
+                'page_number' => 201,
+                'content' => '<div class="page" id="201">
+<p class="text-end page-number">#201</p>
+
+<p style="margin: 18px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+اَوْ كَظُلُمَاتٍ فٖى بَحْرٍ لُجِّىٍّ يَغْشٰيهُ مَوْجٌ مِنْ فَوْقِهٖ مَوْجٌ مِنْ فَوْقِهٖ سَحَابٌ ظُلُمَاتٌ بَعْضُهَا فَوْقَ بَعْضٍ اِذَٓا اَخْرَجَ يَدَهُ لَمْ يَكَدْ يَرٰيهَا وَمَنْ لَمْ يَجْعَلِ اللّٰهُ لَهُ نُورًا فَمَا لَهُ مِنْ نُورٍ
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; “Of als de duisternissen van een diepe zee waar golven boven golven bedekt zijn met wolken; veelvoudige duisternissen waarin men geen hand voor ogen ziet. Voorwaar, hij die van ALLAH geen licht ontvangt, zal nergens licht kunnen vinden.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:40&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p>Vervolgens schitterde er opeens een reflectie van Een Goddelijke Naam Die als een fantastische lichternis alles verhelderde. Telkens wanneer er een sluier voor het verstand openging, verscheen er voor de inbeelding een andere wereld die in onachtzaamheid duister oogde, totdat Een Goddelijke Naam Zich als de zon manifesteerde en die wereld van alle kanten volledig verlichtte. Deze hartenreis en denkbeeldige belevenis hield een geruime tijd aan.</p>
+
+<p class="text-bold text-italic">Bijvoorbeeld:</p>
+
+<p>Toen ik het dierenrijk zag, hadden de eindeloze benodigdheden en de hevige behoeften van alle dieren tezamen met hun zwakte en onmacht die wereld uiterst donker en droevig weergegeven. Plotseling was De Naam <span class="text-bold">Barmhartige</span> naar de verschijning <span class="text-italic">(oftewel de betekenis)</span> van <span class="text-bold">De Onderhouder</span> als de hemelse zon opgekomen; Hij had die wereld van alle kanten met Het Licht van Genade volledig verguld.</p>
+
+<p>Vervolgens zag ik binnen het dierenrijk een andere alom treurige, meelijwekkende en donkere wereld waarin alle jongen en borelingen zwak, machteloos en behoeftig spartelden. Plotseling was De Naam <span class="text-bold">Genadige</span> naar de verschijning van <span class="text-bold">De Meedogende</span> opgekomen. Hij had die wereld zo fraai en verwonderlijk verlicht, dat de tranen van bezwaar en ontroering omsloegen in tranen van opluchting, vreugde en dankbaarheid.</p>
+
+<p>Vervolgens werd er weer een sluier als een bioscoopdoek voor mij ontvouwd, waardoor de mensenwereld zichtbaar voor mij werd. Die wereld oogde voor mij zo donker, zo duister en zo huiveringwekkend, dat ik uit schrik een kreet van ontsteltenis slaakte.</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “Of als de duisternissen van een diepe zee waar golven boven golven bedekt zijn met wolken; veelvoudige duisternissen waarin men geen hand voor ogen ziet. Voorwaar, hij die van ALLAH geen licht ontvangt, zal nergens licht kunnen vinden.” - <em>De Heilige Qur’an</em>, 24:40</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 202,
+                'content' => '<div class="page" id="202">
+<p class="text-end page-number">#202</p>
+
+<p>Want de mensen met hun verlangens en wensen die tot de eeuwigheid uitstrekken en aanhouden, hun opvattingen en gedachten die het universum omvatten, hun toewijding en potenties die naar de eeuwige oneindigheid, de eeuwige gelukzaligheid en het paradijs smachten, hun zwaktes en benodigdheden die op talloze doelen en verlangens zijn gericht, staan ondanks hun onmacht en behoeftigheid bloot aan talloze calamiteiten en vijanden, terwijl ze gedurende een kortstondig leven, onder ellendige omstandigheden en met een uiterst kommerlijk inkomen proberen te overleven. Onder de vloek van constante teloorgang en scheiding, wat voor het hart de pijnlijkste en afgrijselijkste kwelling is, staren ze naar het graf dat voor het onachtzame volk als een poort tot eeuwige duisternis oogt; één voor één en groepsgewijs worden ze in die put der duisternis geworpen.</p>
+
+<p>Voorwaar, toen ik de wereld van de mensen in deze duisternis zag, en mijn hart, mijn ziel en mijn verstand, samen met al mijn menselijke zintuigen en alle atomen van mijn lichaam op het punt stonden om huiverend te huilen, waren De Naam <span class="text-bold">Rechtvaardige</span> naar de verschijning van <span class="text-bold">De Alwijze</span>, de Naam <span class="text-bold">Barmhartige</span> naar de verschijning van <span class="text-bold">De Genereuze</span>, De Naam <span class="text-bold">Genadige</span> naar de verschijning <span class="text-italic">(oftewel de betekenis)</span> van <span class="text-bold">De Vergever</span>, De Naam <span class="text-bold">Herrijzer</span> naar de verschijning van <span class="text-bold">De Erfgenaam</span>, De Naam <span class="text-bold">Levengever</span> naar de verschijning van <span class="text-bold">De Weldadige</span>, De Naam <span class="text-bold">Heer</span> naar de verschijning van <span class="text-bold">De Eigenaar</span> opgekomen. Ze hadden vele werelden binnen die mensenwereld opgehelderd en verlicht, vensters op de lumineuze wereld van het hiernamaals geopend en lichten over die donkere wereld van de mensen gesprenkeld.</p>
+
+<p>Vervolgens ging er weer een gigantische sluier open, waardoor de wereld van de aarde zichtbaar werd. De donkere grondstellingen van de filosofie hadden mijn inbeelding een angstaanjagende wereld getoond. De zeer oude en uiterst versleten aardbol, die met een zeventigmaal snellere beweging dan een kanonskogel een vijfentwintigduizendjarige afstand in een jaar aflegt, beeft vanbinnen en is elk moment in staat om te splijten en uiteen te vallen. De staat van de arme mensheid die op de aardbol in een reusachtige leegte reist, oogde voor mij verbijsterend en duister. Ik werd duizelig en het werd zwart voor mijn ogen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 203,
+                'content' => '<div class="page" id="203">
+<p class="text-end page-number">#203</p>
+
+<p>Plotseling waren <span class="text-bold">De Almachtige, De Alwetende, De Heer, ALLAH, De Heer der hemelen en de aarde</span> en <span class="text-bold">De Bedwinger van de zon en de maan</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;&lt;span class=&quot;text-arabic-inline&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;رَبُّ السَّمَاوَاتِ وَ الْاَرْضِ وَ مُسَخَّرُ الشَّمْسِ وَ الْقَمَرِ&lt;/span&gt;&lt;/p&gt;"><sup>1</sup></button></span> als Namen van <span class="text-bold">De Schepper der aarde en hemelen</span> naar de verschijningen van <span class="text-bold">Genade, Glorie</span> en <span class="text-bold">Heerschappij</span> opgekomen. Zij hadden die wereld zodanig verlicht, dat ik in die toestand de aardbol als een uiterst geordend, onderhevig, voortreffelijk, bevallig en veilig cruiseschip had gezien dat voor een excursie, voor vermaak en voor handel was klaargemaakt.</p>
+
+<p><span class="text-bold">Conclusie</span></p>
+
+<p>Elke Naam onder de duizend en één Goddelijke Namen Die op het universum zijn gericht, fungeert als Een Zon Die een wereld evenals de daarin verkerende werelden verlicht. En uit het oogpunt van het enigheidsgeheim, waren er bij elke reflectie van Een Naam ook reflecties van De Overige Namen enigermate zichtbaar.</p>
+
+<p>Vervolgens, omdat het hart achter elke duisternis telkens weer een andere vorm van licht aanschouwde, werd zijn lust om verder te reizen geïntensiveerd. Hij wilde de inbeelding bestijgen en richting de hemel rijzen.</p>
+
+<p>Daarop ging er weer een geweldige sluier open; het hart betrad de wereld van de hemelen. Hij zag dat de stralende sterren die leken te glimlachen, groter dan de aarde waren en sneller dan haar wirwar langs elkaar roterend voortbewogen. Als één ervan uit haar baan zou raken, dan zou ze tegen een andere botsen en een dusdanige explosie veroorzaken, dat daardoor het universum zich dood zou schrikken en de wereld uiteen zou vallen. Ze gaven geen licht maar spuwden vuur; ze keken mij niet vriendelijk maar bloeddorstig aan. Ik zag de hemelen binnen grenzeloze, grandioze, woeste, lege, angstaanjagende en verbijsterende duisternissen. Ik had enorme spijt van mijn komst gekregen. Plotseling waren de reflecties van De Schone Namen:
+
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Heer der hemelen en de aarde. Heer der engelen en de zielen.”&lt;/p&gt;"><sup>2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">رَبُّ السَّمٰوَاتِ وَ الْاَرْضِ ۞ رَبُّ الْمَلٰٓئِكَةِ وَ الرُّوحِ</span>
+
+naar de verschijning van:
+
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 4" data-fn="4" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“En Wij hebben de maan en de zon onderworpen.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 13:2&lt;/p&gt;"><sup>4</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">۞ وَ سَخَّرَ الشَّمْسَ وَ الْقَمَرَ</span>
+
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“En voorzeker, Wij hebben de aardse hemel met lampen versierd.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 67:5&lt;/p&gt;"><sup>3</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">وَلَقَدْ زَيَّنَّا السَّمَٓاءَ الدُّنْيَا بِمَصَابٖيحَ</span>
+
+ opgekomen.
+
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> <span class="text-arabic-inline" dir="rtl" lang="ar">رَبُّ السَّمَاوَاتِ وَ الْاَرْضِ وَ مُسَخَّرُ الشَّمْسِ وَ الْقَمَرِ</span></p>
+<p class="footnote-p"><sup>2</sup> “Heer der hemelen en de aarde. Heer der engelen en de zielen.”</p>
+<p class="footnote-p"><sup>3</sup> “En voorzeker, Wij hebben de aardse hemel met lampen versierd.” - <em>De Heilige Qur’an</em>, 67:5</p>
+<p class="footnote-p"><sup>4</sup> “En Wij hebben de maan en de zon onderworpen.” - <em>De Heilige Qur’an</em>, 13:2</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 204,
+                'content' => '<div class="page" id="204">
+<p class="text-end page-number">#204</p>
+
+<p>Uit het oogpunt van die betekenis viel alle sterren die omgeven waren door duisternis een deel van dat grandioze licht toe, waardoor de wereld van de hemelen als het ware met zoveel elektrische lampen als het aantal sterren werd verlicht. En die hemelen waarover gewaand wordt dat ze leeg en woest zijn, werden met engelen en zielen gevuld en verlevendigd. De zonnen en sterren die als een leger onder de talloze legers van De Onbegonnen en Oneindige Sultan voortbewegen, lieten met hun verheven manoeuvres naar mijn waarneming de Overmacht en de Glorieuze Heerschappij van De Ontzaglijke Sultan zien.</p>
+
+<p style="margin-bottom: 0">Als het mogelijk zou zijn, dan had ik met al mijn atomen, en als ze me konden horen, dan had ik in de taal van alle schepselen het volgende willen uitspreken <span class="text-italic">(en namens hen had ik dit ook uitgesproken)</span>:</p>
+
+<p style="margin: 0px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ مَثَلُ نُورِهٖ كَمِشْكٰوةٍ فٖيهَا مِصْبَاحٌ اَلْمِصْبَاحُ فٖى زُجَاجَةٍ
+</p>
+
+<p style="margin: 10px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+اَلزُّجَاجَةُ كَاَنَّهَا كَوْكَبٌ دُرِّىٌّ يُوقَدُ مِنْ شَجَرَةٍ مُبَارَكَةٍ زَيْتُونَةٍ لَا شَرْقِيَّةٍ وَلَا غَرْبِيَّةٍ يَكَادُ
+</p>
+
+<p style="margin: 10px auto 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+زَيْتُهَا يُضٖٓىءُ وَلَوْ لَمْ تَمْسَسْهُ نَارٌ نُورٌ عَلٰى نُورٍ يَهْدِى اللّٰهُ لِنُورِهٖ مَنْ يَشَٓاءُ
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“ALLAH is Het Licht van de hemelen en de aarde. De gelijkenis van Zijn Licht is als een nis met daarin een lamp; de lamp is in een fles; de fles is als een schitterende ster die ontbrandt met een brandstof van een gezegende olijvenboom die noch het oosten en noch het westen toebehoort; haar brandstof kan zelfs zonder in aanraking met vuur te komen ontbranden; Licht boven Lichternis; ALLAH leidt wie Hij Wil tot Zijn Licht.” - <span class=&quot;text-italic&quot;>De Heilige Qur’an, 24:35</span>&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p style="margin-top: 8px;margin-bottom: 0">Ik reciteerde Die Aya, draaide mij om, keerde terug, werd wakker en zei:</p>
+
+<p style="margin: 0px auto 0 auto; max-width: 500px;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+اَلْحَمْدُ لِلّٰهِ عَلٰى نُورِ الْاٖيمَانِ وَ الْقُرْاٰنِ
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH voor het licht van het geloof en De Qur’an.”&lt;/p&gt;"><sup>2</sup></button></span>
+</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> “ALLAH is Het Licht van de hemelen en de aarde. De gelijkenis van Zijn Licht is als een nis met daarin een lamp; de lamp is in een fles; de fles is als een schitterende ster die ontbrandt met een brandstof van een gezegende olijvenboom die noch het oosten en noch het westen toebehoort; haar brandstof kan zelfs zonder in aanraking met vuur te komen ontbranden; Licht boven Lichternis; ALLAH leidt wie Hij Wil tot Zijn Licht.” - <span class="text-italic">De Heilige Qur’an, 24:35</span></p>
+
+    <p class="footnote-p"><sup>2</sup> “De lof zij ALLAH voor het licht van het geloof en De Qur’an.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 205,
+                'content' => '<div class="page" id="205">
+<p class="text-end page-number">#205</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Uit De Leidraad Voor De Jeugd</h2>
+</div>
+
+<p>Op een dag zat ik voor het venster van de gevangenis in Eskişehir. Mijn blik dwaalde naar het lyceum tegenover de gevangenis, waarop ik zag dat de oudere meiden van die school op het plein lachend aan het dansen waren. Op dat moment oogden die meiden in hun wereldse paradijs voor mij als de hoûri’s van de hel. Plotseling zag ik hoe hun toestand er over vijftig jaar uit zou zien. Hun gelach was omgeslagen in bittere tranen. Van daaruit werd de aankomende waarheid verhelderd. In een spirituele en denkbeeldige bioscoop zag ik dat over vijftig jaar vijftig van die zestig lachende meiden kwelling in het graf ondergingen en één met de grond werden. De overige tien meiden waren op hun zeventigjarige leeftijd lelijk geworden, waardoor ze door iedereen met afschuw werden aangekeken. Daarop begon ik om ze te huilen.</p>
+
+<p>De hoedanigheid van de fitna’s gedurende het einde der tijden werd mij getoond. Ik zag dat de aller heftigste en verleidelijkste fitna aan de schaamteloosheid van de vrouwen ontsproot. Die fitna overmeestert de wil en lokt mensen als motten naar het vuur der zedeloosheid. Daarnaast leidt die fitna ertoe dat mensen een minuut durend moment van het aardse leven boven jaren lange momenten van het eeuwige leven verkiezen.</p>
+
+<p>Toen ik op een dag naar de straat keek, voelde ik een effectieve manifestatie van die fitna. Ik kreeg het enorm te doen met de jeugd en zei:</p>
+
+<p class="text-italic">“Deze arme jongeren kunnen zich niet verzetten tegen deze vurige fitna die ze als een magneet aantrekt.”</p>
+
+<p>Terwijl ik in deze gedachten verzonk, verscheen er een afvallige, geestelijke persoonlijkheid die deze fitna aanvuurde en onderwees. Daarop sprak ik hem en de atheïsten die les van hem kregen als volgt aan:</p>
+
+<p>O ellendeling die op het pad van plezier met helse hoûri’s zijn religie opoffert, de zedeloze dwaling gretig inslaat, op de weg van egoïstische lustbevredigingen ongeloof en godloochening aanvaardt, het leven bemint, de dood uitermate vreest, de gedachte aan het graf ontvlucht en afvalligheid onder ogen ziet!</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 206,
+                'content' => '<div class="page" id="206">
+<p class="text-end page-number">#206</p>
+
+<p>Wees er absoluut zeker van dat deze enorme wereld van jou voor en na dit moment, je hele bestaan, je verleden en je toekomst, je vergane landgenoten en voorvaderen, de aankomende schepselen en generaties, de verdwenen werelden en naties, de toekomstige mensen en volkeren vanuit een ongelovig perspectief allemaal absoluut dood zijn.</p>
+
+<p>Voorwaar, gezien je menselijke aard en je verstand laten al die reizende werelden en voortvarende universa waar jij betrokken bij bent continu verbijsterende kwellingen via de heftige en ontelbare sterftes op aarde over je hoofd storten. Als jij over een bewustzijn beschikt, dan zal het je hart branden. Als jij een ziel bezit, dan zal ze een hel ondergaan. Als jouw verstand niet is uitgedoofd, dan zal het stikken van verdriet. Indien een uurtje ontucht in dronkenschap en een vieze genieting deze eindeloze droefenissen en kwellingen kunnen overschaduwen, blijf dan maar in ontucht voortleven. Zo niet, kom dan tot bezinning! Om van die geestelijke hel gered te worden, om een geestelijk paradijs dat het geloof zelfs op aarde verschaft in te treden en om het levensgeluk te proeven, dien je gehoor te geven aan de lessen van De Qur’an. Ruil een specifieke en vergankelijke genieting van een minuut in voor universele, eeuwige en aanhoudende genietingen binnen het kader van het geloof.<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;Waarlijk, het geloof kan zelfs op deze wereld de genietingen van het paradijs verschaffen. Uit de honderden lichten hieromtrent hoef je slechts naar dit ene voorbeeld te kijken: stel je voor dat een persoon die jou erg dierbaar is op het punt staat om te sterven. Als er ineens een dokter als Loeqmân en Khidr verschijnt en hem van de dood redt, dan kun je wel nagaan hoeveel vreugde je op dat moment zult ervaren. Evenzo verschaft het geloof jou zoveel vreugdes en geneugtes als het aantal overledenen die jou dierbaar zijn en waar jij een band mee hebt. Want miljoenen mensen die jou dierbaar zijn en in het graf van het verleden zijn begraven, komen dankzij het geloofslicht opeens tot leven. Zij ondervinden leven en zeggen: <em>&quot;Wij zijn niet dood, noch zullen wij sterven!&quot;</em> In plaats van de grenzeloze kwellingen die ontelbare scheidingen teweegbrengen, ontstaan er vanuit een geloofsoptiek zelfs op aarde eindeloze genietingen en vreugdes omdat je geliefden leven ondervinden en jij met ze verenigd zult worden. Dit toont aan dat het geloof een zaad is waaruit alle genietingen en schoonheden van het paradijs ontkiemen en ontspruiten.&lt;/p&gt;"><sup>1</sup></button></span></p>
+
+<p>En doe geen uitspraken als: <span class="text-italic">“Ik ga mijn leven als een dier leiden.”</span> Want voor dieren zijn het verleden en de toekomst verborgen. Door die verborgenheid niet bekend aan ze te maken, heeft De Hoogst Genadige Alwijze hen van grenzeloze kwellingen gered. Zelfs een kip die gereed is om geslacht te worden, verneemt geen ene vorm van leed en verdriet. Wanneer het mes begint te snijden, wil ze het vernemen, maar dan verdwijnt haar gevoel, waardoor ze ook van die kwelling wordt gered.</p>
+
+<div class="page-footnote">
+    <hr class="hr-footnote">
+    <p class="footnote-p"><sup>1</sup> Waarlijk, het geloof kan zelfs op deze wereld de genietingen van het paradijs verschaffen. Uit de honderden lichten hieromtrent hoef je slechts naar dit ene voorbeeld te kijken: stel je voor dat een persoon die jou erg dierbaar is op het punt staat om te sterven. Als er ineens een dokter als Loeqmân en Khidr verschijnt en hem van de dood redt, dan kun je wel nagaan hoeveel vreugde je op dat moment zult ervaren. Evenzo verschaft het geloof jou zoveel vreugdes en geneugtes als het aantal overledenen die jou dierbaar zijn en waar jij een band mee hebt. Want miljoenen mensen die jou dierbaar zijn en in het graf van het verleden zijn begraven, komen dankzij het geloofslicht opeens tot leven. Zij ondervinden leven en zeggen: “Wij zijn niet dood, noch zullen wij sterven!” In plaats van de grenzeloze kwellingen die ontelbare scheidingen teweegbrengen, ontstaan er vanuit een geloofsoptiek zelfs op aarde eindeloze genietingen en vreugdes omdat je geliefden leven ondervinden en jij met ze verenigd zult worden. Dit toont aan dat het geloof een zaad is waaruit alle genietingen en schoonheden van het paradijs ontkiemen en ontspruiten.</p>
+</div>
+</div>'
+            ],
+            [
+                'page_number' => 207,
+                'content' => '<div class="page" id="207">
+<p class="text-end page-number">#207</p>
+
+<p>Aldus schuilt er een geweldige en voortreffelijke Genade, Erbarmen en Mededogen van de Hoogste Gerechtigde achter het onbekend houden van het verborgene. Vooral bij onschuldige dieren manifesteert dit zich op een volmaaktere wijze. Aldus kun jij wat zedeloze genietingen betreft dieren niet evenaren; jij zult duizendmaal lager dan dieren zinken. Want datgene wat voor dieren verborgen is, wordt door jouw verstand waargenomen en de kwelling ervan wordt opgenomen. Jij wordt volledig onthouden van de pure rust achter de versluiering van het verborgene.</p>
+
+<p>En al jouw mooie eigenschappen waar jij trots op bent, zoals broederschap, eerbied en toewijding, worden tot een uiterst kortstondig moment en een reikwijdte naar verhouding van een vingerafdruk in een enorme woestijn ingeperkt. Binnen een eindeloze tijd hebben ze slechts betrekking op het huidige moment, waardoor ze een gemaakte, tijdelijke, bedrieglijke, ongefundeerde en uiterst bekrompen hoedanigheid krijgen, en jouw menselijkheid en jouw volmaaktheid in dezelfde mate afnemen en bezwijken.</p>
+
+<p>Echter, in het geloofskader zijn het verleden en de toekomst existent. Omdat de broederschap, de eerbied, de liefde en de toewijding van gelovigen het verleden en de toekomst omvatten, nemen hun menselijkheid en hun volmaaktheid in dezelfde mate toe.</p>
+
+<p>En wat je wereldse succes betreft lijk je op een gestoorde Joodse juwelier die stukken glas voor de prijs van een diamant inkoopt. Want voor een vluchtig moment en een kortstondig leven betaal jij de prijs van een lang, aanhoudend en omvattend leven, waardoor jij binnen die begrensde kring uiteraard zegeviert. Omdat jij jouw gevoelens zoals hebzucht, liefde en wraak een jaar lang met volle passie tot zaken wendt die geen minuut aandacht waard zijn, zal jij de gelovigen tijdelijk in dit opzicht overtreffen.</p>
+
+<p>En omdat je verstand, je ziel, je hart en je gevoelens hun verheven taken nalaten, en aan de activiteiten van het verdorven ego en de vieze lusten deelnemen en bijdragen, kun jij de gelovigen op aarde overwinnen en ogenschijnlijk leuker overkomen. Want je verstand, je hart en je ziel zijn uiterst diep gezonken, ze zijn achteruitgegaan en ze hebben de bodem bereikt; ze hebben zich met de vieze lusten en het schandelijke ego verenigd. Uiteraard zal je in dit opzicht een tijdelijke overwinning behalen, wat jou uiteindelijk de hel en de onderdrukte gelovigen het paradijs zal opleveren.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 208,
+                'content' => '<div class="page" id="208">
+<p class="text-end page-number">#208</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Een Belangrijke Kwestie Die Mij Plotseling Is Ingegeven</h2>
+</div>
+
+<p>Bepaalde overleveringen in de Âhadîth geven aan dat vrouwen en hun fitna de grootste rol in de fitna van het einde der tijden zullen spelen. Waarlijk, zoals geschiedenisboeken melden, waren er vroeger strijdvaardige vrouwen genaamd <span class="text-italic">“Amazonen”</span> die een bataljon hadden gevormd en opzienbarende strijden hadden geleverd. Evenzo hebben de ongelovige dwaalgeesten met de beraming van het kwaadgezinde ego halfnaakte vrouwen als één van hun krachtigste bataljons onder het commando van satan voor hun strijd tegen de Islam ingezet. Met hun blote benen als wapens belagen ze de gelovigen en zetten ze hun aanval in. Ze ijveren om de weg naar het huwelijk te sluiten, terwijl ze de weg naar bordelen toegankelijker willen maken. Zodoende onderwerpen ze de ego’s van velen, en verwonden ze de harten en zielen met grote zonden. Een aantal van die harten maken ze zelfs dood.</p>
+
+<p>Nadat deze vrouwen enkele jaren de lusten van vreemden met hun uiterlijk hebben bevredigd, zullen hun verderfelijke benen ter vergelding brandhout van de hel worden; die benen zullen als eerst branden. En omdat ze op aarde hun betrouwbaarheid en loyaliteit hebben verloren, zullen ze ondanks hun natuurlijke verlangen en behoefte geen geschikte man meer kunnen vinden. Mocht ze een man vinden, dan zal hij haar leven zuur maken. Als resultaat van deze toestand kan er uit overleveringen van Âhadîth geconcludeerd worden dat vrouwen gedurende het einde der tijden vanwege de desinteresse en de trouweloosheid in het huwelijk in sommige plaatsen zo respectloos, zorgeloos en waardeloos behandeld zullen worden, dat één man veertig vrouwen om zijn vinger zal winden.</p>
+
+<p>Aangezien dit de waarheid is, en aangezien elke schone vrouw haar schoonheid liefheeft, haar best doet om haar te behouden en niet wil dat ze verwelkt, en aangezien schoonheid een gunst is die – zoals elke gunst – met dankbetuiging impliciet toeneemt en door ondankbaarheid vergaat en bederft, zal een verstandige vrouw uiteraard met al haar kunnen haarzelf ervan weerhouden om haar charme en schoonheid voor het bedrijven en verspreiden van zonden te hanteren, ze lelijk en giftig te maken, en die gunsten via ontkenning in een bron van kwelling te veranderen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 209,
+                'content' => '<div class="page" id="209">
+<p class="text-end page-number">#209</p>
+
+<p>En om die tijdelijke vijf à tien jarige schoonheid te vereeuwigen, zal ze haar op een geoorloofde wijze hanteren en dank voor die gunst betuigen. Anders zal ze tijdens haar ouderdom een geruime tijd verafschuwd worden en hopeloos huilen.</p>
+
+<p>Als die schoonheid binnen de disciplinaire kring van de Islam met de elegantie van de Qur’anische ethiek wordt versierd, dan zal die tijdelijke schoonheid volgens de vaststelling van de Âhadîth impliciet blijven aanhouden en in het paradijs zal ze in een mooiere en stralendere vorm dan die van Hoûri’s terug worden geschonken<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;&lt;strong&gt;Noot van de vertalers:&lt;/strong&gt; een Hoûri is een paradijselijke vrouw. Ze is een onaangeraakte maagd die in alle opzichten onvoorstelbaar mooi is geschapen en alleen voor haar man is bestemd. In een overlevering is vermeld dat één druppel uit haar mond voldoende is om de zeven oceanen te verzoeten. Ook is overgeleverd dat de pracht van haar gezicht de zon in de schaduw stelt. Zo zijn er nog vele overleveringen die de hemelse schoonheid van deze paradijselijke vrouwen omschrijven.&lt;/p&gt;"><sup>1</sup></button></span>. Als de bezitster van schoonheid ook maar een greintje verstand bezit, dan zal ze deze stralende en eeuwige opbrengst niet uit haar handen laten glippen.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+<p class="footnote-p"><sup>1</sup> <strong>Noot van de vertalers:</strong> een Hoûri is een paradijselijke vrouw. Ze is een onaangeraakte maagd die in alle opzichten onvoorstelbaar mooi is geschapen en alleen voor haar man is bestemd. In een overlevering is vermeld dat één druppel uit haar mond voldoende is om de zeven oceanen te verzoeten. Ook is overgeleverd dat de pracht van haar gezicht de zon in de schaduw stelt. Zo zijn er nog vele overleveringen die de hemelse schoonheid van deze paradijselijke vrouwen omschrijven.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 210,
+                'content' => '<div class="page" id="210">
+<p class="text-end page-number">#210</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Samenvatting Van De Tweede Kwestie</h2>
+</div>
+
+<p class="text-center"><strong>[Uit De Vruchten]</strong></p>
+
+<p>Zoals <strong>“De Leidraad voor De Jeugd”</strong> uit de Risale-i Nur uitstekend heeft omschreven, is de dood zo vaststaand en evident, dat ze ons als de nacht van vandaag en als de winter van deze lente zal bereiken.</p>
+
+<p>Zoals deze gevangenis een tijdelijk verblijf is voor gedetineerden die continu komen en vertrekken, is dit aardoppervlak evenzeer een gastenverblijf op het pad van voortsnellende reisgezelschappen die er een nacht verblijven en weer verder reizen.</p>
+
+<p class="text-bold text-italic">De dood die elke stad honderdmaal in de grafakker heeft geleegd, heeft uiteraard een wens die verder dan dit leven reikt.</p>
+
+<p>Voorwaar, het raadsel achter deze verbijsterende waarheid heeft de Risale-i Nur ontrafeld en onthuld. Een korte samenvatting hiervan luidt als volgt:</p>
+
+<p>De dood kan niet gedood en de poort van het graf kan niet gesloten worden. Mocht er dus een methode zijn om uit de klauwen van de dood en de eenzame opsluiting in het graf gered te worden, dan zal het vinden van die methode voor de mens uiteraard van het allerhoogste belang zijn.</p>
+
+<p>Waarlijk, er bestaat een methode en dankzij een geheim uit De Qur’an heeft de Risale-i Nur die methode zo zeker als tweemaal twee vier is onomstotelijk aangetoond. Een korte samenvatting hiervan luidt als volgt:</p>
+
+<p>De dood is óf een eeuwige verdoemenis; een galg waaraan de mens samen met al zijn geliefden en dierbaren gehangen zal worden. Óf ze is een vrijstellingsdocument waarmee de eeuwige wereld en het paleis van gelukzaligheid met het geloofspaspoort kan worden ingetreden.</p>
+
+<p>En het graf is ofwel een duistere isolatiekerker en een bodemloze put, ofwel een poort van de aardse gevangenschap tot de stralende tuinen waar eeuwige festijnen plaatsvinden. Deze waarheid is in <strong>“De Leidraad voor De Jeugd”</strong> met behulp van een voorbeeld aangetoond.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 211,
+                'content' => '<div class="page" id="211">
+<p class="text-end page-number">#211</p>
+
+<p>Bijvoorbeeld, op het plein van deze gevangenis zijn galgen opgesteld. Achter de muren waartegen de galgen leunen, is er een groot kantoor voor een loterij met een wereldwijde deelname gevestigd. Wij in de gevangenis zullen alle vijfhonderd zonder uitzonderingen hoe dan ook één voor één naar het plein worden geroepen. Overal op dat plein worden aankondigingen gedaan; ze zeggen ofwel: <span class="text-italic">“Kom, je doodsvonnis is getekend, loop naar de galg!”</span> ofwel: <span class="text-italic">“Je bent veroordeeld tot eeuwige isolatie, loop door de poort!”</span> ofwel: <span class="text-italic">“Blijde tijding voor jou! Er is een lot ter waarde van miljoenen goudstukken voor jou gevallen. Kom je lot halen!”</span> We zien dat mensen één voor één naar de galg lopen. Een deel van die mensen wordt voor onze ogen opgehangen. Een ander deel hanteert die galgen als een trede om het loterijkantoor aan de andere kant van de muur te bereiken. Aanzienlijke en trouwe ambtenaren die daar aanwezig zijn, delen deze informatie met ons. Op het moment dat wij hun stellige kennisgevingen zo zeker als een eigen waarneming aannemen, komen er twee groepen mensen de gevangenis in.</p>
+
+<p><strong>De mensen van de eerste groep</strong> komen met allerlei muziekinstrumenten, alcoholische dranken en lekker ogende gebakken en lekkernijen in hun handen naar binnen. Met verscheidene verleidingen bieden ze ons die gebakken aan. Echter, die zoetigheden zijn giftig; menselijke duivels hebben er gif in verwerkt.</p>
+
+<p><strong>De mensen van de tweede groep</strong> komen binnen met disciplinaire leerstelsels, halal voedsel en gezegende dranken die ze ons als geschenken aanreiken. Daarnaast delen ze ons stellig en plechtig unaniem het volgende mee:</p>
+
+<p class="text-italic">“Indien jullie de cadeaus van de eerste groep – die jullie ter beproeving worden aangeboden – aannemen en ervan eten, dan zullen jullie aan deze galgen worden opgehangen zoals degenen die jullie reeds opgehangen hebben zien worden. Als jullie in plaats daarvan deze bevelschriften en geschenken van de heerser des lands aannemen, en de beden en litanieën uit de leerstelsels reciteren, dan zullen jullie van de galg gered worden. Twijfel er geen greintje aan dat eenieder van jullie als koninklijke gift een lot ter waarde van een miljoen goudstukken uit het loterijkantoor zal ontvangen. Als jullie besluiten om van die verboden, twijfelachtige en giftige gebakken te eten, dan zullen jullie met de garandering van deze koninklijke bevelschriften en onze stellige kennisgevingen door het effect van de gif onderweg naar de galg al krimpen van de pijn.”</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 212,
+                'content' => '<div class="page" id="212">
+<p class="text-end page-number">#212</p>
+
+<p>Voorwaar, net zoals dit voorbeeld, zal er achter de galg van het sterfuur waarmee wij continu geconfronteerd worden, op de gelovige en gehoorzame mensen die hun levenstaak heilzaam voleindigen honderd procent een lot ter waarde van een eeuwige en onuitputtelijke schat uit de voorbeschikte loterij der mensheid vallen. Zij die in onzede, zonden, ongeloof en ondeugd volharden en onberouwd sterven, zullen met negenennegentig procent zekerheid ofwel eeuwige verdoemenis <span class="text-italic">(zij die niet in het hiernamaals geloven)</span> ofwel een permanente, duistere en geïsoleerde gevangenschap <span class="text-italic">(zij die in de onsterfelijkheid van de ziel geloven, maar in onzede voortleven)</span> ondervinden en de kennisgeving van eeuwige leed ontvangen.</p>
+
+<p><span class="text-bold text-italic">Ten eerste</span> is deze mededeling afkomstig van honderdvierentwintigduizend profeten die bevestigende tekenen in de vorm van talloze mirakelen met zich meebrengen.</p>
+
+<p><span class="text-bold text-italic">Ten tweede</span> is ze afkomstig van meer dan honderdvierentwintig miljoen heiligen die de sporen en schaduwen van de profetische boodschappen via ontdekkingen en waarnemingen als een bioscopische weergave hebben aanschouwd, bevestigd en ondertekend.</p>
+
+<p><span class="text-bold text-italic">Ten derde</span> is ze afkomstig van miljarden waarheidsdeskundigen<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt; Eén van die waarheidsdeskundigen is de Risale-i Nur. De traktaten die inmiddels twintig jaar lang de koppigste filosofen en hardnekkigste heidenen het zwijgen opleggen, zijn verkrijgbaar; iedereen kan ze raadplegen, niemand kan ze tegenspreken.&lt;/p&gt;"><sup>1</sup></button></span>, exegeten en getrouwen die de berichtgevingen van de vorige twee bekende groepen met onbetwistbare evidenties en krachtige aanwijzingen verstandelijk – op een intellectuele en logische wijze – deugdelijk hebben bewezen, bevestigd en ondertekend.</p>
+
+<p>Deze opzienbarende drie groepen, deze waarheidsgetrouwe, aanzienlijke en verheven drie gezelschappen die de zonnen, de manen, de sterren en de heilige commandanten van de mensheid zijn, hebben deze mededelingen met behulp van bevelschriften consensueel overgedragen. Hij die geen gehoor aan hen geeft en de rechte weg die zij toonden niet aanhoudt, hij die een negenennegentig procent kans op extreem gevaar negeert, hoewel hij normaal gesproken een weg door de waarschuwing van één adviseur vermijdt en een langere weg inslaat, is zonder enige twijfel te vergelijken met een persoon die in de volgende toestand verkeert:</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 213,
+                'content' => '<div class="page" id="213">
+<p class="text-end page-number">#213</p>
+
+<p>Ondanks dat talloze boodschappers stellig kennis over twee wegen geven, wijkt de persoon in kwestie af van de kortste en gangbaarste weg die honderd procent eeuwige gelukzaligheid oplevert, waarna hij de voorkeur geeft aan de woeligste, langste en lastigste weg die negenennegentig procent naar de gevangenschap van de hel en eeuwige ellende leidt. Echter, als het aankomt op twee aardse wegen, dan zou diezelfde persoon door één betwijfelbare waarschuwing van één adviseur afzien van de kortere weg om één procent kans op gevaar en een mogelijke gevangenisstraf van één maand te ontwijken, waarna hij de onvoordelige en langere weg zou verkiezen, puur omdat die weg ongevaarlijk is. Een dergelijke ellendeling heeft zijn verstand, zijn hart, zijn ziel en zijn menselijkheid dusdanig verloren, dat hij zich als dronken dwazen bezighoudt met muggen en geen aandacht schenkt aan de angstaanjagende draken die in de verte te zien zijn en op hem afvliegen.</p>
+
+<p>Aangezien de ware situatie zo is, behoren wij als gedetineerden de geschenken van de tweede gezegende groep te aanvaarden, opdat wij onze wraak op deze gevangenschap ten volle kunnen nemen. Met andere woorden, een kortstondige bevrediging van een wraaklust of een vluchtige bevrediging van een zedeloze lust heeft ons een vijftien-, een vijf-, een tien- en een twee- à driejarige gevangenisstraf opgeleverd en onze wereld in een gevangenis veranderd. Ter bestrijding van deze calamiteit dienen wij hardnekkig te ijveren om één à twee uur in gevangenschap in Godsdienstoefeningen van één à twee dagen te veranderen, en onze twee- à driejarige gevangenisstraf met de geschenken van de gezegende groep in twintig à dertig bevorderende jaren voor ons hiernamaals om te zetten, en onze tien- à twintigjarige gevangenschap als een gelegenheid te benutten om van een miljoenenjarige gevangenschap in de hel te worden vergeven. Zodoende dienen wij ten opzichte van onze wenende vergankelijke wereld onze eeuwige wereld te laten lachen en onze wraak op deze calamiteit volwaardig te nemen. Wij behoren de gevangenis als een opvoedingsinrichting te visualiseren en ons best te doen om zedelijke, vertrouwde en bevorderende mensen voor ons land en voor ons volk te worden. Wij moeten het personeel en de directie van de gevangenis laten zien dat de personen die zij als onvaderlandse woestelingen, criminelen, valsaards, moordenaars en ontuchtplegers zagen, in feite studenten zijn die in een gezegende medresse worden opgeleid, opdat ook zij met trots dank aan ALLAH kunnen betuigen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 214,
+                'content' => '<div class="page" id="214">
+<p class="text-end page-number">#214</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>De Derde Kwestie</h2>
+</div>
+
+<p class="text-center text-bold text-italic">Een samenvatting van een gedenkwaardige gebeurtenis waarvan de uiteenzetting in De Leidraad voor De Jeugd is opgenomen</p>
+
+<p>Op een nationale feestdag zat ik voor het venster van de gevangenis in Eskişehir. De oudere studentes van het lyceum tegenover de gevangenis stonden op het schoolplein lachend te dansen. Plotseling werd mij in een geestelijke bioscoop hun toestand over vijftig jaar getoond. Ik zag dat veertig van die vijftig meiden en studentes in het graf één met de aarde werden en kwelling ondervonden. De overgebleven tien waren op hun zeventig- à tachtigjarige leeftijd lelijk geworden. En omdat ze in hun jeugd hun kuisheid niet hadden beschermd, zag ik dat ze met afschuw werden bekeken door de mensen van wie ze liefde verwachtten. Ik moest huilen om hun hartverscheurende toestand. Enkele vrienden in de gevangenis hoorden mij huilen. Ze kwamen vragen wat er aan de hand was. Ik zei:</p>
+
+<p class="text-italic">“Ik spreek jullie later wel...ik wil nu even alleen zijn.”</p>
+
+<p>Waarlijk, wat ik had aanschouwd was de realiteit en geen illusie. Zoals deze huidige zomer en de aanstaande herfst in de winter zullen eindigen, zullen ook de zomerse jeugd en de herfstige ouderdom in het winterse graf en in de tussenwereld eindigen. Als er een bioscoop zou zijn die – in plaats van de gebeurtenissen van vijftig jaar geleden – de toekomstige gebeurtenissen van vijftig jaar later zou kunnen weergeven, en als de vijftig jaar latere toestand van dwaalgeesten en zondaars aan hen getoond zou worden, dan zouden ze vol afschuw en spijt huilen om hun ongeoorloofde pleziertjes waar ze nu om lachen.</p>
+
+<p>Toen ik in die gevangenis van Eskişehir nog bij moest komen van die waarneming, verscheen er ineens een geestelijke persoonlijkheid in de vorm van een menselijke duivel die onzedelijkheid en dwaling verbloemde. Hij zei:</p>
+
+<p class="text-italic">“Wij willen elke vorm van genot en plezier van het leven proeven en laten proeven. Bemoei je niet met ons!”</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 215,
+                'content' => '<div class="page" id="215">
+<p class="text-end page-number">#215</p>
+
+<p>Daarop zei ik:</p>
+
+<p>Aangezien jij omwille van genot en plezier de dood niet gedenkt, en jezelf op dwaling en zedeloosheid werpt, dien je absoluut te weten dat uit het oogpunt van jouw dwaling het gehele verleden dood en verdwenen is; het is een gruwelijke grafakker vol rotte lijken. Door je menselijke betrokkenheid en je voortgang op de dwaalweg, zullen die eindeloze scheidingen en eeuwige sterftes van talloze vrienden jouw hoofd en jouw hart – mits je over één beschikt en het niet gestorven is – overladen met kwellingen die jouw huidige, beperkte en kortstondige plezier in dronkenschap tenietdoen. Daarnaast is ook de aankomende toekomst uit het oogpunt van jouw ongeloof een nietig, duister, dood en gruwelijk griezeloord. En de arme zielen die uit het verleden zijn gekomen, een bestaan hebben gekregen en de huidige tijd meemaken, zullen hun hoofden aan de zeis van het doodsuur verliezen en in het niets worden gesmeten. Vanwege je mentale betrokkenheid zullen er aldoor ook vanuit deze invalshoek grenzeloze ellendige zorgen op je ongelovige hoofd neerstorten. Uiteindelijk zal je zedeloze en beperkte genot volledig in rook opgaan.</p>
+
+<p>Als je van dwaling en onzedigheid afziet, en de kring van een bewust geloof en rechtzinnigheid intreedt, dan zal je dankzij het geloofslicht zien dat het verleden geen grafakker is waarin alles bederft en verdwijnt, maar dat het een existente en lumineuze wereld is die omslaat in de toekomst waar onsterfelijke zielen zich in een wachtsalon verzamelen om in een verdere toekomst de paleizen van gelukzaligheid in te treden. Zodoende zal het geen leed teweegbrengen, maar in evenredigheid met de geloofskracht geestelijk een voorproef van de hemelse zaligheid op aarde geven. Daarnaast zal ook de toekomst niet als een donkere wildernis ogen. Dankzij een gelovige blik zal je veeleer zien dat Een Barmhartige, Genadige, Ontzaglijke en Genereuze Bezitter van Eindeloze Genade en Gulheid, Die elke lente en zomer de aarde als een gedekte tafel met gunsten overlaadt, de mensen uitnodigt tot de paleizen der gelukzaligheid waar Hij feestmalen heeft voorbereid en tentoonstellingen van Zijn geschenken heeft geopend. Doordat een gelovige deze uitnodiging via een geloofsprojectie aanschouwt, zal hij naargelang zijn niveau het genot van de eeuwige wereld enigszins kunnen waarnemen.</p>
+
+<p>Aldus kan waar en zuiver genot enkel in het geloof en dankzij het geloof ondervonden worden.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 216,
+                'content' => '<div class="page" id="216">
+<p class="text-end page-number">#216</p>
+
+<p>Uit de duizenden voordelen en voortbrengselen die het geloof in deze wereld al verschaft, zullen wij in verband met dit onderwerp hier alleen één voordeel en genot dat in <span class="text-bold">“De Leidraad voor De Jeugd”</span> als voetnoot is geschreven met een voorbeeld beschrijven.</p>
+
+<p>Bijvoorbeeld, wanneer jouw enige, uiterst dierbare kind op het punt staat om te sterven en jij wanhopig wordt door de hartverscheurende gedachte om eeuwig gescheiden van hem te worden, kun je wel inzien wat voor vreugde en verademing je zult ervaren als plotseling een dokter als Khidr en Loeqmân tevoorschijn komt en hem een triakelachtig medicijn toedient, waarna je kind zijn ogen opent en van doodsgevaar wordt bevrijdt.</p>
+
+<p>Voorwaar, evenals dit kind zijn er miljoenen mensen waar jij liefde voor koestert en betrokken bij bent. Op het moment dat zij in jouw optiek op het punt staan om in de grafakker van het verleden te rotten en te verdwijnen, komt opeens de waarheid des geloofs als Loeqmân tevoorschijn; door het venster van het hart werpt ze licht op die grafakker die als een enorme vallei van verdoemenis wordt gewaand. Bijgevolg worden alle overledenen allemaal uit de dood herrezen. In de taal van hun houding zeggen ze:</p>
+
+<p class="text-italic">“Wij zijn niet dood, noch zullen wij doodgaan; wij zullen weer met jullie herenigd worden!”</p>
+
+<p>De grenzeloze vreugdes en verademingen die jij zodoende dankzij het geloof hier op aarde al ervaart, bewijzen dat de waarheid des geloofs een dusdanig zaad is, dat daaruit een specifiek paradijs zou ontkiemen en een Toebâ-boom van dat zaad zou worden als het een gedaante zou krijgen.</p>
+
+<p>Die dwarsligger keerde zich naar mij en zei:</p>
+
+<p class="text-italic">“Wij kunnen tenminste met onzedelijkheden en amusementen ons leven zorgeloos als dieren genietend doorbrengen, zonder aan zulke subtiele zaken te denken.”</p>
+
+<p>Daarop zei ik:</p>
+
+<p>Jij kunt niet als dieren leven. Want voor een dier bestaat er geen verleden en geen toekomst. Noch berokkent het verleden hem leed en spijt, noch bezorgt de toekomst hem zorgen en angsten; hij ervaart onvermengd genot. Hij leeft en slaapt zonder zorgen, en betuigt dank aan zijn Schepper. Zelfs een dier dat gereed is om geslacht te worden, verneemt geen pijn.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 217,
+                'content' => '<div class="page" id="217">
+<p class="text-end page-number">#217</p>
+
+<p>Alleen wanneer het mes begint te snijden, wil hij iets vernemen, waarna dat gevoel verdwijnt en hij ook van die kwelling wordt gered. Aldus schuilt er een ultieme Genade en een Goddelijk Mededogen achter het schuilhouden van het verborgene en het versluieren van aankomende belevenissen. Vooral bij onschuldige dieren is dit des te meer te zien. Echter, o mens, omdat jouw verleden en toekomst vanwege je verstand deels uit het verborgene zijn getreden, word jij volledig onthouden van de rust die dieren dankzij de versluiering van het verborgene ervaren. Spijtgevoelens en pijnlijke scheidingen uit het verleden, evenals angsten en zorgen om de toekomst richten jouw beperkte genietingen volledig te gronde. Dit is de werkelijkheid, dus gooi je verstand weg, word een dier en verlos jezelf! Of kom middels het geloof tot inkeer, geef gehoor aan De Qur’an en ervaar zelfs in deze vergankelijke wereld al honderdmaal meer zuivere genietingen dan dieren. Zodoende had ik hem ook in dit opzicht monddood gemaakt.</p>
+
+<p>Weer wendde die stijfkop zich tot mij en zei:</p>
+
+<p class="text-italic">“Wij kunnen tenminste zoals de westerse ongelovigen leven.”</p>
+
+<p>Daarop zei ik:</p>
+
+<p>Ook kun jij niet zoals de westerse ongelovigen zijn. Want ook al zouden zij een profeet verloochenen, ze kunnen alsnog in andere profeten geloven. Als ze ook de andere profeten verloochenen, dan kunnen ze alsnog in ALLAH geloven. Als ze ook Hem niet erkennen, dan kunnen ze alsnog enige bevorderlijke eigenschappen bezitten. Echter, wanneer een moslim de allerlaatste en allergrootste profeet der eindtijd <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> met zijn universele uitnodiging ontkent en uit zijn keten treedt, dan kan hij geen enkele profeet en zelfs ALLAH niet meer erkennen. Want alle profeten, ALLAH en alle vormen van bevorderingen heeft hij via hem leren kennen. Zonder hem kunnen deze aspecten niet in zijn hart blijven. Hierdoor treden er sinds vroeger mensen met allerlei religieuze achtergronden tot de Islam, terwijl geen enkele moslim een ware Jood, Zoroastriër of Christen wordt. Een dergelijke afvallige wordt veeleer een ongelovige wiens eigenschappen bederven, waardoor hij ten opzichte van zowel het land als het volk een kwaadaardige hoedanigheid krijgt. Nadat ik ook dit had opgehelderd, had die hardnekkige en stijfkoppige persoon geen poot meer om op te staan, waarna hij richting de hel verdween.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 218,
+                'content' => '<div class="page" id="218">
+<p class="text-end page-number">#218</p>
+
+<p>Voorwaar, o mijn medestudenten in deze Yûsufische medresse! Aangezien dit de werkelijkheid is, en aangezien de Risale-i Nur deze werkelijkheid zo helder en duidelijk heeft aangetoond, dat de Nur-traktaten inmiddels twintig jaar lang dwarsliggers overhalen om hun koppigheid op te geven en tot geloof te komen, dienen wij ook voort te gaan op de kalme en vredige weg van geloof en rechtzinnigheid waarvan zowel onze toekomst als ons hiernamaals als ons land als ons volk niets behalve bevordering ondervindt. En in plaats van onze vrije tijd aan zinloze fantasieën te verdoen, behoren wij De Qur’anische Soera’s Die wij kennen te reciteren, de betekenissen van Die Soera’s van geleerde broeders te leren, de gemiste geboden gebeden in te halen, lering uit elkaars deugdelijke eigenschappen te trekken en deze gevangenis in een gezegende tuin te veranderen waar welgemanierde rozen worden grootgebracht. Met dergelijke vrome daden dienen wij te ijveren, opdat de gevangenisdirectie en de bewakers niet als wraakengelen over woestelingen en moordenaars waken, maar als rechtzinnige leermeesters en meedogende gidsen toezicht houden op de opvoeding van de studenten in de Yûsufische medresse waarin mensen voor het paradijs worden grootgebracht.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 219,
+                'content' => '<div class="page" id="219">
+<p class="text-end page-number">#219</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>De Vierde Kwestie</h2>
+</div>
+
+<p class="text-center text-bold text-italic">Ook deze kwestie wordt in De Leidraad voor De Jeugd uitgelegd</p>
+
+<p>Op een dag stelden mijn broeders die mij dienden de volgende vraag:</p>
+
+<p class="text-italic">“Ondanks dat deze vreselijke wereldoorlog de hele aardbol in rep en roer heeft gebracht en daarnaast betrekking op het lot van de Islam heeft, hebt u de afgelopen vijftig dagen (inmiddels – in het jaar 1946 – de afgelopen zeven jaar) nooit een vraag over de wereldoorlog gesteld of er enige belangstelling in getoond. Bepaalde praktiserende gelovigen en geleerden daarentegen verlaten de gemeenschap en haasten zich uit de moskee naar de radio om de laatste ontwikkelingen te volgen. Is er iets groters dan dit gaande? Of is het ongunstig om daarmee bezig te zijn?”</p>
+
+<p>Daarop zei ik:</p>
+
+<p>Het levenskapitaal is zeer beperkt; aanzienlijke taken zijn talrijk. Ieder mens bevindt zich binnen verscheidene concentrische kringen die variëren vanaf de kring van zijn hart en zijn maag, de kring van zijn lichaam en zijn woning, de kring van zijn leefomgeving en zijn stad, de kring van zijn provincie en zijn land, de kring van de aardbol en de mensheid, tot aan de kring van alle levenden en het bestaan. Elke kring kan voor ieder mens een bepaalde taak bevatten. Echter, de allerkleinste kring bevat de allergrootste en waardevolste taak die altijd relevant is. De allergrootste kring bevat de allerkleinste taak die niet aanhoudt en zo nu en dan relevant is. Aldus is de omvang van die taken omgekeerd evenredig aan de omvang van de kringen.</p>
+
+<p>Echter, de sensaties van de grote kring kunnen de mens meeslepen tot een punt waarop hij zijn benodigde en waardevolle taken binnen de kleine kring veronachtzaamt, en zich bezighoudt met onnodige en nutteloze zaken die met de buitenwereld te maken hebben. Zodoende zal hij zijn levenskapitaal verkwisten en zijn waardevolle leven aan de hand van waardeloze zaken doden. Daarnaast kan iemand die deze oorlogen aandachtig volgt in zijn hart met een bepaalde partij sympathiseren. De misdaden van die partij zal hij dan verontschuldigen, waardoor hij zichzelf medeplichtig aan die misdaden maakt.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 220,
+                'content' => '<div class="page" id="220">
+<p class="text-end page-number">#220</p>
+
+<p class="text-bold text-italic">Het antwoord op het eerste punt</p>
+
+<p>Waarlijk, er is inderdaad iets groters gaande dan de huidige wereldoorlog en er vindt een belangrijker proces plaats dan de diplomatieke strijd voor de wereldheerschappij. Voor iedereen en vooral voor moslims is er een dusdanige ontwikkeling en een dusdanig proces van start gegaan, dat ieder mens met een verstand zonder enige aarzeling alles zou besteden om dat ene proces te winnen, al zou hij zoveel macht en rijkdom als de Duitsers en de Engelsen bezitten.</p>
+
+<p>Voorwaar, steunend op de duizenden eden en beloften van De Eigenaar en Bestuurder der kosmos, hebben honderdduizenden bekende eminenties, talloze sterren en vele geestelijke gidsen onder de mensheid unaniem informatie over dat proces overgedragen. Deze informatie – wat een deel van hen met zijn ogen heeft waargenomen – omvat het volgende:</p>
+
+<p>Binnen het geloofskader is er voor ieder mens een proces van start gegaan waarbij hij een wereldgroot, een eeuwig en een oneindig land en rijk, versierd met tuinen en paleizen, kan winnen of verliezen. Als hij het geloofsdocument niet grondig bemachtigt, dan zal hij tot de verliezers behoren. In dit tijdperk zijn er ook velen die dat proces door de epidemie van het materialisme verliezen.</p>
+
+<p>Een spirituele en waarheidsdeskundige ontdekker heeft in een streek waargenomen dat slechts enkelen van de veertig dat proces tijdens hun doodsstrijd hadden gewonnen; de rest had het proces verloren. Als de hele wereldheerschappij aan een dergelijke verliezer zou worden gegeven, zou het dan de leegte van dat verloren proces kunnen opvullen?</p>
+
+<p>Voorwaar, afstand nemen van diensten die op het gebied van dat proces succes garanderen, geen acht slaan op een buitengewone pleitbezorger die aan negentig procent van zijn cliënten geen verlies laat lijden, vluchten van taken die dat proces positief beïnvloeden en doen alsof dit aardse leven eeuwig zal aanhouden door alle aandacht op de zinloze zaken van de buitenwereld te vestigen, zijn daden die wij als Risale-i Nur-studenten buitengewoon dwaas achten. Daarom zijn wij ervan overtuigd dat wij al onze tijd en energie aan onze taak moeten besteden, al zouden de verstandelijke vermogens van ons allen verhonderdvoudigen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 221,
+                'content' => '<div class="page" id="221">
+<p class="text-end page-number">#221</p>
+
+<p>O mijn nieuwe broeders in deze beproeving van gevangenschap! Jullie hebben de Risale-i Nur niet ervaren zoals mijn oude broeders die eerder met mij gevangen werden genomen hebben ervaren. Ik kan die broeders en duizenden studenten zoals die broeders als getuigen aanwijzen om te verkondigen, te betogen en te bewijzen – zoals ik reeds heb bewezen – dat de aanzienlijkste pleitbezorger van deze tijd, bekend als de Risale-i Nur die ontsproten is aan de spirituele miraculeusheid van De Leerrijke Qur’an, aan negentig procent van de mensen dat grote proces laat winnen; Hij heeft inmiddels in twintig jaar aan twintigduizend mensen een bewust geloof als document, als akte en als vergunningsbewijs voor het winnen van dat proces aangereikt.</p>
+
+<p>De afgelopen achttien jaar hebben mijn vijanden, de heidenen en de materialisten met gewetenloze listen bepaalde politici tegen mij opgehitst en ons – zoals ze nu weer gedaan hebben – in gevangenissen en isolatiecellen opgesloten om ons uit de weg te ruimen. Desondanks hebben ze uit de honderddertig onderdelen van de stalen burcht der Risale-i Nur slechts twee of drie onderdelen kunnen bekritiseren. Aldus hoeft degene die een advocaat zoekt niet verder dan de Risale-i Nur te zoeken.</p>
+
+<p>En wees niet bang! De Risale-i Nur zal niet verboden worden! Op één of twee uitzonderingen na gaan er belangrijke traktaten in de handen van parlementsleden en politici van de republikeinse regering rond. Inshâ’ALLAH zal er een dag komen waarop voorspoedige gevangenisdirecties en ambtenaren die Nur-traktaten aan gedetineerden als brood en medicijnen zullen toedienen om gevangenissen in pure opvoedingsinstellingen te veranderen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 222,
+                'content' => '<div class="page" id="222">
+<p class="text-end page-number">#222</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Een Samenvatting Van De Achtste Kwestie</h2>
+</div>
+
+<p class="text-bold text-italic text-center" style="max-width: 675px;margin: 0 auto;margin-bottom: 18px;text-align: justify">In De Zevende Kwestie zouden wij de wederopstanding via vele stadia behandelen. Echter, het antwoord dat middels de Namen van onze Schepper werd gegeven, was zo krachtig en zo bevredigend, dat het geen ruimte voor verdere vragen heeft overgelaten. Daarom hebben wij die kwestie kort gehouden. In deze kwestie zullen wij bondig vertellen over één van de honderden voordelen en voortbrengselen van het geloof in het hiernamaals die zowel gelukzaligheid in het hiernamaals als gelukzaligheid op aarde verschaffen. De verklaringen in de Miraculeuze Qur’anrevelaties hebben geen enkele behoefte aan andere openbaringen over de gelukzaligheid in het hiernamaals nagelaten. Daarom laten we dat aspect aan die revelaties over. En uitleg over de gelukzaligheid op aarde laten wij aan de Risale-i Nur over. Hier zullen wij met een korte samenvatting slechts drie à vier van de honderden opbrengsten ten opzichte van het persoonlijke en het gemeenschappelijke leven van de mens uiteenzetten.</p>
+
+<p class="text-bold">De eerste opbrengst</p>
+
+<p>In tegenstelling tot alle diersoorten is de mens betrokken bij de wereld zoals hij bij zijn woning betrokken is. En zoals hij een band met zijn familie heeft, heeft hij evenzeer van nature een innige band met de mensheid. En zoals hij op aarde zijn tijdelijke bestaan wenst voort te zetten, verlangt hij met hartstochtelijke liefde naar een eeuwig oord waar hij kan voortbestaan. En zoals hij ijvert om zijn maag in haar behoefte aan voeding te voorzien, heeft hij evenzeer een natuurlijke drang om de magen van het verstand, het hart, de ziel en de menselijkheid in voeding te voorzien door middel van de wereldwijde voedingsgelegenheden die tot aan de eeuwigheid uitstrekken; hij ploetert hiervoor. En hij koestert dusdanige wensen en verlangens, dat niets behalve eeuwige gelukzaligheid ze kan bevredigen.</p>
+
+<p>Zoals in <span class="text-bold">Het Tiende Woord</span> is vermeld, had ik in mijn kinderjaren het volgende aan mijn inbeelding gevraagd:</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 223,
+                'content' => '<div class="page" id="223">
+<p class="text-end page-number">#223</p>
+
+<p class="text-italic">“Heb jij liever dat jou een miljoen jarig leven en de wereldheerschappij wordt gegeven, wat uiteindelijk in non-existentie en nietigheid zal eindigen? Of zou jij liever een eeuwig, maar een simplistisch en ellendig bestaan willen leiden?”</p>
+
+<p>Ik zag dat mijn inbeelding door de eerste optie een diepe zucht moest slaken en dat de tweede optie haar voorkeur genoot. Ze zei:</p>
+
+<p class="text-italic">“Al is hel de bestemming, ik verlang naar eeuwigheid!”</p>
+
+<p>Voorwaar, het inbeeldingsvermogen dat de menselijke aard dient, kan in aardse genietingen geen voldoening vinden. Aldus is de uiterst omvattende aard van de mens van nature betrokken bij eeuwigheid. Voorwaar, een mens die aan grenzeloze wensen en verlangens gebonden is, bezit desondanks een kapitaal dat uit een uiterst beperkte wil en een absolute behoeftigheid bestaat. Voor een dergelijk mens is het geloof in het hiernamaals een dusdanig krachtige, genoegzame en bevredigende schat, het is een dusdanige bron van geluk en genot, en het is een dusdanig reddingsmiddel, een steunpunt en een troost tegenover de grenzeloze aardse smarten, dat zelfs de opoffering van het gehele aardse leven voor die vrucht en opbrengst een kleine prijs is.</p>
+
+<p class="text-bold">De tweede vrucht en een voordeel voor het persoonlijke leven</p>
+
+<p class="text-italic">Deze uiterst waardevolle opbrengst is in <span class="text-bold">De Derde Kwestie</span> uitgelegd en in <span class="text-bold">De Leidraad voor De Jeugd</span> in een voetnoot behandeld.</p>
+
+<p>Waarlijk, de voornaamste zorg van ieder mens die altijd in zijn gedachte speelt, is de wijze waarop hij in de grafakker zal eindigen, waar ook zijn overleden vrienden en familieleden zich bevinden. Wanneer die arme mens, die voor één enkele vriend zijn ziel zou opofferen, op het punt staat om een ergere kwelling dan de hel te ondergaan door zich in te beelden dat duizenden, miljoenen en misschien zelfs miljarden van zijn vrienden geëxecuteerd en permanent gescheiden van hem zijn, komt opeens het geloof in het hiernamaals aan het licht; het opent zijn ogen, verwijdert de sluier en zegt: <span class="text-italic">“Aanschouw!”</span> Hij kijkt met dat geloof en proeft een geestelijk genot dat aan de paradijselijke geneugtes doet denken, want hij ziet dat zijn vrienden van eeuwige ondergang en ontbinding gered worden, en hem in een stralende wereld verheugd opwachten.</p>
+
+<p>Omdat deze opbrengst in de Risale-i Nur met redenaties is toegelicht, nemen wij hier genoegen mee en ronden wij het af.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 224,
+                'content' => '<div class="page" id="224">
+<p class="text-end page-number">#224</p>
+
+<p class="text-bold">Een derde voordeel voor het persoonlijke leven</p>
+
+<p>De uitverkorenheid en de superieure rang van de mens ten opzichte van de overige levende wezens zijn gebaseerd op zijn hoogwaardige hoedanigheden, omvattende potenties, universele Godsdienstigheden en verreikende bestaanskringen. Echter, het heden, dat tussen de twee afwezige, dode en donkere tijden van het verleden en de toekomst is geperst, bepaalt de toewijding, de liefde, de broederband, de menselijkheid en dergelijke eigenschappen van die mens.</p>
+
+<p>Bijvoorbeeld, omdat zijn vader, zijn broertje, zijn vrouw, zijn volk en zijn land hem dierbaar zijn, stelt hij zich dienstbaar voor ze op. Echter, door het idee dat hij ze in het verleden niet kende en ze in de toekomst na een permanente scheiding nooit meer terug zal zien, slaagt hij er zelden in om daadwerkelijk loyaal en oprecht te zijn; in gelijke verhouding zullen ook zijn volmaaktheden en hoedanigheden afnemen. Wanneer hij door toedoen van zijn verstand op het punt staat om in plaats van de uitverkorene boven de diersoorten de wanhopigste en ellendigste van allemaal te worden, haast opeens het geloof in het hiernamaals naar zijn redding. Zijn tijd die zo krap als het graf is, verandert hij in een uiterst ruime tijdspanne waarin zowel het verleden als de toekomst zijn opgenomen. En hij toont een bestaanskring die de wereld en zelfs de tijdruimte vanaf de onbegonnenheid tot aan de eeuwigheid omvat.</p>
+
+<p>Met de gedachte dat de relatie met zijn vader ook in het hiernamaals en in de zielenwereld zal aanhouden, met het idee dat de broederband met zijn broertje eeuwig zal voortduren en met het besef dat zijn vrouw ook in het paradijs zijn wonderschone levensgezellin zal zijn, zal hij ze liefhebben, eerbiedigen, begenadigen en bijstaan. En zijn waardevolle diensten die bedoeld zijn voor de banden binnen die grote en ruime levens- en bestaanskringen, zal hij niet als instrument voor de waardeloze zaken, simpele geschillen en geringe profijten op aarde hanteren. Hij zal ware loyaliteit en innige oprechtheid bereiken, waarna zijn volmaaktheden en eigenschappen in gelijke mate <span class="text-italic">(naargelang van zijn niveau)</span> zullen groeien; zijn menselijkheid zal worden verheven. De mens die wat aardse genietingen betreft geen mus kan bijbenen, zal boven alle dieren uitschitteren als de uitverkoren en bevoorrechte gast in het universum, en als de geliefdste en aanzienlijkste onderdaan van De Eigenaar van het universum.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 225,
+                'content' => '<div class="page" id="225">
+<p class="text-end page-number">#225</p>
+
+<p>Omdat deze opbrengst ook in de Risale-i Nur met redenaties is toegelicht, nemen wij hier genoegen mee en ronden wij het af.</p>
+
+<p class="text-bold">Een vierde voordeel dat op het gemeenschapsleven is gericht</p>
+
+<p>Een samenvatting van deze opbrengst die in <span class="text-bold">De Negende Straal</span> van de Risale-i Nur is uiteengezet, luidt als volgt:</p>
+
+<p>Kinderen die een vierde van de mensheid uitmaken, kunnen dankzij het geloof in het hiernamaals menselijk leven en de menselijke potenties dragen. Anders zal een kind binnen kwellende angsten met zijn kinderlijke speeltjes een ondeugend leven leiden om zichzelf in slaap te brengen en vergetelheid te zoeken. Immers, doordat kinderen zoals hij in zijn omgeving regelmatig komen te overlijden, worden zijn delicate brein, zijn fragiele hart waarmee hij later langetermijndoelen zal beogen en zijn weerstandloze ziel zozeer beïnvloed, dat daardoor zijn leven en zijn verstand voor hem in een marteltuig veranderen. Wanneer dat arme kind op het punt staat om hierdoor kwelling te ondergaan, zal de lering over het geloof in het hiernamaals ervoor zorgen dat hij in plaats van de angsten waarvoor hij zich onder zijn speelgoed verstopte, een vreugde en een verademing verneemt, zeggende:</p>
+
+<p class="text-italic">“Mijn broertje of mijn vriend is overleden en is nu een vogel in het paradijs geworden. Hij ervaart daar meer genot dan wij en hij vliegt vrijelijk rond. En mijn moeder is overleden, maar ze is naar Gods Genade gerezen. In het paradijs zal zij mij weer op haar schoot nemen en mij knuffelen; ik zal mijn lieve moeder weer terugzien.”</p>
+
+<p>Zodoende kan hij op een menswaardige wijze voortleven.</p>
+
+<p>Ook de ouderen die een vierde van de mensheid uitmaken, kunnen tegenover hun levensvlam die op het punt staat om uit te doven, de grond waaronder ze begraven zullen worden en het afscheid dat ze spoedig van hun geliefde wereld moeten nemen, hun troost enkel en alleen in het geloof in het hiernamaals vinden. Anders zullen die genadige en eerbiedwaardige vaders, en die opofferingsgezinde en meedogende moeders, zoveel zielenleed en zoveel hartenpijn ervaren, dat de wereld een uitzichtloze gevangenis en het leven een vreselijke foltering voor hen zullen worden.</p>
+
+<p>Het geloof in het hiernamaals daarentegen vertelt ze het volgende:</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 226,
+                'content' => '<div class="page" id="226">
+<p class="text-end page-number">#226</p>
+
+<p class="text-italic">“Maak jullie geen zorgen, een eeuwige jeugd, een stralend leven en een oneindig bestaan staan jullie op te wachten! En jullie kinderen en familieleden die jullie verloren hebben, zullen jullie in vreugde weer ontmoeten! En al jullie weldaden zijn geregistreerd; jullie zullen de beloning ervan ondervinden!”</p>
+
+<p>Zodoende verschaft het geloof in het hiernamaals een dusdanige troost en verademing, dat een honderdmaal ergere ouderdom ze nog niet wanhopig zal maken.</p>
+
+<p>De jongeren met hun vurige lusten, hun oncontroleerbare emoties, hun bovenmatige zelfvertrouwen en hun verstand dat ze niet altijd gebruiken, maken een derde van de mensheid uit. Wanneer deze jongeren hun geloof in het hiernamaals verliezen en de bestraffing van de hel niet gedenken, dan zullen het eigendom en de eer van zedige individuen evenals de rust en de trots van zwakkeren en ouderen binnen de gemeenschap in gevaar verkeren. Soms kan een jongeman voor een lustbevrediging van een minuut een gelukkig gezinsleven ruïneren en vijf à zes jaar in zulke gevangenissen doorbrengen; zodoende kan hij zijn leven als een beest verslijten. Indien het geloof in het hiernamaals naar zijn redding komt snellen, dan zal hij gauw tot inkeer komen en het volgende zeggen:</p>
+
+<p class="text-italic">“Al kunnen de agenten van de regering mij niet zien en al kan ik voor ze schuilen, alsnog is er Een Ontzaglijke Sultan Wiens gevangenis “de hel” wordt genoemd; Hij heeft engelen die mij wél zien en mijn wandaden opslaan. Ik ben niet bandeloos; ik ben een reiziger met een taak. Ook ik zal op een dag oud en zwak zoals zij worden.”</p>
+
+<p>Zodoende zal hij voor degenen die hij onrecht wilde aandoen plotseling een mededogen en een eerbied voelen. Ook hierbij nemen wij genoegen met de bewijskrachtige uitleg in de Risale-i Nur en ronden wij het hier af.</p>
+
+<p>Zieken, onderdrukten, slachtoffers van tegenspoeden <span class="text-italic">(zoals wij)</span>, armen en gedetineerden die een zware straf moeten uitzitten, maken een aanzienlijk deel van de mensheid uit. Als het geloof in het hiernamaals hen niet te hulp snelt, dan zullen de dood die door ziektes continu in herinnering wordt gebracht, de ongewroken onderdrukking van arrogante tirannen waartegen de eer niet beschermd kan worden, de hartverscheurende radeloosheid vanwege het vergeefs verliezen van bezittingen en kinderen tijdens grote rampen, en de smartelijke ellende van een vijf à tienjarige gevangenschap wegens een lustbevrediging van enkele minuten of uren, er uiteraard toe leiden dat de wereld een kerker en het leven een pijnlijke kwelling wordt voor die arme individuen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 227,
+                'content' => '<div class="page" id="227">
+<p class="text-end page-number">#227</p>
+
+<p>Indien het geloof in het hiernamaals zich naar hun redding haast, dan zullen ze ineens tot adem komen; hun leed, hun wanhoop, hun angsten en hun wraakgevoelens zullen naar verhouding van hun geloofsniveau gedeeltelijk en soms zelfs volledig verdwijnen.</p>
+
+<p>Ik kan zelfs zeggen dat deze onterechte gevangenschap en de ellendige toestand waarin ik en bepaalde vrienden van mij verkeren geen dag verdragen zouden kunnen worden en tot levensbeëindiging zouden leiden als het geloof in het hiernamaals ons niet te hulp was geschoten. Echter, God zij eindeloze malen dank, ondanks dat ik bij deze calamiteit de pijn van mijn vele broeders die mij zo dierbaar als mijn leven zijn ook draag, en ondanks dat het onrecht jegens mijn oogappel – oftewel de duizenden Risale-i Nur traktaten en de lichten binnen mijn vergulde, versierde en waardevolle boeken – mij bedroefd maakt, en ondanks dat ik sinds vroeger geen greintje verraad en onderdrukking kan verdragen, verzeker ik jullie bij ALLAH dat het licht en de kracht uit het geloof in het hiernamaals mij zoveel geduld, verdraagzaamheid, troost en standvastigheid heeft geschonken, en mij zelfs een strijdvaardige passie heeft gegeven om tijdens een winstgevende les van beproeving een grotere verdienste te verwerven, dat ik – zoals ik aan het begin van dit traktaat aangaf – mezelf in een medresse acht die het waard is om een Yûsufische medresse te worden genoemd. Als bepaalde ziektes en ouderdomskwalen geen belemmering zouden vormen, dan zou ik mijn tijd met een gerust hart optimaal aan mijn lessen benutten. Maar goed…omdat onze toestand betrekking op dit thema heeft, zijn we een beetje van het onderwerp afgeweken; zie dit door de vingers.</p>
+
+<p>Voor ieder mens is zijn woning zijn kleine wereld, of zelfs zijn kleine paradijs. Als het geloof in het hiernamaals geen rol in de gelukzaligheid binnenshuis speelt, dan zullen de huisbewoners naargelang hun mededogen, liefde en betrokkenheid pijnlijke angsten en kwellingen ondervinden. Dat paradijs zal dan in een hel veranderen, of de huisbewoners zullen met tijdelijke pleziertjes en onzedelijkheden hun verstand in slaap sussen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 228,
+                'content' => '<div class="page" id="228">
+<p class="text-end page-number">#228</p>
+
+<p>Zoals een struisvogel die een jager opmerkt en in de hoop niet gezien te worden zijn kop in het zand steekt omdat hij nergens heen kan vluchten of weg kan vliegen, begraven zij hun hoofden in onachtzaamheid om voor de dood, teloorgang en scheiding onopgemerkt te blijven. Ze gedragen zich als dwazen door te doen alsof tijdelijke verdovingen een oplossing zijn.</p>
+
+<p>Bijvoorbeeld, een moeder die haar ziel voor haar kind opoffert, zal huiveren wanneer ze ziet dat haar kind continu in gevaar verkeert. En kinderen die hun broers en vaders niet van onontkoombare tegenspoeden kunnen redden, zullen voortdurend een kwelling en een angst vernemen. Kortom, gedurende dit hectische en instabiele leven op aarde zal het gezinsleven dat gelukkig wordt gewaand vanuit vele opzichten zijn geluk verliezen. Daarnaast zullen de gezinsrelatie en de familieband gedurende een vluchtig leven geen ware loyaliteit en een innige oprechtheid, noch een onbaatzuchtige dienstbaarheid en een zuivere liefde verschaffen. In dezelfde verhouding zullen de morele waarden achteruitgaan en misschien zelfs verdwijnen.</p>
+
+<p>Als het geloof in het hiernamaals in dat huis treedt, dan zal het opeens dat huis verlichten. De band, het mededogen, de relatie en de liefde tussen de huisbewoners zullen niet op een kort tijdsbestek worden afgestemd, maar uit overweging dat die banden ook in het oord van het hiernamaals en de eeuwige gelukzaligheid zullen aanhouden, zullen hun morele waarden stijgen tot een niveau waarbij ze elkaar innig en trouw eerbiedigen, liefhebben en begenadigen, zonder op elkaars gebreken te letten. Zodoende zal de ware menselijke gelukzaligheid in dat huis beginnen te ontplooien.</p>
+
+<p>Omdat ook dit onderwerp in de Risale-i Nur met redenaties is verklaard, houden wij het kort.</p>
+
+<p>Elke stad is als een groot huis voor haar inwoners. Als het geloof in het hiernamaals niet onder de leden van dat grote gezin heerst, dan zullen de fundamenten van goede zeden, bestaande uit oprechtheid, innigheid, deugdelijkheid, toewijding, opofferingsgezindheid, het beogen van Gods Welbehagen en het streven naar zegeningen voor het hiernamaals vervangen worden met wrok, baatzucht, bedrog, egoïsme, gemaaktheid, pronkerij, omkoperij, afzetterij en dergelijke kwade eigenschappen. Onder de schijn van veiligheid en menselijkheid zullen anarchie en woestenij heersen en dat stadsleven vergiftigen; kinderen zullen ondeugend worden, jongeren zullen dronken worden, sterken zullen onrecht plegen en ouderen zullen huilen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 229,
+                'content' => '<div class="page" id="229">
+<p class="text-end page-number">#229</p>
+
+<p>In dit kader is een provincie ook een huis en een land is ook het huis van een nationale familie. Als het geloof in het hiernamaals in deze ruime huizen heerst, dan zal het leven daar ineens veranderen dankzij de ontplooiing van een innige eerbied en mededogen, een onomkoopbare liefde en samenwerking, een onbedrieglijke dienstbaarheid en omgang, een onbaatzuchtige weldadigheid en deugdelijkheid, en een onzelfzuchtige status en begaafdheid.</p>
+
+<p>Tegen de kinderen wordt gezegd: <span class="text-italic">“Het paradijs bestaat, dus wees niet ondeugend.”</span> Zodoende worden ze met de Qur’anische leer gedisciplineerd.</p>
+
+<p>Tegen de jeugd wordt gezegd: <span class="text-italic">“Er bestaat een hel, dus zie af van dronkenschap!”</span> Zodoende worden ze tot inkeer gebracht.</p>
+
+<p>Tegen de kwaaddoeners wordt gezegd: <span class="text-italic">“Gods bestraffing is heftig, je zult een klap ontvangen!”</span> Zodoende worden ze aan rechtvaardigheid onderworpen.</p>
+
+<p>Tegen de ouderen wordt gezegd: <span class="text-italic">“Een onophoudelijke gelukzaligheid in het hiernamaals die al jouw verstreken genietingen ver ontstijgt, evenals een verse en eeuwige jeugd staan jou op te wachten. IJver om ze in ontvangst te nemen!”</span> Zodoende worden hun tranen in een glimlach omgezet.</p>
+
+<p>Met zulke resultaten wordt elke kring verlicht en in elke kring laat het geloof in het hiernamaals vanaf de grootste tot aan de kleinste schaal zijn positieve invloed zien. Mogen de oren suizen van de socialisten en onderwijzers die betrokken zijn bij het menselijke gemeenschapsleven!</p>
+
+<p>Voorwaar, als alles volgens de voornoemde paar voorbeelden betreffende de duizenden voordelen binnen het geloof in het hiernamaals wordt afgewogen, dan zal zo helder als de dag duidelijk worden dat de bron van geluk voor beide werelden en beide levens uit niets anders dan het geloof bestaat.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 230,
+                'content' => '<div class="page" id="230">
+<p class="text-end page-number">#230</p>
+
+<h2 class="page-title-chapter">Het Tweede Niveau</h2>
+
+<p class="text-center text-bold">[Uit De Stralendste Bewijzen]</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;"><sup>1</sup> بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحٖيمِ</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;"><sup>2</sup> وَ بهٖ نَسْتَعٖينُ</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ مَثَلُ نُورِهٖ كَمِشْكٰوةٍ فٖيهَا مِصْبَاحٌ اَلْمِصْبَاحُ فٖى زُجَاجَةٍ الزُّجَاجَةُ كَاَنَّهَا كَوْكَبٌ دُرِّىٌّ يُوقَدُ مِنْ شَجَرَةٍ مُبَارَكَةٍ <sup>3</sup> ا خ ل ۞ اَوْ كَظُلُمَاتٍ فٖى بَحْرٍ لُجِّىٍّ يَغْشٰيهُ مَوْجٌ مِنْ فَوْقِهٖ مَوْجٌ <sup>4</sup> ا خ ل ۞</p>
+
+<p>Deze twee Aya’s uit Soera <span class="text-italic">“E’n-Nûr”</span>, Die de afweging van het geleide en rechtzinnige volk, en het afgedwaalde en ontspoorde volk aan het eind van Soera <span class="text-italic">“El-Fâtihah”</span> beduiden, en Die de bron van alle afwegingen in de Risale-i Nur vormen, drukken die afweging op een buitengewone en miraculeuze wijze uit.</p>
+
+<p>In <span class="text-bold">De Eerste Straal</span> is aangetoond dat de eerstgenoemde Aya uit Soera <span class="text-italic">“E’n-Nûr”</span> met tien aanduidingen op de Risale-i Nur is gericht; op een miraculeuze wijze worden daar verborgen tijdingen over die Tafsir van De Qur’an gegeven. En omdat Die Aya de grootste reden achter de benaming <span class="text-italic">“Nur”</span> van <span class="text-italic">“de Risale-i Nur”</span> is geweest, en omdat het woord <span class="text-italic">“Nûr”</span> in deze buitengewone Aya een spiritueel mirakel zoals het mirakel achter <span class="text-arabic-inline" dir="rtl" lang="ar">نَا</span> <span class="text-italic">(wij)</span></p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+
+<p class="footnote-p">1 “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+
+<p class="footnote-p">2 “En Hem vragen wij om hulp.”</p>
+
+<p class="footnote-p">3 “ALLAH is Het Licht van de hemelen en de aarde. De gelijkenis van Zijn Licht is als een nis met daarin een lamp; de lamp is in een fles; de fles is als een schitterende ster die met een brandstof van een gezegende boom ontbrandt.” - <span class="text-italic">De Heilige Qur’an, 24:35</span></p>
+
+<p class="footnote-p">4 “Of als de duisternissen van een diepe zee, bedekt met golven boven golven.” - <span class="text-italic">De Heilige Qur’an, 24:40</span></p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 230,
+                'content' => '<div class="page" id="230">
+<p class="text-end page-number">#230</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Het Tweede Niveau</h2>
+</div>
+
+<p class="text-center text-bold">[Uit De Stralendste Bewijzen]</p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+ “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">وَ بِهٖ نَسْتَعٖينُ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“En Hem vragen wij om hulp.”&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ مَثَلُ نُورِهٖ كَمِشْكٰوةٍ فٖيهَا مِصْبَاحٌ فٖى زُجَاجَةٍ</span>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">اَلزُّجَاجَةُ كَاَنَّهَا كَوْكَبٌ دُرِّىٌّ يُوقَدُ مِنْ شَجَرَةٍ مُبَارَكَةٍ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“ALLAH is Het Licht van de hemelen en de aarde. De gelijkenis van Zijn Licht is als een nis met daarin een lamp; de lamp is in een fles; de fles is als een schitterende ster die met een brandstof van een gezegende boom ontbrandt.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:35&lt;/p&gt;"><sup style="font-size: 13px;">3</sup></button></span><sup><span class="text-arabic-inline" style="font-size:22px;" dir="rtl" lang="ar">الخ </span></sup>۞
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">اَوْ كَظُلُمَاتٍ فٖى بَحْرٍ لُجِّىٍّ يَغْشٰيهُ مَوْجٌ مِنْ فَوْقِهٖ مَوْجٌ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 4" data-fn="4" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Of als de duisternissen van een diepe zee, bedekt met golven boven golven.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:40&lt;/p&gt;"><sup style="font-size: 13px;">4</sup></button></span><sup><span class="text-arabic-inline" style="font-size:22px;" dir="rtl" lang="ar">الخ </span></sup>۞
+</p>
+
+<p style="margin-top: 18px">Deze twee Aya’s uit Soera <span class="text-italic">“E’n-Nûr”</span>, Die de afweging van het geleide en rechtzinnige volk, en het afgedwaalde en ontspoorde volk aan het eind van Soera <span class="text-italic">“El-Fâtihah”</span> beduiden, en Die de bron van alle afwegingen in de Risale-i Nur vormen, drukken die afweging op een buitengewone en miraculeuze wijze uit.</p>
+
+<p>In <span class="text-bold">De Eerste Straal</span> is aangetoond dat de eerstgenoemde Aya uit Soera <span class="text-italic">“E’n-Nûr”</span> met tien aanduidingen op de Risale-i Nur is gericht; op een miraculeuze wijze worden daar verborgen tijdingen over die Tafsir van De Qur’an gegeven.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+<p class="footnote-p"><sup>2</sup> “En Hem vragen wij om hulp.”</p>
+<p class="footnote-p"><sup>3</sup> “ALLAH is Het Licht van de hemelen en de aarde. De gelijkenis van Zijn Licht is als een nis met daarin een lamp; de lamp is in een fles; de fles is als een schitterende ster die met een brandstof van een gezegende boom ontbrandt.” - <em>De Heilige Qur’an</em>, 24:35</p>
+<p class="footnote-p"><sup>4</sup> “Of als de duisternissen van een diepe zee, bedekt met golven boven golven.” - <em>De Heilige Qur’an</em>, 24:40</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 231,
+                'content' => '<div class="page" id="231">
+<p class="text-end page-number">#231</p>
+
+<p>En omdat Die Aya de grootste reden achter de benaming <span class="text-italic">“Nur”</span> van <span class="text-italic">“de Risale-i Nur”</span> is geweest, en omdat het woord <span class="text-italic">“Nûr”</span> in deze buitengewone Aya een spiritueel mirakel zoals het mirakel achter <span class="text-arabic-inline" dir="rtl" lang="ar">نَا</span> <span class="text-italic">(wij)</span> bij “<span class="text-arabic-inline" dir="rtl" lang="ar">نَعْبُدُ</span> <span class="text-italic">(wij dienen u)</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;&lt;strong&gt;Noot van de vertalers:&lt;/strong&gt; hier wordt de &lt;span class=&quot;text-arabic-inline&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;ن&lt;/span&gt; van &lt;span class=&quot;text-arabic-inline&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;نَعْبُدُ&lt;/span&gt; in Soera E’l-Fâtihah beduid. In &lt;em&gt;De Negenentwintigste Brief&lt;/em&gt; wordt een miraculeus aspect daarvan verklaard.&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span>” herbergt – wat in een gedeelte uit <span class="text-bold">De Negenentwintigste Brief</span> met een voorbeeld van een zielenreis is aangegeven – heeft de wereldreiziger in <span class="text-bold">De Ultieme Aya</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;&lt;strong&gt;Noot van de vertalers:&lt;/strong&gt; dit is de titel van een traktaat uit de reeks van de Risale-i Nur.&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span> het hele universum en alle soorten wezens ondervraagt om zijn Schepper te zoeken, te vinden en te leren kennen. Zodoende heeft hij via drieëndertig wegen en onbetwistbare evidenties met een wetenschappelijke overtuiging en een visuele overtuiging kennis over zijn Schepper opgedaan. Daarnaast heeft diezelfde onvermoeibare en onverzadigbare reiziger de eeuwen en de dimensies van de aarde en de hemelen met zijn verstand, zijn hart en zijn inbeelding afgereisd; hij zag de hele wereld als een stad en begon zijn onderzoek door zijn verstand enerzijds de Wijsheid van De Qur’an en anderzijds de wijsheid der filosofie te laten bestijgen, en door de verreikende verrekijker van het inbeeldingsvermogen de allerverste dimensies te bezichtigen, waarna hij de waarheden zoals ze zich in de realiteit voordoen heeft aanschouwd en ons daarover in <span class="text-bold">De Ultieme Aya</span> gedeeltelijk heeft geïnformeerd.</p>
+
+<p>Voorwaar, met het oog op die pure waarheid en ter illustratie van de vele werelden en dimensies die de wereldreiziger heeft betreden, zullen wij met het denkvermogen als maatstaf slechts drie dimensies als voorbeeld van de afweging aan het eind van Soera <span class="text-italic">“El-Fâtihah”</span> zeer bondig uiteenzetten.</p>
+
+<p class="text-bold">Het eerste voorbeeld</p>
+
+<p>De reiziger die slechts ter wereld is gekomen om zijn Schepper te leren kennen en vinden, zei tegen zijn verstand:</p>
+
+<p class="text-center text-italic">“Wij hebben aan alles over onze Schepper gevraagd. Daarop hebben wij heldere en afdoende antwoorden gekregen. Nu zullen wij volgens het principe: <span class="text-bold">‘Vragen over de zon dien je aan de zon te stellen’</span> een reis beginnen om onze Schepper via de manifestaties van Heilige Eigenschappen – zoals Kennis, Wil en Macht – via zichtbare kunstwerken en via de reflecties van Namen te leren kennen en vinden.”</p>
+
+<p>Vervolgens betrad hij de wereld en stapte in het voetspoor van de dwaalstroming op het schip van de aardbol.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> <span class="text-bold">Noot van de vertalers:</span> hier wordt de <span class="text-arabic-inline" dir="rtl" lang="ar">ن</span> van <span class="text-arabic-inline" dir="rtl" lang="ar">نَعْبُدُ</span> in Soera E’l-Fâtihah beduid. In <span class="text-italic">De Negenentwintigste Brief</span> wordt een miraculeus aspect daarvan verklaard.</p>
+<p class="footnote-p"><sup>2</sup> <span class="text-bold">Noot van de vertalers:</span> dit is de titel van een traktaat uit de reeks van de Risale-i Nur.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 232,
+                'content' => '<div class="page" id="232">
+<p class="text-end page-number">#232</p>
+
+<p>Hij zette de bril op van de wetenschap en de filosofie die ongehoorzaam zijn aan de Wijsheid van De Qur’an. Hij observeerde volgens de kosmografische leer waarbij er geen acht op De Qur’an wordt geslagen, en hij zag dat het aardse schip in een eindeloze leegte honderdmaal sneller dan een kanonskogel voortvoer en met honderdduizenden arme en machteloze levenden aan boord in een jaar tijd een kring van duizend jaar afreisde. Als hij één moment van zijn baan zou afwijken of tegen een dwalende ster zou knallen, dan zou hij in een eindeloze leegte uiteenbrokkelen en die arme levenden in het niets storten. Hij had de vreselijke geestelijke calamiteit van de stroming: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Niet op wie Uw Toorn rust, noch de dwalenden.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 1:7&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّٓالّٖينَ</span> en de verstikkende duisternis achter: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Of als de duisternissen van een diepe zee.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:40&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَوْ كَظُلُمَاتٍ فٖى بَحْرٍ لُجِّىٍّ</span> waargenomen, waarop hij zei:</p>
+
+<p class="text-italic">“Wat hebben wij gedaan? Waarom zijn wij aan boord van dit vreselijke schip gestapt? Hoe kunnen wij ons hiervan bevrijden?”</p>
+
+<p>Daarop sloeg hij de bril van de blinde filosofie kapot en sloot hij zich aan bij de stroming van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Degenen op wie U Uw Gunsten laat neerdalen.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 1:7&lt;/p&gt;"><sup style="font-size: 13px;">3</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلَّذٖينَ اَنْعَمْتَ عَلَيْهِمْ</span>. Opeens kwam De Wijsheid van De Qur’an naar zijn redding, reikte zijn verstand een verrekijker aan waardoor de waarheid nauwkeurig kon worden bekeken en zei: <span class="text-italic">“Aanschouw!”</span> Hij keek en zag dat De Naam: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 4" data-fn="4" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Heer der hemelen en de aarde.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 13:16&lt;/p&gt;"><sup style="font-size: 13px;">4</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">رَبُّ السَّمٰوَاتِ وَالْاَرْضِ</span> opkwam als de zon naar de verschijning van: <br> <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 5" data-fn="5" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Hij is Degene Die de aarde tot jullie dienst heeft gesteld, opdat jullie haar kunnen bewandelen en Zijn onderhoud kunnen nuttigen.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 67:15&lt;/p&gt;"><sup style="font-size: 13px;">5</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">هُوَ الَّذٖى جَعَلَ لَكُمُ الْاَرْضَ ذَلُولًا فَامْشُوا فٖى مَنَاكِبِهَا وَكُلُوا مِنْ رِزْقِهٖ</span>.</p>
+
+<p>Hij zag de aarde als een uiterst geordend en veilig schip dat de levenden samen met hun onderhoud ten dienste van vele wijsheden en voordelen in de zee van de kosmos om de zon liet reizen. De voortbrengselen van seizoenen werden geschonken aan de passagiers die behoefte hadden aan onderhoud. Twee engelen genaamd <span class="text-bold">“Saur”</span> <span class="text-arabic-inline" dir="rtl" lang="ar">(ثَوْرٌ)</span> en <span class="text-bold">“Hoet”</span> <span class="text-arabic-inline" dir="rtl" lang="ar">(حُوتٌ)</span>, die als kapiteinen waren aangesteld, voeren dat schip door een schitterend en opzienbarend land des Heren om de schepselen en de gasten van De Ontzaglijke Schepper te vermaken. Zodoende toonde de Qur’anische Wijsheid de waarheid achter:</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “Niet op wie Uw Toorn rust, noch de dwalenden.” - <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>2</sup> “Of als de duisternissen van een diepe zee.” - <em>De Heilige Qur’an</em>, 24:40</p>
+<p class="footnote-p"><sup>3</sup> “Degenen op wie U Uw Gunsten laat neerdalen.” - <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>4</sup> “Heer der hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 13:16</p>
+<p class="footnote-p"><sup>5</sup> “Hij is Degene Die de aarde tot jullie dienst heeft gesteld, opdat jullie haar kunnen bewandelen en Zijn onderhoud kunnen nuttigen.” - <em>De Heilige Qur’an</em>, 67:15</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 233,
+                'content' => '<div class="page" id="233">
+<p class="text-end page-number">#233</p>
+
+<p><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“ALLAH is Het Licht van de hemelen en de aarde.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:35&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ</span> en maakte via de reflectie van Die Naam zijn Schepper bekend. Daarop zei die reiziger met hart en ziel: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH, Heer der werelden.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 1:2&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمٖينَ</span> en sloot zich aan bij de groep van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Degenen op wie U Uw Gunsten laat neerdalen.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 1:7&lt;/p&gt;"><sup style="font-size: 13px;">3</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلَّذٖينَ اَنْعَمْتَ عَلَيْهِمْ</span>.</p>
+
+<p class="text-bold">Het tweede voorbeeld dat die reiziger tijdens zijn reis door de werelden had waargenomen</p>
+
+<p>Die reiziger stapte uit het schip van de aardbol en betrad de wereld van de dieren en de mensen. Hij keek door de bril van de naturalistische wetenschap die zich niet door het geloof liet bezielen, waarna hij het volgende zag:</p>
+
+<p>De grenzeloze behoeften van die ontelbare levenden, die tegenover ontelbare kwaadaardige vijanden en meedogenloze gebeurtenissen gekwetst en toegetakeld worden, bezitten een kapitaal dat ten opzichte van hun behoeften slechts voor eenhonderdste, of misschien zelfs eenduizendste toereikend is. En hun vermogen is tegen geen miljoenste van die kwaadaardige confrontaties opgewassen. Vanwege zijn medeleven, zijn mededogen en zijn verstandelijke betrokkenheid bij zijn soortgenoten en medeschepselen, kreeg hij in deze vreselijke en treurige toestand zoveel medelijden met ze, dat hij van verdriet wanhopig werd, helse kwellingen onderging en enorme spijt van zijn komst naar die wereld kreeg.</p>
+
+<p>Plotseling snelde De Wijsheid van De Qur’an tot zijn redding, overhandigde hem de verrekijker van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Degenen op wie U Uw Gunsten laat neerdalen.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 1:7&lt;/p&gt;"><sup style="font-size: 13px;">3</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلَّذٖينَ اَنْعَمْتَ عَلَيْهِمْ</span> en zei: <span class="text-italic">“Aanschouw!”</span></p>
+
+<p style="margin-bottom: 0">Hij keek en zag via de manifestatie van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 4" data-fn="4" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“ALLAH is Het Licht van de hemelen en de aarde.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:35&lt;/p&gt;"><sup style="font-size: 13px;">4</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ</span> vele Goddelijke Namen als De Barmhartige, De Genadige, De Onderhouder, De Begunstiger, De Genereuze en De Bewaarder als zonnen opkomen naar de verschijningen van Aya’s als:</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">مَا مِنْ دَٓابَّةٍ اِلَّا هُوَ اٰخِذٌ بِنَاصِيَتِهَا</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 5" data-fn="5" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Er is geen dier, of Hij heeft hem bij zijn voorlok vast.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 11:56&lt;/p&gt;"><sup style="font-size: 13px;">5</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar"> ۞</span>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “ALLAH is Het Licht van de hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 24:35</p>
+<p class="footnote-p"><sup>2</sup> “De lof zij ALLAH, Heer der werelden.” - <em>De Heilige Qur’an</em>, 1:2</p>
+<p class="footnote-p"><sup>3</sup> “Degenen op wie U Uw Gunsten laat neerdalen.” - <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>4</sup> “ALLAH is Het Licht van de hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 24:35</p>
+<p class="footnote-p"><sup>5</sup> “Er is geen dier, of Hij heeft hem bij zijn voorlok vast.” - <em>De Heilige Qur’an</em>, 11:56</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 234,
+                'content' => '<div class="page" id="234">
+<p class="text-end page-number">#234</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">وَكَأَيِّنْ مِنْ دَٓابَّةٍ لاَ تَحْمِلُ رِزْقَهَا اَللّٰهُ يَرْزُقُهَا وَإِيَّاكُمْ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“En hoeveel dieren dragen hun onderhoud niet met zich mee? ALLAH voorziet hen en jou in onderhoud” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 29:60&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar"> ۞</span>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">وَلَقَدْ كَرَّمْنَا بَنَٖٓى اٰدَمَ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Voorzeker, Wij hebben de adamskinderen begunstigd.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 17:70&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar"> ۞ </span><span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّ الْاَبْرَارَ لَفٖى نَعٖيمٍ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Voorzeker, de vromen verkeren in gelukzaligheid.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 82:13&lt;/p&gt;"><sup style="font-size: 13px;">3</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar"> ۞</span>
+</p>
+
+<p>Ze hadden die wereld van de mensen en dieren met Genade en Liefdadigheden overladen, en haar enigszins in een tijdelijk paradijs veranderd. En hij doorzag dat Ze voortreffelijke kennis over De Genereuze Heer van dat bezienswaardige, oogstrelende en leerzame gastenverblijf verschaften. Daarop zei hij duizendmaal: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 4" data-fn="4" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH, Heer der werelden.”&lt;/p&gt;"><sup style="font-size: 13px;">4</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمٖينَ</span>.</p>
+
+<p class="text-bold">Het derde voorbeeld uit de duizenden waarnemingen van die reiziger</p>
+
+<p>De wereldreiziger die zijn Schepper via de manifestaties en reflecties van Goddelijke Namen en Eigenschappen wilde leren kennen, zei tegen zijn verstand en zijn inbeelding:</p>
+
+<p class="text-center text-italic">“Kom, wij gaan ons lichaam op aarde laten en zoals zielen en engelen naar de hemelen rijzen om aan de hemelbewoners over onze Schepper te vragen.”</p>
+
+<p>De ziel besteeg de inbeelding en het verstand, en rees naar de hemel. De reiziger had de kosmografische wetenschap als leidraad genomen. Met de blik van een filosofie die geen gehoor aan het geloof geeft, keek hij volgens de stroming van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 5" data-fn="5" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Zij die Zijn Toorn opwekken, zij die in dwaling verkering.”&lt;/p&gt;"><sup style="font-size: 13px;">5</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">مَغْضُوبْ، ضَٓالٖينَ</span>.</p>
+
+<p>Hij zag dat duizenden hemellichamen en vuurspuwende sterren, waarvan sommige duizendmaal groter dan de aarde waren en honderdmaal sneller dan een kanonskogel raasden, als onbewuste en levenloze schepselen wirwar langs elkaar rondreisden. Als één ervan toevallig uit zijn baan zou vliegen, dan zou het in die lege, grenzeloze en eindeloze wereld via een aanvaring met een onbewust hemellichaam een vernietiging zoals de oordeelsdag veroorzaken.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “En hoeveel dieren dragen hun onderhoud niet met zich mee? ALLAH voorziet hen en jou in onderhoud” - <em>De Heilige Qur’an</em>, 29:60</p>
+<p class="footnote-p"><sup>2</sup> “Voorzeker, Wij hebben de adamskinderen begunstigd.” - <em>De Heilige Qur’an</em>, 17:70</p>
+<p class="footnote-p"><sup>3</sup> “Voorzeker, de vromen verkeren in gelukzaligheid.” - <em>De Heilige Qur’an</em>, 82:13</p>
+<p class="footnote-p"><sup>4</sup> “De lof zij ALLAH, Heer der werelden.”</p>
+<p class="footnote-p"><sup>5</sup> “Zij die Zijn Toorn opwekken, zij die in dwaling verkering.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 235,
+                'content' => '<div class="page" id="235">
+<p class="text-end page-number">#235</p>
+
+<p>Waar die reiziger zijn blik ook op wierp, alles wekte verbijstering, ontsteltenis, verbazing en angst in hem op; zijn komst naar de hemel had enorme spijt in hem opgewekt. Zijn verstand en inbeelding raakten volledig van streek, en zeiden:</p>
+
+<p class="text-center text-italic">“Onze taak bestaat uit het aanschouwen en tonen van fraaie waarheden. Zulke helse, afgrijselijke en kwellende betekenissen doorgronden en waarnemen is een taak waarvan wij afzien en vluchten.”</p>
+
+<p>Plotseling verscheen de manifestatie van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“ALLAH is Het Licht van de hemelen en de aarde.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:35&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ</span> waarna vele Namen als: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Schepper der hemelen en aarde, Bedwinger van de zon en de maan, Heer der werelden.”&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">خَالِقُ السَّمٰوَاتِ وَالْاَرْضِ ، مُسَخِّرُ الشَّمْسِ وَالْقَمَرِ ، رَبُّ الْعَالَمٖينَ</span> opkwamen als zonnen naar de verschijning van Aya’s als:</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">وَلَقَدْ زَيَّنَّا السَّمَٓاءَ الدُّنْيَا بِمَصَابٖيحَ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“En de laagste hemel hebben Wij met lampen versierd.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 67:5&lt;/p&gt;"><sup style="font-size: 13px;">3</sup></button></span>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">اَفَلَمْ يَنْظُرُٓوا اِلَى السَّمَٓاءِ فَوْقَهُمْ كَيْفَ بَنَيْنَاهَا وَزَيَّنَّاهَا</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 4" data-fn="4" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Zien zij de hemel boven hen dan niet, hoe wij die hebben samengesteld en versierd?” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 50:6&lt;/p&gt;"><sup style="font-size: 13px;">4</sup></button></span>
+</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<span class="text-arabic-inline" dir="rtl" lang="ar">ثُمَّ اسْتَوٰٓى اِلَى السَّمَٓاءِ فَسَوّٰيهُنَّ سَبْعَ سَمٰوَاتٍ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 5" data-fn="5" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Daarna wendde Hij zich tot de hemel en vormde daaruit zeven hemelen.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 2:29&lt;/p&gt;"><sup style="font-size: 13px;">5</sup></button></span>
+</p>
+
+<p>Ze hadden de hemelen volledig met lichternis en engelen overladen, en in een grandioze moskee, een gebedshuis en een legerkamp veranderd. De reiziger sloot zich aan bij de stroming van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 6" data-fn="6" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Degenen op wie U Uw Gunsten laat neerdalen.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 1:7&lt;/p&gt;"><sup style="font-size: 13px;">6</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلَّذٖينَ اَنْعَمْتَ عَلَيْهِمْ</span>. Hij werd gered van dwaling en van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 7" data-fn="7" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Of als de duisternissen van een diepe zee.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 24:40&lt;/p&gt;"><sup style="font-size: 13px;">7</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَوْ كَظُلُمَاتٍ فٖى بَحْرٍ لُجِّىٍّ</span>. Hij was opeens getuige van een paradijselijk mooi, geordend en indrukwekkend land. Hij waarnam dat overal kennis over De Ontzaglijke Schepper werd geboden, waardoor de waardes van zijn verstand en zijn inbeelding verduizendvoudigd werden.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “ALLAH is Het Licht van de hemelen en de aarde.” - <em>De Heilige Qur’an</em>, 24:35</p>
+<p class="footnote-p"><sup>2</sup> “Schepper der hemelen en aarde, Bedwinger van de zon en de maan, Heer der werelden.”</p>
+<p class="footnote-p"><sup>3</sup> “En de laagste hemel hebben Wij met lampen versierd.” - <em>De Heilige Qur’an</em>, 67:5</p>
+<p class="footnote-p"><sup>4</sup> “Zien zij de hemel boven hen dan niet, hoe wij die hebben samengesteld en versierd?” - <em>De Heilige Qur’an</em>, 50:6</p>
+<p class="footnote-p"><sup>5</sup> “Daarna wendde Hij zich tot de hemel en vormde daaruit zeven hemelen.” - <em>De Heilige Qur’an</em>, 2:29</p>
+<p class="footnote-p"><sup>6</sup> “Degenen op wie U Uw Gunsten laat neerdalen.” - <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>7</sup> “Of als de duisternissen van een diepe zee.” - <em>De Heilige Qur’an</em>, 24:40</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 236,
+                'content' => '<div class="page" id="236">
+<p class="text-end page-number">#236</p>
+
+<p>Voorwaar, uit de honderden waarnemingen die de reiziger tijdens zijn reis door het universum had ondervonden, hebben wij ter illustratie de voornoemde drie behandeld. Zijn overige waarnemingen en zijn kennis over De Onmisbare Existentie die hij via de reflecties van Goddelijke Namen heeft opgedaan, laten wij aan de Risale-i Nur over; wij nemen genoegen met deze bondige aanwijzing en ronden deze uiterst uitgebreide parabel af.</p>
+
+<p>Onder De Heilige Eigenschappen en De Zeven Attributen Die kennis over onze Schepper verschaffen, gaan wij alleen aan de hand van de drie Aanzienlijke Eigenschappen: Kennis, Wil en Macht, middels Hun vruchten, Hun manifestaties en de indicaties van Hun verwezenlijkingen ons best doen om met hele bondige aanwijzingen – zoals die wereldreiziger – kennis over de Schepper van het universum op te doen. Details hieromtrent laten wij aan de Risale-i Nur over.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 237,
+                'content' => '<div class="page" id="237">
+<p class="text-end page-number">#237</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>De Tweede Poort</h2>
+</div>
+
+<p class="text-center text-bold">[Uit De Negenentwintigste Flits]</p>
+
+<p class="text-center text-bold text-red">Deze Tweede Poort gaat over: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span></p>
+
+<p class="text-center text-italic">In dit traktaat genaamd <span class="text-bold">De Tweede Poort</span> zullen slechts negen van de eindeloze voordelen en lichten in het geloof worden uiteengezet die de zin: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> doen laten uitspreken.</p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar" style="margin-bottom: 5px">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+ “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+&lt;/p&gt;"><sup>2</sup></button></span>
+</p>
+
+<p class="small-title text-center text-red"><strong>Het Eerste Punt</strong></p>
+
+<p>Vooraf zullen er twee punten worden verklaard.</p>
+
+<p>1. De filosofie is een zwarte bril die alles lelijk en eng weergeeft. Het geloof daarentegen is een scherpe, heldere en lumineuze bril die alles fraai en vriendelijk weergeeft.</p>
+
+<p>2. De mens, die bij alle schepselen betrokken is, met alles enigszins in ruilverkeer staat, met alles in zijn omgeving van nature verplicht is om verbaal en non-verbaal contact te leggen, te communiceren en een band te vormen, heeft een rechter-, een linker-, een voor-, een achter, een boven- en een onderzijde die hem in totaal zes kijkrichtingen bieden.</p>
+
+<p>De mens kan de schepselen en de hoedanigheden aan deze zijden door de voornoemde twee brillen bezichtigen.</p>
+
+<p class="text-bold text-italic">De rechterzijde</p>
+
+<p>Met deze zijde wordt het verleden bedoeld. Als de rechterzijde door de bril van filosofie wordt aanschouwd, dan zal het ogen alsof het land van het verleden de oordeelsdag heeft meegemaakt, ondersteboven is gehaald en in een duistere, angstaanjagende en gigantische grafakker is veranderd.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “De lof zij ALLAH.”</p>
+<p class="footnote-p"><sup>2</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 238,
+                'content' => '<div class="page" id="238">
+<p class="text-end page-number">#238</p>
+
+<p>Zonder enige twijfel zal dit beeld enorme angst, onbegrip en wanhoop bij de mens opwekken.</p>
+
+<p>Echter, wanneer die zijde door de bril van het geloof wordt bekeken, dan zal het wellicht ogen alsof dat land ondersteboven is gehaald, terwijl er in feite geen levens zijn verspild. Het is namelijk duidelijk dat de burgers en de bewoners van dat land naar een mooiere wereld van lichternis zijn overgeplaatst. Graven en kuilen gelden als ondergrondse tunnels die gegraven zijn om de lumineuze wereld te bereiken.</p>
+
+<p>Aldus vormen de vreugde, de verademing, de voldoening en de geruststelling die het geloof aan de mensheid verschaft een gunst die duizenden malen: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> doen laten uiten.</p>
+
+<p class="text-bold text-italic">De linkerzijde</p>
+
+<p>Oftewel de toekomst. Als deze zijde door de bril van filosofie wordt aanschouwd, dan zal ze ogen als een duister en angstaanjagend graf waarin wij als voedsel voor slangen en schorpioenen zullen rotten en verdwijnen.</p>
+
+<p>Echter, als deze zijde door de bril van het geloof wordt aanschouwd, dan zal ze ogen als een festijn en een gedekte tafel van barmhartigheid vol verscheidene smakelijke en hemelse gerechten en dranken die de Hoogste Gerechtigde, alias De Genadige en Barmhartige Schepper voor de mensen heeft klaargemaakt. Zodoende zal ze duizenden malen: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> doen laten uiten en die uitingen weer doen laten herhalen.</p>
+
+<p class="text-bold text-italic">De bovenzijde</p>
+
+<p>Oftewel de hemelen. Degene die deze zijde volgens de filosofie observeert, zal door de miljarden sterren en hemellichamen, die in een eindeloze leegte <span class="text-italic">(als een paardenrace of een militaire manoeuvre)</span> op verscheidene manieren razendsnel voortbewegen, geweldige vrees, onbegrip en angst ondervinden.</p>
+
+<p>Echter, wanneer een gelovige kijkt, dan zal hij inzien dat die vreemde en verbazingwekkende manoeuvres onder toezicht en op bevel van een Commandant worden uitgevoerd. Daarnaast zal hij doorzien dat de sterren als de siersels van het hemelrijk en als fonkelende kaarsen voor ons fungeren.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “De lof zij ALLAH.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 239,
+                'content' => '<div class="page" id="239">
+<p class="text-end page-number">#239</p>
+
+<p>Aldus zal die zogenaamde race geen angst en verbijstering, maar vrede en liefde in hem opwekken. Uiteraard zijn duizenden uitingen van: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> nog te weinig voor de gunst des geloofs waarbij het hemelrijk een dusdanige gedaante krijgt.</p>
+
+<p class="text-bold text-italic">De onderzijde</p>
+
+<p>Oftewel, de aardbol. Een mens die deze zijde met een filosofische blik aanschouwt, zal de aardbol zien als een losgeslagen en teugelloos dier of als een versleten schip dat zonder kapitein domweg om de zon roteert. Bijgevolg zal hij vrees en paniek ondervinden.</p>
+
+<p>Echter, als hij als een gelovige kijkt, dan zal hij de aarde zien als een schip van De Barmhartige dat met al zijn voedingsmiddelen, dranken en kledij onder het Commando van ALLAH om de zon roteert om de mensheid een excursie te laten ervaren. Bijgevolg zal hij voor deze grote gunst grote waarderingen via: <br><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> tot uiting brengen.</p>
+
+<p class="text-bold text-italic">De voorzijde</p>
+
+<p>Een individu met een filosofische visie zal aan deze zijde zien dat alle levende schepselen – zowel mens als dier – met een razende snelheid groepsgewijs voortgaan en niet meer terugkeren. Dat wil zeggen, ze vertrekken richting de non-existentie en verdwijnen. Omdat hij zichzelf ook als een volger van die weg ziet, verliest hij haast zijn verstand van verdriet.</p>
+
+<p>Echter, een gelovige die met een gelovige blik kijkt, zal begrijpen dat de voortgang en de reis van de mensen aan deze zijde niet uitmondt in de wereld van non-existentie, maar leidt tot een emigratie zoals die van nomaden die van de ene hooglanden naar de andere trekken. Omdat hij inziet dat mensen van een vergankelijk verblijf naar een eeuwig verblijf, van een dienstruimte naar een beloningsoord, van het land van inspanningen naar het land van genadigheden emigreren, en niet in een wereld van nietigheid eindigen, zal hij deze zijde met genoegen welkom heten. Ook de moeilijkheden die hij onderweg zal ontmoeten, zoals de dood en het graf, zullen uiteindelijk ook gelukzaligheden baren. Immers, de weg die naar de lumineuze werelden leidt, loopt langs het graf; grote gelukzaligheden zijn vruchten van grote en pijnlijke beproevingen.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “De lof zij ALLAH.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 240,
+                'content' => '<div class="page" id="240">
+<p class="text-end page-number">#240</p>
+
+<p>Bijvoorbeeld, de weg die Yousuf naar de gelukzaligheid achter de bekroning tot onderkoning had geleid, liep langs de put waarin zijn broers hem hadden geworpen en langs de gevangenis waarin hij door de laster van Zelîha was beland. Of een kind dat vanuit de baarmoeder ter wereld is gekomen, heeft pas na het passeren van de bekende, benarde en benauwende tunnel het wereldse geluk mogen proeven.</p>
+
+<p class="text-bold text-italic">De achterzijde</p>
+
+<p>Oftewel, de aankomende generaties. Als een mens deze zijde met de blik van filosofie aanschouwt, dan zullen de volgende vragen voor hem onbeantwoord blijven: <span class="text-italic">“Waar komen zij vandaan, waar gaan zij heen en waarom zijn zij überhaupt naar dit aardse oord gekomen?”</span> Hierdoor zal hij van nature in een kwellende toestand van verbijstering en onbegrip verkeren.</p>
+
+<p>Echter, als hij door de bril van het geloof kijkt, dan zal hij begrijpen dat zij door De Onbegonnen Sultan als analisten zijn gezonden om de unieke en buitengewone mirakelen van macht in de expositieruimte van het universum te bezichtigen en te analyseren. En nadat zij een rang en cijfer behalen conform hun beoordeling en evaluatie van die mirakelen, evenals hun besef van de mate waarin die mirakelen De Majesteit van De Onbegonnen Sultan aantonen, zullen zij terug naar Het Rijk van De Onbegonnen Sultan keren. En voor de gunst des geloofs waaraan hij deze visie te danken heeft, zal hij: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> zeggen.</p>
+
+<p>De lof die met: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> betuigd wordt voor de gunst van het geloof waarmee de voornoemde duisternissen verdreven worden, is ook een gunst en verdient daarom ook lofbetuiging. Deze tweede lof verdient weer een derde lof, de derde verdient weer een vierde, enzovoort. Aldus genereren de lofbetuigingen die aan één lofbetuiging ontspruiten een eindeloze keten van lofbetuigingen.</p>
+
+<p class="small-title text-center text-red" style="margin-bottom: 5px"><strong>Het Tweede Punt</strong></p>
+
+<p>De mens dient: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> te zeggen voor de gunst des geloofs die de zes zijden verlicht. Want doordat het geloof de duisternissen aan de zes zijden verwijdert, geldt het als een gunst die onheil verdrijft. Omdat de zes zijden zodoende spontaan verlicht worden, geldt het als een tweede gunst die heil aantrekt.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “De lof zij ALLAH.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 241,
+                'content' => '<div class="page" id="241">
+<p class="text-end page-number">#241</p>
+
+<p>De mens is van nature sociaal geschapen, waardoor hij betrokken is bij de schepselen aan alle zes zijden. De gunst van het geloof geeft hem de gelegenheid om alle zes zijden te benutten.</p>
+
+<p>Volgens het geheim achter de Aya: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“Waar jullie je ook heen wenden, jullie wenden je tot ALLAH.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 2:115&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">فَأَيْنَمَا تُوَلُّوا فَثَمَّ وَجْهُ اللّٰهِ</span> zal de mens vanuit alle zes zijden licht ondervinden. Bovendien bezit een gelovig mens een geestelijk leven dat zich vanaf de schepping van de wereld tot aan haar einde uitstrekt. En het geestelijke leven van de mens ontvangt kracht en bijstand van een levenslicht dat vanaf de onbegonnenheid tot aan de eeuwigheid doorstraalt.</p>
+
+<p style="margin-bottom: 0">Dankzij het geloof waarmee zijn zes zijden verlicht worden, veranderen de krappe huidige tijd en locatie van de mens in een ruime en wijde wereld. Deze grote wereld wordt dan als een verblijfplaats voor de mens. Het verleden en de toekomst zullen in zijn ziel en in zijn hart als present gelden; de tijdsafstand zal worden opgeheven.</p>
+
+<p class="small-title text-center text-red"><strong>Het Derde Punt</strong></p>
+
+<p>Omdat het geloof zowel het steunpunt als de hulpbron van de mens met zich meebrengt, dient er: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> te worden gezegd.</p>
+
+<p>Waarlijk, de mensheid heeft vanwege haar onmacht en de talrijkheid van haar vijanden behoefte aan een steunpunt waarop ze terug kan vallen, opdat ze toevlucht tegen haar vijanden kan nemen.</p>
+
+<p>Daarnaast is ze vanwege de talrijkheid van haar benodigdheden en haar sterke behoeftigheid afhankelijk van een hulpbron die naar haar redding snelt, opdat ze in haar behoeften kan worden voorzien.</p>
+
+<p>O mens! Jouw steunpunt bestaat uit niets anders dan het geloof in ALLAH. De hulpbron van jouw ziel en jouw geweten bestaat slechts uit het geloof in het hiernamaals. Een mens die onbekend is met deze twee punten, zal daarom onbegrip in zijn hart en ziel ervaren, en continu gewetenskwelling ondergaan. Degene die op het eerste punt steunt en bijstand van het tweede ontvangt, zal daarentegen vele vreugden en geneugten in zijn hart en ziel ervaren, vrede ontmoeten, en zowel troost als gewetensrust ondervinden.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “Waar jullie je ook heen wenden, jullie wenden je tot ALLAH.” - <em>De Heilige Qur’an</em>, 2:115</p>
+<p class="footnote-p"><sup>2</sup> “De lof zij ALLAH.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 242,
+                'content' => '<div class="page" id="242">
+<p class="text-end page-number">#242</p>
+
+<p class="small-title text-center text-red"><strong>Het Vierde Punt</strong></p>
+
+<p>De kwellingen die ontstaan wanneer geoorloofde genietingen beginnen te verstrijken, worden verdreven wanneer het geloofslicht de existentie en de komst van soortgelijke genietingen laat zien. En door de bron van gunsten te laten zien, verzekert het geloofslicht dat gunsten zonder vermindering zullen blijven aanhouden. En door het genot achter de verversing van soortgelijke gunsten te laten zien, verdrijft het geloofslicht de kwellingen die scheiding en teloorgang teweegbrengen.</p>
+
+<p>Met andere woorden, de gedachte aan vergankelijkheid wekt bij één genieting vele kwellingen op, terwijl het geloof die kwellingen via de herinnering aan de verversing van soortgelijke gunsten wegwerkt. Daarnaast schuilen er meerdere genietingen binnen de verversing van genietingen.</p>
+
+<p>Waarlijk, als een vrucht geen boom heeft, dan zal het genot dat beperkt is tot die vrucht vergaan na haar consumptie, waarna haar verdwijning verdriet zal baren. Echter, als de boom van die vrucht bekend is, dan wekt de vergankelijkheid van die vrucht geen kwelling op; zij zal immers door soortgelijke vruchten worden vervangen. Tegelijkertijd is verversing zelf een omstandigheid die genot verschaft.</p>
+
+<p>Kortom, de ziel van de mens wordt het meest bekneld door kwellingen die scheidingen teweegbrengen. Het geloofslicht doet die kwellingen teniet door de verversing van soortgelijke gunsten te laten zien en hoop op hereniging te verschaffen.</p>
+
+<p class="small-title text-center text-red"><strong>Het Vijfde Punt</strong></p>
+
+<p>Alles wat de mens in dit bestaan als vijand of vreemdeling beschouwt, of zo levenloos en zo triest als overledenen en wezen waant, wordt door het geloofslicht vriendelijk en broederlijk afgebeeld, en als levendige en Godverheerlijkende vereerders weergegeven.</p>
+
+<p>Met andere woorden, degene die een onachtzame visie bezit, zal de wezens in de wereld zo kwaadaardig als vijanden beschouwen en vervreemd raken. Alles zal voor hem vreemd ogen. Want uit het oogpunt van dwaling bestaat er tussen de schepselen uit het verleden en de toekomst geen broederlijke band of relatie. Alleen tussen de schepselen die momenteel aanwezig zijn, bestaat er een zwakke en beperkte band.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 243,
+                'content' => '<div class="page" id="243">
+<p class="text-end page-number">#243</p>
+
+<p>Kortom, binnen een tijdruimte van duizend jaar zijn de broederbanden tussen dwaalgeesten voor slechts een moment relevant.</p>
+
+<p>Een gelovige visie daarentegen ziet dat alle hemellichamen levendig zijn en een band met elkaar hebben. En die visie toont dat elk hemellichaam in de taal van zijn houding zijn Schepper verheerlijkt. Voorwaar, in dit opzicht bezitten alle hemellichamen een eigen vorm van leven en een ziel. Aldus bestaat er tussen die hemellichamen uit dit gezichtspunt van het geloof geen vervreemding en onbegrip, maar vertrouwen en liefde.</p>
+
+<p style="margin-bottom: 0">De visie van dwaling veronderstelt dat de mensen die niet bij machte zijn om hun verlangens te realiseren, geen eigenaar en toezichthouder bezitten; zij waant ze als wezen die wegens hun leed, smart en onmacht wenen. De gelovige visie daarentegen ziet de levende schepselen niet als wenende wezen, maar als verantwoordelijke functionarissen, dienstdoende vereerders en Godverheerlijkende dienaren.</p>
+
+<p class="small-title text-center text-red"><strong>Het Zesde Punt</strong></p>
+
+<p>Het geloofslicht portretteert de werelden van de aarde en het hiernamaals als twee tafels waarop verscheidene gunsten zijn uitgespreid; een gelovige kan aan de hand van het geloof met zijn uitwendige en inwendige gevoelens, en zijn mentale en geestelijke zintuigen zich van die tafels bedienen.</p>
+
+<p>Volgens de visie van dwaling daarentegen krimpt de kring der mogelijkheden voor de levenden en beperkt het zich tot materiële genietingen.</p>
+
+<p>De visie van het geloof breidt die kring zodanig uit, dat die de hemelen en de aarde omvat. Waarlijk, een gelovige kan de zon zijn lamp aan het plafond van zijn woning en de maan zijn nachtlantaarn noemen. Zodoende worden de zon en de maan voor hem een persoonlijke gunst. Aldus reikt de benutbare kring van een gelovige verder dan de hemelen.</p>
+
+<p>Waarlijk, De Miraculeuze Qur’anrevelaties duiden op deze buitengewone gaven en gunsten die aan het geloof ontspruiten in eloquente Aya’s als:</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; ">
+<span class="text-arabic-inline" dir="rtl" lang="ar">وَسَخَّرَ لَكُمُ الشَّمْسَ وَالْقَمَرَ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“En Hij heeft de zon en de maan tot jullie beschikking gesteld.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 14:33&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar"> ۞ </span><span class="text-arabic-inline" dir="rtl" lang="ar">وَسَخَّرَ لَكُمْ مَا فِى الْبَرِّ وَالْبَحْرِ</span><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“En Hij heeft alles op het land en in de zee tot jullie beschikking gesteld.” - &lt;em&gt;De Heilige Qur’an&lt;/em&gt;, 22:65&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “En Hij heeft de zon en de maan tot jullie beschikking gesteld.” - <em>De Heilige Qur’an</em>, 14:33</p>
+<p class="footnote-p"><sup>2</sup> “En Hij heeft alles op het land en in de zee tot jullie beschikking gesteld.” - <em>De Heilige Qur’an</em>, 22:65</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 244,
+                'content' => '<div class="page" id="244">
+<p class="text-end page-number">#244</p>
+
+<p class="small-title text-center text-red"><strong>Het Zevende Punt</strong></p>
+
+<p>Het geloofslicht maakt duidelijk dat Het Bestaan van ALLAH een ultieme gunst is die boven alle gunsten uitschittert. Hij is immers Een Bron Die alle eindeloze soorten gunsten, giften en gaven omvat.</p>
+
+<p>Aldus zijn wij ALLAH voor de gunsten des geloofs zoveel lofprijzing als het aantal atomen in het bestaan verschuldigd. In de Traktaten van de Risale-i Nur wordt een aantal daarvan beduid. De gedeeltes in de Risale-i Nur aangaande het geloof in ALLAH onthullen deze gunst en maken haar zichtbaar.</p>
+
+<p>Zoals: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;&lt;strong&gt;Noot van de vertalers:&lt;/strong&gt; hiermee wordt gedoeld op het Arabische bepalend lidwoord: &lt;span class=&quot;text-arabic-inline&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;ل&lt;/span&gt; waarmee de universele definitie van een woord wordt omschreven.&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">لَامُ الْاِسْتِغْرَاقِ</span> in <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> aangeeft, bestaat één van de gunsten waarvoor een universele lof betuigd dient te worden, uit de gunst van Barmhartigheid. Waarlijk, Barmhartigheid omvat zoveel gunsten als het aantal levenden dat met Genade is begunstigd. En omdat vooral de mens bij elke levensvorm betrokken is, maakt elke vorm van gelukzaligheid die een levensvorm ervaart de mens ook gelukkig, terwijl elke kwelling die een levensvorm ondergaat hem ook kwelt. Aldus is elke gunst ook voor de vrienden van de gunsteling een gunst.</p>
+
+<p>Ook Genadigheid is een gunst die zoveel gunsten omvat als het totale aantal kinderen dat met moederlijk mededogen begunstigd wordt en naar die verhouding lofprijzing verdient. Waarlijk, een mens met een geweten die door het gehuil van een hongerig en moederloos kind bedroefd raakt en medelijden voelt, zal dankzij het mededogen van moeders jegens hun kinderen uiteraard plezier, voldoening en vreugde vernemen. Voorwaar, zulke genietingen zijn gunsten; ze vergen lof- en dankbetuiging.</p>
+
+<p>Ook Wijsheid is een gunst die zoveel lof- en dankbetuiging als alle aanwezige soorten wijsheden in het universum verdient. Immers, zoals de reflecties van Barmhartigheid het ego en de manifestaties van Genadigheid het hart van de mens begunstigen, wordt het mensenverstand dankzij de subtiliteiten ontsproten aan Wijsheid bevredigd en vergenoegd. Voorwaar, dit vergt een volmondige lofprijzing via de uitspraak: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">2</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span>.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> <span class="text-bold">Noot van de vertalers:</span> hiermee wordt gedoeld op het Arabische bepalend lidwoord: <span class="text-arabic-inline" dir="rtl" lang="ar">ل</span> waarmee de universele definitie van een woord wordt omschreven.</p>
+<p class="footnote-p"><sup>2</sup> “De lof zij ALLAH.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 245,
+                'content' => '<div class="page" id="245">
+<p class="text-end page-number">#245</p>
+
+<p>Ook Bewaarhouding is een gunst die zoveel lofprijzing verdient als het aantal manifestaties van Gods Schone Naam: <span class="text-bold">“De Erfgenaam”</span>, het aantal nalatenissen van vergane oorsprongen <span class="text-italic">(denk aan vaders)</span>, het aantal wezens in de wereld van het hiernamaals en het aantal opgeslagen mensendaden die in het hiernamaals als beloningen zullen worden aangereikt. Voor deze gunst dient er: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> gezegd te worden met een stem die door het hele heelal weergalmt. Immers, het voortbestaan van een gunst is waardevoller dan het wezen van een gunst. De voortduring van een genieting is aangenamer dan die genieting. De bestendigheid in het paradijs overschittert het paradijs, enzovoorts. Aldus zijn de gunsten die de Hoogste Gerechtigde in Zijn Bewaring neemt meer en waardevoller dan alle aanwezige gunsten in het universum. Hiervoor dient er een wereldomvattende: <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH.”&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> te worden geuit.</p>
+
+<p>Indien je de overige Schone Namen zoals de voornoemde vier Namen afweegt, dan zal je inzien dat Elke Naam eindeloze lof- en dankbetuiging vergt aangezien elke Naam eindeloze gunsten herbergt.</p>
+
+<p>Ook het middel tot de gunst des geloofs waarmee de schatten van alle gunsten geopend kunnen worden, alias de eminentie Mohammed <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span>, is zelf een dusdanige gunst, dat de mensheid hem <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> eeuwige eerbetoon en lofprijzing verschuldigd is.</p>
+
+<p style="margin-bottom: 0">Ook de samenvatting en de bron van alle zowel materiële als immateriële gunsten, oftewel de gunst der Islam en De Qur’an, vergen en verdienen oneindige lofbetuigingen.</p>
+
+<p class="small-title text-center text-red"><strong>Het Achtste Punt</strong></p>
+
+<p>Geprezen zij ALLAH, Wiens Heilige Wezen in alle delen en passages, alle pagina’s en regels, alle woorden en letters van het macro-boek genaamd het universum, evenals de Tafsir daarvan bekend als De Glorieuze Qur’an, met lof geprezen wordt, daar ze Zijn Schone en Volmaakte Eigenschappen laten zien.</p>
+
+<p>Elke letter in dat macro-boek, ongeacht hoe groot of klein ze is, prijst naar haar capaciteit De Ene en Onafhankelijke Schoonschrijver door Zijn Ontzaglijke Eigenschappen weer te geven.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> “De lof zij ALLAH.”</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 246,
+                'content' => '<div class="page" id="246">
+<p class="text-end page-number">#246</p>
+
+<p>Ook elke passage in dat boek prijst De Barmhartige en Genadige Schrijver door Zijn Schone Eigenschappen te tonen.</p>
+
+<p>Ook alle passages, punten en letters in dat boek zijn Godvereerders die via de manifestaties en reflecties van Schone Namen Dat Heilige Wezen heiligen, loven en glorificeren.</p>
+
+<p style="margin-bottom: 0">Ook elke ordening en ode in dat boek heiligt en looft Die Almachtige en Alwetende Ordenaar.</p>
+
+<p style="margin-bottom: 0" class="small-title text-center text-red"><strong>Het Negende Punt</strong><span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;Ik beschik niet over de sleutel tot zulke mysteries. Bovendien kan het verstand van iemand die vast noch zulke mysteries ontrafelen, noch zulke formuleringen vertalen. Neem het mij niet kwalijk, maar tot hier heb ik ook alleen kunnen vertalen dankzij de spirituele ondersteuning van de auteur, de zegeningen van de nacht van Qadr en de aura van Mewlana in wiens nabijheid ik dit traktaat heb vertaald.&lt;/p&gt;&lt;p class=&quot;footnote-p fn-popover__para text-end&quot;&gt;De vertaler&lt;br&gt;<em>Abdoelmedjîd Nursî</em>&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span></p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+اَلْحَمْدُ مِنَ اللّٰهِ بِاللّٰهِ عَلَى اللّٰهِ لِلّٰهِ...
+</p>
+
+<p class="text-end text-red" style="margin-top: 0px;">Said Nursî</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> Ik beschik niet over de sleutel tot zulke mysteries. Bovendien kan het verstand van iemand die vast noch zulke mysteries ontrafelen, noch zulke formuleringen vertalen. Neem het mij niet kwalijk, maar tot hier heb ik ook alleen kunnen vertalen dankzij de spirituele ondersteuning van de auteur, de zegeningen van de nacht van Qadr en de aura van Mewlana in wiens nabijheid ik dit traktaat heb vertaald.</p>
+<p class="footnote-p text-end">De vertaler<br>Abdoelmedjîd Nursî</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 247,
+                'content' => '<div class="page" id="247">
+<p class="text-end page-number">#247</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Tijdens Een Droombijeenkomst</h2>
+</div>
+
+<p class="text-center text-bold">[Uit De Schitteringen]</p>
+
+<p class="text-center text-bold">Vergelijkingen tussen De Sharia en de huidige beschaving;<br>de sluwe wijsbegeerte en de Shariaanse leiding</p>
+
+<p class="text-italic">Na de wapenstilstand die een einde aan de Eerste Wereldoorlog bracht, op een donderdagnacht, in een waarachtige droom, bij een grote bijeenkomst, werd van mij het volgende gevraagd:</p>
+
+<p class="text-italic"><strong>“Wat gaat er met de Islamitische wereld gebeuren na deze nederlaag?”</strong><br> Als functionaris van de huidige eeuw nam ik het woord; zij luisterden...</p>
+
+<p class="text-italic">Het onafhankelijk bestaan van de Islam en het collectieve Jihad-gebod om ALLAH’s Woord te verspreiden, zijn religieuze vereisten,</p>
+
+<p class="text-italic">Waaraan dit land<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;&lt;strong&gt;Noot van de vertalers:&lt;/strong&gt; hiermee wordt Anatolië bedoeld.&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span> sinds vroeger heeft voldaan, als één lichaam, als de verkoren wijdeling van de Islamitische staat, als voormalige vaandeldrager van het Khalifaat,</p>
+
+<p class="text-italic">Zal het uiteraard, na alle ellende wat de moslims hebben doorstaan, voorspoed en vrijheid brengen naar de wereld der Islam. Alle ellende die zich heeft voorgedaan,</p>
+
+<p class="text-italic">Zal in de toekomst worden gecompenseerd. Over een uitgave die als een verhonderdvoudigde winst terugkeert, kan er uiteraard niet gezegd worden dat ze verlies genereert. Een wijdeling leeft eigentijds, maar is op de toekomst geconcentreerd.</p>
+
+<p class="text-italic">De heersende ellende heeft onze levensbasis, bestaande uit mededogen en broederschap, geïntensiveerd. Bijgevolg is de Islamitische saamhorigheid geoptimaliseerd. De ontplooiing van broederschap,</p>
+
+<p class="text-italic">Heeft ontwikkeling op gang gebracht. De destructieve beschaving met haar huidige regressie zal verandering ondergaan; haar systeem zal ten onder gaan. Op dat moment zal ze verschijnen:</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> <span class="text-bold">Noot van de vertalers:</span> hiermee wordt Anatolië bedoeld.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 248,
+                'content' => '<div class="page" id="248">
+<p class="text-end page-number">#248</p>
+
+<p class="text-italic">De beschaving der Islam. Aanvankelijk zullen uiteraard moslims haar in de armen sluiten. Wil je de Shariaanse beschaving met de huidige beschaving vergelijken?</p>
+
+<p class="text-italic">Dan moet je hun beginselen uitpluizen, en hun voortbrengselen bekijken. De fundamenten van de huidige beschaving zijn onheilspellend; vijf onheilspellende beginselen bepalen haar basis evenals haar waarde.</p>
+
+<p class="text-italic">Daarmee wordt zij aangedreven. Immers, haar steunpunt bestaat niet uit gerechtigheid maar kracht. De tekenen van kracht daarentegen, zijn agressie en confrontatie, waardoor verraad wordt voortgebracht.</p>
+
+<p class="text-italic">Haar streven is niet op deugd, maar op een heilloze winst gericht. Getuige alles wat winstbejag heeft aangericht, gaan hierbij rivaliteit en vijandigheid met elkaar gepaard, hieruit wordt er moord gebaard.</p>
+
+<p class="text-italic">Haar levensvisie baseert ze niet op samenwerking maar op strijd. De kenmerken van strijd, bestaande uit wrijving en verdrijving, leiden tot gebrekkigheid.</p>
+
+<p class="text-italic">Haar middel om mensen met elkaar te binden, bestaat uit racisme; een middel waar andere rassen nadeel van ondervinden. Ze voedt en versterkt haarzelf door anderen te verslinden.</p>
+
+<p class="text-italic">Nationalisme, fascisme en racisme; de huidige conflicten en heftige gevechten, behoren tot hun onveranderlijke kenmerken, verdoemenis is wat ze teweegbrengen.</p>
+
+<p class="text-italic">Haar vijfde fundament is een verleidelijke dienst om het lessen van lusten en begeerten te bemoedigen en versoepelen, hieraan ontspruit onzedelijkheid.</p>
+
+<p class="text-italic">De hoedanigheid van die lusten en begeerten, doet de mens deformeren; ze verandert zijn geaardheid. Ze bederft zijn mentaliteit, hierdoor ontaard de menselijkheid.</p>
+
+<p class="text-italic">Als je de moderne dames en heren binnenstebuiten zou keren, dan zouden de meesten verschijnen als apen of vossen, slangen of beren, ofwel als zwijnen; hun innerlijk zal met hun uiterlijk rijmen.</p>
+
+<p class="text-italic">Breng ze voor je in jouw gedachten, aanschouw ze in hun harige vachten. De presente voortbrengselen die uit de filosofie zijn voortgekomen, kunnen op deze wijze worden waargenomen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 249,
+                'content' => '<div class="page" id="249">
+<p class="text-end page-number">#249</p>
+
+<p class="text-italic">Bij wereldse afwegingen is de Sharia de maatstaf. De Shariaanse Genade straalt van De Hemelse Qur’an af. Heilzaam is wat de beginselen van De Qur’anische beschaving zaaien. Vijf heilzame beginselen laten het wiel van geluk draaien.</p>
+
+<p class="text-italic">Het steunpunt van de Sharia is geen kracht maar gerechtigheid. Het onveranderlijke kenmerk van gerechtigheid is rechtvaardigheid en evenwicht. Hiermee wordt er vrede gesticht en alle ellende te gronde gericht.</p>
+
+<p class="text-italic">Haar streven is niet op winst maar veeleer op deugd gericht. De kenmerken van deugd bestaan uit liefde en sympathie, hiermee wordt geluk gegenereerd en vijandschap geëlimineerd.</p>
+
+<p class="text-italic">Haar levensvisie is niet op strijd en moord, maar op het samenwerkingsprincipe gebaseerd. Eendracht en saamhorigheid zijn karakteristieken die deel van dit principe uitmaken, hiermee wordt de maatschappij leven ingeblazen.</p>
+
+<p class="text-italic">Haar dienstbaarheid wordt niet door egoïstische lusten maar door Goddelijke Leiding geleid. Haar herkenningsteken bestaat uit een menswaardige ontplooiing en welvarendheid.</p>
+
+<p class="text-italic">Evenals verlichting en progressie, waaraan de ziel behoefte heeft. Het eenheidsverband tussen menigten waarvan Zij kennisgeeft, verdrijven racisme en de negatieve vorm nationalisme.</p>
+
+<p class="text-italic">Ter vervanging daarvan vestigt Zij de aandacht op religieuze gemeenzaamheden, landelijke belangen, beroepsmatige betrekkingen en Godsdienstige broederbanden. Tekenen van dit bindmiddel, geven een hechte broederschap,</p>
+
+<p class="text-italic">Een universele vrede weer. Tegen aanvallen van buitenaf, biedt zij altijd tegenweer. Nu heb jij het geheim begrepen, waarom Zij Zich van modernisme heeft gedistantieerd en hem de rug heeft toegekeerd.</p>
+
+<p class="text-italic">Tot op heden zijn de islamieten nimmer de hedendaagse beschaving willens ingetreden. Ze heeft hen immers niks goeds geleverd, alleen gevankelijk vastgeketend.</p>
+
+<p class="text-italic">Terwijl ze een triakel voor de mens moest wezen, is ze giftig voor hem geworden. Na tachtig van de honderd mensen in ellende en onheil te storten, is het haar gelukt om tien ervan een vals geluk te bezorgen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 250,
+                'content' => '<div class="page" id="250">
+<p class="text-end page-number">#250</p>
+
+<p class="text-italic">De andere tien heeft ze in een rusteloze staat ertussenin geplaatst. Alle financiële baat heeft de slinkse minderheid gekaapt. Over waar geluk kan er echter pas gesproken worden als iedereen ervan deel uitmaakt,</p>
+
+<p class="text-italic">Of tenminste de meerderheid zegepraalt. De Genade voor de mensheid Die als De Qur’an is neergedaald, heeft slechts één beschavingsvorm aangenomen,</p>
+
+<p class="text-italic">Waarbij iedereen of de meerderheid gelukzaligheid wordt aangeboden. In de huidige omstandigheden zijn de lusten losgelaten, het genotzucht is vrijgelaten; dit heeft tot de vorming van een dierlijke vrijheid bijgedragen.</p>
+
+<p class="text-italic">Lusten delen bevelen uit en genotzucht gedraagt zich als dictator die secundaire benodigdheden bij de primaire behoeften heeft inbegrepen. Deze aangelegenheden hebben alle rust verdreven.</p>
+
+<p class="text-italic">Hoewel een mens voorheen alleen met vier middelen kon overleven, heeft de beschaving hem honderd behoeften erbij gegeven. Een halal loon stelt deze behoeften niet tevreden.</p>
+
+<p class="text-italic">Dientengevolge heeft ze de mens tot bedrog en haram gedreven, wat heeft geleid tot het bederf van de fundamenten der goede zeden. De samenleving en de mensheid heeft ze met weelde en praal omgeven.</p>
+
+<p class="text-italic">Maar individuen en persoonlijkheden heeft ze zedeloos en arm gemaakt. Hiervan zijn er genoeg getuigenissen. Alle barbarismen, moorden, wreedheden en trouweloosheden uit eerdere tijdperken,</p>
+
+<p class="text-italic">Heeft deze verdorven beschaving in één keer uitgebraakt. Nog steeds is haar maag van streek vandaag<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;Ze zal dus nog erger braken. Waarlijk, tijdens de twee wereldoorlogen heeft ze zo erg gekotst, dat ze de lucht, de zee en de kusten met bloed heeft overspoeld en bevuild.&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span>. Hierbij is de terughoudendheid van de Islamitische wereld betekenisvol en achtenswaardig.</p>
+
+<p class="text-italic">Hij wil haar niet aanvaarden en heeft zich koud gedragen. Een hoedanigheid van de stralende Sharia – ontsproten aan Gods Lichternis – bestaat uit soevereiniteit en onafhankelijkheid.</p>
+
+<p class="text-italic">Wegens deze hoedanigheid zal dat Licht van leiding Zich nimmer laten dicteren door de ziel van de huidige beschaving die gevormd is door Romeinse wijsbegeerten.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> Ze zal dus nog erger braken. Waarlijk, tijdens de twee wereldoorlogen heeft ze zo erg gekotst, dat ze de lucht, de zee en de kusten met bloed heeft overspoeld en bevuild.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 251,
+                'content' => '<div class="page" id="251">
+<p class="text-end page-number">#251</p>
+
+<p class="text-italic">De leiding die Hij draagt kan niet met zulke filosofieën samengaan. Hij laat Zich niet infecteren noch laat Hij Zich dirigeren. De Sharia alias de ziel der Islam kweekt mededogen en geloofsmoed aan.</p>
+
+<p class="text-italic">Shariaanse waarheden bevinden zich in De Glimmende Hand van De Miraculeuze Revelaties der Qur’an, waarin ze als de staf van Mozes dienen. De beschaving met haar goochelkunsten zal in de toekomst verwonderd voor ze knielen.</p>
+
+<p class="text-italic">Kijk nu aandachtig: het Oude Rome en de Grieken hadden twee filosofieën die als tweeling van hetzelfde zaad ontkiemden. De ene was waanziek, de andere materialistisch.</p>
+
+<p class="text-italic">Ze waren als olie en water en mengden niet met elkaar samen. Tijd verstreek, de beschaving streed om ze te verenigen, evenals het Christendom deed, maar het was vergeefs.</p>
+
+<p class="text-italic">Ze zijn allemaal volledig onafhankelijk gebleven. Tevens hebben beide zielen andere gedaanten betreden; in het heden zijn ze als Duitsers en Fransen verschenen.</p>
+
+<p class="text-italic">Ze zijn bij wijze van spreken gereïncarneerd. O mijn broeder in gedachte! De tijd heeft gedemonstreerd hoe de wijsgerige tweeling als een rund elk verenigingspunt heeft genegeerd.</p>
+
+<p class="text-italic">Nog steeds hebben zij geen vrede gesloten. Zij waren tweeling, broeders en kompanen; op het pad van progressie waren zij reisgenoten. Alsnog vlogen ze elkaar in de haren.</p>
+
+<p class="text-italic">Nooit hebben zij onderling de vrede kunnen handhaven. Hoe zou het Qur’anische Licht, de Shariaanse leiding, waarvan de essentie, de oorsprong en de bakermat geheel van elkaar variëren, dan ooit vrede kunnen sluiten en zich kunnen alliëren met de ziel van deze beschaving alias Romeinse wijsbegeerten?</p>
+
+<p class="text-italic">De wijsbegeerte en de Sharia zijn aan andere bronnen ontsproten. Leiding is uit de hemel nedergekomen; de wijsbegeerte is uit de bodem opgekropen. Leiding opereert in het hart en oefent ook invloed op het brein uit.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 252,
+                'content' => '<div class="page" id="252">
+<p class="text-end page-number">#252</p>
+
+<p class="text-italic">De wijsbegeerte opereert in het brein terwijl ze het hart om de tuin leidt. Leiding bestraalt de ziel en laat haar koren bloeien. Dankzij haar kan de donkere natuur lichternis toevloeien.</p>
+
+<p class="text-italic">De potentie tot ontwikkeling brengt zij in een actieve staat. De belichaamde ziel stelt zij als onderdaan paraat. Een toegewijde mens geeft ze een engelengelaat.</p>
+
+<p class="text-italic">De wijsbegeerte daarentegen heeft haar aandacht voornamelijk aan het eigen fysieke bestaan gegeven. Ze heeft zich tot de natuur begeven en het ego als akker aangewezen, waaruit egoïstische potenties zijn beginnen op te bloeien.</p>
+
+<p class="text-italic">Ze maakt de ziel een onderdaan en laat haar koren schroeien. Als resultaat projecteert ze op de mens satans gelaat. Leiding biedt beide levens gelukzaligheid; ze verspreidt licht over beide oorden en maakt de mens verheven.</p>
+
+<p class="text-italic">De wijsbegeerte die evenals Dedjal<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;Hierin schuilt ook een diepzinnig sein.&lt;/p&gt;"><sup style="font-size: 13px;">1</sup></button></span> eenogig is, kent slechts één oord en één leven. Wegens haar materialistische wezen werpt zij zich aan het aardse onder; ze maakt van de mens een monster.</p>
+
+<p class="text-italic">Waarlijk, de wijsbegeerte bidt de dove natuur aan; ze is de blinde kracht gehoorzaam. Leiding erkent de kunstige creatie waar bewustheid van uitpuilt; ze bemerkt de kracht waarachter wijsheid schuilt.</p>
+
+<p class="text-italic">De wijsbegeerte heeft de aarde met de sluier van verloochening omstrengeld. Leiding heeft het licht van dankbetuiging over de aarde gesprenkeld. Dit geheim heeft ertoe geleid dat enerzijds de wijsbegeerte als blind en doof is bestempeld, terwijl anderzijds leiding als ziend en horend is getypeerd.</p>
+
+<p class="text-italic">Door de wijsbegeerte worden alle gunsten op het oppervlak als een verlaten buit gewaardeerd. Ze stimuleert de mens om in de natuur als een beest te roven en te plunderen, zonder afhankelijkheid uit te drukken.</p>
+
+<p class="text-italic">Volgens de zienswijze van leiding zijn alle gunsten op de schoot van het oppervlak en het gezicht van het heelal Genadevruchten. Onder elke gunst bemerkt zij Een Begunstigende Hand Die zij met dankbetoon laat kussen.</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote">
+<p class="footnote-p"><sup>1</sup> Hierin schuilt ook een diepzinnig sein.</p>
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 253,
+                'content' => '<div class="page" id="253">
+<p class="text-end page-number">#253</p>
+
+<p class="text-italic">Ik zal dit ook niet tegenspreken: de beschaving bevat ook vele deugdelijkheden. Echter, deze behoren niet tot Christelijke eigendommen, noch Europese uitvindingen,</p>
+
+<p class="text-italic">Noch moderne kunstwerken; ze vallen veeleer onder gemeenschappelijke bezittingen. Ze zijn voortbrengselen van samengebundelde ideeën, hemelse wetgevingen, ingeschapen behoeftigheden, en met name:</p>
+
+<p class="text-italic">De Ahmedaanse Sharia, oftewel de Islamitische ontwikkelingsstadia. Aldus kunnen zij door niemand worden opgeëist. De bestuurder van die droombijeenkomst benaderde mij met een tweede vraag en zei:</p>
+
+<p class="text-bold text-italic">“Rampen zijn altijd: resultaten van overtredingen en beginselen van beloningen. O vertegenwoordiger van dit tijdperk! Het lot heeft jullie een klap gegeven; Gods vonnis is gewezen.</p>
+
+<p class="text-bold text-italic">Welke daad van jullie heeft Gods vonnis en het lot de reden gegeven om deze fatwa over jullie uit te spreken, waardoor Gods vonnis als veroordeling tot rampspoed is gestreken en jullie heeft aangegrepen?</p>
+
+<p class="text-bold text-italic">Gemeenschappelijke overtredingen kweken immers altijd gemeenschappelijke rampzaligheden.”</p>
+
+<p class="text-italic">Daarop zei ik: de ontspoorde mentaliteit, de Nimrodische koppigheid en de faraonische verwaandheid van de mensheid hadden haar dusdanig opgeblazen en opgezweld, dat ze vanaf de aardbodem uitzette tot aan het hemelgewelf. Daarnaast had ze ook het subtiele scheppingsmysterie tegengewerkt.</p>
+
+<p class="text-italic">Vervolgens had deze oorlog als een vloed en een plaag uit de hemel de aarde bevangen, ook de heidenen hadden een hemelse klap ontvangen. Deze ramp had dus iedereen getroffen; hierbij was het hele mensenras betrokken.</p>
+
+<p class="text-italic">Een oorzaak waar mensen collectief verantwoordelijk voor waren, school in dwaalwegen, dierlijke vrijheden en egoïstische begeerten die uit materialisme voortkwamen.</p>
+
+<p class="text-italic">Ons aandeel hierin is ons door onze laksheid en onze verzaking van Islamitische fundamenten toegekomen. Immers, De Verheven Schepper had uit de vierentwintig uren slechts één voor ons uitgekozen;</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 254,
+                'content' => '<div class="page" id="254">
+<p class="text-end page-number">#254</p>
+
+<p class="text-italic">Op dat ene uur had Hij vijf gebeden aan ons bevolen en opgedragen. Wij hadden ons loom gedragen en die geboden achteloos nagelaten.</p>
+
+<p class="text-italic">Als straf had Hij ons vijf jaar lang vierentwintig uur enigermate laten bidden door ons continu met oefeningen en inspanningen te laten zwoegen en te laten draven.</p>
+
+<p class="text-italic">Daarnaast had Hij jaarlijks een maand lange vasten aan ons bevolen. Uit medelijden voor ons ego hadden wij dat gebod niet in acht genomen. Ter vergelding liet Hij ons dwangmatig vijf jaar vasten zonder tussenpozen.</p>
+
+<p class="text-italic">Hij beval ons om een veertigste of een tiende van het eigendom dat Hij ons had geschonken als Zakaat af te staan. Wij deden gierig, pleegden onrecht en bedreven haram; wij kozen ervoor om Zijn eis af te slaan.</p>
+
+<p class="text-italic">Bijgevolg had Hij alle opgehoopte Zakaat teruggeëist en ons van haram bevrijd. Daden zijn gelijkwaardig aan vergeldingen; vergeldingen zijn gelijkwaardig aan daden. Zuivere daden komen voor in twee soorten:</p>
+
+<p class="text-italic">De ene is aangenaam en vrijwillig, de andere is onaangenaam en onvrijwillig. Alle kwellingen en rampen kunnen worden opgeslagen als zuivere daden, alleen vallen ze in het onaangename en onvrijwillige kader. De Hadith heeft troost geboden middels de mededeling in dit bericht.</p>
+
+<p class="text-italic">Dit zondige volk heeft wassing met zijn bloed verricht. Het heeft actief berouw bewezen. Als directe beloning waren vier miljoen, oftewel een vijfde van dit volk, meteen gerezen,</p>
+
+<p class="text-italic">Tot de heilige rang van martelaren en veteranen. Zodoende werden alle zonden kwijtgescholden. De deelnemers aan die verheven droombijeenkomst gaven aan dat ze deze toespraak beaamden.</p>
+
+<p class="text-italic">Plotseling werd ik wakker, of viel ik in mijn ontwaakte staat zojuist in slaap. Mijns inziens is de waaktoestand een droom, en een droom is enigszins een waaktoestand.</p>
+
+<p style="margin-bottom: 0" class="text-italic">Daar de vertegenwoordiger van de eeuw in kwestie, is hier bekend als</p>
+
+<p style="margin-top: 0" class="text-end text-italic"><strong>Said Nursî...</strong></p>
+
+</div>'
+            ],
+            [
+                'page_number' => 255,
+                'content' => '<div class="page" id="255">
+<p class="text-end page-number">#255</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Alle Ware Leed Schuilt In Dwaling,<br>Alle Ware Genot Schuilt In Geloof</h2>
+</div>
+
+<p class="text-center text-bold">[Uit De Schitteringen]</p>
+
+<p class="text-center text-bold">Een geweldige waarheid in een ingebeeld gewaad</p>
+
+<p class="text-italic">O scherpzinnige reisgezel! Het rechte pad is de weg van lichternis. Het pad van zij die God tergen en dwalen is de weg van duisternis. Indien jij duidelijk wil zien wat het verschil tussen beide is… o geachte vriend!</p>
+
+<p class="text-italic">Hou je waan dan vast, bestijg je verbeeldingskracht en kom mee richting de duisternissen van het onbestaan. Samen gaan wij naar die ultieme grafakker; de dodenstad die geheel van leven is ontdaan.</p>
+
+<p class="text-italic">Vanuit deze duistere streek heeft Een Onbegonnen Almacht ons met Zijn Machtshand vastgepakt, eruit gesleept, naar het bestaan gebracht en op de aarde gescheept; een oord waar gelukzaligheid ontbreekt.</p>
+
+<p class="text-italic">Nu hebben wij de bestaande wereld bereikt; een land dat op een dreigende woestijn gelijkt. Onze ogen zijn geopend; we laten onze blik over zes zijden glijden. Op een hulpbehoevende wijze beginnen wij spontaan eerst voorwaarts te kijken.</p>
+
+<p class="text-italic">We zien echter calamiteiten en tegenslagen voor ons verschijnen om ons als vijanden te bestrijden. Dit doet ons terugdeinzen en achteruitwijken. We werpen onze blik van links naar rechts, waarna wij natuurlijke elementen bemerken en hopen dat zij ons te hulp snellen.</p>
+
+<p class="text-italic">We zien echter dat zij een verhard en meedogenloos hart dragen. Ze knarsen hun tanden terwijl ze woest staren. Ze geven geen gehoor aan smeekbeden noch aan hulpkreten.</p>
+
+<p class="text-italic">Als verslagen zielen wenden wij onze ogen radeloos naar boven. In een noodlijdende staat kijken we naar hemellichamen; ze hebben een angstaanjagend en dreigend voorkomen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 256,
+                'content' => '<div class="page" id="256">
+<p class="text-end page-number">#256</p>
+
+<p class="text-italic">Ze zijn net kogels die uit hun kanon zijn geschoten. Terwijl ze met een razende vaart langs elkaar in het hemelruim razen, slagen ze er alsnog in om elkaar niet aan te raken.</p>
+
+<p class="text-italic">Als één ervan uit zijn baan zou raken - moge ALLAH ons daarvoor vrijwaren - dan zal deze waarneembare wereld in het verderf geraken. Ze zijn aan het toeval overgelaten; ook deze zijde kan ons niet baten.</p>
+
+<p class="text-italic">Terneergeslagen veranderen wij onze kijkrichting; we verkeren in een pijnlijke staat van verbijstering. Met gebogen hoofden zoeken wij toevlucht binnen onze eigenheidskring; we keren ons tot onszelf om onze eigenheid onder de loep te nemen.</p>
+
+<p class="text-italic">Voorwaar, wat wij in onze arme eigenheid vernemen, zijn de stemmen van duizenden benodigdheden. Wegens duizenden gebrekkigheden, slaakt ze hartverscheurende kreten. Hoewel wij troost hoopten te vinden, deden onze waarnemingen ons slechts vervreemden.</p>
+
+<p class="text-italic">Ook uit deze zijde wordt ons geen heil gegeven. Noodlijdend treden wij in ons geweten. We observeren hem vanbinnen en hopen verlossing te signaleren. Wee ons! Want weer komen wij geen heil tegen. Tevens moeten wij ook nog eens het geweten verplegen.</p>
+
+<p class="text-italic">Want de duizenden verlangens, de vurige begeerten en de sterke gevoelens die in hem optreden, hebben zich overal uitgestrekt en het hele heelal omgeven. Elk ervan baart ons zorgen, maar we kunnen niets voor ze betekenen.</p>
+
+<p class="text-italic">Die verlangens zitten gekneld tussen het existente en het non-existentiële; hun ene eind grenst aan de onbegonnenheid, hun andere eind reikt tot aan de eeuwigheid. Hun omvattendheid is zo verreikend, dat het geweten nimmer tevredenheid zal vinden; al zou hij de hele wereld verslinden.</p>
+
+<p class="text-italic">Voorwaar, alles waartoe wij op deze ellendige weg toevlucht hebben gezocht, heeft ons niets anders dan ellende bezorgd. Dit is dus de weg van zij die God tergen en dwalen. Toeval en dwaling vormen de fundamenten die de visie van deze weg bepalen.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 257,
+                'content' => '<div class="page" id="257">
+<p class="text-end page-number">#257</p>
+
+<p class="text-italic">Deze visie hebben wij aangenomen; daarom zijn wij in deze toestand terechtgekomen. In deze staat hebben wij onze oorsprong en onze bestemming, De Kunstenaar en de wederopstanding, tijdelijk niet in aanmerking genomen.</p>
+
+<p class="text-italic">Dit voelt erger en brandt feller dan de hel; onze ziel wordt verpletterd vanuit alle zes zijden waar wij voor toevlucht naartoe waren gesneld.</p>
+
+<p class="text-italic">Onze huidige staat die ons geweten kwelt, is gekneed uit angst en verschrikking, onmacht en ontzetting, onrust en vervreemding, verlatenheid en vertwijfeling.</p>
+
+<p class="text-italic">Nu gaan wij ons verdedigen tegen alle zes zijden en ijveren om alle onheil te verdrijven. Als eerst raadplegen wij onze eigen capaciteiten.</p>
+
+<p class="text-italic">Ongelukkigerwijs constateren wij alleen onmacht en zwakheid. Als tweede trachten wij onze persoonlijke behoeften te laten zwijgen. Ongelukkigerwijs bemerken wij dat ze blijven krijsen.</p>
+
+<p class="text-italic">Als derde schreeuwen wij om een redder opdat hij ons komt bevrijden. Noch worden wij gehoord, noch geeft er iemand antwoord. Bijgevolg koesteren wij de volgende denkwijze:</p>
+
+<p class="text-bold text-italic">“Alles is vijandig, alles is ons vreemd. Er is niets dat ons hart vertroost, er is niets dat ons zekerheid verleent; niets schenkt ons een waar behagen.”</p>
+
+<p class="text-italic">Als vierde kijken wij naar hemellichamen. Zolang wij naar ze staren, blijven ze ons vrees en angst aanjagen. Hierdoor ontstaat er een beklemmende vervreemding in het geweten die het verstand kwelt met waanideeën.</p>
+
+<p class="text-italic">Voorwaar, o broeder! De hoedanigheid van de dwaalweg is zoals omschreven. De duisternis van ongeloof hebben wij op deze weg ten einde bekeken. Kom nu, mijn broeder, we keren weer terug naar het onbestaan.</p>
+
+<p class="text-italic">We komen weer aan, maar deze keer houden wij als levensbaan de rechte weg en het geloofspad aan. Onze gids en onze imam bestaan uit Goddelijke Bijstand en De Qur’an; de Valk Wiens Autoriteit alle eeuwen bestrijkt.</p>
+
+<p class="text-italic">Voorwaar, de Genade en Gratie van De Onbegonnen Sultan hebben ons gewild, Zijn Macht heeft ons uit het onbestaan getild, goedgunstig op Zijn Gewenste Wetten geplaatst en langs allerlei fases vervoerd.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 258,
+                'content' => '<div class="page" id="258">
+<p class="text-end page-number">#258</p>
+
+<p class="text-italic">Nu heeft Hij ons naar het bestaan gevoerd; met mededogen heeft Hij voor ons een lichaamsgewaad geweven en de potentie gegeven om de rang van rentmeesterschap te bekleden. Het kenmerk van die rang bestaat uit de salât en beden.</p>
+
+<p class="text-italic">Deze fases en toestanden zijn allemaal stadia die getuigen van Zijn Welwillendheid. Om onze lange weg te versoepelen, heeft Hij ons een bevelschrift van het lot aangereikt, met daarin een pagina waarop Hij ons gelaat beschrijft.</p>
+
+<p class="text-italic">Waar wij ook reizen, welke groepen wij ook bezoeken, overal worden wij verwelkomd met broederlijke groeten. Wij geven van onze bezittingen, wij ontvangen van hen goederen.</p>
+
+<p class="text-italic">Een handel die op liefde is gebaseerd; zij die ons ontvangen, verzorgen ons, versieren ons met giften en zwaaien ons uit. Tenslotte bereiken wij de poort naar de wereld; daar vernemen wij een gilgeluid.</p>
+
+<p class="text-italic">Tenslotte betreden wij het oppervlak en zetten wij voet op de waarneembare wereld; een levendig oord der Barmhartige Godheid, een rumoerig verblijf van de luidruchtige mensheid. Wij zijn van niets op de hoogte. Onze grondbeschouwing en onze imam,</p>
+
+<p class="text-italic">Bestaan uit hetgeen de Barmhartige heeft voorgenomen. De waarnemer van onze grondbeschouwing zijn onze delicate ogen. Wij openen onze ogen en we laten ze over de wereld ronddwalen. Kun jij onze vorige komst nog voor de geest halen?</p>
+
+<p class="text-italic">We waren vervreemd en verweest. We hadden vijanden in overvloed en van onze Beschermheer hadden wij geen weet. Tegenover die vijanden bezitten wij nu dankzij het geloofslicht een sterke basis,</p>
+
+<p class="text-italic">Een steunpunt en een beschermer die de vijanden van ons pad afveegt. Dit impliceert het geloof in ALLAH, oftewel: de vlam van onze ziel, ons levenslicht en de begeestering van onze geest.</p>
+
+<p class="text-italic">Voorwaar, nu is ons hart bedaard, er is geen vijand waar hij zich druk om maakt, of überhaupt een vijand die in zijn ervaringswereld bestaat. Toen wij tijdens onze eerdere komst in ons geweten waren getreden, vernamen wij duizenden hartverscheurende krijsen en kreten.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 259,
+                'content' => '<div class="page" id="259">
+<p class="text-end page-number">#259</p>
+
+<p class="text-italic">Onheil had ons omgeven. Immers, wensen, verlangens, potenties en gevoelens worden immer door eeuwigheid gedreven. Maar wat de weg naar eeuwigheid betreft waren wij onwetend; we waren niet op de hoogte van aanroepingen en beden.</p>
+
+<p class="text-italic">Echter, de lof zij ALLAH, tijdens onze huidige komst hebben wij een hulpbron gevonden die de desbetreffende potenties en wensen continu levensadem inblazen; hij laat ze hun vleugels uitslaan opdat ze zich ter oneindige eeuwigheid kunnen voorthaasten.</p>
+
+<p class="text-italic">Hij wijst ze de weg vanwaaruit potenties assistentie ontvangen, levenswater krijgen en richting hun volmaaktheid snellen; die hulpbron is een subtiel geheim dat passie doet ontwaken.</p>
+
+<p class="text-italic">Het tweede geloofsfundament is de erkenning van de herrijzenis. Eeuwige gelukzaligheid is de parel die binnen zijn schulp gevestigd is. Bewijzen voor het geloof schuilen in de Qur’an en in een geheimenis van het menselijk geweten.</p>
+
+<p class="text-italic">Hef je hoofd nu omhoog, kijk naar dit universum en begin met hem te spreken. Tijdens onze vorige komst had hij een gestalte die wij uitermate vreesden. Nu glimlacht hij en straalt hij ons van alle kanten opgetogen toe; overal vernemen wij nederige aanroepingen en beden.</p>
+
+<p class="text-italic">Zie je dan niet, ons oog is als een bij geworden; hij vliegt allerwegen. Het universum is zijn tuin die compleet met bloemen is doorweven. En elke bloem beschenkt hem met een zoete nectar,</p>
+
+<p class="text-italic">Waarnaast ze hem warmte, troost en liefde geeft. Hij neemt ze aan, brengt ze mee en puurt daaruit een honing wanneer hij geloof betuigt; de koning der honingen is wat die mystieke valkenblik bereidt.</p>
+
+<p class="text-italic">Wanneer onze blik de bewegingen van de hemellichamen, de sterren of de zonnen bereikt, dan krijgt hij van hen de Wijsheid der Schepper aangereikt; een leerzame manifestatie en een genadige reflectie is wat hem toeschijnt. De zon spreekt ons vrijwel aan en zegt:</p>
+
+<p class="text-bold text-italic">“O broeders van ons, wees niet vervreemd, noch bevreesd! Wees gegroet, welkom, jullie hebben ons geëerd! Dit vertrek is jullie verblijfplaats en ik ben een stralende kandelaar.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 260,
+                'content' => '<div class="page" id="260">
+<p class="text-end page-number">#260</p>
+
+<p class="text-bold text-italic">Ik ben zoals jullie, alleen ben ik een zuivere en gehoorzame dienaar zonder tegenspraak. De Enige Onafhankelijke heeft mij bij Zijn Pure Gratie geschapen als een geheel onderworpen lichternis die jullie ten dienste staat. Warmte en licht bieden is mijn verantwoording, jullie taak bestaat uit beden en de salât.”</p>
+
+<p class="text-italic">Kijk eens naar de maan! De sterren en oceanen bezitten allen een eigen taal; ze zeggen allemaal: <span class="text-bold">“Welkom, jullie komst heeft ons verblijd. Weten jullie dan niet wie wij zijn?”</span></p>
+
+<p class="text-italic">Kijk volgens het samenwerkingsgeheim en luister naar het sein der ordelijkheid: Een ieder van ze zegt:</p>
+
+<p class="text-bold text-italic">“Ook wij zijn dienaren; wij weerspiegelen de Genade van De Ontzaglijke Entiteit. Treur niet; laat ons voorkomen jullie niet verontrusten.</p>
+
+<p class="text-bold text-italic">De brullen van aardbevingen, de kreten van belevingen, zij behoren jullie geen angst aan te jagen, noch waan in te blazen. Immers, zij impliceren in feite harmonische aanroepingen, vurige verheerlijkingen en uitbundige smeekbeden.</p>
+
+<p class="text-bold text-italic">De Ontzaglijke Entiteit Die jullie naar ons heeft gebracht, houdt hun teugels in Zijn Handen vast.”</p>
+
+<p class="text-italic">Het gelovige oog leest de Genadige Aya van hun gelaat af; eenieder van hen impliceert een uitspraak.</p>
+
+<p class="text-italic">O gelovige wiens hart is ontwaakt! Laten wij onze ogen nu even wat rust verlenen. In hun plaats gaan wij onze delicate oren aan de gezegende handen van het geloof overgeven en naar de wereld dirigeren, opdat zij de melodieuze klanken kunnen vernemen.</p>
+
+<p class="text-italic">De geluiden die tijdens onze vorige komst als het geween van een verlaten wees en als een doodskreet werden gewaand, bestaan nu uit een melodieus gebed, een luide aanroeping en een Godverheerlijkende spraak.</p>
+
+<p class="text-italic">Luister naar de suizingen van de wind, de fluiten van de vogels, de kletsen van de regen, de klotsen van de golven, de dreunen van de donder, de tikken van de stenen; elk ervan speelt een betekenisvolle melodie.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 261,
+                'content' => '<div class="page" id="261">
+<p class="text-end page-number">#261</p>
+
+<p class="text-italic">De ruis van de wind, de slag van de donder, het lied van de golven; elk ervan zingt een verheven litanie. De ritme van de regen, de zang van de vogels; elk ervan is een glorificatie van Gods Genade en een expressie van reële metaforen.</p>
+
+<p class="text-italic">De klanken bij creaties zijn seinen van existentie; ze zeggen: <span class="text-bold">“Ook wij zijn present!”</span> Het stille universum begint zich opeens te verwoorden: <span class="text-bold">“Waan ons niet levenloos, o bazelende mens!”</span></p>
+
+<p class="text-italic">Wij vernemen dat vogels: ofwel een kostelijke gunst, ofwel een neerdalende Genade aanduiden. Met uiteenlopende zanggeluiden, beginnen zij via hun kleine muilen de Goddelijke Genade toe te juichen. Ze landen op een gunst, betuigen dank, waarna ze hemelwaarts voortsuizen.</p>
+
+<p class="text-italic">Impliciet zeggen zij: <span class="text-bold">“O broeders in het universum, hoe schitterend is onze situatie? Wij zijn grootgebracht met Gratie. We zijn voldaan over onze positie.”</span> Via hun scherpe snavels vullen zij het hemelruim met een delicate melodie.</p>
+
+<p class="text-italic">Heel het heelal is als één verheven orkest; het geloofslicht verneemt zijn Godsdienstige recitaties en glorificaties. Immers, wijsheid doet het bestaan van toeval teniet en orde verwerpt de gewaande willekeur binnen de heersende harmonie.</p>
+
+<p class="text-italic">O reisgezel! We gaan nu uit deze figuurlijke wereld treden, van de ingebeelde waan afstijgen, de locatie van het verstand betreden en de twee wegen in ogenschouw nemen om ze af te wegen.</p>
+
+<p class="text-italic">Onze eerste weg was de weg van zij die God tergen en dwalen; die weg overlaadt het diepste van het geweten met vreselijke kwellingen en gruwelijke kwalen. Ons begripsvermogen toont ons dit, hierdoor belanden wij in onbegrip.</p>
+
+<p class="text-italic">Smachtend verlangen wij dringend naar verlossing; het geweten moeten wij ofwel bedaren ofwel uitschakelen. Anders kunnen wij niet verder leven. Er wordt geen gehoor gegeven aan hulpkreten.</p>
+
+<p class="text-italic">Goddelijke leiding daarentegen biedt genezing, terwijl lustbevredigingen fungeren als verdoving. De ene schenkt troost, de andere verwekt onachtzaamheid, de ene vergt bedrijvigheid, de andere biedt tijdverdrijf.</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 262,
+                'content' => '<div class="page" id="262">
+<p class="text-end page-number">#262</p>
+
+<p class="text-italic">Begoochelende begeerten misleiden het geweten en wiegen de ziel in slaap om kwellingen te ontlopen. Anders zullen vreselijke kwellingen een hel in het geweten stoken, waardoor de mens onduldbaar zal weeklagen; het leed van wanhoop is niet te verdragen.</p>
+
+<p class="text-italic">Hoe verder de mens zich dus van de rechte weg distantieert, des te meer deze gesteltenis hem influenceert en zijn geweten tot uitbarsten forceert. Het overblijfsel van elk genot bestaat uit leed.</p>
+
+<p class="text-italic">De pralende beschaving die uit lusten, begeerten, amusementen en onzedelijkheden is gesmeed, heeft voor deze vreselijke kwaal als giftige hypnotiseur een vals geneesmiddel gepresenteerd.</p>
+
+<p class="text-italic">O mijn eerbiedwaardige vriend! Op onze tweede weg, op dat stralende pad, hadden wij een gesteldheid geconstateerd. Die gesteldheid maakt het leven een bron van gelukzaligheid; leed wordt in vreugde getransformeerd.</p>
+
+<p class="text-italic">Deze toestand heeft ons het volgende geleerd: in verscheidene niveaus, conform de kracht des geloofs, wordt de ziel een gesteldheid gegeven. Het lichaam ervaart geneugten via de ziel, de ziel ontmoet vreugde via het geweten.</p>
+
+<p class="text-italic">Er is een directe welvarendheid in het geweten geborgen. Een geestelijk paradijs is in het hart verborgen. Door te denken kunnen wij ernaar graven; het besef kan verborgenheden ontwaren.</p>
+
+<p class="text-italic">In deze staat geldt: hoe meer het hart vermaand, het geweten bewogen en de geest verroerd wordt, des te meer genot er wordt ervaren. Aldus schakelt de stemming over… van vuur naar lichternis… van winter naar zomer.</p>
+
+<p class="text-italic">In het geweten gaan er hemelpoorten open; de wereld krijgt een paradijselijk voorkomen. Daar slaan onze zielen hun vleugels uit, waarna ze vliegen als valken wier verademing in de salât en in beden schuilt.</p>
+
+<p style="margin-bottom: 0" class="text-italic">O mijn eerbiedwaardige reisgezel! Ik wuif jou nu vaarwel... Laten wij samen een gebed uitspreken, en inshâ’ALLAH tot weerziens afscheid nemen.</p>
+
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; ">اَللّٰهُمَّ اِهْدِنَا الصِّرَاطَ الْمُسْتَقٖيمَ، اٰمٖينَ</p>
+
+<p class="text-center text-italic">❧O ALLAH, leidt ons tot het rechte pad..Amîn❧</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 263,
+                'content' => '<div class="page" id="263">
+<p class="text-end page-number">#263</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 264,
+                'content' => '<div class="page" id="264">
+<p class="text-end page-number">#264</p>
+
+<div class="text-center page-title-chapter delima-font">
+<h2>Goddelijke Namen</h2>
+</div>
+
+<table class="names-table" style="width: 100%; border-collapse: collapse; margin-top: 40px;">
+<tbody>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Almachtige</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Qadîr</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْقَدٖيرُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Alwetende</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Alîm</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْعَلٖيمُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Alwijze</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Hakîm</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْحَكٖيمُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Barmhartige</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">E’r-Rahmân</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلرَّحْمٰنُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Begunstiger</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Mun’im</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْمُنْعِمُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Eigenaar</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Mâlik</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْمَالِكُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Erfgenaam</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Wâris</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْوَارِثُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Genadige</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">E’r-Rahîm</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلرَّحٖيمُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Genereuze</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Kerîm</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْكَرٖيمُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Heer</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">E’r-Rab</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلرَّبُّ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Herrijzer</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Bâis</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْبَاعِثُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Levengever</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Muhyî</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْمُحْيٖى</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Onafhankelijke</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">E’s-Samed</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلصَّمَدُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Onderhouder</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">E’r-Razzâq</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلرَّزَّاقُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Overweldiger</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Qahhâr</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْقَهَّارُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Vergever</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Gafoer</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْغَفُورُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Voortbrenger</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Fâtir</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْفَاطِرُ</span></td>
+</tr>
+<tr>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">De Weldadige</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;">El-Wehhâb</td>
+<td style="border: 2px solid #222; padding: 10px; text-align: center;"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْوَهَّابُ</span></td>
+</tr>
+</tbody>
+</table>
 
 </div>'
             ],
