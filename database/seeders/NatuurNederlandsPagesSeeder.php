@@ -33,7 +33,7 @@ class NatuurNederlandsPagesSeeder extends BookPagesSeeder
 </div>
 
 <p>
-De Risale-i Nur is een boekenreeks die geschreven
+<strong>De Risale-i Nur</strong> is een boekenreeks die geschreven
 is door de Islamitische geleerde <strong>Said Nursî</strong> <span class="honorific" dir="rtl" lang="ar">رضي الله عنه</span>. Deze
 boekenreeks bestaat uit twaalf boeken, waaronder: <strong>de
 Woorden</strong> (bestaande uit 33 woorden), <strong>de Brieven</strong>
@@ -1961,7 +1961,7 @@ dagen en elke lente in zes weken een levende wereld
 samenstelt welke kunstiger en diepzinniger is dan het
 heelal, en ten gevolge van die gedachtegang vorming
 verloochenen, is een grotere dwaasheid en onwetendheid
-dan die van de voornoemde groep sofisten.
+dan die van de voorheen genoemde groep sofisten.
 </p>
 
 </div>'
