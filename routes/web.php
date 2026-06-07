@@ -28,6 +28,7 @@ use App\Http\Controllers\PageSeoController;
 use App\Http\Controllers\OnlineLezenSeoController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\GoogleMerchantFeedController;
 use Illuminate\Support\Facades\Route;
 
 // Both admin and user can access
@@ -404,3 +405,7 @@ Route::post('/webhooks/mollie', [CheckoutController::class, 'paymentWebhook'])->
 
 // Admin/custom pickup locations API (used by admin order page custom widget)
 Route::get('/pickup-locations', [PickupLocationController::class, 'index'])->name('pickup.locations');
+
+// Google Merchant Center product feed
+Route::get('/feeds/google-merchant.xml', [GoogleMerchantFeedController::class, 'index'])->name('google-merchant-feed');
+
