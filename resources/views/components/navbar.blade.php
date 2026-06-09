@@ -10,7 +10,7 @@
             </span>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="{{ route('risale') }}">Wat is de Risale-i Nur</a></li>
+            <li><a href="{{ route('risale') }}">Wat is de Risale-i Nur?</a></li>
             <li><a href="{{ route('herzameling') }}">De Herzameling</a></li>
             <li><a href="{{ route('onlineLezen') }}">Bibliotheek</a></li>
             <li><a href="{{ route('audiobooks') }}">Audioboeken</a></li>
