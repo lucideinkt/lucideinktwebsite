@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" translate="no">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="google" content="notranslate">
     <link rel="preload" href="/fonts/OmarNaskh-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     @php
         $seoTitle        = $SEOData->title        ?? $product->title;

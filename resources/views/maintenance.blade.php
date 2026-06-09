@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Lucide Inkt — Binnenkort online</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }

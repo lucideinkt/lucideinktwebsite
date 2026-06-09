@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" translate="no">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="google" content="notranslate">
 
     {{-- Non-production environments: always block indexing --}}
     @if(!app()->isProduction())
@@ -13,8 +14,8 @@
     @if(isset($SEOData))
         {!! seo($SEOData) !!}
     @else
-        <title>Bibliotheek | Lucide Inkt</title>
-        <meta name="description" content="Blader door onze digitale bibliotheek en lees boeken online.">
+        <title>Risale-i Nur Online Lezen | Nederlands & Engels | Lucide Inkt</title>
+        <meta name="description" content="Lees de Risale-i Nur online in het Nederlands en Engels. Onze digitale bibliotheek geeft je direct toegang tot alle boeken van Said Nursi.">
     @endif
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
@@ -213,7 +214,8 @@
             });
         @endphp
         <div class="bookshelf-header-sign">
-            <h1 class="bookshelf-title">Biblio<span class="herina-t"></span>heek</h1>
+            <h1 class="bookshelf-seo-title">Risale-i Nur online lezen</h1>
+            <p class="bookshelf-title">Biblio<span class="herina-t"></span>heek</p>
             <div class="bookshelf-title-ornament">
                 <span>❧ Klik op een boek om te lezen ❧</span>
             </div>
@@ -221,8 +223,7 @@
             @if($hasPdfOnlyBooks)
             <div class="bookshelf-pdf-notice">
                 <span class="bookshelf-pdf-notice__text">
-                    Sommige boeken zijn nog als PDF beschikbaar.<br>
-                    <em>Deze worden geleidelijk vervangen door een online leesversie. Schrijf je in voor onze nieuwsbrief op de homepagina om updates te ontvangen.</em>
+                    In deze online bibliotheek kun je verschillende werken uit de Risale-i Nur lezen in het Nederlands en Engels. Een deel is direct beschikbaar als online leesversie; andere boeken zijn voorlopig als PDF te lezen.
                 </span>
             </div>
             @endif
