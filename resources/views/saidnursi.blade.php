@@ -6,7 +6,7 @@
             <div class="container">
             <x-breadcrumbs :items="[
                 ['label' => 'Home', 'url' => route('home')],
-                ['label' => 'Said Nursî', 'url' => route('saidnursi')],
+                ['label' => 'Said Nursi', 'url' => route('saidnursi')],
             ]" />
             </div>
         </div>
@@ -14,20 +14,18 @@
         <div class="gradient-border"></div>
         <div class="text-box-background">
 
-
-
             <div class="said-nursi-page__text-box">
 
-                <h1 class="title" aria-label="Wie is Said Nursi?">
-                    <span class="sr-only">Wie is Said Nursi?</span>
+                <h1 class="title" aria-label="Wie is Said Nursi? Bediüzzaman Said Nursi — schrijver van de Risale-i Nur">
+                    <span class="sr-only">Wie is Said Nursi? Bediüzzaman Said Nursi — schrijver van de Risale-i Nur</span>
                     <span aria-hidden="true"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</span>
                 </h1>
 
                 <div class="top-images">
-                    <img src="{{ asset('images/said-nursi-portret-jonge-geleerde.png') }}" alt="Portret van de jonge Said Nursi" title="Said Nursi als jonge geleerde" fetchpriority="high" decoding="async">
+                    <img src="{{ asset('images/said-nursi-portret-jonge-geleerde.png') }}" alt="Said Nursi — portret van de jonge geleerde Bediüzzaman Said Nursi" title="Said Nursi: Bediüzzaman Said Nursi als jonge geleerde" fetchpriority="high" decoding="async">
                 </div>
 
-                <h2 class="sub-title"><span class="sr-only">Said Nursi </span><em>1878 – 1960</em></h2>
+                <h2 class="sub-title"><span class="sr-only">Bediüzzaman Said Nursi </span><em>1878 – 1960</em></h2>
 
             <blockquote>
                 <p><strong>"Ik zal de wereld bewijzen dat de Qur’an een spirituele Zon is Die nimmer zal doven en door niemand kan worden uitgedoofd!"</strong></p>
@@ -43,7 +41,7 @@
 
             <p>In een afgelegen dorp in Oost-Anatolië genaamd Nurs was hij ter wereld gekomen. Zijn vader Mirza was een Godvrezende veehouder; zijn moeder Nuriye een vrome dorpsvrouw. Terwijl zijn vader hun dieren altijd muilkorfde wanneer hij ze naar hun graasweide bracht – <em>zodat ze onderweg geen hap van andermans gewas namen</em> – gaf zijn moeder hem altijd alleen borstvoeding nadat zij de rituele wassing had verricht. Zo genoot <strong><span aria-label="Said Nursi">Said Nursî</span></strong> een uiterst zuivere opvoeding die bijdroeg aan de gezegende ontplooiing van zijn buitengewone gaven.</p>
 
-            <img src="{{ asset('images/said-nursi-oost-anatolie.webp') }}" alt="Said Nursi in het Anatolische landschap" title="Said Nursi in Oost-Anatolië" loading="lazy" decoding="async">
+            <img src="{{ asset('images/said-nursi-oost-anatolie.webp') }}" alt="Said Nursi in Oost-Anatolië — geboortestreek van Bediüzzaman Said Nursi" title="Said Nursi in het Anatolische landschap" loading="lazy" decoding="async">
 
             <p>Van kinds af aan dorstte hij naar kennis. Dit dreef hem ertoe om op negenjarige leeftijd zijn ouderhuis te verlaten. In de studiejaren die volgden, verbleef hij in verscheidene medresses. Een studie die normaliter vijftien jaar duurt, rondde hij in drie maanden af. Voordat hij de pubertijd bereikte, ontving hij op veertienjarige leeftijd zijn “<strong>idjazah</strong>” <em>(onderwijsbevoegdheid)</em>. Geleerden die getuigen waren van zijn onmiskenbare begaafdheid gaven hem de eretitel “<strong>Bediüzzaman</strong>” <em>(de onvergelijkelijke des tijds)</em>.</p>
 
@@ -57,7 +55,7 @@
 
             <p><strong>Ter afsluiting volgt nu een tekst van Said <span aria-label="Said Nursi">Nursî</span> zelf uit zijn biografie:</strong></p>
 
-            <img src="{{ asset('images/said-nursi-rechtbank.webp') }}" alt="Said Nursi voor de rechtbank" title="Said Nursi tijdens een rechtszitting" loading="lazy" decoding="async">
+            <img src="{{ asset('images/said-nursi-rechtbank.webp') }}" alt="Said Nursi voor de rechtbank — Bediüzzaman Said Nursi verdedigt de Islam" title="Said Nursi tijdens een rechtszitting" loading="lazy" decoding="async">
 
             <p>Denken zij daadwerkelijk dat ik een zelfzuchtig persoon ben die er slechts op uit is om zijn eigen nefs te redden? Om het geloof van de gemeenschap te redden, heb ik zowel mijn wereld als mijn hiernamaals opgeofferd. Gedurende heel mijn ruim tachtigjarige leven heb ik geen aards genot gekend. Mijn hele leven heb ik op slagvelden, in krijgsgevangenschap of in staatsgevangenissen doorgebracht. Er is geen pijn die ik niet heb geproefd, geen kwelling die ik niet heb ondergaan. Voor krijgsraden ben ik als een woeste misdadiger behandeld; als een verstotene ben ik van oord naar oord verbannen. In staatsgevangenissen werd mij maandenlang elke vorm van contact ontzegd. Ik ben herhaaldelijk vergiftigd en heb velerlei vernederingen moeten verduren. Er zijn tijden geweest waarin ik de dood duizendmaal boven het leven verkoos. Als mijn religie mij niet van zelfmoord had weerhouden, zou Said vandaag waarschijnlijk onder de grond vergaan zijn.</p>
 
@@ -68,7 +66,7 @@
 
             <p>Om het geloof van de gemeenschap in veiligheid te brengen, heb ik op dat pad ook mijn hiernamaals opgeofferd. In mijn ogen bestaat er noch liefde voor het paradijs, noch vrees voor de hel. Namens het geloof van niet alleen de Turkse gemeenschap van 25 miljoen, maar van de gehele Islamitische gemeenschap van honderden miljoenen mensen, mogen niet één, maar duizend Saids opgeofferd worden. Als onze Qur’an op aarde zonder volgers achterblijft, dan verlang ik ook niet naar het paradijs; ook daar zal het dan een gevangenis voor mij zijn. Als ik zou zien dat het geloof van mijn volk is veiliggesteld, dan ben ik bereid om in de vlammen van de hel te branden. Want terwijl mijn lichaam dan knettert in het vuur, zal in mijn hart een rozentuin van gelukzaligheid ontbloeien.</p>
 
-            <img src="{{ asset('images/rose-frame.webp') }}" alt="Decoratieve rozenkader als afsluiting van de biografie van Said Nursi" title="Rozenkader — Said Nursi" loading="lazy" decoding="async">
+            <img src="{{ asset('images/rose-frame.webp') }}" alt="Afsluiting biografie Said Nursi — Bediüzzaman Said Nursi" title="Said Nursi — Bediüzzaman Said Nursi (1878–1960)" loading="lazy" decoding="async">
         </div>
         </div>
     </main>
