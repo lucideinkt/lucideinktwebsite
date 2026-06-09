@@ -791,6 +791,18 @@ body { margin: 0; padding: 0; width: 100%; }
 .bookshelf-header-sign::before { left: 28px; }
 .bookshelf-header-sign::after  { right: 28px; }
 
+.bookshelf-seo-title {
+    font-family: 'freight-text-pro', Georgia, serif;
+    font-size: clamp(10px, 1.4vw, 13px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 220, 120, 0.55);
+    text-shadow: none;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
 .bookshelf-title {
     font-family: 'Herina', serif;
     font-size: clamp(28px, 5vw, 52px);

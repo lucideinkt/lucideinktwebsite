@@ -224,8 +224,8 @@ class SEOService
                 'type'        => 'website',
             ],
             'online-lezen' => [
-                'title'       => 'Online Bibliotheek | Lucide Inkt',
-                'description' => 'Lees onze boeken direct online. Ontdek de Risale-i Nur vertalingen digitaal, waar en wanneer je maar wilt.',
+                'title'       => 'Risale-i Nur Online Lezen | Nederlands & Engels | Lucide Inkt',
+                'description' => 'Lees de Risale-i Nur online in het Nederlands en Engels. Onze digitale bibliotheek geeft je direct toegang tot alle boeken van Said Nursi, waar en wanneer je maar wilt.',
                 'url'         => route('onlineLezen'),
                 'image'       => secure_url('images/bookshelf_social.jpg'),
                 'type'        => 'website',
