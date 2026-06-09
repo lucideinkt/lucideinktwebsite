@@ -121,7 +121,7 @@
 
         {{-- Search — desktop sidebar only; on mobile the search lives in the top bar --}}
         <div class="bs-panel bs-panel--search-desktop">
-            <h2 class="bs-section-title">Zoeken in boeken</h2>
+            <h2 class="bs-section-title">Zoeken in de Risale-i Nur</h2>
             <div class="bs-panel-body">
                 <div class="bs-search-wrap">
                     <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in alle boeken..." autocomplete="off">
@@ -143,7 +143,7 @@
 
         {{-- Bladwijzers --}}
         <div class="bs-panel">
-            <h2 class="bs-section-title">Bladwijzers</h2>
+            <h2 class="bs-section-title">Bladwijzers online lezen</h2>
             <div class="bs-panel-body bs-panel-body--list" id="bs-bookmarks-list">
                 <div class="bs-list-empty"><i class="fa-solid fa-bookmark"></i> Geen bladwijzers opgeslagen.</div>
             </div>
@@ -223,7 +223,7 @@
             @if($hasPdfOnlyBooks)
             <div class="bookshelf-pdf-notice">
                 <span class="bookshelf-pdf-notice__text">
-                    In deze online bibliotheek kun je verschillende werken uit de Risale-i Nur lezen in het Nederlands en Engels. Een deel is direct beschikbaar als online leesversie; andere boeken zijn voorlopig als PDF te lezen.
+                    In deze online bibliotheek kun je verschillende werken uit de <strong>Risale-i Nur</strong> lezen in het <strong>Nederlands en Engels</strong>. Een deel is direct beschikbaar als online leesversie; andere boeken zijn voorlopig als PDF te lezen.
                 </span>
             </div>
             @endif
@@ -257,10 +257,10 @@
                     <div class="shelf-book-cover">
                         <div class="shelf-book-spine"></div>
                         {{-- Corner ornaments --}}
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tl" alt="" aria-hidden="true">
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tr" alt="" aria-hidden="true">
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="" aria-hidden="true">
-                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="" aria-hidden="true">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tl" alt="Risale-i Nur online lezen" title="Risale-i Nur online lezen">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tr" alt="Risale-i Nur online lezen" title="Risale-i Nur online lezen">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--bl" alt="Risale-i Nur online lezen" title="Risale-i Nur online lezen">
+                        <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--br" alt="Risale-i Nur online lezen" title="Risale-i Nur online lezen">
                         {{-- Title --}}
                         <div class="shelf-book-title-group">
                             <span class="shelf-book-title">{{ Str::before($product->title, ' - ') ?: $product->title }}</span>
