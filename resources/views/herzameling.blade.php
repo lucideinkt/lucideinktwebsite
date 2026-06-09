@@ -5,7 +5,7 @@
             <div class="container">
             <x-breadcrumbs :items="[
                 ['label' => 'Home', 'url' => route('home')],
-                ['label' => 'Herzameling', 'url' => route('herzameling')],
+                ['label' => 'Leven na de Dood — Herzameling', 'url' => route('herzameling')],
             ]" />
             </div>
         </div>
@@ -14,15 +14,15 @@
         <div class="text-box-background">
             <div class="herzameling-page__text-box">
 
-                <h1 class="title" aria-label="Het Traktaat over de Herzameling — Hiernamaals en Leven na de Dood | Risale-i Nur">
-                    <span class="sr-only">Het Traktaat over de Herzameling — Hiernamaals en Leven na de Dood | Risale-i Nur</span>
+                <h1 class="title" aria-label="Leven na de Dood — Het Traktaat over de Herzameling | Bestaat er een Hiernamaals?">
+                    <span class="sr-only">Leven na de Dood — Het Traktaat over de Herzameling | Bestaat er een Hiernamaals?</span>
                     <span aria-hidden="true"><span class="title-h"></span>et <span
                             class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
                         ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
                             class="title-in"></span>g</span>
                 </h1>
 
-                <h2 class="sr-only">Het hiernamaals en leven na de dood volgens de Risale-i Nur</h2>
+                <h2 class="sr-only">Bestaat er leven na de dood? Het hiernamaals volgens de Risale-i Nur</h2>
                 <p>Is de mens op deze rusteloze wereld gekomen om in een waan van aards geluk een ellendig leven te leiden en vervolgens voorgoed te verdwijnen? Of schuilt er meer achter zijn bestaan dan alleen het aardse, waarin zijn menselijke potenties nooit volwaardig tot hun recht kunnen komen? Definitieve antwoorden op zulke cruciale bestaansvragen zijn te vinden in dit waardevolle werk. Met onbetwistbare redenaties maakt het helder dat de herzameling in het hiernamaals noodzakelijk is.</p>
 
                 <p>Waarom <strong style="font-family: DelimaMTProBold">"Herzameling"?</strong></p>
@@ -31,7 +31,7 @@
 
                 <p>Bediüzzaman Said Nursî licht toe dat tijdens deze herzameling zich drie hoofdfases zullen voltrekken: de hereniging van de zielen met hun lichamen, de wederopwekking van die lichamen én hun wederopbouw uit de atomen waaruit ze oorspronkelijk waren samengesteld. Vervolgens zal de gehele mensheid uit de menselijke geschiedenis op het grote verzamelplein worden bijeengebracht om aan ALLAH verantwoording af te leggen. Hoewel de wederopstanding weliswaar een essentieel onderdeel is van dit proces, dekt ze niet de volledige, wezenlijke betekenis van de term <strong>'haşir'</strong>. Om de betekenis van deze beladen term meer recht te doen, hebben wij <strong>'haşir'</strong> als "herzameling" vertaald.</p>
 
-                <h2 class="sr-only">Bewijs voor het hiernamaals en leven na de dood in de Risale-i Nur</h2>
+                <h2 class="sr-only">Leven na de dood — bewijs voor het hiernamaals in de Risale-i Nur</h2>
                 <div class="content-with-image">
                     <div class="content-text">
                         <p><strong>Inhoud van het boek</strong></p>
@@ -39,7 +39,7 @@
                         <p>Aan de hand van een symbolisch verhaal worden waarheden over de herzameling en het hiernamaals verhelderd. Tevens worden verscheidene voorbeelden aangevoerd, zoals een ontbonden militaire eenheid waarvan de gedemobiliseerde soldaten met één bevel opnieuw tot een eenheid kunnen worden samengebracht, om zodoende te illustreren hoe de verspreide Goddelijke <strong>'soldaten'</strong>, oftewel de <strong>"atomen"</strong> van een ontbonden mensenlichaam, op bevel van de Schepper tot een lichaam kunnen worden herzameld.</p>
                     </div>
                     <div class="content-image">
-                        <img src="{{ asset('images/risale-i-nur-hiernamaals-herzameling.webp') }}" alt="Risale-i Nur — Het Traktaat over de Herzameling: hiernamaals en leven na de dood" title="Risale-i Nur: Hiernamaals en Leven na de Dood" loading="lazy" decoding="async">
+                        <img src="{{ asset('images/risale-i-nur-hiernamaals-herzameling.webp') }}" alt="Risale-i Nur — Leven na de dood: het hiernamaals en de herzameling" title="Leven na de Dood — Risale-i Nur: Hiernamaals en Herzameling" loading="lazy" decoding="async">
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
                 <div style="text-align: center;max-width: 700px; margin: 0 auto"><strong>Om deze waarheden ook voor een breder publiek toegankelijk te maken, hebben wij onze eerste Engelse vertaling van dit traktaat uitgebracht:</strong></div>
 
                 <div class="bottom-books-box">
-                    <img src="{{ asset('images/risale-i-nur-leven-na-de-dood-herzameling.png') }}" alt="Risale-i Nur — Leven na de dood: Het Traktaat over de Herzameling in Nederlands en Engels" title="Risale-i Nur: Leven na de Dood — Herzameling (Nederlands & Engels)" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/risale-i-nur-leven-na-de-dood-herzameling.png') }}" alt="Risale-i Nur — Leven na de dood: Het Traktaat over de Herzameling in Nederlands en Engels" title="Leven na de Dood — Risale-i Nur Herzameling (Nederlands & Engels)" loading="lazy" decoding="async">
                 </div>
 
                 <p class="bottom-links">
