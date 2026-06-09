@@ -27,7 +27,7 @@
             </div>
             <div class="shop-header">
                 <div class="shop-frame-wrapper">
-                    <img src="{{ asset('images/kader-frame-winkel-af.png') }}" alt="Risale-i Nur boeken kopen bij Lucide Inkt" class="shop-frame-img">
+                    <img src="{{ asset('images/kader-frame-winkel-af.png') }}" alt="Risale-i Nur boeken kopen in het Nederlands en Engels bij Lucide Inkt" class="shop-frame-img">
                     <h1 class="shop-title" aria-label="Risale-i Nur Boeken Kopen — Winkel">
                         <span class="sr-only">Risale-i Nur Boeken Kopen — Winkel</span>
                         <span aria-hidden="true">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</span>

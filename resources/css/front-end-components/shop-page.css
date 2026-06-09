@@ -46,16 +46,16 @@ body:has(.page.shop) .page-normal-background {
     text-align: center;
     max-width: 680px;
     margin: 0 auto 32px;
-    font-size: 15px;
-    color: #3d1f0a;
-    font-weight: 500;
+    font-size: 14px;
+    color: rgba(61, 31, 10, 0.72);
+    font-style: italic;
     line-height: 1.6;
     position: relative;
     z-index: 1;
-    background: rgba(255, 245, 210, 0.7);
-    border: 1px solid rgba(197, 155, 50, 0.35);
-    border-radius: 6px;
-    padding: 10px 20px;
+    letter-spacing: 0.2px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    max-width: 480px;
 }
 
 .background-of-the-shop-grid {
@@ -890,6 +890,13 @@ body:has(.page.shop) .page-normal-background {
         max-width: 280px;
         margin-bottom: -5px;
     }
+
+    .shop-intro {
+        margin-top: 0px;
+        margin-bottom: 25px;
+        max-width: 400px;
+    }
+
 }
 
 @media (max-width: 360px) {
