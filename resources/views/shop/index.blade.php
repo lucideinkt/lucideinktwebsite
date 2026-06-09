@@ -27,16 +27,20 @@
             </div>
             <div class="shop-header">
                 <div class="shop-frame-wrapper">
-                    <img src="{{ asset('images/kader-frame-winkel-af.png') }}" alt="" class="shop-frame-img" aria-hidden="true">
-                    <h1 class="shop-title">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</h1>
+                    <img src="{{ asset('images/kader-frame-winkel-af.png') }}" alt="Risale-i Nur boeken kopen in het Nederlands en Engels bij Lucide Inkt" class="shop-frame-img">
+                    <h1 class="shop-title" aria-label="Risale-i Nur Boeken Kopen — Winkel">
+                        <span class="sr-only">Risale-i Nur Boeken Kopen — Winkel</span>
+                        <span aria-hidden="true">W<span class="shop-title-in"></span><span class="shop-title-ke"></span>l</span>
+                    </h1>
                 </div>
             </div>
         </div>
 
-
         <div class="gradient-border"></div>
         <div class="background-of-the-shop-grid">
+            <h2 class="sr-only">Risale-i Nur boeken kopen — collectie Nederlandse en Engelse vertalingen van Said Nursi</h2>
 
+            <p class="shop-intro">Hier kun je de <strong>Risale-i Nur boeken kopen</strong> in het <strong>Nederlands</strong> en <strong>Engels</strong> — vertalingen van de werken van Bediüzzaman Said Nursi.</p>
 
             <div class="book-box product-cards-grid">
                 @foreach ($products as $product)

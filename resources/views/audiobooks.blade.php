@@ -6,7 +6,7 @@
             <div class="container">
                 <x-breadcrumbs :items="[
                   ['label' => 'Home', 'url' => route('home')],
-                  ['label' => 'Audioboeken', 'url' => route('audiobooks')],
+                  ['label' => 'Risale-i Nur Audioboeken', 'url' => route('audiobooks')],
                 ]" />
             </div>
         </div>
@@ -16,7 +16,8 @@
             <div class="audiobooks-page__text-box">
 
                 <div class="audiobooks-header">
-                    <h1 class="audiobooks-title">Audio Bibliotheek</h1>
+                    <h1 class="audiobooks-title">Risale-i Nur Audioboeken</h1>
+                    <p style="max-width: 375px;margin-top: 10px" class="audiobooks-subtitle">Beluister de werken van Said Nursi in het Nederlands en Engels</p>
                 </div>
 
                 <div class="audiobooks-grid">
@@ -35,7 +36,7 @@
                                                 $imageUrl = asset('storage/' . $imagePath);
                                             }
                                         @endphp
-                                        <img src="{{ $imageUrl }}" alt="{{ $product->title }}" class="audio-book-image" loading="lazy">
+                                        <img src="{{ $imageUrl }}" alt="{{ $product->title }} — Risale-i Nur audioboek" class="audio-book-image" loading="lazy">
                                     @else
                                         <div class="audio-book-placeholder">
                                             <i class="fa-solid fa-headphones"></i>
@@ -83,4 +84,3 @@
     <x-footer></x-footer>
     </div>
 </x-layout>
-
