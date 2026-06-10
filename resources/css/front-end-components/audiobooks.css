@@ -126,7 +126,7 @@
 
 .audiobooks-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 0px;
     padding: 0;
 }
 
@@ -171,6 +171,7 @@
     max-width: 600px;
     margin: 20px auto 0;
     line-height: 1.7;
+    max-width: 400px;
 }
 
 .audiobooks-grid {
@@ -391,7 +392,7 @@
     }
 
     .audiobooks-header {
-        margin-bottom: 15px;
+        margin-bottom: 0px;
     }
 
     .audio-play-button {
@@ -404,6 +405,10 @@
     .audio-play-button i {
         font-size: 18px;
         margin-left: 2px;
+    }
+
+    .audiobooks-subtitle {
+        max-width: 340px;
     }
 }
 

@@ -17,8 +17,10 @@
 
                 <div class="audiobooks-header">
                     <h1 class="audiobooks-title">Risale-i Nur Audioboeken</h1>
-                    <p style="max-width: 375px;margin-top: 10px" class="audiobooks-subtitle">Beluister de werken van Said Nursi in het Nederlands en Engels</p>
+                    <p class="audiobooks-subtitle">Beluister de <strong>Risale-i Nur audioboeken</strong> in het Nederlands en Engels</p>
                 </div>
+
+                <h2 class="sr-only">Risale-i Nur audioboeken — Nederlandse en Engelse vertalingen van Said Nursi</h2>
 
                 <div class="audiobooks-grid">
                     @forelse ($products as $product)
@@ -36,7 +38,7 @@
                                                 $imageUrl = asset('storage/' . $imagePath);
                                             }
                                         @endphp
-                                        <img src="{{ $imageUrl }}" alt="{{ $product->title }} — Risale-i Nur audioboek" class="audio-book-image" loading="lazy">
+                                        <img src="{{ $imageUrl }}" alt="{{ $product->title }} — Risale-i Nur audioboeken" title="{{ $product->title }} — Risale-i Nur audioboeken" class="audio-book-image" loading="lazy">
                                     @else
                                         <div class="audio-book-placeholder">
                                             <i class="fa-solid fa-headphones"></i>
