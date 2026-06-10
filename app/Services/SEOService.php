@@ -232,7 +232,7 @@ class SEOService
             ],
             'audiobooks' => [
                 'title'       => 'Risale-i Nur Audioboeken | Audio Bibliotheek | Lucide Inkt',
-                'description' => 'Risale-i Nur audioboeken — beluister de vertalingen van Said Nursi in het Nederlands en Engels. Ontdek onze groeiende audio bibliotheek.',
+                'description' => 'Risale-i Nur audioboeken: beluister de werken van Bediüzzaman Said Nursi als audioboeken in het Nederlands en Engels. Ontdek onze audio bibliotheek.',
                 'url'         => route('audiobooks'),
                 'image'       => secure_url('images/books_standing_new.webp'),
                 'type'        => 'website',
