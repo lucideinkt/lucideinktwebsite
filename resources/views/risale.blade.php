@@ -5,7 +5,7 @@
             <div class="container">
             <x-breadcrumbs :items="[
                 ['label' => 'Home', 'url' => route('home')],
-                ['label' => 'Wat is de Risale-i Nur?', 'url' => route('risale')],
+                ['label' => 'Risale-i Nur', 'url' => route('risale')],
             ]" />
             </div>
         </div>
