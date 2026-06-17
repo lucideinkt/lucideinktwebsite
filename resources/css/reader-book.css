@@ -1618,7 +1618,7 @@ body.dark-mode .reader-to-top { background: #b06030; }
     .reader-topbar-left,
     .reader-topbar-right { align-items: center; }
     .reader-topbar-mobile-page { display: flex; align-items: center; }
-    .reader-wrap { padding: 68px 10px 60px; }
+    .reader-wrap { padding: 68px 16px 60px; }
 
     .fn-popover {
         width: calc(100vw - 32px);
@@ -3054,7 +3054,7 @@ body.dark-mode .reader-sheet-close-x:hover { background: rgba(255,255,255,0.18);
 }
 @media (max-width: 1024px) {
     /* Content padding — scrubber gone, FAB at bottom */
-    .reader-wrap { padding: 72px 10px calc(env(safe-area-inset-bottom, 0px) + 80px); }
+    .reader-wrap { padding: 72px 16px calc(env(safe-area-inset-bottom, 0px) + 80px); }
 
     /* ── Hide separate FABs and bottom scrubber ── */
     .reader-search-fab    { display: none !important; }
