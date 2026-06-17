@@ -43,6 +43,7 @@
                     <li><a href="{{ route('onlineLezen') }}">Bibliotheek</a></li>
                     <li><a href="{{ route('audiobooks') }}">Audioboeken</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ route('nieuwsbrief') }}">Nieuwsbrief</a></li>
                 </ul>
             </div>
 

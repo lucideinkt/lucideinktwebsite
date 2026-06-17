@@ -236,6 +236,7 @@ Route::get('/risale-i-nur', [PageController::class, 'risale'])->name('risale');
 Route::get('/herzameling', [PageController::class, 'herzameling'])->name('herzameling');
 Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/nieuwsbrief', [PageController::class, 'nieuwsbrief'])->name('nieuwsbrief');
 Route::get('/algemene-voorwaarden', [PageController::class, 'algemeneVoorwaarden'])->name('algemeneVoorwaarden');
 Route::get('/privacybeleid', [PageController::class, 'privacybeleid'])->name('privacybeleid');
 Route::get('/retourbeleid', [PageController::class, 'retourbeleid'])->name('retourbeleid');

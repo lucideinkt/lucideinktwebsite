@@ -945,79 +945,102 @@ body.dark-mode .reader-book-title { color: #555; }
 .reader-topbar-nav {
     display: none;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     flex-shrink: 0;
-    flex: 0 1 260px;
-    min-width: 180px;
+    flex: 0 1 auto;
 }
 @media (min-width: 1025px) {
     .reader-topbar-nav { display: flex; }
 }
-.reader-topbar-page-cur,
-.reader-topbar-page-total {
-    font-size: 12px;
-    font-weight: 600;
+
+/* Row of pills inside the nav */
+.reader-topbar-nav-pills {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+/* Page badge: "114 / 116" — inside the nav pill */
+.reader-topbar-page-badge {
+    font-size: 12px !important;
     color: #7a5020;
-    font-family: 'DelimaProRegular', serif;
-    letter-spacing: 0.02em;
+    min-width: 46px;
+    text-align: center;
     white-space: nowrap;
     user-select: none;
-    min-width: 22px;
-    text-align: center;
+    letter-spacing: 0.01em;
 }
-.reader-topbar-page-total { opacity: 0.45; }
-body.dark-mode .reader-topbar-page-cur   { color: #c09060; }
-body.dark-mode .reader-topbar-page-total { color: #c09060; opacity: 0.35; }
+#topbar-page-cur-num { font-weight: 700; }
+.reader-topbar-page-sep { font-weight: 400; opacity: 0.50; }
+body.dark-mode .reader-topbar-page-badge { color: #c09060; }
 
-/* The topbar page slider */
-.reader-topbar-page-slider {
-    flex: 1;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 4px;
-    border-radius: 2px;
+/* Nav group extra spacing */
+.reader-topbar-nav-group { gap: 8px !important; }
+
+/* Goto pill: number input + Ga button */
+.reader-topbar-nav-goto { gap: 5px !important; padding: 0 5px !important; }
+
+.reader-topbar-goto-input {
+    width: 52px;
+    border: 1px solid rgba(180,140,60,0.35);
+    background: rgba(255,255,255,0.65);
+    border-radius: 6px;
+    font-size: 16px; /* 16px prevents iOS auto-zoom */
+    font-family: 'DelimaProRegular', serif;
+    font-weight: 600;
+    line-height: normal;
+    color: #5a3000;
+    text-align: center;
     outline: none;
-    cursor: pointer;
+    -moz-appearance: textfield;
+    padding: 0 4px;
+    height: 30px;
+    letter-spacing: 0.01em;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    /* Scale down visually without affecting iOS font-size check */
+    transform: scale(0.80);
+    transform-origin: center;
+    margin: 0 -5px;
+}
+.reader-topbar-goto-input:focus {
+    border-color: rgba(121,0,0,0.45);
+    box-shadow: 0 0 0 2px rgba(121,0,0,0.08);
+    background: #fff;
+}
+.reader-topbar-goto-input::-webkit-inner-spin-button,
+.reader-topbar-goto-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.reader-topbar-goto-input::placeholder { color: rgba(90,48,0,0.30); font-weight: 400; }
+body.dark-mode .reader-topbar-goto-input {
+    background: rgba(30,20,10,0.55);
+    border-color: rgba(232,168,100,0.30);
+    color: #e8c890;
+}
+body.dark-mode .reader-topbar-goto-input:focus {
+    border-color: rgba(232,168,124,0.65);
+    box-shadow: 0 0 0 2px rgba(232,168,124,0.10);
+    background: rgba(30,20,10,0.80);
+}
+body.dark-mode .reader-topbar-goto-input::placeholder { color: rgba(232,168,124,0.30); }
+
+.reader-topbar-goto-btn {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 0 9px !important;
+    height: 24px;
+    background: #790000 !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+    letter-spacing: 0.04em;
     border: none !important;
-    padding: 0 !important;
-    background: linear-gradient(
-        to right,
-        #c87830 0%,
-        #c87830 var(--tb-slider-pct, 0%),
-        rgba(180,140,60,0.22) var(--tb-slider-pct, 0%),
-        rgba(180,140,60,0.22) 100%
-    );
+    transition: background 0.13s, transform 0.08s;
+    flex-shrink: 0;
 }
-.reader-topbar-page-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: #790000;
-    cursor: pointer;
-    border: 2px solid #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.28);
-    transition: transform 0.1s;
-}
-.reader-topbar-page-slider:active::-webkit-slider-thumb { transform: scale(1.25); }
-.reader-topbar-page-slider::-moz-range-thumb {
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: #790000;
-    border: 2px solid #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.28);
-    cursor: pointer;
-}
-body.dark-mode .reader-topbar-page-slider {
-    background: linear-gradient(
-        to right,
-        #e8a050 0%,
-        #e8a050 var(--tb-slider-pct, 0%),
-        rgba(232,168,124,0.18) var(--tb-slider-pct, 0%),
-        rgba(232,168,124,0.18) 100%
-    );
-}
-body.dark-mode .reader-topbar-page-slider::-webkit-slider-thumb { background: #e8a87c; border-color: rgba(24,15,7,0.7); }
-body.dark-mode .reader-topbar-page-slider::-moz-range-thumb     { background: #e8a87c; }
+.reader-topbar-goto-btn:hover { background: #5a0000 !important; }
+.reader-topbar-goto-btn:active { transform: scale(0.95); background: #4a0000 !important; }
+body.dark-mode .reader-topbar-goto-btn { background: #c07040 !important; color: #fff !important; }
+body.dark-mode .reader-topbar-goto-btn:hover { background: #a05830 !important; }
+
+/* The topbar page slider — reuses font-range style, just wider */
+.reader-topbar-page-slider { width: 120px !important; }
 
 .reader-topbar-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
 
@@ -1034,7 +1057,158 @@ body.dark-mode .reader-topbar-page-slider::-moz-range-thumb     { background: #e
 }
 body.dark-mode .reader-topbar-mobile-page { color: rgba(232,168,124,0.5); }
 
-/* Action icon buttons group */
+/* Tappable variant — subtle visual hint */
+.reader-topbar-mobile-page--tappable {
+    cursor: pointer;
+    border-bottom: 1px dashed rgba(121,0,0,0.3);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+}
+.reader-topbar-mobile-page--tappable:hover,
+.reader-topbar-mobile-page--tappable:focus {
+    color: rgba(121,0,0,0.75);
+    border-bottom-color: rgba(121,0,0,0.6);
+    outline: none;
+}
+body.dark-mode .reader-topbar-mobile-page--tappable { border-bottom-color: rgba(232,168,124,0.35); }
+body.dark-mode .reader-topbar-mobile-page--tappable:hover,
+body.dark-mode .reader-topbar-mobile-page--tappable:focus { color: rgba(232,168,124,0.85); border-bottom-color: rgba(232,168,124,0.65); }
+
+/* ── Go-to-page modal ─────────────────────────────── */
+.goto-page-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    animation: gotoFadeIn 0.15s ease;
+}
+.goto-page-overlay[hidden] { display: none; }
+
+@keyframes gotoFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Modal card — identical to .reader-control-sheet */
+.goto-page-modal {
+    background: #fffdf5;
+    border-radius: 20px;
+    border: 1px solid rgba(180,140,60,0.18);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.10);
+    padding: 22px 20px 18px;
+    width: min(260px, 84vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    font-family: 'DelimaProRegular', serif;
+    animation: gotoSlideUp 0.22s cubic-bezier(0.34,1.56,0.64,1);
+}
+body.dark-mode .goto-page-modal {
+    background: #1e140a;
+    border-color: rgba(232,168,124,0.15);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.35);
+}
+
+@keyframes gotoSlideUp {
+    from { transform: scale(0.88) translateY(10px); opacity: 0; }
+    to   { transform: scale(1) translateY(0);        opacity: 1; }
+}
+
+/* Label */
+.goto-page-label {
+    font-family: 'DelimaProRegular', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(90,58,0,0.55);
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+body.dark-mode .goto-page-label { color: rgba(232,168,124,0.50); }
+
+/* Big centered input */
+.goto-page-input {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 28px;
+    font-family: 'DelimaProRegular', serif;
+    text-align: center;
+    border: 2px solid rgba(121,0,0,0.22);
+    border-radius: 12px;
+    background: rgba(180,140,60,0.06);
+    color: #2a1a0a;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    -moz-appearance: textfield;
+    box-sizing: border-box;
+}
+.goto-page-input::-webkit-inner-spin-button,
+.goto-page-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.goto-page-input:focus {
+    border-color: #790000;
+    box-shadow: 0 0 0 3px rgba(121,0,0,0.10);
+    background: #fff;
+}
+body.dark-mode .goto-page-input {
+    background: rgba(232,168,124,0.07);
+    border-color: rgba(232,168,124,0.25);
+    color: #f0e0c0;
+}
+body.dark-mode .goto-page-input:focus {
+    border-color: #e8a87c;
+    box-shadow: 0 0 0 3px rgba(232,168,124,0.12);
+    background: rgba(232,168,124,0.11);
+}
+
+/* Range hint below input */
+.goto-page-range {
+    font-family: 'DelimaProRegular', serif;
+    font-size: 11px;
+    color: rgba(90,58,0,0.38);
+    margin: 6px 0 16px;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+body.dark-mode .goto-page-range { color: rgba(232,168,124,0.38); }
+
+/* Full-width Ga button */
+.goto-page-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'DelimaProRegular', serif;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.12s, transform 0.08s;
+    letter-spacing: 0.04em;
+    box-sizing: border-box;
+}
+.goto-page-btn--confirm {
+    background: #790000;
+    color: #fff;
+}
+.goto-page-btn--confirm:active {
+    background: #5a0000;
+    transform: scale(0.97);
+}
+body.dark-mode .goto-page-btn--confirm { background: #c07040; color: #fff; }
+body.dark-mode .goto-page-btn--confirm:active { background: #a05830; }
+
+
 .reader-topbar-actions {
     display: none;
     align-items: center;

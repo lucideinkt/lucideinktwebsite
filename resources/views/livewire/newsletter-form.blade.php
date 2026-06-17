@@ -1,10 +1,10 @@
 <div>
     <form wire:submit.prevent="submit" class="newsletter-form">
         <div class="newsletter-input-group">
-            <input style="border: 1px solid rgba(236, 229, 194, 0.3)!important;outline: none!important;box-shadow: none!important;"
+            <input
                 type="email"
                 wire:model="email"
-                placeholder="Uw e-mailadres"
+                placeholder="Jouw e-mailadres"
                 class="newsletter-input @error('email') error @enderror"
             >
             <button type="submit" class="newsletter-btn" wire:loading.attr="disabled">
