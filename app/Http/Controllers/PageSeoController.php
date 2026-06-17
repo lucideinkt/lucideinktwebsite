@@ -22,6 +22,7 @@ class PageSeoController extends Controller
             'risale'               => ['label' => 'Risale-i Nur',               'route' => 'risale',                'icon' => 'fa-book-open'],
             'herzameling'          => ['label' => 'Herzameling',                'route' => 'herzameling',           'icon' => 'fa-book-open'],
             'contact'              => ['label' => 'Contact',                    'route' => 'contact',               'icon' => 'fa-envelope'],
+            'nieuwsbrief'          => ['label' => 'Nieuwsbrief',                'route' => 'nieuwsbrief',           'icon' => 'fa-newspaper'],
             'shop'                 => ['label' => 'Winkel',                     'route' => 'shop',                  'icon' => 'fa-store'],
             'online-lezen'         => ['label' => 'Online Bibliotheek',         'route' => 'onlineLezen',           'icon' => 'fa-book-reader'],
             'audiobooks'           => ['label' => 'Audio Bibliotheek',          'route' => 'audiobooks',            'icon' => 'fa-headphones'],

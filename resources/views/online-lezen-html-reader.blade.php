@@ -165,18 +165,35 @@
 
         {{-- Center: page slider navigation (desktop only) --}}
         <div class="reader-topbar-nav" aria-label="Paginanavigatie">
-            <span class="reader-topbar-page-cur" id="topbar-page-cur" aria-live="polite">—</span>
-            <input type="range" class="reader-topbar-page-slider" id="topbar-page-slider"
-                   min="{{ $allPageMeta->min('page_number') }}"
-                   max="{{ $allPageMeta->max('page_number') }}"
-                   value="{{ $allPageMeta->min('page_number') }}"
-                   aria-label="Ga naar pagina">
-            <span class="reader-topbar-page-total">{{ $allPageMeta->max('page_number') }}</span>
+            <div class="reader-topbar-nav-pills">
+                {{-- Pill 1: slider + page badge --}}
+                <div class="reader-topbar-font-group reader-topbar-nav-group">
+                    <input type="range" class="reader-topbar-font-range reader-topbar-page-slider" id="topbar-page-slider"
+                           min="{{ $allPageMeta->min('page_number') }}"
+                           max="{{ $allPageMeta->max('page_number') }}"
+                           value="{{ $allPageMeta->min('page_number') }}"
+                           style="width: 120px;"
+                           aria-label="Ga naar pagina">
+                    <span class="reader-topbar-font-val reader-topbar-page-badge" id="topbar-page-cur" aria-live="polite">
+                        <span id="topbar-page-cur-num">—</span><span class="reader-topbar-page-sep"> / {{ $allPageMeta->max('page_number') }}</span>
+                    </span>
+                </div>
+                {{-- Pill 2: type page number + Ga --}}
+                <div class="reader-topbar-font-group reader-topbar-nav-goto">
+                    <input type="number" class="reader-topbar-goto-input" id="topbar-goto-input"
+                           min="{{ $allPageMeta->min('page_number') }}"
+                           max="{{ $allPageMeta->max('page_number') }}"
+                           inputmode="numeric"
+                           placeholder=""
+                           aria-label="Ga naar pagina">
+                    <button type="button" class="reader-topbar-font-btn reader-topbar-goto-btn" id="topbar-goto-btn" aria-label="Ga naar pagina">Ga</button>
+                </div>
+            </div>
         </div>
 
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             {{-- Mobile page indicator (≤1024px only) --}}
-            <span class="reader-topbar-mobile-page" id="topbar-mobile-page" aria-live="polite">— / {{ $allPageMeta->max('page_number') }}</span>
+            <span class="reader-topbar-mobile-page reader-topbar-mobile-page--tappable" id="topbar-mobile-page" aria-live="polite" role="button" tabindex="0" title="Ga naar pagina" aria-label="Pagina — van {{ $allPageMeta->max('page_number') }}, klik om te navigeren">— / {{ $allPageMeta->max('page_number') }}</span>
             {{-- Compact font controls — desktop only --}}
             <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
                 <div class="reader-topbar-font-group">
@@ -220,6 +237,20 @@
     {{-- Progress bar — slim, just below topbar --}}
     <div class="reader-progress-bar-wrap" role="progressbar" aria-label="Leesvoortgang" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
         <div class="reader-progress-bar-fill" id="progress-fill"></div>
+    </div>
+
+    {{-- Go-to-page modal (mobile) --}}
+    <div id="goto-page-overlay" class="goto-page-overlay" role="dialog" aria-modal="true" aria-label="Ga naar pagina" hidden>
+        <div class="goto-page-modal">
+            <p class="goto-page-label">Ga naar pagina</p>
+            <input type="number" id="goto-page-input" class="goto-page-input"
+                   min="{{ $allPageMeta->min('page_number') }}"
+                   max="{{ $allPageMeta->max('page_number') }}"
+                   inputmode="numeric"
+                   aria-label="Paginanummer">
+            <p class="goto-page-range">{{ $allPageMeta->min('page_number') }} – {{ $allPageMeta->max('page_number') }}</p>
+            <button type="button" id="goto-page-confirm" class="goto-page-btn goto-page-btn--confirm">Ga</button>
+        </div>
     </div>
 
     {{-- Boekinhoud --}}
@@ -531,7 +562,7 @@
         const progressFill      = document.getElementById('progress-fill');
         const sheetProgressFill = document.getElementById('sheet-progress-fill');
         const fabPageCurrent    = document.getElementById('fab-page-current');
-        const topbarBadge       = document.getElementById('topbar-page-cur');
+        const topbarBadge       = document.getElementById('topbar-page-cur-num');
         const topbarMobilePage  = document.getElementById('topbar-mobile-page');
         const totalPages        = {{ $allPageMeta->max('page_number') }};
         const controlSheet      = document.getElementById('reader-control-sheet');
@@ -687,6 +718,59 @@
             }
         }
 
+        // ── Go-to-page modal (mobile) ──────────────────────────────────────
+        (function () {
+            const overlay    = document.getElementById('goto-page-overlay');
+            const input      = document.getElementById('goto-page-input');
+            const confirmBtn = document.getElementById('goto-page-confirm');
+            const cancelBtn  = document.getElementById('goto-page-cancel');
+            const badge      = document.getElementById('topbar-mobile-page');
+            const minPage    = {{ $allPageMeta->min('page_number') }};
+            const maxPage    = {{ $allPageMeta->max('page_number') }};
+
+            function openModal() {
+                input.value = '';
+                // Set placeholder to current page so user knows where they are
+                const curPage = parseInt((topbarMobilePage?.textContent || '').split('/')[0].trim(), 10);
+                input.placeholder = (!isNaN(curPage) ? curPage : minPage).toString();
+                overlay.hidden = false;
+                // small delay so the keyboard doesn't fight the animation
+                setTimeout(() => input.focus(), 80);
+            }
+
+            function closeModal() {
+                overlay.hidden = true;
+                input.value = '';
+            }
+
+            function confirm() {
+                // If field is empty, fall back to the placeholder (= current page)
+                const raw = input.value.trim() !== '' ? input.value : input.placeholder;
+                const n = parseInt(raw, 10);
+                if (!isNaN(n) && n >= minPage && n <= maxPage) {
+                    closeModal();
+                    jumpTo(n, false);
+                } else {
+                    input.style.borderColor = '#c0392b';
+                    input.style.boxShadow   = '0 0 0 3px rgba(192,57,43,0.18)';
+                    setTimeout(() => {
+                        input.style.borderColor = '';
+                        input.style.boxShadow   = '';
+                    }, 900);
+                    input.select();
+                }
+            }
+
+            if (badge)      badge.addEventListener('click', openModal);
+            if (badge)      badge.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
+            if (confirmBtn) confirmBtn.addEventListener('click', confirm);
+            if (overlay)    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+            if (input)      input.addEventListener('keydown', e => {
+                if (e.key === 'Enter') confirm();
+                if (e.key === 'Escape') closeModal();
+            });
+        })();
+
         function _scrollTo(page, smooth) {
             const el = pageMap[page];
             if (!el) return;
@@ -797,6 +881,7 @@
             const nearest = sorted.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
             jumpTo(nearest, false);
         });
+
         document.getElementById('topbar-prev-btn')?.addEventListener('click', () => {
             const cur = visiblePage(), idx = sorted.indexOf(cur);
             if (idx > 0) jumpTo(sorted[idx - 1], true);
@@ -805,6 +890,43 @@
             const cur = visiblePage(), idx = sorted.indexOf(cur);
             if (idx < sorted.length - 1) jumpTo(sorted[idx + 1], true);
         });
+
+        // Topbar "Ga" button (desktop goto pill)
+        (function () {
+            const gotoInput = document.getElementById('topbar-goto-input');
+            const gotoBtn   = document.getElementById('topbar-goto-btn');
+            const minP = {{ $allPageMeta->min('page_number') }};
+            const maxP = {{ $allPageMeta->max('page_number') }};
+            let pendingValue = '';
+            function doGoto() {
+                const raw = (pendingValue || gotoInput?.value || '').trim();
+                pendingValue = '';
+                const n = raw ? parseInt(raw, 10) : null;
+                if (n !== null && !isNaN(n) && n >= minP && n <= maxP) {
+                    jumpTo(n, false);
+                    if (gotoInput) gotoInput.value = '';
+                } else if (gotoInput) {
+                    gotoInput.style.color = '#c0392b';
+                    setTimeout(() => gotoInput.style.color = '', 700);
+                }
+            }
+            // Capture value before blur fires (mousedown on button happens before blur)
+            gotoBtn?.addEventListener('mousedown', () => {
+                pendingValue = gotoInput?.value || '';
+            });
+            // Also handle touch devices
+            gotoBtn?.addEventListener('touchstart', () => {
+                pendingValue = gotoInput?.value || '';
+            }, { passive: true });
+            // Clear on blur so field stays empty when unfocused
+            gotoInput?.addEventListener('blur', () => {
+                setTimeout(() => { if (gotoInput) gotoInput.value = ''; }, 150);
+            });
+            gotoBtn?.addEventListener('click', doGoto);
+            gotoInput?.addEventListener('keydown', e => {
+                if (e.key === 'Enter') { e.preventDefault(); doGoto(); }
+            });
+        })();
         document.getElementById('topbar-toc-btn')?.addEventListener('click', () => openToc?.());
         // topbar-bm-btn wired below (line ~1774) alongside fab-bm-btn
         // topbar-search-btn wired inside search IIFE below

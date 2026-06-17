@@ -42,6 +42,13 @@ class PageController extends Controller
         ]);
     }
 
+    public function nieuwsbrief(): View
+    {
+        return view('nieuwsbrief', [
+            'SEOData' => SEOService::getPageSEO('nieuwsbrief'),
+        ]);
+    }
+
     public function algemeneVoorwaarden(): View
     {
         return view('algemene-voorwaarden', [

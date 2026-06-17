@@ -157,6 +157,8 @@ class SEOService
                     ],
                 ]),
 
+            'contact', 'nieuwsbrief' => null,
+
             default => null,
         };
     }
@@ -213,6 +215,13 @@ class SEOService
                 'title'       => 'Contact | Lucide Inkt',
                 'description' => 'Neem contact op met Lucide Inkt voor vragen over de Risale-i Nur vertalingen of onze diensten.',
                 'url'         => route('contact'),
+                'image'       => secure_url(self::DEFAULT_OG_IMAGE),
+                'type'        => 'website',
+            ],
+            'nieuwsbrief' => [
+                'title'       => 'Nieuwsbrief | Lucide Inkt',
+                'description' => 'Schrijf je in voor de nieuwsbrief van Lucide Inkt en ontvang updates over nieuwe vertalingen en aankondigingen.',
+                'url'         => route('nieuwsbrief'),
                 'image'       => secure_url(self::DEFAULT_OG_IMAGE),
                 'type'        => 'website',
             ],
