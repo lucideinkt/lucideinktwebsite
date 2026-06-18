@@ -243,11 +243,19 @@
     <div id="goto-page-overlay" class="goto-page-overlay" role="dialog" aria-modal="true" aria-label="Ga naar pagina" hidden>
         <div class="goto-page-modal">
             <p class="goto-page-label">Ga naar pagina</p>
-            <input type="number" id="goto-page-input" class="goto-page-input"
-                   min="{{ $allPageMeta->min('page_number') }}"
-                   max="{{ $allPageMeta->max('page_number') }}"
-                   inputmode="numeric"
-                   aria-label="Paginanummer">
+            <div class="goto-page-input-row">
+                <button type="button" id="goto-page-prev" class="goto-page-step" aria-label="Vorige pagina">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <input type="number" id="goto-page-input" class="goto-page-input"
+                       min="{{ $allPageMeta->min('page_number') }}"
+                       max="{{ $allPageMeta->max('page_number') }}"
+                       inputmode="numeric"
+                       aria-label="Paginanummer">
+                <button type="button" id="goto-page-next" class="goto-page-step" aria-label="Volgende pagina">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
             <p class="goto-page-range">{{ $allPageMeta->min('page_number') }} – {{ $allPageMeta->max('page_number') }}</p>
             <button type="button" id="goto-page-confirm" class="goto-page-btn goto-page-btn--confirm">Ga</button>
         </div>
@@ -724,9 +732,23 @@
             const input      = document.getElementById('goto-page-input');
             const confirmBtn = document.getElementById('goto-page-confirm');
             const cancelBtn  = document.getElementById('goto-page-cancel');
+            const prevBtn    = document.getElementById('goto-page-prev');
+            const nextBtn    = document.getElementById('goto-page-next');
             const badge      = document.getElementById('topbar-mobile-page');
             const minPage    = {{ $allPageMeta->min('page_number') }};
             const maxPage    = {{ $allPageMeta->max('page_number') }};
+
+            // Step by ±1 page and navigate there immediately. Falls back to the
+            // placeholder (= current page) when the field is empty, then clamps.
+            function step(delta) {
+                const base = input.value.trim() !== '' ? input.value : input.placeholder;
+                let n = parseInt(base, 10);
+                if (isNaN(n)) n = minPage;
+                n = Math.min(maxPage, Math.max(minPage, n + delta));
+                input.value = n.toString();
+                input.placeholder = n.toString();
+                jumpTo(n, false);
+            }
 
             function openModal() {
                 input.value = '';
@@ -764,6 +786,8 @@
             if (badge)      badge.addEventListener('click', openModal);
             if (badge)      badge.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
             if (confirmBtn) confirmBtn.addEventListener('click', confirm);
+            if (prevBtn)    prevBtn.addEventListener('click', () => step(-1));
+            if (nextBtn)    nextBtn.addEventListener('click', () => step(1));
             if (overlay)    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
             if (input)      input.addEventListener('keydown', e => {
                 if (e.key === 'Enter') confirm();
