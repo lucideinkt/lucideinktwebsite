@@ -44,8 +44,15 @@
 
             @endphp
 
-            <h3 class="product-card-title">
-                {!! str_replace('|', '<br>', e($markupTitle)) !!}
+            @php
+                $titleParts = array_map('trim', explode('|', $markupTitle));
+                $titleLineCount = count($titleParts);
+            @endphp
+
+            <h3 class="product-card-title product-card-title-lines-{{ $titleLineCount }}">
+                @foreach ($titleParts as $titlePart)
+                    <span>{{ $titlePart }}</span>
+                @endforeach
             </h3>
             @if($subTitle)
                 <p class="product-card-subtitle">{{ $subTitle }}</p>
