@@ -715,6 +715,10 @@
     align-items: center;
 }
 
+.cta-text-mobile {
+    display: none;
+}
+
 @media (max-width: 1200px) {
     .hero-orbit-decoration {
         position: absolute;
@@ -875,6 +879,29 @@
     .hero-cta-btn:last-of-type {
         position: relative;
         left: -10px;
+    }
+
+    .cta-text-mobile {
+        display: block;
+        font-size: 10px;
+        position: absolute;
+        color: #f6dfac;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta-text-mobile.read {
+        top: 40px;
+        left: 6px;
+    }
+
+    .cta-text-mobile.listen {
+        top: 103px;
+        left: 8px;
+    }
+
+    .cta-text-mobile.shopping {
+        top: 165px;
+        left: -2px;
     }
 }
 
