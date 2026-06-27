@@ -35,10 +35,17 @@
                     2,
                     null
                 );
+
+                [$markupTitle] = array_pad(
+                    explode(' - ', $product->mark_up_product_title ?? $product->title, 2),
+                    2,
+                    null
+                );
+
             @endphp
 
             <h3 class="product-card-title">
-                {!! str_replace('|', '<br>', e($mainTitle)) !!}
+                {!! str_replace('|', '<br>', e($markupTitle)) !!}
             </h3>
             @if($subTitle)
                 <p class="product-card-subtitle">{{ $subTitle }}</p>

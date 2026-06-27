@@ -26,6 +26,7 @@ class StoreProductRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
+            'mark_up_product_title' => ['nullable', 'string', 'max:255'],
             'is_published' => 'required|boolean',
             'short_description' => 'nullable|string',
             'long_description' => 'nullable|string',
@@ -107,6 +108,8 @@ class StoreProductRequest extends FormRequest
             'title.required' => 'De productnaam is verplicht.',
             'title.string' => 'De productnaam moet tekst zijn.',
             'title.max' => 'De productnaam mag maximaal 255 tekens zijn.',
+            'mark_up_product_title.string' => 'Mark-up titel moet tekst zijn.',
+            'mark_up_product_title.max' => 'Mark-up titel mag maximaal 255 tekens zijn.',
             'is_published.required' => 'Geef aan of het product gepubliceerd is.',
             'is_published.boolean' => 'Ongeldige waarde voor gepubliceerd.',
             'short_description.string' => 'Korte omschrijving moet tekst zijn.',
