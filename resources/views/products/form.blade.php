@@ -30,6 +30,12 @@
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('title') border-red-500 @enderror">
               @error('title')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
             </div>
+              <div>
+                  <label for="title" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Mark-up Titel</label>
+                  <input type="text" name="mark_up_product_title" id="mark_up_product_title" value="{{ old('mark_up_product_title', $product->mark_up_product_title ?? '') }}"
+                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white @error('mark_up_product_title') border-red-500 @enderror">
+                  @error('mark_up_product_title')<p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>@enderror
+              </div>
             <div>
               <label for="short_description" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Korte omschrijving</label>
               <textarea name="short_description" id="short_description" rows="3"
