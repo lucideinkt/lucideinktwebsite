@@ -852,8 +852,9 @@ body:has(.page.shop) .page-normal-background {
 
 @media (max-width: 480px) {
     .shop-title {
-        font-size: 30px;
+        font-size: 33px;
         top: 40%;
+        margin-top: 25px !important;
     }
 
     .background-of-the-shop-grid {
@@ -919,7 +920,7 @@ body:has(.page.shop) .page-normal-background {
     }
 
     .shop-frame-wrapper {
-        max-width: 320px;
+        max-width: 350px;
         margin-bottom: -5px;
     }
 
