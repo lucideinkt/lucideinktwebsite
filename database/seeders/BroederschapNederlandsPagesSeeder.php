@@ -1591,8 +1591,120 @@ Het broederschapsgevoel dat onze broeder Hâfız Ali Efendi uit İslâmköy jege
 </p>
 
 <p>
-Toen hij mij kwam bezoeken, had ik gezegd dat het handschrift van de andere broeder mooier dan zijn handschrift was. Ik zei dat het schrijfwerk van de andere broeder meer dienst zou verrichten. Ik zag dat Hâfız Ali werkelijk welgemeend en oprecht trots was op en plezier haalde uit het uitblinkende talent van
+Toen hij mij kwam bezoeken, had ik gezegd dat het handschrift van de andere broeder mooier dan zijn handschrift was. Ik zei dat het schrijfwerk van de andere broeder meer dienst zou verrichten. Ik zag dat Hâfız Ali werkelijk welgemeend en oprecht trots was op en plezier haalde uit het uitblinkende talent van van de andere broeder.
 </p>
+
+</div>'
+            ],
+            [
+                'page_number' => 51,
+                'content' => '<div class="page" id="51">
+<p class="text-end page-number">#51</p>
+
+<p>
+En omdat hij daarenboven de genegen blik van zijn leermeester ving, werd hij met tevredenheid vervuld. Ik vestigde mijn aandacht op zijn hart en merkte op dat hij niet huichelde… ik voelde aan dat hij oprecht was.
+</p>
+
+<p>
+Ik dankte de Alhoge ALLAH om de aanwezigheid van broeders die zulke verheven gevoelens koesteren. Inshâ’ALLAH zal dit gevoel grote diensten vervullen. <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span>, langzaamaan begint dit gevoel op broeders uit onze omgeving over te gaan.
+</p>
+
+<p class="text-center text-arabic delima-font text-red" style="margin: 0">
+بِاسْمِهٖ سُبْحَانَهُ <sup>2</sup>
+</p>
+
+<p class="text-bold">
+Mijn geachte, loyale broeders!
+</p>
+
+<p>
+In deze wereld, vooral in deze tijden, geldt met name voor slachtoffers van tegenslagen en in het bijzonder voor de Nur-studenten, dat zij tegenover de vreselijke verdrukkingen en radeloosheden waaraan ze blootstaan de effectiefste genezing kunnen ontmoeten wanneer zij elkaar troosten en verademing geven, elkaars geestelijke kracht versterken, elkaars pijn, verdriet en leed als ware toegewijde broeders verzachten en de gegriefde gemoederen met pure mededogen strelen. De ware broederschap onder ons die op het hiernamaals is gefundeerd, kan geen ruzie en partijdigheid verdragen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “De lof zij ALLAH.”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “In Zijn Naam; Hij is Feilloos.”
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 52,
+                'content' => '<div class="page" id="52">
+<p class="text-end page-number">#52</p>
+
+<p>
+Met al mijn kracht heb ik mij in volle vertrouwen op jullie verlaten. Jullie weten en constateren dat ik heb besloten om niet alleen mijn rust, mijn waardigheid en mijn eer, maar zelfs mijn leven met genoegen voor jullie op te offeren. Tevens zweer ik jullie dat mijn hart de afgelopen acht dagen kwelling ondergaat vanwege een onbeduidende kwestie waarbij twee pilaren van onze Nur-dienst zich ogenschijnlijk aanstellerig tegenover elkaar gedragen en elkaar treiteren in plaats van elkaar te troosten. Huiverend hebben mijn ziel, mijn hart en mijn verstand het volgende uitgehuild:
+</p>
+
+<p class="text-italic">
+“<sup>1</sup><span style="font-style: normal;" class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْاَمَانُ، اَلْاَمَانُ</span>, O Genadigste der Genadigen... sta ons bij! Behoed ons! Bevrijd ons van het onheil dat de demonische en menselijke duivels zaaien! Vervul de harten van mijn broeders met pure wederzijdse loyaliteit, liefde, broederschap en mededogen!”
+</p>
+
+<p>
+O mijn broeders die zo onbuigzaam zijn als ijzer! Sta mij terzijde... onze kwestie is uiterst delicaat. Omdat ik veel vertrouwen in jullie had gesteld, had ik al mijn taken aan jullie geestelijke persoonlijkheid overgelaten. Hierop dienen jullie je dringend met al jullie kracht te haasten om mij bij te staan.
+</p>
+
+<p>
+Al was jullie frictie zeer beperkt, kortstondig en klein, alsnog kan zelfs een haartje of stofdeeltje schade berokkenen als het op het veertje van ons uurwerk of op de pupil van ons oog belandt.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Sta ons bij, sta ons bij!”
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 53,
+                'content' => '<div class="page" id="53">
+<p class="text-end page-number">#53</p>
+
+<p>
+Voorzorg in dit kader is zodanig van belang, dat drie materiële explosies en drie immateriële bevestigingen exact hierover hebben bericht.
+</p>
+
+<p style="text-align: right;" class="text-italic text-red">
+Said Nursî
+</p>
+
+<p class="text-center text-arabic delima-font text-red" style="margin: 0;">
+بِاسْمِهٖ سُبْحَانَهُ <sup>1</sup>
+</p>
+
+<p>
+Het is noodzakelijk voor ons geworden om binnen de kring der mogelijkheden met al onze kracht de principes uit <span class="text-bold">“De Flits der Oprechtheid”</span> en het geheim achter ware oprechtheid onderling en wederzijds na te leven.
+</p>
+
+<p>
+Ik heb betrouwbare informatie ontvangen over drie mannen die sinds de afgelopen drie maanden speciaal zijn ingeschakeld om hier de band tussen vooraanstaande broeders te verkillen door het verschil in hun mentaliteit of gedachtegang uit te buiten. En om de standvastige Nur-studenten zat en van streek te maken, en om de lichtgeraakte en onverdraagzame broeders argwaan in te blazen en van de Nur-dienst te doen laten afzien, stellen ze onze rechtszaak voor niets uit..
+</p>
+
+<p>
+Wees op jullie hoede! Sta niet toe dat de opofferingsgezinde broederschap en oprechte liefde die jullie tot op heden voor elkaar koesterden tot wankelen wordt gebracht! Zelfs de kleinste tegenslag kan ons enorm schaden.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “In Zijn Naam; Hij is Feilloos.”
+</p>
+
+</div>
 
 </div>'
             ],

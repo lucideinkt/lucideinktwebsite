@@ -72,14 +72,17 @@
                                 <span class="cta-icon-box"><i class="fa-solid fa-book-open-reader"></i></span>
                                 <span class="cta-span">Lees Online</span>
                             </a>
+                            <span onclick="window.location.href='{{ route('onlineLezen') }}';" style="cursor: pointer;" class="cta-text-mobile read">Lezen</span>
                             <a href="{{ route('audiobooks') }}" class="hero-cta-btn">
                                 <span class="cta-icon-box"><i class="fa-solid fa-headphones"></i></span>
                                 <span class="cta-span">Luister Audio</span>
                             </a>
+                            <span onclick="window.location.href='{{ route('audiobooks') }}';" style="cursor: pointer;" class="cta-text-mobile listen">Luisteren</span>
                             <a href="{{ route('shop') }}" class="hero-cta-btn">
                                 <span class="cta-icon-box"><i class="fa-solid fa-cart-shopping"></i></span>
                                 <span class="cta-span">Bestel Boeken</span>
                             </a>
+                            <span onclick="window.location.href='{{ route('shop') }}';" style="cursor: pointer;" class="cta-text-mobile shopping">Bestellen</span>
                         </div>
                     </div>
 
