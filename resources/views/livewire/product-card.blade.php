@@ -51,7 +51,7 @@
 
             <h3 class="product-card-title product-card-title-lines-{{ $titleLineCount }}">
                 @foreach ($titleParts as $titlePart)
-                    <span>{{ $titlePart }}</span>
+                    <span>{!! $titlePart === '&' ? '<span class="inline-and">&</span>' : $titlePart !!}</span>
                 @endforeach
             </h3>
             @if($subTitle)
