@@ -506,7 +506,12 @@ body:has(.page.shop) .page-normal-background {
 
 /* Optional: make the middle & smaller in 3-line titles */
 .product-card-title-lines-3 span:nth-child(2) {
-    line-height: 0.75;
+
+}
+
+.inline-and {
+    display: block!important;
+    margin-bottom: -7px!important;
 }
 
 .product-card-title::before {
