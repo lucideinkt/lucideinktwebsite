@@ -28,6 +28,7 @@ use App\Http\Controllers\PageSeoController;
 use App\Http\Controllers\OnlineLezenSeoController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\HomepageQuoteController;
 use App\Http\Controllers\GoogleMerchantFeedController;
 use Illuminate\Support\Facades\Route;
 
@@ -185,6 +186,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard/online-lezen-seo',          [OnlineLezenSeoController::class, 'index'])->name('admin.online-lezen-seo.index');
     Route::get('/dashboard/online-lezen-seo/{id}/edit',[OnlineLezenSeoController::class, 'edit'])->name('admin.online-lezen-seo.edit');
     Route::put('/dashboard/online-lezen-seo/{id}',     [OnlineLezenSeoController::class, 'update'])->name('admin.online-lezen-seo.update');
+
+    // Homepage Quotes
+    Route::get('/dashboard/homepage-quotes',                [HomepageQuoteController::class, 'index'])->name('admin.homepage-quotes.index');
+    Route::get('/dashboard/homepage-quotes/create',         [HomepageQuoteController::class, 'create'])->name('admin.homepage-quotes.create');
+    Route::post('/dashboard/homepage-quotes',               [HomepageQuoteController::class, 'store'])->name('admin.homepage-quotes.store');
+    Route::get('/dashboard/homepage-quotes/{id}/edit',      [HomepageQuoteController::class, 'edit'])->name('admin.homepage-quotes.edit');
+    Route::put('/dashboard/homepage-quotes/{id}',           [HomepageQuoteController::class, 'update'])->name('admin.homepage-quotes.update');
+    Route::delete('/dashboard/homepage-quotes/{id}',        [HomepageQuoteController::class, 'destroy'])->name('admin.homepage-quotes.destroy');
 
 });
 

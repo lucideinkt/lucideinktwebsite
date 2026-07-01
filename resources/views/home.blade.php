@@ -270,7 +270,20 @@
                 <div id="quotes-slider">
                     <div class="qs-track">
                         <div class="qs-list">
+                            @forelse($quotes as $quote)
                             <div class="qs-slide">
+                                <div class="quote-card">
+                                    <div class="quote-icon">
+                                        <i class="fa-solid fa-quote-left"></i>
+                                    </div>
+                                    <p class="quote-text">
+                                        "{{ $quote->text }}"
+                                    </p>
+                                    <div class="quote-source">- {{ $quote->source }}</div>
+                                </div>
+                            </div>
+                            @empty
+                            <div class="qs-slide qs-active">
                                 <div class="quote-card">
                                     <div class="quote-icon">
                                         <i class="fa-solid fa-quote-left"></i>
@@ -283,35 +296,7 @@
                                     <div class="quote-source">- Risale-i Nur</div>
                                 </div>
                             </div>
-
-                            <div class="qs-slide">
-                                <div class="quote-card">
-                                    <div class="quote-icon">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                    <p class="quote-text">
-                                        "Aldus impliceert de uitvoering van het middaggebed dat de menselijke ziel zich
-                                        verlost van die druk, losbreekt uit onachtzaamheid en ontsnapt van onbeduidende
-                                        en voorbijgaande aangelegenheden."
-                                    </p>
-                                    <div class="quote-source">- Risale-i Nur</div>
-                                </div>
-                            </div>
-
-                            <div class="qs-slide">
-                                <div class="quote-card">
-                                    <div class="quote-icon">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                    <p class="quote-text">
-                                        "Als alles niet wordt geattribueerd aan de Majestueuze Almachtige, Die de Ene
-                                        Individuele is, maar aan oorzaken wordt toegedicht, dan is de interventie van
-                                        vele kosmische elementen en oorzaken voor de vorming van ieder schepsel een
-                                        vereiste."
-                                    </p>
-                                    <div class="quote-source">- Risale-i Nur</div>
-                                </div>
-                            </div>
+                            @endforelse
                         </div>
                     </div>
 

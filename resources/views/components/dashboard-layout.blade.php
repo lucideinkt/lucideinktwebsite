@@ -235,6 +235,13 @@
             <span class="ms-3">Nieuwsbrieven</span>
           </a>
         </li>
+          <li>
+              <a href="{{ route('admin.homepage-quotes.index') }}"
+                 class="flex items-center p-2 rounded-lg group {{ request()->routeIs('admin.homepage-quotes.*') ? 'bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-white' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700' }}">
+                  <i class="fa-solid fa-quote-left text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-5 text-center"></i>
+                  <span class="ms-3">Homepage Quotes</span>
+              </a>
+          </li>
 
         <li class="pt-4 pb-1">
           <span class="text-xs font-semibold text-gray-400 uppercase dark:text-gray-500 px-2">Analyse</span>
