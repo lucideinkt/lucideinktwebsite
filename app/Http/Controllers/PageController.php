@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Services\SEOService;
+use App\Models\HomepageQuote;
 use Illuminate\Contracts\View\View;
 
 class PageController extends Controller
 {
     public function home(): View
     {
+        $quotes = HomepageQuote::active()->ordered()->get();
+
         return view('home', [
             'SEOData' => SEOService::getPageSEO('home'),
+            'quotes'  => $quotes,
         ]);
     }
 
