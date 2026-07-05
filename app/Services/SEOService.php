@@ -246,6 +246,13 @@ class SEOService
                 'image'       => secure_url('images/books_standing_new.webp'),
                 'type'        => 'website',
             ],
+            'artikelen' => [
+                'title'       => 'Artikelen over de Risale-i Nur | Lucide Inkt',
+                'description' => 'Lees onze artikelen over de Risale-i Nur van Bediüzzaman Said Nursi. Verdiepende teksten over geloofswaarheden, islamitische thema\'s en meer.',
+                'url'         => route('artikelen'),
+                'image'       => secure_url(self::DEFAULT_OG_IMAGE),
+                'type'        => 'website',
+            ],
 
             // ── Legal / info pages ───────────────────────────────────────────
             'algemene-voorwaarden' => [

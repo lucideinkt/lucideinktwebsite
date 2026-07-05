@@ -24,11 +24,7 @@
                         <div class="empty-state-actions error-404-actions">
                             <a href="{{ route('home') }}" class="btn-shop">
                                 <i class="fa-solid fa-house"></i>
-                                Terug naar home
-                            </a>
-                            <a href="{{ route('shop') }}" class="btn-shop btn-shop-secondary">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                                Naar de winkel
+                                Naar de Home pagina
                             </a>
                         </div>
                     </div>

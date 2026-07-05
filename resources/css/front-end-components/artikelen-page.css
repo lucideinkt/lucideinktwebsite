@@ -1,0 +1,827 @@
+/* =========================================================
+   ARTIKELEN PAGE STYLING
+   Matches the layout of herzameling-page and said-nursi-page
+   ========================================================= */
+
+/* ── Hero band ── */
+.artikelen-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 8px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.artikelen-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.artikelen-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Article detail hero (same look) ── */
+.artikel-detail-hero {
+    padding-top: 100px;
+    margin-top: -100px;
+    padding-bottom: 8px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+    background-image: url("../../images/51_geometric wallpaper texture-seamless_hr_new.webp");
+    background-size: 500px;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+.artikel-detail-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(251, 245, 217, 0.38) 0%,
+        rgba(251, 245, 217, 0.72) 50%,
+        rgba(251, 245, 217, 0.38) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.artikel-detail-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Page layout ── */
+.page.artikelen,
+.page.artikel-detail {
+    padding-bottom: 0px;
+}
+
+.page.artikelen .gradient-border,
+.page.artikel-detail .gradient-border {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+}
+
+/* ── Tighten leather band ── */
+body:has(.artikelen-page__text-box) .text-box-background,
+body:has(.artikel-detail-page__text-box) .text-box-background {
+    padding-top: 28px;
+    padding-bottom: 42px;
+}
+
+/* ── Main text box (same decorative style as herzameling) ── */
+.artikelen-page__text-box,
+.artikel-detail-page__text-box {
+    --said-box-overlay-color:   #c8860a;
+    --said-box-overlay-opacity: 0.08;
+
+    display: block;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+
+    background-color: #f7e9c4;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(210, 175, 110, 0.22)  0%,
+            transparent                18%,
+            transparent                82%,
+            rgba(210, 175, 110, 0.22)  100%
+        ),
+        url("../../images/BillyPaper.webp");
+    background-size: auto, 600px;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+
+    outline: 1px solid rgba(197, 155, 50, 0.28);
+    outline-offset: 5px;
+    padding: 55px 60px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    max-width: 1075px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 2px solid rgba(197, 155, 50, 0.72);
+
+    box-shadow:
+        0 1px 0   rgba(255, 248, 190, 0.70),
+        0 2px 5px  rgba(30, 10, 0, 0.10),
+        0 6px 16px rgba(25, 8, 0, 0.12),
+        0 14px 35px rgba(18, 5, 0, 0.16),
+        inset 0 0 0 1px rgba(255, 245, 175, 0.35),
+        inset 0 1px 0   rgba(255, 252, 210, 0.55);
+}
+
+.artikelen-page__text-box::after,
+.artikel-detail-page__text-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(
+            ellipse 85% 75% at 50% 38%,
+            transparent                    30%,
+            rgba(140, 70, 10, 0.07)       75%,
+            rgba(100, 45, 5, 0.13)      100%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.artikelen-page__text-box > *,
+.artikel-detail-page__text-box > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Artikelen header ── */
+.artikelen-header {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+.artikelen-title {
+    font-family: var(--font-herina);
+    letter-spacing: 2px;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--main-font-color);
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.artikelen-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        rgba(218, 165, 32, 0.5) 0%,
+        rgba(197, 160, 89, 0.8) 50%,
+        rgba(218, 165, 32, 0.5) 100%
+    );
+}
+
+.artikelen-subtitle {
+    font-size: 1rem;
+    color: var(--main-font-color);
+    opacity: 0.75;
+    max-width: 600px;
+    margin: 20px auto 0;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* ── Empty state (matches audiobooks style) ── */
+.artikelen-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px 20px 0;
+    color: var(--ink-2);
+    padding-top: 0px;
+    margin-top: -5px;
+}
+
+.artikelen-empty i {
+    font-size: 6rem;
+    margin-bottom: 24px;
+    opacity: 0.3;
+}
+
+.artikelen-empty p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #b0a58e;
+}
+
+/* ── Articles grid ── */
+.artikelen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
+/* ── Article card ── */
+.artikel-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid rgba(197, 155, 50, 0.45);
+    background-color: rgba(255, 248, 220, 0.6);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 2px 8px rgba(30, 10, 0, 0.08);
+}
+
+.artikel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(30, 10, 0, 0.14);
+}
+
+.artikel-card__image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(210, 175, 110, 0.2);
+}
+
+.artikel-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artikel-card:hover .artikel-card__image {
+    transform: scale(1.03);
+}
+
+.artikel-card__content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.artikel-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--main-font-color);
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+}
+
+.artikel-card__intro {
+    font-size: 0.875rem;
+    color: var(--main-font-color);
+    opacity: 0.72;
+    line-height: 1.55;
+    margin: 0 0 0.75rem;
+    flex: 1;
+}
+
+.artikel-card__read-more {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #a0720d;
+    margin-top: auto;
+    transition: color 0.15s;
+}
+
+.artikel-card:hover .artikel-card__read-more {
+    color: #7a5500;
+}
+
+/* ── Concept indicators (admin-only, subtle) ─────────────────── */
+
+/* Image wrapper is position: relative so the dot anchors to it */
+.artikel-card__image-wrapper {
+    position: relative;
+}
+
+/* Small dot in top-right corner of the image */
+.artikel-card__concept-dot {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.75);
+    pointer-events: none;
+}
+
+/* Fallback when there's no image */
+.artikel-card__no-image-concept-wrapper {
+    position: relative;
+    height: 0;
+}
+
+.artikel-card__no-image-concept-wrapper .artikel-card__concept-dot {
+    top: 0.55rem;
+    right: 0.55rem;
+}
+
+/* Detail page: small pill absolutely in top-right corner of the text box */
+.artikel-detail__concept-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: transparent;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: rgba(146, 64, 14, 0.55);
+    padding: 0.18rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.artikel-detail__concept-badge i {
+    color: rgba(245, 158, 11, 0.65);
+    font-size: 0.65rem;
+}
+
+.artikel-detail__concept-badge:hover {
+    border-color: rgba(245, 158, 11, 0.8);
+    color: rgba(146, 64, 14, 0.85);
+}
+
+/* ── Article detail page ── */
+
+/* Reduce top padding so H1 sits close to the top of the box */
+.artikel-detail-page__text-box {
+    padding-top: 30px;
+}
+
+.artikel-detail__title {
+    font-family: var(--font-herina);
+    letter-spacing: 1.5px;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--main-font-color);
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.artikel-detail__intro {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.75;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+}
+
+.artikel-detail__featured-image {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.artikel-detail__featured-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(30, 10, 0, 0.12);
+}
+
+/* ── Text blocks ── */
+.artikel-detail__text-block {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    line-height: 1.75;
+    color: var(--main-font-color);
+}
+
+/* Indent variant — first-line only, like classic book typography */
+.artikel-detail__text-block--indent .artikel-detail__text-content p {
+    text-indent: 50px;
+}
+
+@media (max-width: 600px) {
+    .artikel-detail__text-block--indent .artikel-detail__text-content p {
+        text-indent: 25px;
+    }
+}
+
+/* Source is never indented */
+
+/* Text-with-image wrapper (left/right float) */
+.artikel-detail__text-with-image--left,
+.artikel-detail__text-with-image--right {
+    overflow: hidden; /* clearfix for float */
+}
+
+/* Center/full: stack image above text */
+.artikel-detail__text-with-image--center,
+.artikel-detail__text-with-image--full {
+    display: flex;
+    flex-direction: column;
+}
+
+.artikel-detail__text-content {
+    /* inner text wrapper — keeps flow clean */
+}
+
+/* Inline image figure inside a text block */
+.artikel-detail__inline-image {
+    margin-bottom: 0.75rem;
+}
+
+.artikel-detail__inline-image img {
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
+    display: block;
+}
+
+.artikel-detail__inline-image figcaption {
+    font-size: 0.8rem;
+    opacity: 0.62;
+    margin-top: 0.4rem;
+    font-style: italic;
+}
+
+/* Float left */
+.artikel-detail__inline-image--left {
+    float: left;
+    margin-right: 1.75rem;
+    margin-top: 0.25rem;
+}
+
+/* Float right */
+.artikel-detail__inline-image--right {
+    float: right;
+    margin-left: 1.75rem;
+    margin-top: 0.25rem;
+}
+
+/* Centered above text */
+.artikel-detail__inline-image--center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Full width above text */
+.artikel-detail__inline-image--full {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.artikel-detail__text-block p {
+    margin-bottom: 1em;
+}
+
+.artikel-detail__text-block h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.6rem;
+}
+
+.artikel-detail__text-block h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.5rem;
+}
+
+.artikel-detail__text-block blockquote {
+    border-left: 3px solid rgba(197, 155, 50, 0.6);
+    padding-left: 1.25rem;
+    margin: 1.25rem 0;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* ── Source line under a text block ── */
+.artikel-detail__source {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-top: -0.9rem;
+    margin-bottom: 1.75rem;
+    padding-left: 0.1rem;
+    font-size: 0.82rem;
+    color: var(--main-font-color);
+    opacity: 0.62;
+    font-style: italic;
+}
+
+.artikel-detail__source::before {
+    content: "—";
+    font-style: normal;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+/* ── Image blocks ── */
+.artikel-detail__image-block {
+    margin: 1.75rem 0;
+}
+
+.artikel-detail__image-block img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
+    display: block;
+}
+
+.artikel-detail__image-block figcaption {
+    font-size: 0.82rem;
+    opacity: 0.65;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Center */
+.artikel-detail__image-block--center {
+    text-align: center;
+}
+
+.artikel-detail__image-block--center img {
+    margin: 0 auto;
+}
+
+/* Full width */
+.artikel-detail__image-block--full img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Float left */
+.artikel-detail__image-block--left {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 0.25rem;
+}
+
+/* Float right */
+.artikel-detail__image-block--right {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 0.25rem;
+}
+
+/* Clearfix for float blocks */
+.artikel-detail-page__text-box::before {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* ── TinyMCE rich-text body (new articles) ── */
+.artikel-detail__body {
+    color: var(--main-font-color);
+    line-height: 1.8;
+}
+
+.artikel-detail__body p {
+    margin: 0 0 0.9em 0;
+}
+
+.artikel-detail__body h1,
+.artikel-detail__body h2,
+.artikel-detail__body h3,
+.artikel-detail__body h4,
+.artikel-detail__body h5,
+.artikel-detail__body h6 {
+    margin: 1.4em 0 0.45em 0;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.artikel-detail__body h2 { font-size: 1.3rem; }
+.artikel-detail__body h3 { font-size: 1.1rem; }
+
+/* Floated images: gap between image and text */
+.artikel-detail__body img[style*="float: left"],
+.artikel-detail__body img[style*="float:left"] {
+    float: left;
+    margin: 2px 1rem 0.4rem 0 !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
+    max-width: 45%;
+    height: auto;
+}
+
+.artikel-detail__body img[style*="float: right"],
+.artikel-detail__body img[style*="float:right"] {
+    float: right;
+    margin: 2px 0 0.4rem 1rem !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
+    max-width: 45%;
+    height: auto;
+}
+
+/* Non-floated images */
+.artikel-detail__body img:not([style*="float"]) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
+    margin: 0.5rem auto 1rem;
+}
+
+/* Figures (when TinyMCE uses image+caption) */
+.artikel-detail__body figure {
+    margin: 0 0 1em 0;
+}
+
+.artikel-detail__body figure.align-left {
+    float: left;
+    margin: 2px 1rem 0.4rem 0;
+    max-width: 45%;
+}
+
+.artikel-detail__body figure.align-right {
+    float: right;
+    margin: 2px 0 0.4rem 1rem;
+    max-width: 45%;
+}
+
+.artikel-detail__body figure img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
+    display: block;
+    margin: 0;
+}
+
+.artikel-detail__body figcaption {
+    font-size: 0.82rem;
+    opacity: 0.62;
+    margin-top: 0.4rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.artikel-detail__body blockquote {
+    border-left: 3px solid rgba(197, 155, 50, 0.6);
+    padding-left: 1.25rem;
+    margin: 1.25rem 0;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.artikel-detail__body ul,
+.artikel-detail__body ol {
+    padding-left: 1.5rem;
+    margin: 0 0 0.9em 0;
+}
+
+.artikel-detail__body table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.artikel-detail__body td,
+.artikel-detail__body th {
+    border: 1px solid rgba(197, 155, 50, 0.3);
+    padding: 6px 12px;
+}
+
+.artikel-detail__body a {
+    color: #a0720d;
+    text-decoration: underline;
+}
+
+.artikel-detail__body::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Mobile: un-float images */
+@media (max-width: 640px) {
+    .artikel-detail__body img[style*="float: left"],
+    .artikel-detail__body img[style*="float:left"],
+    .artikel-detail__body img[style*="float: right"],
+    .artikel-detail__body img[style*="float:right"] {
+        float: none !important;
+        max-width: 100% !important;
+        margin: 0.5rem auto 1rem !important;
+        display: block;
+    }
+
+    .artikel-detail__body figure.align-left,
+    .artikel-detail__body figure.align-right {
+        float: none;
+        max-width: 100%;
+        margin: 0.5rem 0 1rem;
+    }
+}
+
+/* ── Back link */
+.artikel-detail__back-link {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(197, 155, 50, 0.3);
+    clear: both;
+}
+
+.artikel-detail__back-link a {
+    color: #a0720d;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.15s;
+}
+
+.artikel-detail__back-link a:hover {
+    color: #7a5500;
+}
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+    .artikelen-page__text-box,
+    .artikel-detail-page__text-box {
+        padding: 28px 20px 36px;
+        border-radius: 22px;
+    }
+
+    .artikelen-title {
+        font-size: 36px;
+    }
+
+    .artikel-detail__title {
+        font-size: 32px;
+    }
+
+    .artikel-detail__featured-image {
+        margin-bottom: 0.75rem;
+    }
+
+    .artikelen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artikel-detail__image-block--left,
+    .artikel-detail__image-block--right {
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .artikel-detail__image-block--left img,
+    .artikel-detail__image-block--right img {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Inline text-block images on mobile */
+    .artikel-detail__inline-image--left,
+    .artikel-detail__inline-image--right {
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+
+    .artikel-detail__inline-image--left img,
+    .artikel-detail__inline-image--right img {
+        width: 100% !important;
+    }
+}
