@@ -4,7 +4,7 @@
                 class="first-letter">H</span>OME</a>
     </li>
     <li class="nav-item dropdown">
-        <a class="{{ request()->routeIs('risale') || request()->routeIs('herzameling') || request()->routeIs('onlineLezen') ? 'active' : '' }}" href="{{ route('risale') }}">
+        <a class="{{ request()->routeIs('risale') || request()->routeIs('herzameling') || request()->routeIs('onlineLezen') || request()->routeIs('artikelen') || request()->routeIs('artikelenDetail') ? 'active' : '' }}" href="{{ route('risale') }}">
             <span>
                 <span class="first-letter">R</span>İSALE-İ NUR <i class="fa-solid fa-chevron-down"></i>
             </span>
@@ -14,6 +14,7 @@
             <li><a href="{{ route('herzameling') }}">De Herzameling</a></li>
             <li><a href="{{ route('onlineLezen') }}">Bibliotheek</a></li>
             <li><a href="{{ route('audiobooks') }}">Audioboeken</a></li>
+            <li><a href="{{ route('artikelen') }}">Artikelen</a></li>
         </ul>
     </li>
     <li class="nav-item">

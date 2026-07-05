@@ -24,6 +24,7 @@ class Order extends Model
         'invoice_pdf_path',
         'shipping_cost_id',
         'shipping_cost_amount',
+        'shipping_cost_country',
         'total_before',
         'order_note',
 
