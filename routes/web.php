@@ -29,6 +29,7 @@ use App\Http\Controllers\OnlineLezenSeoController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\HomepageQuoteController;
+use App\Http\Controllers\ArtikelenAdminController;
 use App\Http\Controllers\GoogleMerchantFeedController;
 use Illuminate\Support\Facades\Route;
 
@@ -195,6 +196,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::put('/dashboard/homepage-quotes/{id}',           [HomepageQuoteController::class, 'update'])->name('admin.homepage-quotes.update');
     Route::delete('/dashboard/homepage-quotes/{id}',        [HomepageQuoteController::class, 'destroy'])->name('admin.homepage-quotes.destroy');
 
+    // Artikelen
+    Route::get('/dashboard/artikelen',                      [ArtikelenAdminController::class, 'index'])->name('admin.artikelen.index');
+    Route::get('/dashboard/artikelen/create',               [ArtikelenAdminController::class, 'create'])->name('admin.artikelen.create');
+    Route::post('/dashboard/artikelen',                     [ArtikelenAdminController::class, 'store'])->name('admin.artikelen.store');
+    Route::post('/dashboard/artikelen/upload-image',        [ArtikelenAdminController::class, 'uploadImage'])->name('admin.artikelen.upload-image');
+    Route::get('/dashboard/artikelen/{id}/edit',            [ArtikelenAdminController::class, 'edit'])->name('admin.artikelen.edit');
+    Route::put('/dashboard/artikelen/{id}',                 [ArtikelenAdminController::class, 'update'])->name('admin.artikelen.update');
+    Route::delete('/dashboard/artikelen/{id}',              [ArtikelenAdminController::class, 'destroy'])->name('admin.artikelen.destroy');
+
 });
 
 // Shop
@@ -244,6 +254,8 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/risale-i-nur', [PageController::class, 'risale'])->name('risale');
 Route::get('/herzameling', [PageController::class, 'herzameling'])->name('herzameling');
 Route::get('/said-nursi', [PageController::class, 'saidNursi'])->name('saidnursi');
+Route::get('/artikelen', [PageController::class, 'artikelen'])->name('artikelen');
+Route::get('/artikelen/{slug}', [PageController::class, 'artikelDetail'])->name('artikelenDetail');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/nieuwsbrief', [PageController::class, 'nieuwsbrief'])->name('nieuwsbrief');
 Route::get('/algemene-voorwaarden', [PageController::class, 'algemeneVoorwaarden'])->name('algemeneVoorwaarden');

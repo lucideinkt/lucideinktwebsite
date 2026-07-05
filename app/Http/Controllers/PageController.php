@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\SEOService;
 use App\Models\HomepageQuote;
+use App\Models\Artikel;
 use Illuminate\Contracts\View\View;
 
 class PageController extends Controller
@@ -36,6 +37,42 @@ class PageController extends Controller
     {
         return view('herzameling', [
             'SEOData' => SEOService::getPageSEO('herzameling'),
+        ]);
+    }
+
+    public function artikelen(): View
+    {
+        $isAdmin = auth()->check() && auth()->user()->role === 'admin';
+
+        $query = Artikel::ordered();
+        if (!$isAdmin) {
+            $query->published();
+        }
+
+        $artikelen = $query->get();
+
+        return view('artikelen', [
+            'SEOData'   => SEOService::getPageSEO('artikelen'),
+            'artikelen' => $artikelen,
+            'isAdmin'   => $isAdmin,
+        ]);
+    }
+
+    public function artikelDetail(string $slug): View
+    {
+        $isAdmin = auth()->check() && auth()->user()->role === 'admin';
+
+        $query = Artikel::where('slug', $slug);
+        if (!$isAdmin) {
+            $query->published();
+        }
+
+        $artikel = $query->firstOrFail();
+
+        return view('artikel-detail', [
+            'SEOData' => SEOService::getPageSEO('artikelen'),
+            'artikel' => $artikel,
+            'isAdmin' => $isAdmin,
         ]);
     }
 
