@@ -102,6 +102,26 @@
         <textarea id="body-editor" name="body">{!! old('body', $artikel->body) !!}</textarea>
       </div>
 
+      {{-- SEO --}}
+      <div class="pt-2 border-t border-gray-200 dark:border-gray-700">
+        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-magnifying-glass text-xs text-gray-400"></i> SEO
+        </h3>
+        <div>
+          <label for="seo_description" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+            SEO-beschrijving
+            <span class="ml-1 text-xs font-normal text-gray-400">(optioneel — max 165 tekens, ideaal 120–165)</span>
+          </label>
+          <textarea id="seo_description" name="seo_description" rows="3" maxlength="165"
+            placeholder="Laat leeg om automatisch te genereren uit de eerste alinea van de inhoud..."
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">{{ old('seo_description', $artikel->seo_description) }}</textarea>
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
+            <span id="seo_desc_count">{{ strlen(old('seo_description', $artikel->seo_description ?? '')) }}</span> / 165 tekens
+            <span id="seo_desc_feedback" class="ml-2"></span>
+          </p>
+        </div>
+      </div>
+
       {{-- Instellingen --}}
       <div class="grid grid-cols-2 gap-4 pt-2 border-t border-gray-200 dark:border-gray-700">
         <div>
@@ -114,6 +134,26 @@
           <input type="checkbox" id="is_published" name="is_published" value="1" {{ old('is_published', $artikel->is_published) ? 'checked' : '' }}
             class="w-4 h-4 text-primary-600 bg-gray-100 border-gray-300 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600">
           <label for="is_published" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gepubliceerd (zichtbaar op website)</label>
+        </div>
+      </div>
+
+      {{-- Titel breedte --}}
+      <div class="pt-2 border-t border-gray-200 dark:border-gray-700">
+        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-text-width text-xs text-gray-400"></i> Opmaak
+        </h3>
+        <div>
+          <label for="title_max_width" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+            Max. breedte titel
+            <span class="ml-1 text-xs font-normal text-gray-400">(px — leeg = standaard 800px)</span>
+          </label>
+          <div class="flex items-center gap-2">
+            <input type="number" id="title_max_width" name="title_max_width"
+              value="{{ old('title_max_width', $artikel->title_max_width) }}"
+              min="200" max="1400" step="10" placeholder="800"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-32 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+            <span class="text-sm text-gray-500">px</span>
+          </div>
         </div>
       </div>
 
@@ -176,6 +216,7 @@ tinymce.init({
     },
     automatic_uploads: true,
     file_picker_types: 'image',
+    convert_urls: false,
     content_style: `
         @font-face {
             font-family: 'DelimaMTProRegular';
@@ -210,6 +251,22 @@ tinymce.init({
         td, th { border: 1px solid #d1d5db; padding: 6px 10px; }
     `,
 });
+// SEO description counter
+(function () {
+    const ta = document.getElementById('seo_description');
+    const count = document.getElementById('seo_desc_count');
+    const feedback = document.getElementById('seo_desc_feedback');
+    function update() {
+        const len = ta.value.length;
+        count.textContent = len;
+        if (len === 0) { feedback.textContent = ''; feedback.className = ''; }
+        else if (len >= 120 && len <= 165) { feedback.textContent = '✓ Optimaal'; feedback.className = 'text-green-500'; }
+        else if (len >= 80 && len < 120) { feedback.textContent = '⚠ Iets te kort'; feedback.className = 'text-yellow-500'; }
+        else { feedback.textContent = '✗ Te kort'; feedback.className = 'text-red-500'; }
+    }
+    ta.addEventListener('input', update);
+    update();
+})();
 </script>
 @endpush
 

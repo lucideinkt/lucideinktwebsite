@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\PageSeoSetting;
+use App\Models\Artikel;
 use Illuminate\Support\Facades\Storage;
 use RalphJSmit\Laravel\SEO\SchemaCollection;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
@@ -337,6 +338,75 @@ class SEOService
         ];
 
         return $pages[$page] ?? [];
+    }
+
+    /**
+     * Generate SEO data for an individual artikel page.
+     */
+    public static function getArtikelSEO(Artikel $artikel): SEOData
+    {
+        // Title: article title + site suffix
+        $title = $artikel->title . ' | Lucide Inkt';
+
+        // Description: use seo_description if provided, else auto-generate from content
+        if (!empty($artikel->seo_description)) {
+            $description = $artikel->seo_description;
+        } else {
+            $rawText = '';
+            if ($artikel->body) {
+                $rawText = strip_tags($artikel->body);
+            } elseif (!empty($artikel->content)) {
+                $firstText = collect($artikel->content)->firstWhere('type', 'text');
+                if ($firstText) {
+                    $rawText = strip_tags($firstText['html'] ?? '');
+                }
+            }
+            $rawText = preg_replace('/\s+/', ' ', trim($rawText));
+
+            if (strlen($rawText) <= 155) {
+                $description = $rawText;
+            } else {
+                $cut = substr($rawText, 0, 155);
+                $lastSpace = strrpos($cut, ' ');
+                $description = ($lastSpace !== false ? substr($cut, 0, $lastSpace) : $cut) . '...';
+            }        }
+
+        // OG Image: featured image or default
+        if ($artikel->featured_image) {
+            $ext = strtolower(pathinfo($artikel->featured_image, PATHINFO_EXTENSION));
+            $ogImage = secure_url('storage/' . $artikel->featured_image);
+        } else {
+            $ogImage = secure_url(self::DEFAULT_OG_IMAGE);
+        }
+
+        $url = route('artikelenDetail', $artikel->slug);
+
+        return new SEOData(
+            title: $title,
+            description: $description ?: null,
+            url: $url,
+            image: $ogImage,
+            author: 'Lucide Inkt',
+            locale: 'nl_NL',
+            site_name: 'Lucide Inkt',
+            type: 'article',
+            published_time: $artikel->created_at,
+            modified_time: $artikel->updated_at,
+            schema: SchemaCollection::make()->add(fn (SEOData $d) => [
+                '@context'    => 'https://schema.org',
+                '@type'       => 'Article',
+                'headline'    => $artikel->title,
+                'description' => $description ?: null,
+                'url'         => $url,
+                'image'       => $ogImage,
+                'publisher'   => [
+                    '@type' => 'Organization',
+                    'name'  => 'Lucide Inkt',
+                    'logo'  => ['@type' => 'ImageObject', 'url' => secure_url('images/google_logo.png')],
+                ],
+                'isPartOf' => ['@type' => 'WebSite', 'name' => 'Lucide Inkt', 'url' => route('home')],
+            ]),
+        );
     }
 
     /**
