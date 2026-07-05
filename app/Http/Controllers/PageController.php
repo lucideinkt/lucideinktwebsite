@@ -70,7 +70,7 @@ class PageController extends Controller
         $artikel = $query->firstOrFail();
 
         return view('artikel-detail', [
-            'SEOData' => SEOService::getPageSEO('artikelen'),
+            'SEOData' => SEOService::getArtikelSEO($artikel),
             'artikel' => $artikel,
             'isAdmin' => $isAdmin,
         ]);

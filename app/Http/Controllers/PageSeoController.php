@@ -26,6 +26,7 @@ class PageSeoController extends Controller
             'shop'                 => ['label' => 'Winkel',                     'route' => 'shop',                  'icon' => 'fa-store'],
             'online-lezen'         => ['label' => 'Online Bibliotheek',         'route' => 'onlineLezen',           'icon' => 'fa-book-reader'],
             'audiobooks'           => ['label' => 'Audio Bibliotheek',          'route' => 'audiobooks',            'icon' => 'fa-headphones'],
+            'artikelen'            => ['label' => 'Artikelen',                   'route' => 'artikelen',             'icon' => 'fa-pen-nib'],
             'algemene-voorwaarden' => ['label' => 'Algemene Voorwaarden',       'route' => 'algemeneVoorwaarden',   'icon' => 'fa-file-contract'],
             'privacybeleid'        => ['label' => 'Privacybeleid',              'route' => 'privacybeleid',         'icon' => 'fa-shield-halved'],
             'retourbeleid'         => ['label' => 'Retourbeleid',               'route' => 'retourbeleid',          'icon' => 'fa-rotate-left'],
