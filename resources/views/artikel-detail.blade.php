@@ -22,7 +22,9 @@
                     </a>
                 @endif
 
-                <h1 class="artikel-detail__title">{{ $artikel->title }}</h1>
+                <div class="artikel-detail__title-wrapper">
+                    <h1 class="artikel-detail__title" style="max-width:{{ $artikel->title_max_width ? $artikel->title_max_width.'px' : '800px' }};">{{ $artikel->title }}</h1>
+                </div>
 
 
                 @if($artikel->featured_image && ($artikel->show_featured_image ?? true))

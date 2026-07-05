@@ -17,9 +17,11 @@ class Artikel extends Model
         'body',
         'featured_image',
         'featured_image_alt',
+        'seo_description',
         'show_featured_image',
         'is_published',
         'sort_order',
+        'title_max_width',
     ];
 
     protected $casts = [

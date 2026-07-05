@@ -107,4 +107,12 @@
     .bc {
         margin-top: 30px;
     }
+
+    /* Last breadcrumb item (e.g. article title): cap width so it wraps neatly */
+    .bc-item:last-child {
+        max-width: 80vw;
+        text-align: center;
+        white-space: normal;
+        word-break: break-word;
+    }
 }

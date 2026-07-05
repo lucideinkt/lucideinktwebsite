@@ -32,9 +32,11 @@ class ArtikelenAdminController extends Controller
             'intro'                => 'nullable|string',
             'featured_image'       => 'nullable|image|max:4096',
             'featured_image_alt'   => 'nullable|string|max:255',
+            'seo_description'      => 'nullable|string|max:165',
             'show_featured_image'  => 'sometimes|boolean',
             'is_published'         => 'sometimes|boolean',
             'sort_order'           => 'nullable|integer|min:0',
+            'title_max_width'      => 'nullable|integer|min:200|max:1400',
         ]);
 
         $validated['is_published']        = $request->boolean('is_published');
@@ -79,9 +81,11 @@ class ArtikelenAdminController extends Controller
             'intro'                => 'nullable|string',
             'featured_image'       => 'nullable|image|max:4096',
             'featured_image_alt'   => 'nullable|string|max:255',
+            'seo_description'      => 'nullable|string|max:165',
             'show_featured_image'  => 'sometimes|boolean',
             'is_published'         => 'sometimes|boolean',
             'sort_order'           => 'nullable|integer|min:0',
+            'title_max_width'      => 'nullable|integer|min:200|max:1400',
         ]);
 
         $validated['is_published']        = $request->boolean('is_published');
