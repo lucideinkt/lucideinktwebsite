@@ -371,10 +371,13 @@ class SEOService
                 $description = ($lastSpace !== false ? substr($cut, 0, $lastSpace) : $cut) . '...';
             }        }
 
-        // OG Image: featured image via Storage facade (same method as getPageSEO)
-        // Using Storage::disk('public')->url() is more reliable than secure_url('storage/...')
-        // across different server setups (Cloudways, S3, CDN) and handles symlink differences.
-        if ($artikel->featured_image) {
+        // OG Image priority:
+        // 1. Dedicated og_image field (stored in seo/og/artikelen/ — guaranteed accessible)
+        // 2. Featured image via Storage facade
+        // 3. Site default
+        if (!empty($artikel->og_image)) {
+            $ogImage = Storage::disk('public')->url($artikel->og_image);
+        } elseif ($artikel->featured_image) {
             $ogImage = Storage::disk('public')->url($artikel->featured_image);
         } else {
             $ogImage = secure_url(self::DEFAULT_OG_IMAGE);
