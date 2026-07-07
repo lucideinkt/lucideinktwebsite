@@ -188,8 +188,26 @@ tinymce.init({
     skin: isDark ? 'oxide-dark' : 'oxide',
     content_css: 'default',
     plugins: 'image link lists table code autoresize anchor',
-    toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | table | removeformat | code',
+    toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | indentparagraph | bullist numlist | link image | table | removeformat | code',
     toolbar_mode: 'wrap',
+    formats: {
+        indentparagraph: { selector: 'p,h1,h2,h3,h4,h5,h6', classes: 'indent-p' },
+    },
+    setup: function (editor) {
+        editor.ui.registry.addToggleButton('indentparagraph', {
+            icon: 'indent',
+            tooltip: 'Inspringen eerste regel (zoals Said Nursi pagina)',
+            onAction: function () {
+                editor.formatter.toggle('indentparagraph');
+                editor.nodeChanged();
+            },
+            onSetup: function (buttonApi) {
+                return editor.formatter.formatChanged('indentparagraph', function (state) {
+                    buttonApi.setActive(state);
+                }).unbind;
+            },
+        });
+    },
     min_height: 500,
     menubar: false,
     branding: false,
@@ -236,6 +254,7 @@ tinymce.init({
             padding: 16px 0;
         }
         p { margin: 0 0 0.9em 0; }
+        p.indent-p, h1.indent-p, h2.indent-p, h3.indent-p, h4.indent-p, h5.indent-p, h6.indent-p { text-indent: 50px; }
         h1,h2,h3,h4,h5,h6 { margin: 1.25em 0 0.4em 0; line-height: 1.3; }
         img { max-width: 100%; height: auto; border-radius: 4px; }
         img[style*="float: left"], img[style*="float:left"]   { float: left;  margin: 2px 1rem 0.4rem 0 !important; display: inline; }
