@@ -622,6 +622,55 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
     margin: 0 0 0.9em 0;
 }
 
+/* Manual first-line indent toggle from the editor — matches the Said Nursi
+   book-reader paragraph indent (50px desktop / 25px on small screens) */
+.artikel-detail__body p.indent-p,
+.artikel-detail__body h1.indent-p,
+.artikel-detail__body h2.indent-p,
+.artikel-detail__body h3.indent-p,
+.artikel-detail__body h4.indent-p,
+.artikel-detail__body h5.indent-p,
+.artikel-detail__body h6.indent-p {
+    text-indent: 50px;
+}
+
+@media (max-width: 600px) {
+    .artikel-detail__body p.indent-p,
+    .artikel-detail__body h1.indent-p,
+    .artikel-detail__body h2.indent-p,
+    .artikel-detail__body h3.indent-p,
+    .artikel-detail__body h4.indent-p,
+    .artikel-detail__body h5.indent-p,
+    .artikel-detail__body h6.indent-p {
+        text-indent: 25px;
+    }
+}
+
+/* Justified text becomes hard to read with the narrow column on small
+   screens — switch it to left-aligned. Overrides TinyMCE's inline
+   style="text-align: justify" saved on individual paragraphs. */
+@media (max-width: 768px) {
+    .artikel-detail__body p[style*="text-align: justify"],
+    .artikel-detail__body p[style*="text-align:justify"],
+    .artikel-detail__body [style*="text-align: justify"],
+    .artikel-detail__body [style*="text-align:justify"] {
+        text-align: left !important;
+    }
+}
+
+/* Images never inherit the paragraph's first-line indent, and non-floated
+   (full width / block) images always stay perfectly centered — only the
+   surrounding text keeps the indent. */
+.artikel-detail__body img {
+    text-indent: 0;
+}
+
+.artikel-detail__body img:not([style*="float"]) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
 .artikel-detail__body h1,
 .artikel-detail__body h2,
 .artikel-detail__body h3,
@@ -664,7 +713,7 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
-    margin: 0.5rem auto 1rem;
+    margin: 1.1rem auto;
 }
 
 /* Figures (when TinyMCE uses image+caption) */
@@ -737,15 +786,35 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
     clear: both;
 }
 
-/* Mobile: un-float images */
-@media (max-width: 640px) {
+/* Mobile: un-float images, make them full-width within the card's
+   content area (respecting the card's own 20px padding). No negative
+   margins — the image simply fills the column width, centered. */
+@media (max-width: 768px) {
+    /* General img override */
     .artikel-detail__body img {
         float: none !important;
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
-        margin: 0.5rem 0 1rem 0 !important;
+        margin: 0 0 1.1rem 0 !important;
         display: block !important;
+        text-indent: 0 !important;
+        border-radius: 6px !important;
+    }
+
+    /* Override higher-specificity float:left / float:right rules */
+    .artikel-detail__body img[style*="float: right"],
+    .artikel-detail__body img[style*="float:right"],
+    .artikel-detail__body img[style*="float: left"],
+    .artikel-detail__body img[style*="float:left"] {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 0 1.1rem 0 !important;
+        display: block !important;
+        text-indent: 0 !important;
+        border-radius: 6px !important;
     }
 
     .artikel-detail__body figure,
@@ -754,13 +823,33 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
         float: none !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0.5rem 0 1rem !important;
+        margin: 0 0 1.1rem 0 !important;
+        text-indent: 0 !important;
     }
 
     .artikel-detail__body figure img {
         width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .artikel-detail__body p:has(> img) {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .artikel-detail__body p:has(> img) > img {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 0 1.1rem 0 !important;
+        text-indent: 0 !important;
+        border-radius: 6px !important;
+        align-self: stretch;
     }
 }
+
 
 /* ── Back link */
 .artikel-detail__back-link {
