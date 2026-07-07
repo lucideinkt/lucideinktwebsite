@@ -17,6 +17,7 @@ class Artikel extends Model
         'body',
         'featured_image',
         'featured_image_alt',
+        'og_image',
         'seo_description',
         'show_featured_image',
         'is_published',

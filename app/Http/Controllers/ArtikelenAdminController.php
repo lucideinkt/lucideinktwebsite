@@ -32,6 +32,7 @@ class ArtikelenAdminController extends Controller
             'intro'                => 'nullable|string',
             'featured_image'       => 'nullable|image|max:4096',
             'featured_image_alt'   => 'nullable|string|max:255',
+            'og_image_upload'      => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'seo_description'      => 'nullable|string|max:165',
             'show_featured_image'  => 'sometimes|boolean',
             'is_published'         => 'sometimes|boolean',
@@ -49,6 +50,13 @@ class ArtikelenAdminController extends Controller
             $validated['featured_image'] = $request->file('featured_image')
                 ->store('artikelen', 'public');
         }
+
+        // OG/social image — stored in seo/og/artikelen/ (same location as page SEO images)
+        if ($request->hasFile('og_image_upload') && $request->file('og_image_upload')->isValid()) {
+            $validated['og_image'] = $request->file('og_image_upload')
+                ->store('seo/og/artikelen', 'public');
+        }
+        unset($validated['og_image_upload']);
 
         Artikel::create($validated);
 
@@ -81,6 +89,7 @@ class ArtikelenAdminController extends Controller
             'intro'                => 'nullable|string',
             'featured_image'       => 'nullable|image|max:4096',
             'featured_image_alt'   => 'nullable|string|max:255',
+            'og_image_upload'      => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'seo_description'      => 'nullable|string|max:165',
             'show_featured_image'  => 'sometimes|boolean',
             'is_published'         => 'sometimes|boolean',
@@ -111,6 +120,21 @@ class ArtikelenAdminController extends Controller
             $validated['featured_image_alt'] = null;
         }
 
+        // OG/social image — stored in seo/og/artikelen/ (same path as page SEO images, avoids permission issues)
+        if ($request->hasFile('og_image_upload') && $request->file('og_image_upload')->isValid()) {
+            if ($artikel->og_image) {
+                Storage::disk('public')->delete($artikel->og_image);
+            }
+            $validated['og_image'] = $request->file('og_image_upload')
+                ->store('seo/og/artikelen', 'public');
+        }
+
+        if ($request->boolean('remove_og_image') && $artikel->og_image) {
+            Storage::disk('public')->delete($artikel->og_image);
+            $validated['og_image'] = null;
+        }
+
+        unset($validated['og_image_upload']);
 
         $artikel->update($validated);
 
@@ -125,6 +149,11 @@ class ArtikelenAdminController extends Controller
         // Delete featured image
         if ($artikel->featured_image) {
             Storage::disk('public')->delete($artikel->featured_image);
+        }
+
+        // Delete OG/social image
+        if ($artikel->og_image) {
+            Storage::disk('public')->delete($artikel->og_image);
         }
 
         // Delete block images

@@ -107,6 +107,34 @@
         <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
           <i class="fa-solid fa-magnifying-glass text-xs text-gray-400"></i> SEO
         </h3>
+
+        {{-- OG / Social share image --}}
+        <div class="mb-4">
+          <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+            Social share afbeelding (OG image)
+            <span class="ml-1 text-xs font-normal text-gray-400">— wordt getoond bij delen op WhatsApp, Facebook etc.</span>
+          </label>
+
+          @if($artikel->og_image)
+            <div class="flex items-start gap-3 mb-2">
+              <img src="{{ asset('storage/' . $artikel->og_image) }}" alt="Huidige OG afbeelding" class="image-preview">
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Huidige OG afbeelding</p>
+                <label class="flex items-center gap-1.5 text-xs text-red-600 cursor-pointer">
+                  <input type="checkbox" name="remove_og_image" value="1" class="w-3.5 h-3.5">
+                  Verwijder afbeelding
+                </label>
+              </div>
+            </div>
+          @endif
+
+          <input type="file" name="og_image_upload" accept="image/*" id="og_image_input"
+            class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 dark:text-gray-400">
+          <div id="og_image_preview_wrapper" class="hidden mt-2">
+            <img id="og_image_preview" src="" alt="Voorbeeld" class="image-preview">
+          </div>
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Aanbevolen: 1200×630px, max 5MB. Laat leeg om de uitgelichte afbeelding te gebruiken.</p>
+        </div>
         <div>
           <label for="seo_description" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
             SEO-beschrijving
@@ -179,6 +207,13 @@ document.getElementById('featured_image_input').addEventListener('change', funct
     if (!file) return;
     document.getElementById('featured_image_preview').src = URL.createObjectURL(file);
     document.getElementById('featured_image_preview_wrapper').classList.remove('hidden');
+});
+
+document.getElementById('og_image_input').addEventListener('change', function () {
+    const file = this.files[0];
+    if (!file) return;
+    document.getElementById('og_image_preview').src = URL.createObjectURL(file);
+    document.getElementById('og_image_preview_wrapper').classList.remove('hidden');
 });
 
 const isDark = document.documentElement.classList.contains('dark');
