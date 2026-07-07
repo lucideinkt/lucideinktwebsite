@@ -6,23 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::table('artikelen_table_fix', function (Blueprint $table) {
-            //
-        });
+        if (!Schema::hasColumn('artikelen', 'og_image')) {
+            Schema::table('artikelen', function (Blueprint $table) {
+                $table->string('og_image')->nullable()->after('seo_description');
+            });
+        }
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::table('artikelen_table_fix', function (Blueprint $table) {
-            //
+        Schema::table('artikelen', function (Blueprint $table) {
+            $table->dropColumnIfExists('og_image');
         });
     }
 };
