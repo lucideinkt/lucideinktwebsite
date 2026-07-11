@@ -1708,6 +1708,619 @@ Wees op jullie hoede! Sta niet toe dat de opofferingsgezinde broederschap en opr
 
 </div>'
             ],
+            [
+                'page_number' => 54,
+                'content' => '<div class="page" id="54">
+<p class="text-end page-number">#54</p>
+
+<p>
+Aangezien onze missie ten dienste van de Qur’an en het geloof vereist dat wij – <span class="text-italic">indien nodig</span> – zelfs onze zielen voor elkaar opofferen, zullen frustraties of andere oorzaken die prikkelbaarheden baren, ware toegewijde broeders uiteraard nimmer uiteendrijven; met een volwaardige ingetogenheid, bescheidenheid en overgave zullen zij veeleer de verantwoordelijkheid van alle onaangenaamheden opeisen, en ijveren om hun liefde en toewijding te versterken. Anders kunnen simpele zaken worden opgeblazen en in onherstelbare schade uitmonden. Ik laat het voor de rest aan jullie inzicht over en houd het kort.
+</p>
+
+<p class="text-red text-italic" style="text-align: right;text-indent: 0">
+Said Nursî
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 55,
+                'content' => '<div class="page" id="55">
+<p class="text-end page-number">#55</p>
+
+<p class="text-bold text-italic">
+Ik verzoek het volgende van mijn broeders:
+</p>
+
+<p class="text-italic">
+Akelige en lelijke woorden die vrienden vanwege frustraties, benauwde zielsgesteldheden, geprikkeldheden, toegeeflijkheden jegens egoïstische en satanische listen of onnadenkendheden uitspreken, behoren geen redenen te zijn om elkaar de rug toe te keren en gedachten als “Mijn trots is gekrenkt” tot uiting te brengen. Ik neem die kwalijke woorden op mij; erger je er dus niet aan. Al zou ik duizend vormen van trots bezitten, alsnog zou ik ze aan de wederzijdse liefde en toewijding onder mijn broeders opofferen.
+</p>
+
+<p class="text-red text-italic" style="text-align: right;text-indent: 0">
+Said Nursî
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 57,
+                'content' => '<div class="page" id="57">
+<p class="text-end page-number">#57</p>
+
+<div class="text-center page-title-chapter delima-font">
+        <h2>De Twintigste Flits</h2>
+    </div>
+
+<p class="text-red small-title text-center">
+<strong>Aangaande Oprechtheid</strong>
+</p>
+
+<p style="text-align: justify; text-indent: 0;">
+Hoewel dit traktaat <span class="text-bold">Het Eerste Punt</span> van <span class="text-bold">De Vijf Punten</span> uit <span class="text-bold">De Tweede Kwestie</span> van <span class="text-bold">De Zeven Kwesties</span> uit <span class="text-bold">De Zeventiende Nota</span> van <span class="text-bold">De Zeventiende Flits</span> was, is het vanwege zijn belang: <span class="text-bold">De Twintigste Flits</span> geworden.
+</p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+ “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 450px;">
+﴿ اِنَّٓا اَنْزَلْنَٓا اِلَيْكَ الْكِتَابَ بِالْحَقِّ فَاعْبُدِ اللّٰهَ مُخْلِصًا لَهُ الدّٖينَ ۞ اَلَا لِلّٰهِ الدّٖينُ الْخَالِصُ ﴾ <sup>2</sup>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+هَلَكَ النَّاسُ اِلَّا الْعَالِمُونَ وَهَلَكَ الْعَالِمُونَ اِلَّا الْعَامِلُونَ وَهَلَكَ الْعَامِلُونَ اِلَّا الْمُخْلِصُونَ وَالْمُخْلِصُونَ عَلٰى خَطَرٍ عَظٖيمٍ <sup>3</sup>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: -8px auto 0 auto; max-width: 500px;font-size: 25px">
+﴿ اَوْ كَمَا قَالَ ﴾
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Voorzeker, Wij hebben jou het Boek met de waarheid neergezonden; dien ALLAH, beleid Zijn religie oprecht. Weet dat alleen de zuivere religie ALLAH toebehoort.” - Qur’an, 39:2-3
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> “De mensheid is verdoemd, behalve de geleerden... de geleerden zijn verdoemd, behalve de praktiserenden... de praktiserenden zijn verdoemd, behalve de oprechten... en de oprechten begeven zich in groot gevaar.”
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 58,
+                'content' => '<div class="page" id="58">
+<p class="text-end page-number">#58</p>
+
+<p>
+Zowel de voornoemde Aya als de daaropvolgende Hadîth-i Sharîf laten zien wat voor een belangrijke grondslag oprechtheid binnen de Islam is. Uit de vele subtiliteiten omtrent deze oprechtheidskwestie zullen wij slechts <span class="text-bold">“Vijf Punten”</span> bondig uiteenzetten.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>Opmerking</strong>
+</p>
+
+<p class="text-bold">
+In deze gezegende stad Isparta heerst een fraaie voorspoed die dank doet betuigen. Want vergeleken met andere streken valt hier tussen de Godvrezenden, de Soefi\'s en de geleerden geen concurrentiële onenigheid te bemerken. Al moet ik bekennen dat de benodigde ware liefde en eendracht hier ook ontbreken, alsnog is hier ten opzichte van andere gebieden geen sprake van een kwaadaardige verdeeldheid en rivaliteit.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>Het Eerste Punt</strong>
+</p>
+
+<p class="text-bold text-italic">
+Een belangrijke en aangrijpende vraag:
+</p>
+
+<p class="text-italic">
+“Hoe is het mogelijk dat de aardsgezinden, de onachtzamen en zelfs de dwalers en de huichelaars zonder wedijver eendrachtig kunnen zijn, terwijl de Godsdienstfunctionarissen, de geleerden en de soefi-mystici die rechtschapen en welgezind zijn, wedijverig in onenigheid vervallen? De welgezinden hebben recht op eendracht en de huichelaars verdienen verdeeldheid. Waarom is desondanks dat recht tot de tegenpartij overgegaan, terwijl die ongerechtigheid ons heeft bereikt?”
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 59,
+                'content' => '<div class="page" id="59">
+<p class="text-end page-number">#59</p>
+
+<p>
+<span class="text-bold">Het antwoord:</span> Uit de vele redenen van deze kwellende, ellendige en verderfelijke toestand die volksvrienden tot tranen beroert, zullen wij <span class="text-bold">zeven redenen</span> uiteenzetten.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Eerste Reden</strong>
+</p>
+
+<p class="text-bold" >
+Zoals de onenigheid tussen de rechtschapenen niet uit onwaarheden is voortgekomen, is de eendracht tussen de dwaalgeesten evenmin aan waarheden ontsproten.
+</p>
+
+<p>
+Het is veeleer zo dat de aardsgezinden, de politici, de onderwijsmensen en dergelijke leden van groepen, partijen en organisaties met een bepaalde taak en een specifieke dienst binnen zekere lagen van de maatschappij, elk een functie bekleedt die is geclassificeerd en gespecificeerd. Ook het salaris dat ze als materiële vergoeding evenals de aandacht van mensen<sup>1</sup> die ze ter bevrediging van liefde voor status en aanzien als immateriële vergoeding voor hun taken ontvangen, is geclassificeerd en gespecificeerd.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> <span class="text-bold">Waarschuwing:</span> de aandacht van mensen hoort niet gevraagd maar gegeven te worden. Als ze wordt verkregen, dan mag er niet van genoten worden. Als iemand daarvan geniet, dan zal hij zijn oprechtheid verliezen en beginnen te huichelen. De aandacht van mensen die op basis van roem en eerzucht wordt verkregen, is geen vergoeding en beloning, maar veeleer een berisping en een bestraffing vanwege het gemis aan oprechtheid. Waarlijk, een aandacht, eer en aanzien waaronder het leven van vrome daden bestaande uit oprechtheid lijdt, leveren tijdelijk tot aan de poort van het graf een vluchtig genot op, waartegenover ze aan de andere kant van het graf als kwelling in het graf tot een lelijke gedaante metamorfoseren. Aldus dient de aandacht van mensen niet gewenst, maar gevreesd en vermeden te worden. Mogen de oren suizen van degenen die aan roemzucht lijden en degenen die eer en faam najagen.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 60,
+                'content' => '<div class="page" id="60">
+<p class="text-end page-number">#60</p>
+
+<p>
+Deelname in dit kader baart geen sabotage, geschil en rivaliteit. Het maakt dus niet uit hoe kwaadaardig de weg is waarop zij voortgaan, zij kunnen altijd eendrachtig zijn.
+</p>
+
+<p>
+Echter, wat de Godsdienstfunctionarissen, de geleerden en de soefi-mystici betreft, elk van hen bekleedt een functie die betrekking op de hele gemeenschap heeft. Tevens is hun directe loon niet geclassificeerd en gespecificeerd. Ook op het gebied van status, aandacht en acceptatie is niemands aandeel gespecificeerd. Velen kunnen zich kandidaat voor dezelfde functie stellen. Velen kunnen zich in zowel elke materiële als immateriële vergoeding mengen. Dit baart sabotage en rivaliteit, waardoor saamhorigheid in huichelarij en eendracht in onenigheid omslaat.
+</p>
+
+<p>
+Voorwaar, het medicijn tegen deze vreselijke ziekte is oprechtheid. Deze oprechtheid kunnen zij bereiken als zij:
+</p>
+
+<p style="text-indent: 0">
+• Rechtzinnigheid de voorkeur boven zelfzuchtigheid geven;
+</p>
+
+<p style="text-indent: 0">
+• Het rechtvaardigheidsbelang over het ego en het eigenbelang laten triomferen...
+</p>
+
+<p style="text-indent: 0">
+• Het geheim achter: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اِنْ اَجْرِىَ اِلَّا عَلَى اللّٰهِ</span> verinnerlijken en van alle zowel materiële als immateriële ververgoedingen van mensen onafhankelijk worden<sup>2</sup>...
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Mijn beloning is enkel bij ALLAH.” - Qur’an, 34:47
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> Het: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">اٖيثَارٌ</span> attribuut van de Sahaba’s waarover de Qur’an lovend spreekt als leidraad nemen. Dit impliceert: anderen bij het aannemen van liefdadigheden en aalmoezen de voorkeur geven. En materiële winsten die religieuze diensten meebrengen noch begeren, noch in het hart beogen, en ze slechts als Goddelijke giften beschouwen; geen afhankelijkheid jegens mensen voelen en niets ter vergoeding voor religieuze diensten aannemen. Want voor religieuze diensten mag er op aarde niets gewenst worden, opdat oprechtheid niet verloren gaat. Dienaren in dit kader hebben er echter wel recht op dat de oemma hen in hun levensonderhoud voorziet. Ook hebben zij recht op Zakaat. Hier horen zij echter niet om te vragen; dit wordt ze ongevraagd gegeven. En wanneer zij het krijgen, mogen ze niet: <span class="text-italic">“Dit is de vergoeding voor mijn dienst”</span> zeggen. Door zo tevreden mogelijk andere rechthebbenden die het meer verdienen de voorkeur boven henzelf te geven, kunnen zij met inachtneming van het geheim achter: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَ يُؤْثِرُونَ عَلٰى اَنْفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ</span> [<span class="text-italic">“En zij prefereren anderen boven henzelf, al verkeren zij zelf in behoeftigheid.” - Qur’an, 59:9</span>] van dit ernstige gevaar gered worden en oprechtheid verwerven.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 61,
+                'content' => '<div class="page" id="61">
+<p class="text-end page-number">#61</p>
+
+<p>
+• Het geheim achter: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَمَا عَلَى الرَّسُولِ اِلَّا الْبَلَاغُ</span> verinnerlijken en beseffen dat het verwerven van erkenning, invloed en publieke aandacht tot de taken en gunsten van de Hoogste Gerechtigde behoren, wat hun overdrachtstaak noch includeert, noch behoeft, noch verplicht.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “En de profeet is enkel met overdracht belast.” - Qur’an, 24:54
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 62,
+                'content' => '<div class="page" id="62">
+<p class="text-end page-number">#62</p>
+
+<p class="text-center text-italic">
+Worden deze punten niet in acht genomen, dan zal oprechtheid verloren gaan.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Tweede Reden</strong>
+</p>
+
+<p class="text-center text-bold">
+De laagheid van de dwaalgeesten brengt ze tot eendracht, de trots van de geloofsverkondigers leidt ze tot tweedracht.
+</p>
+
+<p>
+Met andere woorden, omdat de onachtzamen alias de aardsgezinden en de dwaalgeesten niet op gerechtigheid en waarheid steunen, zijn zij zwak en laag. Hun laagheid baart de behoefte om kracht te vergaren. Deze behoefte leidt ertoe dat zij zich innig aan andermans steun en alliantie vastklampen. Zelfs als zij een dwaalweg aanhouden, blijven zij hun eendracht handhaven. Zij ontwikkelen gewoonweg een gerechtigheid in hun onrecht, een oprechtheid in hun dwaling, een goddeloos fanatisme in hun ongodsdienstigheid en een saamhorigheid in hun huichelarij, waardoor ze succes oogsten. Want zelfs als oprechtheid voor het heilloze wordt gehanteerd, zal dat alsnog niet vruchteloos blijven. Waarlijk, iets dat door iemand oprecht wordt gewenst, zal ALLAH schenken.<sup>1</sup>
+</p>
+
+<p>
+Echter, wat de geloofsverkondigers, de Godsdienstfunctionarissen, de geleerden en de mystici betreft, omdat zij op gerechtigheid en waarheid berusten, en omdat elk van hen met slechts zijn Heer in gedachte en met vertrouwen in Zijn Gratie individueel op het waarheidspad voortgaat, bezitten zij geestelijk een trots die hun weg verschaft.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Waarlijk, <span class="text-arabic-inline text-red" dir="rtl" lang="ar">مَنْ طَلَبَ وَ جَدَّ وَجَدَ</span> <span class="text-italic">{Wie zoekt, zal vinden}</span> is een wezenlijk principe. Zijn omvattendheid is verreikend en zijn reikwijdte kan ook onze weg beslaan.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 63,
+                'content' => '<div class="page" id="63">
+<p class="text-end page-number">#63</p>
+
+<p>
+Wanneer één van hen zich zwak voelt, dan zal hij in plaats van mensen zijn Heer raadplegen en Hèm om bijstand vragen. Vanwege de mentaliteitsverschillen zal hij tegenover iemand die indruist tegen de mentaliteit waaraan hij zich houdt de behoefte aan samenwerking niet volwaardig vernemen; hij kan de behoefte aan eendracht niet inzien.
+</p>
+
+<p>
+Als hij daarenboven ook aan egocentrisme en zelfoverschatting lijdt, dan zal hij wanen dat hij gelijk en zijn tegenstander ongelijk heeft, wat in plaats van eendracht en liefde, tweedracht en rivaliteit tussen hen teweegbrengt. Tenslotte zal hij oprechtheid niet kunnen bereiken en zijn taak volledig te gronde richten.
+</p>
+
+<p>
+Voorwaar, de rampzalige gevolgen van deze zorgelijke oorzaak kan hij alleen met inachtneming van <span class="text-bold">negen stelregels</span> mijden.
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+1. Positief handelen. Oftewel, handelen uit liefde voor zijn eigen weg. De vijandigheid en minachting van andere wegen mogen geen invloed op zijn denkwijze en zijn kennis uitoefenen; hij hoort zich daar niet mee bezig te houden;
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+2. In gedachte houden dat er tussen iedereen binnen de kring der Islam – <span class="text-italic">ongeacht de mentaliteitsverschillen</span> – vele verbindende factoren zijn die liefde, broederschap en eendracht vereisen om vervolgens eendracht te verwezenlijken;
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 64,
+                'content' => '<div class="page" id="64">
+<p class="text-end page-number">#64</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+3. Het volgende gewetensprincipe als leidraad nemen: op voorwaarde dat de weg van een ander niet wordt geridiculiseerd, kan elke volger van een waarachtige weg: <span class="text-italic">“Mijn weg is juist”</span> of <span class="text-italic">“Mijn weg is beter”</span> zeggen. Insinueren dat andere wegen onjuist of lelijk zijn met uitingen als: <span class="text-italic">“Alleen mijn weg is juist”</span> of <span class="text-italic">“Alleen onze groepsmentaliteit is voorbeeldig”</span> moet vermeden worden;
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+4. Beseffen dat eendracht met de rechtschapenen een aanleiding tot Gods Gratie en een bron van Godsdienstige glorie is;
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+5. Het volgende inzien: wanneer de dwaalgeesten en de onrechtplegers uit solidariteit collectief een sterke geestelijke persoonlijkheid tot stand brengen en met haar genialiteit aanvallen, dan zal zelfs de sterkste individuele weerstand tegenover die geestelijke persoonlijkheid breken. Vervolgens via eendracht met de rechtschapenen een geestelijke persoonlijkheid tot stand brengen en gerechtigheid tegen die vreselijke geestelijke persoonlijkheid van dwaling beschermen;
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+6. En om de waarheid van valsheid te bevrijden:
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+7. Zijn ego en zijn eigenwaan...
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+8. Zijn misplaatste trots...
+</p>
+
+<p style="padding-left: 1.5em; text-indent: -1.5em;">
+9. En zijn zinloze competitieve gevoelens achterwege laten.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 65,
+                'content' => '<div class="page" id="65">
+<p class="text-end page-number">#65</p>
+
+<p class="text-center text-italic">
+Zodoende kan hij oprechtheid verwerven en zijn taak volwaardig vervullen.<sup>1</sup>
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Derde Reden</strong>
+</p>
+
+<p class="text-center text-bold">
+Noch komt de onenigheid onder de rechtschapenen voort uit onbereidwilligheid en lafhartigheid,
+noch komt de eendracht onder de dwalers voort uit een verheven bereidwilligheid.
+</p>
+
+<p>
+De geloofsverkondigers hebben hun onenigheid veeleer te wijten aan de verkeerde hantering van hun verheven bereidwilligheid, terwijl de dwalers hun eendracht te danken hebben aan de zwakheid en machteloosheid die hun onbereidwilligheid kweekt.
+</p>
+
+<p>
+Wat de geloofsverkondigers aanleiding geeft om hun verheven bereidwilligheid verkeerd te hanteren en zodoende in onenigheid en rivaliteit te vervallen, bestaat uit een karakteristiek die uit het oogpunt van het hiernamaals prijzenswaardig is, namelijk: gretig zijn naar zegeningen en geen genoegen nemen met taken die op het hiernamaals zijn gericht.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> In een authentieke Hadîth is zelfs vermeld dat in de eindtijd de ware religieuzen onder de Christenen zich met de volgers van de Qur’an zullen alliëren om zich tegen hun gedeelde heidense vijanden staande te houden. Evenzo hebben de Godsdienstfunctionarissen en de waarheidsdienaars niet alleen behoefte aan hechte eendracht met hun geloofsverwanten, dienstgenoten en medebroeders; zij hebben zelfs de behoefte om momenteel de geschilpunten tussen hen en de ware Christelijke geestelijken te negeren en niet te bediscussiëren, opdat ze tegenover hun gedeelde vijand bestaande uit de agressieve heidenen eendrachtig kunnen zijn.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 66,
+                'content' => '<div class="page" id="66">
+<p class="text-end page-number">#66</p>
+
+<p>
+Oftewel, door gedachten als: <span class="text-italic">“Ik wil deze zegen verwerven; ik wil deze mensen discipline toedienen; ik wil gehoord worden...”</span> neemt een geloofsverkondiger jegens een ware broeder en een persoon aan wiens liefde, samenwerking, broederschap en hulp hij daadwerkelijk behoefte heeft een competitieve houding aan. Gedachten als: <span class="text-italic">“Waarom bezoeken mijn studenten hem? Waarom heb ik niet zoveel studenten als hij?”</span> geven zijn ego de gelegenheid om een interesse voor de verworpen karakteristiek: <span class="text-italic">“liefde voor status”</span> in hem op te wekken, waarna oprechtheid vergaat en de poort tot schijnheiligheid opengaat.
+</p>
+
+<p>
+Voorwaar, de genezing van deze gebrekkigheid, deze wond en deze ernstige zielsziekte schuilt in de volgende formule: <span class="text-italic">“Het Welbehagen van de Hoogste Gerechtigde kan dankzij oprechtheid worden verworven. Een groot aantal volgelingen en veelvoudige successen spelen hierbij geen rol. Zulke zaken behoren immers tot Gods Taken. Aldus behoren ze niet te worden nagestreefd; ze worden zo nu en dan gegund.”</span>
+</p>
+
+<p>
+Waarlijk, soms kan één enkel woord de reden van iemands redding en de aanleiding tot Gods Welbehagen zijn. Het belang van kwantiteit behoort niet zo’n groot aandachtspunt te zijn. Want soms kan de disciplinering van één persoon God zo behagen als de disciplinering van duizend man.
+</p>
+
+<p>
+Bovendien vergen oprechtheid en rechtschapenheid dat de bevordering van moslims te allen tijde wordt voorgestaan, ongeacht van waar of van wie het afkomstig is.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 67,
+                'content' => '<div class="page" id="67">
+<p class="text-end page-number">#67</p>
+
+<p>
+Anders zijn gedachten als: <span class="text-italic">“Ik wil mensen onderrichten zodat zij mij zegeningen opleveren.”</span> een list van het ego en het ik-complex.
+</p>
+
+<p>
+O mens die gretig naar zegeningen is en geen genoegen neemt met taken die op het hiernamaals zijn gericht! Er zijn een aantal profeten verschenen die op enkelen na geen volgelingen hadden. Desondanks hebben zij de eindeloze verdiensten van de heilige profetentaak ontvangen. Aldus wordt deugdelijkheid niet door een groot aantal volgelingen, maar door het verwerven van Gods Welbehagen bepaald. Wie denk jij te zijn, dat jij zo gretig met de gedachte <span class="text-italic">“Iedereen moet naar mij luisteren!”</span> je eigen taak vergeet en je met Gods Taak bemoeit? Acceptatie creëren en het volk rondom jou verzamelen zijn taken die de Hoogste Gerechtigde toebehoren. Vervul jouw taak en bemoei je niet met ALLAH’s Taak.
+</p>
+
+<p>
+Daarnaast zijn mensen niet de enigen die gerechtigheid en waarheid toehoren en de sprekers ervan zegeningen verschaffen. De bewuste schepselen, zielen en engelen van de Hoogste Gerechtigde hebben het universum overladen en het overal verlevendigd. Aangezien jij naar veel zegeningen verlangt, neem oprechtheid dan als basis en beoog uitsluitend Gods Welbehagen, opdat de klanken van de gezegende woorden die uit jouw mond vloeien dankzij oprechtheid en een zuivere intentie in de luchtdeeltjes tot leven komen, de oren van ontelbare bewuste schepselen binnentreden, hen verlichten en jou zegeningen verschaffen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 68,
+                'content' => '<div class="page" id="68">
+<p class="text-end page-number">#68</p>
+
+<p>
+Want wanneer jij bijvoorbeeld: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> zegt, dan zal die uiting van <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span> met Gods Bewilliging groot- en kleinschalig miljoenen malen als woorden in de lucht worden geschreven. Omdat de Alwijze Schoonschrijver boven futiliteit en verspilling verheven is, heeft Hij zoveel toehorende oren als het aantal van die talloze gezegende woorden geschapen. Als die woorden in de lucht middels oprechtheid en een zuivere intentie tot leven komen, dan zullen ze als kostelijke vruchten de oren van zielen intreden. Als Gods Welbehagen en oprechtheid die woorden in de lucht niet tot leven wekken, dan zullen ze niet beluisterd worden; de zegen zal dan slechts tot de verbale uiting worden beperkt.
+</p>
+
+<p class="text-italic">
+Mogen de oren suizen van de Hafizoen<sup>2</sup> die treuren omdat ze met hun matige stem weinig luisteraars aantrekken!
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Vierde Reden</strong>
+</p>
+
+<p class="text-bold">
+De concurrentiële onenigheid tussen de geloofsverkondigers ontstaat niet omdat ze gevolgen niet onder ogen zien en kortzichtig zijn, noch komt de hechte eendracht onder de dwalers tot stand omdat ze stil bij gevolgen staan en ruimdenkend zijn.
+</p>
+
+<p>
+Het is veeleer zo dat de geloofsverkondigers zich dankzij de invloed van gerechtigheid en waarheid niet laten meeslepen door de blinde emoties van het ego, maar laten leiden door de toekomstgerichte aandriften van het hart en het verstand.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “De lof zij ALLAH.”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> Noot van de vertalers: moslims die de Qur’an hebben gememoriseerd.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 69,
+                'content' => '<div class="page" id="69">
+<p class="text-end page-number">#69</p>
+
+<p>
+Helaas kunnen zij daarbij hun rechtzinnigheid en oprechtheid niet in stand houden, waardoor zij die hoge rang niet kunnen behouden en in onenigheid vervallen.
+</p>
+
+<p>
+De dwaalgeesten daarentegen laten zich onder invloed van het ego en de lusten meeslepen door blinde emoties die gevolgen niet overzien en een miezerig voorhanden genot de voorkeur boven geweldige toekomstige genietingen geven. Bijgevolg zijn zij omwille van een directe baat en een voorhanden genot uiterst eendrachtig met elkaar. Waarlijk, rondom aardse voorhanden genietingen en profijten brengen lage en harteloze egoïsten een innige eendracht en uniteit tot stand.
+</p>
+
+<p>
+De geloofsverkondigers hebben dankzij de verheven principes van het hart en verstand hun aandacht op vruchten en ontwikkelingen met betrekking tot het hiernamaals gevestigd, wat een gegronde rechtzinnigheid, een ideale oprechtheid, en een uiterst toegewijde uniteit en eendrachtigheid mogelijk maakt. Desondanks kunnen zij niet van eigenwaan afzien, waardoor zij wegens radicaliteit en laksheid een verheven krachtbron die gevestigd is in eendracht verliezen. Daarnaast zal hun oprechtheid bezwijken en hun taak met betrekking tot het hiernamaals eronder lijden. Ten slotte zal Gods Welbehagen ook niet meer zo eenvoudig behaald kunnen worden. De zalf en het medicijn tegen deze ernstige ziekte kan men vinden wanneer hij:
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 70,
+                'content' => '<div class="page" id="70">
+<p class="text-end page-number">#70</p>
+
+<p style="text-indent: 0">
+• Op basis van het geheim achter: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْحُبُّ فِى اللّٰهِ</span> de volgers van de waarachtige weg met trots vergezelt;
+</p>
+
+<p style="text-indent: 0">
+• hen navolgt;
+</p>
+
+<p style="text-indent: 0">
+• de eer van het imamaat aan hen overlaat;
+</p>
+
+<p style="text-indent: 0">
+• inziet dat iedereen op die waarachtige weg – <span class="text-italic">zonder uitzonderingen</span> – beter dan hijzelf kan zijn, opdat hij van zijn eigenwaan afziet en oprechtheid verwerft;
+</p>
+
+<p style="text-indent: 0">
+• beseft dat de simpelste oprechte daad de voorkeur boven bergen aan onoprechte daden geniet;
+</p>
+
+<p style="text-indent: 0">• volgzaamheid boven de verantwoordelijke en riskante leiderschapspositie prefereert.
+</p>
+
+<p class="text-italic">
+Zodoende kan hij van die ziekte gered worden, oprechtheid verwerven en zijn taak met betrekking tot het hiernamaals volwaardig volbrengen.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Vijfde Reden</strong>
+</p>
+
+
+<p class="text-bold">
+Zoals de onenigheid en het gemis aan eendracht onder de geloofsverkondigers niet uit hun zwakheid voortkomt, komt de sterke eendracht onder de dwalers evenmin door hun kracht tot stand.
+</p>
+
+<p>
+Het gemis aan eendracht onder de geloofsverkondigers is veeleer tot stand gekomen door de kracht uit hun steunpunt dat zij aan hun volmaakte geloof te danken hebben, terwijl de eendracht onder de onachtzamen en de dwalers is voortgekomen uit de zwakheid en machteloosheid waaraan zij lijden omdat zij in hun hart een steunpunt missen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Liefhebben omwille van ALLAH.”
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 71,
+                'content' => '<div class="page" id="71">
+<p class="text-end page-number">#71</p>
+
+<p>
+Immers, omdat zwakken behoeftig zijn aan eendracht, brengen zij een sterke eendracht tot stand. Omdat sterken die behoefte niet zo sterk vernemen, is hun eendracht zwak. Omdat leeuwen en vossen geen behoefte aan eendracht hebben, leiden ze een solitair leven. Omdat wilde geiten zich tegen wolven willen weren, vormen ze een kudde. Al bij al is de groepsvorming en de geestelijke persoonlijkheid van zwakken sterk<sup>1</sup>, evenals de groepsvorming en de geestelijke persoonlijkheid van sterken zwak is. In de Qur’an wordt dit geheim op een fraaie en subtiele wijze als volgt aangeduid:
+</p>
+
+<p>
+Hoewel de Aya: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَ قَالَ نِسْوَةٌ فِى الْمَدٖينَةِ</span> dubbelvoudig vrouwelijk is, wordt de vrouwengemeenschap met het mannelijke werkwoord <sup>3</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">قَالَ</span> aangesproken, terwijl de mannengemeenschap in de Aya: <sup>4</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">قَالَتِ الْاَعْرَابُ</span> met het vrouwelijke werkwoord: <sup>5</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">قَالَتْ</span> wordt aangesproken.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> In navolging van de Amerikaanse vrouwenrechtencomité is in Europa één van de gezagvolste, effectiefste en enigermate sterkste comités door het zwakke, fragiele en elegante vrouwengeslacht opgericht. En ondanks dat de Armenen qua volk over een kleine populatie en weinig macht beschikken, geven zij met hun comité een sterke en opofferingsgezinde gesteldheid weer. Deze omstandigheden bekrachtigen onze stelling.
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “En de vrouwen in de stad zeiden” - Qur’an, 12:30
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> “Zeiden <span class="text-italic">(mannelijk)</span>” - Qur’an, 12:30
+</p>
+
+<p class="footnote-p">
+<sup>4</sup> “De bedoeïenen zeiden” - Qur’an, 49:14
+</p>
+
+<p class="footnote-p">
+<sup>5</sup> “Zeiden <span class="text-italic">(vrouwelijk)</span>” - Qur’an, 34:47
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 72,
+                'content' => '<div class="page" id="72">
+<p class="text-end page-number">#72</p>
+
+<p>
+Zodoende wordt subtiel het volgende aangegeven: De groepsvorming van zwakke, elegante en gevoelige vrouwen maakt ze sterker, harder en baldadiger, waardoor zij enigszins mannelijkheid verwerven. Omdat de zinsopbouw een mannelijk werkwoord vereist, is de verwoording: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَ قَالَ نِسْوَةٌ</span> uiterst fraai uitgekomen. Omdat de mannen – <span class="text-italic">en vooral de Arabische bedoeïenen</span> – op eigen kracht vertrouwen, is hun groepsvorming zwak, waardoor zij een behoedzame en zachtaardige houding aannemen, en enigszins in een vrouwelijke hoedanigheid treden. Omdat de zinsopbouw een vrouwelijk werkwoord vereist, is de verwoording: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">قَالَتِ الْاَعْرَابُ</span> met haar vrouwelijke werkwoord voortreffelijk geplaatst.
+</p>
+
+<p>
+Waarlijk, omdat het geloof in ALLAH als een uiterst sterk steunpunt gelatenheid en overgave aan de rechtschapenen schenkt, brengen zij bij anderen hun behoefte niet onder woorden en vragen ze niet om andermans assistentie en bijstand. Al zou één van hen daar om vragen, dan zou hij zich daar alsnog niet met een vurige toewijding aan vastklampen.
+</p>
+
+<p>
+Omdat de aardsgezinden bij hun aardse zaken hun ware steunpunt veronachtzamen, worden zij door zwakheid en machteloosheid overmand, waardoor zij een extreme behoefte aan andermans bijstand vernemen. Bijgevolg brengen zij een innige en zelfs toegewijde vorm van eendracht tot stand.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “En de vrouwen zeiden.” - Qur’an, 12:30
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “De bedoeïenen zeiden” - Qur’an, 49:14
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 73,
+                'content' => '<div class="page" id="73">
+<p class="text-end page-number">#73</p>
+
+<p>
+Voorwaar, omdat de rechtschapenen de deugdelijke kracht achter eendracht niet overwegen en beogen, ondervinden zij de ondeugdelijke en kwaadaardige consequentie daarvan door in onenigheid te vervallen.
+</p>
+
+<p>
+Omdat de ondeugdelijke dwaalgeesten daarentegen de kracht achter eendracht door hun onmacht vernemen, hebben zij de aanzienlijke succesformule van eendracht weten te bemachtigen.
+</p>
+
+<p>
+Voorwaar, de rechtschapenen kunnen de zalf en het medicijn tegen de ondeugdelijke ziekte van onenigheid vinden door de felle Goddelijke Berisping in de Aya: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَلَا تَنَازَعُوا فَتَفْشَلُوا وَتَذْهَبَ رٖيحُكُمْ</span> en het Hoogst Wijze Godsgebod omtrent het gemeenschapsleven in de Aya: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوٰى</span> ter harte te nemen, en te overwegen in hoeverre onenigheid de Islam schaadt en de zege van de dwalers over de rechtschapenen versoepelt, opdat zij met een ideale zwakte en onmacht toegewijd en innig tot die karavaan der rechtschapenen kunnen toetreden; men moet zijn eigenheid vergeten en zich van schijnheiligheid en mooidoenerij verlossen om oprechtheid te verwerven.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “En verval onderling niet in onenigheid; anders zal angst jullie overmannen en jullie kracht verloren gaan.” - Qur’an, 8:46
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “En ondersteun elkaar in het kader van weldadigheid en Godsvrees.” - Qur’an, 5:2
+</p>
+
+</div>
+
+</div>'
+            ],
         ];
     }
 }
