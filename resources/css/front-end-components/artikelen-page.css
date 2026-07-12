@@ -836,6 +836,7 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        margin-bottom: 0px;
     }
 
     .artikel-detail__body p:has(> img) > img {
