@@ -421,7 +421,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 
 .artikel-detail__featured-image img {
     max-width: 100%;
-    border-radius: 12px;
     box-shadow: 0 4px 18px rgba(30, 10, 0, 0.12);
 }
 
@@ -469,7 +468,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 }
 
 .artikel-detail__inline-image img {
-    border-radius: 10px;
     box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
     display: block;
 }
@@ -561,7 +559,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 
 .artikel-detail__image-block img {
     max-width: 100%;
-    border-radius: 10px;
     box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
     display: block;
 }
@@ -586,7 +583,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 .artikel-detail__image-block--full img {
     width: 100%;
     max-width: 100%;
-    border-radius: 8px;
 }
 
 /* Float left */
@@ -621,6 +617,60 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 .artikel-detail__body p {
     margin: 0 0 0.9em 0;
 }
+
+.artikel-detail__body .text-arabic {
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: var(--reader-arabic-font-size, 29px);
+    line-height: 2;
+    direction: rtl;
+    text-align: center;
+    font-feature-settings: 'ss04', 'ss14', 'ss17';
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+    margin: 0.3em 0 0.3em;
+    display: block;
+}
+
+/* Bismillah SVG container */
+.artikel-detail__body .text-arabic-bismillah {
+    text-align: center;
+    margin: 1em auto;
+    display: block;
+    margin-bottom: 0px;
+}
+
+/* Footnote superscript within bismillah */
+.artikel-detail__body .text-arabic-inline {
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: var(--reader-arabic-font-size, 29px);
+    line-height: inherit;
+    direction: rtl;
+    display: inline;
+    unicode-bidi: isolate;
+    font-feature-settings: 'ss04', 'ss14', 'ss17';
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+}
+
+@media (max-width: 768px) {
+
+    .artikel-detail__body .text-arabic {
+        margin: 0.2em 0 0.2em;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .artikel-detail__body .text-arabic {
+        margin: 0.2em 0 0.2em;
+    }
+
+}
+
 
 /* Manual first-line indent toggle from the editor — matches the Said Nursi
    book-reader paragraph indent (50px desktop / 25px on small screens) */
@@ -690,7 +740,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 .artikel-detail__body img[style*="float:left"] {
     float: left;
     margin: 2px 1rem 0.4rem 0 !important;
-    border-radius: 10px;
     box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
     max-width: 45%;
     height: auto;
@@ -700,7 +749,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 .artikel-detail__body img[style*="float:right"] {
     float: right;
     margin: 2px 0 0.4rem 1rem !important;
-    border-radius: 10px;
     box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
     max-width: 45%;
     height: auto;
@@ -711,7 +759,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
     display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
     box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
     margin: 1.1rem auto;
 }
@@ -735,7 +782,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
 
 .artikel-detail__body figure img {
     width: 100%;
-    border-radius: 10px;
     box-shadow: 0 2px 12px rgba(30, 10, 0, 0.10);
     display: block;
     margin: 0;
@@ -799,7 +845,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
         margin: 0 0 1.1rem 0 !important;
         display: block !important;
         text-indent: 0 !important;
-        border-radius: 6px !important;
     }
 
     /* Override higher-specificity float:left / float:right rules */
@@ -814,7 +859,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
         margin: 0 0 1.1rem 0 !important;
         display: block !important;
         text-indent: 0 !important;
-        border-radius: 6px !important;
     }
 
     .artikel-detail__body figure,
@@ -836,7 +880,7 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     .artikel-detail__body p:has(> img) > img {
@@ -846,7 +890,6 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
         height: auto !important;
         margin: 0 0 1.1rem 0 !important;
         text-indent: 0 !important;
-        border-radius: 6px !important;
         align-self: stretch;
     }
 }
