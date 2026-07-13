@@ -1767,7 +1767,7 @@ Hoewel dit traktaat <span class="text-bold">Het Eerste Punt</span> van <span cla
 &lt;/p&gt;"><sup>1</sup></button></span>
 </p>
 
-<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 450px;">
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 450px;">
 ﴿ اِنَّٓا اَنْزَلْنَٓا اِلَيْكَ الْكِتَابَ بِالْحَقِّ فَاعْبُدِ اللّٰهَ مُخْلِصًا لَهُ الدّٖينَ ۞ اَلَا لِلّٰهِ الدّٖينُ الْخَالِصُ ﴾ <sup>2</sup>
 </p>
 
@@ -2315,6 +2315,763 @@ Voorwaar, de rechtschapenen kunnen de zalf en het medicijn tegen de ondeugdelijk
 
 <p class="footnote-p">
 <sup>2</sup> “En ondersteun elkaar in het kader van weldadigheid en Godsvrees.” - Qur’an, 5:2
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 74,
+                'content' => '<div class="page" id="74">
+<p class="text-end page-number">#74</p>
+
+<p class="text-red small-title text-center">
+<strong>De Zesde Reden</strong>
+</p>
+
+<p class="text-bold">
+Zoals de onenigheid onder de rechtschapenen niet is ontstaan omdat zij laf, onbereidwillig en onpatriottisch zijn, is de hechte eendracht rondom wereldse zaken onder de onachtzame aardsgezinden evenmin tot stand gekomen omdat zij dapper, patriottisch en bereidwillig zijn.
+</p>
+
+<p>
+Het is veeleer zo dat de rechtschapenen voornamelijk de voordelen voor in het hiernamaals voor ogen houden, waardoor hun patriottisme, hun bereidwilligheid en hun dapperheid over de waardevolle en talrijke zaken in dat kader worden verdeeld. Omdat zij hun ware kapitaal bestaande uit hun tijd niet aan één zaak besteden, wordt de eendracht met hun dienstgenoten niet stevig gegrondvest. Want de zaken hieromtrent zijn talrijk en de kring is wijd.
+</p>
+
+<p>
+De onachtzame aardsgezinden daarentegen denken alleen aan het aardse leven, waardoor zij zich met al hun emoties, met hart en ziel vurig op zaken met betrekking tot het aardse leven werpen, en zich stevig aan de helpers rondom die zaken vastklampen. Zoals een gestoorde Joodse juwelier die aan een stuk glas van vijf cent vijf goudmunten besteedt, kiezen zij ervoor om aan zaken die in werkelijkheid nauwelijks wat waard zijn en waaraan de rechtschapenen weinig waarde hechten, hun uiterst kostbare tijd ten volle te besteden. Uiteraard zal een dergelijke investering en een dusdanig gepassioneerde verbondenheid door de aanwezigheid van een innige oprechtheid zelfs op een valse weg succes rondom die zaak opleveren en een zege over de rechtschapenen verschaffen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 75,
+                'content' => '<div class="page" id="75">
+<p class="text-end page-number">#75</p>
+
+<p>
+Als resultaat van deze zege vervallen de rechtschapenen in schande, oppressie, gekunsteldheid en schijnheiligheid, en verliezen zij hun oprechtheid. Zij worden hierdoor gedwongen om een aantal van die lafhartige, onbereidwillige en onpatriottische aardsgezinden te vleien.
+</p>
+
+<p>
+O rechtschapenen! O rechtzinnige voorstanders van de Sharia, dienaren van de waarheid en volgers van het soefisme! Tegenover deze vreselijke ziekte van onenigheid moeten jullie elkaars gebreken negeren en de ogen voor de tekortkomingen van elkander sluiten! Laat de Furqânische discipline binnen: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَاِذَا مَرُّوا بِاللَّغْوِ مَرُّوا كِرَامًا</span> jullie disciplineren! Tijdens de aanval van externe vijanden behoren jullie het mijden van onderlinge discussies en het redden van de rechtschapenen van verval en vernedering als jullie primairste en essentieelste taak voor het hiernamaals te achten. De broederschap, liefde en hulpvaardigheid die honderden Aya’s en profetische Ahadîth opdragen, behoren jullie te verwezenlijken. Met al jullie emoties behoren jullie met jullie dienstgenoten en jullie geloofsgenoten een sterkere eendracht dan de aardsgezinden te bereiken… kortom, verval niet in onenigheid! Laat jullie eendracht niet verzwakken door gedachten als:
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “En wanneer zij iets onnozels aantreffen, dan gaan zij daar edelmoedig aan voorbij.” - Qur’an, 25:72
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 76,
+                'content' => '<div class="page" id="76">
+<p class="text-end page-number">#76</p>
+
+<p class="text-italic">
+“In plaats van mijn waardevolle tijd aan zulke kleine kwesties te verdoen, ga ik mijn waardevolle tijd aan waardevolle taken zoals dhikr en bezinning benutten.”
+</p>
+
+<p>
+Immers, tijdens de heersende geestelijke Jihad kan een kwestie die jullie klein achten geweldig zijn. Zoals een uur lange wacht van een soldaat soms onder bepaalde cruciale omstandigheden als een jaar lange gebedsdienst kan gelden, kan tijdens de huidige val van de rechtschapenen jouw waardevolle dag die aan een kleine kwestie rondom de geestelijke Jihad wordt besteed, evenals dat uur van die soldaat duizendmaal in waarde stijgen; jouw ene dag kan als duizend dagen gelden. Aangezien ALLAH’s Welbehagen wordt beoogd, behoort er niet gekeken te worden naar hoe groot of klein, hoe belangrijk of onbeduidend die taak is. Op het pad van oprechtheid en Gods Welbehagen staat een atoom gelijk aan een ster. Het is niet de hoedanigheid, maar het resultaat van een oorzaak dat aandacht verdient. Aangezien haar resultaat uit Gods Welbehagen en haar essentie uit oprechtheid bestaat, is ze niet klein maar geweldig.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>De Zevende Reden</strong>
+</p>
+
+<p class="text-bold">
+Zoals de onenigheid en de rivaliteit onder de rechtschapenen en de waarheidsdienaars niet uit jaloezie en wereldliefde zijn voortgekomen, is de eendracht onder de aardsgezinden en de onachtzamen evenmin aan edelmoedigheid en hoogwaardigheid ontsproten.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 77,
+                'content' => '<div class="page" id="77">
+<p class="text-end page-number">#77</p>
+
+<p>
+Het is veeleer zo dat de waarheidsdienaars dankzij de waarheid een hoogwaardigheid, een verheven bereidwilligheid en een gewaardeerde vorm van wedijver op de rechtmatige weg ondervinden die zij niet volwaardig kunnen handhaven. Daarenboven wordt de inmenging van onbekwamen op bepaalde vlakken uitgebuit. Dientengevolge zijn zij in onenigheid vervallen en hebben zij zowel henzelf als de Islamitische gemeenschap aanzienlijke schade toegebracht.
+</p>
+
+<p>
+Wat de onachtzamen en de dwaalgeesten betreft, om de profijten waar zij verzot op zijn niet mis te lopen, en om hun meerderen en vrienden die zij ten eigen bate liefhebben niet te ontstemmen, brengen zij met hun vaste vrienden – <span class="text-italic">zelfs als zij tot de laagste, verraderlijkste en verderfelijkste soort behoren</span> – vanwege hun laagheid, lafheid en onbetrokkenheid een oprechte eenheid tot stand. En met hun deelgenoten waarmee zij rondom baat bijeenkomen, bereiken zij koste wat kost een innige eendracht. Ten gevolge van hun innigheid trekken zij daar profijt van.
+</p>
+
+<p>
+Voorwaar, o rechtschapenen en waarheidsdienaars die in ellende en onenigheid verkeren! Omdat jullie onder deze ellendige omstandigheden jullie oprechtheid hebben verloren en niet uitsluitend Gods Welbehagen hebben beoogd, hebben jullie de huidige vernedering en val van de rechtschapenen veroorzaakt.
+</p>
+
+<p>
+Bij taken die betrekking op de religie en het hiernamaals hebben, behoren geen rivaliteit, afgunst, nijd en jaloezie te heersen; vanuit een waarachtig perspectief is dit ook niet mogelijk.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 78,
+                'content' => '<div class="page" id="78">
+<p class="text-end page-number">#78</p>
+
+<p>
+Immers, jaloezie en nijd ontwikkelen zich wanneer vele handen zich naar één en hetzelfde object uitstrekken, vele blikken zich op één en dezelfde rang richten, of vele magen naar één en hetzelfde brood snakken, waarna mensen door sabotage, geschil en strijd in wedijver en vervolgens in jaloezie vervallen. Omdat één iets op aarde door velen wordt begeerd, terwijl de aarde krap en kortstondig is, kan de aarde de eindeloze wensen van mensen niet bevredigen, waardoor zij in rivaliteit vervallen.
+</p>
+
+<p>
+Echter, dat één man bij Gods Gratie in het hiernamaals een paradijs ter wijdte van vijfhonderd jaar<sup>1</sup> met zeventigduizend paleizen en hoûri\'s krijgt, en dat iedere paradijsbewoner volwaardig tevreden is over wat hem ten deel valt, geeft aan dat in het hiernamaals niets bestaat dat rivaliteit opwekt en daar aldus geen rivaliteit kan plaatsvinden.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> <span class="text-bold text-italic">Een belangrijke vraag van een aanzienlijke groep:</span><br>
+<span class="text-italic">Overleveringen melden dat één persoon in de hemel een paradijs ter wijdte van vijfhonderd jaar zal krijgen. Hoe kan deze werkelijkheid met het begripsvermogen van een werelds verstand worden bevat?</span><br>
+<span class="text-bold">Het antwoord:</span> iedereen in deze wereld bezit tijdelijk een wereldgrote persoonlijke wereld. De pilaar van die wereld is zijn leven. Met zijn uitwendige en inwendige zintuigen kan hij zijn wereld ervaren. Hij kan bijvoorbeeld: <span class="text-italic">“De zon is mijn lamp, de sterren zijn mijn kaarsen.”</span> zeggen. De aanwezigheid van andere schepselen en bezielde wezens ondermijnen zijn eigenaarschap niet, sterker nog, ze verlevendigen en tooien zijn persoonlijke wereld. Op een duizenden malen verhevener niveau is er evenzo voor elke gelovige – <span class="text-italic">naast zijn privétuin met duizenden paleizen en hoûri\'s</span> – een stuk paradijs ter wijdte van vijfhonderd jaar uit het gemeenschappelijke paradijs speciaal voor hem weggelegd. Met zijn zintuigen en gevoelens die conform zijn niveau zullen ontplooien, kan hij het paradijs en de eeuwigheid waardig ervaren. Dat anderen hiervan deelachtig worden, doen zijn eigenaarschap en ervaring niet reduceren maar intensiveren; zij tooien zijn persoonlijke en omvangrijke paradijs. Waarlijk, zoals een mens tijdens een tocht in deze wereld een tuin ter wijdte van een uur, een park ter wijdte van een dag, een streek ter wijdte van een maand en een reisgebied ter wijdte van een jaar met zijn mond, zijn oren, zijn ogen, zijn tastorganen, zijn smaakvermogen en zijn overige zintuigen kan ervaren, kan hij dat ook in het paradijs, alleen kunnen zijn smaakvermogen en reukvermogen die in dit vergankelijke oord slechts een tuin ter wijdte van een uur kunnen ervaren, in het eeuwige oord een tuin ter wijdte van een jaar op dezelfde wijze ervaren. En zijn gezichtsvermogen en hoorvermogen die hier slechts een reisgebied ter wijdte van een jaar kunnen ervaren, kunnen daar tijdens een tocht door dat prachtige en alom getooide oord een reisgebied ter wijdte van vijfhonderd jaar waardig ervaren. Elke gelovige kan naargelang zijn niveau en zijn gevoelens, die evenredig aan de op aarde verworven zegeningen en zaligheden zullen ontplooien, genot proeven, plezier beleven en het paradijs ervaren.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 79,
+                'content' => '<div class="page" id="79">
+<p class="text-end page-number">#79</p>
+
+<p>
+Al bij al is rivaliteit bij taken die op het hiernamaals zijn gericht evenzeer niet mogelijk; het is daar niet de plaats voor jaloezie. Een jaloers persoon is ofwel een schijnheil die met vrome daden wereldse doeleinden beoogt, ofwel een trouwe onwetende die niet heeft begrepen waar vrome daden op gericht zijn, en niet heeft doorzien dat de ziel en de essentie van vrome daden uit oprechtheid bestaat.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 80,
+                'content' => '<div class="page" id="80">
+<p class="text-end page-number">#80</p>
+
+<p>
+Door vijandschap in de vorm van rivaliteit jegens de vrienden van ALLAH te koesteren, bekritiseert hij de omvang van de Goddelijke Genadigheid.
+</p>
+
+<p class="text-bold text-italic">
+Een voorval dat deze werkelijkheid bevestigt:
+</p>
+
+<p>
+Eén van onze vroegere vrienden koesterde vijandschap tegen iemand. In zijn aanwezigheid werden er prijzenswaardige deugden zoals vrome daden en zelfs heiligheid aan zijn vijand toegekend. Onze vriend werd noch jaloers, noch geïrriteerd. Vervolgens zei iemand: <span class="text-italic">“Die vijand van jou is dapper en sterk.”</span>
+</p>
+
+<p>
+Plotseling zagen wij een vurige jaloezie en een rivaliteitsgevoel in hem ontwaken. Wij zeiden: <span class="text-italic">“Heiligheid en vroomheid belichamen een kracht en een verhevenheid gelijkwaardig aan een juweel uit het oneindige leven. Jij bent in dit opzicht niet jaloers op hem. Naast dat kracht zich ook bij een rund vertoont en dapperheid zich ook bij beesten manifesteert, zijn deze eigenschappen ten opzichte van heiligheid en vroomheid te vergelijken met een simpel stuk glas ten opzichte van een diamant.”</span>
+</p>
+
+<p>
+Die vriend zei toen: <span class="text-italic">“In deze wereld hebben wij beiden onze ogen op dezelfde rang gericht. Eigenschappen zoals kracht en dapperheid zijn de treden die ons naar die rang zullen brengen... daarom werd ik jaloers. De rangen in het hiernamaals zijn eindeloos. Alhoewel hij hier mijn vijand is, kan hij daar mijn dierbare en geliefde broeder worden.”</span>
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 81,
+                'content' => '<div class="page" id="81">
+<p class="text-end page-number">#81</p>
+
+<p>
+O waarheidsdienaars en soefi\'s! Het dienen van Gerechtigheid is te vergelijken met het dragen en beschermen van een grote en zware schat. Hoe meer mensen de dragers van die schat de helpende hand reiken, des te blijer en tevredener zij zullen worden. Jaloezie hoort niet eens ter sprake te komen als het aankomt op de uitblinkende kracht, de sterkere invloed en de geboden hulp van nieuwelingen die trots zouden moeten worden toegejuicht. Hoe is het desondanks mogelijk dat die ware broeders en toegewijde helpers met een competitieve blik worden aangekeken en daardoor oprechtheid verloren gaat? Jullie worden om jullie taken bekritiseerd en in de ogen van dwalers zijn jullie schuldig aan het plegen van vreselijke wandaden die zich duizend niveaus beneden jullie en jullie weg bevinden, zoals religie voor wereldse doeleinden hanteren, waarheidskennis ten eigen bate misbruiken, op het pad van gretigheid en hebzucht rivaliseren, enzovoort... In deze toestand kan men alleen van deze ziekte gered worden als hij zijn ego bekritiseert en altijd voorstander van niet zijn ego, maar zijn andersdenkende dienstgenoot wordt... hij hoort het volgende rechtvaardige gewetensprincipe onder de geleerden op het gebied van gedragsleer en discussievoering in acht te nemen:
+</p>
+
+<p class="text-italic">
+“Als iemand tijdens een discussie over een bepaalde kwestie voorstander van zijn eigen standpunten is, geniet als hij gelijk heeft en blij wordt als zijn tegenstander ongelijk heeft en fout zit, dan is diegene onredelijk.”
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 82,
+                'content' => '<div class="page" id="82">
+<p class="text-end page-number">#82</p>
+
+<p>
+Bovendien bevindt zo iemand zich in een nadelige positie. Want als hij gelijk blijkt te hebben, dan leert hij tijdens die discussie niets nieuws. Omdat hij het risico loopt om verwaand te worden, kan het nadelig voor hem uitpakken. Als zijn tegenstander gelijk blijkt te hebben, dan leert hij iets nieuws bij dat hem onnadelig baat oplevert. Tevens zal hij van zijn ego’s verwaandheid worden gered. Aldus zal een redelijke voorstander van gerechtigheid om het belang van gerechtigheid zijn ego’s belang wegcijferen. Wanneer hij gerechtigheid aan de kant van zijn tegenstander ziet, dan zal hij dat alsnog met genoegen aanvaarden, ondersteunen en er tevreden over zijn.
+</p>
+
+<p>
+Voorwaar, als de Godsdienstfunctionarissen, de waarheidsdienaars, de soefi-mystici en de geleerden dit principe als leidraad nemen, dan zullen zij oprechtheid verwerven... en bij hun taken met betrekking tot het hiernamaals succes oogsten... en bij Gods Genade van dit vreselijke verval en de heersende calamiteit gered worden.
+</p>
+
+<p class="text-center text-arabic" dir="rtl" lang="ar" style="margin-top: 0px">
+﴿ سُبْحَانَكَ لَا عِلْمَ لَنَٓا اِلَّا مَا عَلَّمْتَنَٓا اِنَّكَ اَنْتَ الْعَلٖيمُ الْحَكٖيمُ<sup>1</sup> ﴾
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - <span class="text-italic">Qur’an, 2:32</span>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 83,
+                'content' => '<div class="page" id="83">
+<p class="text-end page-number">#83</p>
+
+<div class="page-title-chapter">
+<h2>De Eenentwintigste Flits</h2>
+</div>
+
+<p class="text-red small-title text-center">
+<strong>Aangaande Oprechtheid</strong>
+</p>
+
+<p>
+Hoewel dit traktaat <span class="text-bold">De Vierde Kwestie</span> van <span class="text-bold">De Zeven Kwesties</span> uit <span class="text-bold">De Zeventiende Nota</span> van <span class="text-bold">De Zeventiende Flits</span> was, is het in verband met oprechtheid <span class="text-bold">Het Tweede Punt</span> van <span class="text-bold">De Twintigste Flits</span> geworden. Vanwege zijn luminantie is het als <span class="text-bold">De Eenentwintigste Flits</span> in <span class="text-bold">De Flitsen</span> opgenomen.
+</p>
+
+<p class="text-center text-bold">
+{Deze Flits hoort minstens eens in de vijftien dagen gelezen te worden}
+</p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+ “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
+﴿ وَلَا تَنَازَعُوا فَتَفْشَلُوا وَتَذْهَبَ رٖيحُكُمْ ﴾ <sup>2</sup>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
+﴿ وَ قُومُوا لِلّٰهِ قَانِتٖينَ ﴾ <sup>3</sup>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
+﴿ قَدْ اَفْلَحَ مَنْ زَكّٰيهَا وَ قَدْ خَابَ مَنْ دَسّٰيهَا ﴾ <sup>4</sup>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
+﴿ وَلَا تَشْتَرُوا بِاٰيَاتٖى ثَمَنًا قَلٖيلًا ﴾ <sup>5</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “En verval onderling niet in onenigheid; anders zal angst jullie overmannen en jullie kracht verloren gaan.” - <em>Qur’an, 8:46</em>
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> “En sta voor ALLAH nederig overeind.” - <em>Qur’an, 2:238</em>
+</p>
+
+<p class="footnote-p">
+<sup>4</sup> “Hij die haar (de ziel) zuivert, zal verademing ondervinden. En hij die haar bederft, zal teleurstelling ondergaan.” - <em>Qur’an, 91:9-10</em>
+</p>
+
+<p class="footnote-p">
+<sup>5</sup> “En verkoop Mijn Aya\'s niet voor een lage prijs.” - <em>Qur’an, 2:41</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 84,
+                'content' => '<div class="page" id="84">
+<p class="text-end page-number">#84</p>
+
+<p class="text-bold">
+O mijn broeders van het hiernamaals en mijn vrienden binnen de Qur’anische dienst!
+</p>
+
+<p>
+Jullie weten en behoren te weten, dat in deze wereld, en met name bij taken met betrekking tot het hiernamaals, een uiterst essentieel fundament, een uiterst aanzienlijke kracht, een uiterst bepalende bemiddelaar, een uiterst sterk steunpunt, een uiterst korte waarheidsweg, een uiterst invloedrijke impliciete bede, een uiterst wonderlijk succesmiddel, een uiterst hoogwaardige karaktereigenschap en een uiterst zuivere dienaarschap schuilgaan in oprechtheid.
+</p>
+
+<p>
+Aangezien vele van zulke lichten en krachten in oprechtheid schuilen, en aangezien wij in deze woelige tijden, tegenover meedogenloze vijanden, onder benarde omstandigheden, te midden van giftige innovaties en dwaalwegen weinig in aantal, zwak, behoeftig en krachteloos zijn, en aangezien onze schouders desondanks bij Gods Gratie met een zeer zware, aanzienlijke, universele en heilige geloofstaak en Qur’anische dienst zijn beladen, zijn wij uiteraard meer dan iedereen genoodzaakt en verplicht om met al onze kracht oprechtheid te verwerven. Tevens hebben wij er een uiterste behoefte aan om het geheim achter oprechtheid te verinnerlijken.
+</p>
+
+<p>
+Anders zal de heilige dienst die wij tot op heden hebben vervuld gedeeltelijk verloren gaan en niet aanhouden, en de zware verantwoording daarvan zal op ons rusten. Het fel dreigende Godsverbod in de Aya:
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 85,
+                'content' => '<div class="page" id="85">
+<p class="text-end page-number">#85</p>
+
+<p>
+<sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَلَا تَشْتَرُوا بِاٰيَاتٖى ثَمَنًا قَلٖيلًا</span> zal op ons doelen. Door oprechtheid aan zekere betekenisloze, zinloze, schadelijke, smartelijke, egocentrische, heilloze, ijdele en lage gevoelens en miezerige baten ten nadele van eeuwige gelukzaligheid op te offeren, schenden wij de rechten van alle broeders binnen deze dienst, saboteren wij de taken binnen de Qur’anische dienst en smaden wij de heiligheid van de waarheden des geloofs.
+</p>
+
+<p>
+O mijn broeders! Belangrijke en aanzienlijke weldaden staan bloot aan vele kwaadaardige obstakels. Duivels ijveren enorm om de dienaren van die dienst te dwarsbomen. Tegenover deze obstakels en deze duivels dient er op de kracht van oprechtheid te worden gesteund. Oorzaken die oprechtheid ondermijnen behoren jullie te mijden zoals jullie slangen en schorpioenen ontwijken. Zoals Yousuf <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> aangaf met zijn uitspraak: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اِنَّ النَّفْسَ لَاَمَّارَةٌ بِالسُّٓوءِ اِلَّا مَا رَحِمَ رَبّٖى</span> kan het kwaadgezinde ego niet worden vertrouwd. Sta niet toe dat hoogmoedigheid en het kwaadgezinde ego jullie op het verkeerde spoor brengen. Om oprechtheid te bereiken en te behouden, en om obstakels uit de weg te ruimen, dienen jullie de aankomende principes als leidraad te nemen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “En verkoop Mijn Aya\'s niet voor een lage prijs.” - <em>Qur’an, 2:41</em>
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Voorzeker, het ego spoort aan tot het kwade, tenzij mijn Heer Genadig is.” - <em>Qur’an, 12:53</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 86,
+                'content' => '<div class="page" id="86">
+<p class="text-end page-number">#86</p>
+
+<p class="text-red small-title text-center">
+<strong>Jullie Eerste Principe</strong>
+</p>
+
+<p class="text-center text-bold text-italic" style="max-width: 275px; margin: 0 auto 18px auto;">
+Jullie daden moeten met Gods Tevredenheid stroken.
+</p>
+
+<p>
+Wanneer Hij tevreden is, dan heeft het misnoegen van de hele wereld geen enkele waarde. Wanneer Hij iets aanvaardt, dan maakt het niet uit of de hele mensheid het verwerpt. Nadat Hij tevreden is en iets aanvaardt, dan zal Hij – <span class="text-italic">indien Hij wil en Zijn Wijsheid het vergt</span> – zonder dat jullie erom vragen ook onder de mensen aanvaarding en tevredenheid tot stand brengen. Aldus dienen jullie bij deze dienst rechtstreeks en alleen de Tevredenheid van de Hoogste Gerechtigde als primair doel na te streven.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>Jullie Tweede Principe</strong>
+</p>
+
+<p class="text-center text-bold text-italic" style="max-width: 425px; margin: 0 auto 18px auto;">
+Jullie broeders binnen deze Qur’anische dienst niet bekritiseren en geen afgunst bij ze opwekken door jullie superieur te gedragen.
+</p>
+
+<p>
+Immers, de ene hand van de mens wedijvert niet met zijn andere hand, zijn ene oog bekritiseert zijn andere oog niet, zijn tong spreekt zijn oren niet tegen en zijn hart kijkt niet naar de tekortkomingen van zijn ziel; integendeel, ze vullen elkaars tekorten aan, dekken elkaars gebreken toe, komen aan elkaars behoeften tegemoet en staan elkaar in hun taken bij. Anders zal bij dat mensenbestaan het leven uitdoven, de ziel wegvluchten en het lichaam uiteenvallen.
+</p>
+
+<p>
+Ook de tandwielen van een fabriek werken elkaar niet wedijverig tegen, noch oefenen ze heerszuchtig dwang op elkaar uit, noch brengen ze elkaar tot stilstand door elkaars gebreken te analyseren, elkaar te bekritiseren en elkaars werkmotivatie te vergallen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 87,
+                'content' => '<div class="page" id="87">
+<p class="text-end page-number">#87</p>
+
+<p>
+Integendeel, met al hun potenties ijveren ze om elkaars handelingen tot het hoofddoel te wenden; met een ware saamhorigheid en eendracht blijven ze ten behoeve van hun bestaansreden voortbewegen. Als er ook maar een greintje sabotage of dwang plaatsvindt, dan zal chaos uitbreken en de fabriek vruchteloos laten draaien. Daarop zal de fabriekseigenaar die fabriek ontmantelen en volledig te gronde richten.
+</p>
+
+<p>
+Voorwaar, o Risale-i Nur-studenten en dienaren van de Qur’an! Jullie en wij zijn de organen van een geestelijke persoonlijkheid die de titel: <span class="text-italic">“volmaakt mens”</span> waardig is. En wij dienen als de tandwielen van een fabriek waar eeuwige gelukzaligheid voor het eeuwige leven wordt geproduceerd. En wij zijn werkzame dienaren op een schip des Heren dat de oemma van Mohammed <span class="honorific" dir="rtl" lang="ar">صلى الله عليه وسلم</span> naar de vredige kust van het vredesoord voert. Uiteraard hebben wij de behoefte en de verplichting om volgens het oprechtheidsgeheim – <span class="text-italic">dat vier individuen de geestelijke kracht van 1111 man verschaft</span> – saamhorigheid en ware eenheid te bereiken.
+</p>
+
+<p>
+Waarlijk, wanneer drie Elifs<sup>1</sup> geen eenheid bereiken, dan is hun totaalwaarde drie. Wanneer ze volgens het kwantiteitsgeheim een eenheid vormen, dan wordt hun waarde honderdelf.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Noot van de vertalers: dit is de eerste letter van het Arabische alfabet met getalwaarde 1.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 88,
+                'content' => '<div class="page" id="88">
+<p class="text-end page-number">#88</p>
+
+<p>
+Wanneer vier vieren afzonderlijk staan, dan is hun totaalwaarde zestien. Wanneer ze volgens het broederschapsgeheim, met een unanieme doelstelling en een harmonische samenwerking parallel op één lijn schouder aan schouder komen te staan, dan krijgen ze een kracht en waarde van 4444.
+</p>
+
+<p>
+Evenzo bevestigen vele historische evenementen dat de waarde en geestelijke kracht van zestien opofferingsgezinde broeders dankzij het oprechtheidsgeheim die van vierduizend man ontstijgen.
+</p>
+
+<p>
+Het geheim achter dit mysterie is het volgende: bij een ware innige eendracht kan elk individu kijken met de ogen en horen met de oren van zijn overige broeders. Tien personen die een ware eenheid bereiken, beschikken over een geestelijke waarde en kracht waarmee eenieder vrijwel met twintig ogen kijkt, tien verstanden denkt, twintig oren verneemt en twintig handen werkt.<sup>1</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Waarlijk, een innige saamhorigheid en eenheid die volgens het oprechtheidsgeheim worden gerealiseerd, vormen een bron van grenzeloze verdiensten. Daarnaast fungeren ze tegenover angsten en zelfs de dood als een ultiem schild en steunpunt. Want wanneer de dood opdaagt, dan komt ze één ziel halen. Op basis van het geheim achter ware broederschap beschikt degene die op het pad van Gods Welbehagen op taken met betrekking tot het hiernamaals is gericht over zoveel zielen als het aantal van zijn medebroeders. Mocht het doodsuur dus bij één van hen aanbreken, dan zal hij de dood lachend verwelkomen, zeggende: <span class="text-italic">“Lang leve mijn overige zielen! Omdat die zielen met de zegeningen die ze mij elk moment verschaffen een geestelijk leven blijven voortzetten, sterf ik niet.”</span> Bovendien zal hij zeggen: <span class="text-italic">“Dankzij die zielen blijf ik uit het oogpunt van zegeningen voortleven, alleen uit het oogpunt van zonden sterf ik.”</span> Zodoende zal hij in vrede rusten.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 89,
+                'content' => '<div class="page" id="89">
+<p class="text-end page-number">#89</p>
+
+<p class="text-red small-title text-center">
+<strong>Jullie Derde Principe</strong>
+</p>
+
+<p class="text-center text-bold" style="max-width: 500px; margin: 0 auto 18px auto;">
+Jullie moeten beseffen dat al jullie kracht in oprechtheid en gerechtigheid schuilt.
+</p>
+
+<p>
+Waarlijk, kracht schuilt in gerechtigheid en oprechtheid. Zelfs de onrechtvaardigen verwerven kracht door de oprechtheid en innigheid die zij bij hun ongerechtigheden tonen.
+</p>
+
+<p>
+Waarlijk, een bewijs dat kracht in gerechtigheid en oprechtheid schuilt, is onze dienst. Een manifestatie van oprechtheid binnen onze dienst bevestigt dit standpunt en geldt vanzelf als een bewijs. Immers, ten opzichte van de wetenschappelijke en religieuze diensten die wij ruim twintig jaar in Istanbul en in mijn eigen streek hebben vervuld, is hier met jullie in zeven à acht jaar honderdmaal meer dienst verricht. Echter, ten opzichte van de broeders die hier met mij werken, beschikte ik in mijn eigen streek en in Istanbul over honderd- en misschien zelfs duizendmaal meer helpers. Hoewel ik hier daarenboven als halfanalfabeet eenzaam, afgezonderd en vervreemd ben, terwijl ik onder toezicht van gewetenloze ambtenaren wordt onderdrukt, heeft de geestelijke kracht van de dienst die ik met jullie de afgelopen zeven à acht jaar heb verricht honderdmaal meer succes dan mijn oude dienst getoond.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 90,
+                'content' => '<div class="page" id="90">
+<p class="text-end page-number">#90</p>
+
+<p>
+Ik twijfel er geen greintje aan dat deze kracht uit jullie oprechtheid is voortgekomen.
+</p>
+
+<p>
+Bovendien beken ik dat jullie mij dankzij jullie innige oprechtheid in zeker opzicht hebben verlost van een toestand waarin mijn ego onder de sluier van roem en aanzien werd gestreeld. Inshâ’ALLAH zullen jullie oprechtheid volwaardig verwerven en mij tot pure oprechtheid aanmanen.
+</p>
+
+<p>
+Jullie weten dat imam Ali <span class="text-arabic-inline honorific" dir="rtl" lang="ar">رضي الله عنه</span> met zijn miraculeuze kerâma<sup>1</sup> en Ghaws-oel’A’zam <span class="text-arabic-inline honorific" dir="rtl" lang="ar">قدس الله سره</span> met zijn mystieke kerâma hun aandacht op basis van dit oprechtheidsgeheim op jullie hebben gevestigd. Zij schenken jullie beschermende troost en juichen jullie diensten impliciet toe. Waarlijk, twijfel er geen moment aan dat oprechtheid deze aandacht wekt. Als jullie deze oprechtheid opzettelijk verbreken, dan zullen jullie een klap van hen ontvangen. Gedenk de meedogende klappen uit <span class="text-bold">“De Tiende Flits”</span>.
+</p>
+
+
+
+<p>
+Indien jullie deze spirituele helden achter jullie als beschermers en boven jullie als leermeesters willen ontmoeten, dan moeten jullie met inachtneming van het geheim: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَ يُؤْثِرُونَ عَلٰى اَنْفُسِهِمْ</span> pure oprechtheid verwerven.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Een wonder dat zich bij ALLAH’s Gratie bij een heilige manifesteert.
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “En zij prefereren anderen boven henzelf.” - Qur’an, 59:9
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 91,
+                'content' => '<div class="page" id="91">
+<p class="text-end page-number">#91</p>
+
+<p>
+Geef bij zaken die begeerd worden door het ego, zoals reputatie, status, aanzien en materiële verdiensten, de ego’s van jullie broeders de voorkeur boven jullie eigen ego.
+</p>
+
+<p>
+Zelfs een subtiele en fraaie geloofswaarheid aan een behoeftige gelovige onderrichten, wat een uiterst onschuldige en schadeloze verdienste oplevert, dienen jullie – <span class="text-italic">indien mogelijk</span> – met plezier aan een broeder zonder verteldrang over te laten om jullie ego van verwaandheid veilig te stellen. Mochten jullie een wens koesteren als: <span class="text-italic">“Ik wil zegeningen verwerven; ik wil dit fraaie onderwerp vertellen”</span> dan is dat wellicht noch zondig noch schadelijk, alsnog kan daardoor het oprechtheidsgeheim tussen jullie worden aangetast.
+</p>
+
+<p class="text-red small-title text-center">
+<strong>Jullie Vierde Principe</strong>
+</p>
+
+<p class="text-center text-bold" style="max-width: 475px; margin: 0 auto 18px auto;">
+Acht de gaven en deugden van jullie broeders als jullie eigen en wees dankbaar trots op hun eer.
+</p>
+
+<p>
+Onder de soefi\'s zijn er termen als: <span class="text-italic">“opgaan in de sjeikh”</span> of <span class="text-italic">“opgaan in de profeet”</span>. Ik ben geen soefi. Echter, dit principe van hen zal op onze weg in de vorm van: <span class="text-italic">“opgaan in de broeders”</span> als een mooi principe dienen. Onder broeders wordt dit <span class="text-arabic-inline text-red" dir="rtl" lang="ar">تَفَانٖى</span> genoemd. Dat wil zeggen, onderling in elkaar opgaan. Oftewel, de persoonlijke gevoelens van het ego vergeten en in gedachte met de gaven en gevoelens van de broeders leven. De essentie van onze weg bestaat reeds uit broederschap. Ze is niet zoals de band tussen vader en zoon, of Sjeikh en discipel; ze bestaat veeleer uit ware broederbanden. Er kan hooguit een leermeesterschap bij komen kijken.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 92,
+                'content' => '<div class="page" id="92">
+<p class="text-end page-number">#92</p>
+
+<p>
+Omdat onze weg de weg van: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">خَلٖيلِيَةٌ</span> is, bestaat onze mentaliteit uit boezemvriendschap. En boezemvriendschap vereist dat wij elkaars vertrouwdste vriend, toegewijdste metgezel, hoogst waarderende reisgenoot en edelmoedigste broeder worden. De elementaire essentie van deze boezemvriendschap bestaat uit innige oprechtheid. Degene die innige oprechtheid verbreekt, zal van de geweldig hoge torentop der boezemvriendschap neerstorten. Hij loopt dan het gevaar om in een zeer diepe kloof te belanden waar geen houvast te vinden is.
+</p>
+
+<p>
+Waarlijk, er zijn twee waarneembare wegen. Degenen die onze weg alias de ultieme laan der Qur’an nu verlaten, lopen het risico om onbewust de kracht van onze ongelovige vijanden uit te breiden. Inshâ’ALLAH zullen degenen die via de weg van de Risale-i Nur de heilige kring van de Miraculeuze Qur’an zijn ingeslagen immer lichternis, oprechtheid en geloof kracht geven, en nimmer in zulke kloven belanden.
+</p>
+
+<p>
+O mijn vrienden binnen de Qur’anische dienst! Eén van de effectiefste middelen om oprechtheid te verwerven en te behouden is de doodsbezinning.
+</p>
+
+<p>
+Waarlijk, zoals wereldse langetermijnambities oprechtheid aantasten, schijnheiligheid opwekken en tot de wereld lokken, is doodsbezinning het middel dat afschuw jegens schijnheiligheid opwekt en oprechtheid verschaft.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Noot van de vertalers: de weg waarop de profeet Ibrahim <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> als drager van de titel: <span class="text-italic">“Vriend van ALLAH”</span> als voorbeeld wordt genomen.
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 93,
+                'content' => '<div class="page" id="93">
+<p class="text-end page-number">#93</p>
+
+<p>
+Dit impliceert: de dood gedenken, de vergankelijkheid van de wereld voor ogen houden en van de ego’s listen bevrijd worden.
+</p>
+
+<p>
+Waarlijk, op basis van de lering die soefi’s en waarheidsdienaars hebben getrokken uit de Leerrijke Qur’an met behulp van Aya’s als:
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+ كُلُّ نَفْسٍ ذَٓائِقَةُ الْمَوْتِ <sup>1</sup> ۞ اِنَّكَ مَيِّتٌ وَاِنَّهُمْ مَيِّتُونَ <sup>2</sup>
+</p>
+
+<p>
+hebben zij doodsbezinning een grondslag van hun weg gemaakt. De onsterfelijkheidswaan vanwaaruit langetermijnambities ontspruiten, hebben zij dankzij die bezinning weggewerkt. Middels voorstellingen en inbeeldingen verbeelden zij zich dat zij gestorven zijn, de dodenwassing ondergaan en in het graf worden gelegd. Door deze verbeelding voor de geest te houden, raakt het kwaadgezinde ego op den duur gedemoraliseerd, waarna hij enigszins van zijn langetermijnambities afziet. Deze bezinning bevat enorm veel voordelen. Deze doodsbezinning wordt onderricht in de Hadîth: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَكْثِرُوا ذِكْرَ هَادِمِ اللَّذَّاتِ <span style="font-size: 24px">{اَوْ كَمَا قَالَ}</span></span>, oftewel: <span class="text-italic">“Haal de dood – waar genietingen door bederven en verzuren – regelmatig voor de geest!”</span>
+</p>
+
+<p>
+Echter, omdat onze weg geen soefisme maar de waarheidsweg is, zijn wij niet verplicht om de doodsbezinning aan de hand van voorstellingen en inbeeldingen te beoefenen. Bovendien strookt die methode niet met de waarheidsweg.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Iedere ziel zal de dood proeven.” - <em>Qur’an, 3:185</em>
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Voorzeker, jij zult sterven en zij zullen sterven.” <em>Qur’an, 39:30</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 94,
+                'content' => '<div class="page" id="94">
+<p class="text-end page-number">#94</p>
+
+<p>
+In plaats van de mogelijke afloop vanuit de toekomst in gedachte naar het heden te halen, behoort men vanuit een waarheidsgetrouw perspectief in gedachte vanaf het heden naar de toekomst te gaan en te observeren.
+</p>
+
+<p>
+Waarlijk, zonder enige behoefte aan inbeeldingen en aannames kan men zodoende de enige vrucht van deze kortstondige levensboom in de vorm van zijn eigen lijk aanschouwen. Zoals hij via deze methode zijn eigen dood kan zien, kan hij naarmate hij verder kijkt ook de dood van zijn tijdperk zien. Als hij nog wat verder kijkt, kan hij ook de dood van de aarde aanschouwen en zich een weg tot volwaardige oprechtheid banen.
+</p>
+
+<p class="text-bold">
+Het tweede middel om oprechtheid te verwerven.
+</p>
+
+<p>
+Uit kracht van een bewust geloof en aan de hand van geloofsbezinning op kunstwerken waar schitteringen van kennis over de Kunstenaar van afstralen, kan men de Goddelijke Alomtegenwoordigheid enigszins gewaarworden. Wanneer hij vervolgens de Aanwezigheid en het Toezicht van de Genadige Schepper gedenkt en buiten Hem om geen aandacht van anderen zoekt door in te zien dat het ongepast is om in Zijn Presentie naar anderen te kijken en toevlucht bij hen te zoeken, kan hij van schijnheiligheid worden bevrijd en oprechtheid verwerven. Maar goed… hierin schuilen vele niveaus en stadia. Hoe verder iedereen zich conform zijn aandeel hierin ontwikkelt, des te beter.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 95,
+                'content' => '<div class="page" id="95">
+<p class="text-end page-number">#95</p>
+
+<p>
+In de Risale-i Nur worden vele waarheden behandeld die mensen van schijnheiligheid bevrijden en oprechtheid verschaffen. Daarom nemen wij daar genoegen mee en houden wij het hier kort.
+</p>
+
+<p class="text-center text-bold text-italic" style="max-width: 475px; margin: 0 auto 18px auto;">
+Van de vele oorzaken die oprechtheid breken en schijnheiligheid aanwakkeren, zullen wij twee à drie bondig behandelen.
+</p>
+
+<p class="text-bold">
+De eerste oorzaak
+</p>
+
+<p>
+Rivaliteit om materieel profijt breekt oprechtheid geleidelijk af. Tevens tast ze het verloop van diensten aan. Daarnaast laat ze het materiële profijt aan je voorbij gaan.
+</p>
+
+<p>
+Waarlijk, jegens degenen die zich ten dienste van de waarheid en het hiernamaals stellen, heeft dit <span class="text-italic">(Anatolische)</span> volk altijd een gevoel van eerbied en medewerking gekoesterd. En met de intentie om enigszins een actief aandeel te hebben in de waarheid achter de oprechtheid die zij betrachten en de diensten die zij trouwhartig vervullen, heeft dit volk hen met aalmoezen, liefdadigheden en dergelijke materiële profijten bijgestaan en geëerbiedigd om te voorkomen dat zij hun tijd aan bezigheden voor kostwinning verdoen. Echter, om deze medewerking en dit profijt hoort niet gevraagd te worden; dit wordt ongevraagd aangeboden. Men mag zelfs niet in de taal van zijn houding erom vragen door met verlangens in zijn hart in afwachting te verkeren. Hij hoort dit onverwachts aangeboden te krijgen. Anders zal zijn oprechtheid eronder lijden.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 96,
+                'content' => '<div class="page" id="96">
+<p class="text-end page-number">#96</p>
+
+<p>
+Tevens zal hij het verbod in de Aya: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَلَا تَشْتَرُوا بِاٰيَاتٖى ثَمَنًا قَلٖيلًا</span> tegemoetgaan, waarnaast een deel van zijn daden in rook zullen opgaan.
+</p>
+
+<p>
+Voorwaar, wanneer iemand dit materiële profijt verlangt en in afwachting verkeert, dan zal hij uit zelfzucht dat materiële profijt niet aan anderen willen verliezen. Dientengevolge zal zijn kwaadgezinde ego een rivaliteitsgevoel jegens zijn ware broeder en vriend binnen die specifieke dienst opwekken. Zijn oprechtheid zal worden aangetast, de heiligheid binnen de dienst zal hij verliezen en in de ogen van waarheidsdienaars zal hij een lelijke gestalte krijgen. Daarnaast zal hij het materiële profijt mislopen.
+</p>
+
+<p>
+Maar goed, hierover kan veel verteld worden. Ik houd het kort en zal alleen twee voorbeelden geven om het oprechtheidsgeheim en de innige eendracht onder mijn ware broeders te versterken.
+</p>
+
+<p class="text-bold">
+Het eerste voorbeeld
+</p>
+
+<p>
+Aardsgezinden en zelfs bepaalde politici en maatschappij georiënteerde instellingen en comités hebben het concept van deelgenootschap als leidraad genomen om een grote weelde en een opzienbarende kracht te verwerven. Naast alle uitbuitingen en verliezen die daarbij komen kijken, vergaren zij een buitengewone kracht en winst. Echter, naast de vele nadelen van deelgenootschap doet deelname haar hoedanigheid niet veranderen.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “En verkoop Mijn Aya\'s niet voor een lage prijs.” - <em>Qur’an, 2:41</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 97,
+                'content' => '<div class="page" id="97">
+<p class="text-end page-number">#97</p>
+
+<p>
+Al geldt elke deelgenoot in zeker opzicht en op het gebied van toezicht als eigenaar van het geheel, alsnog kan hij daar geen profijt van trekken. Maar goed…
+</p>
+
+<p>
+Als dit concept van deelgenootschap bij taken met betrekking tot het hiernamaals wordt toegepast, dan zal het een geweldige en onnadelige winst opleveren. Want hierbij geldt het geheim dat elke deelgenoot het collectief geplaatste kapitaal volledig verwerft.
+</p>
+
+<p>
+Bijvoorbeeld, wanneer vijf man met een deelgenootschappelijke samenwerkingsintentie respectievelijk lampolie, een lont, een lamp, een koker en lucifers meebrengen en de lamp in een kamer aansteken, dan zal iedereen volwaardige eigenaar van een complete lamp worden. Als elke deelgenoot een grote spiegel aan de kamerwand heeft hangen, dan zal een lamp inclusief een kamer op eenieders spiegel zonder fragmentatie onverdeeld worden weergegeven.
+</p>
+
+<p>
+Evenzo zullen bij zaken met betrekking tot het hiernamaals een deelgenootschap op basis van het oprechtheidsgeheim, een saamhorigheid op basis van het broederschapsgeheim en een samenwerking op basis van het eenheidsgeheim ertoe leiden dat alle opbrengsten en lichternissen uit die deelgenootschappelijke samenwerking in ieders dadenschrift volledig zal worden vastgelegd – <span class="text-italic">zoals waargenomen en ervaren wordt door waarheidsdienaars, evenals gevergd wordt door Gods Omvangrijke Genade en Generositeit.</span>
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 98,
+                'content' => '<div class="page" id="98">
+<p class="text-end page-number">#98</p>
+
+<p>
+Voorwaar, o mijn broeders! Inshâ’ALLAH zal materieel profijt jullie niet tot rivaliteit drijven. Echter, zoals een aantal soefi’s bij profijtelijke zaken voor het hiernamaals zijn misleid, kunnen jullie ook worden misleid. Maar wat stelt een simpele persoonlijke zegen voor ten opzichte van de zegen en lichternis die conform het voornoemde voorbeeld uit een deelgenootschappelijke samenwerking tot stand komen?
+</p>
+
+<p class="text-bold">
+Het tweede voorbeeld
+</p>
+
+<p>
+Ambachtslieden die samenwerken om de vruchten van hun ambachtskunst te vermeerderen, vergaren een aanzienlijk kapitaal. Er waren eens tien ambachtslieden die afzonderlijk naainaalden produceerden. De dagelijkse vrucht van hun ambachtskunst bestond slechts uit drie naalden. Vervolgens kwamen die tien ambachtslieden volgens het samenwerkingsprincipe bijeen. Eén van hen regelde het staal, een andere stookte de oven, een andere bracht gaatjes in de naalden aan, weer een andere schoof ze in de oven, nog een andere scherpte de punten aan, enzovoort… omdat eenieder zich bij dat productieproces slechts op één simpele en specifieke taak richtte, werden ze allemaal bekwaam in hun vak, waardoor er geen tijd werd verspild en iedereen zijn taak snel en soepel vervulde. Achteraf verdeelden zij de vruchten van hun ambachtskunst die zij volgens de principes van samenwerking en taakverdeling hadden uitgeoefend. Ze zagen dat iedereen dagelijks – <span class="text-italic">in plaats van drie </span><span class="text-italic">naalden</span> – driehonderd naalden ten deel viel.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 99,
+                'content' => '<div class="page" id="99">
+<p class="text-end page-number">#99</p>
+
+<p>
+Deze gebeurtenis circuleerde onder de aardsgezinde ambachtslieden om ze aan te sporen tot samenwerking.
+</p>
+
+<p class="text-bold">
+Voorwaar, o mijn broeders!
+</p>
+
+<p>
+Aangezien eenheid en eendracht bij dergelijke wereldse zaken en matte objecten zulke geweldige collectieve voordelen opleveren, kunnen jullie wel nagaan in wat voor enorme verdienste de lumineuze zaken met betrekking tot het hiernamaals uitmonden, waarbij splitsing en verdeling niet van toepassing is; bij Gods Gratie zal eenieders spiegel alle lichternis weerkaatsen en zal iedereen volwaardige eigenaar van de collectief verworven zegen worden. Deze opzienbarende winst mag niet door rivaliteit en onoprechtheid worden misgelopen.
+</p>
+
+<p class="text-bold">
+Het tweede obstakel dat oprechtheid verbreekt
+</p>
+
+<p>
+Gedreven door roemzucht uit liefde voor status, onder de sluier van eer en aanzien de interesse van het volk verwerven en de aandacht op jezelf vestigen om je ego te strelen en het kwaadgezinde ego een rang toe te kennen, belichaamt een uiterst zorgelijke zielsziekte en opent de poort tot de zogeheten verholen afgoderij, waarbij schijnheiligheid en zelfliefde centraal staan en oprechtheid wordt aangetast.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 100,
+                'content' => '<div class="page" id="100">
+<p class="text-end page-number">#100</p>
+
+<p>
+O mijn broeders! Omdat onze weg ten dienste van de Leerrijke Qur’an uit waarheid en broederschap bestaat, en het broederschapsgeheim inhoudt dat jij jouw eigenheid in je broeders laat opgaan<sup>1</sup> en de ego’s van je broeders de voorkeur boven jouw eigen ego geeft, behoort deze vorm van rivaliteit uit liefde voor status geen invloed onder ons uit te oefenen. Want het staat in schril contrast met onze weg. Aangezien alle eer van alle broeders in haar totaliteit elk individu kan toebehoren, vertrouw ik erop dat de Risale-i Nur-studenten die geweldige geestelijke eer voor geen goud aan een kleine, persoonlijke, ijdele en met een rivaliteit beladen eer en roem zullen offeren.
+</p>
+
+<p>
+Waarlijk, de harten, verstanden en zielen van de Risale-i Nur-studenten zullen zich niet tot zulke lage, kwaadaardige en nietswaardige zaken verlagen. Echter, iedereen beschikt over een kwaadgezind ego. Soms kunnen egoïstische aandriften overweldigend zijn en in zekere mate hun invloed strijdig met het hart, het verstand en de ziel uitoefenen. Ik trek jullie hart, ziel en verstand niet in twijfel; het effect van de Risale-i Nur schenkt mij vertrouwen.
+</p>
+
+<p>
+Echter, het ego, de lusten, de emoties en waanideeën kunnen soms misleidend zijn. Daarom worden jullie zo nu en dan fel vermaand. Deze felheid is op het ego, op lusten, op emoties en op waanideeën gericht. Handel dus bedachtzaam.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> Waarlijk, gelukzalig zij degene die zijn ijzige eigenheid laat plonzen en smelten in een zoet en geweldig bad dat aan Qur’anische Kausar-rivieren is onttrokken; opdat hij dat bad moge verwerven.
 </p>
 
 </div>

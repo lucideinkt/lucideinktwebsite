@@ -42,3 +42,56 @@
   --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+.text-arabic {
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: var(--reader-arabic-font-size, 29px);
+    line-height: 2;
+    direction: rtl;
+    text-align: center;
+    font-feature-settings: 'ss04', 'ss14', 'ss17';
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+    margin: 0.3em 0 0.3em;
+    display: block;
+}
+
+/* Bismillah SVG container */
+.text-arabic-bismillah {
+    text-align: center;
+    margin: 1em auto;
+    display: block;
+    margin-bottom: 0px;
+}
+
+/* Footnote superscript within bismillah */
+.text-arabic-inline {
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: var(--reader-arabic-font-size, 29px);
+    line-height: inherit;
+    direction: rtl;
+    display: inline;
+    unicode-bidi: isolate;
+    font-feature-settings: 'ss04', 'ss14', 'ss17';
+    letter-spacing: 0;
+    word-spacing: 0;
+    color: #ca2a2a;
+}
+
+@media (max-width: 768px) {
+
+    .text-arabic {
+        margin: 0.2em 0 0.2em;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .text-arabic {
+        margin: 0.2em 0 0.2em;
+    }
+
+}
