@@ -218,6 +218,43 @@ tinymce.init({
         ul, ol { padding-left: 1.5rem; margin: 0 0 0.9em 0; }
         table { border-collapse: collapse; width: 100%; margin-bottom: 1em; }
         td, th { border: 1px solid #d1d5db; padding: 6px 10px; }
+        @font-face {
+            font-family: 'OmarNaskhRegular';
+            src: url('/fonts/OmarNaskh-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .text-arabic {
+            font-family: 'OmarNaskhRegular', serif;
+            font-size: 29px;
+            line-height: 2;
+            direction: rtl;
+            text-align: center;
+            font-feature-settings: 'ss04', 'ss14', 'ss17';
+            letter-spacing: 0;
+            word-spacing: 0;
+            color: #ca2a2a;
+            margin: 0.3em 0 0.3em;
+            display: block;
+        }
+        .text-arabic-inline {
+            font-family: 'OmarNaskhRegular', serif;
+            font-size: 29px;
+            line-height: inherit;
+            direction: rtl;
+            display: inline;
+            unicode-bidi: isolate;
+            font-feature-settings: 'ss04', 'ss14', 'ss17';
+            letter-spacing: 0;
+            word-spacing: 0;
+            color: #ca2a2a;
+        }
+        .text-arabic-bismillah {
+            text-align: center;
+            margin: 1em auto;
+            display: block;
+            margin-bottom: 0px;
+        }
     `,
 });
 // SEO description counter
