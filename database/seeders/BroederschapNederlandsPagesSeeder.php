@@ -55,7 +55,7 @@ broederschap en liefde.
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0 auto 0 auto;">
-﴿ اِنَّمَا الْمُؤْمِنُونَ اِخْوَةٌ فَاَصْلِحُوا بَيْنَ اَخَوَيْكُمْ <sup>4</sup> ﴾
+﴿ اِنَّمَا الْمُؤْمِنُونَ اِخْوَةٌ<br> فَاَصْلِحُوا بَيْنَ اَخَوَيْكُمْ <sup>4</sup> ﴾
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 8px auto 0 auto;">
