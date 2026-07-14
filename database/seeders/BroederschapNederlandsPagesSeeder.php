@@ -74,7 +74,7 @@ broederschap en liefde.
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “En er is niets, of het prijst Hem met lof.” - Qur’an, 17:44
+<sup>2</sup> “En er is niets, of het prijst Hem met lof.” - <em>Qur’an, 17:44</em>
 </p>
 
 <p class="footnote-p">
@@ -82,15 +82,15 @@ broederschap en liefde.
 </p>
 
 <p class="footnote-p">
-<sup>4</sup> “Voorzeker, de gelovigen zijn elkaars broeders; verzoen jullie dus onderling met jullie broeders.” - Qur’an, 49:10
+<sup>4</sup> “Voorzeker, de gelovigen zijn elkaars broeders; verzoen jullie dus onderling met jullie broeders.” - <em>Qur’an, 49:10</em>
 </p>
 
 <p class="footnote-p">
-<sup>5</sup> “Vergeld kwaad met goed, en je zult zien dat de persoon waarmee jij vijandig was, jouw trouwe zielsvriend wordt.” - Qur’an, 41:34
+<sup>5</sup> “Vergeld kwaad met goed, en je zult zien dat de persoon waarmee jij vijandig was, jouw trouwe zielsvriend wordt.” - <em>Qur’an, 41:34</em>
 </p>
 
 <p class="footnote-p">
-<sup>6</sup> “Zij die hun woede in toom houden en de mensen vergeven; en ALLAH houdt van de weldoeners.” - Qur’an, 3:134
+<sup>6</sup> “Zij die hun woede in toom houden en de mensen vergeven; en ALLAH houdt van de weldoeners.” - <em>Qur’an, 3:134</em>
 </p>
 
 </div>
@@ -239,11 +239,11 @@ Deugden die liefde opwekken zijn stralend zoals liefde; includeren en beschijnen
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> “En geen zondaar bezondigt zich aan de zonden van een ander.” - Qur’an, 17:15
+<sup>1</sup> “En geen zondaar bezondigt zich aan de zonden van een ander.” - <em>Qur’an, 17:15</em>
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “Voorzeker, de mens is onrechtvaardig.” - Qur’an, 14:34
+<sup>2</sup> “Voorzeker, de mens is onrechtvaardig.” - <em>Qur’an, 14:34</em>
 </p>
 
 </div>
@@ -373,11 +373,11 @@ Gelukzaligheid en vrede schuilen in Hem.
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “En wanneer zij op onzinnigheid stuiten, lopen ze haar edelmoedig voorbij.” - Qur’an, 25:72
+<sup>2</sup> “En wanneer zij op onzinnigheid stuiten, lopen ze haar edelmoedig voorbij.” - <em>Qur’an, 25:72</em>
 </p>
 
 <p class="footnote-p">
-<sup>3</sup> “En wanneer jullie hen vergeven, ontschulden en begenadigen, voorzeker, weet dan dat ALLAH Vergevensgezind en Genadig is.” - Qur’an, 64:14
+<sup>3</sup> “En wanneer jullie hen vergeven, ontschulden en begenadigen, voorzeker, weet dan dat ALLAH Vergevensgezind en Genadig is.” - <em>Qur’an, 64:14</em>
 </p>
 
 </div>
@@ -817,11 +817,11 @@ Waarlijk, alle schande en ellende die zich voordoen bij de Joden, waarover beken
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “Voorzeker, ALLAH is de Onderhouder, Bezitter van Stabiele Kracht.” - Qur’an, 51:58
+<sup>2</sup> “Voorzeker, ALLAH is de Onderhouder, Bezitter van Stabiele Kracht.” - <em>Qur’an, 51:58</em>
 </p>
 
 <p class="footnote-p">
-<sup>3</sup> “En hoeveel dieren dragen hun onderhoud niet met zich mee? ALLAH voorziet hen en jou in onderhoud; en Hij is de Alhorende, de Alwetende.” - Qur’an, 29:60
+<sup>3</sup> “En hoeveel dieren dragen hun onderhoud niet met zich mee? ALLAH voorziet hen en jou in onderhoud; en Hij is de Alhorende, de Alwetende.” - <em>Qur’an, 29:60</em>
 </p>
 
 </div>
@@ -927,7 +927,7 @@ Of wanneer jij bijvoorbeeld ’s avonds je slaap verliest terwijl jij wilt slape
 Of wanneer jij bijvoorbeeld voor een belangrijke uitslag gretig op iemand wacht, dan kan de gedachte: <span class="text-italic">“Waar blijft hij, waar blijft hij!”</span> ertoe leiden dat jouw gretigheid jouw geduld op den duur uitput, waarna jij opstaat en vertrekt. Een minuut later arriveert de man, maar de belangrijke uitslag waar jij op wachtte loop je mis...
 </p>
 
-<p class="text-center text-bold text-italic" style="max-width: 400px; margin: 18px auto">
+<p class="text-center text-bold text-italic">
 Het geheim achter deze omstandigheden is het volgende:
 </p>
 
@@ -1048,7 +1048,7 @@ Waarlijk, is het beter om een bedrag gelijk aan of hoger dan de Zakaat via gifte
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> “U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - Qur’an, 2:32
+<sup>1</sup> “U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - <em>Qur’an, 2:32</em>
 </p>
 
 </div>
@@ -1128,11 +1128,11 @@ Voorwaar, in de Aya: <sup>3</sup><span class="text-arabic-inline text-red" dir="
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “En er is niets, of het prijst Hem met lof.” - Qur’an, 17:44
+<sup>2</sup> “En er is niets, of het prijst Hem met lof.” - <em>Qur’an, 17:44</em>
 </p>
 
 <p class="footnote-p">
-<sup>3</sup> “Is er dan één onder jullie die ervan houdt om het vlees van zijn dode broer te eten?” - Qur’an, 49:12
+<sup>3</sup> “Is er dan één onder jullie die ervan houdt om het vlees van zijn dode broer te eten?” - <em>Qur’an, 49:12</em>
 </p>
 
 </div>
@@ -1787,7 +1787,7 @@ Hoewel dit traktaat <span class="text-bold">Het Eerste Punt</span> van <span cla
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “Voorzeker, Wij hebben jou het Boek met de waarheid neergezonden; dien ALLAH, beleid Zijn religie oprecht. Weet dat alleen de zuivere religie ALLAH toebehoort.” - Qur’an, 39:2-3
+<sup>2</sup> “Voorzeker, Wij hebben jou het Boek met de waarheid neergezonden; dien ALLAH, beleid Zijn religie oprecht. Weet dat alleen de zuivere religie ALLAH toebehoort.” - <em>Qur’an, 39:2-3</em>
 </p>
 
 <p class="footnote-p">
@@ -1894,11 +1894,11 @@ Voorwaar, het medicijn tegen deze vreselijke ziekte is oprechtheid. Deze oprecht
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> “Mijn beloning is enkel bij ALLAH.” - Qur’an, 34:47
+<sup>1</sup> “Mijn beloning is enkel bij ALLAH.” - <em>Qur’an, 34:47</em>
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> Het: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">اٖيثَارٌ</span> attribuut van de Sahaba’s waarover de Qur’an lovend spreekt als leidraad nemen. Dit impliceert: anderen bij het aannemen van liefdadigheden en aalmoezen de voorkeur geven. En materiële winsten die religieuze diensten meebrengen noch begeren, noch in het hart beogen, en ze slechts als Goddelijke giften beschouwen; geen afhankelijkheid jegens mensen voelen en niets ter vergoeding voor religieuze diensten aannemen. Want voor religieuze diensten mag er op aarde niets gewenst worden, opdat oprechtheid niet verloren gaat. Dienaren in dit kader hebben er echter wel recht op dat de oemma hen in hun levensonderhoud voorziet. Ook hebben zij recht op Zakaat. Hier horen zij echter niet om te vragen; dit wordt ze ongevraagd gegeven. En wanneer zij het krijgen, mogen ze niet: <span class="text-italic">“Dit is de vergoeding voor mijn dienst”</span> zeggen. Door zo tevreden mogelijk andere rechthebbenden die het meer verdienen de voorkeur boven henzelf te geven, kunnen zij met inachtneming van het geheim achter: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَ يُؤْثِرُونَ عَلٰى اَنْفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ</span> [<span class="text-italic">“En zij prefereren anderen boven henzelf, al verkeren zij zelf in behoeftigheid.” - Qur’an, 59:9</span>] van dit ernstige gevaar gered worden en oprechtheid verwerven.
+<sup>2</sup> Het: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">اٖيثَارٌ</span> attribuut van de Sahaba’s waarover de Qur’an lovend spreekt als leidraad nemen. Dit impliceert: anderen bij het aannemen van liefdadigheden en aalmoezen de voorkeur geven. En materiële winsten die religieuze diensten meebrengen noch begeren, noch in het hart beogen, en ze slechts als Goddelijke giften beschouwen; geen afhankelijkheid jegens mensen voelen en niets ter vergoeding voor religieuze diensten aannemen. Want voor religieuze diensten mag er op aarde niets gewenst worden, opdat oprechtheid niet verloren gaat. Dienaren in dit kader hebben er echter wel recht op dat de oemma hen in hun levensonderhoud voorziet. Ook hebben zij recht op Zakaat. Hier horen zij echter niet om te vragen; dit wordt ze ongevraagd gegeven. En wanneer zij het krijgen, mogen ze niet: <span class="text-italic">“Dit is de vergoeding voor mijn dienst”</span> zeggen. Door zo tevreden mogelijk andere rechthebbenden die het meer verdienen de voorkeur boven henzelf te geven, kunnen zij met inachtneming van het geheim achter: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَ يُؤْثِرُونَ عَلٰى اَنْفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ</span> [<span class="text-italic">“En zij prefereren anderen boven henzelf, al verkeren zij zelf in behoeftigheid.” - <em>Qur’an, 59:9</em></span>] van dit ernstige gevaar gered worden en oprechtheid verwerven.
 </p>
 
 </div>
@@ -1918,7 +1918,7 @@ Voorwaar, het medicijn tegen deze vreselijke ziekte is oprechtheid. Deze oprecht
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> “En de profeet is enkel met overdracht belast.” - Qur’an, 24:54
+<sup>1</sup> “En de profeet is enkel met overdracht belast.” - <em>Qur’an, 24:54</em>
 </p>
 
 </div>
@@ -2238,19 +2238,19 @@ Hoewel de Aya: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" l
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “En de vrouwen in de stad zeiden” - Qur’an, 12:30
+<sup>2</sup> “En de vrouwen in de stad zeiden” - <em>Qur’an, 12:30</em>
 </p>
 
 <p class="footnote-p">
-<sup>3</sup> “Zeiden <span class="text-italic">(mannelijk)</span>” - Qur’an, 12:30
+<sup>3</sup> “Zeiden <span class="text-italic">(mannelijk)</span>” - <em>Qur’an, 12:30</em>
 </p>
 
 <p class="footnote-p">
-<sup>4</sup> “De bedoeïenen zeiden” - Qur’an, 49:14
+<sup>4</sup> “De bedoeïenen zeiden” - <em>Qur’an, 49:14</em>
 </p>
 
 <p class="footnote-p">
-<sup>5</sup> “Zeiden <span class="text-italic">(vrouwelijk)</span>” - Qur’an, 34:47
+<sup>5</sup> “Zeiden <span class="text-italic">(vrouwelijk)</span>” - <em>Qur’an, 34:47</em>
 </p>
 
 </div>
@@ -2278,11 +2278,11 @@ Omdat de aardsgezinden bij hun aardse zaken hun ware steunpunt veronachtzamen, w
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> “En de vrouwen zeiden.” - Qur’an, 12:30
+<sup>1</sup> “En de vrouwen zeiden.” - <em>Qur’an, 12:30</em>
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “De bedoeïenen zeiden” - Qur’an, 49:14
+<sup>2</sup> “De bedoeïenen zeiden” - <em>Qur’an, 49:14</em>
 </p>
 
 </div>
@@ -2310,11 +2310,11 @@ Voorwaar, de rechtschapenen kunnen de zalf en het medicijn tegen de ondeugdelijk
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> “En verval onderling niet in onenigheid; anders zal angst jullie overmannen en jullie kracht verloren gaan.” - Qur’an, 8:46
+<sup>1</sup> “En verval onderling niet in onenigheid; anders zal angst jullie overmannen en jullie kracht verloren gaan.” - <em>Qur’an, 8:46</em>
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “En ondersteun elkaar in het kader van weldadigheid en Godsvrees.” - Qur’an, 5:2
+<sup>2</sup> “En ondersteun elkaar in het kader van weldadigheid en Godsvrees.” - <em>Qur’an, 5:2</em>
 </p>
 
 </div>
@@ -2361,7 +2361,7 @@ O rechtschapenen! O rechtzinnige voorstanders van de Sharia, dienaren van de waa
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> “En wanneer zij iets onnozels aantreffen, dan gaan zij daar edelmoedig aan voorbij.” - Qur’an, 25:72
+<sup>1</sup> “En wanneer zij iets onnozels aantreffen, dan gaan zij daar edelmoedig aan voorbij.” - <em>Qur’an, 25:72</em>
 </p>
 
 </div>
@@ -2789,7 +2789,7 @@ Indien jullie deze spirituele helden achter jullie als beschermers en boven jull
 </p>
 
 <p class="footnote-p">
-<sup>2</sup> “En zij prefereren anderen boven henzelf.” - Qur’an, 59:9
+<sup>2</sup> “En zij prefereren anderen boven henzelf.” - <em>Qur’an, 59:9</em>
 </p>
 
 </div>
@@ -3078,6 +3078,666 @@ Echter, het ego, de lusten, de emoties en waanideeën kunnen soms misleidend zij
 
 </div>'
             ],
+            [
+                'page_number' => 101,
+                'content' => '<div class="page" id="101">
+<p class="text-end page-number">#101</p>
+
+<p>
+Waarlijk, als onze weg uit sjeikhdom zou bestaan, dan zou er één rang ofwel een beperkt aantal rangen zijn. Meerdere talenten zouden zich dan kandidaat voor één en dezelfde rang stellen. Dit zou een egocentrische ijverzucht kunnen baren. Echter, onze weg bestaat uit broederschap. Een broeder kan geen vader van zijn medebroeder zijn, noch de houding van een sjeikh jegens hem aannemen. De rang van broederschap is ruim; ze geeft geen aanleiding om anderen afgunstig tegen te werken. Een broeder kan hooguit een helper en bevorderaar van zijn medebroeder zijn en hem bij zijn dienst op weg helpen. Bij wegen waarop vaderschap of sjeikhdom heersen, werpen afgunstige gretigheden naar zegeningen en verheven bereidwilligheden vele kwaadaardige en gevaarlijke vruchten af. De toestand van soefi’s is hier een bewijs van. Want naast alle aanzienlijke en opzienbarende volmaaktheden en voordelen die zij genieten, lijden zij aan de ellendige gevolgen van onenigheden en rivaliteiten. Hun opzienbarende en heilige krachten bezwijken onder de stormen van innovaties.
+</p>
+
+<p class="text-bold">
+Het derde obstakel
+</p>
+
+<p>
+Bestaande uit angst en gulzigheid. Omdat dit obstakel inclusief een aantal andere obstakels in <span class="text-italic">“De Zes Vlagen”</span> volledig is uitgelegd, laten wij het hierbij en roepen wij ter bemiddeling alle Schone Namen van de Genadigste der Genadigen aan, opdat Hij ons succes bij het behalen van volwaardige oprechtheid moge schenken; Âmîn!
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 102,
+                'content' => '<div class="page" id="102">
+<p class="text-end page-number">#102</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 275px;">
+اَللّٰهُمَّ بِحَقِّ<br>
+سُورَةِ الْاِخْلَاصِ اِجْعَلْنَا<br>
+مِنْ عِبَادِكَ الْمُخْلِصٖينَ الْمُخْلَصٖينَ<br>
+اٰمٖينَ اٰمٖينَ <sup>1</sup>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
+سُبْحَانَكَ لَا عِلْمَ لَنَٓا اِلَّا مَا عَلَّمْتَنَٓا<br>
+اِنَّكَ اَنْتَ الْعَلٖيمُ الْحَكٖيمُ <sup>2</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “O ALLAH, uit belang van Soera el-Ikhlaas vragen wij U om ons tot de oprechten, de <span class="text-italic">(door U begenadigde)</span> oprechten te laten behoren; amîn, amîn.”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - <em>Qur’an, 2:32</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 103,
+                'content' => '<div class="page" id="103">
+<p class="text-end page-number">#103</p>
+
+<div class="page-title-chapter">
+<h2>Enkel Waarheid is aan het Woord</h2>
+</div>
+
+<p>
+In de Risale-i Nur is bewezen dat rechtvaardigheid zich van tijd tot tijd binnen onrecht manifesteert. Bijvoorbeeld, een mens kan om een bepaalde reden onrecht lijden, ellende kan hem treffen, hij kan tot gevangenisstraf worden veroordeeld en hij kan in de cel belanden. Dit oordeel kan onterecht zijn. Echter, dit incident kan een middel voor de manifestatie van rechtvaardigheid zijn. Het Goddelijke Lot kan iemand die om een andere reden straf en veroordeling heeft verdiend, aan de hand van een onrechtpleger straf toedienen en in ellende dompelen. Dit is een wijze waarop Gods Rechtvaardigheid Zich manifesteert.
+</p>
+
+<p>
+Ik ben nu terug aan het denken… de afgelopen achtentwintig jaar word ik van provincie naar provincie, van stad naar stad verplaatst, en van de ene rechtbank naar de andere gesleept. Waaraan ben ik eigenlijk schuldig volgens degenen die mij zo meedogenloos kwellen? Dat ik religie als instrument voor politieke doeleinden hanteer? Waarom kunnen zij dit dan niet aantonen? Want het strookt niet met de realiteit…
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 104,
+                'content' => '<div class="page" id="104">
+<p class="text-end page-number">#104</p>
+
+<p>
+Een rechtszaak houdt soms maanden en zelfs jaren aan, in de vergeefse hoop dat ze een misdrijf kunnen vinden waarvoor ze mij kunnen veroordelen. Vervolgens word ik vrijgesproken, waarna een nieuw proces om dezelfde zaak in een andere rechtbank tegen mij wordt aangespannen. Daar houden zij zich weer een periode met mij bezig… ze tergen mij en laten mij allerlei kwellingen ondergaan. Uiteindelijk behalen ze geen resultaat, waarna ik weer word vrijgesproken. Vervolgens word ik voor de derde keer bij de kraag gegrepen. Zodoende word ik van de ene tegenslag naar de andere, van de ene rampspoed naar de andere gesleurd. Gedurende de afgelopen achtentwintig jaar is mijn leven zo verstreken...
+</p>
+
+<p>
+Uiteindelijk zagen zij in dat hun beschuldiging vals en ongegrond was. Hadden zij dit verwijt bewust gemaakt of lieten zij zich door argwaan meeslepen? Of het nou bewust was of uit argwaan, in eer en geweten weet ik dat ik geen ene betrokkenheid heb bij een misdrijf waarvan ze mij betichten… iedereen met een geweten weet ook dat ik geen persoon ben die religie als instrument voor politieke doeleinden hanteert… zelfs degenen die mij hiervan betichten weten dit… maar waarom bleven zij mij dan zo hardnekkig tergen? Waarom werd ik ondanks mijn onschuld aan een dergelijk voortdurend onrecht en een constante kwelling blootgesteld? Waarom kan ik niet van deze tegenslagen verlost worden? Staan deze omstandigheden niet in contrast met Gods Rechtvaardigheid?
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 105,
+                'content' => '<div class="page" id="105">
+<p class="text-end page-number">#105</p>
+
+<p>
+Ik had een kwarteeuw lang geen antwoorden op deze vragen kunnen vinden, wat mij bedroefde en kwelde. Nu heb ik de ware reden achter hun onderdrukking en onrecht ontwaard. Tot mijn grote spijt beken ik dat ik schuldig ben aan het het volgende:
+</p>
+
+<p>
+Ik heb mijn Qur’anische dienst als instrument voor mijn materiële en geestelijke ontplooiing en ontwikkeling gebruikt. Nu besef ik dit, voel ik dit en betuig ik ALLAH duizenden malen dank, want gedurende lange jaren werd ik onwillens door hele krachtige spirituele obstakels ervan weerhouden om mijn geloofsdienst voor mijn materiële en geestelijke ontwikkeling en ontplooiing, voor mijn redding van hellestraf en verdoemenis, of zelfs voor mijn eeuwige gelukzaligheid of voor welk persoonlijk doeleinde dan ook te hanteren.
+</p>
+
+<p>
+Deze intensieve gevoelens en ingevingen vervulden mij met verbazing. Ondanks dat iedereen met alle recht een weg mag aanhouden waarop spirituele rangen en zaligheden voor in het hiernamaals aan de hand van vrome daden kunnen worden verworven, wat voor iedereen wenselijk en voor niemand nadelig is, werd ik met hart en ziel daarvan weerhouden. Behalve Gods Welbehagen werden mij op aansporing van mijn aangeboren wetenschapstaak enkel en alleen aangelegenheden met betrekking tot de geloofsdienst getoond. Want geloofswaarheden – <span class="text-italic">die voor niets als instrument dienen, aan niets onderworpen kunnen worden en boven alle doelen verheven zijn</span> – kunnen in de huidige tijdsomstandigheden alleen via een natuurlijke dienaarschap effectief onderwezen worden aan de behoeftigen die er onbekend mee zijn. Immers, hun woelige wereld vol warrigheden behoeft een leermethode die hun geloof redt en koppige dwarsliggers volledig overtuigt.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 106,
+                'content' => '<div class="page" id="106">
+<p class="text-end page-number">#106</p>
+
+<p>
+Met andere woorden, om het absolute ongeloof en de hardnekkige dwaling te breken en iedereen tot volle overtuiging te brengen, is er behoefte aan een Qur’anische les die zonder enige bijbedoelingen wordt onderwezen.
+</p>
+
+<p>
+Deze overtuiging kan onder de hedendaagse omstandigheden alleen tot stand komen nadat beseft wordt dat religie – <span class="text-italic">hetzij aards, hetzij onaards… hetzij materieel, hetzij immaterieel</span> – voor geen enkel persoonlijk doeleinde wordt gehanteerd.
+</p>
+
+<p>
+Anders, als iemand het in zijn eentje opneemt tegen de vreselijke geestelijke persoonlijkheid van de ongelovigen die aan hun groepsvorming en coalitie ontspruit, dan zal hij niet in staat zijn om alle influisteringen volledig weg te werken, al zou hij het allerhoogste spirituele niveau bekleden. Want het ego en de eigenwijsheid van een koppig individu dat tot geloof wil komen, kunnen de volgende gedachte bij hem opwekken:
+</p>
+
+<p class="text-italic">
+“Die persoon heeft ons met zijn genialiteit en met zijn buitengewone niveau misleid.”
+</p>
+
+<p>
+Zodoende zal er een twijfel aan hem blijven knagen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 107,
+                'content' => '<div class="page" id="107">
+<p class="text-end page-number">#107</p>
+
+<p>
+ALLAH zij duizenden malen dank, want onder het verwijt dat ik religie als instrument voor politieke doeleinden hanteer, heeft het Goddelijke Lot mij in weerwil van mijzelf ruim achtentwintig jaar aan de onrechtvaardige hand van de mens pure rechtvaardige klappen en berispingen toegediend, opdat ik de religie voor geen enkel persoonlijk doel als instrument hanteer, zeggende:
+</p>
+
+<p class="text-italic">
+“Pas op! Maak geloofswaarheden niet tot jouw persoonlijke instrument, opdat zij die behoeftig zijn aan het geloof beseffen dat enkel waarheid aan het woord is, en opdat de waanideeën van het ego en de listen van de duivel eindigen en zwijgen!”
+</p>
+
+<p>
+Voorwaar, dit en dit alleen is het geheim op basis waarvan de Nur-traktaten als hoge oceanische golven de gemoederen met passie overspoelen en de harten en zielen beïnvloeden. Ondanks dat de waarheden uit de Risale-i Nur door duizenden geleerden via honderdduizenden boeken met mooiere verwoordingen zijn gepubliceerd, kunnen ze alsnog het absolute ongeloof niet stoppen. Indien de Risale-i Nur onder zulke zware omstandigheden in zekere mate succes oogst, dan is dit het geheim hierachter; <span class="text-bold">Said bestaat niet, noch beschikt Said over macht of gezag… enkel waarheid is aan het woord; de waarheden des geloofs.</span>
+</p>
+
+<p>
+Aangezien het waarheidslicht zijn invloed op de behoeftige gemoederen uitoefent, mogen er niet één maar duizend Saids worden opgeofferd. Alle leed en ellende, alle kwellingen en alle tegenslagen die ik de afgelopen achtentwintig jaar heb geduld en doorstaan, zal ik niemand aanrekenen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 108,
+                'content' => '<div class="page" id="108">
+<p class="text-end page-number">#108</p>
+
+<p>
+Degenen die mijn rechten schonden, mij van stad naar stad zonden, mij beledigden, mij met allerlei verwijten wilden veroordelen en speciaal cellen voor mij klaarmaakten om mij daarin te laten wegkwijnen, heb ik allemaal vergeven. En tegen het rechtvaardige lot zeg ik:
+</p>
+
+<p>
+Ik had deze meedogende klappen van u verdiend. Immers, als ik zoals iedereen een geoorloofde en onschadelijke weg zou aanhouden, aan mezelf zou denken en al mijn materiële en geestelijke wensen niet op zou geven, dan zou ik deze grote geestelijke kracht binnen de geloofsdienst verliezen. Ik heb al het materiële en immateriële van mezelf opgeofferd, elke tegenslag verdragen en elke kwelling geduld. Hierdoor zijn de geloofswaarheden overal verspreid. Hierdoor heeft de Nur-academie honderdduizenden en misschien zelfs miljoenen studenten opgeleid. Voortaan zullen zij op dit pad binnen de geloofsdienst blijven voortgaan. En zij zullen mijn weg waarop afstand van al het materiële en spirituele wordt genomen nimmer verlaten. En zij zullen enkel en alleen om ALLAH’s Welbehagen ijveren. Zij die ons tergden hebben onbewust de geheimen en diepe manifestaties van het Goddelijke Lot gediend; zonder besef hebben zij aan onze missie en aan de ontplooiing van geloofswaarheden bijgedragen. Onze taak ten opzichte van hen is slechts wensen dat zij tot inkeer komen.
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 109,
+                'content' => '<div class="page" id="109">
+<p class="text-end page-number">#109</p>
+
+<p>
+Ik ben erg ziek. Ik heb geen energie meer om verder te schrijven of te spreken. Dit kunnen mijn laatste woorden zijn. De Risale-i Nur-studenten van de medresse <span class="text-bold">“ez-Zehrâ”</span> mogen dit testament van mij niet vergeten.
+</p>
+
+<p class="text-italic text-red" style="text-align: right;">
+Said Nursî
+</p>
+
+</div>'
+            ],
+            [
+                'page_number' => 110,
+                'content' => '<div class="page" id="110">
+<p class="text-end page-number">#110</p>
+
+<div class="page-title-chapter">
+<h2>Waarom zijn wij in de gevangenschap van passiviteit beland?</h2>
+</div>
+
+<p class="text-bold">
+Het antwoord
+</p>
+
+<p>
+Het leven impliceert bedrijvigheid en beweging. Passie is zijn rijpaard. Wanneer jullie bereidwilligheid passie bestijgt en haar richting het slagveld des levens laat galopperen, dan zal zij als eerst de woeste vijand genaamd <span class="text-bold">“wanhoop”</span> tegen het lijf lopen. Zij zal haar geestelijke kracht breken. Daarop dienen jullie het zwaard: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">لَا تَقْنَطُوا</span> tegen die vijand te hanteren.
+</p>
+
+<p>
+Vervolgens zal de druk van <span class="text-bold">“overtreffingsdrang”</span> de lastvrije dienstkring van gerechtigheid bezetten en aanvallen. Hij zal uithalen naar het hoofd van bereidwilligheid en haar van haar paard laten vallen. Daarop dienen jullie de waarheid van: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">كُونُوا لِلّٰهِ</span> op hem af te sturen.
+</p>
+
+<p>
+Vervolgens zal <span class="text-bold">“haast”</span> als chaotische verzaker van aaneengeschakelde oorzaken opdagen en bereidwilligheid laten struikelen. Daarop horen jullie het harnas: <sup>3</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَاصْبِرُوا وَصَابِرُوا وَرَابِطُوا</span> tegen hem aan te gorden.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Wanhoop niet!”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Wees voor ALLAH!”
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> “Wees geduldig, verdraagzaam en standvastig!” - <em>Qur’an, 3:200</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 111,
+                'content' => '<div class="page" id="111">
+<p class="text-end page-number">#111</p>
+
+<p>
+Vervolgens wordt bereidwilligheid gehinderd door egocentrische meningen en subjectieve opvattingen die haar ambities door de war helpen, terwijl de sociale aard van de mens hem verplicht om voor de rechten van zijn soortgenoten op te komen en zijn persoonlijke rechten onder de mensen te vinden.
+</p>
+
+<p>
+Daarop dienen jullie de hoogst toegewijde krijger: <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">خَيْرُ النَّاسِ اَنْفَعُهُمْ لِلنَّاسِ</span> in de aanval te zetten.
+</p>
+
+<p>
+Vervolgens zal <span class="text-bold">“de heersende norm”</span> dankzij de onachtzaamheid van de omgeving de gelegenheid aangrijpen om de rug van bereidwilligheid te breken.
+</p>
+
+<p>
+Daarop dienen jullie toevlucht te nemen tot de stevige burcht: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">لَا يَضُرُّكُمْ مَنْ ضَلَّ اِذَا اهْتَدَيْتُمْ</span>.
+</p>
+
+<p>
+Vervolgens zullen machteloosheid en de onbetrouwbaarheid van het ego een meedogenloze vijand genaamd: <span class="text-bold">“taken aan het lot en aan anderen overlaten”</span> baren. Hij grijpt bereidwilligheid bij de hand en forceert haar te zitten.
+</p>
+
+<p>
+Daarop dienen jullie haar naar de verheven waarheid: <sup>3</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">عَلَى اللّٰهِ لَا غَيْرَ فَلْيَتَوَكَّلِ الْمُتَوَكِّلُونَ</span> te tillen, opdat de hand van die vijand haar gewaad niet kan bereiken.
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “De beste mens is degene die goed is voor zijn medemens.”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Dwaalgeesten zullen jullie niet kunnen deren zolang jullie op het rechte pad blijven.” - <em>Qur’an, 5:105</em>
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> “Op niemand behalve ALLAH behoort de gelatene zich te berusten.”
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 112,
+                'content' => '<div class="page" id="112">
+<p class="text-end page-number">#112</p>
+
+<p>
+Vervolgens zal <span class="text-bold">“bemoeienis met ALLAH’s taak”</span> als ongelovige vijand naderen, naar het gezicht van bereidwilligheid uithalen en haar oog verblinden. Daarop dienen jullie de waarheid achter:
+<span class="text-arabic-inline text-red" dir="rtl" lang="ar">اِسْتَقِمْ كَمَٓا اُمِرْتَ <sup>1</sup> ۞ وَلَا تَتَأَمَّرْ عَلَى سَيِّدِكَ <sup>2</sup></span>
+op hem af te sturen, opdat zij hem kan terechtwijzen.
+</p>
+
+<p>
+Vervolgens zal de moeder van alle moeiten en het nest van alle schandalen alias <span class="text-bold">“gemakzucht”</span> opdoemen. Ze ketent bereidwilligheid en gooit haar in de gevangenis van passiviteit. Daarop behoren jullie de toegewijde strijder: <sup>3</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">لَيْسَ لِلْاِنْسَانِ اِلَّا مَا سَعٰى</span> naar die manipulatieve kwelgeest te zenden.
+</p>
+
+<p class="text-bold text-italic">
+Waarlijk, in moeite schuilt voor jullie een grote rust. Immers, rust voor een vurig geaard mens schuilt enkel in ijver en strijd.
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+اِنَّ لَكُمْ فِى الْمَشَقَّةِ الرَّاحَةَ اِنَّ الْاِنْسَانَ الْمُتَهَيِّجَةَ<br>
+فِطْرَتُهُ رَاحَتُهُ فِى السَّعْىِ وَ الْجِدَالِ
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “Wees rechtdoorzee zoals jou bevolen is!” - <em>Qur’an, 42:15</em>
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Oefen geen zeggenschap op jouw Meester uit!”
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> “De mens bezit niets buiten zijn ijver!” - <em>Qur’an, 53:39</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 113,
+                'content' => '<div class="page" id="113">
+<p class="text-end page-number">#113</p>
+
+<p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+ “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+&lt;/p&gt;"><sup>1</sup></button></span>
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+اِنَّ النَّفْسَ لَاَمَّارَةٌ بِالسُّٓوءِ <sup>2</sup>
+</p>
+
+<p>
+Dit gedeelte<sup>3</sup> beschrijft een subtiliteit binnen de bovengenoemde Aya en binnen de Hadîth: <span class="text-arabic-inline text-red" dir="rtl" lang="ar">
+اَعْدٰى عَدُوِّكَ نَفْسُكَ الَّتٖى بَيْنَ جَنْبَيْكَ <sup>4</sup>
+</span>
+</p>
+
+
+
+<p>
+Zolang het kwaadgezinde ego niet is gezuiverd, kan degene die zichzelf bewondert en liefheeft anderen niet liefhebben. Al lijkt hij anderen lief te hebben, hij kan ze niet innig liefhebben; alleen het profijt en genot dat hij aan een ander beleeft, heeft hij lief. Zo iemand wil constant door anderen bewonderd en geliefd worden. Nooit zal hij een fout aan zichzelf toeschrijven. Als een advocaat zal hij zichzelf verdedigen en vrijpleiten. Door zichzelf met grootspraak en leugens te prijzen en te rechtvaardigen, is hij zichzelf nagenoeg aan het verheiligen, waardoor hij naargelang van zijn zelfverheffing een klap krijgt van de Aya: <br><span class="text-arabic-inline text-red" dir="rtl" lang="ar">
+مَنِ اتَّخَذَ اِلٰهَهُ هَوٰيهُ <sup>5</sup>
+</span>
+
+
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “In de Naam van ALLAH, de Barmhartige, de Genadige.”
+</p>
+
+<p class="footnote-p">
+<sup>2</sup> “Voorzeker, het ego spoort aan tot het kwade.” - <em>Qur’an, 12:53</em>
+</p>
+
+<p class="footnote-p">
+<sup>3</sup> Dit gedeelte is ook nuttig voor iedereen.
+</p>
+
+<p class="footnote-p">
+<sup>4</sup> “Jouw schadelijkste vijand is jouw ego.”
+</p>
+
+<p class="footnote-p">
+<sup>5</sup> “Degene die zijn begeerten tot God maakt.” - <em>Qur’an, 25:43</em>
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 114,
+                'content' => '<div class="page" id="114">
+<p class="text-end page-number">#114</p>
+
+<p>
+Zijn poging om bij anderen bewondering en liefde op te wekken, zal averechts uitpakken, afkeer opwekken en mensen van hem afstoten. Bovendien zal hij bij taken met betrekking tot het hiernamaals zijn oprechtheid verliezen en er schijnheiligheid in mengen. Na overwonnen te worden door zijn gevoelens en egoïstische lusten, die consequenties niet onder ogen zien, gevolgen niet in aanmerking nemen en verslaafd aan voorhanden genietingen zijn, zal hij krachtens een fatwa van zijn verdwaalde gevoelens voor een uurtje plezier een jaar lange gevangenisstraf uitzitten. Geleid door trots of wraak kan hij wegens een daad van een minuut een straf van tien jaar opgelegd krijgen. Zoals een verwend kind dat het laatste deel van de Qur’an heeft geleerd om het vervolgens voor een snoepje te verkopen, hanteert hij ter bevrediging van zijn gevoelens, lusten en begeerten zijn weldaden ter waarde van diamanten als middel voor lustbevredigingen en egotripperijen ter waarde van waardeloze stukken glas. Zodoende lijdt hij verlies aan winstgevende zaken.
+</p>
+
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
+اَللّٰهُمَّ احْفَظْنَا مِنْ شَرِّ النَّفْسِ وَالشَّيْطَانِ<br>
+وَمِنْ شَرِّ الْجِنِّ وَالْاِنْسَانِ <sup>1</sup>
+</p>
+
+<div class="page-footnote">
+<hr class="hr-footnote" />
+
+<p class="footnote-p">
+<sup>1</sup> “O ALLAH, behoed ons tegen het kwaad van het ego en de duivel, en tegen het kwaad van de djinns en de mensen.”
+</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 115,
+                'content' => '<div class="page" id="114">
+<p class="text-end page-number">#115</p>
+
+
+</div>'
+            ],
+            [
+                'page_number' => 116,
+                'content' => '<div class="page" id="116">
+<p class="text-end page-number">#116</p>
+
+<div class="page-title-chapter">
+<h2>Aan de grote Hartveroverende Leermeester</h2>
+<p style="margin-top: -12px">Gedicht van Ali Ulvi</p>
+</div>
+
+<div class="poem text-center text-italic text-red" style="margin: 0px auto 0 auto;">
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+O Leermeester die met Zijn Lichternis heel mijn <br> gemoed heeft weten te overmeesteren;<br>
+Mijn hart roept U aan met heilige vervoeringen die mij begeesteren.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+De bekendmaking van Uw vrijlating heeft mijn ingeving leven ingeblazen;<br>
+Uw welslagen heeft gelovigen met vreugde overladen.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Verdwenen zijn alle wolken die aan de horizon bleven wemelen;<br>
+Engelen celebreren deze feestelijke zege in de hemelen.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Miljoenen redden hun geloof door de Jihad die U hebt geïnstigeerd;<br>
+Gelovige harten ontvlammen wanneer U door ze circuleert.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Uw duizenden spreuken brengen het geloof in geestdrift;<br>
+Terwijl ik Uw verleden met een verheven gedrevenheid doorzift... <br>
+...veredelt Uw hemelse manifestatie mijn inspiratie;<br>
+Uw situatie is als een illustratie van gidsen zoals Fatih.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 117,
+                'content' => '<div class="page" id="117">
+<p class="text-end page-number">#117</p>
+
+<div class="poem text-center text-italic text-red">
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Bestendig als bergen tijdens de engste momenten;<br>
+Persistent onder permanente dreigingen van fatale tormenten.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Uw geloof doet werelden sidderen van fascinatie;<br>
+Uw onwankelbare overtuiging baart bij de vijand zelfs admiratie.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Uw gids is immers niemand anders dan de nobele Godsbode;<br>
+Uw onsterfelijke werk verleent jongeren een levenslange gedragscode.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+De Onbegonnen Gezegendheid van de Edele Qur’an heeft U bereikt;<br>
+Met kennis en volmaaktheid heeft U de mensheid verrijkt.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+O krans die vanuit de uiteinden van paradijzen op onze hoofden is neergestreken;<br>
+De wereld is behoeftig aan Uw inzicht en Uw leerrede.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Als kolkende zeeën overvloeien Uw werken van lichternis;<br>
+U bent de gids van Nur-studenten die koersen naar ALLAH aan het richten is.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 118,
+                'content' => '<div class="page" id="118">
+<p class="text-end page-number">#118</p>
+
+<div class="poem text-center text-italic text-red">
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Miljoenen ervaren golven van extase door <strong>“De Woorden”</strong>;<br>
+Ogen bezichtigen paradijselijke oorden.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+In elke zin schittert Wijsheid uit Qur’anische Lichtbronnen;<br>
+In elke Flits schijnen de stralen van duizend en één zonnen.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+De Nur-belijder zal een voorbeeldrol voor de mensheid vervullen;<br>
+Verheven gevoelens zullen gemoederen verrukken.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Terwijl de visie van een Nur-belijder dagelijks wordt gecultiveerd;<br>
+wordt zijn binnenwereld door de zoetste reünie geabsorbeerd.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Terwijl het geloof als oceanische golven in zijn hart danst;<br>
+Wordt zijn ziel met duizend Qur’anische waarheidslessen bekranst.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Hij verdrijft alle gevaren die de Islam hebben omgeven;<br>
+Want zijn missie is rein van politieke vlekken gebleven.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 119,
+                'content' => '<div class="page" id="119">
+<p class="text-end page-number">#119</p>
+
+<div class="poem text-center text-italic text-red">
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+In elke zet die Hij doet, schuilt een heilige kracht;<br>
+Hij heeft een sublieme stem die de gewetens verzacht.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Wanneer de harten de oneindige liefdesmystiek bereiken;<br>
+Zal een liefderijke kleurenpracht de horizon bestrijken.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+O Nur, een heel land heeft zich geheel en al aan U overgegeven;<br>
+Mettertijd zal het hele mensdom Uw Licht tot richtsnoer nemen.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Met mirakelen wordt U beaamd door de Statige Qur’an;<br>
+O vermaarde hartenwinnaar, blijf gestadig voortgaan.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Uw biografie is gevuld met wonderlijke verhalen;<br>
+Blijf de wereld als zonnen immer ongedimd bestralen.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+U bent met de vertegenwoordiging van het zonnestelsel beladen;<br>
+In daverende dimensies blijft U in volle vaart voortrazen.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Gelovige generaties zullen in Uw voetsporen treden;<br>
+Jaren en eeuwen zullen zij Uw doel blijven nastreven.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+</div>
+
+</div>'
+            ],
+            [
+                'page_number' => 120,
+                'content' => '<div class="page" id="120">
+<p class="text-end page-number">#120</p>
+
+<div class="poem text-center text-italic text-red">
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+Terwijl U vol devotie flitsend de geschiedenis bent ontstegen;<br>
+Heeft het aantal van Uw kinderen de miljoenen overschreden.
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-center" style="margin: 0px auto 0 auto;">
+In mijn ziel ontwaar ik de ontluiking van een wereld vol geheimen;<br>
+Geen uiting in mijn ode kan mijn liefde omschrijven...
+</p>
+
+<p class="text-center text-arabic" style="margin: 0; font-style: normal;">۞</p>
+
+<p class="text-red text-italic" style="text-align: right">
+Ali Ulvi
+</p>
+
+</div>
+
+</div>'
+            ],
         ];
     }
 }
+
