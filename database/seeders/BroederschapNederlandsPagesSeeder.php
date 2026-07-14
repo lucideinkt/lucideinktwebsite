@@ -55,17 +55,17 @@ broederschap en liefde.
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0 auto 0 auto;">
-﴿اِنَّمَا الْمُؤْمِنُونَ اِخْوَةٌ فَاَصْلِحُوا بَيْنَ اَخَوَيْكُمْ<sup>4</sup>﴾
+﴿ اِنَّمَا الْمُؤْمِنُونَ اِخْوَةٌ فَاَصْلِحُوا بَيْنَ اَخَوَيْكُمْ <sup>4</sup> ﴾
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 8px auto 0 auto;">
-﴿اِدْفَعْ بِالَّتٖى هِىَ اَحْسَنُ فَاِذَا الَّذٖى بَيْنَكَ<br>
-وَبَيْنَهُ عَدَاوَةٌ كَاَنَّهُ وَلِىٌّ حَمٖيمٌ<sup>5</sup>﴾
+﴿ اِدْفَعْ بِالَّتٖى هِىَ اَحْسَنُ فَاِذَا الَّذٖى بَيْنَكَ<br>
+وَبَيْنَهُ عَدَاوَةٌ كَاَنَّهُ وَلِىٌّ حَمٖيمٌ <sup>5</sup> ﴾
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 8px auto 0 auto;">
-﴿وَالْكَاظِمٖينَ الْغَيْظَ وَالْعَافٖينَ عَنِ النَّاسِ<br>
-وَاللّٰهُ يُحِبُّ الْمُحْسِنٖينَ<sup>6</sup>﴾
+﴿ وَالْكَاظِمٖينَ الْغَيْظَ وَالْعَافٖينَ عَنِ النَّاسِ<br>
+وَاللّٰهُ يُحِبُّ الْمُحْسِنٖينَ <sup>6</sup> ﴾
 </p>
 
 <div class="page-footnote">
