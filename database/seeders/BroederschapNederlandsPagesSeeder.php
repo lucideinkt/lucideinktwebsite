@@ -32,7 +32,7 @@ class BroederschapNederlandsPagesSeeder extends BookPagesSeeder
     </div>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
-بِاسْمِهٖ <sup>1</sup> ۞ وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ <sup>2</sup>
+بِاسْمِهٖ <sup>1</sup> ۞ وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup>
 </p>
 
 <p class="text-center" style="max-width: 500px; margin: 0 auto;margin-bottom: 18px;">
@@ -49,21 +49,23 @@ broederschap en liefde.
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
+<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
  “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><sup>1</sup></button></span>
+&lt;/p&gt;"><sup>3</sup></button></span>
 </p>
 
-<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
-﴿ اِنَّمَا الْمُؤْمِنُونَ اِخْوَةٌ فَاَصْلِحُوا بَيْنَ اَخَوَيْكُمْ ﴾ <sup>4</sup>
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0 auto 0 auto;">
+﴿اِنَّمَا الْمُؤْمِنُونَ اِخْوَةٌ فَاَصْلِحُوا بَيْنَ اَخَوَيْكُمْ<sup>4</sup>﴾
 </p>
 
-<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
-﴿ اِدْفَعْ بِالَّتٖى هِىَ اَحْسَنُ فَاِذَا الَّذٖى بَيْنَكَ وَبَيْنَهُ عَدَاوَةٌ كَاَنَّهُ وَلِىٌّ حَمٖيمٌ ﴾ <sup>5</sup>
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 8px auto 0 auto;">
+﴿اِدْفَعْ بِالَّتٖى هِىَ اَحْسَنُ فَاِذَا الَّذٖى بَيْنَكَ<br>
+وَبَيْنَهُ عَدَاوَةٌ كَاَنَّهُ وَلِىٌّ حَمٖيمٌ<sup>5</sup>﴾
 </p>
 
-<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
-﴿ وَالْكَاظِمٖينَ الْغَيْظَ وَالْعَافٖينَ عَنِ النَّاسِ وَاللّٰهُ يُحِبُّ الْمُحْسِنٖينَ ﴾ <sup>6</sup>
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 8px auto 0 auto;">
+﴿وَالْكَاظِمٖينَ الْغَيْظَ وَالْعَافٖينَ عَنِ النَّاسِ<br>
+وَاللّٰهُ يُحِبُّ الْمُحْسِنٖينَ<sup>6</sup>﴾
 </p>
 
 <div class="page-footnote">
