@@ -877,9 +877,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     [Met een aantal <strong>"Aanwijzingen"</strong> zullen wij bepaalde onderwerpen aanstippen die uiteengezet zijn in andere delen, namelijk in de <strong>Tweeëntwintigste</strong>, <strong>Negentiende</strong> en <strong>Zesentwintigste Woorden</strong>.]
     </p>
 
-    <div class="text-center">
-    <p class="text-center small-title"><strong>De Eerste Aanwijzing</strong></p>
-    </div>
+    <p class="text-center text-red"><strong>De Eerste Aanwijzing</strong></p>
 
     <p>
     De dwaas en zijn vertrouwde vriend uit het verhaal staan symbool voor drie waarheden.
@@ -989,9 +987,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Sla acht op het Glorieuze Vers: <sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَ اِنْ مِنْ شَيْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهِ</span>. De Ene Enige niet aanvaarden, noodzaakt dus tot de aanvaarding van zoveel goden als het aantal wezens in het bestaan.
     </p>
 
-    <div class="text-center">
-    <p class="text-center small-title"><strong>De Tweede Aanwijzing</strong></p>
-    </div>
+    <p class="text-center text-red"><strong>De Tweede Aanwijzing</strong></p>
 
     <p>
     In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <em>"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</em> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>.
@@ -1104,9 +1100,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     behandeld, zullen wij het hierbij laten.
     </p>
 
-    <div class="text-center">
-    <p class="text-center small-title"><strong>De Derde Aanwijzing</strong></p>
-    </div>
+    <p class="text-center text-red"><strong>De Derde Aanwijzing</strong></p>
 
     <p>
     Laat de volgende gedachte niet bij je opkomen:
@@ -1149,9 +1143,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Alwaarachtige aantonen. <strong><em>Aldus is ongeloof een grenzeloos misdrijf – en een grenzeloos misdrijf behoeft een grenzeloze straf.</em></strong>
     </p>
 
-    <div class="text-center">
-    <p class="text-center small-title"><strong>De Vierde Aanwijzing</strong></p>
-    </div>
+    <p class="text-center text-red"><strong>De Vierde Aanwijzing</strong></p>
 
     <p>
     Zoals wij in het verhaal aan de hand van <strong>"Twaalf Aanzichten"</strong> hebben gezien, is het geenszins mogelijk
@@ -2651,8 +2643,8 @@ uitgesproken... Uiteraard zal Hij Zijn belofte waarmaken; Hij zal een Ultieme Be
 een sublieme gelukzaligheid schenken.
 </p>
 
+<p class="text-center text-red" style="margin-bottom: 18px"><strong>De Negende Waarheid</strong></p>
 <div class="text-center text-center-constrained">
-<p class="text-center small-title"><strong>De Negende Waarheid</strong></p>
 <p class="text-center"><strong><em>De poort van Verlevendiging en Doding; Een glimp van de Namen: “De Allevende en Consistente, de Schenker des levens en Brenger des doods”</em></strong></p>
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَلْحَىُّ الْقَيُّومُ ۞ اَلْمُحْيٖى وَالْمُمٖيتُ</p>
 </div>
@@ -2854,7 +2846,7 @@ acht, dan besef jij ook hoe absurd dat is.
 Kijk naar wat het Ultieme Decreet zegt over de waarheid in kwestie:
 </p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+<p style="max-width: 500px; margin: 0px auto 18px auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
 فَانْظُرْ اِلٰۤى اٰثَارِ رَحْمَتِ اللّٰهِ كَيْفَ يُحْيِى اْلأَرْضَ بَعْدَ مَوْتِهَا
 اِنَّ ذٰلِكَ لَمُحْيِ الْمَوْتٰى وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدٖيرٌ<sup>4</sup>
 </p>
@@ -3004,7 +2996,7 @@ de hel zijn de bewaarplaatsen van de oogst.
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Tiende Waarheid</strong></p>
  <p class="text-center"><strong><em>De poort van Wijsheid, Gratie, Genade en Rechtvaardigheid; Een glimp van de Namen: “De Alwijze, de Genereuze, de Rechtvaardige en de Barmhartige.”</em></strong></p>
- <p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَكٖيمُ ۞ اَلْكَرٖيمُ ۞ اَلْعَادِلُ ۞ اَلرَّحٖيمُ</p>
+ <p style="margin-bottom: 15px" class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَكٖيمُ ۞ اَلْكَرٖيمُ ۞ اَلْعَادِلُ ۞ اَلرَّحٖيمُ</p>
 </div>
 
 <p>
@@ -3531,9 +3523,12 @@ wachtruimte voor zijn hiernamaals.</strong>
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Twaalfde Waarheid</strong></p>
  <p class="text-center"><strong><em>De poort van Profeetschap en Revelatie; Een glimp van: “In de Naam van ALLAH, de Barmhartige, de Genadige.”</em></strong></p>
-<img style="width: 50%;" src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
-<img style="width: 50%;" src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
 </div>
+
+<p style="margin-bottom: 15px" class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
+<img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
+<img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
+</p>
 
 <p>
 Waarlijk, terwijl alle Godsgezanten – <em>ondersteund door hun mirakelen</em> – zijn woorden beamen, alle heiligen –
@@ -3616,7 +3611,7 @@ manifesteren, dan zal het hiernamaals verschijnen. Al bij al reciteert en weerge
 houding:
 </p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+<p style="margin-top: 0px" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
 اٰمَنْتُ بِاللّٰهِ وَبِالْيَوْمِ اْلاٰخِرِ<sup>1</sup>
 </p>
 
@@ -4120,7 +4115,7 @@ En wees niet ontmoedigd als alles niet direct helemaal helder wordt. Want zelfs 
 Ibn Sina <em>(Avicenna)</em> zei:
 </p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+<p style="margin-top: 0px" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
  اَلْحَشْرُ لَيْسَ عَلٰى مَقَايٖيسَ عَقْلِيَّةٍ
 </p>
 
