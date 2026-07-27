@@ -1655,10 +1655,14 @@ creatie en vorming van creaturen, de eindeloze souplesse
 en eenvoud van vorming op het pad van Goddelijke
 eenheid – welke zich voltrekt zoals beschreven
 in uw voorgaande bewijzen – en het uiterste gemak
-dat openlijk getoond wordt in verzen zoals: <sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ اِلَّا كَنَفْسٍ وَاحِدَةٍ</span> <span class="text-arabic-inline" dir="rtl" lang="ar">وَمَٓا اَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ اَوْ هُوَ اَقْرَبُ<sup>9</sup></span> tonen daarentegen aan dat die fenomenale werkelijkheid
-een meest aanvaardbare en rationele zaak is. Wat
-is het geheim en wijsheid achter deze eenvoud?
-</p>
+dat openlijk getoond wordt in verzen zoals:
+
+<p style="text-indent: 0" class="text-center"><sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ اِلَّا كَنَفْسٍ وَاحِدَةٍ</span></p>
+
+<p style="text-indent: 0" class="text-center"><sup>9</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَمَٓا اَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ اَوْ هُوَ اَقْرَبُ</span></p>
+
+<p>tonen daarentegen aan dat die fenomenale werkelijkheid een meest aanvaardbare en rationele zaak is. Wat is het geheim en wijsheid achter deze eenvoud?</p>
+
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
