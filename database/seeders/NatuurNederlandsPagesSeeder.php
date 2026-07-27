@@ -2010,7 +2010,7 @@ greintje twijfel aan overgehouden.”</p>
                 'content' => '<div class="page" id="52">
 <p class="text-end page-number">#52</p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
 اَلْحَمْدُ لِلّٰهِ عَلٰى دٖينِ الْاِسْلَامِ وَكَمَالِ الْاٖيمَانِ<sup>12</sup>
 </p>
 
