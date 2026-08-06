@@ -27,86 +27,10 @@
     // ── Wire up footnote popovers for a SINGLE page ─────────────────────────
     // Tracks which pages have already been wired so we never double-process
     const wiredPages = new WeakSet();
-    let badgeCenterRaf = false;
-
-    function centerBadgeNumber(numEl) {
-        const badgeEl = numEl.closest('.fn-ref, .sup-pointer');
-        if (!badgeEl || !numEl.isConnected) return;
-
-        numEl.style.setProperty('--badge-num-shift-x', '0px');
-        numEl.style.setProperty('--badge-num-shift-y', '0px');
-
-        const range = document.createRange();
-        range.selectNodeContents(numEl);
-        const glyphRect = range.getBoundingClientRect();
-        const badgeRect = badgeEl.getBoundingClientRect();
-        range.detach?.();
-
-        if ((!glyphRect.width && !glyphRect.height) || !badgeRect.width || !badgeRect.height) return;
-
-        const badgeCenterX = badgeRect.left + (badgeRect.width / 2);
-        const badgeCenterY = badgeRect.top + (badgeRect.height / 2);
-        const glyphCenterX = glyphRect.left + (glyphRect.width / 2);
-        const glyphCenterY = glyphRect.top + (glyphRect.height / 2);
-
-        numEl.style.setProperty('--badge-num-shift-x', `${(badgeCenterX - glyphCenterX).toFixed(2)}px`);
-        numEl.style.setProperty('--badge-num-shift-y', `${(badgeCenterY - glyphCenterY).toFixed(2)}px`);
-    }
-
-    function centerBadgeNumbers() {
-        readerEl.querySelectorAll('.fn-ref-num, .sup-pointer-num').forEach(centerBadgeNumber);
-    }
-
-    function scheduleBadgeCentering() {
-        if (badgeCenterRaf) return;
-        badgeCenterRaf = true;
-        requestAnimationFrame(() => {
-            badgeCenterRaf = false;
-            centerBadgeNumbers();
-        });
-    }
-
-    function queueBadgeCentering() {
-        scheduleBadgeCentering();
-        document.fonts?.ready?.then(() => {
-            scheduleBadgeCentering();
-        });
-    }
-
-    function normalizeLegacySupPointers(page) {
-        page.querySelectorAll('.sup-pointer').forEach(pointer => {
-            if (pointer.querySelector('.sup-pointer-num')) return;
-            const num = pointer.textContent.trim();
-            if (!num) return;
-            pointer.textContent = '';
-            const numSpan = document.createElement('span');
-            numSpan.className = 'sup-pointer-num';
-            numSpan.setAttribute('aria-hidden', 'true');
-            numSpan.textContent = num;
-            pointer.appendChild(numSpan);
-        });
-    }
-
-    function normalizeServerRenderedFnRefs(page) {
-        page.querySelectorAll('.fn-ref').forEach(btn => {
-            if (btn.querySelector('.fn-ref-num')) return;
-            const num = (btn.getAttribute('data-fn') || btn.textContent || '').trim();
-            if (!num) return;
-            btn.textContent = '';
-            const numSpan = document.createElement('span');
-            numSpan.className = 'fn-ref-num';
-            numSpan.setAttribute('aria-hidden', 'true');
-            numSpan.textContent = num;
-            btn.appendChild(numSpan);
-        });
-    }
 
     function wireFootnotesForPage(page) {
         if (wiredPages.has(page)) return;
         wiredPages.add(page);
-
-        normalizeLegacySupPointers(page);
-        normalizeServerRenderedFnRefs(page);
 
         const footnoteMap = {};
         const arrowNums   = new Set();
@@ -148,7 +72,7 @@
             btn.setAttribute('data-fn', num);
             btn.setAttribute('data-html', footnoteMap[num]);
             if (arrowNums.has(num)) btn.setAttribute('data-needs-continuation', 'true');
-            btn.innerHTML = `<span class="fn-ref-num" aria-hidden="true">${num}</span>`;
+            btn.innerHTML = sup.outerHTML;
 
             const wrapper = document.createElement('span');
             wrapper.className = 'fn-ref-wrap';
@@ -169,7 +93,6 @@
         });
 
         resolveContinuations(page);
-        queueBadgeCentering();
     }
 
     // ── Resolve continuation footnotes for a single page ────────────────────
@@ -347,10 +270,5 @@
         });
     }
     window.addEventListener('scroll', scheduleReposition, { passive: true });
-    window.addEventListener('resize', () => {
-        scheduleReposition();
-        queueBadgeCentering();
-    });
-    document.fonts?.addEventListener?.('loadingdone', queueBadgeCentering);
-    queueBadgeCentering();
+    window.addEventListener('resize', scheduleReposition);
 }
