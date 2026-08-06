@@ -294,12 +294,17 @@
     line-height: 2;
     direction: rtl;
     text-align: center;
-    font-feature-settings: 'ss04', 'ss14', 'ss17';
+    font-feature-settings: "ss04", "ss14", "ss17";
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
     margin: 0.3em 0 0.3em;
     display: block;
+}
+
+/* iOS does not render ss04 correctly — remove it on iOS devices */
+html.ios-device .book-reader-scope .text-arabic {
+    font-feature-settings: "ss14", "ss17";
 }
 
 .tab-mob {
@@ -661,8 +666,8 @@ body.dark-mode .fn-popover {
     background: #1e130a;
     border-color: rgba(232, 168, 124, 0.2);
     box-shadow:
-        0 4px 6px rgba(0, 0, 0, 0.6),
-        0 10px 28px rgba(0, 0, 0, 0.8);
+        0 4px 6px rgba(0,0,0,0.6),
+        0 10px 28px rgba(0,0,0,0.8);
 }
 body.dark-mode .fn-popover__close {
     background-color: #e8a87c;
@@ -2110,7 +2115,7 @@ body.dark-mode .reader-to-top { background: #b06030; }
 }
 body.dark-mode .reader-topbar-page-badge { color: #666; }
 
-/* ─── Slim progress bar (below topbar) ─── */
+/* ─── Slim progress bar (below topbar) ── */
 .reader-progress-bar-wrap {
     position: fixed;
     top: 56px; left: 0; right: 0;
@@ -2129,7 +2134,7 @@ body.dark-mode .reader-topbar-page-badge { color: #666; }
 }
 body.dark-mode .reader-progress-bar-fill { background: linear-gradient(90deg, #e8a87c, #c06030); }
 
-/* ─── Floating Action Button ─── */
+/* ── Floating Action Button ── */
 .reader-fab {
     position: fixed;
     bottom: 20px; /* scrubber removed */
@@ -2320,7 +2325,7 @@ body.dark-mode .reader-fab[aria-expanded="true"] {
 .reader-fab-sep { font-size: 7px; color: rgba(255,255,255,0.45); }
 .reader-fab-total { font-size: 8px; color: rgba(255,255,255,0.5); letter-spacing: 0.01em; }
 
-/* ─── To-top (repositioned above FAB) ─── */
+/* ── To-top (repositioned above FAB) ── */
 .reader-to-top {
     position: fixed;
     right: 28px;

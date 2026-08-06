@@ -64,6 +64,14 @@
                     document.documentElement.classList.add('reader-preload-dark');
                 }
             } catch(_) {}
+            // Detect iOS to disable unsupported font-feature-settings (ss04)
+            try {
+                var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+                if (isIOS) {
+                    document.documentElement.classList.add('ios-device');
+                }
+            } catch(_) {}
         })();
     </script>
     <style>
