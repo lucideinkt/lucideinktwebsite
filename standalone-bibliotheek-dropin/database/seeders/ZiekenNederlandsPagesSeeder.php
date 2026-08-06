@@ -76,7 +76,7 @@ Dit spirituele recept is vlotter dan al onze andere geschriften samengesteld<sup
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
 <span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
  “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><span class="fn-ref-num" aria-hidden="true">1</span></button></span>
+&lt;/p&gt;"><sup>1</sup></button></span>
 </p>
 
 <p class="text-center text-arabic delima-font"
@@ -2526,3 +2526,4 @@ Said Nursî
         ];
     }
 }
+
