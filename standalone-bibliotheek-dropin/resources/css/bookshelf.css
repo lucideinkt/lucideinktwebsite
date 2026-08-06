@@ -1,0 +1,2160 @@
+/* =========================================================
+   BOOKSHELF - Nostalgic Dark Wooden Library
+   Lucide Inkt Webshop
+   ========================================================= */
+
+@import './front-end-components/cookie-consent.css';
+
+/* ---------------------------------------------------------
+   FONTS
+   --------------------------------------------------------- */
+@font-face {
+    font-family: 'DelimaMTProRegular';
+    src: url('../fonts/DelimaMTPro-Regular.otf') format('opentype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'DelimaMTProBold';
+    src: url('../fonts/DelimaMTPro-Bold.otf') format('opentype');
+    font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Herina';
+    src: url('../fonts/gtherina-regular.woff2') format('woff2'),
+         url('../fonts/gtherina-regular.otf') format('opentype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'BarlaScript';
+    src: url('../fonts/Barla-Aria-Script.woff2') format('woff2'),
+         url('../fonts/Barla-Aria-Script.ttf') format('truetype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'BarlaLiva';
+    src: url('../fonts/Barla-Liva-Nur.woff2') format('woff2'),
+         url('../fonts/Barla-Liva-Nur.ttf') format('truetype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'BarlaSouvenir';
+    src: url('../fonts/Barla-Souvenir-Demi-BT.ttf') format('truetype');
+    font-weight: 600; font-style: normal; font-display: swap;
+}
+
+/* ---------------------------------------------------------
+   CSS VARIABLES
+   --------------------------------------------------------- */
+:root {
+    --wood-dark:   #1a0e05;
+    --wood-mid:    #2e1a0a;
+    --wood-plank:  #3d2209;
+    --wood-shelf:  #5c3010;
+    --wood-edge:   #7a4318;
+    --wood-light:  #a0601f;
+    --gold-bright: #f0c040;
+    --gold-mid:    #c8902a;
+    --gold-dark:   #7a5010;
+    --parchment:   #f5dda0;
+}
+
+/* ---------------------------------------------------------
+   RESET
+   --------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html {
+    margin: 0; padding: 0;
+    width: 100%;
+}
+body { margin: 0; padding: 0; width: 100%; }
+
+/* ---------------------------------------------------------
+   PAGE BACKGROUND
+   --------------------------------------------------------- */
+.bookshelf-page {
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 24px 80px;
+    font-family: 'DelimaMTProRegular', serif;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image:
+        linear-gradient(180deg, #3e0907 0%, #4c0d06 30%, #260604 60%, #110202 100%);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Red carpet texture overlay — separate pseudo-element so we can control its opacity independently */
+.bookshelf-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("../images/14_red carpeting texture-seamless_hr.webp");
+    background-size: 300px;
+    background-repeat: repeat;
+    background-position: center center;
+    opacity: 8%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ---------------------------------------------------------
+   BACK LINK
+   --------------------------------------------------------- */
+.bookshelf-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(240,195,100,0.90);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 2;
+    /* subtle pill background so it's clearly readable against the dark page */
+    padding: 6px 14px 6px 11px;
+    border-radius: 20px;
+    background: rgba(180,110,30,0.18);
+    box-shadow: inset 0 0 0 1px rgba(200,160,60,0.22), 0 2px 8px rgba(0,0,0,0.4);
+}
+.bookshelf-back-link:hover {
+    color: var(--gold-bright);
+    background: rgba(180,110,30,0.30);
+    box-shadow: inset 0 0 0 1px rgba(200,160,60,0.40), 0 4px 14px rgba(0,0,0,0.5);
+}
+.bookshelf-back-link i { font-size: 12px; }
+
+/* ---------------------------------------------------------
+   TWO-COLUMN LAYOUT: sidebar + cabinet
+   --------------------------------------------------------- */
+.bookshelf-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+.bookshelf-cabinet-wrap {
+    flex: 1;
+    min-width: 0;
+    overflow: visible; /* allow candle glow/flame to bleed outside */
+}
+
+/* ---------------------------------------------------------
+   SIDEBAR — full-height wooden panel matching the cabinet
+   --------------------------------------------------------- */
+.bookshelf-sidebar {
+    flex: 0 0 310px;
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;          /* always match the cabinet's full height */
+    position: sticky;
+    top: 20px;
+    font-family: 'DelimaMTProRegular', serif;
+    /* NO max-height — the flex layout stretches this to match the cabinet */
+    /* Same dark wood + frame treatment as .bookshelf-cabinet-frame */
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    border-radius: 8px;
+    /* Same gold rim + deep drop shadow as the cabinet frame */
+    box-shadow:
+        inset 0 0 0 2px rgba(255,185,60,0.22),
+        0 30px 80px rgba(0,0,0,0.9);
+    /* Frame gap — exactly 12px padding as .bookshelf-cabinet-frame */
+    padding: 12px;
+    overflow: hidden;
+}
+
+/* Inner scrollable area — scrolls within the viewport window while sticky */
+.bs-sidebar-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Constrain visible scroll area to viewport so panels are reachable */
+    max-height: calc(100vh - 80px);
+    position: sticky;
+    top: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200,150,50,0.35) transparent;
+    border-radius: 4px;
+}
+.bs-sidebar-scroll::-webkit-scrollbar { width: 4px; }
+.bs-sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(200,150,50,0.3); border-radius: 2px; }
+
+/* Shared panel look — flush inside the full-height sidebar */
+.bs-panel {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    overflow: hidden;
+    /* Subtle separator between sections */
+    border-bottom: 1px solid rgba(0,0,0,0.35);
+    flex-shrink: 0;
+}
+.bs-panel:last-child {
+    border-bottom: none;
+}
+
+/* Gold section header bar — mirrors the bookshelf-header-sign */
+.bs-section-title {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgb(255, 232, 155);
+    margin: 0;
+    padding: 11px 14px 10px;
+    /* Exact same rosewood + gradient as the Bibliotheek header-sign */
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(180deg, #7a4020 0%, #522810 50%, #7a4020 100%);
+    background-blend-mode: soft-light, normal;
+    border-bottom: 2px solid #1a0a02;
+    box-shadow:
+        inset 0 1px 0 rgba(220,160,60,0.35),
+        0 3px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 12px rgba(200,140,30,0.3);
+}
+
+/* Small note beneath the "Zoeken in boeken" section title */
+.bs-search-note {
+    margin: 0;
+    padding: 5px 14px 6px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(255, 220, 150, 0.55);
+    font-style: italic;
+    letter-spacing: 0.3px;
+    background: rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/* Mobile variant — no background strip, sits below the search bar */
+.bs-search-note--mobile {
+    padding: 4px 8px 2px;
+    background: transparent;
+    border-bottom: none;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Body of a panel section */
+.bs-panel-body {
+    padding: 10px 12px 12px;
+}
+
+/* Category list */
+.bs-category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bs-cat-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    color: rgba(220,180,100,0.65);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+}
+.bs-cat-btn i {
+    font-size: 11px;
+    flex-shrink: 0;
+    color: rgba(200,160,60,0.5);
+    transition: color 0.15s;
+}
+.bs-cat-btn:hover {
+    background: rgba(180,100,30,0.18);
+    color: var(--parchment);
+}
+.bs-cat-btn:hover i { color: var(--gold-mid); }
+.bs-cat-btn.active {
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(90deg, rgba(130,40,15,0.9), rgba(90,20,8,0.7));
+    background-blend-mode: soft-light, normal;
+    color: var(--parchment);
+    box-shadow:
+        inset 0 0 0 1px rgba(200,140,40,0.35),
+        inset 0 1px 0 rgba(255,200,80,0.15);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+.bs-cat-btn.active i { color: var(--gold-mid); }
+
+/* Search */
+.bs-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 38px;
+    background: rgba(0,0,0,0.40);
+    border: 1px solid rgba(200,160,60,0.18);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+.bs-search-wrap:focus-within {
+    border-color: rgba(200,160,60,0.45);
+    box-shadow: 0 0 0 2px rgba(180,130,40,0.12);
+}
+.bs-search-input {
+    flex: 1;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: var(--parchment);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    /* iOS Safari zooms in when font-size < 16px on focus — prevent that */
+    touch-action: manipulation;
+}
+/* Keep font-size at ≥16px on touch devices so iOS never auto-zooms */
+@media (hover: none) and (pointer: coarse) {
+    .bs-search-input { font-size: 16px; }
+}
+.bs-search-input::placeholder { color: rgba(200,160,80,0.50); }
+.bs-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: none;
+    border: none;
+    border-left: 1px solid rgba(200,160,60,0.18);
+    padding: 0 12px;
+    color: rgba(200,160,60,0.5);
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+.bs-search-btn:hover { color: var(--gold-mid); }
+
+/* Action buttons (Leeslijst / Laatst gelezen) */
+.bs-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 14px;
+    cursor: pointer;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.22),
+        inset 0 1px 0 rgba(255,210,80,0.12),
+        0 5px 20px rgba(0,0,0,0.65);
+    transition: box-shadow 0.2s;
+    text-align: left;
+}
+.bs-action-btn:hover {
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.40),
+        inset 0 1px 0 rgba(255,210,80,0.18),
+        0 8px 26px rgba(0,0,0,0.75);
+}
+.bs-action-btn > i {
+    font-size: 18px;
+    color: var(--gold-mid);
+    flex-shrink: 0;
+    text-shadow: 0 0 10px rgba(200,140,40,0.5);
+}
+.bs-action-btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.bs-action-btn-label {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,200,100,0.9);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+.bs-action-btn-sub {
+    font-size: 11px;
+    color: rgba(200,160,80,0.5);
+    font-family: 'DelimaMTProRegular', serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px;
+}
+
+/* ---------------------------------------------------------
+   SIDEBAR LIST PANELS (last-read, bookmarks, highlights)
+   --------------------------------------------------------- */
+.bs-panel-body--list {
+    padding: 6px 0;
+    /* No max-height — the sidebar scroll container handles overflow */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200,150,50,0.35) transparent;
+}
+.bs-panel-body--list::-webkit-scrollbar { width: 4px; }
+.bs-panel-body--list::-webkit-scrollbar-thumb { background: rgba(200,150,50,0.3); border-radius: 2px; }
+
+.bs-list-empty {
+    padding: 14px 14px 10px;
+    font-size: 13px;
+    color: rgba(200,160,80,0.65);
+    font-family: 'DelimaMTProRegular', serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bs-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(200,160,60,0.07);
+    transition: background 0.15s;
+}
+.bs-list-item:last-child { border-bottom: none; }
+.bs-list-item:hover { background: rgba(180,100,30,0.15); }
+
+.bs-list-item > i {
+    font-size: 12px;
+    color: rgba(200,160,60,0.55);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.bs-list-item-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bs-list-item-title {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 14px;
+    color: rgba(240,200,120,0.9);
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.bs-list-item-meta {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 12px;
+    color: rgba(200,160,80,0.70);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bs-list-del {
+    background: none;
+    border: none;
+    color: rgba(200,80,80,0.4);
+    font-size: 11px;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+    align-self: center;
+}
+.bs-list-del:hover { color: #e05050; }
+.bs-search-results {
+    margin-top: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(200,160,60,0.18);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200,150,50,0.4) transparent;
+}
+.bs-search-results::-webkit-scrollbar { width: 5px; }
+.bs-search-results::-webkit-scrollbar-track { background: transparent; }
+.bs-search-results::-webkit-scrollbar-thumb { background: rgba(200,150,50,0.35); border-radius: 3px; }
+
+.bs-sr-meta {
+    padding: 8px 12px 6px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(220,180,80,0.85);
+    border-bottom: 1px solid rgba(200,160,60,0.15);
+}
+
+.bs-sr-empty {
+    padding: 20px 14px;
+    text-align: center;
+    color: rgba(200,160,80,0.70);
+    font-size: 13px;
+    font-family: 'DelimaMTProRegular', serif;
+    letter-spacing: 0.5px;
+}
+.bs-sr-empty i { margin-right: 6px; }
+.bs-sr-empty em { color: rgba(220,180,100,0.6); font-style: normal; }
+
+.bs-sr-book {
+    border-bottom: 1px solid rgba(200,160,60,0.1);
+}
+.bs-sr-book:last-child { border-bottom: none; }
+
+.bs-sr-book-title {
+    padding: 8px 12px 5px;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,210,100,0.95);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.bs-sr-book-title i { font-size: 10px; color: var(--gold-mid); }
+
+.bs-sr-item {
+    display: block;
+    padding: 7px 12px 8px 22px;
+    text-decoration: none;
+    border-top: 1px solid rgba(200,160,60,0.07);
+    transition: background 0.15s;
+    cursor: pointer;
+}
+.bs-sr-item:hover {
+    background: rgba(180,100,30,0.18);
+}
+
+.bs-sr-page {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    color: rgba(200,160,60,0.80);
+    margin-bottom: 3px;
+    font-family: 'DelimaMTProRegular', serif;
+}
+
+.bs-sr-page--pdf {
+    color: rgba(180,100,60,0.90);
+}
+
+.bs-sr-page--pdf i {
+    margin-right: 3px;
+}
+
+.bs-sr-snippet {
+    display: block;
+    font-size: 13px;
+    color: rgba(240,215,170,0.92);
+    line-height: 1.5;
+    font-family: 'DelimaMTProRegular', serif;
+    word-break: break-word;
+}
+
+.bs-sr-hit {
+    background: rgba(200,150,40,0.28);
+    color: #ffe080;
+    border-radius: 2px;
+    padding: 0 2px;
+    font-style: normal;
+}
+.shelf-book-read-btn {
+    position: relative;
+    z-index: 3;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: linear-gradient(180deg, #f5dda0 0%, #c8a050 100%);
+    color: #3a1a06;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    box-shadow:
+        0 2px 6px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,240,180,0.6);
+    transition: transform 0.15s, box-shadow 0.15s;
+    pointer-events: none; /* parent <a> handles click */
+    white-space: nowrap;
+    display: none;
+}
+.shelf-book:hover .shelf-book-read-btn {
+    transform: translateY(-1px);
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.7),
+        inset 0 1px 0 rgba(255,240,180,0.7);
+    display: none;
+}
+.shelf-book-read-btn i { font-size: 10px; }
+
+/* Draft badge — admin-only indicator for unpublished book content */
+.shelf-book-draft-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 10;
+    background: rgba(220, 60, 60, 0.88);
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.7);
+    pointer-events: none;
+}
+
+/* Concept button variant — amber/warning style for admin on unpublished books */
+.shelf-book-read-btn--concept {
+    background: linear-gradient(180deg, rgba(180,90,10,0.92) 0%, rgba(120,55,5,0.97) 100%) !important;
+    border-color: rgba(220,130,40,0.6) !important;
+    color: #ffd080 !important;
+    letter-spacing: 1.5px;
+}
+.shelf-book:hover .shelf-book-read-btn--concept {
+    background: linear-gradient(180deg, rgba(200,100,15,0.97) 0%, rgba(140,65,8,1) 100%) !important;
+}
+
+/* Unpublished book — no cover change, concept label on button is the indicator */
+
+/* Coming-soon text — plain centred label, no button chrome */
+.shelf-book-coming-soon-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgb(255, 232, 155);
+    text-shadow:
+        0 1px 2px rgba(0,0,0,0.9),
+        0 0 10px rgba(220,160,40,0.5),
+        0 0 22px rgba(200,130,20,0.25);
+    line-height: 1.6;
+    pointer-events: none;
+}
+
+/* Coming-soon book — not interactive */
+.shelf-book--coming-soon {
+    cursor: default;
+}
+.shelf-book--coming-soon .shelf-book-cover {
+    opacity: 0.72;
+}
+.shelf-book--coming-soon:hover .shelf-book-cover {
+    opacity: 0.72;
+}
+
+/* ---------------------------------------------------------
+   CABINET FRAME — dark wood texture replaces the old
+   plain-colour box-shadow border rings + drop shadow
+   --------------------------------------------------------- */
+.bookshelf-cabinet-frame {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px;
+    overflow: visible; /* allow candle glow/flame to bleed outside the frame */
+    /* 29_dark fine wood: rich dark grain that reads as a
+       heavy carved frame, just like the old box-shadow rings */
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center center / cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    border-radius: 8px 8px 8px 8px;
+    /* thin gold inner rim + the real drop-shadow */
+    box-shadow:
+        inset 0 0 0 2px rgba(255,185,60,0.22),
+        0 30px 80px rgba(0,0,0,0.9);
+}
+
+/* ---------------------------------------------------------
+   CABINET
+   --------------------------------------------------------- */
+.bookshelf-cabinet {
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    overflow: visible; /* candles + poles must bleed into frame padding */
+    background:
+        /* vignette gradient – darkens corners & edges */
+        radial-gradient(ellipse 110% 60% at 50% 20%,
+            transparent 45%, rgba(4,1,0,0.72) 100%),
+        /* dark fine wood: the "shadow" layer */
+        url("../images/29_dark fine wood_DIFF.webp") center center / cover no-repeat,
+        /* rosewood: the main cabinet fill */
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
+        linear-gradient(160deg, #6b3e18 0%, #4e2a0e 40%, #6b3e18 100%);
+    background-blend-mode:
+        normal,
+        multiply,
+        soft-light,
+        normal;
+    padding: 0 40px 28px;
+}
+
+/* Side poles — extend top: -12px / bottom: -12px to fill the full
+   frame height, so they rest on the floor rather than hovering */
+.bookshelf-cabinet::before,
+.bookshelf-cabinet::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;           /* stop at cabinet bottom — frame padding below = visible gap, no poles */
+    width: 40px;
+    z-index: 1;          /* behind header-sign (z-index:2) */
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
+        linear-gradient(180deg, #7a4020 0%, #522810 50%, #7a4020 100%);
+    background-blend-mode: soft-light, normal;
+    /* edge depth only — no full-face inset shadow that was darkening the pole */
+    box-shadow:
+        inset 3px 0 8px rgba(0,0,0,0.3),
+        inset -3px 0 8px rgba(0,0,0,0.3),
+        0 8px 24px 4px rgba(0,0,0,0.55);
+}
+.bookshelf-cabinet::before { left: 0;  border-radius: 6px 0 0 0; }
+.bookshelf-cabinet::after  { right: 0; border-radius: 0 6px 0 0; }
+
+
+/* ---------------------------------------------------------
+   HEADER SIGN
+   --------------------------------------------------------- */
+.bookshelf-header-sign {
+    position: relative;
+    text-align: center;
+    padding: 28px 40px 22px;
+    margin: 0 -40px 8px;
+    z-index: 2;
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
+        linear-gradient(180deg, #7a4020 0%, #522810 50%, #7a4020 100%);
+    background-blend-mode: soft-light, normal;
+    border-bottom: 3px solid #1a0a02;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7), inset 0 1px 0 rgba(220,160,60,0.4), inset 0 -1px 0 rgba(0,0,0,0.3);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.bookshelf-header-sign::before { left: 28px; }
+.bookshelf-header-sign::after  { right: 28px; }
+
+.bookshelf-seo-title {
+    font-family: 'freight-text-pro', Georgia, serif;
+    font-size: clamp(10px, 1.4vw, 13px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 220, 120, 0.55);
+    text-shadow: none;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.bookshelf-title {
+    font-family: 'Herina', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 400;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+    color: rgb(255, 232, 155);
+    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(240,180,60,0.5) 0px 0px 10px, rgba(220,150,30,0.25) 0px 0px 22px;
+    line-height: 1.1;
+}
+
+.bookshelf-title .herina-t {
+    font-size: 0;
+}
+.bookshelf-title .herina-t::before {
+    content: "\E024";
+    font-size: clamp(28px, 5vw, 52px);
+    font-family: 'Herina', serif;
+    color: inherit;
+    text-shadow: inherit;
+}
+
+.bookshelf-title-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+.bookshelf-title-ornament::before,
+.bookshelf-title-ornament::after {
+    content: '';
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(255, 232, 155), transparent);
+}
+.bookshelf-title-ornament span { color: rgb(255, 232, 155); text-shadow: rgba(0,0,0,0.9) 0px 1px 2px, rgba(240,180,60,0.5) 0px 0px 10px, rgba(220,150,30,0.25) 0px 0px 22px; font-size: 14px; opacity: 0.8; }
+
+.bookshelf-subtitle {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 13px;
+    color: rgba(245,220,160,0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* PDF replacement notice — shown when PDF-only books are present */
+.bookshelf-pdf-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(200,160,60,0.25);
+    border-radius: 5px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bookshelf-pdf-notice__icon {
+    font-size: 14px;
+    line-height: 1.4;
+    flex-shrink: 0;
+    opacity: 0.75;
+}
+.bookshelf-pdf-notice__text {
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 13px;
+    color: rgba(245,215,130,0.75);
+    line-height: 1.55;
+    text-align: left;
+    margin-bottom: -6px;
+}
+.bookshelf-pdf-notice__text em {
+    font-style: italic;
+    color: rgba(245,215,130,0.55);
+}
+
+@media (min-width: 769px) {
+    .bookshelf-pdf-notice {
+        max-width: 480px;
+    }
+}
+
+/* ---------------------------------------------------------
+   CEILING SPOTLIGHTS
+   --------------------------------------------------------- */
+.bookshelf-lights {
+    position: absolute;
+    /* Position so lamp caps sit just behind the header-sign bottom edge.
+       Header sign ≈158px tall; cap is 14px at top:-14px → cap bottom = lights top.
+       Setting top to ~164px shows ~6–8px of the glowing cap below the board. */
+    top: 164px;
+    left: 40px; right: 40px;
+    height: 0;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    /* behind header-sign (z-index:2) so caps tuck behind the board */
+    z-index: 1;
+}
+
+.bookshelf-light {
+    position: relative;
+    width: 0;
+}
+
+/* lamp cap — pulled up so it hides behind the header bottom border */
+.bookshelf-light::before {
+    content: '';
+    position: absolute;
+    top: -14px;         /* tuck well behind the 3px border-bottom of the header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 14px;
+    background: radial-gradient(ellipse at 50% 0%, #ffe080 0%, #c8902a 100%);
+    border-radius: 0 0 9px 9px;
+    box-shadow: 0 0 10px 4px rgba(240,192,64,0.8);
+    z-index: 2;
+}
+
+/* wide light beam — fully visible below header */
+.bookshelf-light::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    height: 220px;
+    background: radial-gradient(ellipse 50% 100% at 50% 0%,
+        rgba(255,215,90,0.16) 0%,
+        rgba(255,180,60,0.08) 40%,
+        transparent 100%);
+    animation: spotlight-flicker 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+.bookshelf-light:nth-child(1)::after { animation-delay: 0s; }
+.bookshelf-light:nth-child(2)::after { animation-delay: 1.4s; }
+.bookshelf-light:nth-child(3)::after { animation-delay: 2.8s; }
+
+@keyframes spotlight-flicker {
+    0%,100% { opacity: 1; }
+    15%      { opacity: 0.7; }
+    30%      { opacity: 1; }
+    50%      { opacity: 0.8; }
+    70%      { opacity: 1; }
+    85%      { opacity: 0.65; }
+}
+
+/* ---------------------------------------------------------
+   CANDLES  —  multi-layer Flamecraft-style
+   --------------------------------------------------------- */
+.bookshelf-candle {
+    position: absolute;
+    top: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    z-index: 6;
+    overflow: visible;
+}
+
+.bookshelf-candle--left  { left: 20px;  transform: translateX(-50%); }
+.bookshelf-candle--right { right: 20px; transform: translateX(50%); }
+
+.bookshelf-candle--left::before  {
+    left: -4px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(90deg, #4a2510, #8a5020);
+}
+.bookshelf-candle--right::before {
+    right: -4px;
+    border-radius: 3px 0 0 3px;
+    background: linear-gradient(270deg, #4a2510, #8a5020);
+}
+
+/* ── Flame wrapper — whole flame sways gently ── */
+.candle-flame-wrap {
+    position: relative;
+    width: 28px;
+    height: 68px;          /* extra headroom so blur + scale animations never clip the tip */
+    overflow: visible;
+    animation: flame-sway 2.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    transform-origin: bottom center;
+    margin-bottom: 0;
+}
+
+/* shared flame-layer base */
+.candle-flame {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 50% 50% 20% 20% / 60% 60% 35% 35%;
+}
+
+/* ── Layer 1 — outer glow (tight halo, no wide spread) ── */
+.candle-flame--glow {
+    width: 20px;
+    height: 36px;
+    background: radial-gradient(ellipse at 50% 80%,
+        rgba(255, 110, 0, 0.22) 0%,
+        rgba(255, 70, 0, 0.08) 45%,
+        transparent 70%);
+    filter: blur(3px);
+    border-radius: 50%;
+    animation: flame-glow 2.1s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* ── Layer 2 — outer flame (orange, slightly blurred) ── */
+.candle-flame--outer {
+    width: 20px;
+    height: 44px;
+    background: linear-gradient(180deg,
+        transparent            0%,
+        rgba(200, 60, 0, 0.85) 20%,
+        rgba(255, 100, 10, 1)  50%,
+        rgba(255, 150, 30, 1)  75%,
+        rgba(255, 190, 60, 1)  100%);
+    filter: blur(1.5px);
+    box-shadow:
+        0 0 5px 2px rgba(255, 120, 20, 0.30),
+        0 0 9px 3px rgba(255, 80,  0,  0.08);
+    animation: flame-outer 1.4s ease-in-out infinite;
+    z-index: 2;
+}
+
+/* ── Layer 3 — inner bright flame (yellow-white) ── */
+.candle-flame--inner {
+    width: 13px;
+    height: 34px;
+    bottom: 2px;
+    background: linear-gradient(180deg,
+        transparent           0%,
+        rgba(255, 220, 60, 0.9) 20%,
+        rgba(255, 240, 120, 1)  55%,
+        rgba(255, 255, 190, 1)  85%,
+        rgba(255, 255, 230, 1)  100%);
+    filter: blur(1px);
+    animation: flame-inner 1.1s ease-in-out infinite;
+    z-index: 3;
+}
+
+/* ── Layer 4 — core (glowing white-blue tip) ── */
+.candle-flame--core {
+    width: 6px;
+    height: 16px;
+    bottom: 5px;
+    background: linear-gradient(180deg,
+        rgba(200, 230, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 40%,
+        rgba(255, 255, 220, 1) 100%);
+    filter: blur(0.5px);
+    box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.6);
+    animation: flame-core 0.85s ease-in-out infinite;
+    z-index: 4;
+}
+
+/* ── Wick ── */
+.candle-wick {
+    width: 2px;
+    height: 7px;
+    background: linear-gradient(180deg, #2a1600 0%, #5a3200 60%, #3a1e00 100%);
+    border-radius: 1px 1px 0 0;
+    box-shadow: 0 0 3px 1px rgba(255, 140, 0, 0.35);
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 5;
+}
+
+/* ── Candle body ── */
+.candle-body {
+    width: 14px;
+    height: 48px;
+    background: linear-gradient(180deg, #faf5e4 0%, #ddd6b8 55%, #bdb590 100%);
+    border-radius: 2px 2px 1px 1px;
+    box-shadow:
+        inset -2px 0 4px rgba(0,0,0,0.15),
+        inset  1px 0 3px rgba(255,220,160,0.25),
+        0 0 6px 2px rgba(255,160,30,0.12);
+    position: relative;
+    z-index: 5;
+}
+/* wax melting drip on right side */
+.candle-body::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: -1px;
+    width: 3px;
+    height: 12px;
+    background: linear-gradient(180deg, rgba(250,245,228,0.9) 0%, transparent 100%);
+    border-radius: 0 2px 2px 0;
+}
+
+/* ── Holder saucer ── */
+.candle-base {
+    position: relative;
+    width: 28px;
+    height: 22px;
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
+        linear-gradient(180deg,
+            #c8901e 0%,
+            #a06018 25%,
+            #7a4010 55%,
+            #4e280a 100%);
+    background-blend-mode: soft-light, normal;
+    border-radius: 3px 3px 10px 10px;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.8),
+        inset 0 2px 0 rgba(255,200,80,0.35),
+        inset 2px 0 4px rgba(0,0,0,0.4),
+        inset -2px 0 4px rgba(0,0,0,0.4),
+        inset 0 -4px 8px rgba(0,0,0,0.5);
+}
+
+.bookshelf-candle--left  .candle-base::before { right: -16px; border-radius: 0 3px 3px 0; }
+.bookshelf-candle--right .candle-base::before { left:  -16px; border-radius: 3px 0 0 3px; }
+
+.candle-base::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 6px;
+    background: linear-gradient(180deg, rgba(255,200,80,0.5) 0%, rgba(180,120,20,0.3) 100%);
+    border-radius: 2px 2px 0 0;
+    box-shadow: inset 0 1px 0 rgba(255,220,100,0.4);
+}
+
+/* ── Ambient wall glow — kept subtle, no wide spread ── */
+.bookshelf-candle--left::after,
+.bookshelf-candle--right::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 28px;
+    height: 55px;
+    background: radial-gradient(ellipse at 50% 20%,
+        rgba(255, 150, 30, 0.05) 0%,
+        rgba(255, 100, 10, 0.02) 50%,
+        transparent 80%);
+    pointer-events: none;
+    animation: flame-glow 3.2s ease-in-out infinite;
+    display: none;
+}
+
+/* ══ Keyframes ══ */
+
+/* whole-flame sway */
+@keyframes flame-sway {
+    0%   { transform: rotate(0deg)   skewX(0deg); }
+    20%  { transform: rotate(1.5deg) skewX(0.8deg); }
+    40%  { transform: rotate(-1deg)  skewX(-0.5deg); }
+    60%  { transform: rotate(2deg)   skewX(1deg); }
+    80%  { transform: rotate(-0.8deg) skewX(-0.4deg); }
+    100% { transform: rotate(0deg)   skewX(0deg); }
+}
+
+/* outer halo pulse */
+@keyframes flame-glow {
+    0%,100% { opacity: 1;    transform: translateX(-50%) scaleX(1)    scaleY(1); }
+    25%      { opacity: 0.88; transform: translateX(-50%) scaleX(1.04) scaleY(0.98); }
+    50%      { opacity: 0.94; transform: translateX(-50%) scaleX(0.97) scaleY(1.03); }
+    75%      { opacity: 0.82; transform: translateX(-50%) scaleX(1.02) scaleY(0.99); }
+}
+
+/* outer orange flame */
+@keyframes flame-outer {
+    0%,100% { transform: translateX(-50%) scaleX(1)    scaleY(1);    opacity: 1; }
+    15%      { transform: translateX(-50%) scaleX(0.95) scaleY(1.03); opacity: 0.95; }
+    30%      { transform: translateX(-50%) scaleX(1.04) scaleY(0.98); opacity: 1; }
+    50%      { transform: translateX(-50%) scaleX(0.96) scaleY(1.04); opacity: 0.92; }
+    65%      { transform: translateX(-50%) scaleX(1.02) scaleY(0.98); opacity: 0.97; }
+    80%      { transform: translateX(-50%) scaleX(0.97) scaleY(1.02); opacity: 1; }
+}
+
+/* inner yellow flame — faster, offset phase */
+@keyframes flame-inner {
+    0%,100% { transform: translateX(-50%) scaleX(1)    scaleY(1);    opacity: 1; }
+    20%      { transform: translateX(-50%) scaleX(1.04) scaleY(0.97); opacity: 0.95; }
+    40%      { transform: translateX(-50%) scaleX(0.96) scaleY(1.04); opacity: 1; }
+    60%      { transform: translateX(-50%) scaleX(1.02) scaleY(0.98); opacity: 0.93; }
+    80%      { transform: translateX(-50%) scaleX(0.97) scaleY(1.02); opacity: 1; }
+}
+
+/* white core — fastest, most erratic */
+@keyframes flame-core {
+    0%,100% { transform: translateX(-50%) scaleX(1)    scaleY(1);    opacity: 1; }
+    18%      { transform: translateX(-50%) scaleX(0.92) scaleY(1.06); opacity: 0.92; }
+    36%      { transform: translateX(-50%) scaleX(1.06) scaleY(0.95); opacity: 1; }
+    54%      { transform: translateX(-50%) scaleX(0.9)  scaleY(1.07); opacity: 0.88; }
+    72%      { transform: translateX(-50%) scaleX(1.04) scaleY(0.96); opacity: 0.97; }
+}
+
+/* ---------------------------------------------------------
+   SHELF ROWS
+   --------------------------------------------------------- */
+.bookshelf-shelf-row {
+    position: relative;
+    padding: 28px 0 0; /* NO side padding — plank must reach the pillars */
+    background: linear-gradient(180deg, rgba(255,160,40,0.06) 0%, transparent 40%);
+}
+
+.bookshelf-plank {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 24px;
+    padding: 0 48px 16px;
+    min-height: 240px;
+}
+.bookshelf-plank::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 1px;
+    height: 18px;
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
+        linear-gradient(180deg, #7a4020 0%, #522810 40%, #6a3418 70%, #7a4020 100%);
+    background-blend-mode: soft-light, normal;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.5), inset 0 2px 0 rgba(220,160,60,0.35), inset 0 -1px 0 rgba(0,0,0,0.4);
+    border-radius: 0 0 2px 2px;
+}
+.bookshelf-plank::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 30px;
+    background: radial-gradient(ellipse at center, rgba(255,180,60,0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.shelf-book--ghost {
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ---------------------------------------------------------
+   BOOK ITEMS
+   --------------------------------------------------------- */
+.shelf-book {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    max-width: 320px;
+    transform-origin: bottom center;
+    align-self: flex-end;
+}
+.shelf-book::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 10%; width: 80%; height: 8px;
+    background: rgba(0,0,0,0.6);
+    filter: blur(4px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Book cover */
+.shelf-book-cover {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    border-radius: 3px 6px 6px 3px;
+    overflow: hidden;
+    padding: 36px 14px 20px 18px;
+    /* Deep crimson red leather — colour layer forces uniform hue, shadow layers add depth */
+    background-color: #3d0a08;
+    background-image:
+        radial-gradient(ellipse at 25% 15%, rgba(0,0,0,0.38) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 85%, rgba(0,0,0,0.30) 0%, transparent 50%),
+        linear-gradient(#7c1208, #7c1208),
+        url("../images/123_leather texture-seamless.webp");
+    background-size: auto, auto, auto, cover;
+    background-blend-mode: multiply, multiply, color, normal;
+    box-shadow:
+        inset 4px 0 12px rgba(120,10,20,0.2),
+        inset -3px 0 8px rgba(0,0,0,0.65),
+        inset 0 3px 6px rgba(160,30,40,0.12),
+        inset 0 -3px 6px rgba(0,0,0,0.45),
+        -4px 6px 16px rgba(0,0,0,0.8),
+        2px 0 0 rgba(200,80,80,0.06);
+}
+
+/* Outer gold border frame */
+.shelf-book-cover::before {
+    content: '';
+    position: absolute;
+    inset: 7px 6px 7px 10px;
+    border: 2px solid rgba(195,145,35,0.7);
+    border-radius: 2px;
+    box-shadow:
+        inset 0 0 0 1px rgba(120,80,10,0.4),
+        0 0 0 1px rgba(100,60,5,0.3),
+        inset 0 0 8px rgba(180,120,20,0.1);
+    pointer-events: none;
+}
+
+/* Inner gold border frame */
+.shelf-book-cover::after {
+    content: '';
+    position: absolute;
+    inset: 11px 10px 11px 14px;
+    border: 1px solid rgba(195,145,35,0.35);
+    border-radius: 1px;
+    pointer-events: none;
+}
+
+.shelf-book-title {
+    position: relative;
+    z-index: 2;
+    font-family: gioviale,sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: rgb(255, 232, 155);
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    text-shadow:
+        0 1px 2px rgba(0,0,0,0.9),
+        0 0 10px rgba(220,160,40,0.5),
+        0 0 22px rgba(200,130,20,0.25);
+    padding: 0 6px;
+    margin-top: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: none; /* no auto-hyphenation on book cover titles */
+}
+
+/* Title + optional small label below */
+.shelf-book-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Small plain text label underneath the title */
+.shelf-book-version-label {
+    position: relative;
+    z-index: 4;
+    font-family: sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 220, 150, 0.6);
+    text-shadow: none;
+    text-align: center;
+    display: none;
+}
+
+/* Version badges above book title */
+.shelf-book-version-badge {
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.shelf-book-version-badge--html {
+    background: rgba(40, 120, 60, 0.85);
+    color: #c8f5d0;
+    border: 1px solid rgba(100, 200, 120, 0.5);
+    text-shadow: none;
+}
+
+.shelf-book-version-badge--pdf {
+    background: rgba(160, 60, 30, 0.85);
+    color: #ffd4c0;
+    border: 1px solid rgba(220, 100, 60, 0.5);
+    text-shadow: none;
+}
+
+/* PDF badge as bottom flex item — replaces the read button on pdf books */
+.shelf-book-pdf-badge {
+    white-space: nowrap;
+}
+
+/* Invisible placeholder — keeps title vertically aligned on books without a badge */
+.shelf-book-version-badge--placeholder {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.shelf-book-version-note {
+    position: relative;
+    z-index: 4;
+    display: block;
+    font-family: sans-serif;
+    font-size: 8px;
+    color: rgba(255, 220, 150, 0.7);
+    text-align: center;
+    letter-spacing: 0.3px;
+    margin-top: 1px;
+    margin-bottom: 0;
+    padding: 0 4px;
+    text-shadow: none;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+/* ornament CSS removed — SVGs removed from template */
+
+.shelf-book-corner {
+    position: absolute;
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    pointer-events: none;
+    opacity: 0.92;
+}
+/* Top-left: original orientation */
+.shelf-book-corner--tl { top: 11px;    left: 14px;  transform: none; }
+/* Top-right: mirror horizontally */
+.shelf-book-corner--tr { top: 11px;    right: 9px;  transform: scaleX(-1); }
+/* Bottom-left: mirror vertically */
+.shelf-book-corner--bl { bottom: 11px; left: 14px;  transform: scaleY(-1); }
+/* Bottom-right: rotate 180° */
+.shelf-book-corner--br { bottom: 11px; right: 9px;  transform: scale(-1); }
+
+.shelf-book-spine {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 10px;
+    background: linear-gradient(180deg,
+        #7a1a10 0%,
+        #4e0e0a 15%,
+        #2e0808 40%,
+        #4a100a 60%,
+        #4e0e0a 80%,
+        #7a1a10 100%
+    );
+    box-shadow:
+        inset -3px 0 5px rgba(0,0,0,0.55),
+        inset 1px 0 3px rgba(180,40,20,0.15);
+}
+
+/* Tooltip */
+.shelf-book-tooltip {
+    display: none;
+}
+
+/* ---------------------------------------------------------
+   FOOTER BAR — mirrors the header-sign z-index trick so
+   the side poles tuck behind this baseboard at the bottom
+   --------------------------------------------------------- */
+.bookshelf-footer-bar {
+    position: relative;
+    z-index: 2;                      /* above poles (z-index:1) */
+    margin: 16px -40px -28px;        /* stretch past 40px side padding, consume 28px cabinet bottom padding */
+    height: 28px;                    /* matches cabinet bottom padding — frame gap shows below */
+    background:
+        url("../images/107_rosewood fine wood_DIFF.webp") center center / cover no-repeat,
+        linear-gradient(180deg, #7a4020 0%, #522810 50%, #7a4020 100%);
+    background-blend-mode: soft-light, normal;
+    border-top: 3px solid #1a0a02;
+    border-radius: 4px 4px 8px 8px;
+    box-shadow:
+        inset 0 6px 18px rgba(0,0,0,0.75),   /* deep recess — poles appear to go behind */
+        inset 0 1px 0 rgba(220,160,60,0.35),  /* gold rim just below the border */
+        0 -4px 20px rgba(0,0,0,0.7),          /* upward shadow onto poles — mirrors header's downward shadow */
+        0 6px 18px rgba(0,0,0,0.65);          /* drop shadow onto the frame floor */
+}
+
+/* ---------------------------------------------------------
+   EMPTY STATE
+   --------------------------------------------------------- */
+.bookshelf-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(200,160,80,0.5);
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.bookshelf-empty i { font-size: 3rem; display: block; margin-bottom: 16px; opacity: 0.3; }
+
+/* ---------------------------------------------------------
+   LARGE SCREENS  ≥1400 px  (3 per row, widest — books can be biggest)
+   --------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .shelf-book { max-width: 320px; flex: 0 0 calc((100% - 56px) / 3); }
+    .shelf-book-cover { padding: 42px 16px 22px 20px; }
+    .shelf-book-corner { width: 32px; height: 32px; }
+    .shelf-book-corner--tl { top: 10px; left: 14px; }
+    .shelf-book-corner--tr { top: 10px; right: 10px; }
+    .shelf-book-corner--bl { bottom: 10px; left: 14px; }
+    .shelf-book-corner--br { bottom: 10px; right: 10px; }
+    /* 320px book → text area 284px → 30px title fits comfortably */
+    .shelf-book-title { font-size: 30px; line-height: 1.2; padding: 0 6px; margin-top: 8px; }
+    .bookshelf-plank  { gap: 28px; }
+    .shelf-book-version-label { font-size: 11px; letter-spacing: 0.7px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 6px 14px; letter-spacing: 1.2px; }
+}
+
+/* ---------------------------------------------------------
+   3-PER-ROW  1025–1399 px  (sidebar visible, 3 books)
+   Books max 280px wide → text area ~252px → title scales 2vw.
+   --------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .bookshelf-plank { gap: 20px; }
+    .shelf-book { max-width: 280px; flex: 0 0 calc((100% - 40px) / 3); }
+    /* Corners 26px, top 9px → end at 35px; padding-top 40px clears them */
+    .shelf-book-cover { padding: 40px 14px 18px 18px; }
+    .shelf-book-corner { width: 26px; height: 26px; }
+    .shelf-book-corner--tl { top: 9px;    left: 12px; }
+    .shelf-book-corner--tr { top: 9px;    right: 9px; }
+    .shelf-book-corner--bl { bottom: 9px; left: 12px; }
+    .shelf-book-corner--br { bottom: 9px; right: 9px; }
+    /* 2vw: 1050px→21px, 1399px→27px (clamped 22); text area 252px → fits */
+    .shelf-book-title {
+        font-size: clamp(18px, 2vw, 26px);
+        margin-top: 7px;
+        line-height: 1.2;
+        padding: 0 5px;
+    }
+    .shelf-book-title-group { gap: 3px; }
+    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.5px; }
+    .shelf-book-version-badge { font-size: 9px; padding: 2px 5px; letter-spacing: 0.3px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 5px 12px; letter-spacing: 1px; gap: 5px; }
+    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1px; }
+}
+
+/* ---------------------------------------------------------
+   3-PER-ROW  768–1024 px  (tablet landscape, 3 books)
+   --------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .bookshelf-plank { gap: 16px; }
+    .shelf-book { max-width: 280px; flex: 0 0 calc((100% - 32px) / 3); }
+    .shelf-book-cover {
+        padding: 40px 12px 16px 16px;
+        aspect-ratio: 2 / 3;
+    }
+    .shelf-book-corner { width: 28px; height: 28px; }
+    .shelf-book-corner--tl { top: 9px;    left: 12px; }
+    .shelf-book-corner--tr { top: 9px;    right: 9px; }
+    .shelf-book-corner--bl { bottom: 9px; left: 12px; }
+    .shelf-book-corner--br { bottom: 9px; right: 9px; }
+    .shelf-book-title {
+        font-size: clamp(16px, 2.4vw, 28px);
+        margin-top: 6px;
+        line-height: 1.2;
+        padding: 0 4px;
+    }
+    .shelf-book-title-group { gap: 3px; }
+    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.5px; }
+    .shelf-book-version-badge { font-size: 9px; padding: 2px 5px; letter-spacing: 0.3px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 5px 12px; letter-spacing: 1px; gap: 4px; }
+    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1px; }
+}
+
+/* ---------------------------------------------------------
+   2-PER-ROW  481–767 px  (sidebar hidden/drawer, 2 books)
+   Books capped at 360px. aspect-ratio 3/4.
+   --------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 767px) {
+    .bookshelf-plank { gap: 16px; }
+    .shelf-book { max-width: 360px; flex: 1 1 0; }
+    /* Corners 36px, top 9px → end at 45px; padding-top 50px clears them */
+    .shelf-book-cover {
+        padding: 50px 14px 18px 18px;
+        aspect-ratio: 3 / 4;
+    }
+    .shelf-book-corner { width: 36px; height: 36px; }
+    .shelf-book-corner--tl { top: 9px;    left: 12px; }
+    .shelf-book-corner--tr { top: 9px;    right: 9px; }
+    .shelf-book-corner--bl { bottom: 9px; left: 12px; }
+    .shelf-book-corner--br { bottom: 9px; right: 9px; }
+    .shelf-book-title {
+        font-size: clamp(18px, 3.6vw, 36px);
+        margin-top: 6px;
+        line-height: 1.2;
+        padding: 0 5px;
+    }
+    .shelf-book-title-group { gap: 3px; margin-top: -8px; }
+    .shelf-book-version-label { font-size: 10px; letter-spacing: 0.5px; }
+    .shelf-book-version-badge { font-size: 9px; padding: 2px 5px; letter-spacing: 0.3px; }
+    .shelf-book-read-btn { font-size: 11px; padding: 5px 12px; letter-spacing: 1px; gap: 4px; }
+    .shelf-book-coming-soon-text { font-size: 11px; letter-spacing: 1px; }
+}
+
+/* ---------------------------------------------------------
+   MOBILE CONTROLS BAR  (visible only on screens ≤1024 px)
+   3-row layout: [back | menu] / [search] / [book selector]
+   --------------------------------------------------------- */
+.bs-mobile-controls {
+    display: none; /* shown via media query */
+    flex-direction: column;
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 0 14px;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Row 1: back link (left) + menu button (right) ── */
+.bs-mc-toprow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Back link inside mobile bar — matches .bs-drawer-toggle styling */
+.bs-back-link-mobile {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: normal;
+    color: rgba(240,200,100,0.9);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    text-decoration: none;
+    white-space: nowrap;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.25),
+        inset 0 1px 0 rgba(255,200,80,0.1),
+        0 4px 12px rgba(0,0,0,0.6);
+    transition: box-shadow 0.2s;
+}
+.bs-back-link-mobile:hover {
+    color: var(--gold-bright);
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.45),
+        0 6px 16px rgba(0,0,0,0.7);
+}
+.bs-back-link-mobile i {
+    font-size: 13px;
+    color: var(--gold-mid);
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    margin-top: -1px;
+}
+
+/* Hamburger / drawer-open button */
+.bs-drawer-toggle {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(240,200,100,0.9);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.25),
+        inset 0 1px 0 rgba(255,200,80,0.1),
+        0 4px 12px rgba(0,0,0,0.6);
+    transition: box-shadow 0.2s;
+    white-space: nowrap;
+}
+.bs-drawer-toggle:hover {
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.45),
+        0 6px 16px rgba(0,0,0,0.7);
+}
+.bs-drawer-toggle i {
+    font-size: 13px;
+    color: var(--gold-mid);
+    line-height: 0;      /* collapse line box for geometric centering */
+    display: flex;
+    align-items: center;
+    margin-top: -1px;    /* align with the uppercase serif label text */
+}
+.bs-drawer-toggle span {
+    display: none;
+    line-height: normal;
+    padding-top: 2px;  /* align uppercase label with icon centre */
+}
+@media (min-width: 360px) {
+    .bs-drawer-toggle span { display: inline; }
+}
+
+/* ── Row 2: Full-width search ── */
+.bs-mobile-search-outer {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+.bs-mobile-search-outer .bs-search-results {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    z-index: 50;
+    margin-top: 0;
+    max-height: 460px;
+    background: #1a0c04;
+    border: 1px solid rgba(200,160,60,0.28);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.92), 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* ── Row 3: Custom book selector ── */
+.bs-book-selector {
+    position: relative;
+    width: 100%;
+    z-index: 4;
+}
+
+/* Trigger button */
+.bs-book-selector-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 40px;       /* slightly taller to give font descenders room */
+    padding: 0 14px;
+    border: 1px solid rgba(200,160,60,0.35);
+    border-radius: 8px;
+    cursor: pointer;
+    line-height: normal;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
+    background-blend-mode: soft-light, normal;
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.12),
+        0 4px 12px rgba(0,0,0,0.5);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-align: left;
+    overflow: visible;   /* allow font descenders to render without clipping */
+}
+.bs-book-selector-trigger:hover {
+    border-color: rgba(200,160,60,0.55);
+    box-shadow:
+        inset 0 0 0 1px rgba(200,160,60,0.25),
+        0 6px 16px rgba(0,0,0,0.6);
+}
+.bs-bst-icon {
+    color: rgba(200,160,60,0.70);
+    font-size: 13px;
+    flex-shrink: 0;
+    line-height: 0;      /* zero-out line box so flex centering is purely geometric */
+    display: flex;
+    align-items: center;
+    margin-top: -1px;    /* fine-tune vertical position relative to text */
+}
+.bs-bst-label {
+    flex: 1;
+    color: rgba(240,200,100,0.75);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;  /* allow proper ascender/descender space */
+    padding-top: 2px;     /* push text down to align visually with icons */
+}
+.bs-bst-arrow {
+    color: rgba(200,160,60,0.65);
+    font-size: 11px;
+    flex-shrink: 0;
+    line-height: 0;      /* zero-out line box so flex centering is purely geometric */
+    display: flex;
+    align-items: center;
+    margin-top: -1px;    /* match icon nudge */
+}
+
+/* Dropdown panel */
+.bs-book-selector-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background:
+        url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
+        linear-gradient(180deg, #2a1006 0%, #140802 60%, #2a1006 100%);
+    background-blend-mode: soft-light, normal;
+    border: 1px solid rgba(200,160,60,0.35);
+    border-radius: 10px;
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.92),
+        inset 0 0 0 1px rgba(200,160,60,0.10);
+    overflow: hidden;
+    max-height: 320px;
+    overflow-y: auto;
+    /* Thin gold scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(200,160,60,0.35) transparent;
+}
+.bs-book-selector-panel::-webkit-scrollbar { width: 4px; }
+.bs-book-selector-panel::-webkit-scrollbar-thumb {
+    background: rgba(200,160,60,0.35);
+    border-radius: 2px;
+}
+
+/* Each book item */
+.bs-bsp-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,160,60,0.08);
+    transition: background 0.15s;
+    cursor: pointer;
+}
+.bs-bsp-item:last-child { border-bottom: none; }
+.bs-bsp-item:hover {
+    background: rgba(200,140,40,0.18);
+}
+.bs-bsp-item--disabled {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+}
+.bs-bsp-title {
+    flex: 1;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 14px;
+    color: rgba(240,210,140,0.95);
+    line-height: 1.3;
+}
+
+/* Version badge */
+.bs-bsp-badge {
+    flex-shrink: 0;
+    font-family: sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+.bs-bsp-badge--html {
+    background: rgba(40,120,60,0.80);
+    color: #b8f0c8;
+    border: 1px solid rgba(100,200,120,0.45);
+}
+.bs-bsp-badge--pdf {
+    background: rgba(160,60,30,0.80);
+    color: #ffd4c0;
+    border: 1px solid rgba(220,100,60,0.45);
+}
+.bs-bsp-badge--soon {
+    background: rgba(80,60,20,0.70);
+    color: rgba(240,200,100,0.60);
+    border: 1px solid rgba(200,160,60,0.25);
+}
+
+/* Drawer backdrop */
+.bs-drawer-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 950;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+.bs-drawer-backdrop.bs-open { display: block; }
+
+/* Close button inside the drawer (visible only on mobile) */
+.bs-drawer-close {
+    display: none; /* shown via media query */
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: rgba(255,200,60,0.08);
+    border: 1px solid rgba(200,160,60,0.25);
+    color: rgba(240,200,100,0.90);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px 9px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+    z-index: 20;
+}
+.bs-drawer-close:hover {
+    color: #f0c040;
+    background: rgba(255,200,60,0.08);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+/* ── ≤1024 px : sidebar becomes a left-slide flyout drawer ── */
+@media (max-width: 1024px) {
+
+    /* Show the mobile controls bar */
+    .bs-mobile-controls { display: flex; }
+
+    /* Hide the standalone back-link — it lives inside the mobile bar now */
+    .bookshelf-back-link { display: none; }
+
+    /* Layout: single-column, cabinet takes full width */
+    .bookshelf-layout {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Sidebar: fixed overlay drawer that slides in from the left */
+    .bookshelf-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: min(300px, 86vw);
+        height: 100vh;
+        max-height: 100vh;
+        z-index: 1000;
+        transform: translateX(-110%);
+        transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+        border-radius: 0 10px 10px 0;
+        flex: none;
+        overflow: hidden;
+        padding: 0;
+    }
+    .bookshelf-sidebar.bs-drawer-open {
+        transform: translateX(0);
+        box-shadow:
+            6px 0 40px rgba(0,0,0,0.88),
+            inset 0 0 0 1px rgba(200,160,60,0.22);
+    }
+
+    /* Show the close button */
+    .bs-drawer-close { display: flex; align-items: center; justify-content: center; }
+
+    /* Sidebar scroll: extra top space for close button */
+    .bs-sidebar-scroll {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0;
+        padding-top: 46px;
+    }
+
+    /* Panels: vertical stack (undo the 900px horizontal layout) */
+    .bs-panel {
+        flex: none;
+        border-bottom: 1px solid rgba(0,0,0,0.35);
+        border-right: none;
+    }
+    .bs-panel:last-child { border-bottom: none; }
+
+    /* Hide the desktop-only search panel inside the drawer */
+    .bs-panel--search-desktop { display: none; }
+}
+
+@media (max-width: 768px) {
+    .bookshelf-page { padding: 20px 12px 60px; }
+
+    .bookshelf-cabinet-frame {
+        padding: 10px;
+        box-shadow:
+            inset 0 0 0 2px rgba(255,185,60,0.18),
+            0 20px 50px rgba(0,0,0,0.95);
+    }
+    .bookshelf-cabinet {
+        padding: 0 20px 20px;
+    }
+    /* pillar width = cabinet padding → flush connection; bottom extends to frame ground */
+    .bookshelf-cabinet::before,
+    .bookshelf-cabinet::after { width: 20px; bottom: 0; }
+
+    .bookshelf-header-sign { margin: 0 -20px 8px; padding: 28px 24px 22px; }
+    .bookshelf-footer-bar  { margin: 16px -20px -20px; height: 20px; }
+    .bookshelf-lights { left: 20px; right: 20px; top: 210px; }
+    .bookshelf-candle { top: 540px; }
+    .bookshelf-candle--left  { left: 10px; }
+    .bookshelf-candle--right { right: 10px; }
+
+    .bookshelf-plank { gap: 14px; min-height: 170px; padding: 0 22px 14px; }
+    .bookshelf-plank::after { left: 0; right: 1px; }
+}
+
+@media (max-width: 480px) {
+    .bookshelf-page { padding: 14px 10px 60px; }
+    .bookshelf-title { letter-spacing: 3px; }
+
+    .bookshelf-cabinet-frame {
+        padding: 8px;
+        box-shadow:
+            inset 0 0 0 2px rgba(255,185,60,0.15),
+            0 16px 40px rgba(0,0,0,0.95);
+    }
+    .bookshelf-cabinet {
+        padding: 0 14px 16px;
+    }
+    .bookshelf-cabinet::before,
+    .bookshelf-cabinet::after { width: 14px; bottom: 0; }
+
+    .bookshelf-header-sign { margin: 0 -14px 8px; padding: 24px 18px 18px; }
+    .bookshelf-footer-bar  { margin: 16px -14px -16px; height: 16px; }
+    .bookshelf-lights { left: 14px; right: 14px; top: 190px; }
+    .bookshelf-candle { top: 400px; }
+    .bookshelf-candle--left  { left: 7px; }
+    .bookshelf-candle--right { right: 7px; }
+
+    .bookshelf-plank { gap: 10px; padding: 0 14px 14px; }
+    .bookshelf-plank::after { left: 0; right: 1px; }
+
+    /* ── 2-PER-ROW on phones ──────────────────────────────────────
+       Two books side by side on the plank. Smaller aspect ratio
+       so they fit without being too narrow.
+       Corners 28px, top 8px → end at 36px; padding-top 42px clears.
+       Title: 4vw scales with viewport: 480px→23px, 375px→15→min16.
+       ──────────────────────────────────────────────────────────── */
+    .bookshelf-plank {
+        gap: 10px;
+        justify-content: center;
+        min-height: 180px;
+    }
+    .shelf-book {
+        max-width: none;
+        width: auto;
+        flex: 1 1 0;
+    }
+    .shelf-book-cover {
+        padding: 42px 10px 16px 14px;
+        aspect-ratio: 2 / 3;
+    }
+    .shelf-book-corner { width: 28px; height: 28px; }
+    .shelf-book-corner--tl { top: 8px;    left: 10px; }
+    .shelf-book-corner--tr { top: 8px;    right: 8px; }
+    .shelf-book-corner--bl { bottom: 8px; left: 10px; }
+    .shelf-book-corner--br { bottom: 8px; right: 8px; }
+    .shelf-book-title {
+        font-size: clamp(19px, 5vw, 28px);
+        margin-top: 6px;
+        line-height: 1.2;
+        padding: 0 4px;
+    }
+    .shelf-book-title-group { gap: 3px; margin-top: -8px; }
+    .shelf-book-version-label { font-size: 9px; letter-spacing: 0.4px; }
+    .shelf-book-version-badge { font-size: 8px; padding: 2px 5px; letter-spacing: 0.2px; }
+    .shelf-book-read-btn { font-size: 10px; padding: 5px 10px; letter-spacing: 1px; gap: 4px; }
+    .shelf-book-coming-soon-text { font-size: 10px; letter-spacing: 1px; }
+}
+
+/* Prevent body scroll when drawer is open */
+body.bs-drawer-no-scroll { overflow: hidden; }
+
+
+/* ---------------------------------------------------------
+   2-PER-ROW fine-tuning  ≤380 px
+   Book styles inherit from ≤480px. Just tighten sizes
+   so books don't feel too large on narrow phones.
+   --------------------------------------------------------- */
+@media (max-width: 380px) {
+    /* Corners 26px, top 7px → end at 33px; padding-top 40px clears */
+    .shelf-book-cover { padding: 40px 8px 14px 12px; }
+    .shelf-book-corner { width: 26px; height: 26px; }
+    .shelf-book-corner--tl { top: 7px;    left: 9px; }
+    .shelf-book-corner--tr { top: 7px;    right: 7px; }
+    .shelf-book-corner--bl { bottom: 7px; left: 9px; }
+    .shelf-book-corner--br { bottom: 7px; right: 7px; }
+    .shelf-book-title {
+        font-size: clamp(17px, 4.5vw, 23px);
+        padding: 0 4px;
+    }
+}
+
+/* ---------------------------------------------------------
+   VERY SMALL SCREENS  ≤360 px
+   Structural tightening + book narrowed for the smallest phones.
+   --------------------------------------------------------- */
+@media (max-width: 360px) {
+    .bookshelf-cabinet { padding: 0 10px 12px; }
+    .bookshelf-cabinet::before,
+    .bookshelf-cabinet::after { width: 10px; }
+    .bookshelf-header-sign { margin: 0 -10px 6px; padding: 20px 12px 14px; }
+    .bookshelf-footer-bar  { margin: 12px -10px -12px; height: 12px; }
+    .bookshelf-lights { left: 10px; right: 10px; top: 170px; }
+    .bookshelf-plank { padding: 0 10px 12px; min-height: 180px; }
+
+    /* Narrower book + larger corners for the smallest viewports */
+    .shelf-book { max-width: 250px; }
+    /* Corners 30px, top 8px → end at 38px; padding-top 44px clears */
+    .shelf-book-cover { padding: 44px 14px 18px 18px; }
+    .shelf-book-corner { width: 30px; height: 30px; }
+    .shelf-book-corner--tl { top: 8px;  left: 12px; }
+    .shelf-book-corner--tr { top: 8px;  right: 9px; }
+    .shelf-book-corner--bl { bottom: 8px; left: 12px; }
+    .shelf-book-corner--br { bottom: 8px; right: 9px; }
+    .shelf-book-title {
+        font-size: clamp(15px, 4.5vw, 20px);
+        padding: 0 3px;
+        line-height: 1.15;
+    }
+    .shelf-book-read-btn { font-size: 10px; padding: 5px 12px; letter-spacing: 1px; }
+}
+
+
