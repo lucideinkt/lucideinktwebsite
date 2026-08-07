@@ -58,7 +58,7 @@
 
 /* â”€â”€ Basis â”€â”€ */
 .book-reader-scope {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'DelimaProRegular', Georgia, serif;
     font-size: var(--reader-font-size, 19px);
     --arabic-font-size: 29px;
     line-height: 1.85;
@@ -78,7 +78,7 @@
 .book-reader-scope h2,
 .book-reader-scope h3,
 .book-reader-scope h4 {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'DelimaProRegular', Georgia, serif;
     color: var(--main-font-color);
     line-height: 1.3;
     margin-top: 2em;
