@@ -294,7 +294,7 @@
                                     @endphp
 
                                     <div class="article-slider-slide">
-                                        <a href="{{ route('artikelenDetail', $artikel->slug) }}" class="artikel-card">
+                                        <div class="artikel-card">
                                             {{-- Image --}}
                                             <div class="artikel-card__image-wrapper">
                                                 @if($artikel->featured_image)
@@ -327,11 +327,11 @@
                                                 @if($description)
                                                     <p class="artikel-card__intro">{{ $description }}</p>
                                                 @endif
-                                                <span class="artikel-card__read-more">
+                                                <a href="{{ route('artikelenDetail', $artikel->slug) }}" class="artikel-card__read-more">
                                                     Lees artikel <i class="fa-solid fa-arrow-right"></i>
-                                                </span>
+                                                </a>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 @empty
                                     <div class="article-slider-slide">
@@ -510,8 +510,11 @@
                     const logicalCount = originalSlides.length;
 
                     let current = logicalCount > 1 ? 1 : 0;
+                    let isTransitioning = false;
+                    let transitionGuardTimer;
                     let autoplayTimer;
                     const INTERVAL = 5000;
+                    const TRANSITION_MS = 700;
 
                     if (logicalCount > 1) {
                         const firstClone = originalSlides[0].cloneNode(true);
@@ -546,17 +549,57 @@
                         return current - 1;
                     }
 
+                    function clampTrackIndex(index) {
+                        if (index < 0) return 0;
+                        if (index > slides.length - 1) return slides.length - 1;
+                        return index;
+                    }
+
                     function moveTo(index, animate = true) {
-                        current = index;
+                        current = clampTrackIndex(index);
                         setTrackTransition(animate);
                         track.style.transform = `translateX(-${current * slideWidth()}px)`;
                         const dotIndex = activeDotIndex();
                         dots.forEach((d, i) => d.classList.toggle('asd-dot--active', i === dotIndex));
+
+                        if (animate) {
+                            isTransitioning = true;
+                            clearTimeout(transitionGuardTimer);
+                            transitionGuardTimer = setTimeout(() => {
+                                isTransitioning = false;
+                            }, TRANSITION_MS + 120);
+                        }
+                    }
+
+                    function canAnimateTo(index) {
+                        return !isTransitioning && index >= 0 && index <= slides.length - 1;
+                    }
+
+                    function go(delta) {
+                        const nextIndex = current + delta;
+                        if (!canAnimateTo(nextIndex)) return;
+                        moveTo(nextIndex);
                     }
 
                     // Initialise
-                    applyWidths();
-                    moveTo(current, false);
+                    function syncSliderMetrics() {
+                        // Avoid syncing while the viewport has no layout width (can happen during initial paint).
+                        if (slideWidth() === 0) return false;
+                        applyWidths();
+                        moveTo(current, false);
+                        return true;
+                    }
+
+                    let initAttempts = 0;
+                    function initialiseSliderMetrics() {
+                        if (syncSliderMetrics()) return;
+                        initAttempts += 1;
+                        if (initAttempts < 20) {
+                            requestAnimationFrame(initialiseSliderMetrics);
+                        }
+                    }
+
+                    initialiseSliderMetrics();
 
                     if (logicalCount <= 1) {
                         if (prevBtn) prevBtn.style.display = 'none';
@@ -565,10 +608,12 @@
                         return;
                     }
 
-                    function start() { stop(); autoplayTimer = setInterval(() => moveTo(current + 1), INTERVAL); }
+                    function start() { stop(); autoplayTimer = setInterval(() => go(1), INTERVAL); }
                     function stop()  { clearInterval(autoplayTimer); autoplayTimer = null; }
 
                     track.addEventListener('transitionend', () => {
+                        isTransitioning = false;
+                        clearTimeout(transitionGuardTimer);
                         if (current === slides.length - 1) {
                             current = 1;
                             moveTo(current, false);
@@ -582,24 +627,24 @@
                     slider.addEventListener('mouseenter', stop);
                     slider.addEventListener('mouseleave', start);
 
-                    if (prevBtn) prevBtn.addEventListener('click', () => { stop(); moveTo(current - 1); start(); });
-                    if (nextBtn) nextBtn.addEventListener('click', () => { stop(); moveTo(current + 1); start(); });
+                    if (prevBtn) prevBtn.addEventListener('click', () => { stop(); go(-1); start(); });
+                    if (nextBtn) nextBtn.addEventListener('click', () => { stop(); go(1); start(); });
 
                     dots.forEach(d => d.addEventListener('click', () => {
-                        stop(); moveTo(+d.dataset.index + 1); start();
+                        const target = +d.dataset.index + 1;
+                        if (isTransitioning || target === current) return;
+                        stop();
+                        moveTo(target);
+                        start();
                     }));
 
                     let tx = 0;
                     vp.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
                     vp.addEventListener('touchend',   e => {
                         const dx = tx - e.changedTouches[0].clientX;
-                        if (Math.abs(dx) > 40) { stop(); moveTo(current + (dx > 0 ? 1 : -1)); start(); }
+                        if (Math.abs(dx) > 40) { stop(); go(dx > 0 ? 1 : -1); start(); }
                     }, { passive: true });
 
-                    function syncSliderMetrics() {
-                        applyWidths();
-                        moveTo(current, false);
-                    }
 
                     function enforceUniformHeight() {
                         // Clear any previously forced heights so natural content height is measurable.
