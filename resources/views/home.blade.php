@@ -298,12 +298,12 @@
                                             {{-- Image --}}
                                             <div class="artikel-card__image-wrapper">
                                                 @if($artikel->featured_image)
-                                                    <img
-                                                        src="{{ asset('storage/' . $artikel->featured_image) }}"
-                                                        alt="{{ $artikel->featured_image_alt ?: $artikel->title }}"
-                                                        class="artikel-card__image"
-                                                        loading="lazy"
-                                                        decoding="async">
+                                                    <div
+                                                        class="artikel-card__image-bg"
+                                                        role="img"
+                                                        aria-label="{{ $artikel->featured_image_alt ?: $artikel->title }}"
+                                                        style="background-image: url('{{ asset('storage/' . $artikel->featured_image) }}');">
+                                                    </div>
                                                 @else
                                                     <div class="artikel-card__fallback" aria-hidden="true">
                                                         <i class="fa-solid fa-feather-pointed"></i>
@@ -313,7 +313,11 @@
 
                                             {{-- Content --}}
                                             <div class="artikel-card__content">
-                                                <p class="artikel-card__category">Risale-i Nur &nbsp;◆&nbsp; Geloof</p>
+                                                <p class="artikel-card__category">
+                                                    <span class="artikel-card__category-label">Risale-i Nur</span>
+                                                    <span class="artikel-card__category-separator" aria-hidden="true">◆</span>
+                                                    <span class="artikel-card__category-label">Geloof</span>
+                                                </p>
                                                 <h3 class="artikel-card__title">{{ $artikel->title }}</h3>
                                                 <div class="artikel-card__divider" aria-hidden="true">
                                                     <span class="aso-line"></span>
@@ -592,7 +596,63 @@
                         if (Math.abs(dx) > 40) { stop(); moveTo(current + (dx > 0 ? 1 : -1)); start(); }
                     }, { passive: true });
 
-                    window.addEventListener('resize', () => { applyWidths(); moveTo(current, false); });
+                    function syncSliderMetrics() {
+                        applyWidths();
+                        moveTo(current, false);
+                    }
+
+                    function enforceUniformHeight() {
+                        // Clear any previously forced heights so natural content height is measurable.
+                        slides.forEach(s => {
+                            s.style.height = '';
+                            s.style.minHeight = '';
+                        });
+                        vp.style.height = '';
+
+                        // Force a single reflow so getBoundingClientRect reflects the new state.
+                        void vp.offsetHeight;
+
+                        // Measure the tallest slide (accounts for actual rendered font metrics).
+                        const maxH = slides.reduce((m, s) => {
+                            return Math.max(m, Math.ceil(s.getBoundingClientRect().height));
+                        }, 0);
+
+                        if (maxH > 0) {
+                            slides.forEach(s => { s.style.height = maxH + 'px'; });
+                            vp.style.height = maxH + 'px';
+                        }
+                    }
+
+                    window.addEventListener('resize', syncSliderMetrics);
+
+                    window.addEventListener('orientationchange', () => {
+                        setTimeout(() => {
+                            syncSliderMetrics();
+                        }, 120);
+                    });
+
+                    window.addEventListener('load', () => {
+                        syncSliderMetrics();
+                    });
+
+                    if (window.visualViewport) {
+                        let viewportResizeTimer;
+                        window.visualViewport.addEventListener('resize', () => {
+                            clearTimeout(viewportResizeTimer);
+                            viewportResizeTimer = setTimeout(() => { syncSliderMetrics(); enforceUniformHeight(); }, 80);
+                        });
+                    }
+
+                    if (document.fonts && document.fonts.ready) {
+                        document.fonts.ready.then(() => {
+                            syncSliderMetrics();
+                            // Delay slightly so Safari finishes its font relayout pass.
+                            setTimeout(enforceUniformHeight, 60);
+                        });
+                    }
+
+                    // Initial height enforcement after first widths are applied.
+                    requestAnimationFrame(enforceUniformHeight);
                 })();
 
                 // Add event listeners for close button and overlay
