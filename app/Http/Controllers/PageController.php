@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Services\SEOService;
-use App\Models\HomepageQuote;
 use App\Models\Artikel;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Schema;
 
 class PageController extends Controller
 {
     public function home(): View
     {
-        $quotes = HomepageQuote::active()->ordered()->get();
+        $artikelen = Schema::hasTable('artikelen')
+            ? Artikel::published()->ordered()->take(3)->get()
+            : collect();
 
         return view('home', [
             'SEOData' => SEOService::getPageSEO('home'),
-            'quotes'  => $quotes,
+            'artikelen' => $artikelen,
         ]);
     }
 

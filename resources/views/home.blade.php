@@ -265,48 +265,98 @@
 
         <div class="gradient-border"></div>
 
-        <section class="colored-section quotes-section">
-            <div class="container quote-section">
-                <div id="quotes-slider">
-                    <div class="qs-track">
-                        <div class="qs-list">
-                            @forelse($quotes as $quote)
-                            <div class="qs-slide">
-                                <div class="quote-card">
-                                    <div class="quote-icon">
-                                        <i class="fa-solid fa-quote-left"></i>
+        <section class="colored-section featured-articles-section">
+            <div class="container articles-section-container">
+
+                {{-- Section header --}}
+                <div class="articles-section-heading">
+                    <h2 class="title articles-section-title">
+                        <span class="articles-section-title__line">Artikelen uit</span>
+                        <span class="articles-section-title__line articles-section-title__line--second">de Risale-i Nur</span>
+                    </h2>
+                    <div class="articles-section-ornament" aria-hidden="true">
+                        <span class="aso-line"></span>
+                        <span class="aso-diamond">◆</span>
+                        <span class="aso-line"></span>
+                    </div>
+                </div>
+
+                {{-- Slider --}}
+                <div id="featured-articles-slider">
+                    <div class="article-slider-track">
+                        <div class="article-slider-viewport">
+                            <div class="article-slider-list">
+                                @forelse($artikelen as $artikel)
+                                    @php
+                                        $description = $artikel->seo_description
+                                            ?: ($artikel->intro
+                                                ?: null);
+                                    @endphp
+
+                                    <div class="article-slider-slide">
+                                        <a href="{{ route('artikelenDetail', $artikel->slug) }}" class="artikel-card">
+                                            {{-- Image --}}
+                                            <div class="artikel-card__image-wrapper">
+                                                @if($artikel->featured_image)
+                                                    <img
+                                                        src="{{ asset('storage/' . $artikel->featured_image) }}"
+                                                        alt="{{ $artikel->featured_image_alt ?: $artikel->title }}"
+                                                        class="artikel-card__image"
+                                                        loading="lazy"
+                                                        decoding="async">
+                                                @else
+                                                    <div class="artikel-card__fallback" aria-hidden="true">
+                                                        <i class="fa-solid fa-feather-pointed"></i>
+                                                    </div>
+                                                @endif
+                                            </div>
+
+                                            {{-- Content --}}
+                                            <div class="artikel-card__content">
+                                                <p class="artikel-card__category">Risale-i Nur &nbsp;◆&nbsp; Geloof</p>
+                                                <h3 class="artikel-card__title">{{ $artikel->title }}</h3>
+                                                <div class="artikel-card__divider" aria-hidden="true">
+                                                    <span class="aso-line"></span>
+                                                    <span class="aso-diamond">◆</span>
+                                                    <span class="aso-line"></span>
+                                                </div>
+                                                @if($description)
+                                                    <p class="artikel-card__intro">{{ $description }}</p>
+                                                @endif
+                                                <span class="artikel-card__read-more">
+                                                    Lees artikel <i class="fa-solid fa-arrow-right"></i>
+                                                </span>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <p class="quote-text">
-                                        "{{ $quote->text }}"
-                                    </p>
-                                    <div class="quote-source">- {{ $quote->source }}</div>
-                                </div>
-                            </div>
-                            @empty
-                            <div class="qs-slide qs-active">
-                                <div class="quote-card">
-                                    <div class="quote-icon">
-                                        <i class="fa-solid fa-quote-left"></i>
+                                @empty
+                                    <div class="article-slider-slide">
+                                        <div class="article-slider-empty">
+                                            <i class="fa-solid fa-feather-pointed"></i>
+                                            <h3>Binnenkort nieuwe artikelen</h3>
+                                        </div>
                                     </div>
-                                    <p class="quote-text">
-                                        "Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om:
-                                        'Mijn weg is juist' of 'Mijn weg is beter' te zeggen. Jij hebt echter niet het
-                                        recht om: 'Slechts mijn weg is juist' te zeggen."
-                                    </p>
-                                    <div class="quote-source">- Risale-i Nur</div>
-                                </div>
+                                @endforelse
                             </div>
-                            @endforelse
                         </div>
                     </div>
 
                     {{-- Arrows --}}
-                    <button class="qs-arrow qs-arrow-prev" aria-label="Vorige quote">
+                    <button class="article-slider-arrow article-slider-arrow-prev" aria-label="Vorige artikel">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 19l-7-7 7-7"/></svg>
                     </button>
-                    <button class="qs-arrow qs-arrow-next" aria-label="Volgende quote">
+                    <button class="article-slider-arrow article-slider-arrow-next" aria-label="Volgende artikel">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 5l7 7-7 7"/></svg>
                     </button>
+
+                    {{-- Dots --}}
+                    <div class="article-slider-dots" aria-hidden="true">
+                        @forelse($artikelen as $artikel)
+                            <button class="asd-dot{{ $loop->first ? ' asd-dot--active' : '' }}" data-index="{{ $loop->index }}" aria-label="Ga naar artikel {{ $loop->iteration }}"></button>
+                        @empty
+                            <button class="asd-dot asd-dot--active" data-index="0"></button>
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </section>
@@ -440,81 +490,109 @@
             }
 
             document.addEventListener('DOMContentLoaded', function() {
-                // Custom Quotes Slider
+                // Featured articles slider
                 (function() {
-                    const slider = document.getElementById('quotes-slider');
+                    const slider = document.getElementById('featured-articles-slider');
                     if (!slider) return;
 
-                    const slides = slider.querySelectorAll('.qs-slide');
-                    const prevBtn = slider.querySelector('.qs-arrow-prev');
-                    const nextBtn = slider.querySelector('.qs-arrow-next');
-                    let current = 0;
+                    const vp    = slider.querySelector('.article-slider-viewport');
+                    const track = slider.querySelector('.article-slider-list');
+                    const originalSlides = Array.from(slider.querySelectorAll('.article-slider-slide'));
+                    const dots   = Array.from(slider.querySelectorAll('.asd-dot'));
+                    const prevBtn = slider.querySelector('.article-slider-arrow-prev');
+                    const nextBtn = slider.querySelector('.article-slider-arrow-next');
+                    if (!track || !vp || !originalSlides.length) return;
+
+                    const logicalCount = originalSlides.length;
+
+                    let current = logicalCount > 1 ? 1 : 0;
                     let autoplayTimer;
-                    const INTERVAL = 12000;
-                    const SPEED = 800;
+                    const INTERVAL = 5000;
 
-                    function goTo(index) {
-                        slides[current].classList.remove('qs-active');
+                    if (logicalCount > 1) {
+                        const firstClone = originalSlides[0].cloneNode(true);
+                        const lastClone = originalSlides[logicalCount - 1].cloneNode(true);
+                        firstClone.classList.add('article-slider-slide--clone');
+                        lastClone.classList.add('article-slider-slide--clone');
+                        track.appendChild(firstClone);
+                        track.insertBefore(lastClone, track.firstChild);
+                    }
+
+                    const slides = Array.from(track.querySelectorAll('.article-slider-slide'));
+
+                    // Measure once; re-measure on resize
+                    function slideWidth() { return vp.offsetWidth; }
+
+                    function applyWidths() {
+                        const w = slideWidth();
+                        slides.forEach(s => { s.style.width = w + 'px'; s.style.flexShrink = '0'; });
+                    }
+
+                    function setTrackTransition(enabled = true) {
+                        track.style.transition = enabled
+                            ? 'transform 700ms cubic-bezier(0.22, 1, 0.36, 1)'
+                            : 'none';
+                    }
+
+                    function activeDotIndex() {
+                        if (logicalCount <= 1) return 0;
+                        if (current === 0) return logicalCount - 1;
+                        if (current === slides.length - 1) return 0;
+
+                        return current - 1;
+                    }
+
+                    function moveTo(index, animate = true) {
                         current = index;
-                        slides[current].classList.add('qs-active');
+                        setTrackTransition(animate);
+                        track.style.transform = `translateX(-${current * slideWidth()}px)`;
+                        const dotIndex = activeDotIndex();
+                        dots.forEach((d, i) => d.classList.toggle('asd-dot--active', i === dotIndex));
                     }
 
-                    function next() {
-                        goTo((current + 1) % slides.length);
+                    // Initialise
+                    applyWidths();
+                    moveTo(current, false);
+
+                    if (logicalCount <= 1) {
+                        if (prevBtn) prevBtn.style.display = 'none';
+                        if (nextBtn) nextBtn.style.display = 'none';
+                        dots.forEach(dot => dot.style.display = 'none');
+                        return;
                     }
 
-                    function prev() {
-                        goTo((current - 1 + slides.length) % slides.length);
-                    }
+                    function start() { stop(); autoplayTimer = setInterval(() => moveTo(current + 1), INTERVAL); }
+                    function stop()  { clearInterval(autoplayTimer); autoplayTimer = null; }
 
-                    // Init
-                    slides.forEach(s => s.classList.remove('qs-active'));
-                    slides[0].classList.add('qs-active');
-
-                    function startAutoplay() {
-                        autoplayTimer = setInterval(next, INTERVAL);
-                    }
-
-                    function stopAutoplay() {
-                        clearInterval(autoplayTimer);
-                    }
-
-                    startAutoplay();
-                    slider.addEventListener('mouseenter', stopAutoplay);
-                    slider.addEventListener('mouseleave', startAutoplay);
-                    slider.addEventListener('focusin', stopAutoplay);
-                    slider.addEventListener('focusout', startAutoplay);
-
-                    if (nextBtn) {
-                        nextBtn.addEventListener('click', () => {
-                            stopAutoplay();
-                            next();
-                            startAutoplay();
-                        });
-                    }
-
-                    if (prevBtn) {
-                        prevBtn.addEventListener('click', () => {
-                            stopAutoplay();
-                            prev();
-                            startAutoplay();
-                        });
-                    }
-
-                    // Touch/swipe support
-                    let touchStartX = 0;
-                    slider.addEventListener('touchstart', e => {
-                        touchStartX = e.touches[0].clientX;
-                    }, { passive: true });
-
-                    slider.addEventListener('touchend', e => {
-                        const diff = touchStartX - e.changedTouches[0].clientX;
-                        if (Math.abs(diff) > 40) {
-                            stopAutoplay();
-                            diff > 0 ? next() : prev();
-                            startAutoplay();
+                    track.addEventListener('transitionend', () => {
+                        if (current === slides.length - 1) {
+                            current = 1;
+                            moveTo(current, false);
+                        } else if (current === 0) {
+                            current = logicalCount;
+                            moveTo(current, false);
                         }
+                    });
+
+                    start();
+                    slider.addEventListener('mouseenter', stop);
+                    slider.addEventListener('mouseleave', start);
+
+                    if (prevBtn) prevBtn.addEventListener('click', () => { stop(); moveTo(current - 1); start(); });
+                    if (nextBtn) nextBtn.addEventListener('click', () => { stop(); moveTo(current + 1); start(); });
+
+                    dots.forEach(d => d.addEventListener('click', () => {
+                        stop(); moveTo(+d.dataset.index + 1); start();
+                    }));
+
+                    let tx = 0;
+                    vp.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+                    vp.addEventListener('touchend',   e => {
+                        const dx = tx - e.changedTouches[0].clientX;
+                        if (Math.abs(dx) > 40) { stop(); moveTo(current + (dx > 0 ? 1 : -1)); start(); }
                     }, { passive: true });
+
+                    window.addEventListener('resize', () => { applyWidths(); moveTo(current, false); });
                 })();
 
                 // Add event listeners for close button and overlay
