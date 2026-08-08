@@ -66,6 +66,7 @@
 }
 
 .colored-section.quotes-section,
+.colored-section.featured-articles-section,
 .colored-section.newsletter-section{
     background: linear-gradient(180deg,
         #090501 0%,
@@ -76,6 +77,7 @@
 }
 
 .colored-section.quotes-section::before,
+.colored-section.featured-articles-section::before,
 .colored-section.newsletter-section::before {
     content: "";
     position: absolute;
@@ -1302,7 +1304,8 @@ h2 {
         padding-bottom: 50px;
     }
 
-    .quotes-section {
+    .quotes-section,
+    .featured-articles-section {
         padding-top: 40px;
         padding-bottom: 40px;
     }

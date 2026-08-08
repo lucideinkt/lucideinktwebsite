@@ -30,9 +30,9 @@ class ArtikelenAdminController extends Controller
         $validated = $request->validate([
             'title'                => 'required|string|max:255',
             'intro'                => 'nullable|string',
-            'featured_image'       => 'nullable|image|max:4096',
+            'featured_image'       => 'nullable|image|max:65536',
             'featured_image_alt'   => 'nullable|string|max:255',
-            'og_image_upload'      => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+            'og_image_upload'      => 'nullable|image|mimes:jpeg,png,jpg,webp|max:65536',
             'seo_description'      => 'nullable|string|max:165',
             'show_featured_image'  => 'sometimes|boolean',
             'is_published'         => 'sometimes|boolean',
@@ -87,9 +87,9 @@ class ArtikelenAdminController extends Controller
         $validated = $request->validate([
             'title'                => 'required|string|max:255',
             'intro'                => 'nullable|string',
-            'featured_image'       => 'nullable|image|max:4096',
+            'featured_image'       => 'nullable|image|max:65536',
             'featured_image_alt'   => 'nullable|string|max:255',
-            'og_image_upload'      => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+            'og_image_upload'      => 'nullable|image|mimes:jpeg,png,jpg,webp|max:65536',
             'seo_description'      => 'nullable|string|max:165',
             'show_featured_image'  => 'sometimes|boolean',
             'is_published'         => 'sometimes|boolean',
