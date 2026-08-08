@@ -259,11 +259,6 @@
     color: rgba(60, 35, 10, 0.82);
     margin: 0 0 22px;
     flex: 0 0 auto;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    line-clamp: 5;
-    overflow: hidden;
 }
 
 /* "Lees artikel" button — identical to .risale-section .read-more-link */
@@ -514,8 +509,6 @@
         font-size: 18px;
         line-height: 1.6;
         margin-bottom: 14px;
-        -webkit-line-clamp: 4;
-        line-clamp: 4;
     }
 
     .article-slider-slide .artikel-card__read-more {
@@ -618,8 +611,6 @@
         font-size: 18px;
         line-height: 1.55;
         margin-bottom: 12px;
-        -webkit-line-clamp: 4;
-        line-clamp: 4;
     }
 
     .article-slider-slide .artikel-card__read-more {
