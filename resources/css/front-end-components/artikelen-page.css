@@ -270,6 +270,30 @@ body:has(.artikel-detail-page__text-box) .text-box-background {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+
+    /* remove red border */
+    border-bottom: none;
+}
+
+.artikel-card__image-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+
+    background: linear-gradient(
+        to bottom,
+        #d8b767 0%,
+        #b88a3b 55%,
+        #C59B32B8 100%
+    );
+
+
+
+    pointer-events: none;
+    z-index: 5;
 }
 
 .artikel-card:hover .artikel-card__image {
