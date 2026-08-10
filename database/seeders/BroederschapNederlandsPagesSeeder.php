@@ -2774,10 +2774,8 @@ Bovendien beken ik dat jullie mij dankzij jullie innige oprechtheid in zeker opz
 </p>
 
 <p>
-Jullie weten dat imam Ali <span class="text-arabic-inline honorific" dir="rtl" lang="ar">رضي الله عنه</span> met zijn miraculeuze kerâma<sup>1</sup> en Ghaws-oel’A’zam <span class="text-arabic-inline honorific" dir="rtl" lang="ar">قدس الله سره</span> met zijn mystieke kerâma hun aandacht op basis van dit oprechtheidsgeheim op jullie hebben gevestigd. Zij schenken jullie beschermende troost en juichen jullie diensten impliciet toe. Waarlijk, twijfel er geen moment aan dat oprechtheid deze aandacht wekt. Als jullie deze oprechtheid opzettelijk verbreken, dan zullen jullie een klap van hen ontvangen. Gedenk de meedogende klappen uit <span class="text-bold">“De Tiende Flits”</span>.
+Jullie weten dat imam Ali <span class="text-arabic-inline honorific" dir="rtl" lang="ar">رضي الله عنه</span> met zijn miraculeuze kerâma<sup>1</sup> en Ghaws-oel’A’zam <span class="text-arabic-inline honorific" dir="rtl" lang="ar">قُدِّسَ سِرُّهُ</span> met zijn mystieke kerâma hun aandacht op basis van dit oprechtheidsgeheim op jullie hebben gevestigd. Zij schenken jullie beschermende troost en juichen jullie diensten impliciet toe. Waarlijk, twijfel er geen moment aan dat oprechtheid deze aandacht wekt. Als jullie deze oprechtheid opzettelijk verbreken, dan zullen jullie een klap van hen ontvangen. Gedenk de meedogende klappen uit <span class="text-bold">“De Tiende Flits”</span>.
 </p>
-
-
 
 <p>
 Indien jullie deze spirituele helden achter jullie als beschermers en boven jullie als leermeesters willen ontmoeten, dan moeten jullie met inachtneming van het geheim: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَ يُؤْثِرُونَ عَلٰى اَنْفُسِهِمْ</span> pure oprechtheid verwerven.
