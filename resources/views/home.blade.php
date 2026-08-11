@@ -265,48 +265,102 @@
 
         <div class="gradient-border"></div>
 
-        <section class="colored-section quotes-section">
-            <div class="container quote-section">
-                <div id="quotes-slider">
-                    <div class="qs-track">
-                        <div class="qs-list">
-                            @forelse($quotes as $quote)
-                            <div class="qs-slide">
-                                <div class="quote-card">
-                                    <div class="quote-icon">
-                                        <i class="fa-solid fa-quote-left"></i>
+        <section class="colored-section featured-articles-section">
+            <div class="container articles-section-container">
+
+                {{-- Section header --}}
+                <div class="articles-section-heading">
+                    <h2 class="title articles-section-title">
+                        <span class="articles-section-title__line">Artikelen uit</span>
+                        <span class="articles-section-title__line articles-section-title__line--second">de Risale-i Nur</span>
+                    </h2>
+                    <div class="articles-section-ornament" aria-hidden="true">
+                        <span class="aso-line"></span>
+                        <span class="aso-diamond">◆</span>
+                        <span class="aso-line"></span>
+                    </div>
+                </div>
+
+                {{-- Slider --}}
+                <div id="featured-articles-slider">
+                    <div class="article-slider-track">
+                        <div class="article-slider-viewport">
+                            <div class="article-slider-list">
+                                @forelse($artikelen as $artikel)
+                                    @php
+                                        $description = $artikel->seo_description
+                                            ?: ($artikel->intro
+                                                ?: null);
+                                    @endphp
+
+                                    <div class="article-slider-slide">
+                                        <div class="artikel-card">
+                                            {{-- Image --}}
+                                            <div class="artikel-card__image-wrapper">
+                                                @if($artikel->featured_image)
+                                                    <div
+                                                        class="artikel-card__image-bg"
+                                                        role="img"
+                                                        aria-label="{{ $artikel->featured_image_alt ?: $artikel->title }}"
+                                                        style="background-image: url('{{ asset('storage/' . $artikel->featured_image) }}');">
+                                                    </div>
+                                                @else
+                                                    <div class="artikel-card__fallback" aria-hidden="true">
+                                                        <i class="fa-solid fa-feather-pointed"></i>
+                                                    </div>
+                                                @endif
+                                            </div>
+
+                                            {{-- Content --}}
+                                            <div class="artikel-card__content">
+                                                <p class="artikel-card__category">
+                                                    <span class="artikel-card__category-label">Risale-i Nur</span>
+                                                    <span class="artikel-card__category-separator" aria-hidden="true">◆</span>
+                                                    <span class="artikel-card__category-label">Geloof</span>
+                                                </p>
+                                                <h3 class="artikel-card__title">{{ $artikel->title }}</h3>
+                                                <div class="artikel-card__divider" aria-hidden="true">
+                                                    <span class="aso-line"></span>
+                                                    <span class="aso-diamond">◆</span>
+                                                    <span class="aso-line"></span>
+                                                </div>
+                                                @if($description)
+                                                    <p class="artikel-card__intro">{{ $description }}</p>
+                                                @endif
+                                                <a href="{{ route('artikelenDetail', $artikel->slug) }}" class="artikel-card__read-more">
+                                                    Lees artikel <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="quote-text">
-                                        "{{ $quote->text }}"
-                                    </p>
-                                    <div class="quote-source">- {{ $quote->source }}</div>
-                                </div>
-                            </div>
-                            @empty
-                            <div class="qs-slide qs-active">
-                                <div class="quote-card">
-                                    <div class="quote-icon">
-                                        <i class="fa-solid fa-quote-left"></i>
+                                @empty
+                                    <div class="article-slider-slide">
+                                        <div class="article-slider-empty">
+                                            <i class="fa-solid fa-feather-pointed"></i>
+                                            <h3>Binnenkort nieuwe artikelen</h3>
+                                        </div>
                                     </div>
-                                    <p class="quote-text">
-                                        "Wanneer jij jouw weg en jouw opvattingen juist acht, dan heb jij het recht om:
-                                        'Mijn weg is juist' of 'Mijn weg is beter' te zeggen. Jij hebt echter niet het
-                                        recht om: 'Slechts mijn weg is juist' te zeggen."
-                                    </p>
-                                    <div class="quote-source">- Risale-i Nur</div>
-                                </div>
+                                @endforelse
                             </div>
-                            @endforelse
                         </div>
                     </div>
 
                     {{-- Arrows --}}
-                    <button class="qs-arrow qs-arrow-prev" aria-label="Vorige quote">
+                    <button class="article-slider-arrow article-slider-arrow-prev" aria-label="Vorige artikel">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 19l-7-7 7-7"/></svg>
                     </button>
-                    <button class="qs-arrow qs-arrow-next" aria-label="Volgende quote">
+                    <button class="article-slider-arrow article-slider-arrow-next" aria-label="Volgende artikel">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 5l7 7-7 7"/></svg>
                     </button>
+
+                    {{-- Dots --}}
+                    <div class="article-slider-dots" aria-hidden="true">
+                        @forelse($artikelen as $artikel)
+                            <button class="asd-dot{{ $loop->first ? ' asd-dot--active' : '' }}" data-index="{{ $loop->index }}" aria-label="Ga naar artikel {{ $loop->iteration }}"></button>
+                        @empty
+                            <button class="asd-dot asd-dot--active" data-index="0"></button>
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </section>
@@ -440,81 +494,210 @@
             }
 
             document.addEventListener('DOMContentLoaded', function() {
-                // Custom Quotes Slider
+                // Featured articles slider
                 (function() {
-                    const slider = document.getElementById('quotes-slider');
+                    const slider = document.getElementById('featured-articles-slider');
                     if (!slider) return;
 
-                    const slides = slider.querySelectorAll('.qs-slide');
-                    const prevBtn = slider.querySelector('.qs-arrow-prev');
-                    const nextBtn = slider.querySelector('.qs-arrow-next');
-                    let current = 0;
+                    const vp    = slider.querySelector('.article-slider-viewport');
+                    const track = slider.querySelector('.article-slider-list');
+                    const originalSlides = Array.from(slider.querySelectorAll('.article-slider-slide'));
+                    const dots   = Array.from(slider.querySelectorAll('.asd-dot'));
+                    const prevBtn = slider.querySelector('.article-slider-arrow-prev');
+                    const nextBtn = slider.querySelector('.article-slider-arrow-next');
+                    if (!track || !vp || !originalSlides.length) return;
+
+                    const logicalCount = originalSlides.length;
+
+                    let current = logicalCount > 1 ? 1 : 0;
+                    let isTransitioning = false;
+                    let transitionGuardTimer;
                     let autoplayTimer;
-                    const INTERVAL = 12000;
-                    const SPEED = 800;
+                    const INTERVAL = 5000;
+                    const TRANSITION_MS = 700;
 
-                    function goTo(index) {
-                        slides[current].classList.remove('qs-active');
-                        current = index;
-                        slides[current].classList.add('qs-active');
+                    if (logicalCount > 1) {
+                        const firstClone = originalSlides[0].cloneNode(true);
+                        const lastClone = originalSlides[logicalCount - 1].cloneNode(true);
+                        firstClone.classList.add('article-slider-slide--clone');
+                        lastClone.classList.add('article-slider-slide--clone');
+                        track.appendChild(firstClone);
+                        track.insertBefore(lastClone, track.firstChild);
                     }
 
-                    function next() {
-                        goTo((current + 1) % slides.length);
+                    const slides = Array.from(track.querySelectorAll('.article-slider-slide'));
+
+                    // Measure once; re-measure on resize
+                    function slideWidth() { return vp.offsetWidth; }
+
+                    function applyWidths() {
+                        const w = slideWidth();
+                        slides.forEach(s => { s.style.width = w + 'px'; s.style.flexShrink = '0'; });
                     }
 
-                    function prev() {
-                        goTo((current - 1 + slides.length) % slides.length);
+                    function setTrackTransition(enabled = true) {
+                        track.style.transition = enabled
+                            ? 'transform 700ms cubic-bezier(0.22, 1, 0.36, 1)'
+                            : 'none';
                     }
 
-                    // Init
-                    slides.forEach(s => s.classList.remove('qs-active'));
-                    slides[0].classList.add('qs-active');
+                    function activeDotIndex() {
+                        if (logicalCount <= 1) return 0;
+                        if (current === 0) return logicalCount - 1;
+                        if (current === slides.length - 1) return 0;
 
-                    function startAutoplay() {
-                        autoplayTimer = setInterval(next, INTERVAL);
+                        return current - 1;
                     }
 
-                    function stopAutoplay() {
-                        clearInterval(autoplayTimer);
+                    function clampTrackIndex(index) {
+                        if (index < 0) return 0;
+                        if (index > slides.length - 1) return slides.length - 1;
+                        return index;
                     }
 
-                    startAutoplay();
-                    slider.addEventListener('mouseenter', stopAutoplay);
-                    slider.addEventListener('mouseleave', startAutoplay);
-                    slider.addEventListener('focusin', stopAutoplay);
-                    slider.addEventListener('focusout', startAutoplay);
+                    function moveTo(index, animate = true) {
+                        current = clampTrackIndex(index);
+                        setTrackTransition(animate);
+                        track.style.transform = `translateX(-${current * slideWidth()}px)`;
+                        const dotIndex = activeDotIndex();
+                        dots.forEach((d, i) => d.classList.toggle('asd-dot--active', i === dotIndex));
 
-                    if (nextBtn) {
-                        nextBtn.addEventListener('click', () => {
-                            stopAutoplay();
-                            next();
-                            startAutoplay();
-                        });
-                    }
-
-                    if (prevBtn) {
-                        prevBtn.addEventListener('click', () => {
-                            stopAutoplay();
-                            prev();
-                            startAutoplay();
-                        });
-                    }
-
-                    // Touch/swipe support
-                    let touchStartX = 0;
-                    slider.addEventListener('touchstart', e => {
-                        touchStartX = e.touches[0].clientX;
-                    }, { passive: true });
-
-                    slider.addEventListener('touchend', e => {
-                        const diff = touchStartX - e.changedTouches[0].clientX;
-                        if (Math.abs(diff) > 40) {
-                            stopAutoplay();
-                            diff > 0 ? next() : prev();
-                            startAutoplay();
+                        if (animate) {
+                            isTransitioning = true;
+                            clearTimeout(transitionGuardTimer);
+                            transitionGuardTimer = setTimeout(() => {
+                                isTransitioning = false;
+                            }, TRANSITION_MS + 120);
                         }
+                    }
+
+                    function canAnimateTo(index) {
+                        return !isTransitioning && index >= 0 && index <= slides.length - 1;
+                    }
+
+                    function go(delta) {
+                        const nextIndex = current + delta;
+                        if (!canAnimateTo(nextIndex)) return;
+                        moveTo(nextIndex);
+                    }
+
+                    // Initialise
+                    function syncSliderMetrics() {
+                        // Avoid syncing while the viewport has no layout width (can happen during initial paint).
+                        if (slideWidth() === 0) return false;
+                        applyWidths();
+                        moveTo(current, false);
+                        return true;
+                    }
+
+                    let initAttempts = 0;
+                    function initialiseSliderMetrics() {
+                        if (syncSliderMetrics()) return;
+                        initAttempts += 1;
+                        if (initAttempts < 20) {
+                            requestAnimationFrame(initialiseSliderMetrics);
+                        }
+                    }
+
+                    initialiseSliderMetrics();
+
+                    if (logicalCount <= 1) {
+                        if (prevBtn) prevBtn.style.display = 'none';
+                        if (nextBtn) nextBtn.style.display = 'none';
+                        dots.forEach(dot => dot.style.display = 'none');
+                        return;
+                    }
+
+                    function start() { stop(); autoplayTimer = setInterval(() => go(1), INTERVAL); }
+                    function stop()  { clearInterval(autoplayTimer); autoplayTimer = null; }
+
+                    track.addEventListener('transitionend', () => {
+                        isTransitioning = false;
+                        clearTimeout(transitionGuardTimer);
+                        if (current === slides.length - 1) {
+                            current = 1;
+                            moveTo(current, false);
+                        } else if (current === 0) {
+                            current = logicalCount;
+                            moveTo(current, false);
+                        }
+                    });
+
+                    start();
+                    slider.addEventListener('mouseenter', stop);
+                    slider.addEventListener('mouseleave', start);
+
+                    if (prevBtn) prevBtn.addEventListener('click', () => { stop(); go(-1); start(); });
+                    if (nextBtn) nextBtn.addEventListener('click', () => { stop(); go(1); start(); });
+
+                    dots.forEach(d => d.addEventListener('click', () => {
+                        const target = +d.dataset.index + 1;
+                        if (isTransitioning || target === current) return;
+                        stop();
+                        moveTo(target);
+                        start();
+                    }));
+
+                    let tx = 0;
+                    vp.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+                    vp.addEventListener('touchend',   e => {
+                        const dx = tx - e.changedTouches[0].clientX;
+                        if (Math.abs(dx) > 40) { stop(); go(dx > 0 ? 1 : -1); start(); }
                     }, { passive: true });
+
+
+                    function enforceUniformHeight() {
+                        // Clear any previously forced heights so natural content height is measurable.
+                        slides.forEach(s => {
+                            s.style.height = '';
+                            s.style.minHeight = '';
+                        });
+                        vp.style.height = '';
+
+                        // Force a single reflow so getBoundingClientRect reflects the new state.
+                        void vp.offsetHeight;
+
+                        // Measure the tallest slide (accounts for actual rendered font metrics).
+                        const maxH = slides.reduce((m, s) => {
+                            return Math.max(m, Math.ceil(s.getBoundingClientRect().height));
+                        }, 0);
+
+                        if (maxH > 0) {
+                            slides.forEach(s => { s.style.height = maxH + 'px'; });
+                            vp.style.height = maxH + 'px';
+                        }
+                    }
+
+                    window.addEventListener('resize', syncSliderMetrics);
+
+                    window.addEventListener('orientationchange', () => {
+                        setTimeout(() => {
+                            syncSliderMetrics();
+                        }, 120);
+                    });
+
+                    window.addEventListener('load', () => {
+                        syncSliderMetrics();
+                    });
+
+                    if (window.visualViewport) {
+                        let viewportResizeTimer;
+                        window.visualViewport.addEventListener('resize', () => {
+                            clearTimeout(viewportResizeTimer);
+                            viewportResizeTimer = setTimeout(() => { syncSliderMetrics(); enforceUniformHeight(); }, 80);
+                        });
+                    }
+
+                    if (document.fonts && document.fonts.ready) {
+                        document.fonts.ready.then(() => {
+                            syncSliderMetrics();
+                            // Delay slightly so Safari finishes its font relayout pass.
+                            setTimeout(enforceUniformHeight, 60);
+                        });
+                    }
+
+                    // Initial height enforcement after first widths are applied.
+                    requestAnimationFrame(enforceUniformHeight);
                 })();
 
                 // Add event listeners for close button and overlay
