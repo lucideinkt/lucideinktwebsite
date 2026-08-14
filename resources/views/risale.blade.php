@@ -14,8 +14,8 @@
         <div class="text-box-background">
             <div class="risale-i-nur-page__text-box">
                 <h1 class="title" aria-label="Wat is de Risale-i Nur? Geschreven door Bediüzzaman Said Nursi">
-                    <span class="sr-only">Wat is de Risale-i Nur? Geschreven door Bediüzzaman Said Nursi</span>
-                    <span aria-hidden="true"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</span>
+                    <span class="sr-only">Wat is de Risale-i Nur?</span>
+                    <span aria-hidden="true"><span class="risale-w"></span><span class="letter">W</span>at is de R<span class="risale-is"></span><span class="letter">is</span>ale-i <span class="risale-nu"><span class="letter">Nu</span>r</span>?</span>
                 </h1>
 
                 <h2 class="sr-only">Wat is de Risale-i Nur? Een spirituele Qur'an Tafsir van Said Nursi</h2>

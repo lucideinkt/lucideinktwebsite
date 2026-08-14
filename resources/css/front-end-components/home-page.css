@@ -1430,3 +1430,7 @@ h2 {
         display: none;
     }
 }
+
+.letter {
+    color: transparent;text-shadow: none;position: absolute
+}
