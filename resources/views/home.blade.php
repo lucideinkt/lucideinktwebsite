@@ -139,10 +139,11 @@
                     <img class="rose-decoration" src="{{ asset('images/Rose1.webp') }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
                     <h2 class="title trans" aria-label="Onze Nieuwste Vertaling: Het Traktaat over de Herzameling">
                         <span class="sr-only">Onze Nieuwste Vertaling: Het Traktaat over de Herzameling</span>
-                        <span aria-hidden="true">Onze Nieuwste Vertaling:<br><span class="title-h"></span>et <span
-                                class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
-                        ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
-                                class="title-in"></span>g</span>
+                        <span aria-hidden="true">Onze Nieuwste Vertaling:<br>
+                            <span class="title-h"></span><span class="letter">H</span>et <span
+                                class="title-t"></span><span class="title-r"></span><span class="letter">Tr</span>akta<span class="letter">a</span><span class="title-a-one"></span>t
+                        ov<span class="letter">er</span><span class="title-e-r"></span> de Herza<span class="letter">me</span><span class="title-me"></span>l<span
+                                class="title-in"></span><span class="letter">in</span>g</span>
                     </h2>
                 </div>
 
@@ -241,7 +242,7 @@
                 <div class="risale-content">
                     <h2 class="title" aria-label="Wat is de Risale-i Nur?">
                         <span class="sr-only">Wat is de Risale-i Nur?</span>
-                        <span aria-hidden="true"><span class="risale-w"></span>at is de R<span class="risale-is"></span>ale-i <span class="risale-nu">r</span>?</span>
+                        <span aria-hidden="true"><span class="risale-w"></span><span class="letter">W</span>at is de R<span class="risale-is"></span><span class="letter">is</span>ale-i <span class="risale-nu"><span class="letter">Nu</span>r</span>?</span>
                     </h2>
                     <div class="sub-text">
                         <p>
@@ -372,7 +373,7 @@
                 <div class="risale-content">
                     <h2 class="title" aria-label="Wie is Said Nursî?">
                         <span class="sr-only">Wie is Said Nursî?</span>
-                        <span aria-hidden="true"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</span>
+                        <span aria-hidden="true"><span class="said-title-w"></span><span class="letter">W</span>ie is <span class="said-title-s"></span><span class="letter">S</span>aid N<span class="said-title-ur"></span><span class="letter">ur</span>sî?</span>
                     </h2>
 
                     <div class="risale-image said-nursi-image mobile-only">

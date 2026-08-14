@@ -18,7 +18,7 @@
 
                 <h1 class="title" aria-label="Wie is Said Nursi? Bediüzzaman Said Nursi — schrijver van de Risale-i Nur">
                     <span class="sr-only">Wie is Said Nursi? Bediüzzaman Said Nursi — schrijver van de Risale-i Nur</span>
-                    <span aria-hidden="true"><span class="said-title-w"></span>ie is <span class="said-title-s"></span>aid N<span class="said-title-ur"></span>sî?</span>
+                    <span aria-hidden="true"><span class="said-title-w"></span><span class="letter">W</span>ie is <span class="said-title-s"></span><span class="letter">S</span>aid N<span class="said-title-ur"></span><span class="letter">ur</span>sî?</span>
                 </h1>
 
                 <div class="top-images">

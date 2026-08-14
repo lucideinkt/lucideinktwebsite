@@ -16,10 +16,10 @@
 
                 <h1 class="title" aria-label="Leven na de Dood — Het Traktaat over de Herzameling | Bestaat er een Hiernamaals?">
                     <span class="sr-only">Leven na de Dood — Het Traktaat over de Herzameling | Bestaat er een Hiernamaals?</span>
-                    <span aria-hidden="true"><span class="title-h"></span>et <span
-                            class="title-t"></span><span class="title-r"></span>akta<span class="title-a-one"></span>t
-                        ov<span class="title-e-r"></span> de Herza<span class="title-me"></span>l<span
-                            class="title-in"></span>g</span>
+                    <span class="title-h"></span><span class="letter">H</span>et <span
+                        class="title-t"></span><span class="title-r"></span><span class="letter">Tr</span>akta<span class="letter">a</span><span class="title-a-one"></span>t
+                    ov<span class="letter">er</span><span class="title-e-r"></span> de Herza<span class="letter">me</span><span class="title-me"></span>l<span
+                        class="title-in"></span><span class="letter">in</span>g</span>
                 </h1>
 
                 <h2 class="sr-only">Bestaat er leven na de dood? Het hiernamaals volgens de Risale-i Nur</h2>
