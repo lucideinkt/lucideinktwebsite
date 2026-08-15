@@ -1372,59 +1372,6 @@ en jullie zondes met jullie ziektes vergelden.</em>
 <p class="text-center text-arabic delima-font"
    dir="rtl"
    lang="ar"
-   style="margin:0 auto; max-width:500px;">
-اَلْحَمْدُ لِلّٰهِ الَّذٖى هَدٰينَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِىَ لَوْلَٓا اَنْ هَدٰينَا اللّٰهُ لَقَدْ جَٓاءَتْ رُسُلُ رَبِّنَا بِالْحَقِّ
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“De lof zij ALLAH die ons tot hier heeft geleid. Wij hadden geen leiding zonder de Leiding van ALLAH kunnen vinden. De profeten van onze Heer hebben ons daadwerkelijk de waarheid gebracht.” - &lt;em&gt;De Heilige Qur’an, 7:43&lt;/em&gt;&lt;/p&gt;"><sup>1</sup></button></span>
-</p>
-
-<p class="text-center text-arabic delima-font"
-   dir="rtl"
-   lang="ar"
-   style="margin:10px auto 0 auto; max-width:500px;">
-سُبْحَانَكَ لَا عِلْمَ لَنَٓا اِلَّا مَا عَلَّمْتَنَٓا اِنَّكَ اَنْتَ الْعَلٖيمُ الْحَكٖيمُ
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 2" data-fn="2" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;“U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - &lt;em&gt;De Heilige Qur’an, 2:32&lt;/em&gt;&lt;/p&gt;"><sup>2</sup></button></span>
-</p>
-
-<p class="text-center text-arabic delima-font"
-   dir="rtl"
-   lang="ar"
-   style="margin:18px auto 0 auto; max-width:500px;">
-اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ طِبِّ الْقُلُوبِ وَدَوَائِهَا وَعَافِيَةِ الْاَبْدَانِ وَشِفَائِهَا وَنُورِ الْاَبْصَارِ وَضِيَائِهَا وَعَلٰى اٰلِهٖ وَصَحْبِهٖ وَسَلِّمْ
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;O ALLAH, laat zegeningen neerdalen op Mohammed, alias de heling van onze harten, de gezondheid en de genezing van onze lichamen, het licht en de schittering van onze ogen, evenals op zijn familie en zijn metgezellen.&lt;/p&gt;"><sup>3</sup></button></span>
-</p>
-
-<div class="text-center" style="margin-top:40px;">
-    <img src="/images/end-ornament.svg" alt="Ornament" style="width:95px;">
-</div>
-
-<div class="page-footnote">
-<hr class="hr-footnote" />
-
-<p class="footnote-p">
-<sup>1</sup> “De lof zij ALLAH die ons tot hier heeft geleid. Wij hadden geen leiding zonder de Leiding van ALLAH kunnen vinden. De profeten van onze Heer hebben ons daadwerkelijk de waarheid gebracht.” - <em>De Heilige Qur’an, 7:43</em>
-</p>
-
-<p class="footnote-p">
-<sup>2</sup> “U bent Feilloos. Buiten hetgeen U ons hebt onderwezen, beschikken wij over geen kennis. Voorzeker, U bent de Alwetende, de Alwijze.” - <em>De Heilige Qur’an, 2:32</em>
-</p>
-
-<p class="footnote-p">
-<sup>3</sup> O ALLAH, laat zegeningen neerdalen op Mohammed, alias de heling van onze harten, de gezondheid en de genezing van onze lichamen, het licht en de schittering van onze ogen, evenals op zijn familie en zijn metgezellen.
-</p>
-
-</div>
-
-</div>'
-            ],
-            [
-                'page_number' => 47,
-                'content' => '<div class="page" id="47">
-
-<p class="text-end page-number">#47</p>
-
-<p class="text-center text-arabic delima-font"
-   dir="rtl"
-   lang="ar"
    style="margin: 0px auto 0 auto; max-width: 500px;">
 اَلْحَمْدُ لِلّٰهِ الَّذٖى هَدٰينَا لِهٰذَا وَمَا كُنَّا لِنَهْتَدِىَ لَوْلَٓا اَنْ هَدٰينَا اللّٰهُ لَقَدْ جَٓاءَتْ رُسُلُ رَبِّنَا بِالْحَقِّ<sup>1</sup>
 </p>
@@ -2137,7 +2084,7 @@ Waarlijk, calamiteiten duren lang. Echter, ze duren niet lang omdat ze vervelend
 </p>
 
 <p>
-Zoals in het eerste thema van <strong>“Het Eenentwintigste Woord”</strong> is verklaard, zal de geduldkracht die de Hoogste Gerechtigde aan de mens schenkt voor elke calamiteit toereikend zijn, zolang hij haar niet aan waanvoorstellingen verdoet.
+Zoals in het eerste thema van <strong>“Het Eenentwintigste Woord”</strong> is verklaard, zal de duldkracht die de Hoogste Gerechtigde aan de mens schenkt voor elke calamiteit toereikend zijn, zolang hij haar niet aan waanvoorstellingen verdoet.
 </p>
 
 <div class="page-footnote">
