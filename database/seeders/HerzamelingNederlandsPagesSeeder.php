@@ -139,7 +139,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     “Geen dorp is zonder beheerder. Geen speld ontstaat zonder vervaardiger; ze moet een maker hebben. Geen letter kan tot
     stand komen zonder schrijver, dit weet je! Hoe zou dit eindeloos geordende land dan zonder regeerder kunnen zijn? En kijk
     naar al deze weelde! Elk uur lijkt het alsof een trein<sup>3</sup>
-    uit het verborgene ladingen waardevolle en kunstrijke goederen komt aanvoeren, waarna ze weer verdwijnen... Hoe zouden al deze
+    uit het verborgene ladingen waardevolle en kunstrijke goederen komt aanvoeren, waarna ze weer verdwijnt... Hoe zouden al deze
     producten nou bezitterloos kunnen zijn? En hoe zit het met alle alom zichtbare mededelingsbrieven en toelichtende schrifturen,
     alle monogrammen, zegels en signaturen op alle artikelen, en alle vlaggen die in alle uithoeken wapperen? Hoe kunnen die allemaal
     zonder eigenaar zijn? Jij hebt je blijkbaar verdiept in bepaalde westerse studies, maar deze Islamitische geschriften kun je niet
@@ -397,7 +397,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="text-center text-bold small-title" style="margin-top: 14px;">HET ZESDE AANZICHT</p>
 
     <p>
-    Kom en aanschouw! Deze opzienbarende treinen, vliegtuigen, voorzieningen, magazijnen, galerieën en
+    Kom en aanschouw! Deze opzienbarende treinen, vliegtuigen, voorzieningen, magazijnen, galerijen en
     evenementen beduiden dat achter de schermen een grandioos, albeheersend sultanaat bestaat<sup>4</sup>.
     </p>
 
@@ -458,7 +458,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <p>
     Een dergelijk sultanaat behoeft waardige onderdanen. Echter, je ziet dat heel het volk zich in dit gastenverblijf heeft verzameld, terwijl dit verblijf dagelijks wordt gevuld en geleegd. Alle onderdanen bevinden zich op
-    dit beproevingsterrein voor training, terwijl dit terrein ieder uur wordt aangepast. Heel het volk verblijft enkele minuten in deze tentoonstellingsruimte om in de opengestelde galerieën voorbeelden van de waardevolle
+    dit beproevingsterrein voor training, terwijl dit terrein ieder uur wordt aangepast. Heel het volk verblijft enkele minuten in deze tentoonstellingsruimte om in de opengestelde galerijen voorbeelden van de waardevolle
     giften en de antieke kunstwerken van de vorst te bezichtigen, terwijl deze ruimte elke minuut verandering
     ondergaat. Zij die vertrekken, keren niet terug; zij die verschijnen, zullen vroeg of laat vertrekken.
     </p>
@@ -517,7 +517,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <p class="footnote-p">
     Kleine identiteitsbewijzen duiden op het bestaan van een groot bevolkingsregister, kleine transactiebonnen wijzen op de
-    existentie van een grootboek, en voortvloeiende druppels onthullen de aanwezigheid van een grote waterbron. De geheugens van mensenkinderen, de vruchten van bomen en de zaadjes van vruchten <em>– die als minuscule identiteitsbewijzen gelden, de betekenissen van een mini-bewaartableau belichamen, en als fijne stippen ontvloeien aan de Pen waarmee het
+    existentie van een grootboek, en voortvloeiende druppels onthullen de aanwezigheid van een grote waterbron. De geheugens van mensenkinderen, de vruchten van bomen en de zaadjes van vruchten <em>– die als minuscule identiteitsbewijzen gelden, de betekenis van een mini-bewaartableau belichamen, en als fijne stippen ontvloeien aan de Pen waarmee het
     Grote Bewaartableau is geschreven –</em> onthullen, openbaren en
     bewijzen uiteraard ook het bestaan van een Subliem Geheugen, een Universeel Grootboek en een Ultiem Bewaartableau
     <em>– voor scherpe verstanden worden ze zelfs zichtbaar.</em>
@@ -603,7 +603,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="footnote-p">
     <sup>6</sup> De betekenissen die in dit aanzicht worden geïllustreerd, zullen in <strong>"De Achtste Waarheid"</strong> worden onthuld. Bijvoorbeeld, de leiders van de kringen vertegenwoordigen de profeten en de heiligen. De telefoon symboliseert een band met
     de Heer die zich vormt in het medium van openbaringen
-    <em>(wahy)</em> en de ontvanger van ingevingen <em>(ilhām)</em>, oftewel het
+    <em>(wahy)</em> en de ontvanger van ingevingen <em>(ilhaam)</em>, oftewel het
     hart. <em>(Het hart dient als de hoorn van die telefoon.)</em>
     </p>
     </div>
@@ -942,7 +942,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="text-end page-number">#29</p>
 
     <p>
-    Evenzo behoeft dit universum een Alwijze, Alwetende en Almachtige Kunstenaar. Immers, dit grandioze universum is een paleis waarin de zon en de maan als lampen, en de sterren als kaarsen dienen. De tijd is een draad; een lijn waarop Die Ontzaglijke Kunstenaar jaarlijks een andere wereld vestigt en tentoonstelt. De verschijning van de wereld die Hij vestigt, ververst hij op 360 geordende manieren. Met perfecte Orde en Wijsheid brengt Hij veranderingen aan. Het aardoppervlak laat Hij dienen als een tafel van gunsten die Hij elke lente met 300.000 soorten kunstwerken decoreert en met ontelbare soorten geschenken belaadt. En ondanks dat al die kunstwerken en geschenken uiterst dicht op elkaar warrig met elkaar verweven zijn, worden ze met uiterst distinctieve kenmerken van elkaar onderscheiden. Zo kun je andere aspecten verder afwegen…
+    Evenzo behoeft dit universum een Alwijze, Alwetende en Almachtige Kunstenaar. Immers, dit grandioze universum is een paleis waarin de zon en de maan als lampen, en de sterren als kaarsen dienen. De tijd is een draad; een lijn waarop Die Ontzaglijke Kunstenaar jaarlijks een andere wereld vestigt en tentoonstelt. de verschijning van die wereld die Hij vestigt, ververst hij op 360 geordende manieren. Met perfecte Orde en Wijsheid brengt Hij veranderingen aan. Het aardoppervlak laat Hij dienen als een tafel van gunsten die Hij elke lente met 300.000 soorten kunstwerken decoreert en met ontelbare soorten geschenken belaadt. En ondanks dat al die kunstwerken en geschenken uiterst dicht op elkaar warrig met elkaar verweven zijn, worden ze met uiterst distinctieve kenmerken van elkaar onderscheiden. Zo kun je andere aspecten verder afwegen…
     </p>
 
     <p><strong>
@@ -1266,7 +1266,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <hr class="hr-footnote" />
     <p class="footnote-p">
     <sup>2</sup> Waarlijk, een hongerige leeuwin die haar zwakke welp boven haarzelf verkiest en het vlees dat ze vangt
-    niet zelf eet, maar aan haar jong geeft; een laffe kip die een hond of leeuw aanvalt om haar kuikens te
+    niet zelf eet, maar aan haar jong geeft; een laffe kip die een hond of leeuw aanvalt om haar kuiken te
     beschermen; en een vijgenboom die zelf modder consumeert, terwijl ze haar nakomelingen, oftewel haar
     vruchten, zuivere melk schenkt, zijn allemaal verschijnselen die klaarblijkelijk aan de niet-blinden tonen
     dat ze volgens het Plan van een eindeloos Genadig, Genereus en Meedogend Opperwezen handelen.
@@ -1367,7 +1367,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  aangemerkt. Met andere woorden, wanneer iemand iets onwaarschijnlijk en buiten het bereik van het verstand
  acht, dan neigt hij ertoe datgene te ontkennen. Echter, in <strong>"Het Traktaat over de Herzameling"</strong> is
  onbetwistbaar aangetoond dat juist het pad van ongeloof en de weg van dwaling doordrenkt zijn met
- vergezochteden, onwaarschijnlijkheden, onredelijkheden, onaannemelijkheden en onoverkomelijke problematieken.
+ vergezochtheden, onwaarschijnlijkheden, onredelijkheden, onaannemelijkheden en onoverkomelijke problematieken.
  Tevens wordt aangetoond dat reële mogelijkheden, logische waarschijnlijkheden en onontkoombare aannemelijkheden
  te vinden zijn op het pad des geloofs en in de laan van de Islam.
  </p>
@@ -1484,7 +1484,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  <p class="text-center small-title"><strong>De Vierde Waarheid</strong></p>
  <p style="margin-bottom: 0" class="text-center"><strong><em>De poort van Vrijgevigheid en Schoonheid; Een glimp van de Namen: “de Vrijgevige en de Schone”</em></strong></p>
  <p class="text-center">
-<span class="text-arabic" dir="rtl" lang="ar">اَلْجَوَّادُ وَالْمُحْسِنُ</span>
+<span class="text-arabic" dir="rtl" lang="ar">اَلْجَوَّادُ وَالْجَمٖيلُُ</span>
  </p>
 </div>
 
@@ -1572,13 +1572,13 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  <p class="footnote-p">
  <sup>2</sup> Waarlijk, zoals een klassiek voorbeeld luidt, was er eens een schone dame van wereldklasse die een ordinaire
  beminnaar van zich wegjoeg. Om zichzelf te troosten, zei die man: <em>“Bah, wat was zij lelijk zeg!”</em>
- Zodoende verloochenende hij de schoonheid van die schone vrouw. Ook was er eens een beer die onder een zoete
- druiventros kroop om druiven te eten. Echter, zijn klauwen reikten niet tot die druiven, noch was hij in staat om
+ Zodoende verloochende hij de schoonheid van die schone vrouw. Ook was er eens een beer die onder een zoete
+ druivenrank kroop om druiven te eten. Echter, zijn klauwen reikten niet tot die druiven, noch was hij in staat om
  de druivenstok te beklimmen. Om zichzelf te troosten, zei hij in zijn eigen taal: <em>“Die druiven zijn vast
  en zeker zuur”</em>, waarna hij brommend wegslenterde.
  </p>
  <p class="footnote-p">
- <sup>3</sup> Terwijl wezens in hun rol als spiegels achtereenvolgens vergaan en verdwijnen, zijn de glimpen van diezelfde
+ <sup>3</sup> Terwijl wezens in hun rol als spiegels achtereenvolgens vergaan en verdwijnen, zijn de glimpen van dezelfde
  pracht en schoonheid te zien op de gedaantes en gelaten van hun opvolgers. Dit laat zien dat die Schoonheid niet
  hen toebehoort... Die Schoonheden zijn veeleer Aya’s en tekenen van een Onberispelijke Pracht en een Heilige
  Schoonheid.
@@ -1671,7 +1671,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  <p class="text-center small-title"><strong>De Vijfde Waarheid</strong></p>
  <p class="text-center"><strong><em>De poort van Mededogen en het Mohammedaanse dienaarschap</em></strong> <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong><em>; Een glimp van de Namen: “de Antwoorder en de Genadige”</em></strong></p>
  <p class="text-center">
- <span class="text-arabic" dir="rtl" lang="ar">اَلْمُجٖيبُ وَالرَّحٖيمُ</span>
+ <span style="margin-top: 0" class="text-arabic" dir="rtl" lang="ar">اَلْمُجٖيبُ وَالرَّحٖيمُ</span>
  </p>
 </div>
 
@@ -1811,7 +1811,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
 <p>
  Kijk! Hij bidt met zo’n verheven intensiteit en smeekt met zo’n zoete aanroep, dat zijn stem als het ware
- het hele bestaan, de hemelen en het Oppertoon bereikt, in vervoering brengt en aanzet tot het uiten van:
+ het hele bestaan, de hemelen en de Oppertroon bereikt, in vervoering brengt en aanzet tot het uiten van:
  <em>“Âmîn o ALLAH, âmîn!”</em><sup>3</sup>
 </p>
 
@@ -1835,7 +1835,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="54"> <p class="text-end page-number">#54</p>
 
 <p>
- Kijk! Degene tot Wie hij bidt om gelukzaligheid en eeuwigheid is tevens zo Alhorend, Generous en Almachtig,
+ Kijk! Degene tot Wie hij bidt om gelukzaligheid en eeuwigheid is tevens zo Alhorend, Genereus en Almachtig,
  zo Alziend, Genadig en Alwetend, dat Die Majesteit klaarblijkelijk de geheimste wens en stilste aanroep van
  de meest verborgen levensvorm ziet, verneemt en meedogend verhoort.
 </p>
@@ -1863,8 +1863,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
 <p class="footnote-p">
  Voorwaar, vanwege dit geheim zeggen niet alleen mensen <em>“âmîn”</em> op de beden van de Ahmedaanse Persoonlijkheid
- <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, maar ook het hele bestaan, vanaf de Oppertoon tot aan de aardbodem,
- de geosfeer tot aan de Pleiaden, toont een trotse verbondenheid met zijn Lichternis. De ziel van het Ahmedaanse
+ <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, maar ook het hele bestaan, vanaf de Oppertroon tot aan de aardbodem,
+ de geosfeer tot aan de Plejaden, toont een trotse verbondenheid met zijn Lichternis. De ziel van het Ahmedaanse
  dienaarschap <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> is in feite een bede. In wezen zijn alle bewegingen en
  diensten van het heelal een vorm van bede.
 </p>
@@ -1894,7 +1894,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
 <p>
  Terwijl de glorie der mensheid en tijdeloze uitblinker van het bestaan alle adamskinderen op aarde achter
- zich verzamelt en zijn handpalmen tot de Oppertoon richt om te bidden binnen de waarheidskring van het
+ zich verzamelt en zijn handpalmen tot de Oppertroon richt om te bidden binnen de waarheidskring van het
  Ahmedaanse dienaarschap <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, waarin de essentie van het menselijke
  dienaarschap schuilt, rijst de vraag waar deze trots van het universum om smeekt. Laten wij luisteren...
 </p>
@@ -1914,7 +1914,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p">
- <sup>4</sup> Waarlijk, op het aardoppervlak – <em>dat in verhouding tot het hiernamaals slechts een knappe pagina is</em> –
+ <sup>4</sup> Waarlijk, op het aardoppervlak – <em>dat in verhouding tot het hiernamaals slechts een krappe pagina is</em> –
  worden vele voortreffelijke voorbeelden van kunst, en talloze illustraties van de herzameling en de herrijzenis
  tentoongesteld; &rarr;
  </p>
@@ -1937,7 +1937,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
 <p>
  Net zoals het profeetschap van de eindprofeet tot de totstandkoming van dit beproevingsoord heeft geleid
- en hem de bestemming heeft gemaakt van het geheim:
+ en hem de bestemmeling heeft gemaakt van het geheim:
  <sup>5</sup><span class="text-arabic-inline" dir="rtl" lang="ar">لَوْلَاكَ لَوْلَاكَ لَمَا خَلَقْتُ اْلأَفْلَاكَ</span>,
  zo heeft zijn dienaarschap tot de ontluiking van het rijk der gelukzaligheid geleid.
 </p>
@@ -1986,7 +1986,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  profeetschap, zo ontgrendelt hij de poort tot het hiernamaals met zijn dienaarschap.
 </strong></p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
+<p style="margin-top: 0" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
  عَلَيْهِ صَلَوَاتُ الرَّحْمٰنِ مِلْءَ الدُّنْيَا وَدَارِ الْجِنَانِ<sup>7</sup>
 </p>
 
@@ -2017,13 +2017,8 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
             'content' => '<div class="page" id="58"> <p class="text-end page-number">#58</p>
 <p class="text-center-constrained">
  <span class="text-arabic delima-font" dir="rtl" lang="ar">
- اللّٰهُمَّ صَلِّ وَسَلِّمْ
- عَلَى عَبْدِكَ وَرَسُولِكَ ذٰلِكَ الْحَبِيبِ الَّذِى
- هُوَ سَيِّدُ الْكَوْنَيْنِ وَفَخْرُ الْعَالَمَيْنِ وَحَيَاةُ الدَّارَيْنِ
- وَسِيلَةُ السَّعَادَتَيْنِ وَذُو الْجَنَاحَيْنِ وَرَسُولُ الثَّقَلَيْنِ
- وَعَلٰى اٰلِهِ وَصَحْبِهِ اَجْمَعِينَ
- وَعَلٰى اِخْوَانِهِ مِنَ النَّبِيِّينَ وَالْمُرْسَلِينَ
- اٰمِينَ<sup>8</sup>
+اَللّٰهُمَّ صَلِّ وَ سَلِّمْ عَلٰى عَبْدِكَ وَ رَسُولِكَ ذٰلِكَ الْحَبٖيبِ الَّذٖى هُوَ سَيِّدُ الْكَوْنَيْنِ وَ فَخْرُ الْعَالَمَيْنِ وَ حَيَاتُ الدَّارَيْنِ وَ وَسٖيلَةُ السَّعَادَتَيْنِ وَ ذُو الْجَنَاحَيْنِ وَ رَسُولُ الثَّقَلَيْنِ وَ عَلٰى اٰلِهٖ وَ صَحْبِهٖ اَجْمَعٖينَ وَ عَلٰى اِخْوَانِهٖ مِنَ النَّبِيّٖينَ وَ الْمُرْسَلٖينَ اٰمٖينَ
+ <sup>8</sup>
  </span>
 </p>
 
@@ -2048,7 +2043,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  <p class="text-center small-title"><strong>De Zesde Waarheid</strong></p>
  <p class="text-center"><strong><em>De poort van Majesteit en Oneindigheid; Een glimp van de Namen: “de Ontzaglijke en de Eeuwige”</em></strong></p>
  <p class="text-center">
- <span class="text-arabic" dir="rtl" lang="ar">اَلْجَلٖيلُ وَالْبَاقٖى</span>
+ <span style="margin-top: 0" class="text-arabic" dir="rtl" lang="ar">اَلْجَلٖيلُ وَالْبَاقٖى</span>
  </p>
 </div>
 
@@ -2396,7 +2391,7 @@ boom waarvan de vruchten naar de bazaar van het hiernamaals worden gezonden.
 <p class="text-center small-title"><strong>De Zevende Waarheid</strong></p>
 <p class="text-center"><strong><em>De poort van Bewaring en Preservatie; Een glimp van de Namen: “de Bewaarder en de Opzichter”</em></strong></p>
 <p class="text-center">
-<span class="text-arabic" dir="rtl" lang="ar">اَلْحَفٖيظُ وَالرَّقٖيبُ</span>
+<span style="margin-top: 0" class="text-arabic" dir="rtl" lang="ar">اَلْحَفٖيظُ وَالرَّقٖيبُ</span>
 </p>
 </div>
 
@@ -2444,7 +2439,7 @@ Zie je dan niet dat alle specifieke dadenschriften, samenstellingswetten en uite
 bloemrijke en vruchtdragende flora van een weelderige lente in compacte zaadjes worden opgeschreven en
 bewaard? In een volgende lente worden hun dadenschriften volgens een bepaalde rekenschap ontvouwd, waardoor
 er met een voortreffelijke Orde en Wijsheid een geweldige nieuwe voorjaarse wereld ontstaat. Dit toont aan
-hoe ruimschoots de wet der Bewaring van kracht is.
+hoe ruimschalig de wet der Bewaring van kracht is.
 </p>
 
 <p>
@@ -2475,7 +2470,7 @@ Hij in meerdere bewaarplaatsen op.
 </p>
 
 <p><strong>
-Deze Bewaring duidt aan dat er een aanzienlijk grootboek voor de rekenschap van daden zal worden opgeslagen.
+Deze Bewaring duidt aan dat er een aanzienlijk grootboek voor de rekenschap van daden zal worden opengeslagen.
 </strong></p>
 
 <p>
@@ -2582,7 +2577,7 @@ van één wezen zo lastig zijn als de schepping van alle wezens; er zullen onove
 <p class="text-center small-title"><strong>De Achtste Waarheid</strong></p>
 <p class="text-center"><strong><em>De poort van Belofte en Bedreiging; Een glimp van de Namen: “de Schone en de Ontzaglijke”</em></strong></p>
 <p class="text-center">
-<span class="text-arabic" dir="rtl" lang="ar">اَلْجَمٖيلُ وَالْجَلٖيلُ</span>
+<span style="margin-top: 0" class="text-arabic" dir="rtl" lang="ar">اَلْجَمٖيلُ وَالْجَلٖيلُ</span>
 </p>
 </div>
 
@@ -2593,7 +2588,7 @@ overleveringsketenen zijn verkondigd, en door alle getrouwen en heiligen unaniem
 waarmaken, en zodoende – <em>God verhoede</em> – Zijn onmacht en onwetendheid zal tonen? Daar komt bij dat
 het voldoen aan de vereisten van Zijn Beloftes en Dreigementen Zijn Macht geenszins bezwaart; het is zeer
 licht en gemakkelijk voor Hem, vergelijkbaar met het gemak waarmee de talloze wezens van de verstreken
-lente het aankomende voorjaar – <em>deels identiek<sup>1</sup> en deels Gelijksoortig<sup>2</sup></em> – worden herschapen.
+lente het aankomende voorjaar – <em>deels identiek<sup>1</sup> en deels gelijksoortig<sup>2</sup></em> – worden herschapen.
 </p>
 
 <p><strong>Bovendien is de waarmaking van Zijn belofte</strong> niet alleen voor ons, maar voor alle wezens, voor Hemzelf en voor de Heerschappij van Zijn Sultanaat van essentieel belang.
@@ -2625,7 +2620,7 @@ O loochenaar! Besef jij wel wat voor dwaze misdaad jij met je ongeloof en ontken
 Je beaamt jouw valse waan, jouw ijlende verstand en jouw bedrieglijke nefs. Ondertussen verloochen jij
 een Entiteit Die geenszins ontrouw of inconsequent hoeft te zijn; een Majesteit Wiens Statigheid en Integriteit
 het absoluut niet betaamt om inconsistent te zijn, en Wiens Trouwheid en Waarachtigheid door alle
-zichtbare activiteiten wordt onderlijnd. In je oneindige miezierigheid bega jij een eindeloos misdrijf! Hiervoor
+zichtbare activiteiten wordt onderlijnd. In je oneindige miezerigheid bega jij een eindeloos misdrijf! Hiervoor
 verdien jij uiteraard een zware, grenzeloze straf. Dat één tand van sommige helbewoners zo groot als een
 berg zal zijn, is als maatstaf vermeld om de omvang van hun misdrijf aan te duiden.
 </p>
@@ -2633,7 +2628,7 @@ berg zal zijn, is als maatstaf vermeld om de omvang van hun misdrijf aan te duid
 <p>
 Jij lijkt op een reiziger die zijn ogen voor het zonlicht sluit en in het domein van zijn verbeelding staart,
 waar zijn waan als een vuurvlieg zijn angstwekkende pad tracht te verlichten met het schijnsel dat van zijn
-hoofd afschermt.
+hoofd afschemert.
 </p>
 
 <p>
@@ -2646,7 +2641,7 @@ een sublieme gelukzaligheid schenken.
 <p class="text-center text-red" style="margin-bottom: 18px"><strong>De Negende Waarheid</strong></p>
 <div class="text-center text-center-constrained">
 <p class="text-center"><strong><em>De poort van Verlevendiging en Doding; Een glimp van de Namen: “De Allevende en Consistente, de Schenker des levens en Brenger des doods”</em></strong></p>
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَلْحَىُّ الْقَيُّومُ ۞ اَلْمُحْيٖى وَالْمُمٖيتُ</p>
+<p style="margin-top: 0" class="text-center text-arabic delima-font" dir="rtl" lang="ar">اَلْحَىُّ الْقَيُّومُ ۞ اَلْمُحْيٖى وَالْمُمٖيتُ</p>
 </div>
 
 </div>'
@@ -2660,13 +2655,13 @@ een sublieme gelukzaligheid schenken.
 Is het ooit voor mogelijk te houden dat Degene Die de grote, dode en dorre aarde tot leven wekt, en Die
 bij deze opwekking meer dan driehonderdduizend soorten schepselen soort voor soort zo wonderlijk als de
 menselijke herzameling bijeenbrengt en veraanschouwelijkt, en zodoende Zijn <strong>Macht</strong> demonstreert, en Die
-tijdens deze verzameling en veraanschouwelijking binnen grenzeloze vermengingen en verwervingen met
+tijdens deze verzameling en veraanschouwelijking binnen grenzeloze vermengingen en verwevingen met
 perfecte distincties en onderscheidingen de reikwijdte van Zijn <strong>Kennis</strong> demonstreert, en Die in al Zijn Hemelse
 Decreten de herzameling van de mens belooft, en zodoende de aandacht van al Zijn dienaren op de eeuwige
 gelukzaligheid richt, en alle creaties zij aan zij, schouder aan schouder, hand in hand eendrachtig binnen
 de kring van Zijn Bevel en Wil laat circuleren, en ze als elkaars helpers onderwerpt, en zodoende de grandeur
 van Zijn <strong>Heerschappij</strong> demonstreert, en Die de mensheid als de omvattendste, fragielste, teerhartigste,
-delicaatste en afhankelijkste vrucht van de scheppingsboom voortbrengt, als gesprekspartner verkiest, alles
+delicaatste en aanhankelijkste vrucht van de scheppingsboom voortbrengt, als gesprekspartner verkiest, alles
 tot haar dienst stelt, en zodoende aantoont hoeveel waarde Hij aan de mensheid hecht, al bij al, is het
 denkbaar dat zo’n Genadige Almachtige, zo’n Alwetende Alwijze, de herrijzenis niet zal realiseren, de herzameling
 niet zal of kan waarmaken, de mensheid niet opnieuw tot leven zal of kan wekken, de Ultieme Berechting
@@ -3385,7 +3380,7 @@ afwachtend uit naar de komst van de mens.
  <p class="text-center small-title"><strong>De Elfde Waarheid</strong></p>
  <p class="text-center"><strong><em>De poort van Mensheid; Een glimp van de Naam: “De Alwaarachtige.”</em></strong></p>
  <p class="text-center">
- <span class="text-arabic" dir="rtl" lang="ar">اَلْحَقُّ</span>
+ <span style="margin-top:0;" class="text-arabic" dir="rtl" lang="ar">اَلْحَقُّ</span>
  </p>
 </div>
 
@@ -3980,10 +3975,10 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 </p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
- “El’Qâri’ah!
- Wat is El’Qâri’ah?
+ “El’Qari’ah!
+ Wat is El’Qari’ah?
  En wat kan jou besef geven
- van El’Qâri’ah?
+ van El’Qari’ah?
  Een dag waarop mensen ogen
  als verstrooide motten,
  en bergen als geplozen wolvlokken.
@@ -3994,9 +3989,9 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  als zijn moeder ontmoeten.
  En hoe zou jij kunnen
  beseffen wat zij is?
- ‘Een laaiend inferno!’”
+ ‘Een Laaiend inferno!’”
 </p>
-<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 101:1-8</em></p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 99:1-8</em></p>
 
  </div>'
         ],
@@ -4013,15 +4008,12 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
             'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
- اَلْقَارِعَةُ ۞ مَا الْقَارِعَةُ
- وَمَٓا أَدْرٰيكَ مَا الْقَارِعَةُ ۞ يَوْمَ يَكُونُ
- النَّاسُ كَالْفَرَاشِ الْمَبْثُوثِ ۞
- وَتَكُونُ الْجِبَالُ كَالْعِهْنِ الْمَنْفُوشِ ۞
- فَأَمَّا مَنْ ثَقُلَتْ مَوَازِينُهُ ۞
- فَهُوَ فِى عِيشَةٍ رَاضِيَةٍ ۞
- وَأَمَّا مَنْ خَفَّتْ مَوَازِينُهُ ۞
- فَأُمُّهُ هَاوِيَةٌ ۞ وَمَٓا أَدْرٰيكَ مَا هِيَهْ ۞
- نَارٌ حَامِيَةٌ ۞
+وَلِلّٰهِ
+غَيْبُ السَّمٰوَاتِ وَالْأَرْضِ
+وَمَٓا أَمْرُ السَّاعَةِ
+إِلَّا كَلَمْحِ الْبَصَرِ
+أَوْ هُوَ أَقْرَبُ ۞
+إِنَّ اللّٰهَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ
 </p>
 
 <p class="text-center" style="margin: 18px auto 0 auto; max-width: 500px;">
@@ -4056,10 +4048,10 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
 <strong>“Wij geloven en beamen dit.”</strong>
 </p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
 اٰمَنْتُ بِاللّٰهِ وَ مَلٰئِكَتِهٖ وَ كُتُبِهٖ وَ رُسُلِهٖ وَ الْيَوْمِ الْاٰخِرِ وَ بِالْقَدَرِ خَيْرِهٖ وَ شَرِّهٖ مِنَ اللّٰهِ تَعَالٰى وَ الْبَعْثُ بَعْدَ الْمَوْتِ حَقٌّ وَ اَنَّ الْجَنَّةَ حَقٌّ وَ النَّارَ حَقٌّ وَ اَنَّ الشَّفَاعَةَ حَقٌّ وَ اَنَّ مُنْكَرًا وَ نَكٖيرًا حَقٌّ وَ اَنَّ اللّٰهَ يَبْعَثُ مَنْ فِى الْقُبُورِ اَشْهَدُ اَنْ لَا اِلٰهَ اِلَّا اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ
 
-اَللّٰهُمَّ صَلِّ عَلٰى اَلْطَفِ وَ اَشْرَفِ وَ اَكْمَلِ وَ اَجْمَلِ ثَمَرَاتِ طُوبَاءِ رَحْمَتِكَ الَّذٖى اَرْسَلْتَهُ رَحْمَةً لِلْعَالَمٖينَ وَ وَسٖيلَةً لِوُصُولِنَا اِلٰى اَزْيَنِ وَ اَحْسَنِ وَ اَجْلٰى وَ اَعْلٰى ثَمَرَاتِ تِلْكَ الطُّوبَاءِ الْمُتَدَلِّيَةِ عَلٰى دَارِ الْاٰخِرَةِ اَىِ الْجَنَّةِ  اَللّٰهُمَّ اَجِرْنَا وَ اَجِرْ وَالِدَيْنَا مِنَ النَّارِ وَ اَدْخِلْنَا وَ اَدْخِلْ وَالِدَيْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ بِجَاهِ نَبِيِّكَ الْمُخْتَارِ اٰمٖينَ
+اَللّٰهُمَّ صَلِّ عَلٰى اَلْطَفِ وَ اَشْرَفِ وَ اَكْمَلِ وَ اَجْمَلِ ثَمَرَاتِ طُوبَاءِ رَحْمَتِكَ الَّذٖى اَرْسَلْتَهُ رَحْمَةً لِلْعَالَمٖينَ وَ وَسٖيلَةً لِوُصُولِنَا اِلٰى اَزْيَنِ وَ اَحْسَنِ وَ اَجْلٰى وَ اَعْلٰى ثَمَرَاتِ تِلْكَ الطُّوبَاءِ الْمُتَدَلِّيَةِ عَلٰى دَارِ الْاٰخِرَةِ اَىِ الْجَنَّةِ. اَللّٰهُمَّ اَجِرْنَا وَ اَجِرْ وَالِدَيْنَا مِنَ النَّارِ وَ اَدْخِلْنَا وَ اَدْخِلْ وَالِدَيْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ بِجَاهِ نَبِيِّكَ الْمُخْتَارِ اٰمٖينَ
 </p>
 
  </div>'
@@ -4080,7 +4072,7 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
  Ik geloof in de werkelijkheid van de herrijzenis na de
  dood, de werkelijkheid van het paradijs, de werkelijkheid
  van het hellevuur, de werkelijkheid van de bemiddeling,
- en de werkelijkheid van Moenker en Nekier
+ en de werkelijkheid van Moenker en Nekir
  <em>(de twee engelen die de overledenen in het graf ondervragen).</em>
 </p>
 
@@ -4185,7 +4177,7 @@ overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging
  en toe te voegen.
 </em></p>
 
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
+<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
  رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً
  إِنَّكَ أَنتَ الْوَهَّابُ
 </p>
