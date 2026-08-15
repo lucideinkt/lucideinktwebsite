@@ -455,7 +455,7 @@ weg.
 <p class="text-red small-title"><strong>De derde onmogelijkheid</strong></p>
 
 <p>
-<span class="text-arabic-inline delima-font" dir="rtl" lang="ar">اَلْوَاحِدُ لَا يَصْدُرُ اِلَّا عَنِ الْوَاحِدِ</span>, oftewel zoals de vastgestelde,
+<span class="text-arabic-inline delima-font" dir="rtl" lang="ar">اَلْوَاحِدُ لَا يَصْدُرُ اِلَّا عَنِ الْوَاحِدِ</span>، oftewel zoals de vastgestelde,
 norm luidt: “Als er eenheid is in een wezen,
 kan die uiteraard uitsluitend door één eenheid, uit één
 hand ontstaan.” Met name wanneer dat wezen in een
@@ -795,7 +795,7 @@ gedaantes die de natuur als vormer zien beweringen maken als: “Wij zijn intell
 kun je zien hoe ver ze verwijderd zijn van intelligentie
 en wetenschap en hoe ze zich een ondoenlijk bijgeloof,
 dat op geen enkele wijze mogelijk is, als weg kunnen
-toe-eigenen; lach erom en spuug erop.
+toe-eigenen; lach er om en spuug er op.
 </p>
 
 <p><em>
@@ -1170,7 +1170,7 @@ wijze bewezen.
 <p style="text-indent: 0">
 Wat betreft die vierde weg toont
 het aan het begin genoemde vers: <br>
-<sup>6</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَفِ اللهِ شَكٌّ فَاطِرِ السَّمٰوَاتِ وَالْاَرْضِ</span> onbetwistbaar en
+<sup>6</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَفِى اللّٰهِ شَكٌّ فَاطِرِ السَّمٰوَاتِ وَالْأَرْضِ</span> onbetwistbaar en
 ongetwijfeld, op een klaarblijkelijke wijze, de Goddelijkheid
 aan van de Absoluut Existerende Entiteit
 en wijst erop dat alles regelrecht aan Zijn machtshand
@@ -1556,7 +1556,7 @@ aanbidding. Hij die zijn gebeden nalaat, ziet de aanbidding
 in het bestaan niet en kan die ook niet zien;
 misschien ontkent hij die zelfs. Wezens, welke zich op
 een hoge positie bevinden wat betreft aanbidding en
-verheerlijking, en waarvan eenieder dient als een brief
+verheerlijking, en waarvan een ieder dient als een brief
 der Behoefteloze en spiegel der Goddelijke namen,
 verstoot hij op dat moment van hun verheven positie;
 omdat hij hun toestand tevens waardeloos, functieloos,
@@ -1659,7 +1659,7 @@ dat openlijk getoond wordt in verzen zoals:
 
 <p style="text-indent: 0" class="text-center"><sup>8</sup><span class="text-arabic-inline" dir="rtl" lang="ar">مَا خَلْقُكُمْ وَلَا بَعْثُكُمْ اِلَّا كَنَفْسٍ وَاحِدَةٍ</span></p>
 
-<p style="text-indent: 0" class="text-center"><sup>9</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَمَٓا اَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ اَوْ هُوَ اَقْرَبُ</span></p>
+<p style="text-indent: 0" class="text-center"><sup>9</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَمَا أَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ أَوْ هُوَ أَقْرَبُ</span></p>
 
 <p>tonen daarentegen aan dat die fenomenale werkelijkheid een meest aanvaardbare en rationele zaak is. Wat is het geheim en wijsheid achter deze eenvoud?</p>
 
@@ -1686,7 +1686,7 @@ van één ziel.” - De Heilige Qur’an, 31:28
 <p><em>
 Het antwoord:
 </em> de <strong>Tiende Term</strong> van <strong>de Twintigste
-Brief</strong> waarin het vers <br><sup>10</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ</span> wordt
+Brief</strong> waarin het vers <br><sup>10</sup><span class="text-arabic-inline" dir="rtl" lang="ar">وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</span> wordt
 uiteengezet, verklaart dat geheim op een zeer heldere,
 absolute en doorslaggevende wijze. Met name in de
 bijlage van die brief wordt op een nog duidelijkere
@@ -1862,7 +1862,7 @@ vers:
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-وَمَٓا اَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ اَوْ هُوَ اَقْرَبُ<sup>11</sup>
+وَمَا أَمْرُ السَّاعَةِ اِلَّا كَلَمْحِ الْبَصَرِ أَوْ هُوَ أَقْرَبُ<sup>11</sup>
 </p>
 
 <p class="text-red small-title"><strong>De derde vraag</strong></p>
@@ -1965,7 +1965,7 @@ dagen en elke lente in zes weken een levende wereld
 samenstelt welke kunstiger en diepzinniger is dan het
 heelal, en ten gevolge van die gedachtegang vorming
 verloochenen, is een grotere dwaasheid en onwetendheid
-dan die van de voorheen genoemde groep sofisten.
+dan die van de voornoemde groep sofisten.
 </p>
 
 </div>'
