@@ -1062,26 +1062,6 @@ Waarlijk, is het beter om een bedrag gelijk aan of hoger dan de Zakaat via gifte
                 'content' => '<div class="page" id="35">
 <p class="text-end page-number">#35</p>
 
-<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
-اَللّٰهُمَّ صَلِّ وَ سَلِّمْ عَلٰى سَيِّدِنَا مُحَمَّدٍ الَّذٖى قَالَ «اَلْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ الْمَرْصُوصِ يَشُدُّ بَعْضُهُ بَعْضًا» وَ قَالَ «اَلْقَنَاعَةُ كَنْزٌ لَا يَفْنٰى» وَعَلٰى اٰلِهٖ وَصَحْبِهٖ اَجْمَعٖينَ اٰمٖينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمٖينَ <sup>1</sup>
-</p>
-
-<div class="page-footnote">
-<hr class="hr-footnote" />
-
-<p class="footnote-p">
-<sup>1</sup> “O ALLAH, laat zegeningen en vrede neerdalen op onze meester Mohammed, die eigenaar is van de uitspraak: <span class="text-italic">‘De band tussen gelovigen is als een stevig gebouw dat zijn elementen bijeenhoudt.’</span> en de uitspraak: <span class="text-italic">‘Tevredenheid is een onuitputtelijke schat.’</span> en op al zijn familieleden en metgezellen evenzeer; âmîn... en de lof zij ALLAH, Heer der werelden.”
-</p>
-
-</div>
-
-</div>'
-            ],
-            [
-                'page_number' => 35,
-                'content' => '<div class="page" id="35">
-<p class="text-end page-number">#35</p>
-
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin:0 auto; max-width: 500px;">
 اَللّٰهُمَّ صَلِّ وَ سَلِّمْ عَلٰى سَيِّدِنَا مُحَمَّدٍ<sub style="margin-right: 0px;margin-left: -5px; font-size: 55%; vertical-align: sub; line-height: 0;">نِ</sub> الَّذٖى قَالَ: اَلْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ الْمَرْصُوصِ يَشُدُّ بَعْضُهُ بَعْضًا وَ قَالَ: اَلْقَنَاعَةُ كَنْزٌ لَا يَفْنٰى وَعَلٰى اٰلِهٖ وَصَحْبِهٖ اَجْمَعٖينَ اٰمٖينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمٖينَ <sup>1</sup>
 </p>
@@ -2501,7 +2481,7 @@ O waarheidsdienaars en soefi\'s! Het dienen van Gerechtigheid is te vergelijken 
 <p class="text-end page-number">#82</p>
 
 <p>
-Bovendien bevindt zo iemand zich in een nadelige positie. Want als hij gelijk blijkt te hebben, dan leert hij tijdens die discussie niets nieuws. Omdat hij het risico loopt om verwaand te worden, kan het nadelig voor hem uitpakken. Als zijn tegenstander gelijk blijkt te hebben, dan leert hij iets nieuws bij dat hem onnadelig baat oplevert. Tevens zal hij van zijn ego’s verwaandheid worden gered. Aldus zal een redelijke voorstander van gerechtigheid om het belang van gerechtigheid zijn ego’s belang wegcijferen. Wanneer hij gerechtigheid aan de kant van zijn tegenstander ziet, dan zal hij dat alsnog met genoegen aanvaarden, ondersteunen en er tevreden over zijn.
+Bovendien bevindt zo iemand zich in een nadelige positie. Want als hij gelijk blijkt te hebben, dan leert hij tijdens die discussie niets nieuws. Omdat hij het risico loopt om verwaand te worden, kan het nadelig voor hem uitpakken. Als zijn tegenstander gelijk blijkt te hebben, dan leert hij iets nieuws bij dat hem onnadelige baat oplevert. Tevens zal hij van zijn ego’s verwaandheid worden gered. Aldus zal een redelijke voorstander van gerechtigheid om het belang van gerechtigheid zijn ego’s belang wegcijferen. Wanneer hij gerechtigheid aan de kant van zijn tegenstander ziet, dan zal hij dat alsnog met genoegen aanvaarden, ondersteunen en er tevreden over zijn.
 </p>
 
 <p>
