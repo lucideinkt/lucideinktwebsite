@@ -64,8 +64,7 @@ en intensiefste antipropaganda ijverden om de Risale-i Nur te ontkrachten
 en de mensen angst in te boezemen om ze van de traktaten te doen laten afzien,
 is de Risale-i Nur op een ongeziene wijze verspreid. Zeshonderdduizend kopieën,
 waarvan de meeste zelfs handgeschreven zijn, worden ondergronds met volle passie
-verspreid en door zowel degenen die ermee bekend zijn als degenen die ermee onbekend
-zijn worden ze met volle passie gelezen. Wat is de wijsheid hierachter?”
+verspreid en door zowel degenen die er bekend mee zijn als degenen die er onbekend mee zijn worden ze met volle passie gelezen. Wat is de wijsheid hierachter?”
 </em></p>
 
 <div class="page-footnote">
@@ -294,7 +293,7 @@ van hun geloofsovertuiging kunnen zij deze genietingen ondervinden.
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
-<p class="footnote-p"><sup>1</sup> <span class="text-arabic-inline" dir="rtl" lang="ar">رَبُّ السَّمَاوَاتِ وَالْاَرْضِ</span></p>
+<p class="footnote-p"><sup>1</sup> <span class="text-arabic-inline" dir="rtl" lang="ar">رَبُّ السَّمَاوَاتِ وَالْأَرْضِِ</span></p>
 <p class="footnote-p"><sup>2</sup> <span class="text-arabic-inline" dir="rtl" lang="ar">مُسَخَّرُ الشَّمْسِ وَالْقَمَرِ</span></p>
 <p class="footnote-p"><sup>3</sup> “De lof zij ALLAH voor de gift des geloofs.”</p>
 </div>
@@ -1449,7 +1448,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p>
-    In een Heilige Hadith heeft de Hoogste Gerechtigde het volgende bekendgemaakt: <span class="text-arabic-inline" dir="rtl" lang="ar">انَاَ عِنْدَ ظنَِّ عَبْدٖى بٖى</span>. Oftewel, <em>“Ik zal mijn onderdaan behandelen naar de wijze waarop hij Mij kent.”</em>
+    In een Heilige Hadith heeft de Hoogste Gerechtigde het volgende bekendgemaakt: <span class="text-arabic-inline" dir="rtl" lang="ar">اَنَا عِنْدَ ظَنِّ عَبْدٖى بٖى</span>. Oftewel, <em>“Ik zal mijn onderdaan behandelen naar de wijze waarop hij Mij kent.”</em>
     </p>
 
 </div>'
@@ -2050,7 +2049,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-    بِسْمِهٖ سُبْحَاَنَهُ<sup>1</sup>
+    بِسْمِهٖ سُبْحَانَهُ<sup>1</sup>
     </p>
 
     <p>
@@ -2142,7 +2141,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-    بِاسْمِهٖ سُبْحَانَهُ<sup>1</sup> اَلسَّلَامُ عَلَيْكُمْ وَ رَحْمَةُ اللّٰهِ وَ بَرَكَاتُهُ<sup>2</sup>
+    بِسْمِهٖ سُبْحَانَهُ<sup>1</sup> اَلسَّلَامُ عَلَيْكُمْ وَ رَحْمَةُ اللّٰهِ وَ بَرَكَاتُهُ<sup>2</sup>
     </p>
 
     <p>
@@ -2229,7 +2228,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p style="margin-top: 0" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-    بِاسْمِهٖ سُبْحَانَهُ<sup>1</sup> وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup><br>
+    بِسْمِهٖ سُبْحَانَهُ<sup>1</sup> وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup><br>
     اَلسَّلَامُ عَلَيْكُمْ وَ رَحْمَةُ اللّٰهِ وَ بَرَكَاتُهُ اَبَدًا دَائِمًا<sup>3</sup>
     </p>
 
@@ -2279,7 +2278,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     <p class="text-end page-number">#68</p>
 
     <p style="margin-top: 0; margin-bottom: 0;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-    بِاسْمِهٖ سُبْحَانَهُ<sup>1</sup> وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup>
+    بِسْمِهٖ سُبْحَانَهُ<sup>1</sup> وَ اِنْ مِنْ شَىْءٍ اِلَّا يُسَبِّحُ بِحَمْدِهٖ<sup>2</sup>
     </p>
 
     <p>
@@ -2444,7 +2443,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-    اِنَّا جَعَلْنَا مَا عَلَى الْاَرْضِ زٖينَةً لَهَا لِنَبْلُوَهُمْ اَيُّهُمْ اَحْسَنُ عَمَلًا ۞ وَاِنَّا لَجَاعِلُونَ مَا عَلَيْهَا صَعٖيدًا جُرُزًا ۞ وَمَا الْحَيٰوةُ الدُّنْيَٓا اِلَّا لَعِبٌ وَلَهْوٌ ۞<sup>2</sup>
+    اِنَّا جَعَلْنَا مَا عَلَى الْاَرْضِ زٖينَةً لَهَا لِنَبْلُوَهُمْ اَيُّهُمْ اَحْسَنُ عَمَلًا ۞ وَاِنَّا لَجَاعِلُونَ مَا عَلَيْهَا صَعٖيدًا جُرُزًا ۞ وَمَا الْحَيٰوةُ الدُّنْيَٓا اِلّالْأَرْضٌِ وَلَهْوٌ ۞<sup>2</sup>
     </p>
 
     <p class="text-center-constrained"><em>[Dit Woord bestaat uit Twee Verheven Thema’s en een Stralende Toevoeging]</em></p>
@@ -2724,7 +2723,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p>
-    Voorwaar, deze zes richtingen hebben mij geen warmte en troost, maar angst en vrees bezorgd. Daartegenover heb ik niets anders dan een beperkte wil waarop ik mij kan berusten en waarmee ik weerstand kan bieden.
+    Voorwaar, deze zes richtingen hebben mij geen warmte en troost, maar angst en vrees bezorgt. Daartegenover heb ik niets anders dan een beperkte wil waarop ik me kan berusten en waarmee ik weerstand kan bieden.
     </p>
 
         <hr class="hr-footnote" />
@@ -7138,18 +7137,18 @@ in verschillende situaties en wordt zuiverder, hij ervaart uiteenlopende gesteld
                 'content' => '<div class="page" id="162">
 <p class="text-end page-number">#162</p>
 
-<p style="margin-bottom: 0">Acht jaar voordat dit traktaat was geschreven, tijdens de Ramadan in Istanbul, toen de filosofisch beïnvloede Oude Said op het punt stond om in de Nieuwe Said te veranderen, dacht ik aan de drie wegen die in de volgende Aya aan het eind van De Edele Soera Fatiha worden benoemd:</p>
+<p style="margin-bottom: 0">Acht jaar voordat dit traktaat was geschreven, tijdens de Ramadan in Istanbul, toen de filosofisch beïnvloede Oude Said op het punt stond om in de Nieuwe Said te veranderen, dacht ik aan de drie wegen die in de volgende Aya aan het eind van De Edele Soera Fâtihah worden beduid:</p>
 
 <p style="margin: 0 auto;" class="text-center text-arabic delima-font" dir="rtl" lang="ar">صِرَاطَ الَّذٖينَ اَنْعَمْتَ عَلَيْهِمْ  غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ <br> وَ لَا الضَّٓالّٖينَ <sup>1</sup></p>
 
-<p>Op dat moment zag ik een visioen, een illustratieve gebeurtenis die op een droom leek. Ik zag mezelf in een geweldige woestijn. Een donkere, benauwende en verstikkende wolk had het hele aardoppervlak bedekt. Er was geen bries, noch licht, noch levenswater. Ik verbeeldde mij dat er overal gevaarlijke monsters en woeste schepselen rondwaarden. Mijn hart werd het volgende ingegeven: <em>“Aan de andere kant van deze vlakte is er licht, lucht en levenswater; daar moet je heengaan.”</em> Ik zag dat ik onvrijwillig naar een ondergrondse, tunnellachtige grot werd geleid. Onder de grond reisde ik voort. Ik bemerkte dat velen voor mij die ondergrondse weg waren ingegaan. Op allerlei locaties zag ik dat ze gestikt waren en niet verder waren kunnen komen. Ik zag hun voetsporen. Soms vernam ik bepaalde stemmen, waarna die stemmen op den duur ook verdwenen.</p>
+<p>Op dat moment zag ik een visioen, een illustratieve gebeurtenis die op een droom leek. Ik zag mezelf in een geweldige woestijn. Een donkere, benauwende en verstikkende wolk had het hele aardoppervlak bedekt. Er was geen bries, noch licht, noch levenswater. Ik verbeeldde mij dat er overal gevaarlijke monsters en woeste schepselen ronddwaalden. Mijn hart werd het volgende ingegeven: <em>“Aan de andere kant van deze vlakte is er licht, lucht en levenswater; daar moet je heengaan.”</em> Ik zag dat ik onvrijwillig naar een ondergrondse, tunnelachtige grot werd geleid. Onder de grond reisde ik voort. Ik bemerkte dat velen voor mij die ondergrondse weg waren ingegaan. Op allerlei locaties zag ik dat ze gestikt waren en niet verder waren kunnen komen. Ik zag hun voetsporen. Soms vernam ik bepaalde stemmen, waarna die stemmen op den duur ook verdwenen.</p>
 
 <p>O vriend die via zijn verbeelding mij in mijn denkbeeldige reis vergezelt! Die vlakte symboliseert de natuur en de naturalistische filosofie. Die tunnel symboliseert de weg die filosofen met hun theorieën hebben gebaand om de waarheid te bereiken. De voetsporen die ik zag waren van beroemde filosofen zoals Plato en Aristoteles<sup>2</sup>. De stemmen die ik vernam waren van genieën zoals Ibn Sinâ en Farabî. Waarlijk, op bepaalde locaties vernam ik de uitspraken en standpunten van Ibn Sinâ, waarna die naarmate ik vorderde ook op den duur volledig uitdoofden.</p>
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
-<p class="footnote-p"><sup>1</sup> “De weg van degenen op wie Uw Gunsten neerdaalden; niet die van hen op wie Uw Toorn neerdaalt, noch die van hen die zijn afgedwaald.” – <em>De Heilige Qur’an</em>, 1:7</p>
-<p class="footnote-p"><sup>2</sup> <strong>Mocht jij het volgende opmerken:</strong> <em>“Wie denk jij dat jij bent, dat jij zulke beroemde denkers tegenspreekt? Jij bent net een mug die opmerkingen over de vleugten van adelaars maakt.”</em><br><strong>Dan zeg ik:</strong> zolang ik een Onbegonnen Leermeester zoals De Qur’an heb, ben ik op het pad van de waarheid en Godskennis niet verplicht om die adelaars, oftewel de studenten van een buitensporige filosofie en een fantasierijk intellect, ook maar de waarde van een vliegenvleugje te geven. Hoe inferieur ik ook aan ze ben, hun leermeester blijft eindeloos inferieur aan mijn Leermeester. Dankzij de hulp van mijn Leermeester hebben de zaken waarin zij zijn verdronken mij hiel en niet eens nat kunnen maken. Waarlijk, een simpele soldaat onder het gezag en bevel van een grote koning kan meer dan de grote maarschalk van een kleine heerser voor elkaar krijgen.</p>
+<p class="footnote-p"><sup>1</sup> “De weg van degenen op wie Uw Gunsten neerdalen; niet die van hen op wie Uw Toorn neerdaalt, noch die van hen die zijn afgedwaald.” – <em>De Heilige Qur’an</em>, 1:7</p>
+<p class="footnote-p"><sup>2</sup> <strong>Mocht jij het volgende opmerken:</strong> <em>“Wie denk jij dat jij bent, dat jij zulke beroemdheden tegenspreekt? Jij bent net een mug die opmerkingen over de vluchten van adelaren maakt.”</em><br><strong>Dan zeg ik:</strong> zolang ik een Onbegonnen Leermeester zoals De Qur’an heb, ben ik op het pad van de waarheid en Godskennis niet verplicht om die adelaren, oftewel de studenten van een buitensporige filosofie en een fantasierijk intellect, ook maar de waarde van een vliegenvleugel te geven. Hoe inferieur ik ook aan ze ben, hun leermeester blijft eindeloos inferieur aan mijn Leermeester. Dankzij de hulp van mijn Leermeester hebben de zaken waarin zij zijn verdronken mijn hielen niet eens nat kunnen maken. Waarlijk, een simpele soldaat onder het gezag en bevel van een grote koning kan meer dan de grote maarschalk van een kleine heerser voor elkaar krijgen.</p>
 </div>
 
 </div>'
@@ -7779,7 +7778,7 @@ in verschillende situaties en wordt zuiverder, hij ervaart uiteenlopende gesteld
 
 <p><strong>Oftewel, “Trouw en vermenigvuldig jullie. Op de dag des oordeels zal jullie talrijkheid mij met trots vervullen.”</strong></p>
 
-<p>Echter, door het sluierverbod zal het aantal huwelijken niet toe- maar juist enorm afnemen. Want zelfs de losbandigste en modernste jongeman verlangt naar een kuise levensgezellin. Hij zal niet wensen dat zij zo modern, oftewel zo open en bloot is als cchijzelf, waardoor hij vrijgezel blijft en misschien zelfs in ontucht belandt.</p>
+<p>Echter, door het sluierverbod zal het aantal huwelijken niet toe- maar juist enorm afnemen. Want zelfs de losbandigste en modernste jongeman verlangt naar een kuise levensgezellin. Hij zal niet wensen dat zij zo modern, oftewel zo open en bloot is als hijzelf, waardoor hij vrijgezel blijft en misschien zelfs in ontucht belandt.</p>
 
 <p>Een vrouw is anders; zij kan haar echtgenoot niet dermate beperken. Immers, omdat een vrouw gezien haar huishoudelijke functie binnen het gezinsleven als beheerster van alle goederen, kinderen en bezittingen van haar man fungeert, bestaan haar fundamenteelste karakteristieken uit loyaliteit en betrouwbaarheid. Open- en blotigheid daarentegen richten die loyaliteit te gronde, doen haar betrouwbaarheid in de ogen van haar man in rook opgaan en leveren haar gewetenskwelling op. Daarenboven zijn lef en vrijgevigheid twee eigenschappen die bij mannen prijzenswaardig zijn, terwijl ze bij vrouwen als zondige karakteristieken en kwade eigenschappen gelden omdat ze haar betrouwbaarheid en haar loyaliteit aantasten. De taak van haar man daarentegen bestaat niet uit penningmeesterschap en loyaliteit, maar uit bescherming, mededogen en eerbied. Daarom kan die man niet worden beperkt en mag hij met andere vrouwen huwen.</p>
 
@@ -8556,40 +8555,6 @@ naar de verschijning van:
                 'content' => '<div class="page" id="230">
 <p class="text-end page-number">#230</p>
 
-<h2 class="page-title-chapter">Het Tweede Niveau</h2>
-
-<p class="text-center text-bold">[Uit De Stralendste Bewijzen]</p>
-
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;"><sup>1</sup> بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحٖيمِ</p>
-
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;"><sup>2</sup> وَ بهٖ نَسْتَعٖينُ</p>
-
-<p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ مَثَلُ نُورِهٖ كَمِشْكٰوةٍ فٖيهَا مِصْبَاحٌ اَلْمِصْبَاحُ فٖى زُجَاجَةٍ الزُّجَاجَةُ كَاَنَّهَا كَوْكَبٌ دُرِّىٌّ يُوقَدُ مِنْ شَجَرَةٍ مُبَارَكَةٍ <sup>3</sup> ا خ ل ۞ اَوْ كَظُلُمَاتٍ فٖى بَحْرٍ لُجِّىٍّ يَغْشٰيهُ مَوْجٌ مِنْ فَوْقِهٖ مَوْجٌ <sup>4</sup> ا خ ل ۞</p>
-
-<p>Deze twee Aya’s uit Soera <span class="text-italic">“E’n-Nûr”</span>, Die de afweging van het geleide en rechtzinnige volk, en het afgedwaalde en ontspoorde volk aan het eind van Soera <span class="text-italic">“El-Fâtihah”</span> beduiden, en Die de bron van alle afwegingen in de Risale-i Nur vormen, drukken die afweging op een buitengewone en miraculeuze wijze uit.</p>
-
-<p>In <span class="text-bold">De Eerste Straal</span> is aangetoond dat de eerstgenoemde Aya uit Soera <span class="text-italic">“E’n-Nûr”</span> met tien aanduidingen op de Risale-i Nur is gericht; op een miraculeuze wijze worden daar verborgen tijdingen over die Tafsir van De Qur’an gegeven. En omdat Die Aya de grootste reden achter de benaming <span class="text-italic">“Nur”</span> van <span class="text-italic">“de Risale-i Nur”</span> is geweest, en omdat het woord <span class="text-italic">“Nûr”</span> in deze buitengewone Aya een spiritueel mirakel zoals het mirakel achter <span class="text-arabic-inline" dir="rtl" lang="ar">نَا</span> <span class="text-italic">(wij)</span></p>
-
-<div class="page-footnote">
-<hr class="hr-footnote">
-
-<p class="footnote-p">1 “In de Naam van ALLAH, de Barmhartige, de Genadige.”</p>
-
-<p class="footnote-p">2 “En Hem vragen wij om hulp.”</p>
-
-<p class="footnote-p">3 “ALLAH is Het Licht van de hemelen en de aarde. De gelijkenis van Zijn Licht is als een nis met daarin een lamp; de lamp is in een fles; de fles is als een schitterende ster die met een brandstof van een gezegende boom ontbrandt.” - <span class="text-italic">De Heilige Qur’an, 24:35</span></p>
-
-<p class="footnote-p">4 “Of als de duisternissen van een diepe zee, bedekt met golven boven golven.” - <span class="text-italic">De Heilige Qur’an, 24:40</span></p>
-
-</div>
-
-</div>'
-            ],
-            [
-                'page_number' => 230,
-                'content' => '<div class="page" id="230">
-<p class="text-end page-number">#230</p>
-
 <div class="text-center page-title-chapter delima-font">
 <h2>Het Tweede Niveau</h2>
 </div>
@@ -8609,7 +8574,7 @@ naar de verschijning van:
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0px auto 0 auto;">
-<span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ مَثَلُ نُورِهٖ كَمِشْكٰوةٍ فٖيهَا مِصْبَاحٌ فٖى زُجَاجَةٍ</span>
+<span class="text-arabic-inline" dir="rtl" lang="ar">اَللّٰهُ نُورُ السَّمٰوَاتِ وَالْاَرْضِ مَثَلُ نُورِهٖ كَمِشْكٰوةٍ فٖيهَا مِصْبَاحٌ اَلْمِصْبَاحُ فٖى زُجَاجَةٍ</span>
 </p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 18px auto 0 auto; max-width: 500px;">
