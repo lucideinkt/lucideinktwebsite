@@ -58,4 +58,8 @@ return [
         },
     ],
 
+    'mobile' => [
+        'api_key' => env('MOBILE_API_KEY'),
+    ],
+
 ];
