@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductPdfPage;
+use App\Services\BookHtmlNormalizer;
 use App\Services\SEOService;
 use Illuminate\Http\Request;
 
@@ -121,6 +122,11 @@ class OnlineLezenController extends Controller
         $initialPages = $product->bookPages()->orderBy('page_number')->get();
 
         abort_if($initialPages->isEmpty(), 404);
+
+        $normalizer = app(BookHtmlNormalizer::class);
+        foreach ($initialPages as $page) {
+            $page->content = $normalizer->normalizePageHtml($page->content);
+        }
 
         // All page numbers + book_title for dropdown + progress bar (lightweight)
         $allPageMeta = $product->bookPages()

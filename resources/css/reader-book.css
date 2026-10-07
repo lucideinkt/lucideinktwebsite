@@ -484,6 +484,19 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     display: inline;
     cursor: pointer;
 }
+.fn-ref-text { cursor: pointer; }
+.fn-arabic-inline {
+    display: inline-flex;
+    direction: ltr;
+    text-indent: 0;
+    flex-direction: row-reverse;
+    align-items: center;
+    vertical-align: baseline;
+}
+.fn-ref-text:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
 
 /* ── Klikbare voetnootreferenties (.fn-ref) ── */
 .book-reader-scope .fn-ref {

@@ -27,6 +27,7 @@
     // ── Wire up footnote popovers for a SINGLE page ─────────────────────────
     // Tracks which pages have already been wired so we never double-process
     const wiredPages = new WeakSet();
+    const textFootnotes = new WeakMap();
     let badgeCenterRaf = false;
 
     function centerBadgeNumber(numEl) {
@@ -101,6 +102,74 @@
         });
     }
 
+    function wireFootnoteText(page) {
+        const arabicSelector = '[lang="ar"], .text-arabic, .text-arabic-inline, .text-arabic-bismillah';
+        const meaningfulSibling = (node, direction) => {
+            let sibling = node[direction];
+            while (sibling && sibling.nodeType === Node.TEXT_NODE && !sibling.textContent.trim()) {
+                sibling = sibling[direction];
+            }
+            return sibling;
+        };
+        const mark = (element, btn) => {
+            if (!element || element.closest('a, .page-footnote') || textFootnotes.has(element)) return;
+            textFootnotes.set(element, btn);
+            element.classList.add('fn-ref-text');
+            element.setAttribute('role', 'button');
+            element.setAttribute('tabindex', '0');
+            element.setAttribute('aria-label', `Open voetnoot ${btn.dataset.fn}`);
+        };
+        const markLastWord = (node, btn) => {
+            if (!node) return;
+            if (node.nodeType === Node.ELEMENT_NODE) {
+                if (node.matches('a, button, .fn-ref-wrap')) return;
+                let child = node.lastChild;
+                while (child?.nodeType === Node.TEXT_NODE && !child.textContent.trim()) child = child.previousSibling;
+                markLastWord(child, btn);
+                return;
+            }
+            if (node.nodeType !== Node.TEXT_NODE) return;
+            const match = /(\S+)(\s*)$/.exec(node.textContent);
+            if (!match) return;
+            const word = document.createElement('span');
+            word.textContent = match[1];
+            const trailing = document.createTextNode(match[2]);
+            node.textContent = node.textContent.slice(0, match.index);
+            node.after(word, trailing);
+            mark(word, btn);
+        };
+        page.querySelectorAll('.fn-ref').forEach(btn => {
+            const wrapper = btn.closest('.fn-ref-wrap');
+            const anchor = wrapper || btn;
+            const paragraph = btn.closest(arabicSelector);
+            const before = meaningfulSibling(anchor, 'previousSibling');
+            const after = meaningfulSibling(anchor, 'nextSibling');
+            const citation = paragraph?.matches('span') ? paragraph :
+                after?.nodeType === Node.ELEMENT_NODE && after.matches(`span:is(${arabicSelector})`) ? after :
+                before?.nodeType === Node.ELEMENT_NODE && before.matches(`span:is(${arabicSelector})`) ? before : null;
+            if (citation) {
+                mark(citation, btn);
+                const group = document.createElement('span');
+                group.className = 'fn-arabic-inline';
+                citation.before(group);
+                group.append(citation, btn);
+                if (wrapper?.isConnected) {
+                    if (wrapper.contains(group)) wrapper.replaceWith(group);
+                    else wrapper.replaceWith(...wrapper.childNodes);
+                }
+                return;
+            }
+            if (paragraph && paragraph.querySelectorAll('.fn-ref').length === 1) {
+                mark(paragraph, btn);
+                return;
+            }
+            if (after?.nodeType === Node.ELEMENT_NODE && after.matches(arabicSelector)) mark(after, btn);
+            else if (before?.nodeType === Node.ELEMENT_NODE && before.matches(`${arabicSelector}, img`)) mark(before, btn);
+            else if (wrapper?.querySelector('.fn-ref-word')) mark(wrapper.querySelector('.fn-ref-word'), btn);
+            else markLastWord(before, btn);
+        });
+    }
+
     function wireFootnotesForPage(page) {
         if (wiredPages.has(page)) return;
         wiredPages.add(page);
@@ -133,7 +202,10 @@
             }
         });
 
-        if (!Object.keys(footnoteMap).length) return;
+        if (!Object.keys(footnoteMap).length) {
+            wireFootnoteText(page);
+            return;
+        }
 
         page.querySelectorAll('sup').forEach(sup => {
             if (sup.closest('.page-footnote')) return;
@@ -168,6 +240,7 @@
             sup.replaceWith(wrapper);
         });
 
+        wireFootnoteText(page);
         resolveContinuations(page);
         queueBadgeCentering();
     }
@@ -310,9 +383,19 @@
     }
 
     // ── Event delegation ──────────────────────────────────────────────────
+    function footnoteButtonForTarget(target) {
+        const badge = target.closest('.fn-ref');
+        if (badge) return badge;
+        if (target.closest('a')) return null;
+        for (let element = target; element && element !== readerEl; element = element.parentElement) {
+            const btn = textFootnotes.get(element);
+            if (btn) return btn;
+        }
+        return null;
+    }
+
     readerEl.addEventListener('click', e => {
-        const btn = e.target.closest('.fn-ref')
-            ?? e.target.closest('.fn-ref-word')?.closest('.fn-ref-wrap')?.querySelector('.fn-ref');
+        const btn = footnoteButtonForTarget(e.target);
         if (btn) {
             e.preventDefault();
             e.stopPropagation();
@@ -324,6 +407,13 @@
             hidePopover();
             e.stopImmediatePropagation();
         }
+    });
+
+    readerEl.addEventListener('keydown', e => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        if (!textFootnotes.has(e.target)) return;
+        e.preventDefault();
+        e.target.click();
     });
 
     document.addEventListener('click', e => {
