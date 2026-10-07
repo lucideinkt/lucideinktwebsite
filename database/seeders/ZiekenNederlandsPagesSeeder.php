@@ -74,9 +74,7 @@ Dit spirituele recept is vlotter dan al onze andere geschriften samengesteld<sup
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><span class="fn-ref-num" aria-hidden="true">1</span></button></span>
+<sup>1</sup>
 </p>
 
 <p class="text-center text-arabic delima-font"
@@ -1442,9 +1440,7 @@ Mijn eerbiedwaardige broeder van het hiernamaals Hâfız Hâlid Efendi!
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><sup>3</sup></button></span>
+<sup>3</sup>
 </p>
 
 <p class="text-center text-arabic delima-font"
@@ -1791,9 +1787,7 @@ Echter, het geloof en de Islam waaraan de twee gelukzaligheden in beide oorden o
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><sup>1</sup></button></span>
+<sup>1</sup>
 </p>
 
 <p class="text-center text-arabic delima-font"
@@ -2118,7 +2112,7 @@ Immers, bij elke verstreken dag is de last van de calamiteit verdwenen, de rust 
 </p>
 
 <p>
-Wat de toekomstige dagen betreft, aangezien ze nog niet zijn aangebroken, is het belachelijk om de ziekten en calamiteiten die je dan eventueel kunnen overkomen nu voor ogen te houden, je geduld daardoor te verliezen en beginnen te klagen. Hoe buitengewoon dwaas is het om vandaag door de gedachte: <em>“Ik ga de aankomende dagen honger en dorst lijden”</em> volop te eten en drinken?</em>
+Wat de toekomstige dagen betreft, aangezien ze nog niet zijn aangebroken, is het belachelijk om de ziekten en calamiteiten die je dan eventueel kunnen overkomen nu voor ogen te houden, je geduld daardoor te verliezen en beginnen te klagen. Hoe buitengewoon dwaas is het om vandaag door de gedachte: <em>“Ik ga de aankomende dagen honger en dorst lijden”</em> volop te eten en drinken?
 </p>
 
 </div>'

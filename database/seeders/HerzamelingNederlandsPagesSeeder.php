@@ -65,7 +65,7 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
     <p class="footnote-p">
     <sup>2</sup> “Aanschouw de sporen van ALLAH’s Genade, hoe Hij de
 aarde na haar dood doet herleven. Voorzeker, Hij is Degene
-Die de doden tot leven brengt, en Hij bezit Macht over alles.” –Qur’an, 30:50</em>
+Die de doden tot leven brengt, en Hij bezit Macht over alles.” –Qur’an, 30:50
     </p>
     </div>
     </div>'
@@ -1127,7 +1127,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <p>
     Immers, ondanks dat dit universum de status en waardigheid van <strong>"de Schriftuur van de Soevereine
-    <em>(Samed)</strong>"</em> bekleedt, stort ongeloof het in een afgrond van betekenisloosheid en doelloosheid, wat beledigend
+    <em>(Samed)</em>"</strong> bekleedt, stort ongeloof het in een afgrond van betekenisloosheid en doelloosheid, wat beledigend
     is tegenover het hele universum. Daarnaast leidt de ontkenning die inherent is aan ongeloof tot de verwerping van alle Heilige Goddelijke Namen waarvan de reflecties en verwevingen bij alle wezens te zien zijn.
     </p>
     </div>',
@@ -1175,7 +1175,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <div class="text-center text-center-constrained">
     <p class="text-center small-title"><strong>De Eerste Waarheid</strong></p>
-    <p class="text-center"><strong><em>De poort van Gods Heerschappij en Sultanaat; Een glimp van de Naam "Rab" <em>(Heer)</em></strong>.</em></p>
+    <p class="text-center"><strong><em>De poort van Gods Heerschappij en Sultanaat; Een glimp van de Naam "Rab" <em>(Heer)</em></em></strong>.</p>
     </div>
 
     <p>
@@ -3652,7 +3652,7 @@ een reflectie kunnen schenken.
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p"><sup>1</sup> “Noch jullie schepping noch jullie verwekking is anders dan die van één nefs.” <em>– Qur’an, 31:28</em></p>
- <p class="footnote-p"><sup>2</sup> “Aan ALLAH behoort de hoogste gelijkenis.” <em>– Qur’an, 16:60</em></em></p>
+ <p class="footnote-p"><sup>2</sup> “Aan ALLAH behoort de hoogste gelijkenis.” <em>– Qur’an, 16:60</em></p>
 </div>
 
  </div>'
@@ -3789,7 +3789,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  de doden tot leven brengt,
  en Hij bezit Macht over alles.”
  </p>
- <p class="text-center text-italic delima-font" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 30:50</em></p>
+ <p class="text-center text-italic delima-font" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 30:50</p>
 
  <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;margin-top: 10px; max-width: 500px;">
  قَالَ مَنْ يُحْيِ الْعِظَامَ
@@ -3885,7 +3885,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  En wie spreekt
  waarachtiger dan <strong>ALLAH</strong>?”
 </p>
-<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 4:87</em></p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 4:87</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto;margin-top: 10px; max-width: 500px;">
  إِنَّ الْأَبْرَارَ لَفِى نَعِيمٍ
@@ -3946,7 +3946,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  zo licht als een stofdeeltje bedrijft,
  zal dat eveneens aanschouwen.”
 </p>
-<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 99:1-8</em></p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 99:1-8</p>
 
  </div>'
         ],
@@ -4027,7 +4027,7 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  <strong>ALLAH</strong> bezit Macht
  over <strong>alles</strong>.”
 </p>
-<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 16:77</em></p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 16:77</p>
 
  </div>'
         ],
@@ -4200,7 +4200,7 @@ overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging
  alle lof zij ALLAH,
  de Heer der werelden.”
 </p>
-<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 10:10</em></p>
+<p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 10:10</p>
 
 <p class="text-end text-italic" style="margin-top: 24px;">De Vertalers</p>
 

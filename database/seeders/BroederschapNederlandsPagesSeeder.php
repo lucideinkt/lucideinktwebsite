@@ -49,9 +49,7 @@ broederschap en liefde.
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 3" data-fn="3" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><span class="fn-ref-num" aria-hidden="true">3</span></button></span>
+<sup>3</sup>
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0 auto 0 auto;">
@@ -790,9 +788,7 @@ Dit <span class="text-bold">Zesde Opzicht</span> is vrij lang. Maar omdat het te
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><sup>1</sup></button></span>
+<sup>1</sup>
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
@@ -1591,7 +1587,7 @@ En omdat hij daarenboven de genegen blik van zijn leermeester ving, werd hij met
 Ik dankte de Alhoge ALLAH om de aanwezigheid van broeders die zulke verheven gevoelens koesteren. Inshâ’ALLAH zal dit gevoel grote diensten vervullen. <sup>1</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span>, langzaamaan begint dit gevoel op broeders uit onze omgeving over te gaan.
 </p>
 
-<p class="text-center text-arabic delima-font text-red" style="margin: 0">
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0">
 بِاسْمِهٖ سُبْحَانَهُ <sup>2</sup>
 </p>
 
@@ -1663,7 +1659,7 @@ Voorzorg in dit kader is zodanig van belang, dat drie materiële explosies en dr
 Said Nursî
 </p>
 
-<p class="text-center text-arabic delima-font text-red" style="margin: 0;">
+<p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0;">
 بِاسْمِهٖ سُبْحَانَهُ <sup>1</sup>
 </p>
 
@@ -1744,9 +1740,7 @@ Hoewel dit traktaat <span class="text-bold">Het Eerste Punt</span> van <span cla
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><sup>1</sup></button></span>
+<sup>1</sup>
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 450px;">
@@ -2527,9 +2521,7 @@ Hoewel dit traktaat <span class="text-bold">De Vierde Kwestie</span> van <span c
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><sup>1</sup></button></span>
+<sup>1</sup>
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar">
@@ -3385,9 +3377,7 @@ Waarlijk, in moeite schuilt voor jullie een grote rust. Immers, rust voor een vu
 <p class="text-center text-arabic-bismillah" dir="rtl" lang="ar">
 <img src="/images/bismillah .svg" alt="Bismillah" class="bismillah-svg bismillah-svg-light">
 <img src="/images/bismillah-dark.svg" alt="Bismillah" class="bismillah-svg bismillah-svg-dark">
-<span class="fn-ref-wrap"><span class="fn-ref-word"></span><button class="fn-ref" type="button" aria-label="Voetnoot 1" data-fn="1" data-html="&lt;p class=&quot;footnote-p fn-popover__para&quot;&gt;
- “In de Naam van ALLAH, de Barmhartige, de Genadige.”
-&lt;/p&gt;"><sup>1</sup></button></span>
+<sup>1</sup>
 </p>
 
 <p class="text-center text-arabic delima-font text-red" dir="rtl" lang="ar" style="margin: 0px auto 0 auto; max-width: 500px;">
@@ -3463,7 +3453,7 @@ Zijn poging om bij anderen bewondering en liefde op te wekken, zal averechts uit
             ],
             [
                 'page_number' => 115,
-                'content' => '<div class="page" id="114">
+                'content' => '<div class="page" id="115">
 <p class="text-end page-number">#115</p>
 
 
