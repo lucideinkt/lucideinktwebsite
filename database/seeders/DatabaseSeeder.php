@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        /*
         // Maak users aan
         User::create([
             'first_name' => 'Bilal',
@@ -529,9 +530,6 @@ class DatabaseSeeder extends Seeder
 
             Product::create($book);
         }
-
-        $this->call(NatuurNederlandsPagesSeeder::class);
-        $this->call(HerzamelingNederlandsPagesSeeder::class);
-        $this->call(AfwegingenNederlandsPagesSeeder::class);
+        */
     }
 }
