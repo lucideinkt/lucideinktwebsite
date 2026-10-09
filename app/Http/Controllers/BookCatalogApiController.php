@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\BookContentVersion;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class BookCatalogApiController extends Controller
 {
-    public function index(Request $request): JsonResponse
+    public function index(Request $request, BookContentVersion $versions): JsonResponse
     {
         $validated = $request->validate([
             'page' => ['sometimes', 'integer', 'min:1'],
@@ -43,6 +44,7 @@ class BookCatalogApiController extends Controller
                     'cover_image' => $this->coverImageUrl($product),
                     'page_count' => $product->book_pages_count,
                     'pages_url' => route('api.v1.books.pages.index', ['slug' => $product->slug]),
+                    'content_version' => $versions->snapshot($product)['content_version'],
                 ])
                 ->values(),
             'pagination' => [
