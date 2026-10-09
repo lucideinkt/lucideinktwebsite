@@ -105,6 +105,97 @@ class BookPagesApiTest extends TestCase
             ->assertJsonValidationErrors('limit');
     }
 
+    public function test_navigation_returns_actual_page_numbers_and_shared_contents(): void
+    {
+        $book = Product::query()->create([
+            'slug' => 'navigation-book',
+            'title' => 'Navigation Book',
+            'book_content_published' => true,
+        ]);
+        foreach ([12, 5, 8] as $number) {
+            BookPage::create(['product_id' => $book->id, 'page_number' => $number, 'content' => '<p>Tekst</p>']);
+        }
+        $toc = [
+            ['level' => 'main', 'title' => 'Hoofdstuk', 'subtitle' => 'Toelichting', 'page' => 5],
+            ['level' => 'sub', 'title' => 'Onderdeel', 'subtitle' => null, 'page' => 8],
+        ];
+        config(['book_toc.navigation-book' => $toc]);
+
+        $this->getJson('/api/v1/books/navigation-book/navigation')
+            ->assertOk()
+            ->assertJsonPath('schema_version', 1)
+            ->assertJsonPath('book.slug', 'navigation-book')
+            ->assertJsonPath('page_numbers', [5, 8, 12])
+            ->assertJsonPath('toc', $toc);
+    }
+
+    public function test_navigation_without_configured_contents_returns_an_empty_list(): void
+    {
+        $book = Product::query()->create([
+            'slug' => 'no-contents-book',
+            'title' => 'No Contents',
+            'book_content_published' => true,
+        ]);
+        BookPage::create(['product_id' => $book->id, 'page_number' => 5, 'content' => '<p>Tekst</p>']);
+        $this->getJson('/api/v1/books/no-contents-book/navigation')
+            ->assertOk()
+            ->assertJsonPath('page_numbers', [5])
+            ->assertJsonPath('toc', []);
+    }
+
+    public function test_navigation_hides_unpublished_missing_and_empty_books(): void
+    {
+        Product::query()->create([
+            'slug' => 'empty-book', 'title' => 'Empty Book', 'book_content_published' => true,
+        ]);
+        Product::query()->create([
+            'slug' => 'private-book', 'title' => 'Private Book', 'book_content_published' => false,
+        ]);
+        foreach (['empty-book', 'private-book', 'missing-book'] as $slug) {
+            $this->getJson('/api/v1/books/'.$slug.'/navigation')->assertNotFound();
+        }
+    }
+
+    public function test_native_search_returns_hits_on_pages_outside_the_first_batch(): void
+    {
+        $book = Product::query()->create([
+            'slug' => 'search-book', 'title' => 'Search Book', 'book_content_published' => true,
+        ]);
+        BookPage::create(['product_id' => $book->id, 'page_number' => 80, 'content' => '<p>Bediüzzaman Nursî en het geloof.</p>']);
+        $this->getJson('/api/v1/books/search-book/search?q=Nursi')
+            ->assertOk()->assertJsonPath('results.0.page', 80)->assertJsonPath('total', 1);
+        $this->getJson('/api/v1/books/search-book/search?q=onvindbaar')
+            ->assertOk()->assertJsonPath('results', []);
+        $book->update(['book_content_published' => false]);
+        $this->getJson('/api/v1/books/search-book/search?q=geloof')->assertNotFound();
+    }
+
+    public function test_native_search_validates_query_length(): void
+    {
+        $this->getJson('/api/v1/books/book/search?q=a')->assertUnprocessable()->assertJsonValidationErrors('q');
+        $this->getJson('/api/v1/books/book/search?q='.str_repeat('a', 201))->assertUnprocessable()->assertJsonValidationErrors('q');
+    }
+
+    public function test_all_books_search_returns_hits_per_published_book(): void
+    {
+        $first = Product::query()->create(['slug' => 'eerste', 'title' => 'Eerste', 'book_content_published' => true]);
+        $second = Product::query()->create(['slug' => 'tweede', 'title' => 'Tweede', 'book_content_published' => true]);
+        $hidden = Product::query()->create(['slug' => 'verborgen', 'title' => 'Verborgen', 'book_content_published' => false]);
+        BookPage::create(['product_id' => $first->id, 'page_number' => 12, 'content' => '<p>Bediüzzaman Nursî en het geloof.</p>']);
+        BookPage::create(['product_id' => $second->id, 'page_number' => 3, 'content' => '<p>Over het geloof.</p>']);
+        BookPage::create(['product_id' => $hidden->id, 'page_number' => 1, 'content' => '<p>Geloof.</p>']);
+
+        $this->getJson('/api/v1/search?q=geloof')
+            ->assertOk()
+            ->assertJsonPath('total', 2)
+            ->assertJsonPath('results.0.slug', 'eerste')
+            ->assertJsonPath('results.0.title', 'Eerste')
+            ->assertJsonPath('results.0.page', 12)
+            ->assertJsonPath('results.1.slug', 'tweede');
+        $this->getJson('/api/v1/search?q=Nursi')->assertOk()->assertJsonPath('results.0.snippet', 'Bediüzzaman [[HIT]]Nursî[[/HIT]] en het geloof.');
+        $this->getJson('/api/v1/search?q=a')->assertUnprocessable()->assertJsonValidationErrors('q');
+    }
+
     public function test_catalog_lists_newly_published_books_with_reader_metadata(): void
     {
         $book = Product::query()->create([

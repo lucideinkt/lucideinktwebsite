@@ -182,7 +182,7 @@
                            value="{{ $allPageMeta->min('page_number') }}"
                            style="width: 120px;"
                            aria-label="Ga naar pagina">
-                    <span class="reader-topbar-font-val reader-topbar-page-badge" id="topbar-page-cur" aria-live="polite">
+                    <span class="reader-topbar-font-val reader-topbar-page-badge" id="topbar-page-cur" aria-live="polite" role="button" tabindex="0" aria-label="Ga naar pagina" aria-haspopup="dialog">
                         <span id="topbar-page-cur-num">—</span><span class="reader-topbar-page-sep"> / {{ $allPageMeta->max('page_number') }}</span>
                     </span>
                 </div>
@@ -202,6 +202,11 @@
         <div class="reader-topbar-right" role="toolbar" aria-label="Lezeropties">
             {{-- Mobile page indicator (≤1024px only) --}}
             <span class="reader-topbar-mobile-page reader-topbar-mobile-page--tappable" id="topbar-mobile-page" aria-live="polite" role="button" tabindex="0" title="Ga naar pagina" aria-label="Pagina — van {{ $allPageMeta->max('page_number') }}, klik om te navigeren">— / {{ $allPageMeta->max('page_number') }}</span>
+            @if(!empty($tocEntries))
+            <button class="reader-topbar-icon-btn reader-topbar-mobile-toc" id="topbar-mobile-toc-btn" type="button" aria-label="Inhoudsopgave" title="Inhoudsopgave">
+                <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+            </button>
+            @endif
             {{-- Compact font controls — desktop only --}}
             <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
                 <div class="reader-topbar-font-group">
@@ -250,6 +255,7 @@
     {{-- Go-to-page modal (mobile) --}}
     <div id="goto-page-overlay" class="goto-page-overlay" role="dialog" aria-modal="true" aria-label="Ga naar pagina" hidden>
         <div class="goto-page-modal">
+            <button type="button" id="goto-page-cancel" class="goto-page-close" aria-label="Paginanavigatie sluiten">×</button>
             <p class="goto-page-label">Ga naar pagina</p>
             <div class="goto-page-input-row">
                 <button type="button" id="goto-page-prev" class="goto-page-step" aria-label="Vorige pagina">
@@ -265,6 +271,8 @@
                 </button>
             </div>
             <p class="goto-page-range">{{ $allPageMeta->min('page_number') }} – {{ $allPageMeta->max('page_number') }}</p>
+            <input type="range" id="goto-page-slider" class="goto-page-slider" min="0" max="{{ $allPageMeta->count() - 1 }}" step="1" value="0" aria-label="Pagina kiezen">
+            <p id="goto-page-error" class="goto-page-error" role="alert" hidden></p>
             <button type="button" id="goto-page-confirm" class="goto-page-btn goto-page-btn--confirm">Ga</button>
         </div>
     </div>
@@ -563,6 +571,11 @@
         const topbarEl    = document.querySelector('.reader-topbar');
         const progressEl  = document.querySelector('.reader-progress-bar-wrap');
         const TOPBAR_H    = (topbarEl?.offsetHeight ?? 56) + (progressEl?.offsetHeight ?? 2);
+        function centerReaderPassage(element) {
+            const rect = element.getBoundingClientRect();
+            const center = TOPBAR_H + (window.innerHeight - TOPBAR_H) / 2;
+            window.scrollTo({ top: Math.max(0, window.scrollY + rect.top + rect.height / 2 - center), behavior: 'smooth' });
+        }
         const STORAGE_KEY = 'reading_progress_{{ $product->id }}';
         const FONT_KEY    = 'reading_fontsize_{{ $product->id }}';
         const ARABIC_FONT_KEY = 'reading_arabicfontsize_{{ $product->id }}';
@@ -743,6 +756,9 @@
             const prevBtn    = document.getElementById('goto-page-prev');
             const nextBtn    = document.getElementById('goto-page-next');
             const badge      = document.getElementById('topbar-mobile-page');
+            const desktopBadge = document.getElementById('topbar-page-cur');
+            const slider = document.getElementById('goto-page-slider');
+            const errorLabel = document.getElementById('goto-page-error');
             const minPage    = {{ $allPageMeta->min('page_number') }};
             const maxPage    = {{ $allPageMeta->max('page_number') }};
 
@@ -752,46 +768,60 @@
                 const base = input.value.trim() !== '' ? input.value : input.placeholder;
                 let n = parseInt(base, 10);
                 if (isNaN(n)) n = minPage;
-                n = Math.min(maxPage, Math.max(minPage, n + delta));
+                const index = sorted.indexOf(n);
+                n = sorted[Math.min(sorted.length - 1, Math.max(0, (index < 0 ? 0 : index) + delta))];
                 input.value = n.toString();
                 input.placeholder = n.toString();
-                jumpTo(n, false);
+                slider.value = sorted.indexOf(n);
+                errorLabel.hidden = true;
             }
 
             function openModal() {
-                input.value = '';
+                const current = visiblePage() || minPage;
+                input.value = String(current);
+                slider.value = sorted.indexOf(current);
+                errorLabel.hidden = true;
                 // Set placeholder to current page so user knows where they are
                 const curPage = parseInt((topbarMobilePage?.textContent || '').split('/')[0].trim(), 10);
                 input.placeholder = (!isNaN(curPage) ? curPage : minPage).toString();
                 overlay.hidden = false;
-                // small delay so the keyboard doesn't fight the animation
-                setTimeout(() => input.focus(), 80);
+                overlay.style.paddingTop = (topbarEl.getBoundingClientRect().bottom + 10) + 'px';
+                cancelBtn.focus();
             }
 
             function closeModal() {
                 overlay.hidden = true;
                 input.value = '';
+                (badge.offsetParent ? badge : desktopBadge)?.focus();
             }
 
             function confirm() {
                 // If field is empty, fall back to the placeholder (= current page)
                 const raw = input.value.trim() !== '' ? input.value : input.placeholder;
-                const n = parseInt(raw, 10);
-                if (!isNaN(n) && n >= minPage && n <= maxPage) {
+                const n = Number(raw);
+                if (Number.isInteger(n) && sorted.includes(n)) {
                     closeModal();
                     jumpTo(n, false);
                 } else {
-                    input.style.borderColor = '#c0392b';
-                    input.style.boxShadow   = '0 0 0 3px rgba(192,57,43,0.18)';
-                    setTimeout(() => {
-                        input.style.borderColor = '';
-                        input.style.boxShadow   = '';
-                    }, 900);
+                    errorLabel.textContent = `Kies een bestaande pagina tussen ${minPage} en ${maxPage}.`;
+                    errorLabel.hidden = false;
                     input.select();
                 }
             }
 
             if (badge)      badge.addEventListener('click', openModal);
+            desktopBadge?.addEventListener('click', openModal);
+            desktopBadge?.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
+            cancelBtn?.addEventListener('click', closeModal);
+            slider?.addEventListener('input', () => { input.value = String(sorted[Number(slider.value)]); errorLabel.hidden = true; });
+            input?.addEventListener('input', () => { const index = sorted.indexOf(Number(input.value)); if (index >= 0) slider.value = index; });
+            overlay?.addEventListener('keydown', e => {
+                if (e.key === 'Escape') { e.preventDefault(); closeModal(); }
+                if (e.key !== 'Tab') return;
+                const controls = [...overlay.querySelectorAll('button, input')].filter(el => !el.disabled);
+                if (e.shiftKey && document.activeElement === controls[0]) { e.preventDefault(); controls.at(-1).focus(); }
+                else if (!e.shiftKey && document.activeElement === controls.at(-1)) { e.preventDefault(); controls[0].focus(); }
+            });
             if (badge)      badge.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
             if (confirmBtn) confirmBtn.addEventListener('click', confirm);
             if (prevBtn)    prevBtn.addEventListener('click', () => step(-1));
@@ -960,6 +990,7 @@
             });
         })();
         document.getElementById('topbar-toc-btn')?.addEventListener('click', () => openToc?.());
+        document.getElementById('topbar-mobile-toc-btn')?.addEventListener('click', () => openToc?.());
         // topbar-bm-btn wired below (line ~1774) alongside fab-bm-btn
         // topbar-search-btn wired inside search IIFE below
         // topbar-theme-btn: cycle system → light → dark → system
@@ -1479,8 +1510,11 @@
                                                 || (pageMap[startPage] && bmGetParaByIndex(pageMap[startPage], (bmLoad().find(b=>b.id===urlBmId)||{}).paraIndex ?? -1));
                                     }
                                     if (targetEl) {
-                                        const markTop = targetEl.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
-                                        window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                                        if (urlHlId) centerReaderPassage(targetEl);
+                                        else {
+                                            const markTop = targetEl.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
+                                            window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                                        }
                                     }
                                 }, 350);
                             }
@@ -1646,15 +1680,14 @@
                                 const foundMark = document.querySelector(`[data-hl-id="${hl.id}"]`);
                                 const target = foundMark || markEl || pageEl;
                                 if (target) {
-                                    const markTop = target.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
-                                    window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                                    centerReaderPassage(target);
                                     updateUI(hl.pageNum);
                                     save(hl.pageNum);
                                 }
                             }, 230);
                         } else {
                             try { localStorage.setItem('reading_progress_' + hl.productId, String(hl.pageNum)); } catch (_) {}
-                            const url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum;
+                            const url = hl.readerUrl + (hl.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + hl.pageNum + '&hlid=' + encodeURIComponent(hl.id);
                             window.location.href = url;
                         }
                     });
@@ -2285,8 +2318,7 @@
 
                         // Single smooth scroll directly to the highlighted word
                         requestAnimationFrame(() => {
-                            const markTop = mark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
-                            window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                            centerReaderPassage(mark);
                         });
                         return;
                     }
@@ -2467,8 +2499,7 @@
                                 }, 120); // wait for popover animation to start
                             } else if (found && currentMark) {
                                 // Single smooth scroll directly to the highlighted word
-                                const markTop = currentMark.getBoundingClientRect().top + window.scrollY - Math.floor(window.innerHeight / 3);
-                                window.scrollTo({ top: Math.max(0, markTop), behavior: 'smooth' });
+                                centerReaderPassage(currentMark);
                             } else if (pageEl) {
                                 pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }
@@ -2521,4 +2552,3 @@
 
 </body>
 </html>
-
