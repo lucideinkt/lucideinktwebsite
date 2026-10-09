@@ -1919,7 +1919,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
                 'content' => '<div class="page" id="57">
     <p class="text-end page-number">#57</p>
 
-    <p class="text-center text-red small-title"><strong><em>!!Een waarschuwing, een les en een vermaning voor een aantal arme jongeren</em></strong></p>
+    <p class="text-center text-red small-title"><strong><em>Een waarschuwing, een les en een vermaning voor een aantal arme jongeren</em></strong></p>
 
     <p>
     Op een dag kwamen een aantal stralende jongeren bij mij op bezoek. Met het oog op de gevaren ten opzichte van het leven, de jeugd en de lusten, vroegen deze jongeren om een sterke vermaning. Zoals ik eerder tegen de jongeren die de Risale-i Nur raadpleegden had gezegd, zei ik:
