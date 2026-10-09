@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\BookPage;
 use App\Models\Product;
+use App\Services\BookContentVersion;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
@@ -266,5 +267,89 @@ class BookPagesApiTest extends TestCase
         $this->getJson('/api/v1/books?limit=51')
             ->assertUnprocessable()
             ->assertJsonValidationErrors('limit');
+    }
+
+    public function test_book_versions_are_stable_and_shared_by_catalog_navigation_and_pages(): void
+    {
+        $book = Product::query()->create(['slug' => 'versioned-book', 'title' => 'Versioned Book', 'book_content_published' => true]);
+        BookPage::create(['product_id' => $book->id, 'page_number' => 5, 'content' => '<p>Tekst</p>']);
+        $version = $this->getJson('/api/v1/books')->assertOk()->json('books.0.content_version');
+        $this->assertMatchesRegularExpression('/^[a-f0-9]{64}$/', $version);
+        $this->getJson('/api/v1/books/versioned-book/navigation')->assertOk()->assertJsonPath('book.content_version', $version);
+        $this->getJson('/api/v1/books/versioned-book/pages')->assertOk()->assertJsonPath('book.content_version', $version);
+        $book->update(['updated_at' => now()->addDay()]);
+        $this->getJson('/api/v1/books')->assertOk()->assertJsonPath('books.0.content_version', $version);
+    }
+
+    public function test_text_footnotes_page_numbers_and_contents_change_the_book_version_without_timestamp_updates(): void
+    {
+        $book = Product::query()->create(['slug' => 'versioned-book', 'title' => 'Versioned Book', 'book_content_published' => true]);
+        $page = BookPage::create(['product_id' => $book->id, 'page_number' => 5, 'content' => '<p>Tekst</p>']);
+        $versions = app(BookContentVersion::class);
+        $version = $versions->snapshot($book)['content_version'];
+        foreach ([
+            '<p>Gewijzigde tekst</p>',
+            '<p>Gewijzigde tekst</p><div class="page-footnote"><p class="footnote-p"><sup>1</sup>Nieuwe noot</p></div>',
+        ] as $html) {
+            BookPage::query()->whereKey($page->id)->update(['content' => $html]);
+            $next = $versions->snapshot($book)['content_version'];
+            $this->assertNotSame($version, $next);
+            $version = $next;
+        }
+        BookPage::query()->whereKey($page->id)->update(['page_number' => 7]);
+        $next = $versions->snapshot($book)['content_version'];
+        $this->assertNotSame($version, $next);
+        config(['book_toc.versioned-book' => [['level' => 'main', 'title' => 'Nieuw', 'subtitle' => null, 'page' => 7]]]);
+        $version = $versions->snapshot($book)['content_version'];
+        $this->assertNotSame($next, $version);
+        $added = BookPage::create(['product_id' => $book->id, 'page_number' => 8, 'content' => '<p>Toegevoegd</p>']);
+        $this->assertNotSame($version, $versions->snapshot($book)['content_version']);
+        $added->delete();
+        $this->assertSame($version, $versions->snapshot($book)['content_version']);
+        $book->title = 'Nieuwe titel';
+        $this->assertNotSame($version, $versions->snapshot($book)['content_version']);
+    }
+
+    public function test_same_path_images_in_body_footnotes_and_cover_change_the_version(): void
+    {
+        $source = 'images/book-version-'.bin2hex(random_bytes(8)).'.svg';
+        $path = public_path($source);
+        file_put_contents($path, '<svg>first</svg>');
+        try {
+            $book = Product::query()->create(['slug' => 'images-book', 'title' => 'Images Book', 'book_content_published' => true]);
+            $page = BookPage::create(['product_id' => $book->id, 'page_number' => 5, 'content' => '<p>Tekst</p>']);
+            foreach (['body', 'footnote', 'cover'] as $location) {
+                $book->image_1 = $location === 'cover' ? $source : null;
+                $html = match ($location) {
+                    'body' => '<p><img src="/'.$source.'"></p>',
+                    'footnote' => '<div class="page-footnote"><p class="footnote-p"><sup>1</sup><img src="/'.$source.'"></p></div>',
+                    default => '<p>Tekst</p>',
+                };
+                $page->update(['content' => $html]);
+                file_put_contents($path, '<svg>first</svg>');
+                $version = app(BookContentVersion::class)->snapshot($book)['content_version'];
+                // Same byte count and timestamp: hashing must detect an in-place replacement.
+                $time = filemtime($path);
+                file_put_contents($path, '<svg>other</svg>');
+                touch($path, $time);
+                $this->assertNotSame($version, app(BookContentVersion::class)->snapshot($book)['content_version']);
+            }
+        } finally {
+            unlink($path);
+        }
+    }
+
+    public function test_page_downloads_reject_a_stale_version_and_validate_the_version_parameter(): void
+    {
+        $book = Product::query()->create(['slug' => 'versioned-book', 'title' => 'Versioned Book', 'book_content_published' => true]);
+        $page = BookPage::create(['product_id' => $book->id, 'page_number' => 5, 'content' => '<p>Tekst</p>']);
+        $version = $this->getJson('/api/v1/books/versioned-book/navigation')->json('book.content_version');
+        $this->getJson('/api/v1/books/versioned-book/pages?version='.$version)->assertOk();
+        $page->update(['content' => '<p>Nieuwe tekst</p>']);
+        $this->getJson('/api/v1/books/versioned-book/pages?version='.$version)
+            ->assertStatus(409)->assertJsonPath('message', 'Het boek is gewijzigd. Start de download opnieuw.');
+        $this->getJson('/api/v1/books/versioned-book/pages?version=invalid')
+            ->assertUnprocessable()->assertJsonValidationErrors('version');
+        $this->getJson('/api/v1/books/versioned-book/pages')->assertOk();
     }
 }
