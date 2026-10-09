@@ -532,8 +532,8 @@ Eens had ik als resultaat van een bittere partijdigheid meegemaakt dat een relig
 <p class="text-center text-red small-title"><strong>Het Vijfde Opzicht</strong></p>
 
 <p class="text-center text-bold">
-Dit opzicht verklaart dat koppigheid en<br>
-partijdigheid uiterst verderfelijk voor het<br>
+Dit opzicht verklaart dat koppigheid en
+partijdigheid uiterst verderfelijk voor het
 gemeenschapsleven zijn.
 </p>
 

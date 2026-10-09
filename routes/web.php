@@ -260,6 +260,7 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/nieuwsbrief', [PageController::class, 'nieuwsbrief'])->name('nieuwsbrief');
 Route::get('/algemene-voorwaarden', [PageController::class, 'algemeneVoorwaarden'])->name('algemeneVoorwaarden');
 Route::get('/privacybeleid', [PageController::class, 'privacybeleid'])->name('privacybeleid');
+Route::get('/privacybeleid-app', [PageController::class, 'privacybeleidApp'])->name('privacybeleidApp');
 Route::get('/retourbeleid', [PageController::class, 'retourbeleid'])->name('retourbeleid');
 Route::get('/verzending-levering', [PageController::class, 'verzendingLevering'])->name('verzendingLevering');
 

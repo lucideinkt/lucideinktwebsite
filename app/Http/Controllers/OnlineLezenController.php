@@ -333,7 +333,7 @@ class OnlineLezenController extends Controller
     /**
      * Remove diacritics/accents for accent-insensitive search
      */
-    private static function removeDiacritics(string $str): string
+    public static function removeDiacritics(string $str): string
     {
         $map = [
             'à'=>'a','á'=>'a','â'=>'a','ã'=>'a','ä'=>'a','å'=>'a','ā'=>'a','ă'=>'a','ą'=>'a',

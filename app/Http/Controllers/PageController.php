@@ -106,6 +106,13 @@ class PageController extends Controller
         ]);
     }
 
+    public function privacybeleidApp(): View
+    {
+        return view('privacybeleid-app', [
+            'SEOData' => SEOService::getPageSEO('privacybeleid-app'),
+        ]);
+    }
+
     public function retourbeleid(): View
     {
         return view('retourbeleid', [
