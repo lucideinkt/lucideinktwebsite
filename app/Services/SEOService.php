@@ -270,6 +270,13 @@ class SEOService
                 'image'       => secure_url(self::DEFAULT_OG_IMAGE),
                 'type'        => 'website',
             ],
+            'privacybeleid-app' => [
+                'title'       => 'Privacybeleid Risale Lezer app | Lucide Inkt',
+                'description' => 'Lees hoe de Risale Lezer app van Lucide Inkt omgaat met uw gegevens.',
+                'url'         => route('privacybeleidApp'),
+                'image'       => secure_url(self::DEFAULT_OG_IMAGE),
+                'type'        => 'website',
+            ],
             'retourbeleid' => [
                 'title'       => 'Retourbeleid | Lucide Inkt',
                 'description' => 'Lees ons retourbeleid. Ontdek hoe u producten kunt retourneren bij Lucide Inkt.',
