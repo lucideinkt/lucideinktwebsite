@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\BookContentVersion;
 use Illuminate\Http\JsonResponse;
 
 class BookNavigationApiController extends Controller
 {
-    public function index(string $slug): JsonResponse
+    public function index(string $slug, BookContentVersion $versions): JsonResponse
     {
         $product = Product::query()
             ->where('slug', $slug)
@@ -15,9 +16,8 @@ class BookNavigationApiController extends Controller
             ->whereHas('bookPages')
             ->firstOrFail();
 
-        $pageNumbers = $product->bookPages()
-            ->orderBy('page_number')
-            ->pluck('page_number')
+        $snapshot = $versions->snapshot($product);
+        $pageNumbers = $snapshot['pages']->pluck('page_number')
             ->map(fn ($number): int => (int) $number)
             ->values();
 
@@ -26,9 +26,10 @@ class BookNavigationApiController extends Controller
             'book' => [
                 'slug' => $product->slug,
                 'title' => $product->title,
+                'content_version' => $snapshot['content_version'],
             ],
             'page_numbers' => $pageNumbers,
-            'toc' => config('book_toc.'.$slug, []),
+            'toc' => $snapshot['toc'],
         ]);
     }
 }
