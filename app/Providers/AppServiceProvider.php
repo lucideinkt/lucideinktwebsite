@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 use App\Services\SiteSettingService; // still used for Mollie and indexing
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Book API: downloads and search use separate counters, so searching
+        // in the app can never block downloading or updating books.
+        RateLimiter::for('book-downloads', fn (Request $request) => Limit::perMinute(300)->by($request->ip()));
+        RateLimiter::for('book-search', fn (Request $request) => Limit::perMinute(60)->by($request->ip()));
+
         // Blade directive: @role('admin') ... @endrole
         Blade::if('role', function (string $role): bool {
             $user = auth()->user();
