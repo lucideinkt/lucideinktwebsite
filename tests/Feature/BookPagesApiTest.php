@@ -197,6 +197,21 @@ class BookPagesApiTest extends TestCase
         $this->getJson('/api/v1/search?q=a')->assertUnprocessable()->assertJsonValidationErrors('q');
     }
 
+    public function test_search_rate_limit_does_not_block_book_downloads(): void
+    {
+        $book = Product::query()->create(['slug' => 'limiet', 'title' => 'Limiet', 'book_content_published' => true]);
+        BookPage::create(['product_id' => $book->id, 'page_number' => 1, 'content' => '<p>Over het geloof.</p>']);
+
+        for ($i = 0; $i < 60; $i++) {
+            $this->getJson('/api/v1/search?q=geloof')->assertOk();
+        }
+        $this->getJson('/api/v1/books/limiet/search?q=geloof')->assertTooManyRequests();
+
+        $this->getJson('/api/v1/books')->assertOk();
+        $this->getJson('/api/v1/books/limiet/navigation')->assertOk();
+        $this->getJson('/api/v1/books/limiet/pages?after=0&limit=20')->assertOk();
+    }
+
     public function test_catalog_lists_newly_published_books_with_reader_metadata(): void
     {
         $book = Product::query()->create([
