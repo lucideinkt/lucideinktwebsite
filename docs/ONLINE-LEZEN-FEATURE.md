@@ -24,6 +24,7 @@ The Online Lezen (Online Reading) feature allows users to browse and read books 
 - Recent books show their saved page on a centered Delima badge on the cover. Reading history is displayed only on this shelf, not duplicated in the sidebar.
 - Empty sections are omitted. Removed or unavailable books do not appear in recent reading.
 - Each section occupies one horizontal shelf with compact headings. Overflowing books can be reached by swiping, scrolling, arrow buttons, or keyboard navigation.
+- Shelves fit three books at once on mobile as well as desktop when the section contains at least three books.
 - Headers share the same minimum height, fixed-width icon alignment and reserved navigation space, including shelves that do not need navigation.
 - Sections refresh on browser back navigation and cross-tab history changes. Resizing updates navigation controls without resetting the scroll position.
 
