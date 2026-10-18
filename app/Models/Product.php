@@ -13,6 +13,18 @@ class Product extends Model
 {
     use HasFactory, HasSEO, SoftDeletes;
 
+    public const BOOK_CONTENT_LANGUAGES = [
+        'nl' => 'Nederlands',
+        'en' => 'Engels',
+        'tr' => 'Turks',
+    ];
+
+    public const BOOK_CONTENT_TYPES = [
+        'leesboek' => 'Leesboek',
+        'duaboek' => 'Duaboek',
+        'quran' => 'Quran',
+    ];
+
     protected $fillable = [
         'title',
         'slug',
@@ -41,6 +53,9 @@ class Product extends Model
         'audio_file',
         'online_lezen_image',
         'book_content',
+        'book_content_cover',
+        'book_content_language',
+        'book_content_type',
         'book_content_published',
         'pdf_reader_enabled',
         'pdf_text_content',
