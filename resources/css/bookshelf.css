@@ -1615,6 +1615,12 @@ body { margin: 0; padding: 0; width: 100%; }
 .shelf-book-cover--custom:has(.shelf-book-progress) .shelf-book-pdf-badge {
     display: none;
 }
+@media (max-width: 767px) {
+    .shelf-book-cover--custom .shelf-book-pdf-badge,
+    .shelf-book-progress {
+        left: calc(50% + 4px);
+    }
+}
 
 /* Invisible placeholder — keeps title vertically aligned on books without a badge */
 .shelf-book-version-badge--placeholder {
