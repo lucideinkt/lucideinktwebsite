@@ -57,7 +57,7 @@
     </span>
 </div>
 
-<form method="POST" action="{{ route('bookContent.update', $product->id) }}" id="pages-form">
+<form method="POST" action="{{ route('bookContent.update', $product->id) }}" id="pages-form" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -84,6 +84,81 @@
                 Reeks: <em style="color:#aaa;">Uit de Reeks van de Risale-i Nur</em> &nbsp;·&nbsp;
                 Auteur: <em style="color:#aaa;">Bedîüzzaman Said Nursî</em>
             </span>
+        </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 mb-5 p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label for="book_content_language" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Taal</label>
+            <select id="book_content_language" name="book_content_language" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <option value="">Selecteer een taal</option>
+                @foreach(\App\Models\Product::BOOK_CONTENT_LANGUAGES as $value => $label)
+                    <option value="{{ $value }}" @selected(old('book_content_language', $product->book_content_language) === $value)>{{ $label }}</option>
+                @endforeach
+            </select>
+            @error('book_content_language')
+                <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <label for="book_content_type" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Soort boek</label>
+            <select id="book_content_type" name="book_content_type" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <option value="">Selecteer een soort boek</option>
+                @foreach(\App\Models\Product::BOOK_CONTENT_TYPES as $value => $label)
+                    <option value="{{ $value }}" @selected(old('book_content_type', $product->book_content_type) === $value)>{{ $label }}</option>
+                @endforeach
+            </select>
+            @error('book_content_type')
+                <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+            @enderror
+        </div>
+    </div>
+
+    {{-- Published library cover --}}
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 mb-5">
+        <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-image text-primary-600"></i>
+                Boekkaft voor de bibliotheek
+            </h2>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                Wordt gebruikt in plaats van de standaardkaft bij gepubliceerde HTML-boekcontent of wanneer de PDF-lezer is ingeschakeld.
+            </p>
+        </div>
+        <div class="p-4 flex flex-col sm:flex-row sm:items-start gap-4">
+            @php
+                $coverImage = $product->book_content_cover;
+                $coverImageUrl = $coverImage
+                    ? (Str::startsWith($coverImage, 'http')
+                        ? $coverImage
+                        : (Str::startsWith($coverImage, 'images/') || Str::startsWith($coverImage, 'image/')
+                            ? asset($coverImage)
+                            : asset('storage/' . $coverImage)))
+                    : null;
+            @endphp
+            @if($coverImageUrl)
+                <img src="{{ $coverImageUrl }}" alt="Huidige bibliotheekkaft" class="w-24 h-32 object-contain rounded border border-gray-200 dark:border-gray-600">
+            @else
+                <div class="w-24 h-32 flex items-center justify-center rounded border border-dashed border-gray-300 dark:border-gray-600 text-gray-400">
+                    <i class="fa-solid fa-book text-2xl"></i>
+                </div>
+            @endif
+            <div class="flex-1">
+                <label for="book_content_cover" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Kaftafbeelding uploaden <span class="font-normal text-gray-400">(JPEG, PNG of WebP; maximaal 5 MB)</span>
+                </label>
+                <input type="file" name="book_content_cover" id="book_content_cover" accept="image/jpeg,image/png,image/webp"
+                    class="block w-full text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 dark:text-gray-400 dark:file:bg-gray-700 dark:file:text-gray-300 cursor-pointer">
+                @error('book_content_cover')
+                    <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+                @enderror
+                @if($product->book_content_cover)
+                    <label class="inline-flex items-center gap-2 mt-3 text-xs text-red-600 dark:text-red-400">
+                        <input type="checkbox" name="delete_book_content_cover" value="1" class="rounded border-gray-300">
+                        Huidige kaft verwijderen
+                    </label>
+                @endif
+            </div>
         </div>
     </div>
 
@@ -260,9 +335,13 @@
     const noMsg     = document.getElementById('no-pages-msg');
 
     function getPageNr(content) {
-        const m = content.match(/class="[^"]*\bpage\b[^"]*"[^>]*id="(\d+)"/i)
-               || content.match(/id="(\d+)"[^>]*class="[^"]*\bpage\b[^"]*"/i);
-        return m ? parseInt(m[1], 10) : null;
+        const divs = content.match(/<div\b[^>]*>/gi) || [];
+        for (const div of divs) {
+            if (!/\bclass\s*=\s*["'][^>]*\bpage\b/i.test(div)) continue;
+            const match = div.match(/\bid\s*=\s*["']?(\d+)/i);
+            if (match) return parseInt(match[1], 10);
+        }
+        return null;
     }
 
     function updateBadge(card) {

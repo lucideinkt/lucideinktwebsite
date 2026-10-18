@@ -7,6 +7,37 @@ use PHPUnit\Framework\TestCase;
 
 class BookPageJsonSerializerTest extends TestCase
 {
+    public function test_it_keeps_in_text_notes_and_their_rules_separate_from_modal_footnotes(): void
+    {
+        $html = <<<'HTML'
+<div class="page" id="80">
+    <hr>
+    <p>Gewone tekst<sup>1</sup>.</p>
+    <hr class="hr-footnote">
+    <p class="footnote-p"><strong>Voetnoot: </strong>Uitleg<sup>2</sup>.</p>
+    <p class="text-arabic" lang="ar" dir="rtl">متن فارسی</p>
+    <div class="page-footnote">
+        <hr class="hr-footnote">
+        <p class="footnote-p"><sup>1</sup> Popupnoot.</p>
+    </div>
+</div>
+HTML;
+
+        $page = (new BookPageJsonSerializer)->serialize(80, $html);
+
+        $this->assertCount(5, $page['blocks']);
+        $this->assertArrayNotHasKey('presentation', $page['blocks'][0]);
+        $this->assertSame('footnote_ref', $page['blocks'][1]['children'][1]['type']);
+        $this->assertSame('footnote_separator', $page['blocks'][2]['presentation']['role']);
+        $this->assertSame('footnote', $page['blocks'][3]['presentation']['role']);
+        $this->assertSame('superscript', $page['blocks'][3]['children'][2]['type']);
+        $this->assertSame('2', $page['blocks'][3]['children'][2]['children'][0]['text']);
+        $this->assertSame('ar', $page['blocks'][4]['language']);
+        $this->assertCount(1, $page['footnotes']);
+        $this->assertSame('80:1', $page['footnotes'][0]['target']);
+        $this->assertArrayNotHasKey('presentation', $page['footnotes'][0]['blocks'][0]);
+    }
+
     public function test_it_serializes_book_blocks_and_footnotes_as_native_friendly_nodes(): void
     {
         $html = <<<'HTML'

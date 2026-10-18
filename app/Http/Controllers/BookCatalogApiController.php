@@ -32,6 +32,10 @@ class BookCatalogApiController extends Controller
                 'short_description',
                 'image_1',
                 'online_lezen_image',
+                'book_content_cover',
+                'book_content_published',
+                'book_content_language',
+                'book_content_type',
             ], 'page', $page);
 
         return response()->json([
@@ -41,6 +45,8 @@ class BookCatalogApiController extends Controller
                     'slug' => $product->slug,
                     'title' => $product->title,
                     'description' => $product->short_description,
+                    'language' => $product->book_content_language,
+                    'book_type' => $product->book_content_type,
                     'cover_image' => $this->coverImageUrl($product),
                     'page_count' => $product->book_pages_count,
                     'pages_url' => route('api.v1.books.pages.index', ['slug' => $product->slug]),
@@ -59,7 +65,9 @@ class BookCatalogApiController extends Controller
 
     private function coverImageUrl(Product $product): ?string
     {
-        $image = $product->online_lezen_image ?: $product->image_1;
+        $image = ($product->book_content_published ? $product->book_content_cover : null)
+            ?: $product->online_lezen_image
+            ?: $product->image_1;
         if (! $image) {
             return null;
         }
