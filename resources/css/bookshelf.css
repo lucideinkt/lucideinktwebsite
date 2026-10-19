@@ -1361,7 +1361,7 @@ body { margin: 0; padding: 0; width: 100%; }
     .bookshelf-section .bookshelf-plank { min-height: 0; }
     .bookshelf-track { --shelf-track-gap: 16px; }
     .bookshelf-track > .shelf-book {
-        flex: 0 0 calc((100% - var(--shelf-track-gap)) / 2);
+        flex: 0 0 calc((100% - 2 * var(--shelf-track-gap)) / 3);
     }
     .bookshelf-track .shelf-book-cover:not(.shelf-book-cover--custom) {
         padding: 26px 6px 12px 8px;
