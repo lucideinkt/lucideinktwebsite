@@ -852,112 +852,16 @@ body { margin: 0; padding: 0; width: 100%; }
     margin: 0;
 }
 
-/* PDF replacement notice — shown when PDF-only books are present */
-.bookshelf-pdf-notice {
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    margin-top: 12px;
-    padding: 8px 12px;
-    background: rgba(0,0,0,0.25);
-    border: 1px solid rgba(200,160,60,0.25);
-    border-radius: 5px;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.bookshelf-pdf-notice__icon {
-    font-size: 14px;
-    line-height: 1.4;
-    flex-shrink: 0;
-    opacity: 0.75;
-}
-.bookshelf-pdf-notice__text {
+.bs-library-description {
     font-family: 'DelimaMTProRegular', serif;
-    font-size: 13px;
+    font-size: 12px;
     color: rgba(245,215,130,0.75);
     line-height: 1.55;
     text-align: left;
-    margin-bottom: -6px;
+    margin: 0;
 }
-.bookshelf-pdf-notice__text em {
-    font-style: italic;
-    color: rgba(245,215,130,0.55);
-}
-
-@media (min-width: 769px) {
-    .bookshelf-pdf-notice {
-        max-width: 480px;
-    }
-}
-
-/* ---------------------------------------------------------
-   CEILING SPOTLIGHTS
-   --------------------------------------------------------- */
-.bookshelf-lights {
-    position: absolute;
-    /* Position so lamp caps sit just behind the header-sign bottom edge.
-       Header sign ≈158px tall; cap is 14px at top:-14px → cap bottom = lights top.
-       Setting top to ~164px shows ~6–8px of the glowing cap below the board. */
-    top: 235px;
-    left: 40px; right: 40px;
-    height: 0;
-    display: flex;
-    justify-content: space-around;
-    pointer-events: none;
-    /* behind header-sign (z-index:2) so caps tuck behind the board */
-    z-index: 1;
-}
-
-.bookshelf-light {
-    position: relative;
-    width: 0;
-}
-
-/* lamp cap — pulled up so it hides behind the header bottom border */
-.bookshelf-light::before {
-    content: '';
-    position: absolute;
-    top: -14px;         /* tuck well behind the 3px border-bottom of the header */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 18px;
-    height: 14px;
-    background: radial-gradient(ellipse at 50% 0%, #ffe080 0%, #c8902a 100%);
-    border-radius: 0 0 9px 9px;
-    box-shadow: 0 0 10px 4px rgba(240,192,64,0.8);
-    z-index: 2;
-}
-
-/* wide light beam — fully visible below header */
-.bookshelf-light::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 340px;
-    height: 220px;
-    background: radial-gradient(ellipse 50% 100% at 50% 0%,
-        rgba(255,215,90,0.16) 0%,
-        rgba(255,180,60,0.08) 40%,
-        transparent 100%);
-    animation: spotlight-flicker 4s ease-in-out infinite;
-    z-index: 1;
-}
-
-.bookshelf-light:nth-child(1)::after { animation-delay: 0s; }
-.bookshelf-light:nth-child(2)::after { animation-delay: 1.4s; }
-.bookshelf-light:nth-child(3)::after { animation-delay: 2.8s; }
-
-@keyframes spotlight-flicker {
-    0%,100% { opacity: 1; }
-    15%      { opacity: 0.7; }
-    30%      { opacity: 1; }
-    50%      { opacity: 0.8; }
-    70%      { opacity: 1; }
-    85%      { opacity: 0.65; }
+.bs-library-description strong {
+    color: rgba(245,220,160,0.9);
 }
 
 /* ---------------------------------------------------------
@@ -1361,7 +1265,7 @@ body { margin: 0; padding: 0; width: 100%; }
     .bookshelf-section .bookshelf-plank { min-height: 0; }
     .bookshelf-track { --shelf-track-gap: 16px; }
     .bookshelf-track > .shelf-book {
-        flex: 0 0 calc((100% - 2 * var(--shelf-track-gap)) / 3);
+        flex: 0 0 calc((100% - var(--shelf-track-gap)) / 2);
     }
     .bookshelf-track .shelf-book-cover:not(.shelf-book-cover--custom) {
         padding: 26px 6px 12px 8px;
@@ -1853,7 +1757,8 @@ body { margin: 0; padding: 0; width: 100%; }
 
 /* Back link inside mobile bar — matches .bs-drawer-toggle styling */
 .bs-back-link-mobile {
-    flex-shrink: 0;
+    flex: 0 1 auto;
+    min-width: 0;
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -1866,11 +1771,12 @@ body { margin: 0; padding: 0; width: 100%; }
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    line-height: normal;
+    line-height: 1.35;
     color: rgba(240,200,100,0.9);
     text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     text-decoration: none;
-    white-space: nowrap;
+    white-space: normal;
+    box-sizing: border-box;
     background:
         url("../images/29_dark fine wood_DIFF.webp") center/cover no-repeat,
         linear-gradient(160deg, #2e1408 0%, #1a0a02 40%, #3a1a08 100%);
@@ -1888,6 +1794,7 @@ body { margin: 0; padding: 0; width: 100%; }
         0 6px 16px rgba(0,0,0,0.7);
 }
 .bs-back-link-mobile i {
+    flex: 0 0 auto;
     font-size: 13px;
     color: var(--gold-mid);
     line-height: 0;
@@ -1898,7 +1805,8 @@ body { margin: 0; padding: 0; width: 100%; }
 
 /* Hamburger / drawer-open button */
 .bs-drawer-toggle {
-    flex-shrink: 0;
+    flex: 0 0 auto;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2236,7 +2144,6 @@ body { margin: 0; padding: 0; width: 100%; }
 
     .bookshelf-header-sign { margin: 0 -20px 8px; padding: 28px 24px 22px; }
     .bookshelf-footer-bar  { margin: 16px -20px -20px; height: 20px; }
-    .bookshelf-lights { left: 20px; right: 20px; top: 210px; }
     .bookshelf-candle { top: 540px; }
     .bookshelf-candle--left  { left: 10px; }
     .bookshelf-candle--right { right: 10px; }
@@ -2263,7 +2170,6 @@ body { margin: 0; padding: 0; width: 100%; }
 
     .bookshelf-header-sign { margin: 0 -14px 8px; padding: 24px 18px 18px; }
     .bookshelf-footer-bar  { margin: 16px -14px -16px; height: 16px; }
-    .bookshelf-lights { left: 14px; right: 14px; top: 190px; }
     .bookshelf-candle { top: 400px; }
     .bookshelf-candle--left  { left: 7px; }
     .bookshelf-candle--right { right: 7px; }
@@ -2337,12 +2243,23 @@ body.bs-drawer-no-scroll { overflow: hidden; }
    Structural tightening + book narrowed for the smallest phones.
    --------------------------------------------------------- */
 @media (max-width: 360px) {
+    .bs-mc-toprow { gap: 6px; }
+    .bs-back-link-mobile {
+        padding: 0 8px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+    .bs-drawer-toggle {
+        gap: 5px;
+        padding: 0 9px;
+        letter-spacing: 1px;
+    }
+
     .bookshelf-cabinet { padding: 0 10px 12px; }
     .bookshelf-cabinet::before,
     .bookshelf-cabinet::after { width: 10px; }
     .bookshelf-header-sign { margin: 0 -10px 6px; padding: 20px 12px 14px; }
     .bookshelf-footer-bar  { margin: 12px -10px -12px; height: 12px; }
-    .bookshelf-lights { left: 10px; right: 10px; top: 170px; }
     .bookshelf-plank { padding: 0 10px 12px; min-height: 180px; }
 
     /* Narrower book + larger corners for the smallest viewports */
