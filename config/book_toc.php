@@ -14,6 +14,16 @@
  */
 return [
 
+    'cevsen-ul-kebir' => array_map(
+        static fn (int $page): array => [
+            'level' => 'main',
+            'title' => $page.'. ukde',
+            'subtitle' => null,
+            'page' => $page,
+        ],
+        range(1, 100)
+    ),
+
     'het-traktaat-over-de-herzameling-nederlands' => [
         ['level' => 'main', 'title' => 'Het Tiende Woord',       'subtitle' => 'Aangaande Hashr – De Herzameling', 'page' => 5],
         ['level' => 'sub',  'title' => 'Opmerking',               'subtitle' => null, 'page' => 5],
@@ -223,4 +233,3 @@ return [
     // 'slug-van-volgend-boek' => [ ... ],
 
 ];
-

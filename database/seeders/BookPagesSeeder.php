@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\BookPage;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 /**
  * Base template for book page seeders.
@@ -14,6 +15,7 @@ use Illuminate\Database\Seeder;
  * - Implement productSlug() to return the product slug.
  * - Optionally implement bookTitle() to provide a default book title for all pages.
  * - Implement pages() to return an array of page definitions.
+ * - Missing products are created as unpublished, online-only book records.
  */
 abstract class BookPagesSeeder extends Seeder
 {
@@ -44,13 +46,6 @@ abstract class BookPagesSeeder extends Seeder
 
     public function run(): void
     {
-        $product = Product::firstWhere('slug', $this->productSlug());
-
-        if (! $product) {
-            $this->command->warn("Product with slug [{$this->productSlug()}] not found. Skipping seeder: " . static::class);
-            return;
-        }
-
         $now = now();
 
         // Build the upsert rows and collect page numbers present in this seeder.
@@ -65,7 +60,6 @@ abstract class BookPagesSeeder extends Seeder
             $pageNumbers[] = (int) $page['page_number'];
 
             $rows[] = [
-                'product_id'  => $product->id,
                 'page_number' => (int) $page['page_number'],
                 'content'     => $page['content'],
                 'book_title'  => $page['book_title'] ?? $this->bookTitle() ?? null,
@@ -78,6 +72,25 @@ abstract class BookPagesSeeder extends Seeder
             $this->command->warn("No valid pages defined in " . static::class . ". Nothing seeded.");
             return;
         }
+
+        $product = Product::firstOrCreate(
+            ['slug' => $this->productSlug()],
+            [
+                'title' => $this->bookTitle() ?? Str::headline($this->productSlug()),
+                'is_published' => false,
+                'book_content_published' => false,
+                'stock' => 0,
+            ]
+        );
+
+        if ($product->wasRecentlyCreated) {
+            $this->command->info("Created online-only book: {$product->title}. Publish its book content in book content management when ready.");
+        }
+
+        foreach ($rows as &$row) {
+            $row['product_id'] = $product->id;
+        }
+        unset($row);
 
         // Upsert all pages in one query – always overwrites content & book_title.
         BookPage::upsert(

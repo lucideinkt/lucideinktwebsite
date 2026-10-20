@@ -287,10 +287,14 @@
         >
             @php $bookTitle = $pages->first()?->book_title; @endphp
             @if($bookTitle)
-            <div class="text-center page-title-series">
+            <div class="text-center page-title-series{{ $product->slug === 'cevsen-ul-kebir' ? ' page-title-series--cevsen' : '' }}">
+                @if($product->slug !== 'cevsen-ul-kebir')
                 <p>Uit de Reeks van de Risale-i Nur</p>
+                @endif
                 <h1 class="book-title">{{ $bookTitle }}</h1>
+                @if($product->slug !== 'cevsen-ul-kebir')
                 <p>Bedi&uuml;zzaman Said Nurs&icirc;</p>
+                @endif
             </div>
             @endif
 

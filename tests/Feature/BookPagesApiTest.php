@@ -6,6 +6,7 @@ use App\Http\Controllers\BookContentController;
 use App\Models\BookPage;
 use App\Models\Product;
 use App\Services\BookContentVersion;
+use Database\Seeders\CevsenPagesSeeder;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -27,6 +28,8 @@ class BookPagesApiTest extends TestCase
             $table->id();
             $table->string('slug');
             $table->string('title');
+            $table->boolean('is_published')->default(false);
+            $table->integer('stock')->default(0);
             $table->text('short_description')->nullable();
             $table->string('image_1')->nullable();
             $table->string('online_lezen_image')->nullable();
@@ -99,6 +102,64 @@ class BookPagesApiTest extends TestCase
                 $this->assertStringContainsString(route('onlineLezenRead', $book->slug), $html);
                 $this->assertStringNotContainsString('shelf-book--unpublished', $html);
             }
+        }
+    }
+
+    public function test_seeder_creates_a_missing_online_only_book_and_can_be_rerun(): void
+    {
+        $this->seed(CevsenPagesSeeder::class);
+
+        $product = Product::where('slug', 'cevsen-ul-kebir')->sole();
+        $this->assertSame('Cevşen-ül Kebir', $product->title);
+        $this->assertFalse((bool) $product->is_published);
+        $this->assertFalse($product->book_content_published);
+        $this->assertSame(0, $product->stock);
+        $this->assertSame(100, $product->bookPages()->count());
+        $this->getJson('/api/v1/books/cevsen-ul-kebir/pages')->assertNotFound();
+
+        $product->update([
+            'title' => 'Existing title',
+            'book_content_published' => true,
+            'is_published' => true,
+            'stock' => 7,
+        ]);
+        $this->seed(CevsenPagesSeeder::class);
+
+        $this->assertSame(1, Product::where('slug', 'cevsen-ul-kebir')->count());
+        $this->assertSame('Existing title', $product->fresh()->title);
+        $this->assertTrue($product->fresh()->book_content_published);
+        $this->assertTrue((bool) $product->fresh()->is_published);
+        $this->assertSame(7, $product->fresh()->stock);
+        $this->assertSame(100, $product->bookPages()->count());
+        $this->getJson('/api/v1/books/cevsen-ul-kebir/pages')
+            ->assertOk()
+            ->assertJsonPath('book.title', 'Existing title');
+    }
+
+    public function test_cevsen_reader_omits_series_and_author_but_keeps_the_main_title(): void
+    {
+        foreach (['cevsen-ul-kebir', 'regular-book'] as $slug) {
+            $product = (new Product)->forceFill([
+                'id' => 1,
+                'slug' => $slug,
+                'title' => 'Reader title',
+            ]);
+            $pages = collect([(new BookPage)->forceFill([
+                'page_number' => 1,
+                'book_title' => 'Reader title',
+                'content' => '<div class="page" id="1"><p>Content</p></div>',
+            ])]);
+
+            $html = view('online-lezen-html-reader', [
+                'product' => $product,
+                'pages' => $pages,
+                'allPageMeta' => $pages,
+                'tocEntries' => [],
+            ])->render();
+
+            $this->assertStringContainsString('<h1 class="book-title">Reader title</h1>', $html);
+            $this->assertSame($slug !== 'cevsen-ul-kebir', str_contains($html, 'Uit de Reeks van de Risale-i Nur'));
+            $this->assertSame($slug !== 'cevsen-ul-kebir', str_contains($html, 'Bedi&uuml;zzaman Said Nurs&icirc;'));
         }
     }
 

@@ -35,6 +35,14 @@
 <body>
 
 <div class="bookshelf-page">
+    @php
+        // Check if any books are currently only available as PDF (not yet as online reading version)
+        $hasPdfOnlyBooks = $products->contains(function ($p) use ($isAdmin) {
+            $contentPublished = $p->book_content_published;
+            $hasHtml = $p->book_pages_count > 0 && ($isAdmin || $contentPublished);
+            return !$hasHtml && !empty($p->pdf_file) && $p->pdf_reader_enabled;
+        });
+    @endphp
 
     {{-- Back to website link --}}
     <a href="{{ route('home') }}" class="bookshelf-back-link">
@@ -47,11 +55,11 @@
         {{-- Row 1: Terug (left) + Menu toggle (right) --}}
         <div class="bs-mc-toprow">
             <a href="{{ route('home') }}" class="bs-back-link-mobile">
-                <i class="fa-solid fa-chevron-left"></i> Terug naar de website
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Terug naar de website
             </a>
-            <button class="bs-drawer-toggle" id="bs-drawer-toggle" aria-label="Open bibliotheek menu">
-                <i class="fa-solid fa-bars"></i>
-                <span>Menu</span>
+            <button class="bs-drawer-toggle" id="bs-drawer-toggle" aria-label="Open opgeslagen items">
+                <i class="fa-solid fa-bookmark"></i>
+                <span>Opgeslagen</span>
             </button>
         </div>
 
@@ -149,6 +157,15 @@
             </div>
         </div>
 
+        @if($hasPdfOnlyBooks)
+        <section class="bs-panel">
+            <h2 class="bs-section-title">Over deze bibliotheek</h2>
+            <p class="bs-panel-body bs-library-description">
+                In deze online bibliotheek kun je verschillende werken uit de <strong>Risale-i Nur</strong> lezen in het <strong>Nederlands en Engels</strong>. Een deel is direct beschikbaar als online leesversie; andere boeken zijn voorlopig als PDF te lezen.
+            </p>
+        </section>
+        @endif
+
         </div>{{-- /.bs-sidebar-scroll --}}
     </aside>
 
@@ -162,13 +179,6 @@
 
     {{-- The wooden cabinet --}}
     <div class="bookshelf-cabinet">
-
-        {{-- Ceiling spotlights --}}
-        <div class="bookshelf-lights">
-            <div class="bookshelf-light"></div>
-            <div class="bookshelf-light"></div>
-            <div class="bookshelf-light"></div>
-        </div>
 
         {{-- Left candle --}}
         <div class="bookshelf-candle bookshelf-candle--left">
@@ -197,14 +207,6 @@
         </div>
 
         {{-- Header sign --}}
-        @php
-            // Check if any books are currently only available as PDF (not yet as online reading version)
-            $hasPdfOnlyBooks = $products->contains(function ($p) use ($isAdmin) {
-                $contentPublished = $p->book_content_published;
-                $hasHtml = $p->book_pages_count > 0 && ($isAdmin || $contentPublished);
-                return !$hasHtml && !empty($p->pdf_file) && $p->pdf_reader_enabled;
-            });
-        @endphp
         <div class="bookshelf-header-sign">
             <h1 class="bookshelf-seo-title">Risale-i Nur online lezen</h1>
             <p class="bookshelf-title">Biblio<span class="herina-t"></span>heek</p>
@@ -212,13 +214,6 @@
                 <span>❧ Klik op een boek om te lezen ❧</span>
             </div>
             <p class="bookshelf-subtitle">Lucide Inkt</p>
-            @if($hasPdfOnlyBooks)
-            <div class="bookshelf-pdf-notice">
-                <span class="bookshelf-pdf-notice__text">
-                    In deze online bibliotheek kun je verschillende werken uit de <strong>Risale-i Nur</strong> lezen in het <strong>Nederlands en Engels</strong>. Een deel is direct beschikbaar als online leesversie; andere boeken zijn voorlopig als PDF te lezen.
-                </span>
-            </div>
-            @endif
         </div>
 
         {{-- Flat book pool — JS will build shelf rows --}}
