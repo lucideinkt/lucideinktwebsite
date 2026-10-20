@@ -235,6 +235,7 @@ class BookPageJsonSerializer
         $language = trim($node->getAttribute('lang')) ?: $inheritedLanguage;
         $direction = trim($node->getAttribute('dir')) ?: $inheritedDirection;
         $classes = preg_split('/\s+/', trim($node->getAttribute('class')) ?: '') ?: [];
+        $inTextFootnote = ! $insideFootnote && $tag === 'p' && in_array('footnote-p', $classes, true);
         $type = $this->nodeType($tag, $classes, $insideFootnote);
 
         if ($tag === 'img') {
@@ -273,7 +274,7 @@ class BookPageJsonSerializer
 
             $children = [];
             foreach ($node->childNodes as $child) {
-                $childNode = $this->serializeNode($child, $pageNumber, $insideFootnote, $language, $direction);
+                $childNode = $this->serializeNode($child, $pageNumber, $insideFootnote || $inTextFootnote, $language, $direction);
                 if ($childNode !== null) {
                     $children[] = $childNode;
                 }
@@ -291,6 +292,11 @@ class BookPageJsonSerializer
         }
 
         $presentation = $this->presentation($node);
+        if ($inTextFootnote) {
+            $presentation['role'] = 'footnote';
+        } elseif (! $insideFootnote && $tag === 'hr' && in_array('hr-footnote', $classes, true)) {
+            $presentation['role'] = 'footnote_separator';
+        }
         if ($presentation !== []) {
             $result['presentation'] = $presentation;
         }

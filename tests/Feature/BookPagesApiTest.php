@@ -2,11 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\BookContentController;
 use App\Models\BookPage;
 use App\Models\Product;
 use App\Services\BookContentVersion;
+use Database\Seeders\CevsenPagesSeeder;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
 
 class BookPagesApiTest extends TestCase
@@ -22,9 +28,14 @@ class BookPagesApiTest extends TestCase
             $table->id();
             $table->string('slug');
             $table->string('title');
+            $table->boolean('is_published')->default(false);
+            $table->integer('stock')->default(0);
             $table->text('short_description')->nullable();
             $table->string('image_1')->nullable();
             $table->string('online_lezen_image')->nullable();
+            $table->string('book_content_cover')->nullable();
+            $table->string('book_content_language', 2)->nullable();
+            $table->string('book_content_type', 20)->nullable();
             $table->boolean('book_content_published')->default(false);
             $table->softDeletes();
             $table->timestamps();
@@ -34,7 +45,9 @@ class BookPagesApiTest extends TestCase
             $table->unsignedBigInteger('product_id');
             $table->unsignedSmallInteger('page_number');
             $table->longText('content')->nullable();
+            $table->string('book_title')->nullable();
             $table->timestamps();
+            $table->unique(['product_id', 'page_number'], 'book_pages_product_page_unique');
         });
         Schema::create('seo', function (Blueprint $table): void {
             $table->id();
@@ -51,6 +64,103 @@ class BookPagesApiTest extends TestCase
         Schema::dropIfExists('products');
 
         parent::tearDown();
+    }
+
+    public function test_library_covers_support_html_and_enabled_pdf_books(): void
+    {
+        $cases = [
+            [0, false, 'books/example.pdf', true, false, true],
+            [0, false, 'books/example.pdf', true, true, true],
+            [0, false, 'books/example.pdf', false, false, false],
+            [0, true, 'books/example.pdf', false, false, false],
+            [0, false, null, true, false, false],
+            [1, true, null, false, false, true],
+            [1, false, null, false, true, false],
+            [1, false, 'books/example.pdf', true, false, true],
+        ];
+
+        foreach ($cases as [$pageCount, $published, $pdf, $pdfEnabled, $isAdmin, $expectCover]) {
+            $book = (new Product)->forceFill([
+                'id' => 1,
+                'slug' => 'library-cover-test',
+                'title' => 'Library Cover Test',
+                'book_pages_count' => $pageCount,
+                'book_content_published' => $published,
+                'pdf_file' => $pdf,
+                'pdf_reader_enabled' => $pdfEnabled,
+                'book_content_cover' => 'products/book-content-covers/library-test.png',
+            ]);
+            $html = view('online-lezen', [
+                'products' => collect([$book]),
+                'categories' => collect(),
+                'isAdmin' => $isAdmin,
+            ])->render();
+
+            $this->assertSame($expectCover, str_contains($html, 'class="shelf-book-custom-cover"'));
+            $this->assertSame($expectCover, str_contains($html, 'shelf-book-cover--custom'));
+            if ($pageCount === 0 && $pdfEnabled && $pdf) {
+                $this->assertStringContainsString(route('onlineLezenRead', $book->slug), $html);
+                $this->assertStringNotContainsString('shelf-book--unpublished', $html);
+            }
+        }
+    }
+
+    public function test_seeder_creates_a_missing_online_only_book_and_can_be_rerun(): void
+    {
+        $this->seed(CevsenPagesSeeder::class);
+
+        $product = Product::where('slug', 'cevsen-ul-kebir')->sole();
+        $this->assertSame('Cevşen-ül Kebir', $product->title);
+        $this->assertFalse((bool) $product->is_published);
+        $this->assertFalse($product->book_content_published);
+        $this->assertSame(0, $product->stock);
+        $this->assertSame(100, $product->bookPages()->count());
+        $this->getJson('/api/v1/books/cevsen-ul-kebir/pages')->assertNotFound();
+
+        $product->update([
+            'title' => 'Existing title',
+            'book_content_published' => true,
+            'is_published' => true,
+            'stock' => 7,
+        ]);
+        $this->seed(CevsenPagesSeeder::class);
+
+        $this->assertSame(1, Product::where('slug', 'cevsen-ul-kebir')->count());
+        $this->assertSame('Existing title', $product->fresh()->title);
+        $this->assertTrue($product->fresh()->book_content_published);
+        $this->assertTrue((bool) $product->fresh()->is_published);
+        $this->assertSame(7, $product->fresh()->stock);
+        $this->assertSame(100, $product->bookPages()->count());
+        $this->getJson('/api/v1/books/cevsen-ul-kebir/pages')
+            ->assertOk()
+            ->assertJsonPath('book.title', 'Existing title');
+    }
+
+    public function test_cevsen_reader_omits_series_and_author_but_keeps_the_main_title(): void
+    {
+        foreach (['cevsen-ul-kebir', 'regular-book'] as $slug) {
+            $product = (new Product)->forceFill([
+                'id' => 1,
+                'slug' => $slug,
+                'title' => 'Reader title',
+            ]);
+            $pages = collect([(new BookPage)->forceFill([
+                'page_number' => 1,
+                'book_title' => 'Reader title',
+                'content' => '<div class="page" id="1"><p>Content</p></div>',
+            ])]);
+
+            $html = view('online-lezen-html-reader', [
+                'product' => $product,
+                'pages' => $pages,
+                'allPageMeta' => $pages,
+                'tocEntries' => [],
+            ])->render();
+
+            $this->assertStringContainsString('<h1 class="book-title">Reader title</h1>', $html);
+            $this->assertSame($slug !== 'cevsen-ul-kebir', str_contains($html, 'Uit de Reeks van de Risale-i Nur'));
+            $this->assertSame($slug !== 'cevsen-ul-kebir', str_contains($html, 'Bedi&uuml;zzaman Said Nurs&icirc;'));
+        }
     }
 
     public function test_it_returns_paginated_structured_pages_for_a_published_book(): void
@@ -219,6 +329,8 @@ class BookPagesApiTest extends TestCase
             'title' => 'New Native Reader Book',
             'short_description' => 'A short book description.',
             'online_lezen_image' => 'images/native-cover.png',
+            'book_content_cover' => 'products/book-content-covers/custom-cover.webp',
+            'image_1' => 'images/default-cover.png',
             'book_content_published' => true,
         ]);
         BookPage::create([
@@ -239,6 +351,7 @@ class BookPagesApiTest extends TestCase
         $unpublishedBook = Product::query()->create([
             'slug' => 'unpublished-catalog-book',
             'title' => 'Unpublished Catalog Book',
+            'book_content_cover' => 'products/book-content-covers/unpublished-cover.webp',
             'book_content_published' => false,
         ]);
         BookPage::create([
@@ -259,7 +372,8 @@ class BookPagesApiTest extends TestCase
             ->assertJsonPath('books.1.slug', 'new-native-reader-book')
             ->assertJsonPath('books.1.title', 'New Native Reader Book')
             ->assertJsonPath('books.1.description', 'A short book description.')
-            ->assertJsonPath('books.1.cover_image', secure_url('images/native-cover.png'))
+            ->assertJsonPath('books.1.cover_image', secure_url('storage/products/book-content-covers/custom-cover.webp'))
+            ->assertJsonMissing(['cover_image' => secure_url('storage/products/book-content-covers/unpublished-cover.webp')])
             ->assertJsonPath('books.1.page_count', 1)
             ->assertJsonPath('books.1.pages_url', route('api.v1.books.pages.index', ['slug' => 'new-native-reader-book']))
             ->assertJsonPath('pagination.total', 2)
@@ -282,6 +396,159 @@ class BookPagesApiTest extends TestCase
         $this->getJson('/api/v1/books?limit=51')
             ->assertUnprocessable()
             ->assertJsonValidationErrors('limit');
+    }
+
+    public function test_book_content_metadata_can_be_saved_and_is_returned_in_the_catalog(): void
+    {
+        $book = Product::create([
+            'slug' => 'metadata-book',
+            'title' => 'Metadata Book',
+            'book_content_published' => true,
+        ]);
+        $page = BookPage::create([
+            'product_id' => $book->id,
+            'page_number' => 14,
+            'content' => '<div class="page empty-page" id="14"></div>',
+        ]);
+        $previousVersion = app(BookContentVersion::class)->snapshot($book)['content_version'];
+
+        foreach (array_keys(Product::BOOK_CONTENT_LANGUAGES) as $language) {
+            foreach (array_keys(Product::BOOK_CONTENT_TYPES) as $type) {
+                app(BookContentController::class)->update(Request::create('/', 'PUT', [
+                    'book_content_language' => $language,
+                    'book_content_type' => $type,
+                ]), $book->id);
+
+                $book->refresh();
+                $this->assertSame($language, $book->book_content_language);
+                $this->assertSame($type, $book->book_content_type);
+                $this->assertSame($page->content, $page->fresh()->content);
+                $version = app(BookContentVersion::class)->snapshot($book)['content_version'];
+                $this->assertNotSame($previousVersion, $version);
+                $previousVersion = $version;
+                $this->getJson('/api/v1/books')
+                    ->assertOk()
+                    ->assertJsonPath('books.0.language', $language)
+                    ->assertJsonPath('books.0.book_type', $type)
+                    ->assertJsonPath('books.0.content_version', $version);
+            }
+        }
+
+        app(BookContentController::class)->update(Request::create('/', 'PUT'), $book->id);
+        $this->assertSame('tr', $book->fresh()->book_content_language);
+        $this->assertSame('quran', $book->fresh()->book_content_type);
+
+        app(BookContentController::class)->update(Request::create('/', 'PUT', [
+            'book_content_language' => null,
+            'book_content_type' => null,
+        ]), $book->id);
+        $this->assertNull($book->fresh()->book_content_language);
+        $this->assertNull($book->fresh()->book_content_type);
+    }
+
+    public function test_book_content_metadata_rejects_unsupported_choices(): void
+    {
+        $book = Product::create([
+            'slug' => 'invalid-metadata-book',
+            'title' => 'Invalid Metadata Book',
+            'book_content_language' => 'nl',
+            'book_content_type' => 'leesboek',
+        ]);
+
+        foreach ([
+            'book_content_language' => 'fr',
+            'book_content_type' => 'unknown',
+        ] as $field => $value) {
+            try {
+                app(BookContentController::class)->update(Request::create('/', 'PUT', [
+                    $field => $value,
+                ]), $book->id);
+                $this->fail('Unsupported book metadata was accepted.');
+            } catch (ValidationException $exception) {
+                $this->assertArrayHasKey($field, $exception->errors());
+            }
+        }
+
+        $this->assertSame('nl', $book->fresh()->book_content_language);
+        $this->assertSame('leesboek', $book->fresh()->book_content_type);
+    }
+
+    public function test_book_content_cover_can_be_uploaded_and_removed(): void
+    {
+        Storage::fake('public');
+
+        $book = Product::query()->create([
+            'slug' => 'book-with-custom-cover',
+            'title' => 'Book With Custom Cover',
+            'book_content_published' => false,
+        ]);
+
+        $controller = app(BookContentController::class);
+        $controller->update(
+            Request::create('/dashboard/book-content/'.$book->id, 'PUT', [], [], [
+                'book_content_cover' => UploadedFile::fake()->image('cover.png'),
+            ]),
+            $book->id
+        );
+
+        $book->refresh();
+        $this->assertNotNull($book->book_content_cover);
+        Storage::disk('public')->assertExists($book->book_content_cover);
+        $uploadedCover = $book->book_content_cover;
+
+        $controller->update(
+            Request::create('/dashboard/book-content/'.$book->id, 'PUT', [
+                'delete_book_content_cover' => '1',
+            ]),
+            $book->id
+        );
+
+        $book->refresh();
+        $this->assertNull($book->book_content_cover);
+        Storage::disk('public')->assertMissing($uploadedCover);
+    }
+
+    public function test_book_content_save_uses_page_number_from_html_instead_of_stale_form_value(): void
+    {
+        $book = Product::query()->create([
+            'slug' => 'book-with-stale-page-number',
+            'title' => 'Book With Stale Page Number',
+        ]);
+        $emptyPage = BookPage::create([
+            'product_id' => $book->id,
+            'page_number' => 9,
+            'content' => '<div class="page empty-page" id="9"></div>',
+        ]);
+        $otherPage = BookPage::create([
+            'product_id' => $book->id,
+            'page_number' => 14,
+            'content' => '<div class="page" id="14"><p>Other page</p></div>',
+        ]);
+
+        app(BookContentController::class)->update(
+            Request::create('/dashboard/book-content/'.$book->id, 'PUT', [
+                'pages' => [
+                    $emptyPage->id => [
+                        'id' => $emptyPage->id,
+                        'page_number' => 10,
+                        'content' => '<div class="page empty-page id="14"></div>',
+                    ],
+                    $otherPage->id => [
+                        'id' => $otherPage->id,
+                        'page_number' => 9,
+                        'content' => '<div class="page" id="9"><p>Other page</p></div>',
+                    ],
+                ],
+            ]),
+            $book->id
+        );
+
+        $this->assertSame(14, $emptyPage->fresh()->page_number);
+        $this->assertSame('<div class="page empty-page id="14"></div>', $emptyPage->fresh()->content);
+        $this->assertDatabaseHas('book_pages', [
+            'product_id' => $book->id,
+            'page_number' => 9,
+        ]);
     }
 
     public function test_book_versions_are_stable_and_shared_by_catalog_navigation_and_pages(): void

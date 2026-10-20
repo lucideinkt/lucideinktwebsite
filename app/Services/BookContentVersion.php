@@ -16,7 +16,9 @@ class BookContentVersion
     {
         $pages = $product->bookPages()->orderBy('page_number')->get(['page_number', 'content']);
         $toc = config('book_toc.'.$product->slug, []);
-        $cover = $product->online_lezen_image ?: $product->image_1;
+        $cover = ($product->book_content_published ? $product->book_content_cover : null)
+            ?: $product->online_lezen_image
+            ?: $product->image_1;
         $coverSource = $cover && ! filter_var($cover, FILTER_VALIDATE_URL) && ! str_starts_with($cover, 'images/')
             ? '/storage/'.$cover
             : $cover;
@@ -31,6 +33,8 @@ class BookContentVersion
             'slug' => $product->slug,
             'title' => $product->title,
             'description' => $product->short_description,
+            'language' => $product->book_content_language,
+            'book_type' => $product->book_content_type,
             'cover' => $coverSource,
             'toc' => $toc,
         ], JSON_THROW_ON_ERROR));

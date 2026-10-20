@@ -23,9 +23,11 @@ De bestaande `GET /bibliotheek/{slug}/paginas`-route geeft `page_number` en `con
 
 ## Boekcatalogus voor mobiele apps
 
+Boekpaginaseeders maken automatisch een ontbrekend productrecord aan op basis van de slug en boektitel (of een titel afgeleid van de slug). Dit record is uitsluitend bedoeld als technische koppeling voor de bibliotheek: `is_published` blijft uit, de voorraad is nul en het verschijnt niet als gepubliceerd webshopproduct. De boekcontent begint als concept (`book_content_published = false`); publiceer deze na controle via boekcontentbeheer om het boek in de openbare bibliotheek en appcatalogus te tonen. Opnieuw seeden hergebruikt hetzelfde record en behoudt bestaande productgegevens en publicatiestatus.
+
 `GET /api/v1/books?page=1&limit=20` geeft de gepubliceerde HTML-boeken terug die ten minste één boekpagina hebben. Conceptboeken en producten zonder boekpagina's worden niet opgenomen. De lijst is alfabetisch gesorteerd en gepagineerd; `limit` is 1 t/m 50. Nieuwe boeken verschijnen vanzelf zodra ze gepubliceerd zijn en pagina's hebben, zonder dat er een app-release of aparte API-configuratie nodig is. De client vraagt de catalogus opnieuw op om wijzigingen te ontdekken; de API pusht geen updates naar een app die niet actief aanvraagt.
 
-Een boekitem bevat `slug`, `title`, `description`, `cover_image`, `page_count` en `pages_url`. De cover gebruikt eerst de specifieke `online_lezen_image` en anders `image_1`; bestandspaden worden als absolute URL teruggegeven. De app kan `pages_url` ophalen om het pagina-endpoint te gebruiken. Een voorbeeldresponse:
+Een boekitem bevat `slug`, `title`, `description`, `language`, `book_type`, `cover_image`, `page_count` en `pages_url`. In boekcontentbeheer kunnen taal (`nl`, `en`, `tr`) en soort boek (`leesboek`, `duaboek`, `quran`) worden ingesteld. Niet-ingestelde waarden zijn `null`; bestaande boeken krijgen niet automatisch een taal of soort toegewezen. Wijzigingen in deze metadata wijzigen ook `content_version`. De cover gebruikt eerst de gepubliceerde `book_content_cover`, daarna `online_lezen_image` en anders `image_1`; bestandspaden worden als absolute URL teruggegeven. De app kan `pages_url` ophalen om het pagina-endpoint te gebruiken. Een voorbeeldresponse:
 
 ```json
 {
@@ -35,6 +37,8 @@ Een boekitem bevat `slug`, `title`, `description`, `cover_image`, `page_count` e
       "slug": "voorbeeldboek",
       "title": "Voorbeeldboek",
       "description": "Korte omschrijving",
+      "language": "nl",
+      "book_type": "leesboek",
       "cover_image": "https://example.test/storage/products/cover.webp",
       "page_count": 120,
       "pages_url": "https://example.test/api/v1/books/voorbeeldboek/pages"
@@ -51,6 +55,8 @@ Een boekitem bevat `slug`, `title`, `description`, `cover_image`, `page_count` e
 ```
 
 ## Afgesproken contentregels
+
+De inhoudsopgave staat per boekslug in `config/book_toc.php` en wordt gebruikt door de HTML-reader en de navigatie-API. Cevşen-ül Kebir bevat 100 items, van `1. ukde` tot en met `100. ukde`, die elk naar de gelijkgenummerde pagina verwijzen. Hiervoor is opnieuw seeden niet nodig.
 
 - Iedere pagina blijft een zelfstandige `.page` met het bestaande paginanummer en alle bestaande typografie-, layout- en taalmetadata.
 - Een voetnootverwijzing is een gewone `<sup>N</sup>` op de plek van de verwijzing.

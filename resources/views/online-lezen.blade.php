@@ -30,11 +30,19 @@
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
     <link rel="stylesheet" href="https://use.typekit.net/pwj1cgt.css">
 
-    @vite(['resources/css/bookshelf.css'])
+    @vite(['resources/css/bookshelf.css', 'resources/js/bookshelf.js'])
 </head>
 <body>
 
 <div class="bookshelf-page">
+    @php
+        // Check if any books are currently only available as PDF (not yet as online reading version)
+        $hasPdfOnlyBooks = $products->contains(function ($p) use ($isAdmin) {
+            $contentPublished = $p->book_content_published;
+            $hasHtml = $p->book_pages_count > 0 && ($isAdmin || $contentPublished);
+            return !$hasHtml && !empty($p->pdf_file) && $p->pdf_reader_enabled;
+        });
+    @endphp
 
     {{-- Back to website link --}}
     <a href="{{ route('home') }}" class="bookshelf-back-link">
@@ -47,11 +55,11 @@
         {{-- Row 1: Terug (left) + Menu toggle (right) --}}
         <div class="bs-mc-toprow">
             <a href="{{ route('home') }}" class="bs-back-link-mobile">
-                <i class="fa-solid fa-chevron-left"></i> Terug naar de website
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Terug naar de website
             </a>
-            <button class="bs-drawer-toggle" id="bs-drawer-toggle" aria-label="Open bibliotheek menu">
-                <i class="fa-solid fa-bars"></i>
-                <span>Menu</span>
+            <button class="bs-drawer-toggle" id="bs-drawer-toggle" aria-label="Open opgeslagen items">
+                <i class="fa-solid fa-bookmark"></i>
+                <span>Opgeslagen</span>
             </button>
         </div>
 
@@ -133,14 +141,6 @@
             </div>
         </div>
 
-        {{-- Laatst gelezen --}}
-        <div class="bs-panel">
-            <h2 class="bs-section-title">Laatst gelezen</h2>
-            <div class="bs-panel-body bs-panel-body--list" id="bs-last-read-list">
-                <div class="bs-list-empty"><i class="fa-regular fa-clock"></i> Nog geen boeken gelezen.</div>
-            </div>
-        </div>
-
         {{-- Bladwijzers --}}
         <div class="bs-panel">
             <h2 class="bs-section-title">Bladwijzers online lezen</h2>
@@ -157,6 +157,15 @@
             </div>
         </div>
 
+        @if($hasPdfOnlyBooks)
+        <section class="bs-panel">
+            <h2 class="bs-section-title">Over deze bibliotheek</h2>
+            <p class="bs-panel-body bs-library-description">
+                In deze online bibliotheek kun je verschillende werken uit de <strong>Risale-i Nur</strong> lezen in het <strong>Nederlands en Engels</strong>. Een deel is direct beschikbaar als online leesversie; andere boeken zijn voorlopig als PDF te lezen.
+            </p>
+        </section>
+        @endif
+
         </div>{{-- /.bs-sidebar-scroll --}}
     </aside>
 
@@ -170,13 +179,6 @@
 
     {{-- The wooden cabinet --}}
     <div class="bookshelf-cabinet">
-
-        {{-- Ceiling spotlights --}}
-        <div class="bookshelf-lights">
-            <div class="bookshelf-light"></div>
-            <div class="bookshelf-light"></div>
-            <div class="bookshelf-light"></div>
-        </div>
 
         {{-- Left candle --}}
         <div class="bookshelf-candle bookshelf-candle--left">
@@ -205,14 +207,6 @@
         </div>
 
         {{-- Header sign --}}
-        @php
-            // Check if any books are currently only available as PDF (not yet as online reading version)
-            $hasPdfOnlyBooks = $products->contains(function ($p) use ($isAdmin) {
-                $contentPublished = $p->book_content_published;
-                $hasHtml = $p->book_pages_count > 0 && ($isAdmin || $contentPublished);
-                return !$hasHtml && !empty($p->pdf_file) && $p->pdf_reader_enabled;
-            });
-        @endphp
         <div class="bookshelf-header-sign">
             <h1 class="bookshelf-seo-title">Risale-i Nur online lezen</h1>
             <p class="bookshelf-title">Biblio<span class="herina-t"></span>heek</p>
@@ -220,13 +214,6 @@
                 <span>❧ Klik op een boek om te lezen ❧</span>
             </div>
             <p class="bookshelf-subtitle">Lucide Inkt</p>
-            @if($hasPdfOnlyBooks)
-            <div class="bookshelf-pdf-notice">
-                <span class="bookshelf-pdf-notice__text">
-                    In deze online bibliotheek kun je verschillende werken uit de <strong>Risale-i Nur</strong> lezen in het <strong>Nederlands en Engels</strong>. Een deel is direct beschikbaar als online leesversie; andere boeken zijn voorlopig als PDF te lezen.
-                </span>
-            </div>
-            @endif
         </div>
 
         {{-- Flat book pool — JS will build shelf rows --}}
@@ -237,24 +224,32 @@
                     $hasHtml = $product->book_pages_count > 0 && ($isAdmin || $contentPublished);
                     $hasPdfReader = !$hasHtml && !empty($product->pdf_file) && $product->pdf_reader_enabled;
                     $isReadable = $hasHtml || $hasPdfReader;
+                    $showCustomCover = $product->book_content_cover && (($hasHtml && $contentPublished) || $hasPdfReader);
                     $href = $hasHtml
                         ? route('onlineLezenReadHtml', $product->slug)
                         : ($hasPdfReader ? route('onlineLezenRead', $product->slug) : '#');
                 @endphp
                 @if($isReadable)
-                <a href="{{ $href }}" class="shelf-book{{ $isAdmin && !$contentPublished ? ' shelf-book--unpublished' : '' }}" title="{{ $product->title }}"
+                <a href="{{ $href }}" class="shelf-book{{ $isAdmin && $hasHtml && !$contentPublished ? ' shelf-book--unpublished' : '' }}" title="{{ $product->title }}"
                    data-category="{{ $product->category_id ?? '' }}"
+                   data-language="{{ $product->book_content_language }}"
+                   data-book-type="{{ $product->book_content_type }}"
                    data-title="{{ strtolower($product->title) }}"
                    data-product-id="{{ $product->id }}"
                    data-reader-url="{{ $href }}">
                 @else
                 <div class="shelf-book shelf-book--coming-soon" title="{{ $product->title }}"
                    data-category="{{ $product->category_id ?? '' }}"
+                   data-language="{{ $product->book_content_language }}"
+                   data-book-type="{{ $product->book_content_type }}"
                    data-title="{{ strtolower($product->title) }}"
                    data-product-id="{{ $product->id }}"
                    data-reader-url="">
                 @endif
-                    <div class="shelf-book-cover">
+                    <div class="shelf-book-cover{{ $showCustomCover ? ' shelf-book-cover--custom' : '' }}">
+                        @if($showCustomCover)
+                            <img src="{{ asset('storage/' . $product->book_content_cover) }}" class="shelf-book-custom-cover" alt="Kaft van {{ $product->title }}">
+                        @endif
                         <div class="shelf-book-spine"></div>
                         {{-- Corner ornaments --}}
                         <img src="{{ asset('images/corners-books.png') }}" class="shelf-book-corner shelf-book-corner--tl" alt="Risale-i Nur online lezen" title="Risale-i Nur online lezen">
@@ -284,7 +279,7 @@
                         </div>
                         @endif
                     </div>
-                    <span class="shelf-book-tooltip">{{ $product->title }}{{ $isAdmin && !$contentPublished ? ' (concept)' : '' }}</span>
+                    <span class="shelf-book-tooltip">{{ $product->title }}{{ $isAdmin && $hasHtml && !$contentPublished ? ' (concept)' : '' }}</span>
                 @if($isReadable)
                 </a>
                 @else
@@ -535,79 +530,6 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
     function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
     function lsParse(k, def) { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? def; } catch(_) { return def; } }
-
-    // ── Laatst gelezen list ───────────────────────────────
-    function renderLastRead() {
-        const el = document.getElementById('bs-last-read-list');
-        if (!el) return;
-        const history = lsParse('bibliotheek_reading_history', []);
-        el.innerHTML = '';
-        if (!history.length) {
-            el.innerHTML = '<div class="bs-list-empty"><i class="fa-regular fa-clock"></i> Nog geen boeken gelezen.</div>';
-            return;
-        }
-        history.forEach(function (item) {
-            const row = document.createElement('div');
-            row.className = 'bs-list-item';
-            row.style.cursor = 'pointer';
-            row.innerHTML =
-                '<i class="fa-regular fa-clock"></i>' +
-                '<div class="bs-list-item-body">' +
-                    '<span class="bs-list-item-title">' + escHtml(item.productTitle) + '</span>' +
-                    '<span class="bs-list-item-meta">Pagina ' + item.page + '</span>' +
-                '</div>' +
-                '<button class="bs-list-del" title="Verwijder"><i class="fa-solid fa-xmark"></i></button>';
-            // Navigate on row click
-            row.addEventListener('click', function (e) {
-                if (e.target.closest('.bs-list-del')) return;
-                // Append ?page=N so the reader uses the URL param (reliable on mobile)
-                var url = item.readerUrl + (item.readerUrl.indexOf('?') >= 0 ? '&' : '?') + 'page=' + item.page;
-                window.location.href = url;
-            });
-            // Delete button
-            row.querySelector('.bs-list-del').addEventListener('click', function (e) {
-                e.stopPropagation();
-                try {
-                    const updated = lsParse('bibliotheek_reading_history', [])
-                        .filter(function (h) { return h.productId !== item.productId; });
-                    localStorage.setItem('bibliotheek_reading_history', JSON.stringify(updated));
-
-                    // Also clear the saved page position so the book starts from page 1 again
-                    localStorage.removeItem('pdf_last_page_' + item.productId);
-                    localStorage.removeItem('reading_progress_' + item.productId);
-
-                    // Clear pdfjs.history entry for this book's PDF
-                    try {
-                        const pdfHistory = JSON.parse(localStorage.getItem('pdfjs.history') || '{}');
-                        if (pdfHistory.files) {
-                            pdfHistory.files = pdfHistory.files.filter(function (f) {
-                                // Match by productId embedded in the URL (/pdf-proxy/...) or by readerUrl
-                                return !String(f.url || '').includes('/' + item.productId + '/') &&
-                                       !String(f.url || '').includes('_' + item.productId + '.');
-                            });
-                            localStorage.setItem('pdfjs.history', JSON.stringify(pdfHistory));
-                        }
-                    } catch (_) {}
-
-                    // Clear bibliotheek_last_read if it refers to the same book
-                    try {
-                        const lastRead = JSON.parse(localStorage.getItem('bibliotheek_last_read') || 'null');
-                        if (lastRead && lastRead.productId === item.productId) {
-                            localStorage.removeItem('bibliotheek_last_read');
-                        }
-                    } catch (_) {}
-                } catch (_) {}
-                renderLastRead();
-            });
-            el.appendChild(row);
-        });
-    }
-    renderLastRead();
-
-    // Re-render when page is restored from bfcache (browser back button)
-    window.addEventListener('pageshow', function(e) {
-        if (e.persisted) renderLastRead();
-    });
 
     // ── Bladwijzers list ─────────────────────────────────
     function renderBookmarks() {
@@ -1100,69 +1022,6 @@ document.addEventListener('touchstart', function () {}, { passive: true });
     });
 
     updateBadge();
-})();
-</script>
-
-<script>
-(function () {
-
-    window.buildShelves = function buildShelves() {
-        const pool   = document.querySelector('.bookshelf-books-pool');
-        const target = document.getElementById('bookshelf-shelves');
-        // Only non-filtered books
-        const books  = Array.from(pool.querySelectorAll('.shelf-book, .bookshelf-empty'))
-                           .filter(b => b.dataset.hidden !== '1');
-
-        // ≥768 px → 3 per row  |  <768 px → 2 per row
-        const perRow = window.innerWidth >= 768 ? 3 : 2;
-
-        target.innerHTML = '';
-
-        if (!books.length) {
-            const empty = document.createElement('div');
-            empty.className = 'bookshelf-empty';
-            empty.innerHTML = '<i class="fa-solid fa-book-open"></i><p>Geen boeken gevonden.</p>';
-            const row = document.createElement('div');
-            row.className = 'bookshelf-shelf-row';
-            const plank = document.createElement('div');
-            plank.className = 'bookshelf-plank';
-            plank.appendChild(empty);
-            row.appendChild(plank);
-            target.appendChild(row);
-            return;
-        }
-
-        for (let i = 0; i < books.length; i += perRow) {
-            const chunk = books.slice(i, i + perRow);
-            const row   = document.createElement('div');
-            row.className = 'bookshelf-shelf-row';
-            const plank = document.createElement('div');
-            plank.className = 'bookshelf-plank';
-            chunk.forEach(book => plank.appendChild(book.cloneNode(true)));
-
-            // Fill incomplete rows with invisible ghost books so real books
-            // keep the same width as books on full rows.
-            if (chunk.length < perRow) {
-                for (let j = chunk.length; j < perRow; j++) {
-                    const ghost = document.createElement('div');
-                    ghost.className = 'shelf-book shelf-book--ghost';
-                    ghost.setAttribute('aria-hidden', 'true');
-                    plank.appendChild(ghost);
-                }
-            }
-
-            row.appendChild(plank);
-            target.appendChild(row);
-        }
-    }
-
-    buildShelves();
-
-    let resizeTimer;
-    window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(buildShelves, 150);
-    });
 })();
 </script>
 

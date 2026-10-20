@@ -15,6 +15,19 @@ The Online Lezen (Online Reading) feature allows users to browse and read books 
 - Fully responsive design (desktop, tablet, mobile)
 - Smooth animations and transitions
 
+### Dynamic bookshelf sections (`/bibliotheek`)
+- Sections use the language and book type configured in book content management.
+- Uploaded book content covers are shown for published HTML books and books with an enabled PDF reader. Disabled PDF books and unpublished HTML-only books retain the standard cover.
+- Dutch, English and Turkish books have separate sections. Prayer books and Qurans are grouped under "Dua’s & Qur’an", regardless of language.
+- Unclassified books remain visible under "Overige boeken"; no language is guessed from a title.
+- "Laatst gelezen" uses this browser's reading history, newest first, and links to the saved page. Books also remain in their regular section.
+- Recent books show their saved page on a centered Delima badge on the cover. Reading history is displayed only on this shelf, not duplicated in the sidebar.
+- Empty sections are omitted. Removed or unavailable books do not appear in recent reading.
+- Each section occupies one horizontal shelf with compact headings. Overflowing books can be reached by swiping, scrolling, arrow buttons, or keyboard navigation.
+- Shelves fit three books at once on mobile and desktop, provided the section contains enough books.
+- Headers share the same minimum height, fixed-width icon alignment and reserved navigation space, including shelves that do not need navigation.
+- Sections refresh on browser back navigation and cross-tab history changes. Resizing updates navigation controls without resetting the scroll position.
+
 ### 📖 PDF Reader Page (`/online-lezen/{slug}`)
 - Full-screen PDF viewer
 - Book information and description

@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         tailwindcss(),
         laravel({
-            input: ['resources/css/front-end-style.css', 'resources/css/dashboard-style.css', 'resources/css/reader-book.css', 'resources/css/bookshelf.css', 'resources/js/main.js', 'resources/js/dashboard.js', 'resources/js/delivery-options.js'],
+            input: ['resources/css/front-end-style.css', 'resources/css/dashboard-style.css', 'resources/css/reader-book.css', 'resources/css/bookshelf.css', 'resources/js/bookshelf.js', 'resources/js/main.js', 'resources/js/dashboard.js', 'resources/js/delivery-options.js'],
             refresh: [
                 'resources/views/**/*.blade.php',
                 'routes/**/*.php',
