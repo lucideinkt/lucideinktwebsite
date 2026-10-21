@@ -62,11 +62,16 @@
 }
 
 .book-reader-scope .cevsen-separator {
-    font-family: 'Scheherazade New', serif;
-    font-size: 0.8em;
-    font-weight: 700;
-    vertical-align: super;
-    line-height: 0;
+    font-family: 'OmarNaskhRegular', serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #9a7b49;
+    vertical-align: baseline;
+    line-height: normal;
+}
+
+.book-reader-scope .cevsen-verse-number {
+    color: #9a7b49;
 }
 
 /* =========================================================
@@ -946,6 +951,8 @@ body.dark-mode .book-reader-scope .footnote-p sup { color: #b0a080; }
 body.dark-mode .book-reader-scope .text-arabic { color: #e8a87c; }
 body.dark-mode .book-reader-scope .text-arabic-inline { color: #e8a87c; }
 body.dark-mode .book-reader-scope .honorific { color: #e8a87c; }
+body.dark-mode .book-reader-scope .cevsen-separator { color: #c09060; }
+body.dark-mode .book-reader-scope .cevsen-verse-number { color: #c09060; }
 
 
 /* Sup pointer (legacy) */
