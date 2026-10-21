@@ -42,12 +42,14 @@ class BookPageSeedersValidationTest extends TestCase
         $this->assertCount(100, $pages);
         $this->assertStringNotContainsString('<h2>Cevşen-ül Kebir</h2>', $pages[0]['content']);
         $this->assertStringNotContainsString("\u{06EA}", $content);
+        $this->assertSame(100, mb_substr_count($content, "\u{06DD}"));
+        $this->assertStringContainsString('<span class="cevsen-verse-number">۝١</span>', $pages[0]['content']);
         $this->assertSame(550, mb_substr_count($content, "\u{0656}"));
         $this->assertStringContainsString("عَظ\u{0656}يمُ", $content);
         $this->assertStringContainsString("حَك\u{0656}يمُ", $content);
         $this->assertStringNotContainsString("\u{2733}", $content);
         $this->assertStringNotContainsString("\u{066D}", $content);
-        $this->assertSame(1021, substr_count($content, '<span class="cevsen-separator">*</span>'));
+        $this->assertSame(1021, substr_count($content, '<span class="cevsen-separator">۞</span>'));
     }
 
     public function test_book_page_seeders_have_no_unresolved_validation_findings(): void
