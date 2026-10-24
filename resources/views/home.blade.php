@@ -272,8 +272,7 @@
                 {{-- Section header --}}
                 <div class="articles-section-heading">
                     <h2 class="title articles-section-title">
-                        <span class="articles-section-title__line">Artikelen uit</span>
-                        <span class="articles-section-title__line articles-section-title__line--second">de Risale-i Nur</span>
+                        Artikelen
                     </h2>
                     <div class="articles-section-ornament" aria-hidden="true">
                         <span class="aso-line"></span>
