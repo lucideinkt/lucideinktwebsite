@@ -280,19 +280,23 @@
     {{-- Boekinhoud --}}
     <main class="reader-wrap">
         <article class="book-reader-scope" id="reader-content" lang="nl" role="main"
+            data-book-slug="{{ $product->slug }}"
             data-product-id="{{ $product->id }}"
             data-api-url="{{ route('onlineLezenPagesApi', $product->slug) }}"
             data-last-page="{{ $pages->last()->page_number }}"
             data-total-pages="{{ $allPageMeta->max('page_number') }}"
         >
-            @php $bookTitle = $pages->first()?->book_title; @endphp
+            @php
+                $bookTitle = $pages->first()?->book_title;
+                $isStandaloneDuaBook = in_array($product->slug, ['cevsen-ul-kebir', 'namaz-tesbihati'], true);
+            @endphp
             @if($bookTitle)
-            <div class="text-center page-title-series{{ $product->slug === 'cevsen-ul-kebir' ? ' page-title-series--cevsen' : '' }}">
-                @if($product->slug !== 'cevsen-ul-kebir')
+            <div class="text-center page-title-series{{ $isStandaloneDuaBook ? ' page-title-series--cevsen' : '' }}">
+                @if(!$isStandaloneDuaBook)
                 <p>Uit de Reeks van de Risale-i Nur</p>
                 @endif
                 <h1 class="book-title">{{ $bookTitle }}</h1>
-                @if($product->slug !== 'cevsen-ul-kebir')
+                @if(!$isStandaloneDuaBook)
                 <p>Bedi&uuml;zzaman Said Nurs&icirc;</p>
                 @endif
             </div>
