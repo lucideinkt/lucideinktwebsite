@@ -331,6 +331,8 @@ class BookPagesApiTest extends TestCase
             'online_lezen_image' => 'images/native-cover.png',
             'book_content_cover' => 'products/book-content-covers/custom-cover.webp',
             'image_1' => 'images/default-cover.png',
+            'book_content_language' => 'nl',
+            'book_content_type' => 'leesboek',
             'book_content_published' => true,
         ]);
         BookPage::create([
@@ -341,6 +343,8 @@ class BookPagesApiTest extends TestCase
         $secondBook = Product::query()->create([
             'slug' => 'another-native-reader-book',
             'title' => 'Another Native Reader Book',
+            'online_lezen_image' => 'images/non-library-cover.png',
+            'image_1' => 'images/default-cover.png',
             'book_content_published' => true,
         ]);
         BookPage::create([
@@ -373,6 +377,9 @@ class BookPagesApiTest extends TestCase
             ->assertJsonPath('books.1.title', 'New Native Reader Book')
             ->assertJsonPath('books.1.description', 'A short book description.')
             ->assertJsonPath('books.1.cover_image', secure_url('storage/products/book-content-covers/custom-cover.webp'))
+            ->assertJsonPath('books.1.language', 'nl')
+            ->assertJsonPath('books.1.book_type', 'leesboek')
+            ->assertJsonPath('books.0.cover_image', null)
             ->assertJsonMissing(['cover_image' => secure_url('storage/products/book-content-covers/unpublished-cover.webp')])
             ->assertJsonPath('books.1.page_count', 1)
             ->assertJsonPath('books.1.pages_url', route('api.v1.books.pages.index', ['slug' => 'new-native-reader-book']))

@@ -65,9 +65,7 @@ class BookCatalogApiController extends Controller
 
     private function coverImageUrl(Product $product): ?string
     {
-        $image = ($product->book_content_published ? $product->book_content_cover : null)
-            ?: $product->online_lezen_image
-            ?: $product->image_1;
+        $image = $product->book_content_published ? $product->book_content_cover : null;
         if (! $image) {
             return null;
         }
