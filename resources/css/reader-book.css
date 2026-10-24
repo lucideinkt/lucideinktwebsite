@@ -92,7 +92,7 @@
     font-family: 'DelimaProRegular', Georgia, serif;
     font-size: var(--reader-font-size, 19px);
     --arabic-font-size: 29px;
-    line-height: 1.85;
+    line-height: 1.7;
     color: #2a1a0a;
     background-color: transparent; /* achtergrond op body gezet */
     -webkit-font-smoothing: antialiased;
@@ -126,7 +126,7 @@
 .book-reader-scope p {
     margin-top: 0;
     margin-bottom: 1.1em;
-    line-height: 1.85;
+    line-height: 1.7;
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
