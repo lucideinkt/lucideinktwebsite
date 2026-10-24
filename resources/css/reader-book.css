@@ -832,6 +832,15 @@ body.dark-mode .fn-popover__text .text-underline {
         max-width: 100%;
     }
 
+    .book-reader-scope p {
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+
     .book-reader-scope .text-arabic {
         margin: 0.2em 0 0.2em;
     }
@@ -849,11 +858,6 @@ body.dark-mode .fn-popover__text .text-underline {
 }
 
 @media (max-width: 480px) {
-    .book-reader-scope p {
-        text-align: left;
-        hyphens: none;
-    }
-
     .book-reader-scope .book-title {
         font-size: 60px;
         line-height: 1.1;
