@@ -61,6 +61,15 @@
     unicode-range: U+002A;
 }
 
+@font-face {
+    font-family: 'ScheherazadeArabicFallback';
+    src: url('../fonts/ScheherazadeNew-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
+}
+
 .book-reader-scope .cevsen-separator {
     font-family: 'OmarNaskhRegular', serif;
     font-size: 1em;
@@ -70,7 +79,8 @@
     line-height: normal;
 }
 
-.book-reader-scope .cevsen-verse-number {
+.book-reader-scope .cevsen-verse-number,
+.book-reader-scope .tesbihat-ornament {
     color: #9a7b49;
 }
 
@@ -134,6 +144,18 @@
     widows: 3;
     color: var(--main-font-color);
     text-indent: 1.5em;
+}
+
+.book-reader-scope[data-book-slug="namaz-tesbihati"] .page p:not(.text-arabic):not([lang="ar"]):not(.page-number):not(.footnote-p) {
+    margin-bottom: 0.4em;
+}
+
+.book-reader-scope[data-book-slug="namaz-tesbihati"] .page > .page-number + p:not(.text-arabic):not([lang="ar"]):not(.footnote-p) {
+    margin-bottom: 0.8em;
+}
+
+.book-reader-scope[data-book-slug="namaz-tesbihati"] .page > .page-number + p > strong {
+    font-size: 1.15em;
 }
 
 .book-reader-scope span {
@@ -330,7 +352,7 @@
 
 /* â”€â”€ Arabische tekst â”€â”€ */
 .book-reader-scope .text-arabic {
-    font-family: 'OmarNaskhRegular', serif;
+    font-family: 'OmarNaskhRegular', 'ScheherazadeArabicFallback', serif;
     font-size: var(--reader-arabic-font-size, 29px);
     line-height: 2;
     direction: rtl;
@@ -417,7 +439,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 
 /* Footnote superscript within bismillah */
 .book-reader-scope .text-arabic-inline {
-    font-family: 'OmarNaskhRegular', serif;
+    font-family: 'OmarNaskhRegular', 'ScheherazadeArabicFallback', serif;
     font-size: var(--reader-arabic-font-size, 29px);
     line-height: inherit;
     direction: rtl;
@@ -944,6 +966,16 @@ body.dark-mode .book-reader-scope .hr-section-divider {
     border-bottom-color: rgba(232, 168, 124, 0.15);
 }
 
+.book-reader-scope .hr-tesbihat {
+    border: 0;
+    border-top: 1px solid rgba(var(--main-font-color-rgb, 90, 0, 0), 0.15);
+    margin: 1.1em 0;
+}
+
+body.dark-mode .book-reader-scope .hr-tesbihat {
+    border-top-color: rgba(232, 168, 124, 0.2);
+}
+
 /* Page number */
 body.dark-mode .book-reader-scope .page-number { color: #4a4030; }
 
@@ -956,7 +988,8 @@ body.dark-mode .book-reader-scope .text-arabic { color: #e8a87c; }
 body.dark-mode .book-reader-scope .text-arabic-inline { color: #e8a87c; }
 body.dark-mode .book-reader-scope .honorific { color: #e8a87c; }
 body.dark-mode .book-reader-scope .cevsen-separator { color: #c09060; }
-body.dark-mode .book-reader-scope .cevsen-verse-number { color: #c09060; }
+body.dark-mode .book-reader-scope .cevsen-verse-number,
+body.dark-mode .book-reader-scope .tesbihat-ornament { color: #c09060; }
 
 
 /* Sup pointer (legacy) */

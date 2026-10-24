@@ -24,6 +24,14 @@ return [
         range(1, 100)
     ),
 
+    'namaz-tesbihati' => [
+        ['level' => 'main', 'title' => 'Fajr – Ochtendgebed', 'subtitle' => null, 'page' => 1],
+        ['level' => 'main', 'title' => 'Dhuhr – Middaggebed', 'subtitle' => null, 'page' => 2],
+        ['level' => 'main', 'title' => 'Asr – Namiddaggebed', 'subtitle' => null, 'page' => 3],
+        ['level' => 'main', 'title' => 'Maghrib – Avondgebed', 'subtitle' => null, 'page' => 4],
+        ['level' => 'main', 'title' => 'Isha – Nachtgebed', 'subtitle' => null, 'page' => 5],
+    ],
+
     'het-traktaat-over-de-herzameling-nederlands' => [
         ['level' => 'main', 'title' => 'Het Tiende Woord',       'subtitle' => 'Aangaande Hashr – De Herzameling', 'page' => 5],
         ['level' => 'sub',  'title' => 'Opmerking',               'subtitle' => null, 'page' => 5],
