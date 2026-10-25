@@ -1184,8 +1184,10 @@ body { margin: 0; padding: 0; width: 100%; }
     gap: 4px;
 }
 .bookshelf-section-controls[hidden] {
-    display: inline-flex;
-    visibility: hidden;
+    display: none;
+}
+.bookshelf-section-header:has(> .bookshelf-section-controls[hidden]) {
+    grid-template-columns: minmax(0, 1fr) auto;
 }
 .bookshelf-scroll-button {
     display: inline-flex;
@@ -1219,7 +1221,7 @@ body { margin: 0; padding: 0; width: 100%; }
     overflow-x: auto;
     overflow-y: hidden;
     overscroll-behavior-x: contain;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: none;
     scrollbar-width: none;
     padding: 6px 0 0;
     margin: -6px 0 0;
@@ -1246,7 +1248,6 @@ body { margin: 0; padding: 0; width: 100%; }
 }
 .bookshelf-track > .shelf-book {
     flex: 0 0 calc((100% - 2 * var(--shelf-track-gap, 24px)) / 3);
-    scroll-snap-align: start;
 }
 .bookshelf-track > .shelf-book::after {
     content: none;
