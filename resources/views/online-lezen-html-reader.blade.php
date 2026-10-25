@@ -622,6 +622,54 @@
 
         if (!readerEl) return;
 
+        const useOmarJoiners = document.documentElement.classList.contains('ios-device');
+
+        function readerSourceText(text) {
+            return useOmarJoiners ? text.replace(/\u200d/g, '') : text;
+        }
+
+        function readerDomOffset(text, sourceOffset) {
+            if (!useOmarJoiners) return sourceOffset;
+            let offset = 0, source = 0;
+            while (offset < text.length && source < sourceOffset) {
+                if (text[offset] !== '\u200d') source++;
+                offset++;
+            }
+            while (text[offset] === '\u200d') offset++;
+            return offset;
+        }
+
+        function readerTextMatch(text, query) {
+            const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+            const source = readerSourceText(text);
+            const index = normalize(source).indexOf(normalize(readerSourceText(query)));
+            if (index === -1) return null;
+            return {
+                start: readerDomOffset(text, index),
+                end: readerDomOffset(text, index + readerSourceText(query).length),
+            };
+        }
+
+        if (useOmarJoiners) {
+            // CoreText duplicates below-letter marks in certain Arabic/Persian joins.
+            // ZWJ preserves joining while bypassing that substitution; keep it display-only.
+            const walker = document.createTreeWalker(readerEl, NodeFilter.SHOW_TEXT);
+            let node;
+            while ((node = walker.nextNode())) {
+                if (!node.parentElement?.closest('.text-arabic, .text-arabic-inline, .honorific')) continue;
+                node.textContent = node.textContent.replace(
+                    /([بجچي][\p{M}]*[ِٖ][\p{M}]*)(?=[ابتثجحخدذرزسشصضطظعغفقكلمنهويىأإآؤئةپچژگکی])/gu,
+                    '$1\u200d'
+                );
+            }
+            readerEl.addEventListener('copy', event => {
+                const text = window.getSelection()?.toString();
+                if (!text?.includes('\u200d') || !event.clipboardData) return;
+                event.clipboardData.setData('text/plain', readerSourceText(text));
+                event.preventDefault();
+            });
+        }
+
         const API_URL_VAL = readerEl.dataset.apiUrl;
         const allPageNumbers = @json($allPageMeta->pluck('page_number')->toArray());
         const sorted    = allPageNumbers.slice().sort((a, b) => a - b);
@@ -1803,8 +1851,9 @@
             const pre = document.createRange();
             pre.selectNodeContents(pageEl);
             pre.setEnd(range.startContainer, range.startOffset);
-            const s = pre.toString().length;
-            return { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), pageNum, color: null, text: range.toString().trim().slice(0, 80), startOffset: s, endOffset: s + range.toString().length, productId: PRODUCT_ID, productTitle: PRODUCT_TITLE, readerUrl: READER_URL };
+            const s = readerSourceText(pre.toString()).length;
+            const text = readerSourceText(range.toString());
+            return { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), pageNum, color: null, text: text.trim().slice(0, 80), startOffset: s, endOffset: s + text.length, productId: PRODUCT_ID, productTitle: PRODUCT_TITLE, readerUrl: READER_URL };
         }
 
         function hlDeserialize(pageEl, s, e) {
@@ -1812,9 +1861,9 @@
             function walk(n) {
                 if (sn && en) return;
                 if (n.nodeType === Node.TEXT_NODE) {
-                    const l = n.textContent.length;
-                    if (!sn && c + l > s)  { sn = n; so = s - c; }
-                    if (!en && c + l >= e) { en = n; eo = e - c; }
+                    const l = readerSourceText(n.textContent).length;
+                    if (!sn && c + l > s)  { sn = n; so = readerDomOffset(n.textContent, s - c); }
+                    if (!en && c + l >= e) { en = n; eo = readerDomOffset(n.textContent, e - c); }
                     c += l;
                 } else { for (const ch of n.childNodes) { walk(ch); if (sn && en) break; } }
             }
@@ -2112,8 +2161,8 @@
                 ? (hlPageNum(hlPageEl(hlMark)) || 0)
                 : (hlPending?.pageNum || 0);
             const text = hlMark
-                ? (hlMark.textContent.trim().slice(0, 80))
-                : (hlPending?.range.toString().trim().slice(0, 80) || '');
+                ? readerSourceText(hlMark.textContent).trim().slice(0, 80)
+                : readerSourceText(hlPending?.range.toString() || '').trim().slice(0, 80);
             if (!pageNum) { hlHide(); return; }
 
             // Find the paragraph that contains the selection
@@ -2158,7 +2207,7 @@
 
         document.getElementById('hl-copy-btn')?.addEventListener('click', e => {
             e.stopPropagation();
-            const text = hlMark ? hlMark.textContent : (hlPending?.range.toString() || '');
+            const text = readerSourceText(hlMark ? hlMark.textContent : (hlPending?.range.toString() || ''));
             if (text) navigator.clipboard?.writeText(text).catch(() => {
                 const ta = Object.assign(document.createElement('textarea'), { value: text });
                 Object.assign(ta.style, { position: 'fixed', opacity: '0' });
@@ -2291,11 +2340,6 @@
                 if (!query || !pageEl) return;
                 clearAllHighlights();
 
-                function normStr(s) {
-                    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-                }
-                const queryNorm = normStr(query);
-
                 function findAndScroll() {
                     const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
                         acceptNode(node) {
@@ -2309,15 +2353,14 @@
 
                     let node;
                     while ((node = walker.nextNode())) {
-                        const normText = normStr(node.textContent);
-                        const idx = normText.indexOf(queryNorm);
-                        if (idx === -1) continue;
+                        const match = readerTextMatch(node.textContent, query);
+                        if (!match) continue;
 
-                        const before = document.createTextNode(node.textContent.slice(0, idx));
+                        const before = document.createTextNode(node.textContent.slice(0, match.start));
                         const mark   = document.createElement('mark');
                         mark.className = 'reader-search-highlight';
-                        mark.textContent = node.textContent.slice(idx, idx + query.length);
-                        const after  = document.createTextNode(node.textContent.slice(idx + query.length));
+                        mark.textContent = node.textContent.slice(match.start, match.end);
+                        const after  = document.createTextNode(node.textContent.slice(match.end));
                         node.parentNode.insertBefore(before, node);
                         node.parentNode.insertBefore(mark, node);
                         node.parentNode.insertBefore(after, node);
@@ -2413,12 +2456,6 @@
                         if (!pageEl) { closeSearch(); return; }
 
 
-                        // Helper: remove diacritics for accent-insensitive DOM matching
-                        function normStr(s) {
-                            return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-                        }
-                        const queryNorm = normStr(query);
-
                         const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
                             acceptNode(node) {
                                 const p = node.parentElement;
@@ -2434,8 +2471,8 @@
                         let fnRefBtn = null;
 
                         while ((node = walker.nextNode())) {
-                            const idx = normStr(node.textContent).indexOf(queryNorm);
-                            if (idx === -1) continue;
+                            const match = readerTextMatch(node.textContent, query);
+                            if (!match) continue;
 
                             // Check if this match lives inside a hidden .page-footnote
                             const footnoteSection = node.parentElement?.closest('.page-footnote');
@@ -2458,11 +2495,11 @@
                             }
 
                             // Normal (visible) match — wrap in <mark>
-                            const before = document.createTextNode(node.textContent.slice(0, idx));
+                            const before = document.createTextNode(node.textContent.slice(0, match.start));
                             const mark   = document.createElement('mark');
                             mark.className = 'reader-search-highlight';
-                            mark.textContent = node.textContent.slice(idx, idx + query.length);
-                            const after  = document.createTextNode(node.textContent.slice(idx + query.length));
+                            mark.textContent = node.textContent.slice(match.start, match.end);
+                            const after  = document.createTextNode(node.textContent.slice(match.end));
                             node.parentNode.insertBefore(before, node);
                             node.parentNode.insertBefore(mark, node);
                             node.parentNode.insertBefore(after, node);
@@ -2490,13 +2527,13 @@
                                     const pWalker = document.createTreeWalker(popoverText, NodeFilter.SHOW_TEXT);
                                     let pNode;
                                     while ((pNode = pWalker.nextNode())) {
-                                        const pIdx = normStr(pNode.textContent).indexOf(queryNorm);
-                                        if (pIdx === -1) continue;
-                                        const pBefore = document.createTextNode(pNode.textContent.slice(0, pIdx));
+                                        const match = readerTextMatch(pNode.textContent, query);
+                                        if (!match) continue;
+                                        const pBefore = document.createTextNode(pNode.textContent.slice(0, match.start));
                                         const pMark   = document.createElement('mark');
                                         pMark.className = 'reader-search-highlight';
-                                        pMark.textContent = pNode.textContent.slice(pIdx, pIdx + query.length);
-                                        const pAfter  = document.createTextNode(pNode.textContent.slice(pIdx + query.length));
+                                        pMark.textContent = pNode.textContent.slice(match.start, match.end);
+                                        const pAfter  = document.createTextNode(pNode.textContent.slice(match.end));
                                         pNode.parentNode.insertBefore(pBefore, pNode);
                                         pNode.parentNode.insertBefore(pMark, pNode);
                                         pNode.parentNode.insertBefore(pAfter, pNode);
