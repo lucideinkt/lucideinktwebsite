@@ -1,5 +1,18 @@
 ## Lucide Inkt Website
 
+### Arabisch op iPhone/iPad
+
+De boeklezer gebruikt alleen op iOS `resources/fonts/OmarNaskh-Reader.ttf`.
+Dit is dezelfde Omar Naskh met ongewijzigde glyphs en letterbreedtes; een guard in
+GSUB lookup 76 voorkomt dat CoreText klinkertekens tweemaal invoegt. De variant
+komt uit de mobiele app (`risale-lezer/scripts/build-reader-font.py`).
+Android en desktop houden het oorspronkelijke font. Er worden geen extra
+verbindingstekens aan de tekst toegevoegd: die werden door CoreText als spaties
+getekend en verstoorden sommige letterverbindingen.
+
+Deploy de reader-template samen met de gebouwde CSS en font-assets
+(`npm run build`). Opnieuw seeden of boekinhoud wijzigen is niet nodig.
+
 ### Boeknavigatie
 
 `GET /api/v1/books/{slug}/navigation` geeft voor gepubliceerde boeken met pagina's

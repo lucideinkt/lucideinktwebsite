@@ -622,52 +622,14 @@
 
         if (!readerEl) return;
 
-        const useOmarJoiners = document.documentElement.classList.contains('ios-device');
-
-        function readerSourceText(text) {
-            return useOmarJoiners ? text.replace(/\u200d/g, '') : text;
-        }
-
-        function readerDomOffset(text, sourceOffset) {
-            if (!useOmarJoiners) return sourceOffset;
-            let offset = 0, source = 0;
-            while (offset < text.length && source < sourceOffset) {
-                if (text[offset] !== '\u200d') source++;
-                offset++;
-            }
-            while (text[offset] === '\u200d') offset++;
-            return offset;
-        }
-
         function readerTextMatch(text, query) {
             const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-            const source = readerSourceText(text);
-            const index = normalize(source).indexOf(normalize(readerSourceText(query)));
+            const index = normalize(text).indexOf(normalize(query));
             if (index === -1) return null;
             return {
-                start: readerDomOffset(text, index),
-                end: readerDomOffset(text, index + readerSourceText(query).length),
+                start: index,
+                end: index + query.length,
             };
-        }
-
-        if (useOmarJoiners) {
-            // CoreText duplicates below-letter marks in certain Arabic/Persian joins.
-            // ZWJ preserves joining while bypassing that substitution; keep it display-only.
-            const walker = document.createTreeWalker(readerEl, NodeFilter.SHOW_TEXT);
-            let node;
-            while ((node = walker.nextNode())) {
-                if (!node.parentElement?.closest('.text-arabic, .text-arabic-inline, .honorific')) continue;
-                node.textContent = node.textContent.replace(
-                    /([بجچي][\p{M}]*[ِٖ][\p{M}]*)(?=[ابتثجحخدذرزسشصضطظعغفقكلمنهويىأإآؤئةپچژگکی])/gu,
-                    '$1\u200d'
-                );
-            }
-            readerEl.addEventListener('copy', event => {
-                const text = window.getSelection()?.toString();
-                if (!text?.includes('\u200d') || !event.clipboardData) return;
-                event.clipboardData.setData('text/plain', readerSourceText(text));
-                event.preventDefault();
-            });
         }
 
         const API_URL_VAL = readerEl.dataset.apiUrl;
@@ -1851,8 +1813,8 @@
             const pre = document.createRange();
             pre.selectNodeContents(pageEl);
             pre.setEnd(range.startContainer, range.startOffset);
-            const s = readerSourceText(pre.toString()).length;
-            const text = readerSourceText(range.toString());
+            const s = pre.toString().length;
+            const text = range.toString();
             return { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), pageNum, color: null, text: text.trim().slice(0, 80), startOffset: s, endOffset: s + text.length, productId: PRODUCT_ID, productTitle: PRODUCT_TITLE, readerUrl: READER_URL };
         }
 
@@ -1861,9 +1823,9 @@
             function walk(n) {
                 if (sn && en) return;
                 if (n.nodeType === Node.TEXT_NODE) {
-                    const l = readerSourceText(n.textContent).length;
-                    if (!sn && c + l > s)  { sn = n; so = readerDomOffset(n.textContent, s - c); }
-                    if (!en && c + l >= e) { en = n; eo = readerDomOffset(n.textContent, e - c); }
+                    const l = n.textContent.length;
+                    if (!sn && c + l > s)  { sn = n; so = s - c; }
+                    if (!en && c + l >= e) { en = n; eo = e - c; }
                     c += l;
                 } else { for (const ch of n.childNodes) { walk(ch); if (sn && en) break; } }
             }
@@ -2161,8 +2123,8 @@
                 ? (hlPageNum(hlPageEl(hlMark)) || 0)
                 : (hlPending?.pageNum || 0);
             const text = hlMark
-                ? readerSourceText(hlMark.textContent).trim().slice(0, 80)
-                : readerSourceText(hlPending?.range.toString() || '').trim().slice(0, 80);
+                ? hlMark.textContent.trim().slice(0, 80)
+                : (hlPending?.range.toString() || '').trim().slice(0, 80);
             if (!pageNum) { hlHide(); return; }
 
             // Find the paragraph that contains the selection
@@ -2207,7 +2169,7 @@
 
         document.getElementById('hl-copy-btn')?.addEventListener('click', e => {
             e.stopPropagation();
-            const text = readerSourceText(hlMark ? hlMark.textContent : (hlPending?.range.toString() || ''));
+            const text = hlMark ? hlMark.textContent : (hlPending?.range.toString() || '');
             if (text) navigator.clipboard?.writeText(text).catch(() => {
                 const ta = Object.assign(document.createElement('textarea'), { value: text });
                 Object.assign(ta.style, { position: 'fixed', opacity: '0' });
