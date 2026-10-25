@@ -22,6 +22,7 @@
         "@splidejs/splide": "^4.1.4",
         "flowbite": "^4.0.2",
         "glightbox": "^3.3.1",
+        "hyphen": "^1.14.1",
         "pdfjs-dist": "^5.4.530",
         "swiper": "^12.1.3"
     }

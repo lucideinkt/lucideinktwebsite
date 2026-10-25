@@ -623,12 +623,19 @@
         if (!readerEl) return;
 
         function readerTextMatch(text, query) {
-            const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-            const index = normalize(text).indexOf(normalize(query));
+            const fold = value => value.normalize('NFD').replace(/[\u0300-\u036f\u00AD]/g, '').toLowerCase();
+            let folded = '';
+            const sourceIndex = [];
+            for (let i = 0; i < text.length; i++) {
+                const part = fold(text[i]);
+                for (let j = 0; j < part.length; j++) { folded += part[j]; sourceIndex.push(i); }
+            }
+            const needle = fold(query);
+            const index = needle ? folded.indexOf(needle) : -1;
             if (index === -1) return null;
             return {
-                start: index,
-                end: index + query.length,
+                start: sourceIndex[index],
+                end: sourceIndex[index + needle.length - 1] + 1,
             };
         }
 
@@ -1809,24 +1816,29 @@
         }
         function hlPageNum(el) { return parseInt(Object.keys(pageMap).find(k => pageMap[k] === el), 10) || null; }
 
+        const stripShy = value => value.replace(/\u00AD/g, '');
+
         function hlSerialize(range, pageEl, pageNum) {
             const pre = document.createRange();
             pre.selectNodeContents(pageEl);
             pre.setEnd(range.startContainer, range.startOffset);
-            const s = pre.toString().length;
-            const text = range.toString();
+            const s = stripShy(pre.toString()).length;
+            const text = stripShy(range.toString());
             return { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), pageNum, color: null, text: text.trim().slice(0, 80), startOffset: s, endOffset: s + text.length, productId: PRODUCT_ID, productTitle: PRODUCT_TITLE, readerUrl: READER_URL };
         }
 
+        // Offsets count source characters; soft hyphens inserted for justification are skipped.
         function hlDeserialize(pageEl, s, e) {
             let c = 0, sn = null, so = 0, en = null, eo = 0;
             function walk(n) {
                 if (sn && en) return;
                 if (n.nodeType === Node.TEXT_NODE) {
-                    const l = n.textContent.length;
-                    if (!sn && c + l > s)  { sn = n; so = s - c; }
-                    if (!en && c + l >= e) { en = n; eo = e - c; }
-                    c += l;
+                    const t = n.textContent;
+                    for (let i = 0; i <= t.length && !(sn && en); i++) {
+                        if (!sn && c === s && i < t.length && t[i] !== '\u00AD') { sn = n; so = i; }
+                        if (!en && c === e && i > 0) { en = n; eo = i; }
+                        if (i < t.length && t[i] !== '\u00AD') c++;
+                    }
                 } else { for (const ch of n.childNodes) { walk(ch); if (sn && en) break; } }
             }
             walk(pageEl);
@@ -2122,9 +2134,9 @@
             const pageNum = hlMark
                 ? (hlPageNum(hlPageEl(hlMark)) || 0)
                 : (hlPending?.pageNum || 0);
-            const text = hlMark
-                ? hlMark.textContent.trim().slice(0, 80)
-                : (hlPending?.range.toString() || '').trim().slice(0, 80);
+            const text = stripShy(hlMark
+                ? hlMark.textContent
+                : (hlPending?.range.toString() || '')).trim().slice(0, 80);
             if (!pageNum) { hlHide(); return; }
 
             // Find the paragraph that contains the selection
@@ -2169,7 +2181,7 @@
 
         document.getElementById('hl-copy-btn')?.addEventListener('click', e => {
             e.stopPropagation();
-            const text = hlMark ? hlMark.textContent : (hlPending?.range.toString() || '');
+            const text = stripShy(hlMark ? hlMark.textContent : (hlPending?.range.toString() || ''));
             if (text) navigator.clipboard?.writeText(text).catch(() => {
                 const ta = Object.assign(document.createElement('textarea'), { value: text });
                 Object.assign(ta.style, { position: 'fixed', opacity: '0' });

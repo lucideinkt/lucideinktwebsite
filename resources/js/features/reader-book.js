@@ -2,6 +2,29 @@
     const readerEl = document.getElementById('reader-content');
     if (!readerEl) return;
 
+    // Browser hyphenation dictionaries miss many Dutch compounds, which leaves wide
+    // gaps in justified lines. Insert explicit soft hyphens (same approach as the app);
+    // highlight offsets, search and copy ignore U+00AD.
+    const hyphenatorReady = import('hyphen/nl').then(m => m.hyphenateSync).catch(() => null);
+    const hyphenSkipSelector = '[class*="arabic"], [lang^="ar"], h1, h2, h3, h4, h5, h6, .text-center, script, style, button';
+
+    function hyphenatePage(page) {
+        hyphenatorReady.then(hyphenateSync => {
+            if (!hyphenateSync) return;
+            const walker = document.createTreeWalker(page, NodeFilter.SHOW_TEXT, {
+                acceptNode: node => /[A-Za-zÀ-ÿ]{6}/.test(node.data) && !/[\u0600-\u06FF]/.test(node.data)
+                    && !node.parentElement?.closest(hyphenSkipSelector)
+                    ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT,
+            });
+            const nodes = [];
+            while (walker.nextNode()) nodes.push(walker.currentNode);
+            nodes.forEach(node => {
+                const hyphenated = hyphenateSync(node.data, { html: false, minWordLength: 6 });
+                if (hyphenated !== node.data) node.data = hyphenated;
+            });
+        });
+    }
+
     // Returns true if the HTML string ends with a → continuation arrow
     function endsWithArrow(html) {
         const text = html.replace(/<[^>]*>/g, '').trim();
@@ -63,6 +86,7 @@
         badgeCenterRaf = true;
         requestAnimationFrame(() => {
             badgeCenterRaf = false;
+            flowCenteredBreaks();
             centerBadgeNumbers();
         });
     }
@@ -71,6 +95,39 @@
         scheduleBadgeCentering();
         document.fonts?.ready?.then(() => {
             scheduleBadgeCentering();
+        });
+    }
+
+    // A hard break in a centred Dutch paragraph is layout for wide pages. When a segment wraps on its own
+    // anyway (mobile), the break only adds a ragged extra line, so it is hidden and the lines are balanced.
+    function flowCenteredBreaks() {
+        readerEl.querySelectorAll('p:not(.text-arabic)').forEach(block => {
+            if (!block.querySelector('br') || block.querySelector('.text-arabic, .arabic-short, .arabic-chunk')) return;
+            if (getComputedStyle(block).textAlign !== 'center') return;
+            block.querySelectorAll('br:not(.soft-br, .hard-br)').forEach(br => {
+                const before = document.createRange();
+                before.setStart(block, 0);
+                before.setEndBefore(br);
+                // A break after punctuation ends a verse or sentence and stays.
+                const soft = /[\p{L}\p{N}]$/u.test(before.toString().trimEnd());
+                br.classList.add(soft ? 'soft-br' : 'hard-br');
+                if (soft && (br.nextSibling?.nodeType !== Node.TEXT_NODE || !/^\s/.test(br.nextSibling.textContent))) br.after(' ');
+            });
+            block.classList.remove('break-flow');
+            const style = getComputedStyle(block);
+            const lineHeight = parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.5;
+            const nodes = [...block.childNodes];
+            const range = document.createRange();
+            let from = 0;
+            const wraps = [...nodes.map((node, index) => node.nodeName === 'BR' ? index : -1).filter(index => index >= 0), nodes.length]
+                .some(end => {
+                    range.setStart(block, from);
+                    range.setEnd(block, end);
+                    from = end + 1;
+                    const tops = [...range.getClientRects()].filter(rect => rect.width > 0).map(rect => rect.top);
+                    return tops.length > 1 && Math.max(...tops) - Math.min(...tops) > lineHeight / 2;
+                });
+            block.classList.toggle('break-flow', wraps);
         });
     }
 
@@ -88,12 +145,117 @@
         });
     }
 
-    // Short inline Arabic phrases (e.g. bismillah) must never wrap or get stretched by justification.
+    // A hard <br> right before an inline Arabic quote (optionally via a footnote marker) is
+    // source layout; it would leave a short ragged line, so let the quote continue the line.
+    function joinBreaksBeforeInlineArabic(page) {
+        page.querySelectorAll('br').forEach(br => {
+            let next = br.nextSibling;
+            while (next && ((next.nodeType === Node.TEXT_NODE && !next.textContent.trim())
+                || (next.nodeType === Node.ELEMENT_NODE && (next.matches('sup, .fn-ref, .sup-pointer'))))) next = next.nextSibling;
+            if (!next || next.nodeType !== Node.ELEMENT_NODE || !next.matches('.text-arabic-inline')) return;
+            const prev = br.previousSibling;
+            if (!prev || prev.nodeName === 'BR') return;
+            if (/\s$/.test(prev.textContent || '')) br.remove();
+            else br.replaceWith(' ');
+        });
+    }
+
+    // Short inline Arabic phrases must never wrap or get stretched by justification.
+    // Multi-word plain-text phrases are split into unbreakable single words so a justified
+    // line can break between any two Arabic words instead of leaving wide gaps.
     function markShortInlineArabic(page) {
         page.querySelectorAll('.text-arabic-inline').forEach(el => {
             const words = el.textContent.trim().split(/\s+/).filter(Boolean);
-            if (words.length && words.length <= 4) el.classList.add('text-arabic-inline--short');
+            if (!words.length) return;
+            if (words.length === 1 || el.children.length) {
+                if (words.length <= 4) el.classList.add('text-arabic-inline--short');
+                return;
+            }
+            const chunks = words.map(word => [word]);
+            el.textContent = '';
+            chunks.forEach((chunk, index) => {
+                if (index) el.append(' ');
+                const span = document.createElement('span');
+                span.className = 'text-arabic-chunk';
+                span.textContent = chunk.join(' ');
+                el.appendChild(span);
+            });
         });
+    }
+
+    // Verse ornaments (۞ ﴾ ﴿) in running Arabic get the same muted colour as Cevsen separators.
+    function markArabicOrnaments(page) {
+        page.querySelectorAll('.text-arabic, .text-arabic-inline').forEach(el => {
+            const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+            const nodes = [];
+            while (walker.nextNode()) {
+                const node = walker.currentNode;
+                if (/[\u06DE\uFD3E\uFD3F]/.test(node.data) && !node.parentElement.closest('.cevsen-separator')) nodes.push(node);
+            }
+            nodes.forEach(node => {
+                const frag = document.createDocumentFragment();
+                node.data.split(/([\u06DE\uFD3E\uFD3F])/).forEach((part, index) => {
+                    if (index % 2) {
+                        const span = document.createElement('span');
+                        span.className = 'cevsen-separator';
+                        span.textContent = part;
+                        frag.appendChild(span);
+                    } else if (part) frag.append(part);
+                });
+                node.replaceWith(frag);
+            });
+        });
+    }
+
+    // Every line holding inline Arabic gets the same, symmetric extra space above and below,
+    // sized for the tallest marks and deepest letters in the book, so no letter ever touches
+    // the neighbouring lines and all Arabic lines look alike. The margins are calc() expressions
+    // on the font-size variables, so they follow both font sliders without re-measuring.
+    const ARABIC_INK_ABOVE = 1.05; // highest mark above the baseline, in Arabic em
+    const ARABIC_INK_BELOW = 0.75; // deepest letter below the baseline, in Arabic em
+    const ARABIC_LINE_GAP = 0.1;   // minimum clearance to the neighbouring line, in Latin em
+    const fontMetricsCache = new Map();
+    const fontMetricsCanvas = document.createElement('canvas').getContext('2d');
+    async function fontMetrics(family) {
+        if (fontMetricsCache.has(family)) return fontMetricsCache.get(family);
+        const font = `100px ${family}`;
+        try { await document.fonts.load(font); } catch {}
+        fontMetricsCanvas.font = font;
+        const box = fontMetricsCanvas.measureText('H');
+        const metrics = {
+            ascent: box.fontBoundingBoxAscent / 100,
+            descent: box.fontBoundingBoxDescent / 100,
+            inkAscent: fontMetricsCanvas.measureText('bdfhklH').actualBoundingBoxAscent / 100,
+            inkDescent: fontMetricsCanvas.measureText('gjpqy').actualBoundingBoxDescent / 100,
+        };
+        if (!metrics.ascent) return null;
+        fontMetricsCache.set(family, metrics);
+        return metrics;
+    }
+    async function fitInlineArabicBoxes(page) {
+        const boxes = page.querySelectorAll('.text-arabic-inline--short, .text-arabic-chunk, .fn-arabic-tail');
+        const fixed = n => n.toFixed(4);
+        for (const el of boxes) {
+            const block = el.parentElement?.closest(':not(.text-arabic-inline):not(.fn-arabic-inline):not(.text-arabic-chunk):not(.fn-arabic-tail)');
+            if (!block) continue;
+            const blockStyle = getComputedStyle(block);
+            const [latin, arabic] = await Promise.all([fontMetrics(blockStyle.fontFamily), fontMetrics(getComputedStyle(el).fontFamily)]);
+            if (!latin || !arabic) continue;
+            const size = parseFloat(blockStyle.fontSize);
+            const ratio = (parseFloat(blockStyle.lineHeight) || (latin.ascent + latin.descent) * size) / size;
+            const sliderSize = parseFloat(blockStyle.getPropertyValue('--reader-font-size'));
+            const latinLength = k => sliderSize
+                ? `var(--reader-font-size) * ${fixed(k * size / sliderSize)}`
+                : `${fixed(k * size)}px`;
+            // Ink is sized on the regular Arabic size, so smaller honorifics get the same lines.
+            const arabicLength = k => `var(--reader-arabic-font-size, 1em) * ${k}`;
+            const halfLeading = (ratio - latin.ascent - latin.descent) / 2;
+            const extra = `max(${arabicLength(ARABIC_INK_ABOVE)} + ${latinLength(ARABIC_LINE_GAP + latin.inkDescent - ratio)}, `
+                + `${arabicLength(ARABIC_INK_BELOW)} + ${latinLength(ARABIC_LINE_GAP + latin.inkAscent - ratio)}, 0px)`;
+            el.style.setProperty('line-height', fixed(arabic.ascent + arabic.descent), 'important');
+            el.style.marginTop = `calc(${latinLength(latin.ascent + halfLeading)} + ${extra} - ${fixed(arabic.ascent)}em)`;
+            el.style.marginBottom = `calc(${latinLength(latin.descent + halfLeading)} + ${extra} - ${fixed(arabic.descent)}em)`;
+        }
     }
 
     function normalizeServerRenderedFnRefs(page) {
@@ -161,6 +323,27 @@
                 group.className = 'fn-arabic-inline';
                 citation.before(group);
                 group.append(citation, btn);
+                // Long phrases may wrap between words (like the app); only the last word stays with the badge.
+                const lastChunk = citation.querySelector('.text-arabic-chunk:last-child');
+                if (lastChunk) {
+                    lastChunk.classList.add('fn-arabic-tail');
+                    lastChunk.append(btn);
+                    group.classList.add('fn-arabic-inline--wrap');
+                } else if (!citation.classList.contains('text-arabic-inline--short')) {
+                    const walker = document.createTreeWalker(citation, NodeFilter.SHOW_TEXT);
+                    let lastText = null;
+                    while (walker.nextNode()) if (walker.currentNode.textContent.trim()) lastText = walker.currentNode;
+                    const match = lastText && /(\S+)(\s*)$/.exec(lastText.textContent);
+                    if (match) {
+                        const tail = document.createElement('span');
+                        tail.className = 'fn-arabic-tail';
+                        tail.textContent = match[1];
+                        lastText.textContent = lastText.textContent.slice(0, match.index);
+                        lastText.after(tail);
+                        tail.append(btn);
+                        group.classList.add('fn-arabic-inline--wrap');
+                    }
+                }
                 if (wrapper?.isConnected) {
                     if (wrapper.contains(group)) wrapper.replaceWith(group);
                     else wrapper.replaceWith(...wrapper.childNodes);
@@ -184,7 +367,10 @@
 
         normalizeLegacySupPointers(page);
         normalizeServerRenderedFnRefs(page);
+        joinBreaksBeforeInlineArabic(page);
         markShortInlineArabic(page);
+        markArabicOrnaments(page);
+        hyphenatePage(page);
 
         const footnoteMap = {};
         const arrowNums   = new Set();
@@ -213,6 +399,7 @@
 
         if (!Object.keys(footnoteMap).length) {
             wireFootnoteText(page);
+            fitInlineArabicBoxes(page);
             return;
         }
 
@@ -250,6 +437,7 @@
         });
 
         wireFootnoteText(page);
+        fitInlineArabicBoxes(page).then(queueBadgeCentering);
         resolveContinuations(page);
         queueBadgeCentering();
     }
@@ -302,6 +490,14 @@
     }, { rootMargin: '150% 0px' });
 
     readerEl.querySelectorAll('.page').forEach(page => pageWireObserver.observe(page));
+
+    document.addEventListener('copy', e => {
+        const selection = window.getSelection();
+        const text = selection?.toString() || '';
+        if (!text.includes('\u00AD') || !readerEl.contains(selection.anchorNode)) return;
+        e.clipboardData.setData('text/plain', text.replace(/\u00AD/g, ''));
+        e.preventDefault();
+    });
 
     // ── Watch for dynamically loaded pages (lazy-loaded books) ───────────────
     // Only watch direct children of readerEl — NOT subtree — to avoid firing on
