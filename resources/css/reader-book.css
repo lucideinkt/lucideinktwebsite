@@ -285,6 +285,34 @@ html.ios-device {
     font-weight: 500;
 }
 
+/* Titel verdeeld over meerdere h2's leest als één titel */
+.book-reader-scope .page-title-chapter h2:has(+ h2) {
+    margin-bottom: 0;
+}
+
+/* Arabisch direct onder een titel: de eigen regelhoogte van het Arabisch geeft al ruimte */
+.book-reader-scope .page-title-chapter:has(+ .text-arabic),
+.book-reader-scope .page-title-chapter:has(+ .text-arabic) > :last-child {
+    margin-bottom: 0;
+}
+
+.book-reader-scope .page-title-chapter + .text-arabic {
+    margin-top: 0.6em !important;
+}
+
+.book-reader-scope .page-title-chapter:has(> :nth-child(2)) + .text-arabic {
+    margin-top: 0.3em !important;
+}
+
+/* Centrale alinea waarvan een regel toch al afbreekt: harde breaks negeren, regels balanceren */
+.book-reader-scope p.break-flow br.soft-br {
+    display: none;
+}
+
+.book-reader-scope p.break-flow {
+    text-wrap: balance;
+}
+
 .book-reader-scope .page-title-chapter p {
     text-align: center;
     color: #666;
@@ -320,7 +348,7 @@ html.ios-device {
     font-size: 0.82em;
     line-height: 1.6;
     color: #234622;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
     text-align: left;
     hyphens: auto;
     -webkit-hyphens: auto;

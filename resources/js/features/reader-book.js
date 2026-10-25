@@ -86,6 +86,7 @@
         badgeCenterRaf = true;
         requestAnimationFrame(() => {
             badgeCenterRaf = false;
+            flowCenteredBreaks();
             centerBadgeNumbers();
         });
     }
@@ -94,6 +95,39 @@
         scheduleBadgeCentering();
         document.fonts?.ready?.then(() => {
             scheduleBadgeCentering();
+        });
+    }
+
+    // A hard break in a centred Dutch paragraph is layout for wide pages. When a segment wraps on its own
+    // anyway (mobile), the break only adds a ragged extra line, so it is hidden and the lines are balanced.
+    function flowCenteredBreaks() {
+        readerEl.querySelectorAll('p:not(.text-arabic)').forEach(block => {
+            if (!block.querySelector('br') || block.querySelector('.text-arabic, .arabic-short, .arabic-chunk')) return;
+            if (getComputedStyle(block).textAlign !== 'center') return;
+            block.querySelectorAll('br:not(.soft-br, .hard-br)').forEach(br => {
+                const before = document.createRange();
+                before.setStart(block, 0);
+                before.setEndBefore(br);
+                // A break after punctuation ends a verse or sentence and stays.
+                const soft = /[\p{L}\p{N}]$/u.test(before.toString().trimEnd());
+                br.classList.add(soft ? 'soft-br' : 'hard-br');
+                if (soft && (br.nextSibling?.nodeType !== Node.TEXT_NODE || !/^\s/.test(br.nextSibling.textContent))) br.after(' ');
+            });
+            block.classList.remove('break-flow');
+            const style = getComputedStyle(block);
+            const lineHeight = parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.5;
+            const nodes = [...block.childNodes];
+            const range = document.createRange();
+            let from = 0;
+            const wraps = [...nodes.map((node, index) => node.nodeName === 'BR' ? index : -1).filter(index => index >= 0), nodes.length]
+                .some(end => {
+                    range.setStart(block, from);
+                    range.setEnd(block, end);
+                    from = end + 1;
+                    const tops = [...range.getClientRects()].filter(rect => rect.width > 0).map(rect => rect.top);
+                    return tops.length > 1 && Math.max(...tops) - Math.min(...tops) > lineHeight / 2;
+                });
+            block.classList.toggle('break-flow', wraps);
         });
     }
 
@@ -111,20 +145,33 @@
         });
     }
 
+    // A hard <br> right before an inline Arabic quote (optionally via a footnote marker) is
+    // source layout; it would leave a short ragged line, so let the quote continue the line.
+    function joinBreaksBeforeInlineArabic(page) {
+        page.querySelectorAll('br').forEach(br => {
+            let next = br.nextSibling;
+            while (next && ((next.nodeType === Node.TEXT_NODE && !next.textContent.trim())
+                || (next.nodeType === Node.ELEMENT_NODE && (next.matches('sup, .fn-ref, .sup-pointer'))))) next = next.nextSibling;
+            if (!next || next.nodeType !== Node.ELEMENT_NODE || !next.matches('.text-arabic-inline')) return;
+            const prev = br.previousSibling;
+            if (!prev || prev.nodeName === 'BR') return;
+            if (/\s$/.test(prev.textContent || '')) br.remove();
+            else br.replaceWith(' ');
+        });
+    }
+
     // Short inline Arabic phrases must never wrap or get stretched by justification.
-    // Longer plain-text phrases are split into unbreakable word pairs so a justified
-    // line can break between pairs instead of leaving wide gaps, without orphaning a word.
+    // Multi-word plain-text phrases are split into unbreakable single words so a justified
+    // line can break between any two Arabic words instead of leaving wide gaps.
     function markShortInlineArabic(page) {
         page.querySelectorAll('.text-arabic-inline').forEach(el => {
             const words = el.textContent.trim().split(/\s+/).filter(Boolean);
             if (!words.length) return;
-            if (words.length <= 3 || el.children.length) {
+            if (words.length === 1 || el.children.length) {
                 if (words.length <= 4) el.classList.add('text-arabic-inline--short');
                 return;
             }
-            const chunks = [];
-            for (let i = 0; i < words.length; i += 2) chunks.push(words.slice(i, i + 2));
-            if (chunks.at(-1).length === 1) chunks.at(-2).push(chunks.pop()[0]);
+            const chunks = words.map(word => [word]);
             el.textContent = '';
             chunks.forEach((chunk, index) => {
                 if (index) el.append(' ');
@@ -132,6 +179,30 @@
                 span.className = 'text-arabic-chunk';
                 span.textContent = chunk.join(' ');
                 el.appendChild(span);
+            });
+        });
+    }
+
+    // Verse ornaments (۞ ﴾ ﴿) in running Arabic get the same muted colour as Cevsen separators.
+    function markArabicOrnaments(page) {
+        page.querySelectorAll('.text-arabic, .text-arabic-inline').forEach(el => {
+            const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+            const nodes = [];
+            while (walker.nextNode()) {
+                const node = walker.currentNode;
+                if (/[\u06DE\uFD3E\uFD3F]/.test(node.data) && !node.parentElement.closest('.cevsen-separator')) nodes.push(node);
+            }
+            nodes.forEach(node => {
+                const frag = document.createDocumentFragment();
+                node.data.split(/([\u06DE\uFD3E\uFD3F])/).forEach((part, index) => {
+                    if (index % 2) {
+                        const span = document.createElement('span');
+                        span.className = 'cevsen-separator';
+                        span.textContent = part;
+                        frag.appendChild(span);
+                    } else if (part) frag.append(part);
+                });
+                node.replaceWith(frag);
             });
         });
     }
@@ -296,7 +367,9 @@
 
         normalizeLegacySupPointers(page);
         normalizeServerRenderedFnRefs(page);
+        joinBreaksBeforeInlineArabic(page);
         markShortInlineArabic(page);
+        markArabicOrnaments(page);
         hyphenatePage(page);
 
         const footnoteMap = {};
