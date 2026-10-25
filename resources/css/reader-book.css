@@ -456,7 +456,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     /* Zero-height inline box: large Arabic may not stretch the Dutch line box. */
     line-height: 0;
     position: relative;
-    top: 0.06em;
+    top: -0.06em;
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
@@ -580,6 +580,9 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 /* Normale tekst krijgt een iets lagere badge; Arabisch behoudt de oorspronkelijke hoogte. */
 .book-reader-scope :is(.arabic, .text-arabic, .text-arabic-inline, .text-arabic-bismillah, [lang="ar"], [dir="rtl"]) {
     --fn-badge-raise: -7px;
+}
+.book-reader-scope .text-arabic-inline {
+    --fn-badge-raise: 8px;
 }
 
 /* ── Klikbare voetnootreferenties (.fn-ref) ── */
