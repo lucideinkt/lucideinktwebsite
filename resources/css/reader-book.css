@@ -44,6 +44,18 @@
 }
 
 @font-face {
+    font-family: 'OmarNaskhApple';
+    src: url('../fonts/OmarNaskh-Reader.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html.ios-device {
+    --reader-arabic-font: 'OmarNaskhApple';
+}
+
+@font-face {
     font-family: 'Scheherazade New';
     src: url('../fonts/ScheherazadeNew-Regular.ttf') format('truetype');
     font-weight: 400;
@@ -71,7 +83,7 @@
 }
 
 .book-reader-scope .cevsen-separator {
-    font-family: 'OmarNaskhRegular', serif;
+    font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), serif;
     font-size: 1em;
     font-weight: 400;
     color: #9a7b49;
@@ -136,7 +148,7 @@
 .book-reader-scope p {
     margin-top: 0;
     margin-bottom: 1.1em;
-    line-height: 1.7;
+    line-height: 1.5;
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
@@ -352,7 +364,7 @@
 
 /* â”€â”€ Arabische tekst â”€â”€ */
 .book-reader-scope .text-arabic {
-    font-family: 'OmarNaskhRegular', 'ScheherazadeArabicFallback', serif;
+    font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), 'ScheherazadeArabicFallback', serif;
     font-size: var(--reader-arabic-font-size, 29px);
     line-height: 2;
     direction: rtl;
@@ -439,9 +451,12 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 
 /* Footnote superscript within bismillah */
 .book-reader-scope .text-arabic-inline {
-    font-family: 'OmarNaskhRegular', 'ScheherazadeArabicFallback', serif;
+    font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), 'ScheherazadeArabicFallback', serif;
     font-size: var(--reader-arabic-font-size, 29px);
-    line-height: inherit;
+    /* Zero-height inline box: large Arabic may not stretch the Dutch line box. */
+    line-height: 0;
+    position: relative;
+    top: 0.06em;
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
@@ -471,9 +486,9 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 /*}*/
 
 .book-reader-scope .honorific {
-    font-family: 'OmarNaskhRegular', serif;
+    font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), serif;
     font-size: 1.2em;
-    line-height: 1.15;
+    line-height: 0;
     direction: rtl;
     -webkit-font-feature-settings: "ss15";
     font-feature-settings: "ss15";
@@ -504,16 +519,18 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     min-width: 20px;
     height: 20px;
     padding: 0;
-    margin: 0 2px 0 3px;
+    /* Negative top margin gives the badge a zero-height layout box at the baseline. */
+    margin: -20px 2px 0 3px;
     cursor: pointer;
     font-family: 'DelimaProRegular', Georgia, serif;
     font-size: 0 !important;
     font-weight: 700;
     line-height: 0;
     text-indent: 0;
-    vertical-align: super;
+    vertical-align: baseline;
     color: #ffffff !important;
     position: relative;
+    top: var(--fn-badge-raise, -2px);
     text-decoration: none;
     border: none;
     border-radius: 999px;
@@ -560,6 +577,11 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     outline-offset: 3px;
 }
 
+/* Normale tekst krijgt een iets lagere badge; Arabisch behoudt de oorspronkelijke hoogte. */
+.book-reader-scope :is(.arabic, .text-arabic, .text-arabic-inline, .text-arabic-bismillah, [lang="ar"], [dir="rtl"]) {
+    --fn-badge-raise: -7px;
+}
+
 /* ── Klikbare voetnootreferenties (.fn-ref) ── */
 .book-reader-scope .fn-ref {
     display: inline-grid;
@@ -570,16 +592,18 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     min-width: 20px;
     height: 20px;
     padding: 0;
-    margin: 0 2px 0 3px;
+    /* Negative top margin gives the badge a zero-height layout box at the baseline. */
+    margin: -20px 2px 0 3px;
     cursor: pointer;
     font-family: 'DelimaProRegular', Georgia, serif;
     font-size: 0 !important;
     font-weight: 700;
     line-height: 0;
     text-indent: 0;
-    vertical-align: super;
+    vertical-align: baseline;
     color: #ffffff !important;
     position: relative;
+    top: var(--fn-badge-raise, -2px);
     text-decoration: none;
     border-radius: 999px;
     box-shadow: 0 1px 4px rgba(10, 70, 45, 0.40);
@@ -746,7 +770,7 @@ body.dark-mode .book-reader-scope .fn-ref--active {
 .fn-popover__text .delima-font .text-arabic-inline,
 .fn-popover__text span[dir="rtl"],
 .fn-popover__text span[lang="ar"] {
-    font-family: 'OmarNaskhRegular', serif !important;
+    font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), serif !important;
     direction: rtl;
     font-feature-settings: 'ss04', 'ss14', 'ss15';
     letter-spacing: 0;
@@ -792,7 +816,7 @@ body.dark-mode .fn-popover__text .delima-font .text-arabic-inline,
 body.dark-mode .fn-popover__text span[dir="rtl"],
 body.dark-mode .fn-popover__text span[lang="ar"] {
     color: #e8a87c;
-    font-family: 'OmarNaskhRegular', serif !important;
+    font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), serif !important;
 }
 body.dark-mode .fn-popover__text .text-underline {
     text-decoration-color: rgba(255, 154, 154, 0.6);
@@ -823,7 +847,7 @@ body.dark-mode .fn-popover__text .text-underline {
 .reader-tooltip.text-arabic {
     direction: rtl;
     text-align: right;
-    font-family: 'OmarNaskhRegular', serif;
+    font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), serif;
     font-size: 1.3em;
     line-height: 1.9;
 }
