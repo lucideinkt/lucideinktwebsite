@@ -18,5 +18,7 @@ class BooksSeeder extends Seeder
         $this->call(HerzamelingNederlandsPagesSeeder::class);
         $this->call(NatuurNederlandsPagesSeeder::class);
         $this->call(ZiekenNederlandsPagesSeeder::class);
+        $this->call(CevsenPagesSeeder::class);
+        $this->call(TesbihatPagesSeeder::class);
     }
 }
