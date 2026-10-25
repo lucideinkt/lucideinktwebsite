@@ -453,10 +453,10 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
 .book-reader-scope .text-arabic-inline {
     font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), 'ScheherazadeArabicFallback', serif;
     font-size: var(--reader-arabic-font-size, 29px);
-    /* Zero-height inline box: large Arabic may not stretch the Dutch line box. */
-    line-height: 0;
-    position: relative;
-    top: -0.06em;
+    /* Compact line box: lines with Arabic grow just enough to avoid overlapping adjacent lines. */
+    line-height: 1.1;
+    /* Lowered slightly so the extra space is split evenly above and below the line. */
+    vertical-align: -0.06em;
     direction: rtl;
     display: inline;
     unicode-bidi: isolate;
@@ -464,6 +464,12 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     letter-spacing: 0;
     word-spacing: 0;
     color: #ca2a2a;
+}
+
+.book-reader-scope .text-arabic-inline--short {
+    display: inline-block;
+    white-space: nowrap;
+    text-indent: 0;
 }
 
 /*.book-reader-scope .honorific {*/
@@ -570,7 +576,16 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     text-indent: 0;
     flex-direction: row-reverse;
     align-items: center;
-    vertical-align: baseline;
+    /* Raised so the extra line space is split evenly (slightly more above than below). */
+    vertical-align: 0.22em;
+}
+/* Extra room above only, so stacked Arabic lines never touch while the space below stays unchanged. */
+.book-reader-scope .fn-arabic-inline,
+.book-reader-scope :not(.fn-arabic-inline) > .text-arabic-inline--short {
+    padding-top: 4px;
+}
+.book-reader-scope .fn-arabic-inline > .fn-ref {
+    --fn-badge-raise: 6px;
 }
 .fn-ref-text:focus-visible {
     outline: 2px solid currentColor;
@@ -582,7 +597,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     --fn-badge-raise: -7px;
 }
 .book-reader-scope .text-arabic-inline {
-    --fn-badge-raise: 8px;
+    --fn-badge-raise: 11px;
 }
 
 /* ── Klikbare voetnootreferenties (.fn-ref) ── */
