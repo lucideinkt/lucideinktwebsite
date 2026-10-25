@@ -88,6 +88,14 @@
         });
     }
 
+    // Short inline Arabic phrases (e.g. bismillah) must never wrap or get stretched by justification.
+    function markShortInlineArabic(page) {
+        page.querySelectorAll('.text-arabic-inline').forEach(el => {
+            const words = el.textContent.trim().split(/\s+/).filter(Boolean);
+            if (words.length && words.length <= 4) el.classList.add('text-arabic-inline--short');
+        });
+    }
+
     function normalizeServerRenderedFnRefs(page) {
         page.querySelectorAll('.fn-ref').forEach(btn => {
             if (btn.querySelector('.fn-ref-num')) return;
@@ -176,6 +184,7 @@
 
         normalizeLegacySupPointers(page);
         normalizeServerRenderedFnRefs(page);
+        markShortInlineArabic(page);
 
         const footnoteMap = {};
         const arrowNums   = new Set();
