@@ -370,6 +370,13 @@ html.ios-device .book-reader-scope .text-arabic {
     font-feature-settings: "ss14", "ss17";
 }
 
+/* Avoid detached vowel marks in Omar Naskh on iOS without changing the text. */
+html.ios-device .book-reader-scope[data-book-slug="namaz-tesbihati"] .text-arabic,
+html.ios-device .book-reader-scope[data-book-slug="namaz-tesbihati"] .text-arabic-inline {
+    font-family: 'ScheherazadeArabicFallback', serif;
+    font-feature-settings: normal;
+}
+
 .tab-mob {
     display: none;
 }
