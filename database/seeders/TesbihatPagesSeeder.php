@@ -5,12 +5,15 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 /**
- * Namaz Tesbihatı — volledig zelfstandige offline boek-seeder.
- * De Arabische tekst is letterlijk ingebed; de Turkse instructies zijn vertaald.
- * Bron van de tekst: risaleoku.com/oku/tesbihat/{1..5} zoals door de gebruiker
- * als tekst aangeleverd. Geen HTTP-verzoeken of externe tekstbestanden.
- * Op verzoek is soera Al-Fatiha niet opgenomen.
- * Controleer vóór publicatie de transcriptie en eventuele herpublicatierechten.
+ * Namaz Tesbihatı — zelfstandige offline boek-seeder.
+ *
+ * Gebaseerd op de door de gebruiker aangeleverde teksten
+ * (Sabah, Öğle, İkindi, Akşam, Yatsı), met Nederlandse aanwijzingen.
+ * De Arabische tekst en schrijfwijze zijn behouden; alleen de separator
+ * en het kleine alif-teken worden afgestemd op Cevşen, naast de HTML-opmaak.
+ * Geen HTTP-verzoeken of externe tekstbestanden.
+ *
+ * Controleer eventuele rechten op herpublicatie vóór publicatie.
  */
 class TesbihatPagesSeeder extends BookPagesSeeder
 {
@@ -29,412 +32,479 @@ class TesbihatPagesSeeder extends BookPagesSeeder
         $pages = [
             [
                 'page_number' => 1,
-                'content' => <<<'TESBIHAT_PAGE_002'
+                'content' => <<<'TESBIHAT_PAGE_001'
 <div class="page" id="1">
 <p class="text-end page-number">#1</p>
 <p class="text-center"><strong>Fajr – Ochtendgebed</strong></p>
 
-<p class="text-center">Na het verrichten van het verplichte ochtendgebed en het geven van de salām:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلَامُ وَ مِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ</p>
-<p class="text-center">Hierna worden de handen met geopende handpalmen omhooggeheven:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلَاةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ الْاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center">Daarna:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اِنَّا نُقَدِّمُ اِلَيْكَ بَيْنَ يَدَىْ كُلِّ نَفَسٍ وَ لَمْحَةٍ وَ لَحْظَةٍ وَ طَرْفَةٍ يَطْرِفُ بِهَٓا اَهْلُ السَّمٰوَاتِ وَ اَهْلُ الْاَرَض۪ينَ شَهَادَةً اَشْهَدُ اَنْ</p>
-<p class="text-center">Dit wordt tot hier één keer uitgesproken, daarna:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ وَحْدَهُ لَٓا شَر۪يكَ لَهُ لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ يُحْي۪ى وَ يُم۪يتُ وَ هُوَ حَىٌّ لَا يَمُوتُ بِيَدِهِ الْخَيْرُ وَ هُوَ عَلٰى كُلِّ شَىْءٍ قَد۪يرٌ</p>
-<p class="text-center">Dit wordt tien keer herhaald; bij de tiende keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَ اِلَيْهِ الْمَص۪يرُ</p>
-<p class="text-center">Daarna worden de handen opgeheven, met de handpalmen naar beneden gericht:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنَ النَّارِ</p>
-<p class="text-center">Dit wordt drie, vijf of zeven keer herhaald. Vervolgens:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنْ كُلِّ نَارٍ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الدّ۪ينِيَّةِ وَ الدُّنْيَوِيَّةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ اٰخِرِ الزَّمَانِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْمَس۪يحِ الدَّجَّالِ وَ السُّفْيَانِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنَ الضَّلَالَاتِ وَ الْبِدْعِيَّاتِ وَ الْبَلِيَّاتِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النَّفْسِ الْاَمَّارَةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شُرُورِ النُّفُوسِ الْاَمَّارَاتِ الْفِرْعَوْنِيَّةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النِّسَٓاءِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ بَلَٓاءِ النِّسَٓاءِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ النِّسَٓاءِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ يَوْمِ الْقِيٰمَةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ جَهَنَّمَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ قَهْرِكَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ نَارِ قَهْرِكَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ وَ ال۪نّيرَانِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنَ الرِّيَاءِ وَ السُّمْعَةِ وَ الْعُجُبِ وَ الْفَخْرِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ تَجَاوُزِ الْمُلْحِد۪ينَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ الْمُنَافِق۪ينَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْفَاسِق۪ينَ ٭ اَللّٰهُمَّ اَجِرْنَا وَ اَجِرْ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ ف۪ى خِدْمَةِ الْقُرْاٰنِ وَ اْلا۪يمَانِ وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا مِنَ النَّارِ</p>
-<p class="text-center">Daarna worden de handpalmen omhooggedraaid:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ ٭ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ ٭ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ ٭ اَللّٰهُمَّ اَدْخِلْنَا وَ اَدْخِلْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ وَ اِخْوَانَنَا وَ اَخَوَاتِنَا وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ ف۪ى خِدْمَةِ اْلا۪يمَانِ وَ الْقُرْاٰنِ اَلْجَنَّةَ مَعَ الْاَبْرَارِ صَلِّ عَلٰى نَبِيِّكَ الْمُخْتَارِ وَ اٰلِه۪ الْاَطْهَارِ وَ اَصْحَابِهِ الْاَخْيَارِ وَ سَلِّمْ مَادَامَ الَّيْلُ وَ النَّهَارُ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center">Daarna volgen Āyat al-Kursī en de tasbīḥāt van het gebed, 33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</p>
-<p class="text-center">Hierna wordt de duʿāʾ van het gebed verricht. Vervolgens:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</p>
-<p class="text-center">Eén keer, en vervolgens:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ</p>
-<p class="text-center">Dit wordt 33 keer gereciteerd.</p>
-<p class="text-center">{Voetnoot: Wie wil, kan dit na het ochtend- en nachtgebed 100 keer reciteren.}</p>
-<p class="text-center">En daarna:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</p>
-<p class="text-center">Hierna wordt uitsluitend na het ochtendgebed tien keer gereciteerd:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ اَلْمَلِكُ الْحَقُّ الْمُب۪ينُ مُحَمَّدٌ رَسُولُ اللّٰهِ صَادِقُ الْوَعْدِ الْاَم۪ينُ</p>
-<p class="text-center">Hierna:</p>
+<p class="text-center">Na het verplichte deel van het ochtendgebed en de afsluitende vredesgroet zeg je:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلاَمُ وَ مِنْكَ السَّلاَمُ تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center">Hef daarna je handen op met de handpalmen naar boven en reciteer de smeekbede Salâtan Tunjînâ:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ اْلاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center">Reciteer vervolgens eenmaal:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اِنَّا نُقَدِّمُ اِلَيْكَ بَيْنَ يَدَىْ كُلِّ نَفَسٍ وَ لَمْحَةٍ وَ لَحْظَةٍ وَ طَرْفَةٍ يَطْرِفُ بِهَٓا اَهْلُ السَّمٰوَاتِ وَ اَهْلُ اْلاَرَض۪ينَ شَهَادَةً اَشْهَدُ اَنْ</p>
+<p class="text-center">Herhaal negenmaal:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لآَ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لآَ شَر۪يكَ لَهُ لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ يُحْي۪ى وَ يُم۪يتُ وَ هُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَ هُوَ عَلٰى كُلِّ شَىْءٍ قَد۪يرٌ</p>
+<p class="text-center">Vul de tiende herhaling als volgt aan:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لآَ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لآَ شَر۪يكَ لَهُ لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ يُحْي۪ى وَ يُم۪يتُ وَ هُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَ هُوَ عَلٰى كُلِّ شَىْءٍ قَد۪يرٌ وَ اِلَيْهِ الْمَص۪يرُ</p>
+<p class="text-center">Draai daarna je handpalmen naar beneden en zeg drie-, vijf- of zevenmaal: <span class="text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنَ النَّارِ</span> Ga vervolgens verder met:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنْ كُلِّ نَارٍ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الدّ۪ينِيَّةِ وَ الدُّنْيَوِيَّةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ اٰخِرِ الزَّمَانِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْمَس۪يحِ الدَّجَّالِ وَ السُّفْيَانِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنَ الضَّلاَلاَتِ وَ الْبِدْعِيَّاتِ وَ الْبَلِيَّاتِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النَّفْسِ اْلاَمَّارَةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شُرُورِ النُّفُوسِ اْلاَمَّارَاتِ الْفِرْعَوْنِيَّةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النِّسَٓاءِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ بَلآَءِ النِّسَٓاءِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ النِّسَٓاءِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ يَوْمِ الْقِيٰمَةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ جَهَنَّمَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ قَهْرِكَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ نَارِ قَهْرِكَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ وَ النِّرَانِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنَ الرِّيَاءِ وَ السُّمْعَةِ وَ الْعُجُبِ وَ الْفَخْرِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ تَجَاوُزِ الْمُلْحِد۪ينَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ الْمُنَافِق۪ينَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْفَاسِق۪ينَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا وَ اَجِرْ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ ف۪ى خِدْمَةِ الْقُرْاٰنِ وَ اْلا۪يمَانِ وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا مِنَ النَّارِ</p>
+<p class="text-center">Draai je handpalmen naar boven en ga verder met:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ اْلاَبْرَارِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ اْلاَبْرَارِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَدْخِلْنَا وَ اَدْخِلْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ وَ اِخْوَانَنَا وَ اَخَوَاتِنَا وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ ف۪ى خِدْمَةِ اْلا۪يمَانِ وَ الْقُرْاٰنِ اَلْجَنَّةَ مَعَ اْلاَبْرَارِ صَلِّ عَلٰى نَبِيِّكَ الْمُخْتَارِ وَ اٰلِه۪ اْلاَطْهَارِ وَ اَصْحَابِهِ اْلاَخْيَارِ وَ سَلِّمْ مَادَامَ الَّيْلُ وَ النَّهَارُ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center">Spreek vervolgens zegeningen uit over de Profeet en reciteer deze smeekbede:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللَّهِ وَ الْحَمْدُ لِلَّهِ وَ لَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</p>
+<p class="text-center">Reciteer Ayat al-Kursi (het Troonvers, soera Al-Baqara, vers 255):</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا ٭ لَبَّيْكَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ وَ عَلٰى جَم۪يعِ الْاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ اَصْحَابِه۪ بِعَدَدِ اَوْرَاقِ الْاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ الْاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلَاةٍ مِنْهَٓا اَشْهَدُ اَنْ لَٓا اِلٰهَ اِلَّا اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَۚ اَلْحَيُّ الْقَيُّومُۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌۜ لَهُ مَا فِي السَّمٰوَاتِ وَمَا فِي الْاَرْضِۜ مَنْ ذَا الَّذ۪ي يَشْفَعُ عِنْدَهُٓ اِلَّا بِاِذْنِه۪ۜ يَعْلَمُ مَا بَيْنَ اَيْد۪يهِمْ وَمَا خَلْفَهُمْۚ وَلَا يُح۪يطُونَ بِشَيْءٍ مِنْ عِلْمِه۪ٓ اِلَّا بِمَا شَٓاءَۚ وَسِعَ كُرْسِيُّهُ السَّمٰوَاتِ وَالْاَرْضَۚ وَلَا يَؤُ۫دُهُ حِفْظُهُمَاۚ وَهُوَ الْعَلِيُّ الْعَظ۪يمُ</p>
+<p class="text-center">Zeg daarna:</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</span></p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِى وَيُمِيتُ وَهُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ وَاِلَيْهِ الْمَصِيرُ</p>
+<p class="text-center">Verricht hierna een persoonlijke smeekbede. Zeg daarna eenmaal <span class="text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</span> en ga verder met de geloofsgetuigenis van Gods eenheid.</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ</span> Sluit daarna af met: <span class="text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</span></p>
+<p class="text-center">Alleen bij de tesbihat van het ochtendgebed reciteer je tienmaal:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لآَ اِلٰهَ اِلاَّ اللّٰهُ اَلْمَلِكُ الْحَقُّ الْمُب۪ينُ مُحَمَّدٌ رَسُولُ اللّٰهِ صَادِقُ الْوَعْدِ اْلاَم۪ينُ</p>
+<p class="text-center">Ga vervolgens verder met de tesbihat:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَك يَٓا﴿اَللّٰهُ﴾تَعَالَيْتَ يَا﴿رَحْمٰنُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿رَح۪يمُ﴾تَعَالَيْتَ يَا﴿كَر۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَم۪يدُ﴾تَعَالَيْتَ يَا﴿حَك۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مَج۪يدُ﴾تَعَالَيْتَ يَا﴿مَلِكُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰن</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قُدُّوسُ﴾تَعَالَيْتَ يَا﴿سَلَامُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُؤْمِنُ﴾تَعَالَيْتَ يَا﴿مُهَيْمِنُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَز۪يزُ﴾تَعَالَيْتَ يَا﴿جَبَّارُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُتَكَبِّرُ﴾تَعَالَيْتَ يَا﴿خَالِقُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا﴿اَوَّلُ﴾تَعَالَيْتَ يَٓا﴿اٰخِرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿ظَاهِرُ﴾تَعَالَيْتَ يَا﴿بَاطِنُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿بَارِىءُ﴾تَعَالَيْتَ يَا﴿مُصَوِّرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿تَوَّابُ﴾تَعَالَيْتَ يَا﴿وَهَّابُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿بَاعِثُ﴾تَعَالَيْتَ يَا﴿وَارِثُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قَد۪يمُ﴾تَعَالَيْتَ يَا﴿مُق۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿فَرْدُ﴾تَعَالَيْتَ يَا﴿وِتْرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿نُورُ﴾تَعَالَيْتَ يَا﴿سَتَّارُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿جَل۪يلُ﴾تَعَالَيْتَ يَا﴿جَم۪يلُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قَاهِرُ﴾تَعَالَيْتَ يَا﴿قَادِرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مَل۪يكُ﴾تَعَالَيْتَ يَا﴿مُقْتَدِرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَل۪يمُ﴾تَعَالَيْتَ يَا﴿عَلَّا مُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَظ۪يمُ﴾تَعَالَيْتَ يَا﴿غَفُورُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَل۪يمُ﴾تَعَالَيْتَ يَا﴿وَدُودُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿شَه۪يدُ﴾تَعَالَيْتَ يَا﴿شَاهِدُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿كَب۪يرُ﴾تَعَالَيْتَ يَا﴿مُتَعَالُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿نُورُ﴾تَعَالَيْتَ يَا﴿لَط۪يفُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿سَم۪يعُ﴾تَعَالَيْتَ يَا﴿كَف۪يلُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قَر۪يبُ﴾تَعَالَيْتَ يَا﴿بَص۪يرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَقُّ﴾تَعَالَيْتَ يَا﴿مُب۪ينُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿رَؤُفُ﴾تَعَالَيْتَ يَا﴿رَح۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿طَاهِرُ﴾تَعَالَيْتَ يَا﴿مُطَهِّرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُجَمِّلُ﴾تَعَالَيْتَ يَا﴿مُفَضِّلُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُظْهِرُ﴾تَعَالَيْتَ يَا﴿مُنْعِمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿دَيَّانُ﴾تَعَالَيْتَ يَا﴿سُلْطَانُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَنَّانُ﴾تَعَالَيْتَ يَا﴿مَنَّانُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا﴿اَحَدُ﴾تَعَالَيْتَ يَا﴿صَمَدُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَىُّ﴾تَعَالَيْتَ يَا﴿قَيُّومُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَدْلُ﴾تَعَالَيْتَ يَا﴿حَكَمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿فَرْدُ﴾تَعَالَيْتَ يَا﴿قُدُّوسُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ اٰهِيًّا شَرَاهِيًّا تَعَالَيْتَ لَٓا اِلٰهَ اِلَّا ٓ اَنْتَ اَجِرْنَا وَ اَجِرْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ اِخْوَانَنَا وَ اَخَوَاتَنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ وَ رُفَقَٓائَنَا وَ اَحْبَابَنَا الْمُخْلِص۪ينَ مِنَ النَّارِ وَ مِنْ كُلِّ نَارٍ وَ احْفَظْنَا مِنْ شَرِّ النَّفْسِ وَ الشَّيْطَانِ وَ مِنْ شَرِّ الْجِنِّ وَ اْلاِنْسَانِ وَ مِنْ شَرِّ الْبِدْعَةِ وَ الضَّلَالَاتِ وَ اْلاِلْحَادِ وَ الطُّغْيَانِ بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ ٭ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ بِشَفَاعَةِ نَبِيِّكَ الْمُخْتَارِ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا <span class="cevsen-separator">٭</span> لَبَّيْكَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَ عَلٰى جَم۪يعِ اْلاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ أَصْحَابِهِ بِعَدَدِ اَوْرَاقِ اْلاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ اْلاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلاَةٍ مِنْهَٓا اَشْهَدُ اَنْ لآَ اِلٰهَ اِلاَّ اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de smeekbede Tercüman-ı İsm-i A’zâm:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَا يَسْتَو۪ٓى اَصْحَابُ النَّارِ وَاَصْحَابُ الْجَنَّةِۜ اَصْحَابُ الْجَنَّةِ هُمُ الْفَٓائِزُونَ﴿٠٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَوْ اَنْزَلْنَا هٰذَا الْقُرْاٰنَ عَلٰى جَبَلٍ لَرَاَيْتَهُ خَاشِعًا مُتَصَدِّعًا مِنْ خَشْيَةِ اللّٰهِۜ وَتِلْكَ الْاَمْثَالُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ يَتَفَكَّرُونَ﴿١٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لَٓا اِلٰهَ اِلَّا هُوَۚ عَالِمُ الْغَيْبِ وَالشَّهَادَةِۚ هُوَ الرَّحْمٰنُ الرَّح۪يمُ﴿٢٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لَٓا اِلٰهَ اِلَّا هُوَۚ اَلْمَلِكُ الْقُدُّوسُ السَّلَامُ الْمُؤْمِنُ الْمُهَيْمِنُ الْعَز۪يزُ الْجَبَّارُ الْمُتَكَبِّرُۜ سُبْحَانَ اللّٰهِ عَمَّا يُشْرِكُونَ﴿٣٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الْخَالِقُ الْبَارِىُٔ الْمُصَوِّرُ لَهُ الْاَسْمَٓاءُ الْحُسْنٰىۜ يُسَبِّحُ لَهُ مَا فِى السَّمٰوَاتِ وَالْاَرْضِۚ وَهُوَ الْعَز۪يزُ الْحَك۪يمُ﴿٤٢﴾</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَك يَٓا اَللّٰهُ تَعَالَيْتَ يَا رَحْمٰنُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا رَح۪يمُ تَعَالَيْتَ يَا كَر۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَم۪يدُ تَعَالَيْتَ يَا حَك۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مَج۪يدُ تَعَالَيْتَ يَا مَلِكُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰن</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قُدُّوسُ تَعَالَيْتَ يَا سَلاَمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُؤْمِنُ تَعَالَيْتَ يَا مُهَيْمِنُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَز۪يزُ تَعَالَيْتَ يَا جَبَّارُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُتَكَبِّرُ تَعَالَيْتَ يَا خَالِقُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا اَوَّلُ تَعَالَيْتَ يَٓا اٰخِرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا ظَاهِرُ تَعَالَيْتَ يَا بَاطِنُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا بَارِىءُ تَعَالَيْتَ يَا مُصَوِّرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا تَوَّابُ تَعَالَيْتَ يَا وَهَّابُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا بَاعِثُ تَعَالَيْتَ يَا وَارِثُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قَد۪يمُ تَعَالَيْتَ يَا مُق۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا فَرْدُ تَعَالَيْتَ يَا وِتْرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا نُورُ تَعَالَيْتَ يَا سَتَّارُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا جَل۪يلُ تَعَالَيْتَ يَا جَم۪يلُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قَاهِرُ تَعَالَيْتَ يَا قَادِرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مَل۪يكُ تَعَالَيْتَ يَا مُقْتَدِرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَل۪يمُ تَعَالَيْتَ يَا عَلاَّمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَظ۪يمُ تَعَالَيْتَ يَا غَفُورُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَل۪يمُ تَعَالَيْتَ يَا وَدُودُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا شَه۪يدُ تَعَالَيْتَ يَا شَاهِدُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا كَب۪يرُ تَعَالَيْتَ يَا مُتَعَالُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا نُورُ تَعَالَيْتَ يَا لَط۪يفُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا سَم۪يعُ تَعَالَيْتَ يَا كَف۪يلُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قَر۪يبُ تَعَالَيْتَ يَا بَص۪يرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَقُّ تَعَالَيْتَ يَا مُب۪ينُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا رَؤُفُ تَعَالَيْتَ يَا رَح۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا طَاهِرُ تَعَالَيْتَ يَا مُطَهِّرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُجَمِّلُ تَعَالَيْتَ يَا مُفَضِّلُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُظْهِرُ تَعَالَيْتَ يَا مُنْعِمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا دَيَّانُ تَعَالَيْتَ يَا سُلْطَانُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَنَّانُ تَعَالَيْتَ يَا مَنَّانُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا اَحَدُ تَعَالَيْتَ يَا صَمَدُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَىُّ تَعَالَيْتَ يَا قَيُّومُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَدْلُ تَعَالَيْتَ يَا حَكَمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا فَرْدُ تَعَالَيْتَ يَا قُدُّوسُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center">Open je handen met de handpalmen naar boven en reciteer:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ اٰهِيًّا شَرَاهِيًّا تَعَالَيْتَ لآَ اِلٰهَ اِلآَّ اَنْتَ اَجِرْنَا وَ اَجِرْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ اِخْوَانَنَا وَ اَخَوَاتَنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ وَ رُفَقَٓائَنَا وَ اَحْبَابَنَا الْمُخْلِص۪ينَ مِنَ النَّارِ</p>
+<p class="text-center">Draai je handpalmen naar beneden en ga verder met:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَ مِنْ كُلِّ نَارٍ وَ احْفَظْنَا مِنْ شَرِّ النَّفْسِ وَ الشَّيْطَانِ وَ مِنْ شَرِّ الْجِنِّ وَ اْلاِنْسَانِ وَ مِنْ شَرِّ الْبِدْعَةِ وَ الضَّلاَلاَتِ وَ اْلاِلْحَادِ وَ الطُّغْيَانِ</p>
+<p class="text-center">Draai je handpalmen weer naar boven en sluit de smeekbede als volgt af:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ اْلاَبْرَارِ بِشَفَاعَةِ نَبِيِّكَ الْمُخْتَارِ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de verzen 20 tot en met 24 van soera Al-Hashr:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاَ يَسْتَو۪ٓى اَصْحَابُ النَّارِ وَاَصْحَابُ الْجَنَّةِۜ اَصْحَابُ الْجَنَّةِ هُمُ الْفَٓائِزُونَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لَوْ اَنْزَلْنَا هٰذَا الْقُرْاٰنَ عَلٰى جَبَلٍ لَرَاَيْتَهُ خَاشِعًا مُتَصَدِّعًا مِنْ خَشْيَةِ اللّٰهِۜ وَتِلْكَ اْلاَمْثَالُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ يَتَفَكَّرُونَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لآَ اِلٰهَ اِلاَّ هُوَۚ عَالِمُ الْغَيْبِ وَالشَّهَادَةِۚ هُوَ الرَّحْمٰنُ الرَّح۪يمُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لآَ اِلٰهَ اِلاَّ هُوَۚ اَلْمَلِكُ الْقُدُّوسُ السَّلاَمُ الْمُؤْمِنُ الْمُهَيْمِنُ الْعَز۪يزُ الْجَبَّارُ الْمُتَكَبِّرُۜ سُبْحَانَ اللّٰهِ عَمَّا يُشْرِكُونَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الْخَالِقُ الْبَارِىُٔ الْمُصَوِّرُ لَهُ اْلاَسْمَٓاءُ الْحُسْنٰىۜ يُسَبِّحُ لَهُ مَا فِى السَّمٰوَاتِ وَاْلاَرْضِۚ وَهُوَ الْعَز۪يزُ الْحَك۪يمُ</p>
 </div>
-TESBIHAT_PAGE_002,
+TESBIHAT_PAGE_001,
             ],
             [
                 'page_number' => 2,
-                'content' => <<<'TESBIHAT_PAGE_003'
+                'content' => <<<'TESBIHAT_PAGE_002'
 <div class="page" id="2">
 <p class="text-end page-number">#2</p>
 <p class="text-center"><strong>Dhuhr – Middaggebed</strong></p>
 
-<p class="text-center">Na het geven van de salām van het verplichte middaggebed:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلَامُ وَ مِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ</p>
-<p class="text-center">Hierna worden de handen omhooggeheven:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلَاةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ الْاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center">Daarna Āyat al-Kursī en 33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</p>
-<p class="text-center">Daarna wordt de duʿāʾ van het gebed verricht. Vervolgens één keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ</p>
-<p class="text-center">En bij de 33e keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</p>
+<p class="text-center">Na het verplichte deel van het middaggebed en de afsluitende vredesgroet zeg je:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلاَمُ وَ مِنْكَ السَّلاَمُ تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center">Hef daarna je handen op met de handpalmen naar boven en reciteer de smeekbede Salâtan Tunjînâ:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ اْلاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center">Verricht daarna het afsluitende soennagebed van het middaggebed. Spreek vervolgens zegeningen uit over de Profeet en reciteer deze smeekbede:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللَّهِ وَ الْحَمْدُ لِلَّهِ وَ لَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</p>
+<p class="text-center">Reciteer Ayat al-Kursi (het Troonvers, soera Al-Baqara, vers 255):</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا ٭ لَبَّيْكَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ وَ عَلٰى جَم۪يعِ الْاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ اَصْحَابِه۪ بِعَدَدِ اَوْرَاقِ الْاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ الْاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلَاةٍ مِنْهَٓا اَشْهَدُ اَنْ لَٓا اِلٰهَ اِلَّا اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَۚ اَلْحَيُّ الْقَيُّومُۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌۜ لَهُ مَا فِي السَّمٰوَاتِ وَمَا فِي الْاَرْضِۜ مَنْ ذَا الَّذ۪ي يَشْفَعُ عِنْدَهُٓ اِلَّا بِاِذْنِه۪ۜ يَعْلَمُ مَا بَيْنَ اَيْد۪يهِمْ وَمَا خَلْفَهُمْۚ وَلَا يُح۪يطُونَ بِشَيْءٍ مِنْ عِلْمِه۪ٓ اِلَّا بِمَا شَٓاءَۚ وَسِعَ كُرْسِيُّهُ السَّمٰوَاتِ وَالْاَرْضَۚ وَلَا يَؤُ۫دُهُ حِفْظُهُمَاۚ وَهُوَ الْعَلِيُّ الْعَظ۪يمُ</p>
+<p class="text-center">Zeg daarna:</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</span></p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِى وَيُمِيتُ وَهُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ وَاِلَيْهِ الْمَصِيرُ</p>
+<p class="text-center">Verricht hierna een persoonlijke smeekbede. Zeg daarna eenmaal <span class="text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</span> en ga verder met de geloofsgetuigenis van Gods eenheid.</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ</span> Sluit daarna af met: <span class="text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</span> Ga vervolgens verder met de tesbihat:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَا﴿جَم۪يلُ﴾يَٓا اَللّٰهُ ٭ يَا﴿قَر۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُج۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿حَب۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَؤُفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَطُوفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَعْرُوفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿لَط۪يفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَظ۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿حَنَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَنَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿دَيَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سُبْحَانُ﴾يَٓا اَللّٰهُ ٭ يَٓا﴿اَمَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿بُرْهَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سُلْطَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُسْتَعَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُحْسِنُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُتَعَالُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَحْمٰنُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَح۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿كَر۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَج۪يدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿فَرْدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿وِتْرُ﴾يَٓا اَللّٰهُ ٭ يَٓا﴿اَحَدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿صَمَدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَحْمُودُ﴾يَٓا اَللّٰهُ ٭ يَا﴿صَادِقَالْوَعْدِ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَلِىُّ﴾يَٓا اَللّٰهُ ٭ يَا﴿غَنِىُّ﴾يَٓا اَللّٰهُ ٭ يَا﴿شَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿كَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿مُعَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿بَاق۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿هَاد۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿قَادِرُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سَاتِرُ﴾يَٓا اَللّٰهُ ٭ يَا﴿قَهَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿جَبَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿غَفَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿فَتَّاحُ﴾يَٓا اَللّٰهُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَبَّ السَّمٰوَاتِ وَ الْاَرْضِ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ ٭ اَسْئَلُكَ بِحَقِّ هٰذِهِ الْاَسْمَٓاءِ كُلِّهَٓا اَنْ تُصَلِّىَ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلٰٓى اٰلِ مُحَمَّدٍ وَ ارْحَمْ مُحَمَّدًا كَمَا صَلَّيْتَ وَ سَلَّمْتَ وَ بَارَكْتَ وَ رَحِمْتَ وَ تَرَحَّمْتَ عَلٰٓى اِبرَاه۪يمَ وَ عَلٰٓى اٰلِ اِبْرَاه۪يمَ فِى الْعَالَم۪ينَ رَبَّنَٓا اِنَّكَ حَم۪يدٌ مَج۪يدٌ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ وَ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا <span class="cevsen-separator">٭</span> لَبَّيْكَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَ عَلٰى جَم۪يعِ اْلاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ أَصْحَابِهِ بِعَدَدِ اَوْرَاقِ اْلاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ اْلاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلاَةٍ مِنْهَٓا اَشْهَدُ اَنْ لآَ اِلٰهَ اِلاَّ اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de smeekbede İsm-i A’zâm:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَقَدْ صَدَقَ اللّٰهُ رَسُولَهُ الرُّءْيَا بِالْحَقِّۚ لَتَدْخُلُنَّ الْمَسْجِدَ الْحَرَامَ اِنْ شَٓاءَ اللّٰهُ اٰمِن۪ينَۙ مُحَلِّق۪ينَ رُوُ۫ٔسَكُمْ وَمُقَصِّر۪ينَۙ لَا تَخَافُونَۜ فَعَلِمَ مَا لَمْ تَعْلَمُوا فَجَعَلَ مِنْ دُونِ ذٰلِكَ فَتْحًا قَر۪يبًا﴿٧٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ الَّذ۪ٓى اَرْسَلَ رَسُولَهُ بِالْهُدٰى وَد۪ينِ الْحَقِّ لِيُظْهِرَهُ عَلَى الدّ۪ينِ كُلِّه۪ۜ وَكَفٰى بِاللّٰهِ شَه۪يدًاۜ﴿٨٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِۜ وَالَّذ۪ينَ مَعَهُٓ اَشِدَّٓاءُ عَلَى الْكُفَّارِ رُحَمَٓاءُ بَيْنَهُمْ تَرٰيهُمْ رُكَّعًا سُجَّدًا يَبْتَغُونَ فَضْلاً مِنَ اللّٰهِ وَرِضْوَانًاۘ س۪يمَاهُمْ ف۪ى وُجُوهِهِمْ مِنْ اَثَرِ السُّجُودِۜ ذٰلِكَ مَثَلُهُمْ فِى التَّوْرٰيةِۚۛ وَمَثَلُهُمْ فِى اْلاِنْج۪يلِ۠ۛ كَزَرْعٍ اَخْرَجَ شَطْئَهُ۫ فَاٰزَرَهُ فَاسْتَغْلَظَ فَاسْتَوٰى عَلٰى سُوقِه۪ يُعْجِبُ الزُّرَّاعَ لِيَغ۪يظَ بِهِمُ الْكُفَّارَۜ وَعَدَ اللّٰهُ الَّذ۪ينَ اٰمَنُوا وَعَمِلُوا الصَّالِحَاتِ مِنْهُمْ مَغْفِرَةً وَاَجْرًا عَظ۪يمًا﴿٩٢﴾</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا جَم۪يلُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا قَر۪يبُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُج۪يبُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا حَب۪يبُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَؤُفُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا عَطُوفُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَعْرُوفُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا لَط۪يفُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا عَظ۪يمُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا حَنَّانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَنَّانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا دَيَّانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا سُبْحَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَٓا اَمَانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا بُرْهَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا سُلْطَانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُسْتَعَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مُحْسِنُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُتَعَالُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا رَحْمٰنُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَح۪يمُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا كَر۪يمُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَج۪يدُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا فَرْدُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا وِتْرُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَٓا اَحَدُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا صَمَدُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مَحْمُودُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا صَادِقَ الْوَعْدِ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا عَلِىُّ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا غَنِىُّ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا شَاف۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا كَاف۪ى يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مُعَاف۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا بَاق۪ى يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا هَاد۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا قَادِرُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا سَاتِرُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا قَهَّارُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا جَبَّارُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا غَفَّارُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا فَتَّاحُ يَٓا اَللّٰهُ</p>
+<p class="text-center">Open je handen met de handpalmen naar boven en reciteer:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَبَّ السَّمٰوَاتِ وَ اْلاَرْضِ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَسْئَلُكَ بِحَقِّ هٰذِهِ اْلاَسْمَٓاءِ كُلِّهَٓا اَنْ تُصَلِّىَ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلٰٓى اٰلِ مُحَمَّدٍ وَ ارْحَمْ مُحَمَّدًا كَمَا صَلَّيْتَ وَ سَلَّمْتَ وَ بَارَكْتَ وَ رَحِمْتَ وَ تَرَحَّمْتَ عَلٰٓى اِبرَاه۪يمَ وَ عَلٰٓى اٰلِ اِبْرَاه۪يمَ فِى الْعَالَم۪ينَ رَبَّنَٓا اِنَّكَ حَم۪يدٌ مَج۪يدٌ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ وَ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de verzen 27 tot en met 29 van soera Al-Fath:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لَقَدْ صَدَقَ اللّٰهُ رَسُولَهُ الرُّءْيَا بِالْحَقِّۚ لَتَدْخُلُنَّ الْمَسْجِدَ الْحَرَامَ اِنْ شَٓاءَ اللّٰهُ اٰمِن۪ينَۙ مُحَلِّق۪ينَ رُوُ۫ٔسَكُمْ وَمُقَصِّر۪ينَۙ لاَ تَخَافُونَۜ فَعَلِمَ مَا لَمْ تَعْلَمُوا فَجَعَلَ مِنْ دُونِ ذٰلِكَ فَتْحًا قَر۪يبًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ الَّذ۪ٓى اَرْسَلَ رَسُولَهُ بِالْهُدٰى وَد۪ينِ الْحَقِّ لِيُظْهِرَهُ عَلَى الدّ۪ينِ كُلِّه۪ۜ وَكَفٰى بِاللّٰهِ شَه۪يدًۜا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِۜ وَالَّذ۪ينَ مَعَهُٓ اَشِدَّٓاءُ عَلَى الْكُفَّارِ رُحَمَٓاءُ بَيْنَهُمْ تَرٰيهُمْ رُكَّعًا سُجَّدًا يَبْتَغُونَ فَضْلاً مِنَ اللّٰهِ وَرِضْوَانًۘا س۪يمَاهُمْ ف۪ى وُجُوهِهِمْ مِنْ اَثَرِ السُّجُودِۜ ذٰلِكَ مَثَلُهُمْ فِى التَّوْرٰيةِۚۛ وَمَثَلُهُمْ فِى اْلاِنْج۪يلِ۠ۛ كَزَرْعٍ اَخْرَجَ شَطْئَهُ فَاٰزَرَهُ فَاسْتَغْلَظَ فَاسْتَوٰى عَلٰى سُوقِه۪ يُعْجِبُ الزُّرَّاعَ لِيَغ۪يظَ بِهِمُ الْكُفَّارَۜ وَعَدَ اللّٰهُ الَّذ۪ينَ اٰمَنُوا وَعَمِلُوا الصَّالِحَاتِ مِنْهُمْ مَغْفِرَةً وَاَجْرًا عَظ۪يمًا</p>
 </div>
-TESBIHAT_PAGE_003,
+TESBIHAT_PAGE_002,
             ],
             [
                 'page_number' => 3,
-                'content' => <<<'TESBIHAT_PAGE_004'
+                'content' => <<<'TESBIHAT_PAGE_003'
 <div class="page" id="3">
 <p class="text-end page-number">#3</p>
 <p class="text-center"><strong>Asr – Namiddaggebed</strong></p>
 
-<p class="text-center">Na het verrichten van het verplichte namiddaggebed en het geven van de salām:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلَامُ وَ مِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ</p>
-<p class="text-center">Hierna worden de handen omhooggeheven:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلَاةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ الْاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center">Daarna Āyat al-Kursī en 33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</p>
-<p class="text-center">Daarna wordt de duʿāʾ van het gebed verricht. Eén keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</p>
-<p class="text-center">En 33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ</p>
-<p class="text-center">En bij de 33e keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</p>
+<p class="text-center">Na het verplichte deel van het namiddaggebed en de afsluitende vredesgroet zeg je:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلاَمُ وَ مِنْكَ السَّلاَمُ تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center">Hef daarna je handen op met de handpalmen naar boven en reciteer de smeekbede Salâtan Tunjînâ:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ اْلاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center">Spreek zegeningen uit over de Profeet en reciteer deze smeekbede:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللَّهِ وَ الْحَمْدُ لِلَّهِ وَ لَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</p>
+<p class="text-center">Reciteer Ayat al-Kursi (het Troonvers, soera Al-Baqara, vers 255):</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا ٭ لَبَّيْكَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ وَ عَلٰى جَم۪يعِ الْاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ اَصْحَابِه۪ بِعَدَدِ اَوْرَاقِ الْاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ الْاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلَاةٍ مِنْهَٓا اَشْهَدُ اَنْ لَٓا اِلٰهَ اِلَّا اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَۚ اَلْحَيُّ الْقَيُّومُۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌۜ لَهُ مَا فِي السَّمٰوَاتِ وَمَا فِي الْاَرْضِۜ مَنْ ذَا الَّذ۪ي يَشْفَعُ عِنْدَهُٓ اِلَّا بِاِذْنِه۪ۜ يَعْلَمُ مَا بَيْنَ اَيْد۪يهِمْ وَمَا خَلْفَهُمْۚ وَلَا يُح۪يطُونَ بِشَيْءٍ مِنْ عِلْمِه۪ٓ اِلَّا بِمَا شَٓاءَۚ وَسِعَ كُرْسِيُّهُ السَّمٰوَاتِ وَالْاَرْضَۚ وَلَا يَؤُ۫دُهُ حِفْظُهُمَاۚ وَهُوَ الْعَلِيُّ الْعَظ۪يمُ</p>
+<p class="text-center">Zeg daarna:</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</span></p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِى وَيُمِيتُ وَهُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ وَاِلَيْهِ الْمَصِيرُ</p>
+<p class="text-center">Verricht hierna een persoonlijke smeekbede. Zeg daarna eenmaal <span class="text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</span> en ga verder met de geloofsgetuigenis van Gods eenheid.</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ</span> Sluit daarna af met: <span class="text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</span> Ga vervolgens verder met de tesbihat:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَك يَٓا﴿اَللّٰهُ﴾تَعَالَيْتَ يَا﴿رَحْمٰنُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿رَح۪يمُ﴾تَعَالَيْتَ يَا﴿كَر۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَم۪يدُ﴾تَعَالَيْتَ يَا﴿حَك۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مَج۪يدُ﴾تَعَالَيْتَ يَا﴿مَلِكُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰن</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قُدُّوسُ﴾تَعَالَيْتَ يَا﴿سَلَامُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُؤْمِنُ﴾تَعَالَيْتَ يَا﴿مُهَيْمِنُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَز۪يزُ﴾تَعَالَيْتَ يَا﴿جَبَّارُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُتَكَبِّرُ﴾تَعَالَيْتَ يَا﴿خَالِقُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا﴿اَوَّلُ﴾تَعَالَيْتَ يَٓا﴿اٰخِرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿ظَاهِرُ﴾تَعَالَيْتَ يَا﴿بَاطِنُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿بَارِىءُ﴾تَعَالَيْتَ يَا﴿مُصَوِّرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿تَوَّابُ﴾تَعَالَيْتَ يَا﴿وَهَّابُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿بَاعِثُ﴾تَعَالَيْتَ يَا﴿وَارِثُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قَد۪يمُ﴾تَعَالَيْتَ يَا﴿مُق۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿فَرْدُ﴾تَعَالَيْتَ يَا﴿وِتْرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿نُورُ﴾تَعَالَيْتَ يَا﴿سَتَّارُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿جَل۪يلُ﴾تَعَالَيْتَ يَا﴿جَم۪يلُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قَاهِرُ﴾تَعَالَيْتَ يَا﴿قَادِرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مَل۪يكُ﴾تَعَالَيْتَ يَا﴿مُقْتَدِرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَل۪يمُ﴾تَعَالَيْتَ يَا﴿عَلَّا مُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَظ۪يمُ﴾تَعَالَيْتَ يَا﴿غَفُورُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَل۪يمُ﴾تَعَالَيْتَ يَا﴿وَدُودُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿شَه۪يدُ﴾تَعَالَيْتَ يَا﴿شَاهِدُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿كَب۪يرُ﴾تَعَالَيْتَ يَا﴿مُتَعَالُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿نُورُ﴾تَعَالَيْتَ يَا﴿لَط۪يفُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿سَم۪يعُ﴾تَعَالَيْتَ يَا﴿كَف۪يلُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿قَر۪يبُ﴾تَعَالَيْتَ يَا﴿بَص۪يرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَقُّ﴾تَعَالَيْتَ يَا﴿مُب۪ينُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿رَؤُفُ﴾تَعَالَيْتَ يَا﴿رَح۪يمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿طَاهِرُ﴾تَعَالَيْتَ يَا﴿مُطَهِّرُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُجَمِّلُ﴾تَعَالَيْتَ يَا﴿مُفَضِّلُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿مُظْهِرُ﴾تَعَالَيْتَ يَا﴿مُنْعِمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿دَيَّانُ﴾تَعَالَيْتَ يَا﴿سُلْطَانُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَنَّانُ﴾تَعَالَيْتَ يَا﴿مَنَّانُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا﴿اَحَدُ﴾تَعَالَيْتَ يَا﴿صَمَدُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿حَىُّ﴾تَعَالَيْتَ يَا﴿قَيُّومُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿عَدْلُ﴾تَعَالَيْتَ يَا﴿حَكَمُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا﴿فَرْدُ﴾تَعَالَيْتَ يَا﴿قُدُّوسُ﴾اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ اٰهِيًّا شَرَاهِيًّا تَعَالَيْتَ لَٓا اِلٰهَ اِلَّا ٓ اَنْتَ اَجِرْنَا وَ اَجِرْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ اِخْوَانَنَا وَ اَخَوَاتَنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ وَ رُفَقَٓائَنَا وَ اَحْبَابَنَا الْمُخْلِص۪ينَ مِنَ النَّارِ وَ مِنْ كُلِّ نَارٍ وَ احْفَظْنَا مِنْ شَرِّ النَّفْسِ وَ الشَّيْطَانِ وَ مِنْ شَرِّ الْجِنِّ وَ اْلاِنْسَانِ وَ مِنْ شَرِّ الْبِدْعَةِ وَ الضَّلَالَاتِ وَ اْلاِلْحَادِ وَ الطُّغْيَانِ بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ ٭ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ بِشَفَاعَةِ نَبِيِّكَ الْمُخْتَارِ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا <span class="cevsen-separator">٭</span> لَبَّيْكَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَ عَلٰى جَم۪يعِ اْلاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ أَصْحَابِهِ بِعَدَدِ اَوْرَاقِ اْلاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ اْلاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلاَةٍ مِنْهَٓا اَشْهَدُ اَنْ لآَ اِلٰهَ اِلاَّ اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de smeekbede Tercüman-ı İsm-i A’zâm:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">عَمَّ يَتَسَٓاءَلُونَۚ﴿١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">عَنِ النَّبَاِ الْعَظ۪يمِۙ﴿٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلَّذ۪ى هُمْ ف۪يهِ مُخْتَلِفُونَۜ﴿٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">كَلَّا سَيَعْلَمُونَۙ﴿٤﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">ثُمَّ كَلَّا سَيَعْلَمُونَ﴿٥﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلَمْ نَجْعَلِ الْاَرْضَ مِهَادًاۙ﴿٦﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَالْجِبَالَ اَوْتَادًا۬﴿٧﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَخَلَقْنَاكُمْ اَزْوَاجًاۙ﴿٨﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا نَوْمَكُمْ سُبَاتًاۙ﴿٩﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا الَّيْلَ لِبَاسًاۙ﴿٠١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا النَّهَارَ مَعَاشًا۬﴿١١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَبَنَيْنَا فَوْقَكُمْ سَبْعًا شِدَادًاۙ﴿٢١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا سِرَاجًا وَهَّاجًا۬﴿٣١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَاَنْزَلْنَا مِنَ الْمُعْصِرَاتِ مَٓاءً ثَجَّاجًاۙ﴿٤١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لِنُخْرِجَ بِه۪ حَبًّا وَنَبَاتًاۙ﴿٥١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَنَّاتٍ اَلْفَافًاۜ﴿٦١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ يَوْمَ الْفَصْلِ كَانَ م۪يقَاتًاۙ﴿٧١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَوْمَ يُنْفَخُ فِى الصُّورِ فَتَاْتُونَ اَفْوَاجًاۙ﴿٨١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَفُتِحَتِ السَّمَٓاءُ فَكَانَتْ اَبْوَابًاۙ﴿٩١﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَسُيِّرَتِ الْجِبَالُ فَكَانَتْ سَرَابًاۜ﴿٠٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ جَهَنَّمَ كَانَتْ مِرْصَادًاۙ﴿١٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لِلطَّاغ۪ينَ مَاٰبًاۙ﴿٢٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَابِث۪ينَ ف۪يهَٓا اَحْقَابًاۚ﴿٣٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَايَذُوقُونَ ف۪يهَا بَرْدًا وَلَا شَرَابًاۙ﴿٤٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِلَّا حَم۪يمًا وَغَسَّاقًاۙ﴿٥٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">جَزَٓاءً وِفَاقًا﴿٦٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّهُمْ كَانُوا لَايَرْجُونَ حِسَابًاۙ﴿٧٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَكَذَّبُوا بِاٰيَاتِنَا كِذَّابًاۜ﴿٨٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَكُلَّ شَىْءٍ اَحْصَيْنَاهُ كِتَابًا﴿٩٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">فَذُوقُوا فَلَنْ نَز۪يدَكُمْ اِلَّا عَذَابًا۟﴿٠٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ لِلْمُتَّق۪ينَ مَفَازًاۙ﴿١٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">حَدَٓائِقَ وَاَعْنَابًاۙ﴿٢٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَكَوَاعِبَ اَتْرَابًاۙ﴿٣٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">وَكَاْسًا دِهَاقًاۜ﴿٤٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَايَسْمَعُونَ ف۪يهَالَغْوًا وَلَا كِذَّابًاۚ﴿٥٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">جَزَٓاءً مِنْ رَبِّكَ عَطَٓاءً حِسَابًاۙ﴿٦٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">رَبِّ السَّمٰوَاتِ وَالْاَرْضِ وَمَا بَيْنَهُمَاۙ الرَّحْمٰنِ لَايَمْلِكُونَ مِنْهُ خِطَابًاۙ﴿٧٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَوْمَ يَقُومُ الرُّوحُ وَالْمَلٰٓئِكَةُ صَفًّاۜ لَايَتَكَلَّمُونَ اِلَّا مَنْ اَذِنَ لَهُ الرَّحْمٰنُ وَقَالَ صَوَابًا﴿٨٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">ذٰلِكَ الْيَوْمُ الْحَقُّۚ فَمَنْ شَٓاءَ اتَّخَذَ اِلٰى رَبِّه۪ مَاٰبًا﴿٩٣﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّٓا اَنْذَرْنَاكُمْ عَذَابًا قَر۪يبًاۚ يَوْمَ يَنْظُرُ الْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُولُ الْكَافِرُ يَالَيْتَن۪ى كُنْتُ تُرَابًا﴿٠٤﴾</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَك يَٓا اَللّٰهُ تَعَالَيْتَ يَا رَحْمٰنُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا رَح۪يمُ تَعَالَيْتَ يَا كَر۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَم۪يدُ تَعَالَيْتَ يَا حَك۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مَج۪يدُ تَعَالَيْتَ يَا مَلِكُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰن</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قُدُّوسُ تَعَالَيْتَ يَا سَلاَمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُؤْمِنُ تَعَالَيْتَ يَا مُهَيْمِنُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَز۪يزُ تَعَالَيْتَ يَا جَبَّارُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُتَكَبِّرُ تَعَالَيْتَ يَا خَالِقُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا اَوَّلُ تَعَالَيْتَ يَٓا اٰخِرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا ظَاهِرُ تَعَالَيْتَ يَا بَاطِنُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا بَارِىءُ تَعَالَيْتَ يَا مُصَوِّرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا تَوَّابُ تَعَالَيْتَ يَا وَهَّابُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا بَاعِثُ تَعَالَيْتَ يَا وَارِثُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قَد۪يمُ تَعَالَيْتَ يَا مُق۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا فَرْدُ تَعَالَيْتَ يَا وِتْرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا نُورُ تَعَالَيْتَ يَا سَتَّارُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا جَل۪يلُ تَعَالَيْتَ يَا جَم۪يلُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قَاهِرُ تَعَالَيْتَ يَا قَادِرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مَل۪يكُ تَعَالَيْتَ يَا مُقْتَدِرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَل۪يمُ تَعَالَيْتَ يَا عَلاَّمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَظ۪يمُ تَعَالَيْتَ يَا غَفُورُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَل۪يمُ تَعَالَيْتَ يَا وَدُودُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا شَه۪يدُ تَعَالَيْتَ يَا شَاهِدُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا كَب۪يرُ تَعَالَيْتَ يَا مُتَعَالُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا نُورُ تَعَالَيْتَ يَا لَط۪يفُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا سَم۪يعُ تَعَالَيْتَ يَا كَف۪يلُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا قَر۪يبُ تَعَالَيْتَ يَا بَص۪يرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَقُّ تَعَالَيْتَ يَا مُب۪ينُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا رَؤُفُ تَعَالَيْتَ يَا رَح۪يمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا طَاهِرُ تَعَالَيْتَ يَا مُطَهِّرُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُجَمِّلُ تَعَالَيْتَ يَا مُفَضِّلُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا مُظْهِرُ تَعَالَيْتَ يَا مُنْعِمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا دَيَّانُ تَعَالَيْتَ يَا سُلْطَانُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَنَّانُ تَعَالَيْتَ يَا مَنَّانُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَٓا اَحَدُ تَعَالَيْتَ يَا صَمَدُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا حَىُّ تَعَالَيْتَ يَا قَيُّومُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا عَدْلُ تَعَالَيْتَ يَا حَكَمُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ يَا فَرْدُ تَعَالَيْتَ يَا قُدُّوسُ اَجِرْنَا مِنَ النَّارِ بِعَفْوِكَ يَا رَحْمٰنُ</p>
+<p class="text-center">Open je handen met de handpalmen naar boven en reciteer:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَكَ اٰهِيًّا شَرَاهِيًّا تَعَالَيْتَ لآَ اِلٰهَ اِلآَّ اَنْتَ اَجِرْنَا وَ اَجِرْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ اِخْوَانَنَا وَ اَخَوَاتَنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ وَ رُفَقَٓائَنَا وَ اَحْبَابَنَا الْمُخْلِص۪ينَ مِنَ النَّارِ</p>
+<p class="text-center">Draai je handpalmen naar beneden en ga verder met:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَ مِنْ كُلِّ نَارٍ وَ احْفَظْنَا مِنْ شَرِّ النَّفْسِ وَ الشَّيْطَانِ وَ مِنْ شَرِّ الْجِنِّ وَ اْلاِنْسَانِ وَ مِنْ شَرِّ الْبِدْعَةِ وَ الضَّلاَلاَتِ وَ اْلاِلْحَادِ وَ الطُّغْيَانِ</p>
+<p class="text-center">Draai je handpalmen weer naar boven en sluit de smeekbede als volgt af:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ اْلاَبْرَارِ بِشَفَاعَةِ نَبِيِّكَ الْمُخْتَارِ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer soera An-Naba:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">عَمَّ يَتَسَٓاءَلُونَۚ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">عَنِ النَّبَأِالْعَظ۪يمِۙ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلَّذ۪ى هُمْ ف۪يهِ مُخْتَلِفُونَۜ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">كَلَّا سَيَعْلَمُونَۙ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">ثُمَّ كَلَّا سَيَعْلَمُونَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلَمْ نَجْعَلِ اْلاَرْضَ مِهَادًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَالْجِبَالَ اَوْتَادًۖا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَخَلَقْنَاكُمْ اَزْوَاجًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا نَوْمَكُمْ سُبَاتًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا الَّيْلَ لِبَاسًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا النَّهَارَ مَعَاشًۖا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَبَنَيْنَا فَوْقَكُمْ سَبْعًا شِدَادًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَعَلْنَا سِرَاجًا وَهَّاجًۖا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَاَنْزَلْنَا مِنَ الْمُعْصِرَاتِ مَٓاءً ثَجَّاجًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لِنُخْرِجَ بِه۪ حَبًّا وَنَبَاتًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَجَنَّاتٍ اَلْفَافًۜا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ يَوْمَ الْفَصْلِ كَانَ م۪يقَاتًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَوْمَ يُنْفَخُ فِى الصُّورِ فَتَاْتُونَ اَفْوَاجًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَفُتِحَتِ السَّمَٓاءُ فَكَانَتْ اَبْوَابًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَسُيِّرَتِ الْجِبَالُ فَكَانَتْ سَرَابًۜا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ جَهَنَّمَ كَانَتْ مِرْصَادًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لِلطَّاغ۪ينَ مَاٰبًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاَبِث۪ينَ ف۪يهَٓا اَحْقَابًۚا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاَيَذُوقُونَ ف۪يهَا بَرْدًا وَلاَ شَرَابًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِلاَّ حَم۪يمًا وَغَسَّاقًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">جَزَٓاءً وِفَاقًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّهُمْ كَانُوا لاَيَرْجُونَ حِسَابًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَكَذَّبُوا بِاٰيَاتِنَا كِذَّابًۜا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَكُلَّ شَىْءٍ اَحْصَيْنَاهُ كِتَابًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">فَذُوقُوا فَلَنْ نَز۪يدَكُمْ اِلاَّ عَذَابً۟ا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ لِلْمُتَّق۪ينَ مَفَازًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">حَدَٓائِقَ وَاَعْنَابًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَكَوَاعِبَ اَتْرَابًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَكَاْسًا دِهَاقًۜا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاَيَسْمَعُونَ ف۪يهَالَغْوًا وَلاَ كِذَّابًۚا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">جَزَٓاءً مِنْ رَبِّكَ عَطَٓاءً حِسَابًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">رَبِّ السَّمٰوَاتِ وَاْلاَرْضِ وَمَا بَيْنَهُمَاۙ الرَّحْمٰنِ لاَيَمْلِكُونَ مِنْهُ خِطَابًۙا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَوْمَ يَقُومُ الرُّوحُ وَالْمَلٰٓئِكَةُ صَفًّاۜ لاَيَتَكَلَّمُونَ اِلاَّ مَنْ اَذِنَ لَهُ الرَّحْمٰنُ وَقَالَ صَوَابًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">ذٰلِكَ الْيَوْمُ الْحَقُّ ۚ فَمَنْ شَٓاءَ اتَّخَذَ اِلٰى رَبِّه۪ مَاٰبًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّٓا اَنْذَرْنَاكُمْ عَذَابًا قَر۪يبًۚا يَوْمَ يَنْظُرُ الْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُولُ الْكَافِرُ يَالَيْتَن۪ى كُنْتُ تُرَابًا</p>
 </div>
-TESBIHAT_PAGE_004,
+TESBIHAT_PAGE_003,
             ],
             [
                 'page_number' => 4,
-                'content' => <<<'TESBIHAT_PAGE_005'
+                'content' => <<<'TESBIHAT_PAGE_004'
 <div class="page" id="4">
 <p class="text-end page-number">#4</p>
 <p class="text-center"><strong>Maghrib – Avondgebed</strong></p>
 
-<p class="text-center">Na het geven van de salām van het verplichte avondgebed:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلَامُ وَ مِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ</p>
-<p class="text-center">Hierna worden de handen omhooggeheven:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلَاةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ الْاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center">Hierna wordt het sunnagebed verricht. Vervolgens één keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اٰمَنَّا بَاَنَّهُ</p>
-<p class="text-center">En negen keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ وَحْدَهُ لَٓا شَر۪يكَ لَهُ لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ يُحْي۪ى وَ يُم۪يتُ بِيَدِهِ الْخَيْرُ وَ هُوَ عَلٰى كُلِّ شَىْءٍ قَد۪يرٌ</p>
-<p class="text-center">Bij de tiende keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ وَحْدَهُ لَٓا شَر۪يكَ لَهُ لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ يُحْي۪ى وَ يُم۪يتُ وَ هُوَ حَىٌّ لَا يَمُوتُ بِيَدِهِ الْخَيْرُ وَ هُوَ عَلٰى كُلِّ شَىْءٍ قَد۪يرٌ وَ اِلَيْهِ الْمَص۪يرُ</p>
-<p class="text-center">Daarna worden de handen opgeheven met de handpalmen naar beneden gericht:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنَ النَّارِ</p>
-<p class="text-center">Dit wordt drie, vijf of zeven keer gereciteerd:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنْ كُلِّ نَارٍ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الدّ۪ينِيَّةِ وَ الدُّنْيَوِيَّةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ اٰخِرِ الزَّمَانِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْمَس۪يحِ الدَّجَّالِ وَ السُّفْيَانِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنَ الضَّلَالَاتِ وَ الْبِدْعِيَّاتِ وَ الْبَلِيَّاتِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النَّفْسِ الْاَمَّارَةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شُرُورِ النُّفُوسِ الْاَمَّارَاتِ الْفِرْعَوْنِيَّةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النِّسَٓاءِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ بَلَٓاءِ النِّسَٓاءِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ النِّسَٓاءِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ يَوْمِ الْقِيٰمَةِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ جَهَنَّمَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ قَهْرِكَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ نَارِ قَهْرِكَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ وَ ال۪نّيرَانِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنَ الرِّيَاءِ وَ السُّمْعَةِ وَ الْعُجُبِ وَ الْفَخْرِ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ تَجَاوُزِ الْمُلْحِد۪ينَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ الْمُنَافِق۪ينَ ٭ اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْفَاسِق۪ينَ ٭ اَللّٰهُمَّ اَجِرْنَا وَ اَجِرْ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ ف۪ى خِدْمَةِ الْقُرْاٰنِ وَ اْلا۪يمَانِ وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا مِنَ النَّارِ</p>
-<p class="text-center">Daarna worden de handpalmen omhooggedraaid:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ ٭ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ ٭ اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ الْاَبْرَارِ ٭ اَللّٰهُمَّ اَدْخِلْنَا وَ اَدْخِلْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ وَ اِخْوَانَنَا وَ اَخَوَاتِنَا وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ ف۪ى خِدْمَةِ اْلا۪يمَانِ وَ الْقُرْاٰنِ اَلْجَنَّةَ مَعَ الْاَبْرَارِ صَلِّ عَلٰى نَبِيِّكَ الْمُخْتَارِ وَ اٰلِه۪ الْاَطْهَارِ وَ اَصْحَابِهِ الْاَخْيَارِ وَ سَلِّمْ مَادَامَ الَّيْلُ وَ النَّهَارُ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center">Daarna volgen Āyat al-Kursī en de tasbīḥāt van het gebed, 33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</p>
-<p class="text-center">Hierna wordt de duʿāʾ van het gebed verricht. Vervolgens:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</p>
-<p class="text-center">Eén keer, en vervolgens:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ</p>
-<p class="text-center">Dit wordt 33 keer gereciteerd; bij de 33e keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</p>
+<p class="text-center">Na het verplichte deel van het avondgebed en de afsluitende vredesgroet zeg je:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلاَمُ وَ مِنْكَ السَّلاَمُ تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center">Hef daarna je handen op met de handpalmen naar boven en reciteer de smeekbede Salâtan Tunjînâ:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ اْلاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center">Verricht daarna het afsluitende soennagebed van het avondgebed. Zeg vervolgens eenmaal <span class="text-arabic" dir="rtl" lang="ar">اٰمَنَّا بِاَنَّهُ</span> en reciteer daarna negenmaal:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لآَ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لآَ شَر۪يكَ لَهُ لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ يُحْي۪ى وَ يُم۪يتُ بِيَدِهِ الْخَيْرُ وَ هُوَ عَلٰى كُلِّ شَىْءٍ قَد۪يرٌ</p>
+<p class="text-center">Vul de tiende herhaling als volgt aan:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لآَ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لآَ شَر۪يكَ لَهُ لَهُ الْمُلْكُ وَ لَهُ الْحَمْدُ يُحْي۪ى وَ يُم۪يتُ وَ هُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَ هُوَ عَلٰى كُلِّ شَىْءٍ قَد۪يرٌ وَ اِلَيْهِ الْمَص۪يرُ</p>
+<p class="text-center">Draai daarna je handpalmen naar beneden en zeg drie-, vijf- of zevenmaal: <span class="text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنَ النَّارِ</span> Ga vervolgens verder met:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَجِرْنَا مِنْ كُلِّ نَارٍ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الدّ۪ينِيَّةِ وَ الدُّنْيَوِيَّةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ اٰخِرِ الزَّمَانِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْمَس۪يحِ الدَّجَّالِ وَ السُّفْيَانِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنَ الضَّلاَلاَتِ وَ الْبِدْعِيَّاتِ وَ الْبَلِيَّاتِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النَّفْسِ اْلاَمَّارَةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شُرُورِ النُّفُوسِ اْلاَمَّارَاتِ الْفِرْعَوْنِيَّةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ النِّسَٓاءِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ بَلآَءِ النِّسَٓاءِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ النِّسَٓاءِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ يَوْمِ الْقِيٰمَةِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ جَهَنَّمَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ قَهْرِكَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ نَارِ قَهْرِكَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ عَذَابِ الْقَبْرِ وَ النِّرَانِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنَ الرِّيَاءِ وَ السُّمْعَةِ وَ الْعُجُبِ وَ الْفَخْرِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ تَجَاوُزِ الْمُلْحِد۪ينَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ شَرِّ الْمُنَافِق۪ينَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا مِنْ فِتْنَةِ الْفَاسِق۪ينَ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَجِرْنَا وَ اَجِرْ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ ف۪ى خِدْمَةِ الْقُرْاٰنِ وَ اْلا۪يمَانِ وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا مِنَ النَّارِ</p>
+<p class="text-center">Draai je handpalmen naar boven en ga verder met:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَفْوِكَ يَا مُج۪يرُ بِفَضْلِكَ يَا غَفَّارُ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ اْلاَبْرَارِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَدْخِلْنَا الْجَنَّةَ مَعَ اْلاَبْرَارِ <span class="cevsen-separator">٭</span> اَللّٰهُمَّ اَدْخِلْنَا وَ اَدْخِلْ اُسْتَادَنَا سَع۪يدَ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ طَلَبَةَ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ وَ اِخْوَانَنَا وَ اَخَوَاتِنَا وَ اَقْرِبَٓائَنَا وَ اَجْدَادَنَا وَ اَحْبَابَنَا الْمُؤْمِن۪ينَ الْمُخْلِص۪ينَ ف۪ى خِدْمَةِ اْلا۪يمَانِ وَ الْقُرْاٰنِ اَلْجَنَّةَ مَعَ اْلاَبْرَارِ صَلِّ عَلٰى نَبِيِّكَ الْمُخْتَارِ وَ اٰلِه۪ اْلاَطْهَارِ وَ اَصْحَابِهِ اْلاَخْيَارِ وَ سَلِّمْ مَادَامَ الَّيْلُ وَ النَّهَارُ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center">Spreek vervolgens zegeningen uit over de Profeet en reciteer deze smeekbede:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللَّهِ وَ الْحَمْدُ لِلَّهِ وَ لَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</p>
+<p class="text-center">Reciteer Ayat al-Kursi (het Troonvers, soera Al-Baqara, vers 255):</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا ٭ لَبَّيْكَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ وَ عَلٰى جَم۪يعِ الْاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ اَصْحَابِه۪ بِعَدَدِ اَوْرَاقِ الْاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ الْاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلَاةٍ مِنْهَٓا اَشْهَدُ اَنْ لَٓا اِلٰهَ اِلَّا اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَۚ اَلْحَيُّ الْقَيُّومُۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌۜ لَهُ مَا فِي السَّمٰوَاتِ وَمَا فِي الْاَرْضِۜ مَنْ ذَا الَّذ۪ي يَشْفَعُ عِنْدَهُٓ اِلَّا بِاِذْنِه۪ۜ يَعْلَمُ مَا بَيْنَ اَيْد۪يهِمْ وَمَا خَلْفَهُمْۚ وَلَا يُح۪يطُونَ بِشَيْءٍ مِنْ عِلْمِه۪ٓ اِلَّا بِمَا شَٓاءَۚ وَسِعَ كُرْسِيُّهُ السَّمٰوَاتِ وَالْاَرْضَۚ وَلَا يَؤُ۫دُهُ حِفْظُهُمَاۚ وَهُوَ الْعَلِيُّ الْعَظ۪يمُ</p>
+<p class="text-center">Zeg daarna:</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</span></p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِى وَيُمِيتُ وَهُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ وَاِلَيْهِ الْمَصِيرُ</p>
+<p class="text-center">Verricht hierna een persoonlijke smeekbede. Zeg daarna eenmaal <span class="text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</span> en ga verder met de geloofsgetuigenis van Gods eenheid.</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ</span> Sluit daarna af met: <span class="text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</span> Ga vervolgens verder met de tesbihat:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَا﴿جَم۪يلُ﴾يَٓا اَللّٰهُ ٭ يَا﴿قَر۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُج۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿حَب۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَؤُفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَطُوفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَعْرُوفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿لَط۪يفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَظ۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿حَنَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَنَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿دَيَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سُبْحَانُ﴾يَٓا اَللّٰهُ ٭ يَٓا﴿اَمَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿بُرْهَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سُلْطَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُسْتَعَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُحْسِنُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُتَعَالُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَحْمٰنُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَح۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿كَر۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَج۪يدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿فَرْدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿وِتْرُ﴾يَٓا اَللّٰهُ ٭ يَٓا﴿اَحَدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿صَمَدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَحْمُودُ﴾يَٓا اَللّٰهُ ٭ يَا﴿صَادِقَالْوَعْدِ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَلِىُّ﴾يَٓا اَللّٰهُ ٭ يَا﴿غَنِىُّ﴾يَٓا اَللّٰهُ ٭ يَا﴿شَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿كَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿مُعَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿بَاق۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿هَاد۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿قَادِرُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سَاتِرُ﴾يَٓا اَللّٰهُ ٭ يَا﴿قَهَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿جَبَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿غَفَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿فَتَّاحُ﴾يَٓا اَللّٰهُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَبَّ السَّمٰوَاتِ وَ الْاَرْضِ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ ٭ اَسْئَلُكَ بِحَقِّ هٰذِهِ الْاَسْمَٓاءِ كُلِّهَٓا اَنْ تُصَلِّىَ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلٰٓى اٰلِ مُحَمَّدٍ وَ ارْحَمْ مُحَمَّدًا كَمَا صَلَّيْتَ وَ سَلَّمْتَ وَ بَارَكْتَ وَ رَحِمْتَ وَ تَرَحَّمْتَ عَلٰٓى اِبرَاه۪يمَ وَ عَلٰٓى اٰلِ اِبْرَاه۪يمَ فِى الْعَالَم۪ينَ رَبَّنَٓا اِنَّكَ حَم۪يدٌ مَج۪يدٌ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ وَ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا <span class="cevsen-separator">٭</span> لَبَّيْكَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَ عَلٰى جَم۪يعِ اْلاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ أَصْحَابِهِ بِعَدَدِ اَوْرَاقِ اْلاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ اْلاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلاَةٍ مِنْهَٓا اَشْهَدُ اَنْ لآَ اِلٰهَ اِلاَّ اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de smeekbede İsm-i A’zâm:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَا يَسْتَو۪ٓى اَصْحَابُ النَّارِ وَاَصْحَابُ الْجَنَّةِۜ اَصْحَابُ الْجَنَّةِ هُمُ الْفَٓائِزُونَ﴿٠٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَوْ اَنْزَلْنَا هٰذَا الْقُرْاٰنَ عَلٰى جَبَلٍ لَرَاَيْتَهُ خَاشِعًا مُتَصَدِّعًا مِنْ خَشْيَةِ اللّٰهِۜ وَتِلْكَ الْاَمْثَالُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ يَتَفَكَّرُونَ﴿١٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لَٓا اِلٰهَ اِلَّا هُوَۚ عَالِمُ الْغَيْبِ وَالشَّهَادَةِۚ هُوَ الرَّحْمٰنُ الرَّح۪يمُ﴿٢٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لَٓا اِلٰهَ اِلَّا هُوَۚ اَلْمَلِكُ الْقُدُّوسُ السَّلَامُ الْمُؤْمِنُ الْمُهَيْمِنُ الْعَز۪يزُ الْجَبَّارُ الْمُتَكَبِّرُۜ سُبْحَانَ اللّٰهِ عَمَّا يُشْرِكُونَ﴿٣٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الْخَالِقُ الْبَارِىُٔ الْمُصَوِّرُ لَهُ الْاَسْمَٓاءُ الْحُسْنٰىۜ يُسَبِّحُ لَهُ مَا فِى السَّمٰوَاتِ وَالْاَرْضِۚ وَهُوَ الْعَز۪يزُ الْحَك۪يمُ﴿٤٢﴾</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا جَم۪يلُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا قَر۪يبُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُج۪يبُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا حَب۪يبُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَؤُفُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا عَطُوفُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَعْرُوفُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا لَط۪يفُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا عَظ۪يمُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا حَنَّانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَنَّانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا دَيَّانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا سُبْحَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَٓا اَمَانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا بُرْهَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا سُلْطَانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُسْتَعَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مُحْسِنُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُتَعَالُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا رَحْمٰنُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَح۪يمُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا كَر۪يمُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَج۪يدُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا فَرْدُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا وِتْرُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَٓا اَحَدُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا صَمَدُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مَحْمُودُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا صَادِقَ الْوَعْدِ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا عَلِىُّ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا غَنِىُّ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا شَاف۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا كَاف۪ى يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مُعَاف۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا بَاق۪ى يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا هَاد۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا قَادِرُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا سَاتِرُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا قَهَّارُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا جَبَّارُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا غَفَّارُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا فَتَّاحُ يَٓا اَللّٰهُ</p>
+<p class="text-center">Open je handen met de handpalmen naar boven en reciteer:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَبَّ السَّمٰوَاتِ وَ اْلاَرْضِ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَسْئَلُكَ بِحَقِّ هٰذِهِ اْلاَسْمَٓاءِ كُلِّهَٓا اَنْ تُصَلِّىَ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلٰٓى اٰلِ مُحَمَّدٍ وَ ارْحَمْ مُحَمَّدًا كَمَا صَلَّيْتَ وَ سَلَّمْتَ وَ بَارَكْتَ وَ رَحِمْتَ وَ تَرَحَّمْتَ عَلٰٓى اِبرَاه۪يمَ وَ عَلٰٓى اٰلِ اِبْرَاه۪يمَ فِى الْعَالَم۪ينَ رَبَّنَٓا اِنَّكَ حَم۪يدٌ مَج۪يدٌ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ وَ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de verzen 20 tot en met 24 van soera Al-Hashr:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاَ يَسْتَو۪ٓى اَصْحَابُ النَّارِ وَاَصْحَابُ الْجَنَّةِۜ اَصْحَابُ الْجَنَّةِ هُمُ الْفَٓائِزُونَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لَوْ اَنْزَلْنَا هٰذَا الْقُرْاٰنَ عَلٰى جَبَلٍ لَرَاَيْتَهُ خَاشِعًا مُتَصَدِّعًا مِنْ خَشْيَةِ اللّٰهِۜ وَتِلْكَ اْلاَمْثَالُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ يَتَفَكَّرُونَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لآَ اِلٰهَ اِلاَّ هُوَۚ عَالِمُ الْغَيْبِ وَالشَّهَادَةِۚ هُوَ الرَّحْمٰنُ الرَّح۪يمُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الَّذ۪ى لآَ اِلٰهَ اِلاَّ هُوَۚ اَلْمَلِكُ الْقُدُّوسُ السَّلاَمُ الْمُؤْمِنُ الْمُهَيْمِنُ الْعَز۪يزُ الْجَبَّارُ الْمُتَكَبِّرُۜ سُبْحَانَ اللّٰهِ عَمَّا يُشْرِكُونَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">هُوَ اللّٰهُ الْخَالِقُ الْبَارِىُٔ الْمُصَوِّرُ لَهُ اْلاَسْمَٓاءُ الْحُسْنٰىۜ يُسَبِّحُ لَهُ مَا فِى السَّمٰوَاتِ وَاْلاَرْضِۚ وَهُوَ الْعَز۪يزُ الْحَك۪يمُ</p>
 </div>
-TESBIHAT_PAGE_005,
+TESBIHAT_PAGE_004,
             ],
             [
                 'page_number' => 5,
-                'content' => <<<'TESBIHAT_PAGE_006'
+                'content' => <<<'TESBIHAT_PAGE_005'
 <div class="page" id="5">
 <p class="text-end page-number">#5</p>
 <p class="text-center"><strong>Isha – Nachtgebed</strong></p>
 
-<p class="text-center">Na het geven van de salām van het verplichte nachtgebed:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلَامُ وَ مِنْكَ السَّلَامُ تَبَارَكْتَ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ</p>
-<p class="text-center">Hierna worden de handen omhooggeheven:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلَاةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ الْاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center">Na het laatste sunnagebed en het witrgebed volgen de tasbīḥāt van het gebed, 33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</p>
-<p class="text-center">Hierna wordt de duʿāʾ van het gebed verricht. Vervolgens één keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</p>
-<p class="text-center">33 keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَٓا اِلٰهَ اِلَّا اللّٰهُ</p>
-<p class="text-center">Bij de 33e keer:</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</p>
+<p class="text-center">Na het verplichte deel van het nachtgebed en de afsluitende vredesgroet zeg je:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ اَنْتَ السَّلاَمُ وَ مِنْكَ السَّلاَمُ تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center">Hef daarna je handen op met de handpalmen naar boven en reciteer de smeekbede Salâtan Tunjînâ:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْج۪ينَا بِهَا مِنْ جَم۪يعِ اْلاَهْوَالِ وَ اْلاٰفَاتِ وَ تَقْض۪ى لَنَا بِهَا جَم۪يعَ الْحَاجَاتِ وَ تُطَهِّرُنَا بِهَا مِنْ جَم۪يعِ السَّيِّئَاتِ وَ تَرْفَعُنَا بِهَا عِنْدَكَ اَعْلَى الدَّرَجَاتِ وَ تُبَلِّغُنَا بِهَٓا اَقْصَى الْغَايَاتِ مِنْ جَم۪يعِ الْخَيْرَاتِ فِى الْحَيَاةِ وَ بَعْدَ الْمَمَاتِ اٰم۪ينَ يَا مُج۪يبَ الدَّعَوَاتِ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center">Verricht daarna het afsluitende soennagebed van het nachtgebed en het witrgebed. Spreek vervolgens zegeningen uit over de Profeet en reciteer deze smeekbede:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللَّهِ وَ الْحَمْدُ لِلَّهِ وَ لَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</p>
+<p class="text-center">Reciteer Ayat al-Kursi (het Troonvers, soera Al-Baqara, vers 255):</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا ٭ لَبَّيْكَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ وَ عَلٰى جَم۪يعِ الْاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلَاةٍ وَ اَلْفُ اَلْفِ سَلَامٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ اَصْحَابِه۪ بِعَدَدِ اَوْرَاقِ الْاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ الْاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّادِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلَاةٍ مِنْهَٓا اَشْهَدُ اَنْ لَٓا اِلٰهَ اِلَّا اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُ لَٓا اِلٰهَ اِلَّا هُوَۚ اَلْحَيُّ الْقَيُّومُۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌۜ لَهُ مَا فِي السَّمٰوَاتِ وَمَا فِي الْاَرْضِۜ مَنْ ذَا الَّذ۪ي يَشْفَعُ عِنْدَهُٓ اِلَّا بِاِذْنِه۪ۜ يَعْلَمُ مَا بَيْنَ اَيْد۪يهِمْ وَمَا خَلْفَهُمْۚ وَلَا يُح۪يطُونَ بِشَيْءٍ مِنْ عِلْمِه۪ٓ اِلَّا بِمَا شَٓاءَۚ وَسِعَ كُرْسِيُّهُ السَّمٰوَاتِ وَالْاَرْضَۚ وَلَا يَؤُ۫دُهُ حِفْظُهُمَاۚ وَهُوَ الْعَلِيُّ الْعَظ۪يمُ</p>
+<p class="text-center">Zeg daarna:</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span></p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">اَللّٰهُ اَكْبَرُ</span></p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِى وَيُمِيتُ وَهُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَهُوَ عَلٰى كُلِّ شَىْءٍ قَدِيرٌ وَاِلَيْهِ الْمَصِيرُ</p>
+<p class="text-center">Verricht hierna een persoonlijke smeekbede. Zeg daarna eenmaal <span class="text-arabic" dir="rtl" lang="ar">فَاعْلَمْ اَنَّهُ</span> en ga verder met de geloofsgetuigenis van Gods eenheid.</p>
+<p class="text-center">33 keer: <span class="text-arabic" dir="rtl" lang="ar">لاۤ اِلٰهَ اِلاَّ اللّٰهُ</span> Sluit daarna af met: <span class="text-arabic" dir="rtl" lang="ar">مُحَمَّدٌ رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمَ</span> Ga vervolgens verder met de tesbihat:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَا﴿جَم۪يلُ﴾يَٓا اَللّٰهُ ٭ يَا﴿قَر۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُج۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿حَب۪يبُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَؤُفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَطُوفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَعْرُوفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿لَط۪يفُ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَظ۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿حَنَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَنَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿دَيَّانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سُبْحَانُ﴾يَٓا اَللّٰهُ ٭ يَٓا﴿اَمَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿بُرْهَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سُلْطَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُسْتَعَانُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُحْسِنُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مُتَعَالُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَحْمٰنُ﴾يَٓا اَللّٰهُ ٭ يَا﴿رَح۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿كَر۪يمُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَج۪يدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿فَرْدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿وِتْرُ﴾يَٓا اَللّٰهُ ٭ يَٓا﴿اَحَدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿صَمَدُ﴾يَٓا اَللّٰهُ ٭ يَا﴿مَحْمُودُ﴾يَٓا اَللّٰهُ ٭ يَا﴿صَادِقَالْوَعْدِ﴾يَٓا اَللّٰهُ ٭ يَا﴿عَلِىُّ﴾يَٓا اَللّٰهُ ٭ يَا﴿غَنِىُّ﴾يَٓا اَللّٰهُ ٭ يَا﴿شَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿كَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿مُعَاف۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿بَاق۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿هَاد۪ى﴾يَٓا اَللّٰهُ ٭ يَا﴿قَادِرُ﴾يَٓا اَللّٰهُ ٭ يَا﴿سَاتِرُ﴾يَٓا اَللّٰهُ ٭ يَا﴿قَهَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿جَبَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿غَفَّارُ﴾يَٓا اَللّٰهُ ٭ يَا﴿فَتَّاحُ﴾يَٓا اَللّٰهُ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَبَّ السَّمٰوَاتِ وَ الْاَرْضِ يَا ذَا الْجَلَالِ وَ اْلاِكْرَامِ ٭ اَسْئَلُكَ بِحَقِّ هٰذِهِ الْاَسْمَٓاءِ كُلِّهَٓا اَنْ تُصَلِّىَ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلٰٓى اٰلِ مُحَمَّدٍ وَ ارْحَمْ مُحَمَّدًا كَمَا صَلَّيْتَ وَ سَلَّمْتَ وَ بَارَكْتَ وَ رَحِمْتَ وَ تَرَحَّمْتَ عَلٰٓى اِبرَاه۪يمَ وَ عَلٰٓى اٰلِ اِبْرَاه۪يمَ فِى الْعَالَم۪ينَ رَبَّنَٓا اِنَّكَ حَم۪يدٌ مَج۪يدٌ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ وَ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
-<hr>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اِنَّ اللّٰهَ وَ مَلَٓئِكَتَهُ يُصَلُّونَ عَلَى النَّبِىِّ يَٓا اَيُّهَا الَّذ۪ينَ اٰمَنُوا صَلُّوا عَلَيْهِ وَ سَلِّمُوا تَسْل۪يمًا <span class="cevsen-separator">٭</span> لَبَّيْكَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِ سَيِّدِنَا مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِعَدَدِ كُلِّ دَٓاءٍ وَدَوَٓاءٍ وَبَارِكْ وَسَلِّمْ عَلَيْهِ وَعَلَيْهِمْ كَث۪يرًا كَث۪يرًا</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">صَلِّ وَ سَلِّمْ يَا رَبِّ عَلٰى حَب۪يبِكَ مُحَمَّدٍ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">وَ عَلٰى جَم۪يعِ اْلاَنْبِيَٓاءِ وَ الْمُرْسَل۪ينَ وَ عَلَٓى اٰلِ كُلٍّ وَ صَحْبِ كُلٍّ اَجْمَع۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اٰم۪ينَ وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا رَسُولَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَا حَب۪يبَ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَلْفُ اَلْفِ صَلاَةٍ وَ اَلْفُ اَلْفِ سَلاَمٍ عَلَيْكَ يَٓا اَم۪ينَ وَحْىِ اللّٰهِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَللّٰهُمَّ صَلِّ وَ سَلِّمْ وَ بَارِكْ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلَٓى اٰلِه۪ وَ أَصْحَابِهِ بِعَدَدِ اَوْرَاقِ اْلاَشْجَارِ وَ اَمْوَاجِ الْبِحَارِ وَ قَطَرَاتِ اْلاَمْطَارِ وَ اغْفِرْلَنَا وَ ارْحَمْنَا وَ الْطُفْ بِنَا وَ بِاُسْتَادِنَا سَع۪يدِ النُّورْس۪ى رَضِىَ اللّٰهُ عَنْهُ وَ وَالِدَيْنَا وَ بِطَلَبَةِ رَسَٓائِلِ النُّورِ الصَّدِق۪ينَ يَٓا اِلٰهَنَا بِكُلِّ صَلاَةٍ مِنْهَٓا اَشْهَدُ اَنْ لآَ اِلٰهَ اِلاَّ اللّٰهُ وَ اَشْهَدُ اَنَّ مُحَمَّدًا رَسُولُ اللّٰهِ صَلَّى اللّٰهُ تَعَالٰى عَلَيْهِ وَ سَلَّمْ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de smeekbede İsm-i A’zâm:</p>
 <p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">اٰمَنَ الرَّسُولُ بِمَٓا اُنْزِلَ اِلَيْهِ مِنْ رَبِّه۪ وَالْمُؤْمِنُونَۜ كُلٌّ اٰمَنَ بِاللّٰهِ وَمَلٰٓئِكَتِه۪ وَكُتُبِه۪ وَرُسُلِه۪ۜ لَا نُفَرِّقُ بَيْنَ اَحَدٍ مِنْ رُسُلِه۪۠ وَقَالُوا سَمِعْنَا وَاَطَعْنَا غُفْرَانَكَ رَبَّنَا وَاِلَيْكَ الْمَص۪يرُ﴿٥٨٢﴾</p>
-<p class="text-center text-arabic" dir="rtl" lang="ar">لَا يُكَلِّفُ اللّٰهُ نَفْسًا اِلَّا وُسْعَهَاۜ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَااكْتَسَبَتْۜ رَبَّنَا لَا تُؤَاخِذْنَٓا اِنْ نَس۪ينَٓا اَوْ اَخْطَاْنَاۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَٓا اِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذ۪ينَ مِنْ قَبْلِنَاۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِه۪ۚ وَاعْفُ عَنَّا۠ وَاغْفِرْ لَنَا۠ وَارْحَمْنَا۠ اَنْتَ مَوْلٰينَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِر۪ينَ﴿٦٨٢﴾</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا جَم۪يلُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا قَر۪يبُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُج۪يبُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا حَب۪يبُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَؤُفُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا عَطُوفُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَعْرُوفُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا لَط۪يفُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا عَظ۪يمُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا حَنَّانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَنَّانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا دَيَّانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا سُبْحَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَٓا اَمَانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا بُرْهَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا سُلْطَانُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُسْتَعَانُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مُحْسِنُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مُتَعَالُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا رَحْمٰنُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَح۪يمُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا كَر۪يمُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا مَج۪يدُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا فَرْدُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا وِتْرُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَٓا اَحَدُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا صَمَدُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مَحْمُودُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا صَادِقَ الْوَعْدِ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا عَلِىُّ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا غَنِىُّ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا شَاف۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا كَاف۪ى يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا مُعَاف۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا بَاق۪ى يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا هَاد۪ى يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا قَادِرُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا سَاتِرُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا قَهَّارُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا جَبَّارُ يَٓا اَللّٰهُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا غَفَّارُ يَٓا اَللّٰهُ <span class="cevsen-separator">٭</span> يَا فَتَّاحُ يَٓا اَللّٰهُ</p>
+<p class="text-center">Open je handen met de handpalmen naar boven en reciteer:</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">يَا رَبَّ السَّمٰوَاتِ وَ اْلاَرْضِ يَا ذَا الْجَلاَلِ وَ اْلاِكْرَامِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اَسْئَلُكَ بِحَقِّ هٰذِهِ اْلاَسْمَٓاءِ كُلِّهَٓا اَنْ تُصَلِّىَ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَ عَلٰٓى اٰلِ مُحَمَّدٍ وَ ارْحَمْ مُحَمَّدًا كَمَا صَلَّيْتَ وَ سَلَّمْتَ وَ بَارَكْتَ وَ رَحِمْتَ وَ تَرَحَّمْتَ عَلٰٓى اِبرَاه۪يمَ وَ عَلٰٓى اٰلِ اِبْرَاه۪يمَ فِى الْعَالَم۪ينَ رَبَّنَٓا اِنَّكَ حَم۪يدٌ مَج۪يدٌ بِرَحْمَتِكَ يَٓا اَرْحَمَ الرَّاحِم۪ينَ وَ الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَم۪ينَ</p>
+<hr class="hr-tesbihat">
+<p class="text-center">Reciteer de verzen 285 en 286 van soera Al-Baqara (Âmene’r-rasûlü):</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّح۪يمِ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">اٰمَنَ الرَّسُولُ بِمَٓا اُنْزِلَ اِلَيْهِ مِنْ رَبِّه۪ وَالْمُؤْمِنُونَۜ كُلٌّ اٰمَنَ بِاللّٰهِ وَمَلٰٓئِكَتِه۪ وَكُتُبِه۪ وَرُسُلِه۪ۜ لَا نُفَرِّقُ بَيْنَ اَحَدٍ مِنْ رُسُلِه۪۠ وَقَالُوا سَمِعْنَا وَاَطَعْنَا غُفْرَانَكَ رَبَّنَا وَاِلَيْكَ الْمَص۪يرُ</p>
+<p class="text-center text-arabic" dir="rtl" lang="ar">لَا يُكَلِّفُ اللّٰهُ نَفْسًا اِلَّا وُسْعَهَاۜ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْۜ رَبَّنَا لَا تُؤَاخِذْنَٓا اِنْ نَس۪ينَٓا اَوْ اَخْطَأْنَاۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَٓا اِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذ۪ينَ مِنْ قَبْلِنَاۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِه۪ۚ وَاعْفُ عَنَّا۠ وَاغْفِرْ لَنَا۠ وَارْحَمْنَا۠ اَنْتَ مَوْلٰينَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِر۪ينَ</p>
 </div>
-TESBIHAT_PAGE_006,
+TESBIHAT_PAGE_005,
             ],
         ];
 
-        return array_map(function (array $page): array {
-            $page['content'] = str_replace(
-                ['٭', '۪', '<hr>'],
-                ['<span class="cevsen-separator">۞</span>', 'ٖ', '<hr class="hr-tesbihat">'],
-                $page['content']
-            );
-
-            $content = preg_replace_callback(
-                '/﴿([٠-٩]+)﴾/u',
-                static function (array $matches): string {
-                    $digits = preg_split('//u', $matches[1], -1, PREG_SPLIT_NO_EMPTY);
-
-                    return '<span class="cevsen-verse-number">۝'.implode('', array_reverse($digits)).'</span>';
-                },
-                $page['content']
-            );
-
-            if ($content === null) {
-                throw new \RuntimeException('Unable to format Tesbihat Arabic verse markers.');
-            }
-
-            if ($page['page_number'] === 3) {
-                $content = preg_replace(
-                    '/(<span class="cevsen-verse-number">۝[٠-٩]+<\/span>)<\/p>\s*<p class="text-center text-arabic" dir="rtl" lang="ar">/u',
-                    '$1 ',
-                    $content
-                );
-
-                if ($content === null) {
-                    throw new \RuntimeException('Unable to join the Asr surah verses.');
-                }
-            }
-
-            $page['content'] = str_replace(
-                ['﴿', '﴾'],
-                ['<span class="tesbihat-ornament">﴿</span>', '<span class="tesbihat-ornament">﴾</span>'],
-                $content
-            );
+        return array_map(static function (array $page): array {
+            $page['content'] = str_replace(['٭', '۪'], ['۞', 'ٖ'], $page['content']);
 
             return $page;
         }, $pages);
