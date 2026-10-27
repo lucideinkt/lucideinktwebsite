@@ -58,12 +58,14 @@
             try {
                 let stored = localStorage.getItem('reader-theme');
                 // Default to system theme when nothing is saved yet
-                let mode = stored || 'system';
+                let mode = ['system', 'light', 'dark', 'ivory', 'white', 'sepia', 'green', 'gray', 'night', 'black'].includes(stored)
+                    ? stored : (localStorage.getItem('reader-dark-mode') === '0' ? 'light' : 'system');
                 let prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (mode === 'dark' || (mode === 'system' && prefersDark)) {
+                document.documentElement.dataset.readerTheme = mode === 'system' ? (prefersDark ? 'dark' : 'light') : mode;
+                if (mode === 'dark' || mode === 'gray' || mode === 'night' || mode === 'black' || (mode === 'system' && prefersDark)) {
                     document.documentElement.classList.add('reader-preload-dark');
                 }
-            } catch(_) {}
+            } catch(error) { console.warn('Leesthema kon niet vooraf worden geladen.', error); }
             // Detect iOS to disable unsupported font-feature-settings (ss04)
             try {
                 let isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
@@ -139,7 +141,7 @@
         .font-step-az--large.font-step-az--arabic        { font-size: 22px !important; }
         .reader-lib-clear-all                            { font-size: 11px !important; }
         .reader-sheet-arrow                              { font-size: 12px !important; }
-        .reader-sheet-theme-btn span                     { font-size: 9px !important; }
+        .reader-sheet-theme-btn span                     { font-size: 12px !important; }
         .reader-sheet-theme-btn i                        { font-size: 16px !important; }
         .reader-back-btn                                 { font-size: 12px !important; }
         .reader-topbar-page-badge                        { font-size: 11px !important; }
@@ -186,16 +188,6 @@
                         <span id="topbar-page-cur-num">—</span><span class="reader-topbar-page-sep"> / {{ $allPageMeta->max('page_number') }}</span>
                     </span>
                 </div>
-                {{-- Pill 2: type page number + Ga --}}
-                <div class="reader-topbar-font-group reader-topbar-nav-goto">
-                    <input type="number" class="reader-topbar-goto-input" id="topbar-goto-input"
-                           min="{{ $allPageMeta->min('page_number') }}"
-                           max="{{ $allPageMeta->max('page_number') }}"
-                           inputmode="numeric"
-                           placeholder=""
-                           aria-label="Ga naar pagina">
-                    <button type="button" class="reader-topbar-font-btn reader-topbar-goto-btn" id="topbar-goto-btn" aria-label="Ga naar pagina">Ga</button>
-                </div>
             </div>
         </div>
 
@@ -207,25 +199,6 @@
                 <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
             </button>
             @endif
-            {{-- Compact font controls — desktop only --}}
-            <div class="reader-topbar-font-controls" aria-label="Lettergrootte">
-                <div class="reader-topbar-font-group">
-                    <button class="reader-topbar-font-btn reader-topbar-font-btn--small" id="topbar-font-dec-btn" type="button" aria-label="Kleinere tekst">a</button>
-                    <input type="range" class="reader-topbar-font-range" id="topbar-font-range" aria-label="Tekstgrootte">
-                    <button class="reader-topbar-font-btn reader-topbar-font-btn--large" id="topbar-font-inc-btn" type="button" aria-label="Grotere tekst">A</button>
-                    <span class="reader-topbar-font-val" id="topbar-font-val" aria-live="polite">19px</span>
-                    <button class="reader-topbar-font-reset" id="topbar-font-reset" type="button" aria-label="Tekst lettergrootte resetten">↺</button>
-                </div>
-                <div class="reader-topbar-font-divider" aria-hidden="true"></div>
-                <div class="reader-topbar-font-group">
-                    <button class="reader-topbar-font-btn reader-topbar-font-btn--arabic reader-topbar-font-btn--small" id="topbar-arabic-font-dec-btn" type="button" aria-label="Kleiner Arabisch">ا</button>
-                    <input type="range" class="reader-topbar-font-range" id="topbar-arabic-font-range" aria-label="Arabische tekstgrootte">
-                    <button class="reader-topbar-font-btn reader-topbar-font-btn--arabic reader-topbar-font-btn--large" id="topbar-arabic-font-inc-btn" type="button" aria-label="Groter Arabisch">ا</button>
-                    <span class="reader-topbar-font-val reader-topbar-font-val--arabic" id="topbar-arabic-font-val" aria-live="polite">29px</span>
-                    <button class="reader-topbar-font-reset" id="topbar-arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
-                </div>
-            </div>
-
             {{-- Action icon buttons (desktop only) --}}
             <div class="reader-topbar-actions">
                 <div class="reader-topbar-actions-divider" aria-hidden="true"></div>
@@ -235,13 +208,8 @@
                 <button class="reader-topbar-icon-btn reader-topbar-bm-icon-btn" id="topbar-bm-btn" type="button" aria-label="Bladwijzer toevoegen" title="Bladwijzer">
                     <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
                 </button>
-                @if(!empty($tocEntries))
-                <button class="reader-topbar-icon-btn" id="topbar-toc-btn" type="button" aria-label="Inhoudsopgave" title="Inhoudsopgave">
-                    <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
-                </button>
-                @endif
-                <button class="reader-topbar-icon-btn reader-topbar-theme-btn" id="topbar-theme-btn" type="button" aria-label="Thema wisselen" title="Thema">
-                    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+                <button class="reader-topbar-icon-btn" id="topbar-settings-btn" type="button" aria-label="Thema's en instellingen" title="Thema's en instellingen" aria-haspopup="dialog">
+                    <i class="fa-solid fa-sliders" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -252,7 +220,7 @@
         <div class="reader-progress-bar-fill" id="progress-fill"></div>
     </div>
 
-    {{-- Go-to-page modal (mobile) --}}
+    {{-- Go-to-page modal --}}
     <div id="goto-page-overlay" class="goto-page-overlay" role="dialog" aria-modal="true" aria-label="Ga naar pagina" hidden>
         <div class="goto-page-modal">
             <button type="button" id="goto-page-cancel" class="goto-page-close" aria-label="Paginanavigatie sluiten">×</button>
@@ -261,19 +229,22 @@
                 <button type="button" id="goto-page-prev" class="goto-page-step" aria-label="Vorige pagina">
                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                 </button>
+                <div class="goto-page-field">
                 <input type="number" id="goto-page-input" class="goto-page-input"
                        min="{{ $allPageMeta->min('page_number') }}"
                        max="{{ $allPageMeta->max('page_number') }}"
                        inputmode="numeric"
                        aria-label="Paginanummer">
+                <span class="goto-page-total">/ {{ $allPageMeta->max('page_number') }}</span>
+                </div>
                 <button type="button" id="goto-page-next" class="goto-page-step" aria-label="Volgende pagina">
                     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
-            <p class="goto-page-range">{{ $allPageMeta->min('page_number') }} – {{ $allPageMeta->max('page_number') }}</p>
             <input type="range" id="goto-page-slider" class="goto-page-slider" min="0" max="{{ $allPageMeta->count() - 1 }}" step="1" value="0" aria-label="Pagina kiezen">
+            <div class="goto-page-range"><span>{{ $allPageMeta->min('page_number') }}</span><span>{{ $allPageMeta->max('page_number') }}</span></div>
             <p id="goto-page-error" class="goto-page-error" role="alert" hidden></p>
-            <button type="button" id="goto-page-confirm" class="goto-page-btn goto-page-btn--confirm">Ga</button>
+            <button type="button" id="goto-page-confirm" class="goto-page-btn goto-page-btn--confirm">Ga naar pagina <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </div>
     </div>
 
@@ -338,7 +309,7 @@
 
 
     {{-- ────── Control Sheet ────── --}}
-    <div class="reader-control-sheet" id="reader-control-sheet" role="dialog" aria-label="Lezeropties" aria-hidden="true">
+    <div class="reader-control-sheet" id="reader-control-sheet" role="dialog" aria-modal="true" aria-labelledby="reader-sheet-heading" aria-hidden="true" inert>
         {{-- Drag handle --}}
         <div class="reader-sheet-drag-handle" aria-hidden="true"></div>
 
@@ -347,21 +318,10 @@
             <div class="reader-sheet-progress-fill" id="sheet-progress-fill"></div>
         </div>
 
-        {{-- Book title + close button (visible on mobile where topbar title is hidden) --}}
-        <div class="reader-sheet-book-title">
-            <span class="reader-sheet-book-title-text" aria-hidden="true">{{ $product->title }}</span>
+        <div class="reader-settings-heading" id="reader-sheet-header" hidden>
+            <h2 id="reader-sheet-heading">Leesmenu</h2>
             <button class="reader-sheet-close-x" id="reader-sheet-close-btn" type="button" aria-label="Sluiten">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-        </div>
-
-        {{-- Tabs --}}
-        <div class="reader-sheet-tabs" role="tablist">
-            <button class="reader-sheet-tab active" id="sheet-tab-controls" data-tab="controls" role="tab" aria-selected="true">
-                <i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Instellingen</span>
-            </button>
-            <button class="reader-sheet-tab" id="sheet-tab-library" data-tab="library" role="tab" aria-selected="false">
-                <i class="fa-solid fa-bookmark" aria-hidden="true"></i><span>Bibliotheek</span>
+                <span aria-hidden="true">×</span>
             </button>
         </div>
 
@@ -398,6 +358,9 @@
                 <span class="sheet-menu-row-label">Zoek in boek</span>
                 <i class="fa-solid fa-magnifying-glass sheet-menu-row-icon" aria-hidden="true"></i>
             </button>
+            <button id="sheet-menu-clear-search" type="button" hidden>
+                <i class="fa-solid fa-eraser" aria-hidden="true"></i> Zoekmarkeringen wissen
+            </button>
 
             <button class="sheet-menu-row sheet-menu-bm-row" id="sheet-menu-bm-btn" type="button" aria-label="Bladwijzer toevoegen">
                 <span class="sheet-menu-row-label" id="sheet-menu-bm-label">Bladwijzer toevoegen</span>
@@ -425,56 +388,93 @@
             <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Terug
         </button>
 
+        <div class="reader-settings-tabs" role="tablist" aria-label="Leesinstellingen">
+            <button id="reader-settings-tab-text" class="reader-settings-tab" type="button" role="tab" aria-selected="true" aria-controls="reader-settings-text" tabindex="0">Tekst</button>
+            <button id="reader-settings-tab-colors" class="reader-settings-tab" type="button" role="tab" aria-selected="false" aria-controls="reader-settings-colors" tabindex="-1">Kleuren</button>
+        </div>
+        <div id="reader-settings-text" role="tabpanel" aria-labelledby="reader-settings-tab-text">
         {{-- Text font size --}}
-        <div class="reader-sheet-section reader-sheet-fontpicker-row">
+        <div class="reader-sheet-section reader-sheet-fontpicker-row reader-setting-row">
             <div class="reader-sheet-slider-meta">
-                <span class="reader-sheet-slider-label"><i class="fa-solid fa-font" aria-hidden="true"></i> Tekst</span>
+                <span class="reader-sheet-slider-label">Nederlandse tekst</span>
                 <div class="reader-sheet-slider-right">
                     <span class="reader-sheet-slider-val" id="sheet-font-val" aria-live="polite">19.0px</span>
-                    <button class="reader-sheet-reset-btn" id="sheet-font-reset" type="button" aria-label="Lettergrootte resetten">↺</button>
+                    <button class="reader-sheet-reset-btn" id="sheet-font-reset" type="button" aria-label="Nederlandse tekst herstellen">Herstellen</button>
                 </div>
             </div>
             <div class="font-step-control" id="font-step-control">
-                <button class="font-step-az font-step-az--small" id="font-dec-btn" type="button" aria-label="Kleiner lettertype">a</button>
-                <input type="range" class="font-step-range" id="font-step-range"
+                <button class="font-step-az" id="font-dec-btn" type="button" aria-label="Kleiner lettertype">−</button>
+                <output class="reader-setting-value" id="reader-font-value" aria-live="polite">19</output>
+                <input type="range" class="font-step-range reader-setting-slider" id="font-step-range"
                        min="0" step="1" aria-label="Lettergrootte">
-                <button class="font-step-az font-step-az--large" id="font-inc-btn" type="button" aria-label="Groter lettertype">A</button>
+                <button class="font-step-az" id="font-inc-btn" type="button" aria-label="Groter lettertype">+</button>
             </div>
         </div>
 
         {{-- Arabic font size --}}
-        <div class="reader-sheet-section reader-sheet-fontpicker-row">
+        <div class="reader-sheet-section reader-sheet-fontpicker-row reader-setting-row">
             <div class="reader-sheet-slider-meta">
-                <span class="reader-sheet-slider-label"><i class="fa-solid fa-language" aria-hidden="true"></i> Arabisch</span>
+                <span class="reader-sheet-slider-label">Arabische tekst</span>
                 <div class="reader-sheet-slider-right">
                     <span class="reader-sheet-slider-val" id="arabic-font-size-display" aria-live="polite">29.0px</span>
-                    <button class="reader-sheet-reset-btn" id="arabic-font-reset" type="button" aria-label="Arabische lettergrootte resetten">↺</button>
+                    <button class="reader-sheet-reset-btn" id="arabic-font-reset" type="button" aria-label="Arabische tekst herstellen">Herstellen</button>
                 </div>
             </div>
             <div class="font-step-control" id="arabic-font-step-control">
-                <button class="font-step-az font-step-az--small font-step-az--arabic" id="arabic-font-dec-btn" type="button" aria-label="Kleiner Arabisch lettertype">ا</button>
-                <input type="range" class="font-step-range" id="arabic-font-step-range"
+                <button class="font-step-az" id="arabic-font-dec-btn" type="button" aria-label="Kleiner Arabisch lettertype">−</button>
+                <output class="reader-setting-value" id="reader-arabic-value" aria-live="polite">29</output>
+                <input type="range" class="font-step-range reader-setting-slider" id="arabic-font-step-range"
                        min="0" step="1" aria-label="Arabische lettergrootte">
-                <button class="font-step-az font-step-az--large font-step-az--arabic" id="arabic-font-inc-btn" type="button" aria-label="Groter Arabisch lettertype">ا</button>
+                <button class="font-step-az" id="arabic-font-inc-btn" type="button" aria-label="Groter Arabisch lettertype">+</button>
             </div>
         </div>
 
         <div class="reader-sheet-divider"></div>
 
+        @foreach ([
+            ['id' => 'line-height', 'label' => 'Regelafstand', 'min' => '1.2', 'max' => '2.2', 'step' => '0.1', 'default' => '1.5'],
+            ['id' => 'side-padding', 'label' => 'Zijruimte', 'min' => '8', 'max' => '64', 'step' => '4', 'default' => '16'],
+        ] as $control)
+        <div class="reader-sheet-section reader-sheet-fontpicker-row reader-setting-row">
+            <div class="reader-sheet-slider-meta">
+                <label class="reader-sheet-slider-label" for="reader-{{ $control['id'] }}">{{ $control['label'] }}</label>
+                <div class="reader-sheet-slider-right">
+                    <button class="reader-sheet-reset-btn" id="reader-{{ $control['id'] }}-reset" type="button" aria-label="{{ $control['label'] }} herstellen">Herstellen</button>
+                </div>
+            </div>
+            <div class="font-step-control">
+            <button class="font-step-az" id="reader-{{ $control['id'] }}-dec" type="button" aria-label="{{ $control['label'] }} verkleinen">−</button>
+            <output class="reader-setting-value" id="reader-{{ $control['id'] }}-value" for="reader-{{ $control['id'] }}">{{ $control['default'] }}</output>
+            <input type="range" class="font-step-range reader-setting-slider" id="reader-{{ $control['id'] }}"
+                   min="{{ $control['min'] }}" max="{{ $control['max'] }}" step="{{ $control['step'] }}" value="{{ $control['default'] }}">
+            <button class="font-step-az" id="reader-{{ $control['id'] }}-inc" type="button" aria-label="{{ $control['label'] }} vergroten">+</button>
+            </div>
+        </div>
+        @endforeach
+        </div>
+
         {{-- Theme --}}
+        <div id="reader-settings-colors" role="tabpanel" aria-labelledby="reader-settings-tab-colors" hidden>
         <div class="reader-sheet-section reader-sheet-theme-section">
             <span class="reader-sheet-section-label">Weergave</span>
             <div class="reader-sheet-theme-row">
                 <button class="reader-sheet-theme-btn" data-theme="system" type="button" aria-label="Systeemthema">
-                    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i><span>Systeem</span>
+                    <span class="reader-theme-swatch" aria-hidden="true">Aa</span><span>Systeem</span>
                 </button>
-                <button class="reader-sheet-theme-btn" data-theme="light" type="button" aria-label="Licht thema">
-                    <i class="fa-solid fa-sun" aria-hidden="true"></i><span>Licht</span>
+                <button class="reader-sheet-theme-btn" data-theme="light" type="button" aria-label="Papier thema">
+                    <span class="reader-theme-swatch" aria-hidden="true">Aa</span><span>Papier</span>
                 </button>
                 <button class="reader-sheet-theme-btn" data-theme="dark" type="button" aria-label="Donker thema">
-                    <i class="fa-solid fa-moon" aria-hidden="true"></i><span>Donker</span>
+                    <span class="reader-theme-swatch" aria-hidden="true">Aa</span><span>Donker</span>
                 </button>
+                @foreach (['ivory' => 'Warm ivoor', 'white' => 'Papierwit', 'sepia' => 'Klassiek sepia', 'green' => 'Zacht saliegroen', 'gray' => 'Donker grafiet', 'night' => 'Nachtmodus', 'black' => 'Zwart'] as $value => $label)
+                <button class="reader-sheet-theme-btn" data-theme="{{ $value }}" type="button" aria-label="{{ $label }} thema">
+                    <span class="reader-theme-swatch" aria-hidden="true">Aa</span><span>{{ $label }}</span>
+                </button>
+                @endforeach
             </div>
+        </div>
+        <button id="reader-theme-reset" class="reader-settings-reset" type="button">Standaardkleur herstellen</button>
         </div>
 
         <div class="reader-sheet-bottom-safe"></div>
@@ -506,13 +506,13 @@
     </div>
     <div class="reader-sheet-backdrop" id="reader-sheet-backdrop" aria-hidden="true"></div>
 
-    {{-- Inhoudsopgave panel (sidebar drawer) — only rendered when the book has TOC entries --}}
+    {{-- Inhoudsopgave — only rendered when the book has TOC entries --}}
     @if(!empty($tocEntries))
-    <nav id="toc-panel" class="toc-panel" role="dialog" aria-label="Inhoudsopgave" aria-hidden="true">
+    <nav id="toc-panel" class="toc-panel" role="dialog" aria-label="Inhoudsopgave" aria-modal="true" aria-hidden="true" inert>
         <div class="toc-panel-header">
-            <span class="toc-panel-title"><i class="fa-solid fa-list" aria-hidden="true"></i>Inhoudsopgave</span>
+            <span class="toc-panel-title">Inhoudsopgave</span>
             <button class="toc-panel-close" id="toc-close-btn" aria-label="Sluit inhoudsopgave">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                <span aria-hidden="true">×</span>
             </button>
         </div>
         <div class="toc-panel-body" id="toc-panel-body">
@@ -544,27 +544,28 @@
     </div>
 
     {{-- Search panel --}}
-    <div id="reader-search-panel" class="reader-search-panel" hidden role="dialog" aria-label="Zoeken in boek" aria-modal="true">
-        {{-- Drag handle — visible only on mobile (CSS hides on desktop) --}}
-        <div class="reader-search-drag-handle" aria-hidden="true"></div>
+    <div id="reader-search-panel" class="reader-search-panel" hidden role="dialog" aria-label="Zoek in boek" aria-modal="true">
         <div class="reader-search-header">
-            <span class="reader-search-title"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Zoeken</span>
-            <button class="reader-search-close" id="reader-search-close" aria-label="Sluiten">
-                <i class="fa-solid fa-xmark"></i>
+            <span class="reader-search-title">Zoek in boek</span>
+            <button class="reader-search-close" id="reader-search-close" aria-label="Venster sluiten" type="button">
+                <span aria-hidden="true">×</span>
             </button>
         </div>
         <div class="reader-search-body">
             <div class="reader-search-input-wrap">
                 <i class="fa-solid fa-magnifying-glass reader-search-icon" aria-hidden="true"></i>
                 <input type="search" id="reader-search-input" class="reader-search-input"
-                       placeholder="Zoek tekst in boek..." autocomplete="off" spellcheck="false">
-                <button class="reader-search-clear" id="reader-search-clear" aria-label="Wissen" hidden>
-                    <i class="fa-solid fa-xmark"></i>
+                       aria-label="Zoektekst" placeholder="Typ hier om te zoeken" maxlength="200" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="done">
+                <button class="reader-search-clear" id="reader-search-clear" aria-label="Zoektekst wissen" type="button" hidden>
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
         <div class="reader-search-meta" id="reader-search-meta" aria-live="polite"></div>
-        <div class="reader-search-results" id="reader-search-results" role="list"></div>
+        <div class="reader-search-results" id="reader-search-results" role="group" aria-label="Zoekresultaten"></div>
+        <button id="reader-search-keyboard-dismiss" class="reader-search-keyboard-dismiss" type="button" hidden>
+            <i class="fa-regular fa-keyboard" aria-hidden="true"></i> Toetsenbord verbergen
+        </button>
     </div>
     <div class="reader-search-backdrop" id="reader-search-backdrop"></div>
 
@@ -735,8 +736,7 @@
             readerEl.style.setProperty('--reader-font-size', sz + 'px');
             if (frozenAnchor) restoreAnchor(frozenAnchor);
             if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
-            const tbFontVal = document.getElementById('topbar-font-val');
-            if (tbFontVal) tbFontVal.textContent = Math.round(sz) + 'px';
+            document.getElementById('reader-font-value').textContent = String(Math.round(sz * 10) / 10);
         }
         function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
         function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
@@ -746,9 +746,48 @@
             readerEl.style.setProperty('--reader-arabic-font-size', sz + 'px');
             if (frozenAnchor) restoreAnchor(frozenAnchor);
             if (arabicFontValEl) arabicFontValEl.textContent = sz.toFixed(1) + 'px';
-            const tbArabicVal = document.getElementById('topbar-arabic-font-val');
-            if (tbArabicVal) tbArabicVal.textContent = Math.round(sz) + 'px';
+            document.getElementById('reader-arabic-value').textContent = String(Math.round(sz * 10) / 10);
         }
+
+        function preferenceStorageError(error) {
+            console.error('Leesinstellingen konden niet worden bewaard of geladen.', error);
+            if (window.showToast) window.showToast('Je leesinstellingen konden niet worden bewaard of geladen.', 'error');
+        }
+        [
+            { id: 'line-height', key: 'reader-line-height', property: '--reader-line-height', min: 1.2, max: 2.2, fallback: 1.5, unit: '' },
+            { id: 'side-padding', key: 'reader-side-padding', property: '--reader-side-padding', min: 8, max: 64, fallback: parseFloat(getComputedStyle(document.querySelector('.reader-wrap')).paddingLeft), unit: 'px' },
+        ].forEach(control => {
+            const input = document.getElementById('reader-' + control.id);
+            const output = document.getElementById('reader-' + control.id + '-value');
+            function apply(value, persist) {
+                const number = Number(value);
+                const normalized = value !== null && value !== '' && Number.isFinite(number)
+                    ? Math.round(Math.min(control.max, Math.max(control.min, number)) * 10) / 10 : control.fallback;
+                const anchor = persist ? captureAnchor() : null;
+                document.documentElement.style.setProperty(control.property, normalized + control.unit);
+                if (control.id === 'line-height') {
+                    document.documentElement.style.setProperty('--reader-arabic-line-scale', String(Math.max(1, normalized / 1.5)));
+                    document.body.classList.toggle('reader-custom-spacing', normalized !== 1.5);
+                    if (persist) document.dispatchEvent(new Event('reader-layout-change'));
+                }
+                input.value = String(normalized);
+                output.textContent = String(normalized);
+                input.setAttribute('aria-valuetext', output.textContent);
+                if (anchor) restoreAnchor(anchor);
+                if (persist) {
+                    try { localStorage.setItem(control.key, String(normalized)); }
+                    catch (error) { preferenceStorageError(error); }
+                }
+            }
+            let saved = null;
+            try { saved = localStorage.getItem(control.key); }
+            catch (error) { preferenceStorageError(error); }
+            apply(saved, false);
+            input.addEventListener('input', () => apply(input.value, true));
+            document.getElementById('reader-' + control.id + '-dec').addEventListener('click', () => apply(Number(input.value) - Number(input.step), true));
+            document.getElementById('reader-' + control.id + '-inc').addEventListener('click', () => apply(Number(input.value) + Number(input.step), true));
+            document.getElementById('reader-' + control.id + '-reset').addEventListener('click', () => apply(control.fallback, true));
+        });
 
         function visiblePage() {
             let closest = null, best = Infinity;
@@ -772,7 +811,27 @@
             }
         }
 
-        // ── Go-to-page modal (mobile) ──────────────────────────────────────
+        function positionReaderDialogs() {
+            const viewport = window.visualViewport;
+            const viewportTop = viewport?.offsetTop ?? 0;
+            const viewportBottom = viewportTop + (viewport?.height ?? window.innerHeight);
+            const top = Math.max(viewportTop + 12, topbarEl.getBoundingClientRect().bottom + 10);
+            document.documentElement.style.setProperty('--reader-dialog-top', top + 'px');
+            document.documentElement.style.setProperty('--reader-dialog-height', Math.max(0, viewportBottom - top - 12) + 'px');
+        }
+        window.addEventListener('resize', positionReaderDialogs);
+        window.visualViewport?.addEventListener('resize', positionReaderDialogs);
+        window.visualViewport?.addEventListener('scroll', positionReaderDialogs);
+
+        function trapReaderDialogFocus(event, container) {
+            if (event.key !== 'Tab') return;
+            const controls = [...container.querySelectorAll('button, input, [tabindex="0"]')]
+                .filter(el => !el.disabled && el.getClientRects().length);
+            if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); controls.at(-1)?.focus(); }
+            else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); controls[0]?.focus(); }
+        }
+
+        // ── Go-to-page modal ──────────────────────────────────────────────
         (function () {
             const overlay    = document.getElementById('goto-page-overlay');
             const input      = document.getElementById('goto-page-input');
@@ -787,8 +846,13 @@
             const minPage    = {{ $allPageMeta->min('page_number') }};
             const maxPage    = {{ $allPageMeta->max('page_number') }};
 
-            // Step by ±1 page and navigate there immediately. Falls back to the
-            // placeholder (= current page) when the field is empty, then clamps.
+            function syncPageControls() {
+                const index = sorted.indexOf(Number(input.value));
+                prevBtn.disabled = index <= 0;
+                nextBtn.disabled = index === sorted.length - 1;
+                slider.style.setProperty('--goto-progress', Math.max(0, index) / Math.max(1, sorted.length - 1) * 100 + '%');
+            }
+
             function step(delta) {
                 const base = input.value.trim() !== '' ? input.value : input.placeholder;
                 let n = parseInt(base, 10);
@@ -799,6 +863,7 @@
                 input.placeholder = n.toString();
                 slider.value = sorted.indexOf(n);
                 errorLabel.hidden = true;
+                syncPageControls();
             }
 
             function openModal() {
@@ -810,7 +875,8 @@
                 const curPage = parseInt((topbarMobilePage?.textContent || '').split('/')[0].trim(), 10);
                 input.placeholder = (!isNaN(curPage) ? curPage : minPage).toString();
                 overlay.hidden = false;
-                overlay.style.paddingTop = (topbarEl.getBoundingClientRect().bottom + 10) + 'px';
+                positionReaderDialogs();
+                syncPageControls();
                 cancelBtn.focus();
             }
 
@@ -838,14 +904,11 @@
             desktopBadge?.addEventListener('click', openModal);
             desktopBadge?.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
             cancelBtn?.addEventListener('click', closeModal);
-            slider?.addEventListener('input', () => { input.value = String(sorted[Number(slider.value)]); errorLabel.hidden = true; });
-            input?.addEventListener('input', () => { const index = sorted.indexOf(Number(input.value)); if (index >= 0) slider.value = index; });
+            slider?.addEventListener('input', () => { input.value = String(sorted[Number(slider.value)]); errorLabel.hidden = true; syncPageControls(); });
+            input?.addEventListener('input', () => { const index = sorted.indexOf(Number(input.value)); if (index >= 0) slider.value = index; syncPageControls(); });
             overlay?.addEventListener('keydown', e => {
                 if (e.key === 'Escape') { e.preventDefault(); closeModal(); }
-                if (e.key !== 'Tab') return;
-                const controls = [...overlay.querySelectorAll('button, input')].filter(el => !el.disabled);
-                if (e.shiftKey && document.activeElement === controls[0]) { e.preventDefault(); controls.at(-1).focus(); }
-                else if (!e.shiftKey && document.activeElement === controls.at(-1)) { e.preventDefault(); controls[0].focus(); }
+                trapReaderDialogFocus(e, overlay);
             });
             if (badge)      badge.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
             if (confirmBtn) confirmBtn.addEventListener('click', confirm);
@@ -892,39 +955,50 @@
                 const el = document.getElementById(id);
                 if (el) el.hidden = (key !== which);
             });
-            // Keep tab highlight in sync for desktop
-            document.getElementById('sheet-tab-controls')?.classList.toggle('active', which === 'controls');
-            document.getElementById('sheet-tab-library')?.classList.toggle('active', which === 'library');
-            document.getElementById('sheet-tab-controls')?.setAttribute('aria-selected', which === 'controls' ? 'true' : 'false');
-            document.getElementById('sheet-tab-library')?.setAttribute('aria-selected', which === 'library' ? 'true' : 'false');
+            document.getElementById('reader-sheet-heading').textContent = {
+                menu: 'Leesmenu', controls: 'Leesinstellingen', library: 'Bladwijzers en markeringen',
+            }[which];
+            document.getElementById('reader-sheet-header').hidden = which !== 'library';
+            controlSheet.scrollTop = 0;
+            if (controlSheet.classList.contains('open')) {
+                const panel = document.getElementById(ids[which]);
+                panel.querySelector('button')?.focus({ preventScroll: true });
+            }
         }
-        function openSheet() {
+        let sheetTrigger = null;
+        function openSheet(which = 'menu') {
             if (!controlSheet) return;
+            sheetTrigger = document.activeElement;
             const cur = visiblePage();
-            // Mobile: show Apple Books menu panel; desktop: show controls panel
-            showPanel(window.innerWidth <= 1024 ? 'menu' : 'controls');
+            showPanel(which);
+            positionReaderDialogs();
             if (sheetPageSlider) sheetPageSlider.value = cur;
             if (sheetPagePreview) sheetPagePreview.textContent = cur;
             controlSheet.classList.add('open');
+            controlSheet.inert = false;
             controlSheet.setAttribute('aria-hidden', 'false');
             sheetBackdrop?.classList.add('open');
             sheetBackdrop?.setAttribute('aria-hidden', 'false');
             fab?.setAttribute('aria-expanded', 'true');
             bmPageLabel();
             updateUI(cur);
+            document.getElementById(which === 'controls' ? 'sheet-panel-controls' : 'sheet-panel-menu').querySelector('button')?.focus({ preventScroll: true });
         }
         function closeSheet() {
             if (!controlSheet) return;
             controlSheet.classList.remove('open');
+            controlSheet.inert = true;
             controlSheet.setAttribute('aria-hidden', 'true');
             sheetBackdrop?.classList.remove('open');
             sheetBackdrop?.setAttribute('aria-hidden', 'true');
             fab?.setAttribute('aria-expanded', 'false');
+            (sheetTrigger?.getClientRects().length ? sheetTrigger : fab)?.focus({ preventScroll: true });
         }
         function toggleSheet() { controlSheet?.classList.contains('open') ? closeSheet() : openSheet(); }
 
         fab?.addEventListener('click', e => { e.stopPropagation(); toggleSheet(); });
         document.getElementById('reader-sheet-close-btn')?.addEventListener('click', closeSheet);
+        controlSheet?.addEventListener('keydown', event => trapReaderDialogFocus(event, controlSheet));
         sheetBackdrop?.addEventListener('click', () => { closeSheet(); closeToc?.(); });
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && controlSheet?.classList.contains('open')) closeSheet();
@@ -978,59 +1052,10 @@
             if (idx < sorted.length - 1) jumpTo(sorted[idx + 1], true);
         });
 
-        // Topbar "Ga" button (desktop goto pill)
-        (function () {
-            const gotoInput = document.getElementById('topbar-goto-input');
-            const gotoBtn   = document.getElementById('topbar-goto-btn');
-            const minP = {{ $allPageMeta->min('page_number') }};
-            const maxP = {{ $allPageMeta->max('page_number') }};
-            let pendingValue = '';
-            function doGoto() {
-                const raw = (pendingValue || gotoInput?.value || '').trim();
-                pendingValue = '';
-                const n = raw ? parseInt(raw, 10) : null;
-                if (n !== null && !isNaN(n) && n >= minP && n <= maxP) {
-                    jumpTo(n, false);
-                    if (gotoInput) gotoInput.value = '';
-                } else if (gotoInput) {
-                    gotoInput.style.color = '#c0392b';
-                    setTimeout(() => gotoInput.style.color = '', 700);
-                }
-            }
-            // Capture value before blur fires (mousedown on button happens before blur)
-            gotoBtn?.addEventListener('mousedown', () => {
-                pendingValue = gotoInput?.value || '';
-            });
-            // Also handle touch devices
-            gotoBtn?.addEventListener('touchstart', () => {
-                pendingValue = gotoInput?.value || '';
-            }, { passive: true });
-            // Clear on blur so field stays empty when unfocused
-            gotoInput?.addEventListener('blur', () => {
-                setTimeout(() => { if (gotoInput) gotoInput.value = ''; }, 150);
-            });
-            gotoBtn?.addEventListener('click', doGoto);
-            gotoInput?.addEventListener('keydown', e => {
-                if (e.key === 'Enter') { e.preventDefault(); doGoto(); }
-            });
-        })();
-        document.getElementById('topbar-toc-btn')?.addEventListener('click', () => openToc?.());
         document.getElementById('topbar-mobile-toc-btn')?.addEventListener('click', () => openToc?.());
         // topbar-bm-btn wired below (line ~1774) alongside fab-bm-btn
         // topbar-search-btn wired inside search IIFE below
-        // topbar-theme-btn: cycle system → light → dark → system
-        document.getElementById('topbar-theme-btn')?.addEventListener('click', () => {
-            const current = loadTheme();
-            const next = current === 'system' ? 'light' : current === 'light' ? 'dark' : 'system';
-            saveTheme(next); applyTheme(next);
-            const icons = { system: 'fa-circle-half-stroke', light: 'fa-sun', dark: 'fa-moon' };
-            const btn = document.getElementById('topbar-theme-btn');
-            if (btn) {
-                const i = btn.querySelector('i');
-                if (i) { i.className = 'fa-solid ' + icons[next]; }
-                btn.title = next === 'system' ? 'Systeem' : next === 'light' ? 'Licht' : 'Donker';
-            }
-        });
+        document.getElementById('topbar-settings-btn')?.addEventListener('click', () => openSheet('controls'));
 
 
         // Sheet: page slider
@@ -1145,16 +1170,12 @@
             const sz = FONT_STEPS[fontStepIdx];
             applyFont(sz, anchor); saveFont(sz);
             syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
-            const tbr = document.getElementById('topbar-font-range');
-            if (tbr) tbr.value = fontStepIdx;
         }
         function setArabicStep(idx, anchor = true) {
             arabicStepIdx = Math.max(0, Math.min(ARABIC_STEPS.length - 1, idx));
             const sz = ARABIC_STEPS[arabicStepIdx];
             applyArabicFont(sz, anchor); saveArabicFont(sz);
             syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
-            const tbr = document.getElementById('topbar-arabic-font-range');
-            if (tbr) tbr.value = arabicStepIdx;
         }
 
         // ── Range slider helpers ──────────────────────────────────────────
@@ -1207,54 +1228,11 @@
         document.getElementById('arabic-font-dec-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx - 1));
         document.getElementById('arabic-font-inc-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx + 1));
 
-        // Topbar compact font controls (desktop only)
-        document.getElementById('topbar-font-dec-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx - 1));
-        document.getElementById('topbar-font-inc-btn')?.addEventListener('click',        () => setFontStep(fontStepIdx + 1));
-        document.getElementById('topbar-arabic-font-dec-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx - 1));
-        document.getElementById('topbar-arabic-font-inc-btn')?.addEventListener('click', () => setArabicStep(arabicStepIdx + 1));
-
-        document.getElementById('topbar-font-reset')?.addEventListener('click', () => {
-            fontStepIdx = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
-            applyFont(DEFAULT_FONT, true); saveFont(DEFAULT_FONT);
-            syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
-        });
-        document.getElementById('topbar-arabic-font-reset')?.addEventListener('click', () => {
-            arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
-            applyArabicFont(DEFAULT_ARABIC_FONT, true); saveArabicFont(DEFAULT_ARABIC_FONT);
-            syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
-        });
-
-        // Topbar sliders — init range and wire input events
-        const topbarFontRange   = document.getElementById('topbar-font-range');
-        const topbarArabicRange = document.getElementById('topbar-arabic-font-range');
-        if (topbarFontRange) {
-            topbarFontRange.min  = 0;
-            topbarFontRange.max  = FONT_STEPS.length - 1;
-            topbarFontRange.step = 1;
-            topbarFontRange.value = fontStepIdx;
-            topbarFontRange.addEventListener('input', () => {
-                setFontStep(parseInt(topbarFontRange.value));
-            });
-        }
-        if (topbarArabicRange) {
-            topbarArabicRange.min  = 0;
-            topbarArabicRange.max  = ARABIC_STEPS.length - 1;
-            topbarArabicRange.step = 1;
-            topbarArabicRange.value = arabicStepIdx;
-            topbarArabicRange.addEventListener('input', () => {
-                setArabicStep(parseInt(topbarArabicRange.value));
-            });
-        }
-
         document.getElementById('sheet-font-reset')?.addEventListener('click', () => {
-            fontStepIdx = nearestStepIdx(FONT_STEPS, DEFAULT_FONT);
-            applyFont(DEFAULT_FONT, true); saveFont(DEFAULT_FONT);
-            syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
+            setFontStep(nearestStepIdx(FONT_STEPS, DEFAULT_FONT));
         });
         document.getElementById('arabic-font-reset')?.addEventListener('click', () => {
-            arabicStepIdx = nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT);
-            applyArabicFont(DEFAULT_ARABIC_FONT, true); saveArabicFont(DEFAULT_ARABIC_FONT);
-            syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
+            setArabicStep(nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT));
         });
 
         // --- Pinch-to-zoom for font size (touch gestures) ---
@@ -1326,30 +1304,37 @@
 
         // --- Theme ---
         const THEME_KEY = 'reader-theme';
+        const READER_THEMES = ['system', 'light', 'dark', 'ivory', 'white', 'sepia', 'green', 'gray', 'night', 'black'];
         function loadTheme() {
             try {
                 const stored = localStorage.getItem(THEME_KEY);
-                if (stored) return stored;
+                if (READER_THEMES.includes(stored)) return stored;
                 const old = localStorage.getItem('reader-dark-mode');
                 if (old === '0') return 'light';
                 return 'system'; // default: follow OS preference
-            } catch (_) { return 'system'; }
+            } catch (error) { preferenceStorageError(error); return 'system'; }
         }
-        function saveTheme(mode) { try { localStorage.setItem(THEME_KEY, mode); } catch (_) {} }
+        let currentTheme = loadTheme();
+        function saveTheme(mode) { try { localStorage.setItem(THEME_KEY, mode); } catch (error) { preferenceStorageError(error); } }
         function applyTheme(mode) {
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.body.classList.toggle('dark-mode', mode === 'dark' || (mode === 'system' && prefersDark));
+            currentTheme = mode;
+            const resolved = mode === 'system' ? (prefersDark ? 'dark' : 'light') : mode;
+            document.body.dataset.readerTheme = resolved;
+            document.documentElement.dataset.readerTheme = resolved;
+            document.body.classList.toggle('dark-mode', resolved === 'dark' || resolved === 'gray' || resolved === 'night' || resolved === 'black');
             document.querySelectorAll('.reader-sheet-theme-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.theme === mode);
+                btn.setAttribute('aria-pressed', String(btn.dataset.theme === mode));
             });
         }
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-            if (loadTheme() === 'system') applyTheme('system');
+            if (currentTheme === 'system') applyTheme('system');
         });
         document.querySelectorAll('.reader-sheet-theme-btn').forEach(btn => {
             btn.addEventListener('click', () => { saveTheme(btn.dataset.theme); applyTheme(btn.dataset.theme); });
         });
-        applyTheme(loadTheme());
+        applyTheme(currentTheme);
         document.documentElement.classList.remove('reader-preload-dark');
 
 
@@ -1412,42 +1397,54 @@
             let activeEl = null;
             items.forEach(btn => {
                 btn.classList.remove('active');
+                btn.removeAttribute('aria-current');
+                btn.setAttribute('aria-label', `${btn.querySelector('.toc-panel-item-title').textContent}, pagina ${btn.dataset.page}`);
                 if (parseInt(btn.dataset.page, 10) <= cur) activeEl = btn;
             });
-            if (activeEl) activeEl.classList.add('active');
+            if (activeEl) {
+                activeEl.classList.add('active');
+                activeEl.setAttribute('aria-current', 'location');
+                activeEl.setAttribute('aria-label', activeEl.getAttribute('aria-label') + ', huidige hoofdstuk');
+            }
         }
 
+        let tocTrigger = null;
         function openToc() {
             if (!tocPanel) return;
-            // Close search panel if open (but leave the settings sheet open)
+            tocTrigger = document.activeElement;
             const searchPanel = document.getElementById('reader-search-panel');
-            const searchBackdrop = document.getElementById('reader-search-backdrop');
             if (searchPanel && !searchPanel.hidden) {
-                searchPanel.classList.remove('open');
-                searchBackdrop?.classList.remove('open');
-                setTimeout(() => { searchPanel.hidden = true; }, 220);
+                document.getElementById('reader-search-close').click();
             }
+            positionReaderDialogs();
             tocPanel.classList.add('open');
+            tocPanel.inert = false;
             tocPanel.setAttribute('aria-hidden', 'false');
+            tocCloseBtn?.focus({ preventScroll: true });
             if (tocBackdrop) { tocBackdrop.classList.add('open'); tocBackdrop.setAttribute('aria-hidden', 'false'); }
             markActiveTocItem();
             // Scroll active item into view
             requestAnimationFrame(() => {
                 const active = tocPanelBody?.querySelector('.toc-panel-item.active');
-                if (active) active.scrollIntoView({ block: 'center' });
+                if (active) tocPanelBody.scrollTop = Math.max(0,
+                    active.getBoundingClientRect().top - tocPanelBody.getBoundingClientRect().top +
+                    tocPanelBody.scrollTop + active.offsetHeight / 2 - tocPanelBody.clientHeight / 2);
             });
         }
 
         function closeToc() {
             if (!tocPanel) return;
             tocPanel.classList.remove('open');
+            tocPanel.inert = true;
             tocPanel.setAttribute('aria-hidden', 'true');
             if (tocBackdrop) { tocBackdrop.classList.remove('open'); tocBackdrop.setAttribute('aria-hidden', 'true'); }
+            if (tocTrigger?.getClientRects().length) tocTrigger.focus({ preventScroll: true });
         }
 
         buildTocPanel();
         sheetTocBtn?.addEventListener('click', () => tocPanel?.classList.contains('open') ? closeToc() : openToc());
         tocCloseBtn?.addEventListener('click', closeToc);
+        tocPanel?.addEventListener('keydown', event => trapReaderDialogFocus(event, tocPanel));
         tocBackdrop?.addEventListener('click', () => { closeToc(); closeSheet(); });
         document.addEventListener('keydown', ev => {
             if (ev.key === 'Escape' && tocPanel?.classList.contains('open')) closeToc();
@@ -1470,16 +1467,12 @@
             applyFont(initFont);
             fontStepIdx = nearestStepIdx(FONT_STEPS, initFont);
             syncRangeSlider('font-step-range', FONT_STEPS, fontStepIdx);
-            const tbr = document.getElementById('topbar-font-range');
-            if (tbr) tbr.value = fontStepIdx;
 
             const savedArabicFont = loadArabicFont();
             const initArabic = savedArabicFont || DEFAULT_ARABIC_FONT;
             applyArabicFont(initArabic);
             arabicStepIdx = nearestStepIdx(ARABIC_STEPS, initArabic);
             syncRangeSlider('arabic-font-step-range', ARABIC_STEPS, arabicStepIdx);
-            const tbar = document.getElementById('topbar-arabic-font-range');
-            if (tbar) tbar.value = arabicStepIdx;
             hlRestoreAll(); // restore saved highlights for server-rendered pages
             bmRenderAllMarkers(); // restore bookmark paragraph markers
 
@@ -1555,24 +1548,38 @@
             }
         }
 
-        // ══════════════════════════════════════════
-        //  SHEET TABS
-        // ══════════════════════════════════════════
-        const tabControls = document.getElementById('sheet-tab-controls');
-        const tabLibrary  = document.getElementById('sheet-tab-library');
-        const panelControls = document.getElementById('sheet-panel-controls');
         const panelLibrary  = document.getElementById('sheet-panel-library');
 
-        function switchTab(tab) {
-            if (tab === 'library') {
-                showPanel('library');
-                libRender();
-            } else {
-                showPanel('controls');
-            }
+        // --- Reader settings tabs ---
+        const settingsTabs = ['text', 'colors'];
+        function selectSettingsTab(selected, focus = false) {
+            settingsTabs.forEach(name => {
+                const active = name === selected;
+                const tab = document.getElementById('reader-settings-tab-' + name);
+                tab.setAttribute('aria-selected', String(active));
+                tab.tabIndex = active ? 0 : -1;
+                document.getElementById('reader-settings-' + name).hidden = !active;
+                if (active && focus) tab.focus({ preventScroll: true });
+            });
         }
-        tabControls?.addEventListener('click', () => switchTab('controls'));
-        tabLibrary?.addEventListener('click',  () => switchTab('library'));
+        settingsTabs.forEach((name, index) => {
+            const tab = document.getElementById('reader-settings-tab-' + name);
+            tab.addEventListener('click', () => selectSettingsTab(name));
+            tab.addEventListener('keydown', event => {
+                let next;
+                if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') next = settingsTabs[1 - index];
+                else if (event.key === 'Home') next = settingsTabs[0];
+                else if (event.key === 'End') next = settingsTabs[1];
+                else return;
+                event.preventDefault();
+                selectSettingsTab(next, true);
+            });
+        });
+        document.getElementById('reader-theme-reset').addEventListener('click', () => {
+            saveTheme('system');
+            applyTheme('system');
+        });
+        // --- End reader settings tabs ---
 
         // ══════════════════════════════════════════
         //  HIGHLIGHTING SYSTEM
@@ -2231,56 +2238,60 @@
             const clearBtn  = document.getElementById('reader-search-clear');
             const metaEl    = document.getElementById('reader-search-meta');
             const resultsEl = document.getElementById('reader-search-results');
+            const keyboardDismiss = document.getElementById('reader-search-keyboard-dismiss');
+            const clearMarksBtn = document.getElementById('sheet-menu-clear-search');
             if (!panel || !input) return;
 
             let currentMark = null;
-
-            // ── Pin panel to visual viewport ──────────────────────────────────
-            // On mobile the panel is full-screen; iOS keeps fixed elements in
-            // place when the keyboard opens so no JS repositioning is needed.
-            // On desktop the panel slides in from the right — also no pinning.
-            // We keep startPinning/stopPinning as no-ops so the rest of the
-            // code doesn't need changing.
-            function isMobile() { return window.innerWidth <= 1024; }
-            function pinPanelToViewport() { /* no-op — full-screen panel needs no repositioning */ }
-            function startPinning() { /* no-op */ }
-            function stopPinning() {
-                if (isMobile()) {
-                    panel.style.bottom = panel.style.transition = '';
-                }
+            let searchTimer = null;
+            let searchController = null;
+            let searchVersion = 0;
+            let searchViewportHeight = window.visualViewport?.height ?? window.innerHeight;
+            function resetSearch() {
+                clearTimeout(searchTimer);
+                searchController?.abort();
+                searchVersion++;
+                metaEl.textContent = '';
+                metaEl.removeAttribute('role');
+                resultsEl.replaceChildren();
+                resultsEl.scrollTop = 0;
+                panel.removeAttribute('aria-busy');
             }
+            function syncSearchKeyboard() {
+                const viewport = window.visualViewport;
+                keyboardDismiss.hidden = panel.hidden || document.activeElement !== input ||
+                    !viewport || searchViewportHeight - viewport.height < 100;
+            }
+            window.visualViewport?.addEventListener('resize', syncSearchKeyboard);
+            input.addEventListener('focus', syncSearchKeyboard);
+            input.addEventListener('blur', () => { keyboardDismiss.hidden = true; });
+            keyboardDismiss.addEventListener('click', () => input.blur());
+            resultsEl.addEventListener('touchmove', () => input.blur(), { passive: true });
 
+            let searchTrigger = null;
             function openSearch() {
+                searchTrigger = document.activeElement;
+                closeToc();
+                resetSearch();
+                input.value = '';
+                clearBtn.hidden = true;
+                searchViewportHeight = window.visualViewport?.height ?? window.innerHeight;
+                positionReaderDialogs();
                 panel.hidden = false;
+                panel.classList.add('open');
                 backdrop.classList.add('open');
-                // ── iOS Safari focus fix ──────────────────────────────────────────
-                // input.focus() MUST be called synchronously within the user-gesture
-                // call stack (here, before any setTimeout/rAF) for the software
-                // keyboard to open on real iOS devices.
-                // The panel is off-screen (via transform) but NOT display:none at
-                // this point, so focus works and the keyboard opens.
+                // iOS requires synchronous focus in the user gesture to open the keyboard.
                 input.focus({ preventScroll: true });
-                // Animate the panel in on the next paint
-                requestAnimationFrame(() => {
-                    panel.classList.add('open');
-                    startPinning();
-                });
             }
             function closeSearch() {
-                stopPinning();
                 panel.classList.remove('open');
                 backdrop.classList.remove('open');
-                setTimeout(() => { panel.hidden = true; }, 280);
+                panel.hidden = true;
+                resetSearch();
+                input.blur();
+                (searchTrigger?.getClientRects().length ? searchTrigger : fab)?.focus({ preventScroll: true });
                 // Note: highlights are intentionally NOT cleared here —
                 // they only clear when a new search result is clicked.
-            }
-            function clearHighlight() {
-                if (currentMark && currentMark.parentNode) {
-                    const parent = currentMark.parentNode;
-                    parent.replaceChild(document.createTextNode(currentMark.textContent), currentMark);
-                    parent.normalize();
-                }
-                currentMark = null;
             }
             function clearAllHighlights() {
                 // Remove all search highlights from the entire document
@@ -2292,7 +2303,9 @@
                     }
                 });
                 currentMark = null;
+                clearMarksBtn.hidden = true;
             }
+            clearMarksBtn.addEventListener('click', () => { clearAllHighlights(); closeSheet(); });
 
             openBtn?.addEventListener('click', openSearch);
             document.getElementById('fab-search-btn')?.addEventListener('click', openSearch);
@@ -2308,6 +2321,7 @@
             closeBtn.addEventListener('click', closeSearch);
             backdrop.addEventListener('click', closeSearch);
             document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeSearch(); });
+            panel.addEventListener('keydown', event => trapReaderDialogFocus(event, panel));
 
             // Direct highlight (no panel) — used when arriving from library search (?q=)
             window.readerHighlightDirect = function (query, pageEl) {
@@ -2340,6 +2354,7 @@
                         node.parentNode.insertBefore(after, node);
                         node.parentNode.removeChild(node);
                         currentMark = mark;
+                        clearMarksBtn.hidden = false;
 
                         // Single smooth scroll directly to the highlighted word
                         requestAnimationFrame(() => {
@@ -2367,55 +2382,67 @@
                 clearBtn.hidden = !input.value;
                 debounceSearch();
             });
+            input.addEventListener('keydown', event => {
+                if (event.key === 'Enter') { event.preventDefault(); input.blur(); }
+            });
             clearBtn.addEventListener('click', () => {
                 input.value = ''; clearBtn.hidden = true;
-                metaEl.textContent = ''; resultsEl.innerHTML = '';
-                clearHighlight();
-                // Refocus synchronously — no scroll restoration needed for the
-                // bottom-sheet design; iOS will simply keep the keyboard open.
+                resetSearch();
                 input.focus({ preventScroll: true });
             });
 
-            let searchTimer = null;
             function debounceSearch() {
-                clearTimeout(searchTimer);
-                if (input.value.trim().length < 2) { metaEl.textContent = ''; resultsEl.innerHTML = ''; return; }
+                resetSearch();
+                const query = input.value.trim();
+                if (query.length < 2 || query.length > 200) return;
+                panel.setAttribute('aria-busy', 'true');
+                metaEl.setAttribute('role', 'status');
                 metaEl.textContent = 'Zoeken…';
-                searchTimer = setTimeout(runSearch, 350);
+                searchTimer = setTimeout(runSearch, 120);
             }
 
             async function runSearch() {
                 const query = input.value.trim();
-                if (query.length < 2) return;
+                if (query.length < 2 || query.length > 200) return;
+                const version = searchVersion;
+                const controller = new AbortController();
+                searchController = controller;
                 try {
-                    const res  = await fetch(SEARCH_URL + '?q=' + encodeURIComponent(query));
+                    const res = await fetch(SEARCH_URL + '?q=' + encodeURIComponent(query), { signal: controller.signal });
+                    if (!res.ok) throw new Error('Zoeken is niet gelukt.');
                     const data = await res.json();
-                    renderResults(data.results, data.total, query);
+                    if (!Array.isArray(data.results) || !Number.isInteger(data.total) || data.total < 0 ||
+                        !data.results.every(result => Number.isInteger(result.page) && typeof result.snippet === 'string')) {
+                        throw new Error('Ongeldig zoekantwoord.');
+                    }
+                    if (version === searchVersion && !controller.signal.aborted) renderResults(data.results, data.total, query);
                 } catch (e) {
-                    metaEl.textContent = 'Zoekfout. Probeer opnieuw.';
+                    if (version === searchVersion && !controller.signal.aborted) {
+                        metaEl.setAttribute('role', 'alert');
+                        metaEl.textContent = 'Zoeken is niet gelukt. Probeer opnieuw.';
+                    }
+                } finally {
+                    if (version === searchVersion) panel.removeAttribute('aria-busy');
                 }
             }
 
             function renderResults(results, total, query) {
                 resultsEl.innerHTML = '';
-                if (!results.length) { metaEl.textContent = 'Geen resultaten voor "' + query + '".'; return; }
-                metaEl.textContent = total + ' resultaat' + (total !== 1 ? 'en' : '');
+                metaEl.textContent = total + (total === 1 ? ' resultaat' : ' resultaten');
 
-                results.forEach(r => {
+                results.forEach((r, index) => {
                     // Build snippet — escape HTML first, then restore [[HIT]] marks
                     const snippetHtml = r.snippet
                         .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
                         .replace(/\[\[HIT\]\]([\s\S]*?)\[\[\/HIT\]\]/g, '<mark>$1</mark>');
 
-                    // Use <div> not <button> so flex-direction:column works reliably
-                    const item = document.createElement('div');
+                    const item = document.createElement('button');
                     item.className = 'reader-search-result-item';
-                    item.setAttribute('role', 'button');
-                    item.setAttribute('tabindex', '0');
+                    item.type = 'button';
 
                     const pageBadge = document.createElement('span');
                     pageBadge.className = 'reader-search-result-page';
-                    pageBadge.textContent = 'Pagina ' + r.page;
+                    pageBadge.textContent = 'p.' + r.page + ' · ';
 
                     const snippet = document.createElement('span');
                     snippet.className = 'reader-search-result-snippet';
@@ -2425,9 +2452,14 @@
                     item.appendChild(snippet);
 
                     item.addEventListener('click', () => {
-                        clearAllHighlights();
                         const pageEl = pageMap[r.page];
-                        if (!pageEl) { closeSearch(); return; }
+                        if (!pageEl) {
+                            metaEl.setAttribute('role', 'alert');
+                            metaEl.textContent = 'Deze pagina kon niet worden geopend. Probeer opnieuw.';
+                            return;
+                        }
+                        clearAllHighlights();
+                        let remaining = results.slice(0, index).filter(result => result.page === r.page).length;
 
 
                         const walker = document.createTreeWalker(pageEl, NodeFilter.SHOW_TEXT, {
@@ -2445,7 +2477,14 @@
                         let fnRefBtn = null;
 
                         while ((node = walker.nextNode())) {
-                            const match = readerTextMatch(node.textContent, query);
+                            let offset = 0;
+                            let match = readerTextMatch(node.textContent, query);
+                            while (match && remaining > 0) {
+                                remaining--;
+                                offset = match.end;
+                                const next = readerTextMatch(node.textContent.slice(offset), query);
+                                match = next ? { start: offset + next.start, end: offset + next.end } : null;
+                            }
                             if (!match) continue;
 
                             // Check if this match lives inside a hidden .page-footnote
@@ -2479,16 +2518,14 @@
                             node.parentNode.insertBefore(after, node);
                             node.parentNode.removeChild(node);
                             currentMark = mark;
+                            clearMarksBtn.hidden = false;
                             found = true;
                             break;
                         }
 
                         // Close panel, then open footnote popover (if needed) and scroll to highlight
-                        panel.classList.remove('open');
-                        backdrop.classList.remove('open');
+                        closeSearch();
                         setTimeout(() => {
-                            panel.hidden = true;
-
                             if (matchInFootnote && fnRefBtn) {
                                 // Open the footnote popover by simulating a click on the fn-ref button
                                 fnRefBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -2513,6 +2550,7 @@
                                         pNode.parentNode.insertBefore(pAfter, pNode);
                                         pNode.parentNode.removeChild(pNode);
                                         currentMark = pMark;
+                                        clearMarksBtn.hidden = false;
                                         break;
                                     }
                                 }, 120); // wait for popover animation to start
@@ -2524,7 +2562,6 @@
                             }
                         }, 230);
                     });
-                    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') item.click(); });
                     resultsEl.appendChild(item);
                 });
             }

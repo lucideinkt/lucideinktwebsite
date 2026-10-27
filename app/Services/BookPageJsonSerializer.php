@@ -357,6 +357,11 @@ class BookPageJsonSerializer
             $presentation['alignment'] = $matches[1];
         }
 
+        if (preg_match('/(?:^|;)\s*margin-top\s*:\s*(-?(?:\d+(?:\.\d*)?|\.\d+))\s*(px)?\s*(?:;|$)/', $style, $matches) === 1
+            && (isset($matches[2]) || (float) $matches[1] === 0.0)) {
+            $presentation['margin_top'] = $matches[1].'px';
+        }
+
         if (in_array('text-red', $classes, true)) {
             $presentation['tone'] = 'accent';
         }

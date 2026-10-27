@@ -87,6 +87,19 @@ HTML;
         $this->assertStringNotContainsString('data-html', json_encode($page, JSON_THROW_ON_ERROR));
     }
 
+    public function test_it_preserves_pixel_top_margins_in_block_presentation(): void
+    {
+        $page = (new BookPageJsonSerializer)->serialize(9, <<<'HTML'
+<div class="page" id="9">
+    <p class="text-center text-bold small-title" style="margin-top: 10px">HET TWEEDE AANZICHT</p>
+    <p style="margin-top: 0">Tekst</p>
+</div>
+HTML);
+
+        $this->assertSame('10px', $page['blocks'][0]['presentation']['margin_top']);
+        $this->assertSame('0px', $page['blocks'][1]['presentation']['margin_top']);
+    }
+
     public function test_it_marks_unlabelled_leading_footnote_content_as_a_continuation(): void
     {
         $html = <<<'HTML'
