@@ -603,7 +603,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     vertical-align: baseline;
     color: #ffffff !important;
     position: relative;
-    top: var(--fn-badge-raise, -2px);
+    top: var(--fn-badge-raise, -4px);
     text-decoration: none;
     border: none;
     border-radius: 999px;
@@ -664,7 +664,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     outline-offset: 3px;
 }
 
-/* Normale tekst krijgt een iets lagere badge; Arabisch behoudt de oorspronkelijke hoogte. */
+/* Arabisch behoudt zijn eigen badgehoogte, onafhankelijk van gewone tekst. */
 .book-reader-scope :is(.arabic, .text-arabic, .text-arabic-inline, .text-arabic-bismillah, [lang="ar"], [dir="rtl"]) {
     --fn-badge-raise: -7px;
 }
@@ -693,7 +693,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     vertical-align: baseline;
     color: #ffffff !important;
     position: relative;
-    top: var(--fn-badge-raise, -2px);
+    top: var(--fn-badge-raise, -4px);
     text-decoration: none;
     border-radius: 999px;
     box-shadow: 0 1px 4px rgba(10, 70, 45, 0.40);

@@ -1,5 +1,72 @@
 ## Lucide Inkt Website
 
+### Leesinstellingen
+
+Het leesmenu gebruikt op mobiel en desktop hetzelfde zwevende venster zonder
+kopbalk. Sluiten kan buiten het venster of met Escape.
+Tekst/Kleuren heeft ook geen kopbalk en biedt **Terug** naar het leesmenu.
+Bladwijzers en markeringen behoudt zijn titel en sluitknop.
+Op desktop vervangt de instellingenknop de losse lettergroottebediening en
+themaschakelaar in de bovenbalk. Deze knop opent dezelfde volledige instellingen.
+Zoeken, paginakeuze en inhoudsopgave openen als compacte vensters onder de
+bovenbalk, ook op mobiel. Zoekresultaten scrollen binnen het venster; de hoogte
+past zich aan de zichtbare ruimte boven het schermtoetsenbord aan.
+Zoeken gebruikt dezelfde enkele invoerrand, inline resultaatrijen (`p. … · tekst`),
+markeerkleuren en transparante sluitlaag als de app. Zoekopdrachten starten na
+120 ms vanaf twee tekens; wijzigen, wissen en sluiten annuleren oude aanvragen.
+Opnieuw openen begint met een leeg zoekveld. Op mobiel kan het toetsenbord
+worden verborgen zonder het zoekvenster te sluiten; zoekmarkeringen kunnen
+afzonderlijk via het leesmenu worden gewist.
+De inhoudsopgave toont volledige, afbreekbare hoofdstuktitels en ondertitels,
+met paginanummers rechts en een rand bij het huidige hoofdstuk. Bij openen
+wordt alleen de lijst naar dat hoofdstuk geschoven, niet de boektekst erachter.
+De vensters, invoervelden, knoppen en bovenbalk volgen het gekozen kleurthema.
+De website gebruikt dezelfde menuoppervlakken, compacte rijen en herstelknoppen
+onder de tekstlabels als de app. De inhoudsopgaveknop staat rechts naast de
+paginanummers in de bovenbalk; niet meer onderaan het paginakeuzevenster.
+Desktop heeft hiervoor slechts een enkele knop in de bovenbalk.
+Onder **Thema's en instellingen** staan twee toetsenbordbedienbare tabs:
+**Tekst** (Nederlandse en Arabische lettergrootte, regelafstand en zijruimte met
+plus/min-knoppen) en **Kleuren**. Ronde kleurvoorbeelden tonen de achtergrond
+met `Aa` in de bijbehorende tekstkleur; Systeem volgt ook in dit voorbeeld de
+apparaatinstelling. Het menu gebruikt compacte, rustige typografie.
+Elke tekstinstelling heeft een eigen herstelknop. **Standaardkleur herstellen**
+staat alleen bij Kleuren en kiest Systeem, zonder de tekstinstellingen te wijzigen.
+Herstellen verandert nooit de leespositie, bladwijzers of markeringen.
+Extra kleurthema's vervangen ook de papiertextuur op de zichtbare leeslaag;
+het oorspronkelijke thema Papier behoudt zijn textuur.
+Bismillah-afbeeldingen en voetnootknoppen gebruiken bij de extra thema's
+de bijbehorende accentkleur, met contrasterende cijfers op de knoppen.
+Donker grafiet gebruikt koel blauw (`#A9CCE8`), Nachtmodus zacht saliegroen
+(`#B8C9AD`) en Zwart champagnegoud (`#C8B78F`), ook voor Arabisch en titels,
+met per thema afgestemde secundaire tekst.
+De headericonen volgen de app: 14 px iconen zonder achtergrond of binnenpadding,
+met een brede klikzone die binnen de headerhoogte blijft.
+Papier en Donker behouden hun oorspronkelijke SVG-kleuren en badgeverlopen. Ook Arabisch en titels volgen het geselecteerde thema.
+De afbeeldingsvorm, voetnootacties en leespositie blijven bij wisselen behouden.
+
+In het leesmenu bij **Thema's en instellingen** kunnen lezers de regelafstand
+(1,2–2,2) en zijruimte (8–64, zonder technische eenheid in het menu) aanpassen en afzonderlijk resetten.
+Zonder opgeslagen voorkeur blijft de bestaande zijruimte behouden: 16 px op
+smalle schermen en 32 px op desktop. De standaardregelafstand is 1,5.
+Arabische blokken houden bij een kleinere regelafstand voldoende ruimte voor
+diakritische tekens en worden bij een grotere instelling ruimer.
+
+Papier en het oorspronkelijke warme Donker blijven behouden. Daarnaast zijn er
+Warm ivoor (`#F8F5EB` / `#302D28`), Papierwit (`#FAF9F6` / `#252525`),
+Klassiek sepia (`#F2E6D1` / `#46392A`), Zacht saliegroen (`#EFF3EB` / `#24352D`),
+Donker grafiet (`#1E2226` / `#E4E2DD`), Nachtmodus (`#1E1E1E` / `#E5E5E5`)
+en Zwart / AMOLED (`#000000` / `#D8D8D8`), telkens achtergrond / tekst,
+plus Systeem (automatisch Papier of het oorspronkelijke Donker).
+Papier en Donker staan vooraan; alleen Papier heeft een papiertextuur. Tekst, menu's, zoekvensters en voetnootvensters krijgen
+bijpassende kleuren. Een oude donkere voorkeur blijft donker.
+Voorkeuren worden lokaal in dezelfde browser bewaard, niet met de app
+gesynchroniseerd. Leesposities, bladwijzers en markeringen blijven behouden.
+
+Controleer met `node --test tests/reader-preferences.test.mjs tests/reader-dialogs.test.mjs` en `npm run build`.
+Deploy de Blade-template, reader-JavaScript en gebouwde CSS samen; opnieuw
+seeden of bestaande boeken opnieuw downloaden is voor deze instellingen niet nodig.
+
 ### Arabisch op iPhone/iPad
 
 De boeklezer gebruikt alleen op iOS `resources/fonts/OmarNaskh-Reader.ttf`.

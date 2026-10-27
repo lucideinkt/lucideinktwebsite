@@ -264,6 +264,14 @@
         }
     }
 
+    document.addEventListener('reader-layout-change', () => {
+        Promise.all([...readerEl.querySelectorAll('.page')].map(fitInlineArabicBoxes))
+            .catch(error => {
+                console.error('Arabische regelafstand kon niet worden bijgewerkt.', error);
+                window.showToast?.('De Arabische regelafstand kon niet worden bijgewerkt.', 'error');
+            });
+    });
+
     function normalizeServerRenderedFnRefs(page) {
         page.querySelectorAll('.fn-ref').forEach(btn => {
             if (btn.querySelector('.fn-ref-num')) return;
@@ -367,10 +375,22 @@
         });
     }
 
+    function themeBismillahImages(page) {
+        page.querySelectorAll('img.bismillah-svg').forEach(image => {
+            const wrapper = document.createElement('span');
+            wrapper.className = image.className + ' reader-themed-image';
+            wrapper.style.setProperty('--image-mask', `url(${JSON.stringify(image.src)})`);
+            image.className = '';
+            image.replaceWith(wrapper);
+            wrapper.appendChild(image);
+        });
+    }
+
     function wireFootnotesForPage(page) {
         if (wiredPages.has(page)) return;
         wiredPages.add(page);
 
+        themeBismillahImages(page);
         normalizeLegacySupPointers(page);
         normalizeServerRenderedFnRefs(page);
         joinBreaksBeforeInlineArabic(page);
