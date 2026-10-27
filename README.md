@@ -13,6 +13,12 @@ getekend en verstoorden sommige letterverbindingen.
 Deploy de reader-template samen met de gebouwde CSS en font-assets
 (`npm run build`). Opnieuw seeden of boekinhoud wijzigen is niet nodig.
 
+### Arabische scheidingsornamenten
+
+De webreader houdt het Arabische scheidingsornament (`۞`) met een vaste spatie
+bij het voorafgaande woord, ook op later ingeladen pagina's. Hiervoor is opnieuw
+seeden niet nodig; bouw en deploy de reader-assets met `npm run build`.
+
 ### Boeknavigatie
 
 `GET /api/v1/books/{slug}/navigation` geeft voor gepubliceerde boeken met pagina's

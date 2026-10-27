@@ -205,6 +205,12 @@
                 node.replaceWith(frag);
             });
         });
+        page.querySelectorAll('.cevsen-separator').forEach(ornament => {
+            const previous = ornament.previousSibling;
+            if (previous?.nodeType === Node.TEXT_NODE && /\s$/.test(previous.data)) {
+                previous.data = previous.data.replace(/\s+$/, '\u00A0');
+            }
+        });
     }
 
     // Every line holding inline Arabic gets the same, symmetric extra space above and below,
