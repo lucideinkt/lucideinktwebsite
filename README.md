@@ -42,6 +42,15 @@ Donker grafiet gebruikt koel blauw (`#A9CCE8`), Nachtmodus zacht saliegroen
 met per thema afgestemde secundaire tekst.
 De headericonen volgen de app: 14 px iconen zonder achtergrond of binnenpadding,
 met een brede klikzone die binnen de headerhoogte blijft.
+Tijdens scrollen wordt de zichtbare pagina met een binaire zoekactie bepaald,
+maximaal eenmaal per animatieframe; de bediening wordt alleen bij een paginawissel
+bijgewerkt. iOS-viewportverschuivingen sturen geen corrigerende documentscrolls aan.
+De ondoorzichtige leesheader gebruikt geen achtergrondblur.
+Inhoudsopgaverijen groeien mee met lange titels en ondertitels; ze worden niet
+samengedrukt in de scrollbare lijst en behouden hun regelafstand en binnenruimte.
+Het mobiele instellingenvenster gebruikt de stabiele kleine viewporthoogte (`svh`),
+zonder dubbele safe-area-opvulling onder de kleurreset. Scrollankering staat voor
+dit venster uit, zodat browserbalkwijzigingen de inhoud niet laten verspringen.
 Papier en Donker behouden hun oorspronkelijke SVG-kleuren en badgeverlopen. Ook Arabisch en titels volgen het geselecteerde thema.
 De afbeeldingsvorm, voetnootacties en leespositie blijven bij wisselen behouden.
 

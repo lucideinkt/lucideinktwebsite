@@ -790,12 +790,17 @@
         });
 
         function visiblePage() {
-            let closest = null, best = Infinity;
-            Object.keys(pageMap).forEach(n => {
-                const d = Math.abs(pageMap[n].getBoundingClientRect().top - TOPBAR_H);
-                if (d < best) { best = d; closest = parseInt(n, 10); }
-            });
-            return closest || firstPage;
+            let low = 0, high = sorted.length - 1;
+            while (low < high) {
+                const mid = Math.floor((low + high) / 2);
+                if (pageMap[sorted[mid]].getBoundingClientRect().top < TOPBAR_H) low = mid + 1;
+                else high = mid;
+            }
+            const next = sorted[low];
+            if (low === 0) return next || firstPage;
+            const previous = sorted[low - 1];
+            return Math.abs(pageMap[previous].getBoundingClientRect().top - TOPBAR_H)
+                <= Math.abs(pageMap[next].getBoundingClientRect().top - TOPBAR_H) ? previous : next;
         }
 
         // --- Lazy load: fetch next batch from the API ---
@@ -940,9 +945,18 @@
 
         // --- Scroll ---
         let saveTimer = null;
+        let scrollFrame = null;
+        let lastScrollPage = null;
         window.addEventListener('scroll', function () {
-            const cur = visiblePage();
-            updateUI(cur);
+            if (scrollFrame !== null) return;
+            scrollFrame = requestAnimationFrame(() => {
+                scrollFrame = null;
+                const cur = visiblePage();
+                if (cur !== lastScrollPage) {
+                    updateUI(cur);
+                    lastScrollPage = cur;
+                }
+            });
             clearTimeout(saveTimer);
             saveTimer = setTimeout(() => save(visiblePage()), 300);
         }, { passive: true });
@@ -2583,18 +2597,8 @@
         }
         window.addEventListener('scroll', resetHorizontalScroll, { passive: true });
 
-        // visualViewport fires when iOS shifts the viewport offset (keyboard open).
-        // We pin it back to offset 0,0 every time.
-        if (window.visualViewport) {
-            window.visualViewport.addEventListener('scroll', function () {
-                if (window.visualViewport.offsetLeft !== 0 || window.visualViewport.offsetTop !== 0) {
-                    window.scrollTo(
-                        window.scrollX + window.visualViewport.offsetLeft,
-                        window.scrollY + window.visualViewport.offsetTop
-                    );
-                }
-            });
-        }
+        // Let iOS handle viewport offsets during momentum scrolling and keyboard changes.
+        // Dialogs follow visualViewport without moving the document itself.
         // Note: we deliberately do NOT restore scrollY on focusin here anymore.
         // The search panel is a bottom sheet — iOS keeps the reader page behind
         // it exactly where it was; no scroll restoration is needed.
