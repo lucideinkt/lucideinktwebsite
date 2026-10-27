@@ -405,6 +405,30 @@ html.ios-device {
     display: block;
 }
 
+.book-reader-scope .arabic-madd-below {
+    position: relative;
+}
+
+.book-reader-scope .arabic-waqf {
+    display: inline-block;
+    position: relative;
+    width: 0;
+    line-height: 0;
+    vertical-align: baseline;
+    transform: translate(0.21em, -0.65em);
+}
+
+.book-reader-scope .arabic-madd-below::after {
+    content: "مد";
+    position: absolute;
+    top: calc(100% - 0.7em);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
 /* iOS does not render ss04 correctly — remove it on iOS devices */
 html.ios-device .book-reader-scope .text-arabic {
     font-feature-settings: "ss14", "ss17";
