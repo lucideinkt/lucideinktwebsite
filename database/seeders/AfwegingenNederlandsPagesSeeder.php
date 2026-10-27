@@ -1290,9 +1290,10 @@ ook als een klein boekje worden samengesteld en verspreid.
     Wat die twee medicijnen betreft: het ene medicijn vertegenwoordigt geduld en gelatenheid; steunen op de Macht en vertrouwen op de Wijsheid van jouw Schepper. <em>Klopt deze bewering?</em>
     </p>
 
- <p>
-Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zijn onmacht steunt op een Universele Sultan Die slechts “Wees!” hoeft te bevelen om iets tot stand te brengen? Immers, tegenover de angstaanjagendste calamiteit zal hij: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّا لِلّهِ وَاِنَّا اِلَيْهِ رَاجِعُونَ</span> zeggen en zich met een gerust hart op zijn Genadige Schepper berusten.
-</p>
+    <p>
+    Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zijn onmacht steunt op een Universele Sultan Die slechts “Wees!” hoeft te bevelen om iets tot stand te brengen? Immers, tegenover de angstaanjagendste calamiteit zal hij: <br><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اِنَّا لِلّٰهِ وَاِنَّا اِلَيْهِ رَاجِعُونَ</span> zeggen en zich met een gerust hart op zijn Genadige Schepper berusten.
+    </p>
+
     <p>
     Waarlijk, een kenner van ALLAH geniet van zijn onmacht en zijn vrees voor ALLAH. Waarlijk, in vrees schuilt genot. Als een eenjarig kind over een verstand zou beschikken en als hem gevraagd zou worden welke toestand hem het meeste genot oplevert, dan zou hij het volgende zeggen:
     </p>
@@ -2184,7 +2185,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     <p>
     Waarlijk, iedereen die zijn plezierige dagen van vroeger herdenkt, zal door smart en verdriet een geestelijke kwelling vernemen en een droevige zucht slaken. En wanneer hij denkt aan de verstreken dagen die hij in ellende en pijn heeft doorgebracht, dan zal hij door hun teloorgang een geestelijke genieting ervaren en een zucht van opluchting slaken met de gedachte: </p>
 
-    <p><em><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">الْحَمْدُ لِلّٰهِ</span>, Godzijdank, dat onheil heeft zijn zegen achtergelaten en is verdwenen.</em></p>
+    <p><em><sup>1</sup><span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَمْدُ لِلّٰهِ</span>, Godzijdank, dat onheil heeft zijn zegen achtergelaten en is verdwenen.</em></p>
 
 
     <p>
@@ -2439,7 +2440,7 @@ Waarlijk, waar zou een man nog terug voor deinzen nadat hij zich op basis van zi
     </p>
 
     <p class="text-center text-arabic delima-font" dir="rtl" lang="ar">
-    اِنَّا جَعَلْنَا مَا عَلَى الْاَرْضِ زٖينَةً لَهَا لِنَبْلُوَهُمْ اَيُّهُمْ اَحْسَنُ عَمَلًا ۞ وَاِنَّا لَجَاعِلُونَ مَا عَلَيْهَا صَعٖيدًا جُرُزًا ۞ وَمَا الْحَيٰوةُ الدُّنْيَٓا اِلّالْأَرْضٌِ وَلَهْوٌ ۞<sup>2</sup>
+        اِنَّا جَعَلْنَا مَا عَلَى الْاَرْضِ زٖينَةً لَهَا لِنَبْلُوَهُمْ اَيُّهُمْ اَحْسَنُ عَمَلاً ۞ وَاِنَّا لَجَاعِلُونَ مَا عَلَيْهَا صَعٖيدًا جُرُزًا ۞ وَمَا الْحَيٰوةُ الدُّنْيَٓا اِلَّا لَعِبٌ وَلَهْوٌ ۞<sup>2</sup>
     </p>
 
     <p class="text-center-constrained"><em>[Dit Woord bestaat uit Twee Verheven Thema’s en een Stralende Toevoeging]</em></p>
