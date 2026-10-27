@@ -59,6 +59,80 @@ test('header icon buttons match the app without padded backgrounds or overflowin
     assert.match(css, /\.reader-topbar-actions \{ height: 100%; \}/);
 });
 
+test('mobile settings keep stable viewport bounds without duplicated safe-area gaps', () => {
+    const sheet = css.match(/#reader-control-sheet\s*\{([^}]+)\}/)[1];
+    assert.ok(sheet.includes('100svh'));
+    assert.ok(!sheet.includes('100dvh'));
+    assert.ok(sheet.includes('padding-bottom: 0;'));
+    assert.ok(sheet.includes('overscroll-behavior-y: contain;'));
+    assert.ok(sheet.includes('overflow-anchor: none;'));
+    assert.match(css, /#reader-control-sheet \.reader-sheet-bottom-safe \{ display: none; \}/);
+});
+
+test('visible page lookup preserves nearest-page behavior with logarithmic layout reads', () => {
+    const sorted = Array.from({ length: 1024 }, (_, i) => i + 5);
+    let reads = 0, scrollY = 0;
+    const pageMap = Object.fromEntries(sorted.map((n, i) => [n, {
+        getBoundingClientRect() { reads++; return { top: i * 700 - scrollY }; },
+    }]));
+    const context = vm.createContext({ sorted, pageMap, TOPBAR_H: 44, firstPage: 5 });
+    vm.runInContext(view.slice(view.indexOf('function visiblePage()'), view.indexOf('// --- Lazy load:')), context);
+    for (const offset of [-120, 0, 306, 307, 700, 50000, 716800, 800000]) {
+        scrollY = offset;
+        const expected = sorted.reduce((best, n, i) =>
+            Math.abs(i * 700 - offset - 44) < Math.abs((best - 5) * 700 - offset - 44) ? n : best, 5);
+        reads = 0;
+        assert.equal(context.visiblePage(), expected, `offset ${offset}`);
+        assert.ok(reads <= 12, `${reads} layout reads for 1024 pages`);
+    }
+});
+
+test('rapid scroll events share one frame and unchanged pages do not rewrite reader controls', () => {
+    const frames = [], timers = new Map(), updates = [], saves = [];
+    let scroll, current = 5, timerId = 0;
+    const context = vm.createContext({
+        window: { addEventListener(event, handler) { if (event === 'scroll') scroll = handler; } },
+        requestAnimationFrame(callback) { frames.push(callback); return frames.length; },
+        clearTimeout(id) { timers.delete(id); },
+        setTimeout(callback) { timers.set(++timerId, callback); return timerId; },
+        visiblePage: () => current, updateUI: page => updates.push(page), save: page => saves.push(page),
+    });
+    vm.runInContext(view.slice(view.indexOf('// --- Scroll ---'), view.indexOf('// ── Control Sheet')), context);
+    for (let i = 0; i < 100; i++) scroll();
+    assert.equal(frames.length, 1);
+    assert.deepEqual(updates, []);
+    frames.shift()();
+    assert.deepEqual(updates, [5]);
+    scroll(); frames.shift()();
+    assert.deepEqual(updates, [5]);
+    current = 8;
+    scroll(); frames.shift()();
+    assert.deepEqual(updates, [5, 8]);
+    assert.equal(timers.size, 1);
+    [...timers.values()][0]();
+    assert.deepEqual(saves, [8]);
+});
+
+test('iOS viewport offsets never trigger corrective document scrolling', () => {
+    const script = view.slice(view.indexOf('// Hard-lock:'), view.indexOf('// Note: we deliberately'));
+    const scrolls = [], listeners = {};
+    const context = vm.createContext({
+        window: {
+            scrollX: 0, scrollY: -120,
+            scrollTo: (...args) => scrolls.push(args),
+            addEventListener: (event, handler) => { listeners[event] = handler; },
+            visualViewport: { offsetTop: -100, offsetLeft: 0, addEventListener() { assert.fail('No viewport scroll correction'); } },
+        },
+    });
+    vm.runInContext(script, context);
+    for (let i = 0; i < 100; i++) listeners.scroll();
+    assert.deepEqual(scrolls, []);
+    context.window.scrollX = 12;
+    listeners.scroll();
+    assert.deepEqual(scrolls, [[0, -120]]);
+    assert.match(css, /body\[data-reader-theme\] \.reader-topbar\s*\{[^}]*backdrop-filter: none;/);
+});
+
 test('page picker steps through existing pages and confirms only an actual page', () => {
     const r = navigation();
     r.element('topbar-mobile-page').handlers.click();
@@ -255,6 +329,8 @@ test('search and contents match app fields, inline results and wrapping chapter 
     assert.match(css, /\.reader-search-result-item\s*\{[^}]*flex: 0 0 auto; height: auto/);
     assert.match(view, /setTimeout\(runSearch, 120\)/);
     assert.match(css, /#toc-panel \.toc-panel-item-title\s*\{[^}]*white-space: normal/);
+    assert.match(css, /#toc-panel \.toc-panel-item\s*\{[^}]*flex: 0 0 auto; height: auto !important; max-height: none/);
+    assert.match(css, /#toc-panel \.toc-panel-item-title\s*\{[^}]*line-height: 26px !important/);
     assert.match(css, /#toc-panel \.toc-panel-item\.active\s*\{[^}]*border-left: 3px/);
     assert.doesNotMatch(view, /active\.scrollIntoView/);
     assert.match(view, /aria-current', 'location'/);
