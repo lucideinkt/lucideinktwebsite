@@ -451,6 +451,13 @@
             </div>
         </div>
         @endforeach
+        <div class="reader-alignment-control">
+            <span class="reader-sheet-slider-label" id="reader-alignment-label">Tekstuitlijning</span>
+            <div class="reader-settings-tabs" role="group" aria-labelledby="reader-alignment-label">
+                <button type="button" class="reader-settings-tab" data-text-alignment="justify" aria-pressed="true">Uitgevuld</button>
+                <button type="button" class="reader-settings-tab" data-text-alignment="left" aria-pressed="false">Links uitgelijnd</button>
+            </div>
+        </div>
         </div>
 
         {{-- Theme --}}
@@ -753,6 +760,30 @@
             console.error('Leesinstellingen konden niet worden bewaard of geladen.', error);
             if (window.showToast) window.showToast('Je leesinstellingen konden niet worden bewaard of geladen.', 'error');
         }
+        const alignmentButtons = document.querySelectorAll('[data-text-alignment]');
+        document.querySelectorAll('.book-reader-scope .page p:not(.text-arabic):not([lang="ar"]):not(.footnote-p):not(.page-number)').forEach(paragraph => {
+            const style = getComputedStyle(paragraph);
+            if (style.direction !== 'rtl' && ['justify', 'left', 'start'].includes(style.textAlign)) {
+                paragraph.classList.add('reader-alignable');
+            }
+        });
+        function applyTextAlignment(value, persist) {
+            const alignment = value === 'left' ? 'left' : 'justify';
+            const anchor = persist ? captureAnchor() : null;
+            document.documentElement.style.setProperty('--reader-text-alignment', alignment);
+            alignmentButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.textAlignment === alignment)));
+            if (persist) {
+                document.dispatchEvent(new Event('reader-layout-change'));
+                if (anchor) restoreAnchor(anchor);
+                try { localStorage.setItem('reader-text-alignment', alignment); }
+                catch (error) { preferenceStorageError(error); }
+            }
+        }
+        let savedAlignment = null;
+        try { savedAlignment = localStorage.getItem('reader-text-alignment'); }
+        catch (error) { preferenceStorageError(error); }
+        applyTextAlignment(savedAlignment, false);
+        alignmentButtons.forEach(button => button.addEventListener('click', () => applyTextAlignment(button.dataset.textAlignment, true)));
         [
             { id: 'line-height', key: 'reader-line-height', property: '--reader-line-height', min: 1.2, max: 2.2, fallback: 1.5, unit: '' },
             { id: 'side-padding', key: 'reader-side-padding', property: '--reader-side-padding', min: 8, max: 64, fallback: parseFloat(getComputedStyle(document.querySelector('.reader-wrap')).paddingLeft), unit: 'px' },

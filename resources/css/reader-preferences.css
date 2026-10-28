@@ -76,6 +76,37 @@ body[data-reader-theme="dark"] {
     padding-left: var(--reader-side-padding, 32px);
     padding-right: var(--reader-side-padding, 32px);
 }
+.book-reader-scope .page p.reader-alignable {
+    text-align: var(--reader-text-alignment, justify) !important;
+}
+#reader-content .page .prayer-body {
+    color: #25211b !important;
+}
+.book-reader-scope .prayer-verse-number {
+    display: inline-block;
+    white-space: nowrap;
+    direction: rtl;
+    unicode-bidi: isolate;
+}
+.book-reader-scope .prayer-verse-number::before { content: "﴿"; margin-inline-end: 0.12em; }
+.book-reader-scope .prayer-verse-number::after { content: "﴾"; margin-inline-start: 0.12em; }
+.book-reader-scope .prayer-verse-number .prayer-verse-sign { font-size: 0 !important; }
+body:is([data-reader-theme="dark"], [data-reader-theme="gray"], [data-reader-theme="night"], [data-reader-theme="black"]) #reader-content .page .prayer-body {
+    color: var(--reader-ink) !important;
+}
+#reader-content .page .prayer-body :is(.text-arabic, .text-arabic-inline, [lang="ar"], .text-red) {
+    color: inherit !important;
+}
+#reader-content .page .prayer-body .prayer-accent {
+    color: var(--reader-accent) !important;
+}
+body[data-reader-theme="light"] #reader-content .page .prayer-body .prayer-accent {
+    color: #ca2a2a !important;
+}
+#reader-control-sheet .reader-settings-tab[aria-pressed="true"] {
+    background: var(--reader-accent) !important;
+    color: var(--reader-active-ink) !important;
+}
 @media (max-width: 1024px) {
     .reader-wrap {
         padding-left: var(--reader-side-padding, 16px);

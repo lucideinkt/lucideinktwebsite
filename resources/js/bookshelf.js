@@ -49,6 +49,17 @@ function readHistory() {
     }
 }
 
+function readShelfGrid(key) {
+    try {
+        const value = localStorage.getItem('library-shelf-layout:' + key);
+        if (value !== null && value !== 'row' && value !== 'grid') throw new Error('Ongeldige boekenplankweergave');
+        return value === 'grid';
+    } catch (error) {
+        console.warn('De boekenplankweergave kon niet worden geladen.', error);
+        return false;
+    }
+}
+
 function buildShelves() {
     const pool = document.querySelector('.bookshelf-books-pool');
     const target = document.getElementById('bookshelf-shelves');
@@ -79,6 +90,8 @@ function buildShelves() {
         const section = document.createElement('section');
         section.className = 'bookshelf-section';
         section.dataset.section = group.key;
+        let preferredGrid = readShelfGrid(group.key);
+        section.classList.toggle('bookshelf-section--grid', preferredGrid);
         const headingId = 'bookshelf-heading-' + group.key;
         section.setAttribute('aria-labelledby', headingId);
 
@@ -106,6 +119,30 @@ function buildShelves() {
         track.id = 'bookshelf-track-' + group.key;
         track.setAttribute('role', 'group');
         track.setAttribute('aria-labelledby', headingId);
+        const layoutButton = document.createElement('button');
+        layoutButton.type = 'button';
+        layoutButton.className = 'bookshelf-layout-button';
+        layoutButton.setAttribute('aria-controls', track.id);
+        const layoutIcon = document.createElement('i');
+        layoutIcon.className = 'fa-solid fa-table-cells-large';
+        layoutIcon.setAttribute('aria-hidden', 'true');
+        const layoutLabel = document.createElement('span');
+        layoutButton.append(layoutIcon, layoutLabel);
+        header.appendChild(layoutButton);
+        layoutButton.addEventListener('click', () => {
+            const grid = !section.classList.contains('bookshelf-section--grid');
+            try {
+                localStorage.setItem('library-shelf-layout:' + group.key, grid ? 'grid' : 'row');
+            } catch (error) {
+                console.warn('De boekenplankweergave kon niet worden opgeslagen.', error);
+                window.alert('De boekenplankweergave kon niet worden opgeslagen. Probeer het opnieuw.');
+                return;
+            }
+            preferredGrid = grid;
+            section.classList.toggle('bookshelf-section--grid', grid);
+            track.scrollLeft = 0;
+            updateControls();
+        });
         const buttons = [-1, 1].map(direction => {
             const button = document.createElement('button');
             button.type = 'button';
@@ -125,16 +162,41 @@ function buildShelves() {
         });
         header.appendChild(controls);
         const updateControls = () => {
+            const bookWidth = track.firstElementChild?.getBoundingClientRect().width || 0;
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const capacity = bookWidth > 0 ? Math.max(1, Math.floor((track.clientWidth + gap + 1) / (bookWidth + gap))) : group.books.length;
+            const canExpand = group.books.length > capacity;
+            const grid = preferredGrid && canExpand;
+            section.classList.toggle('bookshelf-section--grid', grid);
+            layoutButton.hidden = !canExpand;
+            layoutButton.setAttribute('aria-expanded', String(grid));
+            const text = grid ? 'Inklappen' : 'Uitklappen';
+            const label = text + ': ' + group.title;
+            layoutIcon.className = 'fa-solid ' + (grid ? 'fa-grip-lines' : 'fa-table-cells-large');
+            layoutLabel.textContent = text;
+            layoutButton.setAttribute('aria-label', label);
+            layoutButton.title = label;
+            plank.querySelectorAll('.bookshelf-row-board').forEach(board => board.remove());
+            if (grid) {
+                const rowBottoms = [...new Set(Array.from(track.children, book => book.offsetTop + book.offsetHeight))].sort((a, b) => a - b);
+                rowBottoms.slice(0, -1).forEach(bottom => {
+                    const board = document.createElement('div');
+                    board.className = 'bookshelf-row-board';
+                    board.setAttribute('aria-hidden', 'true');
+                    board.style.top = bottom + 'px';
+                    plank.appendChild(board);
+                });
+            }
             const maxScroll = track.scrollWidth - track.clientWidth;
-            controls.hidden = maxScroll <= 1;
+            controls.hidden = grid || maxScroll <= 1;
             buttons[0].disabled = track.scrollLeft <= 1;
             buttons[1].disabled = track.scrollLeft >= maxScroll - 1;
-            track.tabIndex = maxScroll > 1 ? 0 : -1;
+            track.tabIndex = !grid && maxScroll > 1 ? 0 : -1;
         };
         track.addEventListener('scroll', updateControls, { passive: true });
         track.addEventListener('bookshelf:resize', updateControls);
         track.addEventListener('keydown', event => {
-            if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+            if (section.classList.contains('bookshelf-section--grid') || event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
             event.preventDefault();
             buttons[event.key === 'ArrowLeft' ? 0 : 1].click();
         });
