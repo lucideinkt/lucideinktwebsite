@@ -57,6 +57,13 @@ function reader(saved = {}) {
     const themes = ['system', 'light', 'dark', 'ivory', 'white', 'sepia', 'green', 'gray', 'night', 'black'].map(theme => ({
         ...element(theme), dataset: { theme }, classList: { toggle() {} },
     }));
+    const alignments = ['justify', 'left'].map(textAlignment => ({
+        ...element('alignment-' + textAlignment), dataset: { textAlignment },
+    }));
+    const paragraphs = ['justify', 'left', 'center', 'right'].map(textAlign => ({
+        textAlign, classes: new Set(), classList: { add(name) { this.owner.classes.add(name); } },
+    }));
+    paragraphs.forEach(p => { p.classList.owner = p; });
     const classList = {
         toggle(name, active) { if (active) classes.add(name); else classes.delete(name); },
         remove(name) { classes.delete(name); },
@@ -66,7 +73,11 @@ function reader(saved = {}) {
         documentElement: { dataset: {}, classList, style: { setProperty: (key, value) => properties.set(key, value) } },
         getElementById: element,
         querySelector() { return {}; },
-        querySelectorAll() { return themes; },
+        querySelectorAll(selector) {
+            if (selector === '[data-text-alignment]') return alignments;
+            if (selector.startsWith('.book-reader-scope .page p')) return paragraphs;
+            return themes;
+        },
         dispatchEvent(event) { events.push(event.type); },
     };
     const context = vm.createContext({
@@ -80,14 +91,35 @@ function reader(saved = {}) {
         },
         console: { error(...args) { errors.push(args); } },
         Event: class { constructor(type) { this.type = type; } },
-        getComputedStyle() { return { paddingLeft: '32px' }; },
+        getComputedStyle(element) { return { paddingLeft: '32px', direction: 'ltr', textAlign: element.textAlign }; },
         captureAnchor() { anchors.push('capture'); return { top: 100 }; },
         restoreAnchor() { anchors.push('restore'); },
     });
     vm.runInContext(layoutScript + themeScript, context);
-    return { storage, properties, document, element, themes, errors, events, anchors, context,
+    return { storage, properties, document, element, themes, alignments, paragraphs, errors, events, anchors, context,
         setDark(value) { system.matches = value; systemChange(); } };
 }
+
+test('alignment defaults to justified, persists independently and leaves special paragraphs unchanged', () => {
+    const r = reader({ 'reader-theme': 'sepia', bookmarks: '[12]' });
+    assert.equal(r.properties.get('--reader-text-alignment'), 'justify');
+    assert.deepEqual(r.paragraphs.map(p => p.classes.has('reader-alignable')), [true, true, false, false]);
+    r.alignments[1].click();
+    assert.equal(r.properties.get('--reader-text-alignment'), 'left');
+    assert.equal(r.storage.get('reader-text-alignment'), 'left');
+    assert.equal(r.alignments[1].attributes.get('aria-pressed'), 'true');
+    assert.equal(r.alignments[0].attributes.get('aria-pressed'), 'false');
+    assert.deepEqual(r.anchors, ['capture', 'restore']);
+    assert.deepEqual(r.events, ['reader-layout-change']);
+    assert.equal(r.storage.get('bookmarks'), '[12]');
+    assert.equal(reader(Object.fromEntries(r.storage)).properties.get('--reader-text-alignment'), 'left');
+    r.alignments[0].click();
+    assert.equal(r.storage.get('reader-text-alignment'), 'justify');
+    assert.equal(reader({ 'reader-text-alignment': 'invalid' }).properties.get('--reader-text-alignment'), 'justify');
+    assert.match(view, /data-text-alignment="justify"[^>]*>Uitgevuld/);
+    assert.match(view, /data-text-alignment="left"[^>]*>Links uitgelijnd/);
+    assert.match(css, /p\.reader-alignable\s*\{[^}]*text-align: var\(--reader-text-alignment, justify\) !important/);
+});
 
 test('new layout preferences preserve existing data and restore the page anchor', () => {
     const r = reader({ 'reader-theme': 'sepia', 'reader-font-size': '21', bookmarks: '[12]' });
