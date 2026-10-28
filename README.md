@@ -1,5 +1,15 @@
 ## Lucide Inkt Website
 
+### Boekenplanken
+
+Onder een planktitel verschijnt de subtiele tekstknop **Uitklappen** / **Inklappen**
+alleen wanneer de boeken niet op een enkele rij passen bij de huidige schermbreedte.
+Standaard blijft horizontaal bladeren beschikbaar; het raster toont alle boeken
+in meerdere rijen, met dezelfde boekgrootte (twee per rij op mobiel, drie op desktop).
+Onder elke uitgeklapte boekenrij loopt een houten plank.
+De keuze wordt per plank in deze browser bewaard en blijft bij zoeken en herladen
+behouden. Leesgeschiedenis en opgeslagen paginanummers veranderen niet.
+
 ### Leesinstellingen
 
 Het leesmenu gebruikt op mobiel en desktop hetzelfde zwevende venster zonder
@@ -30,13 +40,32 @@ Onder **Thema's en instellingen** staan twee toetsenbordbedienbare tabs:
 plus/min-knoppen) en **Kleuren**. Ronde kleurvoorbeelden tonen de achtergrond
 met `Aa` in de bijbehorende tekstkleur; Systeem volgt ook in dit voorbeeld de
 apparaatinstelling. Het menu gebruikt compacte, rustige typografie.
-Elke tekstinstelling heeft een eigen herstelknop. **Standaardkleur herstellen**
+Bij **Tekstuitlijning** kies je **Uitgevuld** (standaard, rechte linker- en
+rechterrand) of **Links uitgelijnd** (vrije rechterrand). De browser bewaart de
+keuze; de leespositie blijft behouden bij wisselen. Titels met een eigen
+uitlijning, Arabische passages en voetnoten blijven ongewijzigd.
+Elke numerieke tekstinstelling heeft een eigen herstelknop. **Standaardkleur herstellen**
 staat alleen bij Kleuren en kiest Systeem, zonder de tekstinstellingen te wijzigen.
 Herstellen verandert nooit de leespositie, bladwijzers of markeringen.
 Extra kleurthema's vervangen ook de papiertextuur op de zichtbare leeslaag;
 het oorspronkelijke thema Papier behoudt zijn textuur.
 Bismillah-afbeeldingen en voetnootknoppen gebruiken bij de extra thema's
 de bijbehorende accentkleur, met contrasterende cijfers op de knoppen.
+In **Namaz Tesbihatı** en **Cevşen-ül Kebir** heeft Arabische hoofdtekst op lichte
+thema's een warme bijna-zwarte kleur (`#25211b`); op donkere thema's blijft de
+lichte tekstkleur van het thema behouden. Alleen het kernwoord van een naam of
+eigenschap na *yā* krijgt de accentkleur, niet de hele aanroeping. *Yā*, het
+herhaalde *yā ALLAH* en langere verbindende zinnen blijven in de gewone
+tekstkleur. ALLAH en Allāhumma buiten die herhaalde aanroepingen krijgen wel
+een accent; verssymbolen behouden hun eigen kleur.
+In de terugkerende smeekbede van **Cevşen-ül Kebir** krijgen ook *yā* voor
+*lā ilāha* en *khalliṣnā* / *najjinā* voor *min an-nār* de thema-accentkleur.
+Genummerde verssymbolen in beide gebedenboeken tonen een Arabisch cijfer tussen
+twee siermotieven met behoud van de ornamentkleur. De brontekst en cijferwaarde
+blijven behouden voor zoeken en markeringen.
+De lezer voegt deze kleurmarkeringen alleen bij weergave toe: de brontekst,
+zoekposities en opgeslagen markeringen veranderen niet. Andere boeken blijven
+ongewijzigd.
 Donker grafiet gebruikt koel blauw (`#A9CCE8`), Nachtmodus zacht saliegroen
 (`#B8C9AD`) en Zwart champagnegoud (`#C8B78F`), ook voor Arabisch en titels,
 met per thema afgestemde secundaire tekst.

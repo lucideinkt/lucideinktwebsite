@@ -1,4 +1,6 @@
-﻿export function readerBook() {
+﻿import { markPrayerText } from './prayer-text.js';
+
+export function readerBook() {
     const readerEl = document.getElementById('reader-content');
     if (!readerEl) return;
 
@@ -395,6 +397,7 @@
         normalizeServerRenderedFnRefs(page);
         joinBreaksBeforeInlineArabic(page);
         markShortInlineArabic(page);
+        markPrayerText(page, readerEl.dataset.bookSlug);
         markArabicOrnaments(page);
         hyphenatePage(page);
 
