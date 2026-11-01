@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="google" content="notranslate">
-    <link rel="preload" href="/fonts/OmarNaskh-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ Vite::asset('resources/fonts/OmarNaskh-Joining.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
     @php
         $seoTitle        = $SEOData->title        ?? $product->title;
         $seoDescription  = $SEOData->description  ?? $product->short_description ?? '';

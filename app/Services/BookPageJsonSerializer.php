@@ -378,6 +378,12 @@ class BookPageJsonSerializer
         if (in_array('honorific', $classes, true)) {
             $presentation['role'] = 'honorific';
         }
+        if (in_array('arabic-waqf', $classes, true)) {
+            $presentation['role'] = 'arabic_waqf';
+        }
+        if (in_array('arabic-madd-below', $classes, true)) {
+            $presentation['role'] = 'arabic_madd_below';
+        }
         if (in_array('text-bold', $classes, true)) {
             $presentation['font_weight'] = 'semibold';
         }

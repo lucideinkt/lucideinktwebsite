@@ -46,6 +46,7 @@ export function prayerAccentRanges(text, slug) {
 
 export function markPrayerText(page, slug) {
     if (!['namaz-tesbihati', 'cevsen-ul-kebir'].includes(slug)) return;
+    markPrayerMadd(page);
     const verseWalker = document.createTreeWalker(page, NodeFilter.SHOW_TEXT);
     const verseNodes = [];
     while (verseWalker.nextNode()) {
@@ -53,6 +54,7 @@ export function markPrayerText(page, slug) {
         if (/\u06dd[\u0660-\u0669\u06f0-\u06f9]+/u.test(node.data)
             && !node.parentElement.closest('.prayer-verse-number')) verseNodes.push(node);
     }
+
     for (const node of verseNodes) {
         const fragment = document.createDocumentFragment();
         let cursor = 0;
@@ -97,6 +99,48 @@ export function markPrayerText(page, slug) {
                 cursor = to;
             }
             fragment.append(node.data.slice(cursor));
+            node.replaceWith(fragment);
+        }
+    });
+}
+
+export function arabicDisplayText(text) {
+    return text.replaceAll('شَطَْٔ', 'شَطْئَ');
+}
+
+export function markPrayerMadd(page) {
+    page.querySelectorAll('.text-arabic, .text-arabic-inline, [lang="ar"]').forEach(element => {
+        if (element.parentElement?.closest('.text-arabic, .text-arabic-inline, [lang="ar"]')) return;
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (!node.parentElement.closest('.arabic-madd-sign')) nodes.push(node);
+        }
+        for (const node of nodes) {
+            const corrected = arabicDisplayText(node.data);
+            node.data = corrected;
+            const matches = [...corrected.matchAll(/\p{L}\p{M}*/gu)]
+                .filter(match => match[0].includes('\u06eb'));
+            if (!matches.length) continue;
+            const fragment = document.createDocumentFragment();
+            let cursor = 0;
+            for (const match of matches) {
+                fragment.append(corrected.slice(cursor, match.index));
+                const wrapper = document.createElement('span');
+                if (!node.parentElement.closest('.arabic-madd-below')) wrapper.className = 'arabic-madd-below';
+                for (const part of match[0].split(/(\u06eb)/u)) {
+                    if (part === '\u06eb') {
+                        const sign = document.createElement('span');
+                        sign.className = 'arabic-madd-sign';
+                        sign.textContent = part;
+                        wrapper.append(sign);
+                    } else wrapper.append(part);
+                }
+                fragment.append(wrapper);
+                cursor = match.index + match[0].length;
+            }
+            fragment.append(corrected.slice(cursor));
             node.replaceWith(fragment);
         }
     });

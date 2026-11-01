@@ -6,6 +6,18 @@ import vm from 'node:vm';
 const view = readFileSync(new URL('../resources/views/online-lezen-html-reader.blade.php', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../resources/css/reader-preferences.css', import.meta.url), 'utf8');
 
+test('Bismillah SVGs get extra bottom space without changing their top spacing or image size', () => {
+    const readerCss = readFileSync(new URL('../resources/css/reader-book.css', import.meta.url), 'utf8');
+    assert.match(readerCss, /\.text-arabic-bismillah:has\(\.bismillah-svg\)\s*\{\s*padding-bottom: calc\(var\(--reader-font-size, 19px\) \* 0\.6\);/);
+    assert.match(readerCss, /\.text-arabic-bismillah\s*\{[^}]*margin: 1em auto;[^}]*margin-bottom: 0px;/);
+    assert.match(readerCss, /\.bismillah-svg\s*\{[^}]*width: 33%;[^}]*margin: 0 auto;/);
+});
+
+test('book headings use a slightly roomier line height', () => {
+    const readerCss = readFileSync(new URL('../resources/css/reader-book.css', import.meta.url), 'utf8');
+    assert.match(readerCss, /\.book-reader-scope h4 \{[^}]*line-height: 1\.7em;/);
+});
+
 test('paper menus use the app card and row palette and text settings have unboxed restore labels', () => {
     assert.match(css, /--reader-menu-bg: #fffdf5; --reader-menu-ink: #2a1a0a/);
     assert.match(css, /--reader-row-bg: #fbf0cb/);

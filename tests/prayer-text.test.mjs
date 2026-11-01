@@ -1,10 +1,35 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { prayerAccentRanges, markPrayerText } from '../resources/js/features/prayer-text.js';
+import { arabicDisplayText, prayerAccentRanges, markPrayerText } from '../resources/js/features/prayer-text.js';
 
 const accents = (text, slug = 'namaz-tesbihati') => prayerAccentRanges(text, slug).map(r => text.slice(r.start, r.end));
 
+test('the reader loads the joining repair without rewriting the madd word', () => {
+    const css = readFileSync('resources/css/reader-book.css', 'utf8');
+    assert.ok(css.includes("url('../fonts/OmarNaskh-Joining.woff2')"));
+    assert.ok(css.includes("url('../fonts/OmarNaskh-Joining.ttf')"));
+    assert.ok(css.includes("url('../fonts/OmarNaskh-Reader.ttf')"));
+    const view = readFileSync('resources/views/online-lezen-html-reader.blade.php', 'utf8');
+    assert.ok(view.includes("Vite::asset('resources/fonts/OmarNaskh-Joining.woff2')"));
+    assert.equal(readFileSync('resources/fonts/OmarNaskh-Joining.woff2').subarray(0, 4).toString(), 'wOF2');
+    assert.equal(arabicDisplayText('عَلَيْنَٓا'), 'عَلَيْنَٓا');
+});
+
+test('waqf signs sit slightly higher without changing their horizontal placement or width', () => {
+    const css = readFileSync('resources/css/reader-book.css', 'utf8');
+    assert.match(css, /\.arabic-waqf\s*\{[^}]*width: 0;[^}]*transform: translate\(0\.21em, -0\.72em\);/);
+});
+
+test('the reference hamza spelling joins its letters without moving saved text offsets', () => {
+    const source = 'شَطَْٔهُ';
+    assert.equal(arabicDisplayText(source), 'شَطْئَهُ');
+    assert.equal(arabicDisplayText(source).length, source.length);
+    assert.equal(arabicDisplayText('رُؤُسَكُمْ'), 'رُؤُسَكُمْ');
+    const css = readFileSync('resources/css/reader-book.css', 'utf8');
+    assert.match(css, /\.arabic-madd-below::after\s*\{[^}]*content: "مد"/);
+    assert.match(css, /\.arabic-madd-sign\s*\{ font-size: 0 !important/);
+});
 test('divine names retain their exact spelling while requests and non-divine vocatives remain unaccented', () => {
     for (const word of ['اَللّٰهُمَّ', 'اللّٰهُ', 'لِلّٰهِ', 'بِاللّٰهِ', 'وَلِلّٰهِ', 'ﷲ']) {
         assert.deepEqual(accents(`قَبْلَ ${word} بَعْدَ`), [word]);

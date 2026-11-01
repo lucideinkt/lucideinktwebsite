@@ -7,6 +7,29 @@ use PHPUnit\Framework\TestCase;
 
 class BookPageJsonSerializerTest extends TestCase
 {
+    public function test_it_preserves_madd_under_letter_metadata(): void
+    {
+        $page = (new BookPageJsonSerializer)->serialize(1,
+            '<div class="page"><p lang="ar">وَلَا يَ<span class="arabic-madd-below">ؤُ</span>دُهُ</p></div>');
+        $children = $page['blocks'][0]['children'];
+        $this->assertSame('arabic_madd_below', $children[1]['presentation']['role']);
+        $this->assertSame('ؤُ', $children[1]['children'][0]['text']);
+        $this->assertSame('دُهُ', $children[2]['text']);
+    }
+
+    public function test_it_preserves_waqf_placement_metadata_and_original_characters(): void
+    {
+        $html = '<div class="page"><p class="text-arabic" lang="ar" dir="rtl">هُوَ<span class="arabic-waqf">ۚ</span> نَوْمٌ<span class="arabic-waqf">ۜ</span></p></div>';
+        $page = (new BookPageJsonSerializer)->serialize(1, $html);
+        $children = $page['blocks'][0]['children'];
+        foreach ([1 => 'ۚ', 3 => 'ۜ'] as $index => $sign) {
+            $this->assertSame('arabic_waqf', $children[$index]['presentation']['role']);
+            $this->assertSame($sign, $children[$index]['children'][0]['text']);
+        }
+        $this->assertSame('هُوَ', $children[0]['text']);
+        $this->assertSame(' نَوْمٌ', $children[2]['text']);
+    }
+
     public function test_it_keeps_in_text_notes_and_their_rules_separate_from_modal_footnotes(): void
     {
         $html = <<<'HTML'

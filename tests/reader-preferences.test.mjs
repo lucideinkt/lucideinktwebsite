@@ -265,9 +265,9 @@ test('all fixed themes persist; only system follows OS changes and legacy values
     }
 });
 
-test('ordinary footnote badges are raised slightly while Arabic keeps its existing offsets', () => {
+test('ordinary footnote badges sit slightly lower while Arabic keeps its existing offsets', () => {
     const bookCss = readFileSync(new URL('../resources/css/reader-book.css', import.meta.url), 'utf8');
-    assert.equal([...bookCss.matchAll(/top: var\(--fn-badge-raise, -4px\);/g)].length, 2);
+    assert.equal([...bookCss.matchAll(/top: var\(--fn-badge-raise, -1px\);/g)].length, 2);
     for (const offset of ['6px', '-7px', '11px']) {
         assert.ok(bookCss.includes(`--fn-badge-raise: ${offset};`));
     }
