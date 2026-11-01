@@ -851,7 +851,7 @@
             const viewport = window.visualViewport;
             const viewportTop = viewport?.offsetTop ?? 0;
             const viewportBottom = viewportTop + (viewport?.height ?? window.innerHeight);
-            const top = Math.max(viewportTop + 12, topbarEl.getBoundingClientRect().bottom + 10);
+            const top = Math.max(viewportTop + 12, topbarEl.offsetHeight + 10);
             document.documentElement.style.setProperty('--reader-dialog-top', top + 'px');
             document.documentElement.style.setProperty('--reader-dialog-height', Math.max(0, viewportBottom - top - 12) + 'px');
         }
@@ -978,7 +978,21 @@
         let saveTimer = null;
         let scrollFrame = null;
         let lastScrollPage = null;
+        let chromeScrollY = window.scrollY;
+        function updateReaderChrome() {
+            const y = Math.max(0, window.scrollY);
+            const delta = y - chromeScrollY;
+            const panelOpen = document.querySelector('.reader-control-sheet.open, .toc-panel.open, .reader-search-panel.open');
+            if (panelOpen || y <= topbarEl.offsetHeight) {
+                document.body.classList.remove('reader-chrome-hidden');
+                chromeScrollY = y;
+            } else if (Math.abs(delta) >= 8) {
+                document.body.classList.toggle('reader-chrome-hidden', delta > 0);
+                chromeScrollY = y;
+            }
+        }
         window.addEventListener('scroll', function () {
+            updateReaderChrome();
             if (scrollFrame !== null) return;
             scrollFrame = requestAnimationFrame(() => {
                 scrollFrame = null;
