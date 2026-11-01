@@ -45,6 +45,7 @@ export function prayerAccentRanges(text, slug) {
 }
 
 export function markPrayerText(page, slug) {
+    markWaqfLetters(page);
     if (!['namaz-tesbihati', 'cevsen-ul-kebir'].includes(slug)) return;
     markPrayerMadd(page);
     const verseWalker = document.createTreeWalker(page, NodeFilter.SHOW_TEXT);
@@ -94,6 +95,40 @@ export function markPrayerText(page, slug) {
                 span.textContent = node.data.slice(from, to);
                 fragment.append(span);
                 cursor = to;
+            }
+            fragment.append(node.data.slice(cursor));
+            node.replaceWith(fragment);
+        }
+    });
+}
+
+// Print editions show the small high seen as a ط stop sign and the standalone rounded zero as the ع ruku sign.
+const waqfLetters = { '\u06dc': '\u0637', '\u06df': '\u0639' };
+
+export function markWaqfLetters(page) {
+    page.querySelectorAll('.arabic-waqf').forEach(element => {
+        const letter = waqfLetters[element.textContent.trim()];
+        if (!letter) return;
+        element.classList.add('arabic-waqf-letter');
+        element.textContent = letter;
+    });
+    page.querySelectorAll('.text-arabic, .text-arabic-inline, [lang="ar"]').forEach(element => {
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (/(?<![\p{L}\p{M}])\u06df/u.test(node.data) && !node.parentElement.closest('.arabic-waqf')) nodes.push(node);
+        }
+        for (const node of nodes) {
+            const fragment = document.createDocumentFragment();
+            let cursor = 0;
+            for (const match of node.data.matchAll(/(?<![\p{L}\p{M}])\u06df/gu)) {
+                fragment.append(node.data.slice(cursor, match.index));
+                const sign = document.createElement('span');
+                sign.className = 'arabic-waqf arabic-waqf-letter';
+                sign.textContent = waqfLetters[match[0]];
+                fragment.append(sign);
+                cursor = match.index + 1;
             }
             fragment.append(node.data.slice(cursor));
             node.replaceWith(fragment);
