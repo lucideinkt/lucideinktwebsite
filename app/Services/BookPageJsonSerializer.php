@@ -273,11 +273,37 @@ class BookPageJsonSerializer
             }
 
             $children = [];
+            $childrenInsideFootnote = $insideFootnote || $inTextFootnote;
+            $breakAfterArabic = false;
             foreach ($node->childNodes as $child) {
-                $childNode = $this->serializeNode($child, $pageNumber, $insideFootnote || $inTextFootnote, $language, $direction);
-                if ($childNode !== null) {
-                    $children[] = $childNode;
+                $childNode = $this->serializeNode($child, $pageNumber, $childrenInsideFootnote, $language, $direction);
+                if ($childNode === null) {
+                    continue;
                 }
+
+                if ($breakAfterArabic) {
+                    if ($childNode['type'] === 'text') {
+                        $childNode['text'] = preg_replace('/^\s+/u', '', $childNode['text']) ?? $childNode['text'];
+                        if ($childNode['text'] === '') {
+                            continue;
+                        }
+                    }
+                    if ($childNode['type'] !== 'line_break') {
+                        $children[] = ['type' => 'line_break'];
+                    }
+                    $breakAfterArabic = false;
+                }
+
+                $isBlockArabic = ! $childrenInsideFootnote && $this->isBlockArabicSpan($child);
+                if ($isBlockArabic) {
+                    $this->trimTrailingWhitespace($children);
+                    if ($children !== [] && $children[array_key_last($children)]['type'] !== 'line_break') {
+                        $children[] = ['type' => 'line_break'];
+                    }
+                }
+
+                $children[] = $childNode;
+                $breakAfterArabic = $isBlockArabic;
             }
             if ($children !== []) {
                 $result['children'] = $children;
@@ -315,6 +341,46 @@ class BookPageJsonSerializer
         }
 
         return $result;
+    }
+
+    /**
+     * The website shows a span with class text-arabic on its own line (display: block), outside
+     * footnote popovers. Native renderers show a span inline, so the serializer adds explicit
+     * line breaks around it. text-arabic-inline stays inline on both platforms.
+     */
+    private function isBlockArabicSpan(DOMNode $node): bool
+    {
+        if (! $node instanceof DOMElement || strtolower($node->tagName) !== 'span') {
+            return false;
+        }
+
+        $classes = preg_split('/\s+/', trim($node->getAttribute('class'))) ?: [];
+
+        return in_array('text-arabic', $classes, true);
+    }
+
+    /**
+     * @param  array<int, array<string, mixed>>  $children
+     */
+    private function trimTrailingWhitespace(array &$children): void
+    {
+        while ($children !== []) {
+            $last = array_key_last($children);
+            if ($children[$last]['type'] !== 'text') {
+                return;
+            }
+
+            $trimmed = preg_replace('/\s+$/u', '', $children[$last]['text']) ?? $children[$last]['text'];
+            if ($trimmed === '') {
+                array_pop($children);
+
+                continue;
+            }
+
+            $children[$last]['text'] = $trimmed;
+
+            return;
+        }
     }
 
     /**

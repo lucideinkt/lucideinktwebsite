@@ -7,6 +7,35 @@ use PHPUnit\Framework\TestCase;
 
 class BookPageJsonSerializerTest extends TestCase
 {
+    public function test_it_puts_block_level_arabic_spans_on_their_own_line_like_the_website(): void
+    {
+        $serializer = new BookPageJsonSerializer;
+        $subtitle = $serializer->serialize(41, '<div class="page"><p class="text-center"><strong><em>Een glimp van de Namen</em></strong>'
+            ."\n ".'<span class="text-arabic" dir="rtl" lang="ar">اَلْحَكٖيمُ وَالْعَادِلُ</span></p></div>');
+        $this->assertSame(['strong', 'line_break', 'span'], array_column($subtitle['blocks'][0]['children'], 'type'));
+        $this->assertSame('arabic_naskh', $subtitle['blocks'][0]['children'][2]['presentation']['typeface']);
+
+        $surrounded = $serializer->serialize(1, '<div class="page"><p class="text-center">Zeg: <span class="text-arabic" lang="ar" dir="rtl">اَللّٰهُ</span> Ga verder.</p></div>');
+        $children = $surrounded['blocks'][0]['children'];
+        $this->assertSame(['text', 'line_break', 'span', 'line_break', 'text'], array_column($children, 'type'));
+        $this->assertSame('Zeg:', $children[0]['text']);
+        $this->assertSame('Ga verder.', $children[4]['text']);
+
+        $alone = $serializer->serialize(1, '<div class="page"><p class="text-center"><span class="text-arabic" lang="ar" dir="rtl">اَللّٰهُ</span></p></div>');
+        $this->assertSame(['span'], array_column($alone['blocks'][0]['children'], 'type'));
+    }
+
+    public function test_it_keeps_inline_arabic_spans_and_footnote_spans_inline(): void
+    {
+        $serializer = new BookPageJsonSerializer;
+        $inline = $serializer->serialize(1, '<div class="page"><p>Zeg <span class="text-arabic-inline" lang="ar" dir="rtl">اَللّٰهُ</span> nu.</p></div>');
+        $this->assertSame(['text', 'span', 'text'], array_column($inline['blocks'][0]['children'], 'type'));
+
+        $footnote = $serializer->serialize(1, '<div class="page"><p>Tekst<sup>1</sup></p><div class="page-footnote">'
+            .'<p class="footnote-p"><sup>1</sup> Zie <span class="text-arabic" lang="ar" dir="rtl">اَللّٰهُ</span> nu.</p></div></div>');
+        $this->assertSame(['text', 'span', 'text'], array_column($footnote['footnotes'][0]['blocks'][0]['children'], 'type'));
+    }
+
     public function test_it_preserves_madd_under_letter_metadata(): void
     {
         $page = (new BookPageJsonSerializer)->serialize(1,
