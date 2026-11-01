@@ -81,6 +81,16 @@ html.ios-device {
     unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
 }
 
+#reader-content {
+    touch-action: pan-y;
+}
+
+.book-reader-scope .arabic-ornament-tail {
+    display: inline-block;
+    white-space: nowrap;
+    text-indent: 0;
+}
+
 .book-reader-scope .cevsen-separator {
     font-family: var(--reader-arabic-font, 'OmarNaskhRegular'), serif;
     font-size: 1em;
