@@ -7,6 +7,14 @@ use PHPUnit\Framework\TestCase;
 
 class BookPageJsonSerializerTest extends TestCase
 {
+    public function test_it_preserves_section_anchors_for_contents_navigation(): void
+    {
+        $page = (new BookPageJsonSerializer)->serialize(1,
+            '<div class="page" id="1"><p id="fajr-namen" class="text-center">Smeekbede</p><p>Vervolg</p></div>');
+        $this->assertSame('fajr-namen', $page['blocks'][0]['anchor']);
+        $this->assertArrayNotHasKey('anchor', $page['blocks'][1]);
+    }
+
     public function test_it_puts_block_level_arabic_spans_on_their_own_line_like_the_website(): void
     {
         $serializer = new BookPageJsonSerializer;

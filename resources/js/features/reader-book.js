@@ -520,6 +520,15 @@ export function readerBook() {
 
     readerEl.querySelectorAll('.page').forEach(page => pageWireObserver.observe(page));
 
+    document.addEventListener('reader-prepare-navigation', event => {
+        const target = event.detail.page;
+        for (const page of readerEl.querySelectorAll('.page')) {
+            wireFootnotesForPage(page);
+            pageWireObserver.unobserve(page);
+            if (page === target) break;
+        }
+    });
+
     document.addEventListener('copy', e => {
         const selection = window.getSelection();
         const text = selection?.toString() || '';

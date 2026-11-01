@@ -73,15 +73,17 @@ export function markPrayerText(page, slug) {
     page.querySelectorAll('.text-arabic, .text-arabic-inline, [lang="ar"]').forEach(element => {
         if (element.closest('.prayer-body, .page-footnote') || element.classList.contains('prayer-body')) return;
         element.classList.add('prayer-body');
-        const ranges = prayerAccentRanges(element.textContent, slug);
         const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
         const nodes = [];
         while (walker.nextNode()) nodes.push(walker.currentNode);
+        const accentText = nodes.map(node => node.parentElement.closest('.arabic-waqf')
+            ? ' '.repeat(node.data.length) : node.data).join('');
+        const ranges = prayerAccentRanges(accentText, slug);
         let offset = 0;
         for (const node of nodes) {
             const start = offset;
             offset += node.data.length;
-            if (node.parentElement.closest('.cevsen-separator, .cevsen-verse-number')) continue;
+            if (node.parentElement.closest('.cevsen-separator, .cevsen-verse-number, .arabic-waqf')) continue;
             const matches = ranges.filter(range => range.start < offset && range.end > start);
             if (!matches.length) continue;
             const fragment = document.createDocumentFragment();
@@ -103,14 +105,35 @@ export function markPrayerText(page, slug) {
 }
 
 // Print editions show the small high seen as a ط stop sign and the standalone rounded zero as the ع ruku sign.
-const waqfLetters = { '\u06dc': '\u0637', '\u06df': '\u0639' };
+const waqfLetters = {
+    '\u06d6': 'ص',
+    '\u06d8': 'م',
+    '\u06d9': 'لا',
+    '\u06da': 'ج',
+    '\u06dc': 'ط',
+    '\u06df': 'ع',
+    '\u08de': 'قف',
+};
+
+export function waqfDisplayText(text) {
+    return [...text].map(sign => waqfLetters[sign] ?? sign).join('');
+}
 
 export function markWaqfLetters(page) {
     page.querySelectorAll('.arabic-waqf').forEach(element => {
-        const letter = waqfLetters[element.textContent.trim()];
-        if (!letter) return;
+        if (element.querySelector('.arabic-waqf-label')) return;
+        const source = element.textContent.trim();
+        const label = document.createElement('span');
+        label.className = 'arabic-waqf-label';
+        label.textContent = waqfDisplayText(source.replaceAll('\u06db', ''));
+        if (source.includes('\u06db')) {
+            const dots = document.createElement('span');
+            dots.className = 'arabic-waqf-dots';
+            dots.textContent = '\u06db';
+            label.append(dots);
+        }
         element.classList.add('arabic-waqf-letter');
-        element.textContent = letter;
+        element.replaceChildren(label);
     });
     page.querySelectorAll('.text-arabic, .text-arabic-inline, [lang="ar"]').forEach(element => {
         const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
@@ -126,7 +149,10 @@ export function markWaqfLetters(page) {
                 fragment.append(node.data.slice(cursor, match.index));
                 const sign = document.createElement('span');
                 sign.className = 'arabic-waqf arabic-waqf-letter';
-                sign.textContent = waqfLetters[match[0]];
+                const label = document.createElement('span');
+                label.className = 'arabic-waqf-label';
+                label.textContent = waqfLetters[match[0]];
+                sign.append(label);
                 fragment.append(sign);
                 cursor = match.index + 1;
             }
