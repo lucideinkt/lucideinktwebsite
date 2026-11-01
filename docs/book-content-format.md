@@ -58,12 +58,19 @@ Een boekitem bevat `slug`, `title`, `description`, `language`, `book_type`, `cov
 
 De inhoudsopgave staat per boekslug in `config/book_toc.php` en wordt gebruikt door de HTML-reader en de navigatie-API. Cevşen-ül Kebir bevat 100 items, van `1. ukde` tot en met `100. ukde`, die elk naar de gelijkgenummerde pagina verwijzen. Hiervoor is opnieuw seeden niet nodig.
 
+Namaz Tesbihatı is verdeeld over 62 doorlopend genummerde pagina’s: Fajr 1–16, Dhuhr 17–26, Asr 27–40, Maghrib 41–52 en Isha 53–62. De vaste seederpagina’s zijn ingedeeld op logische tekstblokken met vergelijkbare lengte; aanwijzingen blijven bij de daaropvolgende recitatie. De namen-smeekbeden lopen over meerdere pagina’s. An-Naba staat op pagina 39–40; de verzen blijven binnen elke pagina achter elkaar staan. De Arabische tekst en tekens blijven bij deze herindeling ongewijzigd.
+
+Elk gebed heeft vier subonderdelen in de uitklapbare inhoudsopgave: na de smeekbede, de betreffende İsm-i A’zâm-smeekbede, het slotgebed en de afsluitende soera/verzen. De titels en eventuele subtitels volgen de Nederlandse seedertekst. Een optioneel `anchor` in een inhoudsopgave-item verwijst naar het gelijknamige HTML-`id` binnen `page`. De website springt rechtstreeks naar dat onderdeel. De pagina-API bewaart deze IDs als `anchor` op de betreffende JSON-nodes; de navigatie-API geeft de inhoudsopgave inclusief `anchor` door. Een native client moet het scrollen naar deze node zelf ondersteunen; zonder ondersteuning blijft navigatie naar het paginanummer mogelijk.
+
+Deze herindeling vereist opnieuw seeden met `php artisan db:seed --class=TesbihatPagesSeeder`. Dit overschrijft handmatige inhoudswijzigingen in dit boek. De gewijzigde pagina’s en inhoudsopgave wijzigen `content_version`; clients moeten hun gecachte pagina’s en navigatie vernieuwen. Bestaande bladwijzers en leesposities gebruiken de oude paginanummers en worden niet automatisch naar de nieuwe tekstposities vertaald.
+
 - Iedere pagina blijft een zelfstandige `.page` met het bestaande paginanummer en alle bestaande typografie-, layout- en taalmetadata.
 - Een voetnootverwijzing is een gewone `<sup>N</sup>` op de plek van de verwijzing.
 - De nootinhoud staat uitsluitend in het `.page-footnote`-blok als `.footnote-p`-elementen; niet in een `<button>` of `data-html`-attribuut.
 - De bestaande reader maakt van `<sup>`-verwijzingen tijdens het renderen interactieve popovers op basis van het aparte voetnotenblok. Het verborgen blok blijft ook de bron voor printweergave en toekomstige export.
 - De badge en de bijbehorende tekst openen dezelfde noot: volledige Arabische citaten en Bismillah-afbeeldingen zijn aantikbaar, bij Nederlandse tekst alleen het woord direct voor de badge. Een badge voor een Arabisch citaat wordt aan dat volgende citaat gekoppeld. De website ondersteunt ook Enter/Spatie op deze tekst; gewone links behouden hun navigatie. De native client leidt deze tapdoelen lokaal af, zonder wijziging van het API-contract of de seeders.
 - Behoud bestaande inline markup, classes, styles, talen, RTL-richting, afbeeldingen en tekst. Normaliseren betekent hier niet dat boekopmaak verwijderd of opnieuw ontworpen wordt.
+- Waqf-tekens staan direct na het bijbehorende woord in een `span.arabic-waqf`. Een gecombineerd teken, zoals `ۚۛ` of `ࣞۛ`, blijft in één span. De website toont de letters op één gedeelde schaal en stapelt de driepuntjes boven het teken; de JSON-conversie behoudt de broninhoud met de rol `arabic_waqf`.
 - Beide lezers groeperen inline Arabische citaten met hun badge aan het Arabische leeseinde (links). Een verwijzing direct voor of na het citaat wordt alleen in de weergave verplaatst; broncontent en API-target blijven ongewijzigd. Bismillah en losse Arabische alinea's behouden hun bestaande indeling.
 - De inline citaatgroep op de website erft geen alinea-inspringing (`text-indent: 0`), zodat er naast de normale woordspatie geen extra gat voor de Nederlandse vervolgtekst ontstaat.
 

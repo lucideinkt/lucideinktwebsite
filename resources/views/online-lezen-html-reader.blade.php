@@ -830,6 +830,7 @@
             const next = sorted[low];
             if (low === 0) return next || firstPage;
             const previous = sorted[low - 1];
+            if (pageMap[previous].getBoundingClientRect().bottom > TOPBAR_H) return previous;
             return Math.abs(pageMap[previous].getBoundingClientRect().top - TOPBAR_H)
                 <= Math.abs(pageMap[next].getBoundingClientRect().top - TOPBAR_H) ? previous : next;
         }
@@ -841,9 +842,9 @@
 
 
         // jumpTo: loads the page via API first if not yet in DOM, then scrolls
-        function jumpTo(page, smooth) {
+        function jumpTo(page, smooth, anchorId = '') {
             if (pageMap[page]) {
-                _scrollTo(page, smooth);
+                _scrollTo(page, smooth, anchorId);
             }
         }
 
@@ -957,12 +958,22 @@
             });
         })();
 
-        function _scrollTo(page, smooth) {
+        function _scrollTo(page, smooth, anchorId = '') {
             const el = pageMap[page];
             if (!el) return;
+            if (anchorId) {
+                document.dispatchEvent(new CustomEvent('reader-prepare-navigation', { detail: { page: el } }));
+            }
             // Prefer scrolling to the page-number label so the text lands
             // right below the topbar instead of the raw page-border edge
-            const anchor = el.querySelector('.page-number') || el;
+            const anchor = anchorId
+                ? el.querySelector('#' + CSS.escape(anchorId))
+                : el.querySelector('.page-number') || el;
+            if (!anchor) {
+                console.error('Inhoudsopgave verwijst naar een ontbrekend onderdeel.', { page, anchorId });
+                window.alert('Dit onderdeel is nog niet beschikbaar. Werk de boekinhoud bij en vernieuw de pagina.');
+                return;
+            }
             const anchorTop = anchor.getBoundingClientRect().top + window.scrollY;
             // Tighter gap on mobile (≤1024px), small buffer on desktop
             const buffer = window.innerWidth <= 1024 ? 2 : 6;
@@ -1407,11 +1418,14 @@
         function buildTocPanel() {
             if (!tocPanelBody || !TOC_DATA.length) return;
             const frag = document.createDocumentFragment();
-            TOC_DATA.forEach(entry => {
+            let sections = null;
+            TOC_DATA.forEach((entry, index) => {
+                if (entry.level === 'main') sections = null;
                 const btn = document.createElement('button');
                 btn.className = 'toc-panel-item' +
                     (entry.level === 'main' ? ' toc-panel-main' : ' toc-panel-sub');
                 btn.dataset.page = entry.page;
+                if (entry.anchor) btn.dataset.anchor = entry.anchor;
                 btn.setAttribute('type', 'button');
 
                 const info = document.createElement('span');
@@ -1435,7 +1449,37 @@
 
                 btn.appendChild(info);
                 btn.appendChild(pn);
-                frag.appendChild(btn);
+                if (entry.level === 'main' && TOC_DATA[index + 1]?.anchor
+                    && TOC_DATA[index + 1]?.level === 'sub') {
+                    const row = document.createElement('div');
+                    row.className = 'toc-panel-heading';
+                    sections = document.createElement('div');
+                    sections.id = 'toc-sections-' + index;
+                    sections.hidden = true;
+                    const toggle = document.createElement('button');
+                    toggle.className = 'toc-panel-toggle';
+                    toggle.type = 'button';
+                    const chevron = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    chevron.setAttribute('viewBox', '0 0 24 24');
+                    chevron.setAttribute('aria-hidden', 'true');
+                    chevron.setAttribute('focusable', 'false');
+                    const chevronPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    chevronPath.setAttribute('d', 'M6 9 L12 15 L18 9');
+                    chevron.appendChild(chevronPath);
+                    toggle.appendChild(chevron);
+                    toggle.setAttribute('aria-label', 'Onderdelen van ' + entry.title);
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.setAttribute('aria-controls', sections.id);
+                    toggle.addEventListener('click', () => {
+                        const controlledSections = document.getElementById(toggle.getAttribute('aria-controls'));
+                        controlledSections.hidden = !controlledSections.hidden;
+                        toggle.setAttribute('aria-expanded', String(!controlledSections.hidden));
+                    });
+                    row.append(btn, toggle);
+                    frag.append(row, sections);
+                } else {
+                    (sections || frag).appendChild(btn);
+                }
             });
             tocPanelBody.appendChild(frag);
 
@@ -1443,7 +1487,7 @@
             tocPanelBody.querySelectorAll('.toc-panel-item').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const page = parseInt(btn.dataset.page, 10);
-                    if (page) { jumpTo(page, true); closeToc(); }
+                    if (page) { closeToc(); jumpTo(page, true, btn.dataset.anchor); }
                 });
             });
         }
@@ -1453,12 +1497,19 @@
             const cur = visiblePage();
             // Find the last TOC entry whose page <= current page
             const items = Array.from(tocPanelBody.querySelectorAll('.toc-panel-item'));
-            let activeEl = null;
+            const hasAnchors = TOC_DATA.some(entry => entry.anchor);
+            let activeEl = hasAnchors ? items[0] : null;
             items.forEach(btn => {
                 btn.classList.remove('active');
                 btn.removeAttribute('aria-current');
                 btn.setAttribute('aria-label', `${btn.querySelector('.toc-panel-item-title').textContent}, pagina ${btn.dataset.page}`);
-                if (parseInt(btn.dataset.page, 10) <= cur) activeEl = btn;
+                const page = parseInt(btn.dataset.page, 10);
+                if (hasAnchors) {
+                    const target = btn.dataset.anchor
+                        ? pageMap[page]?.querySelector('#' + CSS.escape(btn.dataset.anchor))
+                        : pageMap[page];
+                    if (target && target.getBoundingClientRect().top <= TOPBAR_H + 12) activeEl = btn;
+                } else if (page <= cur) activeEl = btn;
             });
             if (activeEl) {
                 activeEl.classList.add('active');
