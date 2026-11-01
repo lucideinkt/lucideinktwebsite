@@ -152,6 +152,23 @@ HTML);
         $this->assertSame('0px', $page['blocks'][1]['presentation']['margin_top']);
     }
 
+    public function test_it_preserves_bottom_and_shorthand_margins_in_block_presentation(): void
+    {
+        $page = (new BookPageJsonSerializer)->serialize(204, <<<'HTML'
+<div class="page" id="204">
+    <p style="margin-bottom: 0">Tekst</p>
+    <p class="text-center text-arabic arabic" dir="rtl" style="margin: 10px auto 0 auto;">اَللّٰهُ</p>
+    <p style="margin: 1em 0">Tekst</p>
+</div>
+HTML);
+
+        $this->assertSame('0px', $page['blocks'][0]['presentation']['margin_bottom']);
+        $this->assertArrayNotHasKey('margin_top', $page['blocks'][0]['presentation']);
+        $this->assertSame('10px', $page['blocks'][1]['presentation']['margin_top']);
+        $this->assertSame('0px', $page['blocks'][1]['presentation']['margin_bottom']);
+        $this->assertArrayNotHasKey('margin_top', $page['blocks'][2]['presentation'] ?? []);
+    }
+
     public function test_it_marks_unlabelled_leading_footnote_content_as_a_continuation(): void
     {
         $html = <<<'HTML'
