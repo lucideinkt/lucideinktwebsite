@@ -1305,72 +1305,73 @@
             setArabicStep(nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT));
         });
 
-        // --- Pinch-to-zoom for font size (touch gestures) ---
-        let pinchStartDist    = null;
-        let pinchStartFontIdx = null;  // step index at gesture start (not raw px)
-        let pinchAnchor       = null;  // frozen scroll anchor captured at pinch start
-        let _pinchRaf         = false;
-        let _pinchTargetIdx   = null;
-
+        // Preview without reflow; commit both font sizes once the gesture finishes.
+        let pinch = null;
+        const touchDistance = touches => Math.hypot(
+            touches[1].clientX - touches[0].clientX,
+            touches[1].clientY - touches[0].clientY
+        );
+        function pinchTextAnchor(x, y) {
+            let node, offset;
+            if (document.caretPositionFromPoint) {
+                const caret = document.caretPositionFromPoint(x, y);
+                node = caret?.offsetNode;
+                offset = caret?.offset;
+            } else if (document.caretRangeFromPoint) {
+                const caret = document.caretRangeFromPoint(x, y);
+                node = caret?.startContainer;
+                offset = caret?.startOffset;
+            }
+            if (node?.nodeType !== Node.TEXT_NODE || !readerEl.contains(node) || !node.length) return null;
+            const range = document.createRange();
+            const start = Math.min(offset, node.length - 1);
+            range.setStart(node, start);
+            range.setEnd(node, start + 1);
+            return { range, top: range.getBoundingClientRect().top };
+        }
+        function finishPinch(commit) {
+            if (!pinch) return;
+            const gesture = pinch;
+            pinch = null;
+            readerEl.style.transform = '';
+            readerEl.style.transformOrigin = '';
+            readerEl.style.willChange = '';
+            if (!commit) return;
+            setFontStep(nearestStepIdx(FONT_STEPS, gesture.font * gesture.scale), false);
+            setArabicStep(nearestStepIdx(ARABIC_STEPS, gesture.arabic * gesture.scale), false);
+            if (gesture.textAnchor) {
+                requestAnimationFrame(() => window.scrollBy(0,
+                    gesture.textAnchor.range.getBoundingClientRect().top - gesture.textAnchor.top));
+            } else restoreAnchor(gesture.pageAnchor);
+        }
         readerEl.addEventListener('touchstart', e => {
-            if (e.touches.length === 2) {
-                e.preventDefault();
-                pinchStartDist    = Math.hypot(
-                    e.touches[1].pageX - e.touches[0].pageX,
-                    e.touches[1].pageY - e.touches[0].pageY
-                );
-                pinchStartFontIdx = fontStepIdx; // snapshot index, no layout read needed
-                pinchAnchor       = captureAnchor(); // freeze scroll anchor once at gesture start
-            }
+            if (e.touches.length !== 2) { if (pinch) finishPinch(false); return; }
+            if (pinch) return;
+            e.preventDefault();
+            const x = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const y = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            const rect = readerEl.getBoundingClientRect();
+            pinch = {
+                distance: Math.max(1, touchDistance(e.touches)), scale: 1,
+                font: FONT_STEPS[fontStepIdx], arabic: ARABIC_STEPS[arabicStepIdx],
+                textAnchor: pinchTextAnchor(x, y), pageAnchor: captureAnchor()
+            };
+            window.getSelection()?.removeAllRanges();
+            readerEl.style.transformOrigin = `${x - rect.left}px ${y - rect.top}px`;
+            readerEl.style.willChange = 'transform';
         }, { passive: false });
-
         readerEl.addEventListener('touchmove', e => {
-            if (e.touches.length === 2 && pinchStartDist !== null) {
-                e.preventDefault();
-                const currentDist = Math.hypot(
-                    e.touches[1].pageX - e.touches[0].pageX,
-                    e.touches[1].pageY - e.touches[0].pageY
-                );
-                const ratio = currentDist / pinchStartDist;
-                let targetIdx = pinchStartFontIdx;
-                if (ratio > 1.15) targetIdx = Math.min(FONT_STEPS.length - 1, pinchStartFontIdx + Math.floor((ratio - 1) / 0.15));
-                if (ratio < 0.87) targetIdx = Math.max(0, pinchStartFontIdx - Math.floor((1 - ratio) / 0.13));
-
-                if (targetIdx !== fontStepIdx) {
-                    _pinchTargetIdx = targetIdx;
-                    // Throttle: only apply once per animation frame, with frozen anchor
-                    if (!_pinchRaf) {
-                        _pinchRaf = true;
-                        requestAnimationFrame(() => {
-                            _pinchRaf = false;
-                            if (_pinchTargetIdx !== null) {
-                                setFontStep(_pinchTargetIdx, pinchAnchor || false);
-                                _pinchTargetIdx = null;
-                            }
-                        });
-                    }
-                }
-            }
+            if (!pinch || e.touches.length !== 2) return;
+            e.preventDefault();
+            const minimum = Math.max(FONT_STEPS[0] / pinch.font, ARABIC_STEPS[0] / pinch.arabic);
+            const maximum = Math.min(FONT_STEPS.at(-1) / pinch.font, ARABIC_STEPS.at(-1) / pinch.arabic);
+            pinch.scale = Math.min(maximum, Math.max(minimum, touchDistance(e.touches) / pinch.distance));
+            readerEl.style.transform = `scale(${pinch.scale})`;
         }, { passive: false });
-
         readerEl.addEventListener('touchend', e => {
-            if (e.touches.length < 2 && pinchStartDist !== null) {
-                // Pinch ended — final apply with frozen anchor, then clear
-                if (_pinchTargetIdx !== null) setFontStep(_pinchTargetIdx, pinchAnchor || true);
-                else setFontStep(fontStepIdx, pinchAnchor || true);
-                pinchStartDist    = null;
-                pinchStartFontIdx = null;
-                pinchAnchor       = null;
-                _pinchTargetIdx   = null;
-            }
+            if (e.touches.length < 2) finishPinch(true);
         });
-
-        readerEl.addEventListener('touchcancel', () => {
-            pinchStartDist    = null;
-            pinchStartFontIdx = null;
-            pinchAnchor       = null;
-            _pinchTargetIdx   = null;
-        });
+        readerEl.addEventListener('touchcancel', () => finishPinch(false));
 
         // --- Theme ---
         const THEME_KEY = 'reader-theme';
