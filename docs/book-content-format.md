@@ -70,9 +70,14 @@ Deze herindeling vereist opnieuw seeden met `php artisan db:seed --class=Tesbiha
 - De bestaande reader maakt van `<sup>`-verwijzingen tijdens het renderen interactieve popovers op basis van het aparte voetnotenblok. Het verborgen blok blijft ook de bron voor printweergave en toekomstige export.
 - De badge en de bijbehorende tekst openen dezelfde noot: volledige Arabische citaten en Bismillah-afbeeldingen zijn aantikbaar, bij Nederlandse tekst alleen het woord direct voor de badge. Een badge voor een Arabisch citaat wordt aan dat volgende citaat gekoppeld. De website ondersteunt ook Enter/Spatie op deze tekst; gewone links behouden hun navigatie. De native client leidt deze tapdoelen lokaal af, zonder wijziging van het API-contract of de seeders.
 - Behoud bestaande inline markup, classes, styles, talen, RTL-richting, afbeeldingen en tekst. Normaliseren betekent hier niet dat boekopmaak verwijderd of opnieuw ontworpen wordt.
+- In doorlopende Arabische tekst blijft alleen het laatste woord met het daaropvolgende scheidingsteken ۞ bijeen. De lezers maken hiervoor een onbreekbare weergavegroep, ook over kleurspans heen; de brontekst, zoekoffsets en expliciete regeleinden blijven ongewijzigd.
 - Waqf-tekens staan direct na het bijbehorende woord in een `span.arabic-waqf`. Een gecombineerd teken, zoals `ۚۛ` of `ࣞۛ`, blijft in één span. De website toont de letters op één gedeelde schaal en stapelt de driepuntjes boven het teken; de JSON-conversie behoudt de broninhoud met de rol `arabic_waqf`.
 - Beide lezers groeperen inline Arabische citaten met hun badge aan het Arabische leeseinde (links). Een verwijzing direct voor of na het citaat wordt alleen in de weergave verplaatst; broncontent en API-target blijven ongewijzigd. Bismillah en losse Arabische alinea's behouden hun bestaande indeling.
 - De inline citaatgroep op de website erft geen alinea-inspringing (`text-indent: 0`), zodat er naast de normale woordspatie geen extra gat voor de Nederlandse vervolgtekst ontstaat.
+
+## Pinchzoom op de website
+
+De websitelezer toont bij pinchzoom een vloeiende schaalvoorvertoning zonder tussentijdse regelherindeling. Bij loslaten worden de Nederlandse en Arabische tekstgrootte samen aangepast, binnen hun bestaande grenzen (12–36 en 16–52 px), afgerond op 0,1 px en opgeslagen. Het tekstfragment bij het gebaar blijft op dezelfde schermhoogte. Annuleren behoudt de oorspronkelijke groottes.
 
 ## JSON-contract voor de React Native-client
 
