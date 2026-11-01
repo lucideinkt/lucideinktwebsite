@@ -317,6 +317,11 @@ class BookPageJsonSerializer
             $result['direction'] = $direction;
         }
 
+        $anchor = trim($node->getAttribute('id'));
+        if ($anchor !== '' && ! $insideFootnote) {
+            $result['anchor'] = $anchor;
+        }
+
         $presentation = $this->presentation($node);
         if ($inTextFootnote) {
             $presentation['role'] = 'footnote';

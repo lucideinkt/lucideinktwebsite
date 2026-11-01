@@ -7,6 +7,7 @@ use App\Models\BookPage;
 use App\Models\Product;
 use App\Services\BookContentVersion;
 use Database\Seeders\CevsenPagesSeeder;
+use Database\Seeders\TesbihatPagesSeeder;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -228,7 +229,7 @@ class BookPagesApiTest extends TestCase
         }
         $toc = [
             ['level' => 'main', 'title' => 'Hoofdstuk', 'subtitle' => 'Toelichting', 'page' => 5],
-            ['level' => 'sub', 'title' => 'Onderdeel', 'subtitle' => null, 'page' => 8],
+            ['level' => 'sub', 'title' => 'Onderdeel', 'subtitle' => null, 'page' => 8, 'anchor' => 'onderdeel'],
         ];
         config(['book_toc.navigation-book' => $toc]);
 
@@ -238,6 +239,38 @@ class BookPagesApiTest extends TestCase
             ->assertJsonPath('book.slug', 'navigation-book')
             ->assertJsonPath('page_numbers', [5, 8, 12])
             ->assertJsonPath('toc', $toc);
+    }
+
+    public function test_reseeding_tesbihat_replaces_long_pages_and_updates_navigation_and_api(): void
+    {
+        $book = Product::query()->create([
+            'slug' => 'namaz-tesbihati',
+            'title' => 'Namaz Tesbihatı',
+            'book_content_published' => true,
+        ]);
+        foreach (range(1, 5) as $number) {
+            BookPage::create(['product_id' => $book->id, 'page_number' => $number, 'content' => '<p>Oude pagina</p>']);
+        }
+        $oldVersion = app(BookContentVersion::class)->snapshot($book)['content_version'];
+        $this->seed(TesbihatPagesSeeder::class);
+        $this->assertSame(62, $book->bookPages()->count());
+        $this->assertTrue($book->fresh()->book_content_published);
+        $this->assertSame(0, $book->bookPages()->where('content', 'like', '%Oude pagina%')->count());
+        $navigation = $this->getJson('/api/v1/books/namaz-tesbihati/navigation')
+            ->assertOk()
+            ->assertJsonPath('page_numbers', range(1, 62))
+            ->assertJsonPath('toc', config('book_toc.namaz-tesbihati'));
+        $version = $navigation->json('book.content_version');
+        $this->assertNotSame($oldVersion, $version);
+        $response = $this->getJson('/api/v1/books/namaz-tesbihati/pages?after=38&limit=2')
+            ->assertOk()
+            ->assertJsonPath('book.content_version', $version)
+            ->assertJsonPath('pages.0.page_number', 39)
+            ->assertJsonPath('pages.1.page_number', 40);
+        $this->assertContains('asr-soera', array_column($response->json('pages.0.blocks'), 'anchor'));
+        $this->getJson('/api/v1/books')->assertOk()->assertJsonPath('books.0.page_count', 62);
+        $this->seed(TesbihatPagesSeeder::class);
+        $this->assertSame(62, $book->bookPages()->count());
     }
 
     public function test_navigation_without_configured_contents_returns_an_empty_list(): void

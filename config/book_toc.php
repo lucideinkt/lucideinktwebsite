@@ -8,6 +8,7 @@
  *   title    – display title shown in the sidebar
  *   subtitle – optional italic line below the title (or null)
  *   page     – page number to jump to when clicked
+ *   anchor   – optional element ID within that page
  *
  * To add a new book, add a new key matching the product slug and fill in
  * the entries array following the same pattern.
@@ -26,10 +27,30 @@ return [
 
     'namaz-tesbihati' => [
         ['level' => 'main', 'title' => 'Fajr – Ochtendgebed', 'subtitle' => null, 'page' => 1],
-        ['level' => 'main', 'title' => 'Dhuhr – Middaggebed', 'subtitle' => null, 'page' => 2],
-        ['level' => 'main', 'title' => 'Asr – Namiddaggebed', 'subtitle' => null, 'page' => 3],
-        ['level' => 'main', 'title' => 'Maghrib – Avondgebed', 'subtitle' => null, 'page' => 4],
-        ['level' => 'main', 'title' => 'Isha – Nachtgebed', 'subtitle' => null, 'page' => 5],
+        ['level' => 'sub', 'title' => 'Na de smeekbede', 'subtitle' => 'Geloofsgetuigenis en zegeningen over de Profeet', 'page' => 6, 'anchor' => 'fajr-na-smeekbede'],
+        ['level' => 'sub', 'title' => 'Tercüman-ı İsm-i A’zâm', 'subtitle' => 'Smeekbede', 'page' => 9, 'anchor' => 'fajr-namen'],
+        ['level' => 'sub', 'title' => 'Slotgebed', 'subtitle' => null, 'page' => 15, 'anchor' => 'fajr-slotgebed'],
+        ['level' => 'sub', 'title' => 'Soera Al-Hashr', 'subtitle' => 'Verzen 20 tot en met 24', 'page' => 16, 'anchor' => 'fajr-soera'],
+        ['level' => 'main', 'title' => 'Dhuhr – Middaggebed', 'subtitle' => null, 'page' => 17],
+        ['level' => 'sub', 'title' => 'Na de smeekbede', 'subtitle' => 'Geloofsgetuigenis en zegeningen over de Profeet', 'page' => 20, 'anchor' => 'dhuhr-na-smeekbede'],
+        ['level' => 'sub', 'title' => 'İsm-i A’zâm', 'subtitle' => 'Smeekbede', 'page' => 22, 'anchor' => 'dhuhr-namen'],
+        ['level' => 'sub', 'title' => 'Slotgebed', 'subtitle' => null, 'page' => 25, 'anchor' => 'dhuhr-slotgebed'],
+        ['level' => 'sub', 'title' => 'Soera Al-Fath', 'subtitle' => 'Verzen 27 tot en met 29', 'page' => 26, 'anchor' => 'dhuhr-soera'],
+        ['level' => 'main', 'title' => 'Asr – Namiddaggebed', 'subtitle' => null, 'page' => 27],
+        ['level' => 'sub', 'title' => 'Na de smeekbede', 'subtitle' => 'Geloofsgetuigenis en zegeningen over de Profeet', 'page' => 30, 'anchor' => 'asr-na-smeekbede'],
+        ['level' => 'sub', 'title' => 'Tercüman-ı İsm-i A’zâm', 'subtitle' => 'Smeekbede', 'page' => 32, 'anchor' => 'asr-namen'],
+        ['level' => 'sub', 'title' => 'Slotgebed', 'subtitle' => null, 'page' => 38, 'anchor' => 'asr-slotgebed'],
+        ['level' => 'sub', 'title' => 'Soera An-Naba', 'subtitle' => null, 'page' => 39, 'anchor' => 'asr-soera'],
+        ['level' => 'main', 'title' => 'Maghrib – Avondgebed', 'subtitle' => null, 'page' => 41],
+        ['level' => 'sub', 'title' => 'Na de smeekbede', 'subtitle' => 'Geloofsgetuigenis en zegeningen over de Profeet', 'page' => 46, 'anchor' => 'maghrib-na-smeekbede'],
+        ['level' => 'sub', 'title' => 'İsm-i A’zâm', 'subtitle' => 'Smeekbede', 'page' => 48, 'anchor' => 'maghrib-namen'],
+        ['level' => 'sub', 'title' => 'Slotgebed', 'subtitle' => null, 'page' => 51, 'anchor' => 'maghrib-slotgebed'],
+        ['level' => 'sub', 'title' => 'Soera Al-Hashr', 'subtitle' => 'Verzen 20 tot en met 24', 'page' => 52, 'anchor' => 'maghrib-soera'],
+        ['level' => 'main', 'title' => 'Isha – Nachtgebed', 'subtitle' => null, 'page' => 53],
+        ['level' => 'sub', 'title' => 'Na de smeekbede', 'subtitle' => 'Geloofsgetuigenis en zegeningen over de Profeet', 'page' => 56, 'anchor' => 'isha-na-smeekbede'],
+        ['level' => 'sub', 'title' => 'İsm-i A’zâm', 'subtitle' => 'Smeekbede', 'page' => 58, 'anchor' => 'isha-namen'],
+        ['level' => 'sub', 'title' => 'Slotgebed', 'subtitle' => null, 'page' => 61, 'anchor' => 'isha-slotgebed'],
+        ['level' => 'sub', 'title' => 'Soera Al-Baqara', 'subtitle' => 'Verzen 285 en 286 · Âmene’r-rasûlü', 'page' => 62, 'anchor' => 'isha-soera'],
     ],
 
     'het-traktaat-over-de-herzameling-nederlands' => [
