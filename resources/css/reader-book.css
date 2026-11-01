@@ -415,12 +415,12 @@ html.ios-device {
     line-height: 0;
     vertical-align: baseline;
     color: var(--reader-accent, #ca2a2a);
-    transform: translate(0.21em, -1.1em);
+    transform: translate(0.21em, -1em);
 }
 
 .book-reader-scope .arabic-waqf-letter {
     font-size: 0.42em;
-    transform: translate(0.5em, -2.6em);
+    transform: translate(0.5em, -2.36em);
 }
 
 .book-reader-scope .arabic-madd-below::after {
