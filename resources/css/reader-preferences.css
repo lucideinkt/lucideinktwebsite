@@ -94,11 +94,13 @@ body:is([data-reader-theme="dark"], [data-reader-theme="gray"], [data-reader-the
 #reader-content .page .prayer-body :is(.text-arabic, .text-arabic-inline, [lang="ar"], .text-red) {
     color: inherit !important;
 }
-#reader-content .page .prayer-body .prayer-accent {
+#reader-content .page .prayer-body .prayer-accent,
+#reader-content .page .arabic-waqf {
     color: var(--reader-accent) !important;
 }
 body[data-reader-theme="light"] #reader-content .page .prayer-body .prayer-accent,
-body[data-reader-theme="light"] #reader-content .page .prayer-body .arabic-madd-below::after {
+body[data-reader-theme="light"] #reader-content .page .prayer-body .arabic-madd-below::after,
+body[data-reader-theme="light"] #reader-content .page .arabic-waqf {
     color: #ca2a2a !important;
 }
 #reader-control-sheet .reader-settings-tab[aria-pressed="true"] {
