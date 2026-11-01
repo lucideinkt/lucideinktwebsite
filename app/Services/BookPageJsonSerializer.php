@@ -423,9 +423,20 @@ class BookPageJsonSerializer
             $presentation['alignment'] = $matches[1];
         }
 
-        if (preg_match('/(?:^|;)\s*margin-top\s*:\s*(-?(?:\d+(?:\.\d*)?|\.\d+))\s*(px)?\s*(?:;|$)/', $style, $matches) === 1
-            && (isset($matches[2]) || (float) $matches[1] === 0.0)) {
-            $presentation['margin_top'] = $matches[1].'px';
+        $margins = [];
+        if (preg_match('/(?:^|;)\s*margin\s*:\s*([^;]+?)\s*(?:;|$)/', $style, $matches) === 1) {
+            $parts = preg_split('/\s+/', $matches[1]) ?: [];
+            $margins = ['top' => $parts[0] ?? null, 'bottom' => $parts[2] ?? $parts[0] ?? null];
+        }
+        foreach (['top', 'bottom'] as $side) {
+            if (preg_match('/(?:^|;)\s*margin-'.$side.'\s*:\s*([^;]+?)\s*(?:;|$)/', $style, $matches) === 1) {
+                $margins[$side] = $matches[1];
+            }
+            if (isset($margins[$side])
+                && preg_match('/^(-?(?:\d+(?:\.\d*)?|\.\d+))(px)?$/', $margins[$side], $matches) === 1
+                && (isset($matches[2]) || (float) $matches[1] === 0.0)) {
+                $presentation['margin_'.$side] = $matches[1].'px';
+            }
         }
 
         if (in_array('text-red', $classes, true)) {

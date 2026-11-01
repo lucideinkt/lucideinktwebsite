@@ -62,10 +62,7 @@ export function markPrayerText(page, slug) {
             fragment.append(node.data.slice(cursor, match.index));
             const number = document.createElement('span');
             number.className = 'prayer-verse-number cevsen-verse-number';
-            const sign = document.createElement('span');
-            sign.className = 'prayer-verse-sign';
-            sign.textContent = match[0].slice(0, 1);
-            number.append(sign, match[1]);
+            number.textContent = match[0];
             fragment.append(number);
             cursor = match.index + match[0].length;
         }

@@ -88,9 +88,6 @@ body[data-reader-theme="dark"] {
     direction: rtl;
     unicode-bidi: isolate;
 }
-.book-reader-scope .prayer-verse-number::before { content: "﴿"; margin-inline-end: 0.12em; }
-.book-reader-scope .prayer-verse-number::after { content: "﴾"; margin-inline-start: 0.12em; }
-.book-reader-scope .prayer-verse-number .prayer-verse-sign { font-size: 0 !important; }
 body:is([data-reader-theme="dark"], [data-reader-theme="gray"], [data-reader-theme="night"], [data-reader-theme="black"]) #reader-content .page .prayer-body {
     color: var(--reader-ink) !important;
 }
