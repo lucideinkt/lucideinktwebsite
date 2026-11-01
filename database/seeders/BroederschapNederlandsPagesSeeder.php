@@ -3333,7 +3333,7 @@ Daarop dienen jullie haar naar de verheven waarheid: <sup>3</sup><span class="te
 
 <p>
 Vervolgens zal <span class="text-bold">“bemoeienis met ALLAH’s taak”</span> als ongelovige vijand naderen, naar het gezicht van bereidwilligheid uithalen en haar oog verblinden. Daarop dienen jullie de waarheid achter:
-<span class="text-arabic-inline text-red" dir="rtl" lang="ar">اِسْتَقِمْ كَمَٓا اُمِرْتَ <sup>1</sup> ۞ وَلَا تَتَأَمَّرْ عَلَى سَيِّدِكَ <sup>2</sup></span>
+<span dir="rtl"><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اِسْتَقِمْ كَمَٓا اُمِرْتَ <sup>1</sup></span> <span class="text-arabic-inline text-red" dir="rtl" lang="ar">۞</span> <span class="text-arabic-inline text-red" dir="rtl" lang="ar">وَلَا تَتَأَمَّرْ عَلَى سَيِّدِكَ <sup>2</sup></span></span>
 op hem af te sturen, opdat zij hem kan terechtwijzen.
 </p>
 

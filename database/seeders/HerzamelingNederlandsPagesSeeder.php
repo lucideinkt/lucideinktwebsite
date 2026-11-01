@@ -1188,8 +1188,10 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
     <div class="text-center text-center-constrained">
     <p class="text-center small-title"><strong>De Tweede Waarheid</strong></p>
-    <p class="text-center"><strong><em>De poort van Vrijgevigheid en Genadigheid; Een glimp van de Namen: "de Genereuze en de Genadige"</em></strong>
-    <span class="text-arabic" dir="rtl" lang="ar">اَلْكَرٖيمُ وَالرَّحٖيمُ</span></p>
+    <p class="text-center"><strong><em>De poort van Vrijgevigheid en Genadigheid; Een glimp van de Namen: "de Genereuze en de Genadige"</em></strong></p>
+    <p class="text-center">
+    <span style="margin-top: 0" class="text-arabic" dir="rtl" lang="ar">اَلْكَرٖيمُ وَالرَّحٖيمُ</span>
+    </p>
     </div>
 
     <p>
@@ -1347,8 +1349,10 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
  <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Derde Waarheid</strong></p>
- <p class="text-center"><strong><em>De poort van Wijsheid en Rechtvaardigheid; Een glimp van de Namen: "de Alwijze en de Rechtvaardige"</em></strong>
- <span class="text-arabic" dir="rtl" lang="ar">اَلْحَكٖيمُ وَالْعَادِلُ</span></p>
+ <p class="text-center"><strong><em>De poort van Wijsheid en Rechtvaardigheid; Een glimp van de Namen: "de Alwijze en de Rechtvaardige"</em></strong></p>
+ <p class="text-center">
+ <span style="margin-top: 0" class="text-arabic" dir="rtl" lang="ar">اَلْحَكٖيمُ وَالْعَادِلُ</span>
+ </p>
  </div>
 
  <p>

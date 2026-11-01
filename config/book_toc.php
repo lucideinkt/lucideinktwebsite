@@ -15,9 +15,9 @@
 return [
 
     'cevsen-ul-kebir' => array_map(
-        static fn (int $page): array => [
+        static fn(int $page): array => [
             'level' => 'main',
-            'title' => $page.'. ukde',
+            'title' => $page . '. ukde',
             'subtitle' => null,
             'page' => $page,
         ],

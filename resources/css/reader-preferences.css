@@ -100,7 +100,8 @@ body:is([data-reader-theme="dark"], [data-reader-theme="gray"], [data-reader-the
 #reader-content .page .prayer-body .prayer-accent {
     color: var(--reader-accent) !important;
 }
-body[data-reader-theme="light"] #reader-content .page .prayer-body .prayer-accent {
+body[data-reader-theme="light"] #reader-content .page .prayer-body .prayer-accent,
+body[data-reader-theme="light"] #reader-content .page .prayer-body .arabic-madd-below::after {
     color: #ca2a2a !important;
 }
 #reader-control-sheet .reader-settings-tab[aria-pressed="true"] {
@@ -596,7 +597,7 @@ body[data-reader-theme] #reader-search-panel .reader-search-result-item {
     background: var(--reader-row-bg, var(--reader-bg)) !important;
     border: 0; border-radius: 9px;
     color: var(--reader-menu-ink, var(--reader-ink)) !important;
-    font: 15px/23px 'DelimaMTProRegular', serif !important;
+    font: 15px/26px 'DelimaMTProRegular', serif !important;
     letter-spacing: 0; text-transform: none;
     box-shadow: none;
     transform: none;
@@ -608,6 +609,7 @@ body[data-reader-theme] #reader-search-panel .reader-search-result-page {
 }
 body[data-reader-theme] #reader-search-panel .reader-search-result-snippet mark {
     background: #ffe08a; color: #2a1a0a !important; border: 0;
+    border-radius: 3px; padding: 0 3px;
     font-family: 'DelimaMTProBold', serif;
 }
 body[data-reader-theme] #reader-search-panel .reader-search-keyboard-dismiss {
