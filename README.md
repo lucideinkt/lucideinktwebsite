@@ -145,6 +145,42 @@ lokale afbeeldingsbestanden (ook bij vervanging onder dezelfde naam).
 Wijzigingen aan de JSON-serializer krijgen eveneens een nieuwe versie.
 Een algemene producttijdstempel wijzigt de versie niet.
 
+Waqf-spans behouden in de pagina-JSON de presentatierol `arabic_waqf`, zodat
+de offline lezer dezelfde positionering boven de laatste letter kan gebruiken
+als de website, zonder wijziging van de oorspronkelijke tekens.
+Op de website staan waqf-tekens 0,72 keer de Arabische lettergrootte hoger,
+gelijk aan de app, met behoud van hun horizontale positie en nulbreedte.
+Medd-spans krijgen de rol `arabic_madd_below`. In de gebedenlezer wordt het
+ruitvormige teken (`U+06EB`) verborgen en als `مد` onder de betreffende letter
+weergegeven in de thema-accentkleur. `شَطَْٔهُ` wordt verbonden weergegeven als
+`شَطْئَهُ`, met dezelfde tekstlengte zodat opgeslagen markeringen niet verschuiven.
+
+Op pagina 112 van Broederschap & Oprechtheid staan de twee Arabische
+uitspraken in afzonderlijke citaatspans, elk met hun eigen voetnootnummer,
+binnen een rechts-naar-linkscontainer. Zo blijven nummers 1 en 2 bij de juiste
+uitspraak in de website en pagina-JSON. Alleen de HTML-structuur is gewijzigd:
+de tekst en tekstposities blijven gelijk. Bestaande offline exemplaren krijgen
+deze structuur pas na een door de gebruiker gestarte boekupdate.
+
+Onder Bismillah-SVG's staat in alle boeken 0,6 keer de Nederlandse
+tekstgrootte extra ruimte (11,4 px bij 19 px). De padding geldt voor beide
+SVG-varianten en alle thema's, zonder de afbeelding of bovenruimte te wijzigen.
+Deze opmaakwijziging vereist alleen een nieuwe reader-assetbuild, geen seeder.
+
+Koppen (`h1`–`h4`, inclusief hoofdstuktitels) gebruiken in de lezer
+`line-height: 1.45`, net als de mobiele app.
+
+De lezer gebruikt `resources/fonts/OmarNaskh-Joining.woff2` (TTF-fallback)
+en op iOS `OmarNaskh-Reader.ttf`. Deze gegenereerde fonts herstellen het
+ontbrekende verbindingsstreepje bij fatha + madd, zoals in `عَلَيْنَٓا`,
+zonder de tekst of opgeslagen markeringen te wijzigen. De bron en generator
+staan in de risalelezer-app: `python3 scripts/build-reader-font.py`
+(vereist FontTools). Kopieer de gegenereerde Joining- en Reader-TTF uit
+`assets/fonts/` naar `resources/fonts/`; maak de WOFF2 met
+`fonttools ttLib.woff2 compress resources/fonts/OmarNaskh-Joining.ttf`
+en voer daarna `npm run build` uit. De preload gebruikt hetzelfde Vite-asset
+als de reader-CSS, zodat ook de fontcache na een build correct vernieuwt.
+
 `BookContentVersion` leest de actuele pagina's en configuratie, zonder migratie
 of afhankelijkheid van model-events. Daarmee worden ook bulk-imports en directe
 pagina-updates herkend. Afbeeldingsbronnen worden kort gecachet op basis van de

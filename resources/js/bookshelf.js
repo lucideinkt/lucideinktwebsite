@@ -1,6 +1,6 @@
 export function getShelfSections(books, history) {
     const groups = [
-        { key: 'recent', title: 'Laatst gelezen', icon: 'fa-clock', books: [] },
+        { key: 'recent', title: 'Verder lezen', icon: 'fa-clock', books: [] },
         { key: 'nl', title: 'Nederlandse boeken', icon: 'fa-book-open', books: [] },
         { key: 'en', title: 'Engelse boeken', icon: 'fa-book-open', books: [] },
         { key: 'tr', title: 'Turkse boeken', icon: 'fa-book-open', books: [] },

@@ -100,14 +100,11 @@
 
         {{-- Row 3: Full-width search --}}
         <div class="bs-mobile-search-outer">
-            <div class="bs-search-wrap">
-                <input type="text" id="bs-mobile-search-input" class="bs-search-input"
-                       placeholder="Zoek tekst in alle boeken..." autocomplete="off">
-                <button class="bs-search-btn" id="bs-mobile-search-clear" aria-label="Zoeken">
-                    <i class="fa-solid fa-magnifying-glass" id="bs-mobile-search-icon"></i>
-                </button>
-            </div>
-            <div class="bs-search-results" id="bs-mobile-search-results" hidden></div>
+            <button type="button" class="bs-search-wrap bs-mobile-search-trigger" id="bs-mobile-search-open" data-search-modal-open
+                    aria-haspopup="dialog" aria-controls="bs-mobile-search-modal" aria-expanded="false">
+                <span class="bs-mobile-search-trigger-text" data-search-trigger-text>Zoek tekst in alle boeken...</span>
+                <span class="bs-search-btn" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </button>
         </div>
 
     </div>
@@ -131,13 +128,11 @@
         <div class="bs-panel bs-panel--search-desktop">
             <h2 class="bs-section-title">Zoeken in de Risale-i Nur</h2>
             <div class="bs-panel-body">
-                <div class="bs-search-wrap">
-                    <input type="text" id="bs-search-input" class="bs-search-input" placeholder="Zoek tekst in alle boeken..." autocomplete="off">
-                    <button class="bs-search-btn" id="bs-search-clear" aria-label="Zoeken">
-                        <i class="fa-solid fa-magnifying-glass" id="bs-search-icon"></i>
-                    </button>
-                </div>
-                <div class="bs-search-results" id="bs-search-results" hidden></div>
+                <button type="button" class="bs-search-wrap bs-mobile-search-trigger bs-search-trigger--sidebar" data-search-modal-open
+                        aria-haspopup="dialog" aria-controls="bs-mobile-search-modal" aria-expanded="false">
+                    <span class="bs-mobile-search-trigger-text">Zoek tekst in alle boeken...</span>
+                    <span class="bs-search-btn" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </button>
             </div>
         </div>
 
@@ -335,6 +330,29 @@
     {{-- Drawer backdrop (mobile) --}}
     <div class="bs-drawer-backdrop" id="bs-drawer-backdrop-main"></div>
 
+    {{-- Mobile search dialog (mirrors the app's library search) --}}
+    <div class="bs-search-modal" id="bs-mobile-search-modal" hidden>
+        <div class="bs-search-modal-backdrop" data-search-modal-close></div>
+        <div class="bs-search-modal-card" role="dialog" aria-modal="true" aria-labelledby="bs-mobile-search-title">
+            <div class="bs-search-modal-header">
+                <h2 class="bs-search-modal-title" id="bs-mobile-search-title">Zoek in alle boeken</h2>
+                <button type="button" class="bs-search-modal-icon-btn" data-search-modal-close aria-label="Zoeken sluiten">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="bs-search-modal-field">
+                <i class="fa-solid fa-magnifying-glass" id="bs-mobile-search-icon" aria-hidden="true"></i>
+                <input type="search" id="bs-mobile-search-input" class="bs-search-modal-input" aria-label="Zoektekst"
+                       placeholder="Typ hier om te zoeken" maxlength="200" autocomplete="off" autocorrect="off"
+                       autocapitalize="none" spellcheck="false" enterkeyhint="done">
+                <button type="button" class="bs-search-modal-icon-btn" id="bs-mobile-search-clear" aria-label="Zoektekst wissen" hidden>
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="bs-search-results bs-search-modal-results" id="bs-mobile-search-results" hidden></div>
+        </div>
+    </div>
+
 </div>{{-- /.bookshelf-page --}}
 
 <style>
@@ -526,8 +544,6 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
 <script>
 (function () {
-    const SEARCH_URL = '{{ route("onlineLezenSearchAll") }}';
-
     function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
     function lsParse(k, def) { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? def; } catch(_) { return def; } }
 
@@ -617,56 +633,6 @@ document.addEventListener('touchstart', function () {}, { passive: true });
     }
     renderHighlights();
 
-    // ── Full-text search ─────────────────────────────────
-    const searchInput  = document.getElementById('bs-search-input');
-    const searchIcon   = document.getElementById('bs-search-icon');
-    const resultsPanel = document.getElementById('bs-search-results');
-    let searchTimer = null, activeXHR = null;
-
-    function setSearchIcon(s) {
-        if (searchIcon) searchIcon.className = {idle:'fa-solid fa-magnifying-glass',loading:'fa-solid fa-spinner fa-spin',clear:'fa-solid fa-xmark'}[s]||'fa-solid fa-magnifying-glass';
-    }
-    function showResults(data, query) {
-        if (!resultsPanel) return;
-        resultsPanel.removeAttribute('hidden');
-        resultsPanel.innerHTML = '';
-        try { sessionStorage.setItem('bibliotheek_search', JSON.stringify({query,data})); } catch(_){}
-        if (!data.results||!data.results.length) { resultsPanel.innerHTML='<div class="bs-sr-empty"><i class="fa-solid fa-book-open"></i> Geen resultaten voor <em>"'+escHtml(query)+'"</em></div>'; return; }
-        const m=document.createElement('div'); m.className='bs-sr-meta'; m.textContent=data.total+' resultaat'+(data.total!==1?'en':'')+' voor "'+query+'"'; resultsPanel.appendChild(m);
-        const byBook={};
-        data.results.forEach(r=>{ if(!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,type:r.type,hits:[]}; byBook[r.productId].hits.push(r); });
-        Object.values(byBook).forEach(function(book) {
-            const b=document.createElement('div'); b.className='bs-sr-book';
-            const icon = book.type==='pdf' ? 'fa-solid fa-file-pdf' : 'fa-solid fa-book';
-            b.innerHTML='<div class="bs-sr-book-title"><i class="'+icon+'"></i> '+escHtml(book.title)+'</div>';
-            book.hits.forEach(function(hit) {
-                const a=document.createElement('a'); a.className='bs-sr-item';
-                a.href = hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(query);
-                const pageIcon = hit.type==='pdf' ? '<i class="fa-solid fa-file-pdf" style="font-size:9px;margin-right:2px;opacity:.7"></i>' : '';
-                a.innerHTML='<span class="bs-sr-page'+(hit.type==='pdf'?' bs-sr-page--pdf':'')+'">'+pageIcon+'Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
-                b.appendChild(a);
-            });
-            resultsPanel.appendChild(b);
-        });
-    }
-    function hideResults() { if(resultsPanel) resultsPanel.setAttribute('hidden',''); try{sessionStorage.removeItem('bibliotheek_search');}catch(_){} }
-    function doSearch(q) {
-        if(activeXHR){activeXHR.abort();activeXHR=null;}
-        if(!q||q.length<2){hideResults();setSearchIcon('idle');return;}
-        setSearchIcon('loading');
-        activeXHR=new XMLHttpRequest(); activeXHR.open('GET',SEARCH_URL+'?q='+encodeURIComponent(q));
-        activeXHR.onload=function(){if(activeXHR.status===200){try{showResults(JSON.parse(activeXHR.responseText),q);}catch(_){}}setSearchIcon('clear');activeXHR=null;};
-        activeXHR.onerror=function(){setSearchIcon('idle');activeXHR=null;};
-        activeXHR.send();
-    }
-    if (searchInput) {
-        searchInput.addEventListener('input',function(){const q=searchInput.value.trim();setSearchIcon(q.length>=2?'loading':'idle');clearTimeout(searchTimer);searchTimer=setTimeout(()=>doSearch(q),400);});
-        searchInput.addEventListener('keydown',function(e){if(e.key==='Escape'){searchInput.value='';hideResults();setSearchIcon('idle');if(activeXHR){activeXHR.abort();activeXHR=null;}}});
-    }
-    document.getElementById('bs-search-clear')?.addEventListener('click',function(){if(searchInput?.value.trim()){searchInput.value='';hideResults();setSearchIcon('idle');searchInput.focus();}});
-    // Restore after back-navigation
-    (function(){try{const s=sessionStorage.getItem('bibliotheek_search');if(!s)return;const{query,data}=JSON.parse(s);if(!query||!data)return;if(searchInput)searchInput.value=query;setSearchIcon('clear');showResults(data,query);}catch(_){}})();
-
 })();
 </script>
 
@@ -695,7 +661,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
         const meta = document.createElement('div');
         meta.className = 'bs-sr-meta';
-        meta.textContent = data.total + ' resultaat' + (data.total !== 1 ? 'en' : '') + ' voor "' + query + '"';
+        meta.textContent = data.total + (data.total === 1 ? ' resultaat' : ' resultaten');
         resultsPanel.appendChild(meta);
 
         // Group by book
@@ -711,8 +677,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
             const titleEl = document.createElement('div');
             titleEl.className = 'bs-sr-book-title';
-            const titleIcon = book.type === 'pdf' ? 'fa-solid fa-file-pdf' : 'fa-solid fa-book';
-            titleEl.innerHTML = '<i class="' + titleIcon + '"></i> ' + escHtml(book.title);
+            titleEl.textContent = book.title;
             bookEl.appendChild(titleEl);
 
             book.hits.forEach(function (hit) {
@@ -722,7 +687,7 @@ document.addEventListener('touchstart', function () {}, { passive: true });
                 item.href = hit.readerUrl + '?page=' + hit.page + '&q=' + encodeURIComponent(query);
                 const pageIcon = hit.type === 'pdf' ? '<i class="fa-solid fa-file-pdf" style="font-size:9px;margin-right:2px;opacity:.7"></i>' : '';
                 item.innerHTML =
-                    '<span class="bs-sr-page' + (hit.type === 'pdf' ? ' bs-sr-page--pdf' : '') + '">' + pageIcon + 'Pagina ' + hit.page + '</span>' +
+                    '<span class="bs-sr-page' + (hit.type === 'pdf' ? ' bs-sr-page--pdf' : '') + '">' + pageIcon + 'p.' + hit.page + ' · </span>' +
                     '<span class="bs-sr-snippet">' + formatSnippet(hit.snippet) + '</span>';
                 bookEl.appendChild(item);
             });
@@ -1109,93 +1074,168 @@ document.addEventListener('touchstart', function () {}, { passive: true });
 
     const MOBILE_SEARCH_SS_KEY = 'bibliotheek_search'; // shared with desktop so both restore each other's results
 
-    function initSearch(inputId, iconId, resultsId, clearId) {
-        const input   = document.getElementById(inputId);
-        const icon    = document.getElementById(iconId);
-        const results = document.getElementById(resultsId);
-        const clear   = document.getElementById(clearId);
-        if (!input) return;
+    const modal       = document.getElementById('bs-mobile-search-modal');
+    const triggers    = Array.from(document.querySelectorAll('[data-search-modal-open]'));
+    const triggerTexts = Array.from(document.querySelectorAll('[data-search-trigger-text]'));
+    const input       = document.getElementById('bs-mobile-search-input');
+    const icon        = document.getElementById('bs-mobile-search-icon');
+    const results     = document.getElementById('bs-mobile-search-results');
+    const clear       = document.getElementById('bs-mobile-search-clear');
+    if (!modal || !triggers.length || !input || !results) return;
 
-        let timer = null, xhr = null;
+    const TRIGGER_PLACEHOLDER = triggerTexts.length ? triggerTexts[0].textContent : '';
+    let timer = null, xhr = null, previousOverflow = '', activeTrigger = null;
 
-        function setIcon(s) {
-            if (!icon) return;
-            icon.className = {idle:'fa-solid fa-magnifying-glass',loading:'fa-solid fa-spinner fa-spin',clear:'fa-solid fa-xmark'}[s] || 'fa-solid fa-magnifying-glass';
+    function setLoading(loading) {
+        if (icon) icon.className = loading ? 'fa-solid fa-spinner fa-spin' : 'fa-solid fa-magnifying-glass';
+    }
+    function syncTrigger() {
+        const q = input.value.trim();
+        triggerTexts.forEach(function (el) {
+            el.textContent = q || TRIGGER_PLACEHOLDER;
+            el.classList.toggle('has-query', !!q);
+        });
+        if (clear) clear.hidden = !input.value;
+    }
+    function hideResults() {
+        results.setAttribute('hidden', '');
+        results.innerHTML = '';
+        try { sessionStorage.removeItem(MOBILE_SEARCH_SS_KEY); } catch(_) {}
+    }
+    function showMessage(html) {
+        results.removeAttribute('hidden');
+        results.innerHTML = '<div class="bs-sr-empty">' + html + '</div>';
+    }
+    function showResults(data, q) {
+        results.removeAttribute('hidden');
+        results.innerHTML = '';
+        // Persist so the results survive back-navigation
+        try { sessionStorage.setItem(MOBILE_SEARCH_SS_KEY, JSON.stringify({ query: q, data: data })); } catch(_) {}
+        if (!data.results || !data.results.length) {
+            showMessage('Geen resultaten voor <em>"' + escHtml(q) + '"</em>');
+            return;
         }
-        function hideResults() {
-            if (results) results.setAttribute('hidden','');
-            try { sessionStorage.removeItem(MOBILE_SEARCH_SS_KEY); } catch(_) {}
-        }
-        function showResults(data, q) {
-            if (!results) return;
-            results.removeAttribute('hidden');
-            results.innerHTML = '';
-            // Persist so the results survive back-navigation
-            try { sessionStorage.setItem(MOBILE_SEARCH_SS_KEY, JSON.stringify({ query: q, data: data })); } catch(_) {}
-            if (!data.results || !data.results.length) {
-                results.innerHTML = '<div class="bs-sr-empty"><i class="fa-solid fa-book-open"></i> Geen resultaten voor <em>"' + escHtml(q) + '"</em></div>';
-                return;
-            }
-            const meta = document.createElement('div'); meta.className='bs-sr-meta';
-            meta.textContent = data.total + ' resultaat' + (data.total!==1?'en':'') + ' voor "' + q + '"';
-            results.appendChild(meta);
-            const byBook = {};
-            data.results.forEach(r => { if (!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,type:r.type,hits:[]}; byBook[r.productId].hits.push(r); });
-            Object.values(byBook).forEach(function(book) {
-                const b = document.createElement('div'); b.className='bs-sr-book';
-                const icon = book.type==='pdf' ? 'fa-solid fa-file-pdf' : 'fa-solid fa-book';
-                b.innerHTML = '<div class="bs-sr-book-title"><i class="'+icon+'"></i> ' + escHtml(book.title) + '</div>';
-                book.hits.forEach(function(hit) {
-                    const a = document.createElement('a'); a.className='bs-sr-item';
-                    a.href = hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(q);
-                    const pageIcon = hit.type==='pdf' ? '<i class="fa-solid fa-file-pdf" style="font-size:9px;margin-right:2px;opacity:.7"></i>' : '';
-                    a.innerHTML = '<span class="bs-sr-page'+(hit.type==='pdf'?' bs-sr-page--pdf':'')+'">'+pageIcon+'Pagina '+hit.page+'</span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
-                    b.appendChild(a);
-                });
-                results.appendChild(b);
+        const meta = document.createElement('div'); meta.className='bs-sr-meta';
+        meta.textContent = data.total + (data.total === 1 ? ' resultaat' : ' resultaten');
+        results.appendChild(meta);
+        const byBook = {};
+        data.results.forEach(r => { if (!byBook[r.productId]) byBook[r.productId]={title:r.productTitle,type:r.type,hits:[]}; byBook[r.productId].hits.push(r); });
+        Object.values(byBook).forEach(function(book) {
+            const b = document.createElement('div'); b.className='bs-sr-book';
+            const title = document.createElement('div'); title.className='bs-sr-book-title';
+            title.textContent = book.title;
+            b.appendChild(title);
+            book.hits.forEach(function(hit) {
+                const a = document.createElement('a'); a.className='bs-sr-item';
+                a.href = hit.readerUrl+'?page='+hit.page+'&q='+encodeURIComponent(q);
+                const pageIcon = hit.type==='pdf' ? '<i class="fa-solid fa-file-pdf" style="font-size:9px;margin-right:2px;opacity:.7"></i>' : '';
+                a.innerHTML = '<span class="bs-sr-page'+(hit.type==='pdf'?' bs-sr-page--pdf':'')+'">'+pageIcon+'p.'+hit.page+' · </span><span class="bs-sr-snippet">'+escHtml(hit.snippet).replace(/\[\[HIT\]\]/g,'<mark class="bs-sr-hit">').replace(/\[\[\/HIT\]\]/g,'</mark>')+'</span>';
+                b.appendChild(a);
             });
-        }
-        function doSearch(q) {
-            if (xhr) { xhr.abort(); xhr=null; }
-            if (!q || q.length < 2) { hideResults(); setIcon('idle'); return; }
-            setIcon('loading');
-            xhr = new XMLHttpRequest();
-            xhr.open('GET', SEARCH_URL + '?q=' + encodeURIComponent(q));
-            xhr.onload = function () {
-                if (xhr.status===200) { try { showResults(JSON.parse(xhr.responseText), q); } catch(_){} }
-                setIcon('clear'); xhr = null;
-            };
-            xhr.onerror = function () { setIcon('idle'); xhr = null; };
-            xhr.send();
-        }
-        input.addEventListener('input', function () {
-            const q = input.value.trim();
-            setIcon(q.length>=2?'loading':'idle');
-            clearTimeout(timer);
-            timer = setTimeout(function(){ doSearch(q); }, 400);
+            results.appendChild(b);
         });
-        input.addEventListener('keydown', function (e) {
-            if (e.key==='Escape') { input.value=''; hideResults(); setIcon('idle'); if(xhr){xhr.abort();xhr=null;} }
-        });
-        clear && clear.addEventListener('click', function () {
-            if (input.value.trim()) { input.value=''; hideResults(); setIcon('idle'); input.focus(); }
-        });
-
-        // Restore search results after back-navigation
-        (function () {
-            try {
-                const stored = sessionStorage.getItem(MOBILE_SEARCH_SS_KEY);
-                if (!stored) return;
-                const { query, data } = JSON.parse(stored);
-                if (!query || !data) return;
-                input.value = query;
-                setIcon('clear');
-                showResults(data, query);
-            } catch(_) {}
-        })();
+    }
+    function abortSearch() {
+        clearTimeout(timer);
+        if (xhr) { xhr.abort(); xhr = null; }
+        setLoading(false);
+    }
+    function doSearch(q) {
+        if (xhr) { xhr.abort(); xhr = null; }
+        if (!q || q.length < 2) { hideResults(); setLoading(false); return; }
+        setLoading(true);
+        const request = xhr = new XMLHttpRequest();
+        request.open('GET', SEARCH_URL + '?q=' + encodeURIComponent(q));
+        request.onload = function () {
+            if (xhr !== request) return;
+            xhr = null; setLoading(false);
+            if (request.status === 200) {
+                try { showResults(JSON.parse(request.responseText), q); return; } catch(_) {}
+            }
+            showMessage('Zoeken is mislukt. Probeer het opnieuw.');
+        };
+        request.onerror = function () {
+            if (xhr !== request) return;
+            xhr = null; setLoading(false);
+            showMessage('Zoeken is mislukt. Controleer je verbinding.');
+        };
+        request.send();
     }
 
-    initSearch('bs-mobile-search-input', 'bs-mobile-search-icon', 'bs-mobile-search-results', 'bs-mobile-search-clear');
+    // Keep the card above the on-screen keyboard
+    function fitToViewport() {
+        const vv = window.visualViewport;
+        modal.style.setProperty('--bs-search-vh', (vv ? vv.height : window.innerHeight) + 'px');
+        modal.style.setProperty('--bs-search-top-offset', (vv ? vv.offsetTop : 0) + 'px');
+    }
+    function setExpanded(expanded) {
+        triggers.forEach(function (el) { el.setAttribute('aria-expanded', expanded ? 'true' : 'false'); });
+    }
+    function openModal(e) {
+        if (!modal.hidden) return;
+        activeTrigger = e && e.currentTarget ? e.currentTarget : triggers[0];
+        fitToViewport();
+        modal.hidden = false;
+        setExpanded(true);
+        previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        syncTrigger();
+        input.focus({ preventScroll: true });
+        const len = input.value.length;
+        try { input.setSelectionRange(len, len); } catch(_) {}
+    }
+    function closeModal() {
+        if (modal.hidden) return;
+        modal.hidden = true;
+        setExpanded(false);
+        document.body.style.overflow = previousOverflow;
+        input.blur();
+        if (activeTrigger) activeTrigger.focus({ preventScroll: true });
+    }
+
+    triggers.forEach(function (el) { el.addEventListener('click', openModal); });
+    modal.querySelectorAll('[data-search-modal-close]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+    });
+    modal.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { e.preventDefault(); closeModal(); }
+    });
+    input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
+    });
+    input.addEventListener('input', function () {
+        syncTrigger();
+        const q = input.value.trim();
+        abortSearch();
+        if (q.length < 2) { hideResults(); return; }
+        setLoading(true);
+        timer = setTimeout(function(){ doSearch(q); }, 250);
+    });
+    clear && clear.addEventListener('click', function () {
+        input.value = '';
+        abortSearch();
+        hideResults();
+        syncTrigger();
+        input.focus();
+    });
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', fitToViewport);
+        window.visualViewport.addEventListener('scroll', fitToViewport);
+    }
+    window.addEventListener('resize', fitToViewport);
+
+    // Restore the previous query after back-navigation; results appear when the dialog opens
+    (function () {
+        try {
+            const stored = sessionStorage.getItem(MOBILE_SEARCH_SS_KEY);
+            if (!stored) return;
+            const { query, data } = JSON.parse(stored);
+            if (!query || !data) return;
+            input.value = query;
+            showResults(data, query);
+            syncTrigger();
+        } catch(_) {}
+    })();
 })();
 </script>
 

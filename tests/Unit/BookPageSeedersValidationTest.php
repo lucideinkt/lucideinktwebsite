@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Services\BookHtmlValidator;
+use App\Services\BookPageJsonSerializer;
 use Database\Seeders\AfwegingenNederlandsPagesSeeder;
 use Database\Seeders\BroederschapNederlandsPagesSeeder;
 use Database\Seeders\CevsenPagesSeeder;
@@ -13,6 +14,38 @@ use PHPUnit\Framework\TestCase;
 
 class BookPageSeedersValidationTest extends TestCase
 {
+    public function test_broederschap_page_112_keeps_each_footnote_with_its_own_arabic_citation(): void
+    {
+        $seeder = new BroederschapNederlandsPagesSeeder;
+        $pages = (new \ReflectionClass($seeder))->getMethod('pages')->invoke($seeder);
+        $source = array_values(array_filter($pages, fn ($page) => $page['page_number'] === 112))[0];
+        $page = (new BookPageJsonSerializer)->serialize(112, $source['content']);
+        $citations = [];
+        $visit = function (array $nodes) use (&$visit, &$citations): void {
+            foreach ($nodes as $node) {
+                $refs = array_values(array_filter($node['children'] ?? [],
+                    fn ($child) => $child['type'] === 'footnote_ref'));
+                if (($node['language'] ?? null) === 'ar' && $refs) {
+                    $citations[] = $node;
+                }
+                $visit($node['children'] ?? []);
+            }
+        };
+        $visit($page['blocks']);
+        $this->assertCount(2, $citations);
+        foreach (['اِسْتَقِمْ كَمَٓا اُمِرْتَ ', 'وَلَا تَتَأَمَّرْ عَلَى سَيِّدِكَ '] as $index => $text) {
+            $this->assertSame('rtl', $citations[$index]['direction']);
+            $this->assertSame($text, $citations[$index]['children'][0]['text']);
+            $this->assertSame('112:'.($index + 1), $citations[$index]['children'][1]['target']);
+        }
+        $this->assertSame(['112:1', '112:2', '112:3'], array_column($page['footnotes'], 'target'));
+        $plain = function (array $nodes) use (&$plain): string {
+            return implode('', array_map(fn ($node) => $node['text'] ?? $plain($node['children'] ?? []), $nodes));
+        };
+        $this->assertStringContainsString('Wees rechtdoorzee', $plain($page['footnotes'][0]['blocks']));
+        $this->assertStringContainsString('Oefen geen zeggenschap', $plain($page['footnotes'][1]['blocks']));
+    }
+
     public function test_cevsen_table_of_contents_links_every_ukde_to_its_page(): void
     {
         $toc = (require __DIR__.'/../../config/book_toc.php')['cevsen-ul-kebir'];

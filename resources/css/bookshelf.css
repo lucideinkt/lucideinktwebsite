@@ -519,12 +519,12 @@ body { margin: 0; padding: 0; width: 100%; }
 .bs-search-results::-webkit-scrollbar-thumb { background: rgba(200,150,50,0.35); border-radius: 3px; }
 
 .bs-sr-meta {
-    padding: 8px 12px 6px;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(220,180,80,0.85);
-    border-bottom: 1px solid rgba(200,160,60,0.15);
+    padding: 10px 12px 2px;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: right;
+    color: rgba(200,160,80,0.70);
 }
 
 .bs-sr-empty {
@@ -539,42 +539,42 @@ body { margin: 0; padding: 0; width: 100%; }
 .bs-sr-empty em { color: rgba(220,180,100,0.6); font-style: normal; }
 
 .bs-sr-book {
-    border-bottom: 1px solid rgba(200,160,60,0.1);
+    padding: 6px 10px 2px;
 }
-.bs-sr-book:last-child { border-bottom: none; }
+.bs-sr-book:last-child { padding-bottom: 10px; }
+.bs-sr-book + .bs-sr-book { padding-top: 14px; }
 
 .bs-sr-book-title {
-    padding: 8px 12px 5px;
-    font-family: 'DelimaMTProRegular', serif;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255,210,100,0.95);
-    display: flex;
-    align-items: center;
-    gap: 7px;
+    margin-bottom: 6px;
+    font-family: 'DelimaMTProBold', serif;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(240,200,100,0.75);
 }
-.bs-sr-book-title i { font-size: 10px; color: var(--gold-mid); }
 
 .bs-sr-item {
     display: block;
-    padding: 7px 12px 8px 22px;
+    margin-bottom: 8px;
+    padding: 12px 13px;
+    border-radius: 9px;
+    background: rgba(0,0,0,0.28);
+    border: 1px solid rgba(200,160,60,0.18);
     text-decoration: none;
-    border-top: 1px solid rgba(200,160,60,0.07);
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 15px;
+    line-height: 26px;
+    color: rgba(240,210,140,0.95);
+    word-break: break-word;
     transition: background 0.15s;
     cursor: pointer;
 }
-.bs-sr-item:hover {
-    background: rgba(180,100,30,0.18);
+.bs-sr-item:hover,
+.bs-sr-item:focus-visible {
+    background: rgba(200,140,40,0.18);
 }
 
 .bs-sr-page {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.8px;
-    color: rgba(200,160,60,0.80);
-    margin-bottom: 3px;
-    font-family: 'DelimaMTProRegular', serif;
+    color: rgba(200,160,80,0.70);
 }
 
 .bs-sr-page--pdf {
@@ -586,20 +586,16 @@ body { margin: 0; padding: 0; width: 100%; }
 }
 
 .bs-sr-snippet {
-    display: block;
-    font-size: 13px;
-    color: rgba(240,215,170,0.92);
-    line-height: 1.5;
-    font-family: 'DelimaMTProRegular', serif;
-    word-break: break-word;
+    color: inherit;
 }
 
 .bs-sr-hit {
-    background: rgba(200,150,40,0.28);
-    color: #ffe080;
-    border-radius: 2px;
-    padding: 0 2px;
+    background: #ffe08a;
+    color: #2a1a0a;
+    font-family: 'DelimaMTProBold', serif;
     font-style: normal;
+    border-radius: 3px;
+    padding: 0 3px;
 }
 .shelf-book-read-btn {
     position: relative;
@@ -1896,18 +1892,155 @@ body { margin: 0; padding: 0; width: 100%; }
     position: relative;
     z-index: 3;
 }
-.bs-mobile-search-outer .bs-search-results {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% + 4px);
-    z-index: 50;
-    margin-top: 0;
-    max-height: 460px;
-    background: #1a0c04;
-    border: 1px solid rgba(200,160,60,0.28);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.92), 0 2px 8px rgba(0,0,0,0.7);
+.bs-mobile-search-trigger {
+    width: 100%;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
+.bs-mobile-search-trigger:focus-visible {
+    outline: none;
+    border-color: rgba(200,160,60,0.45);
+    box-shadow: 0 0 0 2px rgba(180,130,40,0.12);
+}
+.bs-mobile-search-trigger-text {
+    flex: 1;
+    min-width: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    color: rgba(200,160,80,0.50);
+}
+.bs-mobile-search-trigger-text.has-query { color: var(--parchment); }
+.bs-search-trigger--sidebar .bs-mobile-search-trigger-text { font-size: 14px; }
+.bs-search-trigger--sidebar:hover { border-color: rgba(200,160,60,0.35); }
+
+/* Mobile search dialog — mirrors the app's LibrarySearch modal */
+.bs-search-modal {
+    --bs-search-vh: 100dvh;
+    --bs-search-top-offset: 0px;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+.bs-search-modal[hidden] { display: none; }
+.bs-search-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+.bs-search-modal-card {
+    position: absolute;
+    top: calc(var(--bs-search-top-offset) + env(safe-area-inset-top, 0px) + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(560px, calc(100vw - 24px));
+    max-height: calc(var(--bs-search-vh) - env(safe-area-inset-top, 0px) - 28px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(200,160,60,0.35);
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2a1006 0%, #140802 60%, #2a1006 100%);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.92);
+}
+@media (min-width: 769px) {
+    .bs-search-modal-card {
+        top: clamp(48px, 20vh, 180px);
+        transform: translateX(-50%);
+        width: min(640px, calc(100vw - 48px));
+        max-height: min(720px, calc(var(--bs-search-vh) - clamp(48px, 20vh, 180px) - 48px));
+    }
+}
+.bs-search-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px 8px 16px;
+    background: rgba(0,0,0,0.18);
+    border-bottom: 1px solid rgba(200,160,60,0.18);
+}
+.bs-search-modal-title {
+    flex: 1;
+    margin: 0;
+    font-family: 'DelimaMTProBold', serif;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
+    color: rgba(240,200,100,0.85);
+}
+.bs-search-modal-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: rgba(240,200,100,0.85);
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.bs-search-modal-icon-btn[hidden] { display: none; }
+.bs-search-modal-field .bs-search-modal-icon-btn { color: rgba(200,160,60,0.65); }
+.bs-search-modal-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin: 14px 14px 8px;
+    padding: 0 4px 0 12px;
+    background: rgba(0,0,0,0.40);
+    border: 1px solid rgba(200,160,60,0.45);
+    border-radius: 5px;
+}
+.bs-search-modal-field > i {
+    width: 18px;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(200,160,60,0.65);
+}
+.bs-search-modal-input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'DelimaMTProRegular', serif;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    color: #f5dda0;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.bs-search-modal-input::placeholder { color: rgba(200,160,80,0.50); }
+.bs-search-modal-input::-webkit-search-cancel-button { display: none; }
+.bs-search-modal .bs-search-modal-results {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    margin: 0;
+    padding: 0 2px 14px;
+    background: none;
+    border: none;
+    border-radius: 0;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+.bs-search-modal .bs-sr-meta { padding-top: 2px; }
 
 /* ── Row 3: Custom book selector ── */
 .bs-book-selector {

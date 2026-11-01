@@ -31,9 +31,8 @@
     font-weight: 400;
     font-display: swap;
     src:
-        url('../fonts/OmarNaskh-Regular.woff2') format('woff2'),
-        url('../fonts/OmarNaskh-Regular.woff') format('woff'),
-        url('../fonts/OmarNaskh-Regular.ttf') format('truetype');
+        url('../fonts/OmarNaskh-Joining.woff2') format('woff2'),
+        url('../fonts/OmarNaskh-Joining.ttf') format('truetype');
 }
 
 @font-face {
@@ -133,7 +132,7 @@ html.ios-device {
 .book-reader-scope h4 {
     font-family: 'DelimaProRegular', Georgia, serif;
     color: var(--main-font-color);
-    line-height: 1.3;
+    line-height: 1.7em;
     margin-top: 2em;
     margin-bottom: 0.5em;
     text-wrap: balance;
@@ -147,7 +146,7 @@ html.ios-device {
 /* â”€â”€ Paragrafen â”€â”€ */
 .book-reader-scope p {
     margin-top: 0;
-    margin-bottom: 1.1em;
+    margin-bottom: 0.9em;
     line-height: 1.5;
     text-align: justify;
     hyphens: auto;
@@ -415,7 +414,7 @@ html.ios-device {
     width: 0;
     line-height: 0;
     vertical-align: baseline;
-    transform: translate(0.21em, -0.65em);
+    transform: translate(0.21em, -0.72em);
 }
 
 .book-reader-scope .arabic-madd-below::after {
@@ -427,7 +426,10 @@ html.ios-device {
     font-size: 0.4em;
     line-height: 1;
     white-space: nowrap;
+    color: var(--reader-accent, #ca2a2a);
 }
+
+.book-reader-scope .arabic-madd-sign { font-size: 0 !important; }
 
 /* iOS does not render ss04 correctly — remove it on iOS devices */
 html.ios-device .book-reader-scope .text-arabic {
@@ -447,6 +449,10 @@ html.ios-device .book-reader-scope .text-arabic {
 }
 
 /* Bismillah SVG image */
+.book-reader-scope .text-arabic-bismillah:has(.bismillah-svg) {
+    padding-bottom: calc(var(--reader-font-size, 19px) * 0.6);
+}
+
 .book-reader-scope .bismillah-svg {
     height: auto;
     width: 33%;
@@ -603,7 +609,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     vertical-align: baseline;
     color: #ffffff !important;
     position: relative;
-    top: var(--fn-badge-raise, -4px);
+    top: var(--fn-badge-raise, -1px);
     text-decoration: none;
     border: none;
     border-radius: 999px;
@@ -693,7 +699,7 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     vertical-align: baseline;
     color: #ffffff !important;
     position: relative;
-    top: var(--fn-badge-raise, -4px);
+    top: var(--fn-badge-raise, -1px);
     text-decoration: none;
     border-radius: 999px;
     box-shadow: 0 1px 4px rgba(10, 70, 45, 0.40);

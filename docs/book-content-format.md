@@ -124,6 +124,7 @@ Contractregels:
 - Een voetnootverwijzing bevat alleen nummer en target. De noot staat één keer in `footnotes`; meerdere verwijzingen naar dezelfde noot kunnen hetzelfde target delen.
 - Voetnoten behouden rijke inhoud en meerdere paragrafen. Nummerloze noten aan het begin van een pagina worden gemarkeerd als voortzetting vanaf de vorige pagina; een afsluitende `→` wordt `continues_to_next_page`.
 - Een blok of inline node met Arabisch/RTL bevat expliciete `language` en `direction` metadata, bijvoorbeeld `ar` en `rtl`.
+- Een `<span class="text-arabic">` (buiten voetnoten) staat op de website op een eigen regel. De serializer zet daarom `line_break`-nodes voor en na die `span` wanneer er tekst omheen staat, zodat de app dezelfde regelverdeling toont. `text-arabic-inline` en Arabische spans in voetnoten blijven inline.
 - `presentation` bevat uitsluitend allowlisted, platform-neutrale tokens voor een deel van de boekopmaak, zoals uitlijning, accent, semibold/italic, typeface, inhoudsrol en beperkte breedte. De React Native-app moet deze tokens naar native `Text`/`View`-stijlen mappen; ze zijn geen CSS.
 - Afbeeldingen worden nodes met een bron-URL en alternatieve tekst; site-relatieve paden worden door de app opgelost tegen de geconfigureerde API-origin. Ruwe HTML wordt niet als uitvoerbaar element aan de app doorgegeven.
 - Paginering behoudt `after`, `limit` en `has_more`, zodat bestaande laadlogica bruikbaar blijft.
