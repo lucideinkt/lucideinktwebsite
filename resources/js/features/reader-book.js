@@ -208,7 +208,6 @@ export function readerBook() {
                 node.replaceWith(frag);
             });
         });
-        keepOrnamentsWithWords(page);
     }
 
     // Every line holding inline Arabic gets the same, symmetric extra space above and below,
@@ -424,6 +423,7 @@ export function readerBook() {
 
         if (!Object.keys(footnoteMap).length) {
             wireFootnoteText(page);
+            keepOrnamentsWithWords(page);
             fitInlineArabicBoxes(page);
             return;
         }
@@ -462,6 +462,7 @@ export function readerBook() {
         });
 
         wireFootnoteText(page);
+        keepOrnamentsWithWords(page);
         fitInlineArabicBoxes(page).then(queueBadgeCentering);
         resolveContinuations(page);
         queueBadgeCentering();

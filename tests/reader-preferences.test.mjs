@@ -208,6 +208,52 @@ test('individual layout resets leave other settings and the theme unchanged', ()
     assert.match(css, /\.reader-sheet-reset-btn\s*\{[^}]*min-width: 44px; min-height: 44px;/);
 });
 
+test('all text settings reset together with one anchor correction while theme and user data remain unchanged', () => {
+    const r = reader({
+        'reader-theme': 'sepia', reading_fontsize_42: '25', reading_arabicfontsize_42: '40',
+        'reader-line-height': '2', 'reader-side-padding': '48', 'reader-text-alignment': 'left',
+        bookmarks: '[12]', highlights: '[7]',
+    });
+    Object.assign(r.context, {
+        FONT_KEY: 'reading_fontsize_42', ARABIC_FONT_KEY: 'reading_arabicfontsize_42',
+        DEFAULT_FONT: 19, DEFAULT_ARABIC_FONT: 29,
+        readerEl: r.document.documentElement,
+        fontValEl: r.element('font-val'), arabicFontValEl: r.element('arabic-font-val'),
+    });
+    vm.runInContext(
+        view.slice(view.indexOf('function saveFont('), view.indexOf('function loadFont('))
+        + view.slice(view.indexOf('function applyFont('), view.indexOf('function preferenceStorageError('))
+        + view.slice(view.indexOf('const FONT_STEPS '), view.indexOf('// Preview without reflow')),
+        r.context,
+    );
+    r.element('reader-text-reset').click();
+    for (const [key, value] of Object.entries({
+        reading_fontsize_42: '19', reading_arabicfontsize_42: '29', 'reader-line-height': '1.5',
+        'reader-side-padding': '32', 'reader-text-alignment': 'justify',
+        'reader-theme': 'sepia', bookmarks: '[12]', highlights: '[7]',
+    })) assert.equal(r.storage.get(key), value, key);
+    assert.deepEqual(r.anchors, ['capture', 'restore']);
+    assert.deepEqual(r.events, ['reader-layout-change']);
+    assert.equal(r.element('reader-line-height-value').textContent, '1.5');
+    assert.equal(r.element('reader-side-padding-value').textContent, '32');
+    assert.equal(r.alignments[0].attributes.get('aria-pressed'), 'true');
+    assert.equal(r.properties.get('--reader-font-size'), '19px');
+    assert.equal(r.properties.get('--reader-arabic-font-size'), '29px');
+    assert.equal(r.element('font-step-range').value, 70);
+    assert.equal(r.element('arabic-font-step-range').value, 130);
+    const restored = reader(Object.fromEntries(r.storage));
+    assert.equal(restored.properties.get('--reader-line-height'), '1.5');
+    assert.equal(restored.properties.get('--reader-side-padding'), '32px');
+    assert.equal(restored.properties.get('--reader-text-alignment'), 'justify');
+    r.element('font-inc-btn').click();
+    r.element('sheet-font-reset').click();
+    assert.equal(r.storage.get('reading_fontsize_42'), '19');
+    r.element('arabic-font-inc-btn').click();
+    r.element('arabic-font-reset').click();
+    assert.equal(r.storage.get('reading_arabicfontsize_42'), '29');
+    assert.match(view, /id="reader-text-reset"[^>]*>Alle tekstinstellingen herstellen<\/button>/);
+});
+
 test('flat themes replace the visible paper layer rather than only changing the body underneath it', () => {
     assert.match(css, /body\[data-reader-theme\]:not\(\[data-reader-theme="light"\]\):not\(\[data-reader-theme="dark"\]\) \.online-reader-html\s*\{\s*background: var\(--reader-bg\);/);
     assert.match(css, /#reader-control-sheet\s*\{[^}]*overflow-y: auto;/);

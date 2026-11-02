@@ -104,6 +104,8 @@ test('rapid scroll events share one frame and unchanged pages do not rewrite rea
     let scroll, current = 5, timerId = 0;
     const context = vm.createContext({
         window: { addEventListener(event, handler) { if (event === 'scroll') scroll = handler; } },
+        document: { querySelector: () => null, body: { classList: { remove() {}, toggle() {} } } },
+        topbarEl: { offsetHeight: 56 },
         requestAnimationFrame(callback) { frames.push(callback); return frames.length; },
         clearTimeout(id) { timers.delete(id); },
         setTimeout(callback) { timers.set(++timerId, callback); return timerId; },
@@ -123,6 +125,54 @@ test('rapid scroll events share one frame and unchanged pages do not rewrite rea
     assert.equal(timers.size, 1);
     [...timers.values()][0]();
     assert.deepEqual(saves, [8]);
+});
+
+test('reader header stays visible on restored positions and only hides during user scrolling', () => {
+    const listeners = {}, classes = new Set();
+    let panelOpen = false;
+    const context = vm.createContext({
+        window: { scrollY: 0, addEventListener(type, handler) { listeners[type] = handler; } },
+        document: {
+            documentElement: { clientWidth: 400 },
+            querySelector: () => panelOpen ? {} : null,
+            body: { classList: {
+                remove: name => classes.delete(name),
+                toggle(name, active) { if (active) classes.add(name); else classes.delete(name); },
+            } },
+        },
+        topbarEl: { offsetHeight: 56 },
+    });
+    vm.runInContext(view.slice(view.indexOf('// --- Scroll ---'), view.indexOf("window.addEventListener('scroll', function ()")), context);
+    const move = y => { context.window.scrollY = y; context.updateReaderChrome(); };
+    const hidden = () => classes.has('reader-chrome-hidden');
+    move(2400);
+    move(2600);
+    assert.equal(hidden(), false, 'initial restoration and layout corrections keep the header visible');
+    for (const type of ['wheel', 'touchmove', 'keydown', 'pointerdown']) {
+        listeners[type]({ type, key: 'PageDown', clientX: 400 });
+        move(context.window.scrollY + 100);
+        assert.equal(hidden(), true, type + ' hides on downward scroll');
+        move(context.window.scrollY - 30);
+        assert.equal(hidden(), false, type + ' reveals on upward scroll');
+        listeners.scrollend();
+        move(context.window.scrollY + 500);
+        assert.equal(hidden(), false, 'programmatic navigation after scrollend keeps header visible');
+    }
+    listeners.keydown({ type: 'keydown', key: 'a' });
+    move(6000);
+    assert.equal(hidden(), false);
+    listeners.keydown({ type: 'keydown', key: 'ArrowDown', target: { closest: () => ({}) } });
+    move(6100);
+    assert.equal(hidden(), false, 'controls do not arm header hiding');
+    listeners.wheel({ type: 'wheel' });
+    move(6200);
+    assert.equal(hidden(), true);
+    listeners.pageshow();
+    assert.equal(hidden(), false, 'back-forward cache restores a visible header');
+    panelOpen = true;
+    listeners.touchmove({ type: 'touchmove' });
+    move(6300);
+    assert.equal(hidden(), false, 'open reader panels keep the header visible');
 });
 
 test('iOS viewport offsets never trigger corrective document scrolling', () => {
