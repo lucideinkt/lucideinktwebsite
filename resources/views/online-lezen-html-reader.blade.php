@@ -458,6 +458,7 @@
                 <button type="button" class="reader-settings-tab" data-text-alignment="left" aria-pressed="false">Links uitgelijnd</button>
             </div>
         </div>
+        <button id="reader-text-reset" class="reader-settings-reset" type="button">Alle tekstinstellingen herstellen</button>
         </div>
 
         {{-- Theme --}}
@@ -721,7 +722,7 @@
             } catch (_) {}
         }
         function load()       { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseInt(v, 10) : null; } catch (_) { return null; } }
-        function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (_) {} }
+        function saveFont(sz) { try { localStorage.setItem(FONT_KEY, String(sz)); } catch (error) { preferenceStorageError(error); } }
         function loadFont()   { try { const v = localStorage.getItem(FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         // Capture a scroll anchor (current page el + its viewport top) — call BEFORE layout changes
         function captureAnchor() {
@@ -745,7 +746,7 @@
             if (fontValEl) fontValEl.textContent = sz.toFixed(1) + 'px';
             document.getElementById('reader-font-value').textContent = String(Math.round(sz * 10) / 10);
         }
-        function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (_) {} }
+        function saveArabicFont(sz) { try { localStorage.setItem(ARABIC_FONT_KEY, String(sz)); } catch (error) { preferenceStorageError(error); } }
         function loadArabicFont()   { try { const v = localStorage.getItem(ARABIC_FONT_KEY); return v ? parseFloat(v) : null; } catch (_) { return null; } }
         function applyArabicFont(sz, anchor) {
             const frozenAnchor = (anchor && typeof anchor === 'object') ? anchor
@@ -767,13 +768,13 @@
                 paragraph.classList.add('reader-alignable');
             }
         });
-        function applyTextAlignment(value, persist) {
+        function applyTextAlignment(value, persist, batch = false) {
             const alignment = value === 'left' ? 'left' : 'justify';
-            const anchor = persist ? captureAnchor() : null;
+            const anchor = persist && !batch ? captureAnchor() : null;
             document.documentElement.style.setProperty('--reader-text-alignment', alignment);
             alignmentButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.textAlignment === alignment)));
             if (persist) {
-                document.dispatchEvent(new Event('reader-layout-change'));
+                if (!batch) document.dispatchEvent(new Event('reader-layout-change'));
                 if (anchor) restoreAnchor(anchor);
                 try { localStorage.setItem('reader-text-alignment', alignment); }
                 catch (error) { preferenceStorageError(error); }
@@ -784,22 +785,23 @@
         catch (error) { preferenceStorageError(error); }
         applyTextAlignment(savedAlignment, false);
         alignmentButtons.forEach(button => button.addEventListener('click', () => applyTextAlignment(button.dataset.textAlignment, true)));
+        const resetTextLayout = [];
         [
             { id: 'line-height', key: 'reader-line-height', property: '--reader-line-height', min: 1.2, max: 2.2, fallback: 1.5, unit: '' },
             { id: 'side-padding', key: 'reader-side-padding', property: '--reader-side-padding', min: 8, max: 64, fallback: parseFloat(getComputedStyle(document.querySelector('.reader-wrap')).paddingLeft), unit: 'px' },
         ].forEach(control => {
             const input = document.getElementById('reader-' + control.id);
             const output = document.getElementById('reader-' + control.id + '-value');
-            function apply(value, persist) {
+            function apply(value, persist, batch = false) {
                 const number = Number(value);
                 const normalized = value !== null && value !== '' && Number.isFinite(number)
                     ? Math.round(Math.min(control.max, Math.max(control.min, number)) * 10) / 10 : control.fallback;
-                const anchor = persist ? captureAnchor() : null;
+                const anchor = persist && !batch ? captureAnchor() : null;
                 document.documentElement.style.setProperty(control.property, normalized + control.unit);
                 if (control.id === 'line-height') {
                     document.documentElement.style.setProperty('--reader-arabic-line-scale', String(Math.max(1, normalized / 1.5)));
                     document.body.classList.toggle('reader-custom-spacing', normalized !== 1.5);
-                    if (persist) document.dispatchEvent(new Event('reader-layout-change'));
+                    if (persist && !batch) document.dispatchEvent(new Event('reader-layout-change'));
                 }
                 input.value = String(normalized);
                 output.textContent = String(normalized);
@@ -818,6 +820,7 @@
             document.getElementById('reader-' + control.id + '-dec').addEventListener('click', () => apply(Number(input.value) - Number(input.step), true));
             document.getElementById('reader-' + control.id + '-inc').addEventListener('click', () => apply(Number(input.value) + Number(input.step), true));
             document.getElementById('reader-' + control.id + '-reset').addEventListener('click', () => apply(control.fallback, true));
+            resetTextLayout.push(() => apply(control.fallback, true, true));
         });
 
         function visiblePage() {
@@ -990,11 +993,32 @@
         let scrollFrame = null;
         let lastScrollPage = null;
         let chromeScrollY = window.scrollY;
+        let readerScrollInput = false;
+        function beginReaderScroll(event) {
+            if (event.defaultPrevented || event.target?.closest?.('.reader-control-sheet, .toc-panel, .reader-search-panel, .fn-modal')) return;
+            if (event.type === 'keydown' && (
+                !['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)
+                || event.target?.closest?.('input, textarea, select, button, [contenteditable="true"]')
+                || event.ctrlKey || event.metaKey || event.altKey
+            )) return;
+            if (event.type === 'pointerdown' && event.clientX < document.documentElement.clientWidth) return;
+            if (!readerScrollInput) chromeScrollY = Math.max(0, window.scrollY);
+            readerScrollInput = true;
+        }
+        ['wheel', 'touchmove', 'keydown', 'pointerdown'].forEach(type => {
+            window.addEventListener(type, beginReaderScroll, { passive: true });
+        });
+        window.addEventListener('scrollend', () => { readerScrollInput = false; });
+        window.addEventListener('pageshow', () => {
+            readerScrollInput = false;
+            chromeScrollY = Math.max(0, window.scrollY);
+            document.body.classList.remove('reader-chrome-hidden');
+        });
         function updateReaderChrome() {
             const y = Math.max(0, window.scrollY);
             const delta = y - chromeScrollY;
             const panelOpen = document.querySelector('.reader-control-sheet.open, .toc-panel.open, .reader-search-panel.open');
-            if (panelOpen || y <= topbarEl.offsetHeight) {
+            if (panelOpen || !readerScrollInput || y <= topbarEl.offsetHeight) {
                 document.body.classList.remove('reader-chrome-hidden');
                 chromeScrollY = y;
             } else if (Math.abs(delta) >= 8) {
@@ -1303,6 +1327,15 @@
         });
         document.getElementById('arabic-font-reset')?.addEventListener('click', () => {
             setArabicStep(nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT));
+        });
+        document.getElementById('reader-text-reset')?.addEventListener('click', () => {
+            const anchor = captureAnchor();
+            setFontStep(nearestStepIdx(FONT_STEPS, DEFAULT_FONT), false);
+            setArabicStep(nearestStepIdx(ARABIC_STEPS, DEFAULT_ARABIC_FONT), false);
+            resetTextLayout.forEach(reset => reset());
+            applyTextAlignment('justify', true, true);
+            document.dispatchEvent(new Event('reader-layout-change'));
+            if (anchor) restoreAnchor(anchor);
         });
 
         // Preview without reflow; commit both font sizes once the gesture finishes.

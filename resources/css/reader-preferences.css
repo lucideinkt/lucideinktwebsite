@@ -257,7 +257,10 @@ body.reader-custom-spacing .book-reader-scope .page p[lang="ar"] {
     color: var(--reader-active-ink) !important;
 }
 #reader-control-sheet .reader-settings-reset {
+    display: block;
     margin-top: 16px;
+    margin-inline: auto;
+    text-align: center;
     min-height: 44px;
     padding: 8px 0;
     background: transparent !important;
@@ -266,6 +269,9 @@ body.reader-custom-spacing .book-reader-scope .page p[lang="ar"] {
     font: inherit;
     cursor: pointer;
     font-size: 13px !important;
+}
+#reader-control-sheet #reader-text-reset {
+    margin: 4px auto 0;
 }
 #reader-control-sheet :is(.sheet-menu-row-label, .sheet-menu-pill-label) { font-size: 14px; }
 #reader-control-sheet :is(.sheet-menu-page-counter, .sheet-menu-pill-pct) { font-size: 12px; }

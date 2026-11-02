@@ -12,6 +12,16 @@ behouden. Leesgeschiedenis en opgeslagen paginanummers veranderen niet.
 
 ### Leesinstellingen
 
+Onder de tekstuitlijning staat **Alle tekstinstellingen herstellen**. Deze knop
+herstelt beide lettergroottes, regelafstand, zijruimte en tekstuitlijning tegelijk,
+zonder het kleurthema te wijzigen. De afzonderlijke herstelknoppen blijven bestaan.
+
+Scheidingstekens, verssymbolen, waqf-tekens, eretekens en voetnootknoppen blijven
+bij het aangrenzende woord, ook bij zoomen en andere lettergroottes.
+Openingssymbolen blijven bij het volgende woord; overige tekens bij het vorige
+(of het volgende als er nog geen vorig woord is). De tekst, kleuren en opgeslagen
+zoek-/markeringsposities veranderen niet; expliciete regeleinden blijven behouden.
+
 Het leesmenu gebruikt op mobiel en desktop hetzelfde zwevende venster zonder
 kopbalk. Sluiten kan buiten het venster of met Escape.
 Tekst/Kleuren heeft ook geen kopbalk en biedt **Terug** naar het leesmenu.
@@ -75,6 +85,8 @@ Tijdens scrollen wordt de zichtbare pagina met een binaire zoekactie bepaald,
 maximaal eenmaal per animatieframe; de bediening wordt alleen bij een paginawissel
 bijgewerkt. iOS-viewportverschuivingen sturen geen corrigerende documentscrolls aan.
 De ondoorzichtige leesheader gebruikt geen achtergrondblur.
+Bij het openen van een boek en het herstellen van de leespositie blijft de header
+zichtbaar. Alleen zelf omlaag scrollen verbergt hem; omhoog scrollen toont hem weer.
 Inhoudsopgaverijen groeien mee met lange titels en ondertitels; ze worden niet
 samengedrukt in de scrollbare lijst en behouden hun regelafstand en binnenruimte.
 Het mobiele instellingenvenster gebruikt de stabiele kleine viewporthoogte (`svh`),

@@ -20,5 +20,6 @@ class BooksSeeder extends Seeder
         $this->call(ZiekenNederlandsPagesSeeder::class);
         $this->call(CevsenPagesSeeder::class);
         $this->call(TesbihatPagesSeeder::class);
+        $this->call(RegatheringEnglishPagesSeeder::class);
     }
 }
