@@ -78,21 +78,23 @@ export function keepOrnamentsWithWords(page) {
             const { leaves } = layout();
             const start = leaves.find(leaf => leaf.start <= range.start && leaf.end > range.start);
             const end = leaves.findLast(leaf => leaf.start < range.end && leaf.end >= range.end);
-            const group = start.node.parentElement.closest('.arabic-ornament-tail');
-            if (group?.contains(end.node)) continue;
+            // Keep the surrounding RTL run intact: splitting it changes the visual word order.
+            let container = start.node.parentElement;
+            while (!container.contains(end.node)) container = container.parentElement;
+            if (container.closest('.arabic-ornament-tail, .fn-arabic-tail, .text-arabic-chunk, .text-arabic-inline--short, .fn-ref-wrap, .fn-arabic-inline:not(.fn-arabic-inline--wrap)')) continue;
             const before = document.createRange();
-            before.setStart(paragraph, 0);
+            before.setStart(container, 0);
             if (start.node.nodeType === Node.TEXT_NODE) before.setEnd(start.node, range.start - start.start);
             else before.setEndBefore(start.node);
             const prefix = before.extractContents();
             const tail = document.createRange();
-            tail.setStart(paragraph, 0);
+            tail.setStart(container, 0);
             if (end.node.nodeType === Node.TEXT_NODE) tail.setEnd(end.node, range.end - end.start - (start === end ? range.start - start.start : 0));
             else tail.setEndAfter(end.node);
             const wrapper = document.createElement('span');
             wrapper.className = 'arabic-ornament-tail';
             wrapper.append(tail.extractContents());
-            paragraph.prepend(prefix, wrapper);
+            container.prepend(prefix, wrapper);
         }
         // Range extraction clones partial ancestors; an anchor belongs only to its first fragment.
         const seen = new Set();
