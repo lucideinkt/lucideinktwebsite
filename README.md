@@ -21,6 +21,8 @@ bij het aangrenzende woord, ook bij zoomen en andere lettergroottes.
 Openingssymbolen blijven bij het volgende woord; overige tekens bij het vorige
 (of het volgende als er nog geen vorig woord is). De tekst, kleuren en opgeslagen
 zoek-/markeringsposities veranderen niet; expliciete regeleinden blijven behouden.
+Bij deze groepering blijven bestaande Arabische rechts-naar-links-spans intact,
+zodat woorden en voetnootknoppen hun oorspronkelijke leesvolgorde behouden.
 
 Het leesmenu gebruikt op mobiel en desktop hetzelfde zwevende venster zonder
 kopbalk. Sluiten kan buiten het venster of met Escape.
