@@ -838,6 +838,12 @@
                 <= Math.abs(pageMap[next].getBoundingClientRect().top - TOPBAR_H) ? previous : next;
         }
 
+        function updatePageInUrl(page) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('page', String(page));
+            history.replaceState(history.state, '', url.pathname + url.search + url.hash);
+        }
+
         // --- Lazy load: fetch next batch from the API ---
         function loadMorePages(upToPage) {
             return Promise.resolve(); // no-op: all pages are server-side rendered
@@ -1034,6 +1040,7 @@
                 const cur = visiblePage();
                 if (cur !== lastScrollPage) {
                     updateUI(cur);
+                    updatePageInUrl(cur);
                     lastScrollPage = cur;
                 }
             });
