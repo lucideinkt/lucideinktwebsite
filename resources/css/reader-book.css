@@ -611,8 +611,8 @@ body.dark-mode .book-reader-scope .bismillah-svg-dark {
     font-size: 1.2em;
     line-height: 0;
     direction: rtl;
-    -webkit-font-feature-settings: "ss15";
-    font-feature-settings: "ss15";
+    -webkit-font-feature-settings: "ss17";
+    font-feature-settings: "ss17";
     display: inline;
     white-space: nowrap;
     letter-spacing: 0;

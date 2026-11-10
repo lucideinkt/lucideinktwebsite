@@ -1276,7 +1276,7 @@ karakteristieken nodig.
 Als jij een oog bezit, observeer dan het gezicht van
 de mens en zie dat er een gelijkenis is aangaande basisorganen
 in dit kleine gelaat. Daarnaast staat definitief
-vast dat elk gelaat, vanaf Adam <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> tot aan het
+vast dat elk gelaat, vanaf Adam <span class="honorific" dir="rtl" lang="ar">عليه السلام</span> tot aan het
 heden en tot in de eeuwigheid, onderscheidende attributen
 bezit ten opzichte van overige gelaten. Aldus
 is elk gelaat een ander boek. Om enkel de kunst erin
