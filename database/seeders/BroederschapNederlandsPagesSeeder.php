@@ -636,7 +636,7 @@ Een gedenkwaardige gebeurtenis:
 </p>
 
 <p>
-Tijdens een strijd had imam Ali <span class="text-arabic-inline honorific" dir="rtl" lang="ar">رضي الله عنه</span> een kafir op de grond gesmeten. Net toen hij zijn zwaard had geheven om hem de laatste slag toe te brengen, spuugde die kafir in zijn gezicht. Daarop liet hij die kafir gaan; hij maakte hem niet dood. Die kafir vroeg:
+Tijdens een strijd had imam Ali <span class="honorific" dir="rtl" lang="ar">رضي الله عنه</span> een kafir op de grond gesmeten. Net toen hij zijn zwaard had geheven om hem de laatste slag toe te brengen, spuugde die kafir in zijn gezicht. Daarop liet hij die kafir gaan; hij maakte hem niet dood. Die kafir vroeg:
 </p>
 
 <p class="text-italic">
@@ -2600,7 +2600,7 @@ Anders zal de heilige dienst die wij tot op heden hebben vervuld gedeeltelijk ve
 </p>
 
 <p>
-O mijn broeders! Belangrijke en aanzienlijke weldaden staan bloot aan vele kwaadaardige obstakels. Duivels ijveren enorm om de dienaren van die dienst te dwarsbomen. Tegenover deze obstakels en deze duivels dient er op de kracht van oprechtheid te worden gesteund. Oorzaken die oprechtheid ondermijnen behoren jullie te mijden zoals jullie slangen en schorpioenen ontwijken. Zoals Yousuf <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> aangaf met zijn uitspraak: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اِنَّ النَّفْسَ لَاَمَّارَةٌ بِالسُّٓوءِ اِلَّا مَا رَحِمَ رَبّٖى</span> kan het kwaadgezinde ego niet worden vertrouwd. Sta niet toe dat hoogmoedigheid en het kwaadgezinde ego jullie op het verkeerde spoor brengen. Om oprechtheid te bereiken en te behouden, en om obstakels uit de weg te ruimen, dienen jullie de aankomende principes als leidraad te nemen.
+O mijn broeders! Belangrijke en aanzienlijke weldaden staan bloot aan vele kwaadaardige obstakels. Duivels ijveren enorm om de dienaren van die dienst te dwarsbomen. Tegenover deze obstakels en deze duivels dient er op de kracht van oprechtheid te worden gesteund. Oorzaken die oprechtheid ondermijnen behoren jullie te mijden zoals jullie slangen en schorpioenen ontwijken. Zoals Yousuf <span class="honorific" dir="rtl" lang="ar">عليه السلام</span> aangaf met zijn uitspraak: <sup>2</sup><span class="text-arabic-inline text-red" dir="rtl" lang="ar">اِنَّ النَّفْسَ لَاَمَّارَةٌ بِالسُّٓوءِ اِلَّا مَا رَحِمَ رَبّٖى</span> kan het kwaadgezinde ego niet worden vertrouwd. Sta niet toe dat hoogmoedigheid en het kwaadgezinde ego jullie op het verkeerde spoor brengen. Om oprechtheid te bereiken en te behouden, en om obstakels uit de weg te ruimen, dienen jullie de aankomende principes als leidraad te nemen.
 </p>
 
 <div class="page-footnote">
@@ -2746,7 +2746,7 @@ Bovendien beken ik dat jullie mij dankzij jullie innige oprechtheid in zeker opz
 </p>
 
 <p>
-Jullie weten dat imam Ali <span class="text-arabic-inline honorific" dir="rtl" lang="ar">رضي الله عنه</span> met zijn miraculeuze kerâma<sup>1</sup> en Ghaws-oel’A’zam <span class="text-arabic-inline honorific" dir="rtl" lang="ar">قدس سره</span> met zijn mystieke kerâma hun aandacht op basis van dit oprechtheidsgeheim op jullie hebben gevestigd. Zij schenken jullie beschermende troost en juichen jullie diensten impliciet toe. Waarlijk, twijfel er geen moment aan dat oprechtheid deze aandacht wekt. Als jullie deze oprechtheid opzettelijk verbreken, dan zullen jullie een klap van hen ontvangen. Gedenk de meedogende klappen uit <span class="text-bold">“De Tiende Flits”</span>.
+Jullie weten dat imam Ali <span class="honorific" dir="rtl" lang="ar">رضي الله عنه</span> met zijn miraculeuze kerâma<sup>1</sup> en Ghaws-oel’A’zam <span class="honorific" dir="rtl" lang="ar">قدس سره</span> met zijn mystieke kerâma hun aandacht op basis van dit oprechtheidsgeheim op jullie hebben gevestigd. Zij schenken jullie beschermende troost en juichen jullie diensten impliciet toe. Waarlijk, twijfel er geen moment aan dat oprechtheid deze aandacht wekt. Als jullie deze oprechtheid opzettelijk verbreken, dan zullen jullie een klap van hen ontvangen. Gedenk de meedogende klappen uit <span class="text-bold">“De Tiende Flits”</span>.
 </p>
 
 <p>
@@ -2820,7 +2820,7 @@ Waarlijk, zoals wereldse langetermijnambities oprechtheid aantasten, schijnheili
 <hr class="hr-footnote" />
 
 <p class="footnote-p">
-<sup>1</sup> Noot van de vertalers: de weg waarop de profeet Ibrahim <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه السلام</span> als drager van de titel: <span class="text-italic">“Vriend van ALLAH”</span> als voorbeeld wordt genomen.
+<sup>1</sup> Noot van de vertalers: de weg waarop de profeet Ibrahim <span class="honorific" dir="rtl" lang="ar">عليه السلام</span> als drager van de titel: <span class="text-italic">“Vriend van ALLAH”</span> als voorbeeld wordt genomen.
 </p>
 
 </div>
