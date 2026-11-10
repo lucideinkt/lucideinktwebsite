@@ -22,9 +22,9 @@ class HerzamelingNederlandsPagesSeeder extends BookPagesSeeder
         // Add page definitions here. Keep it empty for now or add a few sample pages.
         // You can paste the HTML of each page into the 'content' field.
         return [
-        [
-            'page_number' => 5,
-            'content' => '<div class="page" id="5">
+            [
+                'page_number' => 5,
+                'content' => '<div class="page" id="5">
     <p class="text-end page-number">#5</p>
 
     <div class="text-center page-title-chapter delima-font">
@@ -69,11 +69,11 @@ Die de doden tot leven brengt, en Hij bezit Macht over alles.” –Qur’an, 30
     </p>
     </div>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 6,
-            'content' => '<div class="page" id="6">
+            [
+                'page_number' => 6,
+                'content' => '<div class="page" id="6">
     <p class="text-end page-number">#6</p>
 
     <p>
@@ -118,11 +118,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     ogen niets concreets zie, zal ik jou niet geloven.”
     </em></p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 7,
-            'content' => '<div class="page" id="7">
+            [
+                'page_number' => 7,
+                'content' => '<div class="page" id="7">
     <p class="text-end page-number">#7</p>
 
     <p>
@@ -160,11 +160,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
     </div>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 8,
-            'content' => '<div class="page" id="8">
+            [
+                'page_number' => 8,
+                'content' => '<div class="page" id="8">
     <p class="text-end page-number">#8</p>
 
     <p>Zijn vriend antwoordde:</p>
@@ -197,11 +197,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     dwarse opstandelingen zijn weggelegd? Hier worden die vrijwel niet verstrekt...
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 9,
-            'content' => '<div class="page" id="9">
+            [
+                'page_number' => 9,
+                'content' => '<div class="page" id="9">
     <p class="text-end page-number">#9</p>
 
     <p class="text-center text-center-constrained"><strong>
@@ -239,11 +239,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Dit geeft aan dat hun vereffening aan de Ultieme Berechting wordt overgelaten!
     </strong></p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 10,
-            'content' => '<div class="page" id="10">
+            [
+                'page_number' => 10,
+                'content' => '<div class="page" id="10">
     <p class="text-end page-number">#10</p>
 
     <p class="text-center small-title"><strong>HET DERDE AANZICHT</strong></p>
@@ -283,11 +283,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     verborgen pracht.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 11,
-            'content' => '<div class="page" id="11">
+            [
+                'page_number' => 11,
+                'content' => '<div class="page" id="11">
     <p class="text-end page-number">#11</p>
 
     <p style="text-indent: 0">
@@ -315,11 +315,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     en die schoonheid, waarna ze opeens onverzadigd vertrekken.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 12,
-            'content' => '<div class="page" id="12">
+            [
+                'page_number' => 12,
+                'content' => '<div class="page" id="12">
     <p class="text-end page-number">#12</p>
 
     <p class="text-center text-center-constrained"><strong>
@@ -358,11 +358,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Folter ons niet met eindigheid en afstandelijkheid.
     </em></strong></p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 13,
-            'content' => '<div class="page" id="13">
+            [
+                'page_number' => 13,
+                'content' => '<div class="page" id="13">
     <p class="text-end page-number">#13</p>
 
     <p style="text-indent: 0"><strong><em>
@@ -432,11 +432,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </div>
 
     </div>'
-        ],
-        [
-            'page_number' => 14,
+            ],
+            [
+                'page_number' => 14,
 
-            'content' => '<div class="page empty-page id="14">
+                'content' => '<div class="page empty-page id="14">
 
     <p class="text-end page-number">#14</p>
 
@@ -449,11 +449,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </div>
 
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 15,
-            'content' => '<div class="page" id="15">
+            [
+                'page_number' => 15,
+                'content' => '<div class="page" id="15">
     <p class="text-end page-number">#15</p>
 
     <p>
@@ -481,11 +481,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
 
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 16,
-            'content' => '<div class="page" id="16">
+            [
+                'page_number' => 16,
+                'content' => '<div class="page" id="16">
     <p class="text-end page-number">#16</p>
 
     <p style="text-indent: 0">
@@ -524,11 +524,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
     </div>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 17,
-            'content' => '<div class="page" id="17">
+            [
+                'page_number' => 17,
+                'content' => '<div class="page" id="17">
     <p class="text-end page-number">#17</p>
 
     <p style="text-indent: 0">
@@ -563,11 +563,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     verbeelding staart, waar zijn waan als een vuurvlieg zijn angstwekkende pad tracht te verlichten met het schijnsel dat van zijn hoofd afschemert.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 18,
-            'content' => '<div class="page" id="18">
+            [
+                'page_number' => 18,
+                'content' => '<div class="page" id="18">
     <p class="text-end page-number">#18</p>
 
     <p style="text-indent: 0">
@@ -608,11 +608,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
     </div>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 19,
-            'content' => '<div class="page" id="19">
+            [
+                'page_number' => 19,
+                'content' => '<div class="page" id="19">
     <p class="text-end page-number">#19</p>
 
     <p>
@@ -654,11 +654,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
     </div>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 20,
-            'content' => '<div class="page" id="20">
+            [
+                'page_number' => 20,
+                'content' => '<div class="page" id="20">
     <p class="text-end page-number">#20</p>
 
     <p style="text-indent: 0">
@@ -693,11 +693,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     samenkomst wordt immers grofweg een tienjarige investering gedaan. Deze huidige toestanden op zichzelf zijn dus niet het einddoel; ze dienen veeleer als een representatie, een simulatie van iets hogers.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 21,
-            'content' => '<div class="page" id="21">
+            [
+                'page_number' => 21,
+                'content' => '<div class="page" id="21">
     <p class="text-end page-number">#21</p>
 
     <p style="text-indent: 0;">
@@ -732,11 +732,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Maar als je aandachtig observeert, dan zul je in al die instabiele verblijven, tijdelijke terreinen en vergankelijke galerijen bemerken wat voor ordeningen van een zonneklare wijsheid, wat voor tekenen van een evidente bijstand, wat voor verschijnselen van een verheven rechtvaardigheid en wat voor vruchten van een omvangrijke genade er te zien zijn.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 22,
-            'content' => '<div class="page" id="22">
+            [
+                'page_number' => 22,
+                'content' => '<div class="page" id="22">
     <p class="text-end page-number">#22</p>
 
     <p style="text-indent: 0">
@@ -751,11 +751,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Bovendien moeten wij aannemen dat de regisseur van deze wijze beschikkingen, weldadige activiteiten en genaderijke gunsten – <em>(God verhoede)</em> – een roekeloze spelleider en een wrede tiran is. Dit zou betekenen dat werkelijkheden tot hun tegenpolen verworden.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 23,
-            'content' => '<div class="page" id="23">
+            [
+                'page_number' => 23,
+                'content' => '<div class="page" id="23">
     <p class="text-end page-number">#23</p>
 
     <p style="text-indent: 0">
@@ -780,11 +780,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Kijk, deze <strong>rang</strong> kan niet voor enkele dagen verleend zijn, maar voor een zeer ruime tijdspanne. Hier staat: <em>"U zult dit loon uit de majesteitelijke schatkist op \'die en die\' datum ontvangen."</em> Echter, die datum ligt ver in de toekomst en valt pas nadat dit terrein wordt afgesloten. Tevens is deze <strong>taak</strong> niet afgestemd op dit tijdelijke oord; die is veeleer gegeven om een blijvende gelukzaligheid in de nabijheid van de vorst te verwerven.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 24,
-            'content' => '<div class="page" id="24">
+            [
+                'page_number' => 24,
+                'content' => '<div class="page" id="24">
     <p class="text-end page-number">#24</p>
 
     <p style="text-indent: 0">
@@ -803,11 +803,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Begrijp dus, o vriend, dit tijdelijke land dient als een akker. Het is een oefenterrein; een handelsplaats. Op den duur zullen ongetwijfeld een Ultieme Berechting en een Sublieme Gelukzaligheid volgen. Wanneer je dit ontkent, dan zul je alle identiteitsbewijzen, handboeken, uitrustingen en gedragscodes van al deze officieren, en daarenboven alle ordeningen in dit land moeten ontkennen. Zelfs de regering en het staand beleid zul je moeten loochenen. Op dat moment kun jij noch mens noch een bewust wezen worden genoemd; je zult dan verstandelozer dan de sofisten zijn.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 25,
-            'content' => '<div class="page" id="25">
+            [
+                'page_number' => 25,
+                'content' => '<div class="page" id="25">
     <p class="text-end page-number">#25</p>
 
     <p>
@@ -830,11 +830,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Zoals je ziet, is het ultieme decreet voorzien van zo\'n miraculeus zegel, dat het op geen enkele wijze kan worden vervalst. Afgezien van dwazen zoals jij, weet iedereen dat het decreet toebehoort aan de vorst.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 26,
-            'content' => '<div class="page" id="26">
+            [
+                'page_number' => 26,
+                'content' => '<div class="page" id="26">
     <p class="text-end page-number">#26</p>
 
     <p>
@@ -862,11 +862,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="footnote-p"><sup>8</sup> <strong>"Alle lof zij ALLAH."</strong></p>
     </div>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 27,
-            'content' => '<div class="page" id="27">
+            [
+                'page_number' => 27,
+                'content' => '<div class="page" id="27">
     <p class="text-end page-number">#27</p>
 
     <div class="text-center page-title-chapter delima-font">
@@ -911,11 +911,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Wanneer we spreken over een boek, waarin een ander boek in elk woord met een micro-pen is vastgelegd, en een gestructureerde ode in elke letter in minuscuul schrift is geschreven, dan is het absoluut ondenkbaar dat een dergelijk boek geen schrijver heeft.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 28,
-            'content' => '<div class="page" id="28">
+            [
+                'page_number' => 28,
+                'content' => '<div class="page" id="28">
     <p class="text-end page-number">#28</p>
 
     <p>
@@ -934,11 +934,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Vooral als in dat paleis ware structuren om het uur zo vloeiend als beelden op een bioscoopdoek materialiseren, en met perfecte orde zo moeiteloos als het wisselen van kleren worden vervangen, terwijl daarenboven in elk verschijnend beeld verscheidene microstructuren worden gecreëerd.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 29,
-            'content' => '<div class="page" id="29">
+            [
+                'page_number' => 29,
+                'content' => '<div class="page" id="29">
     <p class="text-end page-number">#29</p>
 
     <p>
@@ -953,11 +953,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Bovendien kun je nagaan wat voor dwaze waanzin het zou zijn om op een wolkeloze middag de zon te ontkennen, terwijl haar schittering en reflectie op alle luchtbellen op het zeeoppervlak, op alle glimmende objecten op het aardoppervlak en op alle kristallen in sneeuwvlokken te zien zijn en waargenomen worden. Want zodra één enkele zon ontkend en niet aanvaard wordt, is het noodzakelijk om evenveel wezenlijke en zelfstandige zonnetjes te aanvaarden als het bestaande aantal waterdruppels, luchtbellen en reflecterende deeltjes. Er moet dan verondersteld worden dat ieder atoom, dat slechts ruimte heeft voor één atoompje, de waarheid van een geweldige zon omvat.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 30,
-            'content' => '<div class="page" id="30">
+            [
+                'page_number' => 30,
+                'content' => '<div class="page" id="30">
     <p class="text-end page-number">#30</p>
 
     <p>
@@ -976,11 +976,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Waarlijk, uit één iets alles voortbrengen en uit alles één iets vervaardigen, is een daad die uitsluitend is voorbehouden aan de Al-Schepper.
     </p>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 31,
-            'content' => '<div class="page" id="31">
+            [
+                'page_number' => 31,
+                'content' => '<div class="page" id="31">
     <p class="text-end page-number">#31</p>
 
     <p style="text-indent: 0">
@@ -990,7 +990,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="text-center text-red"><strong>De Tweede Aanwijzing</strong></p>
 
     <p>
-    In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <em>"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</em> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>.
+    In het verhaal kwam een nobele adjudant voor waarover werd gezegd: <em>"Iedereen die niet blind is, kan bij het zien van zijn emblemen ontwaren dat die eminentie op bevel van de majesteit handelt; hij is de uitverkoren onderdaan van de vorst."</em> Voorwaar, die nobele adjudant is de Nobelste Godsbode <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>.
     </p>
 
     <p>
@@ -1015,11 +1015,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p class="footnote-p"><sup>1</sup> <strong>"En er is niets, of het verheerlijkt Hem met lof."</strong></p>
     </div>
     </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 32,
-            'content' => '<div class="page" id="32">
+            [
+                'page_number' => 32,
+                'content' => '<div class="page" id="32">
     <p class="text-end page-number">#32</p>
 
     <p style="text-indent: 0">
@@ -1049,11 +1049,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     fijnzinnige kunstwerken, maar vervolgens geen geleerde gids aanstelt om verlichting te verschaffen?
     </p>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 33,
-            'content' => '<div class="page" id="33">
+            [
+                'page_number' => 33,
+                'content' => '<div class="page" id="33">
     <p class="text-end page-number">#33</p>
 
     <p>
@@ -1077,18 +1077,18 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     <p>
     Zo zijn er nog vele profetische taken die elk op zichzelf absoluut aantonen dat Goddelijkheid niet zonder
     profeetschap kan… In het licht van de voornoemde eigenschappen en taken rest nu de vraag of er ooit iemand
-    is verschenen die bekwamer en rijker was dan Mohammed de Arabier <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>? Heeft de tijd ooit iemand
+    is verschenen die bekwamer en rijker was dan Mohammed de Arabier <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>? Heeft de tijd ooit iemand
     getoond die de rang van profeetschap en de taak van verkondiging waardiger was dan hij? Nooit
     en te nimmer! Hij is de meester van alle profeten, de imam van alle gezanten, de mentor van alle gezuiverden,
     de nabijste onder Gods nabije dienaren, de volmaaktste van alle creaties en de sultan van alle geestelijke
     gidsen.
     </p>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 34,
-            'content' => '<div class="page" id="34">
+            [
+                'page_number' => 34,
+                'content' => '<div class="page" id="34">
     <p class="text-end page-number">#34</p>
 
     <p>
@@ -1131,11 +1131,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     is tegenover het hele universum. Daarnaast leidt de ontkenning die inherent is aan ongeloof tot de verwerping van alle Heilige Goddelijke Namen waarvan de reflecties en verwevingen bij alle wezens te zien zijn.
     </p>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 35,
-            'content' => '<div class="page" id="35">
+            [
+                'page_number' => 35,
+                'content' => '<div class="page" id="35">
     <p class="text-end page-number">#35</p>
 
     <p style="text-indent: 0">
@@ -1166,11 +1166,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     die poorten worden ontgrendeld. We zullen met de kortste en eenvoudigste beginnen…
     </p>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 36,
-            'content' => '<div class="page" id="36">
+            [
+                'page_number' => 36,
+                'content' => '<div class="page" id="36">
     <p class="text-end page-number">#36</p>
 
     <div class="text-center text-center-constrained">
@@ -1200,11 +1200,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     beloning naar Zijn Generositeit en Genade, noch straf conform Zijn Statigheid en Digniteit zal toekennen?
     </p>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 37,
-            'content' => '<div class="page" id="37">
+            [
+                'page_number' => 37,
+                'content' => '<div class="page" id="37">
     <p class="text-end page-number">#37</p>
 
     <p>
@@ -1238,11 +1238,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
     </div>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 38,
-            'content' => '<div class="page" id="38">
+            [
+                'page_number' => 38,
+                'content' => '<div class="page" id="38">
     <p class="text-end page-number">#38</p>
 
     <p>
@@ -1280,11 +1280,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     </p>
     </div>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 39,
-            'content' => '<div class="page" id="39">
+            [
+                'page_number' => 39,
+                'content' => '<div class="page" id="39">
     <p class="text-end page-number">#39</p>
 
     <p style="text-indent: 0">
@@ -1315,11 +1315,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     voor een klap van Glorie en Digniteit.
     </p>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 40,
-            'content' => '<div class="page" id="40">
+            [
+                'page_number' => 40,
+                'content' => '<div class="page" id="40">
     <p class="text-end page-number">#40</p>
 
     <p>
@@ -1340,11 +1340,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
     Genadige hen geen eeuwige gelukzaligheid in een oord van beloning zal schenken?
     </p>
     </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 41,
-            'content' => '<div class="page" id="41">
+            [
+                'page_number' => 41,
+                'content' => '<div class="page" id="41">
  <p class="text-end page-number">#41</p>
 
  <div class="text-center text-center-constrained">
@@ -1382,11 +1382,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  </p>
  </div>
  </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 42,
-            'content' => '<div class="page" id="42">
+            [
+                'page_number' => 42,
+                'content' => '<div class="page" id="42">
  <p class="text-end page-number">#42</p>
 
  <p>
@@ -1422,11 +1422,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  klein zaadje worden vastgelegd, wijzen erop dat een Pen van Eindeloze Wijsheid actief is.
  </p>
  </div>',
-        ],
+            ],
 
-        [
-            'page_number' => 43,
-            'content' => '<div class="page" id="43"> <p class="text-end page-number">#43</p>
+            [
+                'page_number' => 43,
+                'content' => '<div class="page" id="43"> <p class="text-end page-number">#43</p>
 <p>
  Ook de aanwezigheid van een uiterst subliem kunstenaarschap in de schepping van alle wezens toont
  aan dat alles het ontwerp is van een Oneindig Wijze Kunstenaar. Waarlijk, de wijze waarop de samenvatting
@@ -1453,11 +1453,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 44,
-            'content' => '<div class="page" id="44"> <p class="text-end page-number">#44</p>
+            [
+                'page_number' => 44,
+                'content' => '<div class="page" id="44"> <p class="text-end page-number">#44</p>
 <p>
  Voorwaar, is het ooit voor mogelijk te houden dat zo’n Rechtvaardigheid en Wijsheid, Die zelfs aan
  de kleinste behoefte van het nietigste schepsel tegemoetkomen, de ultieme behoefte van het aanzienlijkste
@@ -1478,11 +1478,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 45,
-            'content' => '<div class="page" id="45"> <p class="text-end page-number">#45</p>
+            [
+                'page_number' => 45,
+                'content' => '<div class="page" id="45"> <p class="text-end page-number">#45</p>
 
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Vierde Waarheid</strong></p>
@@ -1515,11 +1515,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 46,
-            'content' => '<div class="page" id="46"> <p class="text-end page-number">#46</p>
+            [
+                'page_number' => 46,
+                'content' => '<div class="page" id="46"> <p class="text-end page-number">#46</p>
 <p style="text-indent: 0;">
  Grenzeloze vrijgevigheid
  en gulheid willen immers eindeloos begiftigen en begunstigen. Eindeloos begiftigen en begunstigen
@@ -1552,11 +1552,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  </p>
 </div>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 47,
-            'content' => '<div class="page" id="47"> <p class="text-end page-number">#47</p>
+            [
+                'page_number' => 47,
+                'content' => '<div class="page" id="47"> <p class="text-end page-number">#47</p>
 
 <p style="text-indent: 0">
  Verborgen, feilloze Volmaaktheden verlangen immers naar onthulling in het bijzijn van toeschouwers die ze met uitingen van
@@ -1590,11 +1590,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 48,
-            'content' => '<div class="page" id="48"> <p class="text-end page-number">#48</p>
+            [
+                'page_number' => 48,
+                'content' => '<div class="page" id="48"> <p class="text-end page-number">#48</p>
 
 <p>
  Voorwaar, de Bezitter van een verborgen Schoonheid Die zo verheven en onvergelijkelijk is, zal Zijn Eigen
@@ -1629,11 +1629,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  onbevattelijke, maar ook afkerig van het onbereikbare.
 </p>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 49,
-            'content' => '<div class="page" id="49"> <p class="text-end page-number">#49</p>
+            [
+                'page_number' => 49,
+                'content' => '<div class="page" id="49"> <p class="text-end page-number">#49</p>
 <p style="text-indent: 0">
  Hierdoor kan zijn binnenwereld ten opzichte van een Schoonheid Die eeuwige liefde, eindeloze passie en grenzeloze bewondering verdient, vervuld zijn van vijandschap,
  wrok en ontkenning. Voorwaar, het geheim achter de vijandschap van een kafir jegens ALLAH kan
@@ -1665,15 +1665,15 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 50,
-            'content' => '<div class="page" id="50"> <p class="text-end page-number">#50</p>
+            [
+                'page_number' => 50,
+                'content' => '<div class="page" id="50"> <p class="text-end page-number">#50</p>
 
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Vijfde Waarheid</strong></p>
- <p class="text-center"><strong><em>De poort van Mededogen en het Mohammedaanse dienaarschap</em></strong> <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong><em>; Een glimp van de Namen: “de Antwoorder en de Genadige”</em></strong></p>
+ <p class="text-center"><strong><em>De poort van Mededogen en het Mohammedaanse dienaarschap</em></strong> <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong><em>; Een glimp van de Namen: “de Antwoorder en de Genadige”</em></strong></p>
  <p class="text-center">
  <span style="margin-top: 0" class="text-arabic" dir="rtl" lang="ar">اَلْمُجٖيبُ وَالرَّحٖيمُ</span>
  </p>
@@ -1708,11 +1708,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 51,
-            'content' => '<div class="page" id="51"> <p class="text-end page-number">#51</p>
+            [
+                'page_number' => 51,
+                'content' => '<div class="page" id="51"> <p class="text-end page-number">#51</p>
 
 <p>
  Waarlijk, de zichtbare gratie en geriefelijkheid in bijvoorbeeld de wijze waarop zwakke en jonge dieren in
@@ -1746,11 +1746,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  </p>
 </div>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 52,
-            'content' => '<div class="page" id="52"> <p class="text-end page-number">#52</p>
+            [
+                'page_number' => 52,
+                'content' => '<div class="page" id="52"> <p class="text-end page-number">#52</p>
 
 <p>
  <strong>Kijk nu mee!</strong> Terwijl die eminentie om eeuwige gelukzaligheid bidt, staat hij in zo’n sublieme salaat en in
@@ -1769,7 +1769,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p">
- <sup>2</sup> Waarlijk, vanaf het moment waarop de Ahmedaanse smeekbede <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> werd
+ <sup>2</sup> Waarlijk, vanaf het moment waarop de Ahmedaanse smeekbede <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> werd
  verricht tot aan het heden gelden alle salaats en zegenwensen van heel zijn oemma als een ononderbroken en gezamenlijk
  uitgesproken <em>“âmîn”</em> op zijn bede. Zelfs elke zegen die hem wordt toegewenst, geldt als een afzonderlijke <em>“âmîn”</em> op zijn bede.
  De salaat en vrede die tijdens elk gebed door ieder lid van zijn oemma over hem worden afgebeden, en de bede die de volgers
@@ -1777,7 +1777,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  bede om eeuwige gelukzaligheid.
  </p>
  <p class="footnote-p">
- Voorwaar, om oneindigheid en eeuwige gelukzaligheid te bereiken – <em>waar ieder mens in de natuurlijke taal van zijn menselijke aard met al zijn kracht naar verlangt</em> – bidt de profeet Ahmed <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> namens de
+ Voorwaar, om oneindigheid en eeuwige gelukzaligheid te bereiken – <em>waar ieder mens in de natuurlijke taal van zijn menselijke aard met al zijn kracht naar verlangt</em> – bidt de profeet Ahmed <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> namens de
  gehele mensheid, waarop de verlichte mensen achter hem <em>“âmîn”</em> zeggen.
  </p>
  <p class="footnote-p"><strong>
@@ -1786,11 +1786,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 53,
-            'content' => '<div class="page" id="53"> <p class="text-end page-number">#53</p>
+            [
+                'page_number' => 53,
+                'content' => '<div class="page" id="53"> <p class="text-end page-number">#53</p>
 
 <p>
  Kijk! De behoefte aan eeuwigheid waarvoor hij bidt is zo universeel, dat niet alleen de aardbewoners, maar
@@ -1832,11 +1832,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  </p>
 </div>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 54,
-            'content' => '<div class="page" id="54"> <p class="text-end page-number">#54</p>
+            [
+                'page_number' => 54,
+                'content' => '<div class="page" id="54"> <p class="text-end page-number">#54</p>
 
 <p>
  Kijk! Degene tot Wie hij bidt om gelukzaligheid en eeuwigheid is tevens zo Alhorend, Genereus en Almachtig,
@@ -1856,7 +1856,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
  </p>
 
 <p class="footnote-p">
- Waarlijk, dankzij de Lichternis van de Ahmedaanse Persoonlijkheid <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>
+ Waarlijk, dankzij de Lichternis van de Ahmedaanse Persoonlijkheid <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>
  is de gestalte van de wereld veranderd. De ware aard van de mens en het hele universum is dankzij dat Licht
  verschenen; dientengevolge is gebleken dat elke creatie in dit universum een brief is van de Soevereine
  <em>(Samed)</em> waarvan Goddelijke Namen kunnen worden afgelezen; ieder schepsel is een aangestelde functionaris
@@ -1867,9 +1867,9 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 
 <p class="footnote-p">
  Voorwaar, vanwege dit geheim zeggen niet alleen mensen <em>“âmîn”</em> op de beden van de Ahmedaanse Persoonlijkheid
- <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, maar ook het hele bestaan, vanaf de Oppertroon tot aan de aardbodem,
+ <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, maar ook het hele bestaan, vanaf de Oppertroon tot aan de aardbodem,
  de geosfeer tot aan de Plejaden, toont een trotse verbondenheid met zijn Lichternis. De ziel van het Ahmedaanse
- dienaarschap <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> is in feite een bede. In wezen zijn alle bewegingen en
+ dienaarschap <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> is in feite een bede. In wezen zijn alle bewegingen en
  diensten van het heelal een vorm van bede.
 </p>
 
@@ -1880,11 +1880,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 55,
-            'content' => '<div class="page" id="55"> <p class="text-end page-number">#55</p>
+            [
+                'page_number' => 55,
+                'content' => '<div class="page" id="55"> <p class="text-end page-number">#55</p>
 
 <p>
  Hij begenadigt en reageert met zo’n Wijsheid, Alziendheid en Genadigheid, dat het een einde maakt
@@ -1899,7 +1899,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 <p>
  Terwijl de glorie der mensheid en tijdeloze uitblinker van het bestaan alle adamskinderen op aarde achter
  zich verzamelt en zijn handpalmen tot de Oppertroon richt om te bidden binnen de waarheidskring van het
- Ahmedaanse dienaarschap <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, waarin de essentie van het menselijke
+ Ahmedaanse dienaarschap <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>, waarin de essentie van het menselijke
  dienaarschap schuilt, rijst de vraag waar deze trots van het universum om smeekt. Laten wij luisteren...
 </p>
 
@@ -1925,11 +1925,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 56,
-            'content' => '<div class="page" id="56"> <p class="text-end page-number">#56</p>
+            [
+                'page_number' => 56,
+                'content' => '<div class="page" id="56"> <p class="text-end page-number">#56</p>
 
 <p>
  Waarlijk, voor de Absolute Almacht Die gedurende onze lente het aardoppervlak in een verzamelplaats
@@ -1970,11 +1970,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 57,
-            'content' => '<div class="page" id="57"> <p class="text-end page-number">#57</p>
+            [
+                'page_number' => 57,
+                'content' => '<div class="page" id="57"> <p class="text-end page-number">#57</p>
 
 <p>
  Met andere woorden, zou de Schepper de simpelste en onbeduidendste wensen en stemmen aandachtig
@@ -1986,7 +1986,7 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 <p class="text-center"><strong>Conclusie:</strong></p>
 
 <p class="text-center text-center-constrained"><strong>
- Zoals de Nobelste Godsbode <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> de poort tot de wereld heeft geopend met zijn
+ Zoals de Nobelste Godsbode <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> de poort tot de wereld heeft geopend met zijn
  profeetschap, zo ontgrendelt hij de poort tot het hiernamaals met zijn dienaarschap.
 </strong></p>
 
@@ -2014,11 +2014,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 58,
-            'content' => '<div class="page" id="58"> <p class="text-end page-number">#58</p>
+            [
+                'page_number' => 58,
+                'content' => '<div class="page" id="58"> <p class="text-end page-number">#58</p>
 <p class="text-center-constrained">
  <span class="text-arabic delima-font" dir="rtl" lang="ar">
 اَللّٰهُمَّ صَلِّ وَ سَلِّمْ عَلٰى عَبْدِكَ وَ رَسُولِكَ ذٰلِكَ الْحَبٖيبِ الَّذٖى هُوَ سَيِّدُ الْكَوْنَيْنِ وَ فَخْرُ الْعَالَمَيْنِ وَ حَيَاتُ الدَّارَيْنِ وَ وَسٖيلَةُ السَّعَادَتَيْنِ وَ ذُو الْجَنَاحَيْنِ وَ رَسُولُ الثَّقَلَيْنِ وَ عَلٰى اٰلِهٖ وَ صَحْبِهٖ اَجْمَعٖينَ وَ عَلٰى اِخْوَانِهٖ مِنَ النَّبِيّٖينَ وَ الْمُرْسَلٖينَ اٰمٖينَ
@@ -2037,11 +2037,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 59,
-            'content' => '<div class="page" id="59"> <p class="text-end page-number">#59</p>
+            [
+                'page_number' => 59,
+                'content' => '<div class="page" id="59"> <p class="text-end page-number">#59</p>
 
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Zesde Waarheid</strong></p>
@@ -2074,11 +2074,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 60,
-            'content' => '<div class="page" id="60"> <p class="text-end page-number">#60</p>
+            [
+                'page_number' => 60,
+                'content' => '<div class="page" id="60"> <p class="text-end page-number">#60</p>
 
 <p>
  Overigens verblijven alle onderdanen tijdelijk op dit beproevingsterrein om hun dienstbaarheid op de proef
@@ -2109,11 +2109,11 @@ uitleg over de herzameling <em>(Hashr)</em> en het hiernamaals wenst, kijk dan s
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 61,
-            'content' => '<div class="page" id="61"> <p class="text-end page-number">#61</p>
+            [
+                'page_number' => 61,
+                'content' => '<div class="page" id="61"> <p class="text-end page-number">#61</p>
 <p>
 Stel je voor dat jij tijdens een reis een herberg langs de weg ontwaart die een hoogachtbaar individu voor
 zijn bezoekers heeft opgebouwd. Om zijn gasten een nacht ter lering en vermaak te bieden, besteedt hij
@@ -2142,11 +2142,11 @@ Evenzo, wanneer je de toestand van dit aardse gastenverblijf zonder dronkenschap
 dan zul je de navolgende <strong>“Negen Kernpunten”</strong> ontwaren:
 </p>
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 62,
-            'content' => '<div class="page" id="62"> <p class="text-end page-number">#62</p>
+            [
+                'page_number' => 62,
+                'content' => '<div class="page" id="62"> <p class="text-end page-number">#62</p>
 
 <p><strong>Het Eerste Kernpunt</strong></p>
 
@@ -2186,11 +2186,11 @@ paradijselijke gunsten die de Barmhartige Genadige voor Zijn geliefde dienaren h
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 63,
-            'content' => '<div class="page" id="63"> <p class="text-end page-number">#63</p>
+            [
+                'page_number' => 63,
+                'content' => '<div class="page" id="63"> <p class="text-end page-number">#63</p>
 
 <p><strong>Het vierde fundament</strong></p>
 
@@ -2226,11 +2226,11 @@ dat naar een dergelijk schepsel kijkt, is het dus een leerrijke bron van bezinni
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 64,
-            'content' => '<div class="page" id="64"> <p class="text-end page-number">#64</p>
+            [
+                'page_number' => 64,
+                'content' => '<div class="page" id="64"> <p class="text-end page-number">#64</p>
 
 <div class="page-footnote">
 <hr class="hr-footnote" />
@@ -2262,11 +2262,11 @@ met haar majesteit verenigd. Aldus kan men stellen dat er in dat leger geen spra
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 65,
-            'content' => '<div class="page" id="65"> <p class="text-end page-number">#65</p>
+            [
+                'page_number' => 65,
+                'content' => '<div class="page" id="65"> <p class="text-end page-number">#65</p>
 
 <p><strong>Het Vijfde Fundament</strong></p>
 
@@ -2299,11 +2299,11 @@ laat ze haar fysieke gedaante in de geheugens van al haar toeschouwers en haar s
 </p>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 66,
-            'content' => '<div class="page" id="66"> <p class="text-end page-number">#66</p>
+            [
+                'page_number' => 66,
+                'content' => '<div class="page" id="66"> <p class="text-end page-number">#66</p>
 
 <p style="text-indent: 0">
 Elk geheugen en elk zaad zijn als
@@ -2344,11 +2344,11 @@ geen vernietiging is, maar een vrijstelling na de voltooiing van hun taken.<sup>
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 67,
-            'content' => '<div class="page" id="67"> <p class="text-end page-number">#67</p>
+            [
+                'page_number' => 67,
+                'content' => '<div class="page" id="67"> <p class="text-end page-number">#67</p>
 
 <p style="text-indent: 0">
 Daarnaast is het een ontruiming om ruimte vrij te maken voor de schepselen die de volgende lente zullen verschijnen; het is een voorbereiding
@@ -2385,11 +2385,11 @@ boom waarvan de vruchten naar de bazaar van het hiernamaals worden gezonden.
 </p>
 </div>
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 68,
-            'content' => '<div class="page" id="68"> <p class="text-end page-number">#68</p>
+            [
+                'page_number' => 68,
+                'content' => '<div class="page" id="68"> <p class="text-end page-number">#68</p>
 
 <div class="text-center text-center-constrained">
 <p class="text-center small-title"><strong>De Zevende Waarheid</strong></p>
@@ -2419,11 +2419,11 @@ terwijl het geheel van deze veranderingen eveneens afgestemd is op een ordelijk 
 </p>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 69,
-            'content' => '<div class="page" id="69"> <p class="text-end page-number">#69</p>
+            [
+                'page_number' => 69,
+                'content' => '<div class="page" id="69"> <p class="text-end page-number">#69</p>
 
 <p>
 Wij zien immers dat aan het leven van elk wezen een einde wordt gebracht nadat het zijn taak heeft voltooid,
@@ -2459,11 +2459,11 @@ een waakzaam Oog worden bewaard en zorgvuldig worden vastgelegd? Dit is absoluut
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 70,
-            'content' => '<div class="page" id="70"> <p class="text-end page-number">#70</p>
+            [
+                'page_number' => 70,
+                'content' => '<div class="page" id="70"> <p class="text-end page-number">#70</p>
 
 <p>
 Waarlijk, blijkens deze manifestatie van Bewaring wijdt de Eigenaar van heel dit bestaan veel zorg aan
@@ -2494,11 +2494,11 @@ voorttrekken naar de herzamelplaats en de Ultieme Berechting ondergaan? <strong>
 </p>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 71,
-            'content' => '<div class="page" id="71"> <p class="text-end page-number">#71</p>
+            [
+                'page_number' => 71,
+                'content' => '<div class="page" id="71"> <p class="text-end page-number">#71</p>
 
 <p>
 En dat de Heer bij machte is om alle toekomstige mogelijkheden<sup>2</sup> te realiseren, wordt bevestigd door alle vroegere gebeurtenissen die zich als mirakelen van Macht hebben voltrokken, en door de winter en de
@@ -2533,11 +2533,11 @@ zodanig heeft gecreëerd, tegenover niets machteloos staat.&rarr;
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 72,
-            'content' => '<div class="page" id="72"> <p class="text-end page-number">#72</p>
+            [
+                'page_number' => 72,
+                'content' => '<div class="page" id="72"> <p class="text-end page-number">#72</p>
 
 <p style="text-indent: 0">
 Hoe denkt de mens zich dan te kunnen onttrekken aan het bestaan om aan zo’n Ontzaglijke Almacht te
@@ -2571,11 +2571,11 @@ van één wezen zo lastig zijn als de schepping van alle wezens; er zullen onove
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 73,
-            'content' => '<div class="page" id="73"> <p class="text-end page-number">#73</p>
+            [
+                'page_number' => 73,
+                'content' => '<div class="page" id="73"> <p class="text-end page-number">#73</p>
 
 <div class="text-center text-center-constrained">
 <p class="text-center small-title"><strong>De Achtste Waarheid</strong></p>
@@ -2614,11 +2614,11 @@ O loochenaar! Besef jij wel wat voor dwaze misdaad jij met je ongeloof en ontken
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 74,
-            'content' => '<div class="page" id="74"> <p class="text-end page-number">#74</p>
+            [
+                'page_number' => 74,
+                'content' => '<div class="page" id="74"> <p class="text-end page-number">#74</p>
 
 <p>
 Je beaamt jouw valse waan, jouw ijlende verstand en jouw bedrieglijke nefs. Ondertussen verloochen jij
@@ -2649,11 +2649,11 @@ een sublieme gelukzaligheid schenken.
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 75,
-            'content' => '<div class="page" id="75"> <p class="text-end page-number">#75</p>
+            [
+                'page_number' => 75,
+                'content' => '<div class="page" id="75"> <p class="text-end page-number">#75</p>
 
 <p>
 Is het ooit voor mogelijk te houden dat Degene Die de grote, dode en dorre aarde tot leven wekt, en Die
@@ -2681,11 +2681,11 @@ en het veld van de herrijzenis tot stand.
 </p>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 76,
-            'content' => '<div class="page" id="76"> <p class="text-end page-number">#76</p>
+            [
+                'page_number' => 76,
+                'content' => '<div class="page" id="76"> <p class="text-end page-number">#76</p>
 
 <p>
 Zo zien wij bijvoorbeeld dat Hij tijdens de voorjaarse
@@ -2731,11 +2731,11 @@ ogen met één sein bergen verzet, continenten herschikt
 en zeeën in land verandert.
 </p>
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 77,
-            'content' => '<div class="page" id="77"> <p class="text-end page-number">#77</p>
+            [
+                'page_number' => 77,
+                'content' => '<div class="page" id="77"> <p class="text-end page-number">#77</p>
 
 <p style="text-indent: 0">
 Vervolgens zie je dat een groot rotsblok in een vallei is gerold, waardoor de weg
@@ -2783,11 +2783,11 @@ stipje vestigt en bewaart, mag er toch geen vraag oprijzen als: <em>“Kan Hij d
 </p>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 78,
-            'content' => '<div class="page" id="78"> <p class="text-end page-number">#78</p>
+            [
+                'page_number' => 78,
+                'content' => '<div class="page" id="78"> <p class="text-end page-number">#78</p>
 
 <p style="text-indent: 0">
 En als het gaat om de Almachtige Entiteit, Die de aardbol
@@ -2835,11 +2835,11 @@ acht, dan besef jij ook hoe absurd dat is.
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 79,
-            'content' => '<div class="page" id="79"> <p class="text-end page-number">#79</p>
+            [
+                'page_number' => 79,
+                'content' => '<div class="page" id="79"> <p class="text-end page-number">#79</p>
 
 <p>
 Kijk naar wat het Ultieme Decreet zegt over de waarheid in kwestie:
@@ -2889,11 +2889,11 @@ Die de doden tot leven brengt, en Hij bezit Macht over alles.” <em>– Qur’a
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 80,
-            'content' => '<div class="page" id="80"> <p class="text-end page-number">#80</p>
+            [
+                'page_number' => 80,
+                'content' => '<div class="page" id="80"> <p class="text-end page-number">#80</p>
 
 <p style="text-indent: 0">
 En dat Hij ons daarnaartoe zal
@@ -2943,11 +2943,11 @@ uiteindelijk tot de onvergeeflijkheid van ongeloof.
 </div>
 
 </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 81,
-            'content' => '<div class="page" id="81"> <p class="text-end page-number">#81</p>
+            [
+                'page_number' => 81,
+                'content' => '<div class="page" id="81"> <p class="text-end page-number">#81</p>
 
 <p>
 Daarnaast is de Absolute Almacht verheven en heilig boven elke vorm van onmacht.
@@ -2986,11 +2986,11 @@ de hel zijn de bewaarplaatsen van de oogst.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 82,
-            'content' => '<div class="page" id="82"> <p class="text-end page-number">#82</p>
+            [
+                'page_number' => 82,
+                'content' => '<div class="page" id="82"> <p class="text-end page-number">#82</p>
 
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Tiende Waarheid</strong></p>
@@ -3029,11 +3029,11 @@ om hem daar voor altijd te vervullen van geluk?
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 83,
-            'content' => '<div class="page" id="83"> <p class="text-end page-number">#83</p>
+            [
+                'page_number' => 83,
+                'content' => '<div class="page" id="83"> <p class="text-end page-number">#83</p>
 
 <p>
 En kan het redelijkerwijs ooit aannemelijk zijn dat
@@ -3074,11 +3074,11 @@ Zijn ware Rechtvaardigheid en wezenlijke Wijsheid
 door zoiets betekenisloos tot stand te brengen?
 </p>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 84,
-            'content' => '<div class="page" id="84"> <p class="text-end page-number">#84</p>
+            [
+                'page_number' => 84,
+                'content' => '<div class="page" id="84"> <p class="text-end page-number">#84</p>
 
 <p>
 En is het ooit voor mogelijk te houden dat Hij elke
@@ -3121,11 +3121,11 @@ en werelden als het aantal verstreken jaren.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 85,
-            'content' => '<div class="page" id="85"> <p class="text-end page-number">#85</p>
+            [
+                'page_number' => 85,
+                'content' => '<div class="page" id="85"> <p class="text-end page-number">#85</p>
 
 <p style="text-indent: 0">
 Hoewel ze in voorkomen en hoedanigheid van elkaar verschillen,
@@ -3169,11 +3169,11 @@ tot uitdrukking te brengen.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 86,
-            'content' => '<div class="page" id="86"> <p class="text-end page-number">#86</p>
+            [
+                'page_number' => 86,
+                'content' => '<div class="page" id="86"> <p class="text-end page-number">#86</p>
 
 <p>
 Als elders ook geen plaats bestaat waar Ze volledig
@@ -3219,11 +3219,11 @@ aan dat er een uiterst verheven Rechtvaardigheid heerst.
  </p>
 </div>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 87,
-            'content' => '<div class="page" id="87"> <p class="text-end page-number">#87</p>
+            [
+                'page_number' => 87,
+                'content' => '<div class="page" id="87"> <p class="text-end page-number">#87</p>
 
 <p style="text-indent: 0">
 Daarnaast moeten wij aannemen dat de Regisseur van de wijze beschikkingen, weldadige activiteiten en genaderijke gunsten die wij in dit universum
@@ -3266,11 +3266,11 @@ zaait hij en wordt hij gezaaid in dit leven; in het hiernamaals
 zal hij de oogst binnenhalen.
 </p>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 88,
-            'content' => '<div class="page" id="88"> <p class="text-end page-number">#88</p>
+            [
+                'page_number' => 88,
+                'content' => '<div class="page" id="88"> <p class="text-end page-number">#88</p>
 
 <p>
 Waarlijk, als je deze creaties aanschouwt op basis
@@ -3318,11 +3318,11 @@ waardoor ze in het moeras van naturalisme zijn verdronken.
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 89,
-            'content' => '<div class="page" id="89"> <p class="text-end page-number">#89</p>
+            [
+                'page_number' => 89,
+                'content' => '<div class="page" id="89"> <p class="text-end page-number">#89</p>
 
 <p>
 Deze toestanden lijken op scenario’s die opgezet en
@@ -3374,11 +3374,11 @@ afwachtend uit naar de komst van de mens.
 </strong></p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 90,
-            'content' => '<div class="page" id="90"> <p class="text-end page-number">#90</p>
+            [
+                'page_number' => 90,
+                'content' => '<div class="page" id="90"> <p class="text-end page-number">#90</p>
 
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Elfde Waarheid</strong></p>
@@ -3423,11 +3423,11 @@ is in de ogen van de waarheid?
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 91,
-            'content' => '<div class="page" id="91"> <p class="text-end page-number">#91</p>
+            [
+                'page_number' => 91,
+                'content' => '<div class="page" id="91"> <p class="text-end page-number">#91</p>
 
 <p>
 En kan het ooit mogelijk zijn dat de Algerechtigde
@@ -3468,11 +3468,11 @@ God verhoede!
 </strong></p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 92,
-            'content' => '<div class="page" id="92"> <p class="text-end page-number">#92</p>
+            [
+                'page_number' => 92,
+                'content' => '<div class="page" id="92"> <p class="text-end page-number">#92</p>
 
 <p>
 <strong>Conclusie:</strong> Toen wij naar het identiteitsbewijs en het
@@ -3513,11 +3513,11 @@ wachtruimte voor zijn hiernamaals.</strong>
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 93,
-            'content' => '<div class="page" id="93"> <p class="text-end page-number">#93</p>
+            [
+                'page_number' => 93,
+                'content' => '<div class="page" id="93"> <p class="text-end page-number">#93</p>
 
 <div class="text-center text-center-constrained">
  <p class="text-center small-title"><strong>De Twaalfde Waarheid</strong></p>
@@ -3549,11 +3549,11 @@ verwoesten niet in staat zal zijn om die waarheid tot wankelen te brengen.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 94,
-            'content' => '<div class="page" id="94"> <p class="text-end page-number">#94</p>
+            [
+                'page_number' => 94,
+                'content' => '<div class="page" id="94"> <p class="text-end page-number">#94</p>
 
 <p style="text-indent: 0">
 Immers, die waarheid wordt door de Alwaarachtige met alle vereisten van Zijn Namen en Eigenschappen gespecificeerd, door de Nobelste Godsbode
@@ -3587,11 +3587,11 @@ duiden op de herzameling.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 95,
-            'content' => '<div class="page" id="95"> <p class="text-end page-number">#95</p>
+            [
+                'page_number' => 95,
+                'content' => '<div class="page" id="95"> <p class="text-end page-number">#95</p>
 
 <p>
 Bijvoorbeeld, zoals de kunstrijke pracht binnen de mooiste compositie van de mens de Kunstenaar laat
@@ -3620,11 +3620,11 @@ houding:
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 96,
-            'content' => '<div class="page" id="96"> <p class="text-end page-number">#96</p>
+            [
+                'page_number' => 96,
+                'content' => '<div class="page" id="96"> <p class="text-end page-number">#96</p>
 
 <div class="text-center page-title-chapter delima-font">
  <h2>Slot</h2>
@@ -3660,11 +3660,11 @@ een reflectie kunnen schenken.
 </div>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 97,
-            'content' => '<div class="page" id="97"> <p class="text-end page-number">#97</p>
+            [
+                'page_number' => 97,
+                'content' => '<div class="page" id="97"> <p class="text-end page-number">#97</p>
 
 <p>
 En volgens het geheim van <strong>“transparantie”</strong> zijn de minuscule pupil van een transparant deeltje en het
@@ -3704,11 +3704,11 @@ oproep kan Hij alle mensen herzamelen als waren zij één mens.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 98,
-            'content' => '<div class="page" id="98"> <p class="text-end page-number">#98</p>
+            [
+                'page_number' => 98,
+                'content' => '<div class="page" id="98"> <p class="text-end page-number">#98</p>
 
 <p><strong><em>
 Bovendien ontstaan de niveaus van sterkte en zwakte door de invloed van hun tegenpolen.
@@ -3734,11 +3734,11 @@ licht als de wederopwekking van één nefs.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 99,
-            'content' => '<div class="page" id="99"> <p class="text-end page-number">#99</p>
+            [
+                'page_number' => 99,
+                'content' => '<div class="page" id="99"> <p class="text-end page-number">#99</p>
 
 <p>
 Wat wij vanaf het begin tot hiertoe hebben verklaard in de symbolische <strong>“Aanzichten”</strong> en de <strong>“Waarheden”</strong>
@@ -3765,11 +3765,11 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 </strong></em></p>
 </div>
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 100,
-            'content' => '<div class="page" id="100">
+            [
+                'page_number' => 100,
+                'content' => '<div class="page" id="100">
  <p class="text-end page-number">#100</p>
 
  <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
@@ -3814,18 +3814,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
  <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 36:78-79</em></p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 101,
-            'content' => '<div class="page" id="101"> <p class="text-end page-number">#101</p>
+            [
+                'page_number' => 101,
+                'content' => '<div class="page" id="101"> <p class="text-end page-number">#101</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 102,
-            'content' => '<div class="page" id="102"> <p class="text-end page-number">#102</p>
+            [
+                'page_number' => 102,
+                'content' => '<div class="page" id="102"> <p class="text-end page-number">#102</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
  يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمْ
@@ -3859,18 +3859,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 22:1-2</em></p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 103,
-            'content' => '<div class="page" id="103"> <p class="text-end page-number">#103</p>
+            [
+                'page_number' => 103,
+                'content' => '<div class="page" id="103"> <p class="text-end page-number">#103</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 104,
-            'content' => '<div class="page" id="104"> <p class="text-end page-number">#104</p>
+            [
+                'page_number' => 104,
+                'content' => '<div class="page" id="104"> <p class="text-end page-number">#104</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
  اَللّٰهُ لَا إِلٰهَ إِلَّا هُوَ
@@ -3906,18 +3906,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 82:13-14</em></p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 105,
-            'content' => '<div class="page" id="105"> <p class="text-end page-number">#105</p>
+            [
+                'page_number' => 105,
+                'content' => '<div class="page" id="105"> <p class="text-end page-number">#105</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 106,
-            'content' => '<div class="page" id="106"> <p class="text-end page-number">#106</p>
+            [
+                'page_number' => 106,
+                'content' => '<div class="page" id="106"> <p class="text-end page-number">#106</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 500px;">
  اِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا ۞
@@ -3953,18 +3953,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 99:1-8</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 107,
-            'content' => '<div class="page" id="107"> <p class="text-end page-number">#107</p>
+            [
+                'page_number' => 107,
+                'content' => '<div class="page" id="107"> <p class="text-end page-number">#107</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 108,
-            'content' => '<div class="page" id="108"> <p class="text-end page-number">#108</p>
+            [
+                'page_number' => 108,
+                'content' => '<div class="page" id="108"> <p class="text-end page-number">#108</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
  اَلْقَارِعَةُ ۞ مَا الْقَارِعَةُ
@@ -3998,18 +3998,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;"><em>– Qur’an, 99:1-8</em></p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 109,
-            'content' => '<div class="page" id="109"> <p class="text-end page-number">#109</p>
+            [
+                'page_number' => 109,
+                'content' => '<div class="page" id="109"> <p class="text-end page-number">#109</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 110,
-            'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
+            [
+                'page_number' => 110,
+                'content' => '<div class="page" id="110"> <p class="text-end page-number">#110</p>
 
 <p class="text-center text-arabic delima-font" dir="rtl" lang="ar" style="margin: 0 auto; max-width: 600px;">
 وَلِلّٰهِ
@@ -4034,18 +4034,18 @@ echter de Qur’an toe. Hij is immers het Woord, en aan Hem is het Woord. Laten 
 <p class="text-center text-italic" style="margin: 18px auto 0 auto; max-width: 500px;">– Qur’an, 16:77</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 111,
-            'content' => '<div class="page" id="111"> <p class="text-end page-number">#111</p>
+            [
+                'page_number' => 111,
+                'content' => '<div class="page" id="111"> <p class="text-end page-number">#111</p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 112,
-            'content' => '<div class="page" id="112"> <p class="text-end page-number">#112</p>
+            [
+                'page_number' => 112,
+                'content' => '<div class="page" id="112"> <p class="text-end page-number">#112</p>
 
 <p>
 Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en laten wij reageren met:
@@ -4059,11 +4059,11 @@ Laten we aldus gehoor geven aan zulke verhelderende Ayaat van de Qur’an, en la
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 113,
-            'content' => '<div class="page" id="113"> <p class="text-end page-number">#113</p>
+            [
+                'page_number' => 113,
+                'content' => '<div class="page" id="113"> <p class="text-end page-number">#113</p>
 
 <p class="text-center text-center-constrained">
  “Ik geloof in <strong>ALLAH</strong>, in Zijn engelen, in Zijn Boeken en
@@ -4116,11 +4116,11 @@ Ibn Sina <em>(Avicenna)</em> zei:
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 114,
-            'content' => '<div class="page" id="114"> <p class="text-end page-number">#114</p>
+            [
+                'page_number' => 114,
+                'content' => '<div class="page" id="114"> <p class="text-end page-number">#114</p>
 
 <p><em>
  “De herzameling laat zich niet meten naar de maatstaf van het verstand.” <span style="font-style: normal">Hij concludeerde:</span></em></p>
@@ -4155,11 +4155,11 @@ zekerheid aanvaard kan worden.
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 115,
-            'content' => '<div class="page" id="115"> <p class="text-end page-number">#115</p>
+            [
+                'page_number' => 115,
+                'content' => '<div class="page" id="115"> <p class="text-end page-number">#115</p>
 <p>
 In dit <strong>“Tiende Woord”</strong> worden deze activiteiten dankzij de zegen van de Qur’an op deze wijze veraanschouwelijkt
 en gepresenteerd. Anders, als het verstand slechts aan zijn eigen bekrompen en beperkte principes zou worden
@@ -4167,11 +4167,11 @@ overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging
 </p>
 
  </div>'
-        ],
+            ],
 
-        [
-            'page_number' => 116,
-            'content' => '<div class="page" id="116"> <p class="text-end page-number">#116</p>
+            [
+                'page_number' => 116,
+                'content' => '<div class="page" id="116"> <p class="text-end page-number">#116</p>
 
 
 <p><em>
@@ -4209,7 +4209,7 @@ overgelaten, dan zou het machteloos staan en gedwongen zijn tot blinde navolging
 <p class="text-end text-italic" style="margin-top: 24px;">De Vertalers</p>
 
 </div>'
-        ],
+            ],
 
         ];
     }

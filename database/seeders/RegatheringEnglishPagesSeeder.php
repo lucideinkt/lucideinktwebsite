@@ -71,7 +71,7 @@ REGATHERING_PAGE_006,
 
 <p>Lastly, we wish to highlight the Divine Name Rabb, commonly rendered as <strong>“Lord.”</strong> Although <strong>“Lord”</strong> is the standard rendering, Rabb conveys far more than mere sovereign rule; it denotes a compassionate nurturing that directs, sustains, and oversees the development of creation. For example, when the Name Rabb manifests in a seed, God’s nurturing Lordship gradually raises it into a flourishing tree, with each stage of its growth revealing yet another facet of this Divine Name. And just as all physical development unfolds by the grace of this Name, so too is spiritual growth sustained by its manifestation.</p>
 
-<p>Hence, if we aspire to grow in accordance with the design our Creator has willed for us, we ought to heed ALLAH’s first command to the Prophet Muhammad <span class="text-arabic-inline honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>: <strong>“Read in the Name of your Lord.”</strong> For just as our Rabb nurtured us physically from a single drop of fluid into an intricately designed human being, so too is He willing to nurture us spiritually toward a most refined maturity, provided we seek knowledge and growth in His Name.</p>
+<p>Hence, if we aspire to grow in accordance with the design our Creator has willed for us, we ought to heed ALLAH’s first command to the Prophet Muhammad <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span>: <strong>“Read in the Name of your Lord.”</strong> For just as our Rabb nurtured us physically from a single drop of fluid into an intricately designed human being, so too is He willing to nurture us spiritually toward a most refined maturity, provided we seek knowledge and growth in His Name.</p>
 
 <p style="max-width: 450px; margin: 0 auto 18px;" class="text-center"><strong>May ALLAH make this treatise beneficial for its readers and accept it as a service in His cause.</strong></p>
 
@@ -264,7 +264,7 @@ REGATHERING_PAGE_015,
 
 <p>This king’s beloved says:</p>
 
-<p><strong>“O Sultan who nourishes us with His favors! Reveal to us the archetypes and sources of the examples and shadows You have shown us here. Guide us to the center of Your Empire. Do not leave us to perish in these deserts. Admit us into Your presence. Have mercy on us. Grant us the privilege to rejoice in the delightful favors You have allowed us to taste here. Spare us the agony of finitude and abandonment. Do not forsake and annihilate these loyal and grateful subjects of Yours who long for You.” </strong></p>
+<p><strong><em>“O Sultan who nourishes us with His favors! Reveal to us the archetypes and sources of the examples and shadows You have shown us here. Guide us to the center of Your Empire. Do not leave us to perish in these deserts. Admit us into Your presence. Have mercy on us. Grant us the privilege to rejoice in the delightful favors You have allowed us to taste here. Spare us the agony of finitude and abandonment. Do not forsake and annihilate these loyal and grateful subjects of Yours who long for You.” </em></strong></p>
 
 <p>He voices his wishes and pleads fervently; you hear it as well...</p>
 
@@ -280,15 +280,21 @@ REGATHERING_PAGE_016,
 <div class="page" id="17">
  <p class="text-end page-number">#17</p>
 
-<p><strong>Thus, those within this arena of trial are not abandoned to their own devices; blissful palaces and terrifying dungeons await them...</strong></p>
+<p class="text-center text-center-constrained"><strong>Thus, those within this arena of trial are not abandoned to their own devices; blissful palaces and terrifying dungeons await them...</strong></p>
 
-<p class="text-center text-red small-title"><strong>Sixth Outlook</strong></p>
+<p class="text-center text-red small-title"><strong>SIXTH OUTLOOK</strong></p>
 
 <p>Come and behold! These marvelous trains, airplanes, armaments, storehouses, and galleries, along with these active enactments, all demonstrate that behind the veil, a phenomenal, omnidominant sultanate exists.<sup>1</sup></p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
- <p class="footnote-p"><sup>1</sup> <strong>For example,</strong> during a present-day battle drill on a training field, executing the command: <em>“Present arms! Fix bayonets!”</em> makes a vast army resemble a thorny oak forest. <strong>Similarly,</strong> during ceremonial parades on a National Day, heeding the command: <em>“Don your uniforms and pin on your emblems!”</em> turns an entire army camp into a fully flourished ornamental garden teeming with colorful flowers. <strong>Likewise,</strong> among the Timeless Sultan’s boundless types of soldiers <em>– such as angels, jinn, humans, and animals –</em> the non-sentient plants across the Earth’s fields constitute a division subject to the law: <span class="text-arabic-inline" dir="rtl" lang="ar">كُنْ فَيَكُونُ</span> <em>“(ALLAH says) Be! And it is.”</em> During their jihad for survival, the moment they receive the Divine Command: <em>“Take up arms, equip yourselves, and stand your ground,”</em> all thorny trees and plants draw their bayonets, making the entire globe resemble a majestic army camp bristling with armed soldiers. <strong>Furthermore,</strong> as each day and each week of spring serves as a celebration for a specific unit of the plant division, each unit presents itself to the Observant Gaze of the Timeless Sultan with the jeweled emblems He has pinned on them, parading in succession to showcase the lovely gifts He has granted them. In this grand display, all plants and trees heed the Lord’s implicit command: <em>“Adorn yourselves with the jewels of thy Lord’s Artistry, pin on the emblems of Divine Origination known as ‘flowers and fruits,’ and flourish!” </em> </p>
+ <p class="footnote-p"><sup>1</sup> <strong>For example,</strong> during a present-day battle drill on a training field, executing the command: <em>“Present arms! Fix bayonets!”</em> makes a vast army resemble a thorny oak forest.</p>
+
+<p class="footnote-p"><strong>Similarly,</strong> during ceremonial parades on a National Day, heeding the command: <em>“Don your uniforms and pin on your emblems!”</em> turns an entire army camp into a fully flourished ornamental garden teeming with colorful flowers.</p>
+
+<p class="footnote-p"><strong>Likewise,</strong> among the Timeless Sultan’s boundless types of soldiers <em>– such as angels, jinn, humans, and animals –</em> the non-sentient plants across the Earth’s fields constitute a division subject to the law: <span class="text-arabic-inline" dir="rtl" lang="ar">كُنْ فَيَكُونُ</span> <em>“(ALLAH says) Be! And it is.”</em> During their jihad for survival, the moment they receive the Divine Command: <em>“Take up arms, equip yourselves, and stand your ground,”</em> all thorny trees and plants draw their bayonets, making the entire globe resemble a majestic army camp bristling with armed soldiers.</p>
+
+<p class="footnote-p"><strong>Furthermore,</strong> as each day and each week of spring serves as a celebration for a specific unit of the plant division, each unit presents itself to the Observant Gaze of the Timeless Sultan with the jeweled emblems He has pinned on them, parading in succession to showcase the lovely gifts He has granted them. In this grand display, all plants and trees heed the Lord’s implicit command: <em>“Adorn yourselves with the jewels of thy Lord’s Artistry, pin on the emblems of Divine Origination known as ‘flowers and fruits,’ and flourish!” </em> &rarr;</p>
 </div>
 </div>
 REGATHERING_PAGE_017,
@@ -299,21 +305,25 @@ REGATHERING_PAGE_017,
 <div class="page" id="18">
  <p class="text-end page-number">#18</p>
 
-<p><strong>An empire of such grandeur deserves worthy subjects. </strong></p>
+<p class="text-center text-center-constrained"><strong>An empire of such grandeur deserves worthy subjects. </strong></p>
 
-<p><strong>However,</strong> as you can see, all subjects have gathered here in this <strong>guesthouse</strong>, while the guesthouse fills and empties each day.</p>
+<p><strong>However,</strong> as you can see, all subjects have gathered here in this <strong><em>guesthouse</em></strong>, while the guesthouse fills and empties each day.</p>
 
-<p><strong>Moreover,</strong> these subjects reside in this <strong>arena of trial</strong> to train, while the arena is altered every hour.</p>
+<p><strong>Moreover,</strong> these subjects reside in this <strong><em>arena of trial</em></strong> to train, while the arena is altered every hour.</p>
 
-<p><strong>Furthermore,</strong> the subjects spend only a few minutes in this <strong>gallery</strong> to view examples of the king’s precious gifts and the antiques of his extraordinary artistry on display, while the gallery changes by the minute. Those who leave do not return; those who enter inevitably leave.</p>
+<p><strong>Furthermore,</strong> the subjects spend only a few minutes in this <strong><em>gallery</em></strong> to view examples of the king’s precious gifts and the antiques of his extraordinary artistry on display, while the gallery changes by the minute. Those who leave do not return; those who enter inevitably leave.</p>
 
 <p>This state of affairs conclusively shows that beyond this guesthouse, this arena, and these displays, there exist permanent palaces and eternal abodes amidst gardens and treasuries brimming with the pure and supreme archetypes of these examples and images.</p>
 
-<p><strong>Thus, the efforts here are for them… His Majesty assigns work here and offers reward there. Everyone there possesses some form of bliss, tailored to their own individual potential…</strong></p>
+<p class="text-center text-center-constrained"><strong><em>Thus, the efforts here are for them… His Majesty assigns work here and offers reward there.</em></strong></p>
+
+<p class="text-center text-center-constrained"><strong>Everyone there possesses some form of bliss, tailored to their own individual potential…</strong></p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
- <p class="footnote-p">Consequently, the Earth’s surface turns into a resplendent army camp, where soldiers in ornate uniforms and bejeweled emblems stage a parade on a phenomenal festive day. <strong>Such wise and organized armaments and adornments clearly show to the non-blind that they materialize at the behest of an Almighty Sultan and All-Wise Ruler.</strong></p>
+ <p class="footnote-p">Consequently, the Earth’s surface turns into a resplendent army camp, where soldiers in ornate uniforms and bejeweled emblems stage a parade on a phenomenal festive day.</p>
+
+<p class="footnote-p"><strong>Such wise and organized armaments and adornments clearly show to the non-blind that they materialize at the behest of an Almighty Sultan and All-Wise Ruler.</strong></p>
 </div>
 </div>
 REGATHERING_PAGE_018,
@@ -324,7 +334,7 @@ REGATHERING_PAGE_018,
 <div class="page" id="19">
  <p class="text-end page-number">#19</p>
 
-<p class="text-center text-red small-title"><strong>Seventh Outlook</strong></p>
+<p class="text-center text-red small-title"><strong>SEVENTH OUTLOOK</strong></p>
 
 <p>Come, let us roam around for a bit and see what goes on in this sophisticated society. Behold! In every area, on every corner, multiple cameras have been set up, capturing images. Look, various scribes are seated in every location, taking notes. They record everything. Even the least significant services, the most mundane events, are being documented. Look up there! Atop that high peak, a huge camera has been set up exclusively for the king,<sup>1</sup> capturing all that transpires within these regions. This indicates that His Majesty has mandated that all interactions and affairs in his kingdom are to be archived. Hence, that sublime eminence has all events recorded and their images preserved. Such diligent storage and preservation are clearly meant for an accounting.</p>
 
@@ -332,7 +342,9 @@ REGATHERING_PAGE_018,
  <hr class="hr-footnote" />
  <p class="footnote-p"><sup>1</sup> Some of the meanings implied in this <strong>Outlook</strong> are revealed in <strong>“The Seventh Truth.”</strong> Here, we would just like to clarify that the king’s huge exclusive camera symbolizes the <strong>“Preserved Tablet”</strong> (<span class="text-arabic-inline" dir="rtl" lang="ar">لَوْحِ مَحْفُوظْ</span>).</p>
 
-<p class="footnote-p">In <strong>“The Twenty-Sixth Word,”</strong> the reality of the Preserved Tablet’s existence is proven as follows: Small identity cards signify the existence of a great population register, little receipts indicate the presence of a general ledger, and consistent droplets reveal the existence of a huge water source. <strong>Similarly,</strong> serving as minuscule identity cards, embodying the meaning of miniature Preserved Tablets, and flowing as dot-like droplets from the Pen that inscribed the Great Preserved Tablet, the memories of humans, the fruits of trees, and the seeds of fruits clearly signify, indicate, and verify the existence of a Grand Memory, a Divine Ledger, and a Supreme Preserved Tablet, making them apparent to discerning minds...</p>
+<p class="footnote-p">In <strong>“The Twenty-Sixth Word,”</strong> the reality of the Preserved Tablet’s existence is proven as follows:</p>
+
+<p class="footnote-p">Small identity cards signify the existence of a great population register, little receipts indicate the presence of a general ledger, and consistent droplets reveal the existence of a huge water source. <strong><em>Similarly,</em></strong> serving as minuscule identity cards, embodying the meaning of miniature Preserved Tablets, and flowing as dot-like droplets from the Pen that inscribed the Great Preserved Tablet, the memories of humans, the fruits of trees, and the seeds of fruits clearly signify, indicate, and verify the existence of a Grand Memory, a Divine Ledger, and a Supreme Preserved Tablet, making them apparent to discerning minds...</p>
 </div>
 </div>
 REGATHERING_PAGE_019,
@@ -345,9 +357,9 @@ REGATHERING_PAGE_019,
 
 <p>Now, is it at all possible that an all-preserving ruler, who does not overlook even the most trivial act of his least significant subject, would not preserve, judge, and duly reward or punish the grandest deeds of his paramount subjects? In fact, behaviors defying His Majesty’s honor and sovereignty, exceeding the tolerance of his merciful disposition, proceed from among those prominent figures, yet they remain unpunished here.</p>
 
-<p><strong>Thus, their reckoning is reserved for an Ultimate Judgment.</strong></p>
+<p class="text-center text-center-constrained"><strong>Thus, their reckoning is reserved for an Ultimate Judgment.</strong></p>
 
-<p class="text-center text-red small-title"><strong>Eighth Outlook</strong></p>
+<p class="text-center text-red small-title"><strong>EIGHTH OUTLOOK</strong></p>
 
 <p>Come, I will now read to you the king’s decrees. Behold! He consistently conveys promises and fierce threats, declaring:</p>
 
@@ -367,9 +379,9 @@ REGATHERING_PAGE_020,
 
 <p>Your condition resembles that of a traveler who shuts his eyes to the sunlight and turns inward, gazing into the realm of his imagination, where his illusion <em>– akin to a firefly –</em> tries to light his dreadful path with the dim glow of the lantern inside his head. Verily, once the king makes a promise, he is certain to fulfill it. And while fulfilling it is easy for him, to us and to everything else, including himself and his empire, it is of utmost importance.</p>
 
-<p><strong>Thus, an Ultimate Judgment shall take place, and sublime bliss does exist.</strong></p>
+<p class="text-center text-center-constrained"><strong>Thus, an Ultimate Judgment shall take place, and sublime bliss does exist.</strong></p>
 
-<p class="text-center text-red small-title"><strong>Ninth Outlook</strong></p>
+<p class="text-center text-red small-title"><strong>NINTH OUTLOOK</strong></p>
 
 <p>Come, let us now visit a few leaders of these circles and communities,<sup>1</sup> each of whom possesses a private phone for direct contact with the king. Some have even ascended to his presence. Listen to their declarations; unanimously, they report:</p>
 
@@ -392,9 +404,9 @@ REGATHERING_PAGE_021,
 
 <p>Hence, it stands on enduring, unwavering, imperishable, stable, perfect, and magnificent realities worthy of that sultanate.</p>
 
-<p><strong>Thus, a realm beyond this world exists; migration to that realm shall come to pass.</strong></p>
+<p class="text-center text-center-constrained"><strong>Thus, a realm beyond this world exists; migration to that realm shall come to pass.</strong></p>
 
-<p class="text-center text-red small-title"><strong>Tenth Outlook</strong></p>
+<p class="text-center text-red small-title"><strong>TENTH OUTLOOK</strong></p>
 
 <p>Come, today is Royal New Year’s Day.<sup>1</sup> A transition is approaching; extraordinary phenomena are about to unfold. On this beautiful spring day, let us explore that green desert land adorned with lovely flowers.</p>
 
@@ -429,9 +441,9 @@ REGATHERING_PAGE_023,
 
 <p>Consequently, at the dawn of a major gathering, the future course of affairs will revolve around the outcome of these events. Moreover, the recorded visuals will forever be displayed in a grand gallery. Hence, these fleeting, impermanent settings yield permanent images and eternal fruits.</p>
 
-<p><strong>Thus, these ceremonies are meant for sublime bliss, an Ultimate Judgment, and other exalted ends unknown to us.</strong></p>
+<p class="text-center text-center-constrained"><strong>Thus, these ceremonies are meant for sublime bliss, an Ultimate Judgment, and other exalted ends unknown to us.</strong></p>
 
-<p class="text-center text-red small-title"><strong>Eleventh Outlook</strong></p>
+<p class="text-center text-red small-title"><strong>ELEVENTH OUTLOOK</strong></p>
 
 <p>Come, O stubborn friend! Let us embark on a journey by plane, then board a train traveling eastward or westward <em>– that is, to the past or the future.</em> Let’s see what kind of miracles this wondrous entity has displayed in other regions. Behold! Remarkable wonders such as the stays, fields, and galleries we witnessed earlier are found everywhere. Only in terms of art and appearance do they differ from one another. Pay close attention! For all throughout those unstable stays, those unenduring fields, those impermanent galleries, arrangements of such striking wisdom, signs of such unmistakable aid, glimpses of such exalted justice, and fruits of such comprehensive mercy are so profoundly evident that anyone who is not shortsighted acknowledges with full certainty that a wisdom more perfect, an aid more beautiful, a mercy more comprehensive, and a justice more exalted than His Majesty’s are neither possible nor imaginable.</p>
 </div>
@@ -447,9 +459,9 @@ REGATHERING_PAGE_024,
 
 <p>Moreover, one would have to regard the entity behind these wise enactments, benevolent activities, and gracious favors as <em>– God forbid –</em> a vile trickster and a cruel tyrant. This equates to turning truths into their opposites. However, with the exception of senseless sophists who deny the existence of all things, all intellectuals unanimously agree that the inversion of truths is not possible.</p>
 
-<p><strong>Thus, beyond this realm, there is another realm where an Ultimate Judgment, a Grand Rectification, and a Sublime Bestowal shall unfold, allowing this mercy, wisdom, aid, and justice to fully manifest.</strong></p>
+<p class="text-center"><strong>Thus, beyond this realm, there is another realm where an Ultimate Judgment, a Grand Rectification, and a Sublime Bestowal shall unfold, allowing this mercy, wisdom, aid, and justice to fully manifest.</strong></p>
 
-<p class="text-center text-red small-title"><strong>Twelfth Outlook</strong></p>
+<p class="text-center text-red small-title"><strong>TWELFTH OUTLOOK</strong></p>
 
 <p>Come, let us return now. We are going to meet with the leaders and officers of these communities and examine their equipment to ascertain whether it was provided merely to survive for a fleeting time in the arena of trial or to attain a long life of bliss in another realm. We cannot examine every individual and each piece of equipment, but to gain some insight, let us take a look at this officer’s identity card and handbook.</p>
 </div>
@@ -497,7 +509,7 @@ REGATHERING_PAGE_027,
 
 <p>As that noble adjutant, in unison with the Supreme Decree, proclaims and conveys the transition of this land with all his strength, can this matter even be up for debate? Surely it cannot! Unless, of course, you decide to deny everything we have witnessed thus far…</p>
 
-<p><strong>Well then, my friend. The floor is yours. Speak. Say what you have to say!</strong></p>
+<p><strong><em>Well then, my friend. The floor is yours. Speak. Say what you have to say!</em></strong></p>
 
 <p><em>– “What is there to say? Can anything be said against this? Is it possible to oppose the sun at its zenith? I can only say: Alhamdulillah, I am infinitely grateful, for I am liberated from the dominance of delusions and desires, freed from the grip of my nafs and my whims, and saved from permanent imprisonment and confinement, as I am now convinced that beyond these chaotic, unstable guesthouses, there exists a land of bliss in the proximity of the king; and we are candidates for it.”</em></p>
 
@@ -511,7 +523,13 @@ REGATHERING_PAGE_028,
 <div class="page" id="29">
  <p class="text-end page-number">#29</p>
 
-<p class="text-center text-red small-title"><strong>Prologue</strong></p>
+<div class="text-center page-title-chapter delima-font">
+    <h2 class="chapter-title">Prologue</h2>
+    </div>
+
+<p>[With a few signs, we shall reference some matters
+that are explained in other sections – <em>namely in the
+<strong>Twenty-Second</strong>, <strong>Nineteenth</strong>, and <strong>Twenty-Sixth Words</strong>.</em>]</p>    
 
 <p class="text-center text-red small-title"><strong>First Sign</strong></p>
 
@@ -562,7 +580,7 @@ REGATHERING_PAGE_030,
 
 <p>Time is a thread, a line upon which the Glorious Artificer annually establishes a different world for display. In each established world, He meticulously refreshes its appearances in three hundred and sixty ways, applying changes with impeccable order and wisdom. He fashioned the Earth’s surface as a spread of favors, embellishing it each spring with three hundred thousand types of artworks, showering it with innumerable varieties of gifts. Despite their intricate intermingling and medley, these artworks and gifts arise distinct from one another with utmost clarity and definition. Analyze other aspects along these lines…</p>
 
-<p><strong>How can anyone remain heedless of such a palace’s Artificer?</strong></p>
+<p class="text-center text-center-constrained"><strong>How can anyone remain heedless of such a palace’s Artificer?</strong></p>
 
 <p>Furthering this reasoning: during a cloudless noon, when the sun’s brilliance and reflection are visible on every bubble across the ocean surface, every shiny object on dry land, and every snow particle, denying the sun would be nothing short of a delirious delusion. For at that moment, denying and not acknowledging one single sun entails acknowledging as many actual and independent micro-suns as there are droplets, bubbles, and reflective particles. This compels one to accept that within each particle, despite having room for only one particle, resides the reality of a giant sun.</p>
 
@@ -599,7 +617,7 @@ REGATHERING_PAGE_032,
 <div class="page" id="33">
  <p class="text-end page-number">#33</p>
 
-<p><strong>Verily, that noble adjutant is God’s Noblest Messenger </strong><span class="text-arabic-inline" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong>. </strong></p>
+<p class="text-center text-center-constrained"><strong>Verily, that noble adjutant is God’s Noblest Messenger </strong><span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong>. </strong></p>
 
 <p>Indeed, to the Holy Artificer of a universe so resplendent, such a Noble Messenger is as essential as light is to the sun. For just as it is unthinkable for the sun not to emit light, so too is it impossible for Divinity not to send Prophets to reveal Itself.</p>
 
@@ -639,9 +657,7 @@ REGATHERING_PAGE_034,
 <div class="page" id="35">
  <p class="text-end page-number">#35</p>
 
-<p>In light of the aforementioned traits and tasks, we now ought to ask: <strong>Has anyone ever emerged in the world more qualified and comprehensive than Muhammad the Arabian</strong> <span class="text-arabic-inline" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong>? Has time ever shown anyone more worthy and </strong></p>
-
-<p><strong>fitting for the role of Messengership and the task of conveying Divine tidings than he? Not once, not ever!</strong></p>
+<p>In light of the aforementioned traits and tasks, we now ought to ask: <strong><em>Has anyone ever emerged in the world more qualified and comprehensive than Muhammad the Arabian </strong><span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong><em>?</em> <em>Has time ever shown anyone more worthy and fitting for the role of Messengership and the task of conveying Divine tidings than he?</em></strong> Not once, not ever!</p>
 
 <p>He is indeed the Master of all Messengers, the imam of all Prophets, the mentor of all purified sages, the foremost among the recipients of God’s Nearness, the most perfect of all creations, and the Sultan of all spiritual guides.</p>
 
@@ -667,7 +683,7 @@ REGATHERING_PAGE_035,
 
 <p><em>“How could a brief lifetime warrant eternal punishment?”</em></p>
 
-<p>For, despite this universe’s status and value as <strong>“Scriptures of The Absolute Refuge (As’Samad)”</strong>, unbelief plunges it into an abyss of meaninglessness and purposelessness, thereby insulting the entire cosmos. Moreover, unbelief’s inherent denial entails rejecting all of God’s Holy Names, whose reflections and weavings are manifest in all apparent beings. At the same time, unbelief belies all the infinite proofs that attest to the Truthfulness and Faithfulness of the Divine Haqq. <strong>Therefore, unbelief is a boundless crime – and a boundless crime begets boundless punishment.</strong></p>
+<p>For, despite this universe’s status and value as <strong>“Scriptures of The Absolute Refuge (As’Samad)”</strong>, unbelief plunges it into an abyss of meaninglessness and purposelessness, thereby insulting the entire cosmos. Moreover, unbelief’s inherent denial entails rejecting all of God’s Holy Names, whose reflections and weavings are manifest in all apparent beings. At the same time, unbelief belies all the infinite proofs that attest to the Truthfulness and Faithfulness of the Divine Haqq. <strong><em>Therefore, unbelief is a boundless crime – and a boundless crime begets boundless punishment.</em></strong></p>
 
 <p class="text-center text-red small-title"><strong>Fourth Sign</strong></p>
 
