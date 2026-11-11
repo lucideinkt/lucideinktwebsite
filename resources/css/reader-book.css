@@ -931,6 +931,15 @@ body.dark-mode .book-reader-scope .fn-ref--active {
     display: inline;
     unicode-bidi: embed;
 }
+/* Match running-text honorifics after the general popup Arabic styles. */
+.fn-popover__text span.honorific {
+    font-size: 1.2em;
+    line-height: 0;
+    display: inline;
+    white-space: nowrap;
+    -webkit-font-feature-settings: "ss17";
+    font-feature-settings: "ss17";
+}
 .fn-popover__text .delima-font {
     font-family: 'DelimaProRegular', serif;
 }

@@ -718,15 +718,15 @@ REGATHERING_PAGE_038,
 <div class="page" id="39">
  <p class="text-end page-number">#39</p>
 
-<p><strong>First Truth</strong></p>
+<p class="text-center text-red small-title"><strong>First Truth</strong></p>
 
-<p><strong><em>The Gate of Lordship and Sultanate; A glimpse of the Name </em>“Rabb” (Lord)<em>.</em></strong></p>
+<p class="text-center text-center-constrained"><strong><em>The Gate of Lordship and Sultanate; A glimpse of the Name </em>“Rabb” (Lord)<em>.</em></strong></p>
 
 <p>Is it at all possible that the Disposition of God’s Lordship and the Sultanate of His Divinity would bring this universe into being to display His Perfections through exalted aims and lofty purposes, yet not ordain rewards for the believers who respond to those aims and purposes with faith and servanthood, nor punishment for the deviators who oppose those purposes with rejection and disdain?</p>
 
-<p><strong>Second Truth</strong></p>
+<p class="text-center text-red small-title"><strong>Second Truth</strong></p>
 
-<p><strong><em>The Gate of Generosity and Mercy; A glimpse of the Names: “The Generous and The Merciful”</em></strong> (<span class="text-arabic-inline" dir="rtl" lang="ar">اَلْكَرٖيمُ وَالرَّحٖيمُ</span>)</p>
+<p class="text-center text-center-constrained"><strong><em>The Gate of Generosity and Mercy; A glimpse of the Names: “The Generous and The Merciful”</em></strong> (<span class="text-arabic-inline" dir="rtl" lang="ar">اَلْكَرٖيمُ وَالرَّحٖيمُ</span>)</p>
 
 <p>Is it at all possible that the Lord of this world, Whose observable works reveal Him as Possessor of Infinite Generosity and Mercy, as well as Infinite Dignity and Sovereignty, reserves no rewards worthy of His Generosity and Mercy, nor punishments befitting His Dignity and Sovereignty?</p>
 </div>
@@ -765,7 +765,8 @@ REGATHERING_PAGE_040,
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
- <p class="footnote-p"><sup>1</sup> Indeed, a hungry lioness prioritizing her weak cub over herself, foregoing the meat she has captured to feed it to her young; a cowardly chicken attacking a dog or lion to protect its hatchling; a fig tree subsisting on mud while bestowing pure milk upon its progeny – <em>its fruits </em>– clearly demonstrate to the non-blind that they operate in accordance with the Plan of an Infinitely Merciful, Generous, and Compassionate Entity. Indeed, the fact that beings lacking consciousness, such as plants and animals, perform tasks requiring a high level of awareness and wisdom conclusively reveals the existence of an Omniscient and Wise Entity Who orchestrates their actions; they operate in His Name.</p>
+ <p class="footnote-p"><sup>1</sup> Indeed, a hungry lioness prioritizing her weak cub over herself, foregoing the meat she has captured to feed it to her young; a cowardly chicken attacking a dog or lion to protect its hatchling; a fig tree subsisting on mud while bestowing pure milk upon its progeny – <em>its fruits </em>– clearly demonstrate to the non-blind that they operate in accordance with the Plan of an Infinitely Merciful, Generous, and Compassionate Entity.</p>
+ <p class="footnote-p">Indeed, the fact that beings lacking consciousness, such as plants and animals, perform tasks requiring a high level of awareness and wisdom conclusively reveals the existence of an Omniscient and Wise Entity Who orchestrates their actions; they operate in His Name.</p>
 </div>
 </div>
 REGATHERING_PAGE_041,
@@ -782,7 +783,7 @@ REGATHERING_PAGE_041,
 
 <p>At times, Divine punishment may also be imposed on Earth. The calamities that befell rebellious and obstinate nations in previous eras demonstrate that humans are not left to their own devices; they are always subject to the lash from Divine Glory and Dignity.</p>
 
-<p>Indeed, among all beings, it is man who is endowed with an eminent task and immense potential. Now, as the Lord of man makes Himself known through countless well-designed works of art, yet man fails to acknowledge Him in return with faith; and as He inspires love through innumerable embellished fruits of Mercy, yet man fails to evoke His Love in return with servanthood; and as He displays His Grace and Mercy through abundant varieties of favors, yet man fails to honor Him in return with praise and gratitude <strong>– can it then be deemed possible that such a man will remain unpunished?</strong> Would he be left to roam around freely? Would the Awe-Inspiring Possessor of Sovereignty and Dignity not prepare a realm of retribution?</p>
+<p>Indeed, among all beings, it is man who is endowed with an eminent task and immense potential. Now, as the Lord of man makes Himself known through countless well-designed works of art, yet man fails to acknowledge Him in return with faith; and as He inspires love through innumerable embellished fruits of Mercy, yet man fails to evoke His Love in return with servanthood; and as He displays His Grace and Mercy through abundant varieties of favors, yet man fails to honor Him in return with praise and gratitude <strong><em>– can it then be deemed possible that such a man will remain unpunished?</em></strong> Would he be left to roam around freely? Would the Awe-Inspiring Possessor of Sovereignty and Dignity not prepare a realm of retribution?</p>
 </div>
 REGATHERING_PAGE_042,
             ],
@@ -793,6 +794,24 @@ REGATHERING_PAGE_042,
  <p class="text-end page-number">#43</p>
 
 <p>And as for the believers who acknowledge Him with faith as He makes Himself known; who love and endear Him through servanthood as He inspires love; and who honor Him with gratitude in response to His Mercy – <strong>is it at all possible that the All-Merciful, the All-Compassionate, would not reward them with a world of Eternal Bliss?</strong></p>
+
+<p class="text-center text-red small-title"><strong>Third Truth</strong></p>
+
+<p class="text-center text-center-constrained"><strong><em>The Gate of Wisdom and Justice; A reflection of the Names:</em> “The Wise and The Just” (</strong> <span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَكٖيمُ وَالْعَادِلُ</span> <strong>)</strong></p>
+
+<p>Is it at all possible<sup>1</sup> that the Awe-Inspiring Entity, Who displays the Sultanate of His Lordship through Wisdom and harmony, through Justice and balance that extend from particles to suns, would not grace the believers who seek refuge under the protective Wing of His Lordship and attune themselves to that Wisdom and Justice through faith and servanthood? And would He not chasten the insolent who defy that Wisdom and Justice with denial and disobedience?</p>
+
+<div class="page-footnote">
+ <hr class="hr-footnote" />
+ <p class="footnote-p"><sup>1</sup> Indeed, the phrase <strong><em>“Is it at all possible”</em></strong> is repeated frequently, for it conveys a profound secret:</p>
+
+ <p class="footnote-p">Most unbelief and misguidance stem from incomprehensibility. In other words, when people deem something remote from reason and improbable, they tend to deny it.</p>
+
+ <p class="footnote-p">However, <strong>“The Treatise on the Regathering”</strong> irrefutably demonstrates that true incomprehensibility, actual improbability, remoteness from reason, and insurmountable difficulties flood the alley of unbelief and the path of misguidance. In contrast, realistic possibilities, reasoned probabilities, and inevitable plausibilities are rooted in the path of faith and the avenue of Islam.</p>
+
+ <p class="footnote-p"><strong>In conclusion,</strong> while philosophers lean toward unbelief due to incomprehensibility, <strong>“The Tenth Word”</strong> exposes where true incomprehensibility lies by repeatedly posing this rhetorical question, delivering them a silencing blow.</p>
+</div>
+
 </div>
 REGATHERING_PAGE_043,
             ],
@@ -802,24 +821,14 @@ REGATHERING_PAGE_043,
 <div class="page" id="44">
  <p class="text-end page-number">#44</p>
 
-<p><strong>Third Truth</strong></p>
-
-<p><strong><em>The Gate of Wisdom and Justice; A reflection of the Names:</em> “The Wise and The Just” (</strong> <span class="text-arabic-inline" dir="rtl" lang="ar">اَلْحَكٖيمُ وَالْعَادِلُ</span> <strong>)</strong></p>
-
-<p>Is it at all possible<sup>1</sup> that the Awe-Inspiring Entity, Who displays the Sultanate of His Lordship through Wisdom and harmony, through Justice and balance that extend from particles to suns, would not grace the believers who seek refuge under the protective Wing of His Lordship and attune themselves to that Wisdom and Justice through faith and servanthood? And would He not chasten the insolent who defy that Wisdom and Justice with denial and disobedience?</p>
-
 <p>In this temporal world, not even a thousandth of what befits such Wisdom and Justice is enacted upon humanity; their true fulfillment is deferred. The majority of the misguided go unpunished, whereas most of the believers remain unrewarded upon departing from this world.<strong> Thus, an Ultimate Judgment and sublime bliss are yet to come. </strong></p>
 
-<p><strong><em>Verily, it is apparent that the Entity Who governs this world manages affairs with Infinite Wisdom. Do you seek proof?</em> Observe His commitment to benefit and welfare in every matter. </strong></p>
+<p><strong><em>Verily, it is apparent that the Entity Who governs this world manages affairs with Infinite Wisdom. Do you seek proof?</em> </strong> Observe His commitment to benefit and welfare in every matter. </p>
 
 <p>Do you not see that every part of a human being <em>– from limbs and bones to vessels and even the cells of the body –</em> is aligned with benefits and wisdom? In fact, akin to a fruit-laden tree, certain organs are richly endowed with innumerable beneficial fruits of Wisdom, revealing that all affairs are managed by a Hand of Infinite Wisdom.</p>
 
 <p>Moreover, the presence of infinite order within the artful design of all things demonstrates that affairs are managed with Infinite Wisdom. Indeed, the way a beautiful flower’s intricate program is embedded within a tiny seed, and a vast tree’s page of deeds, life chronicle, and list of components are inscribed within a small kernel by the spiritual Pen of Destiny, clearly reveals that a Pen of Infinite Wisdom is at work.</p>
 
-<div class="page-footnote">
- <hr class="hr-footnote" />
- <p class="footnote-p"><sup>1</sup> Indeed, the phrase <strong>“Is it at all possible”</strong> is repeated frequently, for it conveys a profound secret: Most unbelief and misguidance stem from incomprehensibility. In other words, when people deem something remote from reason and improbable, they tend to deny it. However, <strong>“The Treatise on the Regathering”</strong> irrefutably demonstrates that true incomprehensibility, actual improbability, remoteness from reason, and insurmountable difficulties flood the alley of unbelief and the path of misguidance. In contrast, realistic possibilities, reasoned probabilities, and inevitable plausibilities are rooted in the path of faith and the avenue of Islam. <strong>In conclusion,</strong> while philosophers lean toward unbelief due to incomprehensibility, <strong>“The Tenth Word”</strong> exposes where true incomprehensibility lies by repeatedly posing this rhetorical question, delivering them a silencing blow.</p>
-</div>
 </div>
 REGATHERING_PAGE_044,
             ],
@@ -833,7 +842,7 @@ REGATHERING_PAGE_044,
 
 <p>Indeed, the way the index of the entire universe, the keys to all treasures of Mercy, and the mirrors of all Divine Names are woven into a tiny human body demonstrates Wisdom embedded within the highest degree of fine Artistry.</p>
 
-<p><strong>Now, is it at all possible that such Wisdom, reigning throughout the enactments of Divine Lordship, would not desire to reward and eternally bless the faithful believers who seek refuge under the protective Wing of that Lordship?</strong></p>
+<p><strong><em>Now, is it at all possible that such Wisdom, reigning throughout the enactments of Divine Lordship, would not desire to reward and eternally bless the faithful believers who seek refuge under the protective Wing of that Lordship?</em></strong></p>
 
 <p><strong><em>Do you also seek proof that affairs are managed with Justice and balance?</em></strong></p>
 
@@ -855,9 +864,9 @@ REGATHERING_PAGE_045,
 
 <p>Human beings, passing through a fleeting life in this ephemeral world, cannot <em>– and will not –</em> experience the reality of such Justice here. Thus, their account is left to an Ultimate Judgment. For true justice demands that this diminutive human be rewarded or punished not by his physical minuteness, but by the weight of his crime, the value of his being, and the greatness of his duty. Since this impermanent, fleeting world is remote from manifesting such Justice and Wisdom for man, who is fashioned for eternity, it follows that the Just, All-Glorious Possessor of Beauty, and the Wise, All-Beauteous Possessor of Glory, holds dominion over a permanent Hell and an eternal Paradise.</p>
 
-<p><strong>Fourth Truth</strong></p>
+<p class="text-center text-red small-title"><strong>Fourth Truth</strong></p>
 
-<p><strong><em>The Gate of Munificence and Beauty; A reflection of the Names:</em> “The Munificent and The Beauteous” (</strong> <span class="text-arabic-inline" dir="rtl" lang="ar">اَلْجَوَّادُ وَالْجَمٖيلُُ</span> <strong>)</strong></p>
+<p class="text-center text-center-constrained"><strong><em>The Gate of Munificence and Beauty; A reflection of the Names:</em> “The Munificent and The Beauteous” (</strong> <span class="text-arabic-inline" dir="rtl" lang="ar">اَلْجَوَّادُ وَالْجَمٖيلُُ</span> <strong>)</strong></p>
 
 <p>Is it at all possible that boundless Munificence and Bounteousness; endless wealth; inexhaustible treasures; peerless, timeless Beauty; and flawless, perpetual Perfection would not desire a world of bliss and a feasting haven where grateful supplicants, yearning mirrors, and amazed beholders reside forever?</p>
 </div>
@@ -873,7 +882,7 @@ REGATHERING_PAGE_046,
 
 <p>Such infinite Munificence and Bounteousness, such inexhaustible treasures and Mercy, call for an everlasting feasting haven and a realm of bliss where all that is desired is ever-present. They also undoubtedly require that those who rejoice in those feasts remain in that blissful realm, residing there forever, lest they be haunted by cessation and separation.</p>
 
-<p><strong>For just as the cessation of pain brings joy, the cessation of joy brings pain. Such boundless Bounteousness does not will to cause such pain; rather, it desires an eternal Paradise inhabited by ever-reliant dwellers.</strong></p>
+<p class="text-center"><strong>For just as the cessation of pain brings joy, the cessation of joy brings pain. Such boundless Bounteousness does not will to cause such pain; rather, it desires an eternal Paradise inhabited by ever-reliant dwellers.</strong></p>
 
 <p>For infinite Munificence and Bounteousness seek to bestow infinite favors and gifts. Infinite favors and gifts, in turn, require infinite gratitude and receptivity. This necessitates the perpetual existence of beneficiaries, so they may express gratitude and appreciation for those ceaseless bestowals and endless favors. Otherwise, a fragmentary, fleeting joy bound to turn bitter due to its transience cannot harmonize with the demands of such Munificence and Bounteousness.</p>
 
@@ -887,13 +896,19 @@ REGATHERING_PAGE_047,
 <div class="page" id="48">
  <p class="text-end page-number">#48</p>
 
-<p>Pay attention to the Lord’s declarations inscribed within the palms of all plants and animals across the globe.<sup>1</sup> Listen to the Prophets and saints, the heralds of the beauties that emanate from Divine Lordship. In unity, they reveal and declare the impeccable perfection of the Awe-Inspiring Artificer, displaying His marvelous artistry as they captivate the attentive eye. Thus, the Artificer of this world possesses supremely precious and stunning hidden Perfections, which He wills to unveil through these wondrous works of art. For flawless, veiled Perfections desire to be revealed in the presence of witnesses who appreciate and admire them with exclamations of <strong>“Mâshâ’ALLAH.”</strong></p>
+<p>Pay attention to the Lord’s declarations inscribed within the palms of all plants and animals across the globe.<sup>1</sup> Listen to the Prophets and saints, the heralds of the beauties that emanate from Divine Lordship. In unity, they reveal and declare the impeccable perfection of the Awe-Inspiring Artificer, displaying His marvelous artistry as they captivate the attentive eye.</p>
 
-<p>Furthermore, eternal Perfections long for perpetual display, which in turn necessitates the everlasting existence of appreciative admirers.</p>
+<p>Thus, the Artificer of this world possesses supremely precious and stunning hidden Perfections, which He wills to unveil through these wondrous works of art. For flawless, veiled Perfections desire to be revealed in the presence of witnesses who appreciate and admire them with exclamations of <strong>“Mâshâ’ALLAH.”</strong></p>
+
+<p>Furthermore, eternal Perfections long for perpetual display, which in turn necessitates the everlasting existence of appreciative admirers. For in the eyes of an impermanent admirer, the value of perfections will diminish.<sup>2</sup></p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
  <p class="footnote-p"><sup>1</sup> Indeed, at the tip of a hair-thin branch of a bone-dry tree, an ornately designed flower and an artfully bejeweled fruit flourish as written declarations, inviting sentient beings to read the resplendent Artistry of a Wondrous, Wise, and Divinely Artistic Artificer. Now expand this analogy from plants to animals...</p>
+
+ <p class="footnote-p"><sup>2</sup> Indeed, consider the classic example: A beauty with no equal in the world once banished a common man from her presence due to his obsessive infatuation. To console himself, he muttered, <em>“Ugh, how ugly she is,”</em> thus denying the beauty’s beauty.</p>
+
+ <p class="footnote-p">Similarly, a bear once wandered beneath a sweet grapevine, longing to eat its fruit. Yet, he could neither reach the grapes nor climb the vine. To soothe himself, he grunted in his own tongue, <em>“They’re sour anyway,” </em>as he lumbered off grumbling.<em>”</em></p>
 </div>
 </div>
 REGATHERING_PAGE_048,
@@ -904,20 +919,20 @@ REGATHERING_PAGE_048,
 <div class="page" id="49">
  <p class="text-end page-number">#49</p>
 
-<p>For in the eyes of an impermanent admirer, the value of perfections will diminish.<sup>2</sup> And just as the light of day reveals the sun, these exceedingly beautiful, artistic, radiant, and ornate beings spread across the face of the universe reveal the splendors of an incomparable spiritual Beauty and hint at the subtleties of a peerless, hidden Elegance.<sup>1</sup> Such glimpses of Transcendent Elegance and Sacred Beauty signify that each distinct Divine Name contains numerous concealed treasures.</p>
+<p>And just as the light of day reveals the sun, these exceedingly beautiful, artistic, radiant, and ornate beings spread across the face of the universe reveal the splendors of an incomparable spiritual Beauty and hint at the subtleties of a peerless, hidden Elegance.<sup>1</sup> Such glimpses of Transcendent Elegance and Sacred Beauty signify that each distinct Divine Name contains numerous concealed treasures.</p>
 
 <p>Verily, a hidden Beauty of such unparalleled exaltedness longs to behold Its own Resplendence in a mirror, observing the degrees of Its Elegance and the dimensions of Its Beauteousness in a sentient, desirous reflection. Likewise, It desires to be perceived by others, so that It may witness Its beloved Beauty through their eyes.</p>
 
 <p><strong>Thus, It wills to behold Its own Beauty in two ways:</strong></p>
 
-<p><strong>•	 First,</strong> by directly beholding It in mirrors of varying colors; <strong>•	 Second,</strong> by viewing It through the gazes of desirous beholders and amazed admirers.</p>
+<p><strong>•	 First,</strong> by directly beholding It in mirrors of varying colors;</p>
+
+<p><strong>•	 Second,</strong> by viewing It through the gazes of desirous beholders and amazed admirers.</p>
 
 <p>Hence, beauty and elegance desire to see and be seen. These acts of seeing and being seen, in turn, necessitate the existence of yearning beholders and amazed admirers.</p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
-<p class="footnote-p"><sup>2</sup> Indeed, consider the classic example: A beauty with no equal in the world once banished a common man from her presence due to his obsessive infatuation. To console himself, he muttered, <em>“Ugh, how ugly she is,”</em> thus denying the beauty’s beauty. Similarly, a bear once wandered beneath a sweet grapevine, longing to eat its fruit. Yet, he could neither reach the grapes nor climb the vine. To soothe himself, he grunted in his own tongue, <em>“They’re sour anyway,” </em>as he lumbered off grumbling.<em>”</em></p>
-
 <p class="footnote-p"><sup>1</sup> As beings, in their roles as mirrors, fade and vanish in succession, glimpses of the same elegance and beauty reappear upon the forms and faces of their successors, revealing that beauty is not theirs. Rather, those beauties are Âyât; they are signs of a Transcendent Elegance and a Sacred Beauty.</p>
 </div>
 </div>
@@ -935,7 +950,7 @@ REGATHERING_PAGE_049,
 
 <p>The endless Bounteousness and Munificence, the peerless Beauty and Elegance, and the impeccable Perfections in question necessitate everlasting admirers who are eternally grateful and desirous. Nevertheless, as we observe in this worldly guesthouse, visitors soon depart and disappear. They only get to taste a fraction of that Bounteousness; their appetite is awakened, yet they leave without partaking. Guests merely cast a brief glance at a spark or a faint shadow of that Beauty and Perfection before leaving unsatiated.</p>
 
-<p><strong>Thus, they journey forth toward an eternal viewing haven.</strong></p>
+<p class="text-center text-center-constrained"><strong>Thus, they journey forth toward an eternal viewing haven.</strong></p>
 
 <p><strong>Overall,</strong> just as this world, with all its existences, conclusively points to its Awe-Inspiring Artificer, so too do the Artificer’s Attributes and Holy Names prove, indicate, and necessitate the Realm of the Hereafter.</p>
 </div>
@@ -947,15 +962,20 @@ REGATHERING_PAGE_050,
 <div class="page" id="51">
  <p class="text-end page-number">#51</p>
 
-<p><strong>Fifth Truth</strong></p>
+<p class="text-center text-red small-title"><strong>Fifth Truth</strong></p>
 
-<p><strong><em>The Gate of Compassion and Muhammadan Servanthood </em></strong><span class="text-arabic-inline" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong><em>; A glimpse of the Names:</em> “The Responder and The Merciful” (</strong> <span class="text-arabic-inline" dir="rtl" lang="ar">اَلْمُجٖيبُ وَالرَّحٖيمُ</span> <strong>)</strong></p>
+<p class="text-center text-center-constrained"><strong><em>The Gate of Compassion and Muhammadan Servanthood </em></strong><span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span><strong><em>; A glimpse of the Names:</em> “The Responder and The Merciful” (</strong> <span class="text-arabic-inline" dir="rtl" lang="ar">اَلْمُجٖيبُ وَالرَّحٖيمُ</span> <strong>)</strong></p>
 
 <p>Is it at all possible that a Lord of Infinite Compassion and Mercy, Who sees the slightest need of His least significant creation and meets it with perfect compassion from unexpected sources; Who hears the softest invocation of His most hidden creature and rushes to its aid; and Who responds to every plea expressed through the language of both being and speech, would see, yet not meet and fulfill the deepest need of His greatest servant,<sup>1</sup> the dearest among His creation?</p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
- <p class="footnote-p"><sup>1</sup> Indeed, an Eminence whose ever-flourishing sultanate has endured for more than 1,350 years; whose nation has, for the greater part of that span, numbered over 350 million adherents; and whose entire following renews its oath of allegiance to him day by day, bearing witness to his excellence and submitting to his commands with perfect obedience, has imbued half the globe and one-fifth of humanity with his spiritual hue. As the beloved of hearts and the nourisher of souls, he stands, beyond all doubt, as the greatest servant of the Lord Who presides over the universe. Moreover, as nearly every form of existence in the universe bears one of his miraculous fruits in tribute to his task and mission, no doubt remains that this Noble One is the dearest creation of the Cosmic Creator. And as eternity is a need that the entirety of humanity, with all its potential, longs for <em>– a need that elevates man from the lowest depths to the loftiest heights –</em> it is indeed the greatest of all needs;<strong> and the greatest of all servants shall beseech the Fulfiller of Needs to grant it on behalf of all.</strong></p>
+ <p class="footnote-p"><sup>1</sup> Indeed, an Eminence whose ever-flourishing sultanate has endured for more than 1,350 years; whose nation has, for the greater part of that span, numbered over 350 million adherents; and whose entire following renews its oath of allegiance to him day by day, bearing witness to his excellence and submitting to his commands with perfect obedience, has imbued half the globe and one-fifth of humanity with his spiritual hue. As the beloved of hearts and the nourisher of souls, he stands, beyond all doubt, as the greatest servant of the Lord Who presides over the universe.</p>
+
+ <p class="footnote-p">Moreover, as nearly every form of existence in the universe bears one of his miraculous fruits in tribute to his task and mission, no doubt remains that this Noble One is the dearest creation of the Cosmic Creator.</p>
+
+<p class="footnote-p">And as eternity is a need that the entirety of humanity, with all its potential, longs for <em>– a need that elevates man from the lowest depths to the loftiest heights –</em> it is indeed the greatest of all needs;<strong> and the greatest of all servants shall beseech the Fulfiller of Needs to grant it on behalf of all.</strong></p>
+
 </div>
 </div>
 REGATHERING_PAGE_051,
@@ -972,7 +992,7 @@ REGATHERING_PAGE_051,
 
 <p>Drawing from my explanation in <strong>“The Nineteenth Word,”</strong> we shall once again shed light on this truth.</p>
 
-<p><strong>O friend who listens along with my nafs! </strong></p>
+<p><strong><em>O friend who listens along with my nafs!</em></strong></p>
 
 <p>In the symbolic story, we spoke of a gathering on an island where a most noble adjutant delivered a speech. The truth this alludes to is as follows:</p>
 
@@ -996,11 +1016,15 @@ REGATHERING_PAGE_052,
 
 <p>Behold! He prays for needs so universal <em>– such as eternity –</em> that not only the inhabitants of Earth, but also the dwellers of the heavens, and even all of existence, partake in his supplication; in the language of their very being, they say:</p>
 
-<p><strong>“Yes, our Lord! Fulfill his wish! Hear his prayer! We also long for it!”</strong></p>
+<p><strong><em>“Yes, our Lord! Fulfill his wish! Hear his prayer! We also long for it!”</em></strong></p>
 
 <div class="page-footnote">
  <hr class="hr-footnote" />
- <p class="footnote-p"><sup>1</sup> Indeed, from the time the Ahmadic supplication <span class="text-arabic-inline" dir="rtl" lang="ar">عليه الصلاة والسلام</span> was first raised until this very day, all the peace and blessings invoked upon him by his entire Ummah have been an unwavering <em>“Âmîn” </em>to his prayer, in which they all partake. In fact, each <strong>“Salawât”</strong> sent upon him serves as an <em>“Âmîn”</em> to his prayer. The peace and blessings offered to him by every member of his Ummah in each Salat, and the invocation recited for him by the Shâfi'îs after every iqâmah, constitute a powerful and universal <em>“Âmîn”</em> to his plea for Eternal Bliss. Verily, as the entirety of humanity, through the language of its being, pleads with all its might for eternal life and bliss, the Ahmadan Eminence <span class="text-arabic-inline" dir="rtl" lang="ar">عليه الصلاة والسلام</span> intercedes on behalf of all. In response, the luminous segment of humanity aligns behind him, chanting <em>“Âmîn.”</em> Now, could such a prayer ever go unanswered?</p>
+ <p class="footnote-p"><sup>1</sup> Indeed, from the time the Ahmadic supplication <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> was first raised until this very day, all the peace and blessings invoked upon him by his entire Ummah have been an unwavering <em>“Âmîn” </em>to his prayer, in which they all partake. In fact, each <strong>“Salawât”</strong> sent upon him serves as an <em>“Âmîn”</em> to his prayer.</p>
+
+<p class="footnote-p">The peace and blessings offered to him by every member of his Ummah in each Salat, and the invocation recited for him by the Shâfi'îs after every iqâmah, constitute a powerful and universal <em>“Âmîn”</em> to his plea for Eternal Bliss.</p> 
+
+<p class="footnote-p">Verily, as the entirety of humanity, through the language of its being, pleads with all its might for eternal life and bliss, the Ahmadan Eminence <span class="honorific" dir="rtl" lang="ar">عليه الصلاة والسلام</span> intercedes on behalf of all. In response, the luminous segment of humanity aligns behind him, chanting <em>“Âmîn.”</em> Now, could such a prayer ever go unanswered?</p>
 </div>
 </div>
 REGATHERING_PAGE_053,
